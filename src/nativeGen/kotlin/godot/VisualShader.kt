@@ -175,10 +175,6 @@ open class VisualShader(
     return _ret.asBoolean()
   }
 
-  fun rebuild() {
-    __method_bind.rebuild.call(this._handle)
-  }
-
   fun removeNode(type: Int, id: Int) {
     val _args = VariantArray.new()
     _args.append(type)
@@ -340,13 +336,6 @@ open class VisualShader(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
             "is_node_connection".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_node_connection" }
-        }
-      val rebuild: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "rebuild".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rebuild" }
         }
       val removeNode: CPointer<godot_method_bind>
         get() = memScoped {

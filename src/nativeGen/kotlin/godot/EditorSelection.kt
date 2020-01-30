@@ -41,16 +41,6 @@ open class EditorSelection(
   }
 
   companion object {
-    fun new(): EditorSelection = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSelection".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorSelection" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorSelection(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorSelection = EditorSelection(ptr)
     /**
      * Container for method_bind pointers for EditorSelection
      */

@@ -94,14 +94,6 @@ open class GridMap(
       setMeshLibrary(value)
     }
 
-  var theme: MeshLibrary
-    get() {
-       return getTheme() 
-    }
-    set(value) {
-      setTheme(value)
-    }
-
   /**
    * Specialized setter for cellSize
    */
@@ -216,11 +208,6 @@ open class GridMap(
   fun getOctantSize(): Int {
     val _ret = __method_bind.getOctantSize.call(this._handle)
     return _ret.asInt()
-  }
-
-  fun getTheme(): MeshLibrary {
-    val _ret = __method_bind.getTheme.call(this._handle)
-    return _ret.asObject(::MeshLibrary)!!
   }
 
   fun getUsedCells(): VariantArray {
@@ -340,11 +327,6 @@ open class GridMap(
   fun setOctantSize(size: Int) {
     val _arg = Variant.new(size)
     __method_bind.setOctantSize.call(this._handle, _arg, 1)
-  }
-
-  fun setTheme(theme: MeshLibrary) {
-    val _arg = Variant.new(theme)
-    __method_bind.setTheme.call(this._handle, _arg, 1)
   }
 
   fun worldToMap(pos: Vector3): Vector3 {
@@ -477,12 +459,6 @@ open class GridMap(
             "get_octant_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_octant_size" }
         }
-      val getTheme: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
-            "get_theme".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_theme" }
-        }
       val getUsedCells: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
@@ -584,12 +560,6 @@ open class GridMap(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_octant_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_octant_size" }
-        }
-      val setTheme: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
-            "set_theme".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_theme" }
         }
       val worldToMap: CPointer<godot_method_bind>
         get() = memScoped {

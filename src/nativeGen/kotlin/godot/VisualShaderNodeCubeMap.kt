@@ -25,6 +25,14 @@ open class VisualShaderNodeCubeMap(
       setCubeMap(value)
     }
 
+  var source: Source
+    get() {
+       return getSource() 
+    }
+    set(value) {
+      setSource(value.value)
+    }
+
   var textureType: TextureType
     get() {
        return getTextureType() 
@@ -38,6 +46,11 @@ open class VisualShaderNodeCubeMap(
     return _ret.asObject(::CubeMap)!!
   }
 
+  fun getSource(): Source {
+    val _ret = __method_bind.getSource.call(this._handle)
+    return VisualShaderNodeCubeMap.Source.from(_ret.asInt())
+  }
+
   fun getTextureType(): TextureType {
     val _ret = __method_bind.getTextureType.call(this._handle)
     return VisualShaderNodeCubeMap.TextureType.from(_ret.asInt())
@@ -46,6 +59,11 @@ open class VisualShaderNodeCubeMap(
   fun setCubeMap(value: CubeMap) {
     val _arg = Variant.new(value)
     __method_bind.setCubeMap.call(this._handle, _arg, 1)
+  }
+
+  fun setSource(value: Int) {
+    val _arg = Variant.new(value)
+    __method_bind.setSource.call(this._handle, _arg, 1)
   }
 
   fun setTextureType(value: Int) {
@@ -74,7 +92,30 @@ open class VisualShaderNodeCubeMap(
     }
   }
 
+  enum class Source(
+    val value: Int
+  ) {
+    SOURCE_TEXTURE(0),
+
+    SOURCE_PORT(1);
+
+    companion object {
+      fun from(value: Int): Source {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
   companion object {
+    val SOURCE_PORT: Int = 1
+
+    val SOURCE_TEXTURE: Int = 0
+
     val TYPE_COLOR: Int = 1
 
     val TYPE_DATA: Int = 0
@@ -102,6 +143,13 @@ open class VisualShaderNodeCubeMap(
             "get_cube_map".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_cube_map" }
         }
+      val getSource: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
+            "get_source".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_source" }
+        }
       val getTextureType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -115,6 +163,13 @@ open class VisualShaderNodeCubeMap(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
             "set_cube_map".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_cube_map" }
+        }
+      val setSource: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
+            "set_source".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_source" }
         }
       val setTextureType: CPointer<godot_method_bind>
         get() = memScoped {

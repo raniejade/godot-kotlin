@@ -21,6 +21,14 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketClient(
   _handle: COpaquePointer
 ) : WebSocketMultiplayerPeer(_handle) {
+  var trustedSslCertificate: X509Certificate
+    get() {
+       return getTrustedSslCertificate() 
+    }
+    set(value) {
+      setTrustedSslCertificate(value)
+    }
+
   var verifySsl: Boolean
     get() {
        return isVerifySslEnabled() 
@@ -32,13 +40,15 @@ open class WebSocketClient(
   fun connectToUrl(
     url: String,
     protocols: PoolStringArray,
-    gdMpApi: Boolean = false
+    gdMpApi: Boolean = false,
+    customHeaders: PoolStringArray
   ): GDError {
     val _args = VariantArray.new()
     _args.append(url)
     _args.append(protocols)
     _args.append(gdMpApi)
-    val _ret = __method_bind.connectToUrl.call(this._handle, _args.toVariant(), 3)
+    _args.append(customHeaders)
+    val _ret = __method_bind.connectToUrl.call(this._handle, _args.toVariant(), 4)
     return GDError.from(_ret.asInt())
   }
 
@@ -49,9 +59,29 @@ open class WebSocketClient(
     __method_bind.disconnectFromHost.call(this._handle, _args.toVariant(), 2)
   }
 
+  fun getConnectedHost(): String {
+    val _ret = __method_bind.getConnectedHost.call(this._handle)
+    return _ret.asString()
+  }
+
+  fun getConnectedPort(): Int {
+    val _ret = __method_bind.getConnectedPort.call(this._handle)
+    return _ret.asInt()
+  }
+
+  fun getTrustedSslCertificate(): X509Certificate {
+    val _ret = __method_bind.getTrustedSslCertificate.call(this._handle)
+    return _ret.asObject(::X509Certificate)!!
+  }
+
   fun isVerifySslEnabled(): Boolean {
     val _ret = __method_bind.isVerifySslEnabled.call(this._handle)
     return _ret.asBoolean()
+  }
+
+  fun setTrustedSslCertificate(arg0: X509Certificate) {
+    val _arg = Variant.new(arg0)
+    __method_bind.setTrustedSslCertificate.call(this._handle, _arg, 1)
   }
 
   fun setVerifySslEnabled(enabled: Boolean) {
@@ -88,12 +118,40 @@ open class WebSocketClient(
             "disconnect_from_host".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method disconnect_from_host" }
         }
+      val getConnectedHost: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketClient".cstr.ptr,
+            "get_connected_host".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connected_host" }
+        }
+      val getConnectedPort: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketClient".cstr.ptr,
+            "get_connected_port".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connected_port" }
+        }
+      val getTrustedSslCertificate: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketClient".cstr.ptr,
+            "get_trusted_ssl_certificate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_trusted_ssl_certificate" }
+        }
       val isVerifySslEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketClient".cstr.ptr,
             "is_verify_ssl_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_verify_ssl_enabled" }
+        }
+      val setTrustedSslCertificate: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketClient".cstr.ptr,
+            "set_trusted_ssl_certificate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_trusted_ssl_certificate" }
         }
       val setVerifySslEnabled: CPointer<godot_method_bind>
         get() = memScoped {

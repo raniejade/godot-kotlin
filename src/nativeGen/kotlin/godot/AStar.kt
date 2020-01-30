@@ -34,11 +34,16 @@ open class AStar(
     __method_bind.addPoint.call(this._handle, _args.toVariant(), 3)
   }
 
-  fun arePointsConnected(id: Int, toId: Int): Boolean {
+  fun arePointsConnected(
+    id: Int,
+    toId: Int,
+    bidirectional: Boolean = true
+  ): Boolean {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(toId)
-    val _ret = __method_bind.arePointsConnected.call(this._handle, _args.toVariant(), 2)
+    _args.append(bidirectional)
+    val _ret = __method_bind.arePointsConnected.call(this._handle, _args.toVariant(), 3)
     return _ret.asBoolean()
   }
 
@@ -58,11 +63,16 @@ open class AStar(
     __method_bind.connectPoints.call(this._handle, _args.toVariant(), 3)
   }
 
-  fun disconnectPoints(id: Int, toId: Int) {
+  fun disconnectPoints(
+    id: Int,
+    toId: Int,
+    bidirectional: Boolean = true
+  ) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(toId)
-    __method_bind.disconnectPoints.call(this._handle, _args.toVariant(), 2)
+    _args.append(bidirectional)
+    __method_bind.disconnectPoints.call(this._handle, _args.toVariant(), 3)
   }
 
   fun getAvailablePointId(): Int {
@@ -70,9 +80,11 @@ open class AStar(
     return _ret.asInt()
   }
 
-  fun getClosestPoint(toPosition: Vector3): Int {
-    val _arg = Variant.new(toPosition)
-    val _ret = __method_bind.getClosestPoint.call(this._handle, _arg, 1)
+  fun getClosestPoint(toPosition: Vector3, includeDisabled: Boolean = false): Int {
+    val _args = VariantArray.new()
+    _args.append(toPosition)
+    _args.append(includeDisabled)
+    val _ret = __method_bind.getClosestPoint.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -90,10 +102,20 @@ open class AStar(
     return _ret.asPoolIntArray()
   }
 
+  fun getPointCapacity(): Int {
+    val _ret = __method_bind.getPointCapacity.call(this._handle)
+    return _ret.asInt()
+  }
+
   fun getPointConnections(id: Int): PoolIntArray {
     val _arg = Variant.new(id)
     val _ret = __method_bind.getPointConnections.call(this._handle, _arg, 1)
     return _ret.asPoolIntArray()
+  }
+
+  fun getPointCount(): Int {
+    val _ret = __method_bind.getPointCount.call(this._handle)
+    return _ret.asInt()
   }
 
   fun getPointPath(fromId: Int, toId: Int): PoolVector3Array {
@@ -136,6 +158,11 @@ open class AStar(
   fun removePoint(id: Int) {
     val _arg = Variant.new(id)
     __method_bind.removePoint.call(this._handle, _arg, 1)
+  }
+
+  fun reserveSpace(numNodes: Int) {
+    val _arg = Variant.new(numNodes)
+    __method_bind.reserveSpace.call(this._handle, _arg, 1)
   }
 
   fun setPointDisabled(id: Int, disabled: Boolean = true) {
@@ -227,11 +254,23 @@ open class AStar(
             "get_id_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_id_path" }
         }
+      val getPointCapacity: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AStar".cstr.ptr,
+            "get_point_capacity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_point_capacity" }
+        }
       val getPointConnections: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AStar".cstr.ptr,
             "get_point_connections".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_point_connections" }
+        }
+      val getPointCount: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AStar".cstr.ptr,
+            "get_point_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_point_count" }
         }
       val getPointPath: CPointer<godot_method_bind>
         get() = memScoped {
@@ -274,6 +313,12 @@ open class AStar(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AStar".cstr.ptr,
             "remove_point".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_point" }
+        }
+      val reserveSpace: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AStar".cstr.ptr,
+            "reserve_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reserve_space" }
         }
       val setPointDisabled: CPointer<godot_method_bind>
         get() = memScoped {

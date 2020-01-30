@@ -33,6 +33,11 @@ open class IP(
     return _ret.asVariantArray()
   }
 
+  fun getLocalInterfaces(): VariantArray {
+    val _ret = __method_bind.getLocalInterfaces.call(this._handle)
+    return _ret.asVariantArray()
+  }
+
   fun getResolveItemAddress(id: Int): String {
     val _arg = Variant.new(id)
     val _ret = __method_bind.getResolveItemAddress.call(this._handle, _arg, 1)
@@ -157,6 +162,12 @@ open class IP(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
             "get_local_addresses".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_local_addresses" }
+        }
+      val getLocalInterfaces: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
+            "get_local_interfaces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_local_interfaces" }
         }
       val getResolveItemAddress: CPointer<godot_method_bind>
         get() = memScoped {

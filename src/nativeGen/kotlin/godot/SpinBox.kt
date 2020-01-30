@@ -51,6 +51,10 @@ open class SpinBox(
       setSuffix(value)
     }
 
+  fun apply() {
+    __method_bind.apply.call(this._handle)
+  }
+
   fun getAlign(): LineEdit.Align {
     val _ret = __method_bind.getAlign.call(this._handle)
     return LineEdit.Align.from(_ret.asInt())
@@ -110,6 +114,12 @@ open class SpinBox(
      * Container for method_bind pointers for SpinBox
      */
     private object __method_bind {
+      val apply: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
+            "apply".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method apply" }
+        }
       val getAlign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,

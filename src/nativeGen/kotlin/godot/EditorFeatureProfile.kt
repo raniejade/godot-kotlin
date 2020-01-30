@@ -38,10 +38,10 @@ open class EditorFeatureProfile(
     return _ret.asBoolean()
   }
 
-  fun isClassPropertyDisabled(className: String, arg1: String): Boolean {
+  fun isClassPropertyDisabled(className: String, property: String): Boolean {
     val _args = VariantArray.new()
     _args.append(className)
-    _args.append(arg1)
+    _args.append(property)
     val _ret = __method_bind.isClassPropertyDisabled.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
@@ -81,12 +81,12 @@ open class EditorFeatureProfile(
   fun setDisableClassProperty(
     className: String,
     property: String,
-    arg2: Boolean
+    disable: Boolean
   ) {
     val _args = VariantArray.new()
     _args.append(className)
     _args.append(property)
-    _args.append(arg2)
+    _args.append(disable)
     __method_bind.setDisableClassProperty.call(this._handle, _args.toVariant(), 3)
   }
 
@@ -145,16 +145,6 @@ open class EditorFeatureProfile(
 
     val FEATURE_SCRIPT: Int = 1
 
-    fun new(): EditorFeatureProfile = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorFeatureProfile".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorFeatureProfile" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorFeatureProfile(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorFeatureProfile = EditorFeatureProfile(ptr)
     /**
      * Container for method_bind pointers for EditorFeatureProfile
      */

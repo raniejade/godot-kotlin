@@ -39,6 +39,14 @@ open class HTTPClient(
       setConnection(value)
     }
 
+  var readChunkSize: Int
+    get() {
+       return getReadChunkSize() 
+    }
+    set(value) {
+      setReadChunkSize(value)
+    }
+
   fun close() {
     __method_bind.close.call(this._handle)
   }
@@ -61,6 +69,11 @@ open class HTTPClient(
   fun getConnection(): StreamPeer {
     val _ret = __method_bind.getConnection.call(this._handle)
     return _ret.asObject(::StreamPeer)!!
+  }
+
+  fun getReadChunkSize(): Int {
+    val _ret = __method_bind.getReadChunkSize.call(this._handle)
+    return _ret.asInt()
   }
 
   fun getResponseBodyLength(): Int {
@@ -564,6 +577,12 @@ open class HTTPClient(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "get_connection".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_connection" }
+        }
+      val getReadChunkSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
+            "get_read_chunk_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_read_chunk_size" }
         }
       val getResponseBodyLength: CPointer<godot_method_bind>
         get() = memScoped {

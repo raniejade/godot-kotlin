@@ -44,6 +44,14 @@ open class NetworkedMultiplayerENet(
       setCompressionMode(value.value)
     }
 
+  var serverRelay: Boolean
+    get() {
+       return isServerRelayEnabled() 
+    }
+    set(value) {
+      setServerRelayEnabled(value)
+    }
+
   var transferChannel: Int
     get() {
        return getTransferChannel() 
@@ -138,6 +146,11 @@ open class NetworkedMultiplayerENet(
     return _ret.asBoolean()
   }
 
+  fun isServerRelayEnabled(): Boolean {
+    val _ret = __method_bind.isServerRelayEnabled.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun setAlwaysOrdered(ordered: Boolean) {
     val _arg = Variant.new(ordered)
     __method_bind.setAlwaysOrdered.call(this._handle, _arg, 1)
@@ -156,6 +169,11 @@ open class NetworkedMultiplayerENet(
   fun setCompressionMode(mode: Int) {
     val _arg = Variant.new(mode)
     __method_bind.setCompressionMode.call(this._handle, _arg, 1)
+  }
+
+  fun setServerRelayEnabled(enabled: Boolean) {
+    val _arg = Variant.new(enabled)
+    __method_bind.setServerRelayEnabled.call(this._handle, _arg, 1)
   }
 
   fun setTransferChannel(channel: Int) {
@@ -297,6 +315,13 @@ open class NetworkedMultiplayerENet(
             "is_always_ordered".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_always_ordered" }
         }
+      val isServerRelayEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
+            "is_server_relay_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_server_relay_enabled" }
+        }
       val setAlwaysOrdered: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -324,6 +349,13 @@ open class NetworkedMultiplayerENet(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "set_compression_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_compression_mode" }
+        }
+      val setServerRelayEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
+            "set_server_relay_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_server_relay_enabled" }
         }
       val setTransferChannel: CPointer<godot_method_bind>
         get() = memScoped {

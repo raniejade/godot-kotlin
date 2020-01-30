@@ -51,6 +51,10 @@ open class MainLoop(
   }
 
   companion object {
+    val NOTIFICATION_APP_PAUSED: Int = 1015
+
+    val NOTIFICATION_APP_RESUMED: Int = 1014
+
     val NOTIFICATION_CRASH: Int = 1012
 
     val NOTIFICATION_OS_IME_UPDATE: Int = 1013

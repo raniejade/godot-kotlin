@@ -320,15 +320,6 @@ open class EditorPlugin(
 
     val DOCK_SLOT_RIGHT_UR: Int = 6
 
-    fun new(): EditorPlugin = memScoped {
-      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorPlugin" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorPlugin(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorPlugin = EditorPlugin(ptr)
     /**
      * Container for method_bind pointers for EditorPlugin
      */

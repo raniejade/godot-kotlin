@@ -43,16 +43,6 @@ open class EditorInspectorPlugin(
   }
 
   companion object {
-    fun new(): EditorInspectorPlugin = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorInspectorPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorInspectorPlugin" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorInspectorPlugin(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorInspectorPlugin = EditorInspectorPlugin(ptr)
     /**
      * Container for method_bind pointers for EditorInspectorPlugin
      */

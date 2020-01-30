@@ -3,8 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Color
+import godot.core.Dictionary
 import godot.core.GDError
 import godot.core.Godot
+import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
@@ -36,6 +38,14 @@ open class RichTextLabel(
     }
     set(value) {
       setBbcode(value)
+    }
+
+  var customEffects: VariantArray
+    get() {
+       return getEffects() 
+    }
+    set(value) {
+      setEffects(value)
     }
 
   var metaUnderlined: Boolean
@@ -110,9 +120,16 @@ open class RichTextLabel(
       setVisibleCharacters(value)
     }
 
-  fun addImage(image: Texture) {
-    val _arg = Variant.new(image)
-    __method_bind.addImage.call(this._handle, _arg, 1)
+  fun addImage(
+    image: Texture,
+    width: Int = 0,
+    height: Int = 0
+  ) {
+    val _args = VariantArray.new()
+    _args.append(image)
+    _args.append(width)
+    _args.append(height)
+    __method_bind.addImage.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addText(text: String) {
@@ -138,6 +155,11 @@ open class RichTextLabel(
   fun getContentHeight(): Int {
     val _ret = __method_bind.getContentHeight.call(this._handle)
     return _ret.asInt()
+  }
+
+  fun getEffects(): VariantArray {
+    val _ret = __method_bind.getEffects.call(this._handle)
+    return _ret.asVariantArray()
   }
 
   fun getLineCount(): Int {
@@ -180,6 +202,11 @@ open class RichTextLabel(
     return _ret.asInt()
   }
 
+  fun installEffect(effect: Variant) {
+    val _arg = Variant.new(effect)
+    __method_bind.installEffect.call(this._handle, _arg, 1)
+  }
+
   fun isMetaUnderlined(): Boolean {
     val _ret = __method_bind.isMetaUnderlined.call(this._handle)
     return _ret.asBoolean()
@@ -220,6 +247,12 @@ open class RichTextLabel(
     return GDError.from(_ret.asInt())
   }
 
+  fun parseExpressionsForValues(expressions: PoolStringArray): Dictionary {
+    val _arg = Variant.new(expressions)
+    val _ret = __method_bind.parseExpressionsForValues.call(this._handle, _arg, 1)
+    return _ret.asDictionary()
+  }
+
   fun pop() {
     __method_bind.pop.call(this._handle)
   }
@@ -227,6 +260,14 @@ open class RichTextLabel(
   fun pushAlign(align: Int) {
     val _arg = Variant.new(align)
     __method_bind.pushAlign.call(this._handle, _arg, 1)
+  }
+
+  fun pushBold() {
+    __method_bind.pushBold.call(this._handle)
+  }
+
+  fun pushBoldItalics() {
+    __method_bind.pushBoldItalics.call(this._handle)
   }
 
   fun pushCell() {
@@ -248,6 +289,10 @@ open class RichTextLabel(
     __method_bind.pushIndent.call(this._handle, _arg, 1)
   }
 
+  fun pushItalics() {
+    __method_bind.pushItalics.call(this._handle)
+  }
+
   fun pushList(type: Int) {
     val _arg = Variant.new(type)
     __method_bind.pushList.call(this._handle, _arg, 1)
@@ -256,6 +301,14 @@ open class RichTextLabel(
   fun pushMeta(data: Variant) {
     val _arg = Variant.new(data)
     __method_bind.pushMeta.call(this._handle, _arg, 1)
+  }
+
+  fun pushMono() {
+    __method_bind.pushMono.call(this._handle)
+  }
+
+  fun pushNormal() {
+    __method_bind.pushNormal.call(this._handle)
   }
 
   fun pushStrikethrough() {
@@ -285,6 +338,11 @@ open class RichTextLabel(
   fun setBbcode(text: String) {
     val _arg = Variant.new(text)
     __method_bind.setBbcode.call(this._handle, _arg, 1)
+  }
+
+  fun setEffects(effects: VariantArray) {
+    val _arg = Variant.new(effects)
+    __method_bind.setEffects.call(this._handle, _arg, 1)
   }
 
   fun setMetaUnderline(enable: Boolean) {
@@ -420,7 +478,19 @@ open class RichTextLabel(
 
     ITEM_TABLE(11),
 
-    ITEM_META(12);
+    ITEM_FADE(12),
+
+    ITEM_SHAKE(13),
+
+    ITEM_WAVE(14),
+
+    ITEM_TORNADO(15),
+
+    ITEM_RAINBOW(16),
+
+    ITEM_META(17),
+
+    ITEM_CUSTOMFX(18);
 
     companion object {
       fun from(value: Int): ItemType {
@@ -447,6 +517,10 @@ open class RichTextLabel(
 
     val ITEM_COLOR: Int = 5
 
+    val ITEM_CUSTOMFX: Int = 18
+
+    val ITEM_FADE: Int = 12
+
     val ITEM_FONT: Int = 4
 
     val ITEM_FRAME: Int = 0
@@ -457,9 +531,13 @@ open class RichTextLabel(
 
     val ITEM_LIST: Int = 10
 
-    val ITEM_META: Int = 12
+    val ITEM_META: Int = 17
 
     val ITEM_NEWLINE: Int = 3
+
+    val ITEM_RAINBOW: Int = 16
+
+    val ITEM_SHAKE: Int = 13
 
     val ITEM_STRIKETHROUGH: Int = 7
 
@@ -467,7 +545,11 @@ open class RichTextLabel(
 
     val ITEM_TEXT: Int = 1
 
+    val ITEM_TORNADO: Int = 15
+
     val ITEM_UNDERLINE: Int = 6
+
+    val ITEM_WAVE: Int = 14
 
     val LIST_DOTS: Int = 2
 
@@ -530,6 +612,13 @@ open class RichTextLabel(
             "get_content_height".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_content_height" }
         }
+      val getEffects: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+            "get_effects".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_effects" }
+        }
       val getLineCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -585,6 +674,13 @@ open class RichTextLabel(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_visible_line_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_visible_line_count" }
+        }
+      val installEffect: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+            "install_effect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method install_effect" }
         }
       val isMetaUnderlined: CPointer<godot_method_bind>
         get() = memScoped {
@@ -643,6 +739,13 @@ open class RichTextLabel(
             "parse_bbcode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method parse_bbcode" }
         }
+      val parseExpressionsForValues: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+            "parse_expressions_for_values".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method parse_expressions_for_values" }
+        }
       val pop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -656,6 +759,20 @@ open class RichTextLabel(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_align".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_align" }
+        }
+      val pushBold: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+            "push_bold".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_bold" }
+        }
+      val pushBoldItalics: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+            "push_bold_italics".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_bold_italics" }
         }
       val pushCell: CPointer<godot_method_bind>
         get() = memScoped {
@@ -685,6 +802,13 @@ open class RichTextLabel(
             "push_indent".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_indent" }
         }
+      val pushItalics: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+            "push_italics".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_italics" }
+        }
       val pushList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -698,6 +822,20 @@ open class RichTextLabel(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_meta".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_meta" }
+        }
+      val pushMono: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+            "push_mono".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_mono" }
+        }
+      val pushNormal: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+            "push_normal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_normal" }
         }
       val pushStrikethrough: CPointer<godot_method_bind>
         get() = memScoped {
@@ -740,6 +878,13 @@ open class RichTextLabel(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_bbcode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bbcode" }
+        }
+      val setEffects: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+            "set_effects".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_effects" }
         }
       val setMetaUnderline: CPointer<godot_method_bind>
         get() = memScoped {

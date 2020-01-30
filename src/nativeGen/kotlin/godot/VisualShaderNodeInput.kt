@@ -30,6 +30,11 @@ open class VisualShaderNodeInput(
     return _ret.asString()
   }
 
+  fun getInputRealName(): String {
+    val _ret = __method_bind.getInputRealName.call(this._handle)
+    return _ret.asString()
+  }
+
   fun setInputName(name: String) {
     val _arg = Variant.new(name)
     __method_bind.setInputName.call(this._handle, _arg, 1)
@@ -56,6 +61,13 @@ open class VisualShaderNodeInput(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeInput".cstr.ptr,
             "get_input_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_input_name" }
+        }
+      val getInputRealName: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeInput".cstr.ptr,
+            "get_input_real_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_input_real_name" }
         }
       val setInputName: CPointer<godot_method_bind>
         get() = memScoped {

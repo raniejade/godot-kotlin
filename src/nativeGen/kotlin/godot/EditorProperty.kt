@@ -166,16 +166,6 @@ open class EditorProperty(
   }
 
   companion object {
-    fun new(): EditorProperty = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorProperty".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorProperty" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorProperty(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorProperty = EditorProperty(ptr)
     /**
      * Container for method_bind pointers for EditorProperty
      */

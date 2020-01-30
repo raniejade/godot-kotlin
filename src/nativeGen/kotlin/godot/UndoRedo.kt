@@ -19,12 +19,11 @@ import kotlinx.cinterop.reinterpret
 open class UndoRedo(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addDoMethod(`object`: Object, method: String): Variant {
+  fun addDoMethod(`object`: Object, method: String) {
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(method)
-    val _ret = __method_bind.addDoMethod.call(this._handle, _args.toVariant(), 2)
-    return _ret
+    __method_bind.addDoMethod.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addDoProperty(
@@ -44,12 +43,11 @@ open class UndoRedo(
     __method_bind.addDoReference.call(this._handle, _arg, 1)
   }
 
-  fun addUndoMethod(`object`: Object, method: String): Variant {
+  fun addUndoMethod(`object`: Object, method: String) {
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(method)
-    val _ret = __method_bind.addUndoMethod.call(this._handle, _args.toVariant(), 2)
-    return _ret
+    __method_bind.addUndoMethod.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addUndoProperty(
@@ -93,6 +91,16 @@ open class UndoRedo(
   fun getVersion(): Int {
     val _ret = __method_bind.getVersion.call(this._handle)
     return _ret.asInt()
+  }
+
+  fun hasRedo(): Boolean {
+    val _ret = __method_bind.hasRedo.call(this._handle)
+    return _ret.asBoolean()
+  }
+
+  fun hasUndo(): Boolean {
+    val _ret = __method_bind.hasUndo.call(this._handle)
+    return _ret.asBoolean()
   }
 
   fun isCommitingAction(): Boolean {
@@ -216,6 +224,18 @@ open class UndoRedo(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
             "get_version".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_version" }
+        }
+      val hasRedo: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "has_redo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_redo" }
+        }
+      val hasUndo: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "has_undo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_undo" }
         }
       val isCommitingAction: CPointer<godot_method_bind>
         get() = memScoped {

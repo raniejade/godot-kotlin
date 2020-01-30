@@ -14,7 +14,7 @@ import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeCubeMapUniform(
   _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+) : VisualShaderNodeTextureUniform(_handle) {
   companion object {
     fun new(): VisualShaderNodeCubeMapUniform = memScoped {
       val fnPtr =

@@ -177,6 +177,8 @@ open class GeometryInstance(
   ) {
     FLAG_USE_BAKED_LIGHT(0),
 
+    FLAG_DRAW_NEXT_FRAME_IF_VISIBLE(1),
+
     FLAG_MAX(2);
 
     companion object {
@@ -215,6 +217,8 @@ open class GeometryInstance(
   }
 
   companion object {
+    val FLAG_DRAW_NEXT_FRAME_IF_VISIBLE: Int = 1
+
     val FLAG_MAX: Int = 2
 
     val FLAG_USE_BAKED_LIGHT: Int = 0

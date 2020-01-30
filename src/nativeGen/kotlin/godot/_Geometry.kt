@@ -8,7 +8,6 @@ import godot.core.Plane
 import godot.core.PoolIntArray
 import godot.core.PoolVector2Array
 import godot.core.PoolVector3Array
-import godot.core.Transform2D
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
@@ -213,6 +212,27 @@ open class _Geometry(
     return _ret.asVariantArray()
   }
 
+  fun isPointInCircle(
+    point: Vector2,
+    circlePosition: Vector2,
+    circleRadius: Float
+  ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(point)
+    _args.append(circlePosition)
+    _args.append(circleRadius)
+    val _ret = __method_bind.isPointInCircle.call(this._handle, _args.toVariant(), 3)
+    return _ret.asBoolean()
+  }
+
+  fun isPointInPolygon(point: Vector2, polygon: PoolVector2Array): Boolean {
+    val _args = VariantArray.new()
+    _args.append(point)
+    _args.append(polygon)
+    val _ret = __method_bind.isPointInPolygon.call(this._handle, _args.toVariant(), 2)
+    return _ret.asBoolean()
+  }
+
   fun isPolygonClockwise(polygon: PoolVector2Array): Boolean {
     val _arg = Variant.new(polygon)
     val _ret = __method_bind.isPolygonClockwise.call(this._handle, _arg, 1)
@@ -396,14 +416,6 @@ open class _Geometry(
     _args.append(c)
     val _ret = __method_bind.segmentIntersectsTriangle.call(this._handle, _args.toVariant(), 5)
     return _ret
-  }
-
-  fun transformPoints2d(points: PoolVector2Array, transform: Transform2D): PoolVector2Array {
-    val _args = VariantArray.new()
-    _args.append(points)
-    _args.append(transform)
-    val _ret = __method_bind.transformPoints2d.call(this._handle, _args.toVariant(), 2)
-    return _ret.asPoolVector2Array()
   }
 
   fun triangulateDelaunay2d(points: PoolVector2Array): PoolIntArray {
@@ -631,6 +643,18 @@ open class _Geometry(
           requireNotNull(ptr) { "No method_bind found for method intersect_polyline_with_polygon_2d"
             }
         }
+      val isPointInCircle: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
+            "is_point_in_circle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_point_in_circle" }
+        }
+      val isPointInPolygon: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
+            "is_point_in_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_point_in_polygon" }
+        }
       val isPolygonClockwise: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
@@ -714,12 +738,6 @@ open class _Geometry(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
             "segment_intersects_triangle".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method segment_intersects_triangle" }
-        }
-      val transformPoints2d: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "transform_points_2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method transform_points_2d" }
         }
       val triangulateDelaunay2d: CPointer<godot_method_bind>
         get() = memScoped {

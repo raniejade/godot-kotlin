@@ -317,6 +317,14 @@ open class Image(
     return _ret.asObject(::Image)!!
   }
 
+  fun saveExr(path: String, grayscale: Boolean = false): GDError {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(grayscale)
+    val _ret = __method_bind.saveExr.call(this._handle, _args.toVariant(), 2)
+    return GDError.from(_ret.asInt())
+  }
+
   fun savePng(path: String): GDError {
     val _arg = Variant.new(path)
     val _ret = __method_bind.savePng.call(this._handle, _arg, 1)
@@ -926,6 +934,12 @@ open class Image(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
             "rgbe_to_srgb".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rgbe_to_srgb" }
+        }
+      val saveExr: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+            "save_exr".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save_exr" }
         }
       val savePng: CPointer<godot_method_bind>
         get() = memScoped {

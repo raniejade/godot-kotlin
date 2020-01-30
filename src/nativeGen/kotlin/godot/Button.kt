@@ -35,6 +35,14 @@ open class Button(
       setClipText(value)
     }
 
+  var expandIcon: Boolean
+    get() {
+       return isExpandIcon() 
+    }
+    set(value) {
+      setExpandIcon(value)
+    }
+
   var flat: Boolean
     get() {
        return isFlat() 
@@ -79,6 +87,11 @@ open class Button(
     return Button.TextAlign.from(_ret.asInt())
   }
 
+  fun isExpandIcon(): Boolean {
+    val _ret = __method_bind.isExpandIcon.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun isFlat(): Boolean {
     val _ret = __method_bind.isFlat.call(this._handle)
     return _ret.asBoolean()
@@ -92,6 +105,11 @@ open class Button(
   fun setClipText(enabled: Boolean) {
     val _arg = Variant.new(enabled)
     __method_bind.setClipText.call(this._handle, _arg, 1)
+  }
+
+  fun setExpandIcon(arg0: Boolean) {
+    val _arg = Variant.new(arg0)
+    __method_bind.setExpandIcon.call(this._handle, _arg, 1)
   }
 
   fun setFlat(enabled: Boolean) {
@@ -174,6 +192,12 @@ open class Button(
             "get_text_align".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_text_align" }
         }
+      val isExpandIcon: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+            "is_expand_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_expand_icon" }
+        }
       val isFlat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
@@ -191,6 +215,12 @@ open class Button(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
             "set_clip_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_clip_text" }
+        }
+      val setExpandIcon: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+            "set_expand_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_expand_icon" }
         }
       val setFlat: CPointer<godot_method_bind>
         get() = memScoped {

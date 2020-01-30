@@ -29,17 +29,6 @@ open class EditorNavigationMeshGenerator(
   }
 
   companion object {
-    fun new(): EditorNavigationMeshGenerator = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorNavigationMeshGenerator".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorNavigationMeshGenerator" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorNavigationMeshGenerator(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorNavigationMeshGenerator =
-        EditorNavigationMeshGenerator(ptr)
     /**
      * Container for method_bind pointers for EditorNavigationMeshGenerator
      */

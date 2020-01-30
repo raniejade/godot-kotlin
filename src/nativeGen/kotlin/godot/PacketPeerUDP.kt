@@ -39,6 +39,22 @@ open class PacketPeerUDP(
     return _ret.asBoolean()
   }
 
+  fun joinMulticastGroup(multicastAddress: String, interfaceName: String): GDError {
+    val _args = VariantArray.new()
+    _args.append(multicastAddress)
+    _args.append(interfaceName)
+    val _ret = __method_bind.joinMulticastGroup.call(this._handle, _args.toVariant(), 2)
+    return GDError.from(_ret.asInt())
+  }
+
+  fun leaveMulticastGroup(multicastAddress: String, interfaceName: String): GDError {
+    val _args = VariantArray.new()
+    _args.append(multicastAddress)
+    _args.append(interfaceName)
+    val _ret = __method_bind.leaveMulticastGroup.call(this._handle, _args.toVariant(), 2)
+    return GDError.from(_ret.asInt())
+  }
+
   fun listen(
     port: Int,
     bindAddress: String = "*",
@@ -50,6 +66,11 @@ open class PacketPeerUDP(
     _args.append(recvBufSize)
     val _ret = __method_bind.listen.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
+  }
+
+  fun setBroadcastEnabled(enabled: Boolean) {
+    val _arg = Variant.new(enabled)
+    __method_bind.setBroadcastEnabled.call(this._handle, _arg, 1)
   }
 
   fun setDestAddress(host: String, port: Int): GDError {
@@ -107,12 +128,33 @@ open class PacketPeerUDP(
             "is_listening".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_listening" }
         }
+      val joinMulticastGroup: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
+            "join_multicast_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method join_multicast_group" }
+        }
+      val leaveMulticastGroup: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
+            "leave_multicast_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method leave_multicast_group" }
+        }
       val listen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "listen".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method listen" }
+        }
+      val setBroadcastEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
+            "set_broadcast_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_broadcast_enabled" }
         }
       val setDestAddress: CPointer<godot_method_bind>
         get() = memScoped {

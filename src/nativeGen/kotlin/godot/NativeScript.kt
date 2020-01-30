@@ -92,9 +92,9 @@ open class NativeScript(
     return _ret.asString()
   }
 
-  fun new(): Object {
+  fun new(): Variant {
     val _ret = __method_bind.new.call(this._handle)
-    return _ret.asObject(::Object)!!
+    return _ret
   }
 
   fun setClassName(className: String) {

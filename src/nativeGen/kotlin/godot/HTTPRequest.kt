@@ -29,6 +29,14 @@ open class HTTPRequest(
       setBodySizeLimit(value)
     }
 
+  var downloadChunkSize: Int
+    get() {
+       return getDownloadChunkSize() 
+    }
+    set(value) {
+      setDownloadChunkSize(value)
+    }
+
   var downloadFile: String
     get() {
        return getDownloadFile() 
@@ -43,6 +51,14 @@ open class HTTPRequest(
     }
     set(value) {
       setMaxRedirects(value)
+    }
+
+  var timeout: Int
+    get() {
+       return getTimeout() 
+    }
+    set(value) {
+      setTimeout(value)
     }
 
   var useThreads: Boolean
@@ -67,6 +83,11 @@ open class HTTPRequest(
     return _ret.asInt()
   }
 
+  fun getDownloadChunkSize(): Int {
+    val _ret = __method_bind.getDownloadChunkSize.call(this._handle)
+    return _ret.asInt()
+  }
+
   fun getDownloadFile(): String {
     val _ret = __method_bind.getDownloadFile.call(this._handle)
     return _ret.asString()
@@ -84,6 +105,11 @@ open class HTTPRequest(
 
   fun getMaxRedirects(): Int {
     val _ret = __method_bind.getMaxRedirects.call(this._handle)
+    return _ret.asInt()
+  }
+
+  fun getTimeout(): Int {
+    val _ret = __method_bind.getTimeout.call(this._handle)
     return _ret.asInt()
   }
 
@@ -114,6 +140,11 @@ open class HTTPRequest(
     __method_bind.setBodySizeLimit.call(this._handle, _arg, 1)
   }
 
+  fun setDownloadChunkSize(arg0: Int) {
+    val _arg = Variant.new(arg0)
+    __method_bind.setDownloadChunkSize.call(this._handle, _arg, 1)
+  }
+
   fun setDownloadFile(path: String) {
     val _arg = Variant.new(path)
     __method_bind.setDownloadFile.call(this._handle, _arg, 1)
@@ -122,6 +153,11 @@ open class HTTPRequest(
   fun setMaxRedirects(amount: Int) {
     val _arg = Variant.new(amount)
     __method_bind.setMaxRedirects.call(this._handle, _arg, 1)
+  }
+
+  fun setTimeout(timeout: Int) {
+    val _arg = Variant.new(timeout)
+    __method_bind.setTimeout.call(this._handle, _arg, 1)
   }
 
   fun setUseThreads(enable: Boolean) {
@@ -154,7 +190,9 @@ open class HTTPRequest(
 
     RESULT_DOWNLOAD_FILE_WRITE_ERROR(10),
 
-    RESULT_REDIRECT_LIMIT_REACHED(11);
+    RESULT_REDIRECT_LIMIT_REACHED(11),
+
+    RESULT_TIMEOUT(12);
 
     companion object {
       fun from(value: Int): Result {
@@ -193,6 +231,8 @@ open class HTTPRequest(
 
     val RESULT_SUCCESS: Int = 0
 
+    val RESULT_TIMEOUT: Int = 12
+
     fun new(): HTTPRequest = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HTTPRequest".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for HTTPRequest" }
@@ -227,6 +267,13 @@ open class HTTPRequest(
             "get_body_size_limit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_body_size_limit" }
         }
+      val getDownloadChunkSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "get_download_chunk_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_download_chunk_size" }
+        }
       val getDownloadFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -255,6 +302,13 @@ open class HTTPRequest(
             "get_max_redirects".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_max_redirects" }
         }
+      val getTimeout: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "get_timeout".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_timeout" }
+        }
       val isUsingThreads: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -276,6 +330,13 @@ open class HTTPRequest(
             "set_body_size_limit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_body_size_limit" }
         }
+      val setDownloadChunkSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "set_download_chunk_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_download_chunk_size" }
+        }
       val setDownloadFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -289,6 +350,13 @@ open class HTTPRequest(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
             "set_max_redirects".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_max_redirects" }
+        }
+      val setTimeout: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "set_timeout".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_timeout" }
         }
       val setUseThreads: CPointer<godot_method_bind>
         get() = memScoped {

@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Transform
 import godot.core.Variant
 import godot.core.VariantArray
+import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -101,6 +102,18 @@ open class PhysicalBone(
     val _p = jointOffset
     cb(_p)
     jointOffset = _p
+  }
+
+  fun applyCentralImpulse(impulse: Vector3) {
+    val _arg = Variant.new(impulse)
+    __method_bind.applyCentralImpulse.call(this._handle, _arg, 1)
+  }
+
+  fun applyImpulse(position: Vector3, impulse: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    _args.append(impulse)
+    __method_bind.applyImpulse.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getBodyOffset(): Transform {
@@ -256,6 +269,20 @@ open class PhysicalBone(
      * Container for method_bind pointers for PhysicalBone
      */
     private object __method_bind {
+      val applyCentralImpulse: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+            "apply_central_impulse".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method apply_central_impulse" }
+        }
+      val applyImpulse: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+            "apply_impulse".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method apply_impulse" }
+        }
       val getBodyOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =

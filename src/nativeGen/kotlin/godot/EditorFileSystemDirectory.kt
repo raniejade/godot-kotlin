@@ -99,16 +99,6 @@ open class EditorFileSystemDirectory(
   }
 
   companion object {
-    fun new(): EditorFileSystemDirectory = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorFileSystemDirectory".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorFileSystemDirectory" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorFileSystemDirectory(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorFileSystemDirectory = EditorFileSystemDirectory(ptr)
     /**
      * Container for method_bind pointers for EditorFileSystemDirectory
      */

@@ -118,6 +118,22 @@ open class TextEdit(
       setHighlightCurrentLine(value)
     }
 
+  var minimapDraw: Boolean
+    get() {
+       return isDrawingMinimap() 
+    }
+    set(value) {
+      drawMinimap(value)
+    }
+
+  var minimapWidth: Int
+    get() {
+       return getMinimapWidth() 
+    }
+    set(value) {
+      setMinimapWidth(value)
+    }
+
   var overrideSelectedFontColor: Boolean
     get() {
        return isOverridingSelectedFontColor() 
@@ -132,6 +148,38 @@ open class TextEdit(
     }
     set(value) {
       setReadonly(value)
+    }
+
+  var scrollHorizontal: Int
+    get() {
+       return getHScroll() 
+    }
+    set(value) {
+      setHScroll(value)
+    }
+
+  var scrollVertical: Float
+    get() {
+       return getVScroll() 
+    }
+    set(value) {
+      setVScroll(value)
+    }
+
+  var selectingEnabled: Boolean
+    get() {
+       return isSelectingEnabled() 
+    }
+    set(value) {
+      setSelectingEnabled(value)
+    }
+
+  var shortcutKeysEnabled: Boolean
+    get() {
+       return isShortcutKeysEnabled() 
+    }
+    set(value) {
+      setShortcutKeysEnabled(value)
     }
 
   var showLineNumbers: Boolean
@@ -207,6 +255,10 @@ open class TextEdit(
     val _arg = Variant.new(line)
     val _ret = __method_bind.canFold.call(this._handle, _arg, 1)
     return _ret.asBoolean()
+  }
+
+  fun centerViewportToCursor() {
+    __method_bind.centerViewportToCursor.call(this._handle)
   }
 
   fun clearColors() {
@@ -290,6 +342,11 @@ open class TextEdit(
     __method_bind.deselect.call(this._handle)
   }
 
+  fun drawMinimap(draw: Boolean) {
+    val _arg = Variant.new(draw)
+    __method_bind.drawMinimap.call(this._handle, _arg, 1)
+  }
+
   fun foldAllLines() {
     __method_bind.foldAllLines.call(this._handle)
   }
@@ -302,6 +359,11 @@ open class TextEdit(
   fun getBreakpoints(): VariantArray {
     val _ret = __method_bind.getBreakpoints.call(this._handle)
     return _ret.asVariantArray()
+  }
+
+  fun getHScroll(): Int {
+    val _ret = __method_bind.getHScroll.call(this._handle)
+    return _ret.asInt()
   }
 
   fun getKeywordColor(keyword: String): Color {
@@ -324,6 +386,11 @@ open class TextEdit(
   fun getMenu(): PopupMenu {
     val _ret = __method_bind.getMenu.call(this._handle)
     return _ret.asObject(::PopupMenu)!!
+  }
+
+  fun getMinimapWidth(): Int {
+    val _ret = __method_bind.getMinimapWidth.call(this._handle)
+    return _ret.asInt()
   }
 
   fun getSelectionFromColumn(): Int {
@@ -354,6 +421,11 @@ open class TextEdit(
   fun getText(): String {
     val _ret = __method_bind.getText.call(this._handle)
     return _ret.asString()
+  }
+
+  fun getVScroll(): Float {
+    val _ret = __method_bind.getVScroll.call(this._handle)
+    return _ret.asFloat()
   }
 
   fun getVScrollSpeed(): Float {
@@ -389,6 +461,11 @@ open class TextEdit(
 
   fun isDrawingFoldGutter(): Boolean {
     val _ret = __method_bind.isDrawingFoldGutter.call(this._handle)
+    return _ret.asBoolean()
+  }
+
+  fun isDrawingMinimap(): Boolean {
+    val _ret = __method_bind.isDrawingMinimap.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -444,8 +521,18 @@ open class TextEdit(
     return _ret.asBoolean()
   }
 
+  fun isSelectingEnabled(): Boolean {
+    val _ret = __method_bind.isSelectingEnabled.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun isSelectionActive(): Boolean {
     val _ret = __method_bind.isSelectionActive.call(this._handle)
+    return _ret.asBoolean()
+  }
+
+  fun isShortcutKeysEnabled(): Boolean {
+    val _ret = __method_bind.isShortcutKeysEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -544,6 +631,11 @@ open class TextEdit(
     __method_bind.setDrawTabs.call(this._handle, _arg, 1)
   }
 
+  fun setHScroll(value: Int) {
+    val _arg = Variant.new(value)
+    __method_bind.setHScroll.call(this._handle, _arg, 1)
+  }
+
   fun setHidingEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
     __method_bind.setHidingEnabled.call(this._handle, _arg, 1)
@@ -566,6 +658,11 @@ open class TextEdit(
     __method_bind.setLineAsHidden.call(this._handle, _args.toVariant(), 2)
   }
 
+  fun setMinimapWidth(width: Int) {
+    val _arg = Variant.new(width)
+    __method_bind.setMinimapWidth.call(this._handle, _arg, 1)
+  }
+
   fun setOverrideSelectedFontColor(override: Boolean) {
     val _arg = Variant.new(override)
     __method_bind.setOverrideSelectedFontColor.call(this._handle, _arg, 1)
@@ -579,6 +676,16 @@ open class TextEdit(
   fun setRightClickMovesCaret(enable: Boolean) {
     val _arg = Variant.new(enable)
     __method_bind.setRightClickMovesCaret.call(this._handle, _arg, 1)
+  }
+
+  fun setSelectingEnabled(enable: Boolean) {
+    val _arg = Variant.new(enable)
+    __method_bind.setSelectingEnabled.call(this._handle, _arg, 1)
+  }
+
+  fun setShortcutKeysEnabled(enable: Boolean) {
+    val _arg = Variant.new(enable)
+    __method_bind.setShortcutKeysEnabled.call(this._handle, _arg, 1)
   }
 
   fun setShowLineNumbers(enable: Boolean) {
@@ -599,6 +706,11 @@ open class TextEdit(
   fun setText(text: String) {
     val _arg = Variant.new(text)
     __method_bind.setText.call(this._handle, _arg, 1)
+  }
+
+  fun setVScroll(value: Float) {
+    val _arg = Variant.new(value)
+    __method_bind.setVScroll.call(this._handle, _arg, 1)
   }
 
   fun setVScrollSpeed(speed: Float) {
@@ -640,6 +752,25 @@ open class TextEdit(
 
     companion object {
       fun from(value: Int): SearchFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class SearchResult(
+    val value: Int
+  ) {
+    SEARCH_RESULT_COLUMN(0),
+
+    SEARCH_RESULT_LINE(1);
+
+    companion object {
+      fun from(value: Int): SearchResult {
         for (enumValue in values()) {
           if (enumValue.value == value) {
             return enumValue
@@ -702,6 +833,10 @@ open class TextEdit(
 
     val SEARCH_MATCH_CASE: Int = 1
 
+    val SEARCH_RESULT_COLUMN: Int = 0
+
+    val SEARCH_RESULT_LINE: Int = 1
+
     val SEARCH_WHOLE_WORDS: Int = 2
 
     fun new(): TextEdit = memScoped {
@@ -734,6 +869,12 @@ open class TextEdit(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "can_fold".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method can_fold" }
+        }
+      val centerViewportToCursor: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "center_viewport_to_cursor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method center_viewport_to_cursor" }
         }
       val clearColors: CPointer<godot_method_bind>
         get() = memScoped {
@@ -825,6 +966,12 @@ open class TextEdit(
             "deselect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method deselect" }
         }
+      val drawMinimap: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "draw_minimap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method draw_minimap" }
+        }
       val foldAllLines: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
@@ -842,6 +989,12 @@ open class TextEdit(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_breakpoints".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_breakpoints" }
+        }
+      val getHScroll: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "get_h_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_h_scroll" }
         }
       val getKeywordColor: CPointer<godot_method_bind>
         get() = memScoped {
@@ -866,6 +1019,12 @@ open class TextEdit(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_menu".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_menu" }
+        }
+      val getMinimapWidth: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "get_minimap_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_minimap_width" }
         }
       val getSelectionFromColumn: CPointer<godot_method_bind>
         get() = memScoped {
@@ -902,6 +1061,12 @@ open class TextEdit(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_text" }
+        }
+      val getVScroll: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "get_v_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_v_scroll" }
         }
       val getVScrollSpeed: CPointer<godot_method_bind>
         get() = memScoped {
@@ -944,6 +1109,12 @@ open class TextEdit(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_drawing_fold_gutter".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_drawing_fold_gutter" }
+        }
+      val isDrawingMinimap: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "is_drawing_minimap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_drawing_minimap" }
         }
       val isDrawingSpaces: CPointer<godot_method_bind>
         get() = memScoped {
@@ -1008,11 +1179,23 @@ open class TextEdit(
             "is_right_click_moving_caret".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_right_click_moving_caret" }
         }
+      val isSelectingEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "is_selecting_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_selecting_enabled" }
+        }
       val isSelectionActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_selection_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_selection_active" }
+        }
+      val isShortcutKeysEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "is_shortcut_keys_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_shortcut_keys_enabled" }
         }
       val isShowLineNumbersEnabled: CPointer<godot_method_bind>
         get() = memScoped {
@@ -1110,6 +1293,12 @@ open class TextEdit(
             "set_draw_tabs".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_draw_tabs" }
         }
+      val setHScroll: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "set_h_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_h_scroll" }
+        }
       val setHidingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
@@ -1134,6 +1323,12 @@ open class TextEdit(
             "set_line_as_hidden".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_line_as_hidden" }
         }
+      val setMinimapWidth: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "set_minimap_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_minimap_width" }
+        }
       val setOverrideSelectedFontColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
@@ -1151,6 +1346,18 @@ open class TextEdit(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_right_click_moves_caret".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_right_click_moves_caret" }
+        }
+      val setSelectingEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "set_selecting_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_selecting_enabled" }
+        }
+      val setShortcutKeysEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "set_shortcut_keys_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shortcut_keys_enabled" }
         }
       val setShowLineNumbers: CPointer<godot_method_bind>
         get() = memScoped {
@@ -1175,6 +1382,12 @@ open class TextEdit(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_text" }
+        }
+      val setVScroll: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
+            "set_v_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_v_scroll" }
         }
       val setVScrollSpeed: CPointer<godot_method_bind>
         get() = memScoped {

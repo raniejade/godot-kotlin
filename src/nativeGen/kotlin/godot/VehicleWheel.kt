@@ -18,6 +18,14 @@ import kotlinx.cinterop.reinterpret
 open class VehicleWheel(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  var brake: Float
+    get() {
+       return getBrake() 
+    }
+    set(value) {
+      setBrake(value)
+    }
+
   var dampingCompression: Float
     get() {
        return getDampingCompression() 
@@ -32,6 +40,22 @@ open class VehicleWheel(
     }
     set(value) {
       setDampingRelaxation(value)
+    }
+
+  var engineForce: Float
+    get() {
+       return getEngineForce() 
+    }
+    set(value) {
+      setEngineForce(value)
+    }
+
+  var steering: Float
+    get() {
+       return getSteering() 
+    }
+    set(value) {
+      setSteering(value)
     }
 
   var suspensionMaxForce: Float
@@ -106,6 +130,11 @@ open class VehicleWheel(
       setRollInfluence(value)
     }
 
+  fun getBrake(): Float {
+    val _ret = __method_bind.getBrake.call(this._handle)
+    return _ret.asFloat()
+  }
+
   fun getDampingCompression(): Float {
     val _ret = __method_bind.getDampingCompression.call(this._handle)
     return _ret.asFloat()
@@ -113,6 +142,11 @@ open class VehicleWheel(
 
   fun getDampingRelaxation(): Float {
     val _ret = __method_bind.getDampingRelaxation.call(this._handle)
+    return _ret.asFloat()
+  }
+
+  fun getEngineForce(): Float {
+    val _ret = __method_bind.getEngineForce.call(this._handle)
     return _ret.asFloat()
   }
 
@@ -138,6 +172,11 @@ open class VehicleWheel(
 
   fun getSkidinfo(): Float {
     val _ret = __method_bind.getSkidinfo.call(this._handle)
+    return _ret.asFloat()
+  }
+
+  fun getSteering(): Float {
+    val _ret = __method_bind.getSteering.call(this._handle)
     return _ret.asFloat()
   }
 
@@ -176,6 +215,11 @@ open class VehicleWheel(
     return _ret.asBoolean()
   }
 
+  fun setBrake(brake: Float) {
+    val _arg = Variant.new(brake)
+    __method_bind.setBrake.call(this._handle, _arg, 1)
+  }
+
   fun setDampingCompression(length: Float) {
     val _arg = Variant.new(length)
     __method_bind.setDampingCompression.call(this._handle, _arg, 1)
@@ -184,6 +228,11 @@ open class VehicleWheel(
   fun setDampingRelaxation(length: Float) {
     val _arg = Variant.new(length)
     __method_bind.setDampingRelaxation.call(this._handle, _arg, 1)
+  }
+
+  fun setEngineForce(engineForce: Float) {
+    val _arg = Variant.new(engineForce)
+    __method_bind.setEngineForce.call(this._handle, _arg, 1)
   }
 
   fun setFrictionSlip(length: Float) {
@@ -199,6 +248,11 @@ open class VehicleWheel(
   fun setRollInfluence(rollInfluence: Float) {
     val _arg = Variant.new(rollInfluence)
     __method_bind.setRollInfluence.call(this._handle, _arg, 1)
+  }
+
+  fun setSteering(steering: Float) {
+    val _arg = Variant.new(steering)
+    __method_bind.setSteering.call(this._handle, _arg, 1)
   }
 
   fun setSuspensionMaxForce(length: Float) {
@@ -245,6 +299,13 @@ open class VehicleWheel(
      * Container for method_bind pointers for VehicleWheel
      */
     private object __method_bind {
+      val getBrake: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
+            "get_brake".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_brake" }
+        }
       val getDampingCompression: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -258,6 +319,13 @@ open class VehicleWheel(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_damping_relaxation".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_damping_relaxation" }
+        }
+      val getEngineForce: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
+            "get_engine_force".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_engine_force" }
         }
       val getFrictionSlip: CPointer<godot_method_bind>
         get() = memScoped {
@@ -293,6 +361,13 @@ open class VehicleWheel(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_skidinfo".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_skidinfo" }
+        }
+      val getSteering: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
+            "get_steering".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_steering" }
         }
       val getSuspensionMaxForce: CPointer<godot_method_bind>
         get() = memScoped {
@@ -343,6 +418,13 @@ open class VehicleWheel(
             "is_used_as_traction".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_used_as_traction" }
         }
+      val setBrake: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
+            "set_brake".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_brake" }
+        }
       val setDampingCompression: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -356,6 +438,13 @@ open class VehicleWheel(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_damping_relaxation".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_damping_relaxation" }
+        }
+      val setEngineForce: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
+            "set_engine_force".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_engine_force" }
         }
       val setFrictionSlip: CPointer<godot_method_bind>
         get() = memScoped {
@@ -377,6 +466,13 @@ open class VehicleWheel(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_roll_influence".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_roll_influence" }
+        }
+      val setSteering: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
+            "set_steering".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_steering" }
         }
       val setSuspensionMaxForce: CPointer<godot_method_bind>
         get() = memScoped {

@@ -66,6 +66,30 @@ open class _OS(
       setLowProcessorUsageMode(value)
     }
 
+  var lowProcessorUsageModeSleepUsec: Int
+    get() {
+       return getLowProcessorUsageModeSleepUsec() 
+    }
+    set(value) {
+      setLowProcessorUsageModeSleepUsec(value)
+    }
+
+  var maxWindowSize: Vector2
+    get() {
+       return getMaxWindowSize() 
+    }
+    set(value) {
+      setMaxWindowSize(value)
+    }
+
+  var minWindowSize: Vector2
+    get() {
+       return getMinWindowSize() 
+    }
+    set(value) {
+      setMinWindowSize(value)
+    }
+
   var screenOrientation: ScreenOrientation
     get() {
        return getScreenOrientation() 
@@ -80,6 +104,14 @@ open class _OS(
     }
     set(value) {
       setUseVsync(value)
+    }
+
+  var vsyncViaCompositor: Boolean
+    get() {
+       return isVsyncViaCompositorEnabled() 
+    }
+    set(value) {
+      setVsyncViaCompositor(value)
     }
 
   var windowBorderless: Boolean
@@ -147,6 +179,24 @@ open class _OS(
     }
 
   /**
+   * Specialized setter for maxWindowSize
+   */
+  fun maxWindowSize(cb: Vector2.() -> Unit) {
+    val _p = maxWindowSize
+    cb(_p)
+    maxWindowSize = _p
+  }
+
+  /**
+   * Specialized setter for minWindowSize
+   */
+  fun minWindowSize(cb: Vector2.() -> Unit) {
+    val _p = minWindowSize
+    cb(_p)
+    minWindowSize = _p
+  }
+
+  /**
    * Specialized setter for windowPosition
    */
   fun windowPosition(cb: Vector2.() -> Unit) {
@@ -212,7 +262,7 @@ open class _OS(
   fun execute(
     path: String,
     arguments: PoolStringArray,
-    blocking: Boolean,
+    blocking: Boolean = true,
     output: VariantArray,
     readStderr: Boolean = false
   ): Int {
@@ -312,6 +362,11 @@ open class _OS(
     return _ret.asInt()
   }
 
+  fun getGrantedPermissions(): PoolStringArray {
+    val _ret = __method_bind.getGrantedPermissions.call(this._handle)
+    return _ret.asPoolStringArray()
+  }
+
   fun getImeSelection(): Vector2 {
     val _ret = __method_bind.getImeSelection.call(this._handle)
     return _ret.asVector2()
@@ -330,6 +385,21 @@ open class _OS(
   fun getLocale(): String {
     val _ret = __method_bind.getLocale.call(this._handle)
     return _ret.asString()
+  }
+
+  fun getLowProcessorUsageModeSleepUsec(): Int {
+    val _ret = __method_bind.getLowProcessorUsageModeSleepUsec.call(this._handle)
+    return _ret.asInt()
+  }
+
+  fun getMaxWindowSize(): Vector2 {
+    val _ret = __method_bind.getMaxWindowSize.call(this._handle)
+    return _ret.asVector2()
+  }
+
+  fun getMinWindowSize(): Vector2 {
+    val _ret = __method_bind.getMinWindowSize.call(this._handle)
+    return _ret.asVector2()
   }
 
   fun getModelName(): String {
@@ -515,6 +585,37 @@ open class _OS(
     return _ret.asVector2()
   }
 
+  fun globalMenuAddItem(
+    menu: String,
+    label: String,
+    id: Variant,
+    meta: Variant
+  ) {
+    val _args = VariantArray.new()
+    _args.append(menu)
+    _args.append(label)
+    _args.append(id)
+    _args.append(meta)
+    __method_bind.globalMenuAddItem.call(this._handle, _args.toVariant(), 4)
+  }
+
+  fun globalMenuAddSeparator(menu: String) {
+    val _arg = Variant.new(menu)
+    __method_bind.globalMenuAddSeparator.call(this._handle, _arg, 1)
+  }
+
+  fun globalMenuClear(menu: String) {
+    val _arg = Variant.new(menu)
+    __method_bind.globalMenuClear.call(this._handle, _arg, 1)
+  }
+
+  fun globalMenuRemoveItem(menu: String, idx: Int) {
+    val _args = VariantArray.new()
+    _args.append(menu)
+    _args.append(idx)
+    __method_bind.globalMenuRemoveItem.call(this._handle, _args.toVariant(), 2)
+  }
+
   fun hasEnvironment(environment: String): Boolean {
     val _arg = Variant.new(environment)
     val _ret = __method_bind.hasEnvironment.call(this._handle, _arg, 1)
@@ -582,8 +683,18 @@ open class _OS(
     return _ret.asBoolean()
   }
 
+  fun isVsyncViaCompositorEnabled(): Boolean {
+    val _ret = __method_bind.isVsyncViaCompositorEnabled.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun isWindowAlwaysOnTop(): Boolean {
     val _ret = __method_bind.isWindowAlwaysOnTop.call(this._handle)
+    return _ret.asBoolean()
+  }
+
+  fun isWindowFocused(): Boolean {
+    val _ret = __method_bind.isWindowFocused.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -682,6 +793,11 @@ open class _OS(
     return _ret.asBoolean()
   }
 
+  fun requestPermissions(): Boolean {
+    val _ret = __method_bind.requestPermissions.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun setBorderlessWindow(borderless: Boolean) {
     val _arg = Variant.new(borderless)
     __method_bind.setBorderlessWindow.call(this._handle, _arg, 1)
@@ -727,6 +843,21 @@ open class _OS(
     __method_bind.setLowProcessorUsageMode.call(this._handle, _arg, 1)
   }
 
+  fun setLowProcessorUsageModeSleepUsec(usec: Int) {
+    val _arg = Variant.new(usec)
+    __method_bind.setLowProcessorUsageModeSleepUsec.call(this._handle, _arg, 1)
+  }
+
+  fun setMaxWindowSize(size: Vector2) {
+    val _arg = Variant.new(size)
+    __method_bind.setMaxWindowSize.call(this._handle, _arg, 1)
+  }
+
+  fun setMinWindowSize(size: Vector2) {
+    val _arg = Variant.new(size)
+    __method_bind.setMinWindowSize.call(this._handle, _arg, 1)
+  }
+
   fun setNativeIcon(filename: String) {
     val _arg = Variant.new(filename)
     __method_bind.setNativeIcon.call(this._handle, _arg, 1)
@@ -751,6 +882,11 @@ open class _OS(
   fun setUseVsync(enable: Boolean) {
     val _arg = Variant.new(enable)
     __method_bind.setUseVsync.call(this._handle, _arg, 1)
+  }
+
+  fun setVsyncViaCompositor(enable: Boolean) {
+    val _arg = Variant.new(enable)
+    __method_bind.setVsyncViaCompositor.call(this._handle, _arg, 1)
   }
 
   fun setWindowAlwaysOnTop(enabled: Boolean) {
@@ -1232,6 +1368,12 @@ open class _OS(
             "get_exit_code".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_exit_code" }
         }
+      val getGrantedPermissions: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "get_granted_permissions".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_granted_permissions" }
+        }
       val getImeSelection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
@@ -1255,6 +1397,25 @@ open class _OS(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
             "get_locale".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_locale" }
+        }
+      val getLowProcessorUsageModeSleepUsec: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "get_low_processor_usage_mode_sleep_usec".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method get_low_processor_usage_mode_sleep_usec" }
+        }
+      val getMaxWindowSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "get_max_window_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_max_window_size" }
+        }
+      val getMinWindowSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "get_min_window_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_min_window_size" }
         }
       val getModelName: CPointer<godot_method_bind>
         get() = memScoped {
@@ -1467,6 +1628,30 @@ open class _OS(
             "get_window_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_window_size" }
         }
+      val globalMenuAddItem: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "global_menu_add_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method global_menu_add_item" }
+        }
+      val globalMenuAddSeparator: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "global_menu_add_separator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method global_menu_add_separator" }
+        }
+      val globalMenuClear: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "global_menu_clear".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method global_menu_clear" }
+        }
+      val globalMenuRemoveItem: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "global_menu_remove_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method global_menu_remove_item" }
+        }
       val hasEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
@@ -1545,11 +1730,23 @@ open class _OS(
             "is_vsync_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_vsync_enabled" }
         }
+      val isVsyncViaCompositorEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "is_vsync_via_compositor_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_vsync_via_compositor_enabled" }
+        }
       val isWindowAlwaysOnTop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
             "is_window_always_on_top".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_window_always_on_top" }
+        }
+      val isWindowFocused: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "is_window_focused".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_window_focused" }
         }
       val isWindowFullscreen: CPointer<godot_method_bind>
         get() = memScoped {
@@ -1659,6 +1856,12 @@ open class _OS(
             "request_permission".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method request_permission" }
         }
+      val requestPermissions: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "request_permissions".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method request_permissions" }
+        }
       val setBorderlessWindow: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
@@ -1713,6 +1916,25 @@ open class _OS(
             "set_low_processor_usage_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_low_processor_usage_mode" }
         }
+      val setLowProcessorUsageModeSleepUsec: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "set_low_processor_usage_mode_sleep_usec".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method set_low_processor_usage_mode_sleep_usec" }
+        }
+      val setMaxWindowSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "set_max_window_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_max_window_size" }
+        }
+      val setMinWindowSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "set_min_window_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_min_window_size" }
+        }
       val setNativeIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
@@ -1743,6 +1965,12 @@ open class _OS(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
             "set_use_vsync".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_use_vsync" }
+        }
+      val setVsyncViaCompositor: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+            "set_vsync_via_compositor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_vsync_via_compositor" }
         }
       val setWindowAlwaysOnTop: CPointer<godot_method_bind>
         get() = memScoped {

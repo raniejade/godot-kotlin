@@ -16,17 +16,6 @@ open class EditorResourcePreviewGenerator(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   companion object {
-    fun new(): EditorResourcePreviewGenerator = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorResourcePreviewGenerator".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorResourcePreviewGenerator" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorResourcePreviewGenerator(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorResourcePreviewGenerator =
-        EditorResourcePreviewGenerator(ptr)
     /**
      * Container for method_bind pointers for EditorResourcePreviewGenerator
      */

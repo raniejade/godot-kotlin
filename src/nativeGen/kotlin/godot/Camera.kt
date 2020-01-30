@@ -244,7 +244,7 @@ open class Camera(
     return _ret.asVector3()
   }
 
-  fun projectPosition(screenPoint: Vector2, zDepth: Float = 0.0f): Vector3 {
+  fun projectPosition(screenPoint: Vector2, zDepth: Float): Vector3 {
     val _args = VariantArray.new()
     _args.append(screenPoint)
     _args.append(zDepth)

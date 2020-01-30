@@ -12,12 +12,12 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourceFormatSaverBinary(
+open class ResourceFormatLoaderCrypto(
   _handle: COpaquePointer
-) : ResourceFormatSaver(_handle) {
+) : ResourceFormatLoader(_handle) {
   companion object {
     /**
-     * Container for method_bind pointers for ResourceFormatSaverBinary
+     * Container for method_bind pointers for ResourceFormatLoaderCrypto
      */
     private object __method_bind
   }

@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -140,6 +141,22 @@ open class NavigationMesh(
     }
     set(value) {
       setParsedGeometryType(value)
+    }
+
+  var geometrySourceGeometryMode: Int
+    get() {
+       return getSourceGeometryMode() 
+    }
+    set(value) {
+      setSourceGeometryMode(value)
+    }
+
+  var geometrySourceGroupName: String
+    get() {
+       return getSourceGroupName() 
+    }
+    set(value) {
+      setSourceGroupName(value)
     }
 
   var polygonVertsPerPoly: Float
@@ -312,6 +329,16 @@ open class NavigationMesh(
     return _ret.asInt()
   }
 
+  fun getSourceGeometryMode(): Int {
+    val _ret = __method_bind.getSourceGeometryMode.call(this._handle)
+    return _ret.asInt()
+  }
+
+  fun getSourceGroupName(): String {
+    val _ret = __method_bind.getSourceGroupName.call(this._handle)
+    return _ret.asString()
+  }
+
   fun getVertices(): PoolVector3Array {
     val _ret = __method_bind.getVertices.call(this._handle)
     return _ret.asPoolVector3Array()
@@ -417,6 +444,16 @@ open class NavigationMesh(
   fun setSamplePartitionType(samplePartitionType: Int) {
     val _arg = Variant.new(samplePartitionType)
     __method_bind.setSamplePartitionType.call(this._handle, _arg, 1)
+  }
+
+  fun setSourceGeometryMode(mask: Int) {
+    val _arg = Variant.new(mask)
+    __method_bind.setSourceGeometryMode.call(this._handle, _arg, 1)
+  }
+
+  fun setSourceGroupName(mask: String) {
+    val _arg = Variant.new(mask)
+    __method_bind.setSourceGroupName.call(this._handle, _arg, 1)
   }
 
   fun setVertices(vertices: PoolVector3Array) {
@@ -625,6 +662,20 @@ open class NavigationMesh(
             "get_sample_partition_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_sample_partition_type" }
         }
+      val getSourceGeometryMode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+            "get_source_geometry_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_source_geometry_mode" }
+        }
+      val getSourceGroupName: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+            "get_source_group_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_source_group_name" }
+        }
       val getVertices: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -772,6 +823,20 @@ open class NavigationMesh(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
             "set_sample_partition_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_sample_partition_type" }
+        }
+      val setSourceGeometryMode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+            "set_source_geometry_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_source_geometry_mode" }
+        }
+      val setSourceGroupName: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+            "set_source_group_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_source_group_name" }
         }
       val setVertices: CPointer<godot_method_bind>
         get() = memScoped {

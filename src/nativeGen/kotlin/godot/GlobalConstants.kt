@@ -72,11 +72,19 @@ open class GlobalConstants(
 
     val ERR_CANT_ACQUIRE_RESOURCE: Int = 28
 
+    val ERR_CANT_CONNECT: Int = 25
+
     val ERR_CANT_CREATE: Int = 20
+
+    val ERR_CANT_FORK: Int = 29
 
     val ERR_CANT_OPEN: Int = 19
 
+    val ERR_CANT_RESOLVE: Int = 26
+
     val ERR_COMPILATION_FAILED: Int = 36
+
+    val ERR_CONNECTION_ERROR: Int = 27
 
     val ERR_CYCLIC_LINK: Int = 40
 
@@ -85,6 +93,8 @@ open class GlobalConstants(
     val ERR_DATABASE_CANT_WRITE: Int = 35
 
     val ERR_DOES_NOT_EXIST: Int = 33
+
+    val ERR_DUPLICATE_SYMBOL: Int = 42
 
     val ERR_FILE_ALREADY_IN_USE: Int = 11
 
@@ -114,6 +124,8 @@ open class GlobalConstants(
 
     val ERR_INVALID_DATA: Int = 30
 
+    val ERR_INVALID_DECLARATION: Int = 41
+
     val ERR_INVALID_PARAMETER: Int = 31
 
     val ERR_LINK_FAILED: Int = 38
@@ -128,9 +140,13 @@ open class GlobalConstants(
 
     val ERR_PARSE_ERROR: Int = 43
 
+    val ERR_PRINTER_ON_FIRE: Int = 48
+
     val ERR_QUERY_FAILED: Int = 21
 
     val ERR_SCRIPT_FAILED: Int = 39
+
+    val ERR_SKIP: Int = 45
 
     val ERR_TIMEOUT: Int = 24
 

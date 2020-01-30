@@ -61,6 +61,10 @@ open class Popup(
     __method_bind.popupCenteredRatio.call(this._handle, _arg, 1)
   }
 
+  fun setAsMinsize() {
+    __method_bind.setAsMinsize.call(this._handle)
+  }
+
   fun setExclusive(enable: Boolean) {
     val _arg = Variant.new(enable)
     __method_bind.setExclusive.call(this._handle, _arg, 1)
@@ -119,6 +123,12 @@ open class Popup(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
             "popup_centered_ratio".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method popup_centered_ratio" }
+        }
+      val setAsMinsize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
+            "set_as_minsize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_as_minsize" }
         }
       val setExclusive: CPointer<godot_method_bind>
         get() = memScoped {

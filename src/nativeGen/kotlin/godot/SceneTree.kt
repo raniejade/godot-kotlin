@@ -280,8 +280,9 @@ open class SceneTree(
     __method_bind.queueDelete.call(this._handle, _arg, 1)
   }
 
-  fun quit() {
-    __method_bind.quit.call(this._handle)
+  fun quit(exitCode: Int = -1) {
+    val _arg = Variant.new(exitCode)
+    __method_bind.quit.call(this._handle, _arg, 1)
   }
 
   fun reloadCurrentScene(): GDError {

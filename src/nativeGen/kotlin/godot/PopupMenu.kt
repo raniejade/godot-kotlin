@@ -126,6 +126,34 @@ open class PopupMenu(
     __method_bind.addIconItem.call(this._handle, _args.toVariant(), 4)
   }
 
+  fun addIconRadioCheckItem(
+    texture: Texture,
+    label: String,
+    id: Int = -1,
+    accel: Int = 0
+  ) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    _args.append(label)
+    _args.append(id)
+    _args.append(accel)
+    __method_bind.addIconRadioCheckItem.call(this._handle, _args.toVariant(), 4)
+  }
+
+  fun addIconRadioCheckShortcut(
+    texture: Texture,
+    shortcut: ShortCut,
+    id: Int = -1,
+    global: Boolean = false
+  ) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    _args.append(shortcut)
+    _args.append(id)
+    _args.append(global)
+    __method_bind.addIconRadioCheckShortcut.call(this._handle, _args.toVariant(), 4)
+  }
+
   fun addIconShortcut(
     texture: Texture,
     shortcut: ShortCut,
@@ -150,6 +178,22 @@ open class PopupMenu(
     _args.append(id)
     _args.append(accel)
     __method_bind.addItem.call(this._handle, _args.toVariant(), 3)
+  }
+
+  fun addMultistateItem(
+    label: String,
+    maxStates: Int,
+    defaultState: Int = 0,
+    id: Int = -1,
+    accel: Int = 0
+  ) {
+    val _args = VariantArray.new()
+    _args.append(label)
+    _args.append(maxStates)
+    _args.append(defaultState)
+    _args.append(id)
+    _args.append(accel)
+    __method_bind.addMultistateItem.call(this._handle, _args.toVariant(), 5)
   }
 
   fun addRadioCheckItem(
@@ -533,6 +577,18 @@ open class PopupMenu(
             "add_icon_item".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_icon_item" }
         }
+      val addIconRadioCheckItem: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
+            "add_icon_radio_check_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_icon_radio_check_item" }
+        }
+      val addIconRadioCheckShortcut: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
+            "add_icon_radio_check_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_icon_radio_check_shortcut" }
+        }
       val addIconShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
@@ -544,6 +600,12 @@ open class PopupMenu(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
             "add_item".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_item" }
+        }
+      val addMultistateItem: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
+            "add_multistate_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_multistate_item" }
         }
       val addRadioCheckItem: CPointer<godot_method_bind>
         get() = memScoped {

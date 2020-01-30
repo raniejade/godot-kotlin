@@ -8,6 +8,7 @@ import godot.core.Transform
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -21,14 +22,6 @@ import kotlinx.cinterop.reinterpret
 open class Skeleton(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  var bonesInWorldTransform: Boolean
-    get() {
-       return isUsingBonesInWorldTransform() 
-    }
-    set(value) {
-      setUseBonesInWorldTransform(value)
-    }
-
   fun addBone(name: String) {
     val _arg = Variant.new(name)
     __method_bind.addBone.call(this._handle, _arg, 1)
@@ -92,12 +85,6 @@ open class Skeleton(
     return _ret.asTransform()
   }
 
-  fun getBoneTransform(boneIdx: Int): Transform {
-    val _arg = Variant.new(boneIdx)
-    val _ret = __method_bind.getBoneTransform.call(this._handle, _arg, 1)
-    return _ret.asTransform()
-  }
-
   fun getBoundChildNodesToBone(boneIdx: Int): VariantArray {
     val _arg = Variant.new(boneIdx)
     val _ret = __method_bind.getBoundChildNodesToBone.call(this._handle, _arg, 1)
@@ -107,11 +94,6 @@ open class Skeleton(
   fun isBoneRestDisabled(boneIdx: Int): Boolean {
     val _arg = Variant.new(boneIdx)
     val _ret = __method_bind.isBoneRestDisabled.call(this._handle, _arg, 1)
-    return _ret.asBoolean()
-  }
-
-  fun isUsingBonesInWorldTransform(): Boolean {
-    val _ret = __method_bind.isUsingBonesInWorldTransform.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -138,6 +120,12 @@ open class Skeleton(
     __method_bind.physicalBonesStopSimulation.call(this._handle)
   }
 
+  fun registerSkin(skin: Skin): SkinReference {
+    val _arg = Variant.new(skin)
+    val _ret = __method_bind.registerSkin.call(this._handle, _arg, 1)
+    return _ret.asObject(::SkinReference)!!
+  }
+
   fun setBoneCustomPose(boneIdx: Int, customPose: Transform) {
     val _args = VariantArray.new()
     _args.append(boneIdx)
@@ -152,18 +140,18 @@ open class Skeleton(
     __method_bind.setBoneDisableRest.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun setBoneGlobalPose(boneIdx: Int, pose: Transform) {
+  fun setBoneGlobalPoseOverride(
+    boneIdx: Int,
+    pose: Transform,
+    amount: Float,
+    persistent: Boolean = false
+  ) {
     val _args = VariantArray.new()
     _args.append(boneIdx)
     _args.append(pose)
-    __method_bind.setBoneGlobalPose.call(this._handle, _args.toVariant(), 2)
-  }
-
-  fun setBoneIgnoreAnimation(bone: Int, ignore: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(bone)
-    _args.append(ignore)
-    __method_bind.setBoneIgnoreAnimation.call(this._handle, _args.toVariant(), 2)
+    _args.append(amount)
+    _args.append(persistent)
+    __method_bind.setBoneGlobalPoseOverride.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setBoneParent(boneIdx: Int, parentIdx: Int) {
@@ -185,11 +173,6 @@ open class Skeleton(
     _args.append(boneIdx)
     _args.append(rest)
     __method_bind.setBoneRest.call(this._handle, _args.toVariant(), 2)
-  }
-
-  fun setUseBonesInWorldTransform(enable: Boolean) {
-    val _arg = Variant.new(enable)
-    __method_bind.setUseBonesInWorldTransform.call(this._handle, _arg, 1)
   }
 
   fun unbindChildNodeFromBone(boneIdx: Int, node: Node) {
@@ -286,12 +269,6 @@ open class Skeleton(
             "get_bone_rest".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bone_rest" }
         }
-      val getBoneTransform: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "get_bone_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_transform" }
-        }
       val getBoundChildNodesToBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
@@ -303,13 +280,6 @@ open class Skeleton(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
             "is_bone_rest_disabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_bone_rest_disabled" }
-        }
-      val isUsingBonesInWorldTransform: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "is_using_bones_in_world_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_using_bones_in_world_transform"
-            }
         }
       val localizeRests: CPointer<godot_method_bind>
         get() = memScoped {
@@ -343,6 +313,12 @@ open class Skeleton(
             "physical_bones_stop_simulation".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method physical_bones_stop_simulation" }
         }
+      val registerSkin: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+            "register_skin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method register_skin" }
+        }
       val setBoneCustomPose: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
@@ -355,17 +331,11 @@ open class Skeleton(
             "set_bone_disable_rest".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bone_disable_rest" }
         }
-      val setBoneGlobalPose: CPointer<godot_method_bind>
+      val setBoneGlobalPoseOverride: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "set_bone_global_pose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bone_global_pose" }
-        }
-      val setBoneIgnoreAnimation: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "set_bone_ignore_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bone_ignore_animation" }
+            "set_bone_global_pose_override".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_global_pose_override" }
         }
       val setBoneParent: CPointer<godot_method_bind>
         get() = memScoped {
@@ -384,12 +354,6 @@ open class Skeleton(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
             "set_bone_rest".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bone_rest" }
-        }
-      val setUseBonesInWorldTransform: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "set_use_bones_in_world_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_bones_in_world_transform" }
         }
       val unbindChildNodeFromBone: CPointer<godot_method_bind>
         get() = memScoped {

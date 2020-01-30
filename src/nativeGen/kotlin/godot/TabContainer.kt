@@ -51,6 +51,14 @@ open class TabContainer(
       setTabsVisible(value)
     }
 
+  var useHiddenTabsForMinSize: Boolean
+    get() {
+       return getUseHiddenTabsForMinSize() 
+    }
+    set(value) {
+      setUseHiddenTabsForMinSize(value)
+    }
+
   fun areTabsVisible(): Boolean {
     val _ret = __method_bind.areTabsVisible.call(this._handle)
     return _ret.asBoolean()
@@ -120,6 +128,11 @@ open class TabContainer(
     return _ret.asInt()
   }
 
+  fun getUseHiddenTabsForMinSize(): Boolean {
+    val _ret = __method_bind.getUseHiddenTabsForMinSize.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun setCurrentTab(tabIdx: Int) {
     val _arg = Variant.new(tabIdx)
     __method_bind.setCurrentTab.call(this._handle, _arg, 1)
@@ -169,6 +182,11 @@ open class TabContainer(
   fun setTabsVisible(visible: Boolean) {
     val _arg = Variant.new(visible)
     __method_bind.setTabsVisible.call(this._handle, _arg, 1)
+  }
+
+  fun setUseHiddenTabsForMinSize(enabled: Boolean) {
+    val _arg = Variant.new(enabled)
+    __method_bind.setUseHiddenTabsForMinSize.call(this._handle, _arg, 1)
   }
 
   enum class TabAlign(
@@ -303,6 +321,13 @@ open class TabContainer(
             "get_tabs_rearrange_group".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tabs_rearrange_group" }
         }
+      val getUseHiddenTabsForMinSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
+            "get_use_hidden_tabs_for_min_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_use_hidden_tabs_for_min_size" }
+        }
       val setCurrentTab: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -365,6 +390,13 @@ open class TabContainer(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_tabs_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tabs_visible" }
+        }
+      val setUseHiddenTabsForMinSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
+            "set_use_hidden_tabs_for_min_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_hidden_tabs_for_min_size" }
         }}
   }
 }

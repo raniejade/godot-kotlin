@@ -55,9 +55,11 @@ open class ProjectSettings(
     return _ret.asBoolean()
   }
 
-  fun loadResourcePack(pack: String): Boolean {
-    val _arg = Variant.new(pack)
-    val _ret = __method_bind.loadResourcePack.call(this._handle, _arg, 1)
+  fun loadResourcePack(pack: String, replaceFiles: Boolean = true): Boolean {
+    val _args = VariantArray.new()
+    _args.append(pack)
+    _args.append(replaceFiles)
+    val _ret = __method_bind.loadResourcePack.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 

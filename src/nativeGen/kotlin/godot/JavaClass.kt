@@ -12,12 +12,21 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourceFormatSaverShader(
+open class JavaClass(
   _handle: COpaquePointer
-) : ResourceFormatSaver(_handle) {
+) : Reference(_handle) {
   companion object {
+    fun new(): JavaClass = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("JavaClass".cstr.ptr)
+      requireNotNull(fnPtr) { "No instance found for JavaClass" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+      JavaClass(
+        fn()
+      )
+    }
+    fun from(ptr: COpaquePointer): JavaClass = JavaClass(ptr)
     /**
-     * Container for method_bind pointers for ResourceFormatSaverShader
+     * Container for method_bind pointers for JavaClass
      */
     private object __method_bind
   }

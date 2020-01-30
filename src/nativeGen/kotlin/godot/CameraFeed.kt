@@ -88,9 +88,9 @@ open class CameraFeed(
 
     FEED_RGB(1),
 
-    FEED_YCbCr(2),
+    FEED_YCBCR(2),
 
-    FEED_YCbCr_Sep(3);
+    FEED_YCBCR_SEP(3);
 
     companion object {
       fun from(value: Int): FeedDataType {
@@ -136,9 +136,9 @@ open class CameraFeed(
 
     val FEED_UNSPECIFIED: Int = 0
 
-    val FEED_YCbCr: Int = 2
+    val FEED_YCBCR: Int = 2
 
-    val FEED_YCbCr_Sep: Int = 3
+    val FEED_YCBCR_SEP: Int = 3
 
     fun new(): CameraFeed = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CameraFeed".cstr.ptr)

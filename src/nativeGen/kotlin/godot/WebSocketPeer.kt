@@ -46,6 +46,11 @@ open class WebSocketPeer(
     return _ret.asBoolean()
   }
 
+  fun setNoDelay(enabled: Boolean) {
+    val _arg = Variant.new(enabled)
+    __method_bind.setNoDelay.call(this._handle, _arg, 1)
+  }
+
   fun setWriteMode(mode: Int) {
     val _arg = Variant.new(mode)
     __method_bind.setWriteMode.call(this._handle, _arg, 1)
@@ -127,6 +132,13 @@ open class WebSocketPeer(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
             "is_connected_to_host".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_connected_to_host" }
+        }
+      val setNoDelay: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
+            "set_no_delay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_no_delay" }
         }
       val setWriteMode: CPointer<godot_method_bind>
         get() = memScoped {

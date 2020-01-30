@@ -40,6 +40,14 @@ open class SpriteBase3D(
       setAxis(value.value)
     }
 
+  var billboard: SpatialMaterial.BillboardMode
+    get() {
+       return getBillboardMode() 
+    }
+    set(value) {
+      setBillboardMode(value.value)
+    }
+
   var centered: Boolean
     get() {
        return isCentered() 
@@ -153,6 +161,11 @@ open class SpriteBase3D(
     return Vector3.Axis.from(_ret.asInt())
   }
 
+  fun getBillboardMode(): SpatialMaterial.BillboardMode {
+    val _ret = __method_bind.getBillboardMode.call(this._handle)
+    return SpatialMaterial.BillboardMode.from(_ret.asInt())
+  }
+
   fun getDrawFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.getDrawFlag.call(this._handle, _arg, 1)
@@ -207,6 +220,11 @@ open class SpriteBase3D(
   fun setAxis(axis: Int) {
     val _arg = Variant.new(axis)
     __method_bind.setAxis.call(this._handle, _arg, 1)
+  }
+
+  fun setBillboardMode(mode: Int) {
+    val _arg = Variant.new(mode)
+    __method_bind.setBillboardMode.call(this._handle, _arg, 1)
   }
 
   fun setCentered(centered: Boolean) {
@@ -335,6 +353,13 @@ open class SpriteBase3D(
             "get_axis".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_axis" }
         }
+      val getBillboardMode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+            "get_billboard_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_billboard_mode" }
+        }
       val getDrawFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -411,6 +436,13 @@ open class SpriteBase3D(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
             "set_axis".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_axis" }
+        }
+      val setBillboardMode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+            "set_billboard_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_billboard_mode" }
         }
       val setCentered: CPointer<godot_method_bind>
         get() = memScoped {

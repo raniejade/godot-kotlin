@@ -547,6 +547,8 @@ open class TileSet(
 
     BIND_LEFT(8),
 
+    BIND_CENTER(16),
+
     BIND_RIGHT(32),
 
     BIND_BOTTOMLEFT(64),
@@ -598,6 +600,8 @@ open class TileSet(
     val BIND_BOTTOMLEFT: Int = 64
 
     val BIND_BOTTOMRIGHT: Int = 256
+
+    val BIND_CENTER: Int = 16
 
     val BIND_LEFT: Int = 8
 

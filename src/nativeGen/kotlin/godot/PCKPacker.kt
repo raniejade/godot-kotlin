@@ -28,13 +28,13 @@ open class PCKPacker(
     return GDError.from(_ret.asInt())
   }
 
-  fun flush(verbose: Boolean): GDError {
+  fun flush(verbose: Boolean = false): GDError {
     val _arg = Variant.new(verbose)
     val _ret = __method_bind.flush.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
-  fun pckStart(pckName: String, alignment: Int): GDError {
+  fun pckStart(pckName: String, alignment: Int = 0): GDError {
     val _args = VariantArray.new()
     _args.append(pckName)
     _args.append(alignment)

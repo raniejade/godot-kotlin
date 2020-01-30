@@ -35,10 +35,9 @@ open class Object(
     return _ret
   }
 
-  fun callDeferred(method: String): Variant {
+  fun callDeferred(method: String) {
     val _arg = Variant.new(method)
-    val _ret = __method_bind.callDeferred.call(this._handle, _arg, 1)
-    return _ret
+    __method_bind.callDeferred.call(this._handle, _arg, 1)
   }
 
   fun callv(method: String, argArray: VariantArray): Variant {
@@ -83,10 +82,9 @@ open class Object(
     __method_bind.disconnect.call(this._handle, _args.toVariant(), 3)
   }
 
-  fun emitSignal(signal: String): Variant {
+  fun emitSignal(signal: String) {
     val _arg = Variant.new(signal)
-    val _ret = __method_bind.emitSignal.call(this._handle, _arg, 1)
-    return _ret
+    __method_bind.emitSignal.call(this._handle, _arg, 1)
   }
 
   fun get(property: String): Variant {
@@ -176,8 +174,8 @@ open class Object(
     return _ret.asBoolean()
   }
 
-  fun isClass(type: String): Boolean {
-    val _arg = Variant.new(type)
+  fun isClass(`class`: String): Boolean {
+    val _arg = Variant.new(`class`)
     val _ret = __method_bind.isClass.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }

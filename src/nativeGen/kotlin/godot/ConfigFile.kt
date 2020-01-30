@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.GDError
 import godot.core.Godot
+import godot.core.PoolByteArray
 import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
@@ -23,6 +24,13 @@ open class ConfigFile(
   fun eraseSection(section: String) {
     val _arg = Variant.new(section)
     __method_bind.eraseSection.call(this._handle, _arg, 1)
+  }
+
+  fun eraseSectionKey(section: String, key: String) {
+    val _args = VariantArray.new()
+    _args.append(section)
+    _args.append(key)
+    __method_bind.eraseSectionKey.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getSectionKeys(section: String): PoolStringArray {
@@ -69,9 +77,41 @@ open class ConfigFile(
     return GDError.from(_ret.asInt())
   }
 
+  fun loadEncrypted(path: String, key: PoolByteArray): GDError {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(key)
+    val _ret = __method_bind.loadEncrypted.call(this._handle, _args.toVariant(), 2)
+    return GDError.from(_ret.asInt())
+  }
+
+  fun loadEncryptedPass(path: String, pass: String): GDError {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(pass)
+    val _ret = __method_bind.loadEncryptedPass.call(this._handle, _args.toVariant(), 2)
+    return GDError.from(_ret.asInt())
+  }
+
   fun save(path: String): GDError {
     val _arg = Variant.new(path)
     val _ret = __method_bind.save.call(this._handle, _arg, 1)
+    return GDError.from(_ret.asInt())
+  }
+
+  fun saveEncrypted(path: String, key: PoolByteArray): GDError {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(key)
+    val _ret = __method_bind.saveEncrypted.call(this._handle, _args.toVariant(), 2)
+    return GDError.from(_ret.asInt())
+  }
+
+  fun saveEncryptedPass(path: String, pass: String): GDError {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(pass)
+    val _ret = __method_bind.saveEncryptedPass.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
@@ -106,6 +146,12 @@ open class ConfigFile(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
             "erase_section".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method erase_section" }
+        }
+      val eraseSectionKey: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "erase_section_key".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method erase_section_key" }
         }
       val getSectionKeys: CPointer<godot_method_bind>
         get() = memScoped {
@@ -143,11 +189,35 @@ open class ConfigFile(
             "load".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method load" }
         }
+      val loadEncrypted: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "load_encrypted".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method load_encrypted" }
+        }
+      val loadEncryptedPass: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "load_encrypted_pass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method load_encrypted_pass" }
+        }
       val save: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
             "save".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method save" }
+        }
+      val saveEncrypted: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "save_encrypted".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save_encrypted" }
+        }
+      val saveEncryptedPass: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "save_encrypted_pass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save_encrypted_pass" }
         }
       val setValue: CPointer<godot_method_bind>
         get() = memScoped {

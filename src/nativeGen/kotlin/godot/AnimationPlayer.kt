@@ -58,6 +58,14 @@ open class AnimationPlayer(
        return getCurrentAnimationPosition() 
     }
 
+  var methodCallMode: AnimationMethodCallMode
+    get() {
+       return getMethodCallMode() 
+    }
+    set(value) {
+      setMethodCallMode(value.value)
+    }
+
   var playbackActive: Boolean
     get() {
        return isActive() 
@@ -201,6 +209,11 @@ open class AnimationPlayer(
     return _ret.asFloat()
   }
 
+  fun getMethodCallMode(): AnimationMethodCallMode {
+    val _ret = __method_bind.getMethodCallMode.call(this._handle)
+    return AnimationPlayer.AnimationMethodCallMode.from(_ret.asInt())
+  }
+
   fun getPlayingSpeed(): Float {
     val _ret = __method_bind.getPlayingSpeed.call(this._handle)
     return _ret.asFloat()
@@ -324,6 +337,11 @@ open class AnimationPlayer(
     __method_bind.setDefaultBlendTime.call(this._handle, _arg, 1)
   }
 
+  fun setMethodCallMode(mode: Int) {
+    val _arg = Variant.new(mode)
+    __method_bind.setMethodCallMode.call(this._handle, _arg, 1)
+  }
+
   fun setRoot(path: NodePath) {
     val _arg = Variant.new(path)
     __method_bind.setRoot.call(this._handle, _arg, 1)
@@ -360,7 +378,30 @@ open class AnimationPlayer(
     }
   }
 
+  enum class AnimationMethodCallMode(
+    val value: Int
+  ) {
+    ANIMATION_METHOD_CALL_DEFERRED(0),
+
+    ANIMATION_METHOD_CALL_IMMEDIATE(1);
+
+    companion object {
+      fun from(value: Int): AnimationMethodCallMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
   companion object {
+    val ANIMATION_METHOD_CALL_DEFERRED: Int = 0
+
+    val ANIMATION_METHOD_CALL_IMMEDIATE: Int = 1
+
     val ANIMATION_PROCESS_IDLE: Int = 1
 
     val ANIMATION_PROCESS_MANUAL: Int = 2
@@ -499,6 +540,13 @@ open class AnimationPlayer(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
             "get_default_blend_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_default_blend_time" }
+        }
+      val getMethodCallMode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
+            "get_method_call_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_method_call_mode" }
         }
       val getPlayingSpeed: CPointer<godot_method_bind>
         get() = memScoped {
@@ -639,6 +687,13 @@ open class AnimationPlayer(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
             "set_default_blend_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_default_blend_time" }
+        }
+      val setMethodCallMode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
+            "set_method_call_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_method_call_mode" }
         }
       val setRoot: CPointer<godot_method_bind>
         get() = memScoped {

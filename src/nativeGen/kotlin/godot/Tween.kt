@@ -52,8 +52,8 @@ open class Tween(
     target: Object,
     targetMethod: String,
     duration: Float,
-    transType: Int,
-    easeType: Int,
+    transType: Int = 0,
+    easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
@@ -77,8 +77,8 @@ open class Tween(
     target: Object,
     targetProperty: NodePath,
     duration: Float,
-    transType: Int,
-    easeType: Int,
+    transType: Int = 0,
+    easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
@@ -162,8 +162,8 @@ open class Tween(
     initialVal: Variant,
     finalVal: Variant,
     duration: Float,
-    transType: Int,
-    easeType: Int,
+    transType: Int = 0,
+    easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
@@ -185,8 +185,8 @@ open class Tween(
     initialVal: Variant,
     finalVal: Variant,
     duration: Float,
-    transType: Int,
-    easeType: Int,
+    transType: Int = 0,
+    easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
@@ -302,8 +302,8 @@ open class Tween(
     initialMethod: String,
     finalVal: Variant,
     duration: Float,
-    transType: Int,
-    easeType: Int,
+    transType: Int = 0,
+    easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
@@ -327,8 +327,8 @@ open class Tween(
     initialVal: NodePath,
     finalVal: Variant,
     duration: Float,
-    transType: Int,
-    easeType: Int,
+    transType: Int = 0,
+    easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()

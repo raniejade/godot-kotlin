@@ -8,6 +8,7 @@ import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -129,6 +130,8 @@ open class EditorSettings(
   }
 
   companion object {
+    val NOTIFICATION_EDITOR_SETTINGS_CHANGED: Int = 10000
+
     /**
      * Container for method_bind pointers for EditorSettings
      */

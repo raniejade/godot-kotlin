@@ -23,6 +23,12 @@ open class FuncRef(
     return _ret
   }
 
+  fun callFuncv(argArray: VariantArray): Variant {
+    val _arg = Variant.new(argArray)
+    val _ret = __method_bind.callFuncv.call(this._handle, _arg, 1)
+    return _ret
+  }
+
   fun isValid(): Boolean {
     val _ret = __method_bind.isValid.call(this._handle)
     return _ret.asBoolean()
@@ -57,6 +63,12 @@ open class FuncRef(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
             "call_func".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method call_func" }
+        }
+      val callFuncv: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
+            "call_funcv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method call_funcv" }
         }
       val isValid: CPointer<godot_method_bind>
         get() = memScoped {

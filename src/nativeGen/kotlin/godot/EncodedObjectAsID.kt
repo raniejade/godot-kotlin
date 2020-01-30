@@ -17,6 +17,14 @@ import kotlinx.cinterop.reinterpret
 open class EncodedObjectAsID(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  var objectId: Int
+    get() {
+       return getObjectId() 
+    }
+    set(value) {
+      setObjectId(value)
+    }
+
   fun getObjectId(): Int {
     val _ret = __method_bind.getObjectId.call(this._handle)
     return _ret.asInt()

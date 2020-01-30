@@ -20,6 +20,30 @@ import kotlinx.cinterop.reinterpret
 open class AudioServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  var busCount: Int
+    get() {
+       return getBusCount() 
+    }
+    set(value) {
+      setBusCount(value)
+    }
+
+  var device: String
+    get() {
+       return getDevice() 
+    }
+    set(value) {
+      setDevice(value)
+    }
+
+  var globalRateScale: Float
+    get() {
+       return getGlobalRateScale() 
+    }
+    set(value) {
+      setGlobalRateScale(value)
+    }
+
   fun addBus(atPosition: Int = -1) {
     val _arg = Variant.new(atPosition)
     __method_bind.addBus.call(this._handle, _arg, 1)
@@ -143,6 +167,11 @@ open class AudioServer(
   fun getDeviceList(): VariantArray {
     val _ret = __method_bind.getDeviceList.call(this._handle)
     return _ret.asVariantArray()
+  }
+
+  fun getGlobalRateScale(): Float {
+    val _ret = __method_bind.getGlobalRateScale.call(this._handle)
+    return _ret.asFloat()
   }
 
   fun getMixRate(): Float {
@@ -286,6 +315,11 @@ open class AudioServer(
   fun setDevice(device: String) {
     val _arg = Variant.new(device)
     __method_bind.setDevice.call(this._handle, _arg, 1)
+  }
+
+  fun setGlobalRateScale(scale: Float) {
+    val _arg = Variant.new(scale)
+    __method_bind.setGlobalRateScale.call(this._handle, _arg, 1)
   }
 
   fun swapBusEffects(
@@ -481,6 +515,13 @@ open class AudioServer(
             "get_device_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_device_list" }
         }
+      val getGlobalRateScale: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
+            "get_global_rate_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_global_rate_scale" }
+        }
       val getMixRate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -641,6 +682,13 @@ open class AudioServer(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
             "set_device".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_device" }
+        }
+      val setGlobalRateScale: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
+            "set_global_rate_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_global_rate_scale" }
         }
       val swapBusEffects: CPointer<godot_method_bind>
         get() = memScoped {

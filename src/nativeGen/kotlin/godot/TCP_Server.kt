@@ -25,6 +25,11 @@ open class TCP_Server(
     return _ret.asBoolean()
   }
 
+  fun isListening(): Boolean {
+    val _ret = __method_bind.isListening.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun listen(port: Int, bindAddress: String = "*"): GDError {
     val _args = VariantArray.new()
     _args.append(port)
@@ -61,6 +66,12 @@ open class TCP_Server(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TCP_Server".cstr.ptr,
             "is_connection_available".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_connection_available" }
+        }
+      val isListening: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TCP_Server".cstr.ptr,
+            "is_listening".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_listening" }
         }
       val listen: CPointer<godot_method_bind>
         get() = memScoped {

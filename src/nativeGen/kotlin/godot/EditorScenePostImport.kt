@@ -28,16 +28,6 @@ open class EditorScenePostImport(
   }
 
   companion object {
-    fun new(): EditorScenePostImport = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorScenePostImport".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorScenePostImport" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorScenePostImport(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorScenePostImport = EditorScenePostImport(ptr)
     /**
      * Container for method_bind pointers for EditorScenePostImport
      */

@@ -102,6 +102,28 @@ open class CanvasItem(
     selfModulate = _p
   }
 
+  fun drawArc(
+    center: Vector2,
+    radius: Float,
+    startAngle: Float,
+    endAngle: Float,
+    pointCount: Int,
+    color: Color,
+    width: Float = 1.0f,
+    antialiased: Boolean = false
+  ) {
+    val _args = VariantArray.new()
+    _args.append(center)
+    _args.append(radius)
+    _args.append(startAngle)
+    _args.append(endAngle)
+    _args.append(pointCount)
+    _args.append(color)
+    _args.append(width)
+    _args.append(antialiased)
+    __method_bind.drawArc.call(this._handle, _args.toVariant(), 8)
+  }
+
   fun drawChar(
     font: Font,
     position: Vector2,
@@ -289,13 +311,17 @@ open class CanvasItem(
   fun drawRect(
     rect: Rect2,
     color: Color,
-    filled: Boolean = true
+    filled: Boolean = true,
+    width: Float = 1.0f,
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(rect)
     _args.append(color)
     _args.append(filled)
-    __method_bind.drawRect.call(this._handle, _args.toVariant(), 3)
+    _args.append(width)
+    _args.append(antialiased)
+    __method_bind.drawRect.call(this._handle, _args.toVariant(), 5)
   }
 
   fun drawSetTransform(
@@ -632,6 +658,12 @@ open class CanvasItem(
      * Container for method_bind pointers for CanvasItem
      */
     private object __method_bind {
+      val drawArc: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
+            "draw_arc".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method draw_arc" }
+        }
       val drawChar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,

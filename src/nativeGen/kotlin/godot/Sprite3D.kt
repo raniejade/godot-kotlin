@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
+import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.Unit
@@ -26,6 +27,14 @@ open class Sprite3D(
     }
     set(value) {
       setFrame(value)
+    }
+
+  var frameCoords: Vector2
+    get() {
+       return getFrameCoords() 
+    }
+    set(value) {
+      setFrameCoords(value)
     }
 
   var hframes: Int
@@ -69,6 +78,15 @@ open class Sprite3D(
     }
 
   /**
+   * Specialized setter for frameCoords
+   */
+  fun frameCoords(cb: Vector2.() -> Unit) {
+    val _p = frameCoords
+    cb(_p)
+    frameCoords = _p
+  }
+
+  /**
    * Specialized setter for regionRect
    */
   fun regionRect(cb: Rect2.() -> Unit) {
@@ -80,6 +98,11 @@ open class Sprite3D(
   fun getFrame(): Int {
     val _ret = __method_bind.getFrame.call(this._handle)
     return _ret.asInt()
+  }
+
+  fun getFrameCoords(): Vector2 {
+    val _ret = __method_bind.getFrameCoords.call(this._handle)
+    return _ret.asVector2()
   }
 
   fun getHframes(): Int {
@@ -110,6 +133,11 @@ open class Sprite3D(
   fun setFrame(frame: Int) {
     val _arg = Variant.new(frame)
     __method_bind.setFrame.call(this._handle, _arg, 1)
+  }
+
+  fun setFrameCoords(coords: Vector2) {
+    val _arg = Variant.new(coords)
+    __method_bind.setFrameCoords.call(this._handle, _arg, 1)
   }
 
   fun setHframes(hframes: Int) {
@@ -157,6 +185,12 @@ open class Sprite3D(
             "get_frame".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_frame" }
         }
+      val getFrameCoords: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
+            "get_frame_coords".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frame_coords" }
+        }
       val getHframes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
@@ -192,6 +226,12 @@ open class Sprite3D(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "set_frame".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_frame" }
+        }
+      val setFrameCoords: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
+            "set_frame_coords".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_frame_coords" }
         }
       val setHframes: CPointer<godot_method_bind>
         get() = memScoped {

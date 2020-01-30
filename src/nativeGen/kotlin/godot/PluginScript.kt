@@ -16,9 +16,9 @@ import kotlinx.cinterop.reinterpret
 open class PluginScript(
   _handle: COpaquePointer
 ) : Script(_handle) {
-  fun new(): Object {
+  fun new(): Variant {
     val _ret = __method_bind.new.call(this._handle)
-    return _ret.asObject(::Object)!!
+    return _ret
   }
 
   companion object {

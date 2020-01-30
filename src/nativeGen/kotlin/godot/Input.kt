@@ -262,6 +262,11 @@ open class Input(
     __method_bind.stopJoyVibration.call(this._handle, _arg, 1)
   }
 
+  fun vibrateHandheld(durationMs: Int = 500) {
+    val _arg = Variant.new(durationMs)
+    __method_bind.vibrateHandheld.call(this._handle, _arg, 1)
+  }
+
   fun warpMousePosition(to: Vector2) {
     val _arg = Variant.new(to)
     __method_bind.warpMousePosition.call(this._handle, _arg, 1)
@@ -621,6 +626,12 @@ open class Input(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
             "stop_joy_vibration".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method stop_joy_vibration" }
+        }
+      val vibrateHandheld: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
+            "vibrate_handheld".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method vibrate_handheld" }
         }
       val warpMousePosition: CPointer<godot_method_bind>
         get() = memScoped {

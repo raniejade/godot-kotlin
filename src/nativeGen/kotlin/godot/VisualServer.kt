@@ -187,18 +187,19 @@ open class VisualServer(
   fun canvasItemAddMesh(
     item: RID,
     mesh: RID,
-    texture: Transform2D,
-    normalMap: Color,
-    arg4: RID,
-    arg5: RID
+    transform: Transform2D = Transform2D.new(Vector2.new(1, 0), Vector2.new(0, 1), Vector2.new(0,
+        0)),
+    modulate: Color = Color.rgb(1,1,1,1),
+    texture: RID,
+    normalMap: RID
   ) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(mesh)
+    _args.append(transform)
+    _args.append(modulate)
     _args.append(texture)
     _args.append(normalMap)
-    _args.append(arg4)
-    _args.append(arg5)
     __method_bind.canvasItemAddMesh.call(this._handle, _args.toVariant(), 6)
   }
 
@@ -385,7 +386,9 @@ open class VisualServer(
     weights: PoolRealArray,
     texture: RID,
     count: Int = -1,
-    normalMap: RID
+    normalMap: RID,
+    antialiased: Boolean = false,
+    antialiasingUseIndices: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(item)
@@ -398,7 +401,9 @@ open class VisualServer(
     _args.append(texture)
     _args.append(count)
     _args.append(normalMap)
-    __method_bind.canvasItemAddTriangleArray.call(this._handle, _args.toVariant(), 10)
+    _args.append(antialiased)
+    _args.append(antialiasingUseIndices)
+    __method_bind.canvasItemAddTriangleArray.call(this._handle, _args.toVariant(), 12)
   }
 
   fun canvasItemClear(item: RID) {
@@ -1109,6 +1114,16 @@ open class VisualServer(
   fun getTestTexture(): RID {
     val _ret = __method_bind.getTestTexture.call(this._handle)
     return _ret.asRID()
+  }
+
+  fun getVideoAdapterName(): String {
+    val _ret = __method_bind.getVideoAdapterName.call(this._handle)
+    return _ret.asString()
+  }
+
+  fun getVideoAdapterVendor(): String {
+    val _ret = __method_bind.getVideoAdapterVendor.call(this._handle)
+    return _ret.asString()
   }
 
   fun getWhiteTexture(): RID {
@@ -1826,14 +1841,14 @@ open class VisualServer(
 
   fun meshAddSurfaceFromArrays(
     mesh: RID,
-    primtive: Int,
+    primitive: Int,
     arrays: VariantArray,
     blendShapes: VariantArray,
     compressFormat: Int = 97280
   ) {
     val _args = VariantArray.new()
     _args.append(mesh)
-    _args.append(primtive)
+    _args.append(primitive)
     _args.append(arrays)
     _args.append(blendShapes)
     _args.append(compressFormat)
@@ -2060,6 +2075,11 @@ open class VisualServer(
     __method_bind.multimeshAllocate.call(this._handle, _args.toVariant(), 5)
   }
 
+  fun multimeshCreate(): RID {
+    val _ret = __method_bind.multimeshCreate.call(this._handle)
+    return _ret.asRID()
+  }
+
   fun multimeshGetAabb(multimesh: RID): AABB {
     val _arg = Variant.new(multimesh)
     val _ret = __method_bind.multimeshGetAabb.call(this._handle, _arg, 1)
@@ -2206,6 +2226,17 @@ open class VisualServer(
     val _arg = Variant.new(particles)
     val _ret = __method_bind.particlesGetEmitting.call(this._handle, _arg, 1)
     return _ret.asBoolean()
+  }
+
+  fun particlesIsInactive(particles: RID): Boolean {
+    val _arg = Variant.new(particles)
+    val _ret = __method_bind.particlesIsInactive.call(this._handle, _arg, 1)
+    return _ret.asBoolean()
+  }
+
+  fun particlesRequestProcess(particles: RID) {
+    val _arg = Variant.new(particles)
+    __method_bind.particlesRequestProcess.call(this._handle, _arg, 1)
   }
 
   fun particlesRestart(particles: RID) {
@@ -4014,7 +4045,11 @@ open class VisualServer(
 
     VIEWPORT_MSAA_8X(3),
 
-    VIEWPORT_MSAA_16X(4);
+    VIEWPORT_MSAA_16X(4),
+
+    VIEWPORT_MSAA_EXT_2X(5),
+
+    VIEWPORT_MSAA_EXT_4X(6);
 
     companion object {
       fun from(value: Int): ViewportMSAA {
@@ -4481,6 +4516,10 @@ open class VisualServer(
     val VIEWPORT_MSAA_8X: Int = 3
 
     val VIEWPORT_MSAA_DISABLED: Int = 0
+
+    val VIEWPORT_MSAA_EXT_2X: Int = 5
+
+    val VIEWPORT_MSAA_EXT_4X: Int = 6
 
     val VIEWPORT_RENDER_INFO_DRAW_CALLS_IN_FRAME: Int = 5
 
@@ -5275,6 +5314,20 @@ open class VisualServer(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
             "get_test_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_test_texture" }
+        }
+      val getVideoAdapterName: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
+            "get_video_adapter_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_video_adapter_name" }
+        }
+      val getVideoAdapterVendor: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
+            "get_video_adapter_vendor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_video_adapter_vendor" }
         }
       val getWhiteTexture: CPointer<godot_method_bind>
         get() = memScoped {
@@ -6171,6 +6224,13 @@ open class VisualServer(
             "multimesh_allocate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method multimesh_allocate" }
         }
+      val multimeshCreate: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
+            "multimesh_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_create" }
+        }
       val multimeshGetAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -6307,6 +6367,20 @@ open class VisualServer(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
             "particles_get_emitting".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method particles_get_emitting" }
+        }
+      val particlesIsInactive: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
+            "particles_is_inactive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_is_inactive" }
+        }
+      val particlesRequestProcess: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
+            "particles_request_process".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_request_process" }
         }
       val particlesRestart: CPointer<godot_method_bind>
         get() = memScoped {

@@ -26,7 +26,7 @@ class RotatingCube(handle: COpaquePointer): Spatial(handle) {
     // rotationDegrees = rotation
   }
 
-  companion object: GodotClass<RotatingCube>(::RotatingCube) {
+  companion object: GodotClass<Spatial, RotatingCube>(::RotatingCube) {
     override fun init(registry: ClassMemberRegistry<RotatingCube>) {
       with(registry) {
         registerMethod(RotatingCube::_process)

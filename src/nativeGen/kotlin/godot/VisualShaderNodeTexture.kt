@@ -101,7 +101,11 @@ open class VisualShaderNodeTexture(
 
     SOURCE_2D_TEXTURE(2),
 
-    SOURCE_2D_NORMAL(3);
+    SOURCE_2D_NORMAL(3),
+
+    SOURCE_DEPTH(4),
+
+    SOURCE_PORT(5);
 
     companion object {
       fun from(value: Int): Source {
@@ -119,6 +123,10 @@ open class VisualShaderNodeTexture(
     val SOURCE_2D_NORMAL: Int = 3
 
     val SOURCE_2D_TEXTURE: Int = 2
+
+    val SOURCE_DEPTH: Int = 4
+
+    val SOURCE_PORT: Int = 5
 
     val SOURCE_SCREEN: Int = 1
 

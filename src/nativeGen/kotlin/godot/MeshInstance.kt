@@ -35,6 +35,14 @@ open class MeshInstance(
       setSkeletonPath(value)
     }
 
+  var skin: Skin
+    get() {
+       return getSkin() 
+    }
+    set(value) {
+      setSkin(value)
+    }
+
   /**
    * Specialized setter for skeleton
    */
@@ -66,6 +74,11 @@ open class MeshInstance(
     return _ret.asNodePath()
   }
 
+  fun getSkin(): Skin {
+    val _ret = __method_bind.getSkin.call(this._handle)
+    return _ret.asObject(::Skin)!!
+  }
+
   fun getSurfaceMaterial(surface: Int): Material {
     val _arg = Variant.new(surface)
     val _ret = __method_bind.getSurfaceMaterial.call(this._handle, _arg, 1)
@@ -85,6 +98,11 @@ open class MeshInstance(
   fun setSkeletonPath(skeletonPath: NodePath) {
     val _arg = Variant.new(skeletonPath)
     __method_bind.setSkeletonPath.call(this._handle, _arg, 1)
+  }
+
+  fun setSkin(skin: Skin) {
+    val _arg = Variant.new(skin)
+    __method_bind.setSkin.call(this._handle, _arg, 1)
   }
 
   fun setSurfaceMaterial(surface: Int, material: Material) {
@@ -143,6 +161,13 @@ open class MeshInstance(
             "get_skeleton_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_skeleton_path" }
         }
+      val getSkin: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+            "get_skin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_skin" }
+        }
       val getSurfaceMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -170,6 +195,13 @@ open class MeshInstance(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
             "set_skeleton_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_skeleton_path" }
+        }
+      val setSkin: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+            "set_skin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_skin" }
         }
       val setSurfaceMaterial: CPointer<godot_method_bind>
         get() = memScoped {

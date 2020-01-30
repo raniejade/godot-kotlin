@@ -79,6 +79,14 @@ open class TileMap(
       setYSortMode(value)
     }
 
+  var centeredTextures: Boolean
+    get() {
+       return isCenteredTexturesEnabled() 
+    }
+    set(value) {
+      setCenteredTextures(value)
+    }
+
   var collisionBounce: Float
     get() {
        return getCollisionBounce() 
@@ -117,6 +125,22 @@ open class TileMap(
     }
     set(value) {
       setCollisionUseKinematic(value)
+    }
+
+  var collisionUseParent: Boolean
+    get() {
+       return getCollisionUseParent() 
+    }
+    set(value) {
+      setCollisionUseParent(value)
+    }
+
+  var compatibilityMode: Boolean
+    get() {
+       return isCompatibilityModeEnabled() 
+    }
+    set(value) {
+      setCompatibilityMode(value)
     }
 
   var mode: Mode
@@ -238,6 +262,11 @@ open class TileMap(
     return _ret.asBoolean()
   }
 
+  fun getCollisionUseParent(): Boolean {
+    val _ret = __method_bind.getCollisionUseParent.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun getCustomTransform(): Transform2D {
     val _ret = __method_bind.getCustomTransform.call(this._handle)
     return _ret.asTransform2D()
@@ -313,6 +342,16 @@ open class TileMap(
     return _ret.asBoolean()
   }
 
+  fun isCenteredTexturesEnabled(): Boolean {
+    val _ret = __method_bind.isCenteredTexturesEnabled.call(this._handle)
+    return _ret.asBoolean()
+  }
+
+  fun isCompatibilityModeEnabled(): Boolean {
+    val _ret = __method_bind.isCompatibilityModeEnabled.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun isYSortModeEnabled(): Boolean {
     val _ret = __method_bind.isYSortModeEnabled.call(this._handle)
     return _ret.asBoolean()
@@ -367,6 +406,11 @@ open class TileMap(
     __method_bind.setCellv.call(this._handle, _args.toVariant(), 5)
   }
 
+  fun setCenteredTextures(enable: Boolean) {
+    val _arg = Variant.new(enable)
+    __method_bind.setCenteredTextures.call(this._handle, _arg, 1)
+  }
+
   fun setClipUv(enable: Boolean) {
     val _arg = Variant.new(enable)
     __method_bind.setClipUv.call(this._handle, _arg, 1)
@@ -409,6 +453,16 @@ open class TileMap(
   fun setCollisionUseKinematic(useKinematic: Boolean) {
     val _arg = Variant.new(useKinematic)
     __method_bind.setCollisionUseKinematic.call(this._handle, _arg, 1)
+  }
+
+  fun setCollisionUseParent(useParent: Boolean) {
+    val _arg = Variant.new(useParent)
+    __method_bind.setCollisionUseParent.call(this._handle, _arg, 1)
+  }
+
+  fun setCompatibilityMode(enable: Boolean) {
+    val _arg = Variant.new(enable)
+    __method_bind.setCompatibilityMode.call(this._handle, _arg, 1)
   }
 
   fun setCustomTransform(customTransform: Transform2D) {
@@ -662,6 +716,12 @@ open class TileMap(
             "get_collision_use_kinematic".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_use_kinematic" }
         }
+      val getCollisionUseParent: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+            "get_collision_use_parent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_use_parent" }
+        }
       val getCustomTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
@@ -740,6 +800,18 @@ open class TileMap(
             "is_cell_y_flipped".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_cell_y_flipped" }
         }
+      val isCenteredTexturesEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+            "is_centered_textures_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_centered_textures_enabled" }
+        }
+      val isCompatibilityModeEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+            "is_compatibility_mode_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_compatibility_mode_enabled" }
+        }
       val isYSortModeEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
@@ -769,6 +841,12 @@ open class TileMap(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
             "set_cellv".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_cellv" }
+        }
+      val setCenteredTextures: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+            "set_centered_textures".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_centered_textures" }
         }
       val setClipUv: CPointer<godot_method_bind>
         get() = memScoped {
@@ -817,6 +895,18 @@ open class TileMap(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
             "set_collision_use_kinematic".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_use_kinematic" }
+        }
+      val setCollisionUseParent: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+            "set_collision_use_parent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_use_parent" }
+        }
+      val setCompatibilityMode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+            "set_compatibility_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_compatibility_mode" }
         }
       val setCustomTransform: CPointer<godot_method_bind>
         get() = memScoped {

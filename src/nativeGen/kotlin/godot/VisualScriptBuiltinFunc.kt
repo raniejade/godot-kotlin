@@ -168,7 +168,13 @@ open class VisualScriptBuiltinFunc(
 
     MATH_SMOOTHSTEP(64),
 
-    FUNC_MAX(65);
+    MATH_POSMOD(65),
+
+    MATH_LERP_ANGLE(66),
+
+    TEXT_ORD(67),
+
+    FUNC_MAX(68);
 
     companion object {
       fun from(value: Int): BuiltinFunc {
@@ -189,7 +195,7 @@ open class VisualScriptBuiltinFunc(
 
     val FUNC_FUNCREF: Int = 50
 
-    val FUNC_MAX: Int = 65
+    val FUNC_MAX: Int = 68
 
     val LOGIC_CLAMP: Int = 47
 
@@ -243,6 +249,8 @@ open class VisualScriptBuiltinFunc(
 
     val MATH_LERP: Int = 26
 
+    val MATH_LERP_ANGLE: Int = 66
+
     val MATH_LINEAR2DB: Int = 39
 
     val MATH_LOG: Int = 19
@@ -250,6 +258,8 @@ open class VisualScriptBuiltinFunc(
     val MATH_MOVE_TOWARD: Int = 29
 
     val MATH_POLAR2CARTESIAN: Int = 41
+
+    val MATH_POSMOD: Int = 65
 
     val MATH_POW: Int = 18
 
@@ -296,6 +306,8 @@ open class VisualScriptBuiltinFunc(
     val STR_TO_VAR: Int = 60
 
     val TEXT_CHAR: Int = 54
+
+    val TEXT_ORD: Int = 67
 
     val TEXT_PRINT: Int = 56
 

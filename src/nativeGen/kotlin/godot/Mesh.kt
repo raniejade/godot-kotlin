@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.AABB
 import godot.core.Godot
 import godot.core.PoolVector3Array
 import godot.core.Variant
@@ -57,6 +58,11 @@ open class Mesh(
   fun generateTriangleMesh(): TriangleMesh {
     val _ret = __method_bind.generateTriangleMesh.call(this._handle)
     return _ret.asObject(::TriangleMesh)!!
+  }
+
+  fun getAabb(): AABB {
+    val _ret = __method_bind.getAabb.call(this._handle)
+    return _ret.asAABB()
   }
 
   fun getFaces(): PoolVector3Array {
@@ -356,6 +362,12 @@ open class Mesh(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Mesh".cstr.ptr,
             "generate_triangle_mesh".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method generate_triangle_mesh" }
+        }
+      val getAabb: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Mesh".cstr.ptr,
+            "get_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_aabb" }
         }
       val getFaces: CPointer<godot_method_bind>
         get() = memScoped {

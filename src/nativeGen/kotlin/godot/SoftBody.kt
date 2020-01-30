@@ -93,6 +93,14 @@ open class SoftBody(
       setPressureCoefficient(value)
     }
 
+  var rayPickable: Boolean
+    get() {
+       return isRayPickable() 
+    }
+    set(value) {
+      setRayPickable(value)
+    }
+
   var simulationPrecision: Int
     get() {
        return getSimulationPrecision() 

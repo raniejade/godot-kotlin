@@ -8,6 +8,7 @@ import godot.core.PoolVector2Array
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.Unit
@@ -22,6 +23,14 @@ import kotlinx.cinterop.reinterpret
 open class Line2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var antialiased: Boolean
+    get() {
+       return getAntialiased() 
+    }
+    set(value) {
+      setAntialiased(value)
+    }
+
   var beginCapMode: LineCapMode
     get() {
        return getBeginCapMode() 
@@ -110,6 +119,14 @@ open class Line2D(
       setWidth(value)
     }
 
+  var widthCurve: Curve
+    get() {
+       return getCurve() 
+    }
+    set(value) {
+      setCurve(value)
+    }
+
   /**
    * Specialized setter for defaultColor
    */
@@ -139,9 +156,19 @@ open class Line2D(
     __method_bind.clearPoints.call(this._handle)
   }
 
+  fun getAntialiased(): Boolean {
+    val _ret = __method_bind.getAntialiased.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun getBeginCapMode(): LineCapMode {
     val _ret = __method_bind.getBeginCapMode.call(this._handle)
     return Line2D.LineCapMode.from(_ret.asInt())
+  }
+
+  fun getCurve(): Curve {
+    val _ret = __method_bind.getCurve.call(this._handle)
+    return _ret.asObject(::Curve)!!
   }
 
   fun getDefaultColor(): Color {
@@ -210,9 +237,19 @@ open class Line2D(
     __method_bind.removePoint.call(this._handle, _arg, 1)
   }
 
+  fun setAntialiased(antialiased: Boolean) {
+    val _arg = Variant.new(antialiased)
+    __method_bind.setAntialiased.call(this._handle, _arg, 1)
+  }
+
   fun setBeginCapMode(mode: Int) {
     val _arg = Variant.new(mode)
     __method_bind.setBeginCapMode.call(this._handle, _arg, 1)
+  }
+
+  fun setCurve(curve: Curve) {
+    val _arg = Variant.new(curve)
+    __method_bind.setCurve.call(this._handle, _arg, 1)
   }
 
   fun setDefaultColor(color: Color) {
@@ -379,11 +416,23 @@ open class Line2D(
             "clear_points".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_points" }
         }
+      val getAntialiased: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+            "get_antialiased".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_antialiased" }
+        }
       val getBeginCapMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
             "get_begin_cap_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_begin_cap_mode" }
+        }
+      val getCurve: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+            "get_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_curve" }
         }
       val getDefaultColor: CPointer<godot_method_bind>
         get() = memScoped {
@@ -463,11 +512,23 @@ open class Line2D(
             "remove_point".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_point" }
         }
+      val setAntialiased: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+            "set_antialiased".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_antialiased" }
+        }
       val setBeginCapMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
             "set_begin_cap_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_begin_cap_mode" }
+        }
+      val setCurve: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+            "set_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_curve" }
         }
       val setDefaultColor: CPointer<godot_method_bind>
         get() = memScoped {

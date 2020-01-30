@@ -406,10 +406,10 @@ open class ItemList(
     __method_bind.setItemIconRegion.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun setItemIconTransposed(idx: Int, rect: Boolean) {
+  fun setItemIconTransposed(idx: Int, transposed: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
-    _args.append(rect)
+    _args.append(transposed)
     __method_bind.setItemIconTransposed.call(this._handle, _args.toVariant(), 2)
   }
 

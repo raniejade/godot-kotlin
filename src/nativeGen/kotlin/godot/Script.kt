@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -40,6 +41,32 @@ open class Script(
   fun getInstanceBaseType(): String {
     val _ret = __method_bind.getInstanceBaseType.call(this._handle)
     return _ret.asString()
+  }
+
+  fun getPropertyDefaultValue(property: String): Variant {
+    val _arg = Variant.new(property)
+    val _ret = __method_bind.getPropertyDefaultValue.call(this._handle, _arg, 1)
+    return _ret
+  }
+
+  fun getScriptConstantMap(): Dictionary {
+    val _ret = __method_bind.getScriptConstantMap.call(this._handle)
+    return _ret.asDictionary()
+  }
+
+  fun getScriptMethodList(): VariantArray {
+    val _ret = __method_bind.getScriptMethodList.call(this._handle)
+    return _ret.asVariantArray()
+  }
+
+  fun getScriptPropertyList(): VariantArray {
+    val _ret = __method_bind.getScriptPropertyList.call(this._handle)
+    return _ret.asVariantArray()
+  }
+
+  fun getScriptSignalList(): VariantArray {
+    val _ret = __method_bind.getScriptSignalList.call(this._handle)
+    return _ret.asVariantArray()
   }
 
   fun getSourceCode(): String {
@@ -102,6 +129,36 @@ open class Script(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "get_instance_base_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_instance_base_type" }
+        }
+      val getPropertyDefaultValue: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
+            "get_property_default_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_property_default_value" }
+        }
+      val getScriptConstantMap: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
+            "get_script_constant_map".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_script_constant_map" }
+        }
+      val getScriptMethodList: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
+            "get_script_method_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_script_method_list" }
+        }
+      val getScriptPropertyList: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
+            "get_script_property_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_script_property_list" }
+        }
+      val getScriptSignalList: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
+            "get_script_signal_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_script_signal_list" }
         }
       val getSourceCode: CPointer<godot_method_bind>
         get() = memScoped {

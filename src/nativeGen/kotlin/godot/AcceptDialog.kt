@@ -18,6 +18,14 @@ import kotlinx.cinterop.reinterpret
 open class AcceptDialog(
   _handle: COpaquePointer
 ) : WindowDialog(_handle) {
+  var dialogAutowrap: Boolean
+    get() {
+       return hasAutowrap() 
+    }
+    set(value) {
+      setAutowrap(value)
+    }
+
   var dialogHideOnOk: Boolean
     get() {
        return getHideOnOk() 
@@ -73,9 +81,19 @@ open class AcceptDialog(
     return _ret.asString()
   }
 
+  fun hasAutowrap(): Boolean {
+    val _ret = __method_bind.hasAutowrap.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun registerTextEnter(lineEdit: Node) {
     val _arg = Variant.new(lineEdit)
     __method_bind.registerTextEnter.call(this._handle, _arg, 1)
+  }
+
+  fun setAutowrap(autowrap: Boolean) {
+    val _arg = Variant.new(autowrap)
+    __method_bind.setAutowrap.call(this._handle, _arg, 1)
   }
 
   fun setHideOnOk(enabled: Boolean) {
@@ -144,12 +162,26 @@ open class AcceptDialog(
             "get_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_text" }
         }
+      val hasAutowrap: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
+            "has_autowrap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_autowrap" }
+        }
       val registerTextEnter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
             "register_text_enter".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method register_text_enter" }
+        }
+      val setAutowrap: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
+            "set_autowrap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_autowrap" }
         }
       val setHideOnOk: CPointer<godot_method_bind>
         get() = memScoped {

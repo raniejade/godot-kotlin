@@ -66,16 +66,6 @@ open class EditorSceneImporter(
 
     val IMPORT_USE_COMPRESSION: Int = 2048
 
-    fun new(): EditorSceneImporter = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSceneImporter".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorSceneImporter" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorSceneImporter(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorSceneImporter = EditorSceneImporter(ptr)
     /**
      * Container for method_bind pointers for EditorSceneImporter
      */

@@ -108,6 +108,14 @@ open class LineEdit(
       setPlaceholder(value)
     }
 
+  var rightIcon: Texture
+    get() {
+       return getRightIcon() 
+    }
+    set(value) {
+      setRightIcon(value)
+    }
+
   var secret: Boolean
     get() {
        return isSecret() 
@@ -122,6 +130,22 @@ open class LineEdit(
     }
     set(value) {
       setSecretCharacter(value)
+    }
+
+  var selectingEnabled: Boolean
+    get() {
+       return isSelectingEnabled() 
+    }
+    set(value) {
+      setSelectingEnabled(value)
+    }
+
+  var shortcutKeysEnabled: Boolean
+    get() {
+       return isShortcutKeysEnabled() 
+    }
+    set(value) {
+      setShortcutKeysEnabled(value)
     }
 
   var text: String
@@ -200,6 +224,11 @@ open class LineEdit(
     return _ret.asFloat()
   }
 
+  fun getRightIcon(): Texture {
+    val _ret = __method_bind.getRightIcon.call(this._handle)
+    return _ret.asObject(::Texture)!!
+  }
+
   fun getSecretCharacter(): String {
     val _ret = __method_bind.getSecretCharacter.call(this._handle)
     return _ret.asString()
@@ -227,6 +256,16 @@ open class LineEdit(
 
   fun isSecret(): Boolean {
     val _ret = __method_bind.isSecret.call(this._handle)
+    return _ret.asBoolean()
+  }
+
+  fun isSelectingEnabled(): Boolean {
+    val _ret = __method_bind.isSelectingEnabled.call(this._handle)
+    return _ret.asBoolean()
+  }
+
+  fun isShortcutKeysEnabled(): Boolean {
+    val _ret = __method_bind.isShortcutKeysEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -291,6 +330,11 @@ open class LineEdit(
     __method_bind.setPlaceholderAlpha.call(this._handle, _arg, 1)
   }
 
+  fun setRightIcon(icon: Texture) {
+    val _arg = Variant.new(icon)
+    __method_bind.setRightIcon.call(this._handle, _arg, 1)
+  }
+
   fun setSecret(enabled: Boolean) {
     val _arg = Variant.new(enabled)
     __method_bind.setSecret.call(this._handle, _arg, 1)
@@ -299,6 +343,16 @@ open class LineEdit(
   fun setSecretCharacter(character: String) {
     val _arg = Variant.new(character)
     __method_bind.setSecretCharacter.call(this._handle, _arg, 1)
+  }
+
+  fun setSelectingEnabled(enable: Boolean) {
+    val _arg = Variant.new(enable)
+    __method_bind.setSelectingEnabled.call(this._handle, _arg, 1)
+  }
+
+  fun setShortcutKeysEnabled(enable: Boolean) {
+    val _arg = Variant.new(enable)
+    __method_bind.setShortcutKeysEnabled.call(this._handle, _arg, 1)
   }
 
   fun setText(text: String) {
@@ -482,6 +536,12 @@ open class LineEdit(
             "get_placeholder_alpha".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_placeholder_alpha" }
         }
+      val getRightIcon: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+            "get_right_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_right_icon" }
+        }
       val getSecretCharacter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
@@ -517,6 +577,18 @@ open class LineEdit(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
             "is_secret".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_secret" }
+        }
+      val isSelectingEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+            "is_selecting_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_selecting_enabled" }
+        }
+      val isShortcutKeysEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+            "is_shortcut_keys_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_shortcut_keys_enabled" }
         }
       val menuOption: CPointer<godot_method_bind>
         get() = memScoped {
@@ -590,6 +662,12 @@ open class LineEdit(
             "set_placeholder_alpha".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_placeholder_alpha" }
         }
+      val setRightIcon: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+            "set_right_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_right_icon" }
+        }
       val setSecret: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
@@ -601,6 +679,18 @@ open class LineEdit(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
             "set_secret_character".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_secret_character" }
+        }
+      val setSelectingEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+            "set_selecting_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_selecting_enabled" }
+        }
+      val setShortcutKeysEnabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+            "set_shortcut_keys_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shortcut_keys_enabled" }
         }
       val setText: CPointer<godot_method_bind>
         get() = memScoped {

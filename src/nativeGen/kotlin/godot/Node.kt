@@ -66,6 +66,14 @@ open class Node(
       setPauseMode(value.value)
     }
 
+  var processPriority: Int
+    get() {
+       return getProcessPriority() 
+    }
+    set(value) {
+      setProcessPriority(value)
+    }
+
   fun addChild(node: Node, legibleUniqueName: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(node)
@@ -230,6 +238,11 @@ open class Node(
   fun getProcessDeltaTime(): Float {
     val _ret = __method_bind.getProcessDeltaTime.call(this._handle)
     return _ret.asFloat()
+  }
+
+  fun getProcessPriority(): Int {
+    val _ret = __method_bind.getProcessPriority.call(this._handle)
+    return _ret.asInt()
   }
 
   fun getSceneInstanceLoadPlaceholder(): Boolean {
@@ -558,6 +571,10 @@ open class Node(
     __method_bind.setSceneInstanceLoadPlaceholder.call(this._handle, _arg, 1)
   }
 
+  fun updateConfigurationWarning() {
+    __method_bind.updateConfigurationWarning.call(this._handle)
+  }
+
   enum class PauseMode(
     val value: Int
   ) {
@@ -610,6 +627,10 @@ open class Node(
     val DUPLICATE_SIGNALS: Int = 1
 
     val DUPLICATE_USE_INSTANCING: Int = 8
+
+    val NOTIFICATION_APP_PAUSED: Int = 1015
+
+    val NOTIFICATION_APP_RESUMED: Int = 1014
 
     val NOTIFICATION_CRASH: Int = 1012
 
@@ -853,6 +874,12 @@ open class Node(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_process_delta_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_process_delta_time" }
+        }
+      val getProcessPriority: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
+            "get_process_priority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_process_priority" }
         }
       val getSceneInstanceLoadPlaceholder: CPointer<godot_method_bind>
         get() = memScoped {
@@ -1198,6 +1225,12 @@ open class Node(
             "set_scene_instance_load_placeholder".cstr.ptr)
           requireNotNull(ptr) {
             "No method_bind found for method set_scene_instance_load_placeholder" }
+        }
+      val updateConfigurationWarning: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
+            "update_configuration_warning".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_configuration_warning" }
         }}
   }
 }

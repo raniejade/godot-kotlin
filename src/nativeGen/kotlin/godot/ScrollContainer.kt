@@ -18,6 +18,14 @@ import kotlinx.cinterop.reinterpret
 open class ScrollContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  var followFocus: Boolean
+    get() {
+       return isFollowingFocus() 
+    }
+    set(value) {
+      setFollowFocus(value)
+    }
+
   var scrollDeadzone: Int
     get() {
        return getDeadzone() 
@@ -83,6 +91,11 @@ open class ScrollContainer(
     return _ret.asObject(::VScrollBar)!!
   }
 
+  fun isFollowingFocus(): Boolean {
+    val _ret = __method_bind.isFollowingFocus.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun isHScrollEnabled(): Boolean {
     val _ret = __method_bind.isHScrollEnabled.call(this._handle)
     return _ret.asBoolean()
@@ -106,6 +119,11 @@ open class ScrollContainer(
   fun setEnableVScroll(enable: Boolean) {
     val _arg = Variant.new(enable)
     __method_bind.setEnableVScroll.call(this._handle, _arg, 1)
+  }
+
+  fun setFollowFocus(enabled: Boolean) {
+    val _arg = Variant.new(enabled)
+    __method_bind.setFollowFocus.call(this._handle, _arg, 1)
   }
 
   fun setHScroll(value: Int) {
@@ -168,6 +186,13 @@ open class ScrollContainer(
             "get_v_scrollbar".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_v_scrollbar" }
         }
+      val isFollowingFocus: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
+            "is_following_focus".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_following_focus" }
+        }
       val isHScrollEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -202,6 +227,13 @@ open class ScrollContainer(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
             "set_enable_v_scroll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_enable_v_scroll" }
+        }
+      val setFollowFocus: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
+            "set_follow_focus".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_follow_focus" }
         }
       val setHScroll: CPointer<godot_method_bind>
         get() = memScoped {

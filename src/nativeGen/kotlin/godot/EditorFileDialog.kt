@@ -267,16 +267,6 @@ open class EditorFileDialog(
 
     val MODE_SAVE_FILE: Int = 4
 
-    fun new(): EditorFileDialog = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorFileDialog".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorFileDialog" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorFileDialog(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorFileDialog = EditorFileDialog(ptr)
     /**
      * Container for method_bind pointers for EditorFileDialog
      */

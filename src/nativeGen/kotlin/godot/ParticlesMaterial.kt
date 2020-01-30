@@ -158,6 +158,14 @@ open class ParticlesMaterial(
       setParamRandomness(6, value)
     }
 
+  var direction: Vector3
+    get() {
+       return getDirection() 
+    }
+    set(value) {
+      setDirection(value)
+    }
+
   var emissionBoxExtents: Vector3
     get() {
        return getEmissionBoxExtents() 
@@ -292,6 +300,14 @@ open class ParticlesMaterial(
     }
     set(value) {
       setParamRandomness(0, value)
+    }
+
+  var lifetimeRandomness: Float
+    get() {
+       return getLifetimeRandomness() 
+    }
+    set(value) {
+      setLifetimeRandomness(value)
     }
 
   var linearAccel: Float
@@ -456,6 +472,15 @@ open class ParticlesMaterial(
   }
 
   /**
+   * Specialized setter for direction
+   */
+  fun direction(cb: Vector3.() -> Unit) {
+    val _p = direction
+    cb(_p)
+    direction = _p
+  }
+
+  /**
    * Specialized setter for emissionBoxExtents
    */
   fun emissionBoxExtents(cb: Vector3.() -> Unit) {
@@ -481,6 +506,11 @@ open class ParticlesMaterial(
   fun getColorRamp(): Texture {
     val _ret = __method_bind.getColorRamp.call(this._handle)
     return _ret.asObject(::Texture)!!
+  }
+
+  fun getDirection(): Vector3 {
+    val _ret = __method_bind.getDirection.call(this._handle)
+    return _ret.asVector3()
   }
 
   fun getEmissionBoxExtents(): Vector3 {
@@ -534,6 +564,11 @@ open class ParticlesMaterial(
     return _ret.asVector3()
   }
 
+  fun getLifetimeRandomness(): Float {
+    val _ret = __method_bind.getLifetimeRandomness.call(this._handle)
+    return _ret.asFloat()
+  }
+
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
     val _ret = __method_bind.getParam.call(this._handle, _arg, 1)
@@ -580,6 +615,11 @@ open class ParticlesMaterial(
   fun setColorRamp(ramp: Texture) {
     val _arg = Variant.new(ramp)
     __method_bind.setColorRamp.call(this._handle, _arg, 1)
+  }
+
+  fun setDirection(degrees: Vector3) {
+    val _arg = Variant.new(degrees)
+    __method_bind.setDirection.call(this._handle, _arg, 1)
   }
 
   fun setEmissionBoxExtents(extents: Vector3) {
@@ -632,6 +672,11 @@ open class ParticlesMaterial(
   fun setGravity(accelVec: Vector3) {
     val _arg = Variant.new(accelVec)
     __method_bind.setGravity.call(this._handle, _arg, 1)
+  }
+
+  fun setLifetimeRandomness(randomness: Float) {
+    val _arg = Variant.new(randomness)
+    __method_bind.setLifetimeRandomness.call(this._handle, _arg, 1)
   }
 
   fun setParam(param: Int, value: Float) {
@@ -709,7 +754,9 @@ open class ParticlesMaterial(
 
     EMISSION_SHAPE_POINTS(3),
 
-    EMISSION_SHAPE_DIRECTED_POINTS(4);
+    EMISSION_SHAPE_DIRECTED_POINTS(4),
+
+    EMISSION_SHAPE_MAX(5);
 
     companion object {
       fun from(value: Int): EmissionShape {
@@ -768,6 +815,8 @@ open class ParticlesMaterial(
     val EMISSION_SHAPE_BOX: Int = 2
 
     val EMISSION_SHAPE_DIRECTED_POINTS: Int = 4
+
+    val EMISSION_SHAPE_MAX: Int = 5
 
     val EMISSION_SHAPE_POINT: Int = 0
 
@@ -836,6 +885,13 @@ open class ParticlesMaterial(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_color_ramp".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_color_ramp" }
+        }
+      val getDirection: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
+            "get_direction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_direction" }
         }
       val getEmissionBoxExtents: CPointer<godot_method_bind>
         get() = memScoped {
@@ -907,6 +963,13 @@ open class ParticlesMaterial(
             "get_gravity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_gravity" }
         }
+      val getLifetimeRandomness: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
+            "get_lifetime_randomness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_lifetime_randomness" }
+        }
       val getParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -969,6 +1032,13 @@ open class ParticlesMaterial(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_color_ramp".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_color_ramp" }
+        }
+      val setDirection: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
+            "set_direction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_direction" }
         }
       val setEmissionBoxExtents: CPointer<godot_method_bind>
         get() = memScoped {
@@ -1039,6 +1109,13 @@ open class ParticlesMaterial(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_gravity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_gravity" }
+        }
+      val setLifetimeRandomness: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
+            "set_lifetime_randomness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_lifetime_randomness" }
         }
       val setParam: CPointer<godot_method_bind>
         get() = memScoped {

@@ -58,9 +58,11 @@ open class InputEvent(
     return _ret.asBoolean()
   }
 
-  fun isActionPressed(action: String): Boolean {
-    val _arg = Variant.new(action)
-    val _ret = __method_bind.isActionPressed.call(this._handle, _arg, 1)
+  fun isActionPressed(action: String, allowEcho: Boolean = false): Boolean {
+    val _args = VariantArray.new()
+    _args.append(action)
+    _args.append(allowEcho)
+    val _ret = __method_bind.isActionPressed.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 

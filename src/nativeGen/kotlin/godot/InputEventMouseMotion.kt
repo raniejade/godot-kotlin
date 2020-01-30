@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Float
 import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,6 +19,14 @@ import kotlinx.cinterop.reinterpret
 open class InputEventMouseMotion(
   _handle: COpaquePointer
 ) : InputEventMouse(_handle) {
+  var pressure: Float
+    get() {
+       return getPressure() 
+    }
+    set(value) {
+      setPressure(value)
+    }
+
   var relative: Vector2
     get() {
        return getRelative() 
@@ -32,6 +41,14 @@ open class InputEventMouseMotion(
     }
     set(value) {
       setSpeed(value)
+    }
+
+  var tilt: Vector2
+    get() {
+       return getTilt() 
+    }
+    set(value) {
+      setTilt(value)
     }
 
   /**
@@ -52,6 +69,20 @@ open class InputEventMouseMotion(
     speed = _p
   }
 
+  /**
+   * Specialized setter for tilt
+   */
+  fun tilt(cb: Vector2.() -> Unit) {
+    val _p = tilt
+    cb(_p)
+    tilt = _p
+  }
+
+  fun getPressure(): Float {
+    val _ret = __method_bind.getPressure.call(this._handle)
+    return _ret.asFloat()
+  }
+
   fun getRelative(): Vector2 {
     val _ret = __method_bind.getRelative.call(this._handle)
     return _ret.asVector2()
@@ -62,6 +93,16 @@ open class InputEventMouseMotion(
     return _ret.asVector2()
   }
 
+  fun getTilt(): Vector2 {
+    val _ret = __method_bind.getTilt.call(this._handle)
+    return _ret.asVector2()
+  }
+
+  fun setPressure(pressure: Float) {
+    val _arg = Variant.new(pressure)
+    __method_bind.setPressure.call(this._handle, _arg, 1)
+  }
+
   fun setRelative(relative: Vector2) {
     val _arg = Variant.new(relative)
     __method_bind.setRelative.call(this._handle, _arg, 1)
@@ -70,6 +111,11 @@ open class InputEventMouseMotion(
   fun setSpeed(speed: Vector2) {
     val _arg = Variant.new(speed)
     __method_bind.setSpeed.call(this._handle, _arg, 1)
+  }
+
+  fun setTilt(tilt: Vector2) {
+    val _arg = Variant.new(tilt)
+    __method_bind.setTilt.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -87,6 +133,13 @@ open class InputEventMouseMotion(
      * Container for method_bind pointers for InputEventMouseMotion
      */
     private object __method_bind {
+      val getPressure: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
+            "get_pressure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pressure" }
+        }
       val getRelative: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -101,6 +154,20 @@ open class InputEventMouseMotion(
             "get_speed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_speed" }
         }
+      val getTilt: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
+            "get_tilt".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tilt" }
+        }
+      val setPressure: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
+            "set_pressure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pressure" }
+        }
       val setRelative: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -114,6 +181,13 @@ open class InputEventMouseMotion(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
             "set_speed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_speed" }
+        }
+      val setTilt: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
+            "set_tilt".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tilt" }
         }}
   }
 }

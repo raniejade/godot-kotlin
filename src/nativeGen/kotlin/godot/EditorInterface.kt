@@ -30,6 +30,11 @@ open class EditorInterface(
     return _ret.asObject(::Control)!!
   }
 
+  fun getCurrentPath(): String {
+    val _ret = __method_bind.getCurrentPath.call(this._handle)
+    return _ret.asString()
+  }
+
   fun getEditedSceneRoot(): Node {
     val _ret = __method_bind.getEditedSceneRoot.call(this._handle)
     return _ret.asObject(::Node)!!
@@ -128,6 +133,16 @@ open class EditorInterface(
     __method_bind.selectFile.call(this._handle, _arg, 1)
   }
 
+  fun setDistractionFreeMode(enter: Boolean) {
+    val _arg = Variant.new(enter)
+    __method_bind.setDistractionFreeMode.call(this._handle, _arg, 1)
+  }
+
+  fun setMainScreenEditor(name: String) {
+    val _arg = Variant.new(name)
+    __method_bind.setMainScreenEditor.call(this._handle, _arg, 1)
+  }
+
   fun setPluginEnabled(plugin: String, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(plugin)
@@ -153,6 +168,13 @@ open class EditorInterface(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
             "get_base_control".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_base_control" }
+        }
+      val getCurrentPath: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+            "get_current_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_path" }
         }
       val getEditedSceneRoot: CPointer<godot_method_bind>
         get() = memScoped {
@@ -279,6 +301,20 @@ open class EditorInterface(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
             "select_file".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method select_file" }
+        }
+      val setDistractionFreeMode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+            "set_distraction_free_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_distraction_free_mode" }
+        }
+      val setMainScreenEditor: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+            "set_main_screen_editor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_main_screen_editor" }
         }
       val setPluginEnabled: CPointer<godot_method_bind>
         get() = memScoped {

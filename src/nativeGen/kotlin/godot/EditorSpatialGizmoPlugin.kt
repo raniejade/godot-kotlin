@@ -72,16 +72,6 @@ open class EditorSpatialGizmoPlugin(
   }
 
   companion object {
-    fun new(): EditorSpatialGizmoPlugin = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSpatialGizmoPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorSpatialGizmoPlugin" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorSpatialGizmoPlugin(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorSpatialGizmoPlugin = EditorSpatialGizmoPlugin(ptr)
     /**
      * Container for method_bind pointers for EditorSpatialGizmoPlugin
      */

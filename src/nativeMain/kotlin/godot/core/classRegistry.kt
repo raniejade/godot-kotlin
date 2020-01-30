@@ -8,7 +8,7 @@ import kotlin.reflect.KCallable
 import kotlin.reflect.KMutableProperty1
 
 class ClassRegistry(val handle: COpaquePointer) {
-  inline fun <reified S: Object, reified T: S> registerClass(info: GodotClass<T>) {
+  inline fun <reified S: Object, reified T: S> registerClass(info: GodotClass<S, T>) {
     val className = T::class.simpleName!!
     val superClassName = S::class.simpleName!!
     val classHandle = ClassHandle(handle, className, superClassName, info)
@@ -16,11 +16,11 @@ class ClassRegistry(val handle: COpaquePointer) {
   }
 }
 
-class ClassHandle<T: Object>(
+class ClassHandle<S: Object, T: S>(
   val handle: COpaquePointer,
   val className: String,
   val superClassName: String,
-  val info: GodotClass<T>
+  val info: GodotClass<S, T>
 ) {
   fun create(instance: COpaquePointer): T {
     return info.factory(instance)
@@ -188,7 +188,7 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
 }
 
 fun createInstance(instance: COpaquePointer?, methodData: COpaquePointer?): COpaquePointer? {
-  val classHandle = checkNotNull(methodData).asStableRef<ClassHandle<Object>>()
+  val classHandle = checkNotNull(methodData).asStableRef<ClassHandle<Object, Object>>()
     .get()
   val kotlinInstance = classHandle.create(checkNotNull(instance))
   kotlinInstance._onInit()
@@ -197,7 +197,7 @@ fun createInstance(instance: COpaquePointer?, methodData: COpaquePointer?): COpa
 }
 
 fun destroyInstance(instance: COpaquePointer?, methodData: COpaquePointer?, classData: COpaquePointer?) {
-  val classHandleRef = checkNotNull(methodData).asStableRef<ClassHandle<Object>>()
+  val classHandleRef = checkNotNull(methodData).asStableRef<ClassHandle<Object, Object>>()
   val kotlinInstanceRef = checkNotNull(classData).asStableRef<Object>()
   val kotlinInstance = kotlinInstanceRef.get()
   kotlinInstance._onDestroy()
@@ -205,7 +205,7 @@ fun destroyInstance(instance: COpaquePointer?, methodData: COpaquePointer?, clas
   kotlinInstanceRef.dispose()
 }
 
-abstract class GodotClass<T: Object>(
+abstract class GodotClass<S: Object, T: S>(
   val factory: (COpaquePointer) -> T
 ) {
   open fun init(registry: ClassMemberRegistry<T>) {}

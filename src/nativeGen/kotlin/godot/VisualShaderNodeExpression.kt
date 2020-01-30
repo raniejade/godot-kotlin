@@ -25,10 +25,6 @@ open class VisualShaderNodeExpression(
       setExpression(value)
     }
 
-  fun build() {
-    __method_bind.build.call(this._handle)
-  }
-
   fun getExpression(): String {
     val _ret = __method_bind.getExpression.call(this._handle)
     return _ret.asString()
@@ -54,13 +50,6 @@ open class VisualShaderNodeExpression(
      * Container for method_bind pointers for VisualShaderNodeExpression
      */
     private object __method_bind {
-      val build: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
-            "build".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method build" }
-        }
       val getExpression: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =

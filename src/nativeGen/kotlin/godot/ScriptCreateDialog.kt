@@ -21,26 +21,18 @@ open class ScriptCreateDialog(
   fun config(
     inherits: String,
     path: String,
-    builtInEnabled: Boolean = true
+    builtInEnabled: Boolean = true,
+    loadEnabled: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(inherits)
     _args.append(path)
     _args.append(builtInEnabled)
-    __method_bind.config.call(this._handle, _args.toVariant(), 3)
+    _args.append(loadEnabled)
+    __method_bind.config.call(this._handle, _args.toVariant(), 4)
   }
 
   companion object {
-    fun new(): ScriptCreateDialog = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("ScriptCreateDialog".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for ScriptCreateDialog" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ScriptCreateDialog(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): ScriptCreateDialog = ScriptCreateDialog(ptr)
     /**
      * Container for method_bind pointers for ScriptCreateDialog
      */

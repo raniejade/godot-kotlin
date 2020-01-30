@@ -12,12 +12,21 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourceFormatLoaderWebm(
+open class PointMesh(
   _handle: COpaquePointer
-) : ResourceFormatLoader(_handle) {
+) : PrimitiveMesh(_handle) {
   companion object {
+    fun new(): PointMesh = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PointMesh".cstr.ptr)
+      requireNotNull(fnPtr) { "No instance found for PointMesh" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+      PointMesh(
+        fn()
+      )
+    }
+    fun from(ptr: COpaquePointer): PointMesh = PointMesh(ptr)
     /**
-     * Container for method_bind pointers for ResourceFormatLoaderWebm
+     * Container for method_bind pointers for PointMesh
      */
     private object __method_bind
   }

@@ -6,6 +6,7 @@ import godot.core.Color
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Boolean
 import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -26,6 +27,14 @@ open class ReferenceRect(
       setBorderColor(value)
     }
 
+  var editorOnly: Boolean
+    get() {
+       return getEditorOnly() 
+    }
+    set(value) {
+      setEditorOnly(value)
+    }
+
   /**
    * Specialized setter for borderColor
    */
@@ -40,9 +49,19 @@ open class ReferenceRect(
     return _ret.asColor()
   }
 
+  fun getEditorOnly(): Boolean {
+    val _ret = __method_bind.getEditorOnly.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun setBorderColor(color: Color) {
     val _arg = Variant.new(color)
     __method_bind.setBorderColor.call(this._handle, _arg, 1)
+  }
+
+  fun setEditorOnly(enabled: Boolean) {
+    val _arg = Variant.new(enabled)
+    __method_bind.setEditorOnly.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -66,12 +85,26 @@ open class ReferenceRect(
             "get_border_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_border_color" }
         }
+      val getEditorOnly: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
+            "get_editor_only".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_editor_only" }
+        }
       val setBorderColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
             "set_border_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_border_color" }
+        }
+      val setEditorOnly: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
+            "set_editor_only".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_editor_only" }
         }}
   }
 }

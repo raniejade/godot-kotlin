@@ -30,6 +30,14 @@ open class BakedLightmap(
       setBakeCellSize(value)
     }
 
+  var bakeDefaultTexelsPerUnit: Float
+    get() {
+       return getBakeDefaultTexelsPerUnit() 
+    }
+    set(value) {
+      setBakeDefaultTexelsPerUnit(value)
+    }
+
   var bakeEnergy: Float
     get() {
        return getEnergy() 
@@ -128,6 +136,11 @@ open class BakedLightmap(
     return _ret.asFloat()
   }
 
+  fun getBakeDefaultTexelsPerUnit(): Float {
+    val _ret = __method_bind.getBakeDefaultTexelsPerUnit.call(this._handle)
+    return _ret.asFloat()
+  }
+
   fun getBakeMode(): BakeMode {
     val _ret = __method_bind.getBakeMode.call(this._handle)
     return BakedLightmap.BakeMode.from(_ret.asInt())
@@ -176,6 +189,11 @@ open class BakedLightmap(
   fun setBakeCellSize(bakeCellSize: Float) {
     val _arg = Variant.new(bakeCellSize)
     __method_bind.setBakeCellSize.call(this._handle, _arg, 1)
+  }
+
+  fun setBakeDefaultTexelsPerUnit(texels: Float) {
+    val _arg = Variant.new(texels)
+    __method_bind.setBakeDefaultTexelsPerUnit.call(this._handle, _arg, 1)
   }
 
   fun setBakeMode(bakeMode: Int) {
@@ -343,6 +361,13 @@ open class BakedLightmap(
             "get_bake_cell_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bake_cell_size" }
         }
+      val getBakeDefaultTexelsPerUnit: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "get_bake_default_texels_per_unit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bake_default_texels_per_unit" }
+        }
       val getBakeMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -412,6 +437,13 @@ open class BakedLightmap(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
             "set_bake_cell_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bake_cell_size" }
+        }
+      val setBakeDefaultTexelsPerUnit: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_bake_default_texels_per_unit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bake_default_texels_per_unit" }
         }
       val setBakeMode: CPointer<godot_method_bind>
         get() = memScoped {

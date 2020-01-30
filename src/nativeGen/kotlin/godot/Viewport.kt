@@ -223,6 +223,14 @@ open class Viewport(
       setSize(value)
     }
 
+  var sizeOverrideStretch: Boolean
+    get() {
+       return isSizeOverrideStretchEnabled() 
+    }
+    set(value) {
+      setSizeOverrideStretch(value)
+    }
+
   var transparentBg: Boolean
     get() {
        return hasTransparentBackground() 

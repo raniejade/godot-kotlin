@@ -86,6 +86,11 @@ open class _Engine(
     return _ret.asFloat()
   }
 
+  fun getIdleFrames(): Int {
+    val _ret = __method_bind.getIdleFrames.call(this._handle)
+    return _ret.asInt()
+  }
+
   fun getIterationsPerSecond(): Int {
     val _ret = __method_bind.getIterationsPerSecond.call(this._handle)
     return _ret.asInt()
@@ -104,6 +109,16 @@ open class _Engine(
   fun getMainLoop(): MainLoop {
     val _ret = __method_bind.getMainLoop.call(this._handle)
     return _ret.asObject(::MainLoop)!!
+  }
+
+  fun getPhysicsFrames(): Int {
+    val _ret = __method_bind.getPhysicsFrames.call(this._handle)
+    return _ret.asInt()
+  }
+
+  fun getPhysicsInterpolationFraction(): Float {
+    val _ret = __method_bind.getPhysicsInterpolationFraction.call(this._handle)
+    return _ret.asFloat()
   }
 
   fun getPhysicsJitterFix(): Float {
@@ -216,6 +231,12 @@ open class _Engine(
             "get_frames_per_second".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_frames_per_second" }
         }
+      val getIdleFrames: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
+            "get_idle_frames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_idle_frames" }
+        }
       val getIterationsPerSecond: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
@@ -239,6 +260,19 @@ open class _Engine(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
             "get_main_loop".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_main_loop" }
+        }
+      val getPhysicsFrames: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
+            "get_physics_frames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_physics_frames" }
+        }
+      val getPhysicsInterpolationFraction: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
+            "get_physics_interpolation_fraction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_physics_interpolation_fraction"
+            }
         }
       val getPhysicsJitterFix: CPointer<godot_method_bind>
         get() = memScoped {

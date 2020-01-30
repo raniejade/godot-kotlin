@@ -28,8 +28,21 @@ open class PacketPeer(
       setAllowObjectDecoding(value)
     }
 
+  var encodeBufferMaxSize: Int
+    get() {
+       return getEncodeBufferMaxSize() 
+    }
+    set(value) {
+      setEncodeBufferMaxSize(value)
+    }
+
   fun getAvailablePacketCount(): Int {
     val _ret = __method_bind.getAvailablePacketCount.call(this._handle)
+    return _ret.asInt()
+  }
+
+  fun getEncodeBufferMaxSize(): Int {
+    val _ret = __method_bind.getEncodeBufferMaxSize.call(this._handle)
     return _ret.asInt()
   }
 
@@ -73,6 +86,11 @@ open class PacketPeer(
     __method_bind.setAllowObjectDecoding.call(this._handle, _arg, 1)
   }
 
+  fun setEncodeBufferMaxSize(maxSize: Int) {
+    val _arg = Variant.new(maxSize)
+    __method_bind.setEncodeBufferMaxSize.call(this._handle, _arg, 1)
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for PacketPeer
@@ -83,6 +101,12 @@ open class PacketPeer(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
             "get_available_packet_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_available_packet_count" }
+        }
+      val getEncodeBufferMaxSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
+            "get_encode_buffer_max_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_encode_buffer_max_size" }
         }
       val getPacket: CPointer<godot_method_bind>
         get() = memScoped {
@@ -125,6 +149,12 @@ open class PacketPeer(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
             "set_allow_object_decoding".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_allow_object_decoding" }
+        }
+      val setEncodeBufferMaxSize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
+            "set_encode_buffer_max_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_encode_buffer_max_size" }
         }}
   }
 }

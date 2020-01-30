@@ -69,16 +69,6 @@ open class EditorExportPlugin(
   }
 
   companion object {
-    fun new(): EditorExportPlugin = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorExportPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorExportPlugin" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorExportPlugin(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorExportPlugin = EditorExportPlugin(ptr)
     /**
      * Container for method_bind pointers for EditorExportPlugin
      */

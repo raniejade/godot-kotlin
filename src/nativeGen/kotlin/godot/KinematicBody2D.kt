@@ -37,6 +37,11 @@ open class KinematicBody2D(
       setSyncToPhysics(value)
     }
 
+  fun getFloorNormal(): Vector2 {
+    val _ret = __method_bind.getFloorNormal.call(this._handle)
+    return _ret.asVector2()
+  }
+
   fun getFloorVelocity(): Vector2 {
     val _ret = __method_bind.getFloorVelocity.call(this._handle)
     return _ret.asVector2()
@@ -95,7 +100,7 @@ open class KinematicBody2D(
 
   fun moveAndSlide(
     linearVelocity: Vector2,
-    floorNormal: Vector2 = Vector2.new(0, 0),
+    upDirection: Vector2 = Vector2.new(0, 0),
     stopOnSlope: Boolean = false,
     maxSlides: Int = 4,
     floorMaxAngle: Float = 0.785398f,
@@ -103,7 +108,7 @@ open class KinematicBody2D(
   ): Vector2 {
     val _args = VariantArray.new()
     _args.append(linearVelocity)
-    _args.append(floorNormal)
+    _args.append(upDirection)
     _args.append(stopOnSlope)
     _args.append(maxSlides)
     _args.append(floorMaxAngle)
@@ -115,7 +120,7 @@ open class KinematicBody2D(
   fun moveAndSlideWithSnap(
     linearVelocity: Vector2,
     snap: Vector2,
-    floorNormal: Vector2 = Vector2.new(0, 0),
+    upDirection: Vector2 = Vector2.new(0, 0),
     stopOnSlope: Boolean = false,
     maxSlides: Int = 4,
     floorMaxAngle: Float = 0.785398f,
@@ -124,7 +129,7 @@ open class KinematicBody2D(
     val _args = VariantArray.new()
     _args.append(linearVelocity)
     _args.append(snap)
-    _args.append(floorNormal)
+    _args.append(upDirection)
     _args.append(stopOnSlope)
     _args.append(maxSlides)
     _args.append(floorMaxAngle)
@@ -171,6 +176,13 @@ open class KinematicBody2D(
      * Container for method_bind pointers for KinematicBody2D
      */
     private object __method_bind {
+      val getFloorNormal: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
+            "get_floor_normal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_floor_normal" }
+        }
       val getFloorVelocity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =

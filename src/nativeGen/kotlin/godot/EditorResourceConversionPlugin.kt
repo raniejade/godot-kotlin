@@ -16,17 +16,6 @@ open class EditorResourceConversionPlugin(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   companion object {
-    fun new(): EditorResourceConversionPlugin = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorResourceConversionPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorResourceConversionPlugin" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorResourceConversionPlugin(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorResourceConversionPlugin =
-        EditorResourceConversionPlugin(ptr)
     /**
      * Container for method_bind pointers for EditorResourceConversionPlugin
      */

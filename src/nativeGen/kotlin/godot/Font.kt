@@ -81,10 +81,10 @@ open class Font(
     return _ret.asVector2()
   }
 
-  fun getWordwrapStringSize(string: String, pWidth: Float): Vector2 {
+  fun getWordwrapStringSize(string: String, width: Float): Vector2 {
     val _args = VariantArray.new()
     _args.append(string)
-    _args.append(pWidth)
+    _args.append(width)
     val _ret = __method_bind.getWordwrapStringSize.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector2()
   }

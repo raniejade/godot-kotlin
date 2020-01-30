@@ -63,6 +63,12 @@ open class TreeItem(
     __method_bind.addButton.call(this._handle, _args.toVariant(), 5)
   }
 
+  fun callRecursive(method: String): Variant {
+    val _arg = Variant.new(method)
+    val _ret = __method_bind.callRecursive.call(this._handle, _arg, 1)
+    return _ret
+  }
+
   fun clearCustomBgColor(column: Int) {
     val _arg = Variant.new(column)
     __method_bind.clearCustomBgColor.call(this._handle, _arg, 1)
@@ -99,6 +105,14 @@ open class TreeItem(
     return _ret.asInt()
   }
 
+  fun getButtonTooltip(column: Int, buttonIdx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(buttonIdx)
+    val _ret = __method_bind.getButtonTooltip.call(this._handle, _args.toVariant(), 2)
+    return _ret.asString()
+  }
+
   fun getCellMode(column: Int): TreeCellMode {
     val _arg = Variant.new(column)
     val _ret = __method_bind.getCellMode.call(this._handle, _arg, 1)
@@ -113,6 +127,12 @@ open class TreeItem(
   fun getCustomBgColor(column: Int): Color {
     val _arg = Variant.new(column)
     val _ret = __method_bind.getCustomBgColor.call(this._handle, _arg, 1)
+    return _ret.asColor()
+  }
+
+  fun getCustomColor(column: Int): Color {
+    val _arg = Variant.new(column)
+    val _ret = __method_bind.getCustomColor.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
@@ -137,6 +157,12 @@ open class TreeItem(
     val _arg = Variant.new(column)
     val _ret = __method_bind.getIconMaxWidth.call(this._handle, _arg, 1)
     return _ret.asInt()
+  }
+
+  fun getIconModulate(column: Int): Color {
+    val _arg = Variant.new(column)
+    val _ret = __method_bind.getIconModulate.call(this._handle, _arg, 1)
+    return _ret.asColor()
   }
 
   fun getIconRegion(column: Int): Rect2 {
@@ -286,6 +312,18 @@ open class TreeItem(
     __method_bind.setButton.call(this._handle, _args.toVariant(), 3)
   }
 
+  fun setButtonDisabled(
+    column: Int,
+    buttonIdx: Int,
+    disabled: Boolean
+  ) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(buttonIdx)
+    _args.append(disabled)
+    __method_bind.setButtonDisabled.call(this._handle, _args.toVariant(), 3)
+  }
+
   fun setCellMode(column: Int, mode: Int) {
     val _args = VariantArray.new()
     _args.append(column)
@@ -379,6 +417,13 @@ open class TreeItem(
     _args.append(column)
     _args.append(width)
     __method_bind.setIconMaxWidth.call(this._handle, _args.toVariant(), 2)
+  }
+
+  fun setIconModulate(column: Int, modulate: Color) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(modulate)
+    __method_bind.setIconModulate.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setIconRegion(column: Int, region: Rect2) {
@@ -519,6 +564,12 @@ open class TreeItem(
             "add_button".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_button" }
         }
+      val callRecursive: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
+            "call_recursive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method call_recursive" }
+        }
       val clearCustomBgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
@@ -555,6 +606,12 @@ open class TreeItem(
             "get_button_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_button_count" }
         }
+      val getButtonTooltip: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
+            "get_button_tooltip".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_button_tooltip" }
+        }
       val getCellMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
@@ -572,6 +629,12 @@ open class TreeItem(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
             "get_custom_bg_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_custom_bg_color" }
+        }
+      val getCustomColor: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
+            "get_custom_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_custom_color" }
         }
       val getCustomMinimumHeight: CPointer<godot_method_bind>
         get() = memScoped {
@@ -596,6 +659,12 @@ open class TreeItem(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
             "get_icon_max_width".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_icon_max_width" }
+        }
+      val getIconModulate: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
+            "get_icon_modulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_icon_modulate" }
         }
       val getIconRegion: CPointer<godot_method_bind>
         get() = memScoped {
@@ -747,6 +816,12 @@ open class TreeItem(
             "set_button".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_button" }
         }
+      val setButtonDisabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
+            "set_button_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_button_disabled" }
+        }
       val setCellMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
@@ -824,6 +899,12 @@ open class TreeItem(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
             "set_icon_max_width".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_icon_max_width" }
+        }
+      val setIconModulate: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TreeItem".cstr.ptr,
+            "set_icon_modulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_icon_modulate" }
         }
       val setIconRegion: CPointer<godot_method_bind>
         get() = memScoped {

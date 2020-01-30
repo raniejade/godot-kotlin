@@ -28,22 +28,33 @@ open class StreamPeerSSL(
       setBlockingHandshakeEnabled(value)
     }
 
-  fun acceptStream(base: StreamPeer): GDError {
-    val _arg = Variant.new(base)
-    val _ret = __method_bind.acceptStream.call(this._handle, _arg, 1)
+  fun acceptStream(
+    stream: StreamPeer,
+    privateKey: CryptoKey,
+    certificate: X509Certificate,
+    chain: X509Certificate
+  ): GDError {
+    val _args = VariantArray.new()
+    _args.append(stream)
+    _args.append(privateKey)
+    _args.append(certificate)
+    _args.append(chain)
+    val _ret = __method_bind.acceptStream.call(this._handle, _args.toVariant(), 4)
     return GDError.from(_ret.asInt())
   }
 
   fun connectToStream(
     stream: StreamPeer,
     validateCerts: Boolean = false,
-    forHostname: String = ""
+    forHostname: String = "",
+    validCertificate: X509Certificate
   ): GDError {
     val _args = VariantArray.new()
     _args.append(stream)
     _args.append(validateCerts)
     _args.append(forHostname)
-    val _ret = __method_bind.connectToStream.call(this._handle, _args.toVariant(), 3)
+    _args.append(validCertificate)
+    val _ret = __method_bind.connectToStream.call(this._handle, _args.toVariant(), 4)
     return GDError.from(_ret.asInt())
   }
 

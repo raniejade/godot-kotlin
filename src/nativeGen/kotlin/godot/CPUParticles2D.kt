@@ -168,6 +168,14 @@ open class CPUParticles2D(
       setParamRandomness(6, value)
     }
 
+  var direction: Vector2
+    get() {
+       return getDirection() 
+    }
+    set(value) {
+      setDirection(value)
+    }
+
   var drawOrder: DrawOrder
     get() {
        return getDrawOrder() 
@@ -256,14 +264,6 @@ open class CPUParticles2D(
       setParticleFlag(0, value)
     }
 
-  var flatness: Float
-    get() {
-       return getFlatness() 
-    }
-    set(value) {
-      setFlatness(value)
-    }
-
   var fractDelta: Boolean
     get() {
        return getFractionalDelta() 
@@ -326,6 +326,14 @@ open class CPUParticles2D(
     }
     set(value) {
       setLifetime(value)
+    }
+
+  var lifetimeRandomness: Float
+    get() {
+       return getLifetimeRandomness() 
+    }
+    set(value) {
+      setLifetimeRandomness(value)
     }
 
   var linearAccel: Float
@@ -522,6 +530,15 @@ open class CPUParticles2D(
   }
 
   /**
+   * Specialized setter for direction
+   */
+  fun direction(cb: Vector2.() -> Unit) {
+    val _p = direction
+    cb(_p)
+    direction = _p
+  }
+
+  /**
    * Specialized setter for emissionColors
    */
   fun emissionColors(cb: PoolColorArray.() -> Unit) {
@@ -586,6 +603,11 @@ open class CPUParticles2D(
     return _ret.asObject(::Gradient)!!
   }
 
+  fun getDirection(): Vector2 {
+    val _ret = __method_bind.getDirection.call(this._handle)
+    return _ret.asVector2()
+  }
+
   fun getDrawOrder(): DrawOrder {
     val _ret = __method_bind.getDrawOrder.call(this._handle)
     return CPUParticles2D.DrawOrder.from(_ret.asInt())
@@ -631,11 +653,6 @@ open class CPUParticles2D(
     return _ret.asInt()
   }
 
-  fun getFlatness(): Float {
-    val _ret = __method_bind.getFlatness.call(this._handle)
-    return _ret.asFloat()
-  }
-
   fun getFractionalDelta(): Boolean {
     val _ret = __method_bind.getFractionalDelta.call(this._handle)
     return _ret.asBoolean()
@@ -648,6 +665,11 @@ open class CPUParticles2D(
 
   fun getLifetime(): Float {
     val _ret = __method_bind.getLifetime.call(this._handle)
+    return _ret.asFloat()
+  }
+
+  fun getLifetimeRandomness(): Float {
+    val _ret = __method_bind.getLifetimeRandomness.call(this._handle)
     return _ret.asFloat()
   }
 
@@ -739,6 +761,11 @@ open class CPUParticles2D(
     __method_bind.setColorRamp.call(this._handle, _arg, 1)
   }
 
+  fun setDirection(direction: Vector2) {
+    val _arg = Variant.new(direction)
+    __method_bind.setDirection.call(this._handle, _arg, 1)
+  }
+
   fun setDrawOrder(order: Int) {
     val _arg = Variant.new(order)
     __method_bind.setDrawOrder.call(this._handle, _arg, 1)
@@ -789,11 +816,6 @@ open class CPUParticles2D(
     __method_bind.setFixedFps.call(this._handle, _arg, 1)
   }
 
-  fun setFlatness(amount: Float) {
-    val _arg = Variant.new(amount)
-    __method_bind.setFlatness.call(this._handle, _arg, 1)
-  }
-
   fun setFractionalDelta(enable: Boolean) {
     val _arg = Variant.new(enable)
     __method_bind.setFractionalDelta.call(this._handle, _arg, 1)
@@ -807,6 +829,11 @@ open class CPUParticles2D(
   fun setLifetime(secs: Float) {
     val _arg = Variant.new(secs)
     __method_bind.setLifetime.call(this._handle, _arg, 1)
+  }
+
+  fun setLifetimeRandomness(random: Float) {
+    val _arg = Variant.new(random)
+    __method_bind.setLifetimeRandomness.call(this._handle, _arg, 1)
   }
 
   fun setNormalmap(normalmap: Texture) {
@@ -905,13 +932,15 @@ open class CPUParticles2D(
   ) {
     EMISSION_SHAPE_POINT(0),
 
-    EMISSION_SHAPE_CIRCLE(1),
+    EMISSION_SHAPE_SPHERE(1),
 
     EMISSION_SHAPE_RECTANGLE(2),
 
     EMISSION_SHAPE_POINTS(3),
 
-    EMISSION_SHAPE_DIRECTED_POINTS(4);
+    EMISSION_SHAPE_DIRECTED_POINTS(4),
+
+    EMISSION_SHAPE_MAX(5);
 
     companion object {
       fun from(value: Int): EmissionShape {
@@ -990,15 +1019,17 @@ open class CPUParticles2D(
 
     val DRAW_ORDER_LIFETIME: Int = 1
 
-    val EMISSION_SHAPE_CIRCLE: Int = 1
-
     val EMISSION_SHAPE_DIRECTED_POINTS: Int = 4
+
+    val EMISSION_SHAPE_MAX: Int = 5
 
     val EMISSION_SHAPE_POINT: Int = 0
 
     val EMISSION_SHAPE_POINTS: Int = 3
 
     val EMISSION_SHAPE_RECTANGLE: Int = 2
+
+    val EMISSION_SHAPE_SPHERE: Int = 1
 
     val FLAG_ALIGN_Y_TO_VELOCITY: Int = 0
 
@@ -1076,6 +1107,13 @@ open class CPUParticles2D(
             "get_color_ramp".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_color_ramp" }
         }
+      val getDirection: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CPUParticles2D".cstr.ptr,
+            "get_direction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_direction" }
+        }
       val getDrawOrder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -1139,13 +1177,6 @@ open class CPUParticles2D(
             "get_fixed_fps".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_fixed_fps" }
         }
-      val getFlatness: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CPUParticles2D".cstr.ptr,
-            "get_flatness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_flatness" }
-        }
       val getFractionalDelta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -1166,6 +1197,13 @@ open class CPUParticles2D(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CPUParticles2D".cstr.ptr,
             "get_lifetime".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_lifetime" }
+        }
+      val getLifetimeRandomness: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CPUParticles2D".cstr.ptr,
+            "get_lifetime_randomness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_lifetime_randomness" }
         }
       val getNormalmap: CPointer<godot_method_bind>
         get() = memScoped {
@@ -1286,6 +1324,13 @@ open class CPUParticles2D(
             "set_color_ramp".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_color_ramp" }
         }
+      val setDirection: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CPUParticles2D".cstr.ptr,
+            "set_direction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_direction" }
+        }
       val setDrawOrder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -1356,13 +1401,6 @@ open class CPUParticles2D(
             "set_fixed_fps".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_fixed_fps" }
         }
-      val setFlatness: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CPUParticles2D".cstr.ptr,
-            "set_flatness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flatness" }
-        }
       val setFractionalDelta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -1383,6 +1421,13 @@ open class CPUParticles2D(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CPUParticles2D".cstr.ptr,
             "set_lifetime".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_lifetime" }
+        }
+      val setLifetimeRandomness: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CPUParticles2D".cstr.ptr,
+            "set_lifetime_randomness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_lifetime_randomness" }
         }
       val setNormalmap: CPointer<godot_method_bind>
         get() = memScoped {

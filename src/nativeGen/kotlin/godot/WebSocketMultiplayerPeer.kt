@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -23,6 +24,21 @@ open class WebSocketMultiplayerPeer(
     return _ret.asObject(::WebSocketPeer)!!
   }
 
+  fun setBuffers(
+    inputBufferSizeKb: Int,
+    inputMaxPackets: Int,
+    outputBufferSizeKb: Int,
+    outputMaxPackets: Int
+  ): GDError {
+    val _args = VariantArray.new()
+    _args.append(inputBufferSizeKb)
+    _args.append(inputMaxPackets)
+    _args.append(outputBufferSizeKb)
+    _args.append(outputMaxPackets)
+    val _ret = __method_bind.setBuffers.call(this._handle, _args.toVariant(), 4)
+    return GDError.from(_ret.asInt())
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for WebSocketMultiplayerPeer
@@ -34,6 +50,13 @@ open class WebSocketMultiplayerPeer(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketMultiplayerPeer".cstr.ptr,
             "get_peer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_peer" }
+        }
+      val setBuffers: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketMultiplayerPeer".cstr.ptr,
+            "set_buffers".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_buffers" }
         }}
   }
 }

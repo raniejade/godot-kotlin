@@ -44,6 +44,14 @@ open class ColorPicker(
       setEditAlpha(value)
     }
 
+  var hsvMode: Boolean
+    get() {
+       return isHsvMode() 
+    }
+    set(value) {
+      setHsvMode(value)
+    }
+
   var presetsEnabled: Boolean
     get() {
        return arePresetsEnabled() 
@@ -117,6 +125,11 @@ open class ColorPicker(
     return _ret.asBoolean()
   }
 
+  fun isHsvMode(): Boolean {
+    val _ret = __method_bind.isHsvMode.call(this._handle)
+    return _ret.asBoolean()
+  }
+
   fun isRawMode(): Boolean {
     val _ret = __method_bind.isRawMode.call(this._handle)
     return _ret.asBoolean()
@@ -130,6 +143,11 @@ open class ColorPicker(
   fun setEditAlpha(show: Boolean) {
     val _arg = Variant.new(show)
     __method_bind.setEditAlpha.call(this._handle, _arg, 1)
+  }
+
+  fun setHsvMode(mode: Boolean) {
+    val _arg = Variant.new(mode)
+    __method_bind.setHsvMode.call(this._handle, _arg, 1)
   }
 
   fun setPickColor(color: Color) {
@@ -222,6 +240,13 @@ open class ColorPicker(
             "is_editing_alpha".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_editing_alpha" }
         }
+      val isHsvMode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "is_hsv_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_hsv_mode" }
+        }
       val isRawMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
@@ -242,6 +267,13 @@ open class ColorPicker(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
             "set_edit_alpha".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_edit_alpha" }
+        }
+      val setHsvMode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "set_hsv_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_hsv_mode" }
         }
       val setPickColor: CPointer<godot_method_bind>
         get() = memScoped {

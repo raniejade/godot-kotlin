@@ -59,6 +59,11 @@ open class KinematicBody(
     return _ret.asBoolean()
   }
 
+  fun getFloorNormal(): Vector3 {
+    val _ret = __method_bind.getFloorNormal.call(this._handle)
+    return _ret.asVector3()
+  }
+
   fun getFloorVelocity(): Vector3 {
     val _ret = __method_bind.getFloorVelocity.call(this._handle)
     return _ret.asVector3()
@@ -112,7 +117,7 @@ open class KinematicBody(
 
   fun moveAndSlide(
     linearVelocity: Vector3,
-    floorNormal: Vector3 = Vector3.new(0, 0, 0),
+    upDirection: Vector3 = Vector3.new(0, 0, 0),
     stopOnSlope: Boolean = false,
     maxSlides: Int = 4,
     floorMaxAngle: Float = 0.785398f,
@@ -120,7 +125,7 @@ open class KinematicBody(
   ): Vector3 {
     val _args = VariantArray.new()
     _args.append(linearVelocity)
-    _args.append(floorNormal)
+    _args.append(upDirection)
     _args.append(stopOnSlope)
     _args.append(maxSlides)
     _args.append(floorMaxAngle)
@@ -132,7 +137,7 @@ open class KinematicBody(
   fun moveAndSlideWithSnap(
     linearVelocity: Vector3,
     snap: Vector3,
-    floorNormal: Vector3 = Vector3.new(0, 0, 0),
+    upDirection: Vector3 = Vector3.new(0, 0, 0),
     stopOnSlope: Boolean = false,
     maxSlides: Int = 4,
     floorMaxAngle: Float = 0.785398f,
@@ -141,7 +146,7 @@ open class KinematicBody(
     val _args = VariantArray.new()
     _args.append(linearVelocity)
     _args.append(snap)
-    _args.append(floorNormal)
+    _args.append(upDirection)
     _args.append(stopOnSlope)
     _args.append(maxSlides)
     _args.append(floorMaxAngle)
@@ -195,6 +200,13 @@ open class KinematicBody(
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
             "get_axis_lock".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_axis_lock" }
+        }
+      val getFloorNormal: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+            "get_floor_normal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_floor_normal" }
         }
       val getFloorVelocity: CPointer<godot_method_bind>
         get() = memScoped {

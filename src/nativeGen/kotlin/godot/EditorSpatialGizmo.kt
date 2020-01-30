@@ -2,9 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
 import godot.core.PoolVector3Array
-import godot.core.RID
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
@@ -47,19 +47,21 @@ open class EditorSpatialGizmo(
   fun addLines(
     lines: PoolVector3Array,
     material: Material,
-    billboard: Boolean = false
+    billboard: Boolean = false,
+    modulate: Color = Color.rgb(1,1,1,1)
   ) {
     val _args = VariantArray.new()
     _args.append(lines)
     _args.append(material)
     _args.append(billboard)
-    __method_bind.addLines.call(this._handle, _args.toVariant(), 3)
+    _args.append(modulate)
+    __method_bind.addLines.call(this._handle, _args.toVariant(), 4)
   }
 
   fun addMesh(
     mesh: ArrayMesh,
     billboard: Boolean = false,
-    skeleton: RID,
+    skeleton: SkinReference,
     material: Material
   ) {
     val _args = VariantArray.new()
@@ -70,11 +72,16 @@ open class EditorSpatialGizmo(
     __method_bind.addMesh.call(this._handle, _args.toVariant(), 4)
   }
 
-  fun addUnscaledBillboard(material: Material, defaultScale: Float = 1.0f) {
+  fun addUnscaledBillboard(
+    material: Material,
+    defaultScale: Float = 1.0f,
+    modulate: Color = Color.rgb(1,1,1,1)
+  ) {
     val _args = VariantArray.new()
     _args.append(material)
     _args.append(defaultScale)
-    __method_bind.addUnscaledBillboard.call(this._handle, _args.toVariant(), 2)
+    _args.append(modulate)
+    __method_bind.addUnscaledBillboard.call(this._handle, _args.toVariant(), 3)
   }
 
   fun clear() {
@@ -102,16 +109,6 @@ open class EditorSpatialGizmo(
   }
 
   companion object {
-    fun new(): EditorSpatialGizmo = memScoped {
-      val fnPtr =
-        checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSpatialGizmo".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorSpatialGizmo" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorSpatialGizmo(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorSpatialGizmo = EditorSpatialGizmo(ptr)
     /**
      * Container for method_bind pointers for EditorSpatialGizmo
      */

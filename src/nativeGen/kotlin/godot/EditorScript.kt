@@ -32,15 +32,6 @@ open class EditorScript(
   }
 
   companion object {
-    fun new(): EditorScript = memScoped {
-      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorScript".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for EditorScript" }
-      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EditorScript(
-        fn()
-      )
-    }
-    fun from(ptr: COpaquePointer): EditorScript = EditorScript(ptr)
     /**
      * Container for method_bind pointers for EditorScript
      */

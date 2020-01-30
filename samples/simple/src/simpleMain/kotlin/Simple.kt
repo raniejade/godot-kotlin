@@ -19,7 +19,7 @@ class Simple(value: COpaquePointer): Spatial(value) {
     Godot.print("Hello in _onDestroy")
   }
 
-  companion object: GodotClass<Simple>(::Simple) {
+  companion object: GodotClass<Spatial, Simple>(::Simple) {
     override fun init(registry: ClassMemberRegistry<Simple>) {
       with(registry) {
         registerMethod(Simple::_ready)
