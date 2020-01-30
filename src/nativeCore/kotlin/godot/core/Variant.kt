@@ -521,6 +521,7 @@ class Variant(
         is Unit -> new()
         is CoreType<*> -> value.toVariant()
         is Variant -> value
+        is Object -> new(value)
         else -> throw UnsupportedOperationException("Can't convert type ${value::class} to Variant")
       }
     }
