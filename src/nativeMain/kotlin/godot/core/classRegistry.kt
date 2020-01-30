@@ -95,35 +95,35 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     val propertyName = property.name
     val handler = MutablePropertyHandler(property)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT, isMutable = true)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT)
   }
 
   inline fun <T: Object, reified P: KMutableProperty1<T, Float>> registerProperty(property: P) {
     val propertyName = property.name
     val handler = MutablePropertyHandler(property)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT, isMutable = true)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT)
   }
 
   inline fun <T: Object, reified P: KMutableProperty1<T, String>> registerProperty(property: P) {
     val propertyName = property.name
     val handler = MutablePropertyHandler(property)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING, isMutable = true)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING)
   }
 
   inline fun <T: Object, reified P: KMutableProperty1<T, Boolean>> registerProperty(property: P) {
     val propertyName = property.name
     val handler = MutablePropertyHandler(property)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL, isMutable = true)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL)
   }
 
   inline fun <T: Object, reified R: Resource, reified P: KMutableProperty1<T, R>> registerProperty(property: P, noinline factory: (COpaquePointer) -> R) {
     val propertyName = property.name
     val handler = MutableObjectPropertyHandler(property, factory)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, propertyClassName = R::class.simpleName, isResource = true, isMutable = true)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, propertyClassName = R::class.simpleName, isResource = true)
   }
 
   // TODO: register core types & add default values
@@ -135,15 +135,9 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     propertyHandleRef: COpaquePointer,
     propertyType: Variant.Type,
     propertyClassName: String? = null,
-    isResource: Boolean = false,
-    isMutable: Boolean = false) {
+    isResource: Boolean = false) {
     memScoped {
-      var usageFlags = GODOT_PROPERTY_USAGE_DEFAULT
-
-      if (isMutable) {
-        usageFlags = usageFlags or GODOT_PROPERTY_USAGE_SCRIPT_VARIABLE
-      }
-
+      val usageFlags = GODOT_PROPERTY_USAGE_DEFAULT or GODOT_PROPERTY_USAGE_SCRIPT_VARIABLE
       val attribs = cValue<godot_property_attributes> {
         rset_type = GODOT_METHOD_RPC_MODE_DISABLED
         usage = usageFlags
@@ -168,11 +162,7 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
 
       val setter = cValue<godot_property_set_func> {
         method_data = propertyHandleRef
-        set_func = if (isMutable) {
-          staticCFunction(::setProperty)
-        } else {
-          staticCFunction(::setPropertyFail)
-        }
+        set_func = staticCFunction(::setProperty)
       }
 
       checkNotNull(Godot.nativescript.godot_nativescript_register_property)(

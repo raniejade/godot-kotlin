@@ -5,17 +5,17 @@
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.698039, 0.266667, 0.266667, 1 )
+albedo_color = Color( 0.792157, 0.258824, 0.258824, 1 )
 
-[node name="Root" type="Spatial"]
+[node name="Scene" type="Spatial"]
 
 [node name="RotatingCube" type="Spatial" parent="."]
-editor/display_folded = true
 script = ExtResource( 1 )
+rotationSpeed = 12.0
 
 [node name="MeshInstance" type="MeshInstance" parent="RotatingCube"]
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.889922, 0.456113, 0, -0.456113, 0.889922, 0, 2.62845, 6.04485 )
+transform = Transform( 1, 0, 0, 0, 0.877068, 0.480367, 0, -0.480367, 0.877068, 0, 2.63079, 5.53845 )
