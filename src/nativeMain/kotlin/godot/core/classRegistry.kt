@@ -6,7 +6,6 @@ import godot.Resource
 import kotlinx.cinterop.*
 import kotlin.reflect.KCallable
 import kotlin.reflect.KMutableProperty1
-import kotlin.reflect.KProperty1
 
 class ClassRegistry(val handle: COpaquePointer) {
   inline fun <reified S: Object, reified T: S> registerClass(info: GodotClass<T>) {
@@ -119,11 +118,23 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL)
   }
 
+  inline fun <T: Object, reified P: KMutableProperty1<T, Color>> registerProperty(property: P, noAlpha: Boolean = false) {
+    val propertyName = property.name
+    val handler = MutablePropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    val hint = if (noAlpha) {
+      godot_property_hint.GODOT_PROPERTY_HINT_COLOR_NO_ALPHA
+    } else {
+      null
+    }
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.COLOR, hint = hint)
+  }
+
   inline fun <T: Object, reified R: Resource, reified P: KMutableProperty1<T, R>> registerProperty(property: P, noinline factory: (COpaquePointer) -> R) {
     val propertyName = property.name
     val handler = MutableObjectPropertyHandler(property, factory)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, propertyClassName = R::class.simpleName, isResource = true)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, hintString = R::class.simpleName, hint = godot_property_hint.GODOT_PROPERTY_HINT_RESOURCE_TYPE)
   }
 
   // TODO: register core types & add default values
@@ -134,8 +145,8 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     propertyName: String,
     propertyHandleRef: COpaquePointer,
     propertyType: Variant.Type,
-    propertyClassName: String? = null,
-    isResource: Boolean = false) {
+    hint: godot_property_hint? = null,
+    hintString: String? = null) {
     memScoped {
       val usageFlags = GODOT_PROPERTY_USAGE_DEFAULT or GODOT_PROPERTY_USAGE_SCRIPT_VARIABLE
       val attribs = cValue<godot_property_attributes> {
@@ -143,15 +154,14 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
         usage = usageFlags
         type = propertyType.value
 
-        if (propertyType == Variant.Type.OBJECT && isResource) {
-          hint = godot_property_hint.GODOT_PROPERTY_HINT_RESOURCE_TYPE
-          if (propertyClassName != null) {
-            GDString.from(propertyClassName) {
-              it._value.write(hint_string.rawPtr)
-            }
+        if (hint != null) {
+          this.hint = hint
+        }
+
+        if (hintString != null) {
+          GDString.from(hintString) {
+            it._value.write(hint_string.rawPtr)
           }
-        } else if (propertyType == Variant.Type.STRING) {
-          hint = godot_property_hint.GODOT_PROPERTY_HINT_TYPE_STRING
         }
       }
 
