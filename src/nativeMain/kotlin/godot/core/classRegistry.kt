@@ -91,12 +91,6 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     }
   }
 
-  inline fun <T: Object, reified P: KProperty1<T, Int>> registerProperty(property: P) {
-    val propertyName = property.name
-    val handler = PropertyHandler(property)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT)
-  }
   inline fun <T: Object, reified P: KMutableProperty1<T, Int>> registerProperty(property: P) {
     val propertyName = property.name
     val handler = MutablePropertyHandler(property)
@@ -104,12 +98,6 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT, isMutable = true)
   }
 
-  inline fun <T: Object, reified P: KProperty1<T, Float>> registerProperty(property: P) {
-    val propertyName = property.name
-    val handler = PropertyHandler(property)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT)
-  }
   inline fun <T: Object, reified P: KMutableProperty1<T, Float>> registerProperty(property: P) {
     val propertyName = property.name
     val handler = MutablePropertyHandler(property)
@@ -117,12 +105,6 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT, isMutable = true)
   }
 
-  inline fun <T: Object, reified P: KProperty1<T, String>> registerProperty(property: P) {
-    val propertyName = property.name
-    val handler = PropertyHandler(property)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING)
-  }
   inline fun <T: Object, reified P: KMutableProperty1<T, String>> registerProperty(property: P) {
     val propertyName = property.name
     val handler = MutablePropertyHandler(property)
@@ -130,12 +112,6 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING, isMutable = true)
   }
 
-  inline fun <T: Object, reified P: KProperty1<T, Boolean>> registerProperty(property: P) {
-    val propertyName = property.name
-    val handler = PropertyHandler(property)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL)
-  }
   inline fun <T: Object, reified P: KMutableProperty1<T, Boolean>> registerProperty(property: P) {
     val propertyName = property.name
     val handler = MutablePropertyHandler(property)
@@ -143,26 +119,7 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL, isMutable = true)
   }
 
-  inline fun <T: Object, R: Object, reified P: KProperty1<T, R>> registerProperty(property: P) {
-    val propertyName = property.name
-    val handler = ObjectPropertyHandler(property)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT)
-  }
-  inline fun <T: Object, R: Object, reified P: KMutableProperty1<T, R>> registerProperty(property: P, noinline factory: (COpaquePointer) -> R) {
-    val propertyName = property.name
-    val handler = MutableObjectPropertyHandler(property, factory)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, isMutable = true)
-  }
-
-  inline fun <T: Object, reified R: Resource, reified P: KProperty1<T, R>> registerResourceProperty(property: P) {
-    val propertyName = property.name
-    val handler = ObjectPropertyHandler(property)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, propertyClassName = R::class.simpleName, isResource = true)
-  }
-  inline fun <T: Object, reified R: Resource, reified P: KMutableProperty1<T, R>> registerResourceProperty(property: P, noinline factory: (COpaquePointer) -> R) {
+  inline fun <T: Object, reified R: Resource, reified P: KMutableProperty1<T, R>> registerProperty(property: P, noinline factory: (COpaquePointer) -> R) {
     val propertyName = property.name
     val handler = MutableObjectPropertyHandler(property, factory)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
