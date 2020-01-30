@@ -3,9 +3,10 @@ import godot.core.ClassMemberRegistry
 import godot.core.GodotClass
 import godot.core.Vector3
 import kotlinx.cinterop.COpaquePointer
+import kotlin.properties.Delegates
 
 class RotatingCube(handle: COpaquePointer): Spatial(handle) {
-  var rotationSpeed: Float = 0f
+  var rotationSpeed: Float by property()
 
   override fun _onInit() {
     rotationDegrees = Vector3.new(y = 1f)
@@ -30,7 +31,7 @@ class RotatingCube(handle: COpaquePointer): Spatial(handle) {
     override fun init(registry: ClassMemberRegistry<RotatingCube>) {
       with(registry) {
         registerMethod(RotatingCube::_process)
-        registerProperty(RotatingCube::rotationSpeed)
+        registerProperty(RotatingCube::rotationSpeed, 100f)
       }
     }
   }

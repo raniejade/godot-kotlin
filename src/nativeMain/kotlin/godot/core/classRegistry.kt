@@ -4,8 +4,10 @@ import gdnative.*
 import godot.Object
 import godot.Resource
 import kotlinx.cinterop.*
+import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KCallable
 import kotlin.reflect.KMutableProperty1
+import kotlin.reflect.KProperty
 
 class ClassRegistry(val handle: COpaquePointer) {
   inline fun <reified S: Object, reified T: S> registerClass(info: GodotClass<S, T>) {
@@ -17,11 +19,11 @@ class ClassRegistry(val handle: COpaquePointer) {
 }
 
 class ClassHandle<S: Object, T: S>(
-  val handle: COpaquePointer,
-  val className: String,
+  handle: COpaquePointer,
+  className: String,
   val superClassName: String,
   val info: GodotClass<S, T>
-) {
+) : ClassMemberRegistry<T>(handle, className) {
   fun create(instance: COpaquePointer): T {
     return info.factory(instance)
   }
@@ -47,12 +49,24 @@ class ClassHandle<S: Object, T: S>(
       )
     }
 
-    val registry = ClassMemberRegistry<T>(handle, className)
-    info.init(registry)
+    info.init(this)
   }
 }
 
-class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: String) {
+abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: String) {
+  private val properties = mutableListOf<MutablePropertyHandler<Object, Any>>()
+
+  @PublishedApi
+  internal fun <T: Object, R>track(handler: MutablePropertyHandler<T, R>) {
+    properties.add(handler as MutablePropertyHandler<Object, Any>)
+  }
+
+  internal fun initializeDefaultValues(instance: T) {
+    properties.forEach {
+      it.initializeDefaultValue(instance)
+    }
+  }
+
   inline fun <R, reified K: (T) -> R> registerMethod(method: K) {
     val methodName = (method as KCallable<Unit>).name
     val methodHandle = MethodHandle0(method)
@@ -90,51 +104,66 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     }
   }
 
-  inline fun <T: Object, reified P: KMutableProperty1<T, Int>> registerProperty(property: P) {
+  inline fun <T: Object, reified P: KMutableProperty1<T, Int>> registerProperty(property: P, default: Int = 0) {
     val propertyName = property.name
-    val handler = MutablePropertyHandler(property)
+    val variant = Variant.new(default)
+    val handler = MutablePropertyHandler(property, variant)
+    track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT, default = variant)
   }
 
-  inline fun <T: Object, reified P: KMutableProperty1<T, Float>> registerProperty(property: P) {
+  inline fun <T: Object, reified P: KMutableProperty1<T, Float>> registerProperty(property: P, default: Float = 0f) {
     val propertyName = property.name
-    val handler = MutablePropertyHandler(property)
+    val variant = Variant.new(default)
+    val handler = MutablePropertyHandler(property, variant)
+    track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT, default = variant)
   }
 
-  inline fun <T: Object, reified P: KMutableProperty1<T, String>> registerProperty(property: P) {
+  inline fun <T: Object, reified P: KMutableProperty1<T, String>> registerProperty(property: P, default: String = "") {
     val propertyName = property.name
-    val handler = MutablePropertyHandler(property)
+    val variant = Variant.new(default)
+    val handler = MutablePropertyHandler(property, variant)
+    track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING, default = variant)
   }
 
-  inline fun <T: Object, reified P: KMutableProperty1<T, Boolean>> registerProperty(property: P) {
+  inline fun <T: Object, reified P: KMutableProperty1<T, Boolean>> registerProperty(property: P, default: Boolean = false) {
     val propertyName = property.name
-    val handler = MutablePropertyHandler(property)
+    val variant = Variant.new(default)
+    val handler = MutablePropertyHandler(property, variant)
+    track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL, default = variant)
   }
 
-  inline fun <T: Object, reified P: KMutableProperty1<T, Color>> registerProperty(property: P, noAlpha: Boolean = false) {
+  inline fun <T: Object, reified P: KMutableProperty1<T, Color>> registerProperty(property: P, noAlpha: Boolean = false, default: Color = Color.rgb(0, 0, 0)) {
     val propertyName = property.name
-    val handler = MutablePropertyHandler(property)
+    val variant = default.toVariant()
+    val handler = MutablePropertyHandler(property, variant)
+    track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
     val hint = if (noAlpha) {
       godot_property_hint.GODOT_PROPERTY_HINT_COLOR_NO_ALPHA
     } else {
       null
     }
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.COLOR, hint = hint)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.COLOR, hint = hint, default = variant)
   }
 
   inline fun <T: Object, reified R: Resource, reified P: KMutableProperty1<T, R>> registerProperty(property: P, noinline factory: (COpaquePointer) -> R) {
     val propertyName = property.name
-    val handler = MutableObjectPropertyHandler(property, factory)
+    val variant = Variant.new()
+    val handler = MutableObjectPropertyHandler(property, variant, factory)
+    track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, hintString = R::class.simpleName, hint = godot_property_hint.GODOT_PROPERTY_HINT_RESOURCE_TYPE)
+    registerProperty(
+      className, propertyName, propertyHandleRef, Variant.Type.OBJECT, hintString = R::class.simpleName, hint = godot_property_hint.GODOT_PROPERTY_HINT_RESOURCE_TYPE,
+      default = variant
+    )
   }
 
   // TODO: register core types & add default values
@@ -146,7 +175,8 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
     propertyHandleRef: COpaquePointer,
     propertyType: Variant.Type,
     hint: godot_property_hint? = null,
-    hintString: String? = null) {
+    hintString: String? = null,
+    default: Variant? = null) {
     memScoped {
       val usageFlags = GODOT_PROPERTY_USAGE_DEFAULT or GODOT_PROPERTY_USAGE_SCRIPT_VARIABLE
       val attribs = cValue<godot_property_attributes> {
@@ -162,6 +192,10 @@ class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: 
           GDString.from(hintString) {
             it._value.write(hint_string.rawPtr)
           }
+        }
+
+        if (default != null) {
+          default._value.write(default_value.rawPtr)
         }
       }
 
@@ -191,6 +225,7 @@ fun createInstance(instance: COpaquePointer?, methodData: COpaquePointer?): COpa
   val classHandle = checkNotNull(methodData).asStableRef<ClassHandle<Object, Object>>()
     .get()
   val kotlinInstance = classHandle.create(checkNotNull(instance))
+  classHandle.initializeDefaultValues(kotlinInstance)
   kotlinInstance._onInit()
   val stableRef = StableRef.create(kotlinInstance)
   return stableRef.asCPointer()
@@ -209,4 +244,17 @@ abstract class GodotClass<S: Object, T: S>(
   val factory: (COpaquePointer) -> T
 ) {
   open fun init(registry: ClassMemberRegistry<T>) {}
+
+  fun <R: Any> property(): ReadWriteProperty<T, R> {
+    return object: ReadWriteProperty<T, R> {
+      private lateinit var value: R
+      override fun getValue(thisRef: T, property: KProperty<*>): R {
+        return value
+      }
+
+      override fun setValue(thisRef: T, property: KProperty<*>, value: R) {
+        this.value = value
+      }
+    }
+  }
 }
