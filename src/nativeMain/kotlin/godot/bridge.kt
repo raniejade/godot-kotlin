@@ -34,8 +34,8 @@ fun invokeMethod(instance: COpaquePointer?,
   val methodHandleRef = checkNotNull(methodData).asStableRef<Method<Object, *>>()
   val methodHandle = methodHandleRef.get()
 
-  check(methodHandle.paramCount == numArgs) {
-    "Invalid number of arguments, $numArgs passed but ${methodHandle.paramCount} expected."
+  check(methodHandle.parameterCount == numArgs) {
+    "Invalid number of arguments, $numArgs passed but ${methodHandle.parameterCount} expected."
   }
 
   val variantArgs = if (numArgs == 0) {

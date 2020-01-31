@@ -1,4 +1,5 @@
 import godot.task.GenerateAPI
+import godot.task.GenerateMethodN
 import org.apache.tools.ant.taskdefs.condition.Os
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithTests
 
@@ -41,6 +42,12 @@ kotlin {
 tasks {
     val generateAPI by creating(GenerateAPI::class) {
         source.set(project.file("godot_headers/api.json"))
+        outputDir.set(project.file("src/nativeGen/kotlin"))
+    }
+
+    val generateMethodN by creating(GenerateMethodN::class) {
+        filename.set("methods")
+        n.set(10)
         outputDir.set(project.file("src/nativeGen/kotlin"))
     }
 }
