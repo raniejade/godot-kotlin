@@ -590,7 +590,8 @@ class Variant(
         Transform2D::class -> Type.TRANSFORM2D
         Vector2::class -> Type.VECTOR2
         Vector3::class -> Type.VECTOR3
-        else -> throw UnsupportedOperationException("Unknown variant type ${T::class}")
+        // assume an object
+        else -> Type.OBJECT
       }
     }
 
