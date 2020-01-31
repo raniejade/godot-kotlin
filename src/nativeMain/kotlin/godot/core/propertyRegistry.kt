@@ -21,8 +21,24 @@ open class MutablePropertyHandler<T: Object, R>(val property: KMutableProperty1<
   }
 }
 
-open class MutableObjectPropertyHandler<T: Object, R: Object, P: KMutableProperty1<T, R>>(
-  property: P,
+class MutableEnumProperty<T: Object, R: Enum<R>>(
+  property: KMutableProperty1<T, R>,
+  default: Variant,
+  val converter: (String) -> R
+) : MutablePropertyHandler<T, R>(property, default) {
+  override fun get(instance: T): Variant {
+    return Variant.new(
+      property.get(instance).toString()
+    )
+  }
+
+  override fun set(instance: T, value: Variant) {
+    property.set(instance, converter(value.asString()))
+  }
+}
+
+class MutableObjectPropertyHandler<T: Object, R: Object>(
+  property: KMutableProperty1<T, R>,
   default: Variant,
   val factory: (COpaquePointer) -> R
 ): MutablePropertyHandler<T, R>(property, default) {

@@ -9,16 +9,15 @@ class PropertyHint<T>(
 ) {
   companion object {
     fun <T: Any> none() = PropertyHint<T>()
-    fun range(start: Int, end: Int, step: Int = 1) = PropertyHint<Int>(
+    fun range(start: Int, end: Int) = PropertyHint<Int>(
+      godot_property_hint.GODOT_PROPERTY_HINT_RANGE,
+      "$start, $end"
+    )
+    fun range(end: Int) = range(0, end)
+    fun range(start: Float, end: Float, step: Float = 0.1f) = PropertyHint<Float>(
       godot_property_hint.GODOT_PROPERTY_HINT_RANGE,
       "$start, $end, $step"
     )
-    fun range(end: Int, step: Int = 1) = range(0, end, step)
-    fun range(start: Float, end: Float, step: Float = 1f) = PropertyHint<Float>(
-      godot_property_hint.GODOT_PROPERTY_HINT_RANGE,
-      "$start, $end, $step"
-    )
-    fun range(end: Float, step: Float = 1f) = range(0f, end, step)
     fun ease() = PropertyHint<Float>(godot_property_hint.GODOT_PROPERTY_HINT_EXP_EASING)
     fun exp(start: Float, end: Float, step: Float = 1f) = PropertyHint<Float>(
       godot_property_hint.GODOT_PROPERTY_HINT_EXP_EASING,

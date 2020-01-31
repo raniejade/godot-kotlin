@@ -566,7 +566,8 @@ internal class GDString(
   fun toKString(): String {
     return memScoped {
       val ptr = checkNotNull(Godot.gdnative.godot_string_wide_str)(_value.ptr)!!
-      ptr.toKStringFromUtf32()
+      // drop the trailing \0
+      ptr.toKStringFromUtf32().dropLast(1)
     }
   }
 

@@ -1,11 +1,19 @@
 import godot.Spatial
 import godot.core.ClassMemberRegistry
 import godot.core.GodotClass
+import godot.core.PropertyHint
 import godot.core.Vector3
 import kotlinx.cinterop.COpaquePointer
 
 class RotatingCube(handle: COpaquePointer): Spatial(handle) {
+  enum class FooBar {
+    FOO,
+    BAR
+  }
+
   var rotationSpeed: Float by property()
+  var fooBar: FooBar by property()
+  var range: Int by property()
 
   override fun _onInit() {
     rotationDegrees = Vector3.new(y = 1f)
@@ -30,7 +38,9 @@ class RotatingCube(handle: COpaquePointer): Spatial(handle) {
     override fun init(registry: ClassMemberRegistry<RotatingCube>) {
       with(registry) {
         registerMethod(RotatingCube::_process)
-        registerProperty(RotatingCube::rotationSpeed, 100f)
+        registerProperty(RotatingCube::rotationSpeed, 100f, hint =  PropertyHint.range(0f, 1000f, 0.5f))
+        registerProperty(RotatingCube::fooBar)
+        registerProperty(RotatingCube::range, hint = PropertyHint.range(30))
 
       }
     }

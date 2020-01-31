@@ -179,11 +179,27 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     val propertyName = property.name
     val variant = Variant.new()
     val handler = MutableObjectPropertyHandler(property, variant, factory)
-    track(handler)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    val propertyHandleRef = track(handler)
     registerProperty(
       className, propertyName, propertyHandleRef, Variant.Type.OBJECT, hint = PropertyHint.resource<R>(),
       default = variant
+    )
+  }
+
+  inline fun <T: Object, reified R: Enum<R>, reified P: KMutableProperty1<T, R>> registerProperty(property: P, default: R? = null) {
+    val propertyName = property.name
+    val variant = if (default != null) {
+      Variant.new(default.toString())
+    } else {
+      Variant.new(enumValues<R>()[0].toString())
+    }
+    val handler = MutableEnumProperty(property, variant) { name ->
+      enumValueOf(name)
+    }
+    val propertyHandleRef = track(handler)
+    registerProperty(
+      className, propertyName, propertyHandleRef, Variant.Type.STRING,
+      default = variant, hint = PropertyHint(godot_property_hint.GODOT_PROPERTY_HINT_ENUM, enumValues<R>().joinToString(","))
     )
   }
 
@@ -199,17 +215,14 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     default: Variant? = null) {
     memScoped {
       val usageFlags = GODOT_PROPERTY_USAGE_DEFAULT or GODOT_PROPERTY_USAGE_SCRIPT_VARIABLE
-      val attribs = cValue<godot_property_attributes> {
+      val attribs = alloc<godot_property_attributes> {
         rset_type = GODOT_METHOD_RPC_MODE_DISABLED
         usage = usageFlags
         type = propertyType.value
         this.hint = checkNotNull(hint.hint)
-        GDString.from(checkNotNull(hint.hintString)) {
-          it._value.write(hint_string.rawPtr)
-        }
-
+        checkNotNull(Godot.gdnative.godot_string_parse_utf8)(hint_string.ptr, hint.hintString.cstr.ptr)
         if (default != null) {
-          default._value.write(default_value.rawPtr)
+          checkNotNull(Godot.gdnative.godot_variant_new_copy)(default_value.ptr, default._value.ptr)
         }
       }
 
