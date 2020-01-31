@@ -2,6 +2,7 @@ import godot.Spatial
 import godot.core.ClassMemberRegistry
 import godot.core.Godot
 import godot.core.GodotClass
+import godot.core.registerMethod
 import kotlinx.cinterop.COpaquePointer
 
 class Simple(value: COpaquePointer): Spatial(value) {

@@ -1,8 +1,5 @@
 import godot.Spatial
-import godot.core.ClassMemberRegistry
-import godot.core.GodotClass
-import godot.core.PropertyHint
-import godot.core.Vector3
+import godot.core.*
 import kotlinx.cinterop.COpaquePointer
 
 class RotatingCube(handle: COpaquePointer): Spatial(handle) {
@@ -38,7 +35,6 @@ class RotatingCube(handle: COpaquePointer): Spatial(handle) {
         registerMethod(RotatingCube::_process)
         registerProperty(RotatingCube::rotationSpeed, 100f, hint =  PropertyHint.range(0f, 1000f, 0.5f))
         registerProperty(RotatingCube::reverse)
-
       }
     }
   }
