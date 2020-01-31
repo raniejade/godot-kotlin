@@ -175,6 +175,20 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.COLOR, hint = hint, default = variant)
   }
 
+  inline fun <T: Object, R: NodePath?, reified P: KMutableProperty1<T, R>> registerProperty(
+    property: P,
+    default: NodePath = NodePath.new(".")
+  ) {
+    val propertyName = property.name
+    val variant = default?.toVariant() ?: Variant.new()
+    val handler = MutablePropertyHandler(property, variant)
+    val propertyHandleRef = track(handler)
+    registerProperty(
+      className, propertyName, propertyHandleRef, Variant.Type.NODE_PATH,
+      default = variant, hint = PropertyHint(godot_property_hint.GODOT_PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE)
+    )
+  }
+
   inline fun <T: Object, reified R: Resource, reified P: KMutableProperty1<T, R>> registerProperty(property: P, noinline factory: (COpaquePointer) -> R) {
     val propertyName = property.name
     val variant = Variant.new()

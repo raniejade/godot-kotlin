@@ -19,4 +19,14 @@ class NodePath(
       )
     }
   }
+
+  companion object {
+    fun new(path: String): NodePath {
+      return allocType(::NodePath) {
+        GDString.from(path) { str ->
+          checkNotNull(Godot.gdnative.godot_node_path_new)(it, str._value.ptr)
+        }
+      }
+    }
+  }
 }
