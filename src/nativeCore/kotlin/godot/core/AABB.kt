@@ -19,4 +19,12 @@ class AABB(
       )
     }
   }
+
+  companion object {
+    fun new(position: Vector3, size: Vector3): AABB {
+      return allocType(::AABB) {
+        checkNotNull(Godot.gdnative.godot_aabb_new)(it, position._value.ptr, size._value.ptr)
+      }
+    }
+  }
 }

@@ -2,7 +2,6 @@ package godot.core
 
 import gdnative.*
 import godot.Object
-import godot.Resource
 import kotlinx.cinterop.*
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KCallable
@@ -163,41 +162,16 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL, default = variant)
   }
 
-  inline fun <T: Object, reified P: KMutableProperty1<T, Color>> registerProperty(
+  inline fun <T: Object, reified R: CoreType<*>, reified P: KMutableProperty1<T, R>> registerProperty(
     property: P,
-    default: Color = Color.rgb(0, 0, 0),
-    hint: PropertyHint<Color> = PropertyHint.rgba()
+    default: R? = null,
+    hint: PropertyHint<R> = PropertyHint.none()
   ) {
     val propertyName = property.name
-    val variant = default.toVariant()
+    val variant = default?.toVariant() ?: Variant.defaultForType<R>().toVariant()
     val handler = MutablePropertyHandler(property, variant)
     val propertyHandleRef = track(handler)
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.COLOR, hint = hint, default = variant)
-  }
-
-  inline fun <T: Object, R: NodePath?, reified P: KMutableProperty1<T, R>> registerProperty(
-    property: P,
-    default: NodePath = NodePath.new(".")
-  ) {
-    val propertyName = property.name
-    val variant = default?.toVariant() ?: Variant.new()
-    val handler = MutablePropertyHandler(property, variant)
-    val propertyHandleRef = track(handler)
-    registerProperty(
-      className, propertyName, propertyHandleRef, Variant.Type.NODE_PATH,
-      default = variant, hint = PropertyHint(godot_property_hint.GODOT_PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE)
-    )
-  }
-
-  inline fun <T: Object, reified R: Resource, reified P: KMutableProperty1<T, R>> registerProperty(property: P, noinline factory: (COpaquePointer) -> R) {
-    val propertyName = property.name
-    val variant = Variant.new()
-    val handler = MutableObjectPropertyHandler(property, variant, factory)
-    val propertyHandleRef = track(handler)
-    registerProperty(
-      className, propertyName, propertyHandleRef, Variant.Type.OBJECT, hint = PropertyHint.resource<R>(),
-      default = variant
-    )
+    registerProperty(className, propertyName, propertyHandleRef, variant.type, default = variant, hint = hint)
   }
 
   inline fun <T: Object, reified R: Enum<R>, reified P: KMutableProperty1<T, R>> registerProperty(property: P, default: R? = null) {
@@ -287,16 +261,20 @@ abstract class GodotClass<S: Object, T: S>(
 ) {
   open fun init(registry: ClassMemberRegistry<T>) {}
 
-  fun <R: Any> property(): ReadWriteProperty<T, R> {
-    return object: ReadWriteProperty<T, R> {
-      private lateinit var value: R
-      override fun getValue(thisRef: T, property: KProperty<*>): R {
-        return value
-      }
+  private class PropertyDelegate<T, R: Any> : ReadWriteProperty<T, R> {
+    private lateinit var value: R
+    override inline fun getValue(thisRef: T, property: KProperty<*>): R {
+      return value
+    }
 
-      override fun setValue(thisRef: T, property: KProperty<*>, value: R) {
-        this.value = value
-      }
+    override inline fun setValue(thisRef: T, property: KProperty<*>, value: R) {
+      this.value = value
     }
   }
+
+  fun intProperty(): ReadWriteProperty<T, Int> = PropertyDelegate()
+  fun floatProperty(): ReadWriteProperty<T, Float> = PropertyDelegate()
+  fun stringProperty(): ReadWriteProperty<T, String> = PropertyDelegate()
+  fun booleanProperty(): ReadWriteProperty<T, Boolean> = PropertyDelegate()
+  fun <R: CoreType<*>> property(): ReadWriteProperty<T, R> = PropertyDelegate()
 }

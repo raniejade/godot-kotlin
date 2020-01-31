@@ -526,6 +526,38 @@ class Variant(
       }
     }
 
+    // hack to get default values of core types
+    // nil variants will always attempt to convert to a sane value of the
+    // target type
+    @PublishedApi
+    internal inline fun <reified T: CoreType<*>> defaultForType(): T {
+      val nil = new()
+      return when (T::class) {
+        AABB::class -> nil.asAABB()
+        VariantArray::class -> nil.asVariantArray()
+        Basis::class -> nil.asBasis()
+        Color::class -> nil.asColor()
+        Dictionary::class -> nil.asDictionary()
+        NodePath::class -> nil.asNodePath()
+        Plane::class -> nil.asPlane()
+        PoolByteArray::class -> nil.asPoolByteArray()
+        PoolColorArray::class -> nil.asPoolColorArray()
+        PoolIntArray::class -> nil.asPoolIntArray()
+        PoolRealArray::class -> nil.asPoolRealArray()
+        PoolStringArray::class -> nil.asPoolStringArray()
+        PoolVector2Array::class -> nil.asPoolVector2Array()
+        PoolVector3Array::class -> nil.asPoolVector3Array()
+        Quat::class -> nil.asQuat()
+        Rect2::class -> nil.asRect2()
+        RID::class -> nil.asRID()
+        Transform::class -> nil.asTransform()
+        Transform2D::class -> nil.asTransform2D()
+        Vector2::class -> nil.asVector2()
+        Vector3::class -> nil.asVector3()
+        else -> throw UnsupportedOperationException("Unknown variant class ${T::class}")
+      } as T
+    }
+
     private fun allocateVariant(constructor: MemScope.(CPointer<godot_variant>) -> Unit): Variant {
       return allocType(::Variant, constructor)
     }
