@@ -1,6 +1,4 @@
-package godot.core
-
-import godot.Object
+package godot
 
 abstract class Signal(val name: String, val emitter: Object) {
   protected fun emitSignal(vararg args: Any?) {

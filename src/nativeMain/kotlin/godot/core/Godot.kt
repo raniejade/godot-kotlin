@@ -1,10 +1,13 @@
 package godot.core
 
 import gdnative.*
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.get
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.reinterpret
 import kotlin.native.concurrent.AtomicReference
 
-object Godot {
+internal object Godot {
   private val gdnativeWrapper = AtomicReference<CPointer<godot_gdnative_core_api_struct>?>(null)
   private val nativescriptWrapper = AtomicReference<CPointer<godot_gdnative_ext_nativescript_api_struct>?>(null)
 
@@ -45,21 +48,5 @@ object Godot {
   fun terminate(options: godot_gdnative_terminate_options) {
     gdnativeWrapper.compareAndSwap(gdnativeWrapper.value, null)
     nativescriptWrapper.compareAndSwap(nativescriptWrapper.value, null)
-  }
-
-  fun nativescriptInit(handle: COpaquePointer, setup: ClassRegistry.() -> Unit) {
-    setup(ClassRegistry(handle))
-  }
-
-  fun print(msg: Any) {
-    val str = GDString.new(msg.toString())
-    print(str)
-    str.destroy()
-  }
-
-  internal fun print(msg: GDString) {
-    memScoped {
-      checkNotNull(gdnative.godot_print)(msg._value.ptr)
-    }
   }
 }

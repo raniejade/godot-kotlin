@@ -1,6 +1,6 @@
-package godot.core
+package godot
 
-import godot.Object
+import godot.core.CoreType
 import kotlinx.cinterop.COpaquePointer
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty

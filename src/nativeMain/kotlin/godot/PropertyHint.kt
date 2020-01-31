@@ -1,7 +1,7 @@
-package godot.core
+package godot
 
 import gdnative.godot_property_hint
-import godot.Resource
+import godot.core.Color
 
 class PropertyHint<T>(
   val hint: godot_property_hint = godot_property_hint.GODOT_PROPERTY_HINT_NONE,

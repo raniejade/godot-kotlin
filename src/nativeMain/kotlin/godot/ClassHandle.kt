@@ -1,8 +1,8 @@
-package godot.core
+package godot
 
 import gdnative.godot_instance_create_func
 import gdnative.godot_instance_destroy_func
-import godot.Object
+import godot.core.Godot
 import kotlinx.cinterop.*
 
 class ClassHandle<S: Object, T: S>(

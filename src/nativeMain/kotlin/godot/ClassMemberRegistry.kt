@@ -1,7 +1,8 @@
-package godot.core
+package godot
 
 import gdnative.*
-import godot.Object
+import godot.core.Godot
+import godot.core.Variant
 import kotlinx.cinterop.*
 
 abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: String) {

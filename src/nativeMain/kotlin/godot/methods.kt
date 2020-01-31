@@ -1,6 +1,6 @@
-package godot.core
+package godot
 
-import godot.Object
+import godot.core.Variant
 import kotlin.reflect.KCallable
 
 abstract class Method<T: Object, R>(val paramCount: Int) {

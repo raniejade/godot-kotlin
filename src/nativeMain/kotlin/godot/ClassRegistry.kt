@@ -1,6 +1,5 @@
-package godot.core
+package godot
 
-import godot.Object
 import kotlinx.cinterop.COpaquePointer
 
 class ClassRegistry(val handle: COpaquePointer) {

@@ -1,4 +1,4 @@
-import godot.Spatial
+import godot.*
 import godot.core.*
 import kotlinx.cinterop.COpaquePointer
 

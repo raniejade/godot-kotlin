@@ -1,7 +1,7 @@
-package godot.core
+package godot
 
 import gdnative.godot_variant
-import godot.Object
+import godot.core.Variant
 import kotlinx.cinterop.*
 
 fun createInstance(instance: COpaquePointer?, methodData: COpaquePointer?): COpaquePointer? {

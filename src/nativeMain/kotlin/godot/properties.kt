@@ -1,7 +1,8 @@
-package godot.core
+package godot
 
 import gdnative.godot_property_hint
-import godot.Object
+import godot.core.CoreType
+import godot.core.Variant
 import kotlin.reflect.KMutableProperty1
 
 open class MutablePropertyHandler<T: Object, R>(val property: KMutableProperty1<T, R>, val default: Variant) {
