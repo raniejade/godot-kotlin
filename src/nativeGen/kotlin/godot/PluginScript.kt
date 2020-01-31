@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Any
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,8 +17,10 @@ import kotlinx.cinterop.reinterpret
 open class PluginScript(
   _handle: COpaquePointer
 ) : Script(_handle) {
-  fun new(): Variant {
-    val _ret = __method_bind.new.call(this._handle)
+  fun new(vararg varargs: Any?): Variant {
+    val _args = VariantArray.new()
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
+    val _ret = __method_bind.new.call(this._handle, _args.toVariant(), 0)
     return _ret
   }
 

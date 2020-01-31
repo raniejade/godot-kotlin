@@ -8,6 +8,7 @@ import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Any
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -63,9 +64,11 @@ open class TreeItem(
     __method_bind.addButton.call(this._handle, _args.toVariant(), 5)
   }
 
-  fun callRecursive(method: String): Variant {
-    val _arg = Variant.new(method)
-    val _ret = __method_bind.callRecursive.call(this._handle, _arg, 1)
+  fun callRecursive(method: String, vararg varargs: Any?): Variant {
+    val _args = VariantArray.new()
+    _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
+    val _ret = __method_bind.callRecursive.call(this._handle, _args.toVariant(), 1)
     return _ret
   }
 

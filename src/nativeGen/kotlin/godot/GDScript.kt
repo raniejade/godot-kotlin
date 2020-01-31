@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Any
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -22,8 +23,10 @@ open class GDScript(
     return _ret.asPoolByteArray()
   }
 
-  fun new(): Variant {
-    val _ret = __method_bind.new.call(this._handle)
+  fun new(vararg varargs: Any?): Variant {
+    val _args = VariantArray.new()
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
+    val _ret = __method_bind.new.call(this._handle, _args.toVariant(), 0)
     return _ret
   }
 

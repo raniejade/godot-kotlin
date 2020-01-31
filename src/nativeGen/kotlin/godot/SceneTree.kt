@@ -8,6 +8,7 @@ import godot.core.PoolIntArray
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Any
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -108,10 +109,15 @@ open class SceneTree(
       setUseFontOversampling(value)
     }
 
-  fun callGroup(group: String, method: String): Variant {
+  fun callGroup(
+    group: String,
+    method: String,
+    vararg varargs: Any?
+  ): Variant {
     val _args = VariantArray.new()
     _args.append(group)
     _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
     val _ret = __method_bind.callGroup.call(this._handle, _args.toVariant(), 2)
     return _ret
   }
@@ -119,12 +125,14 @@ open class SceneTree(
   fun callGroupFlags(
     flags: Int,
     group: String,
-    method: String
+    method: String,
+    vararg varargs: Any?
   ): Variant {
     val _args = VariantArray.new()
     _args.append(flags)
     _args.append(group)
     _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
     val _ret = __method_bind.callGroupFlags.call(this._handle, _args.toVariant(), 3)
     return _ret
   }

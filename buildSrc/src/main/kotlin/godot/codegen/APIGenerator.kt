@@ -398,14 +398,19 @@ class APIGenerator {
 
         builder.addParameters(parameters)
 
+        if (method.hasVarargs) {
+          val nullableAny = ClassName("kotlin", "Any").copy(nullable = true)
+          builder.addParameter("varargs", nullableAny, KModifier.VARARG)
+        }
+
         val returnVar = if (parsedType.isVoid) {
           ""
         } else {
           "val _ret = "
         }
 
-        if (parameters.isNotEmpty()) {
-          if (parameters.size == 1) {
+        if (parameters.isNotEmpty() || method.hasVarargs) {
+          if (parameters.size == 1 && !method.hasVarargs) {
             val parameter = parameters[0]
             builder.addStatement("val _arg = Variant.new(%N)", parameter.name)
             builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, _arg, 1)", method.name)
@@ -414,6 +419,10 @@ class APIGenerator {
 
             parameters.forEach { parameter ->
               builder.addStatement("_args.append(%N)", parameter)
+            }
+
+            if (method.hasVarargs) {
+              builder.addStatement("varargs.forEach { _args.append(Variant.fromAny(it)) }")
             }
 
             builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, _args.toVariant(), %L)", method.name, parameters.size)

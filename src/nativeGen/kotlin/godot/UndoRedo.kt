@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Any
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -19,10 +20,15 @@ import kotlinx.cinterop.reinterpret
 open class UndoRedo(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addDoMethod(`object`: Object, method: String) {
+  fun addDoMethod(
+    `object`: Object,
+    method: String,
+    vararg varargs: Any?
+  ) {
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
     __method_bind.addDoMethod.call(this._handle, _args.toVariant(), 2)
   }
 
@@ -43,10 +49,15 @@ open class UndoRedo(
     __method_bind.addDoReference.call(this._handle, _arg, 1)
   }
 
-  fun addUndoMethod(`object`: Object, method: String) {
+  fun addUndoMethod(
+    `object`: Object,
+    method: String,
+    vararg varargs: Any?
+  ) {
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
     __method_bind.addUndoMethod.call(this._handle, _args.toVariant(), 2)
   }
 

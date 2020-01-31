@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Any
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -409,9 +410,11 @@ open class Node(
     __method_bind.requestReady.call(this._handle)
   }
 
-  fun rpc(method: String): Variant {
-    val _arg = Variant.new(method)
-    val _ret = __method_bind.rpc.call(this._handle, _arg, 1)
+  fun rpc(method: String, vararg varargs: Any?): Variant {
+    val _args = VariantArray.new()
+    _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
+    val _ret = __method_bind.rpc.call(this._handle, _args.toVariant(), 1)
     return _ret
   }
 
@@ -422,24 +425,36 @@ open class Node(
     __method_bind.rpcConfig.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun rpcId(peerId: Int, method: String): Variant {
+  fun rpcId(
+    peerId: Int,
+    method: String,
+    vararg varargs: Any?
+  ): Variant {
     val _args = VariantArray.new()
     _args.append(peerId)
     _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
     val _ret = __method_bind.rpcId.call(this._handle, _args.toVariant(), 2)
     return _ret
   }
 
-  fun rpcUnreliable(method: String): Variant {
-    val _arg = Variant.new(method)
-    val _ret = __method_bind.rpcUnreliable.call(this._handle, _arg, 1)
+  fun rpcUnreliable(method: String, vararg varargs: Any?): Variant {
+    val _args = VariantArray.new()
+    _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
+    val _ret = __method_bind.rpcUnreliable.call(this._handle, _args.toVariant(), 1)
     return _ret
   }
 
-  fun rpcUnreliableId(peerId: Int, method: String): Variant {
+  fun rpcUnreliableId(
+    peerId: Int,
+    method: String,
+    vararg varargs: Any?
+  ): Variant {
     val _args = VariantArray.new()
     _args.append(peerId)
     _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
     val _ret = __method_bind.rpcUnreliableId.call(this._handle, _args.toVariant(), 2)
     return _ret
   }

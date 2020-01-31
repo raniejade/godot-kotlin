@@ -8,6 +8,7 @@ import godot.core.NodePath
 import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Any
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -29,15 +30,19 @@ open class Object(
     __method_bind.addUserSignal.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun call(method: String): Variant {
-    val _arg = Variant.new(method)
-    val _ret = __method_bind.call.call(this._handle, _arg, 1)
+  fun call(method: String, vararg varargs: Any?): Variant {
+    val _args = VariantArray.new()
+    _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
+    val _ret = __method_bind.call.call(this._handle, _args.toVariant(), 1)
     return _ret
   }
 
-  fun callDeferred(method: String) {
-    val _arg = Variant.new(method)
-    __method_bind.callDeferred.call(this._handle, _arg, 1)
+  fun callDeferred(method: String, vararg varargs: Any?) {
+    val _args = VariantArray.new()
+    _args.append(method)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
+    __method_bind.callDeferred.call(this._handle, _args.toVariant(), 1)
   }
 
   fun callv(method: String, argArray: VariantArray): Variant {
@@ -82,9 +87,11 @@ open class Object(
     __method_bind.disconnect.call(this._handle, _args.toVariant(), 3)
   }
 
-  fun emitSignal(signal: String) {
-    val _arg = Variant.new(signal)
-    __method_bind.emitSignal.call(this._handle, _arg, 1)
+  fun emitSignal(signal: String, vararg varargs: Any?) {
+    val _args = VariantArray.new()
+    _args.append(signal)
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
+    __method_bind.emitSignal.call(this._handle, _args.toVariant(), 1)
   }
 
   fun get(property: String): Variant {

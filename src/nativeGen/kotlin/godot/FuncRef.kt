@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Any
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,8 +19,10 @@ import kotlinx.cinterop.reinterpret
 open class FuncRef(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun callFunc(): Variant {
-    val _ret = __method_bind.callFunc.call(this._handle)
+  fun callFunc(vararg varargs: Any?): Variant {
+    val _args = VariantArray.new()
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
+    val _ret = __method_bind.callFunc.call(this._handle, _args.toVariant(), 0)
     return _ret
   }
 

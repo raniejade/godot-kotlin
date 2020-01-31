@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Any
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -92,8 +93,10 @@ open class NativeScript(
     return _ret.asString()
   }
 
-  fun new(): Variant {
-    val _ret = __method_bind.new.call(this._handle)
+  fun new(vararg varargs: Any?): Variant {
+    val _args = VariantArray.new()
+    varargs.forEach { _args.append(Variant.fromAny(it)) }
+    val _ret = __method_bind.new.call(this._handle, _args.toVariant(), 0)
     return _ret
   }
 
