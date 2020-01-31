@@ -2,7 +2,6 @@ package godot.codegen
 
 import com.squareup.kotlinpoet.*
 import java.io.File
-import kotlin.reflect.KCallable
 
 class MethodNGenerator {
   fun generate(filename: String, n: Int, outputDir: File) {
@@ -56,13 +55,18 @@ class MethodNGenerator {
     }
 
     for (argCount in 0..n) {
+      val suppressUncheckedCast = AnnotationSpec.builder(Suppress::class)
+        .addMember("%S", "UNCHECKED_CAST")
+        .build()
       val typeSpec = TypeSpec.classBuilder("Method$argCount")
         .generateMethod(argCount, instanceParam, superClassTypeName)
+        .addAnnotation(suppressUncheckedCast)
         .build()
       addType(typeSpec)
 
       val funSpec = FunSpec.builder("registerMethod")
         .generateRegisterMethod(argCount, instanceParam)
+        .addAnnotation(suppressUncheckedCast)
         .build()
 
       addFunction(funSpec)

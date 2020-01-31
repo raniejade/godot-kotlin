@@ -3,6 +3,7 @@ package godot
 
 import godot.core.Variant
 import kotlin.Int
+import kotlin.Suppress
 import kotlin.collections.List
 import kotlin.reflect.KCallable
 
@@ -15,6 +16,7 @@ abstract class Method<T : Object, R>(
 /**
  * Represents a method with 0 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method0<T : Object, R>(
   val method: (T) -> R
 ) : Method<T, R>(0) {
@@ -28,6 +30,7 @@ class Method0<T : Object, R>(
 /**
  * Registers a method with 0 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, reified K : (T) -> R> ClassMemberRegistry<T>.registerMethod(method: K) {
   val methodName = (method as KCallable<Unit>).name
   val methodHandle = Method0(method)
@@ -38,6 +41,7 @@ inline fun <T : Object, R, reified K : (T) -> R> ClassMemberRegistry<T>.register
 /**
  * Represents a method with 1 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method1<T : Object, A0, R>(
   val method: (T, A0) -> R
 ) : Method<T, R>(1) {
@@ -52,6 +56,7 @@ class Method1<T : Object, A0, R>(
 /**
  * Registers a method with 1 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, A0, reified K : (T, A0) -> R>
     ClassMemberRegistry<T>.registerMethod(method: K) {
   val methodName = (method as KCallable<Unit>).name
@@ -63,6 +68,7 @@ inline fun <T : Object, R, A0, reified K : (T, A0) -> R>
 /**
  * Represents a method with 2 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method2<T : Object, A0, A1, R>(
   val method: (
     T,
@@ -82,6 +88,7 @@ class Method2<T : Object, A0, A1, R>(
 /**
  * Registers a method with 2 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, A0, A1, reified K : (
   T,
   A0,
@@ -96,6 +103,7 @@ inline fun <T : Object, R, A0, A1, reified K : (
 /**
  * Represents a method with 3 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method3<T : Object, A0, A1, A2, R>(
   val method: (
     T,
@@ -117,6 +125,7 @@ class Method3<T : Object, A0, A1, A2, R>(
 /**
  * Registers a method with 3 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, A0, A1, A2, reified K : (
   T,
   A0,
@@ -132,6 +141,7 @@ inline fun <T : Object, R, A0, A1, A2, reified K : (
 /**
  * Represents a method with 4 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method4<T : Object, A0, A1, A2, A3, R>(
   val method: (
     T,
@@ -155,6 +165,7 @@ class Method4<T : Object, A0, A1, A2, A3, R>(
 /**
  * Registers a method with 4 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, A0, A1, A2, A3, reified K : (
   T,
   A0,
@@ -171,6 +182,7 @@ inline fun <T : Object, R, A0, A1, A2, A3, reified K : (
 /**
  * Represents a method with 5 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method5<T : Object, A0, A1, A2, A3, A4, R>(
   val method: (
     T,
@@ -196,6 +208,7 @@ class Method5<T : Object, A0, A1, A2, A3, A4, R>(
 /**
  * Registers a method with 5 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, A0, A1, A2, A3, A4, reified K : (
   T,
   A0,
@@ -213,6 +226,7 @@ inline fun <T : Object, R, A0, A1, A2, A3, A4, reified K : (
 /**
  * Represents a method with 6 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method6<T : Object, A0, A1, A2, A3, A4, A5, R>(
   val method: (
     T,
@@ -240,6 +254,7 @@ class Method6<T : Object, A0, A1, A2, A3, A4, A5, R>(
 /**
  * Registers a method with 6 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, A0, A1, A2, A3, A4, A5, reified K : (
   T,
   A0,
@@ -258,6 +273,7 @@ inline fun <T : Object, R, A0, A1, A2, A3, A4, A5, reified K : (
 /**
  * Represents a method with 7 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method7<T : Object, A0, A1, A2, A3, A4, A5, A6, R>(
   val method: (
     T,
@@ -287,6 +303,7 @@ class Method7<T : Object, A0, A1, A2, A3, A4, A5, A6, R>(
 /**
  * Registers a method with 7 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, A0, A1, A2, A3, A4, A5, A6, reified K : (
   T,
   A0,
@@ -306,6 +323,7 @@ inline fun <T : Object, R, A0, A1, A2, A3, A4, A5, A6, reified K : (
 /**
  * Represents a method with 8 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method8<T : Object, A0, A1, A2, A3, A4, A5, A6, A7, R>(
   val method: (
     T,
@@ -337,6 +355,7 @@ class Method8<T : Object, A0, A1, A2, A3, A4, A5, A6, A7, R>(
 /**
  * Registers a method with 8 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, A0, A1, A2, A3, A4, A5, A6, A7, reified K : (
   T,
   A0,
@@ -357,6 +376,7 @@ inline fun <T : Object, R, A0, A1, A2, A3, A4, A5, A6, A7, reified K : (
 /**
  * Represents a method with 9 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method9<T : Object, A0, A1, A2, A3, A4, A5, A6, A7, A8, R>(
   val method: (
     T,
@@ -390,6 +410,7 @@ class Method9<T : Object, A0, A1, A2, A3, A4, A5, A6, A7, A8, R>(
 /**
  * Registers a method with 9 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, A0, A1, A2, A3, A4, A5, A6, A7, A8, reified K : (
   T,
   A0,
@@ -411,6 +432,7 @@ inline fun <T : Object, R, A0, A1, A2, A3, A4, A5, A6, A7, A8, reified K : (
 /**
  * Represents a method with 10 params
  */
+@Suppress("UNCHECKED_CAST")
 class Method10<T : Object, A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, R>(
   val method: (
     T,
@@ -446,6 +468,7 @@ class Method10<T : Object, A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, R>(
 /**
  * Registers a method with 10 params and returns a value of type R
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <T : Object, R, A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, reified K : (
   T,
   A0,
