@@ -20,7 +20,6 @@ class SignalNGenerator {
         .primaryConstructor(
           FunSpec.constructorBuilder()
             .addParameter("name", String::class)
-            .addParameter("emitter", ClassName("godot", "Object"))
             .build()
         )
         .addProperty(
@@ -28,17 +27,14 @@ class SignalNGenerator {
             .initializer("name")
             .build()
         )
-        .addProperty(
-          PropertySpec.builder("emitter", ClassName("godot", "Object"))
-            .initializer("emitter")
-            .build()
-        )
         .addModifiers(KModifier.ABSTRACT)
         .addFunction(
           FunSpec.builder("emitSignal")
+            .addModifiers(KModifier.PROTECTED)
+            .addParameter("instance", ClassName("godot", "Object"))
             .addParameter("args", ClassName("kotlin", "Any").copy(nullable = true), KModifier.VARARG)
             .addCode("""
-              emitter.emitSignal(name, *args)
+              instance.emitSignal(name, *args)
             """.trimIndent())
             .build()
         )
@@ -60,16 +56,14 @@ class SignalNGenerator {
   }
 
   fun TypeSpec.Builder.generateSignal(argCount: Int): TypeSpec.Builder {
+    val constructorBuilder = FunSpec.constructorBuilder()
+      .addParameter("name", String::class)
     primaryConstructor(
-      FunSpec.constructorBuilder()
-        .addParameter("name", String::class)
-        .addParameter("emitter", ClassName("godot", "Object"))
-        .build()
+      constructorBuilder.build()
     )
 
     superclass(ClassName("godot", "Signal"))
     addSuperclassConstructorParameter("name")
-    addSuperclassConstructorParameter("emitter")
 
     val templateArgs = mutableListOf<TypeVariableName>()
     for (arg in 0 until argCount) {
@@ -78,12 +72,13 @@ class SignalNGenerator {
 
     addTypeVariables(templateArgs)
 
-    val invokeBuilder = FunSpec.builder("invoke")
-      .addModifiers(KModifier.OPERATOR)
+    val invokeBuilder = FunSpec.builder("emit")
+      .addModifiers(KModifier.INTERNAL)
+      .addParameter("instance", ClassName("godot", "Object"))
       .addParameters(templateArgs.mapIndexed { index, type -> ParameterSpec.builder("a$index", type).build() })
 
     invokeBuilder.addCode("emitSignal(\n")
-    invokeBuilder.addCode("⇥name")
+    invokeBuilder.addCode("⇥instance")
 
     for (arg in 0 until argCount) {
       invokeBuilder.addCode(",\na$arg")

@@ -6,6 +6,8 @@ class RotatingCube(handle: COpaquePointer): Spatial(handle) {
   var rotationSpeed by floatProperty()
   var reverse by booleanProperty()
 
+  val myCustomSignal by signal<Int>()
+
   override fun _onInit() {
     rotationDegrees = Vector3.new(y = 1f)
   }
@@ -35,6 +37,7 @@ class RotatingCube(handle: COpaquePointer): Spatial(handle) {
         registerMethod(RotatingCube::_process)
         registerProperty(RotatingCube::rotationSpeed, 100f, hint =  PropertyHint.range(0f, 1000f, 0.5f))
         registerProperty(RotatingCube::reverse)
+        registerSignal(RotatingCube::myCustomSignal, "number")
       }
     }
   }

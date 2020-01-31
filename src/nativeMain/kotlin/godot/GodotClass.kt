@@ -8,6 +8,9 @@ import kotlin.reflect.KProperty
 abstract class GodotClass<S: Object, T: S>(
   val factory: (COpaquePointer) -> T
 ) {
+  @PublishedApi
+  internal lateinit var registry: ClassMemberRegistry<T>
+
   open fun init(registry: ClassMemberRegistry<T>) {}
 
   private class PropertyDelegate<T, R: Any> : ReadWriteProperty<T, R> {

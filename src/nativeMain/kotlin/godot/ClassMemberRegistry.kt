@@ -4,10 +4,13 @@ import gdnative.*
 import godot.core.Godot
 import godot.core.Variant
 import kotlinx.cinterop.*
+import kotlin.math.sign
 
 abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: String) {
   private val properties = mutableListOf<StableRef<MutablePropertyHandler<Object, Any>>>()
   private val methods = mutableListOf<StableRef<Method<Object, Any>>>()
+  @PublishedApi
+  internal val signals = mutableMapOf<String, Signal>()
 
   @PublishedApi
   internal fun <T: Object, R> track(handler: MutablePropertyHandler<T, R>): COpaquePointer {
@@ -35,14 +38,14 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
   }
 
   @PublishedApi
-  internal fun doRegisterMethod(className: String, methodName: String, methodHandleRef: COpaquePointer) {
+  internal fun doRegisterMethod(className: String, methodName: String, methodRef: COpaquePointer) {
     memScoped {
       val attribs = cValue<godot_method_attributes> {
         rpc_type = GODOT_METHOD_RPC_MODE_DISABLED
       }
 
       val instanceMethod = cValue<godot_instance_method> {
-        method_data = methodHandleRef
+        method_data = methodRef
         this.method = staticCFunction(::invokeMethod)
       }
 
@@ -52,6 +55,32 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
         methodName.cstr.ptr,
         attribs,
         instanceMethod
+      )
+    }
+  }
+
+  @PublishedApi
+  internal fun doRegisterSignal(className: String, signalName: String, signal: Signal, parameterTypes: Map<String, Variant.Type>) {
+    signals[signalName] = signal
+    memScoped {
+      val gdSignal = alloc<godot_signal> {
+        val argInfos = allocArray<godot_signal_argument>(parameterTypes.size)
+        parameterTypes.keys.forEachIndexed { index, key ->
+          val argInfo = argInfos[index]
+          val value = parameterTypes.getValue(key)
+          // argument name
+          checkNotNull(Godot.gdnative.godot_string_parse_utf8)(argInfo.name.ptr, key.cstr.ptr)
+          // argument type
+          argInfo.type = value.value
+        }
+        args = argInfos.getPointer(this@memScoped)
+        checkNotNull(Godot.gdnative.godot_string_parse_utf8)(name.ptr, signalName.cstr.ptr)
+        num_args = parameterTypes.size
+      }
+      checkNotNull(Godot.nativescript.godot_nativescript_register_signal)(
+        handle,
+        className.cstr.ptr,
+        gdSignal.ptr
       )
     }
   }

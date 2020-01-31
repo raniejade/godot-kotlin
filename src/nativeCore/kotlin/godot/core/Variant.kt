@@ -1,12 +1,16 @@
 package godot.core
 
+import gdnative.godot_signal_argument
 import gdnative.godot_variant
 import gdnative.godot_variant_operator
 import gdnative.godot_variant_type
+import godot.ClassMemberRegistry
 import godot.Object
+import godot.Signal0
 import kotlinx.cinterop.*
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.freeze
+import kotlin.reflect.KProperty1
 
 class Variant(
   value: CValue<godot_variant>
@@ -556,6 +560,38 @@ class Variant(
         Vector3::class -> nil.asVector3()
         else -> throw UnsupportedOperationException("Unknown variant class ${T::class}")
       } as T
+    }
+
+    @PublishedApi
+    internal inline fun <reified T> typeForT(): Type {
+      return when (T::class) {
+        Int::class -> Type.INT
+        Float::class -> Type.FLOAT
+        String::class -> Type.STRING
+        Boolean::class -> Type.BOOL
+        AABB::class -> Type.AABB
+        VariantArray::class -> Type.ARRAY
+        Basis::class -> Type.BASIS
+        Color::class -> Type.COLOR
+        Dictionary::class -> Type.DICTIONARY
+        NodePath::class -> Type.NODE_PATH
+        Plane::class -> Type.PLANE
+        PoolByteArray::class -> Type.POOL_BYTE_ARRAY
+        PoolColorArray::class -> Type.POOL_COLOR_ARRAY
+        PoolIntArray::class -> Type.POOL_INT_ARRAY
+        PoolRealArray::class -> Type.POOL_REAL_ARRAY
+        PoolStringArray::class -> Type.POOL_STRING_ARRAY
+        PoolVector2Array::class -> Type.POOL_VECTOR2_ARRAY
+        PoolVector3Array::class -> Type.POOL_VECTOR3_ARRAY
+        Quat::class -> Type.QUAT
+        Rect2::class -> Type.RECT2
+        RID::class -> Type.RID
+        Transform::class -> Type.TRANSFORM
+        Transform2D::class -> Type.TRANSFORM2D
+        Vector2::class -> Type.VECTOR2
+        Vector3::class -> Type.VECTOR3
+        else -> throw UnsupportedOperationException("Unknown variant type ${T::class}")
+      }
     }
 
     private fun allocateVariant(constructor: MemScope.(CPointer<godot_variant>) -> Unit): Variant {
