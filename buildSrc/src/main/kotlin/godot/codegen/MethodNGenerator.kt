@@ -22,6 +22,7 @@ class MethodNGenerator {
     }
     addType(
       TypeSpec.classBuilder("Method")
+        .addKdoc("Base class for all methods")
         .addTypeVariable(instanceParam)
         .addTypeVariable(TypeVariableName("R"))
         .primaryConstructor(
