@@ -104,31 +104,43 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     }
   }
 
-  inline fun <T: Object, reified P: KMutableProperty1<T, Int>> registerProperty(property: P, default: Int = 0) {
+  inline fun <T: Object, reified P: KMutableProperty1<T, Int>> registerProperty(
+    property: P,
+    default: Int = 0,
+    hint: PropertyHint<Int> = PropertyHint.none()
+  ) {
     val propertyName = property.name
     val variant = Variant.new(default)
     val handler = MutablePropertyHandler(property, variant)
     track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT, default = variant)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT, hint = hint, default = variant)
   }
 
-  inline fun <T: Object, reified P: KMutableProperty1<T, Float>> registerProperty(property: P, default: Float = 0f) {
+  inline fun <T: Object, reified P: KMutableProperty1<T, Float>> registerProperty(
+    property: P,
+    default: Float = 0f,
+    hint: PropertyHint<Float> = PropertyHint.none()
+  ) {
     val propertyName = property.name
     val variant = Variant.new(default)
     val handler = MutablePropertyHandler(property, variant)
     track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT, default = variant)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT, hint = hint, default = variant)
   }
 
-  inline fun <T: Object, reified P: KMutableProperty1<T, String>> registerProperty(property: P, default: String = "") {
+  inline fun <T: Object, reified P: KMutableProperty1<T, String>> registerProperty(
+    property: P,
+    default: String = "",
+    hint: PropertyHint<String> = PropertyHint.none()
+  ) {
     val propertyName = property.name
     val variant = Variant.new(default)
     val handler = MutablePropertyHandler(property, variant)
     track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING, default = variant)
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING, hint = hint, default = variant)
   }
 
   inline fun <T: Object, reified P: KMutableProperty1<T, Boolean>> registerProperty(property: P, default: Boolean = false) {
@@ -140,17 +152,16 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL, default = variant)
   }
 
-  inline fun <T: Object, reified P: KMutableProperty1<T, Color>> registerProperty(property: P, noAlpha: Boolean = false, default: Color = Color.rgb(0, 0, 0)) {
+  inline fun <T: Object, reified P: KMutableProperty1<T, Color>> registerProperty(
+    property: P,
+    default: Color = Color.rgb(0, 0, 0),
+    hint: PropertyHint<Color> = PropertyHint.rgba()
+  ) {
     val propertyName = property.name
     val variant = default.toVariant()
     val handler = MutablePropertyHandler(property, variant)
     track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
-    val hint = if (noAlpha) {
-      godot_property_hint.GODOT_PROPERTY_HINT_COLOR_NO_ALPHA
-    } else {
-      null
-    }
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.COLOR, hint = hint, default = variant)
   }
 
@@ -161,7 +172,7 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     track(handler)
     val propertyHandleRef = StableRef.create(handler).asCPointer()
     registerProperty(
-      className, propertyName, propertyHandleRef, Variant.Type.OBJECT, hintString = R::class.simpleName, hint = godot_property_hint.GODOT_PROPERTY_HINT_RESOURCE_TYPE,
+      className, propertyName, propertyHandleRef, Variant.Type.OBJECT, hint = PropertyHint.resource<R>(),
       default = variant
     )
   }
@@ -174,8 +185,7 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     propertyName: String,
     propertyHandleRef: COpaquePointer,
     propertyType: Variant.Type,
-    hint: godot_property_hint? = null,
-    hintString: String? = null,
+    hint: PropertyHint<out Any> = PropertyHint.none(),
     default: Variant? = null) {
     memScoped {
       val usageFlags = GODOT_PROPERTY_USAGE_DEFAULT or GODOT_PROPERTY_USAGE_SCRIPT_VARIABLE
@@ -183,15 +193,9 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
         rset_type = GODOT_METHOD_RPC_MODE_DISABLED
         usage = usageFlags
         type = propertyType.value
-
-        if (hint != null) {
-          this.hint = hint
-        }
-
-        if (hintString != null) {
-          GDString.from(hintString) {
-            it._value.write(hint_string.rawPtr)
-          }
+        this.hint = checkNotNull(hint.hint)
+        GDString.from(checkNotNull(hint.hintString)) {
+          it._value.write(hint_string.rawPtr)
         }
 
         if (default != null) {
