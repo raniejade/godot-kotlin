@@ -54,30 +54,45 @@ class ClassHandle<S: Object, T: S>(
 }
 
 abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: String) {
-  private val properties = mutableListOf<MutablePropertyHandler<Object, Any>>()
+  private val properties = mutableListOf<StableRef<MutablePropertyHandler<Object, Any>>>()
+  private val methods = mutableListOf<StableRef<MethodHandle<Object, Any>>>()
 
   @PublishedApi
-  internal fun <T: Object, R>track(handler: MutablePropertyHandler<T, R>) {
-    properties.add(handler as MutablePropertyHandler<Object, Any>)
+  internal fun <T: Object, R> track(handler: MutablePropertyHandler<T, R>): COpaquePointer {
+    val ref = StableRef.create(handler as MutablePropertyHandler<Object, Any>)
+    properties.add(ref)
+    return ref.asCPointer()
+  }
+
+  @PublishedApi
+  internal fun <T: Object, R> track(handler: MethodHandle<T, R>): COpaquePointer {
+    val ref = StableRef.create(handler as MethodHandle<Object, Any>)
+    methods.add(ref)
+    return ref.asCPointer()
   }
 
   internal fun initializeDefaultValues(instance: T) {
     properties.forEach {
-      it.initializeDefaultValue(instance)
+      it.get().initializeDefaultValue(instance)
     }
+  }
+
+  internal fun destroy() {
+    properties.forEach { it.dispose() }
+    methods.forEach { it.dispose() }
   }
 
   inline fun <R, reified K: (T) -> R> registerMethod(method: K) {
     val methodName = (method as KCallable<Unit>).name
     val methodHandle = MethodHandle0(method)
-    val methodHandleRef = StableRef.create(methodHandle).asCPointer()
+    val methodHandleRef = track(methodHandle)
     registerMethod(className, methodName, methodHandleRef)
   }
 
   inline fun <R, A1, reified K: (T, A1) -> R> registerMethod(method: K) {
     val methodName = (method as KCallable<Unit>).name
     val methodHandle = MethodHandle1(method)
-    val methodHandleRef = StableRef.create(methodHandle).asCPointer()
+    val methodHandleRef = track(methodHandle)
     registerMethod(className, methodName, methodHandleRef)
   }
 
@@ -112,8 +127,7 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     val propertyName = property.name
     val variant = Variant.new(default)
     val handler = MutablePropertyHandler(property, variant)
-    track(handler)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    val propertyHandleRef = track(handler)
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT, hint = hint, default = variant)
   }
 
@@ -125,8 +139,7 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     val propertyName = property.name
     val variant = Variant.new(default)
     val handler = MutablePropertyHandler(property, variant)
-    track(handler)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    val propertyHandleRef = track(handler)
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT, hint = hint, default = variant)
   }
 
@@ -138,8 +151,7 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     val propertyName = property.name
     val variant = Variant.new(default)
     val handler = MutablePropertyHandler(property, variant)
-    track(handler)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    val propertyHandleRef = track(handler)
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING, hint = hint, default = variant)
   }
 
@@ -147,8 +159,7 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     val propertyName = property.name
     val variant = Variant.new(default)
     val handler = MutablePropertyHandler(property, variant)
-    track(handler)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    val propertyHandleRef = track(handler)
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL, default = variant)
   }
 
@@ -160,8 +171,7 @@ abstract class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val cl
     val propertyName = property.name
     val variant = default.toVariant()
     val handler = MutablePropertyHandler(property, variant)
-    track(handler)
-    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    val propertyHandleRef = track(handler)
     registerProperty(className, propertyName, propertyHandleRef, Variant.Type.COLOR, hint = hint, default = variant)
   }
 
@@ -240,6 +250,7 @@ fun destroyInstance(instance: COpaquePointer?, methodData: COpaquePointer?, clas
   val kotlinInstanceRef = checkNotNull(classData).asStableRef<Object>()
   val kotlinInstance = kotlinInstanceRef.get()
   kotlinInstance._onDestroy()
+  classHandleRef.get().destroy()
   classHandleRef.dispose()
   kotlinInstanceRef.dispose()
 }
