@@ -2,9 +2,13 @@
 package godot
 
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Any
+import kotlin.Int
+import kotlin.PublishedApi
 import kotlin.String
 import kotlin.Suppress
+import kotlin.collections.List
 import kotlin.collections.Map
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -18,6 +22,19 @@ abstract class Signal(
 ) {
   protected fun emitSignal(instance: Object, vararg args: Any?) {
     instance.emitSignal(name, *args)
+  }
+
+  @PublishedApi
+  internal fun connect(
+    instance: Object,
+    target: Object,
+    method: String,
+    binds: List<Any>?,
+    flags: Int
+  ) {
+    val extraArgs = VariantArray.new()
+    binds?.forEach { extraArgs.append(Variant.fromAny(it)) }
+    instance.connect(name, target, method, extraArgs, flags)
   }
 }
 

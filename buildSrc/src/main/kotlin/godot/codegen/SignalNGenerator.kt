@@ -9,12 +9,14 @@ class SignalNGenerator {
       .addComment("DO NOT EDIT, THIS CLASS IS GENERATED!")
       .generateBase()
       .generateSignals(n)
-      .addImport("godot.core", "Variant")
+      .addImport("godot.core", "Variant", "VariantArray")
       .build()
       .writeTo(outputDir)
   }
 
   fun FileSpec.Builder.generateBase(): FileSpec.Builder {
+    val objectClassName = ClassName("godot", "Object")
+    val anyClassName = ClassName("kotlin", "Any")
     addType(
       TypeSpec.classBuilder("Signal")
         .addKdoc("Base class for all signals")
@@ -32,11 +34,30 @@ class SignalNGenerator {
         .addFunction(
           FunSpec.builder("emitSignal")
             .addModifiers(KModifier.PROTECTED)
-            .addParameter("instance", ClassName("godot", "Object"))
-            .addParameter("args", ClassName("kotlin", "Any").copy(nullable = true), KModifier.VARARG)
+            .addParameter("instance", objectClassName)
+            .addParameter("args", anyClassName.copy(nullable = true), KModifier.VARARG)
             .addCode("""
               instance.emitSignal(name, *args)
             """.trimIndent())
+            .build()
+        )
+        .addFunction(
+          FunSpec.builder("connect")
+            .addAnnotation(PublishedApi::class)
+            .addModifiers(KModifier.INTERNAL)
+            .addParameter("instance", objectClassName)
+            .addParameter("target", objectClassName)
+            .addParameter("method", String::class)
+            .addParameter(
+              "binds",
+              with(ParameterizedTypeName) {
+                ClassName("kotlin.collections", "List").parameterizedBy(anyClassName).copy(nullable = true)
+              }
+            )
+            .addParameter("flags", Int::class)
+            .addStatement("val extraArgs = VariantArray.new()")
+            .addStatement("binds?.forEach { extraArgs.append(Variant.fromAny(it)) }")
+            .addStatement("instance.connect(name, target, method, extraArgs, flags)")
             .build()
         )
         .build()

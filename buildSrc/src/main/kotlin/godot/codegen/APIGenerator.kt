@@ -66,18 +66,53 @@ class APIGenerator {
         } else {
           ClassName("godot", "Signal$argCount")
         }
-        val helper = FunSpec.builder("emit")
+        val emitHelper = FunSpec.builder("emit")
           .addTypeVariables(templateArgs)
           .receiver(signalClassName)
 
-        helper.addCode("emit(\n")
-        helper.addCode("⇥this@Object")
+        emitHelper.addCode("emit(\n")
+        emitHelper.addCode("⇥this@Object")
         templateArgs.forEachIndexed { index, t ->
-          helper.addParameter("a$index", t)
-          helper.addCode(",\na$index")
+          emitHelper.addParameter("a$index", t)
+          emitHelper.addCode(",\na$index")
         }
-        helper.addCode("⇤)\n")
-        addFunction(helper.build())
+        emitHelper.addCode("⇤)\n")
+        addFunction(emitHelper.build())
+
+        val lambdaTypeArgs = mutableListOf<TypeVariableName>()
+        lambdaTypeArgs.addAll(templateArgs)
+        val lambdaType = LambdaTypeName.get(receiver = null, parameters = *lambdaTypeArgs.toTypedArray(), returnType = ClassName("kotlin", "Unit"))
+        val methodType = TypeVariableName("K", lambdaType)
+
+        val connectHelper = FunSpec.builder("connect")
+          .addAnnotation(
+            AnnotationSpec.builder(Suppress::class)
+              .addMember("%S", "UNCHECKED_CAST")
+              .build()
+          )
+          .addModifiers(KModifier.INLINE)
+          .addTypeVariables(templateArgs)
+          .addTypeVariable(methodType.copy(reified = true))
+          .receiver(signalClassName)
+          .addParameter("target", ClassName("godot", "Object"))
+          .addParameter("method", methodType)
+          .addParameter(
+            ParameterSpec.builder(
+              "binds",
+              with(ParameterizedTypeName) {
+                ClassName("kotlin.collections", "List").parameterizedBy(ClassName("kotlin", "Any")).copy(nullable = true)
+              }
+            ).defaultValue("null").build()
+          )
+          .addParameter(
+            ParameterSpec.builder("flags", Int::class)
+              .defaultValue("0")
+              .build()
+          )
+          .addStatement("val methodName = (method as KCallable<Unit>).name")
+          .addStatement("connect(this@Object, target, methodName, binds, flags)")
+
+        addFunction(connectHelper.build())
       }
     }
     return this
@@ -380,6 +415,7 @@ class APIGenerator {
   private fun FileSpec.Builder.addCommonImports(cls: GDClass): FileSpec.Builder {
     addImport("godot.core", "Godot", "Variant", "VariantArray")
     addImport("gdnative", "godot_method_bind")
+    addImport("kotlin.reflect", "KCallable")
     addImport(
       "kotlinx.cinterop",
       "CFunction",

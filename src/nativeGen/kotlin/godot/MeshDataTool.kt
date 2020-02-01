@@ -13,6 +13,7 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import godot.core.Vector3
 import kotlin.Int
+import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer

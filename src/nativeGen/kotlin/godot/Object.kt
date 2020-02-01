@@ -12,6 +12,10 @@ import kotlin.Any
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
+import kotlin.Unit
+import kotlin.collections.List
+import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -290,10 +294,32 @@ open class Object(
       this@Object)
   }
 
+  @Suppress("UNCHECKED_CAST")
+  inline fun <reified K : () -> Unit> Signal0.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
+  }
+
   fun <A0> Signal1<A0>.emit(a0: A0) {
     emit(
       this@Object,
       a0)
+  }
+
+  @Suppress("UNCHECKED_CAST")
+  inline fun <A0, reified K : (A0) -> Unit> Signal1<A0>.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
   }
 
   fun <A0, A1> Signal2<A0, A1>.emit(a0: A0, a1: A1) {
@@ -301,6 +327,17 @@ open class Object(
       this@Object,
       a0,
       a1)
+  }
+
+  @Suppress("UNCHECKED_CAST")
+  inline fun <A0, A1, reified K : (A0, A1) -> Unit> Signal2<A0, A1>.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
   }
 
   fun <A0, A1, A2> Signal3<A0, A1, A2>.emit(
@@ -313,6 +350,21 @@ open class Object(
       a0,
       a1,
       a2)
+  }
+
+  @Suppress("UNCHECKED_CAST")
+  inline fun <A0, A1, A2, reified K : (
+    A0,
+    A1,
+    A2
+  ) -> Unit> Signal3<A0, A1, A2>.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
   }
 
   fun <A0, A1, A2, A3> Signal4<A0, A1, A2, A3>.emit(
@@ -329,6 +381,22 @@ open class Object(
       a3)
   }
 
+  @Suppress("UNCHECKED_CAST")
+  inline fun <A0, A1, A2, A3, reified K : (
+    A0,
+    A1,
+    A2,
+    A3
+  ) -> Unit> Signal4<A0, A1, A2, A3>.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
+  }
+
   fun <A0, A1, A2, A3, A4> Signal5<A0, A1, A2, A3, A4>.emit(
     a0: A0,
     a1: A1,
@@ -343,6 +411,23 @@ open class Object(
       a2,
       a3,
       a4)
+  }
+
+  @Suppress("UNCHECKED_CAST")
+  inline fun <A0, A1, A2, A3, A4, reified K : (
+    A0,
+    A1,
+    A2,
+    A3,
+    A4
+  ) -> Unit> Signal5<A0, A1, A2, A3, A4>.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
   }
 
   fun <A0, A1, A2, A3, A4, A5> Signal6<A0, A1, A2, A3, A4, A5>.emit(
@@ -363,6 +448,24 @@ open class Object(
       a5)
   }
 
+  @Suppress("UNCHECKED_CAST")
+  inline fun <A0, A1, A2, A3, A4, A5, reified K : (
+    A0,
+    A1,
+    A2,
+    A3,
+    A4,
+    A5
+  ) -> Unit> Signal6<A0, A1, A2, A3, A4, A5>.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
+  }
+
   fun <A0, A1, A2, A3, A4, A5, A6> Signal7<A0, A1, A2, A3, A4, A5, A6>.emit(
     a0: A0,
     a1: A1,
@@ -381,6 +484,25 @@ open class Object(
       a4,
       a5,
       a6)
+  }
+
+  @Suppress("UNCHECKED_CAST")
+  inline fun <A0, A1, A2, A3, A4, A5, A6, reified K : (
+    A0,
+    A1,
+    A2,
+    A3,
+    A4,
+    A5,
+    A6
+  ) -> Unit> Signal7<A0, A1, A2, A3, A4, A5, A6>.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
   }
 
   fun <A0, A1, A2, A3, A4, A5, A6, A7> Signal8<A0, A1, A2, A3, A4, A5, A6, A7>.emit(
@@ -405,6 +527,26 @@ open class Object(
       a7)
   }
 
+  @Suppress("UNCHECKED_CAST")
+  inline fun <A0, A1, A2, A3, A4, A5, A6, A7, reified K : (
+    A0,
+    A1,
+    A2,
+    A3,
+    A4,
+    A5,
+    A6,
+    A7
+  ) -> Unit> Signal8<A0, A1, A2, A3, A4, A5, A6, A7>.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
+  }
+
   fun <A0, A1, A2, A3, A4, A5, A6, A7, A8> Signal9<A0, A1, A2, A3, A4, A5, A6, A7, A8>.emit(
     a0: A0,
     a1: A1,
@@ -427,6 +569,27 @@ open class Object(
       a6,
       a7,
       a8)
+  }
+
+  @Suppress("UNCHECKED_CAST")
+  inline fun <A0, A1, A2, A3, A4, A5, A6, A7, A8, reified K : (
+    A0,
+    A1,
+    A2,
+    A3,
+    A4,
+    A5,
+    A6,
+    A7,
+    A8
+  ) -> Unit> Signal9<A0, A1, A2, A3, A4, A5, A6, A7, A8>.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
   }
 
   fun <A0, A1, A2, A3, A4, A5, A6, A7, A8, A9> Signal10<A0, A1, A2, A3, A4, A5, A6, A7, A8,
@@ -454,6 +617,28 @@ open class Object(
       a7,
       a8,
       a9)
+  }
+
+  @Suppress("UNCHECKED_CAST")
+  inline fun <A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, reified K : (
+    A0,
+    A1,
+    A2,
+    A3,
+    A4,
+    A5,
+    A6,
+    A7,
+    A8,
+    A9
+  ) -> Unit> Signal10<A0, A1, A2, A3, A4, A5, A6, A7, A8, A9>.connect(
+    target: Object,
+    method: K,
+    binds: List<Any>? = null,
+    flags: Int = 0
+  ) {
+    val methodName = (method as KCallable<Unit>).name
+    connect(this@Object, target, methodName, binds, flags)
   }
 
   enum class ConnectFlags(

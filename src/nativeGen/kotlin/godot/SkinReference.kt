@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.RID
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer

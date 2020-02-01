@@ -7,6 +7,7 @@ import godot.core.PoolVector2Array
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Unit
+import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
