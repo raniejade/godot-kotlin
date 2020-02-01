@@ -168,6 +168,46 @@ open class Area(
     }
 
   /**
+   * Area::area_entered signal
+   */
+  val signalAreaEntered: Signal1<Area> = Signal1("area_entered")
+
+  /**
+   * Area::area_exited signal
+   */
+  val signalAreaExited: Signal1<Area> = Signal1("area_exited")
+
+  /**
+   * Area::area_shape_entered signal
+   */
+  val signalAreaShapeEntered: Signal4<Int, Area, Int, Int> = Signal4("area_shape_entered")
+
+  /**
+   * Area::area_shape_exited signal
+   */
+  val signalAreaShapeExited: Signal4<Int, Area, Int, Int> = Signal4("area_shape_exited")
+
+  /**
+   * Area::body_entered signal
+   */
+  val signalBodyEntered: Signal1<Node> = Signal1("body_entered")
+
+  /**
+   * Area::body_exited signal
+   */
+  val signalBodyExited: Signal1<Node> = Signal1("body_exited")
+
+  /**
+   * Area::body_shape_entered signal
+   */
+  val signalBodyShapeEntered: Signal4<Int, Node, Int, Int> = Signal4("body_shape_entered")
+
+  /**
+   * Area::body_shape_exited signal
+   */
+  val signalBodyShapeExited: Signal4<Int, Node, Int, Int> = Signal4("body_shape_exited")
+
+  /**
    * Specialized setter for gravityVec
    */
   fun gravityVec(cb: Vector3.() -> Unit) {

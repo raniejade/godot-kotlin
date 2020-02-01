@@ -18,6 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class _VisualScriptEditor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  /**
+   * _VisualScriptEditor::custom_nodes_updated signal
+   */
+  val signalCustomNodesUpdated: Signal0 = Signal0("custom_nodes_updated")
+
   fun addCustomNode(
     name: String,
     category: String,

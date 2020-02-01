@@ -108,6 +108,26 @@ open class AnimationPlayer(
     }
 
   /**
+   * AnimationPlayer::animation_changed signal
+   */
+  val signalAnimationChanged: Signal2<String, String> = Signal2("animation_changed")
+
+  /**
+   * AnimationPlayer::animation_finished signal
+   */
+  val signalAnimationFinished: Signal1<String> = Signal1("animation_finished")
+
+  /**
+   * AnimationPlayer::animation_started signal
+   */
+  val signalAnimationStarted: Signal1<String> = Signal1("animation_started")
+
+  /**
+   * AnimationPlayer::caches_cleared signal
+   */
+  val signalCachesCleared: Signal0 = Signal0("caches_cleared")
+
+  /**
    * Specialized setter for rootNode
    */
   fun rootNode(cb: NodePath.() -> Unit) {

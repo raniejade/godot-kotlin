@@ -61,6 +61,21 @@ open class PopupMenu(
       setSubmenuPopupDelay(value)
     }
 
+  /**
+   * PopupMenu::id_focused signal
+   */
+  val signalIdFocused: Signal1<Int> = Signal1("id_focused")
+
+  /**
+   * PopupMenu::id_pressed signal
+   */
+  val signalIdPressed: Signal1<Int> = Signal1("id_pressed")
+
+  /**
+   * PopupMenu::index_pressed signal
+   */
+  val signalIndexPressed: Signal1<Int> = Signal1("index_pressed")
+
   fun addCheckItem(
     label: String,
     id: Int = -1,

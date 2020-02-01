@@ -60,6 +60,21 @@ open class TabContainer(
       setUseHiddenTabsForMinSize(value)
     }
 
+  /**
+   * TabContainer::pre_popup_pressed signal
+   */
+  val signalPrePopupPressed: Signal0 = Signal0("pre_popup_pressed")
+
+  /**
+   * TabContainer::tab_changed signal
+   */
+  val signalTabChanged: Signal1<Int> = Signal1("tab_changed")
+
+  /**
+   * TabContainer::tab_selected signal
+   */
+  val signalTabSelected: Signal1<Int> = Signal1("tab_selected")
+
   fun areTabsVisible(): Boolean {
     val _ret = __method_bind.areTabsVisible.call(this._handle)
     return _ret.asBoolean()

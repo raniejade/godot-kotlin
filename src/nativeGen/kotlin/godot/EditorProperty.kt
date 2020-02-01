@@ -3,9 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Int
 import kotlin.String
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -66,6 +68,47 @@ open class EditorProperty(
     set(value) {
       setReadOnly(value)
     }
+
+  /**
+   * EditorProperty::multiple_properties_changed signal
+   */
+  val signalMultiplePropertiesChanged: Signal2<PoolStringArray, VariantArray> =
+      Signal2("multiple_properties_changed")
+
+  /**
+   * EditorProperty::object_id_selected signal
+   */
+  val signalObjectIdSelected: Signal2<String, Int> = Signal2("object_id_selected")
+
+  /**
+   * EditorProperty::property_changed signal
+   */
+  val signalPropertyChanged: Signal2<String, Variant> = Signal2("property_changed")
+
+  /**
+   * EditorProperty::property_checked signal
+   */
+  val signalPropertyChecked: Signal2<String, String> = Signal2("property_checked")
+
+  /**
+   * EditorProperty::property_keyed signal
+   */
+  val signalPropertyKeyed: Signal1<String> = Signal1("property_keyed")
+
+  /**
+   * EditorProperty::property_keyed_with_value signal
+   */
+  val signalPropertyKeyedWithValue: Signal2<String, Variant> = Signal2("property_keyed_with_value")
+
+  /**
+   * EditorProperty::resource_selected signal
+   */
+  val signalResourceSelected: Signal2<String, Resource> = Signal2("resource_selected")
+
+  /**
+   * EditorProperty::selected signal
+   */
+  val signalSelected: Signal2<String, Int> = Signal2("selected")
 
   fun addFocusable(control: Control) {
     val _arg = Variant.new(control)

@@ -43,6 +43,11 @@ open class SplitContainer(
       setSplitOffset(value)
     }
 
+  /**
+   * SplitContainer::dragged signal
+   */
+  val signalDragged: Signal1<Int> = Signal1("dragged")
+
   fun clampSplitOffset() {
     __method_bind.clampSplitOffset.call(this._handle)
   }

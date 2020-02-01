@@ -165,6 +165,11 @@ open class AudioStreamPlayer3D(
       setUnitSize(value)
     }
 
+  /**
+   * AudioStreamPlayer3D::finished signal
+   */
+  val signalFinished: Signal0 = Signal0("finished")
+
   fun getAreaMask(): Int {
     val _ret = __method_bind.getAreaMask.call(this._handle)
     return _ret.asInt()

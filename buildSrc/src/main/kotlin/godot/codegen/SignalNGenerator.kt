@@ -170,7 +170,7 @@ class SignalNGenerator {
         )
         .returns(signalClassName)
         .addStatement(
-          "return signals[property.name] as %T", signalClassName
+          "return signals[property.name.toSignalName()] as %T", signalClassName
         )
         .build()
     )
@@ -258,9 +258,9 @@ class SignalNGenerator {
       registerSignalBuilder.addParameter("a$index", String::class)
     }
 
-    registerSignalBuilder.addStatement("val signal = %T(property.name)", signalClassName)
-
-    registerSignalBuilder.addStatement("doRegisterSignal(className, property.name, signal, parameterTypes)")
+    registerSignalBuilder.addStatement("val signalName = property.name.toSignalName()")
+    registerSignalBuilder.addStatement("val signal = %T(signalName)", signalClassName)
+    registerSignalBuilder.addStatement("doRegisterSignal(className, signalName, signal, parameterTypes)")
 
     addFunction(registerSignalBuilder.build())
     return this

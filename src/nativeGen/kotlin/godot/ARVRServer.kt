@@ -38,6 +38,26 @@ open class ARVRServer(
       setWorldScale(value)
     }
 
+  /**
+   * ARVRServer::interface_added signal
+   */
+  val signalInterfaceAdded: Signal1<String> = Signal1("interface_added")
+
+  /**
+   * ARVRServer::interface_removed signal
+   */
+  val signalInterfaceRemoved: Signal1<String> = Signal1("interface_removed")
+
+  /**
+   * ARVRServer::tracker_added signal
+   */
+  val signalTrackerAdded: Signal3<String, Int, Int> = Signal3("tracker_added")
+
+  /**
+   * ARVRServer::tracker_removed signal
+   */
+  val signalTrackerRemoved: Signal3<String, Int, Int> = Signal3("tracker_removed")
+
   fun centerOnHmd(rotationMode: Int, keepHeight: Boolean) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(rotationMode))

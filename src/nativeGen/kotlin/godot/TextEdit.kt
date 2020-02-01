@@ -231,6 +231,36 @@ open class TextEdit(
       setWrapEnabled(value)
     }
 
+  /**
+   * TextEdit::breakpoint_toggled signal
+   */
+  val signalBreakpointToggled: Signal1<Int> = Signal1("breakpoint_toggled")
+
+  /**
+   * TextEdit::cursor_changed signal
+   */
+  val signalCursorChanged: Signal0 = Signal0("cursor_changed")
+
+  /**
+   * TextEdit::info_clicked signal
+   */
+  val signalInfoClicked: Signal2<Int, String> = Signal2("info_clicked")
+
+  /**
+   * TextEdit::request_completion signal
+   */
+  val signalRequestCompletion: Signal0 = Signal0("request_completion")
+
+  /**
+   * TextEdit::symbol_lookup signal
+   */
+  val signalSymbolLookup: Signal3<String, Int, Int> = Signal3("symbol_lookup")
+
+  /**
+   * TextEdit::text_changed signal
+   */
+  val signalTextChanged: Signal0 = Signal0("text_changed")
+
   fun addColorRegion(
     beginKey: String,
     endKey: String,

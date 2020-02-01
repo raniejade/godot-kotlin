@@ -21,6 +21,16 @@ import kotlinx.cinterop.reinterpret
 open class ScriptEditor(
   _handle: COpaquePointer
 ) : PanelContainer(_handle) {
+  /**
+   * ScriptEditor::editor_script_changed signal
+   */
+  val signalEditorScriptChanged: Signal1<Script> = Signal1("editor_script_changed")
+
+  /**
+   * ScriptEditor::script_close signal
+   */
+  val signalScriptClose: Signal1<Script> = Signal1("script_close")
+
   fun canDropDataFw(
     point: Vector2,
     data: Variant,

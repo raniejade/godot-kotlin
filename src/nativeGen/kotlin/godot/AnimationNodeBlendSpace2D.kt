@@ -591,6 +591,11 @@ open class AnimationNodeBlendSpace2D(
     }
 
   /**
+   * AnimationNodeBlendSpace2D::triangles_updated signal
+   */
+  val signalTrianglesUpdated: Signal0 = Signal0("triangles_updated")
+
+  /**
    * Specialized setter for blendPoint0Pos
    */
   fun blendPoint0Pos(cb: Vector2.() -> Unit) {

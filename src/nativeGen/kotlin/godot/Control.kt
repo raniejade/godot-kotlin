@@ -219,6 +219,51 @@ open class Control(
     }
 
   /**
+   * Control::focus_entered signal
+   */
+  val signalFocusEntered: Signal0 = Signal0("focus_entered")
+
+  /**
+   * Control::focus_exited signal
+   */
+  val signalFocusExited: Signal0 = Signal0("focus_exited")
+
+  /**
+   * Control::gui_input signal
+   */
+  val signalGuiInput: Signal1<InputEvent> = Signal1("gui_input")
+
+  /**
+   * Control::minimum_size_changed signal
+   */
+  val signalMinimumSizeChanged: Signal0 = Signal0("minimum_size_changed")
+
+  /**
+   * Control::modal_closed signal
+   */
+  val signalModalClosed: Signal0 = Signal0("modal_closed")
+
+  /**
+   * Control::mouse_entered signal
+   */
+  val signalMouseEntered: Signal0 = Signal0("mouse_entered")
+
+  /**
+   * Control::mouse_exited signal
+   */
+  val signalMouseExited: Signal0 = Signal0("mouse_exited")
+
+  /**
+   * Control::resized signal
+   */
+  val signalResized: Signal0 = Signal0("resized")
+
+  /**
+   * Control::size_flags_changed signal
+   */
+  val signalSizeFlagsChanged: Signal0 = Signal0("size_flags_changed")
+
+  /**
    * Specialized setter for focusNeighbourBottom
    */
   fun focusNeighbourBottom(cb: NodePath.() -> Unit) {

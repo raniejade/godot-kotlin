@@ -46,6 +46,26 @@ open class Tween(
       setRepeat(value)
     }
 
+  /**
+   * Tween::tween_all_completed signal
+   */
+  val signalTweenAllCompleted: Signal0 = Signal0("tween_all_completed")
+
+  /**
+   * Tween::tween_completed signal
+   */
+  val signalTweenCompleted: Signal2<Object, NodePath> = Signal2("tween_completed")
+
+  /**
+   * Tween::tween_started signal
+   */
+  val signalTweenStarted: Signal2<Object, NodePath> = Signal2("tween_started")
+
+  /**
+   * Tween::tween_step signal
+   */
+  val signalTweenStep: Signal4<Object, NodePath, Float, Object> = Signal4("tween_step")
+
   fun followMethod(
     `object`: Object,
     method: String,

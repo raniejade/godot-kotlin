@@ -17,6 +17,11 @@ import kotlinx.cinterop.reinterpret
 open class EditorSelection(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  /**
+   * EditorSelection::selection_changed signal
+   */
+  val signalSelectionChanged: Signal0 = Signal0("selection_changed")
+
   fun addNode(node: Node) {
     val _arg = Variant.new(node)
     __method_bind.addNode.call(this._handle, listOf(_arg))

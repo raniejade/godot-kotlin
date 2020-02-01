@@ -78,6 +78,86 @@ open class Tree(
       setSelectMode(value.value)
     }
 
+  /**
+   * Tree::button_pressed signal
+   */
+  val signalButtonPressed: Signal3<TreeItem, Int, Int> = Signal3("button_pressed")
+
+  /**
+   * Tree::cell_selected signal
+   */
+  val signalCellSelected: Signal0 = Signal0("cell_selected")
+
+  /**
+   * Tree::column_title_pressed signal
+   */
+  val signalColumnTitlePressed: Signal1<Int> = Signal1("column_title_pressed")
+
+  /**
+   * Tree::custom_popup_edited signal
+   */
+  val signalCustomPopupEdited: Signal1<Boolean> = Signal1("custom_popup_edited")
+
+  /**
+   * Tree::empty_rmb signal
+   */
+  val signalEmptyRmb: Signal1<Vector2> = Signal1("empty_rmb")
+
+  /**
+   * Tree::empty_tree_rmb_selected signal
+   */
+  val signalEmptyTreeRmbSelected: Signal1<Vector2> = Signal1("empty_tree_rmb_selected")
+
+  /**
+   * Tree::item_activated signal
+   */
+  val signalItemActivated: Signal0 = Signal0("item_activated")
+
+  /**
+   * Tree::item_collapsed signal
+   */
+  val signalItemCollapsed: Signal1<TreeItem> = Signal1("item_collapsed")
+
+  /**
+   * Tree::item_custom_button_pressed signal
+   */
+  val signalItemCustomButtonPressed: Signal0 = Signal0("item_custom_button_pressed")
+
+  /**
+   * Tree::item_double_clicked signal
+   */
+  val signalItemDoubleClicked: Signal0 = Signal0("item_double_clicked")
+
+  /**
+   * Tree::item_edited signal
+   */
+  val signalItemEdited: Signal0 = Signal0("item_edited")
+
+  /**
+   * Tree::item_rmb_edited signal
+   */
+  val signalItemRmbEdited: Signal0 = Signal0("item_rmb_edited")
+
+  /**
+   * Tree::item_rmb_selected signal
+   */
+  val signalItemRmbSelected: Signal1<Vector2> = Signal1("item_rmb_selected")
+
+  /**
+   * Tree::item_selected signal
+   */
+  val signalItemSelected: Signal0 = Signal0("item_selected")
+
+  /**
+   * Tree::multi_selected signal
+   */
+  val signalMultiSelected: Signal3<TreeItem, Int, Boolean> = Signal3("multi_selected")
+
+  /**
+   * Tree::nothing_selected signal
+   */
+  val signalNothingSelected: Signal0 = Signal0("nothing_selected")
+
   fun areColumnTitlesVisible(): Boolean {
     val _ret = __method_bind.areColumnTitlesVisible.call(this._handle)
     return _ret.asBoolean()

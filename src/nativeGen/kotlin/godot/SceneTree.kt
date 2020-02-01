@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolIntArray
+import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
@@ -110,11 +111,87 @@ open class SceneTree(
       setUseFontOversampling(value)
     }
 
+  /**
+   * SceneTree::connected_to_server signal
+   */
+  val signalConnectedToServer: Signal0 = Signal0("connected_to_server")
+
+  /**
+   * SceneTree::connection_failed signal
+   */
+  val signalConnectionFailed: Signal0 = Signal0("connection_failed")
+
+  /**
+   * SceneTree::files_dropped signal
+   */
+  val signalFilesDropped: Signal2<PoolStringArray, Int> = Signal2("files_dropped")
+
+  /**
+   * SceneTree::global_menu_action signal
+   */
+  val signalGlobalMenuAction: Signal2<Variant, Variant> = Signal2("global_menu_action")
+
+  /**
+   * SceneTree::idle_frame signal
+   */
+  val signalIdleFrame: Signal0 = Signal0("idle_frame")
+
+  /**
+   * SceneTree::network_peer_connected signal
+   */
+  val signalNetworkPeerConnected: Signal1<Int> = Signal1("network_peer_connected")
+
+  /**
+   * SceneTree::network_peer_disconnected signal
+   */
+  val signalNetworkPeerDisconnected: Signal1<Int> = Signal1("network_peer_disconnected")
+
+  /**
+   * SceneTree::node_added signal
+   */
+  val signalNodeAdded: Signal1<Node> = Signal1("node_added")
+
+  /**
+   * SceneTree::node_configuration_warning_changed signal
+   */
+  val signalNodeConfigurationWarningChanged: Signal1<Node> =
+      Signal1("node_configuration_warning_changed")
+
+  /**
+   * SceneTree::node_removed signal
+   */
+  val signalNodeRemoved: Signal1<Node> = Signal1("node_removed")
+
+  /**
+   * SceneTree::node_renamed signal
+   */
+  val signalNodeRenamed: Signal1<Node> = Signal1("node_renamed")
+
+  /**
+   * SceneTree::physics_frame signal
+   */
+  val signalPhysicsFrame: Signal0 = Signal0("physics_frame")
+
+  /**
+   * SceneTree::screen_resized signal
+   */
+  val signalScreenResized: Signal0 = Signal0("screen_resized")
+
+  /**
+   * SceneTree::server_disconnected signal
+   */
+  val signalServerDisconnected: Signal0 = Signal0("server_disconnected")
+
+  /**
+   * SceneTree::tree_changed signal
+   */
+  val signalTreeChanged: Signal0 = Signal0("tree_changed")
+
   fun callGroup(
     group: String,
     method: String,
     vararg varargs: Any?
-  ): Variant {
+  ): godot.core.Variant {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(group))
     _args.add(Variant.fromAny(method))
@@ -128,7 +205,7 @@ open class SceneTree(
     group: String,
     method: String,
     vararg varargs: Any?
-  ): Variant {
+  ): godot.core.Variant {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(flags))
     _args.add(Variant.fromAny(group))
@@ -327,7 +404,7 @@ open class SceneTree(
   fun setGroup(
     group: String,
     property: String,
-    value: Variant
+    value: godot.core.Variant
   ) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(group))
@@ -340,7 +417,7 @@ open class SceneTree(
     callFlags: Int,
     group: String,
     property: String,
-    value: Variant
+    value: godot.core.Variant
   ) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(callFlags))

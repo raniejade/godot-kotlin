@@ -157,6 +157,21 @@ open class LineEdit(
       setText(value)
     }
 
+  /**
+   * LineEdit::text_change_rejected signal
+   */
+  val signalTextChangeRejected: Signal0 = Signal0("text_change_rejected")
+
+  /**
+   * LineEdit::text_changed signal
+   */
+  val signalTextChanged: Signal1<String> = Signal1("text_changed")
+
+  /**
+   * LineEdit::text_entered signal
+   */
+  val signalTextEntered: Signal1<String> = Signal1("text_entered")
+
   fun appendAtCursor(text: String) {
     val _arg = Variant.new(text)
     __method_bind.appendAtCursor.call(this._handle, listOf(_arg))

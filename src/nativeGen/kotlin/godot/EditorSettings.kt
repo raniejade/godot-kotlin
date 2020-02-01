@@ -22,6 +22,11 @@ import kotlinx.cinterop.reinterpret
 open class EditorSettings(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  /**
+   * EditorSettings::settings_changed signal
+   */
+  val signalSettingsChanged: Signal0 = Signal0("settings_changed")
+
   fun addPropertyInfo(info: Dictionary) {
     val _arg = Variant.new(info)
     __method_bind.addPropertyInfo.call(this._handle, listOf(_arg))

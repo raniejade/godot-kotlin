@@ -5,6 +5,9 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,6 +20,41 @@ import kotlinx.cinterop.reinterpret
 open class EditorInspector(
   _handle: COpaquePointer
 ) : ScrollContainer(_handle) {
+  /**
+   * EditorInspector::object_id_selected signal
+   */
+  val signalObjectIdSelected: Signal1<Int> = Signal1("object_id_selected")
+
+  /**
+   * EditorInspector::property_edited signal
+   */
+  val signalPropertyEdited: Signal1<String> = Signal1("property_edited")
+
+  /**
+   * EditorInspector::property_keyed signal
+   */
+  val signalPropertyKeyed: Signal1<String> = Signal1("property_keyed")
+
+  /**
+   * EditorInspector::property_selected signal
+   */
+  val signalPropertySelected: Signal1<String> = Signal1("property_selected")
+
+  /**
+   * EditorInspector::property_toggled signal
+   */
+  val signalPropertyToggled: Signal2<String, Boolean> = Signal2("property_toggled")
+
+  /**
+   * EditorInspector::resource_selected signal
+   */
+  val signalResourceSelected: Signal2<Object, String> = Signal2("resource_selected")
+
+  /**
+   * EditorInspector::restart_requested signal
+   */
+  val signalRestartRequested: Signal0 = Signal0("restart_requested")
+
   fun refresh() {
     __method_bind.refresh.call(this._handle)
   }

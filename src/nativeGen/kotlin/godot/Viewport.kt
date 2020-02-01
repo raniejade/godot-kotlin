@@ -265,6 +265,16 @@ open class Viewport(
     }
 
   /**
+   * Viewport::gui_focus_changed signal
+   */
+  val signalGuiFocusChanged: Signal1<Control> = Signal1("gui_focus_changed")
+
+  /**
+   * Viewport::size_changed signal
+   */
+  val signalSizeChanged: Signal0 = Signal0("size_changed")
+
+  /**
    * Specialized setter for canvasTransform
    */
   fun canvasTransform(cb: Transform2D.() -> Unit) {

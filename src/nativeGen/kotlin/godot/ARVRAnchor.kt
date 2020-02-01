@@ -30,6 +30,11 @@ open class ARVRAnchor(
       setAnchorId(value)
     }
 
+  /**
+   * ARVRAnchor::mesh_updated signal
+   */
+  val signalMeshUpdated: Signal1<Mesh> = Signal1("mesh_updated")
+
   fun getAnchorId(): Int {
     val _ret = __method_bind.getAnchorId.call(this._handle)
     return _ret.asInt()

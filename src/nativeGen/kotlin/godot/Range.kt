@@ -99,6 +99,16 @@ open class Range(
       setValue(value)
     }
 
+  /**
+   * Range::changed signal
+   */
+  val signalChanged: Signal0 = Signal0("changed")
+
+  /**
+   * Range::value_changed signal
+   */
+  val signalValueChanged: Signal1<Float> = Signal1("value_changed")
+
   fun getAsRatio(): Float {
     val _ret = __method_bind.getAsRatio.call(this._handle)
     return _ret.asFloat()

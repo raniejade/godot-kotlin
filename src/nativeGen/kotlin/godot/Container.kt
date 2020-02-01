@@ -19,6 +19,11 @@ import kotlinx.cinterop.reinterpret
 open class Container(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  /**
+   * Container::sort_children signal
+   */
+  val signalSortChildren: Signal0 = Signal0("sort_children")
+
   fun fitChildInRect(child: Control, rect: Rect2) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(child))

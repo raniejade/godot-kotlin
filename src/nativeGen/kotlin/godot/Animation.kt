@@ -50,6 +50,11 @@ open class Animation(
       setStep(value)
     }
 
+  /**
+   * Animation::tracks_changed signal
+   */
+  val signalTracksChanged: Signal0 = Signal0("tracks_changed")
+
   fun addTrack(type: Int, atPosition: Int = -1): Int {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(type))

@@ -19,6 +19,11 @@ import kotlinx.cinterop.reinterpret
 open class ScriptCreateDialog(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
+  /**
+   * ScriptCreateDialog::script_created signal
+   */
+  val signalScriptCreated: Signal1<Script> = Signal1("script_created")
+
   fun config(
     inherits: String,
     path: String,

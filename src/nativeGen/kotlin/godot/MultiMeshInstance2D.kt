@@ -41,6 +41,11 @@ open class MultiMeshInstance2D(
       setTexture(value)
     }
 
+  /**
+   * MultiMeshInstance2D::texture_changed signal
+   */
+  val signalTextureChanged: Signal0 = Signal0("texture_changed")
+
   fun getMultimesh(): MultiMesh {
     val _ret = __method_bind.getMultimesh.call(this._handle)
     return _ret.asObject(::MultiMesh)!!

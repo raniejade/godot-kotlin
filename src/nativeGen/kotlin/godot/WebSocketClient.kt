@@ -38,6 +38,31 @@ open class WebSocketClient(
       setVerifySslEnabled(value)
     }
 
+  /**
+   * WebSocketClient::connection_closed signal
+   */
+  val signalConnectionClosed: Signal1<Boolean> = Signal1("connection_closed")
+
+  /**
+   * WebSocketClient::connection_error signal
+   */
+  val signalConnectionError: Signal0 = Signal0("connection_error")
+
+  /**
+   * WebSocketClient::connection_established signal
+   */
+  val signalConnectionEstablished: Signal1<String> = Signal1("connection_established")
+
+  /**
+   * WebSocketClient::data_received signal
+   */
+  val signalDataReceived: Signal0 = Signal0("data_received")
+
+  /**
+   * WebSocketClient::server_close_request signal
+   */
+  val signalServerCloseRequest: Signal2<Int, String> = Signal2("server_close_request")
+
   fun connectToUrl(
     url: String,
     protocols: PoolStringArray,

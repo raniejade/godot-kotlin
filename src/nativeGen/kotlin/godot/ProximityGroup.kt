@@ -46,6 +46,11 @@ open class ProximityGroup(
     }
 
   /**
+   * ProximityGroup::broadcast signal
+   */
+  val signalBroadcast: Signal2<String, VariantArray> = Signal2("broadcast")
+
+  /**
    * Specialized setter for gridRadius
    */
   fun gridRadius(cb: Vector3.() -> Unit) {

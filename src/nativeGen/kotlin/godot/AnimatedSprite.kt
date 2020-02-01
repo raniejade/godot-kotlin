@@ -88,6 +88,16 @@ open class AnimatedSprite(
     }
 
   /**
+   * AnimatedSprite::animation_finished signal
+   */
+  val signalAnimationFinished: Signal0 = Signal0("animation_finished")
+
+  /**
+   * AnimatedSprite::frame_changed signal
+   */
+  val signalFrameChanged: Signal0 = Signal0("frame_changed")
+
+  /**
    * Specialized setter for offset
    */
   fun offset(cb: Vector2.() -> Unit) {

@@ -18,6 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class GDScriptFunctionState(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  /**
+   * GDScriptFunctionState::completed signal
+   */
+  val signalCompleted: Signal1<Variant> = Signal1("completed")
+
   fun isValid(extendedCheck: Boolean = false): Boolean {
     val _arg = Variant.new(extendedCheck)
     val _ret = __method_bind.isValid.call(this._handle, listOf(_arg))

@@ -44,6 +44,11 @@ open class AnimatedSprite3D(
       setSpriteFrames(value)
     }
 
+  /**
+   * AnimatedSprite3D::frame_changed signal
+   */
+  val signalFrameChanged: Signal0 = Signal0("frame_changed")
+
   fun getAnimation(): String {
     val _ret = __method_bind.getAnimation.call(this._handle)
     return _ret.asString()

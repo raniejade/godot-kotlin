@@ -207,6 +207,31 @@ open class RigidBody(
     }
 
   /**
+   * RigidBody::body_entered signal
+   */
+  val signalBodyEntered: Signal1<Node> = Signal1("body_entered")
+
+  /**
+   * RigidBody::body_exited signal
+   */
+  val signalBodyExited: Signal1<Node> = Signal1("body_exited")
+
+  /**
+   * RigidBody::body_shape_entered signal
+   */
+  val signalBodyShapeEntered: Signal4<Int, Node, Int, Int> = Signal4("body_shape_entered")
+
+  /**
+   * RigidBody::body_shape_exited signal
+   */
+  val signalBodyShapeExited: Signal4<Int, Node, Int, Int> = Signal4("body_shape_exited")
+
+  /**
+   * RigidBody::sleeping_state_changed signal
+   */
+  val signalSleepingStateChanged: Signal0 = Signal0("sleeping_state_changed")
+
+  /**
    * Specialized setter for angularVelocity
    */
   fun angularVelocity(cb: Vector3.() -> Unit) {

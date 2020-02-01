@@ -22,6 +22,11 @@ import kotlinx.cinterop.reinterpret
 open class VisualScript(
   _handle: COpaquePointer
 ) : Script(_handle) {
+  /**
+   * VisualScript::node_ports_changed signal
+   */
+  val signalNodePortsChanged: Signal2<String, Int> = Signal2("node_ports_changed")
+
   fun addCustomSignal(name: String) {
     val _arg = Variant.new(name)
     __method_bind.addCustomSignal.call(this._handle, listOf(_arg))

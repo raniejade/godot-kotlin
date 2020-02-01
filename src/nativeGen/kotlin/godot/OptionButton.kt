@@ -20,6 +20,16 @@ import kotlinx.cinterop.reinterpret
 open class OptionButton(
   _handle: COpaquePointer
 ) : Button(_handle) {
+  /**
+   * OptionButton::item_focused signal
+   */
+  val signalItemFocused: Signal1<Int> = Signal1("item_focused")
+
+  /**
+   * OptionButton::item_selected signal
+   */
+  val signalItemSelected: Signal1<Int> = Signal1("item_selected")
+
   fun addIconItem(
     texture: Texture,
     label: String,

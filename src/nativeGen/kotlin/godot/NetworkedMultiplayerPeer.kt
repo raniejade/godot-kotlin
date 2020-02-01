@@ -35,6 +35,31 @@ open class NetworkedMultiplayerPeer(
       setTransferMode(value.value)
     }
 
+  /**
+   * NetworkedMultiplayerPeer::connection_failed signal
+   */
+  val signalConnectionFailed: Signal0 = Signal0("connection_failed")
+
+  /**
+   * NetworkedMultiplayerPeer::connection_succeeded signal
+   */
+  val signalConnectionSucceeded: Signal0 = Signal0("connection_succeeded")
+
+  /**
+   * NetworkedMultiplayerPeer::peer_connected signal
+   */
+  val signalPeerConnected: Signal1<Int> = Signal1("peer_connected")
+
+  /**
+   * NetworkedMultiplayerPeer::peer_disconnected signal
+   */
+  val signalPeerDisconnected: Signal1<Int> = Signal1("peer_disconnected")
+
+  /**
+   * NetworkedMultiplayerPeer::server_disconnected signal
+   */
+  val signalServerDisconnected: Signal0 = Signal0("server_disconnected")
+
   fun getConnectionStatus(): ConnectionStatus {
     val _ret = __method_bind.getConnectionStatus.call(this._handle)
     return NetworkedMultiplayerPeer.ConnectionStatus.from(_ret.asInt())

@@ -87,6 +87,21 @@ open class FileDialog(
     }
 
   /**
+   * FileDialog::dir_selected signal
+   */
+  val signalDirSelected: Signal1<String> = Signal1("dir_selected")
+
+  /**
+   * FileDialog::file_selected signal
+   */
+  val signalFileSelected: Signal1<String> = Signal1("file_selected")
+
+  /**
+   * FileDialog::files_selected signal
+   */
+  val signalFilesSelected: Signal1<PoolStringArray> = Signal1("files_selected")
+
+  /**
    * Specialized setter for filters
    */
   fun filters(cb: PoolStringArray.() -> Unit) {

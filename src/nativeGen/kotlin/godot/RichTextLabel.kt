@@ -121,6 +121,21 @@ open class RichTextLabel(
       setVisibleCharacters(value)
     }
 
+  /**
+   * RichTextLabel::meta_clicked signal
+   */
+  val signalMetaClicked: Signal1<Variant> = Signal1("meta_clicked")
+
+  /**
+   * RichTextLabel::meta_hover_ended signal
+   */
+  val signalMetaHoverEnded: Signal1<Variant> = Signal1("meta_hover_ended")
+
+  /**
+   * RichTextLabel::meta_hover_started signal
+   */
+  val signalMetaHoverStarted: Signal1<Variant> = Signal1("meta_hover_started")
+
   fun addImage(
     image: Texture,
     width: Int = 0,

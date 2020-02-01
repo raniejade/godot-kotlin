@@ -30,6 +30,16 @@ open class AnimationNode(
       setFilterEnabled(value)
     }
 
+  /**
+   * AnimationNode::removed_from_graph signal
+   */
+  val signalRemovedFromGraph: Signal0 = Signal0("removed_from_graph")
+
+  /**
+   * AnimationNode::tree_changed signal
+   */
+  val signalTreeChanged: Signal0 = Signal0("tree_changed")
+
   fun addInput(name: String) {
     val _arg = Variant.new(name)
     __method_bind.addInput.call(this._handle, listOf(_arg))

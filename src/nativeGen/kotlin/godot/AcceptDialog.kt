@@ -43,6 +43,16 @@ open class AcceptDialog(
       setText(value)
     }
 
+  /**
+   * AcceptDialog::confirmed signal
+   */
+  val signalConfirmed: Signal0 = Signal0("confirmed")
+
+  /**
+   * AcceptDialog::custom_action signal
+   */
+  val signalCustomAction: Signal1<String> = Signal1("custom_action")
+
   fun addButton(
     text: String,
     right: Boolean = false,

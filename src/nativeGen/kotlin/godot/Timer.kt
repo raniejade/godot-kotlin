@@ -65,6 +65,11 @@ open class Timer(
       setWaitTime(value)
     }
 
+  /**
+   * Timer::timeout signal
+   */
+  val signalTimeout: Signal0 = Signal0("timeout")
+
   fun getTimeLeft(): Float {
     val _ret = __method_bind.getTimeLeft.call(this._handle)
     return _ret.asFloat()

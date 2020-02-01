@@ -21,6 +21,11 @@ import kotlinx.cinterop.reinterpret
 open class UndoRedo(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  /**
+   * UndoRedo::version_changed signal
+   */
+  val signalVersionChanged: Signal0 = Signal0("version_changed")
+
   fun addDoMethod(
     `object`: Object,
     method: String,

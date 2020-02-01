@@ -37,6 +37,21 @@ open class ARVRController(
       setRumble(value)
     }
 
+  /**
+   * ARVRController::button_pressed signal
+   */
+  val signalButtonPressed: Signal1<Int> = Signal1("button_pressed")
+
+  /**
+   * ARVRController::button_release signal
+   */
+  val signalButtonRelease: Signal1<Int> = Signal1("button_release")
+
+  /**
+   * ARVRController::mesh_updated signal
+   */
+  val signalMeshUpdated: Signal1<Mesh> = Signal1("mesh_updated")
+
   fun getControllerId(): Int {
     val _ret = __method_bind.getControllerId.call(this._handle)
     return _ret.asInt()

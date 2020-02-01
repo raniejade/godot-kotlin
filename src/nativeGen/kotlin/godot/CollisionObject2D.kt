@@ -30,6 +30,21 @@ open class CollisionObject2D(
       setPickable(value)
     }
 
+  /**
+   * CollisionObject2D::input_event signal
+   */
+  val signalInputEvent: Signal3<Node, InputEvent, Int> = Signal3("input_event")
+
+  /**
+   * CollisionObject2D::mouse_entered signal
+   */
+  val signalMouseEntered: Signal0 = Signal0("mouse_entered")
+
+  /**
+   * CollisionObject2D::mouse_exited signal
+   */
+  val signalMouseExited: Signal0 = Signal0("mouse_exited")
+
   fun createShapeOwner(owner: Object): Int {
     val _arg = Variant.new(owner)
     val _ret = __method_bind.createShapeOwner.call(this._handle, listOf(_arg))

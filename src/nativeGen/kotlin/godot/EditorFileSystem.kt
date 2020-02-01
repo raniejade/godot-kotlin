@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
@@ -20,6 +21,26 @@ import kotlinx.cinterop.reinterpret
 open class EditorFileSystem(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  /**
+   * EditorFileSystem::filesystem_changed signal
+   */
+  val signalFilesystemChanged: Signal0 = Signal0("filesystem_changed")
+
+  /**
+   * EditorFileSystem::resources_reimported signal
+   */
+  val signalResourcesReimported: Signal1<PoolStringArray> = Signal1("resources_reimported")
+
+  /**
+   * EditorFileSystem::resources_reload signal
+   */
+  val signalResourcesReload: Signal1<PoolStringArray> = Signal1("resources_reload")
+
+  /**
+   * EditorFileSystem::sources_changed signal
+   */
+  val signalSourcesChanged: Signal1<Boolean> = Signal1("sources_changed")
+
   fun getFileType(path: String): String {
     val _arg = Variant.new(path)
     val _ret = __method_bind.getFileType.call(this._handle, listOf(_arg))

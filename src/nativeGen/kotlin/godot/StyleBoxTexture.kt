@@ -144,6 +144,11 @@ open class StyleBoxTexture(
     }
 
   /**
+   * StyleBoxTexture::texture_changed signal
+   */
+  val signalTextureChanged: Signal0 = Signal0("texture_changed")
+
+  /**
    * Specialized setter for modulateColor
    */
   fun modulateColor(cb: Color.() -> Unit) {

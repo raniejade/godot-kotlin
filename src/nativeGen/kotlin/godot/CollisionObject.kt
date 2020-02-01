@@ -7,6 +7,7 @@ import godot.core.RID
 import godot.core.Transform
 import godot.core.Variant
 import godot.core.VariantArray
+import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.reflect.KCallable
@@ -36,6 +37,21 @@ open class CollisionObject(
     set(value) {
       setRayPickable(value)
     }
+
+  /**
+   * CollisionObject::input_event signal
+   */
+  val signalInputEvent: Signal5<Node, InputEvent, Vector3, Vector3, Int> = Signal5("input_event")
+
+  /**
+   * CollisionObject::mouse_entered signal
+   */
+  val signalMouseEntered: Signal0 = Signal0("mouse_entered")
+
+  /**
+   * CollisionObject::mouse_exited signal
+   */
+  val signalMouseExited: Signal0 = Signal0("mouse_exited")
 
   fun createShapeOwner(owner: Object): Int {
     val _arg = Variant.new(owner)

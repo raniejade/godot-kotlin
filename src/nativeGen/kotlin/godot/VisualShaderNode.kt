@@ -34,6 +34,11 @@ open class VisualShaderNode(
       setOutputPortForPreview(value)
     }
 
+  /**
+   * VisualShaderNode::editor_refresh_request signal
+   */
+  val signalEditorRefreshRequest: Signal0 = Signal0("editor_refresh_request")
+
   fun getDefaultInputValues(): VariantArray {
     val _ret = __method_bind.getDefaultInputValues.call(this._handle)
     return _ret.asVariantArray()

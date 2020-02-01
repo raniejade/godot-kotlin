@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.GDError
 import godot.core.Godot
+import godot.core.PoolByteArray
 import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
@@ -69,6 +70,12 @@ open class HTTPRequest(
     set(value) {
       setUseThreads(value)
     }
+
+  /**
+   * HTTPRequest::request_completed signal
+   */
+  val signalRequestCompleted: Signal4<Int, Int, PoolStringArray, PoolByteArray> =
+      Signal4("request_completed")
 
   fun cancelRequest() {
     __method_bind.cancelRequest.call(this._handle)

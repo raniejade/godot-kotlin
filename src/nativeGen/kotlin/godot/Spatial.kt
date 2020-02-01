@@ -88,6 +88,11 @@ open class Spatial(
     }
 
   /**
+   * Spatial::visibility_changed signal
+   */
+  val signalVisibilityChanged: Signal0 = Signal0("visibility_changed")
+
+  /**
    * Specialized setter for globalTransform
    */
   fun globalTransform(cb: Transform.() -> Unit) {

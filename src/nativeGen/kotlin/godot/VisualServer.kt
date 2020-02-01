@@ -36,6 +36,16 @@ import kotlinx.cinterop.reinterpret
 open class VisualServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  /**
+   * VisualServer::frame_post_draw signal
+   */
+  val signalFramePostDraw: Signal0 = Signal0("frame_post_draw")
+
+  /**
+   * VisualServer::frame_pre_draw signal
+   */
+  val signalFramePreDraw: Signal0 = Signal0("frame_pre_draw")
+
   fun blackBarsSetImages(
     left: RID,
     top: RID,

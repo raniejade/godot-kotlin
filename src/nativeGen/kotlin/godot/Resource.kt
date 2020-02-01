@@ -44,6 +44,11 @@ open class Resource(
       setPath(value)
     }
 
+  /**
+   * Resource::changed signal
+   */
+  val signalChanged: Signal0 = Signal0("changed")
+
   fun duplicate(subresources: Boolean = false): Resource {
     val _arg = Variant.new(subresources)
     val _ret = __method_bind.duplicate.call(this._handle, listOf(_arg))

@@ -96,6 +96,11 @@ open class GridMap(
     }
 
   /**
+   * GridMap::cell_size_changed signal
+   */
+  val signalCellSizeChanged: Signal1<Vector3> = Signal1("cell_size_changed")
+
+  /**
    * Specialized setter for cellSize
    */
   fun cellSize(cb: Vector3.() -> Unit) {

@@ -115,6 +115,36 @@ open class ItemList(
     }
 
   /**
+   * ItemList::item_activated signal
+   */
+  val signalItemActivated: Signal1<Int> = Signal1("item_activated")
+
+  /**
+   * ItemList::item_rmb_selected signal
+   */
+  val signalItemRmbSelected: Signal2<Int, Vector2> = Signal2("item_rmb_selected")
+
+  /**
+   * ItemList::item_selected signal
+   */
+  val signalItemSelected: Signal1<Int> = Signal1("item_selected")
+
+  /**
+   * ItemList::multi_selected signal
+   */
+  val signalMultiSelected: Signal2<Int, Boolean> = Signal2("multi_selected")
+
+  /**
+   * ItemList::nothing_selected signal
+   */
+  val signalNothingSelected: Signal0 = Signal0("nothing_selected")
+
+  /**
+   * ItemList::rmb_clicked signal
+   */
+  val signalRmbClicked: Signal1<Vector2> = Signal1("rmb_clicked")
+
+  /**
    * Specialized setter for fixedIconSize
    */
   fun fixedIconSize(cb: Vector2.() -> Unit) {

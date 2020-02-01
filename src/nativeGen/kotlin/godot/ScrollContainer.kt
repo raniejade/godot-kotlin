@@ -67,6 +67,16 @@ open class ScrollContainer(
       setEnableVScroll(value)
     }
 
+  /**
+   * ScrollContainer::scroll_ended signal
+   */
+  val signalScrollEnded: Signal0 = Signal0("scroll_ended")
+
+  /**
+   * ScrollContainer::scroll_started signal
+   */
+  val signalScrollStarted: Signal0 = Signal0("scroll_started")
+
   fun getDeadzone(): Int {
     val _ret = __method_bind.getDeadzone.call(this._handle)
     return _ret.asInt()

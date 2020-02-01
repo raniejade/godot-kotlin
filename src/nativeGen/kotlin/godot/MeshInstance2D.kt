@@ -41,6 +41,11 @@ open class MeshInstance2D(
       setTexture(value)
     }
 
+  /**
+   * MeshInstance2D::texture_changed signal
+   */
+  val signalTextureChanged: Signal0 = Signal0("texture_changed")
+
   fun getMesh(): Mesh {
     val _ret = __method_bind.getMesh.call(this._handle)
     return _ret.asObject(::Mesh)!!

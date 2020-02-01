@@ -78,6 +78,21 @@ open class ColorPicker(
     }
 
   /**
+   * ColorPicker::color_changed signal
+   */
+  val signalColorChanged: Signal1<Color> = Signal1("color_changed")
+
+  /**
+   * ColorPicker::preset_added signal
+   */
+  val signalPresetAdded: Signal1<Color> = Signal1("preset_added")
+
+  /**
+   * ColorPicker::preset_removed signal
+   */
+  val signalPresetRemoved: Signal1<Color> = Signal1("preset_removed")
+
+  /**
    * Specialized setter for color
    */
   fun color(cb: Color.() -> Unit) {

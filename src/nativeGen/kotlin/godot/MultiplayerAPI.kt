@@ -46,6 +46,36 @@ open class MultiplayerAPI(
       setRefuseNewNetworkConnections(value)
     }
 
+  /**
+   * MultiplayerAPI::connected_to_server signal
+   */
+  val signalConnectedToServer: Signal0 = Signal0("connected_to_server")
+
+  /**
+   * MultiplayerAPI::connection_failed signal
+   */
+  val signalConnectionFailed: Signal0 = Signal0("connection_failed")
+
+  /**
+   * MultiplayerAPI::network_peer_connected signal
+   */
+  val signalNetworkPeerConnected: Signal1<Int> = Signal1("network_peer_connected")
+
+  /**
+   * MultiplayerAPI::network_peer_disconnected signal
+   */
+  val signalNetworkPeerDisconnected: Signal1<Int> = Signal1("network_peer_disconnected")
+
+  /**
+   * MultiplayerAPI::network_peer_packet signal
+   */
+  val signalNetworkPeerPacket: Signal2<Int, PoolByteArray> = Signal2("network_peer_packet")
+
+  /**
+   * MultiplayerAPI::server_disconnected signal
+   */
+  val signalServerDisconnected: Signal0 = Signal0("server_disconnected")
+
   fun clear() {
     __method_bind.clear.call(this._handle)
   }

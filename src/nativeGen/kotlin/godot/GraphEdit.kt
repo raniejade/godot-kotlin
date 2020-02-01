@@ -65,6 +65,72 @@ open class GraphEdit(
     }
 
   /**
+   * GraphEdit::_begin_node_move signal
+   */
+  val signalBeginNodeMove: Signal0 = Signal0("_begin_node_move")
+
+  /**
+   * GraphEdit::_end_node_move signal
+   */
+  val signalEndNodeMove: Signal0 = Signal0("_end_node_move")
+
+  /**
+   * GraphEdit::connection_from_empty signal
+   */
+  val signalConnectionFromEmpty: Signal3<String, Int, Vector2> = Signal3("connection_from_empty")
+
+  /**
+   * GraphEdit::connection_request signal
+   */
+  val signalConnectionRequest: Signal4<String, Int, String, Int> = Signal4("connection_request")
+
+  /**
+   * GraphEdit::connection_to_empty signal
+   */
+  val signalConnectionToEmpty: Signal3<String, Int, Vector2> = Signal3("connection_to_empty")
+
+  /**
+   * GraphEdit::copy_nodes_request signal
+   */
+  val signalCopyNodesRequest: Signal0 = Signal0("copy_nodes_request")
+
+  /**
+   * GraphEdit::delete_nodes_request signal
+   */
+  val signalDeleteNodesRequest: Signal0 = Signal0("delete_nodes_request")
+
+  /**
+   * GraphEdit::disconnection_request signal
+   */
+  val signalDisconnectionRequest: Signal4<String, Int, String, Int> =
+      Signal4("disconnection_request")
+
+  /**
+   * GraphEdit::duplicate_nodes_request signal
+   */
+  val signalDuplicateNodesRequest: Signal0 = Signal0("duplicate_nodes_request")
+
+  /**
+   * GraphEdit::node_selected signal
+   */
+  val signalNodeSelected: Signal1<Node> = Signal1("node_selected")
+
+  /**
+   * GraphEdit::paste_nodes_request signal
+   */
+  val signalPasteNodesRequest: Signal0 = Signal0("paste_nodes_request")
+
+  /**
+   * GraphEdit::popup_request signal
+   */
+  val signalPopupRequest: Signal1<Vector2> = Signal1("popup_request")
+
+  /**
+   * GraphEdit::scroll_offset_changed signal
+   */
+  val signalScrollOffsetChanged: Signal1<Vector2> = Signal1("scroll_offset_changed")
+
+  /**
    * Specialized setter for scrollOffset
    */
   fun scrollOffset(cb: Vector2.() -> Unit) {

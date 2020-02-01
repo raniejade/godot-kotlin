@@ -77,6 +77,11 @@ open class AudioStreamPlayer(
       setVolumeDb(value)
     }
 
+  /**
+   * AudioStreamPlayer::finished signal
+   */
+  val signalFinished: Signal0 = Signal0("finished")
+
   fun getBus(): String {
     val _ret = __method_bind.getBus.call(this._handle)
     return _ret.asString()

@@ -37,6 +37,21 @@ open class ColorPickerButton(
     }
 
   /**
+   * ColorPickerButton::color_changed signal
+   */
+  val signalColorChanged: Signal1<Color> = Signal1("color_changed")
+
+  /**
+   * ColorPickerButton::picker_created signal
+   */
+  val signalPickerCreated: Signal0 = Signal0("picker_created")
+
+  /**
+   * ColorPickerButton::popup_closed signal
+   */
+  val signalPopupClosed: Signal0 = Signal0("popup_closed")
+
+  /**
    * Specialized setter for color
    */
   fun color(cb: Color.() -> Unit) {

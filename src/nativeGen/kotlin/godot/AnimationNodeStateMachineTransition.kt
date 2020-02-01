@@ -69,6 +69,11 @@ open class AnimationNodeStateMachineTransition(
       setXfadeTime(value)
     }
 
+  /**
+   * AnimationNodeStateMachineTransition::advance_condition_changed signal
+   */
+  val signalAdvanceConditionChanged: Signal0 = Signal0("advance_condition_changed")
+
   fun getAdvanceCondition(): String {
     val _ret = __method_bind.getAdvanceCondition.call(this._handle)
     return _ret.asString()

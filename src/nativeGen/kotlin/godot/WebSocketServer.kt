@@ -54,6 +54,26 @@ open class WebSocketServer(
       setSslCertificate(value)
     }
 
+  /**
+   * WebSocketServer::client_close_request signal
+   */
+  val signalClientCloseRequest: Signal3<Int, Int, String> = Signal3("client_close_request")
+
+  /**
+   * WebSocketServer::client_connected signal
+   */
+  val signalClientConnected: Signal2<Int, String> = Signal2("client_connected")
+
+  /**
+   * WebSocketServer::client_disconnected signal
+   */
+  val signalClientDisconnected: Signal2<Int, Boolean> = Signal2("client_disconnected")
+
+  /**
+   * WebSocketServer::data_received signal
+   */
+  val signalDataReceived: Signal1<Int> = Signal1("data_received")
+
   fun disconnectPeer(
     id: Int,
     code: Int = 1000,

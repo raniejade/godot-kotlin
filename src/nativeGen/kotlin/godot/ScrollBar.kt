@@ -26,6 +26,11 @@ open class ScrollBar(
       setCustomStep(value)
     }
 
+  /**
+   * ScrollBar::scrolling signal
+   */
+  val signalScrolling: Signal0 = Signal0("scrolling")
+
   fun getCustomStep(): Float {
     val _ret = __method_bind.getCustomStep.call(this._handle)
     return _ret.asFloat()

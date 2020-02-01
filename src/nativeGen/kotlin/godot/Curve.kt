@@ -44,6 +44,11 @@ open class Curve(
       setMinValue(value)
     }
 
+  /**
+   * Curve::range_changed signal
+   */
+  val signalRangeChanged: Signal0 = Signal0("range_changed")
+
   fun addPoint(
     position: Vector2,
     leftTangent: Float = 0.0f,

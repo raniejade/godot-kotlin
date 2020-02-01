@@ -18,6 +18,16 @@ import kotlinx.cinterop.reinterpret
 open class CameraServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  /**
+   * CameraServer::camera_feed_added signal
+   */
+  val signalCameraFeedAdded: Signal1<Int> = Signal1("camera_feed_added")
+
+  /**
+   * CameraServer::camera_feed_removed signal
+   */
+  val signalCameraFeedRemoved: Signal1<Int> = Signal1("camera_feed_removed")
+
   fun addFeed(feed: CameraFeed) {
     val _arg = Variant.new(feed)
     __method_bind.addFeed.call(this._handle, listOf(_arg))

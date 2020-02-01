@@ -46,9 +46,30 @@ class APIGenerator {
       .generateMethods(cls, index)
       .generateSignalHelpers(cls, maxSignalParam)
       .generateCompanionObject(cls, index)
+      .generateSignals(cls)
 
     return classBuilder
       .build()
+  }
+
+  private fun TypeSpec.Builder.generateSignals(cls: GDClass): TypeSpec.Builder {
+    for (signal in cls.signals) {
+      val signalClass = "Signal${signal.arguments.size}"
+      val type = if (signal.arguments.isNotEmpty()) {
+        with(ParameterizedTypeName) {
+          // void params can be variants
+          ClassName("godot", signalClass).parameterizedBy(signal.arguments.map { it.type.toClassName() ?: ClassName("godot", "Variant")})
+        }
+      } else {
+        ClassName("godot", signalClass)
+      }
+      val builder = PropertySpec.builder(signal.name, type)
+        .addKdoc("%L::%L signal", cls.name, signal.rawName)
+        .initializer("%L(%S)", signalClass, signal.rawName)
+
+      addProperty(builder.build())
+    }
+    return this
   }
 
   private fun TypeSpec.Builder.generateSignalHelpers(cls: GDClass, maxSignalParam: Int): TypeSpec.Builder {

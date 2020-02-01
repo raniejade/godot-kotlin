@@ -99,6 +99,26 @@ open class BaseButton(
       setToggleMode(value)
     }
 
+  /**
+   * BaseButton::button_down signal
+   */
+  val signalButtonDown: Signal0 = Signal0("button_down")
+
+  /**
+   * BaseButton::button_up signal
+   */
+  val signalButtonUp: Signal0 = Signal0("button_up")
+
+  /**
+   * BaseButton::pressed signal
+   */
+  val signalPressed: Signal0 = Signal0("pressed")
+
+  /**
+   * BaseButton::toggled signal
+   */
+  val signalToggled: Signal1<Boolean> = Signal1("toggled")
+
   fun getActionMode(): ActionMode {
     val _ret = __method_bind.getActionMode.call(this._handle)
     return BaseButton.ActionMode.from(_ret.asInt())

@@ -79,6 +79,11 @@ open class Sprite3D(
     }
 
   /**
+   * Sprite3D::frame_changed signal
+   */
+  val signalFrameChanged: Signal0 = Signal0("frame_changed")
+
+  /**
    * Specialized setter for frameCoords
    */
   fun frameCoords(cb: Vector2.() -> Unit) {

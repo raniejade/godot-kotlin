@@ -80,6 +80,31 @@ open class GraphNode(
     }
 
   /**
+   * GraphNode::close_request signal
+   */
+  val signalCloseRequest: Signal0 = Signal0("close_request")
+
+  /**
+   * GraphNode::dragged signal
+   */
+  val signalDragged: Signal2<Vector2, Vector2> = Signal2("dragged")
+
+  /**
+   * GraphNode::offset_changed signal
+   */
+  val signalOffsetChanged: Signal0 = Signal0("offset_changed")
+
+  /**
+   * GraphNode::raise_request signal
+   */
+  val signalRaiseRequest: Signal0 = Signal0("raise_request")
+
+  /**
+   * GraphNode::resize_request signal
+   */
+  val signalResizeRequest: Signal1<Vector2> = Signal1("resize_request")
+
+  /**
    * Specialized setter for offset
    */
   fun offset(cb: Vector2.() -> Unit) {

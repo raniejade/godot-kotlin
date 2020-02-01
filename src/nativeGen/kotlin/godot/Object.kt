@@ -27,6 +27,11 @@ import kotlinx.cinterop.reinterpret
 open class Object(
   internal val _handle: COpaquePointer
 ) {
+  /**
+   * Object::script_changed signal
+   */
+  val signalScriptChanged: Signal0 = Signal0("script_changed")
+
   fun addUserSignal(signal: String, arguments: VariantArray) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(signal))

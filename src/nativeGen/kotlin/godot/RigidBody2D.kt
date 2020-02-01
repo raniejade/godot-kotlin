@@ -183,6 +183,31 @@ open class RigidBody2D(
     }
 
   /**
+   * RigidBody2D::body_entered signal
+   */
+  val signalBodyEntered: Signal1<Node> = Signal1("body_entered")
+
+  /**
+   * RigidBody2D::body_exited signal
+   */
+  val signalBodyExited: Signal1<Node> = Signal1("body_exited")
+
+  /**
+   * RigidBody2D::body_shape_entered signal
+   */
+  val signalBodyShapeEntered: Signal4<Int, Node, Int, Int> = Signal4("body_shape_entered")
+
+  /**
+   * RigidBody2D::body_shape_exited signal
+   */
+  val signalBodyShapeExited: Signal4<Int, Node, Int, Int> = Signal4("body_shape_exited")
+
+  /**
+   * RigidBody2D::sleeping_state_changed signal
+   */
+  val signalSleepingStateChanged: Signal0 = Signal0("sleeping_state_changed")
+
+  /**
    * Specialized setter for appliedForce
    */
   fun appliedForce(cb: Vector2.() -> Unit) {

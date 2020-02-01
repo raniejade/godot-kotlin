@@ -29,6 +29,26 @@ open class VisibilityNotifier(
     }
 
   /**
+   * VisibilityNotifier::camera_entered signal
+   */
+  val signalCameraEntered: Signal1<Camera> = Signal1("camera_entered")
+
+  /**
+   * VisibilityNotifier::camera_exited signal
+   */
+  val signalCameraExited: Signal1<Camera> = Signal1("camera_exited")
+
+  /**
+   * VisibilityNotifier::screen_entered signal
+   */
+  val signalScreenEntered: Signal0 = Signal0("screen_entered")
+
+  /**
+   * VisibilityNotifier::screen_exited signal
+   */
+  val signalScreenExited: Signal0 = Signal0("screen_exited")
+
+  /**
    * Specialized setter for aabb
    */
   fun aabb(cb: AABB.() -> Unit) {

@@ -45,6 +45,11 @@ open class AudioServer(
       setGlobalRateScale(value)
     }
 
+  /**
+   * AudioServer::bus_layout_changed signal
+   */
+  val signalBusLayoutChanged: Signal0 = Signal0("bus_layout_changed")
+
   fun addBus(atPosition: Int = -1) {
     val _arg = Variant.new(atPosition)
     __method_bind.addBus.call(this._handle, listOf(_arg))

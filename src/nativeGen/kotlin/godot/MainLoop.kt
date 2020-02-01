@@ -21,6 +21,12 @@ import kotlinx.cinterop.reinterpret
 open class MainLoop(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  /**
+   * MainLoop::on_request_permissions_result signal
+   */
+  val signalOnRequestPermissionsResult: Signal2<String, Boolean> =
+      Signal2("on_request_permissions_result")
+
   fun finish() {
     __method_bind.finish.call(this._handle)
   }

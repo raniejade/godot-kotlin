@@ -19,6 +19,26 @@ import kotlinx.cinterop.reinterpret
 open class EditorPlugin(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  /**
+   * EditorPlugin::main_screen_changed signal
+   */
+  val signalMainScreenChanged: Signal1<String> = Signal1("main_screen_changed")
+
+  /**
+   * EditorPlugin::resource_saved signal
+   */
+  val signalResourceSaved: Signal1<Resource> = Signal1("resource_saved")
+
+  /**
+   * EditorPlugin::scene_changed signal
+   */
+  val signalSceneChanged: Signal1<Node> = Signal1("scene_changed")
+
+  /**
+   * EditorPlugin::scene_closed signal
+   */
+  val signalSceneClosed: Signal1<String> = Signal1("scene_closed")
+
   fun addAutoloadSingleton(name: String, path: String) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(name))

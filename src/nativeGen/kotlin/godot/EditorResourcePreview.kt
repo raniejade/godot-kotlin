@@ -18,6 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class EditorResourcePreview(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  /**
+   * EditorResourcePreview::preview_invalidated signal
+   */
+  val signalPreviewInvalidated: Signal1<String> = Signal1("preview_invalidated")
+
   fun addPreviewGenerator(generator: EditorResourcePreviewGenerator) {
     val _arg = Variant.new(generator)
     __method_bind.addPreviewGenerator.call(this._handle, listOf(_arg))

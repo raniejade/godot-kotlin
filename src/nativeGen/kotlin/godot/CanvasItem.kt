@@ -86,6 +86,26 @@ open class CanvasItem(
     }
 
   /**
+   * CanvasItem::draw signal
+   */
+  val signalDraw: Signal0 = Signal0("draw")
+
+  /**
+   * CanvasItem::hide signal
+   */
+  val signalHide: Signal0 = Signal0("hide")
+
+  /**
+   * CanvasItem::item_rect_changed signal
+   */
+  val signalItemRectChanged: Signal0 = Signal0("item_rect_changed")
+
+  /**
+   * CanvasItem::visibility_changed signal
+   */
+  val signalVisibilityChanged: Signal0 = Signal0("visibility_changed")
+
+  /**
    * Specialized setter for modulate
    */
   fun modulate(cb: Color.() -> Unit) {

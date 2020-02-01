@@ -30,6 +30,16 @@ open class Popup(
       setExclusive(value)
     }
 
+  /**
+   * Popup::about_to_show signal
+   */
+  val signalAboutToShow: Signal0 = Signal0("about_to_show")
+
+  /**
+   * Popup::popup_hide signal
+   */
+  val signalPopupHide: Signal0 = Signal0("popup_hide")
+
   fun isExclusive(): Boolean {
     val _ret = __method_bind.isExclusive.call(this._handle)
     return _ret.asBoolean()

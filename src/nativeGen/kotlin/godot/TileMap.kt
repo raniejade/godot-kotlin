@@ -169,6 +169,11 @@ open class TileMap(
     }
 
   /**
+   * TileMap::settings_changed signal
+   */
+  val signalSettingsChanged: Signal0 = Signal0("settings_changed")
+
+  /**
    * Specialized setter for cellCustomTransform
    */
   fun cellCustomTransform(cb: Transform2D.() -> Unit) {

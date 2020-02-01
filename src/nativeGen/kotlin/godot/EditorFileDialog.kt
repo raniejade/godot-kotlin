@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
@@ -83,6 +84,21 @@ open class EditorFileDialog(
     set(value) {
       setShowHiddenFiles(value)
     }
+
+  /**
+   * EditorFileDialog::dir_selected signal
+   */
+  val signalDirSelected: Signal1<String> = Signal1("dir_selected")
+
+  /**
+   * EditorFileDialog::file_selected signal
+   */
+  val signalFileSelected: Signal1<String> = Signal1("file_selected")
+
+  /**
+   * EditorFileDialog::files_selected signal
+   */
+  val signalFilesSelected: Signal1<PoolStringArray> = Signal1("files_selected")
 
   fun addFilter(filter: String) {
     val _arg = Variant.new(filter)

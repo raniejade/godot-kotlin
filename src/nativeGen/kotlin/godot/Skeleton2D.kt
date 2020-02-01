@@ -19,6 +19,11 @@ import kotlinx.cinterop.reinterpret
 open class Skeleton2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  /**
+   * Skeleton2D::bone_setup_changed signal
+   */
+  val signalBoneSetupChanged: Signal0 = Signal0("bone_setup_changed")
+
   fun getBone(idx: Int): Bone2D {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.getBone.call(this._handle, listOf(_arg))

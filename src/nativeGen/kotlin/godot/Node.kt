@@ -76,6 +76,31 @@ open class Node(
       setProcessPriority(value)
     }
 
+  /**
+   * Node::ready signal
+   */
+  val signalReady: Signal0 = Signal0("ready")
+
+  /**
+   * Node::renamed signal
+   */
+  val signalRenamed: Signal0 = Signal0("renamed")
+
+  /**
+   * Node::tree_entered signal
+   */
+  val signalTreeEntered: Signal0 = Signal0("tree_entered")
+
+  /**
+   * Node::tree_exited signal
+   */
+  val signalTreeExited: Signal0 = Signal0("tree_exited")
+
+  /**
+   * Node::tree_exiting signal
+   */
+  val signalTreeExiting: Signal0 = Signal0("tree_exiting")
+
   fun addChild(node: Node, legibleUniqueName: Boolean = false) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(node))

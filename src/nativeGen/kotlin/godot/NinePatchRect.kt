@@ -94,6 +94,11 @@ open class NinePatchRect(
     }
 
   /**
+   * NinePatchRect::texture_changed signal
+   */
+  val signalTextureChanged: Signal0 = Signal0("texture_changed")
+
+  /**
    * Specialized setter for regionRect
    */
   fun regionRect(cb: Rect2.() -> Unit) {

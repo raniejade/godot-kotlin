@@ -26,6 +26,11 @@ open class VisualShaderNodeInput(
       setInputName(value)
     }
 
+  /**
+   * VisualShaderNodeInput::input_type_changed signal
+   */
+  val signalInputTypeChanged: Signal0 = Signal0("input_type_changed")
+
   fun getInputName(): String {
     val _ret = __method_bind.getInputName.call(this._handle)
     return _ret.asString()

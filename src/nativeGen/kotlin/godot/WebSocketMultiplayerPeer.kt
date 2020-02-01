@@ -19,6 +19,11 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketMultiplayerPeer(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
+  /**
+   * WebSocketMultiplayerPeer::peer_packet signal
+   */
+  val signalPeerPacket: Signal1<Int> = Signal1("peer_packet")
+
   fun getPeer(peerId: Int): WebSocketPeer {
     val _arg = Variant.new(peerId)
     val _ret = __method_bind.getPeer.call(this._handle, listOf(_arg))

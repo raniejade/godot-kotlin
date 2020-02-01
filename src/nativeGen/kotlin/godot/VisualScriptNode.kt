@@ -18,6 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptNode(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  /**
+   * VisualScriptNode::ports_changed signal
+   */
+  val signalPortsChanged: Signal0 = Signal0("ports_changed")
+
   fun getDefaultInputValue(portIdx: Int): Variant {
     val _arg = Variant.new(portIdx)
     val _ret = __method_bind.getDefaultInputValue.call(this._handle, listOf(_arg))

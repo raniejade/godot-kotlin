@@ -101,6 +101,11 @@ open class VideoPlayer(
       setVolumeDb(value)
     }
 
+  /**
+   * VideoPlayer::finished signal
+   */
+  val signalFinished: Signal0 = Signal0("finished")
+
   fun getAudioTrack(): Int {
     val _ret = __method_bind.getAudioTrack.call(this._handle)
     return _ret.asInt()

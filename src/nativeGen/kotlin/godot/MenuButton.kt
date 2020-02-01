@@ -26,6 +26,11 @@ open class MenuButton(
       setSwitchOnHover(value)
     }
 
+  /**
+   * MenuButton::about_to_show signal
+   */
+  val signalAboutToShow: Signal0 = Signal0("about_to_show")
+
   fun getPopup(): PopupMenu {
     val _ret = __method_bind.getPopup.call(this._handle)
     return _ret.asObject(::PopupMenu)!!

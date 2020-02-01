@@ -92,6 +92,16 @@ open class TouchScreenButton(
       setVisibilityMode(value.value)
     }
 
+  /**
+   * TouchScreenButton::pressed signal
+   */
+  val signalPressed: Signal0 = Signal0("pressed")
+
+  /**
+   * TouchScreenButton::released signal
+   */
+  val signalReleased: Signal0 = Signal0("released")
+
   fun getAction(): String {
     val _ret = __method_bind.getAction.call(this._handle)
     return _ret.asString()

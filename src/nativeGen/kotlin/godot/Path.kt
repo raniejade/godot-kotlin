@@ -25,6 +25,11 @@ open class Path(
       setCurve(value)
     }
 
+  /**
+   * Path::curve_changed signal
+   */
+  val signalCurveChanged: Signal0 = Signal0("curve_changed")
+
   fun getCurve(): Curve3D {
     val _ret = __method_bind.getCurve.call(this._handle)
     return _ret.asObject(::Curve3D)!!

@@ -61,6 +61,36 @@ open class Tabs(
       setTabCloseDisplayPolicy(value.value)
     }
 
+  /**
+   * Tabs::reposition_active_tab_request signal
+   */
+  val signalRepositionActiveTabRequest: Signal1<Int> = Signal1("reposition_active_tab_request")
+
+  /**
+   * Tabs::right_button_pressed signal
+   */
+  val signalRightButtonPressed: Signal1<Int> = Signal1("right_button_pressed")
+
+  /**
+   * Tabs::tab_changed signal
+   */
+  val signalTabChanged: Signal1<Int> = Signal1("tab_changed")
+
+  /**
+   * Tabs::tab_clicked signal
+   */
+  val signalTabClicked: Signal1<Int> = Signal1("tab_clicked")
+
+  /**
+   * Tabs::tab_close signal
+   */
+  val signalTabClose: Signal1<Int> = Signal1("tab_close")
+
+  /**
+   * Tabs::tab_hover signal
+   */
+  val signalTabHover: Signal1<Int> = Signal1("tab_hover")
+
   fun addTab(title: String = "", icon: Texture) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(title))

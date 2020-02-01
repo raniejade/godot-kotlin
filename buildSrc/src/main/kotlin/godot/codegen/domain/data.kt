@@ -2,6 +2,7 @@ package godot.codegen.domain
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.squareup.kotlinpoet.ClassName
+import org.jetbrains.kotlin.gradle.utils.loadPropertyFromResources
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class RawGDProperty(
@@ -39,6 +40,9 @@ data class RawGDMethod(
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class RawGDEnum(val name: String, val values: Map<String, Int>)
 
+@JsonIgnoreProperties
+data class RawGDSignal(val name: String, val arguments: List<RawGDArgument>)
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class RawGDClass(
   val name: String,
@@ -50,7 +54,8 @@ data class RawGDClass(
   val constants: Map<String, Any>,
   val enums: List<RawGDEnum>,
   val methods: List<RawGDMethod>,
-  val properties: List<RawGDProperty>
+  val properties: List<RawGDProperty>,
+  val signals: List<RawGDSignal>
 )
 
 enum class GDApiType {
@@ -68,7 +73,8 @@ data class GDClass(
   val enums: Map<String, GDEnum>,
   val properties: Map<String, GDProperty>,
   val methods: Map<String, GDMethod>,
-  val constants: Map<String, Any>
+  val constants: Map<String, Any>,
+  val signals: List<GDSignal>
 ) {
   companion object {
     fun from(raw: RawGDClass): GDClass {
@@ -82,7 +88,24 @@ data class GDClass(
         raw.enums.map(GDEnum.Companion::from).map { it.name to it }.toMap(),
         raw.properties.map(GDProperty.Companion::from).map { it.name to it }.toMap(),
         raw.methods.map(GDMethod.Companion::from).map { it.name to it }.toMap(),
-        raw.constants
+        raw.constants,
+        raw.signals.map(GDSignal.Companion::from)
+      )
+    }
+  }
+}
+
+data class GDSignal(
+  val rawName: String,
+  val name: String,
+  val arguments: List<GDArgument>
+) {
+  companion object {
+    fun from(raw: RawGDSignal): GDSignal {
+      return GDSignal(
+        raw.name,
+        "signal" + GDProperty.normalizePropertyName(raw.name).capitalize(),
+        raw.arguments.map(GDArgument.Companion::from)
       )
     }
   }
@@ -180,7 +203,7 @@ data class GDProperty(
       )
     }
 
-    private fun normalizePropertyName(name: String): String {
+    fun normalizePropertyName(name: String): String {
       return name.split("_", "/")
         .joinToString("") { it.capitalize() }
         .decapitalize()

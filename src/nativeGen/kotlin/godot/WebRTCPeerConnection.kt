@@ -21,6 +21,22 @@ import kotlinx.cinterop.reinterpret
 open class WebRTCPeerConnection(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  /**
+   * WebRTCPeerConnection::data_channel_received signal
+   */
+  val signalDataChannelReceived: Signal1<Object> = Signal1("data_channel_received")
+
+  /**
+   * WebRTCPeerConnection::ice_candidate_created signal
+   */
+  val signalIceCandidateCreated: Signal3<String, Int, String> = Signal3("ice_candidate_created")
+
+  /**
+   * WebRTCPeerConnection::session_description_created signal
+   */
+  val signalSessionDescriptionCreated: Signal2<String, String> =
+      Signal2("session_description_created")
+
   fun addIceCandidate(
     media: String,
     index: Int,

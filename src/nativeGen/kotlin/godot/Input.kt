@@ -23,6 +23,11 @@ import kotlinx.cinterop.reinterpret
 open class Input(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  /**
+   * Input::joy_connection_changed signal
+   */
+  val signalJoyConnectionChanged: Signal2<Int, Boolean> = Signal2("joy_connection_changed")
+
   fun actionPress(action: String, strength: Float = 1.0f) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(action))

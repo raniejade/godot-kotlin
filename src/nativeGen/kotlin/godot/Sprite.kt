@@ -127,6 +127,16 @@ open class Sprite(
     }
 
   /**
+   * Sprite::frame_changed signal
+   */
+  val signalFrameChanged: Signal0 = Signal0("frame_changed")
+
+  /**
+   * Sprite::texture_changed signal
+   */
+  val signalTextureChanged: Signal0 = Signal0("texture_changed")
+
+  /**
    * Specialized setter for frameCoords
    */
   fun frameCoords(cb: Vector2.() -> Unit) {

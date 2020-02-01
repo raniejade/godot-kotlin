@@ -29,6 +29,26 @@ open class VisibilityNotifier2D(
     }
 
   /**
+   * VisibilityNotifier2D::screen_entered signal
+   */
+  val signalScreenEntered: Signal0 = Signal0("screen_entered")
+
+  /**
+   * VisibilityNotifier2D::screen_exited signal
+   */
+  val signalScreenExited: Signal0 = Signal0("screen_exited")
+
+  /**
+   * VisibilityNotifier2D::viewport_entered signal
+   */
+  val signalViewportEntered: Signal1<Viewport> = Signal1("viewport_entered")
+
+  /**
+   * VisibilityNotifier2D::viewport_exited signal
+   */
+  val signalViewportExited: Signal1<Viewport> = Signal1("viewport_exited")
+
+  /**
    * Specialized setter for rect
    */
   fun rect(cb: Rect2.() -> Unit) {
