@@ -285,7 +285,7 @@ class Variant(
   fun toAny(): Any? {
     return when (type) {
       Type.NIL -> null
-      Type.OBJECT -> throw UnsupportedOperationException("Can't convert to Any type")
+      Type.OBJECT -> asObject(::Object)
       Type.BOOL -> asBoolean()
       Type.FLOAT -> asFloat()
       Type.INT -> asInt()

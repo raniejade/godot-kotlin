@@ -25,6 +25,17 @@ abstract class GodotClass<S: Object, T: S>(
 
   open fun init(registry: ClassMemberRegistry<T>) {}
 
+  fun new() : T {
+    val base = createBaseClass()
+    return factory(base._handle)
+  }
+
+  fun from(ptr: COpaquePointer): T {
+    return factory(ptr)
+  }
+
+  protected abstract fun createBaseClass(): S
+
   private class PropertyDelegate<T, R: Any>(val changeListener: ChangeListener<T, R>) : ReadWriteProperty<T, R> {
     private lateinit var value: R
     override fun getValue(thisRef: T, property: KProperty<*>): R {

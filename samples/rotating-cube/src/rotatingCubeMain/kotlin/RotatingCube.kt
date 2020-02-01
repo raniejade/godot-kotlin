@@ -49,5 +49,7 @@ class RotatingCube(handle: COpaquePointer): Spatial(handle) {
         registerSignal(RotatingCube::signalReverseChanged, "reverse")
       }
     }
+
+    override fun createBaseClass() = Spatial.new()
   }
 }
