@@ -11,7 +11,7 @@ albedo_color = Color( 0.882353, 0.321569, 0.321569, 1 )
 
 [node name="Cube" type="Spatial" parent="."]
 script = ExtResource( 1 )
-rotationSpeed = 389.0
+rotationSpeed = 94.5
 reverse = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Cube"]
@@ -20,3 +20,8 @@ material/0 = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.920729, 0.390202, 0, -0.390202, 0.920729, 0, 2.436, 4.51712 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+[connection signal="timeout" from="Timer" to="Cube" method="flipRotation"]
