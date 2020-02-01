@@ -68,7 +68,7 @@ open class TreeItem(
     val _args = VariantArray.new()
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.callRecursive.call(this._handle, _args.toVariant(), 1)
+    val _ret = __method_bind.callRecursive.call(this._handle, _args.toVariant(), 1 + varargs.size)
     return _ret
   }
 

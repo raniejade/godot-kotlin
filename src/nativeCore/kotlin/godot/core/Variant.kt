@@ -1,16 +1,12 @@
 package godot.core
 
-import gdnative.godot_signal_argument
 import gdnative.godot_variant
 import gdnative.godot_variant_operator
 import gdnative.godot_variant_type
-import godot.ClassMemberRegistry
 import godot.Object
-import godot.Signal0
 import kotlinx.cinterop.*
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.freeze
-import kotlin.reflect.KProperty1
 
 class Variant(
   value: CValue<godot_variant>
@@ -523,6 +519,10 @@ class Variant(
       }
       return when (value) {
         is Unit -> new()
+        is Int -> new(value)
+        is Float -> new(value)
+        is String -> new(value)
+        is Boolean -> new(value)
         is CoreType<*> -> value.toVariant()
         is Variant -> value
         is Object -> new(value)

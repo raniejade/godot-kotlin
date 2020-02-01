@@ -34,7 +34,7 @@ open class Object(
     val _args = VariantArray.new()
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.call.call(this._handle, _args.toVariant(), 1)
+    val _ret = __method_bind.call.call(this._handle, _args.toVariant(), 1 + varargs.size)
     return _ret
   }
 
@@ -42,7 +42,7 @@ open class Object(
     val _args = VariantArray.new()
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    __method_bind.callDeferred.call(this._handle, _args.toVariant(), 1)
+    __method_bind.callDeferred.call(this._handle, _args.toVariant(), 1 + varargs.size)
   }
 
   fun callv(method: String, argArray: VariantArray): Variant {
@@ -91,7 +91,7 @@ open class Object(
     val _args = VariantArray.new()
     _args.append(signal)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    __method_bind.emitSignal.call(this._handle, _args.toVariant(), 1)
+    __method_bind.emitSignal.call(this._handle, _args.toVariant(), 1 + varargs.size)
   }
 
   fun get(property: String): Variant {
@@ -283,6 +283,177 @@ open class Object(
   }
 
   open fun _onDestroy() {
+  }
+
+  fun Signal0.emit() {
+    emit(
+      this@Object)
+  }
+
+  fun <A0> Signal1<A0>.emit(a0: A0) {
+    emit(
+      this@Object,
+      a0)
+  }
+
+  fun <A0, A1> Signal2<A0, A1>.emit(a0: A0, a1: A1) {
+    emit(
+      this@Object,
+      a0,
+      a1)
+  }
+
+  fun <A0, A1, A2> Signal3<A0, A1, A2>.emit(
+    a0: A0,
+    a1: A1,
+    a2: A2
+  ) {
+    emit(
+      this@Object,
+      a0,
+      a1,
+      a2)
+  }
+
+  fun <A0, A1, A2, A3> Signal4<A0, A1, A2, A3>.emit(
+    a0: A0,
+    a1: A1,
+    a2: A2,
+    a3: A3
+  ) {
+    emit(
+      this@Object,
+      a0,
+      a1,
+      a2,
+      a3)
+  }
+
+  fun <A0, A1, A2, A3, A4> Signal5<A0, A1, A2, A3, A4>.emit(
+    a0: A0,
+    a1: A1,
+    a2: A2,
+    a3: A3,
+    a4: A4
+  ) {
+    emit(
+      this@Object,
+      a0,
+      a1,
+      a2,
+      a3,
+      a4)
+  }
+
+  fun <A0, A1, A2, A3, A4, A5> Signal6<A0, A1, A2, A3, A4, A5>.emit(
+    a0: A0,
+    a1: A1,
+    a2: A2,
+    a3: A3,
+    a4: A4,
+    a5: A5
+  ) {
+    emit(
+      this@Object,
+      a0,
+      a1,
+      a2,
+      a3,
+      a4,
+      a5)
+  }
+
+  fun <A0, A1, A2, A3, A4, A5, A6> Signal7<A0, A1, A2, A3, A4, A5, A6>.emit(
+    a0: A0,
+    a1: A1,
+    a2: A2,
+    a3: A3,
+    a4: A4,
+    a5: A5,
+    a6: A6
+  ) {
+    emit(
+      this@Object,
+      a0,
+      a1,
+      a2,
+      a3,
+      a4,
+      a5,
+      a6)
+  }
+
+  fun <A0, A1, A2, A3, A4, A5, A6, A7> Signal8<A0, A1, A2, A3, A4, A5, A6, A7>.emit(
+    a0: A0,
+    a1: A1,
+    a2: A2,
+    a3: A3,
+    a4: A4,
+    a5: A5,
+    a6: A6,
+    a7: A7
+  ) {
+    emit(
+      this@Object,
+      a0,
+      a1,
+      a2,
+      a3,
+      a4,
+      a5,
+      a6,
+      a7)
+  }
+
+  fun <A0, A1, A2, A3, A4, A5, A6, A7, A8> Signal9<A0, A1, A2, A3, A4, A5, A6, A7, A8>.emit(
+    a0: A0,
+    a1: A1,
+    a2: A2,
+    a3: A3,
+    a4: A4,
+    a5: A5,
+    a6: A6,
+    a7: A7,
+    a8: A8
+  ) {
+    emit(
+      this@Object,
+      a0,
+      a1,
+      a2,
+      a3,
+      a4,
+      a5,
+      a6,
+      a7,
+      a8)
+  }
+
+  fun <A0, A1, A2, A3, A4, A5, A6, A7, A8, A9> Signal10<A0, A1, A2, A3, A4, A5, A6, A7, A8,
+      A9>.emit(
+    a0: A0,
+    a1: A1,
+    a2: A2,
+    a3: A3,
+    a4: A4,
+    a5: A5,
+    a6: A6,
+    a7: A7,
+    a8: A8,
+    a9: A9
+  ) {
+    emit(
+      this@Object,
+      a0,
+      a1,
+      a2,
+      a3,
+      a4,
+      a5,
+      a6,
+      a7,
+      a8,
+      a9)
   }
 
   enum class ConnectFlags(

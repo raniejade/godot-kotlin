@@ -118,7 +118,7 @@ open class SceneTree(
     _args.append(group)
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.callGroup.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.callGroup.call(this._handle, _args.toVariant(), 2 + varargs.size)
     return _ret
   }
 
@@ -133,7 +133,7 @@ open class SceneTree(
     _args.append(group)
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.callGroupFlags.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.callGroupFlags.call(this._handle, _args.toVariant(), 3 + varargs.size)
     return _ret
   }
 

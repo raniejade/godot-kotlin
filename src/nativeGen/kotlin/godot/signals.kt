@@ -45,7 +45,7 @@ class Signal0Provider(
 /**
  * Creates a signal of 0 params
  */
-fun GodotClass<*, *>.signal0(): Signal0Provider = Signal0Provider(registry.signals)
+fun GodotClass<*, *>.signal0(): Signal0Provider = Signal0Provider(signals())
 
 
 /**
@@ -83,7 +83,7 @@ class Signal1Provider<A0>(
 /**
  * Creates a signal of 1 params
  */
-fun <A0> GodotClass<*, *>.signal1(): Signal1Provider<A0> = Signal1Provider(registry.signals)
+fun <A0> GodotClass<*, *>.signal1(): Signal1Provider<A0> = Signal1Provider(signals())
 
 
 /**
@@ -127,7 +127,7 @@ class Signal2Provider<A0, A1>(
 /**
  * Creates a signal of 2 params
  */
-fun <A0, A1> GodotClass<*, *>.signal2(): Signal2Provider<A0, A1> = Signal2Provider(registry.signals)
+fun <A0, A1> GodotClass<*, *>.signal2(): Signal2Provider<A0, A1> = Signal2Provider(signals())
 
 
 /**
@@ -179,7 +179,7 @@ class Signal3Provider<A0, A1, A2>(
  * Creates a signal of 3 params
  */
 fun <A0, A1, A2> GodotClass<*, *>.signal3(): Signal3Provider<A0, A1, A2> =
-    Signal3Provider(registry.signals)
+    Signal3Provider(signals())
 
 
 /**
@@ -235,7 +235,7 @@ class Signal4Provider<A0, A1, A2, A3>(
  * Creates a signal of 4 params
  */
 fun <A0, A1, A2, A3> GodotClass<*, *>.signal4(): Signal4Provider<A0, A1, A2, A3> =
-    Signal4Provider(registry.signals)
+    Signal4Provider(signals())
 
 
 /**
@@ -295,7 +295,7 @@ class Signal5Provider<A0, A1, A2, A3, A4>(
  * Creates a signal of 5 params
  */
 fun <A0, A1, A2, A3, A4> GodotClass<*, *>.signal5(): Signal5Provider<A0, A1, A2, A3, A4> =
-    Signal5Provider(registry.signals)
+    Signal5Provider(signals())
 
 
 /**
@@ -359,7 +359,7 @@ class Signal6Provider<A0, A1, A2, A3, A4, A5>(
  * Creates a signal of 6 params
  */
 fun <A0, A1, A2, A3, A4, A5> GodotClass<*, *>.signal6(): Signal6Provider<A0, A1, A2, A3, A4, A5> =
-    Signal6Provider(registry.signals)
+    Signal6Provider(signals())
 
 
 /**
@@ -427,7 +427,7 @@ class Signal7Provider<A0, A1, A2, A3, A4, A5, A6>(
  * Creates a signal of 7 params
  */
 fun <A0, A1, A2, A3, A4, A5, A6> GodotClass<*, *>.signal7(): Signal7Provider<A0, A1, A2, A3, A4, A5,
-    A6> = Signal7Provider(registry.signals)
+    A6> = Signal7Provider(signals())
 
 
 /**
@@ -500,7 +500,7 @@ class Signal8Provider<A0, A1, A2, A3, A4, A5, A6, A7>(
  * Creates a signal of 8 params
  */
 fun <A0, A1, A2, A3, A4, A5, A6, A7> GodotClass<*, *>.signal8(): Signal8Provider<A0, A1, A2, A3, A4,
-    A5, A6, A7> = Signal8Provider(registry.signals)
+    A5, A6, A7> = Signal8Provider(signals())
 
 
 /**
@@ -577,7 +577,7 @@ class Signal9Provider<A0, A1, A2, A3, A4, A5, A6, A7, A8>(
  * Creates a signal of 9 params
  */
 fun <A0, A1, A2, A3, A4, A5, A6, A7, A8> GodotClass<*, *>.signal9(): Signal9Provider<A0, A1, A2, A3,
-    A4, A5, A6, A7, A8> = Signal9Provider(registry.signals)
+    A4, A5, A6, A7, A8> = Signal9Provider(signals())
 
 
 /**
@@ -658,7 +658,7 @@ class Signal10Provider<A0, A1, A2, A3, A4, A5, A6, A7, A8, A9>(
  * Creates a signal of 10 params
  */
 fun <A0, A1, A2, A3, A4, A5, A6, A7, A8, A9> GodotClass<*, *>.signal10(): Signal10Provider<A0, A1,
-    A2, A3, A4, A5, A6, A7, A8, A9> = Signal10Provider(registry.signals)
+    A2, A3, A4, A5, A6, A7, A8, A9> = Signal10Provider(signals())
 
 
 /**

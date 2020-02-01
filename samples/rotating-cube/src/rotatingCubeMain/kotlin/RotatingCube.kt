@@ -4,9 +4,8 @@ import kotlinx.cinterop.COpaquePointer
 
 class RotatingCube(handle: COpaquePointer): Spatial(handle) {
   var rotationSpeed by floatProperty()
-  var reverse by booleanProperty()
-
   val reverseChanged by signal1<Boolean>()
+  var reverse by booleanProperty(reverseChanged.asListener())
 
   override fun _onInit() {
     rotationDegrees = Vector3.new(y = 1f)

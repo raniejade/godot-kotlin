@@ -414,7 +414,7 @@ open class Node(
     val _args = VariantArray.new()
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpc.call(this._handle, _args.toVariant(), 1)
+    val _ret = __method_bind.rpc.call(this._handle, _args.toVariant(), 1 + varargs.size)
     return _ret
   }
 
@@ -434,7 +434,7 @@ open class Node(
     _args.append(peerId)
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpcId.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.rpcId.call(this._handle, _args.toVariant(), 2 + varargs.size)
     return _ret
   }
 
@@ -442,7 +442,7 @@ open class Node(
     val _args = VariantArray.new()
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpcUnreliable.call(this._handle, _args.toVariant(), 1)
+    val _ret = __method_bind.rpcUnreliable.call(this._handle, _args.toVariant(), 1 + varargs.size)
     return _ret
   }
 
@@ -455,7 +455,7 @@ open class Node(
     _args.append(peerId)
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpcUnreliableId.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.rpcUnreliableId.call(this._handle, _args.toVariant(), 2 + varargs.size)
     return _ret
   }
 

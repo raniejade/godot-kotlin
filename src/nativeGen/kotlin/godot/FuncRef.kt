@@ -22,7 +22,7 @@ open class FuncRef(
   fun callFunc(vararg varargs: Any?): Variant {
     val _args = VariantArray.new()
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.callFunc.call(this._handle, _args.toVariant(), 0)
+    val _ret = __method_bind.callFunc.call(this._handle, _args.toVariant(), 0 + varargs.size)
     return _ret
   }
 

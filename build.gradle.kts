@@ -1,6 +1,4 @@
 import godot.task.GenerateAPI
-import godot.task.GenerateMethodN
-import godot.task.GenerateSignalN
 import org.apache.tools.ant.taskdefs.condition.Os
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithTests
 
@@ -39,22 +37,13 @@ kotlin {
     target.configure()
 }
 
+// Number of parameters generated for method and signal classes
+val MAX_SIGNAL_PARAMS = 10
 
 tasks {
     val generateAPI by creating(GenerateAPI::class) {
         source.set(project.file("godot_headers/api.json"))
-        outputDir.set(project.file("src/nativeGen/kotlin"))
-    }
-
-    val generateMethodN by creating(GenerateMethodN::class) {
-        filename.set("methods")
-        n.set(10)
-        outputDir.set(project.file("src/nativeGen/kotlin"))
-    }
-
-    val generateSignalN by creating(GenerateSignalN::class) {
-        filename.set("signals")
-        n.set(10)
+        maxSignalParams.set(MAX_SIGNAL_PARAMS)
         outputDir.set(project.file("src/nativeGen/kotlin"))
     }
 }

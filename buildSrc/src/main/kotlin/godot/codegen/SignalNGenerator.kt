@@ -181,7 +181,7 @@ class SignalNGenerator {
       )
       .addTypeVariables(templateArgs)
       .returns(signalProviderClassName)
-      .addStatement("return %N(registry.signals)\n","Signal${argCount}Provider")
+      .addStatement("return %N(signals())\n","Signal${argCount}Provider")
 
     addFunction(delegateBuilder.build())
     return this

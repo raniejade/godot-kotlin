@@ -36,6 +36,6 @@ class ClassHandle<S: Object, T: S>(
       )
     }
 
-    info.init(this)
+    info.setup(this)
   }
 }

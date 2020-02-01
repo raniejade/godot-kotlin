@@ -29,7 +29,7 @@ open class UndoRedo(
     _args.append(`object`)
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    __method_bind.addDoMethod.call(this._handle, _args.toVariant(), 2)
+    __method_bind.addDoMethod.call(this._handle, _args.toVariant(), 2 + varargs.size)
   }
 
   fun addDoProperty(
@@ -58,7 +58,7 @@ open class UndoRedo(
     _args.append(`object`)
     _args.append(method)
     varargs.forEach { _args.append(Variant.fromAny(it)) }
-    __method_bind.addUndoMethod.call(this._handle, _args.toVariant(), 2)
+    __method_bind.addUndoMethod.call(this._handle, _args.toVariant(), 2 + varargs.size)
   }
 
   fun addUndoProperty(

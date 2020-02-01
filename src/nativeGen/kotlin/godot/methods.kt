@@ -7,6 +7,9 @@ import kotlin.Suppress
 import kotlin.collections.List
 import kotlin.reflect.KCallable
 
+/**
+ * Base class for all methods
+ */
 abstract class Method<T : Object, R>(
   val parameterCount: Int
 ) {

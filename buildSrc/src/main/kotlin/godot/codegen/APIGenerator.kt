@@ -10,30 +10,33 @@ import java.io.File
 class APIGenerator {
   private val mapper = jacksonObjectMapper()
 
-  fun generate(source: File, outputDir: File) {
+  fun generate(source: File, maxSignalParam: Int, outputDir: File) {
     val types = parseJson(source).map(GDClass.Companion::from)
     val index = GDClassIndex(types.map { it.name to it }.toMap())
-    types.map { generateFile(it, index) }
+    types.map { generateFile(it, maxSignalParam, index) }
       .forEach { fs ->
         fs.writeTo(outputDir)
       }
+
+    MethodNGenerator().generate("methods", maxSignalParam, outputDir)
+    SignalNGenerator().generate("signals", maxSignalParam, outputDir)
   }
 
-  private fun generateFile(cls: GDClass, index: GDClassIndex): FileSpec {
+  private fun generateFile(cls: GDClass, maxSignalParam: Int, index: GDClassIndex): FileSpec {
     return FileSpec.builder(BASE_PACKAGE, cls.name)
       .addComment("""
         DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
       """.trimIndent())
       .addCommonImports(cls)
-      .addType(generateType(cls, index))
+      .addType(generateType(cls, maxSignalParam, index))
       .build()
   }
 
-  private fun generateType(cls: GDClass, index: GDClassIndex): TypeSpec {
-    return generateInstanceType(cls, index)
+  private fun generateType(cls: GDClass, maxSignalParam: Int, index: GDClassIndex): TypeSpec {
+    return generateInstanceType(cls, maxSignalParam, index)
   }
 
-  private fun generateInstanceType(cls: GDClass, index: GDClassIndex): TypeSpec {
+  private fun generateInstanceType(cls: GDClass, maxSignalParam: Int, index: GDClassIndex): TypeSpec {
     val classBuilder = TypeSpec.classBuilder(cls.name)
       .addModifiers(KModifier.OPEN)
       .generatePrimaryConstructor(cls)
@@ -41,10 +44,43 @@ class APIGenerator {
       .generateEnums(cls)
       .generateProperties(cls, index)
       .generateMethods(cls, index)
+      .generateSignalHelpers(cls, maxSignalParam)
       .generateCompanionObject(cls, index)
 
     return classBuilder
       .build()
+  }
+
+  private fun TypeSpec.Builder.generateSignalHelpers(cls: GDClass, maxSignalParam: Int): TypeSpec.Builder {
+    if (cls.name == "Object") {
+      for (argCount in 0..maxSignalParam) {
+        val templateArgs = mutableListOf<TypeVariableName>()
+        for (arg in 0 until argCount) {
+          templateArgs.add(TypeVariableName("A$arg"))
+        }
+
+        val signalClassName = if (argCount > 0) {
+          with(ParameterizedTypeName) {
+            ClassName("godot", "Signal$argCount").parameterizedBy(templateArgs)
+          }
+        } else {
+          ClassName("godot", "Signal$argCount")
+        }
+        val helper = FunSpec.builder("emit")
+          .addTypeVariables(templateArgs)
+          .receiver(signalClassName)
+
+        helper.addCode("emit(\n")
+        helper.addCode("⇥this@Object")
+        templateArgs.forEachIndexed { index, t ->
+          helper.addParameter("a$index", t)
+          helper.addCode(",\na$index")
+        }
+        helper.addCode("⇤)\n")
+        addFunction(helper.build())
+      }
+    }
+    return this
   }
 
   private fun TypeSpec.Builder.generateProperties(cls: GDClass, index: GDClassIndex): TypeSpec.Builder {
@@ -425,7 +461,13 @@ class APIGenerator {
               builder.addStatement("varargs.forEach { _args.append(Variant.fromAny(it)) }")
             }
 
-            builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, _args.toVariant(), %L)", method.name, parameters.size)
+            var paramSize = "${parameters.size}"
+
+            if (method.hasVarargs) {
+              paramSize += " + varargs.size"
+            }
+
+            builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, _args.toVariant(), %L)", method.name, paramSize)
           }
         } else {
           builder.addStatement("${returnVar}__method_bind.%L.call(this._handle)", method.name)
