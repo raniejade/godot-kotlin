@@ -72,22 +72,22 @@ open class PhysicsMaterial(
 
   fun setAbsorbent(absorbent: Boolean) {
     val _arg = Variant.new(absorbent)
-    __method_bind.setAbsorbent.call(this._handle, _arg, 1)
+    __method_bind.setAbsorbent.call(this._handle, listOf(_arg))
   }
 
   fun setBounce(bounce: Float) {
     val _arg = Variant.new(bounce)
-    __method_bind.setBounce.call(this._handle, _arg, 1)
+    __method_bind.setBounce.call(this._handle, listOf(_arg))
   }
 
   fun setFriction(friction: Float) {
     val _arg = Variant.new(friction)
-    __method_bind.setFriction.call(this._handle, _arg, 1)
+    __method_bind.setFriction.call(this._handle, listOf(_arg))
   }
 
   fun setRough(rough: Boolean) {
     val _arg = Variant.new(rough)
-    __method_bind.setRough.call(this._handle, _arg, 1)
+    __method_bind.setRough.call(this._handle, listOf(_arg))
   }
 
   companion object {

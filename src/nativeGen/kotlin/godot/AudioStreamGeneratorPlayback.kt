@@ -22,7 +22,7 @@ open class AudioStreamGeneratorPlayback(
 ) : AudioStreamPlaybackResampled(_handle) {
   fun canPushBuffer(amount: Int): Boolean {
     val _arg = Variant.new(amount)
-    val _ret = __method_bind.canPushBuffer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.canPushBuffer.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -42,13 +42,13 @@ open class AudioStreamGeneratorPlayback(
 
   fun pushBuffer(frames: PoolVector2Array): Boolean {
     val _arg = Variant.new(frames)
-    val _ret = __method_bind.pushBuffer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.pushBuffer.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun pushFrame(frame: Vector2): Boolean {
     val _arg = Variant.new(frame)
-    val _ret = __method_bind.pushFrame.call(this._handle, _arg, 1)
+    val _ret = __method_bind.pushFrame.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 

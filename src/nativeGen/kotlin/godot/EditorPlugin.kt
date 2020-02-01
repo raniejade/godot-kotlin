@@ -19,32 +19,32 @@ open class EditorPlugin(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addAutoloadSingleton(name: String, path: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(path)
-    __method_bind.addAutoloadSingleton.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(path))
+    __method_bind.addAutoloadSingleton.call(this._handle, _args)
   }
 
   fun addControlToBottomPanel(control: Control, title: String): ToolButton {
-    val _args = VariantArray.new()
-    _args.append(control)
-    _args.append(title)
-    val _ret = __method_bind.addControlToBottomPanel.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(control))
+    _args.add(Variant.fromAny(title))
+    val _ret = __method_bind.addControlToBottomPanel.call(this._handle, _args)
     return _ret.asObject(::ToolButton)!!
   }
 
   fun addControlToContainer(container: Int, control: Control) {
-    val _args = VariantArray.new()
-    _args.append(container)
-    _args.append(control)
-    __method_bind.addControlToContainer.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(container))
+    _args.add(Variant.fromAny(control))
+    __method_bind.addControlToContainer.call(this._handle, _args)
   }
 
   fun addControlToDock(slot: Int, control: Control) {
-    val _args = VariantArray.new()
-    _args.append(slot)
-    _args.append(control)
-    __method_bind.addControlToDock.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(slot))
+    _args.add(Variant.fromAny(control))
+    __method_bind.addControlToDock.call(this._handle, _args)
   }
 
   fun addCustomType(
@@ -53,37 +53,37 @@ open class EditorPlugin(
     script: Script,
     icon: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(base)
-    _args.append(script)
-    _args.append(icon)
-    __method_bind.addCustomType.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(base))
+    _args.add(Variant.fromAny(script))
+    _args.add(Variant.fromAny(icon))
+    __method_bind.addCustomType.call(this._handle, _args)
   }
 
   fun addExportPlugin(plugin: EditorExportPlugin) {
     val _arg = Variant.new(plugin)
-    __method_bind.addExportPlugin.call(this._handle, _arg, 1)
+    __method_bind.addExportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun addImportPlugin(importer: EditorImportPlugin) {
     val _arg = Variant.new(importer)
-    __method_bind.addImportPlugin.call(this._handle, _arg, 1)
+    __method_bind.addImportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun addInspectorPlugin(plugin: EditorInspectorPlugin) {
     val _arg = Variant.new(plugin)
-    __method_bind.addInspectorPlugin.call(this._handle, _arg, 1)
+    __method_bind.addInspectorPlugin.call(this._handle, listOf(_arg))
   }
 
   fun addSceneImportPlugin(sceneImporter: EditorSceneImporter) {
     val _arg = Variant.new(sceneImporter)
-    __method_bind.addSceneImportPlugin.call(this._handle, _arg, 1)
+    __method_bind.addSceneImportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun addSpatialGizmoPlugin(plugin: EditorSpatialGizmoPlugin) {
     val _arg = Variant.new(plugin)
-    __method_bind.addSpatialGizmoPlugin.call(this._handle, _arg, 1)
+    __method_bind.addSpatialGizmoPlugin.call(this._handle, listOf(_arg))
   }
 
   fun addToolMenuItem(
@@ -92,19 +92,19 @@ open class EditorPlugin(
     callback: String,
     ud: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(handler)
-    _args.append(callback)
-    _args.append(ud)
-    __method_bind.addToolMenuItem.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(handler))
+    _args.add(Variant.fromAny(callback))
+    _args.add(Variant.fromAny(ud))
+    __method_bind.addToolMenuItem.call(this._handle, _args)
   }
 
   fun addToolSubmenuItem(name: String, submenu: Object) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(submenu)
-    __method_bind.addToolSubmenuItem.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(submenu))
+    __method_bind.addToolSubmenuItem.call(this._handle, _args)
   }
 
   fun getEditorInterface(): EditorInterface {
@@ -128,7 +128,7 @@ open class EditorPlugin(
 
   fun makeBottomPanelItemVisible(item: Control) {
     val _arg = Variant.new(item)
-    __method_bind.makeBottomPanelItemVisible.call(this._handle, _arg, 1)
+    __method_bind.makeBottomPanelItemVisible.call(this._handle, listOf(_arg))
   }
 
   fun queueSaveLayout() {
@@ -137,59 +137,59 @@ open class EditorPlugin(
 
   fun removeAutoloadSingleton(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.removeAutoloadSingleton.call(this._handle, _arg, 1)
+    __method_bind.removeAutoloadSingleton.call(this._handle, listOf(_arg))
   }
 
   fun removeControlFromBottomPanel(control: Control) {
     val _arg = Variant.new(control)
-    __method_bind.removeControlFromBottomPanel.call(this._handle, _arg, 1)
+    __method_bind.removeControlFromBottomPanel.call(this._handle, listOf(_arg))
   }
 
   fun removeControlFromContainer(container: Int, control: Control) {
-    val _args = VariantArray.new()
-    _args.append(container)
-    _args.append(control)
-    __method_bind.removeControlFromContainer.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(container))
+    _args.add(Variant.fromAny(control))
+    __method_bind.removeControlFromContainer.call(this._handle, _args)
   }
 
   fun removeControlFromDocks(control: Control) {
     val _arg = Variant.new(control)
-    __method_bind.removeControlFromDocks.call(this._handle, _arg, 1)
+    __method_bind.removeControlFromDocks.call(this._handle, listOf(_arg))
   }
 
   fun removeCustomType(type: String) {
     val _arg = Variant.new(type)
-    __method_bind.removeCustomType.call(this._handle, _arg, 1)
+    __method_bind.removeCustomType.call(this._handle, listOf(_arg))
   }
 
   fun removeExportPlugin(plugin: EditorExportPlugin) {
     val _arg = Variant.new(plugin)
-    __method_bind.removeExportPlugin.call(this._handle, _arg, 1)
+    __method_bind.removeExportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun removeImportPlugin(importer: EditorImportPlugin) {
     val _arg = Variant.new(importer)
-    __method_bind.removeImportPlugin.call(this._handle, _arg, 1)
+    __method_bind.removeImportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun removeInspectorPlugin(plugin: EditorInspectorPlugin) {
     val _arg = Variant.new(plugin)
-    __method_bind.removeInspectorPlugin.call(this._handle, _arg, 1)
+    __method_bind.removeInspectorPlugin.call(this._handle, listOf(_arg))
   }
 
   fun removeSceneImportPlugin(sceneImporter: EditorSceneImporter) {
     val _arg = Variant.new(sceneImporter)
-    __method_bind.removeSceneImportPlugin.call(this._handle, _arg, 1)
+    __method_bind.removeSceneImportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun removeSpatialGizmoPlugin(plugin: EditorSpatialGizmoPlugin) {
     val _arg = Variant.new(plugin)
-    __method_bind.removeSpatialGizmoPlugin.call(this._handle, _arg, 1)
+    __method_bind.removeSpatialGizmoPlugin.call(this._handle, listOf(_arg))
   }
 
   fun removeToolMenuItem(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.removeToolMenuItem.call(this._handle, _arg, 1)
+    __method_bind.removeToolMenuItem.call(this._handle, listOf(_arg))
   }
 
   fun setForceDrawOverForwardingEnabled() {

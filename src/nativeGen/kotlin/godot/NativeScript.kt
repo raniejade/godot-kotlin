@@ -67,13 +67,13 @@ open class NativeScript(
 
   fun getMethodDocumentation(method: String): String {
     val _arg = Variant.new(method)
-    val _ret = __method_bind.getMethodDocumentation.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getMethodDocumentation.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getPropertyDocumentation(path: String): String {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.getPropertyDocumentation.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPropertyDocumentation.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -89,35 +89,35 @@ open class NativeScript(
 
   fun getSignalDocumentation(signalName: String): String {
     val _arg = Variant.new(signalName)
-    val _ret = __method_bind.getSignalDocumentation.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSignalDocumentation.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun new(vararg varargs: Any?): Variant {
-    val _args = VariantArray.new()
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.new.call(this._handle, _args.toVariant(), 0 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.new.call(this._handle, _args)
     return _ret
   }
 
   fun setClassName(className: String) {
     val _arg = Variant.new(className)
-    __method_bind.setClassName.call(this._handle, _arg, 1)
+    __method_bind.setClassName.call(this._handle, listOf(_arg))
   }
 
   fun setLibrary(library: GDNativeLibrary) {
     val _arg = Variant.new(library)
-    __method_bind.setLibrary.call(this._handle, _arg, 1)
+    __method_bind.setLibrary.call(this._handle, listOf(_arg))
   }
 
   fun setScriptClassIconPath(iconPath: String) {
     val _arg = Variant.new(iconPath)
-    __method_bind.setScriptClassIconPath.call(this._handle, _arg, 1)
+    __method_bind.setScriptClassIconPath.call(this._handle, listOf(_arg))
   }
 
   fun setScriptClassName(className: String) {
     val _arg = Variant.new(className)
-    __method_bind.setScriptClassName.call(this._handle, _arg, 1)
+    __method_bind.setScriptClassName.call(this._handle, listOf(_arg))
   }
 
   companion object {

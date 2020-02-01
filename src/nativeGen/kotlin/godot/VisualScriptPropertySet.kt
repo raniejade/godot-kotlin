@@ -135,42 +135,42 @@ open class VisualScriptPropertySet(
 
   fun setAssignOp(assignOp: Int) {
     val _arg = Variant.new(assignOp)
-    __method_bind.setAssignOp.call(this._handle, _arg, 1)
+    __method_bind.setAssignOp.call(this._handle, listOf(_arg))
   }
 
   fun setBasePath(basePath: NodePath) {
     val _arg = Variant.new(basePath)
-    __method_bind.setBasePath.call(this._handle, _arg, 1)
+    __method_bind.setBasePath.call(this._handle, listOf(_arg))
   }
 
   fun setBaseScript(baseScript: String) {
     val _arg = Variant.new(baseScript)
-    __method_bind.setBaseScript.call(this._handle, _arg, 1)
+    __method_bind.setBaseScript.call(this._handle, listOf(_arg))
   }
 
   fun setBaseType(baseType: String) {
     val _arg = Variant.new(baseType)
-    __method_bind.setBaseType.call(this._handle, _arg, 1)
+    __method_bind.setBaseType.call(this._handle, listOf(_arg))
   }
 
   fun setBasicType(basicType: Int) {
     val _arg = Variant.new(basicType)
-    __method_bind.setBasicType.call(this._handle, _arg, 1)
+    __method_bind.setBasicType.call(this._handle, listOf(_arg))
   }
 
   fun setCallMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setCallMode.call(this._handle, _arg, 1)
+    __method_bind.setCallMode.call(this._handle, listOf(_arg))
   }
 
   fun setIndex(index: String) {
     val _arg = Variant.new(index)
-    __method_bind.setIndex.call(this._handle, _arg, 1)
+    __method_bind.setIndex.call(this._handle, listOf(_arg))
   }
 
   fun setProperty(property: String) {
     val _arg = Variant.new(property)
-    __method_bind.setProperty.call(this._handle, _arg, 1)
+    __method_bind.setProperty.call(this._handle, listOf(_arg))
   }
 
   enum class AssignOp(

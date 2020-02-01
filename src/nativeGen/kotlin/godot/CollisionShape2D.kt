@@ -72,22 +72,22 @@ open class CollisionShape2D(
 
   fun setDisabled(disabled: Boolean) {
     val _arg = Variant.new(disabled)
-    __method_bind.setDisabled.call(this._handle, _arg, 1)
+    __method_bind.setDisabled.call(this._handle, listOf(_arg))
   }
 
   fun setOneWayCollision(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setOneWayCollision.call(this._handle, _arg, 1)
+    __method_bind.setOneWayCollision.call(this._handle, listOf(_arg))
   }
 
   fun setOneWayCollisionMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.setOneWayCollisionMargin.call(this._handle, _arg, 1)
+    __method_bind.setOneWayCollisionMargin.call(this._handle, listOf(_arg))
   }
 
   fun setShape(shape: Shape2D) {
     val _arg = Variant.new(shape)
-    __method_bind.setShape.call(this._handle, _arg, 1)
+    __method_bind.setShape.call(this._handle, listOf(_arg))
   }
 
   companion object {

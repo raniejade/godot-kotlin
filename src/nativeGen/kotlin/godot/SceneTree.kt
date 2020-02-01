@@ -114,11 +114,11 @@ open class SceneTree(
     method: String,
     vararg varargs: Any?
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(group)
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.callGroup.call(this._handle, _args.toVariant(), 2 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(group))
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.callGroup.call(this._handle, _args)
     return _ret
   }
 
@@ -128,32 +128,32 @@ open class SceneTree(
     method: String,
     vararg varargs: Any?
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(flags)
-    _args.append(group)
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.callGroupFlags.call(this._handle, _args.toVariant(), 3 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(flags))
+    _args.add(Variant.fromAny(group))
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.callGroupFlags.call(this._handle, _args)
     return _ret
   }
 
   fun changeScene(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.changeScene.call(this._handle, _arg, 1)
+    val _ret = __method_bind.changeScene.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun changeSceneTo(packedScene: PackedScene): GDError {
     val _arg = Variant.new(packedScene)
-    val _ret = __method_bind.changeSceneTo.call(this._handle, _arg, 1)
+    val _ret = __method_bind.changeSceneTo.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun createTimer(timeSec: Float, pauseModeProcess: Boolean = true): SceneTreeTimer {
-    val _args = VariantArray.new()
-    _args.append(timeSec)
-    _args.append(pauseModeProcess)
-    val _ret = __method_bind.createTimer.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(timeSec))
+    _args.add(Variant.fromAny(pauseModeProcess))
+    val _ret = __method_bind.createTimer.call(this._handle, _args)
     return _ret.asObject(::SceneTreeTimer)!!
   }
 
@@ -199,7 +199,7 @@ open class SceneTree(
 
   fun getNodesInGroup(group: String): VariantArray {
     val _arg = Variant.new(group)
-    val _ret = __method_bind.getNodesInGroup.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodesInGroup.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
@@ -215,7 +215,7 @@ open class SceneTree(
 
   fun hasGroup(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasGroup.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasGroup.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -265,10 +265,10 @@ open class SceneTree(
   }
 
   fun notifyGroup(group: String, notification: Int) {
-    val _args = VariantArray.new()
-    _args.append(group)
-    _args.append(notification)
-    __method_bind.notifyGroup.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(group))
+    _args.add(Variant.fromAny(notification))
+    __method_bind.notifyGroup.call(this._handle, _args)
   }
 
   fun notifyGroupFlags(
@@ -276,21 +276,21 @@ open class SceneTree(
     group: String,
     notification: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(callFlags)
-    _args.append(group)
-    _args.append(notification)
-    __method_bind.notifyGroupFlags.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(callFlags))
+    _args.add(Variant.fromAny(group))
+    _args.add(Variant.fromAny(notification))
+    __method_bind.notifyGroupFlags.call(this._handle, _args)
   }
 
   fun queueDelete(obj: Object) {
     val _arg = Variant.new(obj)
-    __method_bind.queueDelete.call(this._handle, _arg, 1)
+    __method_bind.queueDelete.call(this._handle, listOf(_arg))
   }
 
   fun quit(exitCode: Int = -1) {
     val _arg = Variant.new(exitCode)
-    __method_bind.quit.call(this._handle, _arg, 1)
+    __method_bind.quit.call(this._handle, listOf(_arg))
   }
 
   fun reloadCurrentScene(): GDError {
@@ -300,27 +300,27 @@ open class SceneTree(
 
   fun setAutoAcceptQuit(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setAutoAcceptQuit.call(this._handle, _arg, 1)
+    __method_bind.setAutoAcceptQuit.call(this._handle, listOf(_arg))
   }
 
   fun setCurrentScene(childNode: Node) {
     val _arg = Variant.new(childNode)
-    __method_bind.setCurrentScene.call(this._handle, _arg, 1)
+    __method_bind.setCurrentScene.call(this._handle, listOf(_arg))
   }
 
   fun setDebugCollisionsHint(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setDebugCollisionsHint.call(this._handle, _arg, 1)
+    __method_bind.setDebugCollisionsHint.call(this._handle, listOf(_arg))
   }
 
   fun setDebugNavigationHint(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setDebugNavigationHint.call(this._handle, _arg, 1)
+    __method_bind.setDebugNavigationHint.call(this._handle, listOf(_arg))
   }
 
   fun setEditedSceneRoot(scene: Node) {
     val _arg = Variant.new(scene)
-    __method_bind.setEditedSceneRoot.call(this._handle, _arg, 1)
+    __method_bind.setEditedSceneRoot.call(this._handle, listOf(_arg))
   }
 
   fun setGroup(
@@ -328,11 +328,11 @@ open class SceneTree(
     property: String,
     value: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(group)
-    _args.append(property)
-    _args.append(value)
-    __method_bind.setGroup.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(group))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setGroup.call(this._handle, _args)
   }
 
   fun setGroupFlags(
@@ -341,12 +341,12 @@ open class SceneTree(
     property: String,
     value: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(callFlags)
-    _args.append(group)
-    _args.append(property)
-    _args.append(value)
-    __method_bind.setGroupFlags.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(callFlags))
+    _args.add(Variant.fromAny(group))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setGroupFlags.call(this._handle, _args)
   }
 
   fun setInputAsHandled() {
@@ -355,32 +355,32 @@ open class SceneTree(
 
   fun setMultiplayer(multiplayer: MultiplayerAPI) {
     val _arg = Variant.new(multiplayer)
-    __method_bind.setMultiplayer.call(this._handle, _arg, 1)
+    __method_bind.setMultiplayer.call(this._handle, listOf(_arg))
   }
 
   fun setMultiplayerPollEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setMultiplayerPollEnabled.call(this._handle, _arg, 1)
+    __method_bind.setMultiplayerPollEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
     val _arg = Variant.new(peer)
-    __method_bind.setNetworkPeer.call(this._handle, _arg, 1)
+    __method_bind.setNetworkPeer.call(this._handle, listOf(_arg))
   }
 
   fun setPause(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setPause.call(this._handle, _arg, 1)
+    __method_bind.setPause.call(this._handle, listOf(_arg))
   }
 
   fun setQuitOnGoBack(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setQuitOnGoBack.call(this._handle, _arg, 1)
+    __method_bind.setQuitOnGoBack.call(this._handle, listOf(_arg))
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
     val _arg = Variant.new(refuse)
-    __method_bind.setRefuseNewNetworkConnections.call(this._handle, _arg, 1)
+    __method_bind.setRefuseNewNetworkConnections.call(this._handle, listOf(_arg))
   }
 
   fun setScreenStretch(
@@ -389,17 +389,17 @@ open class SceneTree(
     minsize: Vector2,
     shrink: Float = 1.0f
   ) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    _args.append(aspect)
-    _args.append(minsize)
-    _args.append(shrink)
-    __method_bind.setScreenStretch.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(mode))
+    _args.add(Variant.fromAny(aspect))
+    _args.add(Variant.fromAny(minsize))
+    _args.add(Variant.fromAny(shrink))
+    __method_bind.setScreenStretch.call(this._handle, _args)
   }
 
   fun setUseFontOversampling(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseFontOversampling.call(this._handle, _arg, 1)
+    __method_bind.setUseFontOversampling.call(this._handle, listOf(_arg))
   }
 
   enum class StretchAspect(

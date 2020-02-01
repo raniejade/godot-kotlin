@@ -146,10 +146,10 @@ open class Line2D(
   }
 
   fun addPoint(position: Vector2, atPosition: Int = -1) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    _args.append(atPosition)
-    __method_bind.addPoint.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(atPosition))
+    __method_bind.addPoint.call(this._handle, _args)
   }
 
   fun clearPoints() {
@@ -198,7 +198,7 @@ open class Line2D(
 
   fun getPointPosition(i: Int): Vector2 {
     val _arg = Variant.new(i)
-    val _ret = __method_bind.getPointPosition.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
@@ -234,79 +234,79 @@ open class Line2D(
 
   fun removePoint(i: Int) {
     val _arg = Variant.new(i)
-    __method_bind.removePoint.call(this._handle, _arg, 1)
+    __method_bind.removePoint.call(this._handle, listOf(_arg))
   }
 
   fun setAntialiased(antialiased: Boolean) {
     val _arg = Variant.new(antialiased)
-    __method_bind.setAntialiased.call(this._handle, _arg, 1)
+    __method_bind.setAntialiased.call(this._handle, listOf(_arg))
   }
 
   fun setBeginCapMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setBeginCapMode.call(this._handle, _arg, 1)
+    __method_bind.setBeginCapMode.call(this._handle, listOf(_arg))
   }
 
   fun setCurve(curve: Curve) {
     val _arg = Variant.new(curve)
-    __method_bind.setCurve.call(this._handle, _arg, 1)
+    __method_bind.setCurve.call(this._handle, listOf(_arg))
   }
 
   fun setDefaultColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setDefaultColor.call(this._handle, _arg, 1)
+    __method_bind.setDefaultColor.call(this._handle, listOf(_arg))
   }
 
   fun setEndCapMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setEndCapMode.call(this._handle, _arg, 1)
+    __method_bind.setEndCapMode.call(this._handle, listOf(_arg))
   }
 
   fun setGradient(color: Gradient) {
     val _arg = Variant.new(color)
-    __method_bind.setGradient.call(this._handle, _arg, 1)
+    __method_bind.setGradient.call(this._handle, listOf(_arg))
   }
 
   fun setJointMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setJointMode.call(this._handle, _arg, 1)
+    __method_bind.setJointMode.call(this._handle, listOf(_arg))
   }
 
   fun setPointPosition(i: Int, position: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(i)
-    _args.append(position)
-    __method_bind.setPointPosition.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(i))
+    _args.add(Variant.fromAny(position))
+    __method_bind.setPointPosition.call(this._handle, _args)
   }
 
   fun setPoints(points: PoolVector2Array) {
     val _arg = Variant.new(points)
-    __method_bind.setPoints.call(this._handle, _arg, 1)
+    __method_bind.setPoints.call(this._handle, listOf(_arg))
   }
 
   fun setRoundPrecision(precision: Int) {
     val _arg = Variant.new(precision)
-    __method_bind.setRoundPrecision.call(this._handle, _arg, 1)
+    __method_bind.setRoundPrecision.call(this._handle, listOf(_arg))
   }
 
   fun setSharpLimit(limit: Float) {
     val _arg = Variant.new(limit)
-    __method_bind.setSharpLimit.call(this._handle, _arg, 1)
+    __method_bind.setSharpLimit.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTexture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setTextureMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setTextureMode.call(this._handle, _arg, 1)
+    __method_bind.setTextureMode.call(this._handle, listOf(_arg))
   }
 
   fun setWidth(width: Float) {
     val _arg = Variant.new(width)
-    __method_bind.setWidth.call(this._handle, _arg, 1)
+    __method_bind.setWidth.call(this._handle, listOf(_arg))
   }
 
   enum class LineTextureMode(

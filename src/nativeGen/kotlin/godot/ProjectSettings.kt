@@ -23,61 +23,61 @@ open class ProjectSettings(
 ) : Object(_handle) {
   fun addPropertyInfo(hint: Dictionary) {
     val _arg = Variant.new(hint)
-    __method_bind.addPropertyInfo.call(this._handle, _arg, 1)
+    __method_bind.addPropertyInfo.call(this._handle, listOf(_arg))
   }
 
   fun clear(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.clear.call(this._handle, _arg, 1)
+    __method_bind.clear.call(this._handle, listOf(_arg))
   }
 
   fun getOrder(name: String): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getOrder.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getOrder.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getSetting(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getSetting.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSetting.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun globalizePath(path: String): String {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.globalizePath.call(this._handle, _arg, 1)
+    val _ret = __method_bind.globalizePath.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun hasSetting(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasSetting.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasSetting.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun loadResourcePack(pack: String, replaceFiles: Boolean = true): Boolean {
-    val _args = VariantArray.new()
-    _args.append(pack)
-    _args.append(replaceFiles)
-    val _ret = __method_bind.loadResourcePack.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(pack))
+    _args.add(Variant.fromAny(replaceFiles))
+    val _ret = __method_bind.loadResourcePack.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun localizePath(path: String): String {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.localizePath.call(this._handle, _arg, 1)
+    val _ret = __method_bind.localizePath.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun propertyCanRevert(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.propertyCanRevert.call(this._handle, _arg, 1)
+    val _ret = __method_bind.propertyCanRevert.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun propertyGetRevert(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.propertyGetRevert.call(this._handle, _arg, 1)
+    val _ret = __method_bind.propertyGetRevert.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -88,29 +88,29 @@ open class ProjectSettings(
 
   fun saveCustom(file: String): GDError {
     val _arg = Variant.new(file)
-    val _ret = __method_bind.saveCustom.call(this._handle, _arg, 1)
+    val _ret = __method_bind.saveCustom.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun setInitialValue(name: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(value)
-    __method_bind.setInitialValue.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setInitialValue.call(this._handle, _args)
   }
 
   fun setOrder(name: String, position: Int) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(position)
-    __method_bind.setOrder.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(position))
+    __method_bind.setOrder.call(this._handle, _args)
   }
 
   fun setSetting(name: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(value)
-    __method_bind.setSetting.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setSetting.call(this._handle, _args)
   }
 
   companion object {

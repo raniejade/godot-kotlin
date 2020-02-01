@@ -162,7 +162,7 @@ open class StyleBoxTexture(
 
   fun getExpandMarginSize(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.getExpandMarginSize.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getExpandMarginSize.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -173,7 +173,7 @@ open class StyleBoxTexture(
 
   fun getMarginSize(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.getMarginSize.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getMarginSize.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -209,12 +209,12 @@ open class StyleBoxTexture(
 
   fun setDrawCenter(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setDrawCenter.call(this._handle, _arg, 1)
+    __method_bind.setDrawCenter.call(this._handle, listOf(_arg))
   }
 
   fun setExpandMarginAll(size: Float) {
     val _arg = Variant.new(size)
-    __method_bind.setExpandMarginAll.call(this._handle, _arg, 1)
+    __method_bind.setExpandMarginAll.call(this._handle, listOf(_arg))
   }
 
   fun setExpandMarginIndividual(
@@ -223,56 +223,56 @@ open class StyleBoxTexture(
     sizeRight: Float,
     sizeBottom: Float
   ) {
-    val _args = VariantArray.new()
-    _args.append(sizeLeft)
-    _args.append(sizeTop)
-    _args.append(sizeRight)
-    _args.append(sizeBottom)
-    __method_bind.setExpandMarginIndividual.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(sizeLeft))
+    _args.add(Variant.fromAny(sizeTop))
+    _args.add(Variant.fromAny(sizeRight))
+    _args.add(Variant.fromAny(sizeBottom))
+    __method_bind.setExpandMarginIndividual.call(this._handle, _args)
   }
 
   fun setExpandMarginSize(margin: Int, size: Float) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    _args.append(size)
-    __method_bind.setExpandMarginSize.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(margin))
+    _args.add(Variant.fromAny(size))
+    __method_bind.setExpandMarginSize.call(this._handle, _args)
   }
 
   fun setHAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setHAxisStretchMode.call(this._handle, _arg, 1)
+    __method_bind.setHAxisStretchMode.call(this._handle, listOf(_arg))
   }
 
   fun setMarginSize(margin: Int, size: Float) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    _args.append(size)
-    __method_bind.setMarginSize.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(margin))
+    _args.add(Variant.fromAny(size))
+    __method_bind.setMarginSize.call(this._handle, _args)
   }
 
   fun setModulate(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setModulate.call(this._handle, _arg, 1)
+    __method_bind.setModulate.call(this._handle, listOf(_arg))
   }
 
   fun setNormalMap(normalMap: Texture) {
     val _arg = Variant.new(normalMap)
-    __method_bind.setNormalMap.call(this._handle, _arg, 1)
+    __method_bind.setNormalMap.call(this._handle, listOf(_arg))
   }
 
   fun setRegionRect(region: Rect2) {
     val _arg = Variant.new(region)
-    __method_bind.setRegionRect.call(this._handle, _arg, 1)
+    __method_bind.setRegionRect.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTexture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setVAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setVAxisStretchMode.call(this._handle, _arg, 1)
+    __method_bind.setVAxisStretchMode.call(this._handle, listOf(_arg))
   }
 
   enum class AxisStretchMode(

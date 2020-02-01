@@ -46,12 +46,12 @@ open class VisualScriptLocalVar(
 
   fun setVarName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setVarName.call(this._handle, _arg, 1)
+    __method_bind.setVarName.call(this._handle, listOf(_arg))
   }
 
   fun setVarType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.setVarType.call(this._handle, _arg, 1)
+    __method_bind.setVarType.call(this._handle, listOf(_arg))
   }
 
   companion object {

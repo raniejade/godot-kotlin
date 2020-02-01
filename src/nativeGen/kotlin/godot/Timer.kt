@@ -101,32 +101,32 @@ open class Timer(
 
   fun setAutostart(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAutostart.call(this._handle, _arg, 1)
+    __method_bind.setAutostart.call(this._handle, listOf(_arg))
   }
 
   fun setOneShot(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setOneShot.call(this._handle, _arg, 1)
+    __method_bind.setOneShot.call(this._handle, listOf(_arg))
   }
 
   fun setPaused(paused: Boolean) {
     val _arg = Variant.new(paused)
-    __method_bind.setPaused.call(this._handle, _arg, 1)
+    __method_bind.setPaused.call(this._handle, listOf(_arg))
   }
 
   fun setTimerProcessMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setTimerProcessMode.call(this._handle, _arg, 1)
+    __method_bind.setTimerProcessMode.call(this._handle, listOf(_arg))
   }
 
   fun setWaitTime(timeSec: Float) {
     val _arg = Variant.new(timeSec)
-    __method_bind.setWaitTime.call(this._handle, _arg, 1)
+    __method_bind.setWaitTime.call(this._handle, listOf(_arg))
   }
 
   fun start(timeSec: Float = -1.0f) {
     val _arg = Variant.new(timeSec)
-    __method_bind.start.call(this._handle, _arg, 1)
+    __method_bind.start.call(this._handle, listOf(_arg))
   }
 
   fun stop() {

@@ -21,10 +21,10 @@ open class JSONRPC(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun makeNotification(method: String, params: Variant): Dictionary {
-    val _args = VariantArray.new()
-    _args.append(method)
-    _args.append(params)
-    val _ret = __method_bind.makeNotification.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(params))
+    val _ret = __method_bind.makeNotification.call(this._handle, _args)
     return _ret.asDictionary()
   }
 
@@ -33,19 +33,19 @@ open class JSONRPC(
     params: Variant,
     id: Variant
   ): Dictionary {
-    val _args = VariantArray.new()
-    _args.append(method)
-    _args.append(params)
-    _args.append(id)
-    val _ret = __method_bind.makeRequest.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(params))
+    _args.add(Variant.fromAny(id))
+    val _ret = __method_bind.makeRequest.call(this._handle, _args)
     return _ret.asDictionary()
   }
 
   fun makeResponse(result: Variant, id: Variant): Dictionary {
-    val _args = VariantArray.new()
-    _args.append(result)
-    _args.append(id)
-    val _ret = __method_bind.makeResponse.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(result))
+    _args.add(Variant.fromAny(id))
+    val _ret = __method_bind.makeResponse.call(this._handle, _args)
     return _ret.asDictionary()
   }
 
@@ -54,33 +54,33 @@ open class JSONRPC(
     message: String,
     id: Variant
   ): Dictionary {
-    val _args = VariantArray.new()
-    _args.append(code)
-    _args.append(message)
-    _args.append(id)
-    val _ret = __method_bind.makeResponseError.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(code))
+    _args.add(Variant.fromAny(message))
+    _args.add(Variant.fromAny(id))
+    val _ret = __method_bind.makeResponseError.call(this._handle, _args)
     return _ret.asDictionary()
   }
 
   fun processAction(action: Variant, recurse: Boolean = false): Variant {
-    val _args = VariantArray.new()
-    _args.append(action)
-    _args.append(recurse)
-    val _ret = __method_bind.processAction.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(action))
+    _args.add(Variant.fromAny(recurse))
+    val _ret = __method_bind.processAction.call(this._handle, _args)
     return _ret
   }
 
   fun processString(action: String): String {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.processString.call(this._handle, _arg, 1)
+    val _ret = __method_bind.processString.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun setScope(scope: String, target: Object) {
-    val _args = VariantArray.new()
-    _args.append(scope)
-    _args.append(target)
-    __method_bind.setScope.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(scope))
+    _args.add(Variant.fromAny(target))
+    __method_bind.setScope.call(this._handle, _args)
   }
 
   enum class ErrorCode(

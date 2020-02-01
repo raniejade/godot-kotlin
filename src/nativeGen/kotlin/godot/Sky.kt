@@ -32,7 +32,7 @@ open class Sky(
 
   fun setRadianceSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.setRadianceSize.call(this._handle, _arg, 1)
+    __method_bind.setRadianceSize.call(this._handle, listOf(_arg))
   }
 
   enum class RadianceSize(

@@ -28,13 +28,13 @@ open class XMLParser(
 
   fun getAttributeName(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getAttributeName.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAttributeName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getAttributeValue(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getAttributeValue.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAttributeValue.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -45,13 +45,13 @@ open class XMLParser(
 
   fun getNamedAttributeValue(name: String): String {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getNamedAttributeValue.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNamedAttributeValue.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getNamedAttributeValueSafe(name: String): String {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getNamedAttributeValueSafe.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNamedAttributeValueSafe.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -77,7 +77,7 @@ open class XMLParser(
 
   fun hasAttribute(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasAttribute.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasAttribute.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -88,13 +88,13 @@ open class XMLParser(
 
   fun open(file: String): GDError {
     val _arg = Variant.new(file)
-    val _ret = __method_bind.open.call(this._handle, _arg, 1)
+    val _ret = __method_bind.open.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun openBuffer(buffer: PoolByteArray): GDError {
     val _arg = Variant.new(buffer)
-    val _ret = __method_bind.openBuffer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.openBuffer.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
@@ -105,7 +105,7 @@ open class XMLParser(
 
   fun seek(position: Int): GDError {
     val _arg = Variant.new(position)
-    val _ret = __method_bind.seek.call(this._handle, _arg, 1)
+    val _ret = __method_bind.seek.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 

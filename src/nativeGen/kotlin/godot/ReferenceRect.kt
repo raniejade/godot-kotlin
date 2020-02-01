@@ -56,12 +56,12 @@ open class ReferenceRect(
 
   fun setBorderColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setBorderColor.call(this._handle, _arg, 1)
+    __method_bind.setBorderColor.call(this._handle, listOf(_arg))
   }
 
   fun setEditorOnly(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setEditorOnly.call(this._handle, _arg, 1)
+    __method_bind.setEditorOnly.call(this._handle, listOf(_arg))
   }
 
   companion object {

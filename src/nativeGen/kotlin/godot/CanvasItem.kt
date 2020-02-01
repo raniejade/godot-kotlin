@@ -112,16 +112,16 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(center)
-    _args.append(radius)
-    _args.append(startAngle)
-    _args.append(endAngle)
-    _args.append(pointCount)
-    _args.append(color)
-    _args.append(width)
-    _args.append(antialiased)
-    __method_bind.drawArc.call(this._handle, _args.toVariant(), 8)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(center))
+    _args.add(Variant.fromAny(radius))
+    _args.add(Variant.fromAny(startAngle))
+    _args.add(Variant.fromAny(endAngle))
+    _args.add(Variant.fromAny(pointCount))
+    _args.add(Variant.fromAny(color))
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(antialiased))
+    __method_bind.drawArc.call(this._handle, _args)
   }
 
   fun drawChar(
@@ -131,13 +131,13 @@ open class CanvasItem(
     next: String,
     modulate: Color = Color.rgb(1,1,1,1)
   ): Float {
-    val _args = VariantArray.new()
-    _args.append(font)
-    _args.append(position)
-    _args.append(char)
-    _args.append(next)
-    _args.append(modulate)
-    val _ret = __method_bind.drawChar.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(font))
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(char))
+    _args.add(Variant.fromAny(next))
+    _args.add(Variant.fromAny(modulate))
+    val _ret = __method_bind.drawChar.call(this._handle, _args)
     return _ret.asFloat()
   }
 
@@ -146,11 +146,11 @@ open class CanvasItem(
     radius: Float,
     color: Color
   ) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    _args.append(radius)
-    _args.append(color)
-    __method_bind.drawCircle.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(radius))
+    _args.add(Variant.fromAny(color))
+    __method_bind.drawCircle.call(this._handle, _args)
   }
 
   fun drawColoredPolygon(
@@ -161,14 +161,14 @@ open class CanvasItem(
     normalMap: Texture,
     antialiased: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    _args.append(color)
-    _args.append(uvs)
-    _args.append(texture)
-    _args.append(normalMap)
-    _args.append(antialiased)
-    __method_bind.drawColoredPolygon.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(points))
+    _args.add(Variant.fromAny(color))
+    _args.add(Variant.fromAny(uvs))
+    _args.add(Variant.fromAny(texture))
+    _args.add(Variant.fromAny(normalMap))
+    _args.add(Variant.fromAny(antialiased))
+    __method_bind.drawColoredPolygon.call(this._handle, _args)
   }
 
   fun drawLine(
@@ -178,13 +178,13 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    _args.append(color)
-    _args.append(width)
-    _args.append(antialiased)
-    __method_bind.drawLine.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    _args.add(Variant.fromAny(color))
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(antialiased))
+    __method_bind.drawLine.call(this._handle, _args)
   }
 
   fun drawMesh(
@@ -195,13 +195,13 @@ open class CanvasItem(
         0)),
     modulate: Color = Color.rgb(1,1,1,1)
   ) {
-    val _args = VariantArray.new()
-    _args.append(mesh)
-    _args.append(texture)
-    _args.append(normalMap)
-    _args.append(transform)
-    _args.append(modulate)
-    __method_bind.drawMesh.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(mesh))
+    _args.add(Variant.fromAny(texture))
+    _args.add(Variant.fromAny(normalMap))
+    _args.add(Variant.fromAny(transform))
+    _args.add(Variant.fromAny(modulate))
+    __method_bind.drawMesh.call(this._handle, _args)
   }
 
   fun drawMultiline(
@@ -210,12 +210,12 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    _args.append(color)
-    _args.append(width)
-    _args.append(antialiased)
-    __method_bind.drawMultiline.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(points))
+    _args.add(Variant.fromAny(color))
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(antialiased))
+    __method_bind.drawMultiline.call(this._handle, _args)
   }
 
   fun drawMultilineColors(
@@ -224,12 +224,12 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    _args.append(colors)
-    _args.append(width)
-    _args.append(antialiased)
-    __method_bind.drawMultilineColors.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(points))
+    _args.add(Variant.fromAny(colors))
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(antialiased))
+    __method_bind.drawMultilineColors.call(this._handle, _args)
   }
 
   fun drawMultimesh(
@@ -237,11 +237,11 @@ open class CanvasItem(
     texture: Texture,
     normalMap: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(multimesh)
-    _args.append(texture)
-    _args.append(normalMap)
-    __method_bind.drawMultimesh.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(multimesh))
+    _args.add(Variant.fromAny(texture))
+    _args.add(Variant.fromAny(normalMap))
+    __method_bind.drawMultimesh.call(this._handle, _args)
   }
 
   fun drawPolygon(
@@ -252,14 +252,14 @@ open class CanvasItem(
     normalMap: Texture,
     antialiased: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    _args.append(colors)
-    _args.append(uvs)
-    _args.append(texture)
-    _args.append(normalMap)
-    _args.append(antialiased)
-    __method_bind.drawPolygon.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(points))
+    _args.add(Variant.fromAny(colors))
+    _args.add(Variant.fromAny(uvs))
+    _args.add(Variant.fromAny(texture))
+    _args.add(Variant.fromAny(normalMap))
+    _args.add(Variant.fromAny(antialiased))
+    __method_bind.drawPolygon.call(this._handle, _args)
   }
 
   fun drawPolyline(
@@ -268,12 +268,12 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    _args.append(color)
-    _args.append(width)
-    _args.append(antialiased)
-    __method_bind.drawPolyline.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(points))
+    _args.add(Variant.fromAny(color))
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(antialiased))
+    __method_bind.drawPolyline.call(this._handle, _args)
   }
 
   fun drawPolylineColors(
@@ -282,12 +282,12 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    _args.append(colors)
-    _args.append(width)
-    _args.append(antialiased)
-    __method_bind.drawPolylineColors.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(points))
+    _args.add(Variant.fromAny(colors))
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(antialiased))
+    __method_bind.drawPolylineColors.call(this._handle, _args)
   }
 
   fun drawPrimitive(
@@ -298,14 +298,14 @@ open class CanvasItem(
     width: Float = 1.0f,
     normalMap: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    _args.append(colors)
-    _args.append(uvs)
-    _args.append(texture)
-    _args.append(width)
-    _args.append(normalMap)
-    __method_bind.drawPrimitive.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(points))
+    _args.add(Variant.fromAny(colors))
+    _args.add(Variant.fromAny(uvs))
+    _args.add(Variant.fromAny(texture))
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(normalMap))
+    __method_bind.drawPrimitive.call(this._handle, _args)
   }
 
   fun drawRect(
@@ -315,13 +315,13 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    _args.append(color)
-    _args.append(filled)
-    _args.append(width)
-    _args.append(antialiased)
-    __method_bind.drawRect.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(rect))
+    _args.add(Variant.fromAny(color))
+    _args.add(Variant.fromAny(filled))
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(antialiased))
+    __method_bind.drawRect.call(this._handle, _args)
   }
 
   fun drawSetTransform(
@@ -329,16 +329,16 @@ open class CanvasItem(
     rotation: Float,
     scale: Vector2
   ) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    _args.append(rotation)
-    _args.append(scale)
-    __method_bind.drawSetTransform.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(rotation))
+    _args.add(Variant.fromAny(scale))
+    __method_bind.drawSetTransform.call(this._handle, _args)
   }
 
   fun drawSetTransformMatrix(xform: Transform2D) {
     val _arg = Variant.new(xform)
-    __method_bind.drawSetTransformMatrix.call(this._handle, _arg, 1)
+    __method_bind.drawSetTransformMatrix.call(this._handle, listOf(_arg))
   }
 
   fun drawString(
@@ -348,20 +348,20 @@ open class CanvasItem(
     modulate: Color = Color.rgb(1,1,1,1),
     clipW: Int = -1
   ) {
-    val _args = VariantArray.new()
-    _args.append(font)
-    _args.append(position)
-    _args.append(text)
-    _args.append(modulate)
-    _args.append(clipW)
-    __method_bind.drawString.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(font))
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(text))
+    _args.add(Variant.fromAny(modulate))
+    _args.add(Variant.fromAny(clipW))
+    __method_bind.drawString.call(this._handle, _args)
   }
 
   fun drawStyleBox(styleBox: StyleBox, rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(styleBox)
-    _args.append(rect)
-    __method_bind.drawStyleBox.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(styleBox))
+    _args.add(Variant.fromAny(rect))
+    __method_bind.drawStyleBox.call(this._handle, _args)
   }
 
   fun drawTexture(
@@ -370,12 +370,12 @@ open class CanvasItem(
     modulate: Color = Color.rgb(1,1,1,1),
     normalMap: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    _args.append(position)
-    _args.append(modulate)
-    _args.append(normalMap)
-    __method_bind.drawTexture.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(texture))
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(modulate))
+    _args.add(Variant.fromAny(normalMap))
+    __method_bind.drawTexture.call(this._handle, _args)
   }
 
   fun drawTextureRect(
@@ -386,14 +386,14 @@ open class CanvasItem(
     transpose: Boolean = false,
     normalMap: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    _args.append(rect)
-    _args.append(tile)
-    _args.append(modulate)
-    _args.append(transpose)
-    _args.append(normalMap)
-    __method_bind.drawTextureRect.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(texture))
+    _args.add(Variant.fromAny(rect))
+    _args.add(Variant.fromAny(tile))
+    _args.add(Variant.fromAny(modulate))
+    _args.add(Variant.fromAny(transpose))
+    _args.add(Variant.fromAny(normalMap))
+    __method_bind.drawTextureRect.call(this._handle, _args)
   }
 
   fun drawTextureRectRegion(
@@ -405,15 +405,15 @@ open class CanvasItem(
     normalMap: Texture,
     clipUv: Boolean = true
   ) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    _args.append(rect)
-    _args.append(srcRect)
-    _args.append(modulate)
-    _args.append(transpose)
-    _args.append(normalMap)
-    _args.append(clipUv)
-    __method_bind.drawTextureRectRegion.call(this._handle, _args.toVariant(), 7)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(texture))
+    _args.add(Variant.fromAny(rect))
+    _args.add(Variant.fromAny(srcRect))
+    _args.add(Variant.fromAny(modulate))
+    _args.add(Variant.fromAny(transpose))
+    _args.add(Variant.fromAny(normalMap))
+    _args.add(Variant.fromAny(clipUv))
+    __method_bind.drawTextureRectRegion.call(this._handle, _args)
   }
 
   fun forceUpdateTransform() {
@@ -536,64 +536,64 @@ open class CanvasItem(
 
   fun makeCanvasPositionLocal(screenPoint: Vector2): Vector2 {
     val _arg = Variant.new(screenPoint)
-    val _ret = __method_bind.makeCanvasPositionLocal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.makeCanvasPositionLocal.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun makeInputLocal(event: InputEvent): InputEvent {
     val _arg = Variant.new(event)
-    val _ret = __method_bind.makeInputLocal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.makeInputLocal.call(this._handle, listOf(_arg))
     return _ret.asObject(::InputEvent)!!
   }
 
   fun setAsToplevel(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAsToplevel.call(this._handle, _arg, 1)
+    __method_bind.setAsToplevel.call(this._handle, listOf(_arg))
   }
 
   fun setDrawBehindParent(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setDrawBehindParent.call(this._handle, _arg, 1)
+    __method_bind.setDrawBehindParent.call(this._handle, listOf(_arg))
   }
 
   fun setLightMask(lightMask: Int) {
     val _arg = Variant.new(lightMask)
-    __method_bind.setLightMask.call(this._handle, _arg, 1)
+    __method_bind.setLightMask.call(this._handle, listOf(_arg))
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.setMaterial.call(this._handle, _arg, 1)
+    __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setModulate(modulate: Color) {
     val _arg = Variant.new(modulate)
-    __method_bind.setModulate.call(this._handle, _arg, 1)
+    __method_bind.setModulate.call(this._handle, listOf(_arg))
   }
 
   fun setNotifyLocalTransform(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setNotifyLocalTransform.call(this._handle, _arg, 1)
+    __method_bind.setNotifyLocalTransform.call(this._handle, listOf(_arg))
   }
 
   fun setNotifyTransform(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setNotifyTransform.call(this._handle, _arg, 1)
+    __method_bind.setNotifyTransform.call(this._handle, listOf(_arg))
   }
 
   fun setSelfModulate(selfModulate: Color) {
     val _arg = Variant.new(selfModulate)
-    __method_bind.setSelfModulate.call(this._handle, _arg, 1)
+    __method_bind.setSelfModulate.call(this._handle, listOf(_arg))
   }
 
   fun setUseParentMaterial(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseParentMaterial.call(this._handle, _arg, 1)
+    __method_bind.setUseParentMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setVisible(visible: Boolean) {
     val _arg = Variant.new(visible)
-    __method_bind.setVisible.call(this._handle, _arg, 1)
+    __method_bind.setVisible.call(this._handle, listOf(_arg))
   }
 
   fun show() {

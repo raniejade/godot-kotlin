@@ -132,37 +132,37 @@ open class Sprite3D(
 
   fun setFrame(frame: Int) {
     val _arg = Variant.new(frame)
-    __method_bind.setFrame.call(this._handle, _arg, 1)
+    __method_bind.setFrame.call(this._handle, listOf(_arg))
   }
 
   fun setFrameCoords(coords: Vector2) {
     val _arg = Variant.new(coords)
-    __method_bind.setFrameCoords.call(this._handle, _arg, 1)
+    __method_bind.setFrameCoords.call(this._handle, listOf(_arg))
   }
 
   fun setHframes(hframes: Int) {
     val _arg = Variant.new(hframes)
-    __method_bind.setHframes.call(this._handle, _arg, 1)
+    __method_bind.setHframes.call(this._handle, listOf(_arg))
   }
 
   fun setRegion(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setRegion.call(this._handle, _arg, 1)
+    __method_bind.setRegion.call(this._handle, listOf(_arg))
   }
 
   fun setRegionRect(rect: Rect2) {
     val _arg = Variant.new(rect)
-    __method_bind.setRegionRect.call(this._handle, _arg, 1)
+    __method_bind.setRegionRect.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTexture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setVframes(vframes: Int) {
     val _arg = Variant.new(vframes)
-    __method_bind.setVframes.call(this._handle, _arg, 1)
+    __method_bind.setVframes.call(this._handle, listOf(_arg))
   }
 
   companion object {

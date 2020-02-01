@@ -31,7 +31,7 @@ open class ProxyTexture(
 
   fun setBase(base: Texture) {
     val _arg = Variant.new(base)
-    __method_bind.setBase.call(this._handle, _arg, 1)
+    __method_bind.setBase.call(this._handle, listOf(_arg))
   }
 
   companion object {

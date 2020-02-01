@@ -25,43 +25,43 @@ open class EditorExportPlugin(
     file: PoolByteArray,
     remap: Boolean
   ) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(file)
-    _args.append(remap)
-    __method_bind.addFile.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(file))
+    _args.add(Variant.fromAny(remap))
+    __method_bind.addFile.call(this._handle, _args)
   }
 
   fun addIosBundleFile(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.addIosBundleFile.call(this._handle, _arg, 1)
+    __method_bind.addIosBundleFile.call(this._handle, listOf(_arg))
   }
 
   fun addIosCppCode(code: String) {
     val _arg = Variant.new(code)
-    __method_bind.addIosCppCode.call(this._handle, _arg, 1)
+    __method_bind.addIosCppCode.call(this._handle, listOf(_arg))
   }
 
   fun addIosFramework(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.addIosFramework.call(this._handle, _arg, 1)
+    __method_bind.addIosFramework.call(this._handle, listOf(_arg))
   }
 
   fun addIosLinkerFlags(flags: String) {
     val _arg = Variant.new(flags)
-    __method_bind.addIosLinkerFlags.call(this._handle, _arg, 1)
+    __method_bind.addIosLinkerFlags.call(this._handle, listOf(_arg))
   }
 
   fun addIosPlistContent(plistContent: String) {
     val _arg = Variant.new(plistContent)
-    __method_bind.addIosPlistContent.call(this._handle, _arg, 1)
+    __method_bind.addIosPlistContent.call(this._handle, listOf(_arg))
   }
 
   fun addSharedObject(path: String, tags: PoolStringArray) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(tags)
-    __method_bind.addSharedObject.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(tags))
+    __method_bind.addSharedObject.call(this._handle, _args)
   }
 
   fun skip() {

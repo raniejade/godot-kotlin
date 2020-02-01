@@ -70,22 +70,22 @@ open class InterpolatedCamera(
 
   fun setInterpolationEnabled(targetPath: Boolean) {
     val _arg = Variant.new(targetPath)
-    __method_bind.setInterpolationEnabled.call(this._handle, _arg, 1)
+    __method_bind.setInterpolationEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setSpeed(speed: Float) {
     val _arg = Variant.new(speed)
-    __method_bind.setSpeed.call(this._handle, _arg, 1)
+    __method_bind.setSpeed.call(this._handle, listOf(_arg))
   }
 
   fun setTarget(target: Object) {
     val _arg = Variant.new(target)
-    __method_bind.setTarget.call(this._handle, _arg, 1)
+    __method_bind.setTarget.call(this._handle, listOf(_arg))
   }
 
   fun setTargetPath(targetPath: NodePath) {
     val _arg = Variant.new(targetPath)
-    __method_bind.setTargetPath.call(this._handle, _arg, 1)
+    __method_bind.setTargetPath.call(this._handle, listOf(_arg))
   }
 
   companion object {

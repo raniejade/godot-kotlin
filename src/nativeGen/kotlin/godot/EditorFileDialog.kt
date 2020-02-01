@@ -85,7 +85,7 @@ open class EditorFileDialog(
 
   fun addFilter(filter: String) {
     val _arg = Variant.new(filter)
-    __method_bind.addFilter.call(this._handle, _arg, 1)
+    __method_bind.addFilter.call(this._handle, listOf(_arg))
   }
 
   fun clearFilters() {
@@ -143,42 +143,42 @@ open class EditorFileDialog(
 
   fun setAccess(access: Int) {
     val _arg = Variant.new(access)
-    __method_bind.setAccess.call(this._handle, _arg, 1)
+    __method_bind.setAccess.call(this._handle, listOf(_arg))
   }
 
   fun setCurrentDir(dir: String) {
     val _arg = Variant.new(dir)
-    __method_bind.setCurrentDir.call(this._handle, _arg, 1)
+    __method_bind.setCurrentDir.call(this._handle, listOf(_arg))
   }
 
   fun setCurrentFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.setCurrentFile.call(this._handle, _arg, 1)
+    __method_bind.setCurrentFile.call(this._handle, listOf(_arg))
   }
 
   fun setCurrentPath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.setCurrentPath.call(this._handle, _arg, 1)
+    __method_bind.setCurrentPath.call(this._handle, listOf(_arg))
   }
 
   fun setDisableOverwriteWarning(disable: Boolean) {
     val _arg = Variant.new(disable)
-    __method_bind.setDisableOverwriteWarning.call(this._handle, _arg, 1)
+    __method_bind.setDisableOverwriteWarning.call(this._handle, listOf(_arg))
   }
 
   fun setDisplayMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setDisplayMode.call(this._handle, _arg, 1)
+    __method_bind.setDisplayMode.call(this._handle, listOf(_arg))
   }
 
   fun setMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setMode.call(this._handle, _arg, 1)
+    __method_bind.setMode.call(this._handle, listOf(_arg))
   }
 
   fun setShowHiddenFiles(show: Boolean) {
     val _arg = Variant.new(show)
-    __method_bind.setShowHiddenFiles.call(this._handle, _arg, 1)
+    __method_bind.setShowHiddenFiles.call(this._handle, listOf(_arg))
   }
 
   enum class DisplayMode(

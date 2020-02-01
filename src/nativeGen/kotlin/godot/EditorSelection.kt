@@ -18,7 +18,7 @@ open class EditorSelection(
 ) : Object(_handle) {
   fun addNode(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.addNode.call(this._handle, _arg, 1)
+    __method_bind.addNode.call(this._handle, listOf(_arg))
   }
 
   fun clear() {
@@ -37,7 +37,7 @@ open class EditorSelection(
 
   fun removeNode(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.removeNode.call(this._handle, _arg, 1)
+    __method_bind.removeNode.call(this._handle, listOf(_arg))
   }
 
   companion object {

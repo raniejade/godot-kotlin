@@ -25,11 +25,11 @@ open class Expression(
     baseInstance: Object,
     showError: Boolean = true
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(inputs)
-    _args.append(baseInstance)
-    _args.append(showError)
-    val _ret = __method_bind.execute.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(inputs))
+    _args.add(Variant.fromAny(baseInstance))
+    _args.add(Variant.fromAny(showError))
+    val _ret = __method_bind.execute.call(this._handle, _args)
     return _ret
   }
 
@@ -44,10 +44,10 @@ open class Expression(
   }
 
   fun parse(expression: String, inputNames: PoolStringArray): GDError {
-    val _args = VariantArray.new()
-    _args.append(expression)
-    _args.append(inputNames)
-    val _ret = __method_bind.parse.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(expression))
+    _args.add(Variant.fromAny(inputNames))
+    val _ret = __method_bind.parse.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 

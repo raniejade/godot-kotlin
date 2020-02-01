@@ -74,7 +74,7 @@ open class CSGShape(
 
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.getCollisionLayerBit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCollisionLayerBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -85,7 +85,7 @@ open class CSGShape(
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -121,46 +121,46 @@ open class CSGShape(
 
   fun setCalculateTangents(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setCalculateTangents.call(this._handle, _arg, 1)
+    __method_bind.setCalculateTangents.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionLayer(layer: Int) {
     val _arg = Variant.new(layer)
-    __method_bind.setCollisionLayer.call(this._handle, _arg, 1)
+    __method_bind.setCollisionLayer.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(bit)
-    _args.append(value)
-    __method_bind.setCollisionLayerBit.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(bit))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setCollisionLayerBit.call(this._handle, _args)
   }
 
   fun setCollisionMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.setCollisionMask.call(this._handle, _arg, 1)
+    __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(bit)
-    _args.append(value)
-    __method_bind.setCollisionMaskBit.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(bit))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setCollisionMaskBit.call(this._handle, _args)
   }
 
   fun setOperation(operation: Int) {
     val _arg = Variant.new(operation)
-    __method_bind.setOperation.call(this._handle, _arg, 1)
+    __method_bind.setOperation.call(this._handle, listOf(_arg))
   }
 
   fun setSnap(snap: Float) {
     val _arg = Variant.new(snap)
-    __method_bind.setSnap.call(this._handle, _arg, 1)
+    __method_bind.setSnap.call(this._handle, listOf(_arg))
   }
 
   fun setUseCollision(operation: Boolean) {
     val _arg = Variant.new(operation)
-    __method_bind.setUseCollision.call(this._handle, _arg, 1)
+    __method_bind.setUseCollision.call(this._handle, listOf(_arg))
   }
 
   enum class Operation(

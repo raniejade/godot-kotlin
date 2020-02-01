@@ -158,7 +158,7 @@ open class LineEdit(
 
   fun appendAtCursor(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.appendAtCursor.call(this._handle, _arg, 1)
+    __method_bind.appendAtCursor.call(this._handle, listOf(_arg))
   }
 
   fun clear() {
@@ -177,12 +177,12 @@ open class LineEdit(
 
   fun cursorSetBlinkEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.cursorSetBlinkEnabled.call(this._handle, _arg, 1)
+    __method_bind.cursorSetBlinkEnabled.call(this._handle, listOf(_arg))
   }
 
   fun cursorSetBlinkSpeed(blinkSpeed: Float) {
     val _arg = Variant.new(blinkSpeed)
-    __method_bind.cursorSetBlinkSpeed.call(this._handle, _arg, 1)
+    __method_bind.cursorSetBlinkSpeed.call(this._handle, listOf(_arg))
   }
 
   fun deselect() {
@@ -271,14 +271,14 @@ open class LineEdit(
 
   fun menuOption(option: Int) {
     val _arg = Variant.new(option)
-    __method_bind.menuOption.call(this._handle, _arg, 1)
+    __method_bind.menuOption.call(this._handle, listOf(_arg))
   }
 
   fun select(from: Int = 0, to: Int = -1) {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    __method_bind.select.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    __method_bind.select.call(this._handle, _args)
   }
 
   fun selectAll() {
@@ -287,77 +287,77 @@ open class LineEdit(
 
   fun setAlign(align: Int) {
     val _arg = Variant.new(align)
-    __method_bind.setAlign.call(this._handle, _arg, 1)
+    __method_bind.setAlign.call(this._handle, listOf(_arg))
   }
 
   fun setClearButtonEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setClearButtonEnabled.call(this._handle, _arg, 1)
+    __method_bind.setClearButtonEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setContextMenuEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setContextMenuEnabled.call(this._handle, _arg, 1)
+    __method_bind.setContextMenuEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setCursorPosition(position: Int) {
     val _arg = Variant.new(position)
-    __method_bind.setCursorPosition.call(this._handle, _arg, 1)
+    __method_bind.setCursorPosition.call(this._handle, listOf(_arg))
   }
 
   fun setEditable(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setEditable.call(this._handle, _arg, 1)
+    __method_bind.setEditable.call(this._handle, listOf(_arg))
   }
 
   fun setExpandToTextLength(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setExpandToTextLength.call(this._handle, _arg, 1)
+    __method_bind.setExpandToTextLength.call(this._handle, listOf(_arg))
   }
 
   fun setMaxLength(chars: Int) {
     val _arg = Variant.new(chars)
-    __method_bind.setMaxLength.call(this._handle, _arg, 1)
+    __method_bind.setMaxLength.call(this._handle, listOf(_arg))
   }
 
   fun setPlaceholder(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setPlaceholder.call(this._handle, _arg, 1)
+    __method_bind.setPlaceholder.call(this._handle, listOf(_arg))
   }
 
   fun setPlaceholderAlpha(alpha: Float) {
     val _arg = Variant.new(alpha)
-    __method_bind.setPlaceholderAlpha.call(this._handle, _arg, 1)
+    __method_bind.setPlaceholderAlpha.call(this._handle, listOf(_arg))
   }
 
   fun setRightIcon(icon: Texture) {
     val _arg = Variant.new(icon)
-    __method_bind.setRightIcon.call(this._handle, _arg, 1)
+    __method_bind.setRightIcon.call(this._handle, listOf(_arg))
   }
 
   fun setSecret(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setSecret.call(this._handle, _arg, 1)
+    __method_bind.setSecret.call(this._handle, listOf(_arg))
   }
 
   fun setSecretCharacter(character: String) {
     val _arg = Variant.new(character)
-    __method_bind.setSecretCharacter.call(this._handle, _arg, 1)
+    __method_bind.setSecretCharacter.call(this._handle, listOf(_arg))
   }
 
   fun setSelectingEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setSelectingEnabled.call(this._handle, _arg, 1)
+    __method_bind.setSelectingEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setShortcutKeysEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setShortcutKeysEnabled.call(this._handle, _arg, 1)
+    __method_bind.setShortcutKeysEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setText.call(this._handle, _arg, 1)
+    __method_bind.setText.call(this._handle, listOf(_arg))
   }
 
   enum class Align(

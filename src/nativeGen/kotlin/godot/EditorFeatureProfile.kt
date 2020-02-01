@@ -22,60 +22,60 @@ open class EditorFeatureProfile(
 ) : Reference(_handle) {
   fun getFeatureName(feature: Int): String {
     val _arg = Variant.new(feature)
-    val _ret = __method_bind.getFeatureName.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFeatureName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun isClassDisabled(className: String): Boolean {
     val _arg = Variant.new(className)
-    val _ret = __method_bind.isClassDisabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isClassDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isClassEditorDisabled(className: String): Boolean {
     val _arg = Variant.new(className)
-    val _ret = __method_bind.isClassEditorDisabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isClassEditorDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isClassPropertyDisabled(className: String, property: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(className)
-    _args.append(property)
-    val _ret = __method_bind.isClassPropertyDisabled.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(className))
+    _args.add(Variant.fromAny(property))
+    val _ret = __method_bind.isClassPropertyDisabled.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun isFeatureDisabled(feature: Int): Boolean {
     val _arg = Variant.new(feature)
-    val _ret = __method_bind.isFeatureDisabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isFeatureDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun loadFromFile(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.loadFromFile.call(this._handle, _arg, 1)
+    val _ret = __method_bind.loadFromFile.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun saveToFile(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.saveToFile.call(this._handle, _arg, 1)
+    val _ret = __method_bind.saveToFile.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun setDisableClass(className: String, disable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(className)
-    _args.append(disable)
-    __method_bind.setDisableClass.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(className))
+    _args.add(Variant.fromAny(disable))
+    __method_bind.setDisableClass.call(this._handle, _args)
   }
 
   fun setDisableClassEditor(className: String, disable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(className)
-    _args.append(disable)
-    __method_bind.setDisableClassEditor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(className))
+    _args.add(Variant.fromAny(disable))
+    __method_bind.setDisableClassEditor.call(this._handle, _args)
   }
 
   fun setDisableClassProperty(
@@ -83,18 +83,18 @@ open class EditorFeatureProfile(
     property: String,
     disable: Boolean
   ) {
-    val _args = VariantArray.new()
-    _args.append(className)
-    _args.append(property)
-    _args.append(disable)
-    __method_bind.setDisableClassProperty.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(className))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(disable))
+    __method_bind.setDisableClassProperty.call(this._handle, _args)
   }
 
   fun setDisableFeature(feature: Int, disable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(feature)
-    _args.append(disable)
-    __method_bind.setDisableFeature.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(feature))
+    _args.add(Variant.fromAny(disable))
+    __method_bind.setDisableFeature.call(this._handle, _args)
   }
 
   enum class Feature(

@@ -19,12 +19,12 @@ open class EditorResourcePreview(
 ) : Node(_handle) {
   fun addPreviewGenerator(generator: EditorResourcePreviewGenerator) {
     val _arg = Variant.new(generator)
-    __method_bind.addPreviewGenerator.call(this._handle, _arg, 1)
+    __method_bind.addPreviewGenerator.call(this._handle, listOf(_arg))
   }
 
   fun checkForInvalidation(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.checkForInvalidation.call(this._handle, _arg, 1)
+    __method_bind.checkForInvalidation.call(this._handle, listOf(_arg))
   }
 
   fun queueEditedResourcePreview(
@@ -33,12 +33,12 @@ open class EditorResourcePreview(
     receiverFunc: String,
     userdata: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(resource)
-    _args.append(receiver)
-    _args.append(receiverFunc)
-    _args.append(userdata)
-    __method_bind.queueEditedResourcePreview.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(resource))
+    _args.add(Variant.fromAny(receiver))
+    _args.add(Variant.fromAny(receiverFunc))
+    _args.add(Variant.fromAny(userdata))
+    __method_bind.queueEditedResourcePreview.call(this._handle, _args)
   }
 
   fun queueResourcePreview(
@@ -47,17 +47,17 @@ open class EditorResourcePreview(
     receiverFunc: String,
     userdata: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(receiver)
-    _args.append(receiverFunc)
-    _args.append(userdata)
-    __method_bind.queueResourcePreview.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(receiver))
+    _args.add(Variant.fromAny(receiverFunc))
+    _args.add(Variant.fromAny(userdata))
+    __method_bind.queueResourcePreview.call(this._handle, _args)
   }
 
   fun removePreviewGenerator(generator: EditorResourcePreviewGenerator) {
     val _arg = Variant.new(generator)
-    __method_bind.removePreviewGenerator.call(this._handle, _arg, 1)
+    __method_bind.removePreviewGenerator.call(this._handle, listOf(_arg))
   }
 
   companion object {

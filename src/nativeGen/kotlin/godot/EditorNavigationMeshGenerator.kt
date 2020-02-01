@@ -17,15 +17,15 @@ open class EditorNavigationMeshGenerator(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun bake(navMesh: NavigationMesh, rootNode: Node) {
-    val _args = VariantArray.new()
-    _args.append(navMesh)
-    _args.append(rootNode)
-    __method_bind.bake.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(navMesh))
+    _args.add(Variant.fromAny(rootNode))
+    __method_bind.bake.call(this._handle, _args)
   }
 
   fun clear(navMesh: NavigationMesh) {
     val _arg = Variant.new(navMesh)
-    __method_bind.clear.call(this._handle, _arg, 1)
+    __method_bind.clear.call(this._handle, listOf(_arg))
   }
 
   companion object {

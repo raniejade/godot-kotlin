@@ -71,12 +71,12 @@ open class Bone2D(
 
   fun setDefaultLength(defaultLength: Float) {
     val _arg = Variant.new(defaultLength)
-    __method_bind.setDefaultLength.call(this._handle, _arg, 1)
+    __method_bind.setDefaultLength.call(this._handle, listOf(_arg))
   }
 
   fun setRest(rest: Transform2D) {
     val _arg = Variant.new(rest)
-    __method_bind.setRest.call(this._handle, _arg, 1)
+    __method_bind.setRest.call(this._handle, listOf(_arg))
   }
 
   companion object {

@@ -111,10 +111,10 @@ open class GIProbe(
   }
 
   fun bake(fromNode: Node, createVisualDebug: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(fromNode)
-    _args.append(createVisualDebug)
-    __method_bind.bake.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(createVisualDebug))
+    __method_bind.bake.call(this._handle, _args)
   }
 
   fun debugBake() {
@@ -173,52 +173,52 @@ open class GIProbe(
 
   fun setBias(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.setBias.call(this._handle, _arg, 1)
+    __method_bind.setBias.call(this._handle, listOf(_arg))
   }
 
   fun setCompress(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setCompress.call(this._handle, _arg, 1)
+    __method_bind.setCompress.call(this._handle, listOf(_arg))
   }
 
   fun setDynamicRange(max: Int) {
     val _arg = Variant.new(max)
-    __method_bind.setDynamicRange.call(this._handle, _arg, 1)
+    __method_bind.setDynamicRange.call(this._handle, listOf(_arg))
   }
 
   fun setEnergy(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.setEnergy.call(this._handle, _arg, 1)
+    __method_bind.setEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setExtents(extents: Vector3) {
     val _arg = Variant.new(extents)
-    __method_bind.setExtents.call(this._handle, _arg, 1)
+    __method_bind.setExtents.call(this._handle, listOf(_arg))
   }
 
   fun setInterior(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setInterior.call(this._handle, _arg, 1)
+    __method_bind.setInterior.call(this._handle, listOf(_arg))
   }
 
   fun setNormalBias(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.setNormalBias.call(this._handle, _arg, 1)
+    __method_bind.setNormalBias.call(this._handle, listOf(_arg))
   }
 
   fun setProbeData(data: GIProbeData) {
     val _arg = Variant.new(data)
-    __method_bind.setProbeData.call(this._handle, _arg, 1)
+    __method_bind.setProbeData.call(this._handle, listOf(_arg))
   }
 
   fun setPropagation(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.setPropagation.call(this._handle, _arg, 1)
+    __method_bind.setPropagation.call(this._handle, listOf(_arg))
   }
 
   fun setSubdiv(subdiv: Int) {
     val _arg = Variant.new(subdiv)
-    __method_bind.setSubdiv.call(this._handle, _arg, 1)
+    __method_bind.setSubdiv.call(this._handle, listOf(_arg))
   }
 
   enum class Subdiv(

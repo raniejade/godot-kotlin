@@ -4137,13 +4137,13 @@ open class AnimatedTexture(
 
   fun getFrameDelay(frame: Int): Float {
     val _arg = Variant.new(frame)
-    val _ret = __method_bind.getFrameDelay.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFrameDelay.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getFrameTexture(frame: Int): Texture {
     val _arg = Variant.new(frame)
-    val _ret = __method_bind.getFrameTexture.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFrameTexture.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
@@ -4154,26 +4154,26 @@ open class AnimatedTexture(
 
   fun setFps(fps: Float) {
     val _arg = Variant.new(fps)
-    __method_bind.setFps.call(this._handle, _arg, 1)
+    __method_bind.setFps.call(this._handle, listOf(_arg))
   }
 
   fun setFrameDelay(frame: Int, delay: Float) {
-    val _args = VariantArray.new()
-    _args.append(frame)
-    _args.append(delay)
-    __method_bind.setFrameDelay.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(frame))
+    _args.add(Variant.fromAny(delay))
+    __method_bind.setFrameDelay.call(this._handle, _args)
   }
 
   fun setFrameTexture(frame: Int, texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(frame)
-    _args.append(texture)
-    __method_bind.setFrameTexture.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(frame))
+    _args.add(Variant.fromAny(texture))
+    __method_bind.setFrameTexture.call(this._handle, _args)
   }
 
   fun setFrames(frames: Int) {
     val _arg = Variant.new(frames)
-    __method_bind.setFrames.call(this._handle, _arg, 1)
+    __method_bind.setFrames.call(this._handle, listOf(_arg))
   }
 
   companion object {

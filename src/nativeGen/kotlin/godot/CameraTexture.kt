@@ -59,17 +59,17 @@ open class CameraTexture(
 
   fun setCameraActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.setCameraActive.call(this._handle, _arg, 1)
+    __method_bind.setCameraActive.call(this._handle, listOf(_arg))
   }
 
   fun setCameraFeedId(feedId: Int) {
     val _arg = Variant.new(feedId)
-    __method_bind.setCameraFeedId.call(this._handle, _arg, 1)
+    __method_bind.setCameraFeedId.call(this._handle, listOf(_arg))
   }
 
   fun setWhichFeed(whichFeed: Int) {
     val _arg = Variant.new(whichFeed)
-    __method_bind.setWhichFeed.call(this._handle, _arg, 1)
+    __method_bind.setWhichFeed.call(this._handle, listOf(_arg))
   }
 
   companion object {

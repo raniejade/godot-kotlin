@@ -362,13 +362,13 @@ open class Viewport(
 
   fun getRenderInfo(info: Int): Int {
     val _arg = Variant.new(info)
-    val _ret = __method_bind.getRenderInfo.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getRenderInfo.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getShadowAtlasQuadrantSubdiv(quadrant: Int): ShadowAtlasQuadrantSubdiv {
     val _arg = Variant.new(quadrant)
-    val _ret = __method_bind.getShadowAtlasQuadrantSubdiv.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getShadowAtlasQuadrantSubdiv.call(this._handle, listOf(_arg))
     return Viewport.ShadowAtlasQuadrantSubdiv.from(_ret.asInt())
   }
 
@@ -449,7 +449,7 @@ open class Viewport(
 
   fun input(localEvent: InputEvent) {
     val _arg = Variant.new(localEvent)
-    __method_bind.input.call(this._handle, _arg, 1)
+    __method_bind.input.call(this._handle, listOf(_arg))
   }
 
   fun is3dDisabled(): Boolean {
@@ -509,57 +509,57 @@ open class Viewport(
 
   fun setAsAudioListener(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAsAudioListener.call(this._handle, _arg, 1)
+    __method_bind.setAsAudioListener.call(this._handle, listOf(_arg))
   }
 
   fun setAsAudioListener2d(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAsAudioListener2d.call(this._handle, _arg, 1)
+    __method_bind.setAsAudioListener2d.call(this._handle, listOf(_arg))
   }
 
   fun setAttachToScreenRect(rect: Rect2) {
     val _arg = Variant.new(rect)
-    __method_bind.setAttachToScreenRect.call(this._handle, _arg, 1)
+    __method_bind.setAttachToScreenRect.call(this._handle, listOf(_arg))
   }
 
   fun setCanvasTransform(xform: Transform2D) {
     val _arg = Variant.new(xform)
-    __method_bind.setCanvasTransform.call(this._handle, _arg, 1)
+    __method_bind.setCanvasTransform.call(this._handle, listOf(_arg))
   }
 
   fun setClearMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setClearMode.call(this._handle, _arg, 1)
+    __method_bind.setClearMode.call(this._handle, listOf(_arg))
   }
 
   fun setDebugDraw(debugDraw: Int) {
     val _arg = Variant.new(debugDraw)
-    __method_bind.setDebugDraw.call(this._handle, _arg, 1)
+    __method_bind.setDebugDraw.call(this._handle, listOf(_arg))
   }
 
   fun setDisable3d(disable: Boolean) {
     val _arg = Variant.new(disable)
-    __method_bind.setDisable3d.call(this._handle, _arg, 1)
+    __method_bind.setDisable3d.call(this._handle, listOf(_arg))
   }
 
   fun setDisableInput(disable: Boolean) {
     val _arg = Variant.new(disable)
-    __method_bind.setDisableInput.call(this._handle, _arg, 1)
+    __method_bind.setDisableInput.call(this._handle, listOf(_arg))
   }
 
   fun setGlobalCanvasTransform(xform: Transform2D) {
     val _arg = Variant.new(xform)
-    __method_bind.setGlobalCanvasTransform.call(this._handle, _arg, 1)
+    __method_bind.setGlobalCanvasTransform.call(this._handle, listOf(_arg))
   }
 
   fun setHandleInputLocally(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setHandleInputLocally.call(this._handle, _arg, 1)
+    __method_bind.setHandleInputLocally.call(this._handle, listOf(_arg))
   }
 
   fun setHdr(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setHdr.call(this._handle, _arg, 1)
+    __method_bind.setHdr.call(this._handle, listOf(_arg))
   }
 
   fun setInputAsHandled() {
@@ -568,34 +568,34 @@ open class Viewport(
 
   fun setKeep3dLinear(keep3dLinear: Boolean) {
     val _arg = Variant.new(keep3dLinear)
-    __method_bind.setKeep3dLinear.call(this._handle, _arg, 1)
+    __method_bind.setKeep3dLinear.call(this._handle, listOf(_arg))
   }
 
   fun setMsaa(msaa: Int) {
     val _arg = Variant.new(msaa)
-    __method_bind.setMsaa.call(this._handle, _arg, 1)
+    __method_bind.setMsaa.call(this._handle, listOf(_arg))
   }
 
   fun setPhysicsObjectPicking(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setPhysicsObjectPicking.call(this._handle, _arg, 1)
+    __method_bind.setPhysicsObjectPicking.call(this._handle, listOf(_arg))
   }
 
   fun setShadowAtlasQuadrantSubdiv(quadrant: Int, subdiv: Int) {
-    val _args = VariantArray.new()
-    _args.append(quadrant)
-    _args.append(subdiv)
-    __method_bind.setShadowAtlasQuadrantSubdiv.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(quadrant))
+    _args.add(Variant.fromAny(subdiv))
+    __method_bind.setShadowAtlasQuadrantSubdiv.call(this._handle, _args)
   }
 
   fun setShadowAtlasSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.setShadowAtlasSize.call(this._handle, _arg, 1)
+    __method_bind.setShadowAtlasSize.call(this._handle, listOf(_arg))
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.setSize.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 
   fun setSizeOverride(
@@ -603,71 +603,71 @@ open class Viewport(
     size: Vector2 = Vector2.new(-1, -1),
     margin: Vector2 = Vector2.new(0, 0)
   ) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    _args.append(size)
-    _args.append(margin)
-    __method_bind.setSizeOverride.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(enable))
+    _args.add(Variant.fromAny(size))
+    _args.add(Variant.fromAny(margin))
+    __method_bind.setSizeOverride.call(this._handle, _args)
   }
 
   fun setSizeOverrideStretch(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setSizeOverrideStretch.call(this._handle, _arg, 1)
+    __method_bind.setSizeOverrideStretch.call(this._handle, listOf(_arg))
   }
 
   fun setSnapControlsToPixels(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setSnapControlsToPixels.call(this._handle, _arg, 1)
+    __method_bind.setSnapControlsToPixels.call(this._handle, listOf(_arg))
   }
 
   fun setTransparentBackground(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setTransparentBackground.call(this._handle, _arg, 1)
+    __method_bind.setTransparentBackground.call(this._handle, listOf(_arg))
   }
 
   fun setUpdateMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setUpdateMode.call(this._handle, _arg, 1)
+    __method_bind.setUpdateMode.call(this._handle, listOf(_arg))
   }
 
   fun setUsage(usage: Int) {
     val _arg = Variant.new(usage)
-    __method_bind.setUsage.call(this._handle, _arg, 1)
+    __method_bind.setUsage.call(this._handle, listOf(_arg))
   }
 
   fun setUseArvr(use: Boolean) {
     val _arg = Variant.new(use)
-    __method_bind.setUseArvr.call(this._handle, _arg, 1)
+    __method_bind.setUseArvr.call(this._handle, listOf(_arg))
   }
 
   fun setUseOwnWorld(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseOwnWorld.call(this._handle, _arg, 1)
+    __method_bind.setUseOwnWorld.call(this._handle, listOf(_arg))
   }
 
   fun setUseRenderDirectToScreen(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseRenderDirectToScreen.call(this._handle, _arg, 1)
+    __method_bind.setUseRenderDirectToScreen.call(this._handle, listOf(_arg))
   }
 
   fun setVflip(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setVflip.call(this._handle, _arg, 1)
+    __method_bind.setVflip.call(this._handle, listOf(_arg))
   }
 
   fun setWorld(world: World) {
     val _arg = Variant.new(world)
-    __method_bind.setWorld.call(this._handle, _arg, 1)
+    __method_bind.setWorld.call(this._handle, listOf(_arg))
   }
 
   fun setWorld2d(world2d: World2D) {
     val _arg = Variant.new(world2d)
-    __method_bind.setWorld2d.call(this._handle, _arg, 1)
+    __method_bind.setWorld2d.call(this._handle, listOf(_arg))
   }
 
   fun unhandledInput(localEvent: InputEvent) {
     val _arg = Variant.new(localEvent)
-    __method_bind.unhandledInput.call(this._handle, _arg, 1)
+    __method_bind.unhandledInput.call(this._handle, listOf(_arg))
   }
 
   fun updateWorlds() {
@@ -681,7 +681,7 @@ open class Viewport(
 
   fun warpMouse(toPosition: Vector2) {
     val _arg = Variant.new(toPosition)
-    __method_bind.warpMouse.call(this._handle, _arg, 1)
+    __method_bind.warpMouse.call(this._handle, listOf(_arg))
   }
 
   enum class ClearMode(

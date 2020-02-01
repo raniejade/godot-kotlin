@@ -19,7 +19,7 @@ open class JavaClassWrapper(
 ) : Object(_handle) {
   fun wrap(name: String): JavaClass {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.wrap.call(this._handle, _arg, 1)
+    val _ret = __method_bind.wrap.call(this._handle, listOf(_arg))
     return _ret.asObject(::JavaClass)!!
   }
 

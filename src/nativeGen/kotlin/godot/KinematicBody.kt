@@ -55,7 +55,7 @@ open class KinematicBody(
 
   fun getAxisLock(axis: Int): Boolean {
     val _arg = Variant.new(axis)
-    val _ret = __method_bind.getAxisLock.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAxisLock.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -76,7 +76,7 @@ open class KinematicBody(
 
   fun getSlideCollision(slideIdx: Int): KinematicCollision {
     val _arg = Variant.new(slideIdx)
-    val _ret = __method_bind.getSlideCollision.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlideCollision.call(this._handle, listOf(_arg))
     return _ret.asObject(::KinematicCollision)!!
   }
 
@@ -106,12 +106,12 @@ open class KinematicBody(
     excludeRaycastShapes: Boolean = true,
     testOnly: Boolean = false
   ): KinematicCollision {
-    val _args = VariantArray.new()
-    _args.append(relVec)
-    _args.append(infiniteInertia)
-    _args.append(excludeRaycastShapes)
-    _args.append(testOnly)
-    val _ret = __method_bind.moveAndCollide.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(relVec))
+    _args.add(Variant.fromAny(infiniteInertia))
+    _args.add(Variant.fromAny(excludeRaycastShapes))
+    _args.add(Variant.fromAny(testOnly))
+    val _ret = __method_bind.moveAndCollide.call(this._handle, _args)
     return _ret.asObject(::KinematicCollision)!!
   }
 
@@ -123,14 +123,14 @@ open class KinematicBody(
     floorMaxAngle: Float = 0.785398f,
     infiniteInertia: Boolean = true
   ): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(linearVelocity)
-    _args.append(upDirection)
-    _args.append(stopOnSlope)
-    _args.append(maxSlides)
-    _args.append(floorMaxAngle)
-    _args.append(infiniteInertia)
-    val _ret = __method_bind.moveAndSlide.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(linearVelocity))
+    _args.add(Variant.fromAny(upDirection))
+    _args.add(Variant.fromAny(stopOnSlope))
+    _args.add(Variant.fromAny(maxSlides))
+    _args.add(Variant.fromAny(floorMaxAngle))
+    _args.add(Variant.fromAny(infiniteInertia))
+    val _ret = __method_bind.moveAndSlide.call(this._handle, _args)
     return _ret.asVector3()
   }
 
@@ -143,28 +143,28 @@ open class KinematicBody(
     floorMaxAngle: Float = 0.785398f,
     infiniteInertia: Boolean = true
   ): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(linearVelocity)
-    _args.append(snap)
-    _args.append(upDirection)
-    _args.append(stopOnSlope)
-    _args.append(maxSlides)
-    _args.append(floorMaxAngle)
-    _args.append(infiniteInertia)
-    val _ret = __method_bind.moveAndSlideWithSnap.call(this._handle, _args.toVariant(), 7)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(linearVelocity))
+    _args.add(Variant.fromAny(snap))
+    _args.add(Variant.fromAny(upDirection))
+    _args.add(Variant.fromAny(stopOnSlope))
+    _args.add(Variant.fromAny(maxSlides))
+    _args.add(Variant.fromAny(floorMaxAngle))
+    _args.add(Variant.fromAny(infiniteInertia))
+    val _ret = __method_bind.moveAndSlideWithSnap.call(this._handle, _args)
     return _ret.asVector3()
   }
 
   fun setAxisLock(axis: Int, lock: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(axis)
-    _args.append(lock)
-    __method_bind.setAxisLock.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(axis))
+    _args.add(Variant.fromAny(lock))
+    __method_bind.setAxisLock.call(this._handle, _args)
   }
 
   fun setSafeMargin(pixels: Float) {
     val _arg = Variant.new(pixels)
-    __method_bind.setSafeMargin.call(this._handle, _arg, 1)
+    __method_bind.setSafeMargin.call(this._handle, listOf(_arg))
   }
 
   fun testMove(
@@ -172,11 +172,11 @@ open class KinematicBody(
     relVec: Vector3,
     infiniteInertia: Boolean = true
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(relVec)
-    _args.append(infiniteInertia)
-    val _ret = __method_bind.testMove.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(relVec))
+    _args.add(Variant.fromAny(infiniteInertia))
+    val _ret = __method_bind.testMove.call(this._handle, _args)
     return _ret.asBoolean()
   }
 

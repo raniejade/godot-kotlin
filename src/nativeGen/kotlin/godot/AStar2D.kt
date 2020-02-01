@@ -27,18 +27,18 @@ open class AStar2D(
     position: Vector2,
     weightScale: Float = 1.0f
   ) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(position)
-    _args.append(weightScale)
-    __method_bind.addPoint.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(weightScale))
+    __method_bind.addPoint.call(this._handle, _args)
   }
 
   fun arePointsConnected(id: Int, toId: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(toId)
-    val _ret = __method_bind.arePointsConnected.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(toId))
+    val _ret = __method_bind.arePointsConnected.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -51,18 +51,18 @@ open class AStar2D(
     toId: Int,
     bidirectional: Boolean = true
   ) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(toId)
-    _args.append(bidirectional)
-    __method_bind.connectPoints.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(toId))
+    _args.add(Variant.fromAny(bidirectional))
+    __method_bind.connectPoints.call(this._handle, _args)
   }
 
   fun disconnectPoints(id: Int, toId: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(toId)
-    __method_bind.disconnectPoints.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(toId))
+    __method_bind.disconnectPoints.call(this._handle, _args)
   }
 
   fun getAvailablePointId(): Int {
@@ -71,24 +71,24 @@ open class AStar2D(
   }
 
   fun getClosestPoint(toPosition: Vector2, includeDisabled: Boolean = false): Int {
-    val _args = VariantArray.new()
-    _args.append(toPosition)
-    _args.append(includeDisabled)
-    val _ret = __method_bind.getClosestPoint.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(toPosition))
+    _args.add(Variant.fromAny(includeDisabled))
+    val _ret = __method_bind.getClosestPoint.call(this._handle, _args)
     return _ret.asInt()
   }
 
   fun getClosestPositionInSegment(toPosition: Vector2): Vector2 {
     val _arg = Variant.new(toPosition)
-    val _ret = __method_bind.getClosestPositionInSegment.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getClosestPositionInSegment.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getIdPath(fromId: Int, toId: Int): PoolIntArray {
-    val _args = VariantArray.new()
-    _args.append(fromId)
-    _args.append(toId)
-    val _ret = __method_bind.getIdPath.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromId))
+    _args.add(Variant.fromAny(toId))
+    val _ret = __method_bind.getIdPath.call(this._handle, _args)
     return _ret.asPoolIntArray()
   }
 
@@ -99,7 +99,7 @@ open class AStar2D(
 
   fun getPointConnections(id: Int): PoolIntArray {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.getPointConnections.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointConnections.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
 
@@ -109,22 +109,22 @@ open class AStar2D(
   }
 
   fun getPointPath(fromId: Int, toId: Int): PoolVector2Array {
-    val _args = VariantArray.new()
-    _args.append(fromId)
-    _args.append(toId)
-    val _ret = __method_bind.getPointPath.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromId))
+    _args.add(Variant.fromAny(toId))
+    val _ret = __method_bind.getPointPath.call(this._handle, _args)
     return _ret.asPoolVector2Array()
   }
 
   fun getPointPosition(id: Int): Vector2 {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.getPointPosition.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getPointWeightScale(id: Int): Float {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.getPointWeightScale.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointWeightScale.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -135,45 +135,45 @@ open class AStar2D(
 
   fun hasPoint(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.hasPoint.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasPoint.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isPointDisabled(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.isPointDisabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isPointDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removePoint(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.removePoint.call(this._handle, _arg, 1)
+    __method_bind.removePoint.call(this._handle, listOf(_arg))
   }
 
   fun reserveSpace(numNodes: Int) {
     val _arg = Variant.new(numNodes)
-    __method_bind.reserveSpace.call(this._handle, _arg, 1)
+    __method_bind.reserveSpace.call(this._handle, listOf(_arg))
   }
 
   fun setPointDisabled(id: Int, disabled: Boolean = true) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(disabled)
-    __method_bind.setPointDisabled.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(disabled))
+    __method_bind.setPointDisabled.call(this._handle, _args)
   }
 
   fun setPointPosition(id: Int, position: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(position)
-    __method_bind.setPointPosition.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(position))
+    __method_bind.setPointPosition.call(this._handle, _args)
   }
 
   fun setPointWeightScale(id: Int, weightScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(weightScale)
-    __method_bind.setPointWeightScale.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(weightScale))
+    __method_bind.setPointWeightScale.call(this._handle, _args)
   }
 
   companion object {

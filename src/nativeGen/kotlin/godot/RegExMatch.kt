@@ -36,7 +36,7 @@ open class RegExMatch(
 
   fun getEnd(name: Variant): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getEnd.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getEnd.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -52,13 +52,13 @@ open class RegExMatch(
 
   fun getStart(name: Variant): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getStart.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getStart.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getString(name: Variant): String {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getString.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getString.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 

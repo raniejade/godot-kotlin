@@ -22,15 +22,15 @@ open class _Directory(
 ) : Reference(_handle) {
   fun changeDir(todir: String): GDError {
     val _arg = Variant.new(todir)
-    val _ret = __method_bind.changeDir.call(this._handle, _arg, 1)
+    val _ret = __method_bind.changeDir.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun copy(from: String, to: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    val _ret = __method_bind.copy.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    val _ret = __method_bind.copy.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -41,13 +41,13 @@ open class _Directory(
 
   fun dirExists(path: String): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.dirExists.call(this._handle, _arg, 1)
+    val _ret = __method_bind.dirExists.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun fileExists(path: String): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.fileExists.call(this._handle, _arg, 1)
+    val _ret = __method_bind.fileExists.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -63,7 +63,7 @@ open class _Directory(
 
   fun getDrive(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getDrive.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDrive.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -83,10 +83,10 @@ open class _Directory(
   }
 
   fun listDirBegin(skipNavigational: Boolean = false, skipHidden: Boolean = false): GDError {
-    val _args = VariantArray.new()
-    _args.append(skipNavigational)
-    _args.append(skipHidden)
-    val _ret = __method_bind.listDirBegin.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(skipNavigational))
+    _args.add(Variant.fromAny(skipHidden))
+    val _ret = __method_bind.listDirBegin.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -96,33 +96,33 @@ open class _Directory(
 
   fun makeDir(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.makeDir.call(this._handle, _arg, 1)
+    val _ret = __method_bind.makeDir.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun makeDirRecursive(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.makeDirRecursive.call(this._handle, _arg, 1)
+    val _ret = __method_bind.makeDirRecursive.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun open(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.open.call(this._handle, _arg, 1)
+    val _ret = __method_bind.open.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun remove(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.remove.call(this._handle, _arg, 1)
+    val _ret = __method_bind.remove.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun rename(from: String, to: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    val _ret = __method_bind.rename.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    val _ret = __method_bind.rename.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 

@@ -25,11 +25,11 @@ open class ScriptEditor(
     data: Variant,
     from: Control
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(data)
-    _args.append(from)
-    val _ret = __method_bind.canDropDataFw.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(data))
+    _args.add(Variant.fromAny(from))
+    val _ret = __method_bind.canDropDataFw.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -38,11 +38,11 @@ open class ScriptEditor(
     data: Variant,
     from: Control
   ) {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(data)
-    _args.append(from)
-    __method_bind.dropDataFw.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(data))
+    _args.add(Variant.fromAny(from))
+    __method_bind.dropDataFw.call(this._handle, _args)
   }
 
   fun getCurrentScript(): Script {
@@ -51,10 +51,10 @@ open class ScriptEditor(
   }
 
   fun getDragDataFw(point: Vector2, from: Control): Variant {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(from)
-    val _ret = __method_bind.getDragDataFw.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(from))
+    val _ret = __method_bind.getDragDataFw.call(this._handle, _args)
     return _ret
   }
 
@@ -65,14 +65,14 @@ open class ScriptEditor(
 
   fun gotoLine(lineNumber: Int) {
     val _arg = Variant.new(lineNumber)
-    __method_bind.gotoLine.call(this._handle, _arg, 1)
+    __method_bind.gotoLine.call(this._handle, listOf(_arg))
   }
 
   fun openScriptCreateDialog(baseName: String, basePath: String) {
-    val _args = VariantArray.new()
-    _args.append(baseName)
-    _args.append(basePath)
-    __method_bind.openScriptCreateDialog.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(baseName))
+    _args.add(Variant.fromAny(basePath))
+    __method_bind.openScriptCreateDialog.call(this._handle, _args)
   }
 
   companion object {

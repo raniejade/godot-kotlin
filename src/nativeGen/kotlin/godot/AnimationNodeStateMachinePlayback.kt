@@ -36,7 +36,7 @@ open class AnimationNodeStateMachinePlayback(
 
   fun start(node: String) {
     val _arg = Variant.new(node)
-    __method_bind.start.call(this._handle, _arg, 1)
+    __method_bind.start.call(this._handle, listOf(_arg))
   }
 
   fun stop() {
@@ -45,7 +45,7 @@ open class AnimationNodeStateMachinePlayback(
 
   fun travel(toNode: String) {
     val _arg = Variant.new(toNode)
-    __method_bind.travel.call(this._handle, _arg, 1)
+    __method_bind.travel.call(this._handle, listOf(_arg))
   }
 
   companion object {

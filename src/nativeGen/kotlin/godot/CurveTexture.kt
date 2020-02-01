@@ -40,12 +40,12 @@ open class CurveTexture(
 
   fun setCurve(curve: Curve) {
     val _arg = Variant.new(curve)
-    __method_bind.setCurve.call(this._handle, _arg, 1)
+    __method_bind.setCurve.call(this._handle, listOf(_arg))
   }
 
   fun setWidth(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.setWidth.call(this._handle, _arg, 1)
+    __method_bind.setWidth.call(this._handle, listOf(_arg))
   }
 
   companion object {

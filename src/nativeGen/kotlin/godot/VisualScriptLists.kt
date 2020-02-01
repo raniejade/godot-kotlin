@@ -23,11 +23,11 @@ open class VisualScriptLists(
     name: String,
     index: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(name)
-    _args.append(index)
-    __method_bind.addInputDataPort.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(index))
+    __method_bind.addInputDataPort.call(this._handle, _args)
   }
 
   fun addOutputDataPort(
@@ -35,49 +35,49 @@ open class VisualScriptLists(
     name: String,
     index: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(name)
-    _args.append(index)
-    __method_bind.addOutputDataPort.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(index))
+    __method_bind.addOutputDataPort.call(this._handle, _args)
   }
 
   fun removeInputDataPort(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.removeInputDataPort.call(this._handle, _arg, 1)
+    __method_bind.removeInputDataPort.call(this._handle, listOf(_arg))
   }
 
   fun removeOutputDataPort(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.removeOutputDataPort.call(this._handle, _arg, 1)
+    __method_bind.removeOutputDataPort.call(this._handle, listOf(_arg))
   }
 
   fun setInputDataPortName(index: Int, name: String) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(name)
-    __method_bind.setInputDataPortName.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(name))
+    __method_bind.setInputDataPortName.call(this._handle, _args)
   }
 
   fun setInputDataPortType(index: Int, type: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(type)
-    __method_bind.setInputDataPortType.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(type))
+    __method_bind.setInputDataPortType.call(this._handle, _args)
   }
 
   fun setOutputDataPortName(index: Int, name: String) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(name)
-    __method_bind.setOutputDataPortName.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(name))
+    __method_bind.setOutputDataPortName.call(this._handle, _args)
   }
 
   fun setOutputDataPortType(index: Int, type: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(type)
-    __method_bind.setOutputDataPortType.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(type))
+    __method_bind.setOutputDataPortType.call(this._handle, _args)
   }
 
   companion object {

@@ -20,10 +20,10 @@ open class InstancePlaceholder(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun createInstance(replace: Boolean = false, customScene: PackedScene): Node {
-    val _args = VariantArray.new()
-    _args.append(replace)
-    _args.append(customScene)
-    val _ret = __method_bind.createInstance.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(replace))
+    _args.add(Variant.fromAny(customScene))
+    val _ret = __method_bind.createInstance.call(this._handle, _args)
     return _ret.asObject(::Node)!!
   }
 
@@ -34,13 +34,13 @@ open class InstancePlaceholder(
 
   fun getStoredValues(withOrder: Boolean = false): Dictionary {
     val _arg = Variant.new(withOrder)
-    val _ret = __method_bind.getStoredValues.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getStoredValues.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
 
   fun replaceByInstance(customScene: PackedScene) {
     val _arg = Variant.new(customScene)
-    __method_bind.replaceByInstance.call(this._handle, _arg, 1)
+    __method_bind.replaceByInstance.call(this._handle, listOf(_arg))
   }
 
   companion object {

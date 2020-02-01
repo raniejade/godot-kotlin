@@ -74,17 +74,17 @@ open class PrimitiveMesh(
 
   fun setCustomAabb(aabb: AABB) {
     val _arg = Variant.new(aabb)
-    __method_bind.setCustomAabb.call(this._handle, _arg, 1)
+    __method_bind.setCustomAabb.call(this._handle, listOf(_arg))
   }
 
   fun setFlipFaces(flipFaces: Boolean) {
     val _arg = Variant.new(flipFaces)
-    __method_bind.setFlipFaces.call(this._handle, _arg, 1)
+    __method_bind.setFlipFaces.call(this._handle, listOf(_arg))
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.setMaterial.call(this._handle, _arg, 1)
+    __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   companion object {

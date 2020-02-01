@@ -46,7 +46,7 @@ open class AudioServer(
 
   fun addBus(atPosition: Int = -1) {
     val _arg = Variant.new(atPosition)
-    __method_bind.addBus.call(this._handle, _arg, 1)
+    __method_bind.addBus.call(this._handle, listOf(_arg))
   }
 
   fun addBusEffect(
@@ -54,11 +54,11 @@ open class AudioServer(
     effect: AudioEffect,
     atPosition: Int = -1
   ) {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(effect)
-    _args.append(atPosition)
-    __method_bind.addBusEffect.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(effect))
+    _args.add(Variant.fromAny(atPosition))
+    __method_bind.addBusEffect.call(this._handle, _args)
   }
 
   fun captureGetDevice(): String {
@@ -73,7 +73,7 @@ open class AudioServer(
 
   fun captureSetDevice(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.captureSetDevice.call(this._handle, _arg, 1)
+    __method_bind.captureSetDevice.call(this._handle, listOf(_arg))
   }
 
   fun generateBusLayout(): AudioBusLayout {
@@ -83,7 +83,7 @@ open class AudioServer(
 
   fun getBusChannels(busIdx: Int): Int {
     val _arg = Variant.new(busIdx)
-    val _ret = __method_bind.getBusChannels.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBusChannels.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -93,16 +93,16 @@ open class AudioServer(
   }
 
   fun getBusEffect(busIdx: Int, effectIdx: Int): AudioEffect {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(effectIdx)
-    val _ret = __method_bind.getBusEffect.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(effectIdx))
+    val _ret = __method_bind.getBusEffect.call(this._handle, _args)
     return _ret.asObject(::AudioEffect)!!
   }
 
   fun getBusEffectCount(busIdx: Int): Int {
     val _arg = Variant.new(busIdx)
-    val _ret = __method_bind.getBusEffectCount.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBusEffectCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -111,51 +111,51 @@ open class AudioServer(
     effectIdx: Int,
     channel: Int = 0
   ): AudioEffectInstance {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(effectIdx)
-    _args.append(channel)
-    val _ret = __method_bind.getBusEffectInstance.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(effectIdx))
+    _args.add(Variant.fromAny(channel))
+    val _ret = __method_bind.getBusEffectInstance.call(this._handle, _args)
     return _ret.asObject(::AudioEffectInstance)!!
   }
 
   fun getBusIndex(busName: String): Int {
     val _arg = Variant.new(busName)
-    val _ret = __method_bind.getBusIndex.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBusIndex.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getBusName(busIdx: Int): String {
     val _arg = Variant.new(busIdx)
-    val _ret = __method_bind.getBusName.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBusName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getBusPeakVolumeLeftDb(busIdx: Int, channel: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(channel)
-    val _ret = __method_bind.getBusPeakVolumeLeftDb.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(channel))
+    val _ret = __method_bind.getBusPeakVolumeLeftDb.call(this._handle, _args)
     return _ret.asFloat()
   }
 
   fun getBusPeakVolumeRightDb(busIdx: Int, channel: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(channel)
-    val _ret = __method_bind.getBusPeakVolumeRightDb.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(channel))
+    val _ret = __method_bind.getBusPeakVolumeRightDb.call(this._handle, _args)
     return _ret.asFloat()
   }
 
   fun getBusSend(busIdx: Int): String {
     val _arg = Variant.new(busIdx)
-    val _ret = __method_bind.getBusSend.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBusSend.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getBusVolumeDb(busIdx: Int): Float {
     val _arg = Variant.new(busIdx)
-    val _ret = __method_bind.getBusVolumeDb.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBusVolumeDb.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -201,27 +201,27 @@ open class AudioServer(
 
   fun isBusBypassingEffects(busIdx: Int): Boolean {
     val _arg = Variant.new(busIdx)
-    val _ret = __method_bind.isBusBypassingEffects.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isBusBypassingEffects.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isBusEffectEnabled(busIdx: Int, effectIdx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(effectIdx)
-    val _ret = __method_bind.isBusEffectEnabled.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(effectIdx))
+    val _ret = __method_bind.isBusEffectEnabled.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun isBusMute(busIdx: Int): Boolean {
     val _arg = Variant.new(busIdx)
-    val _ret = __method_bind.isBusMute.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isBusMute.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isBusSolo(busIdx: Int): Boolean {
     val _arg = Variant.new(busIdx)
-    val _ret = __method_bind.isBusSolo.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isBusSolo.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -230,34 +230,34 @@ open class AudioServer(
   }
 
   fun moveBus(index: Int, toIndex: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(toIndex)
-    __method_bind.moveBus.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(toIndex))
+    __method_bind.moveBus.call(this._handle, _args)
   }
 
   fun removeBus(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.removeBus.call(this._handle, _arg, 1)
+    __method_bind.removeBus.call(this._handle, listOf(_arg))
   }
 
   fun removeBusEffect(busIdx: Int, effectIdx: Int) {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(effectIdx)
-    __method_bind.removeBusEffect.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(effectIdx))
+    __method_bind.removeBusEffect.call(this._handle, _args)
   }
 
   fun setBusBypassEffects(busIdx: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(enable)
-    __method_bind.setBusBypassEffects.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setBusBypassEffects.call(this._handle, _args)
   }
 
   fun setBusCount(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setBusCount.call(this._handle, _arg, 1)
+    __method_bind.setBusCount.call(this._handle, listOf(_arg))
   }
 
   fun setBusEffectEnabled(
@@ -265,61 +265,61 @@ open class AudioServer(
     effectIdx: Int,
     enabled: Boolean
   ) {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(effectIdx)
-    _args.append(enabled)
-    __method_bind.setBusEffectEnabled.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(effectIdx))
+    _args.add(Variant.fromAny(enabled))
+    __method_bind.setBusEffectEnabled.call(this._handle, _args)
   }
 
   fun setBusLayout(busLayout: AudioBusLayout) {
     val _arg = Variant.new(busLayout)
-    __method_bind.setBusLayout.call(this._handle, _arg, 1)
+    __method_bind.setBusLayout.call(this._handle, listOf(_arg))
   }
 
   fun setBusMute(busIdx: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(enable)
-    __method_bind.setBusMute.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setBusMute.call(this._handle, _args)
   }
 
   fun setBusName(busIdx: Int, name: String) {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(name)
-    __method_bind.setBusName.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(name))
+    __method_bind.setBusName.call(this._handle, _args)
   }
 
   fun setBusSend(busIdx: Int, send: String) {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(send)
-    __method_bind.setBusSend.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(send))
+    __method_bind.setBusSend.call(this._handle, _args)
   }
 
   fun setBusSolo(busIdx: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(enable)
-    __method_bind.setBusSolo.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setBusSolo.call(this._handle, _args)
   }
 
   fun setBusVolumeDb(busIdx: Int, volumeDb: Float) {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(volumeDb)
-    __method_bind.setBusVolumeDb.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(volumeDb))
+    __method_bind.setBusVolumeDb.call(this._handle, _args)
   }
 
   fun setDevice(device: String) {
     val _arg = Variant.new(device)
-    __method_bind.setDevice.call(this._handle, _arg, 1)
+    __method_bind.setDevice.call(this._handle, listOf(_arg))
   }
 
   fun setGlobalRateScale(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.setGlobalRateScale.call(this._handle, _arg, 1)
+    __method_bind.setGlobalRateScale.call(this._handle, listOf(_arg))
   }
 
   fun swapBusEffects(
@@ -327,11 +327,11 @@ open class AudioServer(
     effectIdx: Int,
     byEffectIdx: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(busIdx)
-    _args.append(effectIdx)
-    _args.append(byEffectIdx)
-    __method_bind.swapBusEffects.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(busIdx))
+    _args.add(Variant.fromAny(effectIdx))
+    _args.add(Variant.fromAny(byEffectIdx))
+    __method_bind.swapBusEffects.call(this._handle, _args)
   }
 
   fun unlock() {

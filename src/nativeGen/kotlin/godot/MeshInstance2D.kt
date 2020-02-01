@@ -57,17 +57,17 @@ open class MeshInstance2D(
 
   fun setMesh(mesh: Mesh) {
     val _arg = Variant.new(mesh)
-    __method_bind.setMesh.call(this._handle, _arg, 1)
+    __method_bind.setMesh.call(this._handle, listOf(_arg))
   }
 
   fun setNormalMap(normalMap: Texture) {
     val _arg = Variant.new(normalMap)
-    __method_bind.setNormalMap.call(this._handle, _arg, 1)
+    __method_bind.setNormalMap.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTexture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   companion object {

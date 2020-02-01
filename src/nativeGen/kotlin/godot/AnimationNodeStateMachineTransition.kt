@@ -100,32 +100,32 @@ open class AnimationNodeStateMachineTransition(
 
   fun setAdvanceCondition(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setAdvanceCondition.call(this._handle, _arg, 1)
+    __method_bind.setAdvanceCondition.call(this._handle, listOf(_arg))
   }
 
   fun setAutoAdvance(autoAdvance: Boolean) {
     val _arg = Variant.new(autoAdvance)
-    __method_bind.setAutoAdvance.call(this._handle, _arg, 1)
+    __method_bind.setAutoAdvance.call(this._handle, listOf(_arg))
   }
 
   fun setDisabled(disabled: Boolean) {
     val _arg = Variant.new(disabled)
-    __method_bind.setDisabled.call(this._handle, _arg, 1)
+    __method_bind.setDisabled.call(this._handle, listOf(_arg))
   }
 
   fun setPriority(priority: Int) {
     val _arg = Variant.new(priority)
-    __method_bind.setPriority.call(this._handle, _arg, 1)
+    __method_bind.setPriority.call(this._handle, listOf(_arg))
   }
 
   fun setSwitchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setSwitchMode.call(this._handle, _arg, 1)
+    __method_bind.setSwitchMode.call(this._handle, listOf(_arg))
   }
 
   fun setXfadeTime(secs: Float) {
     val _arg = Variant.new(secs)
-    __method_bind.setXfadeTime.call(this._handle, _arg, 1)
+    __method_bind.setXfadeTime.call(this._handle, listOf(_arg))
   }
 
   enum class SwitchMode(

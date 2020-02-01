@@ -32,7 +32,7 @@ open class VisualShaderNodeScalarDerivativeFunc(
 
   fun setFunction(func: Int) {
     val _arg = Variant.new(func)
-    __method_bind.setFunction.call(this._handle, _arg, 1)
+    __method_bind.setFunction.call(this._handle, listOf(_arg))
   }
 
   enum class Function(

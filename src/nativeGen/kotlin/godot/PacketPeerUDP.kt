@@ -40,18 +40,18 @@ open class PacketPeerUDP(
   }
 
   fun joinMulticastGroup(multicastAddress: String, interfaceName: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(multicastAddress)
-    _args.append(interfaceName)
-    val _ret = __method_bind.joinMulticastGroup.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(multicastAddress))
+    _args.add(Variant.fromAny(interfaceName))
+    val _ret = __method_bind.joinMulticastGroup.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun leaveMulticastGroup(multicastAddress: String, interfaceName: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(multicastAddress)
-    _args.append(interfaceName)
-    val _ret = __method_bind.leaveMulticastGroup.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(multicastAddress))
+    _args.add(Variant.fromAny(interfaceName))
+    val _ret = __method_bind.leaveMulticastGroup.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -60,24 +60,24 @@ open class PacketPeerUDP(
     bindAddress: String = "*",
     recvBufSize: Int = 65536
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(port)
-    _args.append(bindAddress)
-    _args.append(recvBufSize)
-    val _ret = __method_bind.listen.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(port))
+    _args.add(Variant.fromAny(bindAddress))
+    _args.add(Variant.fromAny(recvBufSize))
+    val _ret = __method_bind.listen.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun setBroadcastEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setBroadcastEnabled.call(this._handle, _arg, 1)
+    __method_bind.setBroadcastEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setDestAddress(host: String, port: Int): GDError {
-    val _args = VariantArray.new()
-    _args.append(host)
-    _args.append(port)
-    val _ret = __method_bind.setDestAddress.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(host))
+    _args.add(Variant.fromAny(port))
+    val _ret = __method_bind.setDestAddress.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 

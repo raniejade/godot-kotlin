@@ -25,11 +25,11 @@ open class WebRTCMultiplayer(
     peerId: Int,
     unreliableLifetime: Int = 1
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(peer)
-    _args.append(peerId)
-    _args.append(unreliableLifetime)
-    val _ret = __method_bind.addPeer.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(peer))
+    _args.add(Variant.fromAny(peerId))
+    _args.add(Variant.fromAny(unreliableLifetime))
+    val _ret = __method_bind.addPeer.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -39,7 +39,7 @@ open class WebRTCMultiplayer(
 
   fun getPeer(peerId: Int): Dictionary {
     val _arg = Variant.new(peerId)
-    val _ret = __method_bind.getPeer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPeer.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
 
@@ -50,21 +50,21 @@ open class WebRTCMultiplayer(
 
   fun hasPeer(peerId: Int): Boolean {
     val _arg = Variant.new(peerId)
-    val _ret = __method_bind.hasPeer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasPeer.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun initialize(peerId: Int, serverCompatibility: Boolean = false): GDError {
-    val _args = VariantArray.new()
-    _args.append(peerId)
-    _args.append(serverCompatibility)
-    val _ret = __method_bind.initialize.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(peerId))
+    _args.add(Variant.fromAny(serverCompatibility))
+    val _ret = __method_bind.initialize.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun removePeer(peerId: Int) {
     val _arg = Variant.new(peerId)
-    __method_bind.removePeer.call(this._handle, _arg, 1)
+    __method_bind.removePeer.call(this._handle, listOf(_arg))
   }
 
   companion object {

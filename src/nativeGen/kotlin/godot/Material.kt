@@ -45,12 +45,12 @@ open class Material(
 
   fun setNextPass(nextPass: Material) {
     val _arg = Variant.new(nextPass)
-    __method_bind.setNextPass.call(this._handle, _arg, 1)
+    __method_bind.setNextPass.call(this._handle, listOf(_arg))
   }
 
   fun setRenderPriority(priority: Int) {
     val _arg = Variant.new(priority)
-    __method_bind.setRenderPriority.call(this._handle, _arg, 1)
+    __method_bind.setRenderPriority.call(this._handle, listOf(_arg))
   }
 
   companion object {

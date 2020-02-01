@@ -70,17 +70,17 @@ open class CollisionPolygon(
 
   fun setDepth(depth: Float) {
     val _arg = Variant.new(depth)
-    __method_bind.setDepth.call(this._handle, _arg, 1)
+    __method_bind.setDepth.call(this._handle, listOf(_arg))
   }
 
   fun setDisabled(disabled: Boolean) {
     val _arg = Variant.new(disabled)
-    __method_bind.setDisabled.call(this._handle, _arg, 1)
+    __method_bind.setDisabled.call(this._handle, listOf(_arg))
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
     val _arg = Variant.new(polygon)
-    __method_bind.setPolygon.call(this._handle, _arg, 1)
+    __method_bind.setPolygon.call(this._handle, listOf(_arg))
   }
 
   companion object {

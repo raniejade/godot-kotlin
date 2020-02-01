@@ -85,27 +85,27 @@ open class TextureRect(
 
   fun setExpand(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setExpand.call(this._handle, _arg, 1)
+    __method_bind.setExpand.call(this._handle, listOf(_arg))
   }
 
   fun setFlipH(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setFlipH.call(this._handle, _arg, 1)
+    __method_bind.setFlipH.call(this._handle, listOf(_arg))
   }
 
   fun setFlipV(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setFlipV.call(this._handle, _arg, 1)
+    __method_bind.setFlipV.call(this._handle, listOf(_arg))
   }
 
   fun setStretchMode(stretchMode: Int) {
     val _arg = Variant.new(stretchMode)
-    __method_bind.setStretchMode.call(this._handle, _arg, 1)
+    __method_bind.setStretchMode.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTexture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   enum class StretchMode(

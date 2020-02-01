@@ -43,11 +43,11 @@ open class VisualShaderNodeGroupBase(
     type: Int,
     name: String
   ) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(type)
-    _args.append(name)
-    __method_bind.addInputPort.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(name))
+    __method_bind.addInputPort.call(this._handle, _args)
   }
 
   fun addOutputPort(
@@ -55,11 +55,11 @@ open class VisualShaderNodeGroupBase(
     type: Int,
     name: String
   ) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(type)
-    _args.append(name)
-    __method_bind.addOutputPort.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(name))
+    __method_bind.addOutputPort.call(this._handle, _args)
   }
 
   fun clearInputPorts() {
@@ -107,73 +107,73 @@ open class VisualShaderNodeGroupBase(
 
   fun hasInputPort(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.hasInputPort.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasInputPort.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasOutputPort(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.hasOutputPort.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasOutputPort.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isValidPortName(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.isValidPortName.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isValidPortName.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeInputPort(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.removeInputPort.call(this._handle, _arg, 1)
+    __method_bind.removeInputPort.call(this._handle, listOf(_arg))
   }
 
   fun removeOutputPort(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.removeOutputPort.call(this._handle, _arg, 1)
+    __method_bind.removeOutputPort.call(this._handle, listOf(_arg))
   }
 
   fun setInputPortName(id: Int, name: String) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(name)
-    __method_bind.setInputPortName.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(name))
+    __method_bind.setInputPortName.call(this._handle, _args)
   }
 
   fun setInputPortType(id: Int, type: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(type)
-    __method_bind.setInputPortType.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(type))
+    __method_bind.setInputPortType.call(this._handle, _args)
   }
 
   fun setInputs(inputs: String) {
     val _arg = Variant.new(inputs)
-    __method_bind.setInputs.call(this._handle, _arg, 1)
+    __method_bind.setInputs.call(this._handle, listOf(_arg))
   }
 
   fun setOutputPortName(id: Int, name: String) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(name)
-    __method_bind.setOutputPortName.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(name))
+    __method_bind.setOutputPortName.call(this._handle, _args)
   }
 
   fun setOutputPortType(id: Int, type: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(type)
-    __method_bind.setOutputPortType.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(type))
+    __method_bind.setOutputPortType.call(this._handle, _args)
   }
 
   fun setOutputs(outputs: String) {
     val _arg = Variant.new(outputs)
-    __method_bind.setOutputs.call(this._handle, _arg, 1)
+    __method_bind.setOutputs.call(this._handle, listOf(_arg))
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.setSize.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 
   companion object {

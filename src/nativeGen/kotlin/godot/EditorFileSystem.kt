@@ -21,7 +21,7 @@ open class EditorFileSystem(
 ) : Node(_handle) {
   fun getFileType(path: String): String {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.getFileType.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFileType.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -32,7 +32,7 @@ open class EditorFileSystem(
 
   fun getFilesystemPath(path: String): EditorFileSystemDirectory {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.getFilesystemPath.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFilesystemPath.call(this._handle, listOf(_arg))
     return _ret.asObject(::EditorFileSystemDirectory)!!
   }
 
@@ -56,7 +56,7 @@ open class EditorFileSystem(
 
   fun updateFile(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.updateFile.call(this._handle, _arg, 1)
+    __method_bind.updateFile.call(this._handle, listOf(_arg))
   }
 
   fun updateScriptClasses() {

@@ -48,7 +48,7 @@ open class VisibilityNotifier(
 
   fun setAabb(rect: AABB) {
     val _arg = Variant.new(rect)
-    __method_bind.setAabb.call(this._handle, _arg, 1)
+    __method_bind.setAabb.call(this._handle, listOf(_arg))
   }
 
   companion object {

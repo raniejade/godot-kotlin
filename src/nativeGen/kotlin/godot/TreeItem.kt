@@ -55,70 +55,70 @@ open class TreeItem(
     disabled: Boolean = false,
     tooltip: String = ""
   ) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(button)
-    _args.append(buttonIdx)
-    _args.append(disabled)
-    _args.append(tooltip)
-    __method_bind.addButton.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(button))
+    _args.add(Variant.fromAny(buttonIdx))
+    _args.add(Variant.fromAny(disabled))
+    _args.add(Variant.fromAny(tooltip))
+    __method_bind.addButton.call(this._handle, _args)
   }
 
   fun callRecursive(method: String, vararg varargs: Any?): Variant {
-    val _args = VariantArray.new()
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.callRecursive.call(this._handle, _args.toVariant(), 1 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.callRecursive.call(this._handle, _args)
     return _ret
   }
 
   fun clearCustomBgColor(column: Int) {
     val _arg = Variant.new(column)
-    __method_bind.clearCustomBgColor.call(this._handle, _arg, 1)
+    __method_bind.clearCustomBgColor.call(this._handle, listOf(_arg))
   }
 
   fun clearCustomColor(column: Int) {
     val _arg = Variant.new(column)
-    __method_bind.clearCustomColor.call(this._handle, _arg, 1)
+    __method_bind.clearCustomColor.call(this._handle, listOf(_arg))
   }
 
   fun deselect(column: Int) {
     val _arg = Variant.new(column)
-    __method_bind.deselect.call(this._handle, _arg, 1)
+    __method_bind.deselect.call(this._handle, listOf(_arg))
   }
 
   fun eraseButton(column: Int, buttonIdx: Int) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(buttonIdx)
-    __method_bind.eraseButton.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(buttonIdx))
+    __method_bind.eraseButton.call(this._handle, _args)
   }
 
   fun getButton(column: Int, buttonIdx: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(buttonIdx)
-    val _ret = __method_bind.getButton.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(buttonIdx))
+    val _ret = __method_bind.getButton.call(this._handle, _args)
     return _ret.asObject(::Texture)!!
   }
 
   fun getButtonCount(column: Int): Int {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getButtonCount.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getButtonCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getButtonTooltip(column: Int, buttonIdx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(buttonIdx)
-    val _ret = __method_bind.getButtonTooltip.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(buttonIdx))
+    val _ret = __method_bind.getButtonTooltip.call(this._handle, _args)
     return _ret.asString()
   }
 
   fun getCellMode(column: Int): TreeCellMode {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getCellMode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCellMode.call(this._handle, listOf(_arg))
     return TreeItem.TreeCellMode.from(_ret.asInt())
   }
 
@@ -129,13 +129,13 @@ open class TreeItem(
 
   fun getCustomBgColor(column: Int): Color {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getCustomBgColor.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCustomBgColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getCustomColor(column: Int): Color {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getCustomColor.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCustomColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
@@ -146,37 +146,37 @@ open class TreeItem(
 
   fun getExpandRight(column: Int): Boolean {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getExpandRight.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getExpandRight.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getIcon(column: Int): Texture {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getIcon.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getIcon.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun getIconMaxWidth(column: Int): Int {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getIconMaxWidth.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getIconMaxWidth.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getIconModulate(column: Int): Color {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getIconModulate.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getIconModulate.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getIconRegion(column: Int): Rect2 {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getIconRegion.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getIconRegion.call(this._handle, listOf(_arg))
     return _ret.asRect2()
   }
 
   fun getMetadata(column: Int): Variant {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getMetadata.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getMetadata.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -187,7 +187,7 @@ open class TreeItem(
 
   fun getNextVisible(wrap: Boolean = false): TreeItem {
     val _arg = Variant.new(wrap)
-    val _ret = __method_bind.getNextVisible.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNextVisible.call(this._handle, listOf(_arg))
     return _ret.asObject(::TreeItem)!!
   }
 
@@ -203,51 +203,51 @@ open class TreeItem(
 
   fun getPrevVisible(wrap: Boolean = false): TreeItem {
     val _arg = Variant.new(wrap)
-    val _ret = __method_bind.getPrevVisible.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPrevVisible.call(this._handle, listOf(_arg))
     return _ret.asObject(::TreeItem)!!
   }
 
   fun getRange(column: Int): Float {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getRange.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getRange.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getRangeConfig(column: Int): Dictionary {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getRangeConfig.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getRangeConfig.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
 
   fun getText(column: Int): String {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getText.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getText.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getTextAlign(column: Int): TextAlign {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getTextAlign.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getTextAlign.call(this._handle, listOf(_arg))
     return TreeItem.TextAlign.from(_ret.asInt())
   }
 
   fun getTooltip(column: Int): String {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.getTooltip.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getTooltip.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun isButtonDisabled(column: Int, buttonIdx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(buttonIdx)
-    val _ret = __method_bind.isButtonDisabled.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(buttonIdx))
+    val _ret = __method_bind.isButtonDisabled.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun isChecked(column: Int): Boolean {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.isChecked.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isChecked.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -258,13 +258,13 @@ open class TreeItem(
 
   fun isCustomSetAsButton(column: Int): Boolean {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.isCustomSetAsButton.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isCustomSetAsButton.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isEditable(column: Int): Boolean {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.isEditable.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isEditable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -275,13 +275,13 @@ open class TreeItem(
 
   fun isSelectable(column: Int): Boolean {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.isSelectable.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isSelectable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isSelected(column: Int): Boolean {
     val _arg = Variant.new(column)
-    val _ret = __method_bind.isSelected.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isSelected.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -295,12 +295,12 @@ open class TreeItem(
 
   fun removeChild(child: Object) {
     val _arg = Variant.new(child)
-    __method_bind.removeChild.call(this._handle, _arg, 1)
+    __method_bind.removeChild.call(this._handle, listOf(_arg))
   }
 
   fun select(column: Int) {
     val _arg = Variant.new(column)
-    __method_bind.select.call(this._handle, _arg, 1)
+    __method_bind.select.call(this._handle, listOf(_arg))
   }
 
   fun setButton(
@@ -308,11 +308,11 @@ open class TreeItem(
     buttonIdx: Int,
     button: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(buttonIdx)
-    _args.append(button)
-    __method_bind.setButton.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(buttonIdx))
+    _args.add(Variant.fromAny(button))
+    __method_bind.setButton.call(this._handle, _args)
   }
 
   fun setButtonDisabled(
@@ -320,37 +320,37 @@ open class TreeItem(
     buttonIdx: Int,
     disabled: Boolean
   ) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(buttonIdx)
-    _args.append(disabled)
-    __method_bind.setButtonDisabled.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(buttonIdx))
+    _args.add(Variant.fromAny(disabled))
+    __method_bind.setButtonDisabled.call(this._handle, _args)
   }
 
   fun setCellMode(column: Int, mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(mode)
-    __method_bind.setCellMode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(mode))
+    __method_bind.setCellMode.call(this._handle, _args)
   }
 
   fun setChecked(column: Int, checked: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(checked)
-    __method_bind.setChecked.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(checked))
+    __method_bind.setChecked.call(this._handle, _args)
   }
 
   fun setCollapsed(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setCollapsed.call(this._handle, _arg, 1)
+    __method_bind.setCollapsed.call(this._handle, listOf(_arg))
   }
 
   fun setCustomAsButton(column: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(enable)
-    __method_bind.setCustomAsButton.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setCustomAsButton.call(this._handle, _args)
   }
 
   fun setCustomBgColor(
@@ -358,18 +358,18 @@ open class TreeItem(
     color: Color,
     justOutline: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(color)
-    _args.append(justOutline)
-    __method_bind.setCustomBgColor.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(color))
+    _args.add(Variant.fromAny(justOutline))
+    __method_bind.setCustomBgColor.call(this._handle, _args)
   }
 
   fun setCustomColor(column: Int, color: Color) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(color)
-    __method_bind.setCustomColor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(color))
+    __method_bind.setCustomColor.call(this._handle, _args)
   }
 
   fun setCustomDraw(
@@ -377,77 +377,77 @@ open class TreeItem(
     `object`: Object,
     callback: String
   ) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(`object`)
-    _args.append(callback)
-    __method_bind.setCustomDraw.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(callback))
+    __method_bind.setCustomDraw.call(this._handle, _args)
   }
 
   fun setCustomMinimumHeight(height: Int) {
     val _arg = Variant.new(height)
-    __method_bind.setCustomMinimumHeight.call(this._handle, _arg, 1)
+    __method_bind.setCustomMinimumHeight.call(this._handle, listOf(_arg))
   }
 
   fun setDisableFolding(disable: Boolean) {
     val _arg = Variant.new(disable)
-    __method_bind.setDisableFolding.call(this._handle, _arg, 1)
+    __method_bind.setDisableFolding.call(this._handle, listOf(_arg))
   }
 
   fun setEditable(column: Int, enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(enabled)
-    __method_bind.setEditable.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(enabled))
+    __method_bind.setEditable.call(this._handle, _args)
   }
 
   fun setExpandRight(column: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(enable)
-    __method_bind.setExpandRight.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setExpandRight.call(this._handle, _args)
   }
 
   fun setIcon(column: Int, texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(texture)
-    __method_bind.setIcon.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(texture))
+    __method_bind.setIcon.call(this._handle, _args)
   }
 
   fun setIconMaxWidth(column: Int, width: Int) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(width)
-    __method_bind.setIconMaxWidth.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(width))
+    __method_bind.setIconMaxWidth.call(this._handle, _args)
   }
 
   fun setIconModulate(column: Int, modulate: Color) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(modulate)
-    __method_bind.setIconModulate.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(modulate))
+    __method_bind.setIconModulate.call(this._handle, _args)
   }
 
   fun setIconRegion(column: Int, region: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(region)
-    __method_bind.setIconRegion.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(region))
+    __method_bind.setIconRegion.call(this._handle, _args)
   }
 
   fun setMetadata(column: Int, meta: Variant) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(meta)
-    __method_bind.setMetadata.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(meta))
+    __method_bind.setMetadata.call(this._handle, _args)
   }
 
   fun setRange(column: Int, value: Float) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(value)
-    __method_bind.setRange.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setRange.call(this._handle, _args)
   }
 
   fun setRangeConfig(
@@ -457,41 +457,41 @@ open class TreeItem(
     step: Float,
     expr: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(min)
-    _args.append(max)
-    _args.append(step)
-    _args.append(expr)
-    __method_bind.setRangeConfig.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(min))
+    _args.add(Variant.fromAny(max))
+    _args.add(Variant.fromAny(step))
+    _args.add(Variant.fromAny(expr))
+    __method_bind.setRangeConfig.call(this._handle, _args)
   }
 
   fun setSelectable(column: Int, selectable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(selectable)
-    __method_bind.setSelectable.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(selectable))
+    __method_bind.setSelectable.call(this._handle, _args)
   }
 
   fun setText(column: Int, text: String) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(text)
-    __method_bind.setText.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(text))
+    __method_bind.setText.call(this._handle, _args)
   }
 
   fun setTextAlign(column: Int, textAlign: Int) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(textAlign)
-    __method_bind.setTextAlign.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(textAlign))
+    __method_bind.setTextAlign.call(this._handle, _args)
   }
 
   fun setTooltip(column: Int, tooltip: String) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(tooltip)
-    __method_bind.setTooltip.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(tooltip))
+    __method_bind.setTooltip.call(this._handle, _args)
   }
 
   enum class TreeCellMode(

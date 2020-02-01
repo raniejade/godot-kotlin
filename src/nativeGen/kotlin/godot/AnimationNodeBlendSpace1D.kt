@@ -568,11 +568,11 @@ open class AnimationNodeBlendSpace1D(
     pos: Float,
     atIndex: Int = -1
   ) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    _args.append(pos)
-    _args.append(atIndex)
-    __method_bind.addBlendPoint.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(node))
+    _args.add(Variant.fromAny(pos))
+    _args.add(Variant.fromAny(atIndex))
+    __method_bind.addBlendPoint.call(this._handle, _args)
   }
 
   fun getBlendPointCount(): Int {
@@ -582,13 +582,13 @@ open class AnimationNodeBlendSpace1D(
 
   fun getBlendPointNode(point: Int): AnimationRootNode {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.getBlendPointNode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBlendPointNode.call(this._handle, listOf(_arg))
     return _ret.asObject(::AnimationRootNode)!!
   }
 
   fun getBlendPointPosition(point: Int): Float {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.getBlendPointPosition.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBlendPointPosition.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -614,41 +614,41 @@ open class AnimationNodeBlendSpace1D(
 
   fun removeBlendPoint(point: Int) {
     val _arg = Variant.new(point)
-    __method_bind.removeBlendPoint.call(this._handle, _arg, 1)
+    __method_bind.removeBlendPoint.call(this._handle, listOf(_arg))
   }
 
   fun setBlendPointNode(point: Int, node: AnimationRootNode) {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(node)
-    __method_bind.setBlendPointNode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(node))
+    __method_bind.setBlendPointNode.call(this._handle, _args)
   }
 
   fun setBlendPointPosition(point: Int, pos: Float) {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(pos)
-    __method_bind.setBlendPointPosition.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(pos))
+    __method_bind.setBlendPointPosition.call(this._handle, _args)
   }
 
   fun setMaxSpace(maxSpace: Float) {
     val _arg = Variant.new(maxSpace)
-    __method_bind.setMaxSpace.call(this._handle, _arg, 1)
+    __method_bind.setMaxSpace.call(this._handle, listOf(_arg))
   }
 
   fun setMinSpace(minSpace: Float) {
     val _arg = Variant.new(minSpace)
-    __method_bind.setMinSpace.call(this._handle, _arg, 1)
+    __method_bind.setMinSpace.call(this._handle, listOf(_arg))
   }
 
   fun setSnap(snap: Float) {
     val _arg = Variant.new(snap)
-    __method_bind.setSnap.call(this._handle, _arg, 1)
+    __method_bind.setSnap.call(this._handle, listOf(_arg))
   }
 
   fun setValueLabel(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setValueLabel.call(this._handle, _arg, 1)
+    __method_bind.setValueLabel.call(this._handle, listOf(_arg))
   }
 
   companion object {

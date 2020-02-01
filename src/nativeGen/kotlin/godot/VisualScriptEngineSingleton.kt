@@ -32,7 +32,7 @@ open class VisualScriptEngineSingleton(
 
   fun setSingleton(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setSingleton.call(this._handle, _arg, 1)
+    __method_bind.setSingleton.call(this._handle, listOf(_arg))
   }
 
   companion object {

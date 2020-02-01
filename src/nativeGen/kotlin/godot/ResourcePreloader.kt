@@ -20,15 +20,15 @@ open class ResourcePreloader(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addResource(name: String, resource: Resource) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(resource)
-    __method_bind.addResource.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(resource))
+    __method_bind.addResource.call(this._handle, _args)
   }
 
   fun getResource(name: String): Resource {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getResource.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getResource.call(this._handle, listOf(_arg))
     return _ret.asObject(::Resource)!!
   }
 
@@ -39,20 +39,20 @@ open class ResourcePreloader(
 
   fun hasResource(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasResource.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasResource.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeResource(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.removeResource.call(this._handle, _arg, 1)
+    __method_bind.removeResource.call(this._handle, listOf(_arg))
   }
 
   fun renameResource(name: String, newname: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(newname)
-    __method_bind.renameResource.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(newname))
+    __method_bind.renameResource.call(this._handle, _args)
   }
 
   companion object {

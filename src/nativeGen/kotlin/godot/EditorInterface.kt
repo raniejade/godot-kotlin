@@ -22,7 +22,7 @@ open class EditorInterface(
 ) : Node(_handle) {
   fun editResource(resource: Resource) {
     val _arg = Variant.new(resource)
-    __method_bind.editResource.call(this._handle, _arg, 1)
+    __method_bind.editResource.call(this._handle, listOf(_arg))
   }
 
   fun getBaseControl(): Control {
@@ -86,34 +86,34 @@ open class EditorInterface(
   }
 
   fun inspectObject(`object`: Object, forProperty: String = "") {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(forProperty)
-    __method_bind.inspectObject.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(forProperty))
+    __method_bind.inspectObject.call(this._handle, _args)
   }
 
   fun isPluginEnabled(plugin: String): Boolean {
     val _arg = Variant.new(plugin)
-    val _ret = __method_bind.isPluginEnabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isPluginEnabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun makeMeshPreviews(meshes: VariantArray, previewSize: Int): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(meshes)
-    _args.append(previewSize)
-    val _ret = __method_bind.makeMeshPreviews.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(meshes))
+    _args.add(Variant.fromAny(previewSize))
+    val _ret = __method_bind.makeMeshPreviews.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun openSceneFromPath(sceneFilepath: String) {
     val _arg = Variant.new(sceneFilepath)
-    __method_bind.openSceneFromPath.call(this._handle, _arg, 1)
+    __method_bind.openSceneFromPath.call(this._handle, listOf(_arg))
   }
 
   fun reloadSceneFromPath(sceneFilepath: String) {
     val _arg = Variant.new(sceneFilepath)
-    __method_bind.reloadSceneFromPath.call(this._handle, _arg, 1)
+    __method_bind.reloadSceneFromPath.call(this._handle, listOf(_arg))
   }
 
   fun saveScene(): GDError {
@@ -122,32 +122,32 @@ open class EditorInterface(
   }
 
   fun saveSceneAs(path: String, withPreview: Boolean = true) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(withPreview)
-    __method_bind.saveSceneAs.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(withPreview))
+    __method_bind.saveSceneAs.call(this._handle, _args)
   }
 
   fun selectFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.selectFile.call(this._handle, _arg, 1)
+    __method_bind.selectFile.call(this._handle, listOf(_arg))
   }
 
   fun setDistractionFreeMode(enter: Boolean) {
     val _arg = Variant.new(enter)
-    __method_bind.setDistractionFreeMode.call(this._handle, _arg, 1)
+    __method_bind.setDistractionFreeMode.call(this._handle, listOf(_arg))
   }
 
   fun setMainScreenEditor(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setMainScreenEditor.call(this._handle, _arg, 1)
+    __method_bind.setMainScreenEditor.call(this._handle, listOf(_arg))
   }
 
   fun setPluginEnabled(plugin: String, enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(plugin)
-    _args.append(enabled)
-    __method_bind.setPluginEnabled.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(plugin))
+    _args.add(Variant.fromAny(enabled))
+    __method_bind.setPluginEnabled.call(this._handle, _args)
   }
 
   companion object {

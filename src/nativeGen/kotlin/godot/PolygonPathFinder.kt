@@ -24,10 +24,10 @@ open class PolygonPathFinder(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun findPath(from: Vector2, to: Vector2): PoolVector2Array {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    val _ret = __method_bind.findPath.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    val _ret = __method_bind.findPath.call(this._handle, _args)
     return _ret.asPoolVector2Array()
   }
 
@@ -38,42 +38,42 @@ open class PolygonPathFinder(
 
   fun getClosestPoint(point: Vector2): Vector2 {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.getClosestPoint.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getIntersections(from: Vector2, to: Vector2): PoolVector2Array {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    val _ret = __method_bind.getIntersections.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    val _ret = __method_bind.getIntersections.call(this._handle, _args)
     return _ret.asPoolVector2Array()
   }
 
   fun getPointPenalty(idx: Int): Float {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getPointPenalty.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointPenalty.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun isPointInside(point: Vector2): Boolean {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.isPointInside.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isPointInside.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setPointPenalty(idx: Int, penalty: Float) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(penalty)
-    __method_bind.setPointPenalty.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(penalty))
+    __method_bind.setPointPenalty.call(this._handle, _args)
   }
 
   fun setup(points: PoolVector2Array, connections: PoolIntArray) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    _args.append(connections)
-    __method_bind.setup.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(points))
+    _args.add(Variant.fromAny(connections))
+    __method_bind.setup.call(this._handle, _args)
   }
 
   companion object {

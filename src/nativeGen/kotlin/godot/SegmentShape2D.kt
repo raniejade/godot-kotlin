@@ -64,12 +64,12 @@ open class SegmentShape2D(
 
   fun setA(a: Vector2) {
     val _arg = Variant.new(a)
-    __method_bind.setA.call(this._handle, _arg, 1)
+    __method_bind.setA.call(this._handle, listOf(_arg))
   }
 
   fun setB(b: Vector2) {
     val _arg = Variant.new(b)
-    __method_bind.setB.call(this._handle, _arg, 1)
+    __method_bind.setB.call(this._handle, listOf(_arg))
   }
 
   companion object {

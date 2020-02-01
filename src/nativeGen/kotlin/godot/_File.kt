@@ -42,7 +42,7 @@ open class _File(
 
   fun fileExists(path: String): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.fileExists.call(this._handle, _arg, 1)
+    val _ret = __method_bind.fileExists.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -73,13 +73,13 @@ open class _File(
 
   fun getBuffer(len: Int): PoolByteArray {
     val _arg = Variant.new(len)
-    val _ret = __method_bind.getBuffer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBuffer.call(this._handle, listOf(_arg))
     return _ret.asPoolByteArray()
   }
 
   fun getCsvLine(delim: String = ","): PoolStringArray {
     val _arg = Variant.new(delim)
-    val _ret = __method_bind.getCsvLine.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCsvLine.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
@@ -115,13 +115,13 @@ open class _File(
 
   fun getMd5(path: String): String {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.getMd5.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getMd5.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getModifiedTime(file: String): Int {
     val _arg = Variant.new(file)
-    val _ret = __method_bind.getModifiedTime.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getModifiedTime.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -152,13 +152,13 @@ open class _File(
 
   fun getSha256(path: String): String {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.getSha256.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSha256.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getVar(allowObjects: Boolean = false): Variant {
     val _arg = Variant.new(allowObjects)
-    val _ret = __method_bind.getVar.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVar.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -168,10 +168,10 @@ open class _File(
   }
 
   fun open(path: String, flags: Int): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(flags)
-    val _ret = __method_bind.open.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(flags))
+    val _ret = __method_bind.open.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -180,11 +180,11 @@ open class _File(
     modeFlags: Int,
     compressionMode: Int = 0
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(modeFlags)
-    _args.append(compressionMode)
-    val _ret = __method_bind.openCompressed.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(modeFlags))
+    _args.add(Variant.fromAny(compressionMode))
+    val _ret = __method_bind.openCompressed.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -193,11 +193,11 @@ open class _File(
     modeFlags: Int,
     key: PoolByteArray
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(modeFlags)
-    _args.append(key)
-    val _ret = __method_bind.openEncrypted.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(modeFlags))
+    _args.add(Variant.fromAny(key))
+    val _ret = __method_bind.openEncrypted.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -206,96 +206,96 @@ open class _File(
     modeFlags: Int,
     pass: String
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(modeFlags)
-    _args.append(pass)
-    val _ret = __method_bind.openEncryptedWithPass.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(modeFlags))
+    _args.add(Variant.fromAny(pass))
+    val _ret = __method_bind.openEncryptedWithPass.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun seek(position: Int) {
     val _arg = Variant.new(position)
-    __method_bind.seek.call(this._handle, _arg, 1)
+    __method_bind.seek.call(this._handle, listOf(_arg))
   }
 
   fun seekEnd(position: Int = 0) {
     val _arg = Variant.new(position)
-    __method_bind.seekEnd.call(this._handle, _arg, 1)
+    __method_bind.seekEnd.call(this._handle, listOf(_arg))
   }
 
   fun setEndianSwap(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setEndianSwap.call(this._handle, _arg, 1)
+    __method_bind.setEndianSwap.call(this._handle, listOf(_arg))
   }
 
   fun store16(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.store16.call(this._handle, _arg, 1)
+    __method_bind.store16.call(this._handle, listOf(_arg))
   }
 
   fun store32(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.store32.call(this._handle, _arg, 1)
+    __method_bind.store32.call(this._handle, listOf(_arg))
   }
 
   fun store64(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.store64.call(this._handle, _arg, 1)
+    __method_bind.store64.call(this._handle, listOf(_arg))
   }
 
   fun store8(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.store8.call(this._handle, _arg, 1)
+    __method_bind.store8.call(this._handle, listOf(_arg))
   }
 
   fun storeBuffer(buffer: PoolByteArray) {
     val _arg = Variant.new(buffer)
-    __method_bind.storeBuffer.call(this._handle, _arg, 1)
+    __method_bind.storeBuffer.call(this._handle, listOf(_arg))
   }
 
   fun storeCsvLine(values: PoolStringArray, delim: String = ",") {
-    val _args = VariantArray.new()
-    _args.append(values)
-    _args.append(delim)
-    __method_bind.storeCsvLine.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(values))
+    _args.add(Variant.fromAny(delim))
+    __method_bind.storeCsvLine.call(this._handle, _args)
   }
 
   fun storeDouble(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.storeDouble.call(this._handle, _arg, 1)
+    __method_bind.storeDouble.call(this._handle, listOf(_arg))
   }
 
   fun storeFloat(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.storeFloat.call(this._handle, _arg, 1)
+    __method_bind.storeFloat.call(this._handle, listOf(_arg))
   }
 
   fun storeLine(line: String) {
     val _arg = Variant.new(line)
-    __method_bind.storeLine.call(this._handle, _arg, 1)
+    __method_bind.storeLine.call(this._handle, listOf(_arg))
   }
 
   fun storePascalString(string: String) {
     val _arg = Variant.new(string)
-    __method_bind.storePascalString.call(this._handle, _arg, 1)
+    __method_bind.storePascalString.call(this._handle, listOf(_arg))
   }
 
   fun storeReal(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.storeReal.call(this._handle, _arg, 1)
+    __method_bind.storeReal.call(this._handle, listOf(_arg))
   }
 
   fun storeString(string: String) {
     val _arg = Variant.new(string)
-    __method_bind.storeString.call(this._handle, _arg, 1)
+    __method_bind.storeString.call(this._handle, listOf(_arg))
   }
 
   fun storeVar(value: Variant, fullObjects: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    _args.append(fullObjects)
-    __method_bind.storeVar.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(value))
+    _args.add(Variant.fromAny(fullObjects))
+    __method_bind.storeVar.call(this._handle, _args)
   }
 
   enum class CompressionMode(

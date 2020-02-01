@@ -32,7 +32,7 @@ open class VisualScriptBuiltinFunc(
 
   fun setFunc(which: Int) {
     val _arg = Variant.new(which)
-    __method_bind.setFunc.call(this._handle, _arg, 1)
+    __method_bind.setFunc.call(this._handle, listOf(_arg))
   }
 
   enum class BuiltinFunc(

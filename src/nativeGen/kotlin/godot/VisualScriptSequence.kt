@@ -32,7 +32,7 @@ open class VisualScriptSequence(
 
   fun setSteps(steps: Int) {
     val _arg = Variant.new(steps)
-    __method_bind.setSteps.call(this._handle, _arg, 1)
+    __method_bind.setSteps.call(this._handle, listOf(_arg))
   }
 
   companion object {

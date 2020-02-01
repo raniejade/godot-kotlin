@@ -42,7 +42,7 @@ open class PlaneShape(
 
   fun setPlane(plane: Plane) {
     val _arg = Variant.new(plane)
-    __method_bind.setPlane.call(this._handle, _arg, 1)
+    __method_bind.setPlane.call(this._handle, listOf(_arg))
   }
 
   companion object {

@@ -46,12 +46,12 @@ open class LinkButton(
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setText.call(this._handle, _arg, 1)
+    __method_bind.setText.call(this._handle, listOf(_arg))
   }
 
   fun setUnderlineMode(underlineMode: Int) {
     val _arg = Variant.new(underlineMode)
-    __method_bind.setUnderlineMode.call(this._handle, _arg, 1)
+    __method_bind.setUnderlineMode.call(this._handle, listOf(_arg))
   }
 
   enum class UnderlineMode(

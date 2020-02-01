@@ -32,7 +32,7 @@ open class AudioEffectPanner(
 
   fun setPan(cpanume: Float) {
     val _arg = Variant.new(cpanume)
-    __method_bind.setPan.call(this._handle, _arg, 1)
+    __method_bind.setPan.call(this._handle, listOf(_arg))
   }
 
   companion object {

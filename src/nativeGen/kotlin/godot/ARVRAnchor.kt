@@ -61,7 +61,7 @@ open class ARVRAnchor(
 
   fun setAnchorId(anchorId: Int) {
     val _arg = Variant.new(anchorId)
-    __method_bind.setAnchorId.call(this._handle, _arg, 1)
+    __method_bind.setAnchorId.call(this._handle, listOf(_arg))
   }
 
   companion object {

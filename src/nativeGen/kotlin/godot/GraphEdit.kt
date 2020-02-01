@@ -73,20 +73,20 @@ open class GraphEdit(
   }
 
   fun addValidConnectionType(fromType: Int, toType: Int) {
-    val _args = VariantArray.new()
-    _args.append(fromType)
-    _args.append(toType)
-    __method_bind.addValidConnectionType.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromType))
+    _args.add(Variant.fromAny(toType))
+    __method_bind.addValidConnectionType.call(this._handle, _args)
   }
 
   fun addValidLeftDisconnectType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.addValidLeftDisconnectType.call(this._handle, _arg, 1)
+    __method_bind.addValidLeftDisconnectType.call(this._handle, listOf(_arg))
   }
 
   fun addValidRightDisconnectType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.addValidRightDisconnectType.call(this._handle, _arg, 1)
+    __method_bind.addValidRightDisconnectType.call(this._handle, listOf(_arg))
   }
 
   fun clearConnections() {
@@ -99,12 +99,12 @@ open class GraphEdit(
     to: String,
     toPort: Int
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(fromPort)
-    _args.append(to)
-    _args.append(toPort)
-    val _ret = __method_bind.connectNode.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(to))
+    _args.add(Variant.fromAny(toPort))
+    val _ret = __method_bind.connectNode.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -114,12 +114,12 @@ open class GraphEdit(
     to: String,
     toPort: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(fromPort)
-    _args.append(to)
-    _args.append(toPort)
-    __method_bind.disconnectNode.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(to))
+    _args.add(Variant.fromAny(toPort))
+    __method_bind.disconnectNode.call(this._handle, _args)
   }
 
   fun getConnectionList(): VariantArray {
@@ -153,12 +153,12 @@ open class GraphEdit(
     to: String,
     toPort: Int
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(fromPort)
-    _args.append(to)
-    _args.append(toPort)
-    val _ret = __method_bind.isNodeConnected.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(to))
+    _args.add(Variant.fromAny(toPort))
+    val _ret = __method_bind.isNodeConnected.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -173,28 +173,28 @@ open class GraphEdit(
   }
 
   fun isValidConnectionType(fromType: Int, toType: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(fromType)
-    _args.append(toType)
-    val _ret = __method_bind.isValidConnectionType.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromType))
+    _args.add(Variant.fromAny(toType))
+    val _ret = __method_bind.isValidConnectionType.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun removeValidConnectionType(fromType: Int, toType: Int) {
-    val _args = VariantArray.new()
-    _args.append(fromType)
-    _args.append(toType)
-    __method_bind.removeValidConnectionType.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromType))
+    _args.add(Variant.fromAny(toType))
+    __method_bind.removeValidConnectionType.call(this._handle, _args)
   }
 
   fun removeValidLeftDisconnectType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.removeValidLeftDisconnectType.call(this._handle, _arg, 1)
+    __method_bind.removeValidLeftDisconnectType.call(this._handle, listOf(_arg))
   }
 
   fun removeValidRightDisconnectType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.removeValidRightDisconnectType.call(this._handle, _arg, 1)
+    __method_bind.removeValidRightDisconnectType.call(this._handle, listOf(_arg))
   }
 
   fun setConnectionActivity(
@@ -204,43 +204,43 @@ open class GraphEdit(
     toPort: Int,
     amount: Float
   ) {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(fromPort)
-    _args.append(to)
-    _args.append(toPort)
-    _args.append(amount)
-    __method_bind.setConnectionActivity.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(to))
+    _args.add(Variant.fromAny(toPort))
+    _args.add(Variant.fromAny(amount))
+    __method_bind.setConnectionActivity.call(this._handle, _args)
   }
 
   fun setRightDisconnects(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setRightDisconnects.call(this._handle, _arg, 1)
+    __method_bind.setRightDisconnects.call(this._handle, listOf(_arg))
   }
 
   fun setScrollOfs(ofs: Vector2) {
     val _arg = Variant.new(ofs)
-    __method_bind.setScrollOfs.call(this._handle, _arg, 1)
+    __method_bind.setScrollOfs.call(this._handle, listOf(_arg))
   }
 
   fun setSelected(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.setSelected.call(this._handle, _arg, 1)
+    __method_bind.setSelected.call(this._handle, listOf(_arg))
   }
 
   fun setSnap(pixels: Int) {
     val _arg = Variant.new(pixels)
-    __method_bind.setSnap.call(this._handle, _arg, 1)
+    __method_bind.setSnap.call(this._handle, listOf(_arg))
   }
 
   fun setUseSnap(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseSnap.call(this._handle, _arg, 1)
+    __method_bind.setUseSnap.call(this._handle, listOf(_arg))
   }
 
   fun setZoom(pZoom: Float) {
     val _arg = Variant.new(pZoom)
-    __method_bind.setZoom.call(this._handle, _arg, 1)
+    __method_bind.setZoom.call(this._handle, listOf(_arg))
   }
 
   companion object {

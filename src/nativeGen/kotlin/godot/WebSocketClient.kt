@@ -43,20 +43,20 @@ open class WebSocketClient(
     gdMpApi: Boolean = false,
     customHeaders: PoolStringArray
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(url)
-    _args.append(protocols)
-    _args.append(gdMpApi)
-    _args.append(customHeaders)
-    val _ret = __method_bind.connectToUrl.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(url))
+    _args.add(Variant.fromAny(protocols))
+    _args.add(Variant.fromAny(gdMpApi))
+    _args.add(Variant.fromAny(customHeaders))
+    val _ret = __method_bind.connectToUrl.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun disconnectFromHost(code: Int = 1000, reason: String = "") {
-    val _args = VariantArray.new()
-    _args.append(code)
-    _args.append(reason)
-    __method_bind.disconnectFromHost.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(code))
+    _args.add(Variant.fromAny(reason))
+    __method_bind.disconnectFromHost.call(this._handle, _args)
   }
 
   fun getConnectedHost(): String {
@@ -81,12 +81,12 @@ open class WebSocketClient(
 
   fun setTrustedSslCertificate(arg0: X509Certificate) {
     val _arg = Variant.new(arg0)
-    __method_bind.setTrustedSslCertificate.call(this._handle, _arg, 1)
+    __method_bind.setTrustedSslCertificate.call(this._handle, listOf(_arg))
   }
 
   fun setVerifySslEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setVerifySslEnabled.call(this._handle, _arg, 1)
+    __method_bind.setVerifySslEnabled.call(this._handle, listOf(_arg))
   }
 
   companion object {

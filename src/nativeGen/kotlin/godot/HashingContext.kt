@@ -26,13 +26,13 @@ open class HashingContext(
 
   fun start(type: Int): GDError {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.start.call(this._handle, _arg, 1)
+    val _ret = __method_bind.start.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun update(chunk: PoolByteArray): GDError {
     val _arg = Variant.new(chunk)
-    val _ret = __method_bind.update.call(this._handle, _arg, 1)
+    val _ret = __method_bind.update.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 

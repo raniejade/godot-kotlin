@@ -87,7 +87,7 @@ open class ColorPicker(
 
   fun addPreset(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.addPreset.call(this._handle, _arg, 1)
+    __method_bind.addPreset.call(this._handle, listOf(_arg))
   }
 
   fun arePresetsEnabled(): Boolean {
@@ -102,7 +102,7 @@ open class ColorPicker(
 
   fun erasePreset(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.erasePreset.call(this._handle, _arg, 1)
+    __method_bind.erasePreset.call(this._handle, listOf(_arg))
   }
 
   fun getPickColor(): Color {
@@ -137,37 +137,37 @@ open class ColorPicker(
 
   fun setDeferredMode(mode: Boolean) {
     val _arg = Variant.new(mode)
-    __method_bind.setDeferredMode.call(this._handle, _arg, 1)
+    __method_bind.setDeferredMode.call(this._handle, listOf(_arg))
   }
 
   fun setEditAlpha(show: Boolean) {
     val _arg = Variant.new(show)
-    __method_bind.setEditAlpha.call(this._handle, _arg, 1)
+    __method_bind.setEditAlpha.call(this._handle, listOf(_arg))
   }
 
   fun setHsvMode(mode: Boolean) {
     val _arg = Variant.new(mode)
-    __method_bind.setHsvMode.call(this._handle, _arg, 1)
+    __method_bind.setHsvMode.call(this._handle, listOf(_arg))
   }
 
   fun setPickColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setPickColor.call(this._handle, _arg, 1)
+    __method_bind.setPickColor.call(this._handle, listOf(_arg))
   }
 
   fun setPresetsEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setPresetsEnabled.call(this._handle, _arg, 1)
+    __method_bind.setPresetsEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setPresetsVisible(visible: Boolean) {
     val _arg = Variant.new(visible)
-    __method_bind.setPresetsVisible.call(this._handle, _arg, 1)
+    __method_bind.setPresetsVisible.call(this._handle, listOf(_arg))
   }
 
   fun setRawMode(mode: Boolean) {
     val _arg = Variant.new(mode)
-    __method_bind.setRawMode.call(this._handle, _arg, 1)
+    __method_bind.setRawMode.call(this._handle, listOf(_arg))
   }
 
   companion object {

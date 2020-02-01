@@ -104,37 +104,37 @@ open class AnimationNodeOneShot(
 
   fun setAutorestart(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAutorestart.call(this._handle, _arg, 1)
+    __method_bind.setAutorestart.call(this._handle, listOf(_arg))
   }
 
   fun setAutorestartDelay(enable: Float) {
     val _arg = Variant.new(enable)
-    __method_bind.setAutorestartDelay.call(this._handle, _arg, 1)
+    __method_bind.setAutorestartDelay.call(this._handle, listOf(_arg))
   }
 
   fun setAutorestartRandomDelay(enable: Float) {
     val _arg = Variant.new(enable)
-    __method_bind.setAutorestartRandomDelay.call(this._handle, _arg, 1)
+    __method_bind.setAutorestartRandomDelay.call(this._handle, listOf(_arg))
   }
 
   fun setFadeinTime(time: Float) {
     val _arg = Variant.new(time)
-    __method_bind.setFadeinTime.call(this._handle, _arg, 1)
+    __method_bind.setFadeinTime.call(this._handle, listOf(_arg))
   }
 
   fun setFadeoutTime(time: Float) {
     val _arg = Variant.new(time)
-    __method_bind.setFadeoutTime.call(this._handle, _arg, 1)
+    __method_bind.setFadeoutTime.call(this._handle, listOf(_arg))
   }
 
   fun setMixMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setMixMode.call(this._handle, _arg, 1)
+    __method_bind.setMixMode.call(this._handle, listOf(_arg))
   }
 
   fun setUseSync(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseSync.call(this._handle, _arg, 1)
+    __method_bind.setUseSync.call(this._handle, listOf(_arg))
   }
 
   enum class MixMode(

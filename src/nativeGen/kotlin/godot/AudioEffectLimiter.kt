@@ -71,22 +71,22 @@ open class AudioEffectLimiter(
 
   fun setCeilingDb(ceiling: Float) {
     val _arg = Variant.new(ceiling)
-    __method_bind.setCeilingDb.call(this._handle, _arg, 1)
+    __method_bind.setCeilingDb.call(this._handle, listOf(_arg))
   }
 
   fun setSoftClipDb(softClip: Float) {
     val _arg = Variant.new(softClip)
-    __method_bind.setSoftClipDb.call(this._handle, _arg, 1)
+    __method_bind.setSoftClipDb.call(this._handle, listOf(_arg))
   }
 
   fun setSoftClipRatio(softClip: Float) {
     val _arg = Variant.new(softClip)
-    __method_bind.setSoftClipRatio.call(this._handle, _arg, 1)
+    __method_bind.setSoftClipRatio.call(this._handle, listOf(_arg))
   }
 
   fun setThresholdDb(threshold: Float) {
     val _arg = Variant.new(threshold)
-    __method_bind.setThresholdDb.call(this._handle, _arg, 1)
+    __method_bind.setThresholdDb.call(this._handle, listOf(_arg))
   }
 
   companion object {

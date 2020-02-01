@@ -162,52 +162,52 @@ open class VisualScriptFunctionCall(
 
   fun setBasePath(basePath: NodePath) {
     val _arg = Variant.new(basePath)
-    __method_bind.setBasePath.call(this._handle, _arg, 1)
+    __method_bind.setBasePath.call(this._handle, listOf(_arg))
   }
 
   fun setBaseScript(baseScript: String) {
     val _arg = Variant.new(baseScript)
-    __method_bind.setBaseScript.call(this._handle, _arg, 1)
+    __method_bind.setBaseScript.call(this._handle, listOf(_arg))
   }
 
   fun setBaseType(baseType: String) {
     val _arg = Variant.new(baseType)
-    __method_bind.setBaseType.call(this._handle, _arg, 1)
+    __method_bind.setBaseType.call(this._handle, listOf(_arg))
   }
 
   fun setBasicType(basicType: Int) {
     val _arg = Variant.new(basicType)
-    __method_bind.setBasicType.call(this._handle, _arg, 1)
+    __method_bind.setBasicType.call(this._handle, listOf(_arg))
   }
 
   fun setCallMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setCallMode.call(this._handle, _arg, 1)
+    __method_bind.setCallMode.call(this._handle, listOf(_arg))
   }
 
   fun setFunction(function: String) {
     val _arg = Variant.new(function)
-    __method_bind.setFunction.call(this._handle, _arg, 1)
+    __method_bind.setFunction.call(this._handle, listOf(_arg))
   }
 
   fun setRpcCallMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setRpcCallMode.call(this._handle, _arg, 1)
+    __method_bind.setRpcCallMode.call(this._handle, listOf(_arg))
   }
 
   fun setSingleton(singleton: String) {
     val _arg = Variant.new(singleton)
-    __method_bind.setSingleton.call(this._handle, _arg, 1)
+    __method_bind.setSingleton.call(this._handle, listOf(_arg))
   }
 
   fun setUseDefaultArgs(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setUseDefaultArgs.call(this._handle, _arg, 1)
+    __method_bind.setUseDefaultArgs.call(this._handle, listOf(_arg))
   }
 
   fun setValidate(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setValidate.call(this._handle, _arg, 1)
+    __method_bind.setValidate.call(this._handle, listOf(_arg))
   }
 
   enum class RPCCallMode(

@@ -93,12 +93,12 @@ open class GraphNode(
 
   fun clearSlot(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.clearSlot.call(this._handle, _arg, 1)
+    __method_bind.clearSlot.call(this._handle, listOf(_arg))
   }
 
   fun getConnectionInputColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getConnectionInputColor.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionInputColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
@@ -109,19 +109,19 @@ open class GraphNode(
 
   fun getConnectionInputPosition(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getConnectionInputPosition.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionInputPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getConnectionInputType(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getConnectionInputType.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionInputType.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getConnectionOutputColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getConnectionOutputColor.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionOutputColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
@@ -132,13 +132,13 @@ open class GraphNode(
 
   fun getConnectionOutputPosition(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getConnectionOutputPosition.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionOutputPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getConnectionOutputType(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getConnectionOutputType.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionOutputType.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -154,25 +154,25 @@ open class GraphNode(
 
   fun getSlotColorLeft(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getSlotColorLeft.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlotColorLeft.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getSlotColorRight(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getSlotColorRight.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlotColorRight.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getSlotTypeLeft(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getSlotTypeLeft.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlotTypeLeft.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getSlotTypeRight(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getSlotTypeRight.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlotTypeRight.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -203,44 +203,44 @@ open class GraphNode(
 
   fun isSlotEnabledLeft(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.isSlotEnabledLeft.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isSlotEnabledLeft.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isSlotEnabledRight(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.isSlotEnabledRight.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isSlotEnabledRight.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setComment(comment: Boolean) {
     val _arg = Variant.new(comment)
-    __method_bind.setComment.call(this._handle, _arg, 1)
+    __method_bind.setComment.call(this._handle, listOf(_arg))
   }
 
   fun setOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.setOffset.call(this._handle, _arg, 1)
+    __method_bind.setOffset.call(this._handle, listOf(_arg))
   }
 
   fun setOverlay(overlay: Int) {
     val _arg = Variant.new(overlay)
-    __method_bind.setOverlay.call(this._handle, _arg, 1)
+    __method_bind.setOverlay.call(this._handle, listOf(_arg))
   }
 
   fun setResizable(resizable: Boolean) {
     val _arg = Variant.new(resizable)
-    __method_bind.setResizable.call(this._handle, _arg, 1)
+    __method_bind.setResizable.call(this._handle, listOf(_arg))
   }
 
   fun setSelected(selected: Boolean) {
     val _arg = Variant.new(selected)
-    __method_bind.setSelected.call(this._handle, _arg, 1)
+    __method_bind.setSelected.call(this._handle, listOf(_arg))
   }
 
   fun setShowCloseButton(show: Boolean) {
     val _arg = Variant.new(show)
-    __method_bind.setShowCloseButton.call(this._handle, _arg, 1)
+    __method_bind.setShowCloseButton.call(this._handle, listOf(_arg))
   }
 
   fun setSlot(
@@ -254,22 +254,22 @@ open class GraphNode(
     customLeft: Texture,
     customRight: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(enableLeft)
-    _args.append(typeLeft)
-    _args.append(colorLeft)
-    _args.append(enableRight)
-    _args.append(typeRight)
-    _args.append(colorRight)
-    _args.append(customLeft)
-    _args.append(customRight)
-    __method_bind.setSlot.call(this._handle, _args.toVariant(), 9)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(enableLeft))
+    _args.add(Variant.fromAny(typeLeft))
+    _args.add(Variant.fromAny(colorLeft))
+    _args.add(Variant.fromAny(enableRight))
+    _args.add(Variant.fromAny(typeRight))
+    _args.add(Variant.fromAny(colorRight))
+    _args.add(Variant.fromAny(customLeft))
+    _args.add(Variant.fromAny(customRight))
+    __method_bind.setSlot.call(this._handle, _args)
   }
 
   fun setTitle(title: String) {
     val _arg = Variant.new(title)
-    __method_bind.setTitle.call(this._handle, _arg, 1)
+    __method_bind.setTitle.call(this._handle, listOf(_arg))
   }
 
   enum class Overlay(

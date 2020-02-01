@@ -104,27 +104,27 @@ open class StaticBody(
 
   fun setBounce(bounce: Float) {
     val _arg = Variant.new(bounce)
-    __method_bind.setBounce.call(this._handle, _arg, 1)
+    __method_bind.setBounce.call(this._handle, listOf(_arg))
   }
 
   fun setConstantAngularVelocity(vel: Vector3) {
     val _arg = Variant.new(vel)
-    __method_bind.setConstantAngularVelocity.call(this._handle, _arg, 1)
+    __method_bind.setConstantAngularVelocity.call(this._handle, listOf(_arg))
   }
 
   fun setConstantLinearVelocity(vel: Vector3) {
     val _arg = Variant.new(vel)
-    __method_bind.setConstantLinearVelocity.call(this._handle, _arg, 1)
+    __method_bind.setConstantLinearVelocity.call(this._handle, listOf(_arg))
   }
 
   fun setFriction(friction: Float) {
     val _arg = Variant.new(friction)
-    __method_bind.setFriction.call(this._handle, _arg, 1)
+    __method_bind.setFriction.call(this._handle, listOf(_arg))
   }
 
   fun setPhysicsMaterialOverride(physicsMaterialOverride: PhysicsMaterial) {
     val _arg = Variant.new(physicsMaterialOverride)
-    __method_bind.setPhysicsMaterialOverride.call(this._handle, _arg, 1)
+    __method_bind.setPhysicsMaterialOverride.call(this._handle, listOf(_arg))
   }
 
   companion object {

@@ -20,7 +20,7 @@ open class _JSON(
 ) : Object(_handle) {
   fun parse(json: String): JSONParseResult {
     val _arg = Variant.new(json)
-    val _ret = __method_bind.parse.call(this._handle, _arg, 1)
+    val _ret = __method_bind.parse.call(this._handle, listOf(_arg))
     return _ret.asObject(::JSONParseResult)!!
   }
 
@@ -29,11 +29,11 @@ open class _JSON(
     indent: String = "",
     sortKeys: Boolean = false
   ): String {
-    val _args = VariantArray.new()
-    _args.append(value)
-    _args.append(indent)
-    _args.append(sortKeys)
-    val _ret = __method_bind.print.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(value))
+    _args.add(Variant.fromAny(indent))
+    _args.add(Variant.fromAny(sortKeys))
+    val _ret = __method_bind.print.call(this._handle, _args)
     return _ret.asString()
   }
 

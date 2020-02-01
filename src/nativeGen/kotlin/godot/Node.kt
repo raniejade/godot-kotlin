@@ -76,10 +76,10 @@ open class Node(
     }
 
   fun addChild(node: Node, legibleUniqueName: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    _args.append(legibleUniqueName)
-    __method_bind.addChild.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(node))
+    _args.add(Variant.fromAny(legibleUniqueName))
+    __method_bind.addChild.call(this._handle, _args)
   }
 
   fun addChildBelowNode(
@@ -87,18 +87,18 @@ open class Node(
     childNode: Node,
     legibleUniqueName: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    _args.append(childNode)
-    _args.append(legibleUniqueName)
-    __method_bind.addChildBelowNode.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(node))
+    _args.add(Variant.fromAny(childNode))
+    _args.add(Variant.fromAny(legibleUniqueName))
+    __method_bind.addChildBelowNode.call(this._handle, _args)
   }
 
   fun addToGroup(group: String, persistent: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(group)
-    _args.append(persistent)
-    __method_bind.addToGroup.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(group))
+    _args.add(Variant.fromAny(persistent))
+    __method_bind.addToGroup.call(this._handle, _args)
   }
 
   fun canProcess(): Boolean {
@@ -108,7 +108,7 @@ open class Node(
 
   fun duplicate(flags: Int = 15): Node {
     val _arg = Variant.new(flags)
-    val _ret = __method_bind.duplicate.call(this._handle, _arg, 1)
+    val _ret = __method_bind.duplicate.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
 
@@ -117,23 +117,23 @@ open class Node(
     recursive: Boolean = true,
     owned: Boolean = true
   ): Node {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    _args.append(recursive)
-    _args.append(owned)
-    val _ret = __method_bind.findNode.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(mask))
+    _args.add(Variant.fromAny(recursive))
+    _args.add(Variant.fromAny(owned))
+    val _ret = __method_bind.findNode.call(this._handle, _args)
     return _ret.asObject(::Node)!!
   }
 
   fun findParent(mask: String): Node {
     val _arg = Variant.new(mask)
-    val _ret = __method_bind.findParent.call(this._handle, _arg, 1)
+    val _ret = __method_bind.findParent.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
 
   fun getChild(idx: Int): Node {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getChild.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getChild.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
 
@@ -184,19 +184,19 @@ open class Node(
 
   fun getNode(path: NodePath): Node {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.getNode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
 
   fun getNodeAndResource(path: NodePath): VariantArray {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.getNodeAndResource.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeAndResource.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun getNodeOrNull(path: NodePath): Node {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.getNodeOrNull.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeOrNull.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
 
@@ -217,7 +217,7 @@ open class Node(
 
   fun getPathTo(node: Node): NodePath {
     val _arg = Variant.new(node)
-    val _ret = __method_bind.getPathTo.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPathTo.call(this._handle, listOf(_arg))
     return _ret.asNodePath()
   }
 
@@ -263,19 +263,19 @@ open class Node(
 
   fun hasNode(path: NodePath): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.hasNode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasNode.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasNodeAndResource(path: NodePath): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.hasNodeAndResource.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasNodeAndResource.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isAParentOf(node: Node): Boolean {
     val _arg = Variant.new(node)
-    val _ret = __method_bind.isAParentOf.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isAParentOf.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -286,13 +286,13 @@ open class Node(
 
   fun isGreaterThan(node: Node): Boolean {
     val _arg = Variant.new(node)
-    val _ret = __method_bind.isGreaterThan.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isGreaterThan.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isInGroup(group: String): Boolean {
     val _arg = Variant.new(group)
-    val _ret = __method_bind.isInGroup.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isInGroup.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -342,10 +342,10 @@ open class Node(
   }
 
   fun moveChild(childNode: Node, toPosition: Int) {
-    val _args = VariantArray.new()
-    _args.append(childNode)
-    _args.append(toPosition)
-    __method_bind.moveChild.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(childNode))
+    _args.add(Variant.fromAny(toPosition))
+    __method_bind.moveChild.call(this._handle, _args)
   }
 
   fun printStrayNodes() {
@@ -365,16 +365,16 @@ open class Node(
     args: VariantArray,
     parentFirst: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(method)
-    _args.append(args)
-    _args.append(parentFirst)
-    __method_bind.propagateCall.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(args))
+    _args.add(Variant.fromAny(parentFirst))
+    __method_bind.propagateCall.call(this._handle, _args)
   }
 
   fun propagateNotification(what: Int) {
     val _arg = Variant.new(what)
-    __method_bind.propagateNotification.call(this._handle, _arg, 1)
+    __method_bind.propagateNotification.call(this._handle, listOf(_arg))
   }
 
   fun queueFree() {
@@ -391,19 +391,19 @@ open class Node(
 
   fun removeChild(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.removeChild.call(this._handle, _arg, 1)
+    __method_bind.removeChild.call(this._handle, listOf(_arg))
   }
 
   fun removeFromGroup(group: String) {
     val _arg = Variant.new(group)
-    __method_bind.removeFromGroup.call(this._handle, _arg, 1)
+    __method_bind.removeFromGroup.call(this._handle, listOf(_arg))
   }
 
   fun replaceBy(node: Node, keepData: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    _args.append(keepData)
-    __method_bind.replaceBy.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(node))
+    _args.add(Variant.fromAny(keepData))
+    __method_bind.replaceBy.call(this._handle, _args)
   }
 
   fun requestReady() {
@@ -411,18 +411,18 @@ open class Node(
   }
 
   fun rpc(method: String, vararg varargs: Any?): Variant {
-    val _args = VariantArray.new()
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpc.call(this._handle, _args.toVariant(), 1 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.rpc.call(this._handle, _args)
     return _ret
   }
 
   fun rpcConfig(method: String, mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(method)
-    _args.append(mode)
-    __method_bind.rpcConfig.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(mode))
+    __method_bind.rpcConfig.call(this._handle, _args)
   }
 
   fun rpcId(
@@ -430,19 +430,19 @@ open class Node(
     method: String,
     vararg varargs: Any?
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(peerId)
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpcId.call(this._handle, _args.toVariant(), 2 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(peerId))
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.rpcId.call(this._handle, _args)
     return _ret
   }
 
   fun rpcUnreliable(method: String, vararg varargs: Any?): Variant {
-    val _args = VariantArray.new()
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpcUnreliable.call(this._handle, _args.toVariant(), 1 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.rpcUnreliable.call(this._handle, _args)
     return _ret
   }
 
@@ -451,26 +451,26 @@ open class Node(
     method: String,
     vararg varargs: Any?
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(peerId)
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpcUnreliableId.call(this._handle, _args.toVariant(), 2 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(peerId))
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.rpcUnreliableId.call(this._handle, _args)
     return _ret
   }
 
   fun rset(property: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(property)
-    _args.append(value)
-    __method_bind.rset.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.rset.call(this._handle, _args)
   }
 
   fun rsetConfig(property: String, mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(property)
-    _args.append(mode)
-    __method_bind.rsetConfig.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(mode))
+    __method_bind.rsetConfig.call(this._handle, _args)
   }
 
   fun rsetId(
@@ -478,18 +478,18 @@ open class Node(
     property: String,
     value: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(peerId)
-    _args.append(property)
-    _args.append(value)
-    __method_bind.rsetId.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(peerId))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.rsetId.call(this._handle, _args)
   }
 
   fun rsetUnreliable(property: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(property)
-    _args.append(value)
-    __method_bind.rsetUnreliable.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.rsetUnreliable.call(this._handle, _args)
   }
 
   fun rsetUnreliableId(
@@ -497,93 +497,93 @@ open class Node(
     property: String,
     value: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(peerId)
-    _args.append(property)
-    _args.append(value)
-    __method_bind.rsetUnreliableId.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(peerId))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.rsetUnreliableId.call(this._handle, _args)
   }
 
   fun setCustomMultiplayer(api: MultiplayerAPI) {
     val _arg = Variant.new(api)
-    __method_bind.setCustomMultiplayer.call(this._handle, _arg, 1)
+    __method_bind.setCustomMultiplayer.call(this._handle, listOf(_arg))
   }
 
   fun setDisplayFolded(fold: Boolean) {
     val _arg = Variant.new(fold)
-    __method_bind.setDisplayFolded.call(this._handle, _arg, 1)
+    __method_bind.setDisplayFolded.call(this._handle, listOf(_arg))
   }
 
   fun setFilename(filename: String) {
     val _arg = Variant.new(filename)
-    __method_bind.setFilename.call(this._handle, _arg, 1)
+    __method_bind.setFilename.call(this._handle, listOf(_arg))
   }
 
   fun setName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setName.call(this._handle, _arg, 1)
+    __method_bind.setName.call(this._handle, listOf(_arg))
   }
 
   fun setNetworkMaster(id: Int, recursive: Boolean = true) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(recursive)
-    __method_bind.setNetworkMaster.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(recursive))
+    __method_bind.setNetworkMaster.call(this._handle, _args)
   }
 
   fun setOwner(owner: Node) {
     val _arg = Variant.new(owner)
-    __method_bind.setOwner.call(this._handle, _arg, 1)
+    __method_bind.setOwner.call(this._handle, listOf(_arg))
   }
 
   fun setPauseMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setPauseMode.call(this._handle, _arg, 1)
+    __method_bind.setPauseMode.call(this._handle, listOf(_arg))
   }
 
   fun setPhysicsProcess(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setPhysicsProcess.call(this._handle, _arg, 1)
+    __method_bind.setPhysicsProcess.call(this._handle, listOf(_arg))
   }
 
   fun setPhysicsProcessInternal(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setPhysicsProcessInternal.call(this._handle, _arg, 1)
+    __method_bind.setPhysicsProcessInternal.call(this._handle, listOf(_arg))
   }
 
   fun setProcess(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setProcess.call(this._handle, _arg, 1)
+    __method_bind.setProcess.call(this._handle, listOf(_arg))
   }
 
   fun setProcessInput(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setProcessInput.call(this._handle, _arg, 1)
+    __method_bind.setProcessInput.call(this._handle, listOf(_arg))
   }
 
   fun setProcessInternal(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setProcessInternal.call(this._handle, _arg, 1)
+    __method_bind.setProcessInternal.call(this._handle, listOf(_arg))
   }
 
   fun setProcessPriority(priority: Int) {
     val _arg = Variant.new(priority)
-    __method_bind.setProcessPriority.call(this._handle, _arg, 1)
+    __method_bind.setProcessPriority.call(this._handle, listOf(_arg))
   }
 
   fun setProcessUnhandledInput(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setProcessUnhandledInput.call(this._handle, _arg, 1)
+    __method_bind.setProcessUnhandledInput.call(this._handle, listOf(_arg))
   }
 
   fun setProcessUnhandledKeyInput(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setProcessUnhandledKeyInput.call(this._handle, _arg, 1)
+    __method_bind.setProcessUnhandledKeyInput.call(this._handle, listOf(_arg))
   }
 
   fun setSceneInstanceLoadPlaceholder(loadPlaceholder: Boolean) {
     val _arg = Variant.new(loadPlaceholder)
-    __method_bind.setSceneInstanceLoadPlaceholder.call(this._handle, _arg, 1)
+    __method_bind.setSceneInstanceLoadPlaceholder.call(this._handle, listOf(_arg))
   }
 
   fun updateConfigurationWarning() {

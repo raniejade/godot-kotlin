@@ -23,12 +23,12 @@ open class EditorSettings(
 ) : Resource(_handle) {
   fun addPropertyInfo(info: Dictionary) {
     val _arg = Variant.new(info)
-    __method_bind.addPropertyInfo.call(this._handle, _arg, 1)
+    __method_bind.addPropertyInfo.call(this._handle, listOf(_arg))
   }
 
   fun erase(property: String) {
     val _arg = Variant.new(property)
-    __method_bind.erase.call(this._handle, _arg, 1)
+    __method_bind.erase.call(this._handle, listOf(_arg))
   }
 
   fun getFavorites(): PoolStringArray {
@@ -41,11 +41,11 @@ open class EditorSettings(
     key: String,
     default: Variant
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(section)
-    _args.append(key)
-    _args.append(default)
-    val _ret = __method_bind.getProjectMetadata.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(section))
+    _args.add(Variant.fromAny(key))
+    _args.add(Variant.fromAny(default))
+    val _ret = __method_bind.getProjectMetadata.call(this._handle, _args)
     return _ret
   }
 
@@ -61,7 +61,7 @@ open class EditorSettings(
 
   fun getSetting(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getSetting.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSetting.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -72,25 +72,25 @@ open class EditorSettings(
 
   fun hasSetting(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasSetting.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasSetting.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun propertyCanRevert(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.propertyCanRevert.call(this._handle, _arg, 1)
+    val _ret = __method_bind.propertyCanRevert.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun propertyGetRevert(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.propertyGetRevert.call(this._handle, _arg, 1)
+    val _ret = __method_bind.propertyGetRevert.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun setFavorites(dirs: PoolStringArray) {
     val _arg = Variant.new(dirs)
-    __method_bind.setFavorites.call(this._handle, _arg, 1)
+    __method_bind.setFavorites.call(this._handle, listOf(_arg))
   }
 
   fun setInitialValue(
@@ -98,11 +98,11 @@ open class EditorSettings(
     value: Variant,
     updateCurrent: Boolean
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(value)
-    _args.append(updateCurrent)
-    __method_bind.setInitialValue.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(value))
+    _args.add(Variant.fromAny(updateCurrent))
+    __method_bind.setInitialValue.call(this._handle, _args)
   }
 
   fun setProjectMetadata(
@@ -110,23 +110,23 @@ open class EditorSettings(
     key: String,
     data: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(section)
-    _args.append(key)
-    _args.append(data)
-    __method_bind.setProjectMetadata.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(section))
+    _args.add(Variant.fromAny(key))
+    _args.add(Variant.fromAny(data))
+    __method_bind.setProjectMetadata.call(this._handle, _args)
   }
 
   fun setRecentDirs(dirs: PoolStringArray) {
     val _arg = Variant.new(dirs)
-    __method_bind.setRecentDirs.call(this._handle, _arg, 1)
+    __method_bind.setRecentDirs.call(this._handle, listOf(_arg))
   }
 
   fun setSetting(name: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(value)
-    __method_bind.setSetting.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setSetting.call(this._handle, _args)
   }
 
   companion object {

@@ -160,7 +160,7 @@ open class Light(
 
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getParam.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParam.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -191,49 +191,49 @@ open class Light(
 
   fun setBakeMode(bakeMode: Int) {
     val _arg = Variant.new(bakeMode)
-    __method_bind.setBakeMode.call(this._handle, _arg, 1)
+    __method_bind.setBakeMode.call(this._handle, listOf(_arg))
   }
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setColor.call(this._handle, _arg, 1)
+    __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 
   fun setCullMask(cullMask: Int) {
     val _arg = Variant.new(cullMask)
-    __method_bind.setCullMask.call(this._handle, _arg, 1)
+    __method_bind.setCullMask.call(this._handle, listOf(_arg))
   }
 
   fun setEditorOnly(editorOnly: Boolean) {
     val _arg = Variant.new(editorOnly)
-    __method_bind.setEditorOnly.call(this._handle, _arg, 1)
+    __method_bind.setEditorOnly.call(this._handle, listOf(_arg))
   }
 
   fun setNegative(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setNegative.call(this._handle, _arg, 1)
+    __method_bind.setNegative.call(this._handle, listOf(_arg))
   }
 
   fun setParam(param: Int, value: Float) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(value)
-    __method_bind.setParam.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setParam.call(this._handle, _args)
   }
 
   fun setShadow(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setShadow.call(this._handle, _arg, 1)
+    __method_bind.setShadow.call(this._handle, listOf(_arg))
   }
 
   fun setShadowColor(shadowColor: Color) {
     val _arg = Variant.new(shadowColor)
-    __method_bind.setShadowColor.call(this._handle, _arg, 1)
+    __method_bind.setShadowColor.call(this._handle, listOf(_arg))
   }
 
   fun setShadowReverseCullFace(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setShadowReverseCullFace.call(this._handle, _arg, 1)
+    __method_bind.setShadowReverseCullFace.call(this._handle, listOf(_arg))
   }
 
   enum class BakeMode(

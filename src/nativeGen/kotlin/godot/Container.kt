@@ -19,10 +19,10 @@ open class Container(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun fitChildInRect(child: Control, rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(child)
-    _args.append(rect)
-    __method_bind.fitChildInRect.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(child))
+    _args.add(Variant.fromAny(rect))
+    __method_bind.fitChildInRect.call(this._handle, _args)
   }
 
   fun queueSort() {

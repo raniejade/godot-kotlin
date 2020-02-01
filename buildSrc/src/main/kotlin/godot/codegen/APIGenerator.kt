@@ -449,25 +449,19 @@ class APIGenerator {
           if (parameters.size == 1 && !method.hasVarargs) {
             val parameter = parameters[0]
             builder.addStatement("val _arg = Variant.new(%N)", parameter.name)
-            builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, _arg, 1)", method.name)
+            builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, listOf(_arg))", method.name)
           } else {
-            builder.addStatement("val _args = VariantArray.new()")
+            builder.addStatement("val _args = mutableListOf<Variant>()")
 
             parameters.forEach { parameter ->
-              builder.addStatement("_args.append(%N)", parameter)
+              builder.addStatement("_args.add(Variant.fromAny(%N))", parameter)
             }
 
             if (method.hasVarargs) {
-              builder.addStatement("varargs.forEach { _args.append(Variant.fromAny(it)) }")
+              builder.addStatement("varargs.forEach { _args.add(Variant.fromAny(it)) }")
             }
 
-            var paramSize = "${parameters.size}"
-
-            if (method.hasVarargs) {
-              paramSize += " + varargs.size"
-            }
-
-            builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, _args.toVariant(), %L)", method.name, paramSize)
+            builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, _args)", method.name)
           }
         } else {
           builder.addStatement("${returnVar}__method_bind.%L.call(this._handle)", method.name)

@@ -28,7 +28,7 @@ open class BoxContainer(
 
   fun addSpacer(begin: Boolean) {
     val _arg = Variant.new(begin)
-    __method_bind.addSpacer.call(this._handle, _arg, 1)
+    __method_bind.addSpacer.call(this._handle, listOf(_arg))
   }
 
   fun getAlignment(): AlignMode {
@@ -38,7 +38,7 @@ open class BoxContainer(
 
   fun setAlignment(alignment: Int) {
     val _arg = Variant.new(alignment)
-    __method_bind.setAlignment.call(this._handle, _arg, 1)
+    __method_bind.setAlignment.call(this._handle, listOf(_arg))
   }
 
   enum class AlignMode(

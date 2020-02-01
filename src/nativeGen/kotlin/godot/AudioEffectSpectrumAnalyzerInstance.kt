@@ -24,11 +24,11 @@ open class AudioEffectSpectrumAnalyzerInstance(
     toHz: Float,
     mode: Int = 1
   ): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(fromHz)
-    _args.append(toHz)
-    _args.append(mode)
-    val _ret = __method_bind.getMagnitudeForFrequencyRange.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromHz))
+    _args.add(Variant.fromAny(toHz))
+    _args.add(Variant.fromAny(mode))
+    val _ret = __method_bind.getMagnitudeForFrequencyRange.call(this._handle, _args)
     return _ret.asVector2()
   }
 

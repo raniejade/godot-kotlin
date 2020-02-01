@@ -62,12 +62,12 @@ open class OmniLight(
 
   fun setShadowDetail(detail: Int) {
     val _arg = Variant.new(detail)
-    __method_bind.setShadowDetail.call(this._handle, _arg, 1)
+    __method_bind.setShadowDetail.call(this._handle, listOf(_arg))
   }
 
   fun setShadowMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setShadowMode.call(this._handle, _arg, 1)
+    __method_bind.setShadowMode.call(this._handle, listOf(_arg))
   }
 
   enum class ShadowMode(

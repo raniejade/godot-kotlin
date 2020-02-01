@@ -32,7 +32,7 @@ open class VideoStreamTheora(
 
   fun setFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.setFile.call(this._handle, _arg, 1)
+    __method_bind.setFile.call(this._handle, listOf(_arg))
   }
 
   companion object {

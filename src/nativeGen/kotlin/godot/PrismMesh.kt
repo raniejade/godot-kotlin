@@ -96,27 +96,27 @@ open class PrismMesh(
 
   fun setLeftToRight(leftToRight: Float) {
     val _arg = Variant.new(leftToRight)
-    __method_bind.setLeftToRight.call(this._handle, _arg, 1)
+    __method_bind.setLeftToRight.call(this._handle, listOf(_arg))
   }
 
   fun setSize(size: Vector3) {
     val _arg = Variant.new(size)
-    __method_bind.setSize.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 
   fun setSubdivideDepth(segments: Int) {
     val _arg = Variant.new(segments)
-    __method_bind.setSubdivideDepth.call(this._handle, _arg, 1)
+    __method_bind.setSubdivideDepth.call(this._handle, listOf(_arg))
   }
 
   fun setSubdivideHeight(segments: Int) {
     val _arg = Variant.new(segments)
-    __method_bind.setSubdivideHeight.call(this._handle, _arg, 1)
+    __method_bind.setSubdivideHeight.call(this._handle, listOf(_arg))
   }
 
   fun setSubdivideWidth(segments: Int) {
     val _arg = Variant.new(segments)
-    __method_bind.setSubdivideWidth.call(this._handle, _arg, 1)
+    __method_bind.setSubdivideWidth.call(this._handle, listOf(_arg))
   }
 
   companion object {

@@ -46,7 +46,7 @@ open class Mesh(
 
   fun createOutline(margin: Float): Mesh {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.createOutline.call(this._handle, _arg, 1)
+    val _ret = __method_bind.createOutline.call(this._handle, listOf(_arg))
     return _ret.asObject(::Mesh)!!
   }
 
@@ -82,32 +82,32 @@ open class Mesh(
 
   fun setLightmapSizeHint(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.setLightmapSizeHint.call(this._handle, _arg, 1)
+    __method_bind.setLightmapSizeHint.call(this._handle, listOf(_arg))
   }
 
   fun surfaceGetArrays(surfIdx: Int): VariantArray {
     val _arg = Variant.new(surfIdx)
-    val _ret = __method_bind.surfaceGetArrays.call(this._handle, _arg, 1)
+    val _ret = __method_bind.surfaceGetArrays.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun surfaceGetBlendShapeArrays(surfIdx: Int): VariantArray {
     val _arg = Variant.new(surfIdx)
-    val _ret = __method_bind.surfaceGetBlendShapeArrays.call(this._handle, _arg, 1)
+    val _ret = __method_bind.surfaceGetBlendShapeArrays.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun surfaceGetMaterial(surfIdx: Int): Material {
     val _arg = Variant.new(surfIdx)
-    val _ret = __method_bind.surfaceGetMaterial.call(this._handle, _arg, 1)
+    val _ret = __method_bind.surfaceGetMaterial.call(this._handle, listOf(_arg))
     return _ret.asObject(::Material)!!
   }
 
   fun surfaceSetMaterial(surfIdx: Int, material: Material) {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    _args.append(material)
-    __method_bind.surfaceSetMaterial.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(surfIdx))
+    _args.add(Variant.fromAny(material))
+    __method_bind.surfaceSetMaterial.call(this._handle, _args)
   }
 
   enum class BlendShapeMode(

@@ -23,12 +23,11 @@ open class EditorSceneImporter(
     flags: Int,
     bakeFps: Int
   ): Animation {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(flags)
-    _args.append(bakeFps)
-    val _ret = __method_bind.importAnimationFromOtherImporter.call(this._handle, _args.toVariant(),
-        3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(flags))
+    _args.add(Variant.fromAny(bakeFps))
+    val _ret = __method_bind.importAnimationFromOtherImporter.call(this._handle, _args)
     return _ret.asObject(::Animation)!!
   }
 
@@ -37,11 +36,11 @@ open class EditorSceneImporter(
     flags: Int,
     bakeFps: Int
   ): Node {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(flags)
-    _args.append(bakeFps)
-    val _ret = __method_bind.importSceneFromOtherImporter.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(flags))
+    _args.add(Variant.fromAny(bakeFps))
+    val _ret = __method_bind.importSceneFromOtherImporter.call(this._handle, _args)
     return _ret.asObject(::Node)!!
   }
 

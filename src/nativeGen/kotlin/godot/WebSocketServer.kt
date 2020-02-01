@@ -58,11 +58,11 @@ open class WebSocketServer(
     code: Int = 1000,
     reason: String = ""
   ) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(code)
-    _args.append(reason)
-    __method_bind.disconnectPeer.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(code))
+    _args.add(Variant.fromAny(reason))
+    __method_bind.disconnectPeer.call(this._handle, _args)
   }
 
   fun getBindIp(): String {
@@ -77,13 +77,13 @@ open class WebSocketServer(
 
   fun getPeerAddress(id: Int): String {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.getPeerAddress.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPeerAddress.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getPeerPort(id: Int): Int {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.getPeerPort.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPeerPort.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -99,7 +99,7 @@ open class WebSocketServer(
 
   fun hasPeer(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.hasPeer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasPeer.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -113,32 +113,32 @@ open class WebSocketServer(
     protocols: PoolStringArray,
     gdMpApi: Boolean = false
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(port)
-    _args.append(protocols)
-    _args.append(gdMpApi)
-    val _ret = __method_bind.listen.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(port))
+    _args.add(Variant.fromAny(protocols))
+    _args.add(Variant.fromAny(gdMpApi))
+    val _ret = __method_bind.listen.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun setBindIp(arg0: String) {
     val _arg = Variant.new(arg0)
-    __method_bind.setBindIp.call(this._handle, _arg, 1)
+    __method_bind.setBindIp.call(this._handle, listOf(_arg))
   }
 
   fun setCaChain(arg0: X509Certificate) {
     val _arg = Variant.new(arg0)
-    __method_bind.setCaChain.call(this._handle, _arg, 1)
+    __method_bind.setCaChain.call(this._handle, listOf(_arg))
   }
 
   fun setPrivateKey(arg0: CryptoKey) {
     val _arg = Variant.new(arg0)
-    __method_bind.setPrivateKey.call(this._handle, _arg, 1)
+    __method_bind.setPrivateKey.call(this._handle, listOf(_arg))
   }
 
   fun setSslCertificate(arg0: X509Certificate) {
     val _arg = Variant.new(arg0)
-    __method_bind.setSslCertificate.call(this._handle, _arg, 1)
+    __method_bind.setSslCertificate.call(this._handle, listOf(_arg))
   }
 
   fun stop() {

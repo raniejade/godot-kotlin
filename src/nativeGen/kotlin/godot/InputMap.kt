@@ -20,62 +20,62 @@ open class InputMap(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun actionAddEvent(action: String, event: InputEvent) {
-    val _args = VariantArray.new()
-    _args.append(action)
-    _args.append(event)
-    __method_bind.actionAddEvent.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(action))
+    _args.add(Variant.fromAny(event))
+    __method_bind.actionAddEvent.call(this._handle, _args)
   }
 
   fun actionEraseEvent(action: String, event: InputEvent) {
-    val _args = VariantArray.new()
-    _args.append(action)
-    _args.append(event)
-    __method_bind.actionEraseEvent.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(action))
+    _args.add(Variant.fromAny(event))
+    __method_bind.actionEraseEvent.call(this._handle, _args)
   }
 
   fun actionEraseEvents(action: String) {
     val _arg = Variant.new(action)
-    __method_bind.actionEraseEvents.call(this._handle, _arg, 1)
+    __method_bind.actionEraseEvents.call(this._handle, listOf(_arg))
   }
 
   fun actionHasEvent(action: String, event: InputEvent): Boolean {
-    val _args = VariantArray.new()
-    _args.append(action)
-    _args.append(event)
-    val _ret = __method_bind.actionHasEvent.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(action))
+    _args.add(Variant.fromAny(event))
+    val _ret = __method_bind.actionHasEvent.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun actionSetDeadzone(action: String, deadzone: Float) {
-    val _args = VariantArray.new()
-    _args.append(action)
-    _args.append(deadzone)
-    __method_bind.actionSetDeadzone.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(action))
+    _args.add(Variant.fromAny(deadzone))
+    __method_bind.actionSetDeadzone.call(this._handle, _args)
   }
 
   fun addAction(action: String, deadzone: Float = 0.5f) {
-    val _args = VariantArray.new()
-    _args.append(action)
-    _args.append(deadzone)
-    __method_bind.addAction.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(action))
+    _args.add(Variant.fromAny(deadzone))
+    __method_bind.addAction.call(this._handle, _args)
   }
 
   fun eraseAction(action: String) {
     val _arg = Variant.new(action)
-    __method_bind.eraseAction.call(this._handle, _arg, 1)
+    __method_bind.eraseAction.call(this._handle, listOf(_arg))
   }
 
   fun eventIsAction(event: InputEvent, action: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(event)
-    _args.append(action)
-    val _ret = __method_bind.eventIsAction.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(event))
+    _args.add(Variant.fromAny(action))
+    val _ret = __method_bind.eventIsAction.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun getActionList(action: String): VariantArray {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.getActionList.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getActionList.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
@@ -86,7 +86,7 @@ open class InputMap(
 
   fun hasAction(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.hasAction.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasAction.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 

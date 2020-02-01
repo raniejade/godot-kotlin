@@ -31,32 +31,32 @@ open class SurfaceTool(
 ) : Reference(_handle) {
   fun addBones(bones: PoolIntArray) {
     val _arg = Variant.new(bones)
-    __method_bind.addBones.call(this._handle, _arg, 1)
+    __method_bind.addBones.call(this._handle, listOf(_arg))
   }
 
   fun addColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.addColor.call(this._handle, _arg, 1)
+    __method_bind.addColor.call(this._handle, listOf(_arg))
   }
 
   fun addIndex(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.addIndex.call(this._handle, _arg, 1)
+    __method_bind.addIndex.call(this._handle, listOf(_arg))
   }
 
   fun addNormal(normal: Vector3) {
     val _arg = Variant.new(normal)
-    __method_bind.addNormal.call(this._handle, _arg, 1)
+    __method_bind.addNormal.call(this._handle, listOf(_arg))
   }
 
   fun addSmoothGroup(smooth: Boolean) {
     val _arg = Variant.new(smooth)
-    __method_bind.addSmoothGroup.call(this._handle, _arg, 1)
+    __method_bind.addSmoothGroup.call(this._handle, listOf(_arg))
   }
 
   fun addTangent(tangent: Plane) {
     val _arg = Variant.new(tangent)
-    __method_bind.addTangent.call(this._handle, _arg, 1)
+    __method_bind.addTangent.call(this._handle, listOf(_arg))
   }
 
   fun addTriangleFan(
@@ -67,34 +67,34 @@ open class SurfaceTool(
     normals: PoolVector3Array,
     tangents: VariantArray
   ) {
-    val _args = VariantArray.new()
-    _args.append(vertices)
-    _args.append(uvs)
-    _args.append(colors)
-    _args.append(uv2s)
-    _args.append(normals)
-    _args.append(tangents)
-    __method_bind.addTriangleFan.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(vertices))
+    _args.add(Variant.fromAny(uvs))
+    _args.add(Variant.fromAny(colors))
+    _args.add(Variant.fromAny(uv2s))
+    _args.add(Variant.fromAny(normals))
+    _args.add(Variant.fromAny(tangents))
+    __method_bind.addTriangleFan.call(this._handle, _args)
   }
 
   fun addUv(uv: Vector2) {
     val _arg = Variant.new(uv)
-    __method_bind.addUv.call(this._handle, _arg, 1)
+    __method_bind.addUv.call(this._handle, listOf(_arg))
   }
 
   fun addUv2(uv2: Vector2) {
     val _arg = Variant.new(uv2)
-    __method_bind.addUv2.call(this._handle, _arg, 1)
+    __method_bind.addUv2.call(this._handle, listOf(_arg))
   }
 
   fun addVertex(vertex: Vector3) {
     val _arg = Variant.new(vertex)
-    __method_bind.addVertex.call(this._handle, _arg, 1)
+    __method_bind.addVertex.call(this._handle, listOf(_arg))
   }
 
   fun addWeights(weights: PoolRealArray) {
     val _arg = Variant.new(weights)
-    __method_bind.addWeights.call(this._handle, _arg, 1)
+    __method_bind.addWeights.call(this._handle, listOf(_arg))
   }
 
   fun appendFrom(
@@ -102,16 +102,16 @@ open class SurfaceTool(
     surface: Int,
     transform: Transform
   ) {
-    val _args = VariantArray.new()
-    _args.append(existing)
-    _args.append(surface)
-    _args.append(transform)
-    __method_bind.appendFrom.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(existing))
+    _args.add(Variant.fromAny(surface))
+    _args.add(Variant.fromAny(transform))
+    __method_bind.appendFrom.call(this._handle, _args)
   }
 
   fun begin(primitive: Int) {
     val _arg = Variant.new(primitive)
-    __method_bind.begin.call(this._handle, _arg, 1)
+    __method_bind.begin.call(this._handle, listOf(_arg))
   }
 
   fun clear() {
@@ -119,10 +119,10 @@ open class SurfaceTool(
   }
 
   fun commit(existing: ArrayMesh, flags: Int = 97280): ArrayMesh {
-    val _args = VariantArray.new()
-    _args.append(existing)
-    _args.append(flags)
-    val _ret = __method_bind.commit.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(existing))
+    _args.add(Variant.fromAny(flags))
+    val _ret = __method_bind.commit.call(this._handle, _args)
     return _ret.asObject(::ArrayMesh)!!
   }
 
@@ -132,10 +132,10 @@ open class SurfaceTool(
   }
 
   fun createFrom(existing: Mesh, surface: Int) {
-    val _args = VariantArray.new()
-    _args.append(existing)
-    _args.append(surface)
-    __method_bind.createFrom.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(existing))
+    _args.add(Variant.fromAny(surface))
+    __method_bind.createFrom.call(this._handle, _args)
   }
 
   fun createFromBlendShape(
@@ -143,11 +143,11 @@ open class SurfaceTool(
     surface: Int,
     blendShape: String
   ) {
-    val _args = VariantArray.new()
-    _args.append(existing)
-    _args.append(surface)
-    _args.append(blendShape)
-    __method_bind.createFromBlendShape.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(existing))
+    _args.add(Variant.fromAny(surface))
+    _args.add(Variant.fromAny(blendShape))
+    __method_bind.createFromBlendShape.call(this._handle, _args)
   }
 
   fun deindex() {
@@ -156,7 +156,7 @@ open class SurfaceTool(
 
   fun generateNormals(flip: Boolean = false) {
     val _arg = Variant.new(flip)
-    __method_bind.generateNormals.call(this._handle, _arg, 1)
+    __method_bind.generateNormals.call(this._handle, listOf(_arg))
   }
 
   fun generateTangents() {
@@ -169,7 +169,7 @@ open class SurfaceTool(
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.setMaterial.call(this._handle, _arg, 1)
+    __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   companion object {

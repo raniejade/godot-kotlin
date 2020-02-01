@@ -21,24 +21,24 @@ open class PCKPacker(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addFile(pckPath: String, sourcePath: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(pckPath)
-    _args.append(sourcePath)
-    val _ret = __method_bind.addFile.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(pckPath))
+    _args.add(Variant.fromAny(sourcePath))
+    val _ret = __method_bind.addFile.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun flush(verbose: Boolean = false): GDError {
     val _arg = Variant.new(verbose)
-    val _ret = __method_bind.flush.call(this._handle, _arg, 1)
+    val _ret = __method_bind.flush.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun pckStart(pckName: String, alignment: Int = 0): GDError {
-    val _args = VariantArray.new()
-    _args.append(pckName)
-    _args.append(alignment)
-    val _ret = __method_bind.pckStart.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(pckName))
+    _args.add(Variant.fromAny(alignment))
+    val _ret = __method_bind.pckStart.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 

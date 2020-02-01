@@ -32,7 +32,7 @@ open class ARVROrigin(
 
   fun setWorldScale(worldScale: Float) {
     val _arg = Variant.new(worldScale)
-    __method_bind.setWorldScale.call(this._handle, _arg, 1)
+    __method_bind.setWorldScale.call(this._handle, listOf(_arg))
   }
 
   companion object {

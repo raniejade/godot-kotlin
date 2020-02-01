@@ -70,17 +70,17 @@ open class OccluderPolygon2D(
 
   fun setClosed(closed: Boolean) {
     val _arg = Variant.new(closed)
-    __method_bind.setClosed.call(this._handle, _arg, 1)
+    __method_bind.setClosed.call(this._handle, listOf(_arg))
   }
 
   fun setCullMode(cullMode: Int) {
     val _arg = Variant.new(cullMode)
-    __method_bind.setCullMode.call(this._handle, _arg, 1)
+    __method_bind.setCullMode.call(this._handle, listOf(_arg))
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
     val _arg = Variant.new(polygon)
-    __method_bind.setPolygon.call(this._handle, _arg, 1)
+    __method_bind.setPolygon.call(this._handle, listOf(_arg))
   }
 
   enum class CullMode(

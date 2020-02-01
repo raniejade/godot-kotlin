@@ -256,7 +256,7 @@ open class StyleBoxFlat(
 
   fun getBorderWidth(margin: Int): Int {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.getBorderWidth.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBorderWidth.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -272,13 +272,13 @@ open class StyleBoxFlat(
 
   fun getCornerRadius(corner: Int): Int {
     val _arg = Variant.new(corner)
-    val _ret = __method_bind.getCornerRadius.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCornerRadius.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getExpandMargin(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.getExpandMargin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getExpandMargin.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -309,56 +309,56 @@ open class StyleBoxFlat(
 
   fun setAaSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.setAaSize.call(this._handle, _arg, 1)
+    __method_bind.setAaSize.call(this._handle, listOf(_arg))
   }
 
   fun setAntiAliased(antiAliased: Boolean) {
     val _arg = Variant.new(antiAliased)
-    __method_bind.setAntiAliased.call(this._handle, _arg, 1)
+    __method_bind.setAntiAliased.call(this._handle, listOf(_arg))
   }
 
   fun setBgColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setBgColor.call(this._handle, _arg, 1)
+    __method_bind.setBgColor.call(this._handle, listOf(_arg))
   }
 
   fun setBorderBlend(blend: Boolean) {
     val _arg = Variant.new(blend)
-    __method_bind.setBorderBlend.call(this._handle, _arg, 1)
+    __method_bind.setBorderBlend.call(this._handle, listOf(_arg))
   }
 
   fun setBorderColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setBorderColor.call(this._handle, _arg, 1)
+    __method_bind.setBorderColor.call(this._handle, listOf(_arg))
   }
 
   fun setBorderWidth(margin: Int, width: Int) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    _args.append(width)
-    __method_bind.setBorderWidth.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(margin))
+    _args.add(Variant.fromAny(width))
+    __method_bind.setBorderWidth.call(this._handle, _args)
   }
 
   fun setBorderWidthAll(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.setBorderWidthAll.call(this._handle, _arg, 1)
+    __method_bind.setBorderWidthAll.call(this._handle, listOf(_arg))
   }
 
   fun setCornerDetail(detail: Int) {
     val _arg = Variant.new(detail)
-    __method_bind.setCornerDetail.call(this._handle, _arg, 1)
+    __method_bind.setCornerDetail.call(this._handle, listOf(_arg))
   }
 
   fun setCornerRadius(corner: Int, radius: Int) {
-    val _args = VariantArray.new()
-    _args.append(corner)
-    _args.append(radius)
-    __method_bind.setCornerRadius.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(corner))
+    _args.add(Variant.fromAny(radius))
+    __method_bind.setCornerRadius.call(this._handle, _args)
   }
 
   fun setCornerRadiusAll(radius: Int) {
     val _arg = Variant.new(radius)
-    __method_bind.setCornerRadiusAll.call(this._handle, _arg, 1)
+    __method_bind.setCornerRadiusAll.call(this._handle, listOf(_arg))
   }
 
   fun setCornerRadiusIndividual(
@@ -367,29 +367,29 @@ open class StyleBoxFlat(
     radiusBottomRight: Int,
     radiusBottomLeft: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(radiusTopLeft)
-    _args.append(radiusTopRight)
-    _args.append(radiusBottomRight)
-    _args.append(radiusBottomLeft)
-    __method_bind.setCornerRadiusIndividual.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(radiusTopLeft))
+    _args.add(Variant.fromAny(radiusTopRight))
+    _args.add(Variant.fromAny(radiusBottomRight))
+    _args.add(Variant.fromAny(radiusBottomLeft))
+    __method_bind.setCornerRadiusIndividual.call(this._handle, _args)
   }
 
   fun setDrawCenter(drawCenter: Boolean) {
     val _arg = Variant.new(drawCenter)
-    __method_bind.setDrawCenter.call(this._handle, _arg, 1)
+    __method_bind.setDrawCenter.call(this._handle, listOf(_arg))
   }
 
   fun setExpandMargin(margin: Int, size: Float) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    _args.append(size)
-    __method_bind.setExpandMargin.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(margin))
+    _args.add(Variant.fromAny(size))
+    __method_bind.setExpandMargin.call(this._handle, _args)
   }
 
   fun setExpandMarginAll(size: Float) {
     val _arg = Variant.new(size)
-    __method_bind.setExpandMarginAll.call(this._handle, _arg, 1)
+    __method_bind.setExpandMarginAll.call(this._handle, listOf(_arg))
   }
 
   fun setExpandMarginIndividual(
@@ -398,27 +398,27 @@ open class StyleBoxFlat(
     sizeRight: Float,
     sizeBottom: Float
   ) {
-    val _args = VariantArray.new()
-    _args.append(sizeLeft)
-    _args.append(sizeTop)
-    _args.append(sizeRight)
-    _args.append(sizeBottom)
-    __method_bind.setExpandMarginIndividual.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(sizeLeft))
+    _args.add(Variant.fromAny(sizeTop))
+    _args.add(Variant.fromAny(sizeRight))
+    _args.add(Variant.fromAny(sizeBottom))
+    __method_bind.setExpandMarginIndividual.call(this._handle, _args)
   }
 
   fun setShadowColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setShadowColor.call(this._handle, _arg, 1)
+    __method_bind.setShadowColor.call(this._handle, listOf(_arg))
   }
 
   fun setShadowOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.setShadowOffset.call(this._handle, _arg, 1)
+    __method_bind.setShadowOffset.call(this._handle, listOf(_arg))
   }
 
   fun setShadowSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.setShadowSize.call(this._handle, _arg, 1)
+    __method_bind.setShadowSize.call(this._handle, listOf(_arg))
   }
 
   companion object {

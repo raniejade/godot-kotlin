@@ -34,12 +34,12 @@ open class StreamPeerSSL(
     certificate: X509Certificate,
     chain: X509Certificate
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(stream)
-    _args.append(privateKey)
-    _args.append(certificate)
-    _args.append(chain)
-    val _ret = __method_bind.acceptStream.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(stream))
+    _args.add(Variant.fromAny(privateKey))
+    _args.add(Variant.fromAny(certificate))
+    _args.add(Variant.fromAny(chain))
+    val _ret = __method_bind.acceptStream.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -49,12 +49,12 @@ open class StreamPeerSSL(
     forHostname: String = "",
     validCertificate: X509Certificate
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(stream)
-    _args.append(validateCerts)
-    _args.append(forHostname)
-    _args.append(validCertificate)
-    val _ret = __method_bind.connectToStream.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(stream))
+    _args.add(Variant.fromAny(validateCerts))
+    _args.add(Variant.fromAny(forHostname))
+    _args.add(Variant.fromAny(validCertificate))
+    val _ret = __method_bind.connectToStream.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -78,7 +78,7 @@ open class StreamPeerSSL(
 
   fun setBlockingHandshakeEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setBlockingHandshakeEnabled.call(this._handle, _arg, 1)
+    __method_bind.setBlockingHandshakeEnabled.call(this._handle, listOf(_arg))
   }
 
   enum class Status(

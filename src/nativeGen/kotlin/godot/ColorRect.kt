@@ -42,7 +42,7 @@ open class ColorRect(
 
   fun setFrameColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setFrameColor.call(this._handle, _arg, 1)
+    __method_bind.setFrameColor.call(this._handle, listOf(_arg))
   }
 
   companion object {

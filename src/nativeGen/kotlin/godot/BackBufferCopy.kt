@@ -56,12 +56,12 @@ open class BackBufferCopy(
 
   fun setCopyMode(copyMode: Int) {
     val _arg = Variant.new(copyMode)
-    __method_bind.setCopyMode.call(this._handle, _arg, 1)
+    __method_bind.setCopyMode.call(this._handle, listOf(_arg))
   }
 
   fun setRect(rect: Rect2) {
     val _arg = Variant.new(rect)
-    __method_bind.setRect.call(this._handle, _arg, 1)
+    __method_bind.setRect.call(this._handle, listOf(_arg))
   }
 
   enum class CopyMode(

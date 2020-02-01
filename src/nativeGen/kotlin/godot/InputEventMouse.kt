@@ -78,17 +78,17 @@ open class InputEventMouse(
 
   fun setButtonMask(buttonMask: Int) {
     val _arg = Variant.new(buttonMask)
-    __method_bind.setButtonMask.call(this._handle, _arg, 1)
+    __method_bind.setButtonMask.call(this._handle, listOf(_arg))
   }
 
   fun setGlobalPosition(globalPosition: Vector2) {
     val _arg = Variant.new(globalPosition)
-    __method_bind.setGlobalPosition.call(this._handle, _arg, 1)
+    __method_bind.setGlobalPosition.call(this._handle, listOf(_arg))
   }
 
   fun setPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.setPosition.call(this._handle, _arg, 1)
+    __method_bind.setPosition.call(this._handle, listOf(_arg))
   }
 
   companion object {

@@ -40,7 +40,7 @@ open class VisualShaderNode(
 
   fun getInputPortDefaultValue(port: Int): Variant {
     val _arg = Variant.new(port)
-    val _ret = __method_bind.getInputPortDefaultValue.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getInputPortDefaultValue.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -51,19 +51,19 @@ open class VisualShaderNode(
 
   fun setDefaultInputValues(values: VariantArray) {
     val _arg = Variant.new(values)
-    __method_bind.setDefaultInputValues.call(this._handle, _arg, 1)
+    __method_bind.setDefaultInputValues.call(this._handle, listOf(_arg))
   }
 
   fun setInputPortDefaultValue(port: Int, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(port)
-    _args.append(value)
-    __method_bind.setInputPortDefaultValue.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(port))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setInputPortDefaultValue.call(this._handle, _args)
   }
 
   fun setOutputPortForPreview(port: Int) {
     val _arg = Variant.new(port)
-    __method_bind.setOutputPortForPreview.call(this._handle, _arg, 1)
+    __method_bind.setOutputPortForPreview.call(this._handle, listOf(_arg))
   }
 
   enum class PortType(

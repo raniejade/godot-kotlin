@@ -601,7 +601,7 @@ open class CPUParticles(
 
   fun convertFromParticles(particles: Node) {
     val _arg = Variant.new(particles)
-    __method_bind.convertFromParticles.call(this._handle, _arg, 1)
+    __method_bind.convertFromParticles.call(this._handle, listOf(_arg))
   }
 
   fun getAmount(): Int {
@@ -706,25 +706,25 @@ open class CPUParticles(
 
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getParam.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParam.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getParamCurve(param: Int): Curve {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getParamCurve.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParamCurve.call(this._handle, listOf(_arg))
     return _ret.asObject(::Curve)!!
   }
 
   fun getParamRandomness(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getParamRandomness.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParamRandomness.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getParticleFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.getParticleFlag.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParticleFlag.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -764,160 +764,160 @@ open class CPUParticles(
 
   fun setAmount(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setAmount.call(this._handle, _arg, 1)
+    __method_bind.setAmount.call(this._handle, listOf(_arg))
   }
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setColor.call(this._handle, _arg, 1)
+    __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 
   fun setColorRamp(ramp: Gradient) {
     val _arg = Variant.new(ramp)
-    __method_bind.setColorRamp.call(this._handle, _arg, 1)
+    __method_bind.setColorRamp.call(this._handle, listOf(_arg))
   }
 
   fun setDirection(direction: Vector3) {
     val _arg = Variant.new(direction)
-    __method_bind.setDirection.call(this._handle, _arg, 1)
+    __method_bind.setDirection.call(this._handle, listOf(_arg))
   }
 
   fun setDrawOrder(order: Int) {
     val _arg = Variant.new(order)
-    __method_bind.setDrawOrder.call(this._handle, _arg, 1)
+    __method_bind.setDrawOrder.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionBoxExtents(extents: Vector3) {
     val _arg = Variant.new(extents)
-    __method_bind.setEmissionBoxExtents.call(this._handle, _arg, 1)
+    __method_bind.setEmissionBoxExtents.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionColors(array: PoolColorArray) {
     val _arg = Variant.new(array)
-    __method_bind.setEmissionColors.call(this._handle, _arg, 1)
+    __method_bind.setEmissionColors.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionNormals(array: PoolVector3Array) {
     val _arg = Variant.new(array)
-    __method_bind.setEmissionNormals.call(this._handle, _arg, 1)
+    __method_bind.setEmissionNormals.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionPoints(array: PoolVector3Array) {
     val _arg = Variant.new(array)
-    __method_bind.setEmissionPoints.call(this._handle, _arg, 1)
+    __method_bind.setEmissionPoints.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionShape(shape: Int) {
     val _arg = Variant.new(shape)
-    __method_bind.setEmissionShape.call(this._handle, _arg, 1)
+    __method_bind.setEmissionShape.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionSphereRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.setEmissionSphereRadius.call(this._handle, _arg, 1)
+    __method_bind.setEmissionSphereRadius.call(this._handle, listOf(_arg))
   }
 
   fun setEmitting(emitting: Boolean) {
     val _arg = Variant.new(emitting)
-    __method_bind.setEmitting.call(this._handle, _arg, 1)
+    __method_bind.setEmitting.call(this._handle, listOf(_arg))
   }
 
   fun setExplosivenessRatio(ratio: Float) {
     val _arg = Variant.new(ratio)
-    __method_bind.setExplosivenessRatio.call(this._handle, _arg, 1)
+    __method_bind.setExplosivenessRatio.call(this._handle, listOf(_arg))
   }
 
   fun setFixedFps(fps: Int) {
     val _arg = Variant.new(fps)
-    __method_bind.setFixedFps.call(this._handle, _arg, 1)
+    __method_bind.setFixedFps.call(this._handle, listOf(_arg))
   }
 
   fun setFlatness(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setFlatness.call(this._handle, _arg, 1)
+    __method_bind.setFlatness.call(this._handle, listOf(_arg))
   }
 
   fun setFractionalDelta(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setFractionalDelta.call(this._handle, _arg, 1)
+    __method_bind.setFractionalDelta.call(this._handle, listOf(_arg))
   }
 
   fun setGravity(accelVec: Vector3) {
     val _arg = Variant.new(accelVec)
-    __method_bind.setGravity.call(this._handle, _arg, 1)
+    __method_bind.setGravity.call(this._handle, listOf(_arg))
   }
 
   fun setLifetime(secs: Float) {
     val _arg = Variant.new(secs)
-    __method_bind.setLifetime.call(this._handle, _arg, 1)
+    __method_bind.setLifetime.call(this._handle, listOf(_arg))
   }
 
   fun setLifetimeRandomness(random: Float) {
     val _arg = Variant.new(random)
-    __method_bind.setLifetimeRandomness.call(this._handle, _arg, 1)
+    __method_bind.setLifetimeRandomness.call(this._handle, listOf(_arg))
   }
 
   fun setMesh(mesh: Mesh) {
     val _arg = Variant.new(mesh)
-    __method_bind.setMesh.call(this._handle, _arg, 1)
+    __method_bind.setMesh.call(this._handle, listOf(_arg))
   }
 
   fun setOneShot(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setOneShot.call(this._handle, _arg, 1)
+    __method_bind.setOneShot.call(this._handle, listOf(_arg))
   }
 
   fun setParam(param: Int, value: Float) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(value)
-    __method_bind.setParam.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setParam.call(this._handle, _args)
   }
 
   fun setParamCurve(param: Int, curve: Curve) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(curve)
-    __method_bind.setParamCurve.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(curve))
+    __method_bind.setParamCurve.call(this._handle, _args)
   }
 
   fun setParamRandomness(param: Int, randomness: Float) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(randomness)
-    __method_bind.setParamRandomness.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(randomness))
+    __method_bind.setParamRandomness.call(this._handle, _args)
   }
 
   fun setParticleFlag(flag: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    _args.append(enable)
-    __method_bind.setParticleFlag.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(flag))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setParticleFlag.call(this._handle, _args)
   }
 
   fun setPreProcessTime(secs: Float) {
     val _arg = Variant.new(secs)
-    __method_bind.setPreProcessTime.call(this._handle, _arg, 1)
+    __method_bind.setPreProcessTime.call(this._handle, listOf(_arg))
   }
 
   fun setRandomnessRatio(ratio: Float) {
     val _arg = Variant.new(ratio)
-    __method_bind.setRandomnessRatio.call(this._handle, _arg, 1)
+    __method_bind.setRandomnessRatio.call(this._handle, listOf(_arg))
   }
 
   fun setSpeedScale(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.setSpeedScale.call(this._handle, _arg, 1)
+    __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
   }
 
   fun setSpread(degrees: Float) {
     val _arg = Variant.new(degrees)
-    __method_bind.setSpread.call(this._handle, _arg, 1)
+    __method_bind.setSpread.call(this._handle, listOf(_arg))
   }
 
   fun setUseLocalCoordinates(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseLocalCoordinates.call(this._handle, _arg, 1)
+    __method_bind.setUseLocalCoordinates.call(this._handle, listOf(_arg))
   }
 
   enum class Flags(

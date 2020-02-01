@@ -45,12 +45,12 @@ open class NavigationPolygonInstance(
 
   fun setEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setEnabled.call(this._handle, _arg, 1)
+    __method_bind.setEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setNavigationPolygon(navpoly: NavigationPolygon) {
     val _arg = Variant.new(navpoly)
-    __method_bind.setNavigationPolygon.call(this._handle, _arg, 1)
+    __method_bind.setNavigationPolygon.call(this._handle, listOf(_arg))
   }
 
   companion object {

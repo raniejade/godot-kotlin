@@ -85,27 +85,27 @@ open class AudioEffectDistortion(
 
   fun setDrive(drive: Float) {
     val _arg = Variant.new(drive)
-    __method_bind.setDrive.call(this._handle, _arg, 1)
+    __method_bind.setDrive.call(this._handle, listOf(_arg))
   }
 
   fun setKeepHfHz(keepHfHz: Float) {
     val _arg = Variant.new(keepHfHz)
-    __method_bind.setKeepHfHz.call(this._handle, _arg, 1)
+    __method_bind.setKeepHfHz.call(this._handle, listOf(_arg))
   }
 
   fun setMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setMode.call(this._handle, _arg, 1)
+    __method_bind.setMode.call(this._handle, listOf(_arg))
   }
 
   fun setPostGain(postGain: Float) {
     val _arg = Variant.new(postGain)
-    __method_bind.setPostGain.call(this._handle, _arg, 1)
+    __method_bind.setPostGain.call(this._handle, listOf(_arg))
   }
 
   fun setPreGain(preGain: Float) {
     val _arg = Variant.new(preGain)
-    __method_bind.setPreGain.call(this._handle, _arg, 1)
+    __method_bind.setPreGain.call(this._handle, listOf(_arg))
   }
 
   enum class Mode(

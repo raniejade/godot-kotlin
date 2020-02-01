@@ -97,27 +97,27 @@ open class CollisionPolygon2D(
 
   fun setBuildMode(buildMode: Int) {
     val _arg = Variant.new(buildMode)
-    __method_bind.setBuildMode.call(this._handle, _arg, 1)
+    __method_bind.setBuildMode.call(this._handle, listOf(_arg))
   }
 
   fun setDisabled(disabled: Boolean) {
     val _arg = Variant.new(disabled)
-    __method_bind.setDisabled.call(this._handle, _arg, 1)
+    __method_bind.setDisabled.call(this._handle, listOf(_arg))
   }
 
   fun setOneWayCollision(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setOneWayCollision.call(this._handle, _arg, 1)
+    __method_bind.setOneWayCollision.call(this._handle, listOf(_arg))
   }
 
   fun setOneWayCollisionMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.setOneWayCollisionMargin.call(this._handle, _arg, 1)
+    __method_bind.setOneWayCollisionMargin.call(this._handle, listOf(_arg))
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
     val _arg = Variant.new(polygon)
-    __method_bind.setPolygon.call(this._handle, _arg, 1)
+    __method_bind.setPolygon.call(this._handle, listOf(_arg))
   }
 
   enum class BuildMode(

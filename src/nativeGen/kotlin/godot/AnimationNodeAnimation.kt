@@ -32,7 +32,7 @@ open class AnimationNodeAnimation(
 
   fun setAnimation(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setAnimation.call(this._handle, _arg, 1)
+    __method_bind.setAnimation.call(this._handle, listOf(_arg))
   }
 
   companion object {

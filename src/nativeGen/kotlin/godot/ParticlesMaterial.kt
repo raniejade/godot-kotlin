@@ -550,7 +550,7 @@ open class ParticlesMaterial(
 
   fun getFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.getFlag.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFlag.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -571,19 +571,19 @@ open class ParticlesMaterial(
 
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getParam.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParam.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getParamRandomness(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getParamRandomness.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParamRandomness.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getParamTexture(param: Int): Texture {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getParamTexture.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParamTexture.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
@@ -609,115 +609,115 @@ open class ParticlesMaterial(
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setColor.call(this._handle, _arg, 1)
+    __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 
   fun setColorRamp(ramp: Texture) {
     val _arg = Variant.new(ramp)
-    __method_bind.setColorRamp.call(this._handle, _arg, 1)
+    __method_bind.setColorRamp.call(this._handle, listOf(_arg))
   }
 
   fun setDirection(degrees: Vector3) {
     val _arg = Variant.new(degrees)
-    __method_bind.setDirection.call(this._handle, _arg, 1)
+    __method_bind.setDirection.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionBoxExtents(extents: Vector3) {
     val _arg = Variant.new(extents)
-    __method_bind.setEmissionBoxExtents.call(this._handle, _arg, 1)
+    __method_bind.setEmissionBoxExtents.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionColorTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setEmissionColorTexture.call(this._handle, _arg, 1)
+    __method_bind.setEmissionColorTexture.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionNormalTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setEmissionNormalTexture.call(this._handle, _arg, 1)
+    __method_bind.setEmissionNormalTexture.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionPointCount(pointCount: Int) {
     val _arg = Variant.new(pointCount)
-    __method_bind.setEmissionPointCount.call(this._handle, _arg, 1)
+    __method_bind.setEmissionPointCount.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionPointTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setEmissionPointTexture.call(this._handle, _arg, 1)
+    __method_bind.setEmissionPointTexture.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionShape(shape: Int) {
     val _arg = Variant.new(shape)
-    __method_bind.setEmissionShape.call(this._handle, _arg, 1)
+    __method_bind.setEmissionShape.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionSphereRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.setEmissionSphereRadius.call(this._handle, _arg, 1)
+    __method_bind.setEmissionSphereRadius.call(this._handle, listOf(_arg))
   }
 
   fun setFlag(flag: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    _args.append(enable)
-    __method_bind.setFlag.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(flag))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setFlag.call(this._handle, _args)
   }
 
   fun setFlatness(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setFlatness.call(this._handle, _arg, 1)
+    __method_bind.setFlatness.call(this._handle, listOf(_arg))
   }
 
   fun setGravity(accelVec: Vector3) {
     val _arg = Variant.new(accelVec)
-    __method_bind.setGravity.call(this._handle, _arg, 1)
+    __method_bind.setGravity.call(this._handle, listOf(_arg))
   }
 
   fun setLifetimeRandomness(randomness: Float) {
     val _arg = Variant.new(randomness)
-    __method_bind.setLifetimeRandomness.call(this._handle, _arg, 1)
+    __method_bind.setLifetimeRandomness.call(this._handle, listOf(_arg))
   }
 
   fun setParam(param: Int, value: Float) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(value)
-    __method_bind.setParam.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setParam.call(this._handle, _args)
   }
 
   fun setParamRandomness(param: Int, randomness: Float) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(randomness)
-    __method_bind.setParamRandomness.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(randomness))
+    __method_bind.setParamRandomness.call(this._handle, _args)
   }
 
   fun setParamTexture(param: Int, texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(texture)
-    __method_bind.setParamTexture.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(texture))
+    __method_bind.setParamTexture.call(this._handle, _args)
   }
 
   fun setSpread(degrees: Float) {
     val _arg = Variant.new(degrees)
-    __method_bind.setSpread.call(this._handle, _arg, 1)
+    __method_bind.setSpread.call(this._handle, listOf(_arg))
   }
 
   fun setTrailColorModifier(texture: GradientTexture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTrailColorModifier.call(this._handle, _arg, 1)
+    __method_bind.setTrailColorModifier.call(this._handle, listOf(_arg))
   }
 
   fun setTrailDivisor(divisor: Int) {
     val _arg = Variant.new(divisor)
-    __method_bind.setTrailDivisor.call(this._handle, _arg, 1)
+    __method_bind.setTrailDivisor.call(this._handle, listOf(_arg))
   }
 
   fun setTrailSizeModifier(texture: CurveTexture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTrailSizeModifier.call(this._handle, _arg, 1)
+    __method_bind.setTrailSizeModifier.call(this._handle, listOf(_arg))
   }
 
   enum class Flags(

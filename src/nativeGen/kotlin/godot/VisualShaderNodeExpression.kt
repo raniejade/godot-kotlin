@@ -32,7 +32,7 @@ open class VisualShaderNodeExpression(
 
   fun setExpression(expression: String) {
     val _arg = Variant.new(expression)
-    __method_bind.setExpression.call(this._handle, _arg, 1)
+    __method_bind.setExpression.call(this._handle, listOf(_arg))
   }
 
   companion object {

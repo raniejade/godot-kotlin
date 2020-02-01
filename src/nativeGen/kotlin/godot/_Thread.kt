@@ -36,12 +36,12 @@ open class _Thread(
     userdata: Variant,
     priority: Int = 1
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(instance)
-    _args.append(method)
-    _args.append(userdata)
-    _args.append(priority)
-    val _ret = __method_bind.start.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(instance))
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(userdata))
+    _args.add(Variant.fromAny(priority))
+    val _ret = __method_bind.start.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 

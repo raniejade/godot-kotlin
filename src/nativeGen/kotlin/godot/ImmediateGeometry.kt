@@ -29,24 +29,24 @@ open class ImmediateGeometry(
     radius: Float,
     addUv: Boolean = true
   ) {
-    val _args = VariantArray.new()
-    _args.append(lats)
-    _args.append(lons)
-    _args.append(radius)
-    _args.append(addUv)
-    __method_bind.addSphere.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(lats))
+    _args.add(Variant.fromAny(lons))
+    _args.add(Variant.fromAny(radius))
+    _args.add(Variant.fromAny(addUv))
+    __method_bind.addSphere.call(this._handle, _args)
   }
 
   fun addVertex(position: Vector3) {
     val _arg = Variant.new(position)
-    __method_bind.addVertex.call(this._handle, _arg, 1)
+    __method_bind.addVertex.call(this._handle, listOf(_arg))
   }
 
   fun begin(primitive: Int, texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(primitive)
-    _args.append(texture)
-    __method_bind.begin.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(primitive))
+    _args.add(Variant.fromAny(texture))
+    __method_bind.begin.call(this._handle, _args)
   }
 
   fun clear() {
@@ -59,27 +59,27 @@ open class ImmediateGeometry(
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setColor.call(this._handle, _arg, 1)
+    __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 
   fun setNormal(normal: Vector3) {
     val _arg = Variant.new(normal)
-    __method_bind.setNormal.call(this._handle, _arg, 1)
+    __method_bind.setNormal.call(this._handle, listOf(_arg))
   }
 
   fun setTangent(tangent: Plane) {
     val _arg = Variant.new(tangent)
-    __method_bind.setTangent.call(this._handle, _arg, 1)
+    __method_bind.setTangent.call(this._handle, listOf(_arg))
   }
 
   fun setUv(uv: Vector2) {
     val _arg = Variant.new(uv)
-    __method_bind.setUv.call(this._handle, _arg, 1)
+    __method_bind.setUv.call(this._handle, listOf(_arg))
   }
 
   fun setUv2(uv: Vector2) {
     val _arg = Variant.new(uv)
-    __method_bind.setUv2.call(this._handle, _arg, 1)
+    __method_bind.setUv2.call(this._handle, listOf(_arg))
   }
 
   companion object {

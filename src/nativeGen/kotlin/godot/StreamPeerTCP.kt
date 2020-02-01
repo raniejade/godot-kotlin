@@ -21,10 +21,10 @@ open class StreamPeerTCP(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
   fun connectToHost(host: String, port: Int): GDError {
-    val _args = VariantArray.new()
-    _args.append(host)
-    _args.append(port)
-    val _ret = __method_bind.connectToHost.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(host))
+    _args.add(Variant.fromAny(port))
+    val _ret = __method_bind.connectToHost.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -54,7 +54,7 @@ open class StreamPeerTCP(
 
   fun setNoDelay(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setNoDelay.call(this._handle, _arg, 1)
+    __method_bind.setNoDelay.call(this._handle, listOf(_arg))
   }
 
   enum class Status(

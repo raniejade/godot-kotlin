@@ -54,7 +54,7 @@ open class KinematicBody2D(
 
   fun getSlideCollision(slideIdx: Int): KinematicCollision2D {
     val _arg = Variant.new(slideIdx)
-    val _ret = __method_bind.getSlideCollision.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlideCollision.call(this._handle, listOf(_arg))
     return _ret.asObject(::KinematicCollision2D)!!
   }
 
@@ -89,12 +89,12 @@ open class KinematicBody2D(
     excludeRaycastShapes: Boolean = true,
     testOnly: Boolean = false
   ): KinematicCollision2D {
-    val _args = VariantArray.new()
-    _args.append(relVec)
-    _args.append(infiniteInertia)
-    _args.append(excludeRaycastShapes)
-    _args.append(testOnly)
-    val _ret = __method_bind.moveAndCollide.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(relVec))
+    _args.add(Variant.fromAny(infiniteInertia))
+    _args.add(Variant.fromAny(excludeRaycastShapes))
+    _args.add(Variant.fromAny(testOnly))
+    val _ret = __method_bind.moveAndCollide.call(this._handle, _args)
     return _ret.asObject(::KinematicCollision2D)!!
   }
 
@@ -106,14 +106,14 @@ open class KinematicBody2D(
     floorMaxAngle: Float = 0.785398f,
     infiniteInertia: Boolean = true
   ): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(linearVelocity)
-    _args.append(upDirection)
-    _args.append(stopOnSlope)
-    _args.append(maxSlides)
-    _args.append(floorMaxAngle)
-    _args.append(infiniteInertia)
-    val _ret = __method_bind.moveAndSlide.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(linearVelocity))
+    _args.add(Variant.fromAny(upDirection))
+    _args.add(Variant.fromAny(stopOnSlope))
+    _args.add(Variant.fromAny(maxSlides))
+    _args.add(Variant.fromAny(floorMaxAngle))
+    _args.add(Variant.fromAny(infiniteInertia))
+    val _ret = __method_bind.moveAndSlide.call(this._handle, _args)
     return _ret.asVector2()
   }
 
@@ -126,26 +126,26 @@ open class KinematicBody2D(
     floorMaxAngle: Float = 0.785398f,
     infiniteInertia: Boolean = true
   ): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(linearVelocity)
-    _args.append(snap)
-    _args.append(upDirection)
-    _args.append(stopOnSlope)
-    _args.append(maxSlides)
-    _args.append(floorMaxAngle)
-    _args.append(infiniteInertia)
-    val _ret = __method_bind.moveAndSlideWithSnap.call(this._handle, _args.toVariant(), 7)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(linearVelocity))
+    _args.add(Variant.fromAny(snap))
+    _args.add(Variant.fromAny(upDirection))
+    _args.add(Variant.fromAny(stopOnSlope))
+    _args.add(Variant.fromAny(maxSlides))
+    _args.add(Variant.fromAny(floorMaxAngle))
+    _args.add(Variant.fromAny(infiniteInertia))
+    val _ret = __method_bind.moveAndSlideWithSnap.call(this._handle, _args)
     return _ret.asVector2()
   }
 
   fun setSafeMargin(pixels: Float) {
     val _arg = Variant.new(pixels)
-    __method_bind.setSafeMargin.call(this._handle, _arg, 1)
+    __method_bind.setSafeMargin.call(this._handle, listOf(_arg))
   }
 
   fun setSyncToPhysics(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setSyncToPhysics.call(this._handle, _arg, 1)
+    __method_bind.setSyncToPhysics.call(this._handle, listOf(_arg))
   }
 
   fun testMove(
@@ -153,11 +153,11 @@ open class KinematicBody2D(
     relVec: Vector2,
     infiniteInertia: Boolean = true
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(relVec)
-    _args.append(infiniteInertia)
-    val _ret = __method_bind.testMove.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(relVec))
+    _args.add(Variant.fromAny(infiniteInertia))
+    val _ret = __method_bind.testMove.call(this._handle, _args)
     return _ret.asBoolean()
   }
 

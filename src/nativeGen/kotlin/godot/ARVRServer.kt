@@ -38,15 +38,15 @@ open class ARVRServer(
     }
 
   fun centerOnHmd(rotationMode: Int, keepHeight: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(rotationMode)
-    _args.append(keepHeight)
-    __method_bind.centerOnHmd.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(rotationMode))
+    _args.add(Variant.fromAny(keepHeight))
+    __method_bind.centerOnHmd.call(this._handle, _args)
   }
 
   fun findInterface(name: String): ARVRInterface {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.findInterface.call(this._handle, _arg, 1)
+    val _ret = __method_bind.findInterface.call(this._handle, listOf(_arg))
     return _ret.asObject(::ARVRInterface)!!
   }
 
@@ -57,7 +57,7 @@ open class ARVRServer(
 
   fun getInterface(idx: Int): ARVRInterface {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getInterface.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getInterface.call(this._handle, listOf(_arg))
     return _ret.asObject(::ARVRInterface)!!
   }
 
@@ -98,7 +98,7 @@ open class ARVRServer(
 
   fun getTracker(idx: Int): ARVRPositionalTracker {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getTracker.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getTracker.call(this._handle, listOf(_arg))
     return _ret.asObject(::ARVRPositionalTracker)!!
   }
 
@@ -114,12 +114,12 @@ open class ARVRServer(
 
   fun setPrimaryInterface(`interface`: ARVRInterface) {
     val _arg = Variant.new(`interface`)
-    __method_bind.setPrimaryInterface.call(this._handle, _arg, 1)
+    __method_bind.setPrimaryInterface.call(this._handle, listOf(_arg))
   }
 
   fun setWorldScale(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.setWorldScale.call(this._handle, _arg, 1)
+    __method_bind.setWorldScale.call(this._handle, listOf(_arg))
   }
 
   enum class RotationMode(

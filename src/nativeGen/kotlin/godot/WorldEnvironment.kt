@@ -31,7 +31,7 @@ open class WorldEnvironment(
 
   fun setEnvironment(env: Environment) {
     val _arg = Variant.new(env)
-    __method_bind.setEnvironment.call(this._handle, _arg, 1)
+    __method_bind.setEnvironment.call(this._handle, listOf(_arg))
   }
 
   companion object {

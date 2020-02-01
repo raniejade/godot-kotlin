@@ -45,12 +45,12 @@ open class VisualScriptOperator(
 
   fun setOperator(op: Int) {
     val _arg = Variant.new(op)
-    __method_bind.setOperator.call(this._handle, _arg, 1)
+    __method_bind.setOperator.call(this._handle, listOf(_arg))
   }
 
   fun setTyped(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.setTyped.call(this._handle, _arg, 1)
+    __method_bind.setTyped.call(this._handle, listOf(_arg))
   }
 
   companion object {

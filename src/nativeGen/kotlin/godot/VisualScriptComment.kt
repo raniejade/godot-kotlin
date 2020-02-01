@@ -69,17 +69,17 @@ open class VisualScriptComment(
 
   fun setDescription(description: String) {
     val _arg = Variant.new(description)
-    __method_bind.setDescription.call(this._handle, _arg, 1)
+    __method_bind.setDescription.call(this._handle, listOf(_arg))
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.setSize.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 
   fun setTitle(title: String) {
     val _arg = Variant.new(title)
-    __method_bind.setTitle.call(this._handle, _arg, 1)
+    __method_bind.setTitle.call(this._handle, listOf(_arg))
   }
 
   companion object {

@@ -34,7 +34,7 @@ open class Shader(
 
   fun getDefaultTextureParam(param: String): Texture {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getDefaultTextureParam.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDefaultTextureParam.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
@@ -45,20 +45,20 @@ open class Shader(
 
   fun hasParam(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasParam.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasParam.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setCode(code: String) {
     val _arg = Variant.new(code)
-    __method_bind.setCode.call(this._handle, _arg, 1)
+    __method_bind.setCode.call(this._handle, listOf(_arg))
   }
 
   fun setDefaultTextureParam(param: String, texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(texture)
-    __method_bind.setDefaultTextureParam.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(texture))
+    __method_bind.setDefaultTextureParam.call(this._handle, _args)
   }
 
   enum class Mode(

@@ -57,15 +57,15 @@ open class Gradient(
   }
 
   fun addPoint(offset: Float, color: Color) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    _args.append(color)
-    __method_bind.addPoint.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(offset))
+    _args.add(Variant.fromAny(color))
+    __method_bind.addPoint.call(this._handle, _args)
   }
 
   fun getColor(point: Int): Color {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.getColor.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
@@ -76,7 +76,7 @@ open class Gradient(
 
   fun getOffset(point: Int): Float {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.getOffset.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getOffset.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -92,37 +92,37 @@ open class Gradient(
 
   fun interpolate(offset: Float): Color {
     val _arg = Variant.new(offset)
-    val _ret = __method_bind.interpolate.call(this._handle, _arg, 1)
+    val _ret = __method_bind.interpolate.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun removePoint(offset: Int) {
     val _arg = Variant.new(offset)
-    __method_bind.removePoint.call(this._handle, _arg, 1)
+    __method_bind.removePoint.call(this._handle, listOf(_arg))
   }
 
   fun setColor(point: Int, color: Color) {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(color)
-    __method_bind.setColor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(color))
+    __method_bind.setColor.call(this._handle, _args)
   }
 
   fun setColors(colors: PoolColorArray) {
     val _arg = Variant.new(colors)
-    __method_bind.setColors.call(this._handle, _arg, 1)
+    __method_bind.setColors.call(this._handle, listOf(_arg))
   }
 
   fun setOffset(point: Int, offset: Float) {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(offset)
-    __method_bind.setOffset.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(offset))
+    __method_bind.setOffset.call(this._handle, _args)
   }
 
   fun setOffsets(offsets: PoolRealArray) {
     val _arg = Variant.new(offsets)
-    __method_bind.setOffsets.call(this._handle, _arg, 1)
+    __method_bind.setOffsets.call(this._handle, listOf(_arg))
   }
 
   companion object {

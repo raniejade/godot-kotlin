@@ -18,9 +18,9 @@ open class PluginScript(
   _handle: COpaquePointer
 ) : Script(_handle) {
   fun new(vararg varargs: Any?): Variant {
-    val _args = VariantArray.new()
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.new.call(this._handle, _args.toVariant(), 0 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.new.call(this._handle, _args)
     return _ret
   }
 

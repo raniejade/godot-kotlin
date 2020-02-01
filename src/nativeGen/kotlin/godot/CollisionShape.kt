@@ -49,17 +49,17 @@ open class CollisionShape(
 
   fun resourceChanged(resource: Resource) {
     val _arg = Variant.new(resource)
-    __method_bind.resourceChanged.call(this._handle, _arg, 1)
+    __method_bind.resourceChanged.call(this._handle, listOf(_arg))
   }
 
   fun setDisabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setDisabled.call(this._handle, _arg, 1)
+    __method_bind.setDisabled.call(this._handle, listOf(_arg))
   }
 
   fun setShape(shape: Shape) {
     val _arg = Variant.new(shape)
-    __method_bind.setShape.call(this._handle, _arg, 1)
+    __method_bind.setShape.call(this._handle, listOf(_arg))
   }
 
   companion object {

@@ -172,52 +172,52 @@ open class Label(
 
   fun setAlign(align: Int) {
     val _arg = Variant.new(align)
-    __method_bind.setAlign.call(this._handle, _arg, 1)
+    __method_bind.setAlign.call(this._handle, listOf(_arg))
   }
 
   fun setAutowrap(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAutowrap.call(this._handle, _arg, 1)
+    __method_bind.setAutowrap.call(this._handle, listOf(_arg))
   }
 
   fun setClipText(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setClipText.call(this._handle, _arg, 1)
+    __method_bind.setClipText.call(this._handle, listOf(_arg))
   }
 
   fun setLinesSkipped(linesSkipped: Int) {
     val _arg = Variant.new(linesSkipped)
-    __method_bind.setLinesSkipped.call(this._handle, _arg, 1)
+    __method_bind.setLinesSkipped.call(this._handle, listOf(_arg))
   }
 
   fun setMaxLinesVisible(linesVisible: Int) {
     val _arg = Variant.new(linesVisible)
-    __method_bind.setMaxLinesVisible.call(this._handle, _arg, 1)
+    __method_bind.setMaxLinesVisible.call(this._handle, listOf(_arg))
   }
 
   fun setPercentVisible(percentVisible: Float) {
     val _arg = Variant.new(percentVisible)
-    __method_bind.setPercentVisible.call(this._handle, _arg, 1)
+    __method_bind.setPercentVisible.call(this._handle, listOf(_arg))
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setText.call(this._handle, _arg, 1)
+    __method_bind.setText.call(this._handle, listOf(_arg))
   }
 
   fun setUppercase(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUppercase.call(this._handle, _arg, 1)
+    __method_bind.setUppercase.call(this._handle, listOf(_arg))
   }
 
   fun setValign(valign: Int) {
     val _arg = Variant.new(valign)
-    __method_bind.setValign.call(this._handle, _arg, 1)
+    __method_bind.setValign.call(this._handle, listOf(_arg))
   }
 
   fun setVisibleCharacters(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setVisibleCharacters.call(this._handle, _arg, 1)
+    __method_bind.setVisibleCharacters.call(this._handle, listOf(_arg))
   }
 
   enum class Align(

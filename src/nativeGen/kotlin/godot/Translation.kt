@@ -28,15 +28,15 @@ open class Translation(
     }
 
   fun addMessage(srcMessage: String, xlatedMessage: String) {
-    val _args = VariantArray.new()
-    _args.append(srcMessage)
-    _args.append(xlatedMessage)
-    __method_bind.addMessage.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(srcMessage))
+    _args.add(Variant.fromAny(xlatedMessage))
+    __method_bind.addMessage.call(this._handle, _args)
   }
 
   fun eraseMessage(srcMessage: String) {
     val _arg = Variant.new(srcMessage)
-    __method_bind.eraseMessage.call(this._handle, _arg, 1)
+    __method_bind.eraseMessage.call(this._handle, listOf(_arg))
   }
 
   fun getLocale(): String {
@@ -46,7 +46,7 @@ open class Translation(
 
   fun getMessage(srcMessage: String): String {
     val _arg = Variant.new(srcMessage)
-    val _ret = __method_bind.getMessage.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getMessage.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -62,7 +62,7 @@ open class Translation(
 
   fun setLocale(locale: String) {
     val _arg = Variant.new(locale)
-    __method_bind.setLocale.call(this._handle, _arg, 1)
+    __method_bind.setLocale.call(this._handle, listOf(_arg))
   }
 
   companion object {

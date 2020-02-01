@@ -46,12 +46,12 @@ open class VisualScriptReturn(
 
   fun setEnableReturnValue(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setEnableReturnValue.call(this._handle, _arg, 1)
+    __method_bind.setEnableReturnValue.call(this._handle, listOf(_arg))
   }
 
   fun setReturnType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.setReturnType.call(this._handle, _arg, 1)
+    __method_bind.setReturnType.call(this._handle, listOf(_arg))
   }
 
   companion object {

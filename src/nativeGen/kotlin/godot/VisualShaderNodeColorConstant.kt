@@ -42,7 +42,7 @@ open class VisualShaderNodeColorConstant(
 
   fun setConstant(value: Color) {
     val _arg = Variant.new(value)
-    __method_bind.setConstant.call(this._handle, _arg, 1)
+    __method_bind.setConstant.call(this._handle, listOf(_arg))
   }
 
   companion object {

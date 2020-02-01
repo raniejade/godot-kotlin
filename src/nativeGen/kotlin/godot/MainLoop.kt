@@ -26,7 +26,7 @@ open class MainLoop(
 
   fun idle(delta: Float): Boolean {
     val _arg = Variant.new(delta)
-    val _ret = __method_bind.idle.call(this._handle, _arg, 1)
+    val _ret = __method_bind.idle.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -36,17 +36,17 @@ open class MainLoop(
 
   fun inputEvent(event: InputEvent) {
     val _arg = Variant.new(event)
-    __method_bind.inputEvent.call(this._handle, _arg, 1)
+    __method_bind.inputEvent.call(this._handle, listOf(_arg))
   }
 
   fun inputText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.inputText.call(this._handle, _arg, 1)
+    __method_bind.inputText.call(this._handle, listOf(_arg))
   }
 
   fun iteration(delta: Float): Boolean {
     val _arg = Variant.new(delta)
-    val _ret = __method_bind.iteration.call(this._handle, _arg, 1)
+    val _ret = __method_bind.iteration.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 

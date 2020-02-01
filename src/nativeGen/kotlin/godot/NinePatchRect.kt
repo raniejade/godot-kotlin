@@ -108,7 +108,7 @@ open class NinePatchRect(
 
   fun getPatchMargin(margin: Int): Int {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.getPatchMargin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPatchMargin.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -134,34 +134,34 @@ open class NinePatchRect(
 
   fun setDrawCenter(drawCenter: Boolean) {
     val _arg = Variant.new(drawCenter)
-    __method_bind.setDrawCenter.call(this._handle, _arg, 1)
+    __method_bind.setDrawCenter.call(this._handle, listOf(_arg))
   }
 
   fun setHAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setHAxisStretchMode.call(this._handle, _arg, 1)
+    __method_bind.setHAxisStretchMode.call(this._handle, listOf(_arg))
   }
 
   fun setPatchMargin(margin: Int, value: Int) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    _args.append(value)
-    __method_bind.setPatchMargin.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(margin))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setPatchMargin.call(this._handle, _args)
   }
 
   fun setRegionRect(rect: Rect2) {
     val _arg = Variant.new(rect)
-    __method_bind.setRegionRect.call(this._handle, _arg, 1)
+    __method_bind.setRegionRect.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTexture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setVAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setVAxisStretchMode.call(this._handle, _arg, 1)
+    __method_bind.setVAxisStretchMode.call(this._handle, listOf(_arg))
   }
 
   enum class AxisStretchMode(

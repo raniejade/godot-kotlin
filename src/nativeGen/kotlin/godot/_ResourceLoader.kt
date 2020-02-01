@@ -20,34 +20,34 @@ open class _ResourceLoader(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun exists(path: String, typeHint: String = ""): Boolean {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(typeHint)
-    val _ret = __method_bind.exists.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(typeHint))
+    val _ret = __method_bind.exists.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun getDependencies(path: String): PoolStringArray {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.getDependencies.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDependencies.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
   fun getRecognizedExtensionsForType(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getRecognizedExtensionsForType.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getRecognizedExtensionsForType.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
   fun has(path: String): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.has.call(this._handle, _arg, 1)
+    val _ret = __method_bind.has.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasCached(path: String): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.hasCached.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasCached.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -56,25 +56,25 @@ open class _ResourceLoader(
     typeHint: String = "",
     noCache: Boolean = false
   ): Resource {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(typeHint)
-    _args.append(noCache)
-    val _ret = __method_bind.load.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(typeHint))
+    _args.add(Variant.fromAny(noCache))
+    val _ret = __method_bind.load.call(this._handle, _args)
     return _ret.asObject(::Resource)!!
   }
 
   fun loadInteractive(path: String, typeHint: String = ""): ResourceInteractiveLoader {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(typeHint)
-    val _ret = __method_bind.loadInteractive.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(typeHint))
+    val _ret = __method_bind.loadInteractive.call(this._handle, _args)
     return _ret.asObject(::ResourceInteractiveLoader)!!
   }
 
   fun setAbortOnMissingResources(abort: Boolean) {
     val _arg = Variant.new(abort)
-    __method_bind.setAbortOnMissingResources.call(this._handle, _arg, 1)
+    __method_bind.setAbortOnMissingResources.call(this._handle, listOf(_arg))
   }
 
   companion object {

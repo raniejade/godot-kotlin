@@ -1197,11 +1197,11 @@ open class AnimationNodeBlendSpace2D(
     pos: Vector2,
     atIndex: Int = -1
   ) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    _args.append(pos)
-    _args.append(atIndex)
-    __method_bind.addBlendPoint.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(node))
+    _args.add(Variant.fromAny(pos))
+    _args.add(Variant.fromAny(atIndex))
+    __method_bind.addBlendPoint.call(this._handle, _args)
   }
 
   fun addTriangle(
@@ -1210,12 +1210,12 @@ open class AnimationNodeBlendSpace2D(
     z: Int,
     atIndex: Int = -1
   ) {
-    val _args = VariantArray.new()
-    _args.append(x)
-    _args.append(y)
-    _args.append(z)
-    _args.append(atIndex)
-    __method_bind.addTriangle.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(x))
+    _args.add(Variant.fromAny(y))
+    _args.add(Variant.fromAny(z))
+    _args.add(Variant.fromAny(atIndex))
+    __method_bind.addTriangle.call(this._handle, _args)
   }
 
   fun getAutoTriangles(): Boolean {
@@ -1235,13 +1235,13 @@ open class AnimationNodeBlendSpace2D(
 
   fun getBlendPointNode(point: Int): AnimationRootNode {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.getBlendPointNode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBlendPointNode.call(this._handle, listOf(_arg))
     return _ret.asObject(::AnimationRootNode)!!
   }
 
   fun getBlendPointPosition(point: Int): Vector2 {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.getBlendPointPosition.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBlendPointPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
@@ -1266,10 +1266,10 @@ open class AnimationNodeBlendSpace2D(
   }
 
   fun getTrianglePoint(triangle: Int, point: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(triangle)
-    _args.append(point)
-    val _ret = __method_bind.getTrianglePoint.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(triangle))
+    _args.add(Variant.fromAny(point))
+    val _ret = __method_bind.getTrianglePoint.call(this._handle, _args)
     return _ret.asInt()
   }
 
@@ -1285,61 +1285,61 @@ open class AnimationNodeBlendSpace2D(
 
   fun removeBlendPoint(point: Int) {
     val _arg = Variant.new(point)
-    __method_bind.removeBlendPoint.call(this._handle, _arg, 1)
+    __method_bind.removeBlendPoint.call(this._handle, listOf(_arg))
   }
 
   fun removeTriangle(triangle: Int) {
     val _arg = Variant.new(triangle)
-    __method_bind.removeTriangle.call(this._handle, _arg, 1)
+    __method_bind.removeTriangle.call(this._handle, listOf(_arg))
   }
 
   fun setAutoTriangles(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAutoTriangles.call(this._handle, _arg, 1)
+    __method_bind.setAutoTriangles.call(this._handle, listOf(_arg))
   }
 
   fun setBlendMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setBlendMode.call(this._handle, _arg, 1)
+    __method_bind.setBlendMode.call(this._handle, listOf(_arg))
   }
 
   fun setBlendPointNode(point: Int, node: AnimationRootNode) {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(node)
-    __method_bind.setBlendPointNode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(node))
+    __method_bind.setBlendPointNode.call(this._handle, _args)
   }
 
   fun setBlendPointPosition(point: Int, pos: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(pos)
-    __method_bind.setBlendPointPosition.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(pos))
+    __method_bind.setBlendPointPosition.call(this._handle, _args)
   }
 
   fun setMaxSpace(maxSpace: Vector2) {
     val _arg = Variant.new(maxSpace)
-    __method_bind.setMaxSpace.call(this._handle, _arg, 1)
+    __method_bind.setMaxSpace.call(this._handle, listOf(_arg))
   }
 
   fun setMinSpace(minSpace: Vector2) {
     val _arg = Variant.new(minSpace)
-    __method_bind.setMinSpace.call(this._handle, _arg, 1)
+    __method_bind.setMinSpace.call(this._handle, listOf(_arg))
   }
 
   fun setSnap(snap: Vector2) {
     val _arg = Variant.new(snap)
-    __method_bind.setSnap.call(this._handle, _arg, 1)
+    __method_bind.setSnap.call(this._handle, listOf(_arg))
   }
 
   fun setXLabel(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setXLabel.call(this._handle, _arg, 1)
+    __method_bind.setXLabel.call(this._handle, listOf(_arg))
   }
 
   fun setYLabel(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setYLabel.call(this._handle, _arg, 1)
+    __method_bind.setYLabel.call(this._handle, listOf(_arg))
   }
 
   enum class BlendMode(

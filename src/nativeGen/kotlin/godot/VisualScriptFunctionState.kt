@@ -23,11 +23,11 @@ open class VisualScriptFunctionState(
     signals: String,
     args: VariantArray
   ) {
-    val _args = VariantArray.new()
-    _args.append(obj)
-    _args.append(signals)
-    _args.append(args)
-    __method_bind.connectToSignal.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(obj))
+    _args.add(Variant.fromAny(signals))
+    _args.add(Variant.fromAny(args))
+    __method_bind.connectToSignal.call(this._handle, _args)
   }
 
   fun isValid(): Boolean {
@@ -37,7 +37,7 @@ open class VisualScriptFunctionState(
 
   fun resume(args: VariantArray): Variant {
     val _arg = Variant.new(args)
-    val _ret = __method_bind.resume.call(this._handle, _arg, 1)
+    val _ret = __method_bind.resume.call(this._handle, listOf(_arg))
     return _ret
   }
 

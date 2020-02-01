@@ -23,7 +23,7 @@ open class SpriteFrames(
 ) : Resource(_handle) {
   fun addAnimation(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.addAnimation.call(this._handle, _arg, 1)
+    __method_bind.addAnimation.call(this._handle, listOf(_arg))
   }
 
   fun addFrame(
@@ -31,16 +31,16 @@ open class SpriteFrames(
     frame: Texture,
     atPosition: Int = -1
   ) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    _args.append(frame)
-    _args.append(atPosition)
-    __method_bind.addFrame.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(anim))
+    _args.add(Variant.fromAny(frame))
+    _args.add(Variant.fromAny(atPosition))
+    __method_bind.addFrame.call(this._handle, _args)
   }
 
   fun clear(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.clear.call(this._handle, _arg, 1)
+    __method_bind.clear.call(this._handle, listOf(_arg))
   }
 
   fun clearAll() {
@@ -49,7 +49,7 @@ open class SpriteFrames(
 
   fun getAnimationLoop(anim: String): Boolean {
     val _arg = Variant.new(anim)
-    val _ret = __method_bind.getAnimationLoop.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAnimationLoop.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -60,61 +60,61 @@ open class SpriteFrames(
 
   fun getAnimationSpeed(anim: String): Float {
     val _arg = Variant.new(anim)
-    val _ret = __method_bind.getAnimationSpeed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAnimationSpeed.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getFrame(anim: String, idx: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    _args.append(idx)
-    val _ret = __method_bind.getFrame.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(anim))
+    _args.add(Variant.fromAny(idx))
+    val _ret = __method_bind.getFrame.call(this._handle, _args)
     return _ret.asObject(::Texture)!!
   }
 
   fun getFrameCount(anim: String): Int {
     val _arg = Variant.new(anim)
-    val _ret = __method_bind.getFrameCount.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFrameCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun hasAnimation(anim: String): Boolean {
     val _arg = Variant.new(anim)
-    val _ret = __method_bind.hasAnimation.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasAnimation.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeAnimation(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.removeAnimation.call(this._handle, _arg, 1)
+    __method_bind.removeAnimation.call(this._handle, listOf(_arg))
   }
 
   fun removeFrame(anim: String, idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    _args.append(idx)
-    __method_bind.removeFrame.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(anim))
+    _args.add(Variant.fromAny(idx))
+    __method_bind.removeFrame.call(this._handle, _args)
   }
 
   fun renameAnimation(anim: String, newname: String) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    _args.append(newname)
-    __method_bind.renameAnimation.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(anim))
+    _args.add(Variant.fromAny(newname))
+    __method_bind.renameAnimation.call(this._handle, _args)
   }
 
   fun setAnimationLoop(anim: String, loop: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    _args.append(loop)
-    __method_bind.setAnimationLoop.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(anim))
+    _args.add(Variant.fromAny(loop))
+    __method_bind.setAnimationLoop.call(this._handle, _args)
   }
 
   fun setAnimationSpeed(anim: String, speed: Float) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    _args.append(speed)
-    __method_bind.setAnimationSpeed.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(anim))
+    _args.add(Variant.fromAny(speed))
+    __method_bind.setAnimationSpeed.call(this._handle, _args)
   }
 
   fun setFrame(
@@ -122,11 +122,11 @@ open class SpriteFrames(
     idx: Int,
     txt: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    _args.append(idx)
-    _args.append(txt)
-    __method_bind.setFrame.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(anim))
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(txt))
+    __method_bind.setFrame.call(this._handle, _args)
   }
 
   companion object {

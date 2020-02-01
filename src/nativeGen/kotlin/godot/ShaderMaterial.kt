@@ -33,32 +33,32 @@ open class ShaderMaterial(
 
   fun getShaderParam(param: String): Variant {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getShaderParam.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getShaderParam.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun propertyCanRevert(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.propertyCanRevert.call(this._handle, _arg, 1)
+    val _ret = __method_bind.propertyCanRevert.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun propertyGetRevert(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.propertyGetRevert.call(this._handle, _arg, 1)
+    val _ret = __method_bind.propertyGetRevert.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun setShader(shader: Shader) {
     val _arg = Variant.new(shader)
-    __method_bind.setShader.call(this._handle, _arg, 1)
+    __method_bind.setShader.call(this._handle, listOf(_arg))
   }
 
   fun setShaderParam(param: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(value)
-    __method_bind.setShaderParam.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setShaderParam.call(this._handle, _args)
   }
 
   companion object {

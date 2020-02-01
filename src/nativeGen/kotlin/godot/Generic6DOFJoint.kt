@@ -653,37 +653,37 @@ open class Generic6DOFJoint(
 
   fun getFlagX(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.getFlagX.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFlagX.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getFlagY(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.getFlagY.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFlagY.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getFlagZ(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.getFlagZ.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFlagZ.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getParamX(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getParamX.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParamX.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getParamY(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getParamY.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParamY.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getParamZ(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.getParamZ.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParamZ.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -693,50 +693,50 @@ open class Generic6DOFJoint(
   }
 
   fun setFlagX(flag: Int, value: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    _args.append(value)
-    __method_bind.setFlagX.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(flag))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setFlagX.call(this._handle, _args)
   }
 
   fun setFlagY(flag: Int, value: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    _args.append(value)
-    __method_bind.setFlagY.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(flag))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setFlagY.call(this._handle, _args)
   }
 
   fun setFlagZ(flag: Int, value: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    _args.append(value)
-    __method_bind.setFlagZ.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(flag))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setFlagZ.call(this._handle, _args)
   }
 
   fun setParamX(param: Int, value: Float) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(value)
-    __method_bind.setParamX.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setParamX.call(this._handle, _args)
   }
 
   fun setParamY(param: Int, value: Float) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(value)
-    __method_bind.setParamY.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setParamY.call(this._handle, _args)
   }
 
   fun setParamZ(param: Int, value: Float) {
-    val _args = VariantArray.new()
-    _args.append(param)
-    _args.append(value)
-    __method_bind.setParamZ.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(param))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setParamZ.call(this._handle, _args)
   }
 
   fun setPrecision(precision: Int) {
     val _arg = Variant.new(precision)
-    __method_bind.setPrecision.call(this._handle, _arg, 1)
+    __method_bind.setPrecision.call(this._handle, listOf(_arg))
   }
 
   enum class Param(

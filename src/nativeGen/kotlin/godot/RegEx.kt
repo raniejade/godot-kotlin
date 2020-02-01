@@ -26,7 +26,7 @@ open class RegEx(
 
   fun compile(pattern: String): GDError {
     val _arg = Variant.new(pattern)
-    val _ret = __method_bind.compile.call(this._handle, _arg, 1)
+    val _ret = __method_bind.compile.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
@@ -55,11 +55,11 @@ open class RegEx(
     offset: Int = 0,
     end: Int = -1
   ): RegExMatch {
-    val _args = VariantArray.new()
-    _args.append(subject)
-    _args.append(offset)
-    _args.append(end)
-    val _ret = __method_bind.search.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(subject))
+    _args.add(Variant.fromAny(offset))
+    _args.add(Variant.fromAny(end))
+    val _ret = __method_bind.search.call(this._handle, _args)
     return _ret.asObject(::RegExMatch)!!
   }
 
@@ -68,11 +68,11 @@ open class RegEx(
     offset: Int = 0,
     end: Int = -1
   ): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(subject)
-    _args.append(offset)
-    _args.append(end)
-    val _ret = __method_bind.searchAll.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(subject))
+    _args.add(Variant.fromAny(offset))
+    _args.add(Variant.fromAny(end))
+    val _ret = __method_bind.searchAll.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
@@ -83,13 +83,13 @@ open class RegEx(
     offset: Int = 0,
     end: Int = -1
   ): String {
-    val _args = VariantArray.new()
-    _args.append(subject)
-    _args.append(replacement)
-    _args.append(all)
-    _args.append(offset)
-    _args.append(end)
-    val _ret = __method_bind.sub.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(subject))
+    _args.add(Variant.fromAny(replacement))
+    _args.add(Variant.fromAny(all))
+    _args.add(Variant.fromAny(offset))
+    _args.add(Variant.fromAny(end))
+    val _ret = __method_bind.sub.call(this._handle, _args)
     return _ret.asString()
   }
 

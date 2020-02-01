@@ -32,7 +32,7 @@ open class AnimationNodeAdd2(
 
   fun setUseSync(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseSync.call(this._handle, _arg, 1)
+    __method_bind.setUseSync.call(this._handle, listOf(_arg))
   }
 
   companion object {

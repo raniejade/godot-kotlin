@@ -32,7 +32,7 @@ open class VisualScriptGlobalConstant(
 
   fun setGlobalConstant(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.setGlobalConstant.call(this._handle, _arg, 1)
+    __method_bind.setGlobalConstant.call(this._handle, listOf(_arg))
   }
 
   companion object {

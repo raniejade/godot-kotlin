@@ -45,12 +45,12 @@ open class NavigationMeshInstance(
 
   fun setEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setEnabled.call(this._handle, _arg, 1)
+    __method_bind.setEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setNavigationMesh(navmesh: NavigationMesh) {
     val _arg = Variant.new(navmesh)
-    __method_bind.setNavigationMesh.call(this._handle, _arg, 1)
+    __method_bind.setNavigationMesh.call(this._handle, listOf(_arg))
   }
 
   companion object {

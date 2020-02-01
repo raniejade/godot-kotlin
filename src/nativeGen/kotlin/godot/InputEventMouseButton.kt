@@ -68,22 +68,22 @@ open class InputEventMouseButton(
 
   fun setButtonIndex(buttonIndex: Int) {
     val _arg = Variant.new(buttonIndex)
-    __method_bind.setButtonIndex.call(this._handle, _arg, 1)
+    __method_bind.setButtonIndex.call(this._handle, listOf(_arg))
   }
 
   fun setDoubleclick(doubleclick: Boolean) {
     val _arg = Variant.new(doubleclick)
-    __method_bind.setDoubleclick.call(this._handle, _arg, 1)
+    __method_bind.setDoubleclick.call(this._handle, listOf(_arg))
   }
 
   fun setFactor(factor: Float) {
     val _arg = Variant.new(factor)
-    __method_bind.setFactor.call(this._handle, _arg, 1)
+    __method_bind.setFactor.call(this._handle, listOf(_arg))
   }
 
   fun setPressed(pressed: Boolean) {
     val _arg = Variant.new(pressed)
-    __method_bind.setPressed.call(this._handle, _arg, 1)
+    __method_bind.setPressed.call(this._handle, listOf(_arg))
   }
 
   companion object {

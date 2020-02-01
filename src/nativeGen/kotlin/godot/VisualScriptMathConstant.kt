@@ -32,7 +32,7 @@ open class VisualScriptMathConstant(
 
   fun setMathConstant(which: Int) {
     val _arg = Variant.new(which)
-    __method_bind.setMathConstant.call(this._handle, _arg, 1)
+    __method_bind.setMathConstant.call(this._handle, listOf(_arg))
   }
 
   enum class MathConstant(

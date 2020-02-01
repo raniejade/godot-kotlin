@@ -46,12 +46,12 @@ open class ViewportContainer(
 
   fun setStretch(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setStretch.call(this._handle, _arg, 1)
+    __method_bind.setStretch.call(this._handle, listOf(_arg))
   }
 
   fun setStretchShrink(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setStretchShrink.call(this._handle, _arg, 1)
+    __method_bind.setStretchShrink.call(this._handle, listOf(_arg))
   }
 
   companion object {

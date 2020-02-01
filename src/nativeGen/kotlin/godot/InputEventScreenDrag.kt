@@ -100,22 +100,22 @@ open class InputEventScreenDrag(
 
   fun setIndex(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.setIndex.call(this._handle, _arg, 1)
+    __method_bind.setIndex.call(this._handle, listOf(_arg))
   }
 
   fun setPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.setPosition.call(this._handle, _arg, 1)
+    __method_bind.setPosition.call(this._handle, listOf(_arg))
   }
 
   fun setRelative(relative: Vector2) {
     val _arg = Variant.new(relative)
-    __method_bind.setRelative.call(this._handle, _arg, 1)
+    __method_bind.setRelative.call(this._handle, listOf(_arg))
   }
 
   fun setSpeed(speed: Vector2) {
     val _arg = Variant.new(speed)
-    __method_bind.setSpeed.call(this._handle, _arg, 1)
+    __method_bind.setSpeed.call(this._handle, listOf(_arg))
   }
 
   companion object {

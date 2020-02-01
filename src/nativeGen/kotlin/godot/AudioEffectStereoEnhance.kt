@@ -58,17 +58,17 @@ open class AudioEffectStereoEnhance(
 
   fun setPanPullout(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setPanPullout.call(this._handle, _arg, 1)
+    __method_bind.setPanPullout.call(this._handle, listOf(_arg))
   }
 
   fun setSurround(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setSurround.call(this._handle, _arg, 1)
+    __method_bind.setSurround.call(this._handle, listOf(_arg))
   }
 
   fun setTimePullout(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setTimePullout.call(this._handle, _arg, 1)
+    __method_bind.setTimePullout.call(this._handle, listOf(_arg))
   }
 
   companion object {

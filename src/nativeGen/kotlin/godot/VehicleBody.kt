@@ -58,17 +58,17 @@ open class VehicleBody(
 
   fun setBrake(brake: Float) {
     val _arg = Variant.new(brake)
-    __method_bind.setBrake.call(this._handle, _arg, 1)
+    __method_bind.setBrake.call(this._handle, listOf(_arg))
   }
 
   fun setEngineForce(engineForce: Float) {
     val _arg = Variant.new(engineForce)
-    __method_bind.setEngineForce.call(this._handle, _arg, 1)
+    __method_bind.setEngineForce.call(this._handle, listOf(_arg))
   }
 
   fun setSteering(steering: Float) {
     val _arg = Variant.new(steering)
-    __method_bind.setSteering.call(this._handle, _arg, 1)
+    __method_bind.setSteering.call(this._handle, listOf(_arg))
   }
 
   companion object {

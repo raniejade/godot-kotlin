@@ -31,11 +31,11 @@ open class GDNative(
     procedureName: String,
     arguments: VariantArray
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(callingType)
-    _args.append(procedureName)
-    _args.append(arguments)
-    val _ret = __method_bind.callNative.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(callingType))
+    _args.add(Variant.fromAny(procedureName))
+    _args.add(Variant.fromAny(arguments))
+    val _ret = __method_bind.callNative.call(this._handle, _args)
     return _ret
   }
 
@@ -51,7 +51,7 @@ open class GDNative(
 
   fun setLibrary(library: GDNativeLibrary) {
     val _arg = Variant.new(library)
-    __method_bind.setLibrary.call(this._handle, _arg, 1)
+    __method_bind.setLibrary.call(this._handle, listOf(_arg))
   }
 
   fun terminate(): Boolean {

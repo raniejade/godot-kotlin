@@ -125,44 +125,44 @@ open class HTTPRequest(
     method: Int = 0,
     requestData: String = ""
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(url)
-    _args.append(customHeaders)
-    _args.append(sslValidateDomain)
-    _args.append(method)
-    _args.append(requestData)
-    val _ret = __method_bind.request.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(url))
+    _args.add(Variant.fromAny(customHeaders))
+    _args.add(Variant.fromAny(sslValidateDomain))
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(requestData))
+    val _ret = __method_bind.request.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun setBodySizeLimit(bytes: Int) {
     val _arg = Variant.new(bytes)
-    __method_bind.setBodySizeLimit.call(this._handle, _arg, 1)
+    __method_bind.setBodySizeLimit.call(this._handle, listOf(_arg))
   }
 
   fun setDownloadChunkSize(arg0: Int) {
     val _arg = Variant.new(arg0)
-    __method_bind.setDownloadChunkSize.call(this._handle, _arg, 1)
+    __method_bind.setDownloadChunkSize.call(this._handle, listOf(_arg))
   }
 
   fun setDownloadFile(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.setDownloadFile.call(this._handle, _arg, 1)
+    __method_bind.setDownloadFile.call(this._handle, listOf(_arg))
   }
 
   fun setMaxRedirects(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setMaxRedirects.call(this._handle, _arg, 1)
+    __method_bind.setMaxRedirects.call(this._handle, listOf(_arg))
   }
 
   fun setTimeout(timeout: Int) {
     val _arg = Variant.new(timeout)
-    __method_bind.setTimeout.call(this._handle, _arg, 1)
+    __method_bind.setTimeout.call(this._handle, listOf(_arg))
   }
 
   fun setUseThreads(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseThreads.call(this._handle, _arg, 1)
+    __method_bind.setUseThreads.call(this._handle, listOf(_arg))
   }
 
   enum class Result(

@@ -32,7 +32,7 @@ open class CSGPrimitive(
 
   fun setInvertFaces(invertFaces: Boolean) {
     val _arg = Variant.new(invertFaces)
-    __method_bind.setInvertFaces.call(this._handle, _arg, 1)
+    __method_bind.setInvertFaces.call(this._handle, listOf(_arg))
   }
 
   companion object {

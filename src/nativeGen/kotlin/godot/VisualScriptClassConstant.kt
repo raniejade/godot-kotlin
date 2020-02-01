@@ -45,12 +45,12 @@ open class VisualScriptClassConstant(
 
   fun setBaseType(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setBaseType.call(this._handle, _arg, 1)
+    __method_bind.setBaseType.call(this._handle, listOf(_arg))
   }
 
   fun setClassConstant(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setClassConstant.call(this._handle, _arg, 1)
+    __method_bind.setClassConstant.call(this._handle, listOf(_arg))
   }
 
   companion object {

@@ -99,32 +99,32 @@ open class Button(
 
   fun setButtonIcon(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setButtonIcon.call(this._handle, _arg, 1)
+    __method_bind.setButtonIcon.call(this._handle, listOf(_arg))
   }
 
   fun setClipText(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setClipText.call(this._handle, _arg, 1)
+    __method_bind.setClipText.call(this._handle, listOf(_arg))
   }
 
   fun setExpandIcon(arg0: Boolean) {
     val _arg = Variant.new(arg0)
-    __method_bind.setExpandIcon.call(this._handle, _arg, 1)
+    __method_bind.setExpandIcon.call(this._handle, listOf(_arg))
   }
 
   fun setFlat(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setFlat.call(this._handle, _arg, 1)
+    __method_bind.setFlat.call(this._handle, listOf(_arg))
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setText.call(this._handle, _arg, 1)
+    __method_bind.setText.call(this._handle, listOf(_arg))
   }
 
   fun setTextAlign(align: Int) {
     val _arg = Variant.new(align)
-    __method_bind.setTextAlign.call(this._handle, _arg, 1)
+    __method_bind.setTextAlign.call(this._handle, listOf(_arg))
   }
 
   enum class TextAlign(

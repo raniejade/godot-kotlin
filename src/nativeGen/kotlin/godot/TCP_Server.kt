@@ -31,10 +31,10 @@ open class TCP_Server(
   }
 
   fun listen(port: Int, bindAddress: String = "*"): GDError {
-    val _args = VariantArray.new()
-    _args.append(port)
-    _args.append(bindAddress)
-    val _ret = __method_bind.listen.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(port))
+    _args.add(Variant.fromAny(bindAddress))
+    val _ret = __method_bind.listen.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 

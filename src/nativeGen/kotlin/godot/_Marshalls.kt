@@ -21,41 +21,41 @@ open class _Marshalls(
 ) : Reference(_handle) {
   fun base64ToRaw(base64Str: String): PoolByteArray {
     val _arg = Variant.new(base64Str)
-    val _ret = __method_bind.base64ToRaw.call(this._handle, _arg, 1)
+    val _ret = __method_bind.base64ToRaw.call(this._handle, listOf(_arg))
     return _ret.asPoolByteArray()
   }
 
   fun base64ToUtf8(base64Str: String): String {
     val _arg = Variant.new(base64Str)
-    val _ret = __method_bind.base64ToUtf8.call(this._handle, _arg, 1)
+    val _ret = __method_bind.base64ToUtf8.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun base64ToVariant(base64Str: String, allowObjects: Boolean = false): Variant {
-    val _args = VariantArray.new()
-    _args.append(base64Str)
-    _args.append(allowObjects)
-    val _ret = __method_bind.base64ToVariant.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(base64Str))
+    _args.add(Variant.fromAny(allowObjects))
+    val _ret = __method_bind.base64ToVariant.call(this._handle, _args)
     return _ret
   }
 
   fun rawToBase64(array: PoolByteArray): String {
     val _arg = Variant.new(array)
-    val _ret = __method_bind.rawToBase64.call(this._handle, _arg, 1)
+    val _ret = __method_bind.rawToBase64.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun utf8ToBase64(utf8Str: String): String {
     val _arg = Variant.new(utf8Str)
-    val _ret = __method_bind.utf8ToBase64.call(this._handle, _arg, 1)
+    val _ret = __method_bind.utf8ToBase64.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun variantToBase64(variant: Variant, fullObjects: Boolean = false): String {
-    val _args = VariantArray.new()
-    _args.append(variant)
-    _args.append(fullObjects)
-    val _ret = __method_bind.variantToBase64.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(variant))
+    _args.add(Variant.fromAny(fullObjects))
+    val _ret = __method_bind.variantToBase64.call(this._handle, _args)
     return _ret.asString()
   }
 

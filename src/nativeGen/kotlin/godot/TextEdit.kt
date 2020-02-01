@@ -236,24 +236,24 @@ open class TextEdit(
     color: Color,
     lineOnly: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(beginKey)
-    _args.append(endKey)
-    _args.append(color)
-    _args.append(lineOnly)
-    __method_bind.addColorRegion.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(beginKey))
+    _args.add(Variant.fromAny(endKey))
+    _args.add(Variant.fromAny(color))
+    _args.add(Variant.fromAny(lineOnly))
+    __method_bind.addColorRegion.call(this._handle, _args)
   }
 
   fun addKeywordColor(keyword: String, color: Color) {
-    val _args = VariantArray.new()
-    _args.append(keyword)
-    _args.append(color)
-    __method_bind.addKeywordColor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(keyword))
+    _args.add(Variant.fromAny(color))
+    __method_bind.addKeywordColor.call(this._handle, _args)
   }
 
   fun canFold(line: Int): Boolean {
     val _arg = Variant.new(line)
-    val _ret = __method_bind.canFold.call(this._handle, _arg, 1)
+    val _ret = __method_bind.canFold.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -300,24 +300,24 @@ open class TextEdit(
 
   fun cursorSetBlinkEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.cursorSetBlinkEnabled.call(this._handle, _arg, 1)
+    __method_bind.cursorSetBlinkEnabled.call(this._handle, listOf(_arg))
   }
 
   fun cursorSetBlinkSpeed(blinkSpeed: Float) {
     val _arg = Variant.new(blinkSpeed)
-    __method_bind.cursorSetBlinkSpeed.call(this._handle, _arg, 1)
+    __method_bind.cursorSetBlinkSpeed.call(this._handle, listOf(_arg))
   }
 
   fun cursorSetBlockMode(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.cursorSetBlockMode.call(this._handle, _arg, 1)
+    __method_bind.cursorSetBlockMode.call(this._handle, listOf(_arg))
   }
 
   fun cursorSetColumn(column: Int, adjustViewport: Boolean = true) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(adjustViewport)
-    __method_bind.cursorSetColumn.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(adjustViewport))
+    __method_bind.cursorSetColumn.call(this._handle, _args)
   }
 
   fun cursorSetLine(
@@ -326,12 +326,12 @@ open class TextEdit(
     canBeHidden: Boolean = true,
     wrapIndex: Int = 0
   ) {
-    val _args = VariantArray.new()
-    _args.append(line)
-    _args.append(adjustViewport)
-    _args.append(canBeHidden)
-    _args.append(wrapIndex)
-    __method_bind.cursorSetLine.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(line))
+    _args.add(Variant.fromAny(adjustViewport))
+    _args.add(Variant.fromAny(canBeHidden))
+    _args.add(Variant.fromAny(wrapIndex))
+    __method_bind.cursorSetLine.call(this._handle, _args)
   }
 
   fun cut() {
@@ -344,7 +344,7 @@ open class TextEdit(
 
   fun drawMinimap(draw: Boolean) {
     val _arg = Variant.new(draw)
-    __method_bind.drawMinimap.call(this._handle, _arg, 1)
+    __method_bind.drawMinimap.call(this._handle, listOf(_arg))
   }
 
   fun foldAllLines() {
@@ -353,7 +353,7 @@ open class TextEdit(
 
   fun foldLine(line: Int) {
     val _arg = Variant.new(line)
-    __method_bind.foldLine.call(this._handle, _arg, 1)
+    __method_bind.foldLine.call(this._handle, listOf(_arg))
   }
 
   fun getBreakpoints(): VariantArray {
@@ -368,13 +368,13 @@ open class TextEdit(
 
   fun getKeywordColor(keyword: String): Color {
     val _arg = Variant.new(keyword)
-    val _ret = __method_bind.getKeywordColor.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getKeywordColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getLine(line: Int): String {
     val _arg = Variant.new(line)
-    val _ret = __method_bind.getLine.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getLine.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -440,13 +440,13 @@ open class TextEdit(
 
   fun hasKeywordColor(keyword: String): Boolean {
     val _arg = Variant.new(keyword)
-    val _ret = __method_bind.hasKeywordColor.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasKeywordColor.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun insertTextAtCursor(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.insertTextAtCursor.call(this._handle, _arg, 1)
+    __method_bind.insertTextAtCursor.call(this._handle, listOf(_arg))
   }
 
   fun isBreakpointGutterEnabled(): Boolean {
@@ -481,7 +481,7 @@ open class TextEdit(
 
   fun isFolded(line: Int): Boolean {
     val _arg = Variant.new(line)
-    val _ret = __method_bind.isFolded.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isFolded.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -502,7 +502,7 @@ open class TextEdit(
 
   fun isLineHidden(line: Int): Boolean {
     val _arg = Variant.new(line)
-    val _ret = __method_bind.isLineHidden.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isLineHidden.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -558,7 +558,7 @@ open class TextEdit(
 
   fun menuOption(option: Int) {
     val _arg = Variant.new(option)
-    __method_bind.menuOption.call(this._handle, _arg, 1)
+    __method_bind.menuOption.call(this._handle, listOf(_arg))
   }
 
   fun paste() {
@@ -579,12 +579,12 @@ open class TextEdit(
     fromLine: Int,
     fromColumn: Int
   ): PoolIntArray {
-    val _args = VariantArray.new()
-    _args.append(key)
-    _args.append(flags)
-    _args.append(fromLine)
-    _args.append(fromColumn)
-    val _ret = __method_bind.search.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(key))
+    _args.add(Variant.fromAny(flags))
+    _args.add(Variant.fromAny(fromLine))
+    _args.add(Variant.fromAny(fromColumn))
+    val _ret = __method_bind.search.call(this._handle, _args)
     return _ret.asPoolIntArray()
   }
 
@@ -594,12 +594,12 @@ open class TextEdit(
     toLine: Int,
     toColumn: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(fromLine)
-    _args.append(fromColumn)
-    _args.append(toLine)
-    _args.append(toColumn)
-    __method_bind.select.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromLine))
+    _args.add(Variant.fromAny(fromColumn))
+    _args.add(Variant.fromAny(toLine))
+    _args.add(Variant.fromAny(toColumn))
+    __method_bind.select.call(this._handle, _args)
   }
 
   fun selectAll() {
@@ -608,124 +608,124 @@ open class TextEdit(
 
   fun setBreakpointGutterEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setBreakpointGutterEnabled.call(this._handle, _arg, 1)
+    __method_bind.setBreakpointGutterEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setContextMenuEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setContextMenuEnabled.call(this._handle, _arg, 1)
+    __method_bind.setContextMenuEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setDrawFoldGutter(arg0: Boolean) {
     val _arg = Variant.new(arg0)
-    __method_bind.setDrawFoldGutter.call(this._handle, _arg, 1)
+    __method_bind.setDrawFoldGutter.call(this._handle, listOf(_arg))
   }
 
   fun setDrawSpaces(arg0: Boolean) {
     val _arg = Variant.new(arg0)
-    __method_bind.setDrawSpaces.call(this._handle, _arg, 1)
+    __method_bind.setDrawSpaces.call(this._handle, listOf(_arg))
   }
 
   fun setDrawTabs(arg0: Boolean) {
     val _arg = Variant.new(arg0)
-    __method_bind.setDrawTabs.call(this._handle, _arg, 1)
+    __method_bind.setDrawTabs.call(this._handle, listOf(_arg))
   }
 
   fun setHScroll(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.setHScroll.call(this._handle, _arg, 1)
+    __method_bind.setHScroll.call(this._handle, listOf(_arg))
   }
 
   fun setHidingEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setHidingEnabled.call(this._handle, _arg, 1)
+    __method_bind.setHidingEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setHighlightAllOccurrences(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setHighlightAllOccurrences.call(this._handle, _arg, 1)
+    __method_bind.setHighlightAllOccurrences.call(this._handle, listOf(_arg))
   }
 
   fun setHighlightCurrentLine(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setHighlightCurrentLine.call(this._handle, _arg, 1)
+    __method_bind.setHighlightCurrentLine.call(this._handle, listOf(_arg))
   }
 
   fun setLineAsHidden(line: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(line)
-    _args.append(enable)
-    __method_bind.setLineAsHidden.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(line))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setLineAsHidden.call(this._handle, _args)
   }
 
   fun setMinimapWidth(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.setMinimapWidth.call(this._handle, _arg, 1)
+    __method_bind.setMinimapWidth.call(this._handle, listOf(_arg))
   }
 
   fun setOverrideSelectedFontColor(override: Boolean) {
     val _arg = Variant.new(override)
-    __method_bind.setOverrideSelectedFontColor.call(this._handle, _arg, 1)
+    __method_bind.setOverrideSelectedFontColor.call(this._handle, listOf(_arg))
   }
 
   fun setReadonly(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setReadonly.call(this._handle, _arg, 1)
+    __method_bind.setReadonly.call(this._handle, listOf(_arg))
   }
 
   fun setRightClickMovesCaret(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setRightClickMovesCaret.call(this._handle, _arg, 1)
+    __method_bind.setRightClickMovesCaret.call(this._handle, listOf(_arg))
   }
 
   fun setSelectingEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setSelectingEnabled.call(this._handle, _arg, 1)
+    __method_bind.setSelectingEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setShortcutKeysEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setShortcutKeysEnabled.call(this._handle, _arg, 1)
+    __method_bind.setShortcutKeysEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setShowLineNumbers(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setShowLineNumbers.call(this._handle, _arg, 1)
+    __method_bind.setShowLineNumbers.call(this._handle, listOf(_arg))
   }
 
   fun setSmoothScrollEnable(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setSmoothScrollEnable.call(this._handle, _arg, 1)
+    __method_bind.setSmoothScrollEnable.call(this._handle, listOf(_arg))
   }
 
   fun setSyntaxColoring(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setSyntaxColoring.call(this._handle, _arg, 1)
+    __method_bind.setSyntaxColoring.call(this._handle, listOf(_arg))
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setText.call(this._handle, _arg, 1)
+    __method_bind.setText.call(this._handle, listOf(_arg))
   }
 
   fun setVScroll(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.setVScroll.call(this._handle, _arg, 1)
+    __method_bind.setVScroll.call(this._handle, listOf(_arg))
   }
 
   fun setVScrollSpeed(speed: Float) {
     val _arg = Variant.new(speed)
-    __method_bind.setVScrollSpeed.call(this._handle, _arg, 1)
+    __method_bind.setVScrollSpeed.call(this._handle, listOf(_arg))
   }
 
   fun setWrapEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setWrapEnabled.call(this._handle, _arg, 1)
+    __method_bind.setWrapEnabled.call(this._handle, listOf(_arg))
   }
 
   fun toggleFoldLine(line: Int) {
     val _arg = Variant.new(line)
-    __method_bind.toggleFoldLine.call(this._handle, _arg, 1)
+    __method_bind.toggleFoldLine.call(this._handle, listOf(_arg))
   }
 
   fun undo() {
@@ -734,7 +734,7 @@ open class TextEdit(
 
   fun unfoldLine(line: Int) {
     val _arg = Variant.new(line)
-    __method_bind.unfoldLine.call(this._handle, _arg, 1)
+    __method_bind.unfoldLine.call(this._handle, listOf(_arg))
   }
 
   fun unhideAllLines() {

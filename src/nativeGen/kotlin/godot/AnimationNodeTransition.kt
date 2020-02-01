@@ -560,38 +560,38 @@ open class AnimationNodeTransition(
 
   fun getInputCaption(input: Int): String {
     val _arg = Variant.new(input)
-    val _ret = __method_bind.getInputCaption.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getInputCaption.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun isInputSetAsAutoAdvance(input: Int): Boolean {
     val _arg = Variant.new(input)
-    val _ret = __method_bind.isInputSetAsAutoAdvance.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isInputSetAsAutoAdvance.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setCrossFadeTime(time: Float) {
     val _arg = Variant.new(time)
-    __method_bind.setCrossFadeTime.call(this._handle, _arg, 1)
+    __method_bind.setCrossFadeTime.call(this._handle, listOf(_arg))
   }
 
   fun setEnabledInputs(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setEnabledInputs.call(this._handle, _arg, 1)
+    __method_bind.setEnabledInputs.call(this._handle, listOf(_arg))
   }
 
   fun setInputAsAutoAdvance(input: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(input)
-    _args.append(enable)
-    __method_bind.setInputAsAutoAdvance.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(input))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setInputAsAutoAdvance.call(this._handle, _args)
   }
 
   fun setInputCaption(input: Int, caption: String) {
-    val _args = VariantArray.new()
-    _args.append(input)
-    _args.append(caption)
-    __method_bind.setInputCaption.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(input))
+    _args.add(Variant.fromAny(caption))
+    __method_bind.setInputCaption.call(this._handle, _args)
   }
 
   companion object {

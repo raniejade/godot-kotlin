@@ -33,11 +33,11 @@ open class Shape2D(
     withShape: Shape2D,
     shapeXform: Transform2D
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(localXform)
-    _args.append(withShape)
-    _args.append(shapeXform)
-    val _ret = __method_bind.collide.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(localXform))
+    _args.add(Variant.fromAny(withShape))
+    _args.add(Variant.fromAny(shapeXform))
+    val _ret = __method_bind.collide.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -46,11 +46,11 @@ open class Shape2D(
     withShape: Shape2D,
     shapeXform: Transform2D
   ): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(localXform)
-    _args.append(withShape)
-    _args.append(shapeXform)
-    val _ret = __method_bind.collideAndGetContacts.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(localXform))
+    _args.add(Variant.fromAny(withShape))
+    _args.add(Variant.fromAny(shapeXform))
+    val _ret = __method_bind.collideAndGetContacts.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
@@ -61,13 +61,13 @@ open class Shape2D(
     shapeXform: Transform2D,
     shapeMotion: Vector2
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(localXform)
-    _args.append(localMotion)
-    _args.append(withShape)
-    _args.append(shapeXform)
-    _args.append(shapeMotion)
-    val _ret = __method_bind.collideWithMotion.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(localXform))
+    _args.add(Variant.fromAny(localMotion))
+    _args.add(Variant.fromAny(withShape))
+    _args.add(Variant.fromAny(shapeXform))
+    _args.add(Variant.fromAny(shapeMotion))
+    val _ret = __method_bind.collideWithMotion.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -78,14 +78,13 @@ open class Shape2D(
     shapeXform: Transform2D,
     shapeMotion: Vector2
   ): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(localXform)
-    _args.append(localMotion)
-    _args.append(withShape)
-    _args.append(shapeXform)
-    _args.append(shapeMotion)
-    val _ret = __method_bind.collideWithMotionAndGetContacts.call(this._handle, _args.toVariant(),
-        5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(localXform))
+    _args.add(Variant.fromAny(localMotion))
+    _args.add(Variant.fromAny(withShape))
+    _args.add(Variant.fromAny(shapeXform))
+    _args.add(Variant.fromAny(shapeMotion))
+    val _ret = __method_bind.collideWithMotionAndGetContacts.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
@@ -96,7 +95,7 @@ open class Shape2D(
 
   fun setCustomSolverBias(bias: Float) {
     val _arg = Variant.new(bias)
-    __method_bind.setCustomSolverBias.call(this._handle, _arg, 1)
+    __method_bind.setCustomSolverBias.call(this._handle, listOf(_arg))
   }
 
   companion object {

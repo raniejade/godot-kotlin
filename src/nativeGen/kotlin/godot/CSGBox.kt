@@ -71,22 +71,22 @@ open class CSGBox(
 
   fun setDepth(depth: Float) {
     val _arg = Variant.new(depth)
-    __method_bind.setDepth.call(this._handle, _arg, 1)
+    __method_bind.setDepth.call(this._handle, listOf(_arg))
   }
 
   fun setHeight(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.setHeight.call(this._handle, _arg, 1)
+    __method_bind.setHeight.call(this._handle, listOf(_arg))
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.setMaterial.call(this._handle, _arg, 1)
+    __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setWidth(width: Float) {
     val _arg = Variant.new(width)
-    __method_bind.setWidth.call(this._handle, _arg, 1)
+    __method_bind.setWidth.call(this._handle, listOf(_arg))
   }
 
   companion object {

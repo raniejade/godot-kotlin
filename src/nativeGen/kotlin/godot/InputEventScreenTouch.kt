@@ -65,17 +65,17 @@ open class InputEventScreenTouch(
 
   fun setIndex(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.setIndex.call(this._handle, _arg, 1)
+    __method_bind.setIndex.call(this._handle, listOf(_arg))
   }
 
   fun setPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.setPosition.call(this._handle, _arg, 1)
+    __method_bind.setPosition.call(this._handle, listOf(_arg))
   }
 
   fun setPressed(pressed: Boolean) {
     val _arg = Variant.new(pressed)
-    __method_bind.setPressed.call(this._handle, _arg, 1)
+    __method_bind.setPressed.call(this._handle, listOf(_arg))
   }
 
   companion object {

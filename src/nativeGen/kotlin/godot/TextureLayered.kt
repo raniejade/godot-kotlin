@@ -32,13 +32,13 @@ open class TextureLayered(
     format: Int,
     flags: Int = 4
   ) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    _args.append(height)
-    _args.append(depth)
-    _args.append(format)
-    _args.append(flags)
-    __method_bind.create.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(height))
+    _args.add(Variant.fromAny(depth))
+    _args.add(Variant.fromAny(format))
+    _args.add(Variant.fromAny(flags))
+    __method_bind.create.call(this._handle, _args)
   }
 
   fun getDepth(): Int {
@@ -63,7 +63,7 @@ open class TextureLayered(
 
   fun getLayerData(layer: Int): Image {
     val _arg = Variant.new(layer)
-    val _ret = __method_bind.getLayerData.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getLayerData.call(this._handle, listOf(_arg))
     return _ret.asObject(::Image)!!
   }
 
@@ -79,25 +79,25 @@ open class TextureLayered(
     layer: Int,
     mipmap: Int = 0
   ) {
-    val _args = VariantArray.new()
-    _args.append(image)
-    _args.append(xOffset)
-    _args.append(yOffset)
-    _args.append(layer)
-    _args.append(mipmap)
-    __method_bind.setDataPartial.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(image))
+    _args.add(Variant.fromAny(xOffset))
+    _args.add(Variant.fromAny(yOffset))
+    _args.add(Variant.fromAny(layer))
+    _args.add(Variant.fromAny(mipmap))
+    __method_bind.setDataPartial.call(this._handle, _args)
   }
 
   fun setFlags(flags: Int) {
     val _arg = Variant.new(flags)
-    __method_bind.setFlags.call(this._handle, _arg, 1)
+    __method_bind.setFlags.call(this._handle, listOf(_arg))
   }
 
   fun setLayerData(image: Image, layer: Int) {
-    val _args = VariantArray.new()
-    _args.append(image)
-    _args.append(layer)
-    __method_bind.setLayerData.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(image))
+    _args.add(Variant.fromAny(layer))
+    __method_bind.setLayerData.call(this._handle, _args)
   }
 
   enum class Flags(

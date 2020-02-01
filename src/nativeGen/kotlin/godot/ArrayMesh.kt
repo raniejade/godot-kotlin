@@ -51,7 +51,7 @@ open class ArrayMesh(
 
   fun addBlendShape(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.addBlendShape.call(this._handle, _arg, 1)
+    __method_bind.addBlendShape.call(this._handle, listOf(_arg))
   }
 
   fun addSurfaceFromArrays(
@@ -60,12 +60,12 @@ open class ArrayMesh(
     blendShapes: VariantArray,
     compressFlags: Int = 97280
   ) {
-    val _args = VariantArray.new()
-    _args.append(primitive)
-    _args.append(arrays)
-    _args.append(blendShapes)
-    _args.append(compressFlags)
-    __method_bind.addSurfaceFromArrays.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(primitive))
+    _args.add(Variant.fromAny(arrays))
+    _args.add(Variant.fromAny(blendShapes))
+    _args.add(Variant.fromAny(compressFlags))
+    __method_bind.addSurfaceFromArrays.call(this._handle, _args)
   }
 
   fun clearBlendShapes() {
@@ -84,7 +84,7 @@ open class ArrayMesh(
 
   fun getBlendShapeName(index: Int): String {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.getBlendShapeName.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBlendShapeName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -94,10 +94,10 @@ open class ArrayMesh(
   }
 
   fun lightmapUnwrap(transform: Transform, texelSize: Float): GDError {
-    val _args = VariantArray.new()
-    _args.append(transform)
-    _args.append(texelSize)
-    val _ret = __method_bind.lightmapUnwrap.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(transform))
+    _args.add(Variant.fromAny(texelSize))
+    val _ret = __method_bind.lightmapUnwrap.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -107,60 +107,60 @@ open class ArrayMesh(
 
   fun setBlendShapeMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setBlendShapeMode.call(this._handle, _arg, 1)
+    __method_bind.setBlendShapeMode.call(this._handle, listOf(_arg))
   }
 
   fun setCustomAabb(aabb: AABB) {
     val _arg = Variant.new(aabb)
-    __method_bind.setCustomAabb.call(this._handle, _arg, 1)
+    __method_bind.setCustomAabb.call(this._handle, listOf(_arg))
   }
 
   fun surfaceFindByName(name: String): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.surfaceFindByName.call(this._handle, _arg, 1)
+    val _ret = __method_bind.surfaceFindByName.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun surfaceGetArrayIndexLen(surfIdx: Int): Int {
     val _arg = Variant.new(surfIdx)
-    val _ret = __method_bind.surfaceGetArrayIndexLen.call(this._handle, _arg, 1)
+    val _ret = __method_bind.surfaceGetArrayIndexLen.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun surfaceGetArrayLen(surfIdx: Int): Int {
     val _arg = Variant.new(surfIdx)
-    val _ret = __method_bind.surfaceGetArrayLen.call(this._handle, _arg, 1)
+    val _ret = __method_bind.surfaceGetArrayLen.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun surfaceGetFormat(surfIdx: Int): Int {
     val _arg = Variant.new(surfIdx)
-    val _ret = __method_bind.surfaceGetFormat.call(this._handle, _arg, 1)
+    val _ret = __method_bind.surfaceGetFormat.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun surfaceGetName(surfIdx: Int): String {
     val _arg = Variant.new(surfIdx)
-    val _ret = __method_bind.surfaceGetName.call(this._handle, _arg, 1)
+    val _ret = __method_bind.surfaceGetName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun surfaceGetPrimitiveType(surfIdx: Int): Mesh.PrimitiveType {
     val _arg = Variant.new(surfIdx)
-    val _ret = __method_bind.surfaceGetPrimitiveType.call(this._handle, _arg, 1)
+    val _ret = __method_bind.surfaceGetPrimitiveType.call(this._handle, listOf(_arg))
     return Mesh.PrimitiveType.from(_ret.asInt())
   }
 
   fun surfaceRemove(surfIdx: Int) {
     val _arg = Variant.new(surfIdx)
-    __method_bind.surfaceRemove.call(this._handle, _arg, 1)
+    __method_bind.surfaceRemove.call(this._handle, listOf(_arg))
   }
 
   fun surfaceSetName(surfIdx: Int, name: String) {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    _args.append(name)
-    __method_bind.surfaceSetName.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(surfIdx))
+    _args.add(Variant.fromAny(name))
+    __method_bind.surfaceSetName.call(this._handle, _args)
   }
 
   fun surfaceUpdateRegion(
@@ -168,11 +168,11 @@ open class ArrayMesh(
     offset: Int,
     data: PoolByteArray
   ) {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    _args.append(offset)
-    _args.append(data)
-    __method_bind.surfaceUpdateRegion.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(surfIdx))
+    _args.add(Variant.fromAny(offset))
+    _args.add(Variant.fromAny(data))
+    __method_bind.surfaceUpdateRegion.call(this._handle, _args)
   }
 
   enum class ArrayFormat(

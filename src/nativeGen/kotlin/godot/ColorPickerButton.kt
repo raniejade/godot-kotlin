@@ -66,12 +66,12 @@ open class ColorPickerButton(
 
   fun setEditAlpha(show: Boolean) {
     val _arg = Variant.new(show)
-    __method_bind.setEditAlpha.call(this._handle, _arg, 1)
+    __method_bind.setEditAlpha.call(this._handle, listOf(_arg))
   }
 
   fun setPickColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setPickColor.call(this._handle, _arg, 1)
+    __method_bind.setPickColor.call(this._handle, listOf(_arg))
   }
 
   companion object {

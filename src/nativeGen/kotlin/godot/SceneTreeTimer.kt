@@ -32,7 +32,7 @@ open class SceneTreeTimer(
 
   fun setTimeLeft(time: Float) {
     val _arg = Variant.new(time)
-    __method_bind.setTimeLeft.call(this._handle, _arg, 1)
+    __method_bind.setTimeLeft.call(this._handle, listOf(_arg))
   }
 
   companion object {

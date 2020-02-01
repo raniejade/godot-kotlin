@@ -22,18 +22,18 @@ open class _VisualScriptEditor(
     category: String,
     script: Script
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(category)
-    _args.append(script)
-    __method_bind.addCustomNode.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(category))
+    _args.add(Variant.fromAny(script))
+    __method_bind.addCustomNode.call(this._handle, _args)
   }
 
   fun removeCustomNode(name: String, category: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(category)
-    __method_bind.removeCustomNode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(category))
+    __method_bind.removeCustomNode.call(this._handle, _args)
   }
 
   companion object {

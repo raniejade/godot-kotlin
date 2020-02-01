@@ -20,14 +20,14 @@ open class EditorInspectorPlugin(
 ) : Reference(_handle) {
   fun addCustomControl(control: Control) {
     val _arg = Variant.new(control)
-    __method_bind.addCustomControl.call(this._handle, _arg, 1)
+    __method_bind.addCustomControl.call(this._handle, listOf(_arg))
   }
 
   fun addPropertyEditor(property: String, editor: Control) {
-    val _args = VariantArray.new()
-    _args.append(property)
-    _args.append(editor)
-    __method_bind.addPropertyEditor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(editor))
+    __method_bind.addPropertyEditor.call(this._handle, _args)
   }
 
   fun addPropertyEditorForMultipleProperties(
@@ -35,11 +35,11 @@ open class EditorInspectorPlugin(
     properties: PoolStringArray,
     editor: Control
   ) {
-    val _args = VariantArray.new()
-    _args.append(label)
-    _args.append(properties)
-    _args.append(editor)
-    __method_bind.addPropertyEditorForMultipleProperties.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(label))
+    _args.add(Variant.fromAny(properties))
+    _args.add(Variant.fromAny(editor))
+    __method_bind.addPropertyEditorForMultipleProperties.call(this._handle, _args)
   }
 
   companion object {

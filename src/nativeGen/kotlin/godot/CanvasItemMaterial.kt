@@ -98,32 +98,32 @@ open class CanvasItemMaterial(
 
   fun setBlendMode(blendMode: Int) {
     val _arg = Variant.new(blendMode)
-    __method_bind.setBlendMode.call(this._handle, _arg, 1)
+    __method_bind.setBlendMode.call(this._handle, listOf(_arg))
   }
 
   fun setLightMode(lightMode: Int) {
     val _arg = Variant.new(lightMode)
-    __method_bind.setLightMode.call(this._handle, _arg, 1)
+    __method_bind.setLightMode.call(this._handle, listOf(_arg))
   }
 
   fun setParticlesAnimHFrames(frames: Int) {
     val _arg = Variant.new(frames)
-    __method_bind.setParticlesAnimHFrames.call(this._handle, _arg, 1)
+    __method_bind.setParticlesAnimHFrames.call(this._handle, listOf(_arg))
   }
 
   fun setParticlesAnimLoop(loop: Boolean) {
     val _arg = Variant.new(loop)
-    __method_bind.setParticlesAnimLoop.call(this._handle, _arg, 1)
+    __method_bind.setParticlesAnimLoop.call(this._handle, listOf(_arg))
   }
 
   fun setParticlesAnimVFrames(frames: Int) {
     val _arg = Variant.new(frames)
-    __method_bind.setParticlesAnimVFrames.call(this._handle, _arg, 1)
+    __method_bind.setParticlesAnimVFrames.call(this._handle, listOf(_arg))
   }
 
   fun setParticlesAnimation(particlesAnim: Boolean) {
     val _arg = Variant.new(particlesAnim)
-    __method_bind.setParticlesAnimation.call(this._handle, _arg, 1)
+    __method_bind.setParticlesAnimation.call(this._handle, listOf(_arg))
   }
 
   enum class LightMode(

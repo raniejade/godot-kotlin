@@ -51,12 +51,12 @@ open class WindowDialog(
 
   fun setResizable(resizable: Boolean) {
     val _arg = Variant.new(resizable)
-    __method_bind.setResizable.call(this._handle, _arg, 1)
+    __method_bind.setResizable.call(this._handle, listOf(_arg))
   }
 
   fun setTitle(title: String) {
     val _arg = Variant.new(title)
-    __method_bind.setTitle.call(this._handle, _arg, 1)
+    __method_bind.setTitle.call(this._handle, listOf(_arg))
   }
 
   companion object {

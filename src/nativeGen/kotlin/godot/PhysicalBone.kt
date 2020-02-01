@@ -106,14 +106,14 @@ open class PhysicalBone(
 
   fun applyCentralImpulse(impulse: Vector3) {
     val _arg = Variant.new(impulse)
-    __method_bind.applyCentralImpulse.call(this._handle, _arg, 1)
+    __method_bind.applyCentralImpulse.call(this._handle, listOf(_arg))
   }
 
   fun applyImpulse(position: Vector3, impulse: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    _args.append(impulse)
-    __method_bind.applyImpulse.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(impulse))
+    __method_bind.applyImpulse.call(this._handle, _args)
   }
 
   fun getBodyOffset(): Transform {
@@ -178,42 +178,42 @@ open class PhysicalBone(
 
   fun setBodyOffset(offset: Transform) {
     val _arg = Variant.new(offset)
-    __method_bind.setBodyOffset.call(this._handle, _arg, 1)
+    __method_bind.setBodyOffset.call(this._handle, listOf(_arg))
   }
 
   fun setBounce(bounce: Float) {
     val _arg = Variant.new(bounce)
-    __method_bind.setBounce.call(this._handle, _arg, 1)
+    __method_bind.setBounce.call(this._handle, listOf(_arg))
   }
 
   fun setFriction(friction: Float) {
     val _arg = Variant.new(friction)
-    __method_bind.setFriction.call(this._handle, _arg, 1)
+    __method_bind.setFriction.call(this._handle, listOf(_arg))
   }
 
   fun setGravityScale(gravityScale: Float) {
     val _arg = Variant.new(gravityScale)
-    __method_bind.setGravityScale.call(this._handle, _arg, 1)
+    __method_bind.setGravityScale.call(this._handle, listOf(_arg))
   }
 
   fun setJointOffset(offset: Transform) {
     val _arg = Variant.new(offset)
-    __method_bind.setJointOffset.call(this._handle, _arg, 1)
+    __method_bind.setJointOffset.call(this._handle, listOf(_arg))
   }
 
   fun setJointType(jointType: Int) {
     val _arg = Variant.new(jointType)
-    __method_bind.setJointType.call(this._handle, _arg, 1)
+    __method_bind.setJointType.call(this._handle, listOf(_arg))
   }
 
   fun setMass(mass: Float) {
     val _arg = Variant.new(mass)
-    __method_bind.setMass.call(this._handle, _arg, 1)
+    __method_bind.setMass.call(this._handle, listOf(_arg))
   }
 
   fun setWeight(weight: Float) {
     val _arg = Variant.new(weight)
-    __method_bind.setWeight.call(this._handle, _arg, 1)
+    __method_bind.setWeight.call(this._handle, listOf(_arg))
   }
 
   enum class JointType(

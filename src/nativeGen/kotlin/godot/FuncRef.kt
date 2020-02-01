@@ -20,15 +20,15 @@ open class FuncRef(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun callFunc(vararg varargs: Any?): Variant {
-    val _args = VariantArray.new()
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.callFunc.call(this._handle, _args.toVariant(), 0 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.callFunc.call(this._handle, _args)
     return _ret
   }
 
   fun callFuncv(argArray: VariantArray): Variant {
     val _arg = Variant.new(argArray)
-    val _ret = __method_bind.callFuncv.call(this._handle, _arg, 1)
+    val _ret = __method_bind.callFuncv.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -39,12 +39,12 @@ open class FuncRef(
 
   fun setFunction(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setFunction.call(this._handle, _arg, 1)
+    __method_bind.setFunction.call(this._handle, listOf(_arg))
   }
 
   fun setInstance(instance: Object) {
     val _arg = Variant.new(instance)
-    __method_bind.setInstance.call(this._handle, _arg, 1)
+    __method_bind.setInstance.call(this._handle, listOf(_arg))
   }
 
   companion object {

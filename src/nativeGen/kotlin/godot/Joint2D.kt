@@ -92,22 +92,22 @@ open class Joint2D(
 
   fun setBias(bias: Float) {
     val _arg = Variant.new(bias)
-    __method_bind.setBias.call(this._handle, _arg, 1)
+    __method_bind.setBias.call(this._handle, listOf(_arg))
   }
 
   fun setExcludeNodesFromCollision(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setExcludeNodesFromCollision.call(this._handle, _arg, 1)
+    __method_bind.setExcludeNodesFromCollision.call(this._handle, listOf(_arg))
   }
 
   fun setNodeA(node: NodePath) {
     val _arg = Variant.new(node)
-    __method_bind.setNodeA.call(this._handle, _arg, 1)
+    __method_bind.setNodeA.call(this._handle, listOf(_arg))
   }
 
   fun setNodeB(node: NodePath) {
     val _arg = Variant.new(node)
-    __method_bind.setNodeB.call(this._handle, _arg, 1)
+    __method_bind.setNodeB.call(this._handle, listOf(_arg))
   }
 
   companion object {

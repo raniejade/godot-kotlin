@@ -91,22 +91,22 @@ open class AtlasTexture(
 
   fun setAtlas(atlas: Texture) {
     val _arg = Variant.new(atlas)
-    __method_bind.setAtlas.call(this._handle, _arg, 1)
+    __method_bind.setAtlas.call(this._handle, listOf(_arg))
   }
 
   fun setFilterClip(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setFilterClip.call(this._handle, _arg, 1)
+    __method_bind.setFilterClip.call(this._handle, listOf(_arg))
   }
 
   fun setMargin(margin: Rect2) {
     val _arg = Variant.new(margin)
-    __method_bind.setMargin.call(this._handle, _arg, 1)
+    __method_bind.setMargin.call(this._handle, listOf(_arg))
   }
 
   fun setRegion(region: Rect2) {
     val _arg = Variant.new(region)
-    __method_bind.setRegion.call(this._handle, _arg, 1)
+    __method_bind.setRegion.call(this._handle, listOf(_arg))
   }
 
   companion object {

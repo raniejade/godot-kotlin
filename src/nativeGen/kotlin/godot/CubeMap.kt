@@ -59,7 +59,7 @@ open class CubeMap(
 
   fun getSide(side: Int): Image {
     val _arg = Variant.new(side)
-    val _ret = __method_bind.getSide.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSide.call(this._handle, listOf(_arg))
     return _ret.asObject(::Image)!!
   }
 
@@ -75,24 +75,24 @@ open class CubeMap(
 
   fun setFlags(flags: Int) {
     val _arg = Variant.new(flags)
-    __method_bind.setFlags.call(this._handle, _arg, 1)
+    __method_bind.setFlags.call(this._handle, listOf(_arg))
   }
 
   fun setLossyStorageQuality(quality: Float) {
     val _arg = Variant.new(quality)
-    __method_bind.setLossyStorageQuality.call(this._handle, _arg, 1)
+    __method_bind.setLossyStorageQuality.call(this._handle, listOf(_arg))
   }
 
   fun setSide(side: Int, image: Image) {
-    val _args = VariantArray.new()
-    _args.append(side)
-    _args.append(image)
-    __method_bind.setSide.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(side))
+    _args.add(Variant.fromAny(image))
+    __method_bind.setSide.call(this._handle, _args)
   }
 
   fun setStorage(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setStorage.call(this._handle, _arg, 1)
+    __method_bind.setStorage.call(this._handle, listOf(_arg))
   }
 
   enum class Flags(

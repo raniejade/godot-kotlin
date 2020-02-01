@@ -120,10 +120,10 @@ open class BakedLightmap(
   }
 
   fun bake(fromNode: Node, createVisualDebug: Boolean = false): BakeError {
-    val _args = VariantArray.new()
-    _args.append(fromNode)
-    _args.append(createVisualDebug)
-    val _ret = __method_bind.bake.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(createVisualDebug))
+    val _ret = __method_bind.bake.call(this._handle, _args)
     return BakedLightmap.BakeError.from(_ret.asInt())
   }
 
@@ -188,57 +188,57 @@ open class BakedLightmap(
 
   fun setBakeCellSize(bakeCellSize: Float) {
     val _arg = Variant.new(bakeCellSize)
-    __method_bind.setBakeCellSize.call(this._handle, _arg, 1)
+    __method_bind.setBakeCellSize.call(this._handle, listOf(_arg))
   }
 
   fun setBakeDefaultTexelsPerUnit(texels: Float) {
     val _arg = Variant.new(texels)
-    __method_bind.setBakeDefaultTexelsPerUnit.call(this._handle, _arg, 1)
+    __method_bind.setBakeDefaultTexelsPerUnit.call(this._handle, listOf(_arg))
   }
 
   fun setBakeMode(bakeMode: Int) {
     val _arg = Variant.new(bakeMode)
-    __method_bind.setBakeMode.call(this._handle, _arg, 1)
+    __method_bind.setBakeMode.call(this._handle, listOf(_arg))
   }
 
   fun setBakeQuality(bakeQuality: Int) {
     val _arg = Variant.new(bakeQuality)
-    __method_bind.setBakeQuality.call(this._handle, _arg, 1)
+    __method_bind.setBakeQuality.call(this._handle, listOf(_arg))
   }
 
   fun setCaptureCellSize(captureCellSize: Float) {
     val _arg = Variant.new(captureCellSize)
-    __method_bind.setCaptureCellSize.call(this._handle, _arg, 1)
+    __method_bind.setCaptureCellSize.call(this._handle, listOf(_arg))
   }
 
   fun setEnergy(energy: Float) {
     val _arg = Variant.new(energy)
-    __method_bind.setEnergy.call(this._handle, _arg, 1)
+    __method_bind.setEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setExtents(extents: Vector3) {
     val _arg = Variant.new(extents)
-    __method_bind.setExtents.call(this._handle, _arg, 1)
+    __method_bind.setExtents.call(this._handle, listOf(_arg))
   }
 
   fun setHdr(hdr: Boolean) {
     val _arg = Variant.new(hdr)
-    __method_bind.setHdr.call(this._handle, _arg, 1)
+    __method_bind.setHdr.call(this._handle, listOf(_arg))
   }
 
   fun setImagePath(imagePath: String) {
     val _arg = Variant.new(imagePath)
-    __method_bind.setImagePath.call(this._handle, _arg, 1)
+    __method_bind.setImagePath.call(this._handle, listOf(_arg))
   }
 
   fun setLightData(data: BakedLightmapData) {
     val _arg = Variant.new(data)
-    __method_bind.setLightData.call(this._handle, _arg, 1)
+    __method_bind.setLightData.call(this._handle, listOf(_arg))
   }
 
   fun setPropagation(propagation: Float) {
     val _arg = Variant.new(propagation)
-    __method_bind.setPropagation.call(this._handle, _arg, 1)
+    __method_bind.setPropagation.call(this._handle, listOf(_arg))
   }
 
   enum class BakeQuality(

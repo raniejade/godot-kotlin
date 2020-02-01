@@ -19,7 +19,7 @@ open class VisualScriptNode(
 ) : Resource(_handle) {
   fun getDefaultInputValue(portIdx: Int): Variant {
     val _arg = Variant.new(portIdx)
-    val _ret = __method_bind.getDefaultInputValue.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDefaultInputValue.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -33,10 +33,10 @@ open class VisualScriptNode(
   }
 
   fun setDefaultInputValue(portIdx: Int, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(portIdx)
-    _args.append(value)
-    __method_bind.setDefaultInputValue.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(portIdx))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setDefaultInputValue.call(this._handle, _args)
   }
 
   companion object {

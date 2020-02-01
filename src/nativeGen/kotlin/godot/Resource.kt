@@ -45,7 +45,7 @@ open class Resource(
 
   fun duplicate(subresources: Boolean = false): Resource {
     val _arg = Variant.new(subresources)
-    val _ret = __method_bind.duplicate.call(this._handle, _arg, 1)
+    val _ret = __method_bind.duplicate.call(this._handle, listOf(_arg))
     return _ret.asObject(::Resource)!!
   }
 
@@ -76,17 +76,17 @@ open class Resource(
 
   fun setLocalToScene(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setLocalToScene.call(this._handle, _arg, 1)
+    __method_bind.setLocalToScene.call(this._handle, listOf(_arg))
   }
 
   fun setName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setName.call(this._handle, _arg, 1)
+    __method_bind.setName.call(this._handle, listOf(_arg))
   }
 
   fun setPath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.setPath.call(this._handle, _arg, 1)
+    __method_bind.setPath.call(this._handle, listOf(_arg))
   }
 
   fun setupLocalToScene() {
@@ -95,7 +95,7 @@ open class Resource(
 
   fun takeOverPath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.takeOverPath.call(this._handle, _arg, 1)
+    __method_bind.takeOverPath.call(this._handle, listOf(_arg))
   }
 
   companion object {

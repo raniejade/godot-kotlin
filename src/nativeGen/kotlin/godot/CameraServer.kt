@@ -19,7 +19,7 @@ open class CameraServer(
 ) : Object(_handle) {
   fun addFeed(feed: CameraFeed) {
     val _arg = Variant.new(feed)
-    __method_bind.addFeed.call(this._handle, _arg, 1)
+    __method_bind.addFeed.call(this._handle, listOf(_arg))
   }
 
   fun feeds(): VariantArray {
@@ -29,7 +29,7 @@ open class CameraServer(
 
   fun getFeed(index: Int): CameraFeed {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.getFeed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFeed.call(this._handle, listOf(_arg))
     return _ret.asObject(::CameraFeed)!!
   }
 
@@ -40,7 +40,7 @@ open class CameraServer(
 
   fun removeFeed(feed: CameraFeed) {
     val _arg = Variant.new(feed)
-    __method_bind.removeFeed.call(this._handle, _arg, 1)
+    __method_bind.removeFeed.call(this._handle, listOf(_arg))
   }
 
   enum class FeedImage(

@@ -32,7 +32,7 @@ open class EncodedObjectAsID(
 
   fun setObjectId(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.setObjectId.call(this._handle, _arg, 1)
+    __method_bind.setObjectId.call(this._handle, listOf(_arg))
   }
 
   companion object {

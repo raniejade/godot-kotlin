@@ -99,27 +99,27 @@ open class RemoteTransform(
 
   fun setRemoteNode(path: NodePath) {
     val _arg = Variant.new(path)
-    __method_bind.setRemoteNode.call(this._handle, _arg, 1)
+    __method_bind.setRemoteNode.call(this._handle, listOf(_arg))
   }
 
   fun setUpdatePosition(updateRemotePosition: Boolean) {
     val _arg = Variant.new(updateRemotePosition)
-    __method_bind.setUpdatePosition.call(this._handle, _arg, 1)
+    __method_bind.setUpdatePosition.call(this._handle, listOf(_arg))
   }
 
   fun setUpdateRotation(updateRemoteRotation: Boolean) {
     val _arg = Variant.new(updateRemoteRotation)
-    __method_bind.setUpdateRotation.call(this._handle, _arg, 1)
+    __method_bind.setUpdateRotation.call(this._handle, listOf(_arg))
   }
 
   fun setUpdateScale(updateRemoteScale: Boolean) {
     val _arg = Variant.new(updateRemoteScale)
-    __method_bind.setUpdateScale.call(this._handle, _arg, 1)
+    __method_bind.setUpdateScale.call(this._handle, listOf(_arg))
   }
 
   fun setUseGlobalCoordinates(useGlobalCoordinates: Boolean) {
     val _arg = Variant.new(useGlobalCoordinates)
-    __method_bind.setUseGlobalCoordinates.call(this._handle, _arg, 1)
+    __method_bind.setUseGlobalCoordinates.call(this._handle, listOf(_arg))
   }
 
   companion object {

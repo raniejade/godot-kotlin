@@ -24,84 +24,84 @@ open class _ClassDB(
 ) : Object(_handle) {
   fun canInstance(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.canInstance.call(this._handle, _arg, 1)
+    val _ret = __method_bind.canInstance.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun classExists(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.classExists.call(this._handle, _arg, 1)
+    val _ret = __method_bind.classExists.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun classGetCategory(`class`: String): String {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.classGetCategory.call(this._handle, _arg, 1)
+    val _ret = __method_bind.classGetCategory.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun classGetIntegerConstant(`class`: String, name: String): Int {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    _args.append(name)
-    val _ret = __method_bind.classGetIntegerConstant.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`class`))
+    _args.add(Variant.fromAny(name))
+    val _ret = __method_bind.classGetIntegerConstant.call(this._handle, _args)
     return _ret.asInt()
   }
 
   fun classGetIntegerConstantList(`class`: String, noInheritance: Boolean = false):
       PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    _args.append(noInheritance)
-    val _ret = __method_bind.classGetIntegerConstantList.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`class`))
+    _args.add(Variant.fromAny(noInheritance))
+    val _ret = __method_bind.classGetIntegerConstantList.call(this._handle, _args)
     return _ret.asPoolStringArray()
   }
 
   fun classGetMethodList(`class`: String, noInheritance: Boolean = false): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    _args.append(noInheritance)
-    val _ret = __method_bind.classGetMethodList.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`class`))
+    _args.add(Variant.fromAny(noInheritance))
+    val _ret = __method_bind.classGetMethodList.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun classGetProperty(`object`: Object, property: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(property)
-    val _ret = __method_bind.classGetProperty.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(property))
+    val _ret = __method_bind.classGetProperty.call(this._handle, _args)
     return _ret
   }
 
   fun classGetPropertyList(`class`: String, noInheritance: Boolean = false): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    _args.append(noInheritance)
-    val _ret = __method_bind.classGetPropertyList.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`class`))
+    _args.add(Variant.fromAny(noInheritance))
+    val _ret = __method_bind.classGetPropertyList.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun classGetSignal(`class`: String, signal: String): Dictionary {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    _args.append(signal)
-    val _ret = __method_bind.classGetSignal.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`class`))
+    _args.add(Variant.fromAny(signal))
+    val _ret = __method_bind.classGetSignal.call(this._handle, _args)
     return _ret.asDictionary()
   }
 
   fun classGetSignalList(`class`: String, noInheritance: Boolean = false): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    _args.append(noInheritance)
-    val _ret = __method_bind.classGetSignalList.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`class`))
+    _args.add(Variant.fromAny(noInheritance))
+    val _ret = __method_bind.classGetSignalList.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun classHasIntegerConstant(`class`: String, name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    _args.append(name)
-    val _ret = __method_bind.classHasIntegerConstant.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`class`))
+    _args.add(Variant.fromAny(name))
+    val _ret = __method_bind.classHasIntegerConstant.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -110,19 +110,19 @@ open class _ClassDB(
     method: String,
     noInheritance: Boolean = false
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    _args.append(method)
-    _args.append(noInheritance)
-    val _ret = __method_bind.classHasMethod.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`class`))
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(noInheritance))
+    val _ret = __method_bind.classHasMethod.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun classHasSignal(`class`: String, signal: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    _args.append(signal)
-    val _ret = __method_bind.classHasSignal.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`class`))
+    _args.add(Variant.fromAny(signal))
+    val _ret = __method_bind.classHasSignal.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -131,11 +131,11 @@ open class _ClassDB(
     property: String,
     value: Variant
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(property)
-    _args.append(value)
-    val _ret = __method_bind.classSetProperty.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    val _ret = __method_bind.classSetProperty.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -146,33 +146,33 @@ open class _ClassDB(
 
   fun getInheritersFromClass(`class`: String): PoolStringArray {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.getInheritersFromClass.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getInheritersFromClass.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
   fun getParentClass(`class`: String): String {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.getParentClass.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParentClass.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun instance(`class`: String): Variant {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.instance.call(this._handle, _arg, 1)
+    val _ret = __method_bind.instance.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun isClassEnabled(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.isClassEnabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isClassEnabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isParentClass(`class`: String, inherits: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    _args.append(inherits)
-    val _ret = __method_bind.isParentClass.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`class`))
+    _args.add(Variant.fromAny(inherits))
+    val _ret = __method_bind.isParentClass.call(this._handle, _args)
     return _ret.asBoolean()
   }
 

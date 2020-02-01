@@ -265,7 +265,7 @@ open class Camera2D(
 
   fun getDragMargin(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.getDragMargin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDragMargin.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -281,7 +281,7 @@ open class Camera2D(
 
   fun getLimit(margin: Int): Int {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.getLimit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getLimit.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -360,96 +360,96 @@ open class Camera2D(
 
   fun setAnchorMode(anchorMode: Int) {
     val _arg = Variant.new(anchorMode)
-    __method_bind.setAnchorMode.call(this._handle, _arg, 1)
+    __method_bind.setAnchorMode.call(this._handle, listOf(_arg))
   }
 
   fun setCustomViewport(viewport: Node) {
     val _arg = Variant.new(viewport)
-    __method_bind.setCustomViewport.call(this._handle, _arg, 1)
+    __method_bind.setCustomViewport.call(this._handle, listOf(_arg))
   }
 
   fun setDragMargin(margin: Int, dragMargin: Float) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    _args.append(dragMargin)
-    __method_bind.setDragMargin.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(margin))
+    _args.add(Variant.fromAny(dragMargin))
+    __method_bind.setDragMargin.call(this._handle, _args)
   }
 
   fun setEnableFollowSmoothing(followSmoothing: Boolean) {
     val _arg = Variant.new(followSmoothing)
-    __method_bind.setEnableFollowSmoothing.call(this._handle, _arg, 1)
+    __method_bind.setEnableFollowSmoothing.call(this._handle, listOf(_arg))
   }
 
   fun setFollowSmoothing(followSmoothing: Float) {
     val _arg = Variant.new(followSmoothing)
-    __method_bind.setFollowSmoothing.call(this._handle, _arg, 1)
+    __method_bind.setFollowSmoothing.call(this._handle, listOf(_arg))
   }
 
   fun setHDragEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setHDragEnabled.call(this._handle, _arg, 1)
+    __method_bind.setHDragEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setHOffset(ofs: Float) {
     val _arg = Variant.new(ofs)
-    __method_bind.setHOffset.call(this._handle, _arg, 1)
+    __method_bind.setHOffset.call(this._handle, listOf(_arg))
   }
 
   fun setLimit(margin: Int, limit: Int) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    _args.append(limit)
-    __method_bind.setLimit.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(margin))
+    _args.add(Variant.fromAny(limit))
+    __method_bind.setLimit.call(this._handle, _args)
   }
 
   fun setLimitDrawingEnabled(limitDrawingEnabled: Boolean) {
     val _arg = Variant.new(limitDrawingEnabled)
-    __method_bind.setLimitDrawingEnabled.call(this._handle, _arg, 1)
+    __method_bind.setLimitDrawingEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setLimitSmoothingEnabled(limitSmoothingEnabled: Boolean) {
     val _arg = Variant.new(limitSmoothingEnabled)
-    __method_bind.setLimitSmoothingEnabled.call(this._handle, _arg, 1)
+    __method_bind.setLimitSmoothingEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setMarginDrawingEnabled(marginDrawingEnabled: Boolean) {
     val _arg = Variant.new(marginDrawingEnabled)
-    __method_bind.setMarginDrawingEnabled.call(this._handle, _arg, 1)
+    __method_bind.setMarginDrawingEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.setOffset.call(this._handle, _arg, 1)
+    __method_bind.setOffset.call(this._handle, listOf(_arg))
   }
 
   fun setProcessMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setProcessMode.call(this._handle, _arg, 1)
+    __method_bind.setProcessMode.call(this._handle, listOf(_arg))
   }
 
   fun setRotating(rotating: Boolean) {
     val _arg = Variant.new(rotating)
-    __method_bind.setRotating.call(this._handle, _arg, 1)
+    __method_bind.setRotating.call(this._handle, listOf(_arg))
   }
 
   fun setScreenDrawingEnabled(screenDrawingEnabled: Boolean) {
     val _arg = Variant.new(screenDrawingEnabled)
-    __method_bind.setScreenDrawingEnabled.call(this._handle, _arg, 1)
+    __method_bind.setScreenDrawingEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setVDragEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setVDragEnabled.call(this._handle, _arg, 1)
+    __method_bind.setVDragEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setVOffset(ofs: Float) {
     val _arg = Variant.new(ofs)
-    __method_bind.setVOffset.call(this._handle, _arg, 1)
+    __method_bind.setVOffset.call(this._handle, listOf(_arg))
   }
 
   fun setZoom(zoom: Vector2) {
     val _arg = Variant.new(zoom)
-    __method_bind.setZoom.call(this._handle, _arg, 1)
+    __method_bind.setZoom.call(this._handle, listOf(_arg))
   }
 
   enum class Camera2DProcessMode(

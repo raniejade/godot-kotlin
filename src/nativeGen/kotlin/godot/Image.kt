@@ -30,11 +30,11 @@ open class Image(
     srcRect: Rect2,
     dst: Vector2
   ) {
-    val _args = VariantArray.new()
-    _args.append(src)
-    _args.append(srcRect)
-    _args.append(dst)
-    __method_bind.blendRect.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(src))
+    _args.add(Variant.fromAny(srcRect))
+    _args.add(Variant.fromAny(dst))
+    __method_bind.blendRect.call(this._handle, _args)
   }
 
   fun blendRectMask(
@@ -43,12 +43,12 @@ open class Image(
     srcRect: Rect2,
     dst: Vector2
   ) {
-    val _args = VariantArray.new()
-    _args.append(src)
-    _args.append(mask)
-    _args.append(srcRect)
-    _args.append(dst)
-    __method_bind.blendRectMask.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(src))
+    _args.add(Variant.fromAny(mask))
+    _args.add(Variant.fromAny(srcRect))
+    _args.add(Variant.fromAny(dst))
+    __method_bind.blendRectMask.call(this._handle, _args)
   }
 
   fun blitRect(
@@ -56,11 +56,11 @@ open class Image(
     srcRect: Rect2,
     dst: Vector2
   ) {
-    val _args = VariantArray.new()
-    _args.append(src)
-    _args.append(srcRect)
-    _args.append(dst)
-    __method_bind.blitRect.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(src))
+    _args.add(Variant.fromAny(srcRect))
+    _args.add(Variant.fromAny(dst))
+    __method_bind.blitRect.call(this._handle, _args)
   }
 
   fun blitRectMask(
@@ -69,17 +69,17 @@ open class Image(
     srcRect: Rect2,
     dst: Vector2
   ) {
-    val _args = VariantArray.new()
-    _args.append(src)
-    _args.append(mask)
-    _args.append(srcRect)
-    _args.append(dst)
-    __method_bind.blitRectMask.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(src))
+    _args.add(Variant.fromAny(mask))
+    _args.add(Variant.fromAny(srcRect))
+    _args.add(Variant.fromAny(dst))
+    __method_bind.blitRectMask.call(this._handle, _args)
   }
 
   fun bumpmapToNormalmap(bumpScale: Float = 1.0f) {
     val _arg = Variant.new(bumpScale)
-    __method_bind.bumpmapToNormalmap.call(this._handle, _arg, 1)
+    __method_bind.bumpmapToNormalmap.call(this._handle, listOf(_arg))
   }
 
   fun clearMipmaps() {
@@ -91,22 +91,22 @@ open class Image(
     source: Int,
     lossyQuality: Float
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    _args.append(source)
-    _args.append(lossyQuality)
-    val _ret = __method_bind.compress.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(mode))
+    _args.add(Variant.fromAny(source))
+    _args.add(Variant.fromAny(lossyQuality))
+    val _ret = __method_bind.compress.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun convert(format: Int) {
     val _arg = Variant.new(format)
-    __method_bind.convert.call(this._handle, _arg, 1)
+    __method_bind.convert.call(this._handle, listOf(_arg))
   }
 
   fun copyFrom(src: Image) {
     val _arg = Variant.new(src)
-    __method_bind.copyFrom.call(this._handle, _arg, 1)
+    __method_bind.copyFrom.call(this._handle, listOf(_arg))
   }
 
   fun create(
@@ -115,12 +115,12 @@ open class Image(
     useMipmaps: Boolean,
     format: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    _args.append(height)
-    _args.append(useMipmaps)
-    _args.append(format)
-    __method_bind.create.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(height))
+    _args.add(Variant.fromAny(useMipmaps))
+    _args.add(Variant.fromAny(format))
+    __method_bind.create.call(this._handle, _args)
   }
 
   fun createFromData(
@@ -130,20 +130,20 @@ open class Image(
     format: Int,
     data: PoolByteArray
   ) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    _args.append(height)
-    _args.append(useMipmaps)
-    _args.append(format)
-    _args.append(data)
-    __method_bind.createFromData.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(height))
+    _args.add(Variant.fromAny(useMipmaps))
+    _args.add(Variant.fromAny(format))
+    _args.add(Variant.fromAny(data))
+    __method_bind.createFromData.call(this._handle, _args)
   }
 
   fun crop(width: Int, height: Int) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    _args.append(height)
-    __method_bind.crop.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(height))
+    __method_bind.crop.call(this._handle, _args)
   }
 
   fun decompress(): GDError {
@@ -162,7 +162,7 @@ open class Image(
 
   fun fill(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.fill.call(this._handle, _arg, 1)
+    __method_bind.fill.call(this._handle, listOf(_arg))
   }
 
   fun fixAlphaEdges() {
@@ -179,7 +179,7 @@ open class Image(
 
   fun generateMipmaps(renormalize: Boolean = false): GDError {
     val _arg = Variant.new(renormalize)
-    val _ret = __method_bind.generateMipmaps.call(this._handle, _arg, 1)
+    val _ret = __method_bind.generateMipmaps.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
@@ -200,27 +200,27 @@ open class Image(
 
   fun getMipmapOffset(mipmap: Int): Int {
     val _arg = Variant.new(mipmap)
-    val _ret = __method_bind.getMipmapOffset.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getMipmapOffset.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getPixel(x: Int, y: Int): Color {
-    val _args = VariantArray.new()
-    _args.append(x)
-    _args.append(y)
-    val _ret = __method_bind.getPixel.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(x))
+    _args.add(Variant.fromAny(y))
+    val _ret = __method_bind.getPixel.call(this._handle, _args)
     return _ret.asColor()
   }
 
   fun getPixelv(src: Vector2): Color {
     val _arg = Variant.new(src)
-    val _ret = __method_bind.getPixelv.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPixelv.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getRect(rect: Rect2): Image {
     val _arg = Variant.new(rect)
-    val _ret = __method_bind.getRect.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getRect.call(this._handle, listOf(_arg))
     return _ret.asObject(::Image)!!
   }
 
@@ -261,25 +261,25 @@ open class Image(
 
   fun load(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.load.call(this._handle, _arg, 1)
+    val _ret = __method_bind.load.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun loadJpgFromBuffer(buffer: PoolByteArray): GDError {
     val _arg = Variant.new(buffer)
-    val _ret = __method_bind.loadJpgFromBuffer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.loadJpgFromBuffer.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun loadPngFromBuffer(buffer: PoolByteArray): GDError {
     val _arg = Variant.new(buffer)
-    val _ret = __method_bind.loadPngFromBuffer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.loadPngFromBuffer.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun loadWebpFromBuffer(buffer: PoolByteArray): GDError {
     val _arg = Variant.new(buffer)
-    val _ret = __method_bind.loadWebpFromBuffer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.loadWebpFromBuffer.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
@@ -300,16 +300,16 @@ open class Image(
     height: Int,
     interpolation: Int = 1
   ) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    _args.append(height)
-    _args.append(interpolation)
-    __method_bind.resize.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(height))
+    _args.add(Variant.fromAny(interpolation))
+    __method_bind.resize.call(this._handle, _args)
   }
 
   fun resizeToPo2(square: Boolean = false) {
     val _arg = Variant.new(square)
-    __method_bind.resizeToPo2.call(this._handle, _arg, 1)
+    __method_bind.resizeToPo2.call(this._handle, listOf(_arg))
   }
 
   fun rgbeToSrgb(): Image {
@@ -318,16 +318,16 @@ open class Image(
   }
 
   fun saveExr(path: String, grayscale: Boolean = false): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(grayscale)
-    val _ret = __method_bind.saveExr.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(grayscale))
+    val _ret = __method_bind.saveExr.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun savePng(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.savePng.call(this._handle, _arg, 1)
+    val _ret = __method_bind.savePng.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
@@ -336,18 +336,18 @@ open class Image(
     y: Int,
     color: Color
   ) {
-    val _args = VariantArray.new()
-    _args.append(x)
-    _args.append(y)
-    _args.append(color)
-    __method_bind.setPixel.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(x))
+    _args.add(Variant.fromAny(y))
+    _args.add(Variant.fromAny(color))
+    __method_bind.setPixel.call(this._handle, _args)
   }
 
   fun setPixelv(dst: Vector2, color: Color) {
-    val _args = VariantArray.new()
-    _args.append(dst)
-    _args.append(color)
-    __method_bind.setPixelv.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(dst))
+    _args.add(Variant.fromAny(color))
+    __method_bind.setPixelv.call(this._handle, _args)
   }
 
   fun shrinkX2() {

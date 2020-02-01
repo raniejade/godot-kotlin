@@ -37,12 +37,12 @@ open class LightOccluder2D(
 
   fun setOccluderLightMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.setOccluderLightMask.call(this._handle, _arg, 1)
+    __method_bind.setOccluderLightMask.call(this._handle, listOf(_arg))
   }
 
   fun setOccluderPolygon(polygon: OccluderPolygon2D) {
     val _arg = Variant.new(polygon)
-    __method_bind.setOccluderPolygon.call(this._handle, _arg, 1)
+    __method_bind.setOccluderPolygon.call(this._handle, listOf(_arg))
   }
 
   companion object {

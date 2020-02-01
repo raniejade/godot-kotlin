@@ -61,10 +61,10 @@ open class OpenSimplexNoise(
     }
 
   fun getImage(width: Int, height: Int): Image {
-    val _args = VariantArray.new()
-    _args.append(width)
-    _args.append(height)
-    val _ret = __method_bind.getImage.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(height))
+    val _ret = __method_bind.getImage.call(this._handle, _args)
     return _ret.asObject(::Image)!!
   }
 
@@ -75,21 +75,21 @@ open class OpenSimplexNoise(
 
   fun getNoise1d(x: Float): Float {
     val _arg = Variant.new(x)
-    val _ret = __method_bind.getNoise1d.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNoise1d.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getNoise2d(x: Float, y: Float): Float {
-    val _args = VariantArray.new()
-    _args.append(x)
-    _args.append(y)
-    val _ret = __method_bind.getNoise2d.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(x))
+    _args.add(Variant.fromAny(y))
+    val _ret = __method_bind.getNoise2d.call(this._handle, _args)
     return _ret.asFloat()
   }
 
   fun getNoise2dv(pos: Vector2): Float {
     val _arg = Variant.new(pos)
-    val _ret = __method_bind.getNoise2dv.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNoise2dv.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -98,17 +98,17 @@ open class OpenSimplexNoise(
     y: Float,
     z: Float
   ): Float {
-    val _args = VariantArray.new()
-    _args.append(x)
-    _args.append(y)
-    _args.append(z)
-    val _ret = __method_bind.getNoise3d.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(x))
+    _args.add(Variant.fromAny(y))
+    _args.add(Variant.fromAny(z))
+    val _ret = __method_bind.getNoise3d.call(this._handle, _args)
     return _ret.asFloat()
   }
 
   fun getNoise3dv(pos: Vector3): Float {
     val _arg = Variant.new(pos)
-    val _ret = __method_bind.getNoise3dv.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNoise3dv.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -118,12 +118,12 @@ open class OpenSimplexNoise(
     z: Float,
     w: Float
   ): Float {
-    val _args = VariantArray.new()
-    _args.append(x)
-    _args.append(y)
-    _args.append(z)
-    _args.append(w)
-    val _ret = __method_bind.getNoise4d.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(x))
+    _args.add(Variant.fromAny(y))
+    _args.add(Variant.fromAny(z))
+    _args.add(Variant.fromAny(w))
+    val _ret = __method_bind.getNoise4d.call(this._handle, _args)
     return _ret.asFloat()
   }
 
@@ -144,7 +144,7 @@ open class OpenSimplexNoise(
 
   fun getSeamlessImage(size: Int): Image {
     val _arg = Variant.new(size)
-    val _ret = __method_bind.getSeamlessImage.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSeamlessImage.call(this._handle, listOf(_arg))
     return _ret.asObject(::Image)!!
   }
 
@@ -155,27 +155,27 @@ open class OpenSimplexNoise(
 
   fun setLacunarity(lacunarity: Float) {
     val _arg = Variant.new(lacunarity)
-    __method_bind.setLacunarity.call(this._handle, _arg, 1)
+    __method_bind.setLacunarity.call(this._handle, listOf(_arg))
   }
 
   fun setOctaves(octaveCount: Int) {
     val _arg = Variant.new(octaveCount)
-    __method_bind.setOctaves.call(this._handle, _arg, 1)
+    __method_bind.setOctaves.call(this._handle, listOf(_arg))
   }
 
   fun setPeriod(period: Float) {
     val _arg = Variant.new(period)
-    __method_bind.setPeriod.call(this._handle, _arg, 1)
+    __method_bind.setPeriod.call(this._handle, listOf(_arg))
   }
 
   fun setPersistence(persistence: Float) {
     val _arg = Variant.new(persistence)
-    __method_bind.setPersistence.call(this._handle, _arg, 1)
+    __method_bind.setPersistence.call(this._handle, listOf(_arg))
   }
 
   fun setSeed(seed: Int) {
     val _arg = Variant.new(seed)
-    __method_bind.setSeed.call(this._handle, _arg, 1)
+    __method_bind.setSeed.call(this._handle, listOf(_arg))
   }
 
   companion object {

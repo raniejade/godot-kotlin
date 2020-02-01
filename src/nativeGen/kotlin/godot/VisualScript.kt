@@ -23,12 +23,12 @@ open class VisualScript(
 ) : Script(_handle) {
   fun addCustomSignal(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.addCustomSignal.call(this._handle, _arg, 1)
+    __method_bind.addCustomSignal.call(this._handle, listOf(_arg))
   }
 
   fun addFunction(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.addFunction.call(this._handle, _arg, 1)
+    __method_bind.addFunction.call(this._handle, listOf(_arg))
   }
 
   fun addNode(
@@ -37,12 +37,12 @@ open class VisualScript(
     node: VisualScriptNode,
     position: Vector2 = Vector2.new(0, 0)
   ) {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(id)
-    _args.append(node)
-    _args.append(position)
-    __method_bind.addNode.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(node))
+    _args.add(Variant.fromAny(position))
+    __method_bind.addNode.call(this._handle, _args)
   }
 
   fun addVariable(
@@ -50,11 +50,11 @@ open class VisualScript(
     defaultValue: Variant,
     export: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(defaultValue)
-    _args.append(export)
-    __method_bind.addVariable.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(defaultValue))
+    _args.add(Variant.fromAny(export))
+    __method_bind.addVariable.call(this._handle, _args)
   }
 
   fun customSignalAddArgument(
@@ -63,41 +63,41 @@ open class VisualScript(
     argname: String,
     index: Int = -1
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    _args.append(argname)
-    _args.append(index)
-    __method_bind.customSignalAddArgument.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(argname))
+    _args.add(Variant.fromAny(index))
+    __method_bind.customSignalAddArgument.call(this._handle, _args)
   }
 
   fun customSignalGetArgumentCount(name: String): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.customSignalGetArgumentCount.call(this._handle, _arg, 1)
+    val _ret = __method_bind.customSignalGetArgumentCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun customSignalGetArgumentName(name: String, argidx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(argidx)
-    val _ret = __method_bind.customSignalGetArgumentName.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(argidx))
+    val _ret = __method_bind.customSignalGetArgumentName.call(this._handle, _args)
     return _ret.asString()
   }
 
   fun customSignalGetArgumentType(name: String, argidx: Int): Variant.Type {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(argidx)
-    val _ret = __method_bind.customSignalGetArgumentType.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(argidx))
+    val _ret = __method_bind.customSignalGetArgumentType.call(this._handle, _args)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun customSignalRemoveArgument(name: String, argidx: Int) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(argidx)
-    __method_bind.customSignalRemoveArgument.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(argidx))
+    __method_bind.customSignalRemoveArgument.call(this._handle, _args)
   }
 
   fun customSignalSetArgumentName(
@@ -105,11 +105,11 @@ open class VisualScript(
     argidx: Int,
     argname: String
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(argidx)
-    _args.append(argname)
-    __method_bind.customSignalSetArgumentName.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(argidx))
+    _args.add(Variant.fromAny(argname))
+    __method_bind.customSignalSetArgumentName.call(this._handle, _args)
   }
 
   fun customSignalSetArgumentType(
@@ -117,11 +117,11 @@ open class VisualScript(
     argidx: Int,
     type: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(argidx)
-    _args.append(type)
-    __method_bind.customSignalSetArgumentType.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(argidx))
+    _args.add(Variant.fromAny(type))
+    __method_bind.customSignalSetArgumentType.call(this._handle, _args)
   }
 
   fun customSignalSwapArgument(
@@ -129,11 +129,11 @@ open class VisualScript(
     argidx: Int,
     withidx: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(argidx)
-    _args.append(withidx)
-    __method_bind.customSignalSwapArgument.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(argidx))
+    _args.add(Variant.fromAny(withidx))
+    __method_bind.customSignalSwapArgument.call(this._handle, _args)
   }
 
   fun dataConnect(
@@ -143,13 +143,13 @@ open class VisualScript(
     toNode: Int,
     toPort: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(fromNode)
-    _args.append(fromPort)
-    _args.append(toNode)
-    _args.append(toPort)
-    __method_bind.dataConnect.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(toNode))
+    _args.add(Variant.fromAny(toPort))
+    __method_bind.dataConnect.call(this._handle, _args)
   }
 
   fun dataDisconnect(
@@ -159,64 +159,64 @@ open class VisualScript(
     toNode: Int,
     toPort: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(fromNode)
-    _args.append(fromPort)
-    _args.append(toNode)
-    _args.append(toPort)
-    __method_bind.dataDisconnect.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(toNode))
+    _args.add(Variant.fromAny(toPort))
+    __method_bind.dataDisconnect.call(this._handle, _args)
   }
 
   fun getFunctionNodeId(name: String): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getFunctionNodeId.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFunctionNodeId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getFunctionScroll(name: String): Vector2 {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getFunctionScroll.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFunctionScroll.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getNode(func: String, id: Int): VisualScriptNode {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(id)
-    val _ret = __method_bind.getNode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(id))
+    val _ret = __method_bind.getNode.call(this._handle, _args)
     return _ret.asObject(::VisualScriptNode)!!
   }
 
   fun getNodePosition(func: String, id: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(id)
-    val _ret = __method_bind.getNodePosition.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(id))
+    val _ret = __method_bind.getNodePosition.call(this._handle, _args)
     return _ret.asVector2()
   }
 
   fun getVariableDefaultValue(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getVariableDefaultValue.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVariableDefaultValue.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getVariableExport(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getVariableExport.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVariableExport.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getVariableInfo(name: String): Dictionary {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getVariableInfo.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVariableInfo.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
 
   fun hasCustomSignal(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasCustomSignal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasCustomSignal.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -227,27 +227,27 @@ open class VisualScript(
     toNode: Int,
     toPort: Int
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(fromNode)
-    _args.append(fromPort)
-    _args.append(toNode)
-    _args.append(toPort)
-    val _ret = __method_bind.hasDataConnection.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(toNode))
+    _args.add(Variant.fromAny(toPort))
+    val _ret = __method_bind.hasDataConnection.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun hasFunction(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasFunction.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasFunction.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasNode(func: String, id: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(id)
-    val _ret = __method_bind.hasNode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(id))
+    val _ret = __method_bind.hasNode.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -257,62 +257,62 @@ open class VisualScript(
     fromOutput: Int,
     toNode: Int
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(fromNode)
-    _args.append(fromOutput)
-    _args.append(toNode)
-    val _ret = __method_bind.hasSequenceConnection.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromOutput))
+    _args.add(Variant.fromAny(toNode))
+    val _ret = __method_bind.hasSequenceConnection.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun hasVariable(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasVariable.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasVariable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeCustomSignal(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.removeCustomSignal.call(this._handle, _arg, 1)
+    __method_bind.removeCustomSignal.call(this._handle, listOf(_arg))
   }
 
   fun removeFunction(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.removeFunction.call(this._handle, _arg, 1)
+    __method_bind.removeFunction.call(this._handle, listOf(_arg))
   }
 
   fun removeNode(func: String, id: Int) {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(id)
-    __method_bind.removeNode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(id))
+    __method_bind.removeNode.call(this._handle, _args)
   }
 
   fun removeVariable(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.removeVariable.call(this._handle, _arg, 1)
+    __method_bind.removeVariable.call(this._handle, listOf(_arg))
   }
 
   fun renameCustomSignal(name: String, newName: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(newName)
-    __method_bind.renameCustomSignal.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(newName))
+    __method_bind.renameCustomSignal.call(this._handle, _args)
   }
 
   fun renameFunction(name: String, newName: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(newName)
-    __method_bind.renameFunction.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(newName))
+    __method_bind.renameFunction.call(this._handle, _args)
   }
 
   fun renameVariable(name: String, newName: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(newName)
-    __method_bind.renameVariable.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(newName))
+    __method_bind.renameVariable.call(this._handle, _args)
   }
 
   fun sequenceConnect(
@@ -321,12 +321,12 @@ open class VisualScript(
     fromOutput: Int,
     toNode: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(fromNode)
-    _args.append(fromOutput)
-    _args.append(toNode)
-    __method_bind.sequenceConnect.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromOutput))
+    _args.add(Variant.fromAny(toNode))
+    __method_bind.sequenceConnect.call(this._handle, _args)
   }
 
   fun sequenceDisconnect(
@@ -335,24 +335,24 @@ open class VisualScript(
     fromOutput: Int,
     toNode: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(fromNode)
-    _args.append(fromOutput)
-    _args.append(toNode)
-    __method_bind.sequenceDisconnect.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromOutput))
+    _args.add(Variant.fromAny(toNode))
+    __method_bind.sequenceDisconnect.call(this._handle, _args)
   }
 
   fun setFunctionScroll(name: String, ofs: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(ofs)
-    __method_bind.setFunctionScroll.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(ofs))
+    __method_bind.setFunctionScroll.call(this._handle, _args)
   }
 
   fun setInstanceBaseType(type: String) {
     val _arg = Variant.new(type)
-    __method_bind.setInstanceBaseType.call(this._handle, _arg, 1)
+    __method_bind.setInstanceBaseType.call(this._handle, listOf(_arg))
   }
 
   fun setNodePosition(
@@ -360,32 +360,32 @@ open class VisualScript(
     id: Int,
     position: Vector2
   ) {
-    val _args = VariantArray.new()
-    _args.append(func)
-    _args.append(id)
-    _args.append(position)
-    __method_bind.setNodePosition.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(func))
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(position))
+    __method_bind.setNodePosition.call(this._handle, _args)
   }
 
   fun setVariableDefaultValue(name: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(value)
-    __method_bind.setVariableDefaultValue.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setVariableDefaultValue.call(this._handle, _args)
   }
 
   fun setVariableExport(name: String, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(enable)
-    __method_bind.setVariableExport.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setVariableExport.call(this._handle, _args)
   }
 
   fun setVariableInfo(name: String, value: Dictionary) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(value)
-    __method_bind.setVariableInfo.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setVariableInfo.call(this._handle, _args)
   }
 
   companion object {

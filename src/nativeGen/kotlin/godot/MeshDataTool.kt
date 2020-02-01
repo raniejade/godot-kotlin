@@ -30,15 +30,15 @@ open class MeshDataTool(
 
   fun commitToSurface(mesh: ArrayMesh): GDError {
     val _arg = Variant.new(mesh)
-    val _ret = __method_bind.commitToSurface.call(this._handle, _arg, 1)
+    val _ret = __method_bind.commitToSurface.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun createFromSurface(mesh: ArrayMesh, surface: Int): GDError {
-    val _args = VariantArray.new()
-    _args.append(mesh)
-    _args.append(surface)
-    val _ret = __method_bind.createFromSurface.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(mesh))
+    _args.add(Variant.fromAny(surface))
+    val _ret = __method_bind.createFromSurface.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -49,21 +49,21 @@ open class MeshDataTool(
 
   fun getEdgeFaces(idx: Int): PoolIntArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getEdgeFaces.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getEdgeFaces.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
 
   fun getEdgeMeta(idx: Int): Variant {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getEdgeMeta.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getEdgeMeta.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getEdgeVertex(idx: Int, vertex: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(vertex)
-    val _ret = __method_bind.getEdgeVertex.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(vertex))
+    val _ret = __method_bind.getEdgeVertex.call(this._handle, _args)
     return _ret.asInt()
   }
 
@@ -73,30 +73,30 @@ open class MeshDataTool(
   }
 
   fun getFaceEdge(idx: Int, edge: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(edge)
-    val _ret = __method_bind.getFaceEdge.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(edge))
+    val _ret = __method_bind.getFaceEdge.call(this._handle, _args)
     return _ret.asInt()
   }
 
   fun getFaceMeta(idx: Int): Variant {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getFaceMeta.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFaceMeta.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getFaceNormal(idx: Int): Vector3 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getFaceNormal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFaceNormal.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun getFaceVertex(idx: Int, vertex: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(vertex)
-    val _ret = __method_bind.getFaceVertex.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(vertex))
+    val _ret = __method_bind.getFaceVertex.call(this._handle, _args)
     return _ret.asInt()
   }
 
@@ -112,19 +112,19 @@ open class MeshDataTool(
 
   fun getVertex(idx: Int): Vector3 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertex.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertex.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun getVertexBones(idx: Int): PoolIntArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertexBones.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexBones.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
 
   fun getVertexColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertexColor.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
@@ -135,132 +135,132 @@ open class MeshDataTool(
 
   fun getVertexEdges(idx: Int): PoolIntArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertexEdges.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexEdges.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
 
   fun getVertexFaces(idx: Int): PoolIntArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertexFaces.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexFaces.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
 
   fun getVertexMeta(idx: Int): Variant {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertexMeta.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexMeta.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getVertexNormal(idx: Int): Vector3 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertexNormal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexNormal.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun getVertexTangent(idx: Int): Plane {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertexTangent.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexTangent.call(this._handle, listOf(_arg))
     return _ret.asPlane()
   }
 
   fun getVertexUv(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertexUv.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexUv.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getVertexUv2(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertexUv2.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexUv2.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getVertexWeights(idx: Int): PoolRealArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getVertexWeights.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexWeights.call(this._handle, listOf(_arg))
     return _ret.asPoolRealArray()
   }
 
   fun setEdgeMeta(idx: Int, meta: Variant) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(meta)
-    __method_bind.setEdgeMeta.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(meta))
+    __method_bind.setEdgeMeta.call(this._handle, _args)
   }
 
   fun setFaceMeta(idx: Int, meta: Variant) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(meta)
-    __method_bind.setFaceMeta.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(meta))
+    __method_bind.setFaceMeta.call(this._handle, _args)
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.setMaterial.call(this._handle, _arg, 1)
+    __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setVertex(idx: Int, vertex: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(vertex)
-    __method_bind.setVertex.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(vertex))
+    __method_bind.setVertex.call(this._handle, _args)
   }
 
   fun setVertexBones(idx: Int, bones: PoolIntArray) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(bones)
-    __method_bind.setVertexBones.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(bones))
+    __method_bind.setVertexBones.call(this._handle, _args)
   }
 
   fun setVertexColor(idx: Int, color: Color) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(color)
-    __method_bind.setVertexColor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(color))
+    __method_bind.setVertexColor.call(this._handle, _args)
   }
 
   fun setVertexMeta(idx: Int, meta: Variant) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(meta)
-    __method_bind.setVertexMeta.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(meta))
+    __method_bind.setVertexMeta.call(this._handle, _args)
   }
 
   fun setVertexNormal(idx: Int, normal: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(normal)
-    __method_bind.setVertexNormal.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(normal))
+    __method_bind.setVertexNormal.call(this._handle, _args)
   }
 
   fun setVertexTangent(idx: Int, tangent: Plane) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(tangent)
-    __method_bind.setVertexTangent.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(tangent))
+    __method_bind.setVertexTangent.call(this._handle, _args)
   }
 
   fun setVertexUv(idx: Int, uv: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(uv)
-    __method_bind.setVertexUv.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(uv))
+    __method_bind.setVertexUv.call(this._handle, _args)
   }
 
   fun setVertexUv2(idx: Int, uv2: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(uv2)
-    __method_bind.setVertexUv2.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(uv2))
+    __method_bind.setVertexUv2.call(this._handle, _args)
   }
 
   fun setVertexWeights(idx: Int, weights: PoolRealArray) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(weights)
-    __method_bind.setVertexWeights.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(weights))
+    __method_bind.setVertexWeights.call(this._handle, _args)
   }
 
   companion object {

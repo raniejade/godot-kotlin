@@ -82,22 +82,22 @@ open class CubeMesh(
 
   fun setSize(size: Vector3) {
     val _arg = Variant.new(size)
-    __method_bind.setSize.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 
   fun setSubdivideDepth(divisions: Int) {
     val _arg = Variant.new(divisions)
-    __method_bind.setSubdivideDepth.call(this._handle, _arg, 1)
+    __method_bind.setSubdivideDepth.call(this._handle, listOf(_arg))
   }
 
   fun setSubdivideHeight(divisions: Int) {
     val _arg = Variant.new(divisions)
-    __method_bind.setSubdivideHeight.call(this._handle, _arg, 1)
+    __method_bind.setSubdivideHeight.call(this._handle, listOf(_arg))
   }
 
   fun setSubdivideWidth(subdivide: Int) {
     val _arg = Variant.new(subdivide)
-    __method_bind.setSubdivideWidth.call(this._handle, _arg, 1)
+    __method_bind.setSubdivideWidth.call(this._handle, listOf(_arg))
   }
 
   companion object {

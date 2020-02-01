@@ -68,15 +68,15 @@ open class VisibilityEnabler2D(
 
   fun isEnablerEnabled(enabler: Int): Boolean {
     val _arg = Variant.new(enabler)
-    val _ret = __method_bind.isEnablerEnabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isEnablerEnabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setEnabler(enabler: Int, enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabler)
-    _args.append(enabled)
-    __method_bind.setEnabler.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(enabler))
+    _args.add(Variant.fromAny(enabled))
+    __method_bind.setEnabler.call(this._handle, _args)
   }
 
   enum class Enabler(

@@ -41,19 +41,19 @@ open class Navigation(
 
   fun getClosestPoint(toPoint: Vector3): Vector3 {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.getClosestPoint.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun getClosestPointNormal(toPoint: Vector3): Vector3 {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.getClosestPointNormal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getClosestPointNormal.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun getClosestPointOwner(toPoint: Vector3): Object {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.getClosestPointOwner.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getClosestPointOwner.call(this._handle, listOf(_arg))
     return _ret.asObject(::Object)!!
   }
 
@@ -62,11 +62,11 @@ open class Navigation(
     end: Vector3,
     useCollision: Boolean = false
   ): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(start)
-    _args.append(end)
-    _args.append(useCollision)
-    val _ret = __method_bind.getClosestPointToSegment.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(start))
+    _args.add(Variant.fromAny(end))
+    _args.add(Variant.fromAny(useCollision))
+    val _ret = __method_bind.getClosestPointToSegment.call(this._handle, _args)
     return _ret.asVector3()
   }
 
@@ -75,11 +75,11 @@ open class Navigation(
     end: Vector3,
     optimize: Boolean = true
   ): PoolVector3Array {
-    val _args = VariantArray.new()
-    _args.append(start)
-    _args.append(end)
-    _args.append(optimize)
-    val _ret = __method_bind.getSimplePath.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(start))
+    _args.add(Variant.fromAny(end))
+    _args.add(Variant.fromAny(optimize))
+    val _ret = __method_bind.getSimplePath.call(this._handle, _args)
     return _ret.asPoolVector3Array()
   }
 
@@ -93,29 +93,29 @@ open class Navigation(
     xform: Transform,
     owner: Object
   ): Int {
-    val _args = VariantArray.new()
-    _args.append(mesh)
-    _args.append(xform)
-    _args.append(owner)
-    val _ret = __method_bind.navmeshAdd.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(mesh))
+    _args.add(Variant.fromAny(xform))
+    _args.add(Variant.fromAny(owner))
+    val _ret = __method_bind.navmeshAdd.call(this._handle, _args)
     return _ret.asInt()
   }
 
   fun navmeshRemove(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.navmeshRemove.call(this._handle, _arg, 1)
+    __method_bind.navmeshRemove.call(this._handle, listOf(_arg))
   }
 
   fun navmeshSetTransform(id: Int, xform: Transform) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(xform)
-    __method_bind.navmeshSetTransform.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(xform))
+    __method_bind.navmeshSetTransform.call(this._handle, _args)
   }
 
   fun setUpVector(up: Vector3) {
     val _arg = Variant.new(up)
-    __method_bind.setUpVector.call(this._handle, _arg, 1)
+    __method_bind.setUpVector.call(this._handle, listOf(_arg))
   }
 
   companion object {

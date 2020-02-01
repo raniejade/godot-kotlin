@@ -37,12 +37,12 @@ open class MenuButton(
 
   fun setDisableShortcuts(disabled: Boolean) {
     val _arg = Variant.new(disabled)
-    __method_bind.setDisableShortcuts.call(this._handle, _arg, 1)
+    __method_bind.setDisableShortcuts.call(this._handle, listOf(_arg))
   }
 
   fun setSwitchOnHover(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setSwitchOnHover.call(this._handle, _arg, 1)
+    __method_bind.setSwitchOnHover.call(this._handle, listOf(_arg))
   }
 
   companion object {

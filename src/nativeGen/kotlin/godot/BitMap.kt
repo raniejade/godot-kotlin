@@ -23,19 +23,19 @@ open class BitMap(
 ) : Resource(_handle) {
   fun create(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.create.call(this._handle, _arg, 1)
+    __method_bind.create.call(this._handle, listOf(_arg))
   }
 
   fun createFromImageAlpha(image: Image, threshold: Float = 0.1f) {
-    val _args = VariantArray.new()
-    _args.append(image)
-    _args.append(threshold)
-    __method_bind.createFromImageAlpha.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(image))
+    _args.add(Variant.fromAny(threshold))
+    __method_bind.createFromImageAlpha.call(this._handle, _args)
   }
 
   fun getBit(position: Vector2): Boolean {
     val _arg = Variant.new(position)
-    val _ret = __method_bind.getBit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -50,32 +50,32 @@ open class BitMap(
   }
 
   fun growMask(pixels: Int, rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(pixels)
-    _args.append(rect)
-    __method_bind.growMask.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(pixels))
+    _args.add(Variant.fromAny(rect))
+    __method_bind.growMask.call(this._handle, _args)
   }
 
   fun opaqueToPolygons(rect: Rect2, epsilon: Float = 2.0f): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    _args.append(epsilon)
-    val _ret = __method_bind.opaqueToPolygons.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(rect))
+    _args.add(Variant.fromAny(epsilon))
+    val _ret = __method_bind.opaqueToPolygons.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun setBit(position: Vector2, bit: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    _args.append(bit)
-    __method_bind.setBit.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(bit))
+    __method_bind.setBit.call(this._handle, _args)
   }
 
   fun setBitRect(rect: Rect2, bit: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    _args.append(bit)
-    __method_bind.setBitRect.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(rect))
+    _args.add(Variant.fromAny(bit))
+    __method_bind.setBitRect.call(this._handle, _args)
   }
 
   companion object {

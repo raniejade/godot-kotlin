@@ -24,32 +24,32 @@ open class Object(
   internal val _handle: COpaquePointer
 ) {
   fun addUserSignal(signal: String, arguments: VariantArray) {
-    val _args = VariantArray.new()
-    _args.append(signal)
-    _args.append(arguments)
-    __method_bind.addUserSignal.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(signal))
+    _args.add(Variant.fromAny(arguments))
+    __method_bind.addUserSignal.call(this._handle, _args)
   }
 
   fun call(method: String, vararg varargs: Any?): Variant {
-    val _args = VariantArray.new()
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    val _ret = __method_bind.call.call(this._handle, _args.toVariant(), 1 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.call.call(this._handle, _args)
     return _ret
   }
 
   fun callDeferred(method: String, vararg varargs: Any?) {
-    val _args = VariantArray.new()
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    __method_bind.callDeferred.call(this._handle, _args.toVariant(), 1 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    __method_bind.callDeferred.call(this._handle, _args)
   }
 
   fun callv(method: String, argArray: VariantArray): Variant {
-    val _args = VariantArray.new()
-    _args.append(method)
-    _args.append(argArray)
-    val _ret = __method_bind.callv.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(argArray))
+    val _ret = __method_bind.callv.call(this._handle, _args)
     return _ret
   }
 
@@ -65,13 +65,13 @@ open class Object(
     binds: VariantArray,
     flags: Int = 0
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(signal)
-    _args.append(target)
-    _args.append(method)
-    _args.append(binds)
-    _args.append(flags)
-    val _ret = __method_bind.connect.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(signal))
+    _args.add(Variant.fromAny(target))
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(binds))
+    _args.add(Variant.fromAny(flags))
+    val _ret = __method_bind.connect.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -80,23 +80,23 @@ open class Object(
     target: Object,
     method: String
   ) {
-    val _args = VariantArray.new()
-    _args.append(signal)
-    _args.append(target)
-    _args.append(method)
-    __method_bind.disconnect.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(signal))
+    _args.add(Variant.fromAny(target))
+    _args.add(Variant.fromAny(method))
+    __method_bind.disconnect.call(this._handle, _args)
   }
 
   fun emitSignal(signal: String, vararg varargs: Any?) {
-    val _args = VariantArray.new()
-    _args.append(signal)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    __method_bind.emitSignal.call(this._handle, _args.toVariant(), 1 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(signal))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    __method_bind.emitSignal.call(this._handle, _args)
   }
 
   fun get(property: String): Variant {
     val _arg = Variant.new(property)
-    val _ret = __method_bind.get.call(this._handle, _arg, 1)
+    val _ret = __method_bind.get.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -112,7 +112,7 @@ open class Object(
 
   fun getIndexed(property: NodePath): Variant {
     val _arg = Variant.new(property)
-    val _ret = __method_bind.getIndexed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getIndexed.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -123,7 +123,7 @@ open class Object(
 
   fun getMeta(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getMeta.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getMeta.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -149,7 +149,7 @@ open class Object(
 
   fun getSignalConnectionList(signal: String): VariantArray {
     val _arg = Variant.new(signal)
-    val _ret = __method_bind.getSignalConnectionList.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSignalConnectionList.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
@@ -160,19 +160,19 @@ open class Object(
 
   fun hasMeta(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasMeta.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasMeta.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasMethod(method: String): Boolean {
     val _arg = Variant.new(method)
-    val _ret = __method_bind.hasMethod.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasMethod.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasUserSignal(signal: String): Boolean {
     val _arg = Variant.new(signal)
-    val _ret = __method_bind.hasUserSignal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasUserSignal.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -183,7 +183,7 @@ open class Object(
 
   fun isClass(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.isClass.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isClass.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -192,11 +192,11 @@ open class Object(
     target: Object,
     method: String
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(signal)
-    _args.append(target)
-    _args.append(method)
-    val _ret = __method_bind.isConnected.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(signal))
+    _args.add(Variant.fromAny(target))
+    _args.add(Variant.fromAny(method))
+    val _ret = __method_bind.isConnected.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -206,10 +206,10 @@ open class Object(
   }
 
   fun notification(what: Int, reversed: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(what)
-    _args.append(reversed)
-    __method_bind.notification.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(what))
+    _args.add(Variant.fromAny(reversed))
+    __method_bind.notification.call(this._handle, _args)
   }
 
   fun propertyListChangedNotify() {
@@ -218,50 +218,50 @@ open class Object(
 
   fun removeMeta(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.removeMeta.call(this._handle, _arg, 1)
+    __method_bind.removeMeta.call(this._handle, listOf(_arg))
   }
 
   fun set(property: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(property)
-    _args.append(value)
-    __method_bind.set.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.set.call(this._handle, _args)
   }
 
   fun setBlockSignals(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setBlockSignals.call(this._handle, _arg, 1)
+    __method_bind.setBlockSignals.call(this._handle, listOf(_arg))
   }
 
   fun setDeferred(property: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(property)
-    _args.append(value)
-    __method_bind.setDeferred.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setDeferred.call(this._handle, _args)
   }
 
   fun setIndexed(property: NodePath, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(property)
-    _args.append(value)
-    __method_bind.setIndexed.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setIndexed.call(this._handle, _args)
   }
 
   fun setMessageTranslation(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setMessageTranslation.call(this._handle, _arg, 1)
+    __method_bind.setMessageTranslation.call(this._handle, listOf(_arg))
   }
 
   fun setMeta(name: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(value)
-    __method_bind.setMeta.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setMeta.call(this._handle, _args)
   }
 
   fun setScript(script: Reference) {
     val _arg = Variant.new(script)
-    __method_bind.setScript.call(this._handle, _arg, 1)
+    __method_bind.setScript.call(this._handle, listOf(_arg))
   }
 
   override fun toString(): String {
@@ -271,7 +271,7 @@ open class Object(
 
   fun tr(message: String): String {
     val _arg = Variant.new(message)
-    val _ret = __method_bind.tr.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tr.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 

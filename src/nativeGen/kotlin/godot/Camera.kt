@@ -139,7 +139,7 @@ open class Camera(
 
   fun clearCurrent(enableNext: Boolean = true) {
     val _arg = Variant.new(enableNext)
-    __method_bind.clearCurrent.call(this._handle, _arg, 1)
+    __method_bind.clearCurrent.call(this._handle, listOf(_arg))
   }
 
   fun getCameraRid(): RID {
@@ -159,7 +159,7 @@ open class Camera(
 
   fun getCullMaskBit(layer: Int): Boolean {
     val _arg = Variant.new(layer)
-    val _ret = __method_bind.getCullMaskBit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCullMaskBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -230,7 +230,7 @@ open class Camera(
 
   fun isPositionBehind(worldPoint: Vector3): Boolean {
     val _arg = Variant.new(worldPoint)
-    val _ret = __method_bind.isPositionBehind.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isPositionBehind.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -240,60 +240,60 @@ open class Camera(
 
   fun projectLocalRayNormal(screenPoint: Vector2): Vector3 {
     val _arg = Variant.new(screenPoint)
-    val _ret = __method_bind.projectLocalRayNormal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.projectLocalRayNormal.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun projectPosition(screenPoint: Vector2, zDepth: Float): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(screenPoint)
-    _args.append(zDepth)
-    val _ret = __method_bind.projectPosition.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(screenPoint))
+    _args.add(Variant.fromAny(zDepth))
+    val _ret = __method_bind.projectPosition.call(this._handle, _args)
     return _ret.asVector3()
   }
 
   fun projectRayNormal(screenPoint: Vector2): Vector3 {
     val _arg = Variant.new(screenPoint)
-    val _ret = __method_bind.projectRayNormal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.projectRayNormal.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun projectRayOrigin(screenPoint: Vector2): Vector3 {
     val _arg = Variant.new(screenPoint)
-    val _ret = __method_bind.projectRayOrigin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.projectRayOrigin.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun setCullMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.setCullMask.call(this._handle, _arg, 1)
+    __method_bind.setCullMask.call(this._handle, listOf(_arg))
   }
 
   fun setCullMaskBit(layer: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    _args.append(enable)
-    __method_bind.setCullMaskBit.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(layer))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setCullMaskBit.call(this._handle, _args)
   }
 
   fun setCurrent(arg0: Boolean) {
     val _arg = Variant.new(arg0)
-    __method_bind.setCurrent.call(this._handle, _arg, 1)
+    __method_bind.setCurrent.call(this._handle, listOf(_arg))
   }
 
   fun setDopplerTracking(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setDopplerTracking.call(this._handle, _arg, 1)
+    __method_bind.setDopplerTracking.call(this._handle, listOf(_arg))
   }
 
   fun setEnvironment(env: Environment) {
     val _arg = Variant.new(env)
-    __method_bind.setEnvironment.call(this._handle, _arg, 1)
+    __method_bind.setEnvironment.call(this._handle, listOf(_arg))
   }
 
   fun setFov(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.setFov.call(this._handle, _arg, 1)
+    __method_bind.setFov.call(this._handle, listOf(_arg))
   }
 
   fun setFrustum(
@@ -302,27 +302,27 @@ open class Camera(
     zNear: Float,
     zFar: Float
   ) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    _args.append(offset)
-    _args.append(zNear)
-    _args.append(zFar)
-    __method_bind.setFrustum.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(size))
+    _args.add(Variant.fromAny(offset))
+    _args.add(Variant.fromAny(zNear))
+    _args.add(Variant.fromAny(zFar))
+    __method_bind.setFrustum.call(this._handle, _args)
   }
 
   fun setFrustumOffset(arg0: Vector2) {
     val _arg = Variant.new(arg0)
-    __method_bind.setFrustumOffset.call(this._handle, _arg, 1)
+    __method_bind.setFrustumOffset.call(this._handle, listOf(_arg))
   }
 
   fun setHOffset(ofs: Float) {
     val _arg = Variant.new(ofs)
-    __method_bind.setHOffset.call(this._handle, _arg, 1)
+    __method_bind.setHOffset.call(this._handle, listOf(_arg))
   }
 
   fun setKeepAspectMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setKeepAspectMode.call(this._handle, _arg, 1)
+    __method_bind.setKeepAspectMode.call(this._handle, listOf(_arg))
   }
 
   fun setOrthogonal(
@@ -330,11 +330,11 @@ open class Camera(
     zNear: Float,
     zFar: Float
   ) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    _args.append(zNear)
-    _args.append(zFar)
-    __method_bind.setOrthogonal.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(size))
+    _args.add(Variant.fromAny(zNear))
+    _args.add(Variant.fromAny(zFar))
+    __method_bind.setOrthogonal.call(this._handle, _args)
   }
 
   fun setPerspective(
@@ -342,41 +342,41 @@ open class Camera(
     zNear: Float,
     zFar: Float
   ) {
-    val _args = VariantArray.new()
-    _args.append(fov)
-    _args.append(zNear)
-    _args.append(zFar)
-    __method_bind.setPerspective.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fov))
+    _args.add(Variant.fromAny(zNear))
+    _args.add(Variant.fromAny(zFar))
+    __method_bind.setPerspective.call(this._handle, _args)
   }
 
   fun setProjection(arg0: Int) {
     val _arg = Variant.new(arg0)
-    __method_bind.setProjection.call(this._handle, _arg, 1)
+    __method_bind.setProjection.call(this._handle, listOf(_arg))
   }
 
   fun setSize(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.setSize.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 
   fun setVOffset(ofs: Float) {
     val _arg = Variant.new(ofs)
-    __method_bind.setVOffset.call(this._handle, _arg, 1)
+    __method_bind.setVOffset.call(this._handle, listOf(_arg))
   }
 
   fun setZfar(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.setZfar.call(this._handle, _arg, 1)
+    __method_bind.setZfar.call(this._handle, listOf(_arg))
   }
 
   fun setZnear(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.setZnear.call(this._handle, _arg, 1)
+    __method_bind.setZnear.call(this._handle, listOf(_arg))
   }
 
   fun unprojectPosition(worldPoint: Vector3): Vector2 {
     val _arg = Variant.new(worldPoint)
-    val _ret = __method_bind.unprojectPosition.call(this._handle, _arg, 1)
+    val _ret = __method_bind.unprojectPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 

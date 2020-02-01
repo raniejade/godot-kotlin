@@ -37,18 +37,18 @@ open class RandomNumberGenerator(
   }
 
   fun randfRange(from: Float, to: Float): Float {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    val _ret = __method_bind.randfRange.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    val _ret = __method_bind.randfRange.call(this._handle, _args)
     return _ret.asFloat()
   }
 
   fun randfn(mean: Float = 0.0f, deviation: Float = 1.0f): Float {
-    val _args = VariantArray.new()
-    _args.append(mean)
-    _args.append(deviation)
-    val _ret = __method_bind.randfn.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(mean))
+    _args.add(Variant.fromAny(deviation))
+    val _ret = __method_bind.randfn.call(this._handle, _args)
     return _ret.asFloat()
   }
 
@@ -58,10 +58,10 @@ open class RandomNumberGenerator(
   }
 
   fun randiRange(from: Int, to: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    val _ret = __method_bind.randiRange.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    val _ret = __method_bind.randiRange.call(this._handle, _args)
     return _ret.asInt()
   }
 
@@ -71,7 +71,7 @@ open class RandomNumberGenerator(
 
   fun setSeed(seed: Int) {
     val _arg = Variant.new(seed)
-    __method_bind.setSeed.call(this._handle, _arg, 1)
+    __method_bind.setSeed.call(this._handle, listOf(_arg))
   }
 
   companion object {

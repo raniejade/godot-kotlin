@@ -21,13 +21,13 @@ open class Crypto(
 ) : Reference(_handle) {
   fun generateRandomBytes(size: Int): PoolByteArray {
     val _arg = Variant.new(size)
-    val _ret = __method_bind.generateRandomBytes.call(this._handle, _arg, 1)
+    val _ret = __method_bind.generateRandomBytes.call(this._handle, listOf(_arg))
     return _ret.asPoolByteArray()
   }
 
   fun generateRsa(size: Int): CryptoKey {
     val _arg = Variant.new(size)
-    val _ret = __method_bind.generateRsa.call(this._handle, _arg, 1)
+    val _ret = __method_bind.generateRsa.call(this._handle, listOf(_arg))
     return _ret.asObject(::CryptoKey)!!
   }
 
@@ -37,12 +37,12 @@ open class Crypto(
     notBefore: String = "20140101000000",
     notAfter: String = "20340101000000"
   ): X509Certificate {
-    val _args = VariantArray.new()
-    _args.append(key)
-    _args.append(issuerName)
-    _args.append(notBefore)
-    _args.append(notAfter)
-    val _ret = __method_bind.generateSelfSignedCertificate.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(key))
+    _args.add(Variant.fromAny(issuerName))
+    _args.add(Variant.fromAny(notBefore))
+    _args.add(Variant.fromAny(notAfter))
+    val _ret = __method_bind.generateSelfSignedCertificate.call(this._handle, _args)
     return _ret.asObject(::X509Certificate)!!
   }
 

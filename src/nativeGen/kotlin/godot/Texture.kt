@@ -37,13 +37,13 @@ open class Texture(
     transpose: Boolean = false,
     normalMap: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(canvasItem)
-    _args.append(position)
-    _args.append(modulate)
-    _args.append(transpose)
-    _args.append(normalMap)
-    __method_bind.draw.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(canvasItem))
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(modulate))
+    _args.add(Variant.fromAny(transpose))
+    _args.add(Variant.fromAny(normalMap))
+    __method_bind.draw.call(this._handle, _args)
   }
 
   fun drawRect(
@@ -54,14 +54,14 @@ open class Texture(
     transpose: Boolean = false,
     normalMap: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(canvasItem)
-    _args.append(rect)
-    _args.append(tile)
-    _args.append(modulate)
-    _args.append(transpose)
-    _args.append(normalMap)
-    __method_bind.drawRect.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(canvasItem))
+    _args.add(Variant.fromAny(rect))
+    _args.add(Variant.fromAny(tile))
+    _args.add(Variant.fromAny(modulate))
+    _args.add(Variant.fromAny(transpose))
+    _args.add(Variant.fromAny(normalMap))
+    __method_bind.drawRect.call(this._handle, _args)
   }
 
   fun drawRectRegion(
@@ -73,15 +73,15 @@ open class Texture(
     normalMap: Texture,
     clipUv: Boolean = true
   ) {
-    val _args = VariantArray.new()
-    _args.append(canvasItem)
-    _args.append(rect)
-    _args.append(srcRect)
-    _args.append(modulate)
-    _args.append(transpose)
-    _args.append(normalMap)
-    _args.append(clipUv)
-    __method_bind.drawRectRegion.call(this._handle, _args.toVariant(), 7)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(canvasItem))
+    _args.add(Variant.fromAny(rect))
+    _args.add(Variant.fromAny(srcRect))
+    _args.add(Variant.fromAny(modulate))
+    _args.add(Variant.fromAny(transpose))
+    _args.add(Variant.fromAny(normalMap))
+    _args.add(Variant.fromAny(clipUv))
+    __method_bind.drawRectRegion.call(this._handle, _args)
   }
 
   fun getData(): Image {
@@ -116,7 +116,7 @@ open class Texture(
 
   fun setFlags(flags: Int) {
     val _arg = Variant.new(flags)
-    __method_bind.setFlags.call(this._handle, _arg, 1)
+    __method_bind.setFlags.call(this._handle, listOf(_arg))
   }
 
   enum class Flags(

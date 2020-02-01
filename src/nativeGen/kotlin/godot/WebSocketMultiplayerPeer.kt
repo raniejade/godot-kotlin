@@ -20,7 +20,7 @@ open class WebSocketMultiplayerPeer(
 ) : NetworkedMultiplayerPeer(_handle) {
   fun getPeer(peerId: Int): WebSocketPeer {
     val _arg = Variant.new(peerId)
-    val _ret = __method_bind.getPeer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPeer.call(this._handle, listOf(_arg))
     return _ret.asObject(::WebSocketPeer)!!
   }
 
@@ -30,12 +30,12 @@ open class WebSocketMultiplayerPeer(
     outputBufferSizeKb: Int,
     outputMaxPackets: Int
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(inputBufferSizeKb)
-    _args.append(inputMaxPackets)
-    _args.append(outputBufferSizeKb)
-    _args.append(outputMaxPackets)
-    val _ret = __method_bind.setBuffers.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(inputBufferSizeKb))
+    _args.add(Variant.fromAny(inputMaxPackets))
+    _args.add(Variant.fromAny(outputBufferSizeKb))
+    _args.add(Variant.fromAny(outputMaxPackets))
+    val _ret = __method_bind.setBuffers.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 

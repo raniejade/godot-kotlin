@@ -25,25 +25,25 @@ open class Physics2DShapeQueryResult(
 
   fun getResultObject(idx: Int): Object {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getResultObject.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getResultObject.call(this._handle, listOf(_arg))
     return _ret.asObject(::Object)!!
   }
 
   fun getResultObjectId(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getResultObjectId.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getResultObjectId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getResultObjectShape(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getResultObjectShape.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getResultObjectShape.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getResultRid(idx: Int): RID {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getResultRid.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getResultRid.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }
 

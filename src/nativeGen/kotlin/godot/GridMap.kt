@@ -113,7 +113,7 @@ open class GridMap(
 
   fun getBakeMeshInstance(idx: Int): RID {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getBakeMeshInstance.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBakeMeshInstance.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }
 
@@ -127,11 +127,11 @@ open class GridMap(
     y: Int,
     z: Int
   ): Int {
-    val _args = VariantArray.new()
-    _args.append(x)
-    _args.append(y)
-    _args.append(z)
-    val _ret = __method_bind.getCellItem.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(x))
+    _args.add(Variant.fromAny(y))
+    _args.add(Variant.fromAny(z))
+    val _ret = __method_bind.getCellItem.call(this._handle, _args)
     return _ret.asInt()
   }
 
@@ -140,11 +140,11 @@ open class GridMap(
     y: Int,
     z: Int
   ): Int {
-    val _args = VariantArray.new()
-    _args.append(x)
-    _args.append(y)
-    _args.append(z)
-    val _ret = __method_bind.getCellItemOrientation.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(x))
+    _args.add(Variant.fromAny(y))
+    _args.add(Variant.fromAny(z))
+    val _ret = __method_bind.getCellItemOrientation.call(this._handle, _args)
     return _ret.asInt()
   }
 
@@ -180,7 +180,7 @@ open class GridMap(
 
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.getCollisionLayerBit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCollisionLayerBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -191,7 +191,7 @@ open class GridMap(
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -216,10 +216,10 @@ open class GridMap(
   }
 
   fun makeBakedMeshes(genLightmapUv: Boolean = false, lightmapUvTexelSize: Float = 0.1f) {
-    val _args = VariantArray.new()
-    _args.append(genLightmapUv)
-    _args.append(lightmapUvTexelSize)
-    __method_bind.makeBakedMeshes.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(genLightmapUv))
+    _args.add(Variant.fromAny(lightmapUvTexelSize))
+    __method_bind.makeBakedMeshes.call(this._handle, _args)
   }
 
   fun mapToWorld(
@@ -227,17 +227,17 @@ open class GridMap(
     y: Int,
     z: Int
   ): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(x)
-    _args.append(y)
-    _args.append(z)
-    val _ret = __method_bind.mapToWorld.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(x))
+    _args.add(Variant.fromAny(y))
+    _args.add(Variant.fromAny(z))
+    val _ret = __method_bind.mapToWorld.call(this._handle, _args)
     return _ret.asVector3()
   }
 
   fun resourceChanged(resource: Resource) {
     val _arg = Variant.new(resource)
-    __method_bind.resourceChanged.call(this._handle, _arg, 1)
+    __method_bind.resourceChanged.call(this._handle, listOf(_arg))
   }
 
   fun setCellItem(
@@ -247,38 +247,38 @@ open class GridMap(
     item: Int,
     orientation: Int = 0
   ) {
-    val _args = VariantArray.new()
-    _args.append(x)
-    _args.append(y)
-    _args.append(z)
-    _args.append(item)
-    _args.append(orientation)
-    __method_bind.setCellItem.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(x))
+    _args.add(Variant.fromAny(y))
+    _args.add(Variant.fromAny(z))
+    _args.add(Variant.fromAny(item))
+    _args.add(Variant.fromAny(orientation))
+    __method_bind.setCellItem.call(this._handle, _args)
   }
 
   fun setCellScale(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.setCellScale.call(this._handle, _arg, 1)
+    __method_bind.setCellScale.call(this._handle, listOf(_arg))
   }
 
   fun setCellSize(size: Vector3) {
     val _arg = Variant.new(size)
-    __method_bind.setCellSize.call(this._handle, _arg, 1)
+    __method_bind.setCellSize.call(this._handle, listOf(_arg))
   }
 
   fun setCenterX(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setCenterX.call(this._handle, _arg, 1)
+    __method_bind.setCenterX.call(this._handle, listOf(_arg))
   }
 
   fun setCenterY(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setCenterY.call(this._handle, _arg, 1)
+    __method_bind.setCenterY.call(this._handle, listOf(_arg))
   }
 
   fun setCenterZ(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setCenterZ.call(this._handle, _arg, 1)
+    __method_bind.setCenterZ.call(this._handle, listOf(_arg))
   }
 
   fun setClip(
@@ -287,51 +287,51 @@ open class GridMap(
     floor: Int = 0,
     axis: Int = 0
   ) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    _args.append(clipabove)
-    _args.append(floor)
-    _args.append(axis)
-    __method_bind.setClip.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(enabled))
+    _args.add(Variant.fromAny(clipabove))
+    _args.add(Variant.fromAny(floor))
+    _args.add(Variant.fromAny(axis))
+    __method_bind.setClip.call(this._handle, _args)
   }
 
   fun setCollisionLayer(layer: Int) {
     val _arg = Variant.new(layer)
-    __method_bind.setCollisionLayer.call(this._handle, _arg, 1)
+    __method_bind.setCollisionLayer.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(bit)
-    _args.append(value)
-    __method_bind.setCollisionLayerBit.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(bit))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setCollisionLayerBit.call(this._handle, _args)
   }
 
   fun setCollisionMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.setCollisionMask.call(this._handle, _arg, 1)
+    __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(bit)
-    _args.append(value)
-    __method_bind.setCollisionMaskBit.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(bit))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setCollisionMaskBit.call(this._handle, _args)
   }
 
   fun setMeshLibrary(meshLibrary: MeshLibrary) {
     val _arg = Variant.new(meshLibrary)
-    __method_bind.setMeshLibrary.call(this._handle, _arg, 1)
+    __method_bind.setMeshLibrary.call(this._handle, listOf(_arg))
   }
 
   fun setOctantSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.setOctantSize.call(this._handle, _arg, 1)
+    __method_bind.setOctantSize.call(this._handle, listOf(_arg))
   }
 
   fun worldToMap(pos: Vector3): Vector3 {
     val _arg = Variant.new(pos)
-    val _ret = __method_bind.worldToMap.call(this._handle, _arg, 1)
+    val _ret = __method_bind.worldToMap.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 

@@ -56,12 +56,12 @@ open class LineShape2D(
 
   fun setD(d: Float) {
     val _arg = Variant.new(d)
-    __method_bind.setD.call(this._handle, _arg, 1)
+    __method_bind.setD.call(this._handle, listOf(_arg))
   }
 
   fun setNormal(normal: Vector2) {
     val _arg = Variant.new(normal)
-    __method_bind.setNormal.call(this._handle, _arg, 1)
+    __method_bind.setNormal.call(this._handle, listOf(_arg))
   }
 
   companion object {

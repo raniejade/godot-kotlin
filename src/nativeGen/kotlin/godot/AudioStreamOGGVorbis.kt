@@ -70,17 +70,17 @@ open class AudioStreamOGGVorbis(
 
   fun setData(data: PoolByteArray) {
     val _arg = Variant.new(data)
-    __method_bind.setData.call(this._handle, _arg, 1)
+    __method_bind.setData.call(this._handle, listOf(_arg))
   }
 
   fun setLoop(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setLoop.call(this._handle, _arg, 1)
+    __method_bind.setLoop.call(this._handle, listOf(_arg))
   }
 
   fun setLoopOffset(seconds: Float) {
     val _arg = Variant.new(seconds)
-    __method_bind.setLoopOffset.call(this._handle, _arg, 1)
+    __method_bind.setLoopOffset.call(this._handle, listOf(_arg))
   }
 
   companion object {

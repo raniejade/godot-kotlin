@@ -24,18 +24,18 @@ open class OptionButton(
     label: String,
     id: Int = -1
   ) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    _args.append(label)
-    _args.append(id)
-    __method_bind.addIconItem.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(texture))
+    _args.add(Variant.fromAny(label))
+    _args.add(Variant.fromAny(id))
+    __method_bind.addIconItem.call(this._handle, _args)
   }
 
   fun addItem(label: String, id: Int = -1) {
-    val _args = VariantArray.new()
-    _args.append(label)
-    _args.append(id)
-    __method_bind.addItem.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(label))
+    _args.add(Variant.fromAny(id))
+    __method_bind.addItem.call(this._handle, _args)
   }
 
   fun addSeparator() {
@@ -53,31 +53,31 @@ open class OptionButton(
 
   fun getItemIcon(idx: Int): Texture {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemIcon.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemIcon.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemId(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemId.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getItemIndex(id: Int): Int {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.getItemIndex.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemIndex.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getItemMetadata(idx: Int): Variant {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemMetadata.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemMetadata.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getItemText(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemText.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemText.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -103,53 +103,53 @@ open class OptionButton(
 
   fun isItemDisabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.isItemDisabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isItemDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeItem(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.removeItem.call(this._handle, _arg, 1)
+    __method_bind.removeItem.call(this._handle, listOf(_arg))
   }
 
   fun select(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.select.call(this._handle, _arg, 1)
+    __method_bind.select.call(this._handle, listOf(_arg))
   }
 
   fun setItemDisabled(idx: Int, disabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(disabled)
-    __method_bind.setItemDisabled.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(disabled))
+    __method_bind.setItemDisabled.call(this._handle, _args)
   }
 
   fun setItemIcon(idx: Int, texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(texture)
-    __method_bind.setItemIcon.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(texture))
+    __method_bind.setItemIcon.call(this._handle, _args)
   }
 
   fun setItemId(idx: Int, id: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(id)
-    __method_bind.setItemId.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(id))
+    __method_bind.setItemId.call(this._handle, _args)
   }
 
   fun setItemMetadata(idx: Int, metadata: Variant) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(metadata)
-    __method_bind.setItemMetadata.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(metadata))
+    __method_bind.setItemMetadata.call(this._handle, _args)
   }
 
   fun setItemText(idx: Int, text: String) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(text)
-    __method_bind.setItemText.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(text))
+    __method_bind.setItemText.call(this._handle, _args)
   }
 
   companion object {

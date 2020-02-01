@@ -25,11 +25,11 @@ open class WebRTCPeerConnection(
     index: Int,
     name: String
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(media)
-    _args.append(index)
-    _args.append(name)
-    val _ret = __method_bind.addIceCandidate.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(media))
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(name))
+    val _ret = __method_bind.addIceCandidate.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -38,10 +38,10 @@ open class WebRTCPeerConnection(
   }
 
   fun createDataChannel(label: String, options: Dictionary): WebRTCDataChannel {
-    val _args = VariantArray.new()
-    _args.append(label)
-    _args.append(options)
-    val _ret = __method_bind.createDataChannel.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(label))
+    _args.add(Variant.fromAny(options))
+    val _ret = __method_bind.createDataChannel.call(this._handle, _args)
     return _ret.asObject(::WebRTCDataChannel)!!
   }
 
@@ -57,7 +57,7 @@ open class WebRTCPeerConnection(
 
   fun initialize(configuration: Dictionary): GDError {
     val _arg = Variant.new(configuration)
-    val _ret = __method_bind.initialize.call(this._handle, _arg, 1)
+    val _ret = __method_bind.initialize.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
@@ -67,18 +67,18 @@ open class WebRTCPeerConnection(
   }
 
   fun setLocalDescription(type: String, sdp: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(sdp)
-    val _ret = __method_bind.setLocalDescription.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(sdp))
+    val _ret = __method_bind.setLocalDescription.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun setRemoteDescription(type: String, sdp: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(sdp)
-    val _ret = __method_bind.setRemoteDescription.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(sdp))
+    val _ret = __method_bind.setRemoteDescription.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 

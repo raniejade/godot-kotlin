@@ -150,57 +150,57 @@ open class Range(
 
   fun setAllowGreater(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.setAllowGreater.call(this._handle, _arg, 1)
+    __method_bind.setAllowGreater.call(this._handle, listOf(_arg))
   }
 
   fun setAllowLesser(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.setAllowLesser.call(this._handle, _arg, 1)
+    __method_bind.setAllowLesser.call(this._handle, listOf(_arg))
   }
 
   fun setAsRatio(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.setAsRatio.call(this._handle, _arg, 1)
+    __method_bind.setAsRatio.call(this._handle, listOf(_arg))
   }
 
   fun setExpRatio(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setExpRatio.call(this._handle, _arg, 1)
+    __method_bind.setExpRatio.call(this._handle, listOf(_arg))
   }
 
   fun setMax(maximum: Float) {
     val _arg = Variant.new(maximum)
-    __method_bind.setMax.call(this._handle, _arg, 1)
+    __method_bind.setMax.call(this._handle, listOf(_arg))
   }
 
   fun setMin(minimum: Float) {
     val _arg = Variant.new(minimum)
-    __method_bind.setMin.call(this._handle, _arg, 1)
+    __method_bind.setMin.call(this._handle, listOf(_arg))
   }
 
   fun setPage(pagesize: Float) {
     val _arg = Variant.new(pagesize)
-    __method_bind.setPage.call(this._handle, _arg, 1)
+    __method_bind.setPage.call(this._handle, listOf(_arg))
   }
 
   fun setStep(step: Float) {
     val _arg = Variant.new(step)
-    __method_bind.setStep.call(this._handle, _arg, 1)
+    __method_bind.setStep.call(this._handle, listOf(_arg))
   }
 
   fun setUseRoundedValues(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setUseRoundedValues.call(this._handle, _arg, 1)
+    __method_bind.setUseRoundedValues.call(this._handle, listOf(_arg))
   }
 
   fun setValue(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.setValue.call(this._handle, _arg, 1)
+    __method_bind.setValue.call(this._handle, listOf(_arg))
   }
 
   fun share(with: Node) {
     val _arg = Variant.new(with)
-    __method_bind.share.call(this._handle, _arg, 1)
+    __method_bind.share.call(this._handle, listOf(_arg))
   }
 
   fun unshare() {

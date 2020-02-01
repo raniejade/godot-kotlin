@@ -171,52 +171,52 @@ open class VideoPlayer(
 
   fun setAudioTrack(track: Int) {
     val _arg = Variant.new(track)
-    __method_bind.setAudioTrack.call(this._handle, _arg, 1)
+    __method_bind.setAudioTrack.call(this._handle, listOf(_arg))
   }
 
   fun setAutoplay(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setAutoplay.call(this._handle, _arg, 1)
+    __method_bind.setAutoplay.call(this._handle, listOf(_arg))
   }
 
   fun setBufferingMsec(msec: Int) {
     val _arg = Variant.new(msec)
-    __method_bind.setBufferingMsec.call(this._handle, _arg, 1)
+    __method_bind.setBufferingMsec.call(this._handle, listOf(_arg))
   }
 
   fun setBus(bus: String) {
     val _arg = Variant.new(bus)
-    __method_bind.setBus.call(this._handle, _arg, 1)
+    __method_bind.setBus.call(this._handle, listOf(_arg))
   }
 
   fun setExpand(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setExpand.call(this._handle, _arg, 1)
+    __method_bind.setExpand.call(this._handle, listOf(_arg))
   }
 
   fun setPaused(paused: Boolean) {
     val _arg = Variant.new(paused)
-    __method_bind.setPaused.call(this._handle, _arg, 1)
+    __method_bind.setPaused.call(this._handle, listOf(_arg))
   }
 
   fun setStream(stream: VideoStream) {
     val _arg = Variant.new(stream)
-    __method_bind.setStream.call(this._handle, _arg, 1)
+    __method_bind.setStream.call(this._handle, listOf(_arg))
   }
 
   fun setStreamPosition(position: Float) {
     val _arg = Variant.new(position)
-    __method_bind.setStreamPosition.call(this._handle, _arg, 1)
+    __method_bind.setStreamPosition.call(this._handle, listOf(_arg))
   }
 
   fun setVolume(volume: Float) {
     val _arg = Variant.new(volume)
-    __method_bind.setVolume.call(this._handle, _arg, 1)
+    __method_bind.setVolume.call(this._handle, listOf(_arg))
   }
 
   fun setVolumeDb(db: Float) {
     val _arg = Variant.new(db)
-    __method_bind.setVolumeDb.call(this._handle, _arg, 1)
+    __method_bind.setVolumeDb.call(this._handle, listOf(_arg))
   }
 
   fun stop() {

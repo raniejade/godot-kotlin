@@ -18,7 +18,7 @@ open class EditorScript(
 ) : Reference(_handle) {
   fun addRootNode(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.addRootNode.call(this._handle, _arg, 1)
+    __method_bind.addRootNode.call(this._handle, listOf(_arg))
   }
 
   fun getEditorInterface(): EditorInterface {

@@ -42,7 +42,7 @@ open class InputEventPanGesture(
 
   fun setDelta(delta: Vector2) {
     val _arg = Variant.new(delta)
-    __method_bind.setDelta.call(this._handle, _arg, 1)
+    __method_bind.setDelta.call(this._handle, listOf(_arg))
   }
 
   companion object {

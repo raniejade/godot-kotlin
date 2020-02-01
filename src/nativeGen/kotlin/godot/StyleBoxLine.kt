@@ -97,27 +97,27 @@ open class StyleBoxLine(
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setColor.call(this._handle, _arg, 1)
+    __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 
   fun setGrowBegin(offset: Float) {
     val _arg = Variant.new(offset)
-    __method_bind.setGrowBegin.call(this._handle, _arg, 1)
+    __method_bind.setGrowBegin.call(this._handle, listOf(_arg))
   }
 
   fun setGrowEnd(offset: Float) {
     val _arg = Variant.new(offset)
-    __method_bind.setGrowEnd.call(this._handle, _arg, 1)
+    __method_bind.setGrowEnd.call(this._handle, listOf(_arg))
   }
 
   fun setThickness(thickness: Int) {
     val _arg = Variant.new(thickness)
-    __method_bind.setThickness.call(this._handle, _arg, 1)
+    __method_bind.setThickness.call(this._handle, listOf(_arg))
   }
 
   fun setVertical(vertical: Boolean) {
     val _arg = Variant.new(vertical)
-    __method_bind.setVertical.call(this._handle, _arg, 1)
+    __method_bind.setVertical.call(this._handle, listOf(_arg))
   }
 
   companion object {

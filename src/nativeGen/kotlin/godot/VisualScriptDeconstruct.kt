@@ -32,7 +32,7 @@ open class VisualScriptDeconstruct(
 
   fun setDeconstructType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.setDeconstructType.call(this._handle, _arg, 1)
+    __method_bind.setDeconstructType.call(this._handle, listOf(_arg))
   }
 
   companion object {

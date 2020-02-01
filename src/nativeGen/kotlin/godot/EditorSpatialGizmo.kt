@@ -22,12 +22,12 @@ open class EditorSpatialGizmo(
 ) : SpatialGizmo(_handle) {
   fun addCollisionSegments(segments: PoolVector3Array) {
     val _arg = Variant.new(segments)
-    __method_bind.addCollisionSegments.call(this._handle, _arg, 1)
+    __method_bind.addCollisionSegments.call(this._handle, listOf(_arg))
   }
 
   fun addCollisionTriangles(triangles: TriangleMesh) {
     val _arg = Variant.new(triangles)
-    __method_bind.addCollisionTriangles.call(this._handle, _arg, 1)
+    __method_bind.addCollisionTriangles.call(this._handle, listOf(_arg))
   }
 
   fun addHandles(
@@ -36,12 +36,12 @@ open class EditorSpatialGizmo(
     billboard: Boolean = false,
     secondary: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(handles)
-    _args.append(material)
-    _args.append(billboard)
-    _args.append(secondary)
-    __method_bind.addHandles.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(handles))
+    _args.add(Variant.fromAny(material))
+    _args.add(Variant.fromAny(billboard))
+    _args.add(Variant.fromAny(secondary))
+    __method_bind.addHandles.call(this._handle, _args)
   }
 
   fun addLines(
@@ -50,12 +50,12 @@ open class EditorSpatialGizmo(
     billboard: Boolean = false,
     modulate: Color = Color.rgb(1,1,1,1)
   ) {
-    val _args = VariantArray.new()
-    _args.append(lines)
-    _args.append(material)
-    _args.append(billboard)
-    _args.append(modulate)
-    __method_bind.addLines.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(lines))
+    _args.add(Variant.fromAny(material))
+    _args.add(Variant.fromAny(billboard))
+    _args.add(Variant.fromAny(modulate))
+    __method_bind.addLines.call(this._handle, _args)
   }
 
   fun addMesh(
@@ -64,12 +64,12 @@ open class EditorSpatialGizmo(
     skeleton: SkinReference,
     material: Material
   ) {
-    val _args = VariantArray.new()
-    _args.append(mesh)
-    _args.append(billboard)
-    _args.append(skeleton)
-    _args.append(material)
-    __method_bind.addMesh.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(mesh))
+    _args.add(Variant.fromAny(billboard))
+    _args.add(Variant.fromAny(skeleton))
+    _args.add(Variant.fromAny(material))
+    __method_bind.addMesh.call(this._handle, _args)
   }
 
   fun addUnscaledBillboard(
@@ -77,11 +77,11 @@ open class EditorSpatialGizmo(
     defaultScale: Float = 1.0f,
     modulate: Color = Color.rgb(1,1,1,1)
   ) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    _args.append(defaultScale)
-    _args.append(modulate)
-    __method_bind.addUnscaledBillboard.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(material))
+    _args.add(Variant.fromAny(defaultScale))
+    _args.add(Variant.fromAny(modulate))
+    __method_bind.addUnscaledBillboard.call(this._handle, _args)
   }
 
   fun clear() {
@@ -100,12 +100,12 @@ open class EditorSpatialGizmo(
 
   fun setHidden(hidden: Boolean) {
     val _arg = Variant.new(hidden)
-    __method_bind.setHidden.call(this._handle, _arg, 1)
+    __method_bind.setHidden.call(this._handle, listOf(_arg))
   }
 
   fun setSpatialNode(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.setSpatialNode.call(this._handle, _arg, 1)
+    __method_bind.setSpatialNode.call(this._handle, listOf(_arg))
   }
 
   companion object {

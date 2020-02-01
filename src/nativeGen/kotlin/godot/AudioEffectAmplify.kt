@@ -32,7 +32,7 @@ open class AudioEffectAmplify(
 
   fun setVolumeDb(volume: Float) {
     val _arg = Variant.new(volume)
-    __method_bind.setVolumeDb.call(this._handle, _arg, 1)
+    __method_bind.setVolumeDb.call(this._handle, listOf(_arg))
   }
 
   companion object {

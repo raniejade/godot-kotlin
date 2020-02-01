@@ -123,42 +123,42 @@ open class AudioEffectReverb(
 
   fun setDamping(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setDamping.call(this._handle, _arg, 1)
+    __method_bind.setDamping.call(this._handle, listOf(_arg))
   }
 
   fun setDry(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setDry.call(this._handle, _arg, 1)
+    __method_bind.setDry.call(this._handle, listOf(_arg))
   }
 
   fun setHpf(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setHpf.call(this._handle, _arg, 1)
+    __method_bind.setHpf.call(this._handle, listOf(_arg))
   }
 
   fun setPredelayFeedback(feedback: Float) {
     val _arg = Variant.new(feedback)
-    __method_bind.setPredelayFeedback.call(this._handle, _arg, 1)
+    __method_bind.setPredelayFeedback.call(this._handle, listOf(_arg))
   }
 
   fun setPredelayMsec(msec: Float) {
     val _arg = Variant.new(msec)
-    __method_bind.setPredelayMsec.call(this._handle, _arg, 1)
+    __method_bind.setPredelayMsec.call(this._handle, listOf(_arg))
   }
 
   fun setRoomSize(size: Float) {
     val _arg = Variant.new(size)
-    __method_bind.setRoomSize.call(this._handle, _arg, 1)
+    __method_bind.setRoomSize.call(this._handle, listOf(_arg))
   }
 
   fun setSpread(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setSpread.call(this._handle, _arg, 1)
+    __method_bind.setSpread.call(this._handle, listOf(_arg))
   }
 
   fun setWet(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setWet.call(this._handle, _arg, 1)
+    __method_bind.setWet.call(this._handle, listOf(_arg))
   }
 
   companion object {

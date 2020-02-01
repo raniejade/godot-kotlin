@@ -31,7 +31,7 @@ open class MultiMeshInstance(
 
   fun setMultimesh(multimesh: MultiMesh) {
     val _arg = Variant.new(multimesh)
-    __method_bind.setMultimesh.call(this._handle, _arg, 1)
+    __method_bind.setMultimesh.call(this._handle, listOf(_arg))
   }
 
   companion object {

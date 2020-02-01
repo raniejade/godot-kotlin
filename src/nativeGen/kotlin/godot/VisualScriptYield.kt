@@ -46,12 +46,12 @@ open class VisualScriptYield(
 
   fun setWaitTime(sec: Float) {
     val _arg = Variant.new(sec)
-    __method_bind.setWaitTime.call(this._handle, _arg, 1)
+    __method_bind.setWaitTime.call(this._handle, listOf(_arg))
   }
 
   fun setYieldMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setYieldMode.call(this._handle, _arg, 1)
+    __method_bind.setYieldMode.call(this._handle, listOf(_arg))
   }
 
   enum class YieldMode(

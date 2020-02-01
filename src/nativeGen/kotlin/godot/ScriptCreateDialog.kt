@@ -24,12 +24,12 @@ open class ScriptCreateDialog(
     builtInEnabled: Boolean = true,
     loadEnabled: Boolean = true
   ) {
-    val _args = VariantArray.new()
-    _args.append(inherits)
-    _args.append(path)
-    _args.append(builtInEnabled)
-    _args.append(loadEnabled)
-    __method_bind.config.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(inherits))
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(builtInEnabled))
+    _args.add(Variant.fromAny(loadEnabled))
+    __method_bind.config.call(this._handle, _args)
   }
 
   companion object {

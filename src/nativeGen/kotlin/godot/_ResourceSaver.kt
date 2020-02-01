@@ -22,7 +22,7 @@ open class _ResourceSaver(
 ) : Object(_handle) {
   fun getRecognizedExtensions(type: Resource): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getRecognizedExtensions.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getRecognizedExtensions.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
@@ -31,11 +31,11 @@ open class _ResourceSaver(
     resource: Resource,
     flags: Int = 0
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(resource)
-    _args.append(flags)
-    val _ret = __method_bind.save.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(resource))
+    _args.add(Variant.fromAny(flags))
+    val _ret = __method_bind.save.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 

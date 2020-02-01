@@ -96,7 +96,7 @@ open class GeometryInstance(
 
   fun getFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.getFlag.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFlag.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -127,49 +127,49 @@ open class GeometryInstance(
 
   fun setCastShadowsSetting(shadowCastingSetting: Int) {
     val _arg = Variant.new(shadowCastingSetting)
-    __method_bind.setCastShadowsSetting.call(this._handle, _arg, 1)
+    __method_bind.setCastShadowsSetting.call(this._handle, listOf(_arg))
   }
 
   fun setCustomAabb(aabb: AABB) {
     val _arg = Variant.new(aabb)
-    __method_bind.setCustomAabb.call(this._handle, _arg, 1)
+    __method_bind.setCustomAabb.call(this._handle, listOf(_arg))
   }
 
   fun setExtraCullMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.setExtraCullMargin.call(this._handle, _arg, 1)
+    __method_bind.setExtraCullMargin.call(this._handle, listOf(_arg))
   }
 
   fun setFlag(flag: Int, value: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    _args.append(value)
-    __method_bind.setFlag.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(flag))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setFlag.call(this._handle, _args)
   }
 
   fun setLodMaxDistance(mode: Float) {
     val _arg = Variant.new(mode)
-    __method_bind.setLodMaxDistance.call(this._handle, _arg, 1)
+    __method_bind.setLodMaxDistance.call(this._handle, listOf(_arg))
   }
 
   fun setLodMaxHysteresis(mode: Float) {
     val _arg = Variant.new(mode)
-    __method_bind.setLodMaxHysteresis.call(this._handle, _arg, 1)
+    __method_bind.setLodMaxHysteresis.call(this._handle, listOf(_arg))
   }
 
   fun setLodMinDistance(mode: Float) {
     val _arg = Variant.new(mode)
-    __method_bind.setLodMinDistance.call(this._handle, _arg, 1)
+    __method_bind.setLodMinDistance.call(this._handle, listOf(_arg))
   }
 
   fun setLodMinHysteresis(mode: Float) {
     val _arg = Variant.new(mode)
-    __method_bind.setLodMinHysteresis.call(this._handle, _arg, 1)
+    __method_bind.setLodMinHysteresis.call(this._handle, listOf(_arg))
   }
 
   fun setMaterialOverride(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.setMaterialOverride.call(this._handle, _arg, 1)
+    __method_bind.setMaterialOverride.call(this._handle, listOf(_arg))
   }
 
   enum class Flags(

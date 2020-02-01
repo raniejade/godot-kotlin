@@ -43,19 +43,19 @@ open class ImageTexture(
     format: Int,
     flags: Int = 7
   ) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    _args.append(height)
-    _args.append(format)
-    _args.append(flags)
-    __method_bind.create.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(height))
+    _args.add(Variant.fromAny(format))
+    _args.add(Variant.fromAny(flags))
+    __method_bind.create.call(this._handle, _args)
   }
 
   fun createFromImage(image: Image, flags: Int = 7) {
-    val _args = VariantArray.new()
-    _args.append(image)
-    _args.append(flags)
-    __method_bind.createFromImage.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(image))
+    _args.add(Variant.fromAny(flags))
+    __method_bind.createFromImage.call(this._handle, _args)
   }
 
   fun getFormat(): Image.Format {
@@ -75,28 +75,28 @@ open class ImageTexture(
 
   fun load(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.load.call(this._handle, _arg, 1)
+    val _ret = __method_bind.load.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun setData(image: Image) {
     val _arg = Variant.new(image)
-    __method_bind.setData.call(this._handle, _arg, 1)
+    __method_bind.setData.call(this._handle, listOf(_arg))
   }
 
   fun setLossyStorageQuality(quality: Float) {
     val _arg = Variant.new(quality)
-    __method_bind.setLossyStorageQuality.call(this._handle, _arg, 1)
+    __method_bind.setLossyStorageQuality.call(this._handle, listOf(_arg))
   }
 
   fun setSizeOverride(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.setSizeOverride.call(this._handle, _arg, 1)
+    __method_bind.setSizeOverride.call(this._handle, listOf(_arg))
   }
 
   fun setStorage(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setStorage.call(this._handle, _arg, 1)
+    __method_bind.setStorage.call(this._handle, listOf(_arg))
   }
 
   enum class Storage(

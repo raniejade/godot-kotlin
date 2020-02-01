@@ -128,7 +128,7 @@ open class _Engine(
 
   fun getSingleton(name: String): Object {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getSingleton.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSingleton.call(this._handle, listOf(_arg))
     return _ret.asObject(::Object)!!
   }
 
@@ -149,7 +149,7 @@ open class _Engine(
 
   fun hasSingleton(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasSingleton.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasSingleton.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -165,27 +165,27 @@ open class _Engine(
 
   fun setEditorHint(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setEditorHint.call(this._handle, _arg, 1)
+    __method_bind.setEditorHint.call(this._handle, listOf(_arg))
   }
 
   fun setIterationsPerSecond(iterationsPerSecond: Int) {
     val _arg = Variant.new(iterationsPerSecond)
-    __method_bind.setIterationsPerSecond.call(this._handle, _arg, 1)
+    __method_bind.setIterationsPerSecond.call(this._handle, listOf(_arg))
   }
 
   fun setPhysicsJitterFix(physicsJitterFix: Float) {
     val _arg = Variant.new(physicsJitterFix)
-    __method_bind.setPhysicsJitterFix.call(this._handle, _arg, 1)
+    __method_bind.setPhysicsJitterFix.call(this._handle, listOf(_arg))
   }
 
   fun setTargetFps(targetFps: Int) {
     val _arg = Variant.new(targetFps)
-    __method_bind.setTargetFps.call(this._handle, _arg, 1)
+    __method_bind.setTargetFps.call(this._handle, listOf(_arg))
   }
 
   fun setTimeScale(timeScale: Float) {
     val _arg = Variant.new(timeScale)
-    __method_bind.setTimeScale.call(this._handle, _arg, 1)
+    __method_bind.setTimeScale.call(this._handle, listOf(_arg))
   }
 
   companion object {

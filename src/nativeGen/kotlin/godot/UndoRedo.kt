@@ -25,11 +25,11 @@ open class UndoRedo(
     method: String,
     vararg varargs: Any?
   ) {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    __method_bind.addDoMethod.call(this._handle, _args.toVariant(), 2 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    __method_bind.addDoMethod.call(this._handle, _args)
   }
 
   fun addDoProperty(
@@ -37,16 +37,16 @@ open class UndoRedo(
     property: String,
     value: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(property)
-    _args.append(value)
-    __method_bind.addDoProperty.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.addDoProperty.call(this._handle, _args)
   }
 
   fun addDoReference(`object`: Object) {
     val _arg = Variant.new(`object`)
-    __method_bind.addDoReference.call(this._handle, _arg, 1)
+    __method_bind.addDoReference.call(this._handle, listOf(_arg))
   }
 
   fun addUndoMethod(
@@ -54,11 +54,11 @@ open class UndoRedo(
     method: String,
     vararg varargs: Any?
   ) {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(method)
-    varargs.forEach { _args.append(Variant.fromAny(it)) }
-    __method_bind.addUndoMethod.call(this._handle, _args.toVariant(), 2 + varargs.size)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    __method_bind.addUndoMethod.call(this._handle, _args)
   }
 
   fun addUndoProperty(
@@ -66,21 +66,21 @@ open class UndoRedo(
     property: String,
     value: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(property)
-    _args.append(value)
-    __method_bind.addUndoProperty.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    __method_bind.addUndoProperty.call(this._handle, _args)
   }
 
   fun addUndoReference(`object`: Object) {
     val _arg = Variant.new(`object`)
-    __method_bind.addUndoReference.call(this._handle, _arg, 1)
+    __method_bind.addUndoReference.call(this._handle, listOf(_arg))
   }
 
   fun clearHistory(increaseVersion: Boolean = true) {
     val _arg = Variant.new(increaseVersion)
-    __method_bind.clearHistory.call(this._handle, _arg, 1)
+    __method_bind.clearHistory.call(this._handle, listOf(_arg))
   }
 
   fun commitAction() {
@@ -88,10 +88,10 @@ open class UndoRedo(
   }
 
   fun createAction(name: String, mergeMode: Int = 0) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(mergeMode)
-    __method_bind.createAction.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(mergeMode))
+    __method_bind.createAction.call(this._handle, _args)
   }
 
   fun getCurrentActionName(): String {

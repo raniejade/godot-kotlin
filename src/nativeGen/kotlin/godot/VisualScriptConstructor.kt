@@ -56,12 +56,12 @@ open class VisualScriptConstructor(
 
   fun setConstructor(constructor: Dictionary) {
     val _arg = Variant.new(constructor)
-    __method_bind.setConstructor.call(this._handle, _arg, 1)
+    __method_bind.setConstructor.call(this._handle, listOf(_arg))
   }
 
   fun setConstructorType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.setConstructorType.call(this._handle, _arg, 1)
+    __method_bind.setConstructorType.call(this._handle, listOf(_arg))
   }
 
   companion object {

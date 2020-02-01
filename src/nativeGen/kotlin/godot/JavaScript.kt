@@ -19,10 +19,10 @@ open class JavaScript(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun eval(code: String, useGlobalExecutionContext: Boolean = false): Variant {
-    val _args = VariantArray.new()
-    _args.append(code)
-    _args.append(useGlobalExecutionContext)
-    val _ret = __method_bind.eval.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(code))
+    _args.add(Variant.fromAny(useGlobalExecutionContext))
+    val _ret = __method_bind.eval.call(this._handle, _args)
     return _ret
   }
 

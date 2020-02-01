@@ -46,12 +46,12 @@ open class RayShape(
 
   fun setLength(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.setLength.call(this._handle, _arg, 1)
+    __method_bind.setLength.call(this._handle, listOf(_arg))
   }
 
   fun setSlipsOnSlope(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.setSlipsOnSlope.call(this._handle, _arg, 1)
+    __method_bind.setSlipsOnSlope.call(this._handle, listOf(_arg))
   }
 
   companion object {

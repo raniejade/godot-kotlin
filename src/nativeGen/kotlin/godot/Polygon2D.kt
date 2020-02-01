@@ -227,10 +227,10 @@ open class Polygon2D(
   }
 
   fun addBone(path: NodePath, weights: PoolRealArray) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(weights)
-    __method_bind.addBone.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(weights))
+    __method_bind.addBone.call(this._handle, _args)
   }
 
   fun clearBones() {
@@ -239,7 +239,7 @@ open class Polygon2D(
 
   fun eraseBone(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.eraseBone.call(this._handle, _arg, 1)
+    __method_bind.eraseBone.call(this._handle, listOf(_arg))
   }
 
   fun getAntialiased(): Boolean {
@@ -254,13 +254,13 @@ open class Polygon2D(
 
   fun getBonePath(index: Int): NodePath {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.getBonePath.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBonePath.call(this._handle, listOf(_arg))
     return _ret.asNodePath()
   }
 
   fun getBoneWeights(index: Int): PoolRealArray {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.getBoneWeights.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBoneWeights.call(this._handle, listOf(_arg))
     return _ret.asPoolRealArray()
   }
 
@@ -341,96 +341,96 @@ open class Polygon2D(
 
   fun setAntialiased(antialiased: Boolean) {
     val _arg = Variant.new(antialiased)
-    __method_bind.setAntialiased.call(this._handle, _arg, 1)
+    __method_bind.setAntialiased.call(this._handle, listOf(_arg))
   }
 
   fun setBonePath(index: Int, path: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(path)
-    __method_bind.setBonePath.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(path))
+    __method_bind.setBonePath.call(this._handle, _args)
   }
 
   fun setBoneWeights(index: Int, weights: PoolRealArray) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(weights)
-    __method_bind.setBoneWeights.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(weights))
+    __method_bind.setBoneWeights.call(this._handle, _args)
   }
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setColor.call(this._handle, _arg, 1)
+    __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 
   fun setInternalVertexCount(internalVertexCount: Int) {
     val _arg = Variant.new(internalVertexCount)
-    __method_bind.setInternalVertexCount.call(this._handle, _arg, 1)
+    __method_bind.setInternalVertexCount.call(this._handle, listOf(_arg))
   }
 
   fun setInvert(invert: Boolean) {
     val _arg = Variant.new(invert)
-    __method_bind.setInvert.call(this._handle, _arg, 1)
+    __method_bind.setInvert.call(this._handle, listOf(_arg))
   }
 
   fun setInvertBorder(invertBorder: Float) {
     val _arg = Variant.new(invertBorder)
-    __method_bind.setInvertBorder.call(this._handle, _arg, 1)
+    __method_bind.setInvertBorder.call(this._handle, listOf(_arg))
   }
 
   fun setOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.setOffset.call(this._handle, _arg, 1)
+    __method_bind.setOffset.call(this._handle, listOf(_arg))
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
     val _arg = Variant.new(polygon)
-    __method_bind.setPolygon.call(this._handle, _arg, 1)
+    __method_bind.setPolygon.call(this._handle, listOf(_arg))
   }
 
   fun setPolygons(polygons: VariantArray) {
     val _arg = Variant.new(polygons)
-    __method_bind.setPolygons.call(this._handle, _arg, 1)
+    __method_bind.setPolygons.call(this._handle, listOf(_arg))
   }
 
   fun setSkeleton(skeleton: NodePath) {
     val _arg = Variant.new(skeleton)
-    __method_bind.setSkeleton.call(this._handle, _arg, 1)
+    __method_bind.setSkeleton.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTexture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setTextureOffset(textureOffset: Vector2) {
     val _arg = Variant.new(textureOffset)
-    __method_bind.setTextureOffset.call(this._handle, _arg, 1)
+    __method_bind.setTextureOffset.call(this._handle, listOf(_arg))
   }
 
   fun setTextureRotation(textureRotation: Float) {
     val _arg = Variant.new(textureRotation)
-    __method_bind.setTextureRotation.call(this._handle, _arg, 1)
+    __method_bind.setTextureRotation.call(this._handle, listOf(_arg))
   }
 
   fun setTextureRotationDegrees(textureRotation: Float) {
     val _arg = Variant.new(textureRotation)
-    __method_bind.setTextureRotationDegrees.call(this._handle, _arg, 1)
+    __method_bind.setTextureRotationDegrees.call(this._handle, listOf(_arg))
   }
 
   fun setTextureScale(textureScale: Vector2) {
     val _arg = Variant.new(textureScale)
-    __method_bind.setTextureScale.call(this._handle, _arg, 1)
+    __method_bind.setTextureScale.call(this._handle, listOf(_arg))
   }
 
   fun setUv(uv: PoolVector2Array) {
     val _arg = Variant.new(uv)
-    __method_bind.setUv.call(this._handle, _arg, 1)
+    __method_bind.setUv.call(this._handle, listOf(_arg))
   }
 
   fun setVertexColors(vertexColors: PoolColorArray) {
     val _arg = Variant.new(vertexColors)
-    __method_bind.setVertexColors.call(this._handle, _arg, 1)
+    __method_bind.setVertexColors.call(this._handle, listOf(_arg))
   }
 
   companion object {

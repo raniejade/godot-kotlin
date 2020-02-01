@@ -23,13 +23,13 @@ open class Navigation2D(
 ) : Node2D(_handle) {
   fun getClosestPoint(toPoint: Vector2): Vector2 {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.getClosestPoint.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getClosestPointOwner(toPoint: Vector2): Object {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.getClosestPointOwner.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getClosestPointOwner.call(this._handle, listOf(_arg))
     return _ret.asObject(::Object)!!
   }
 
@@ -38,11 +38,11 @@ open class Navigation2D(
     end: Vector2,
     optimize: Boolean = true
   ): PoolVector2Array {
-    val _args = VariantArray.new()
-    _args.append(start)
-    _args.append(end)
-    _args.append(optimize)
-    val _ret = __method_bind.getSimplePath.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(start))
+    _args.add(Variant.fromAny(end))
+    _args.add(Variant.fromAny(optimize))
+    val _ret = __method_bind.getSimplePath.call(this._handle, _args)
     return _ret.asPoolVector2Array()
   }
 
@@ -51,24 +51,24 @@ open class Navigation2D(
     xform: Transform2D,
     owner: Object
   ): Int {
-    val _args = VariantArray.new()
-    _args.append(mesh)
-    _args.append(xform)
-    _args.append(owner)
-    val _ret = __method_bind.navpolyAdd.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(mesh))
+    _args.add(Variant.fromAny(xform))
+    _args.add(Variant.fromAny(owner))
+    val _ret = __method_bind.navpolyAdd.call(this._handle, _args)
     return _ret.asInt()
   }
 
   fun navpolyRemove(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.navpolyRemove.call(this._handle, _arg, 1)
+    __method_bind.navpolyRemove.call(this._handle, listOf(_arg))
   }
 
   fun navpolySetTransform(id: Int, xform: Transform2D) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(xform)
-    __method_bind.navpolySetTransform.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(xform))
+    __method_bind.navpolySetTransform.call(this._handle, _args)
   }
 
   companion object {

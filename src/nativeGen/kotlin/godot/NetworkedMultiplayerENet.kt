@@ -62,7 +62,7 @@ open class NetworkedMultiplayerENet(
 
   fun closeConnection(waitUsec: Int = 100) {
     val _arg = Variant.new(waitUsec)
-    __method_bind.closeConnection.call(this._handle, _arg, 1)
+    __method_bind.closeConnection.call(this._handle, listOf(_arg))
   }
 
   fun createClient(
@@ -72,13 +72,13 @@ open class NetworkedMultiplayerENet(
     outBandwidth: Int = 0,
     clientPort: Int = 0
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(address)
-    _args.append(port)
-    _args.append(inBandwidth)
-    _args.append(outBandwidth)
-    _args.append(clientPort)
-    val _ret = __method_bind.createClient.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(address))
+    _args.add(Variant.fromAny(port))
+    _args.add(Variant.fromAny(inBandwidth))
+    _args.add(Variant.fromAny(outBandwidth))
+    _args.add(Variant.fromAny(clientPort))
+    val _ret = __method_bind.createClient.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -88,20 +88,20 @@ open class NetworkedMultiplayerENet(
     inBandwidth: Int = 0,
     outBandwidth: Int = 0
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(port)
-    _args.append(maxClients)
-    _args.append(inBandwidth)
-    _args.append(outBandwidth)
-    val _ret = __method_bind.createServer.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(port))
+    _args.add(Variant.fromAny(maxClients))
+    _args.add(Variant.fromAny(inBandwidth))
+    _args.add(Variant.fromAny(outBandwidth))
+    val _ret = __method_bind.createServer.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun disconnectPeer(id: Int, now: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    _args.append(now)
-    __method_bind.disconnectPeer.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(now))
+    __method_bind.disconnectPeer.call(this._handle, _args)
   }
 
   fun getChannelCount(): Int {
@@ -126,13 +126,13 @@ open class NetworkedMultiplayerENet(
 
   fun getPeerAddress(id: Int): String {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.getPeerAddress.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPeerAddress.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getPeerPort(id: Int): Int {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.getPeerPort.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPeerPort.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -153,32 +153,32 @@ open class NetworkedMultiplayerENet(
 
   fun setAlwaysOrdered(ordered: Boolean) {
     val _arg = Variant.new(ordered)
-    __method_bind.setAlwaysOrdered.call(this._handle, _arg, 1)
+    __method_bind.setAlwaysOrdered.call(this._handle, listOf(_arg))
   }
 
   fun setBindIp(ip: String) {
     val _arg = Variant.new(ip)
-    __method_bind.setBindIp.call(this._handle, _arg, 1)
+    __method_bind.setBindIp.call(this._handle, listOf(_arg))
   }
 
   fun setChannelCount(channels: Int) {
     val _arg = Variant.new(channels)
-    __method_bind.setChannelCount.call(this._handle, _arg, 1)
+    __method_bind.setChannelCount.call(this._handle, listOf(_arg))
   }
 
   fun setCompressionMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setCompressionMode.call(this._handle, _arg, 1)
+    __method_bind.setCompressionMode.call(this._handle, listOf(_arg))
   }
 
   fun setServerRelayEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setServerRelayEnabled.call(this._handle, _arg, 1)
+    __method_bind.setServerRelayEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setTransferChannel(channel: Int) {
     val _arg = Variant.new(channel)
-    __method_bind.setTransferChannel.call(this._handle, _arg, 1)
+    __method_bind.setTransferChannel.call(this._handle, listOf(_arg))
   }
 
   enum class CompressionMode(

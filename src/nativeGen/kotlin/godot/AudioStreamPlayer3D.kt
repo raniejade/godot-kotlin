@@ -271,102 +271,102 @@ open class AudioStreamPlayer3D(
 
   fun play(fromPosition: Float = 0.0f) {
     val _arg = Variant.new(fromPosition)
-    __method_bind.play.call(this._handle, _arg, 1)
+    __method_bind.play.call(this._handle, listOf(_arg))
   }
 
   fun seek(toPosition: Float) {
     val _arg = Variant.new(toPosition)
-    __method_bind.seek.call(this._handle, _arg, 1)
+    __method_bind.seek.call(this._handle, listOf(_arg))
   }
 
   fun setAreaMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.setAreaMask.call(this._handle, _arg, 1)
+    __method_bind.setAreaMask.call(this._handle, listOf(_arg))
   }
 
   fun setAttenuationFilterCutoffHz(degrees: Float) {
     val _arg = Variant.new(degrees)
-    __method_bind.setAttenuationFilterCutoffHz.call(this._handle, _arg, 1)
+    __method_bind.setAttenuationFilterCutoffHz.call(this._handle, listOf(_arg))
   }
 
   fun setAttenuationFilterDb(db: Float) {
     val _arg = Variant.new(db)
-    __method_bind.setAttenuationFilterDb.call(this._handle, _arg, 1)
+    __method_bind.setAttenuationFilterDb.call(this._handle, listOf(_arg))
   }
 
   fun setAttenuationModel(model: Int) {
     val _arg = Variant.new(model)
-    __method_bind.setAttenuationModel.call(this._handle, _arg, 1)
+    __method_bind.setAttenuationModel.call(this._handle, listOf(_arg))
   }
 
   fun setAutoplay(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAutoplay.call(this._handle, _arg, 1)
+    __method_bind.setAutoplay.call(this._handle, listOf(_arg))
   }
 
   fun setBus(bus: String) {
     val _arg = Variant.new(bus)
-    __method_bind.setBus.call(this._handle, _arg, 1)
+    __method_bind.setBus.call(this._handle, listOf(_arg))
   }
 
   fun setDopplerTracking(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setDopplerTracking.call(this._handle, _arg, 1)
+    __method_bind.setDopplerTracking.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionAngle(degrees: Float) {
     val _arg = Variant.new(degrees)
-    __method_bind.setEmissionAngle.call(this._handle, _arg, 1)
+    __method_bind.setEmissionAngle.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionAngleEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setEmissionAngleEnabled.call(this._handle, _arg, 1)
+    __method_bind.setEmissionAngleEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setEmissionAngleFilterAttenuationDb(db: Float) {
     val _arg = Variant.new(db)
-    __method_bind.setEmissionAngleFilterAttenuationDb.call(this._handle, _arg, 1)
+    __method_bind.setEmissionAngleFilterAttenuationDb.call(this._handle, listOf(_arg))
   }
 
   fun setMaxDb(maxDb: Float) {
     val _arg = Variant.new(maxDb)
-    __method_bind.setMaxDb.call(this._handle, _arg, 1)
+    __method_bind.setMaxDb.call(this._handle, listOf(_arg))
   }
 
   fun setMaxDistance(metres: Float) {
     val _arg = Variant.new(metres)
-    __method_bind.setMaxDistance.call(this._handle, _arg, 1)
+    __method_bind.setMaxDistance.call(this._handle, listOf(_arg))
   }
 
   fun setOutOfRangeMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setOutOfRangeMode.call(this._handle, _arg, 1)
+    __method_bind.setOutOfRangeMode.call(this._handle, listOf(_arg))
   }
 
   fun setPitchScale(pitchScale: Float) {
     val _arg = Variant.new(pitchScale)
-    __method_bind.setPitchScale.call(this._handle, _arg, 1)
+    __method_bind.setPitchScale.call(this._handle, listOf(_arg))
   }
 
   fun setStream(stream: AudioStream) {
     val _arg = Variant.new(stream)
-    __method_bind.setStream.call(this._handle, _arg, 1)
+    __method_bind.setStream.call(this._handle, listOf(_arg))
   }
 
   fun setStreamPaused(pause: Boolean) {
     val _arg = Variant.new(pause)
-    __method_bind.setStreamPaused.call(this._handle, _arg, 1)
+    __method_bind.setStreamPaused.call(this._handle, listOf(_arg))
   }
 
   fun setUnitDb(unitDb: Float) {
     val _arg = Variant.new(unitDb)
-    __method_bind.setUnitDb.call(this._handle, _arg, 1)
+    __method_bind.setUnitDb.call(this._handle, listOf(_arg))
   }
 
   fun setUnitSize(unitSize: Float) {
     val _arg = Variant.new(unitSize)
-    __method_bind.setUnitSize.call(this._handle, _arg, 1)
+    __method_bind.setUnitSize.call(this._handle, listOf(_arg))
   }
 
   fun stop() {

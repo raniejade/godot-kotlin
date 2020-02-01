@@ -34,38 +34,38 @@ open class Theme(
   }
 
   fun clearColor(name: String, type: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    __method_bind.clearColor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    __method_bind.clearColor.call(this._handle, _args)
   }
 
   fun clearConstant(name: String, type: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    __method_bind.clearConstant.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    __method_bind.clearConstant.call(this._handle, _args)
   }
 
   fun clearFont(name: String, type: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    __method_bind.clearFont.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    __method_bind.clearFont.call(this._handle, _args)
   }
 
   fun clearIcon(name: String, type: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    __method_bind.clearIcon.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    __method_bind.clearIcon.call(this._handle, _args)
   }
 
   fun clearStylebox(name: String, type: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    __method_bind.clearStylebox.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    __method_bind.clearStylebox.call(this._handle, _args)
   }
 
   fun copyDefaultTheme() {
@@ -74,34 +74,34 @@ open class Theme(
 
   fun copyTheme(other: Theme) {
     val _arg = Variant.new(other)
-    __method_bind.copyTheme.call(this._handle, _arg, 1)
+    __method_bind.copyTheme.call(this._handle, listOf(_arg))
   }
 
   fun getColor(name: String, type: String): Color {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    val _ret = __method_bind.getColor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    val _ret = __method_bind.getColor.call(this._handle, _args)
     return _ret.asColor()
   }
 
   fun getColorList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getColorList.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getColorList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
   fun getConstant(name: String, type: String): Int {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    val _ret = __method_bind.getConstant.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    val _ret = __method_bind.getConstant.call(this._handle, _args)
     return _ret.asInt()
   }
 
   fun getConstantList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getConstantList.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConstantList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
@@ -111,44 +111,44 @@ open class Theme(
   }
 
   fun getFont(name: String, type: String): Font {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    val _ret = __method_bind.getFont.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    val _ret = __method_bind.getFont.call(this._handle, _args)
     return _ret.asObject(::Font)!!
   }
 
   fun getFontList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getFontList.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFontList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
   fun getIcon(name: String, type: String): Texture {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    val _ret = __method_bind.getIcon.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    val _ret = __method_bind.getIcon.call(this._handle, _args)
     return _ret.asObject(::Texture)!!
   }
 
   fun getIconList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getIconList.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getIconList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
   fun getStylebox(name: String, type: String): StyleBox {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    val _ret = __method_bind.getStylebox.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    val _ret = __method_bind.getStylebox.call(this._handle, _args)
     return _ret.asObject(::StyleBox)!!
   }
 
   fun getStyleboxList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getStyleboxList.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getStyleboxList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
@@ -159,47 +159,47 @@ open class Theme(
 
   fun getTypeList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getTypeList.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getTypeList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
   fun hasColor(name: String, type: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    val _ret = __method_bind.hasColor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    val _ret = __method_bind.hasColor.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun hasConstant(name: String, type: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    val _ret = __method_bind.hasConstant.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    val _ret = __method_bind.hasConstant.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun hasFont(name: String, type: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    val _ret = __method_bind.hasFont.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    val _ret = __method_bind.hasFont.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun hasIcon(name: String, type: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    val _ret = __method_bind.hasIcon.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    val _ret = __method_bind.hasIcon.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun hasStylebox(name: String, type: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    val _ret = __method_bind.hasStylebox.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    val _ret = __method_bind.hasStylebox.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -208,11 +208,11 @@ open class Theme(
     type: String,
     color: Color
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    _args.append(color)
-    __method_bind.setColor.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(color))
+    __method_bind.setColor.call(this._handle, _args)
   }
 
   fun setConstant(
@@ -220,16 +220,16 @@ open class Theme(
     type: String,
     constant: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    _args.append(constant)
-    __method_bind.setConstant.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(constant))
+    __method_bind.setConstant.call(this._handle, _args)
   }
 
   fun setDefaultFont(font: Font) {
     val _arg = Variant.new(font)
-    __method_bind.setDefaultFont.call(this._handle, _arg, 1)
+    __method_bind.setDefaultFont.call(this._handle, listOf(_arg))
   }
 
   fun setFont(
@@ -237,11 +237,11 @@ open class Theme(
     type: String,
     font: Font
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    _args.append(font)
-    __method_bind.setFont.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(font))
+    __method_bind.setFont.call(this._handle, _args)
   }
 
   fun setIcon(
@@ -249,11 +249,11 @@ open class Theme(
     type: String,
     texture: Texture
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    _args.append(texture)
-    __method_bind.setIcon.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(texture))
+    __method_bind.setIcon.call(this._handle, _args)
   }
 
   fun setStylebox(
@@ -261,11 +261,11 @@ open class Theme(
     type: String,
     texture: StyleBox
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(type)
-    _args.append(texture)
-    __method_bind.setStylebox.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(texture))
+    __method_bind.setStylebox.call(this._handle, _args)
   }
 
   companion object {

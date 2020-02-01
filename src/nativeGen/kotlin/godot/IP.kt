@@ -20,12 +20,12 @@ open class IP(
 ) : Object(_handle) {
   fun clearCache(hostname: String = "") {
     val _arg = Variant.new(hostname)
-    __method_bind.clearCache.call(this._handle, _arg, 1)
+    __method_bind.clearCache.call(this._handle, listOf(_arg))
   }
 
   fun eraseResolveItem(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.eraseResolveItem.call(this._handle, _arg, 1)
+    __method_bind.eraseResolveItem.call(this._handle, listOf(_arg))
   }
 
   fun getLocalAddresses(): VariantArray {
@@ -40,29 +40,29 @@ open class IP(
 
   fun getResolveItemAddress(id: Int): String {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.getResolveItemAddress.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getResolveItemAddress.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getResolveItemStatus(id: Int): ResolverStatus {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.getResolveItemStatus.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getResolveItemStatus.call(this._handle, listOf(_arg))
     return IP.ResolverStatus.from(_ret.asInt())
   }
 
   fun resolveHostname(host: String, ipType: Int = 3): String {
-    val _args = VariantArray.new()
-    _args.append(host)
-    _args.append(ipType)
-    val _ret = __method_bind.resolveHostname.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(host))
+    _args.add(Variant.fromAny(ipType))
+    val _ret = __method_bind.resolveHostname.call(this._handle, _args)
     return _ret.asString()
   }
 
   fun resolveHostnameQueueItem(host: String, ipType: Int = 3): Int {
-    val _args = VariantArray.new()
-    _args.append(host)
-    _args.append(ipType)
-    val _ret = __method_bind.resolveHostnameQueueItem.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(host))
+    _args.add(Variant.fromAny(ipType))
+    val _ret = __method_bind.resolveHostnameQueueItem.call(this._handle, _args)
     return _ret.asInt()
   }
 

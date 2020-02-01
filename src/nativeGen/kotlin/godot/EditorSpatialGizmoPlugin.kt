@@ -20,17 +20,17 @@ open class EditorSpatialGizmoPlugin(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addMaterial(name: String, material: SpatialMaterial) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(material)
-    __method_bind.addMaterial.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(material))
+    __method_bind.addMaterial.call(this._handle, _args)
   }
 
   fun createHandleMaterial(name: String, billboard: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(billboard)
-    __method_bind.createHandleMaterial.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(billboard))
+    __method_bind.createHandleMaterial.call(this._handle, _args)
   }
 
   fun createIconMaterial(
@@ -39,12 +39,12 @@ open class EditorSpatialGizmoPlugin(
     onTop: Boolean = false,
     color: Color = Color.rgb(1,1,1,1)
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(texture)
-    _args.append(onTop)
-    _args.append(color)
-    __method_bind.createIconMaterial.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(texture))
+    _args.add(Variant.fromAny(onTop))
+    _args.add(Variant.fromAny(color))
+    __method_bind.createIconMaterial.call(this._handle, _args)
   }
 
   fun createMaterial(
@@ -54,20 +54,20 @@ open class EditorSpatialGizmoPlugin(
     onTop: Boolean = false,
     useVertexColor: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(color)
-    _args.append(billboard)
-    _args.append(onTop)
-    _args.append(useVertexColor)
-    __method_bind.createMaterial.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(color))
+    _args.add(Variant.fromAny(billboard))
+    _args.add(Variant.fromAny(onTop))
+    _args.add(Variant.fromAny(useVertexColor))
+    __method_bind.createMaterial.call(this._handle, _args)
   }
 
   fun getMaterial(name: String, gizmo: EditorSpatialGizmo): SpatialMaterial {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(gizmo)
-    val _ret = __method_bind.getMaterial.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(gizmo))
+    val _ret = __method_bind.getMaterial.call(this._handle, _args)
     return _ret.asObject(::SpatialMaterial)!!
   }
 

@@ -19,10 +19,10 @@ open class Skin(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addBind(bone: Int, pose: Transform) {
-    val _args = VariantArray.new()
-    _args.append(bone)
-    _args.append(pose)
-    __method_bind.addBind.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(bone))
+    _args.add(Variant.fromAny(pose))
+    __method_bind.addBind.call(this._handle, _args)
   }
 
   fun clearBinds() {
@@ -31,7 +31,7 @@ open class Skin(
 
   fun getBindBone(bindIndex: Int): Int {
     val _arg = Variant.new(bindIndex)
-    val _ret = __method_bind.getBindBone.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBindBone.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -42,27 +42,27 @@ open class Skin(
 
   fun getBindPose(bindIndex: Int): Transform {
     val _arg = Variant.new(bindIndex)
-    val _ret = __method_bind.getBindPose.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBindPose.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
 
   fun setBindBone(bindIndex: Int, bone: Int) {
-    val _args = VariantArray.new()
-    _args.append(bindIndex)
-    _args.append(bone)
-    __method_bind.setBindBone.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(bindIndex))
+    _args.add(Variant.fromAny(bone))
+    __method_bind.setBindBone.call(this._handle, _args)
   }
 
   fun setBindCount(bindCount: Int) {
     val _arg = Variant.new(bindCount)
-    __method_bind.setBindCount.call(this._handle, _arg, 1)
+    __method_bind.setBindCount.call(this._handle, listOf(_arg))
   }
 
   fun setBindPose(bindIndex: Int, pose: Transform) {
-    val _args = VariantArray.new()
-    _args.append(bindIndex)
-    _args.append(pose)
-    __method_bind.setBindPose.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(bindIndex))
+    _args.add(Variant.fromAny(pose))
+    __method_bind.setBindPose.call(this._handle, _args)
   }
 
   companion object {

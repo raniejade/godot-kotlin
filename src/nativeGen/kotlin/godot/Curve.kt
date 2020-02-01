@@ -50,13 +50,13 @@ open class Curve(
     leftMode: Int = 0,
     rightMode: Int = 0
   ): Int {
-    val _args = VariantArray.new()
-    _args.append(position)
-    _args.append(leftTangent)
-    _args.append(rightTangent)
-    _args.append(leftMode)
-    _args.append(rightMode)
-    val _ret = __method_bind.addPoint.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(leftTangent))
+    _args.add(Variant.fromAny(rightTangent))
+    _args.add(Variant.fromAny(leftMode))
+    _args.add(Variant.fromAny(rightMode))
+    val _ret = __method_bind.addPoint.call(this._handle, _args)
     return _ret.asInt()
   }
 
@@ -94,107 +94,107 @@ open class Curve(
 
   fun getPointLeftMode(index: Int): TangentMode {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.getPointLeftMode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointLeftMode.call(this._handle, listOf(_arg))
     return Curve.TangentMode.from(_ret.asInt())
   }
 
   fun getPointLeftTangent(index: Int): Float {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.getPointLeftTangent.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointLeftTangent.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getPointPosition(index: Int): Vector2 {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.getPointPosition.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getPointRightMode(index: Int): TangentMode {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.getPointRightMode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointRightMode.call(this._handle, listOf(_arg))
     return Curve.TangentMode.from(_ret.asInt())
   }
 
   fun getPointRightTangent(index: Int): Float {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.getPointRightTangent.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointRightTangent.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun interpolate(offset: Float): Float {
     val _arg = Variant.new(offset)
-    val _ret = __method_bind.interpolate.call(this._handle, _arg, 1)
+    val _ret = __method_bind.interpolate.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun interpolateBaked(offset: Float): Float {
     val _arg = Variant.new(offset)
-    val _ret = __method_bind.interpolateBaked.call(this._handle, _arg, 1)
+    val _ret = __method_bind.interpolateBaked.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun removePoint(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.removePoint.call(this._handle, _arg, 1)
+    __method_bind.removePoint.call(this._handle, listOf(_arg))
   }
 
   fun setBakeResolution(resolution: Int) {
     val _arg = Variant.new(resolution)
-    __method_bind.setBakeResolution.call(this._handle, _arg, 1)
+    __method_bind.setBakeResolution.call(this._handle, listOf(_arg))
   }
 
   fun setMaxValue(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.setMaxValue.call(this._handle, _arg, 1)
+    __method_bind.setMaxValue.call(this._handle, listOf(_arg))
   }
 
   fun setMinValue(min: Float) {
     val _arg = Variant.new(min)
-    __method_bind.setMinValue.call(this._handle, _arg, 1)
+    __method_bind.setMinValue.call(this._handle, listOf(_arg))
   }
 
   fun setPointLeftMode(index: Int, mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(mode)
-    __method_bind.setPointLeftMode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(mode))
+    __method_bind.setPointLeftMode.call(this._handle, _args)
   }
 
   fun setPointLeftTangent(index: Int, tangent: Float) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(tangent)
-    __method_bind.setPointLeftTangent.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(tangent))
+    __method_bind.setPointLeftTangent.call(this._handle, _args)
   }
 
   fun setPointOffset(index: Int, offset: Float): Int {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(offset)
-    val _ret = __method_bind.setPointOffset.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(offset))
+    val _ret = __method_bind.setPointOffset.call(this._handle, _args)
     return _ret.asInt()
   }
 
   fun setPointRightMode(index: Int, mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(mode)
-    __method_bind.setPointRightMode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(mode))
+    __method_bind.setPointRightMode.call(this._handle, _args)
   }
 
   fun setPointRightTangent(index: Int, tangent: Float) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(tangent)
-    __method_bind.setPointRightTangent.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(tangent))
+    __method_bind.setPointRightTangent.call(this._handle, _args)
   }
 
   fun setPointValue(index: Int, y: Float) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    _args.append(y)
-    __method_bind.setPointValue.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(index))
+    _args.add(Variant.fromAny(y))
+    __method_bind.setPointValue.call(this._handle, _args)
   }
 
   enum class TangentMode(

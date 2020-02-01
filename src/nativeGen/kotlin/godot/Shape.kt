@@ -32,7 +32,7 @@ open class Shape(
 
   fun setMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.setMargin.call(this._handle, _arg, 1)
+    __method_bind.setMargin.call(this._handle, listOf(_arg))
   }
 
   companion object {

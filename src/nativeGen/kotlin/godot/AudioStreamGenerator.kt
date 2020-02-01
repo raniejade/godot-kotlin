@@ -45,12 +45,12 @@ open class AudioStreamGenerator(
 
   fun setBufferLength(seconds: Float) {
     val _arg = Variant.new(seconds)
-    __method_bind.setBufferLength.call(this._handle, _arg, 1)
+    __method_bind.setBufferLength.call(this._handle, listOf(_arg))
   }
 
   fun setMixRate(hz: Float) {
     val _arg = Variant.new(hz)
-    __method_bind.setMixRate.call(this._handle, _arg, 1)
+    __method_bind.setMixRate.call(this._handle, listOf(_arg))
   }
 
   companion object {

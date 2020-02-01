@@ -215,7 +215,7 @@ open class TextureProgress(
 
   fun getStretchMargin(margin: Int): Int {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.getStretchMargin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getStretchMargin.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -241,64 +241,64 @@ open class TextureProgress(
 
   fun setFillDegrees(mode: Float) {
     val _arg = Variant.new(mode)
-    __method_bind.setFillDegrees.call(this._handle, _arg, 1)
+    __method_bind.setFillDegrees.call(this._handle, listOf(_arg))
   }
 
   fun setFillMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setFillMode.call(this._handle, _arg, 1)
+    __method_bind.setFillMode.call(this._handle, listOf(_arg))
   }
 
   fun setNinePatchStretch(stretch: Boolean) {
     val _arg = Variant.new(stretch)
-    __method_bind.setNinePatchStretch.call(this._handle, _arg, 1)
+    __method_bind.setNinePatchStretch.call(this._handle, listOf(_arg))
   }
 
   fun setOverTexture(tex: Texture) {
     val _arg = Variant.new(tex)
-    __method_bind.setOverTexture.call(this._handle, _arg, 1)
+    __method_bind.setOverTexture.call(this._handle, listOf(_arg))
   }
 
   fun setProgressTexture(tex: Texture) {
     val _arg = Variant.new(tex)
-    __method_bind.setProgressTexture.call(this._handle, _arg, 1)
+    __method_bind.setProgressTexture.call(this._handle, listOf(_arg))
   }
 
   fun setRadialCenterOffset(mode: Vector2) {
     val _arg = Variant.new(mode)
-    __method_bind.setRadialCenterOffset.call(this._handle, _arg, 1)
+    __method_bind.setRadialCenterOffset.call(this._handle, listOf(_arg))
   }
 
   fun setRadialInitialAngle(mode: Float) {
     val _arg = Variant.new(mode)
-    __method_bind.setRadialInitialAngle.call(this._handle, _arg, 1)
+    __method_bind.setRadialInitialAngle.call(this._handle, listOf(_arg))
   }
 
   fun setStretchMargin(margin: Int, value: Int) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    _args.append(value)
-    __method_bind.setStretchMargin.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(margin))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setStretchMargin.call(this._handle, _args)
   }
 
   fun setTintOver(tint: Color) {
     val _arg = Variant.new(tint)
-    __method_bind.setTintOver.call(this._handle, _arg, 1)
+    __method_bind.setTintOver.call(this._handle, listOf(_arg))
   }
 
   fun setTintProgress(tint: Color) {
     val _arg = Variant.new(tint)
-    __method_bind.setTintProgress.call(this._handle, _arg, 1)
+    __method_bind.setTintProgress.call(this._handle, listOf(_arg))
   }
 
   fun setTintUnder(tint: Color) {
     val _arg = Variant.new(tint)
-    __method_bind.setTintUnder.call(this._handle, _arg, 1)
+    __method_bind.setTintUnder.call(this._handle, listOf(_arg))
   }
 
   fun setUnderTexture(tex: Texture) {
     val _arg = Variant.new(tex)
-    __method_bind.setUnderTexture.call(this._handle, _arg, 1)
+    __method_bind.setUnderTexture.call(this._handle, listOf(_arg))
   }
 
   enum class FillMode(

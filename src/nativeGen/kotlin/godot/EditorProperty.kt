@@ -68,7 +68,7 @@ open class EditorProperty(
 
   fun addFocusable(control: Control) {
     val _arg = Variant.new(control)
-    __method_bind.addFocusable.call(this._handle, _arg, 1)
+    __method_bind.addFocusable.call(this._handle, listOf(_arg))
   }
 
   fun emitChanged(
@@ -77,12 +77,12 @@ open class EditorProperty(
     field: String = "",
     changing: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(property)
-    _args.append(value)
-    _args.append(field)
-    _args.append(changing)
-    __method_bind.emitChanged.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(value))
+    _args.add(Variant.fromAny(field))
+    _args.add(Variant.fromAny(changing))
+    __method_bind.emitChanged.call(this._handle, _args)
   }
 
   fun getEditedObject(): Object {
@@ -132,37 +132,37 @@ open class EditorProperty(
 
   fun setBottomEditor(editor: Control) {
     val _arg = Variant.new(editor)
-    __method_bind.setBottomEditor.call(this._handle, _arg, 1)
+    __method_bind.setBottomEditor.call(this._handle, listOf(_arg))
   }
 
   fun setCheckable(checkable: Boolean) {
     val _arg = Variant.new(checkable)
-    __method_bind.setCheckable.call(this._handle, _arg, 1)
+    __method_bind.setCheckable.call(this._handle, listOf(_arg))
   }
 
   fun setChecked(checked: Boolean) {
     val _arg = Variant.new(checked)
-    __method_bind.setChecked.call(this._handle, _arg, 1)
+    __method_bind.setChecked.call(this._handle, listOf(_arg))
   }
 
   fun setDrawRed(drawRed: Boolean) {
     val _arg = Variant.new(drawRed)
-    __method_bind.setDrawRed.call(this._handle, _arg, 1)
+    __method_bind.setDrawRed.call(this._handle, listOf(_arg))
   }
 
   fun setKeying(keying: Boolean) {
     val _arg = Variant.new(keying)
-    __method_bind.setKeying.call(this._handle, _arg, 1)
+    __method_bind.setKeying.call(this._handle, listOf(_arg))
   }
 
   fun setLabel(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setLabel.call(this._handle, _arg, 1)
+    __method_bind.setLabel.call(this._handle, listOf(_arg))
   }
 
   fun setReadOnly(readOnly: Boolean) {
     val _arg = Variant.new(readOnly)
-    __method_bind.setReadOnly.call(this._handle, _arg, 1)
+    __method_bind.setReadOnly.call(this._handle, listOf(_arg))
   }
 
   companion object {

@@ -32,7 +32,7 @@ open class VisualScriptVariableGet(
 
   fun setVariable(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setVariable.call(this._handle, _arg, 1)
+    __method_bind.setVariable.call(this._handle, listOf(_arg))
   }
 
   companion object {

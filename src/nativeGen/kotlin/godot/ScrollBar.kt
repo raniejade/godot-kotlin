@@ -32,7 +32,7 @@ open class ScrollBar(
 
   fun setCustomStep(step: Float) {
     val _arg = Variant.new(step)
-    __method_bind.setCustomStep.call(this._handle, _arg, 1)
+    __method_bind.setCustomStep.call(this._handle, listOf(_arg))
   }
 
   companion object {

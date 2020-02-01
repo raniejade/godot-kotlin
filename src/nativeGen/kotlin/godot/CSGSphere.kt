@@ -86,27 +86,27 @@ open class CSGSphere(
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.setMaterial.call(this._handle, _arg, 1)
+    __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setRadialSegments(radialSegments: Int) {
     val _arg = Variant.new(radialSegments)
-    __method_bind.setRadialSegments.call(this._handle, _arg, 1)
+    __method_bind.setRadialSegments.call(this._handle, listOf(_arg))
   }
 
   fun setRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.setRadius.call(this._handle, _arg, 1)
+    __method_bind.setRadius.call(this._handle, listOf(_arg))
   }
 
   fun setRings(rings: Int) {
     val _arg = Variant.new(rings)
-    __method_bind.setRings.call(this._handle, _arg, 1)
+    __method_bind.setRings.call(this._handle, listOf(_arg))
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
     val _arg = Variant.new(smoothFaces)
-    __method_bind.setSmoothFaces.call(this._handle, _arg, 1)
+    __method_bind.setSmoothFaces.call(this._handle, listOf(_arg))
   }
 
   companion object {

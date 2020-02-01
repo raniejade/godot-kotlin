@@ -71,22 +71,22 @@ open class DampedSpringJoint2D(
 
   fun setDamping(damping: Float) {
     val _arg = Variant.new(damping)
-    __method_bind.setDamping.call(this._handle, _arg, 1)
+    __method_bind.setDamping.call(this._handle, listOf(_arg))
   }
 
   fun setLength(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.setLength.call(this._handle, _arg, 1)
+    __method_bind.setLength.call(this._handle, listOf(_arg))
   }
 
   fun setRestLength(restLength: Float) {
     val _arg = Variant.new(restLength)
-    __method_bind.setRestLength.call(this._handle, _arg, 1)
+    __method_bind.setRestLength.call(this._handle, listOf(_arg))
   }
 
   fun setStiffness(stiffness: Float) {
     val _arg = Variant.new(stiffness)
-    __method_bind.setStiffness.call(this._handle, _arg, 1)
+    __method_bind.setStiffness.call(this._handle, listOf(_arg))
   }
 
   companion object {

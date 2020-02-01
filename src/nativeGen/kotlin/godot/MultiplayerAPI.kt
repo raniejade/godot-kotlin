@@ -98,32 +98,32 @@ open class MultiplayerAPI(
     id: Int = 0,
     mode: Int = 2
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(bytes)
-    _args.append(id)
-    _args.append(mode)
-    val _ret = __method_bind.sendBytes.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(bytes))
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(mode))
+    val _ret = __method_bind.sendBytes.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun setAllowObjectDecoding(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAllowObjectDecoding.call(this._handle, _arg, 1)
+    __method_bind.setAllowObjectDecoding.call(this._handle, listOf(_arg))
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
     val _arg = Variant.new(peer)
-    __method_bind.setNetworkPeer.call(this._handle, _arg, 1)
+    __method_bind.setNetworkPeer.call(this._handle, listOf(_arg))
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
     val _arg = Variant.new(refuse)
-    __method_bind.setRefuseNewNetworkConnections.call(this._handle, _arg, 1)
+    __method_bind.setRefuseNewNetworkConnections.call(this._handle, listOf(_arg))
   }
 
   fun setRootNode(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.setRootNode.call(this._handle, _arg, 1)
+    __method_bind.setRootNode.call(this._handle, listOf(_arg))
   }
 
   enum class RPCMode(

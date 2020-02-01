@@ -124,43 +124,43 @@ open class AudioStreamSample(
 
   fun saveToWav(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.saveToWav.call(this._handle, _arg, 1)
+    val _ret = __method_bind.saveToWav.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun setData(data: PoolByteArray) {
     val _arg = Variant.new(data)
-    __method_bind.setData.call(this._handle, _arg, 1)
+    __method_bind.setData.call(this._handle, listOf(_arg))
   }
 
   fun setFormat(format: Int) {
     val _arg = Variant.new(format)
-    __method_bind.setFormat.call(this._handle, _arg, 1)
+    __method_bind.setFormat.call(this._handle, listOf(_arg))
   }
 
   fun setLoopBegin(loopBegin: Int) {
     val _arg = Variant.new(loopBegin)
-    __method_bind.setLoopBegin.call(this._handle, _arg, 1)
+    __method_bind.setLoopBegin.call(this._handle, listOf(_arg))
   }
 
   fun setLoopEnd(loopEnd: Int) {
     val _arg = Variant.new(loopEnd)
-    __method_bind.setLoopEnd.call(this._handle, _arg, 1)
+    __method_bind.setLoopEnd.call(this._handle, listOf(_arg))
   }
 
   fun setLoopMode(loopMode: Int) {
     val _arg = Variant.new(loopMode)
-    __method_bind.setLoopMode.call(this._handle, _arg, 1)
+    __method_bind.setLoopMode.call(this._handle, listOf(_arg))
   }
 
   fun setMixRate(mixRate: Int) {
     val _arg = Variant.new(mixRate)
-    __method_bind.setMixRate.call(this._handle, _arg, 1)
+    __method_bind.setMixRate.call(this._handle, listOf(_arg))
   }
 
   fun setStereo(stereo: Boolean) {
     val _arg = Variant.new(stereo)
-    __method_bind.setStereo.call(this._handle, _arg, 1)
+    __method_bind.setStereo.call(this._handle, listOf(_arg))
   }
 
   enum class LoopMode(

@@ -31,7 +31,7 @@ open class AnimationNode(
 
   fun addInput(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.addInput.call(this._handle, _arg, 1)
+    __method_bind.addInput.call(this._handle, listOf(_arg))
   }
 
   fun blendAnimation(
@@ -41,13 +41,13 @@ open class AnimationNode(
     seeked: Boolean,
     blend: Float
   ) {
-    val _args = VariantArray.new()
-    _args.append(animation)
-    _args.append(time)
-    _args.append(delta)
-    _args.append(seeked)
-    _args.append(blend)
-    __method_bind.blendAnimation.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(animation))
+    _args.add(Variant.fromAny(time))
+    _args.add(Variant.fromAny(delta))
+    _args.add(Variant.fromAny(seeked))
+    _args.add(Variant.fromAny(blend))
+    __method_bind.blendAnimation.call(this._handle, _args)
   }
 
   fun blendInput(
@@ -58,14 +58,14 @@ open class AnimationNode(
     filter: Int = 0,
     optimize: Boolean = true
   ): Float {
-    val _args = VariantArray.new()
-    _args.append(inputIndex)
-    _args.append(time)
-    _args.append(seek)
-    _args.append(blend)
-    _args.append(filter)
-    _args.append(optimize)
-    val _ret = __method_bind.blendInput.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(inputIndex))
+    _args.add(Variant.fromAny(time))
+    _args.add(Variant.fromAny(seek))
+    _args.add(Variant.fromAny(blend))
+    _args.add(Variant.fromAny(filter))
+    _args.add(Variant.fromAny(optimize))
+    val _ret = __method_bind.blendInput.call(this._handle, _args)
     return _ret.asFloat()
   }
 
@@ -78,15 +78,15 @@ open class AnimationNode(
     filter: Int = 0,
     optimize: Boolean = true
   ): Float {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(node)
-    _args.append(time)
-    _args.append(seek)
-    _args.append(blend)
-    _args.append(filter)
-    _args.append(optimize)
-    val _ret = __method_bind.blendNode.call(this._handle, _args.toVariant(), 7)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(node))
+    _args.add(Variant.fromAny(time))
+    _args.add(Variant.fromAny(seek))
+    _args.add(Variant.fromAny(blend))
+    _args.add(Variant.fromAny(filter))
+    _args.add(Variant.fromAny(optimize))
+    val _ret = __method_bind.blendNode.call(this._handle, _args)
     return _ret.asFloat()
   }
 
@@ -97,13 +97,13 @@ open class AnimationNode(
 
   fun getInputName(input: Int): String {
     val _arg = Variant.new(input)
-    val _ret = __method_bind.getInputName.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getInputName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getParameter(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getParameter.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParameter.call(this._handle, listOf(_arg))
     return _ret
   }
 
@@ -114,32 +114,32 @@ open class AnimationNode(
 
   fun isPathFiltered(path: NodePath): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.isPathFiltered.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isPathFiltered.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeInput(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.removeInput.call(this._handle, _arg, 1)
+    __method_bind.removeInput.call(this._handle, listOf(_arg))
   }
 
   fun setFilterEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setFilterEnabled.call(this._handle, _arg, 1)
+    __method_bind.setFilterEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setFilterPath(path: NodePath, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(enable)
-    __method_bind.setFilterPath.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setFilterPath.call(this._handle, _args)
   }
 
   fun setParameter(name: String, value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(value)
-    __method_bind.setParameter.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setParameter.call(this._handle, _args)
   }
 
   enum class FilterAction(

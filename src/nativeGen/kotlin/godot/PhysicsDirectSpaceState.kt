@@ -21,24 +21,24 @@ open class PhysicsDirectSpaceState(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun castMotion(shape: PhysicsShapeQueryParameters, motion: Vector3): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    _args.append(motion)
-    val _ret = __method_bind.castMotion.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(shape))
+    _args.add(Variant.fromAny(motion))
+    val _ret = __method_bind.castMotion.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun collideShape(shape: PhysicsShapeQueryParameters, maxResults: Int = 32): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    _args.append(maxResults)
-    val _ret = __method_bind.collideShape.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(shape))
+    _args.add(Variant.fromAny(maxResults))
+    val _ret = __method_bind.collideShape.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun getRestInfo(shape: PhysicsShapeQueryParameters): Dictionary {
     val _arg = Variant.new(shape)
-    val _ret = __method_bind.getRestInfo.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getRestInfo.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
 
@@ -50,22 +50,22 @@ open class PhysicsDirectSpaceState(
     collideWithBodies: Boolean = true,
     collideWithAreas: Boolean = false
   ): Dictionary {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    _args.append(exclude)
-    _args.append(collisionMask)
-    _args.append(collideWithBodies)
-    _args.append(collideWithAreas)
-    val _ret = __method_bind.intersectRay.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    _args.add(Variant.fromAny(exclude))
+    _args.add(Variant.fromAny(collisionMask))
+    _args.add(Variant.fromAny(collideWithBodies))
+    _args.add(Variant.fromAny(collideWithAreas))
+    val _ret = __method_bind.intersectRay.call(this._handle, _args)
     return _ret.asDictionary()
   }
 
   fun intersectShape(shape: PhysicsShapeQueryParameters, maxResults: Int = 32): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    _args.append(maxResults)
-    val _ret = __method_bind.intersectShape.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(shape))
+    _args.add(Variant.fromAny(maxResults))
+    val _ret = __method_bind.intersectShape.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 

@@ -123,10 +123,10 @@ open class ItemList(
   }
 
   fun addIconItem(icon: Texture, selectable: Boolean = true) {
-    val _args = VariantArray.new()
-    _args.append(icon)
-    _args.append(selectable)
-    __method_bind.addIconItem.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(icon))
+    _args.add(Variant.fromAny(selectable))
+    __method_bind.addIconItem.call(this._handle, _args)
   }
 
   fun addItem(
@@ -134,11 +134,11 @@ open class ItemList(
     icon: Texture,
     selectable: Boolean = true
   ) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    _args.append(icon)
-    _args.append(selectable)
-    __method_bind.addItem.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(text))
+    _args.add(Variant.fromAny(icon))
+    _args.add(Variant.fromAny(selectable))
+    __method_bind.addItem.call(this._handle, _args)
   }
 
   fun clear() {
@@ -180,10 +180,10 @@ open class ItemList(
   }
 
   fun getItemAtPosition(position: Vector2, exact: Boolean = false): Int {
-    val _args = VariantArray.new()
-    _args.append(position)
-    _args.append(exact)
-    val _ret = __method_bind.getItemAtPosition.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(exact))
+    val _ret = __method_bind.getItemAtPosition.call(this._handle, _args)
     return _ret.asInt()
   }
 
@@ -194,49 +194,49 @@ open class ItemList(
 
   fun getItemCustomBgColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemCustomBgColor.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemCustomBgColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getItemCustomFgColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemCustomFgColor.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemCustomFgColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getItemIcon(idx: Int): Texture {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemIcon.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemIcon.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemIconModulate(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemIconModulate.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemIconModulate.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getItemIconRegion(idx: Int): Rect2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemIconRegion.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemIconRegion.call(this._handle, listOf(_arg))
     return _ret.asRect2()
   }
 
   fun getItemMetadata(idx: Int): Variant {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemMetadata.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemMetadata.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getItemText(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemText.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemText.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getItemTooltip(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getItemTooltip.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemTooltip.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -277,25 +277,25 @@ open class ItemList(
 
   fun isItemDisabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.isItemDisabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isItemDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemIconTransposed(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.isItemIconTransposed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isItemIconTransposed.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemSelectable(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.isItemSelectable.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isItemSelectable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemTooltipEnabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.isItemTooltipEnabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isItemTooltipEnabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -306,166 +306,166 @@ open class ItemList(
 
   fun isSelected(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.isSelected.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isSelected.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun moveItem(fromIdx: Int, toIdx: Int) {
-    val _args = VariantArray.new()
-    _args.append(fromIdx)
-    _args.append(toIdx)
-    __method_bind.moveItem.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromIdx))
+    _args.add(Variant.fromAny(toIdx))
+    __method_bind.moveItem.call(this._handle, _args)
   }
 
   fun removeItem(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.removeItem.call(this._handle, _arg, 1)
+    __method_bind.removeItem.call(this._handle, listOf(_arg))
   }
 
   fun select(idx: Int, single: Boolean = true) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(single)
-    __method_bind.select.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(single))
+    __method_bind.select.call(this._handle, _args)
   }
 
   fun setAllowReselect(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.setAllowReselect.call(this._handle, _arg, 1)
+    __method_bind.setAllowReselect.call(this._handle, listOf(_arg))
   }
 
   fun setAllowRmbSelect(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.setAllowRmbSelect.call(this._handle, _arg, 1)
+    __method_bind.setAllowRmbSelect.call(this._handle, listOf(_arg))
   }
 
   fun setAutoHeight(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAutoHeight.call(this._handle, _arg, 1)
+    __method_bind.setAutoHeight.call(this._handle, listOf(_arg))
   }
 
   fun setFixedColumnWidth(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.setFixedColumnWidth.call(this._handle, _arg, 1)
+    __method_bind.setFixedColumnWidth.call(this._handle, listOf(_arg))
   }
 
   fun setFixedIconSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.setFixedIconSize.call(this._handle, _arg, 1)
+    __method_bind.setFixedIconSize.call(this._handle, listOf(_arg))
   }
 
   fun setIconMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setIconMode.call(this._handle, _arg, 1)
+    __method_bind.setIconMode.call(this._handle, listOf(_arg))
   }
 
   fun setIconScale(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.setIconScale.call(this._handle, _arg, 1)
+    __method_bind.setIconScale.call(this._handle, listOf(_arg))
   }
 
   fun setItemCustomBgColor(idx: Int, customBgColor: Color) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(customBgColor)
-    __method_bind.setItemCustomBgColor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(customBgColor))
+    __method_bind.setItemCustomBgColor.call(this._handle, _args)
   }
 
   fun setItemCustomFgColor(idx: Int, customFgColor: Color) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(customFgColor)
-    __method_bind.setItemCustomFgColor.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(customFgColor))
+    __method_bind.setItemCustomFgColor.call(this._handle, _args)
   }
 
   fun setItemDisabled(idx: Int, disabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(disabled)
-    __method_bind.setItemDisabled.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(disabled))
+    __method_bind.setItemDisabled.call(this._handle, _args)
   }
 
   fun setItemIcon(idx: Int, icon: Texture) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(icon)
-    __method_bind.setItemIcon.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(icon))
+    __method_bind.setItemIcon.call(this._handle, _args)
   }
 
   fun setItemIconModulate(idx: Int, modulate: Color) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(modulate)
-    __method_bind.setItemIconModulate.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(modulate))
+    __method_bind.setItemIconModulate.call(this._handle, _args)
   }
 
   fun setItemIconRegion(idx: Int, rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(rect)
-    __method_bind.setItemIconRegion.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(rect))
+    __method_bind.setItemIconRegion.call(this._handle, _args)
   }
 
   fun setItemIconTransposed(idx: Int, transposed: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(transposed)
-    __method_bind.setItemIconTransposed.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(transposed))
+    __method_bind.setItemIconTransposed.call(this._handle, _args)
   }
 
   fun setItemMetadata(idx: Int, metadata: Variant) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(metadata)
-    __method_bind.setItemMetadata.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(metadata))
+    __method_bind.setItemMetadata.call(this._handle, _args)
   }
 
   fun setItemSelectable(idx: Int, selectable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(selectable)
-    __method_bind.setItemSelectable.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(selectable))
+    __method_bind.setItemSelectable.call(this._handle, _args)
   }
 
   fun setItemText(idx: Int, text: String) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(text)
-    __method_bind.setItemText.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(text))
+    __method_bind.setItemText.call(this._handle, _args)
   }
 
   fun setItemTooltip(idx: Int, tooltip: String) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(tooltip)
-    __method_bind.setItemTooltip.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(tooltip))
+    __method_bind.setItemTooltip.call(this._handle, _args)
   }
 
   fun setItemTooltipEnabled(idx: Int, enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(enable)
-    __method_bind.setItemTooltipEnabled.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(enable))
+    __method_bind.setItemTooltipEnabled.call(this._handle, _args)
   }
 
   fun setMaxColumns(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setMaxColumns.call(this._handle, _arg, 1)
+    __method_bind.setMaxColumns.call(this._handle, listOf(_arg))
   }
 
   fun setMaxTextLines(lines: Int) {
     val _arg = Variant.new(lines)
-    __method_bind.setMaxTextLines.call(this._handle, _arg, 1)
+    __method_bind.setMaxTextLines.call(this._handle, listOf(_arg))
   }
 
   fun setSameColumnWidth(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setSameColumnWidth.call(this._handle, _arg, 1)
+    __method_bind.setSameColumnWidth.call(this._handle, listOf(_arg))
   }
 
   fun setSelectMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setSelectMode.call(this._handle, _arg, 1)
+    __method_bind.setSelectMode.call(this._handle, listOf(_arg))
   }
 
   fun sortItemsByText() {
@@ -474,7 +474,7 @@ open class ItemList(
 
   fun unselect(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.unselect.call(this._handle, _arg, 1)
+    __method_bind.unselect.call(this._handle, listOf(_arg))
   }
 
   fun unselectAll() {

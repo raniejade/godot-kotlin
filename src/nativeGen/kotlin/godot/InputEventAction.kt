@@ -55,17 +55,17 @@ open class InputEventAction(
 
   fun setAction(action: String) {
     val _arg = Variant.new(action)
-    __method_bind.setAction.call(this._handle, _arg, 1)
+    __method_bind.setAction.call(this._handle, listOf(_arg))
   }
 
   fun setPressed(pressed: Boolean) {
     val _arg = Variant.new(pressed)
-    __method_bind.setPressed.call(this._handle, _arg, 1)
+    __method_bind.setPressed.call(this._handle, listOf(_arg))
   }
 
   fun setStrength(strength: Float) {
     val _arg = Variant.new(strength)
-    __method_bind.setStrength.call(this._handle, _arg, 1)
+    __method_bind.setStrength.call(this._handle, listOf(_arg))
   }
 
   companion object {

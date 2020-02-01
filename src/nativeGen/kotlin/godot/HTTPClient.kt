@@ -57,12 +57,12 @@ open class HTTPClient(
     useSsl: Boolean = false,
     verifyHost: Boolean = true
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(host)
-    _args.append(port)
-    _args.append(useSsl)
-    _args.append(verifyHost)
-    val _ret = __method_bind.connectToHost.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(host))
+    _args.add(Variant.fromAny(port))
+    _args.add(Variant.fromAny(useSsl))
+    _args.add(Variant.fromAny(verifyHost))
+    val _ret = __method_bind.connectToHost.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -123,7 +123,7 @@ open class HTTPClient(
 
   fun queryStringFromDict(fields: Dictionary): String {
     val _arg = Variant.new(fields)
-    val _ret = __method_bind.queryStringFromDict.call(this._handle, _arg, 1)
+    val _ret = __method_bind.queryStringFromDict.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
@@ -138,12 +138,12 @@ open class HTTPClient(
     headers: PoolStringArray,
     body: String = ""
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(method)
-    _args.append(url)
-    _args.append(headers)
-    _args.append(body)
-    val _ret = __method_bind.request.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(url))
+    _args.add(Variant.fromAny(headers))
+    _args.add(Variant.fromAny(body))
+    val _ret = __method_bind.request.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -153,28 +153,28 @@ open class HTTPClient(
     headers: PoolStringArray,
     body: PoolByteArray
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(method)
-    _args.append(url)
-    _args.append(headers)
-    _args.append(body)
-    val _ret = __method_bind.requestRaw.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(url))
+    _args.add(Variant.fromAny(headers))
+    _args.add(Variant.fromAny(body))
+    val _ret = __method_bind.requestRaw.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun setBlockingMode(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setBlockingMode.call(this._handle, _arg, 1)
+    __method_bind.setBlockingMode.call(this._handle, listOf(_arg))
   }
 
   fun setConnection(connection: StreamPeer) {
     val _arg = Variant.new(connection)
-    __method_bind.setConnection.call(this._handle, _arg, 1)
+    __method_bind.setConnection.call(this._handle, listOf(_arg))
   }
 
   fun setReadChunkSize(bytes: Int) {
     val _arg = Variant.new(bytes)
-    __method_bind.setReadChunkSize.call(this._handle, _arg, 1)
+    __method_bind.setReadChunkSize.call(this._handle, listOf(_arg))
   }
 
   enum class Status(

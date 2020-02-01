@@ -86,27 +86,27 @@ open class SphereMesh(
 
   fun setHeight(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.setHeight.call(this._handle, _arg, 1)
+    __method_bind.setHeight.call(this._handle, listOf(_arg))
   }
 
   fun setIsHemisphere(isHemisphere: Boolean) {
     val _arg = Variant.new(isHemisphere)
-    __method_bind.setIsHemisphere.call(this._handle, _arg, 1)
+    __method_bind.setIsHemisphere.call(this._handle, listOf(_arg))
   }
 
   fun setRadialSegments(radialSegments: Int) {
     val _arg = Variant.new(radialSegments)
-    __method_bind.setRadialSegments.call(this._handle, _arg, 1)
+    __method_bind.setRadialSegments.call(this._handle, listOf(_arg))
   }
 
   fun setRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.setRadius.call(this._handle, _arg, 1)
+    __method_bind.setRadius.call(this._handle, listOf(_arg))
   }
 
   fun setRings(rings: Int) {
     val _arg = Variant.new(rings)
-    __method_bind.setRings.call(this._handle, _arg, 1)
+    __method_bind.setRings.call(this._handle, listOf(_arg))
   }
 
   companion object {

@@ -72,22 +72,22 @@ open class AudioEffectFilter(
 
   fun setCutoff(freq: Float) {
     val _arg = Variant.new(freq)
-    __method_bind.setCutoff.call(this._handle, _arg, 1)
+    __method_bind.setCutoff.call(this._handle, listOf(_arg))
   }
 
   fun setDb(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setDb.call(this._handle, _arg, 1)
+    __method_bind.setDb.call(this._handle, listOf(_arg))
   }
 
   fun setGain(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setGain.call(this._handle, _arg, 1)
+    __method_bind.setGain.call(this._handle, listOf(_arg))
   }
 
   fun setResonance(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.setResonance.call(this._handle, _arg, 1)
+    __method_bind.setResonance.call(this._handle, listOf(_arg))
   }
 
   enum class FilterDB(

@@ -25,15 +25,15 @@ open class AudioEffectEQ(
 
   fun getBandGainDb(bandIdx: Int): Float {
     val _arg = Variant.new(bandIdx)
-    val _ret = __method_bind.getBandGainDb.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBandGainDb.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun setBandGainDb(bandIdx: Int, volumeDb: Float) {
-    val _args = VariantArray.new()
-    _args.append(bandIdx)
-    _args.append(volumeDb)
-    __method_bind.setBandGainDb.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(bandIdx))
+    _args.add(Variant.fromAny(volumeDb))
+    __method_bind.setBandGainDb.call(this._handle, _args)
   }
 
   companion object {

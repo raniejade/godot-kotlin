@@ -125,21 +125,21 @@ open class RichTextLabel(
     width: Int = 0,
     height: Int = 0
   ) {
-    val _args = VariantArray.new()
-    _args.append(image)
-    _args.append(width)
-    _args.append(height)
-    __method_bind.addImage.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(image))
+    _args.add(Variant.fromAny(width))
+    _args.add(Variant.fromAny(height))
+    __method_bind.addImage.call(this._handle, _args)
   }
 
   fun addText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.addText.call(this._handle, _arg, 1)
+    __method_bind.addText.call(this._handle, listOf(_arg))
   }
 
   fun appendBbcode(bbcode: String): GDError {
     val _arg = Variant.new(bbcode)
-    val _ret = __method_bind.appendBbcode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.appendBbcode.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
@@ -204,7 +204,7 @@ open class RichTextLabel(
 
   fun installEffect(effect: Variant) {
     val _arg = Variant.new(effect)
-    __method_bind.installEffect.call(this._handle, _arg, 1)
+    __method_bind.installEffect.call(this._handle, listOf(_arg))
   }
 
   fun isMetaUnderlined(): Boolean {
@@ -243,13 +243,13 @@ open class RichTextLabel(
 
   fun parseBbcode(bbcode: String): GDError {
     val _arg = Variant.new(bbcode)
-    val _ret = __method_bind.parseBbcode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.parseBbcode.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun parseExpressionsForValues(expressions: PoolStringArray): Dictionary {
     val _arg = Variant.new(expressions)
-    val _ret = __method_bind.parseExpressionsForValues.call(this._handle, _arg, 1)
+    val _ret = __method_bind.parseExpressionsForValues.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
 
@@ -259,7 +259,7 @@ open class RichTextLabel(
 
   fun pushAlign(align: Int) {
     val _arg = Variant.new(align)
-    __method_bind.pushAlign.call(this._handle, _arg, 1)
+    __method_bind.pushAlign.call(this._handle, listOf(_arg))
   }
 
   fun pushBold() {
@@ -276,17 +276,17 @@ open class RichTextLabel(
 
   fun pushColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.pushColor.call(this._handle, _arg, 1)
+    __method_bind.pushColor.call(this._handle, listOf(_arg))
   }
 
   fun pushFont(font: Font) {
     val _arg = Variant.new(font)
-    __method_bind.pushFont.call(this._handle, _arg, 1)
+    __method_bind.pushFont.call(this._handle, listOf(_arg))
   }
 
   fun pushIndent(level: Int) {
     val _arg = Variant.new(level)
-    __method_bind.pushIndent.call(this._handle, _arg, 1)
+    __method_bind.pushIndent.call(this._handle, listOf(_arg))
   }
 
   fun pushItalics() {
@@ -295,12 +295,12 @@ open class RichTextLabel(
 
   fun pushList(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.pushList.call(this._handle, _arg, 1)
+    __method_bind.pushList.call(this._handle, listOf(_arg))
   }
 
   fun pushMeta(data: Variant) {
     val _arg = Variant.new(data)
-    __method_bind.pushMeta.call(this._handle, _arg, 1)
+    __method_bind.pushMeta.call(this._handle, listOf(_arg))
   }
 
   fun pushMono() {
@@ -317,7 +317,7 @@ open class RichTextLabel(
 
   fun pushTable(columns: Int) {
     val _arg = Variant.new(columns)
-    __method_bind.pushTable.call(this._handle, _arg, 1)
+    __method_bind.pushTable.call(this._handle, listOf(_arg))
   }
 
   fun pushUnderline() {
@@ -326,58 +326,58 @@ open class RichTextLabel(
 
   fun removeLine(line: Int): Boolean {
     val _arg = Variant.new(line)
-    val _ret = __method_bind.removeLine.call(this._handle, _arg, 1)
+    val _ret = __method_bind.removeLine.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun scrollToLine(line: Int) {
     val _arg = Variant.new(line)
-    __method_bind.scrollToLine.call(this._handle, _arg, 1)
+    __method_bind.scrollToLine.call(this._handle, listOf(_arg))
   }
 
   fun setBbcode(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setBbcode.call(this._handle, _arg, 1)
+    __method_bind.setBbcode.call(this._handle, listOf(_arg))
   }
 
   fun setEffects(effects: VariantArray) {
     val _arg = Variant.new(effects)
-    __method_bind.setEffects.call(this._handle, _arg, 1)
+    __method_bind.setEffects.call(this._handle, listOf(_arg))
   }
 
   fun setMetaUnderline(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setMetaUnderline.call(this._handle, _arg, 1)
+    __method_bind.setMetaUnderline.call(this._handle, listOf(_arg))
   }
 
   fun setOverrideSelectedFontColor(override: Boolean) {
     val _arg = Variant.new(override)
-    __method_bind.setOverrideSelectedFontColor.call(this._handle, _arg, 1)
+    __method_bind.setOverrideSelectedFontColor.call(this._handle, listOf(_arg))
   }
 
   fun setPercentVisible(percentVisible: Float) {
     val _arg = Variant.new(percentVisible)
-    __method_bind.setPercentVisible.call(this._handle, _arg, 1)
+    __method_bind.setPercentVisible.call(this._handle, listOf(_arg))
   }
 
   fun setScrollActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.setScrollActive.call(this._handle, _arg, 1)
+    __method_bind.setScrollActive.call(this._handle, listOf(_arg))
   }
 
   fun setScrollFollow(follow: Boolean) {
     val _arg = Variant.new(follow)
-    __method_bind.setScrollFollow.call(this._handle, _arg, 1)
+    __method_bind.setScrollFollow.call(this._handle, listOf(_arg))
   }
 
   fun setSelectionEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setSelectionEnabled.call(this._handle, _arg, 1)
+    __method_bind.setSelectionEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setTabSize(spaces: Int) {
     val _arg = Variant.new(spaces)
-    __method_bind.setTabSize.call(this._handle, _arg, 1)
+    __method_bind.setTabSize.call(this._handle, listOf(_arg))
   }
 
   fun setTableColumnExpand(
@@ -385,26 +385,26 @@ open class RichTextLabel(
     expand: Boolean,
     ratio: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(column)
-    _args.append(expand)
-    _args.append(ratio)
-    __method_bind.setTableColumnExpand.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(column))
+    _args.add(Variant.fromAny(expand))
+    _args.add(Variant.fromAny(ratio))
+    __method_bind.setTableColumnExpand.call(this._handle, _args)
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.setText.call(this._handle, _arg, 1)
+    __method_bind.setText.call(this._handle, listOf(_arg))
   }
 
   fun setUseBbcode(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseBbcode.call(this._handle, _arg, 1)
+    __method_bind.setUseBbcode.call(this._handle, listOf(_arg))
   }
 
   fun setVisibleCharacters(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setVisibleCharacters.call(this._handle, _arg, 1)
+    __method_bind.setVisibleCharacters.call(this._handle, listOf(_arg))
   }
 
   enum class Align(

@@ -28,7 +28,7 @@ open class _Geometry(
 ) : Object(_handle) {
   fun buildBoxPlanes(extents: Vector3): VariantArray {
     val _arg = Variant.new(extents)
-    val _ret = __method_bind.buildBoxPlanes.call(this._handle, _arg, 1)
+    val _ret = __method_bind.buildBoxPlanes.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
@@ -39,13 +39,13 @@ open class _Geometry(
     lats: Int,
     axis: Int = 2
   ): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    _args.append(height)
-    _args.append(sides)
-    _args.append(lats)
-    _args.append(axis)
-    val _ret = __method_bind.buildCapsulePlanes.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(radius))
+    _args.add(Variant.fromAny(height))
+    _args.add(Variant.fromAny(sides))
+    _args.add(Variant.fromAny(lats))
+    _args.add(Variant.fromAny(axis))
+    val _ret = __method_bind.buildCapsulePlanes.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
@@ -55,51 +55,51 @@ open class _Geometry(
     sides: Int,
     axis: Int = 2
   ): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    _args.append(height)
-    _args.append(sides)
-    _args.append(axis)
-    val _ret = __method_bind.buildCylinderPlanes.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(radius))
+    _args.add(Variant.fromAny(height))
+    _args.add(Variant.fromAny(sides))
+    _args.add(Variant.fromAny(axis))
+    val _ret = __method_bind.buildCylinderPlanes.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun clipPolygon(points: PoolVector3Array, plane: Plane): PoolVector3Array {
-    val _args = VariantArray.new()
-    _args.append(points)
-    _args.append(plane)
-    val _ret = __method_bind.clipPolygon.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(points))
+    _args.add(Variant.fromAny(plane))
+    val _ret = __method_bind.clipPolygon.call(this._handle, _args)
     return _ret.asPoolVector3Array()
   }
 
   fun clipPolygons2d(polygonA: PoolVector2Array, polygonB: PoolVector2Array): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(polygonA)
-    _args.append(polygonB)
-    val _ret = __method_bind.clipPolygons2d.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(polygonA))
+    _args.add(Variant.fromAny(polygonB))
+    val _ret = __method_bind.clipPolygons2d.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun clipPolylineWithPolygon2d(polyline: PoolVector2Array, polygon: PoolVector2Array):
       VariantArray {
-    val _args = VariantArray.new()
-    _args.append(polyline)
-    _args.append(polygon)
-    val _ret = __method_bind.clipPolylineWithPolygon2d.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(polyline))
+    _args.add(Variant.fromAny(polygon))
+    val _ret = __method_bind.clipPolylineWithPolygon2d.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun convexHull2d(points: PoolVector2Array): PoolVector2Array {
     val _arg = Variant.new(points)
-    val _ret = __method_bind.convexHull2d.call(this._handle, _arg, 1)
+    val _ret = __method_bind.convexHull2d.call(this._handle, listOf(_arg))
     return _ret.asPoolVector2Array()
   }
 
   fun excludePolygons2d(polygonA: PoolVector2Array, polygonB: PoolVector2Array): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(polygonA)
-    _args.append(polygonB)
-    val _ret = __method_bind.excludePolygons2d.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(polygonA))
+    _args.add(Variant.fromAny(polygonB))
+    val _ret = __method_bind.excludePolygons2d.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
@@ -108,11 +108,11 @@ open class _Geometry(
     s1: Vector3,
     s2: Vector3
   ): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(s1)
-    _args.append(s2)
-    val _ret = __method_bind.getClosestPointToSegment.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(s1))
+    _args.add(Variant.fromAny(s2))
+    val _ret = __method_bind.getClosestPointToSegment.call(this._handle, _args)
     return _ret.asVector3()
   }
 
@@ -121,11 +121,11 @@ open class _Geometry(
     s1: Vector2,
     s2: Vector2
   ): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(s1)
-    _args.append(s2)
-    val _ret = __method_bind.getClosestPointToSegment2d.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(s1))
+    _args.add(Variant.fromAny(s2))
+    val _ret = __method_bind.getClosestPointToSegment2d.call(this._handle, _args)
     return _ret.asVector2()
   }
 
@@ -134,12 +134,11 @@ open class _Geometry(
     s1: Vector3,
     s2: Vector3
   ): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(s1)
-    _args.append(s2)
-    val _ret = __method_bind.getClosestPointToSegmentUncapped.call(this._handle, _args.toVariant(),
-        3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(s1))
+    _args.add(Variant.fromAny(s2))
+    val _ret = __method_bind.getClosestPointToSegmentUncapped.call(this._handle, _args)
     return _ret.asVector3()
   }
 
@@ -148,12 +147,11 @@ open class _Geometry(
     s1: Vector2,
     s2: Vector2
   ): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(s1)
-    _args.append(s2)
-    val _ret = __method_bind.getClosestPointToSegmentUncapped2d.call(this._handle,
-        _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(s1))
+    _args.add(Variant.fromAny(s2))
+    val _ret = __method_bind.getClosestPointToSegmentUncapped2d.call(this._handle, _args)
     return _ret.asVector2()
   }
 
@@ -163,13 +161,12 @@ open class _Geometry(
     q1: Vector3,
     q2: Vector3
   ): PoolVector3Array {
-    val _args = VariantArray.new()
-    _args.append(p1)
-    _args.append(p2)
-    _args.append(q1)
-    _args.append(q2)
-    val _ret = __method_bind.getClosestPointsBetweenSegments.call(this._handle, _args.toVariant(),
-        4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(p1))
+    _args.add(Variant.fromAny(p2))
+    _args.add(Variant.fromAny(q1))
+    _args.add(Variant.fromAny(q2))
+    val _ret = __method_bind.getClosestPointsBetweenSegments.call(this._handle, _args)
     return _ret.asPoolVector3Array()
   }
 
@@ -179,36 +176,35 @@ open class _Geometry(
     p2: Vector2,
     q2: Vector2
   ): PoolVector2Array {
-    val _args = VariantArray.new()
-    _args.append(p1)
-    _args.append(q1)
-    _args.append(p2)
-    _args.append(q2)
-    val _ret = __method_bind.getClosestPointsBetweenSegments2d.call(this._handle, _args.toVariant(),
-        4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(p1))
+    _args.add(Variant.fromAny(q1))
+    _args.add(Variant.fromAny(p2))
+    _args.add(Variant.fromAny(q2))
+    val _ret = __method_bind.getClosestPointsBetweenSegments2d.call(this._handle, _args)
     return _ret.asPoolVector2Array()
   }
 
   fun getUv84NormalBit(normal: Vector3): Int {
     val _arg = Variant.new(normal)
-    val _ret = __method_bind.getUv84NormalBit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getUv84NormalBit.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun intersectPolygons2d(polygonA: PoolVector2Array, polygonB: PoolVector2Array): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(polygonA)
-    _args.append(polygonB)
-    val _ret = __method_bind.intersectPolygons2d.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(polygonA))
+    _args.add(Variant.fromAny(polygonB))
+    val _ret = __method_bind.intersectPolygons2d.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
   fun intersectPolylineWithPolygon2d(polyline: PoolVector2Array, polygon: PoolVector2Array):
       VariantArray {
-    val _args = VariantArray.new()
-    _args.append(polyline)
-    _args.append(polygon)
-    val _ret = __method_bind.intersectPolylineWithPolygon2d.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(polyline))
+    _args.add(Variant.fromAny(polygon))
+    val _ret = __method_bind.intersectPolylineWithPolygon2d.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
@@ -217,25 +213,25 @@ open class _Geometry(
     circlePosition: Vector2,
     circleRadius: Float
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(circlePosition)
-    _args.append(circleRadius)
-    val _ret = __method_bind.isPointInCircle.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(circlePosition))
+    _args.add(Variant.fromAny(circleRadius))
+    val _ret = __method_bind.isPointInCircle.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun isPointInPolygon(point: Vector2, polygon: PoolVector2Array): Boolean {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(polygon)
-    val _ret = __method_bind.isPointInPolygon.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(polygon))
+    val _ret = __method_bind.isPointInPolygon.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun isPolygonClockwise(polygon: PoolVector2Array): Boolean {
     val _arg = Variant.new(polygon)
-    val _ret = __method_bind.isPolygonClockwise.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isPolygonClockwise.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -245,26 +241,26 @@ open class _Geometry(
     fromB: Vector2,
     dirB: Vector2
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(fromA)
-    _args.append(dirA)
-    _args.append(fromB)
-    _args.append(dirB)
-    val _ret = __method_bind.lineIntersectsLine2d.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromA))
+    _args.add(Variant.fromAny(dirA))
+    _args.add(Variant.fromAny(fromB))
+    _args.add(Variant.fromAny(dirB))
+    val _ret = __method_bind.lineIntersectsLine2d.call(this._handle, _args)
     return _ret
   }
 
   fun makeAtlas(sizes: PoolVector2Array): Dictionary {
     val _arg = Variant.new(sizes)
-    val _ret = __method_bind.makeAtlas.call(this._handle, _arg, 1)
+    val _ret = __method_bind.makeAtlas.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
 
   fun mergePolygons2d(polygonA: PoolVector2Array, polygonB: PoolVector2Array): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(polygonA)
-    _args.append(polygonB)
-    val _ret = __method_bind.mergePolygons2d.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(polygonA))
+    _args.add(Variant.fromAny(polygonB))
+    val _ret = __method_bind.mergePolygons2d.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
@@ -273,11 +269,11 @@ open class _Geometry(
     delta: Float,
     joinType: Int = 0
   ): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(polygon)
-    _args.append(delta)
-    _args.append(joinType)
-    val _ret = __method_bind.offsetPolygon2d.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(polygon))
+    _args.add(Variant.fromAny(delta))
+    _args.add(Variant.fromAny(joinType))
+    val _ret = __method_bind.offsetPolygon2d.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
@@ -287,12 +283,12 @@ open class _Geometry(
     joinType: Int = 0,
     endType: Int = 3
   ): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(polyline)
-    _args.append(delta)
-    _args.append(joinType)
-    _args.append(endType)
-    val _ret = __method_bind.offsetPolyline2d.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(polyline))
+    _args.add(Variant.fromAny(delta))
+    _args.add(Variant.fromAny(joinType))
+    _args.add(Variant.fromAny(endType))
+    val _ret = __method_bind.offsetPolyline2d.call(this._handle, _args)
     return _ret.asVariantArray()
   }
 
@@ -302,12 +298,12 @@ open class _Geometry(
     b: Vector2,
     c: Vector2
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(a)
-    _args.append(b)
-    _args.append(c)
-    val _ret = __method_bind.pointIsInsideTriangle.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(a))
+    _args.add(Variant.fromAny(b))
+    _args.add(Variant.fromAny(c))
+    val _ret = __method_bind.pointIsInsideTriangle.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -318,13 +314,13 @@ open class _Geometry(
     b: Vector3,
     c: Vector3
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(dir)
-    _args.append(a)
-    _args.append(b)
-    _args.append(c)
-    val _ret = __method_bind.rayIntersectsTriangle.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(dir))
+    _args.add(Variant.fromAny(a))
+    _args.add(Variant.fromAny(b))
+    _args.add(Variant.fromAny(c))
+    val _ret = __method_bind.rayIntersectsTriangle.call(this._handle, _args)
     return _ret
   }
 
@@ -334,12 +330,12 @@ open class _Geometry(
     circlePosition: Vector2,
     circleRadius: Float
   ): Float {
-    val _args = VariantArray.new()
-    _args.append(segmentFrom)
-    _args.append(segmentTo)
-    _args.append(circlePosition)
-    _args.append(circleRadius)
-    val _ret = __method_bind.segmentIntersectsCircle.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(segmentFrom))
+    _args.add(Variant.fromAny(segmentTo))
+    _args.add(Variant.fromAny(circlePosition))
+    _args.add(Variant.fromAny(circleRadius))
+    val _ret = __method_bind.segmentIntersectsCircle.call(this._handle, _args)
     return _ret.asFloat()
   }
 
@@ -348,11 +344,11 @@ open class _Geometry(
     to: Vector3,
     planes: VariantArray
   ): PoolVector3Array {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    _args.append(planes)
-    val _ret = __method_bind.segmentIntersectsConvex.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    _args.add(Variant.fromAny(planes))
+    val _ret = __method_bind.segmentIntersectsConvex.call(this._handle, _args)
     return _ret.asPoolVector3Array()
   }
 
@@ -362,12 +358,12 @@ open class _Geometry(
     height: Float,
     radius: Float
   ): PoolVector3Array {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    _args.append(height)
-    _args.append(radius)
-    val _ret = __method_bind.segmentIntersectsCylinder.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    _args.add(Variant.fromAny(height))
+    _args.add(Variant.fromAny(radius))
+    val _ret = __method_bind.segmentIntersectsCylinder.call(this._handle, _args)
     return _ret.asPoolVector3Array()
   }
 
@@ -377,12 +373,12 @@ open class _Geometry(
     fromB: Vector2,
     toB: Vector2
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(fromA)
-    _args.append(toA)
-    _args.append(fromB)
-    _args.append(toB)
-    val _ret = __method_bind.segmentIntersectsSegment2d.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(fromA))
+    _args.add(Variant.fromAny(toA))
+    _args.add(Variant.fromAny(fromB))
+    _args.add(Variant.fromAny(toB))
+    val _ret = __method_bind.segmentIntersectsSegment2d.call(this._handle, _args)
     return _ret
   }
 
@@ -392,12 +388,12 @@ open class _Geometry(
     spherePosition: Vector3,
     sphereRadius: Float
   ): PoolVector3Array {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    _args.append(spherePosition)
-    _args.append(sphereRadius)
-    val _ret = __method_bind.segmentIntersectsSphere.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    _args.add(Variant.fromAny(spherePosition))
+    _args.add(Variant.fromAny(sphereRadius))
+    val _ret = __method_bind.segmentIntersectsSphere.call(this._handle, _args)
     return _ret.asPoolVector3Array()
   }
 
@@ -408,25 +404,25 @@ open class _Geometry(
     b: Vector3,
     c: Vector3
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(from)
-    _args.append(to)
-    _args.append(a)
-    _args.append(b)
-    _args.append(c)
-    val _ret = __method_bind.segmentIntersectsTriangle.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(from))
+    _args.add(Variant.fromAny(to))
+    _args.add(Variant.fromAny(a))
+    _args.add(Variant.fromAny(b))
+    _args.add(Variant.fromAny(c))
+    val _ret = __method_bind.segmentIntersectsTriangle.call(this._handle, _args)
     return _ret
   }
 
   fun triangulateDelaunay2d(points: PoolVector2Array): PoolIntArray {
     val _arg = Variant.new(points)
-    val _ret = __method_bind.triangulateDelaunay2d.call(this._handle, _arg, 1)
+    val _ret = __method_bind.triangulateDelaunay2d.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
 
   fun triangulatePolygon(polygon: PoolVector2Array): PoolIntArray {
     val _arg = Variant.new(polygon)
-    val _ret = __method_bind.triangulatePolygon.call(this._handle, _arg, 1)
+    val _ret = __method_bind.triangulatePolygon.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
 

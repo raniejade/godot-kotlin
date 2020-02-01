@@ -20,10 +20,10 @@ open class WebSocketPeer(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close(code: Int = 1000, reason: String = "") {
-    val _args = VariantArray.new()
-    _args.append(code)
-    _args.append(reason)
-    __method_bind.close.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(code))
+    _args.add(Variant.fromAny(reason))
+    __method_bind.close.call(this._handle, _args)
   }
 
   fun getConnectedHost(): String {
@@ -48,12 +48,12 @@ open class WebSocketPeer(
 
   fun setNoDelay(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setNoDelay.call(this._handle, _arg, 1)
+    __method_bind.setNoDelay.call(this._handle, listOf(_arg))
   }
 
   fun setWriteMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setWriteMode.call(this._handle, _arg, 1)
+    __method_bind.setWriteMode.call(this._handle, listOf(_arg))
   }
 
   fun wasStringPacket(): Boolean {

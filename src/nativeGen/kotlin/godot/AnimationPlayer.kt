@@ -116,29 +116,29 @@ open class AnimationPlayer(
   }
 
   fun addAnimation(name: String, animation: Animation): GDError {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(animation)
-    val _ret = __method_bind.addAnimation.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(animation))
+    val _ret = __method_bind.addAnimation.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun advance(delta: Float) {
     val _arg = Variant.new(delta)
-    __method_bind.advance.call(this._handle, _arg, 1)
+    __method_bind.advance.call(this._handle, listOf(_arg))
   }
 
   fun animationGetNext(animFrom: String): String {
     val _arg = Variant.new(animFrom)
-    val _ret = __method_bind.animationGetNext.call(this._handle, _arg, 1)
+    val _ret = __method_bind.animationGetNext.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun animationSetNext(animFrom: String, animTo: String) {
-    val _args = VariantArray.new()
-    _args.append(animFrom)
-    _args.append(animTo)
-    __method_bind.animationSetNext.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(animFrom))
+    _args.add(Variant.fromAny(animTo))
+    __method_bind.animationSetNext.call(this._handle, _args)
   }
 
   fun clearCaches() {
@@ -151,13 +151,13 @@ open class AnimationPlayer(
 
   fun findAnimation(animation: Animation): String {
     val _arg = Variant.new(animation)
-    val _ret = __method_bind.findAnimation.call(this._handle, _arg, 1)
+    val _ret = __method_bind.findAnimation.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getAnimation(name: String): Animation {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.getAnimation.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAnimation.call(this._handle, listOf(_arg))
     return _ret.asObject(::Animation)!!
   }
 
@@ -182,10 +182,10 @@ open class AnimationPlayer(
   }
 
   fun getBlendTime(animFrom: String, animTo: String): Float {
-    val _args = VariantArray.new()
-    _args.append(animFrom)
-    _args.append(animTo)
-    val _ret = __method_bind.getBlendTime.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(animFrom))
+    _args.add(Variant.fromAny(animTo))
+    val _ret = __method_bind.getBlendTime.call(this._handle, _args)
     return _ret.asFloat()
   }
 
@@ -236,7 +236,7 @@ open class AnimationPlayer(
 
   fun hasAnimation(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.hasAnimation.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasAnimation.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -256,63 +256,63 @@ open class AnimationPlayer(
     customSpeed: Float = 1.0f,
     fromEnd: Boolean = false
   ) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(customBlend)
-    _args.append(customSpeed)
-    _args.append(fromEnd)
-    __method_bind.play.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(customBlend))
+    _args.add(Variant.fromAny(customSpeed))
+    _args.add(Variant.fromAny(fromEnd))
+    __method_bind.play.call(this._handle, _args)
   }
 
   fun playBackwards(name: String = "", customBlend: Float = -1.0f) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(customBlend)
-    __method_bind.playBackwards.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(customBlend))
+    __method_bind.playBackwards.call(this._handle, _args)
   }
 
   fun queue(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.queue.call(this._handle, _arg, 1)
+    __method_bind.queue.call(this._handle, listOf(_arg))
   }
 
   fun removeAnimation(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.removeAnimation.call(this._handle, _arg, 1)
+    __method_bind.removeAnimation.call(this._handle, listOf(_arg))
   }
 
   fun renameAnimation(name: String, newname: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(newname)
-    __method_bind.renameAnimation.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(newname))
+    __method_bind.renameAnimation.call(this._handle, _args)
   }
 
   fun seek(seconds: Float, update: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(seconds)
-    _args.append(update)
-    __method_bind.seek.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(seconds))
+    _args.add(Variant.fromAny(update))
+    __method_bind.seek.call(this._handle, _args)
   }
 
   fun setActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.setActive.call(this._handle, _arg, 1)
+    __method_bind.setActive.call(this._handle, listOf(_arg))
   }
 
   fun setAnimationProcessMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setAnimationProcessMode.call(this._handle, _arg, 1)
+    __method_bind.setAnimationProcessMode.call(this._handle, listOf(_arg))
   }
 
   fun setAssignedAnimation(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.setAssignedAnimation.call(this._handle, _arg, 1)
+    __method_bind.setAssignedAnimation.call(this._handle, listOf(_arg))
   }
 
   fun setAutoplay(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setAutoplay.call(this._handle, _arg, 1)
+    __method_bind.setAutoplay.call(this._handle, listOf(_arg))
   }
 
   fun setBlendTime(
@@ -320,41 +320,41 @@ open class AnimationPlayer(
     animTo: String,
     sec: Float
   ) {
-    val _args = VariantArray.new()
-    _args.append(animFrom)
-    _args.append(animTo)
-    _args.append(sec)
-    __method_bind.setBlendTime.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(animFrom))
+    _args.add(Variant.fromAny(animTo))
+    _args.add(Variant.fromAny(sec))
+    __method_bind.setBlendTime.call(this._handle, _args)
   }
 
   fun setCurrentAnimation(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.setCurrentAnimation.call(this._handle, _arg, 1)
+    __method_bind.setCurrentAnimation.call(this._handle, listOf(_arg))
   }
 
   fun setDefaultBlendTime(sec: Float) {
     val _arg = Variant.new(sec)
-    __method_bind.setDefaultBlendTime.call(this._handle, _arg, 1)
+    __method_bind.setDefaultBlendTime.call(this._handle, listOf(_arg))
   }
 
   fun setMethodCallMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setMethodCallMode.call(this._handle, _arg, 1)
+    __method_bind.setMethodCallMode.call(this._handle, listOf(_arg))
   }
 
   fun setRoot(path: NodePath) {
     val _arg = Variant.new(path)
-    __method_bind.setRoot.call(this._handle, _arg, 1)
+    __method_bind.setRoot.call(this._handle, listOf(_arg))
   }
 
   fun setSpeedScale(speed: Float) {
     val _arg = Variant.new(speed)
-    __method_bind.setSpeedScale.call(this._handle, _arg, 1)
+    __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
   }
 
   fun stop(reset: Boolean = true) {
     val _arg = Variant.new(reset)
-    __method_bind.stop.call(this._handle, _arg, 1)
+    __method_bind.stop.call(this._handle, listOf(_arg))
   }
 
   enum class AnimationProcessMode(

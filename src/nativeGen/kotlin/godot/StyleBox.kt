@@ -55,10 +55,10 @@ open class StyleBox(
     }
 
   fun draw(canvasItem: RID, rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(canvasItem)
-    _args.append(rect)
-    __method_bind.draw.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(canvasItem))
+    _args.add(Variant.fromAny(rect))
+    __method_bind.draw.call(this._handle, _args)
   }
 
   fun getCenterSize(): Vector2 {
@@ -73,13 +73,13 @@ open class StyleBox(
 
   fun getDefaultMargin(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.getDefaultMargin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDefaultMargin.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getMargin(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.getMargin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getMargin.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -94,17 +94,17 @@ open class StyleBox(
   }
 
   fun setDefaultMargin(margin: Int, offset: Float) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    _args.append(offset)
-    __method_bind.setDefaultMargin.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(margin))
+    _args.add(Variant.fromAny(offset))
+    __method_bind.setDefaultMargin.call(this._handle, _args)
   }
 
   fun testMask(point: Vector2, rect: Rect2): Boolean {
-    val _args = VariantArray.new()
-    _args.append(point)
-    _args.append(rect)
-    val _ret = __method_bind.testMask.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(point))
+    _args.add(Variant.fromAny(rect))
+    val _ret = __method_bind.testMask.call(this._handle, _args)
     return _ret.asBoolean()
   }
 

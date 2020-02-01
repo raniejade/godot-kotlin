@@ -141,50 +141,50 @@ open class AnimatedSprite(
   }
 
   fun play(anim: String = "", backwards: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    _args.append(backwards)
-    __method_bind.play.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(anim))
+    _args.add(Variant.fromAny(backwards))
+    __method_bind.play.call(this._handle, _args)
   }
 
   fun setAnimation(animation: String) {
     val _arg = Variant.new(animation)
-    __method_bind.setAnimation.call(this._handle, _arg, 1)
+    __method_bind.setAnimation.call(this._handle, listOf(_arg))
   }
 
   fun setCentered(centered: Boolean) {
     val _arg = Variant.new(centered)
-    __method_bind.setCentered.call(this._handle, _arg, 1)
+    __method_bind.setCentered.call(this._handle, listOf(_arg))
   }
 
   fun setFlipH(flipH: Boolean) {
     val _arg = Variant.new(flipH)
-    __method_bind.setFlipH.call(this._handle, _arg, 1)
+    __method_bind.setFlipH.call(this._handle, listOf(_arg))
   }
 
   fun setFlipV(flipV: Boolean) {
     val _arg = Variant.new(flipV)
-    __method_bind.setFlipV.call(this._handle, _arg, 1)
+    __method_bind.setFlipV.call(this._handle, listOf(_arg))
   }
 
   fun setFrame(frame: Int) {
     val _arg = Variant.new(frame)
-    __method_bind.setFrame.call(this._handle, _arg, 1)
+    __method_bind.setFrame.call(this._handle, listOf(_arg))
   }
 
   fun setOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.setOffset.call(this._handle, _arg, 1)
+    __method_bind.setOffset.call(this._handle, listOf(_arg))
   }
 
   fun setSpeedScale(speedScale: Float) {
     val _arg = Variant.new(speedScale)
-    __method_bind.setSpeedScale.call(this._handle, _arg, 1)
+    __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
   }
 
   fun setSpriteFrames(spriteFrames: SpriteFrames) {
     val _arg = Variant.new(spriteFrames)
-    __method_bind.setSpriteFrames.call(this._handle, _arg, 1)
+    __method_bind.setSpriteFrames.call(this._handle, listOf(_arg))
   }
 
   fun stop() {

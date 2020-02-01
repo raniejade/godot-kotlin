@@ -249,82 +249,82 @@ open class Particles2D(
 
   fun setAmount(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setAmount.call(this._handle, _arg, 1)
+    __method_bind.setAmount.call(this._handle, listOf(_arg))
   }
 
   fun setDrawOrder(order: Int) {
     val _arg = Variant.new(order)
-    __method_bind.setDrawOrder.call(this._handle, _arg, 1)
+    __method_bind.setDrawOrder.call(this._handle, listOf(_arg))
   }
 
   fun setEmitting(emitting: Boolean) {
     val _arg = Variant.new(emitting)
-    __method_bind.setEmitting.call(this._handle, _arg, 1)
+    __method_bind.setEmitting.call(this._handle, listOf(_arg))
   }
 
   fun setExplosivenessRatio(ratio: Float) {
     val _arg = Variant.new(ratio)
-    __method_bind.setExplosivenessRatio.call(this._handle, _arg, 1)
+    __method_bind.setExplosivenessRatio.call(this._handle, listOf(_arg))
   }
 
   fun setFixedFps(fps: Int) {
     val _arg = Variant.new(fps)
-    __method_bind.setFixedFps.call(this._handle, _arg, 1)
+    __method_bind.setFixedFps.call(this._handle, listOf(_arg))
   }
 
   fun setFractionalDelta(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setFractionalDelta.call(this._handle, _arg, 1)
+    __method_bind.setFractionalDelta.call(this._handle, listOf(_arg))
   }
 
   fun setLifetime(secs: Float) {
     val _arg = Variant.new(secs)
-    __method_bind.setLifetime.call(this._handle, _arg, 1)
+    __method_bind.setLifetime.call(this._handle, listOf(_arg))
   }
 
   fun setNormalMap(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setNormalMap.call(this._handle, _arg, 1)
+    __method_bind.setNormalMap.call(this._handle, listOf(_arg))
   }
 
   fun setOneShot(secs: Boolean) {
     val _arg = Variant.new(secs)
-    __method_bind.setOneShot.call(this._handle, _arg, 1)
+    __method_bind.setOneShot.call(this._handle, listOf(_arg))
   }
 
   fun setPreProcessTime(secs: Float) {
     val _arg = Variant.new(secs)
-    __method_bind.setPreProcessTime.call(this._handle, _arg, 1)
+    __method_bind.setPreProcessTime.call(this._handle, listOf(_arg))
   }
 
   fun setProcessMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.setProcessMaterial.call(this._handle, _arg, 1)
+    __method_bind.setProcessMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setRandomnessRatio(ratio: Float) {
     val _arg = Variant.new(ratio)
-    __method_bind.setRandomnessRatio.call(this._handle, _arg, 1)
+    __method_bind.setRandomnessRatio.call(this._handle, listOf(_arg))
   }
 
   fun setSpeedScale(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.setSpeedScale.call(this._handle, _arg, 1)
+    __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTexture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setUseLocalCoordinates(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseLocalCoordinates.call(this._handle, _arg, 1)
+    __method_bind.setUseLocalCoordinates.call(this._handle, listOf(_arg))
   }
 
   fun setVisibilityRect(visibilityRect: Rect2) {
     val _arg = Variant.new(visibilityRect)
-    __method_bind.setVisibilityRect.call(this._handle, _arg, 1)
+    __method_bind.setVisibilityRect.call(this._handle, listOf(_arg))
   }
 
   enum class DrawOrder(

@@ -54,10 +54,10 @@ open class ProximityGroup(
   }
 
   fun broadcast(name: String, parameters: Variant) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    _args.append(parameters)
-    __method_bind.broadcast.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(parameters))
+    __method_bind.broadcast.call(this._handle, _args)
   }
 
   fun getDispatchMode(): DispatchMode {
@@ -77,17 +77,17 @@ open class ProximityGroup(
 
   fun setDispatchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setDispatchMode.call(this._handle, _arg, 1)
+    __method_bind.setDispatchMode.call(this._handle, listOf(_arg))
   }
 
   fun setGridRadius(radius: Vector3) {
     val _arg = Variant.new(radius)
-    __method_bind.setGridRadius.call(this._handle, _arg, 1)
+    __method_bind.setGridRadius.call(this._handle, listOf(_arg))
   }
 
   fun setGroupName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.setGroupName.call(this._handle, _arg, 1)
+    __method_bind.setGroupName.call(this._handle, listOf(_arg))
   }
 
   enum class DispatchMode(

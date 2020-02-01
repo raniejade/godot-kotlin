@@ -31,14 +31,14 @@ open class Font(
     clipW: Int = -1,
     outlineModulate: Color = Color.rgb(1,1,1,1)
   ) {
-    val _args = VariantArray.new()
-    _args.append(canvasItem)
-    _args.append(position)
-    _args.append(string)
-    _args.append(modulate)
-    _args.append(clipW)
-    _args.append(outlineModulate)
-    __method_bind.draw.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(canvasItem))
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(string))
+    _args.add(Variant.fromAny(modulate))
+    _args.add(Variant.fromAny(clipW))
+    _args.add(Variant.fromAny(outlineModulate))
+    __method_bind.draw.call(this._handle, _args)
   }
 
   fun drawChar(
@@ -49,14 +49,14 @@ open class Font(
     modulate: Color = Color.rgb(1,1,1,1),
     outline: Boolean = false
   ): Float {
-    val _args = VariantArray.new()
-    _args.append(canvasItem)
-    _args.append(position)
-    _args.append(char)
-    _args.append(next)
-    _args.append(modulate)
-    _args.append(outline)
-    val _ret = __method_bind.drawChar.call(this._handle, _args.toVariant(), 6)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(canvasItem))
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(char))
+    _args.add(Variant.fromAny(next))
+    _args.add(Variant.fromAny(modulate))
+    _args.add(Variant.fromAny(outline))
+    val _ret = __method_bind.drawChar.call(this._handle, _args)
     return _ret.asFloat()
   }
 
@@ -77,15 +77,15 @@ open class Font(
 
   fun getStringSize(string: String): Vector2 {
     val _arg = Variant.new(string)
-    val _ret = __method_bind.getStringSize.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getStringSize.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getWordwrapStringSize(string: String, width: Float): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(string)
-    _args.append(width)
-    val _ret = __method_bind.getWordwrapStringSize.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(string))
+    _args.add(Variant.fromAny(width))
+    val _ret = __method_bind.getWordwrapStringSize.call(this._handle, _args)
     return _ret.asVector2()
   }
 

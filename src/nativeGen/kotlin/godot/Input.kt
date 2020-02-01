@@ -23,22 +23,22 @@ open class Input(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun actionPress(action: String, strength: Float = 1.0f) {
-    val _args = VariantArray.new()
-    _args.append(action)
-    _args.append(strength)
-    __method_bind.actionPress.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(action))
+    _args.add(Variant.fromAny(strength))
+    __method_bind.actionPress.call(this._handle, _args)
   }
 
   fun actionRelease(action: String) {
     val _arg = Variant.new(action)
-    __method_bind.actionRelease.call(this._handle, _arg, 1)
+    __method_bind.actionRelease.call(this._handle, listOf(_arg))
   }
 
   fun addJoyMapping(mapping: String, updateExisting: Boolean = false) {
-    val _args = VariantArray.new()
-    _args.append(mapping)
-    _args.append(updateExisting)
-    __method_bind.addJoyMapping.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(mapping))
+    _args.add(Variant.fromAny(updateExisting))
+    __method_bind.addJoyMapping.call(this._handle, _args)
   }
 
   fun getAccelerometer(): Vector3 {
@@ -48,7 +48,7 @@ open class Input(
 
   fun getActionStrength(action: String): Float {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.getActionStrength.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getActionStrength.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
@@ -73,58 +73,58 @@ open class Input(
   }
 
   fun getJoyAxis(device: Int, axis: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(device)
-    _args.append(axis)
-    val _ret = __method_bind.getJoyAxis.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(device))
+    _args.add(Variant.fromAny(axis))
+    val _ret = __method_bind.getJoyAxis.call(this._handle, _args)
     return _ret.asFloat()
   }
 
   fun getJoyAxisIndexFromString(axis: String): Int {
     val _arg = Variant.new(axis)
-    val _ret = __method_bind.getJoyAxisIndexFromString.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyAxisIndexFromString.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getJoyAxisString(axisIndex: Int): String {
     val _arg = Variant.new(axisIndex)
-    val _ret = __method_bind.getJoyAxisString.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyAxisString.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getJoyButtonIndexFromString(button: String): Int {
     val _arg = Variant.new(button)
-    val _ret = __method_bind.getJoyButtonIndexFromString.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyButtonIndexFromString.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getJoyButtonString(buttonIndex: Int): String {
     val _arg = Variant.new(buttonIndex)
-    val _ret = __method_bind.getJoyButtonString.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyButtonString.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getJoyGuid(device: Int): String {
     val _arg = Variant.new(device)
-    val _ret = __method_bind.getJoyGuid.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyGuid.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getJoyName(device: Int): String {
     val _arg = Variant.new(device)
-    val _ret = __method_bind.getJoyName.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getJoyVibrationDuration(device: Int): Float {
     val _arg = Variant.new(device)
-    val _ret = __method_bind.getJoyVibrationDuration.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyVibrationDuration.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getJoyVibrationStrength(device: Int): Vector2 {
     val _arg = Variant.new(device)
-    val _ret = __method_bind.getJoyVibrationStrength.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyVibrationStrength.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
@@ -150,45 +150,45 @@ open class Input(
 
   fun isActionJustPressed(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.isActionJustPressed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isActionJustPressed.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isActionJustReleased(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.isActionJustReleased.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isActionJustReleased.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isActionPressed(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.isActionPressed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isActionPressed.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isJoyButtonPressed(device: Int, button: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(device)
-    _args.append(button)
-    val _ret = __method_bind.isJoyButtonPressed.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(device))
+    _args.add(Variant.fromAny(button))
+    val _ret = __method_bind.isJoyButtonPressed.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun isJoyKnown(device: Int): Boolean {
     val _arg = Variant.new(device)
-    val _ret = __method_bind.isJoyKnown.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isJoyKnown.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isKeyPressed(scancode: Int): Boolean {
     val _arg = Variant.new(scancode)
-    val _ret = __method_bind.isKeyPressed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isKeyPressed.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isMouseButtonPressed(button: Int): Boolean {
     val _arg = Variant.new(button)
-    val _ret = __method_bind.isMouseButtonPressed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isMouseButtonPressed.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
@@ -198,22 +198,22 @@ open class Input(
     name: String,
     guid: String
   ) {
-    val _args = VariantArray.new()
-    _args.append(device)
-    _args.append(connected)
-    _args.append(name)
-    _args.append(guid)
-    __method_bind.joyConnectionChanged.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(device))
+    _args.add(Variant.fromAny(connected))
+    _args.add(Variant.fromAny(name))
+    _args.add(Variant.fromAny(guid))
+    __method_bind.joyConnectionChanged.call(this._handle, _args)
   }
 
   fun parseInputEvent(event: InputEvent) {
     val _arg = Variant.new(event)
-    __method_bind.parseInputEvent.call(this._handle, _arg, 1)
+    __method_bind.parseInputEvent.call(this._handle, listOf(_arg))
   }
 
   fun removeJoyMapping(guid: String) {
     val _arg = Variant.new(guid)
-    __method_bind.removeJoyMapping.call(this._handle, _arg, 1)
+    __method_bind.removeJoyMapping.call(this._handle, listOf(_arg))
   }
 
   fun setCustomMouseCursor(
@@ -221,26 +221,26 @@ open class Input(
     shape: Int = 0,
     hotspot: Vector2 = Vector2.new(0, 0)
   ) {
-    val _args = VariantArray.new()
-    _args.append(image)
-    _args.append(shape)
-    _args.append(hotspot)
-    __method_bind.setCustomMouseCursor.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(image))
+    _args.add(Variant.fromAny(shape))
+    _args.add(Variant.fromAny(hotspot))
+    __method_bind.setCustomMouseCursor.call(this._handle, _args)
   }
 
   fun setDefaultCursorShape(shape: Int = 0) {
     val _arg = Variant.new(shape)
-    __method_bind.setDefaultCursorShape.call(this._handle, _arg, 1)
+    __method_bind.setDefaultCursorShape.call(this._handle, listOf(_arg))
   }
 
   fun setMouseMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setMouseMode.call(this._handle, _arg, 1)
+    __method_bind.setMouseMode.call(this._handle, listOf(_arg))
   }
 
   fun setUseAccumulatedInput(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setUseAccumulatedInput.call(this._handle, _arg, 1)
+    __method_bind.setUseAccumulatedInput.call(this._handle, listOf(_arg))
   }
 
   fun startJoyVibration(
@@ -249,27 +249,27 @@ open class Input(
     strongMagnitude: Float,
     duration: Float = 0.0f
   ) {
-    val _args = VariantArray.new()
-    _args.append(device)
-    _args.append(weakMagnitude)
-    _args.append(strongMagnitude)
-    _args.append(duration)
-    __method_bind.startJoyVibration.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(device))
+    _args.add(Variant.fromAny(weakMagnitude))
+    _args.add(Variant.fromAny(strongMagnitude))
+    _args.add(Variant.fromAny(duration))
+    __method_bind.startJoyVibration.call(this._handle, _args)
   }
 
   fun stopJoyVibration(device: Int) {
     val _arg = Variant.new(device)
-    __method_bind.stopJoyVibration.call(this._handle, _arg, 1)
+    __method_bind.stopJoyVibration.call(this._handle, listOf(_arg))
   }
 
   fun vibrateHandheld(durationMs: Int = 500) {
     val _arg = Variant.new(durationMs)
-    __method_bind.vibrateHandheld.call(this._handle, _arg, 1)
+    __method_bind.vibrateHandheld.call(this._handle, listOf(_arg))
   }
 
   fun warpMousePosition(to: Vector2) {
     val _arg = Variant.new(to)
-    __method_bind.warpMousePosition.call(this._handle, _arg, 1)
+    __method_bind.warpMousePosition.call(this._handle, listOf(_arg))
   }
 
   enum class MouseMode(

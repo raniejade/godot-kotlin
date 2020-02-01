@@ -59,17 +59,17 @@ open class AudioEffectPitchShift(
 
   fun setFftSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.setFftSize.call(this._handle, _arg, 1)
+    __method_bind.setFftSize.call(this._handle, listOf(_arg))
   }
 
   fun setOversampling(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.setOversampling.call(this._handle, _arg, 1)
+    __method_bind.setOversampling.call(this._handle, listOf(_arg))
   }
 
   fun setPitchScale(rate: Float) {
     val _arg = Variant.new(rate)
-    __method_bind.setPitchScale.call(this._handle, _arg, 1)
+    __method_bind.setPitchScale.call(this._handle, listOf(_arg))
   }
 
   enum class FFT_Size(

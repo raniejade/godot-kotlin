@@ -73,12 +73,12 @@ open class CameraFeed(
 
   fun setActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.setActive.call(this._handle, _arg, 1)
+    __method_bind.setActive.call(this._handle, listOf(_arg))
   }
 
   fun setTransform(transform: Transform2D) {
     val _arg = Variant.new(transform)
-    __method_bind.setTransform.call(this._handle, _arg, 1)
+    __method_bind.setTransform.call(this._handle, listOf(_arg))
   }
 
   enum class FeedDataType(

@@ -95,11 +95,11 @@ open class BakedLightmapData(
     lightmap: Texture,
     instance: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(lightmap)
-    _args.append(instance)
-    __method_bind.addUser.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(lightmap))
+    _args.add(Variant.fromAny(instance))
+    __method_bind.addUser.call(this._handle, _args)
   }
 
   fun clearUsers() {
@@ -138,39 +138,39 @@ open class BakedLightmapData(
 
   fun getUserLightmap(userIdx: Int): Texture {
     val _arg = Variant.new(userIdx)
-    val _ret = __method_bind.getUserLightmap.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getUserLightmap.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun getUserPath(userIdx: Int): NodePath {
     val _arg = Variant.new(userIdx)
-    val _ret = __method_bind.getUserPath.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getUserPath.call(this._handle, listOf(_arg))
     return _ret.asNodePath()
   }
 
   fun setBounds(bounds: AABB) {
     val _arg = Variant.new(bounds)
-    __method_bind.setBounds.call(this._handle, _arg, 1)
+    __method_bind.setBounds.call(this._handle, listOf(_arg))
   }
 
   fun setCellSpaceTransform(xform: Transform) {
     val _arg = Variant.new(xform)
-    __method_bind.setCellSpaceTransform.call(this._handle, _arg, 1)
+    __method_bind.setCellSpaceTransform.call(this._handle, listOf(_arg))
   }
 
   fun setCellSubdiv(cellSubdiv: Int) {
     val _arg = Variant.new(cellSubdiv)
-    __method_bind.setCellSubdiv.call(this._handle, _arg, 1)
+    __method_bind.setCellSubdiv.call(this._handle, listOf(_arg))
   }
 
   fun setEnergy(energy: Float) {
     val _arg = Variant.new(energy)
-    __method_bind.setEnergy.call(this._handle, _arg, 1)
+    __method_bind.setEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setOctree(octree: PoolByteArray) {
     val _arg = Variant.new(octree)
-    __method_bind.setOctree.call(this._handle, _arg, 1)
+    __method_bind.setOctree.call(this._handle, listOf(_arg))
   }
 
   companion object {

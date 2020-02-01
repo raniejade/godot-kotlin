@@ -32,7 +32,7 @@ open class VisualScriptResourcePath(
 
   fun setResourcePath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.setResourcePath.call(this._handle, _arg, 1)
+    __method_bind.setResourcePath.call(this._handle, listOf(_arg))
   }
 
   companion object {

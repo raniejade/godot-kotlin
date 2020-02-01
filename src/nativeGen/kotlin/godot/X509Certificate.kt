@@ -20,13 +20,13 @@ open class X509Certificate(
 ) : Resource(_handle) {
   fun load(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.load.call(this._handle, _arg, 1)
+    val _ret = __method_bind.load.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun save(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.save.call(this._handle, _arg, 1)
+    val _ret = __method_bind.save.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 

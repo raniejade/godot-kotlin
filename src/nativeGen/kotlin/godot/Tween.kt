@@ -56,17 +56,17 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(method)
-    _args.append(initialVal)
-    _args.append(target)
-    _args.append(targetMethod)
-    _args.append(duration)
-    _args.append(transType)
-    _args.append(easeType)
-    _args.append(delay)
-    val _ret = __method_bind.followMethod.call(this._handle, _args.toVariant(), 9)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(initialVal))
+    _args.add(Variant.fromAny(target))
+    _args.add(Variant.fromAny(targetMethod))
+    _args.add(Variant.fromAny(duration))
+    _args.add(Variant.fromAny(transType))
+    _args.add(Variant.fromAny(easeType))
+    _args.add(Variant.fromAny(delay))
+    val _ret = __method_bind.followMethod.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -81,17 +81,17 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(property)
-    _args.append(initialVal)
-    _args.append(target)
-    _args.append(targetProperty)
-    _args.append(duration)
-    _args.append(transType)
-    _args.append(easeType)
-    _args.append(delay)
-    val _ret = __method_bind.followProperty.call(this._handle, _args.toVariant(), 9)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(initialVal))
+    _args.add(Variant.fromAny(target))
+    _args.add(Variant.fromAny(targetProperty))
+    _args.add(Variant.fromAny(duration))
+    _args.add(Variant.fromAny(transType))
+    _args.add(Variant.fromAny(easeType))
+    _args.add(Variant.fromAny(delay))
+    val _ret = __method_bind.followProperty.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -120,16 +120,16 @@ open class Tween(
     arg4: Variant,
     arg5: Variant
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(duration)
-    _args.append(callback)
-    _args.append(arg1)
-    _args.append(arg2)
-    _args.append(arg3)
-    _args.append(arg4)
-    _args.append(arg5)
-    val _ret = __method_bind.interpolateCallback.call(this._handle, _args.toVariant(), 8)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(duration))
+    _args.add(Variant.fromAny(callback))
+    _args.add(Variant.fromAny(arg1))
+    _args.add(Variant.fromAny(arg2))
+    _args.add(Variant.fromAny(arg3))
+    _args.add(Variant.fromAny(arg4))
+    _args.add(Variant.fromAny(arg5))
+    val _ret = __method_bind.interpolateCallback.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -143,16 +143,16 @@ open class Tween(
     arg4: Variant,
     arg5: Variant
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(duration)
-    _args.append(callback)
-    _args.append(arg1)
-    _args.append(arg2)
-    _args.append(arg3)
-    _args.append(arg4)
-    _args.append(arg5)
-    val _ret = __method_bind.interpolateDeferredCallback.call(this._handle, _args.toVariant(), 8)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(duration))
+    _args.add(Variant.fromAny(callback))
+    _args.add(Variant.fromAny(arg1))
+    _args.add(Variant.fromAny(arg2))
+    _args.add(Variant.fromAny(arg3))
+    _args.add(Variant.fromAny(arg4))
+    _args.add(Variant.fromAny(arg5))
+    val _ret = __method_bind.interpolateDeferredCallback.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -166,16 +166,16 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(method)
-    _args.append(initialVal)
-    _args.append(finalVal)
-    _args.append(duration)
-    _args.append(transType)
-    _args.append(easeType)
-    _args.append(delay)
-    val _ret = __method_bind.interpolateMethod.call(this._handle, _args.toVariant(), 8)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(initialVal))
+    _args.add(Variant.fromAny(finalVal))
+    _args.add(Variant.fromAny(duration))
+    _args.add(Variant.fromAny(transType))
+    _args.add(Variant.fromAny(easeType))
+    _args.add(Variant.fromAny(delay))
+    val _ret = __method_bind.interpolateMethod.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -189,16 +189,16 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(property)
-    _args.append(initialVal)
-    _args.append(finalVal)
-    _args.append(duration)
-    _args.append(transType)
-    _args.append(easeType)
-    _args.append(delay)
-    val _ret = __method_bind.interpolateProperty.call(this._handle, _args.toVariant(), 8)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(initialVal))
+    _args.add(Variant.fromAny(finalVal))
+    _args.add(Variant.fromAny(duration))
+    _args.add(Variant.fromAny(transType))
+    _args.add(Variant.fromAny(easeType))
+    _args.add(Variant.fromAny(delay))
+    val _ret = __method_bind.interpolateProperty.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -213,10 +213,10 @@ open class Tween(
   }
 
   fun remove(`object`: Object, key: String = ""): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(key)
-    val _ret = __method_bind.remove.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(key))
+    val _ret = __method_bind.remove.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -226,10 +226,10 @@ open class Tween(
   }
 
   fun reset(`object`: Object, key: String = ""): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(key)
-    val _ret = __method_bind.reset.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(key))
+    val _ret = __method_bind.reset.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -239,10 +239,10 @@ open class Tween(
   }
 
   fun resume(`object`: Object, key: String = ""): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(key)
-    val _ret = __method_bind.resume.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(key))
+    val _ret = __method_bind.resume.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -253,28 +253,28 @@ open class Tween(
 
   fun seek(time: Float): Boolean {
     val _arg = Variant.new(time)
-    val _ret = __method_bind.seek.call(this._handle, _arg, 1)
+    val _ret = __method_bind.seek.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.setActive.call(this._handle, _arg, 1)
+    __method_bind.setActive.call(this._handle, listOf(_arg))
   }
 
   fun setRepeat(repeat: Boolean) {
     val _arg = Variant.new(repeat)
-    __method_bind.setRepeat.call(this._handle, _arg, 1)
+    __method_bind.setRepeat.call(this._handle, listOf(_arg))
   }
 
   fun setSpeedScale(speed: Float) {
     val _arg = Variant.new(speed)
-    __method_bind.setSpeedScale.call(this._handle, _arg, 1)
+    __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
   }
 
   fun setTweenProcessMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setTweenProcessMode.call(this._handle, _arg, 1)
+    __method_bind.setTweenProcessMode.call(this._handle, listOf(_arg))
   }
 
   fun start(): Boolean {
@@ -283,10 +283,10 @@ open class Tween(
   }
 
   fun stop(`object`: Object, key: String = ""): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(key)
-    val _ret = __method_bind.stop.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(key))
+    val _ret = __method_bind.stop.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -306,17 +306,17 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(method)
-    _args.append(initial)
-    _args.append(initialMethod)
-    _args.append(finalVal)
-    _args.append(duration)
-    _args.append(transType)
-    _args.append(easeType)
-    _args.append(delay)
-    val _ret = __method_bind.targetingMethod.call(this._handle, _args.toVariant(), 9)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(method))
+    _args.add(Variant.fromAny(initial))
+    _args.add(Variant.fromAny(initialMethod))
+    _args.add(Variant.fromAny(finalVal))
+    _args.add(Variant.fromAny(duration))
+    _args.add(Variant.fromAny(transType))
+    _args.add(Variant.fromAny(easeType))
+    _args.add(Variant.fromAny(delay))
+    val _ret = __method_bind.targetingMethod.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -331,17 +331,17 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    _args.append(property)
-    _args.append(initial)
-    _args.append(initialVal)
-    _args.append(finalVal)
-    _args.append(duration)
-    _args.append(transType)
-    _args.append(easeType)
-    _args.append(delay)
-    val _ret = __method_bind.targetingProperty.call(this._handle, _args.toVariant(), 9)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(`object`))
+    _args.add(Variant.fromAny(property))
+    _args.add(Variant.fromAny(initial))
+    _args.add(Variant.fromAny(initialVal))
+    _args.add(Variant.fromAny(finalVal))
+    _args.add(Variant.fromAny(duration))
+    _args.add(Variant.fromAny(transType))
+    _args.add(Variant.fromAny(easeType))
+    _args.add(Variant.fromAny(delay))
+    val _ret = __method_bind.targetingProperty.call(this._handle, _args)
     return _ret.asBoolean()
   }
 

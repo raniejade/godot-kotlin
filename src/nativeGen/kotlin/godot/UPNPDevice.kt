@@ -74,21 +74,21 @@ open class UPNPDevice(
     proto: String = "UDP",
     duration: Int = 0
   ): Int {
-    val _args = VariantArray.new()
-    _args.append(port)
-    _args.append(portInternal)
-    _args.append(desc)
-    _args.append(proto)
-    _args.append(duration)
-    val _ret = __method_bind.addPortMapping.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(port))
+    _args.add(Variant.fromAny(portInternal))
+    _args.add(Variant.fromAny(desc))
+    _args.add(Variant.fromAny(proto))
+    _args.add(Variant.fromAny(duration))
+    val _ret = __method_bind.addPortMapping.call(this._handle, _args)
     return _ret.asInt()
   }
 
   fun deletePortMapping(port: Int, proto: String = "UDP"): Int {
-    val _args = VariantArray.new()
-    _args.append(port)
-    _args.append(proto)
-    val _ret = __method_bind.deletePortMapping.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(port))
+    _args.add(Variant.fromAny(proto))
+    val _ret = __method_bind.deletePortMapping.call(this._handle, _args)
     return _ret.asInt()
   }
 
@@ -134,32 +134,32 @@ open class UPNPDevice(
 
   fun setDescriptionUrl(url: String) {
     val _arg = Variant.new(url)
-    __method_bind.setDescriptionUrl.call(this._handle, _arg, 1)
+    __method_bind.setDescriptionUrl.call(this._handle, listOf(_arg))
   }
 
   fun setIgdControlUrl(url: String) {
     val _arg = Variant.new(url)
-    __method_bind.setIgdControlUrl.call(this._handle, _arg, 1)
+    __method_bind.setIgdControlUrl.call(this._handle, listOf(_arg))
   }
 
   fun setIgdOurAddr(addr: String) {
     val _arg = Variant.new(addr)
-    __method_bind.setIgdOurAddr.call(this._handle, _arg, 1)
+    __method_bind.setIgdOurAddr.call(this._handle, listOf(_arg))
   }
 
   fun setIgdServiceType(type: String) {
     val _arg = Variant.new(type)
-    __method_bind.setIgdServiceType.call(this._handle, _arg, 1)
+    __method_bind.setIgdServiceType.call(this._handle, listOf(_arg))
   }
 
   fun setIgdStatus(status: Int) {
     val _arg = Variant.new(status)
-    __method_bind.setIgdStatus.call(this._handle, _arg, 1)
+    __method_bind.setIgdStatus.call(this._handle, listOf(_arg))
   }
 
   fun setServiceType(type: String) {
     val _arg = Variant.new(type)
-    __method_bind.setServiceType.call(this._handle, _arg, 1)
+    __method_bind.setServiceType.call(this._handle, listOf(_arg))
   }
 
   enum class IGDStatus(

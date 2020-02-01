@@ -19,13 +19,13 @@ open class GDScriptFunctionState(
 ) : Reference(_handle) {
   fun isValid(extendedCheck: Boolean = false): Boolean {
     val _arg = Variant.new(extendedCheck)
-    val _ret = __method_bind.isValid.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isValid.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun resume(arg: Variant): Variant {
     val _arg = Variant.new(arg)
-    val _ret = __method_bind.resume.call(this._handle, _arg, 1)
+    val _ret = __method_bind.resume.call(this._handle, listOf(_arg))
     return _ret
   }
 

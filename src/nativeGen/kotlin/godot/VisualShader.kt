@@ -45,12 +45,12 @@ open class VisualShader(
     position: Vector2,
     id: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(node)
-    _args.append(position)
-    _args.append(id)
-    __method_bind.addNode.call(this._handle, _args.toVariant(), 4)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(node))
+    _args.add(Variant.fromAny(position))
+    _args.add(Variant.fromAny(id))
+    __method_bind.addNode.call(this._handle, _args)
   }
 
   fun canConnectNodes(
@@ -60,13 +60,13 @@ open class VisualShader(
     toNode: Int,
     toPort: Int
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(fromNode)
-    _args.append(fromPort)
-    _args.append(toNode)
-    _args.append(toPort)
-    val _ret = __method_bind.canConnectNodes.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(toNode))
+    _args.add(Variant.fromAny(toPort))
+    val _ret = __method_bind.canConnectNodes.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
@@ -77,13 +77,13 @@ open class VisualShader(
     toNode: Int,
     toPort: Int
   ): GDError {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(fromNode)
-    _args.append(fromPort)
-    _args.append(toNode)
-    _args.append(toPort)
-    val _ret = __method_bind.connectNodes.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(toNode))
+    _args.add(Variant.fromAny(toPort))
+    val _ret = __method_bind.connectNodes.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -94,13 +94,13 @@ open class VisualShader(
     toNode: Int,
     toPort: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(fromNode)
-    _args.append(fromPort)
-    _args.append(toNode)
-    _args.append(toPort)
-    __method_bind.connectNodesForced.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(toNode))
+    _args.add(Variant.fromAny(toPort))
+    __method_bind.connectNodesForced.call(this._handle, _args)
   }
 
   fun disconnectNodes(
@@ -110,13 +110,13 @@ open class VisualShader(
     toNode: Int,
     toPort: Int
   ) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(fromNode)
-    _args.append(fromPort)
-    _args.append(toNode)
-    _args.append(toPort)
-    __method_bind.disconnectNodes.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(toNode))
+    _args.add(Variant.fromAny(toPort))
+    __method_bind.disconnectNodes.call(this._handle, _args)
   }
 
   fun getGraphOffset(): Vector2 {
@@ -125,36 +125,36 @@ open class VisualShader(
   }
 
   fun getNode(type: Int, id: Int): VisualShaderNode {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(id)
-    val _ret = __method_bind.getNode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(id))
+    val _ret = __method_bind.getNode.call(this._handle, _args)
     return _ret.asObject(::VisualShaderNode)!!
   }
 
   fun getNodeConnections(type: Int): VariantArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getNodeConnections.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeConnections.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun getNodeList(type: Int): PoolIntArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getNodeList.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeList.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
 
   fun getNodePosition(type: Int, id: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(id)
-    val _ret = __method_bind.getNodePosition.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(id))
+    val _ret = __method_bind.getNodePosition.call(this._handle, _args)
     return _ret.asVector2()
   }
 
   fun getValidNodeId(type: Int): Int {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.getValidNodeId.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getValidNodeId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
@@ -165,31 +165,31 @@ open class VisualShader(
     toNode: Int,
     toPort: Int
   ): Boolean {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(fromNode)
-    _args.append(fromPort)
-    _args.append(toNode)
-    _args.append(toPort)
-    val _ret = __method_bind.isNodeConnection.call(this._handle, _args.toVariant(), 5)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(fromNode))
+    _args.add(Variant.fromAny(fromPort))
+    _args.add(Variant.fromAny(toNode))
+    _args.add(Variant.fromAny(toPort))
+    val _ret = __method_bind.isNodeConnection.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun removeNode(type: Int, id: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(id)
-    __method_bind.removeNode.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(id))
+    __method_bind.removeNode.call(this._handle, _args)
   }
 
   fun setGraphOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.setGraphOffset.call(this._handle, _arg, 1)
+    __method_bind.setGraphOffset.call(this._handle, listOf(_arg))
   }
 
   fun setMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setMode.call(this._handle, _arg, 1)
+    __method_bind.setMode.call(this._handle, listOf(_arg))
   }
 
   fun setNodePosition(
@@ -197,11 +197,11 @@ open class VisualShader(
     id: Int,
     position: Vector2
   ) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    _args.append(id)
-    _args.append(position)
-    __method_bind.setNodePosition.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(type))
+    _args.add(Variant.fromAny(id))
+    _args.add(Variant.fromAny(position))
+    __method_bind.setNodePosition.call(this._handle, _args)
   }
 
   enum class Type(

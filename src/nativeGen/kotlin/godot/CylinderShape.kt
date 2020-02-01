@@ -45,12 +45,12 @@ open class CylinderShape(
 
   fun setHeight(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.setHeight.call(this._handle, _arg, 1)
+    __method_bind.setHeight.call(this._handle, listOf(_arg))
   }
 
   fun setRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.setRadius.call(this._handle, _arg, 1)
+    __method_bind.setRadius.call(this._handle, listOf(_arg))
   }
 
   companion object {

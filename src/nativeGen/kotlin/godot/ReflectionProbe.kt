@@ -207,62 +207,62 @@ open class ReflectionProbe(
 
   fun setAsInterior(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setAsInterior.call(this._handle, _arg, 1)
+    __method_bind.setAsInterior.call(this._handle, listOf(_arg))
   }
 
   fun setCullMask(layers: Int) {
     val _arg = Variant.new(layers)
-    __method_bind.setCullMask.call(this._handle, _arg, 1)
+    __method_bind.setCullMask.call(this._handle, listOf(_arg))
   }
 
   fun setEnableBoxProjection(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setEnableBoxProjection.call(this._handle, _arg, 1)
+    __method_bind.setEnableBoxProjection.call(this._handle, listOf(_arg))
   }
 
   fun setEnableShadows(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.setEnableShadows.call(this._handle, _arg, 1)
+    __method_bind.setEnableShadows.call(this._handle, listOf(_arg))
   }
 
   fun setExtents(extents: Vector3) {
     val _arg = Variant.new(extents)
-    __method_bind.setExtents.call(this._handle, _arg, 1)
+    __method_bind.setExtents.call(this._handle, listOf(_arg))
   }
 
   fun setIntensity(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.setIntensity.call(this._handle, _arg, 1)
+    __method_bind.setIntensity.call(this._handle, listOf(_arg))
   }
 
   fun setInteriorAmbient(ambient: Color) {
     val _arg = Variant.new(ambient)
-    __method_bind.setInteriorAmbient.call(this._handle, _arg, 1)
+    __method_bind.setInteriorAmbient.call(this._handle, listOf(_arg))
   }
 
   fun setInteriorAmbientEnergy(ambientEnergy: Float) {
     val _arg = Variant.new(ambientEnergy)
-    __method_bind.setInteriorAmbientEnergy.call(this._handle, _arg, 1)
+    __method_bind.setInteriorAmbientEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setInteriorAmbientProbeContribution(ambientProbeContribution: Float) {
     val _arg = Variant.new(ambientProbeContribution)
-    __method_bind.setInteriorAmbientProbeContribution.call(this._handle, _arg, 1)
+    __method_bind.setInteriorAmbientProbeContribution.call(this._handle, listOf(_arg))
   }
 
   fun setMaxDistance(maxDistance: Float) {
     val _arg = Variant.new(maxDistance)
-    __method_bind.setMaxDistance.call(this._handle, _arg, 1)
+    __method_bind.setMaxDistance.call(this._handle, listOf(_arg))
   }
 
   fun setOriginOffset(originOffset: Vector3) {
     val _arg = Variant.new(originOffset)
-    __method_bind.setOriginOffset.call(this._handle, _arg, 1)
+    __method_bind.setOriginOffset.call(this._handle, listOf(_arg))
   }
 
   fun setUpdateMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setUpdateMode.call(this._handle, _arg, 1)
+    __method_bind.setUpdateMode.call(this._handle, listOf(_arg))
   }
 
   enum class UpdateMode(

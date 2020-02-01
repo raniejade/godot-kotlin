@@ -23,19 +23,19 @@ open class ConfigFile(
 ) : Reference(_handle) {
   fun eraseSection(section: String) {
     val _arg = Variant.new(section)
-    __method_bind.eraseSection.call(this._handle, _arg, 1)
+    __method_bind.eraseSection.call(this._handle, listOf(_arg))
   }
 
   fun eraseSectionKey(section: String, key: String) {
-    val _args = VariantArray.new()
-    _args.append(section)
-    _args.append(key)
-    __method_bind.eraseSectionKey.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(section))
+    _args.add(Variant.fromAny(key))
+    __method_bind.eraseSectionKey.call(this._handle, _args)
   }
 
   fun getSectionKeys(section: String): PoolStringArray {
     val _arg = Variant.new(section)
-    val _ret = __method_bind.getSectionKeys.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSectionKeys.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
@@ -49,69 +49,69 @@ open class ConfigFile(
     key: String,
     default: Variant
   ): Variant {
-    val _args = VariantArray.new()
-    _args.append(section)
-    _args.append(key)
-    _args.append(default)
-    val _ret = __method_bind.getValue.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(section))
+    _args.add(Variant.fromAny(key))
+    _args.add(Variant.fromAny(default))
+    val _ret = __method_bind.getValue.call(this._handle, _args)
     return _ret
   }
 
   fun hasSection(section: String): Boolean {
     val _arg = Variant.new(section)
-    val _ret = __method_bind.hasSection.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasSection.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasSectionKey(section: String, key: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(section)
-    _args.append(key)
-    val _ret = __method_bind.hasSectionKey.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(section))
+    _args.add(Variant.fromAny(key))
+    val _ret = __method_bind.hasSectionKey.call(this._handle, _args)
     return _ret.asBoolean()
   }
 
   fun load(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.load.call(this._handle, _arg, 1)
+    val _ret = __method_bind.load.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun loadEncrypted(path: String, key: PoolByteArray): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(key)
-    val _ret = __method_bind.loadEncrypted.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(key))
+    val _ret = __method_bind.loadEncrypted.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun loadEncryptedPass(path: String, pass: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(pass)
-    val _ret = __method_bind.loadEncryptedPass.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(pass))
+    val _ret = __method_bind.loadEncryptedPass.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun save(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.save.call(this._handle, _arg, 1)
+    val _ret = __method_bind.save.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun saveEncrypted(path: String, key: PoolByteArray): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(key)
-    val _ret = __method_bind.saveEncrypted.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(key))
+    val _ret = __method_bind.saveEncrypted.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
   fun saveEncryptedPass(path: String, pass: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    _args.append(pass)
-    val _ret = __method_bind.saveEncryptedPass.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(path))
+    _args.add(Variant.fromAny(pass))
+    val _ret = __method_bind.saveEncryptedPass.call(this._handle, _args)
     return GDError.from(_ret.asInt())
   }
 
@@ -120,11 +120,11 @@ open class ConfigFile(
     key: String,
     value: Variant
   ) {
-    val _args = VariantArray.new()
-    _args.append(section)
-    _args.append(key)
-    _args.append(value)
-    __method_bind.setValue.call(this._handle, _args.toVariant(), 3)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(section))
+    _args.add(Variant.fromAny(key))
+    _args.add(Variant.fromAny(value))
+    __method_bind.setValue.call(this._handle, _args)
   }
 
   companion object {

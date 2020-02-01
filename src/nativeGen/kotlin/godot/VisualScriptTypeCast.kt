@@ -45,12 +45,12 @@ open class VisualScriptTypeCast(
 
   fun setBaseScript(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.setBaseScript.call(this._handle, _arg, 1)
+    __method_bind.setBaseScript.call(this._handle, listOf(_arg))
   }
 
   fun setBaseType(type: String) {
     val _arg = Variant.new(type)
-    __method_bind.setBaseType.call(this._handle, _arg, 1)
+    __method_bind.setBaseType.call(this._handle, listOf(_arg))
   }
 
   companion object {

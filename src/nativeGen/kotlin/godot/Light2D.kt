@@ -324,107 +324,107 @@ open class Light2D(
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.setColor.call(this._handle, _arg, 1)
+    __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 
   fun setEditorOnly(editorOnly: Boolean) {
     val _arg = Variant.new(editorOnly)
-    __method_bind.setEditorOnly.call(this._handle, _arg, 1)
+    __method_bind.setEditorOnly.call(this._handle, listOf(_arg))
   }
 
   fun setEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setEnabled.call(this._handle, _arg, 1)
+    __method_bind.setEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setEnergy(energy: Float) {
     val _arg = Variant.new(energy)
-    __method_bind.setEnergy.call(this._handle, _arg, 1)
+    __method_bind.setEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setHeight(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.setHeight.call(this._handle, _arg, 1)
+    __method_bind.setHeight.call(this._handle, listOf(_arg))
   }
 
   fun setItemCullMask(itemCullMask: Int) {
     val _arg = Variant.new(itemCullMask)
-    __method_bind.setItemCullMask.call(this._handle, _arg, 1)
+    __method_bind.setItemCullMask.call(this._handle, listOf(_arg))
   }
 
   fun setItemShadowCullMask(itemShadowCullMask: Int) {
     val _arg = Variant.new(itemShadowCullMask)
-    __method_bind.setItemShadowCullMask.call(this._handle, _arg, 1)
+    __method_bind.setItemShadowCullMask.call(this._handle, listOf(_arg))
   }
 
   fun setLayerRangeMax(layer: Int) {
     val _arg = Variant.new(layer)
-    __method_bind.setLayerRangeMax.call(this._handle, _arg, 1)
+    __method_bind.setLayerRangeMax.call(this._handle, listOf(_arg))
   }
 
   fun setLayerRangeMin(layer: Int) {
     val _arg = Variant.new(layer)
-    __method_bind.setLayerRangeMin.call(this._handle, _arg, 1)
+    __method_bind.setLayerRangeMin.call(this._handle, listOf(_arg))
   }
 
   fun setMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.setMode.call(this._handle, _arg, 1)
+    __method_bind.setMode.call(this._handle, listOf(_arg))
   }
 
   fun setShadowBufferSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.setShadowBufferSize.call(this._handle, _arg, 1)
+    __method_bind.setShadowBufferSize.call(this._handle, listOf(_arg))
   }
 
   fun setShadowColor(shadowColor: Color) {
     val _arg = Variant.new(shadowColor)
-    __method_bind.setShadowColor.call(this._handle, _arg, 1)
+    __method_bind.setShadowColor.call(this._handle, listOf(_arg))
   }
 
   fun setShadowEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.setShadowEnabled.call(this._handle, _arg, 1)
+    __method_bind.setShadowEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setShadowFilter(filter: Int) {
     val _arg = Variant.new(filter)
-    __method_bind.setShadowFilter.call(this._handle, _arg, 1)
+    __method_bind.setShadowFilter.call(this._handle, listOf(_arg))
   }
 
   fun setShadowGradientLength(multiplier: Float) {
     val _arg = Variant.new(multiplier)
-    __method_bind.setShadowGradientLength.call(this._handle, _arg, 1)
+    __method_bind.setShadowGradientLength.call(this._handle, listOf(_arg))
   }
 
   fun setShadowSmooth(smooth: Float) {
     val _arg = Variant.new(smooth)
-    __method_bind.setShadowSmooth.call(this._handle, _arg, 1)
+    __method_bind.setShadowSmooth.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.setTexture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setTextureOffset(textureOffset: Vector2) {
     val _arg = Variant.new(textureOffset)
-    __method_bind.setTextureOffset.call(this._handle, _arg, 1)
+    __method_bind.setTextureOffset.call(this._handle, listOf(_arg))
   }
 
   fun setTextureScale(textureScale: Float) {
     val _arg = Variant.new(textureScale)
-    __method_bind.setTextureScale.call(this._handle, _arg, 1)
+    __method_bind.setTextureScale.call(this._handle, listOf(_arg))
   }
 
   fun setZRangeMax(z: Int) {
     val _arg = Variant.new(z)
-    __method_bind.setZRangeMax.call(this._handle, _arg, 1)
+    __method_bind.setZRangeMax.call(this._handle, listOf(_arg))
   }
 
   fun setZRangeMin(z: Int) {
     val _arg = Variant.new(z)
-    __method_bind.setZRangeMin.call(this._handle, _arg, 1)
+    __method_bind.setZRangeMin.call(this._handle, listOf(_arg))
   }
 
   enum class ShadowFilter(

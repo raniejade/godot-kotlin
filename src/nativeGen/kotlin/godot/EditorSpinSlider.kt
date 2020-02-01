@@ -59,17 +59,17 @@ open class EditorSpinSlider(
 
   fun setFlat(flat: Boolean) {
     val _arg = Variant.new(flat)
-    __method_bind.setFlat.call(this._handle, _arg, 1)
+    __method_bind.setFlat.call(this._handle, listOf(_arg))
   }
 
   fun setLabel(label: String) {
     val _arg = Variant.new(label)
-    __method_bind.setLabel.call(this._handle, _arg, 1)
+    __method_bind.setLabel.call(this._handle, listOf(_arg))
   }
 
   fun setReadOnly(readOnly: Boolean) {
     val _arg = Variant.new(readOnly)
-    __method_bind.setReadOnly.call(this._handle, _arg, 1)
+    __method_bind.setReadOnly.call(this._handle, listOf(_arg))
   }
 
   companion object {

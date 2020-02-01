@@ -19,10 +19,10 @@ open class LargeTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun addPiece(ofs: Vector2, texture: Texture): Int {
-    val _args = VariantArray.new()
-    _args.append(ofs)
-    _args.append(texture)
-    val _ret = __method_bind.addPiece.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(ofs))
+    _args.add(Variant.fromAny(texture))
+    val _ret = __method_bind.addPiece.call(this._handle, _args)
     return _ret.asInt()
   }
 
@@ -37,33 +37,33 @@ open class LargeTexture(
 
   fun getPieceOffset(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getPieceOffset.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPieceOffset.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getPieceTexture(idx: Int): Texture {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.getPieceTexture.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPieceTexture.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun setPieceOffset(idx: Int, ofs: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(ofs)
-    __method_bind.setPieceOffset.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(ofs))
+    __method_bind.setPieceOffset.call(this._handle, _args)
   }
 
   fun setPieceTexture(idx: Int, texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    _args.append(texture)
-    __method_bind.setPieceTexture.call(this._handle, _args.toVariant(), 2)
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant.fromAny(idx))
+    _args.add(Variant.fromAny(texture))
+    __method_bind.setPieceTexture.call(this._handle, _args)
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.setSize.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 
   companion object {
