@@ -1,6 +1,98 @@
 package godot.core
 
 import gdnative.godot_error
+import godot.GlobalConstants
+
+enum class Margin(val value: Int) {
+  LEFT(GlobalConstants.MARGIN_LEFT),
+  TOP(GlobalConstants.MARGIN_TOP),
+  RIGHT(GlobalConstants.MARGIN_RIGHT),
+  BOTTOM(GlobalConstants.MARGIN_BOTTOM);
+
+  companion object {
+    fun from(value: Int) = values().first { it.value == value }
+  }
+}
+
+enum class Corner(val value: Int) {
+  TOP_LEFT(GlobalConstants.CORNER_TOP_LEFT),
+  TOP_RIGHT(GlobalConstants.CORNER_TOP_RIGHT),
+  BOTTOM_LEFT(GlobalConstants.CORNER_BOTTOM_LEFT),
+  BOTTOM_RIGHT(GlobalConstants.CORNER_BOTTOM_RIGHT);
+
+  companion object {
+    fun from(value: Int) = values().first { it.value == value }
+  }
+}
+
+enum class Orientation(val value: Int) {
+  VERTICAL(GlobalConstants.VERTICAL),
+  HORIZONTAL(GlobalConstants.HORIZONTAL);
+
+  companion object {
+    fun from(value: Int) = values().first { it.value == value }
+  }
+}
+
+enum class HAlign(val value: Int) {
+  LEFT(GlobalConstants.HALIGN_LEFT),
+  CENTER(GlobalConstants.HALIGN_CENTER),
+  RIGHT(GlobalConstants.HALIGN_RIGHT);
+
+  companion object {
+    fun from(value: Int) = values().first { it.value == value }
+  }
+}
+
+enum class VAlign(val value: Int) {
+  TOP(GlobalConstants.VALIGN_TOP),
+  CENTER(GlobalConstants.VALIGN_CENTER),
+  BOTTOM(GlobalConstants.VALIGN_BOTTOM);
+
+  companion object {
+    fun from(value: Int) = values().first { it.value == value }
+  }
+}
+
+enum class KeyList(val value: Int) {
+  // TODO
+  ;
+  companion object {
+    fun from(value: Int) = values().first { it.value == value }
+  }
+}
+
+enum class KeyModifierMask(val value: Int) {
+  // TODO
+  ;
+  companion object {
+    fun from(value: Int) = values().first { it.value == value }
+  }
+}
+
+enum class ButtonList(val value: Int) {
+  // TODO
+  ;
+  companion object {
+    fun from(value: Int) = values().first { it.value == value }
+  }
+}
+
+enum class JoystickList(val value: Int) {
+  // TODO
+  ;
+  companion object {
+    fun from(value: Int) = values().first { it.value == value }
+  }
+}
+
+enum class MidiMessageList(val value: Int) {
+  // TODO
+  ;
+  companion object {
+    fun from(value: Int) = values().first { it.value == value }
+  }
+}
 
 enum class GDError(val value: Int) {
   OK(godot_error.GODOT_OK.value.toInt()),
@@ -54,13 +146,7 @@ enum class GDError(val value: Int) {
   ERR_PRINTER_ON_FIRE(godot_error.GODOT_ERR_PRINTER_ON_FIRE.value.toInt());
 
   companion object {
-    fun from(value: Int): GDError {
-      for (enumValue in values()) {
-        if (enumValue.value == value) {
-          return enumValue
-        }
-      }
-      throw IllegalArgumentException("Unknown value $godot_error")
-    }
+    fun from(value: Int) = values().first { it.value == value }
   }
+
 }
