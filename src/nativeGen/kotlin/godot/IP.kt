@@ -93,13 +93,13 @@ open class IP(
   enum class Type(
     val value: Int
   ) {
-    TYPE_NONE(0),
+    NONE(0),
 
-    TYPE_IPV4(1),
+    IPV4(1),
 
-    TYPE_IPV6(2),
+    IPV6(2),
 
-    TYPE_ANY(3);
+    ANY(3);
 
     companion object {
       fun from(value: Int): Type {

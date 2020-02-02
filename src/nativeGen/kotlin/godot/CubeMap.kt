@@ -105,7 +105,7 @@ open class CubeMap(
 
     FLAG_FILTER(4),
 
-    FLAGS_DEFAULT(7);
+    DEFAULT(7);
 
     companion object {
       fun from(value: Int): Flags {
@@ -122,17 +122,17 @@ open class CubeMap(
   enum class Side(
     val value: Int
   ) {
-    SIDE_LEFT(0),
+    LEFT(0),
 
-    SIDE_RIGHT(1),
+    RIGHT(1),
 
-    SIDE_BOTTOM(2),
+    BOTTOM(2),
 
-    SIDE_TOP(3),
+    TOP(3),
 
-    SIDE_FRONT(4),
+    FRONT(4),
 
-    SIDE_BACK(5);
+    BACK(5);
 
     companion object {
       fun from(value: Int): Side {
@@ -149,11 +149,11 @@ open class CubeMap(
   enum class Storage(
     val value: Int
   ) {
-    STORAGE_RAW(0),
+    RAW(0),
 
-    STORAGE_COMPRESS_LOSSY(1),
+    COMPRESS_LOSSY(1),
 
-    STORAGE_COMPRESS_LOSSLESS(2);
+    COMPRESS_LOSSLESS(2);
 
     companion object {
       fun from(value: Int): Storage {

@@ -1028,15 +1028,15 @@ open class _OS(
   enum class PowerState(
     val value: Int
   ) {
-    POWERSTATE_UNKNOWN(0),
+    UNKNOWN(0),
 
-    POWERSTATE_ON_BATTERY(1),
+    ON_BATTERY(1),
 
-    POWERSTATE_NO_BATTERY(2),
+    NO_BATTERY(2),
 
-    POWERSTATE_CHARGING(3),
+    CHARGING(3),
 
-    POWERSTATE_CHARGED(4);
+    CHARGED(4);
 
     companion object {
       fun from(value: Int): PowerState {
@@ -1053,29 +1053,29 @@ open class _OS(
   enum class Month(
     val value: Int
   ) {
-    MONTH_JANUARY(1),
+    JANUARY(1),
 
-    MONTH_FEBRUARY(2),
+    FEBRUARY(2),
 
-    MONTH_MARCH(3),
+    MARCH(3),
 
-    MONTH_APRIL(4),
+    APRIL(4),
 
-    MONTH_MAY(5),
+    MAY(5),
 
-    MONTH_JUNE(6),
+    JUNE(6),
 
-    MONTH_JULY(7),
+    JULY(7),
 
-    MONTH_AUGUST(8),
+    AUGUST(8),
 
-    MONTH_SEPTEMBER(9),
+    SEPTEMBER(9),
 
-    MONTH_OCTOBER(10),
+    OCTOBER(10),
 
-    MONTH_NOVEMBER(11),
+    NOVEMBER(11),
 
-    MONTH_DECEMBER(12);
+    DECEMBER(12);
 
     companion object {
       fun from(value: Int): Month {

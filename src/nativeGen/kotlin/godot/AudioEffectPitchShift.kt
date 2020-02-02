@@ -76,17 +76,17 @@ open class AudioEffectPitchShift(
   enum class FFT_Size(
     val value: Int
   ) {
-    FFT_SIZE_256(0),
+    `256`(0),
 
-    FFT_SIZE_512(1),
+    `512`(1),
 
-    FFT_SIZE_1024(2),
+    `1024`(2),
 
-    FFT_SIZE_2048(3),
+    `2048`(3),
 
-    FFT_SIZE_4096(4),
+    `4096`(4),
 
-    FFT_SIZE_MAX(5);
+    MAX(5);
 
     companion object {
       fun from(value: Int): FFT_Size {

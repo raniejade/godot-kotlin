@@ -190,11 +190,11 @@ open class AudioStreamSample(
   enum class Format(
     val value: Int
   ) {
-    FORMAT_8_BITS(0),
+    `8_BITS`(0),
 
-    FORMAT_16_BITS(1),
+    `16_BITS`(1),
 
-    FORMAT_IMA_ADPCM(2);
+    IMA_ADPCM(2);
 
     companion object {
       fun from(value: Int): Format {

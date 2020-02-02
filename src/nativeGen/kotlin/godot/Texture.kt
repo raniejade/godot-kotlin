@@ -129,7 +129,7 @@ open class Texture(
 
     FLAG_FILTER(4),
 
-    FLAGS_DEFAULT(7),
+    DEFAULT(7),
 
     FLAG_ANISOTROPIC_FILTER(8),
 

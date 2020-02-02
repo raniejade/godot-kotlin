@@ -479,13 +479,13 @@ open class RigidBody(
   enum class Mode(
     val value: Int
   ) {
-    MODE_RIGID(0),
+    RIGID(0),
 
-    MODE_STATIC(1),
+    STATIC(1),
 
-    MODE_CHARACTER(2),
+    CHARACTER(2),
 
-    MODE_KINEMATIC(3);
+    KINEMATIC(3);
 
     companion object {
       fun from(value: Int): Mode {

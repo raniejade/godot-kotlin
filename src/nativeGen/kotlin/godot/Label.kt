@@ -224,13 +224,13 @@ open class Label(
   enum class Align(
     val value: Int
   ) {
-    ALIGN_LEFT(0),
+    LEFT(0),
 
-    ALIGN_CENTER(1),
+    CENTER(1),
 
-    ALIGN_RIGHT(2),
+    RIGHT(2),
 
-    ALIGN_FILL(3);
+    FILL(3);
 
     companion object {
       fun from(value: Int): Align {
@@ -247,13 +247,13 @@ open class Label(
   enum class VAlign(
     val value: Int
   ) {
-    VALIGN_TOP(0),
+    TOP(0),
 
-    VALIGN_CENTER(1),
+    CENTER(1),
 
-    VALIGN_BOTTOM(2),
+    BOTTOM(2),
 
-    VALIGN_FILL(3);
+    FILL(3);
 
     companion object {
       fun from(value: Int): VAlign {

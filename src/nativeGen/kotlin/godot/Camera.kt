@@ -403,11 +403,11 @@ open class Camera(
   enum class Projection(
     val value: Int
   ) {
-    PROJECTION_PERSPECTIVE(0),
+    PERSPECTIVE(0),
 
-    PROJECTION_ORTHOGONAL(1),
+    ORTHOGONAL(1),
 
-    PROJECTION_FRUSTUM(2);
+    FRUSTUM(2);
 
     companion object {
       fun from(value: Int): Projection {

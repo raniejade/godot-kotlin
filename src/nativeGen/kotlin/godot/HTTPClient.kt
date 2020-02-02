@@ -181,25 +181,25 @@ open class HTTPClient(
   enum class Status(
     val value: Int
   ) {
-    STATUS_DISCONNECTED(0),
+    DISCONNECTED(0),
 
-    STATUS_RESOLVING(1),
+    RESOLVING(1),
 
-    STATUS_CANT_RESOLVE(2),
+    CANT_RESOLVE(2),
 
-    STATUS_CONNECTING(3),
+    CONNECTING(3),
 
-    STATUS_CANT_CONNECT(4),
+    CANT_CONNECT(4),
 
-    STATUS_CONNECTED(5),
+    CONNECTED(5),
 
-    STATUS_REQUESTING(6),
+    REQUESTING(6),
 
-    STATUS_BODY(7),
+    BODY(7),
 
-    STATUS_CONNECTION_ERROR(8),
+    CONNECTION_ERROR(8),
 
-    STATUS_SSL_HANDSHAKE_ERROR(9);
+    SSL_HANDSHAKE_ERROR(9);
 
     companion object {
       fun from(value: Int): Status {
@@ -216,25 +216,25 @@ open class HTTPClient(
   enum class Method(
     val value: Int
   ) {
-    METHOD_GET(0),
+    GET(0),
 
-    METHOD_HEAD(1),
+    HEAD(1),
 
-    METHOD_POST(2),
+    POST(2),
 
-    METHOD_PUT(3),
+    PUT(3),
 
-    METHOD_DELETE(4),
+    DELETE(4),
 
-    METHOD_OPTIONS(5),
+    OPTIONS(5),
 
-    METHOD_TRACE(6),
+    TRACE(6),
 
-    METHOD_CONNECT(7),
+    CONNECT(7),
 
-    METHOD_PATCH(8),
+    PATCH(8),
 
-    METHOD_MAX(9);
+    MAX(9);
 
     companion object {
       fun from(value: Int): Method {

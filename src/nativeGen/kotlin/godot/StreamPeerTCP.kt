@@ -61,13 +61,13 @@ open class StreamPeerTCP(
   enum class Status(
     val value: Int
   ) {
-    STATUS_NONE(0),
+    NONE(0),
 
-    STATUS_CONNECTING(1),
+    CONNECTING(1),
 
-    STATUS_CONNECTED(2),
+    CONNECTED(2),
 
-    STATUS_ERROR(3);
+    ERROR(3);
 
     companion object {
       fun from(value: Int): Status {

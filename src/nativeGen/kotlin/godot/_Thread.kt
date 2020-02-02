@@ -54,11 +54,11 @@ open class _Thread(
   enum class Priority(
     val value: Int
   ) {
-    PRIORITY_LOW(0),
+    LOW(0),
 
-    PRIORITY_NORMAL(1),
+    NORMAL(1),
 
-    PRIORITY_HIGH(2);
+    HIGH(2);
 
     companion object {
       fun from(value: Int): Priority {

@@ -110,7 +110,7 @@ open class TextureLayered(
 
     FLAG_FILTER(4),
 
-    FLAGS_DEFAULT(4);
+    DEFAULT(4);
 
     companion object {
       fun from(value: Int): Flags {

@@ -85,15 +85,15 @@ open class StreamPeerSSL(
   enum class Status(
     val value: Int
   ) {
-    STATUS_DISCONNECTED(0),
+    DISCONNECTED(0),
 
-    STATUS_HANDSHAKING(1),
+    HANDSHAKING(1),
 
-    STATUS_CONNECTED(2),
+    CONNECTED(2),
 
-    STATUS_ERROR(3),
+    ERROR(3),
 
-    STATUS_ERROR_HOSTNAME_MISMATCH(4);
+    ERROR_HOSTNAME_MISMATCH(4);
 
     companion object {
       fun from(value: Int): Status {

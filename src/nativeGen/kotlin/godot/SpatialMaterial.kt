@@ -1545,31 +1545,31 @@ open class SpatialMaterial(
   enum class Feature(
     val value: Int
   ) {
-    FEATURE_TRANSPARENT(0),
+    TRANSPARENT(0),
 
-    FEATURE_EMISSION(1),
+    EMISSION(1),
 
-    FEATURE_NORMAL_MAPPING(2),
+    NORMAL_MAPPING(2),
 
-    FEATURE_RIM(3),
+    RIM(3),
 
-    FEATURE_CLEARCOAT(4),
+    CLEARCOAT(4),
 
-    FEATURE_ANISOTROPY(5),
+    ANISOTROPY(5),
 
-    FEATURE_AMBIENT_OCCLUSION(6),
+    AMBIENT_OCCLUSION(6),
 
-    FEATURE_DEPTH_MAPPING(7),
+    DEPTH_MAPPING(7),
 
-    FEATURE_SUBSURACE_SCATTERING(8),
+    SUBSURACE_SCATTERING(8),
 
-    FEATURE_TRANSMISSION(9),
+    TRANSMISSION(9),
 
-    FEATURE_REFRACTION(10),
+    REFRACTION(10),
 
-    FEATURE_DETAIL(11),
+    DETAIL(11),
 
-    FEATURE_MAX(12);
+    MAX(12);
 
     companion object {
       fun from(value: Int): Feature {

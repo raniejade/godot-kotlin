@@ -290,7 +290,7 @@ class APIGenerator {
 
       enum.values.forEach { (k, v) ->
         builder.addEnumConstant(
-          k,
+          k.removePrefix(enum.name.toUpperCase() + "_"),
           TypeSpec.anonymousClassBuilder()
             .addSuperclassConstructorParameter("$v")
             .build()

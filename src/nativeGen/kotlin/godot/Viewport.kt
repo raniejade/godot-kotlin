@@ -748,13 +748,13 @@ open class Viewport(
   enum class Usage(
     val value: Int
   ) {
-    USAGE_2D(0),
+    `2D`(0),
 
-    USAGE_2D_NO_SAMPLING(1),
+    `2D_NO_SAMPLING`(1),
 
-    USAGE_3D(2),
+    `3D`(2),
 
-    USAGE_3D_NO_EFFECTS(3);
+    `3D_NO_EFFECTS`(3);
 
     companion object {
       fun from(value: Int): Usage {
@@ -848,15 +848,15 @@ open class Viewport(
   enum class MSAA(
     val value: Int
   ) {
-    MSAA_DISABLED(0),
+    DISABLED(0),
 
-    MSAA_2X(1),
+    `2X`(1),
 
-    MSAA_4X(2),
+    `4X`(2),
 
-    MSAA_8X(3),
+    `8X`(3),
 
-    MSAA_16X(4);
+    `16X`(4);
 
     companion object {
       fun from(value: Int): MSAA {

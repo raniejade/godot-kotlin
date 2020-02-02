@@ -51,11 +51,11 @@ open class VisibilityEnabler(
   enum class Enabler(
     val value: Int
   ) {
-    ENABLER_PAUSE_ANIMATIONS(0),
+    PAUSE_ANIMATIONS(0),
 
-    ENABLER_FREEZE_BODIES(1),
+    FREEZE_BODIES(1),
 
-    ENABLER_MAX(2);
+    MAX(2);
 
     companion object {
       fun from(value: Int): Enabler {

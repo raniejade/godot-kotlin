@@ -167,11 +167,11 @@ open class CSGShape(
   enum class Operation(
     val value: Int
   ) {
-    OPERATION_UNION(0),
+    UNION(0),
 
-    OPERATION_INTERSECTION(1),
+    INTERSECTION(1),
 
-    OPERATION_SUBTRACTION(2);
+    SUBTRACTION(2);
 
     companion object {
       fun from(value: Int): Operation {

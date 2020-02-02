@@ -299,11 +299,11 @@ open class CSGPolygon(
   enum class Mode(
     val value: Int
   ) {
-    MODE_DEPTH(0),
+    DEPTH(0),
 
-    MODE_SPIN(1),
+    SPIN(1),
 
-    MODE_PATH(2);
+    PATH(2);
 
     companion object {
       fun from(value: Int): Mode {

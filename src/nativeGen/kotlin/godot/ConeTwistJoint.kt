@@ -59,17 +59,17 @@ open class ConeTwistJoint(
   enum class Param(
     val value: Int
   ) {
-    PARAM_SWING_SPAN(0),
+    SWING_SPAN(0),
 
-    PARAM_TWIST_SPAN(1),
+    TWIST_SPAN(1),
 
-    PARAM_BIAS(2),
+    BIAS(2),
 
-    PARAM_SOFTNESS(3),
+    SOFTNESS(3),
 
-    PARAM_RELAXATION(4),
+    RELAXATION(4),
 
-    PARAM_MAX(5);
+    MAX(5);
 
     companion object {
       fun from(value: Int): Param {

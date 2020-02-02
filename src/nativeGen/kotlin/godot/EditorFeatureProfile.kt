@@ -101,21 +101,21 @@ open class EditorFeatureProfile(
   enum class Feature(
     val value: Int
   ) {
-    FEATURE_3D(0),
+    `3D`(0),
 
-    FEATURE_SCRIPT(1),
+    SCRIPT(1),
 
-    FEATURE_ASSET_LIB(2),
+    ASSET_LIB(2),
 
-    FEATURE_SCENE_TREE(3),
+    SCENE_TREE(3),
 
-    FEATURE_IMPORT_DOCK(4),
+    IMPORT_DOCK(4),
 
-    FEATURE_NODE_DOCK(5),
+    NODE_DOCK(5),
 
-    FEATURE_FILESYSTEM_DOCK(6),
+    FILESYSTEM_DOCK(6),
 
-    FEATURE_MAX(7);
+    MAX(7);
 
     companion object {
       fun from(value: Int): Feature {

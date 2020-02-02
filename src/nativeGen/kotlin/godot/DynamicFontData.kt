@@ -77,11 +77,11 @@ open class DynamicFontData(
   enum class Hinting(
     val value: Int
   ) {
-    HINTING_NONE(0),
+    NONE(0),
 
-    HINTING_LIGHT(1),
+    LIGHT(1),
 
-    HINTING_NORMAL(2);
+    NORMAL(2);
 
     companion object {
       fun from(value: Int): Hinting {

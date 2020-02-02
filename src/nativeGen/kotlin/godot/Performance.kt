@@ -86,7 +86,7 @@ open class Performance(
 
     AUDIO_OUTPUT_LATENCY(28),
 
-    MONITOR_MAX(29);
+    MAX(29);
 
     companion object {
       fun from(value: Int): Monitor {

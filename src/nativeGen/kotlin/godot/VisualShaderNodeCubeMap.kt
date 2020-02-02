@@ -96,9 +96,9 @@ open class VisualShaderNodeCubeMap(
   enum class Source(
     val value: Int
   ) {
-    SOURCE_TEXTURE(0),
+    TEXTURE(0),
 
-    SOURCE_PORT(1);
+    PORT(1);
 
     companion object {
       fun from(value: Int): Source {

@@ -112,15 +112,15 @@ open class AudioEffectDistortion(
   enum class Mode(
     val value: Int
   ) {
-    MODE_CLIP(0),
+    CLIP(0),
 
-    MODE_ATAN(1),
+    ATAN(1),
 
-    MODE_LOFI(2),
+    LOFI(2),
 
-    MODE_OVERDRIVE(3),
+    OVERDRIVE(3),
 
-    MODE_WAVESHAPE(4);
+    WAVESHAPE(4);
 
     companion object {
       fun from(value: Int): Mode {

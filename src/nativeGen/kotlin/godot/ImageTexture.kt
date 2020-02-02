@@ -103,11 +103,11 @@ open class ImageTexture(
   enum class Storage(
     val value: Int
   ) {
-    STORAGE_RAW(0),
+    RAW(0),
 
-    STORAGE_COMPRESS_LOSSY(1),
+    COMPRESS_LOSSY(1),
 
-    STORAGE_COMPRESS_LOSSLESS(2);
+    COMPRESS_LOSSLESS(2);
 
     companion object {
       fun from(value: Int): Storage {

@@ -379,13 +379,13 @@ open class LineEdit(
   enum class Align(
     val value: Int
   ) {
-    ALIGN_LEFT(0),
+    LEFT(0),
 
-    ALIGN_CENTER(1),
+    CENTER(1),
 
-    ALIGN_RIGHT(2),
+    RIGHT(2),
 
-    ALIGN_FILL(3);
+    FILL(3);
 
     companion object {
       fun from(value: Int): Align {

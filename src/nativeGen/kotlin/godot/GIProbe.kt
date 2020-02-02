@@ -225,15 +225,15 @@ open class GIProbe(
   enum class Subdiv(
     val value: Int
   ) {
-    SUBDIV_64(0),
+    `64`(0),
 
-    SUBDIV_128(1),
+    `128`(1),
 
-    SUBDIV_256(2),
+    `256`(2),
 
-    SUBDIV_512(3),
+    `512`(3),
 
-    SUBDIV_MAX(4);
+    MAX(4);
 
     companion object {
       fun from(value: Int): Subdiv {

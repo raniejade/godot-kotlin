@@ -536,11 +536,11 @@ open class TileMap(
   enum class Mode(
     val value: Int
   ) {
-    MODE_SQUARE(0),
+    SQUARE(0),
 
-    MODE_ISOMETRIC(1),
+    ISOMETRIC(1),
 
-    MODE_CUSTOM(2);
+    CUSTOM(2);
 
     companion object {
       fun from(value: Int): Mode {

@@ -926,9 +926,9 @@ open class Control(
   enum class Anchor(
     val value: Int
   ) {
-    ANCHOR_BEGIN(0),
+    BEGIN(0),
 
-    ANCHOR_END(1);
+    END(1);
 
     companion object {
       fun from(value: Int): Anchor {

@@ -65,11 +65,11 @@ open class Shader(
   enum class Mode(
     val value: Int
   ) {
-    MODE_SPATIAL(0),
+    SPATIAL(0),
 
-    MODE_CANVAS_ITEM(1),
+    CANVAS_ITEM(1),
 
-    MODE_PARTICLES(2);
+    PARTICLES(2);
 
     companion object {
       fun from(value: Int): Mode {

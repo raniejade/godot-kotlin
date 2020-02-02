@@ -83,19 +83,19 @@ open class VisibilityEnabler2D(
   enum class Enabler(
     val value: Int
   ) {
-    ENABLER_PAUSE_ANIMATIONS(0),
+    PAUSE_ANIMATIONS(0),
 
-    ENABLER_FREEZE_BODIES(1),
+    FREEZE_BODIES(1),
 
-    ENABLER_PAUSE_PARTICLES(2),
+    PAUSE_PARTICLES(2),
 
-    ENABLER_PARENT_PROCESS(3),
+    PARENT_PROCESS(3),
 
-    ENABLER_PARENT_PHYSICS_PROCESS(4),
+    PARENT_PHYSICS_PROCESS(4),
 
-    ENABLER_PAUSE_ANIMATED_SPRITES(5),
+    PAUSE_ANIMATED_SPRITES(5),
 
-    ENABLER_MAX(6);
+    MAX(6);
 
     companion object {
       fun from(value: Int): Enabler {

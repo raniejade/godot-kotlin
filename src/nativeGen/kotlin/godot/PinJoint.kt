@@ -59,11 +59,11 @@ open class PinJoint(
   enum class Param(
     val value: Int
   ) {
-    PARAM_BIAS(0),
+    BIAS(0),
 
-    PARAM_DAMPING(1),
+    DAMPING(1),
 
-    PARAM_IMPULSE_CLAMP(2);
+    IMPULSE_CLAMP(2);
 
     companion object {
       fun from(value: Int): Param {

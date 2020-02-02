@@ -58,13 +58,13 @@ open class VisualScriptInputAction(
   enum class Mode(
     val value: Int
   ) {
-    MODE_PRESSED(0),
+    PRESSED(0),
 
-    MODE_RELEASED(1),
+    RELEASED(1),
 
-    MODE_JUST_PRESSED(2),
+    JUST_PRESSED(2),
 
-    MODE_JUST_RELEASED(3);
+    JUST_RELEASED(3);
 
     companion object {
       fun from(value: Int): Mode {

@@ -208,13 +208,13 @@ open class VisualShader(
   enum class Type(
     val value: Int
   ) {
-    TYPE_VERTEX(0),
+    VERTEX(0),
 
-    TYPE_FRAGMENT(1),
+    FRAGMENT(1),
 
-    TYPE_LIGHT(2),
+    LIGHT(2),
 
-    TYPE_MAX(3);
+    MAX(3);
 
     companion object {
       fun from(value: Int): Type {

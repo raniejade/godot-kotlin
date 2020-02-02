@@ -220,15 +220,15 @@ open class FileDialog(
   enum class Mode(
     val value: Int
   ) {
-    MODE_OPEN_FILE(0),
+    OPEN_FILE(0),
 
-    MODE_OPEN_FILES(1),
+    OPEN_FILES(1),
 
-    MODE_OPEN_DIR(2),
+    OPEN_DIR(2),
 
-    MODE_OPEN_ANY(3),
+    OPEN_ANY(3),
 
-    MODE_SAVE_FILE(4);
+    SAVE_FILE(4);
 
     companion object {
       fun from(value: Int): Mode {
@@ -245,11 +245,11 @@ open class FileDialog(
   enum class Access(
     val value: Int
   ) {
-    ACCESS_RESOURCES(0),
+    RESOURCES(0),
 
-    ACCESS_USERDATA(1),
+    USERDATA(1),
 
-    ACCESS_FILESYSTEM(2);
+    FILESYSTEM(2);
 
     companion object {
       fun from(value: Int): Access {

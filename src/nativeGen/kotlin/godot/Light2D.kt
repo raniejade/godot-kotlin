@@ -458,13 +458,13 @@ open class Light2D(
   enum class Mode(
     val value: Int
   ) {
-    MODE_ADD(0),
+    ADD(0),
 
-    MODE_SUB(1),
+    SUB(1),
 
-    MODE_MIX(2),
+    MIX(2),
 
-    MODE_MASK(3);
+    MASK(3);
 
     companion object {
       fun from(value: Int): Mode {

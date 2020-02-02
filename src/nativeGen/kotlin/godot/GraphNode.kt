@@ -301,11 +301,11 @@ open class GraphNode(
   enum class Overlay(
     val value: Int
   ) {
-    OVERLAY_DISABLED(0),
+    DISABLED(0),
 
-    OVERLAY_BREAKPOINT(1),
+    BREAKPOINT(1),
 
-    OVERLAY_POSITION(2);
+    POSITION(2);
 
     companion object {
       fun from(value: Int): Overlay {
