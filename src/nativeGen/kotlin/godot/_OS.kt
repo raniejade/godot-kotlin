@@ -949,9 +949,9 @@ open class _OS(
   enum class VideoDriver(
     val value: Int
   ) {
-    VIDEO_DRIVER_GLES3(0),
+    GLES3(0),
 
-    VIDEO_DRIVER_GLES2(1);
+    GLES2(1);
 
     companion object {
       fun from(value: Int): VideoDriver {
@@ -968,21 +968,21 @@ open class _OS(
   enum class SystemDir(
     val value: Int
   ) {
-    SYSTEM_DIR_DESKTOP(0),
+    DESKTOP(0),
 
-    SYSTEM_DIR_DCIM(1),
+    DCIM(1),
 
-    SYSTEM_DIR_DOCUMENTS(2),
+    DOCUMENTS(2),
 
-    SYSTEM_DIR_DOWNLOADS(3),
+    DOWNLOADS(3),
 
-    SYSTEM_DIR_MOVIES(4),
+    MOVIES(4),
 
-    SYSTEM_DIR_MUSIC(5),
+    MUSIC(5),
 
-    SYSTEM_DIR_PICTURES(6),
+    PICTURES(6),
 
-    SYSTEM_DIR_RINGTONES(7);
+    RINGTONES(7);
 
     companion object {
       fun from(value: Int): SystemDir {
@@ -999,19 +999,19 @@ open class _OS(
   enum class ScreenOrientation(
     val value: Int
   ) {
-    SCREEN_ORIENTATION_LANDSCAPE(0),
+    LANDSCAPE(0),
 
-    SCREEN_ORIENTATION_PORTRAIT(1),
+    PORTRAIT(1),
 
-    SCREEN_ORIENTATION_REVERSE_LANDSCAPE(2),
+    REVERSE_LANDSCAPE(2),
 
-    SCREEN_ORIENTATION_REVERSE_PORTRAIT(3),
+    REVERSE_PORTRAIT(3),
 
-    SCREEN_ORIENTATION_SENSOR_LANDSCAPE(4),
+    SENSOR_LANDSCAPE(4),
 
-    SCREEN_ORIENTATION_SENSOR_PORTRAIT(5),
+    SENSOR_PORTRAIT(5),
 
-    SCREEN_ORIENTATION_SENSOR(6);
+    SENSOR(6);
 
     companion object {
       fun from(value: Int): ScreenOrientation {
@@ -1028,15 +1028,15 @@ open class _OS(
   enum class PowerState(
     val value: Int
   ) {
-    UNKNOWN(0),
+    POWERSTATE_UNKNOWN(0),
 
-    ON_BATTERY(1),
+    POWERSTATE_ON_BATTERY(1),
 
-    NO_BATTERY(2),
+    POWERSTATE_NO_BATTERY(2),
 
-    CHARGING(3),
+    POWERSTATE_CHARGING(3),
 
-    CHARGED(4);
+    POWERSTATE_CHARGED(4);
 
     companion object {
       fun from(value: Int): PowerState {

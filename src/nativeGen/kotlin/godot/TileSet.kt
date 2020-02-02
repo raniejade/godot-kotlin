@@ -573,11 +573,11 @@ open class TileSet(
   enum class BitmaskMode(
     val value: Int
   ) {
-    BITMASK_2X2(0),
+    `2X2`(0),
 
-    BITMASK_3X3_MINIMAL(1),
+    `3X3_MINIMAL`(1),
 
-    BITMASK_3X3(2);
+    `3X3`(2);
 
     companion object {
       fun from(value: Int): BitmaskMode {

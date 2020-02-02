@@ -124,9 +124,9 @@ open class CollisionPolygon2D(
   enum class BuildMode(
     val value: Int
   ) {
-    BUILD_SOLIDS(0),
+    SOLIDS(0),
 
-    BUILD_SEGMENTS(1);
+    SEGMENTS(1);
 
     companion object {
       fun from(value: Int): BuildMode {

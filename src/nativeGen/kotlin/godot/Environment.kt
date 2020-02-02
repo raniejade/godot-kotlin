@@ -1577,13 +1577,13 @@ open class Environment(
   enum class ToneMapper(
     val value: Int
   ) {
-    TONE_MAPPER_LINEAR(0),
+    LINEAR(0),
 
-    TONE_MAPPER_REINHARDT(1),
+    REINHARDT(1),
 
-    TONE_MAPPER_FILMIC(2),
+    FILMIC(2),
 
-    TONE_MAPPER_ACES(3);
+    ACES(3);
 
     companion object {
       fun from(value: Int): ToneMapper {
@@ -1600,13 +1600,13 @@ open class Environment(
   enum class GlowBlendMode(
     val value: Int
   ) {
-    GLOW_BLEND_MODE_ADDITIVE(0),
+    ADDITIVE(0),
 
-    GLOW_BLEND_MODE_SCREEN(1),
+    SCREEN(1),
 
-    GLOW_BLEND_MODE_SOFTLIGHT(2),
+    SOFTLIGHT(2),
 
-    GLOW_BLEND_MODE_REPLACE(3);
+    REPLACE(3);
 
     companion object {
       fun from(value: Int): GlowBlendMode {

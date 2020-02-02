@@ -269,9 +269,9 @@ open class ReflectionProbe(
   enum class UpdateMode(
     val value: Int
   ) {
-    UPDATE_ONCE(0),
+    ONCE(0),
 
-    UPDATE_ALWAYS(1);
+    ALWAYS(1);
 
     companion object {
       fun from(value: Int): UpdateMode {

@@ -931,17 +931,17 @@ open class CPUParticles2D(
   enum class EmissionShape(
     val value: Int
   ) {
-    EMISSION_SHAPE_POINT(0),
+    POINT(0),
 
-    EMISSION_SHAPE_SPHERE(1),
+    SPHERE(1),
 
-    EMISSION_SHAPE_RECTANGLE(2),
+    RECTANGLE(2),
 
-    EMISSION_SHAPE_POINTS(3),
+    POINTS(3),
 
-    EMISSION_SHAPE_DIRECTED_POINTS(4),
+    DIRECTED_POINTS(4),
 
-    EMISSION_SHAPE_MAX(5);
+    MAX(5);
 
     companion object {
       fun from(value: Int): EmissionShape {
@@ -999,9 +999,9 @@ open class CPUParticles2D(
   enum class DrawOrder(
     val value: Int
   ) {
-    DRAW_ORDER_INDEX(0),
+    INDEX(0),
 
-    DRAW_ORDER_LIFETIME(1);
+    LIFETIME(1);
 
     companion object {
       fun from(value: Int): DrawOrder {

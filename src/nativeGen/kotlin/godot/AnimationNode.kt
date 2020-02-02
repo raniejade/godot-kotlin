@@ -156,13 +156,13 @@ open class AnimationNode(
   enum class FilterAction(
     val value: Int
   ) {
-    FILTER_IGNORE(0),
+    IGNORE(0),
 
-    FILTER_PASS(1),
+    PASS(1),
 
-    FILTER_STOP(2),
+    STOP(2),
 
-    FILTER_BLEND(3);
+    BLEND(3);
 
     companion object {
       fun from(value: Int): FilterAction {

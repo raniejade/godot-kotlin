@@ -206,11 +206,11 @@ open class Curve(
   enum class TangentMode(
     val value: Int
   ) {
-    TANGENT_FREE(0),
+    FREE(0),
 
-    TANGENT_LINEAR(1),
+    LINEAR(1),
 
-    TANGENT_MODE_COUNT(2);
+    COUNT(2);
 
     companion object {
       fun from(value: Int): TangentMode {

@@ -627,13 +627,13 @@ open class Animation(
   enum class UpdateMode(
     val value: Int
   ) {
-    UPDATE_CONTINUOUS(0),
+    CONTINUOUS(0),
 
-    UPDATE_DISCRETE(1),
+    DISCRETE(1),
 
-    UPDATE_TRIGGER(2),
+    TRIGGER(2),
 
-    UPDATE_CAPTURE(3);
+    CAPTURE(3);
 
     companion object {
       fun from(value: Int): UpdateMode {
@@ -650,11 +650,11 @@ open class Animation(
   enum class InterpolationType(
     val value: Int
   ) {
-    INTERPOLATION_NEAREST(0),
+    NEAREST(0),
 
-    INTERPOLATION_LINEAR(1),
+    LINEAR(1),
 
-    INTERPOLATION_CUBIC(2);
+    CUBIC(2);
 
     companion object {
       fun from(value: Int): InterpolationType {

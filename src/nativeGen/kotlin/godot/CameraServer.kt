@@ -57,13 +57,13 @@ open class CameraServer(
   enum class FeedImage(
     val value: Int
   ) {
-    FEED_RGBA_IMAGE(0),
+    RGBA_IMAGE(0),
 
-    FEED_YCBCR_IMAGE(0),
+    YCBCR_IMAGE(0),
 
-    FEED_Y_IMAGE(0),
+    Y_IMAGE(0),
 
-    FEED_CBCR_IMAGE(1);
+    CBCR_IMAGE(1);
 
     companion object {
       fun from(value: Int): FeedImage {

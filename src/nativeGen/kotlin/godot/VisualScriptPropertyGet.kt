@@ -159,11 +159,11 @@ open class VisualScriptPropertyGet(
   enum class CallMode(
     val value: Int
   ) {
-    CALL_MODE_SELF(0),
+    SELF(0),
 
-    CALL_MODE_NODE_PATH(1),
+    NODE_PATH(1),
 
-    CALL_MODE_INSTANCE(2);
+    INSTANCE(2);
 
     companion object {
       fun from(value: Int): CallMode {

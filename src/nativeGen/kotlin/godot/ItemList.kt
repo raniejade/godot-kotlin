@@ -515,9 +515,9 @@ open class ItemList(
   enum class SelectMode(
     val value: Int
   ) {
-    SELECT_SINGLE(0),
+    SINGLE(0),
 
-    SELECT_MULTI(1);
+    MULTI(1);
 
     companion object {
       fun from(value: Int): SelectMode {
@@ -534,9 +534,9 @@ open class ItemList(
   enum class IconMode(
     val value: Int
   ) {
-    ICON_MODE_TOP(0),
+    TOP(0),
 
-    ICON_MODE_LEFT(1);
+    LEFT(1);
 
     companion object {
       fun from(value: Int): IconMode {

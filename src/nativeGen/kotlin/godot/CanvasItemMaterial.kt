@@ -130,11 +130,11 @@ open class CanvasItemMaterial(
   enum class LightMode(
     val value: Int
   ) {
-    LIGHT_MODE_NORMAL(0),
+    NORMAL(0),
 
-    LIGHT_MODE_UNSHADED(1),
+    UNSHADED(1),
 
-    LIGHT_MODE_LIGHT_ONLY(2);
+    LIGHT_ONLY(2);
 
     companion object {
       fun from(value: Int): LightMode {
@@ -151,15 +151,15 @@ open class CanvasItemMaterial(
   enum class BlendMode(
     val value: Int
   ) {
-    BLEND_MODE_MIX(0),
+    MIX(0),
 
-    BLEND_MODE_ADD(1),
+    ADD(1),
 
-    BLEND_MODE_SUB(2),
+    SUB(2),
 
-    BLEND_MODE_MUL(3),
+    MUL(3),
 
-    BLEND_MODE_PREMULT_ALPHA(4);
+    PREMULT_ALPHA(4);
 
     companion object {
       fun from(value: Int): BlendMode {

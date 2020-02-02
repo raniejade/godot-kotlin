@@ -698,11 +698,11 @@ open class Viewport(
   enum class ClearMode(
     val value: Int
   ) {
-    CLEAR_MODE_ALWAYS(0),
+    ALWAYS(0),
 
-    CLEAR_MODE_NEVER(1),
+    NEVER(1),
 
-    CLEAR_MODE_ONLY_NEXT_FRAME(2);
+    ONLY_NEXT_FRAME(2);
 
     companion object {
       fun from(value: Int): ClearMode {
@@ -719,19 +719,19 @@ open class Viewport(
   enum class RenderInfo(
     val value: Int
   ) {
-    RENDER_INFO_OBJECTS_IN_FRAME(0),
+    OBJECTS_IN_FRAME(0),
 
-    RENDER_INFO_VERTICES_IN_FRAME(1),
+    VERTICES_IN_FRAME(1),
 
-    RENDER_INFO_MATERIAL_CHANGES_IN_FRAME(2),
+    MATERIAL_CHANGES_IN_FRAME(2),
 
-    RENDER_INFO_SHADER_CHANGES_IN_FRAME(3),
+    SHADER_CHANGES_IN_FRAME(3),
 
-    RENDER_INFO_SURFACE_CHANGES_IN_FRAME(4),
+    SURFACE_CHANGES_IN_FRAME(4),
 
-    RENDER_INFO_DRAW_CALLS_IN_FRAME(5),
+    DRAW_CALLS_IN_FRAME(5),
 
-    RENDER_INFO_MAX(6);
+    MAX(6);
 
     companion object {
       fun from(value: Int): RenderInfo {
@@ -771,13 +771,13 @@ open class Viewport(
   enum class DebugDraw(
     val value: Int
   ) {
-    DEBUG_DRAW_DISABLED(0),
+    DISABLED(0),
 
-    DEBUG_DRAW_UNSHADED(1),
+    UNSHADED(1),
 
-    DEBUG_DRAW_OVERDRAW(2),
+    OVERDRAW(2),
 
-    DEBUG_DRAW_WIREFRAME(3);
+    WIREFRAME(3);
 
     companion object {
       fun from(value: Int): DebugDraw {
@@ -794,21 +794,21 @@ open class Viewport(
   enum class ShadowAtlasQuadrantSubdiv(
     val value: Int
   ) {
-    SHADOW_ATLAS_QUADRANT_SUBDIV_DISABLED(0),
+    DISABLED(0),
 
-    SHADOW_ATLAS_QUADRANT_SUBDIV_1(1),
+    `1`(1),
 
-    SHADOW_ATLAS_QUADRANT_SUBDIV_4(2),
+    `4`(2),
 
-    SHADOW_ATLAS_QUADRANT_SUBDIV_16(3),
+    `16`(3),
 
-    SHADOW_ATLAS_QUADRANT_SUBDIV_64(4),
+    `64`(4),
 
-    SHADOW_ATLAS_QUADRANT_SUBDIV_256(5),
+    `256`(5),
 
-    SHADOW_ATLAS_QUADRANT_SUBDIV_1024(6),
+    `1024`(6),
 
-    SHADOW_ATLAS_QUADRANT_SUBDIV_MAX(7);
+    MAX(7);
 
     companion object {
       fun from(value: Int): ShadowAtlasQuadrantSubdiv {
@@ -825,13 +825,13 @@ open class Viewport(
   enum class UpdateMode(
     val value: Int
   ) {
-    UPDATE_DISABLED(0),
+    DISABLED(0),
 
-    UPDATE_ONCE(1),
+    ONCE(1),
 
-    UPDATE_WHEN_VISIBLE(2),
+    WHEN_VISIBLE(2),
 
-    UPDATE_ALWAYS(3);
+    ALWAYS(3);
 
     companion object {
       fun from(value: Int): UpdateMode {

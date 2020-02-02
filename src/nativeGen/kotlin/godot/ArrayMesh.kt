@@ -179,23 +179,23 @@ open class ArrayMesh(
   enum class ArrayFormat(
     val value: Int
   ) {
-    ARRAY_FORMAT_VERTEX(1),
+    VERTEX(1),
 
-    ARRAY_FORMAT_NORMAL(2),
+    NORMAL(2),
 
-    ARRAY_FORMAT_TANGENT(4),
+    TANGENT(4),
 
-    ARRAY_FORMAT_COLOR(8),
+    COLOR(8),
 
-    ARRAY_FORMAT_TEX_UV(16),
+    TEX_UV(16),
 
-    ARRAY_FORMAT_TEX_UV2(32),
+    TEX_UV2(32),
 
-    ARRAY_FORMAT_BONES(64),
+    BONES(64),
 
-    ARRAY_FORMAT_WEIGHTS(128),
+    WEIGHTS(128),
 
-    ARRAY_FORMAT_INDEX(256);
+    INDEX(256);
 
     companion object {
       fun from(value: Int): ArrayFormat {
@@ -212,25 +212,25 @@ open class ArrayMesh(
   enum class ArrayType(
     val value: Int
   ) {
-    ARRAY_VERTEX(0),
+    VERTEX(0),
 
-    ARRAY_NORMAL(1),
+    NORMAL(1),
 
-    ARRAY_TANGENT(2),
+    TANGENT(2),
 
-    ARRAY_COLOR(3),
+    COLOR(3),
 
-    ARRAY_TEX_UV(4),
+    TEX_UV(4),
 
-    ARRAY_TEX_UV2(5),
+    TEX_UV2(5),
 
-    ARRAY_BONES(6),
+    BONES(6),
 
-    ARRAY_WEIGHTS(7),
+    WEIGHTS(7),
 
-    ARRAY_INDEX(8),
+    INDEX(8),
 
-    ARRAY_MAX(9);
+    MAX(9);
 
     companion object {
       fun from(value: Int): ArrayType {

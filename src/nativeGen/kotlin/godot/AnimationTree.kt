@@ -152,11 +152,11 @@ open class AnimationTree(
   enum class AnimationProcessMode(
     val value: Int
   ) {
-    ANIMATION_PROCESS_PHYSICS(0),
+    PHYSICS(0),
 
-    ANIMATION_PROCESS_IDLE(1),
+    IDLE(1),
 
-    ANIMATION_PROCESS_MANUAL(2);
+    MANUAL(2);
 
     companion object {
       fun from(value: Int): AnimationProcessMode {

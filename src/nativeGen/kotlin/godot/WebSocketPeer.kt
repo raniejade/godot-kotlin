@@ -65,9 +65,9 @@ open class WebSocketPeer(
   enum class WriteMode(
     val value: Int
   ) {
-    WRITE_MODE_TEXT(0),
+    TEXT(0),
 
-    WRITE_MODE_BINARY(1);
+    BINARY(1);
 
     companion object {
       fun from(value: Int): WriteMode {

@@ -117,19 +117,19 @@ open class XMLParser(
   enum class NodeType(
     val value: Int
   ) {
-    NODE_NONE(0),
+    NONE(0),
 
-    NODE_ELEMENT(1),
+    ELEMENT(1),
 
-    NODE_ELEMENT_END(2),
+    ELEMENT_END(2),
 
-    NODE_TEXT(3),
+    TEXT(3),
 
-    NODE_COMMENT(4),
+    COMMENT(4),
 
-    NODE_CDATA(5),
+    CDATA(5),
 
-    NODE_UNKNOWN(6);
+    UNKNOWN(6);
 
     companion object {
       fun from(value: Int): NodeType {

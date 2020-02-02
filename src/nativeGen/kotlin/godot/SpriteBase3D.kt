@@ -296,11 +296,11 @@ open class SpriteBase3D(
   enum class AlphaCutMode(
     val value: Int
   ) {
-    ALPHA_CUT_DISABLED(0),
+    DISABLED(0),
 
-    ALPHA_CUT_DISCARD(1),
+    DISCARD(1),
 
-    ALPHA_CUT_OPAQUE_PREPASS(2);
+    OPAQUE_PREPASS(2);
 
     companion object {
       fun from(value: Int): AlphaCutMode {

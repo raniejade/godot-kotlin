@@ -94,13 +94,13 @@ open class AudioEffectFilter(
   enum class FilterDB(
     val value: Int
   ) {
-    FILTER_6DB(0),
+    `6DB`(0),
 
-    FILTER_12DB(1),
+    `12DB`(1),
 
-    FILTER_18DB(2),
+    `18DB`(2),
 
-    FILTER_24DB(3);
+    `24DB`(3);
 
     companion object {
       fun from(value: Int): FilterDB {

@@ -475,9 +475,9 @@ open class Camera2D(
   enum class AnchorMode(
     val value: Int
   ) {
-    ANCHOR_MODE_FIXED_TOP_LEFT(0),
+    FIXED_TOP_LEFT(0),
 
-    ANCHOR_MODE_DRAG_CENTER(1);
+    DRAG_CENTER(1);
 
     companion object {
       fun from(value: Int): AnchorMode {

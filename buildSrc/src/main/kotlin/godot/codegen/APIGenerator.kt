@@ -290,7 +290,7 @@ class APIGenerator {
 
       enum.values.forEach { (k, v) ->
         builder.addEnumConstant(
-          k.removePrefix(enum.name.toUpperCase() + "_"),
+          k.removeCommonPrefixFromEnumValueName(enum.name.toSnakeCase().toUpperCase().split("_")),
           TypeSpec.anonymousClassBuilder()
             .addSuperclassConstructorParameter("$v")
             .build()
@@ -389,11 +389,12 @@ class APIGenerator {
     // constants
     if (cls.constants.isNotEmpty()) {
       companionObjectBuilder.addProperties(
-        cls.constants.map { (k, v) ->
-          PropertySpec.builder(k, v::class)
-            .initializer(getFormatFromConstantValue(v), v)
-            .build()
-        }
+        cls.constants
+          .map { (k, v) ->
+            PropertySpec.builder(k, v::class)
+              .initializer(getFormatFromConstantValue(v), v)
+              .build()
+          }
       )
     }
 

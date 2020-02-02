@@ -137,11 +137,11 @@ open class AnimationNodeStateMachineTransition(
   enum class SwitchMode(
     val value: Int
   ) {
-    SWITCH_MODE_IMMEDIATE(0),
+    IMMEDIATE(0),
 
-    SWITCH_MODE_SYNC(1),
+    SYNC(1),
 
-    SWITCH_MODE_AT_END(2);
+    AT_END(2);
 
     companion object {
       fun from(value: Int): SwitchMode {

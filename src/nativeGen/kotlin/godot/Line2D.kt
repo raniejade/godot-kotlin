@@ -313,11 +313,11 @@ open class Line2D(
   enum class LineTextureMode(
     val value: Int
   ) {
-    LINE_TEXTURE_NONE(0),
+    NONE(0),
 
-    LINE_TEXTURE_TILE(1),
+    TILE(1),
 
-    LINE_TEXTURE_STRETCH(2);
+    STRETCH(2);
 
     companion object {
       fun from(value: Int): LineTextureMode {
@@ -334,11 +334,11 @@ open class Line2D(
   enum class LineCapMode(
     val value: Int
   ) {
-    LINE_CAP_NONE(0),
+    NONE(0),
 
-    LINE_CAP_BOX(1),
+    BOX(1),
 
-    LINE_CAP_ROUND(2);
+    ROUND(2);
 
     companion object {
       fun from(value: Int): LineCapMode {
@@ -355,11 +355,11 @@ open class Line2D(
   enum class LineJointMode(
     val value: Int
   ) {
-    LINE_JOINT_SHARP(0),
+    SHARP(0),
 
-    LINE_JOINT_BEVEL(1),
+    BEVEL(1),
 
-    LINE_JOINT_ROUND(2);
+    ROUND(2);
 
     companion object {
       fun from(value: Int): LineJointMode {

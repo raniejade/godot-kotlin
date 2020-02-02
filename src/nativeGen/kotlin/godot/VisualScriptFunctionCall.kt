@@ -239,15 +239,15 @@ open class VisualScriptFunctionCall(
   enum class CallMode(
     val value: Int
   ) {
-    CALL_MODE_SELF(0),
+    SELF(0),
 
-    CALL_MODE_NODE_PATH(1),
+    NODE_PATH(1),
 
-    CALL_MODE_INSTANCE(2),
+    INSTANCE(2),
 
-    CALL_MODE_BASIC_TYPE(3),
+    BASIC_TYPE(3),
 
-    CALL_MODE_SINGLETON(4);
+    SINGLETON(4);
 
     companion object {
       fun from(value: Int): CallMode {

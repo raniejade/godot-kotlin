@@ -114,9 +114,9 @@ open class Mesh(
   enum class BlendShapeMode(
     val value: Int
   ) {
-    BLEND_SHAPE_MODE_NORMALIZED(0),
+    NORMALIZED(0),
 
-    BLEND_SHAPE_MODE_RELATIVE(1);
+    RELATIVE(1);
 
     companion object {
       fun from(value: Int): BlendShapeMode {
@@ -133,19 +133,19 @@ open class Mesh(
   enum class PrimitiveType(
     val value: Int
   ) {
-    PRIMITIVE_POINTS(0),
+    POINTS(0),
 
-    PRIMITIVE_LINES(1),
+    LINES(1),
 
-    PRIMITIVE_LINE_STRIP(2),
+    LINE_STRIP(2),
 
-    PRIMITIVE_LINE_LOOP(3),
+    LINE_LOOP(3),
 
-    PRIMITIVE_TRIANGLES(4),
+    TRIANGLES(4),
 
-    PRIMITIVE_TRIANGLE_STRIP(5),
+    TRIANGLE_STRIP(5),
 
-    PRIMITIVE_TRIANGLE_FAN(6);
+    TRIANGLE_FAN(6);
 
     companion object {
       fun from(value: Int): PrimitiveType {
@@ -162,49 +162,49 @@ open class Mesh(
   enum class ArrayFormat(
     val value: Int
   ) {
-    ARRAY_FORMAT_VERTEX(1),
+    VERTEX(1),
 
-    ARRAY_FORMAT_NORMAL(2),
+    NORMAL(2),
 
-    ARRAY_FORMAT_TANGENT(4),
+    TANGENT(4),
 
-    ARRAY_FORMAT_COLOR(8),
+    COLOR(8),
 
-    ARRAY_COMPRESS_BASE(9),
+    COMPRESS_BASE(9),
 
-    ARRAY_FORMAT_TEX_UV(16),
+    TEX_UV(16),
 
-    ARRAY_FORMAT_TEX_UV2(32),
+    TEX_UV2(32),
 
-    ARRAY_FORMAT_BONES(64),
+    BONES(64),
 
-    ARRAY_FORMAT_WEIGHTS(128),
+    WEIGHTS(128),
 
-    ARRAY_FORMAT_INDEX(256),
+    INDEX(256),
 
-    ARRAY_COMPRESS_VERTEX(512),
+    COMPRESS_VERTEX(512),
 
-    ARRAY_COMPRESS_NORMAL(1024),
+    COMPRESS_NORMAL(1024),
 
-    ARRAY_COMPRESS_TANGENT(2048),
+    COMPRESS_TANGENT(2048),
 
-    ARRAY_COMPRESS_COLOR(4096),
+    COMPRESS_COLOR(4096),
 
-    ARRAY_COMPRESS_TEX_UV(8192),
+    COMPRESS_TEX_UV(8192),
 
-    ARRAY_COMPRESS_TEX_UV2(16384),
+    COMPRESS_TEX_UV2(16384),
 
-    ARRAY_COMPRESS_BONES(32768),
+    COMPRESS_BONES(32768),
 
-    ARRAY_COMPRESS_WEIGHTS(65536),
+    COMPRESS_WEIGHTS(65536),
 
-    ARRAY_COMPRESS_DEFAULT(97280),
+    COMPRESS_DEFAULT(97280),
 
-    ARRAY_COMPRESS_INDEX(131072),
+    COMPRESS_INDEX(131072),
 
-    ARRAY_FLAG_USE_2D_VERTICES(262144),
+    FLAG_USE_2D_VERTICES(262144),
 
-    ARRAY_FLAG_USE_16_BIT_BONES(524288);
+    FLAG_USE_16_BIT_BONES(524288);
 
     companion object {
       fun from(value: Int): ArrayFormat {
@@ -221,25 +221,25 @@ open class Mesh(
   enum class ArrayType(
     val value: Int
   ) {
-    ARRAY_VERTEX(0),
+    VERTEX(0),
 
-    ARRAY_NORMAL(1),
+    NORMAL(1),
 
-    ARRAY_TANGENT(2),
+    TANGENT(2),
 
-    ARRAY_COLOR(3),
+    COLOR(3),
 
-    ARRAY_TEX_UV(4),
+    TEX_UV(4),
 
-    ARRAY_TEX_UV2(5),
+    TEX_UV2(5),
 
-    ARRAY_BONES(6),
+    BONES(6),
 
-    ARRAY_WEIGHTS(7),
+    WEIGHTS(7),
 
-    ARRAY_INDEX(8),
+    INDEX(8),
 
-    ARRAY_MAX(9);
+    MAX(9);
 
     companion object {
       fun from(value: Int): ArrayType {

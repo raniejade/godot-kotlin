@@ -80,9 +80,9 @@ open class VisualShaderNodeTextureUniform(
   enum class ColorDefault(
     val value: Int
   ) {
-    COLOR_DEFAULT_WHITE(0),
+    WHITE(0),
 
-    COLOR_DEFAULT_BLACK(1);
+    BLACK(1);
 
     companion object {
       fun from(value: Int): ColorDefault {

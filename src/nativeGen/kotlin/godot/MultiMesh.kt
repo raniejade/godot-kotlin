@@ -196,9 +196,9 @@ open class MultiMesh(
   enum class TransformFormat(
     val value: Int
   ) {
-    TRANSFORM_2D(0),
+    `2D`(0),
 
-    TRANSFORM_3D(1);
+    `3D`(1);
 
     companion object {
       fun from(value: Int): TransformFormat {
@@ -215,11 +215,11 @@ open class MultiMesh(
   enum class CustomDataFormat(
     val value: Int
   ) {
-    CUSTOM_DATA_NONE(0),
+    NONE(0),
 
-    CUSTOM_DATA_8BIT(1),
+    `8BIT`(1),
 
-    CUSTOM_DATA_FLOAT(2);
+    FLOAT(2);
 
     companion object {
       fun from(value: Int): CustomDataFormat {
@@ -236,11 +236,11 @@ open class MultiMesh(
   enum class ColorFormat(
     val value: Int
   ) {
-    COLOR_NONE(0),
+    NONE(0),
 
-    COLOR_8BIT(1),
+    `8BIT`(1),
 
-    COLOR_FLOAT(2);
+    FLOAT(2);
 
     companion object {
       fun from(value: Int): ColorFormat {

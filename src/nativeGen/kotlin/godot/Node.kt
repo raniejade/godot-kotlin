@@ -619,11 +619,11 @@ open class Node(
   enum class PauseMode(
     val value: Int
   ) {
-    PAUSE_MODE_INHERIT(0),
+    INHERIT(0),
 
-    PAUSE_MODE_STOP(1),
+    STOP(1),
 
-    PAUSE_MODE_PROCESS(2);
+    PROCESS(2);
 
     companion object {
       fun from(value: Int): PauseMode {
@@ -640,13 +640,13 @@ open class Node(
   enum class DuplicateFlags(
     val value: Int
   ) {
-    DUPLICATE_SIGNALS(1),
+    SIGNALS(1),
 
-    DUPLICATE_GROUPS(2),
+    GROUPS(2),
 
-    DUPLICATE_SCRIPTS(4),
+    SCRIPTS(4),
 
-    DUPLICATE_USE_INSTANCING(8);
+    USE_INSTANCING(8);
 
     companion object {
       fun from(value: Int): DuplicateFlags {

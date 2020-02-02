@@ -166,19 +166,19 @@ open class TextureButton(
   enum class StretchMode(
     val value: Int
   ) {
-    STRETCH_SCALE(0),
+    SCALE(0),
 
-    STRETCH_TILE(1),
+    TILE(1),
 
-    STRETCH_KEEP(2),
+    KEEP(2),
 
-    STRETCH_KEEP_CENTERED(3),
+    KEEP_CENTERED(3),
 
-    STRETCH_KEEP_ASPECT(4),
+    KEEP_ASPECT(4),
 
-    STRETCH_KEEP_ASPECT_CENTERED(5),
+    KEEP_ASPECT_CENTERED(5),
 
-    STRETCH_KEEP_ASPECT_COVERED(6);
+    KEEP_ASPECT_COVERED(6);
 
     companion object {
       fun from(value: Int): StretchMode {

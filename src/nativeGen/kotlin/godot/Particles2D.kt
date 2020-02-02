@@ -331,9 +331,9 @@ open class Particles2D(
   enum class DrawOrder(
     val value: Int
   ) {
-    DRAW_ORDER_INDEX(0),
+    INDEX(0),
 
-    DRAW_ORDER_LIFETIME(1);
+    LIFETIME(1);
 
     companion object {
       fun from(value: Int): DrawOrder {

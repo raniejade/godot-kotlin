@@ -447,15 +447,15 @@ open class Area(
   enum class SpaceOverride(
     val value: Int
   ) {
-    SPACE_OVERRIDE_DISABLED(0),
+    DISABLED(0),
 
-    SPACE_OVERRIDE_COMBINE(1),
+    COMBINE(1),
 
-    SPACE_OVERRIDE_COMBINE_REPLACE(2),
+    COMBINE_REPLACE(2),
 
-    SPACE_OVERRIDE_REPLACE(3),
+    REPLACE(3),
 
-    SPACE_OVERRIDE_REPLACE_COMBINE(4);
+    REPLACE_COMBINE(4);
 
     companion object {
       fun from(value: Int): SpaceOverride {

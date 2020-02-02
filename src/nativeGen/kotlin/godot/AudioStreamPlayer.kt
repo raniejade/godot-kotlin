@@ -184,11 +184,11 @@ open class AudioStreamPlayer(
   enum class MixTarget(
     val value: Int
   ) {
-    MIX_TARGET_STEREO(0),
+    STEREO(0),
 
-    MIX_TARGET_SURROUND(1),
+    SURROUND(1),
 
-    MIX_TARGET_CENTER(2);
+    CENTER(2);
 
     companion object {
       fun from(value: Int): MixTarget {

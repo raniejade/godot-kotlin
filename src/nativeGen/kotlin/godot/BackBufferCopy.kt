@@ -68,11 +68,11 @@ open class BackBufferCopy(
   enum class CopyMode(
     val value: Int
   ) {
-    COPY_MODE_DISABLED(0),
+    DISABLED(0),
 
-    COPY_MODE_RECT(1),
+    RECT(1),
 
-    COPY_MODE_VIEWPORT(2);
+    VIEWPORT(2);
 
     companion object {
       fun from(value: Int): CopyMode {

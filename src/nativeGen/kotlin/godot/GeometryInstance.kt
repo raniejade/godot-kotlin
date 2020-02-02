@@ -197,13 +197,13 @@ open class GeometryInstance(
   enum class ShadowCastingSetting(
     val value: Int
   ) {
-    SHADOW_CASTING_SETTING_OFF(0),
+    OFF(0),
 
-    SHADOW_CASTING_SETTING_ON(1),
+    ON(1),
 
-    SHADOW_CASTING_SETTING_DOUBLE_SIDED(2),
+    DOUBLE_SIDED(2),
 
-    SHADOW_CASTING_SETTING_SHADOWS_ONLY(3);
+    SHADOWS_ONLY(3);
 
     companion object {
       fun from(value: Int): ShadowCastingSetting {

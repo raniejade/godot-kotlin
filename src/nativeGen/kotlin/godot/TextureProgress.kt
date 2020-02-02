@@ -305,23 +305,23 @@ open class TextureProgress(
   enum class FillMode(
     val value: Int
   ) {
-    FILL_LEFT_TO_RIGHT(0),
+    LEFT_TO_RIGHT(0),
 
-    FILL_RIGHT_TO_LEFT(1),
+    RIGHT_TO_LEFT(1),
 
-    FILL_TOP_TO_BOTTOM(2),
+    TOP_TO_BOTTOM(2),
 
-    FILL_BOTTOM_TO_TOP(3),
+    BOTTOM_TO_TOP(3),
 
-    FILL_CLOCKWISE(4),
+    CLOCKWISE(4),
 
-    FILL_COUNTER_CLOCKWISE(5),
+    COUNTER_CLOCKWISE(5),
 
-    FILL_BILINEAR_LEFT_AND_RIGHT(6),
+    BILINEAR_LEFT_AND_RIGHT(6),
 
-    FILL_BILINEAR_TOP_AND_BOTTOM(7),
+    BILINEAR_TOP_AND_BOTTOM(7),
 
-    FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE(8);
+    CLOCKWISE_AND_COUNTER_CLOCKWISE(8);
 
     companion object {
       fun from(value: Int): FillMode {

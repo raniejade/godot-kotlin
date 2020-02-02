@@ -381,11 +381,11 @@ open class AnimationPlayer(
   enum class AnimationProcessMode(
     val value: Int
   ) {
-    ANIMATION_PROCESS_PHYSICS(0),
+    PHYSICS(0),
 
-    ANIMATION_PROCESS_IDLE(1),
+    IDLE(1),
 
-    ANIMATION_PROCESS_MANUAL(2);
+    MANUAL(2);
 
     companion object {
       fun from(value: Int): AnimationProcessMode {
@@ -402,9 +402,9 @@ open class AnimationPlayer(
   enum class AnimationMethodCallMode(
     val value: Int
   ) {
-    ANIMATION_METHOD_CALL_DEFERRED(0),
+    DEFERRED(0),
 
-    ANIMATION_METHOD_CALL_IMMEDIATE(1);
+    IMMEDIATE(1);
 
     companion object {
       fun from(value: Int): AnimationMethodCallMode {

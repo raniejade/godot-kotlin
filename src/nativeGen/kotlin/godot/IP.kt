@@ -70,13 +70,13 @@ open class IP(
   enum class ResolverStatus(
     val value: Int
   ) {
-    RESOLVER_STATUS_NONE(0),
+    NONE(0),
 
-    RESOLVER_STATUS_WAITING(1),
+    WAITING(1),
 
-    RESOLVER_STATUS_DONE(2),
+    DONE(2),
 
-    RESOLVER_STATUS_ERROR(3);
+    ERROR(3);
 
     companion object {
       fun from(value: Int): ResolverStatus {

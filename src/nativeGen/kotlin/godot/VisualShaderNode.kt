@@ -75,17 +75,17 @@ open class VisualShaderNode(
   enum class PortType(
     val value: Int
   ) {
-    PORT_TYPE_SCALAR(0),
+    SCALAR(0),
 
-    PORT_TYPE_VECTOR(1),
+    VECTOR(1),
 
-    PORT_TYPE_BOOLEAN(2),
+    BOOLEAN(2),
 
-    PORT_TYPE_TRANSFORM(3),
+    TRANSFORM(3),
 
-    PORT_TYPE_SAMPLER(4),
+    SAMPLER(4),
 
-    PORT_TYPE_MAX(5);
+    MAX(5);
 
     companion object {
       fun from(value: Int): PortType {

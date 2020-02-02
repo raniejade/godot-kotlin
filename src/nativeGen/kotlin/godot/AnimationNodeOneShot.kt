@@ -141,9 +141,9 @@ open class AnimationNodeOneShot(
   enum class MixMode(
     val value: Int
   ) {
-    MIX_MODE_BLEND(0),
+    BLEND(0),
 
-    MIX_MODE_ADD(1);
+    ADD(1);
 
     companion object {
       fun from(value: Int): MixMode {

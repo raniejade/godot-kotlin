@@ -87,11 +87,11 @@ open class OccluderPolygon2D(
   enum class CullMode(
     val value: Int
   ) {
-    CULL_DISABLED(0),
+    DISABLED(0),
 
-    CULL_CLOCKWISE(1),
+    CLOCKWISE(1),
 
-    CULL_COUNTER_CLOCKWISE(2);
+    COUNTER_CLOCKWISE(2);
 
     companion object {
       fun from(value: Int): CullMode {

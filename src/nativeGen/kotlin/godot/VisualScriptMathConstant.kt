@@ -39,23 +39,23 @@ open class VisualScriptMathConstant(
   enum class MathConstant(
     val value: Int
   ) {
-    MATH_CONSTANT_ONE(0),
+    ONE(0),
 
-    MATH_CONSTANT_PI(1),
+    PI(1),
 
-    MATH_CONSTANT_HALF_PI(2),
+    HALF_PI(2),
 
-    MATH_CONSTANT_TAU(3),
+    TAU(3),
 
-    MATH_CONSTANT_E(4),
+    E(4),
 
-    MATH_CONSTANT_SQRT2(5),
+    SQRT2(5),
 
-    MATH_CONSTANT_INF(6),
+    INF(6),
 
-    MATH_CONSTANT_NAN(7),
+    NAN(7),
 
-    MATH_CONSTANT_MAX(8);
+    MAX(8);
 
     companion object {
       fun from(value: Int): MathConstant {

@@ -20,11 +20,11 @@ open class VisualScriptCustomNode(
   enum class StartMode(
     val value: Int
   ) {
-    START_MODE_BEGIN_SEQUENCE(0),
+    BEGIN_SEQUENCE(0),
 
-    START_MODE_CONTINUE_SEQUENCE(1),
+    CONTINUE_SEQUENCE(1),
 
-    START_MODE_RESUME_YIELD(2);
+    RESUME_YIELD(2);
 
     companion object {
       fun from(value: Int): StartMode {

@@ -200,9 +200,9 @@ open class TouchScreenButton(
   enum class VisibilityMode(
     val value: Int
   ) {
-    VISIBILITY_ALWAYS(0),
+    ALWAYS(0),
 
-    VISIBILITY_TOUCHSCREEN_ONLY(1);
+    TOUCHSCREEN_ONLY(1);
 
     companion object {
       fun from(value: Int): VisibilityMode {

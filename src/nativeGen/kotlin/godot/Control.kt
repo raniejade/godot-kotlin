@@ -945,11 +945,11 @@ open class Control(
   enum class FocusMode(
     val value: Int
   ) {
-    FOCUS_NONE(0),
+    NONE(0),
 
-    FOCUS_CLICK(1),
+    CLICK(1),
 
-    FOCUS_ALL(2);
+    ALL(2);
 
     companion object {
       fun from(value: Int): FocusMode {
@@ -989,11 +989,11 @@ open class Control(
   enum class MouseFilter(
     val value: Int
   ) {
-    MOUSE_FILTER_STOP(0),
+    STOP(0),
 
-    MOUSE_FILTER_PASS(1),
+    PASS(1),
 
-    MOUSE_FILTER_IGNORE(2);
+    IGNORE(2);
 
     companion object {
       fun from(value: Int): MouseFilter {
@@ -1010,39 +1010,39 @@ open class Control(
   enum class CursorShape(
     val value: Int
   ) {
-    CURSOR_ARROW(0),
+    ARROW(0),
 
-    CURSOR_IBEAM(1),
+    IBEAM(1),
 
-    CURSOR_POINTING_HAND(2),
+    POINTING_HAND(2),
 
-    CURSOR_CROSS(3),
+    CROSS(3),
 
-    CURSOR_WAIT(4),
+    WAIT(4),
 
-    CURSOR_BUSY(5),
+    BUSY(5),
 
-    CURSOR_DRAG(6),
+    DRAG(6),
 
-    CURSOR_CAN_DROP(7),
+    CAN_DROP(7),
 
-    CURSOR_FORBIDDEN(8),
+    FORBIDDEN(8),
 
-    CURSOR_VSIZE(9),
+    VSIZE(9),
 
-    CURSOR_HSIZE(10),
+    HSIZE(10),
 
-    CURSOR_BDIAGSIZE(11),
+    BDIAGSIZE(11),
 
-    CURSOR_FDIAGSIZE(12),
+    FDIAGSIZE(12),
 
-    CURSOR_MOVE(13),
+    MOVE(13),
 
-    CURSOR_VSPLIT(14),
+    VSPLIT(14),
 
-    CURSOR_HSPLIT(15),
+    HSPLIT(15),
 
-    CURSOR_HELP(16);
+    HELP(16);
 
     companion object {
       fun from(value: Int): CursorShape {
@@ -1059,11 +1059,11 @@ open class Control(
   enum class GrowDirection(
     val value: Int
   ) {
-    GROW_DIRECTION_BEGIN(0),
+    BEGIN(0),
 
-    GROW_DIRECTION_END(1),
+    END(1),
 
-    GROW_DIRECTION_BOTH(2);
+    BOTH(2);
 
     companion object {
       fun from(value: Int): GrowDirection {
@@ -1080,15 +1080,15 @@ open class Control(
   enum class SizeFlags(
     val value: Int
   ) {
-    SIZE_FILL(1),
+    FILL(1),
 
-    SIZE_EXPAND(2),
+    EXPAND(2),
 
-    SIZE_EXPAND_FILL(3),
+    EXPAND_FILL(3),
 
-    SIZE_SHRINK_CENTER(4),
+    SHRINK_CENTER(4),
 
-    SIZE_SHRINK_END(8);
+    SHRINK_END(8);
 
     companion object {
       fun from(value: Int): SizeFlags {

@@ -278,11 +278,11 @@ open class CSGPolygon(
   enum class PathRotation(
     val value: Int
   ) {
-    PATH_ROTATION_POLYGON(0),
+    POLYGON(0),
 
-    PATH_ROTATION_PATH(1),
+    PATH(1),
 
-    PATH_ROTATION_PATH_FOLLOW(2);
+    PATH_FOLLOW(2);
 
     companion object {
       fun from(value: Int): PathRotation {

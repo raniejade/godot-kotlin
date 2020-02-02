@@ -981,17 +981,17 @@ open class PhysicsServer(
   enum class BodyAxis(
     val value: Int
   ) {
-    BODY_AXIS_LINEAR_X(1),
+    LINEAR_X(1),
 
-    BODY_AXIS_LINEAR_Y(2),
+    LINEAR_Y(2),
 
-    BODY_AXIS_LINEAR_Z(4),
+    LINEAR_Z(4),
 
-    BODY_AXIS_ANGULAR_X(8),
+    ANGULAR_X(8),
 
-    BODY_AXIS_ANGULAR_Y(16),
+    ANGULAR_Y(16),
 
-    BODY_AXIS_ANGULAR_Z(32);
+    ANGULAR_Z(32);
 
     companion object {
       fun from(value: Int): BodyAxis {
@@ -1029,9 +1029,9 @@ open class PhysicsServer(
   enum class AreaBodyStatus(
     val value: Int
   ) {
-    AREA_BODY_ADDED(0),
+    ADDED(0),
 
-    AREA_BODY_REMOVED(1);
+    REMOVED(1);
 
     companion object {
       fun from(value: Int): AreaBodyStatus {
@@ -1048,13 +1048,13 @@ open class PhysicsServer(
   enum class BodyMode(
     val value: Int
   ) {
-    BODY_MODE_STATIC(0),
+    STATIC(0),
 
-    BODY_MODE_KINEMATIC(1),
+    KINEMATIC(1),
 
-    BODY_MODE_RIGID(2),
+    RIGID(2),
 
-    BODY_MODE_CHARACTER(3);
+    CHARACTER(3);
 
     companion object {
       fun from(value: Int): BodyMode {
@@ -1071,25 +1071,25 @@ open class PhysicsServer(
   enum class ShapeType(
     val value: Int
   ) {
-    SHAPE_PLANE(0),
+    PLANE(0),
 
-    SHAPE_RAY(1),
+    RAY(1),
 
-    SHAPE_SPHERE(2),
+    SPHERE(2),
 
-    SHAPE_BOX(3),
+    BOX(3),
 
-    SHAPE_CAPSULE(4),
+    CAPSULE(4),
 
-    SHAPE_CYLINDER(5),
+    CYLINDER(5),
 
-    SHAPE_CONVEX_POLYGON(6),
+    CONVEX_POLYGON(6),
 
-    SHAPE_CONCAVE_POLYGON(7),
+    CONCAVE_POLYGON(7),
 
-    SHAPE_HEIGHTMAP(8),
+    HEIGHTMAP(8),
 
-    SHAPE_CUSTOM(9);
+    CUSTOM(9);
 
     companion object {
       fun from(value: Int): ShapeType {
@@ -1106,11 +1106,11 @@ open class PhysicsServer(
   enum class PinJointParam(
     val value: Int
   ) {
-    PIN_JOINT_BIAS(0),
+    BIAS(0),
 
-    PIN_JOINT_DAMPING(1),
+    DAMPING(1),
 
-    PIN_JOINT_IMPULSE_CLAMP(2);
+    IMPULSE_CLAMP(2);
 
     companion object {
       fun from(value: Int): PinJointParam {
@@ -1127,23 +1127,23 @@ open class PhysicsServer(
   enum class SpaceParameter(
     val value: Int
   ) {
-    SPACE_PARAM_CONTACT_RECYCLE_RADIUS(0),
+    PARAM_CONTACT_RECYCLE_RADIUS(0),
 
-    SPACE_PARAM_CONTACT_MAX_SEPARATION(1),
+    PARAM_CONTACT_MAX_SEPARATION(1),
 
-    SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION(2),
+    PARAM_BODY_MAX_ALLOWED_PENETRATION(2),
 
-    SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD(3),
+    PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD(3),
 
-    SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD(4),
+    PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD(4),
 
-    SPACE_PARAM_BODY_TIME_TO_SLEEP(5),
+    PARAM_BODY_TIME_TO_SLEEP(5),
 
-    SPACE_PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO(6),
+    PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO(6),
 
-    SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS(7),
+    PARAM_CONSTRAINT_DEFAULT_BIAS(7),
 
-    SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH(8);
+    PARAM_TEST_MOTION_MIN_CONTACT_DEPTH(8);
 
     companion object {
       fun from(value: Int): SpaceParameter {
@@ -1160,15 +1160,15 @@ open class PhysicsServer(
   enum class ConeTwistJointParam(
     val value: Int
   ) {
-    CONE_TWIST_JOINT_SWING_SPAN(0),
+    SWING_SPAN(0),
 
-    CONE_TWIST_JOINT_TWIST_SPAN(1),
+    TWIST_SPAN(1),
 
-    CONE_TWIST_JOINT_BIAS(2),
+    BIAS(2),
 
-    CONE_TWIST_JOINT_SOFTNESS(3),
+    SOFTNESS(3),
 
-    CONE_TWIST_JOINT_RELAXATION(4);
+    RELAXATION(4);
 
     companion object {
       fun from(value: Int): ConeTwistJointParam {
@@ -1185,15 +1185,15 @@ open class PhysicsServer(
   enum class JointType(
     val value: Int
   ) {
-    JOINT_PIN(0),
+    PIN(0),
 
-    JOINT_HINGE(1),
+    HINGE(1),
 
-    JOINT_SLIDER(2),
+    SLIDER(2),
 
-    JOINT_CONE_TWIST(3),
+    CONE_TWIST(3),
 
-    JOINT_6DOF(4);
+    `6DOF`(4);
 
     companion object {
       fun from(value: Int): JointType {
@@ -1210,15 +1210,15 @@ open class PhysicsServer(
   enum class BodyState(
     val value: Int
   ) {
-    BODY_STATE_TRANSFORM(0),
+    TRANSFORM(0),
 
-    BODY_STATE_LINEAR_VELOCITY(1),
+    LINEAR_VELOCITY(1),
 
-    BODY_STATE_ANGULAR_VELOCITY(2),
+    ANGULAR_VELOCITY(2),
 
-    BODY_STATE_SLEEPING(3),
+    SLEEPING(3),
 
-    BODY_STATE_CAN_SLEEP(4);
+    CAN_SLEEP(4);
 
     companion object {
       fun from(value: Int): BodyState {
@@ -1235,19 +1235,19 @@ open class PhysicsServer(
   enum class BodyParameter(
     val value: Int
   ) {
-    BODY_PARAM_BOUNCE(0),
+    PARAM_BOUNCE(0),
 
-    BODY_PARAM_FRICTION(1),
+    PARAM_FRICTION(1),
 
-    BODY_PARAM_MASS(2),
+    PARAM_MASS(2),
 
-    BODY_PARAM_GRAVITY_SCALE(3),
+    PARAM_GRAVITY_SCALE(3),
 
-    BODY_PARAM_LINEAR_DAMP(4),
+    PARAM_LINEAR_DAMP(4),
 
-    BODY_PARAM_ANGULAR_DAMP(5),
+    PARAM_ANGULAR_DAMP(5),
 
-    BODY_PARAM_MAX(6);
+    PARAM_MAX(6);
 
     companion object {
       fun from(value: Int): BodyParameter {
@@ -1311,51 +1311,51 @@ open class PhysicsServer(
   enum class SliderJointParam(
     val value: Int
   ) {
-    SLIDER_JOINT_LINEAR_LIMIT_UPPER(0),
+    LINEAR_LIMIT_UPPER(0),
 
-    SLIDER_JOINT_LINEAR_LIMIT_LOWER(1),
+    LINEAR_LIMIT_LOWER(1),
 
-    SLIDER_JOINT_LINEAR_LIMIT_SOFTNESS(2),
+    LINEAR_LIMIT_SOFTNESS(2),
 
-    SLIDER_JOINT_LINEAR_LIMIT_RESTITUTION(3),
+    LINEAR_LIMIT_RESTITUTION(3),
 
-    SLIDER_JOINT_LINEAR_LIMIT_DAMPING(4),
+    LINEAR_LIMIT_DAMPING(4),
 
-    SLIDER_JOINT_LINEAR_MOTION_SOFTNESS(5),
+    LINEAR_MOTION_SOFTNESS(5),
 
-    SLIDER_JOINT_LINEAR_MOTION_RESTITUTION(6),
+    LINEAR_MOTION_RESTITUTION(6),
 
-    SLIDER_JOINT_LINEAR_MOTION_DAMPING(7),
+    LINEAR_MOTION_DAMPING(7),
 
-    SLIDER_JOINT_LINEAR_ORTHOGONAL_SOFTNESS(8),
+    LINEAR_ORTHOGONAL_SOFTNESS(8),
 
-    SLIDER_JOINT_LINEAR_ORTHOGONAL_RESTITUTION(9),
+    LINEAR_ORTHOGONAL_RESTITUTION(9),
 
-    SLIDER_JOINT_LINEAR_ORTHOGONAL_DAMPING(10),
+    LINEAR_ORTHOGONAL_DAMPING(10),
 
-    SLIDER_JOINT_ANGULAR_LIMIT_UPPER(11),
+    ANGULAR_LIMIT_UPPER(11),
 
-    SLIDER_JOINT_ANGULAR_LIMIT_LOWER(12),
+    ANGULAR_LIMIT_LOWER(12),
 
-    SLIDER_JOINT_ANGULAR_LIMIT_SOFTNESS(13),
+    ANGULAR_LIMIT_SOFTNESS(13),
 
-    SLIDER_JOINT_ANGULAR_LIMIT_RESTITUTION(14),
+    ANGULAR_LIMIT_RESTITUTION(14),
 
-    SLIDER_JOINT_ANGULAR_LIMIT_DAMPING(15),
+    ANGULAR_LIMIT_DAMPING(15),
 
-    SLIDER_JOINT_ANGULAR_MOTION_SOFTNESS(16),
+    ANGULAR_MOTION_SOFTNESS(16),
 
-    SLIDER_JOINT_ANGULAR_MOTION_RESTITUTION(17),
+    ANGULAR_MOTION_RESTITUTION(17),
 
-    SLIDER_JOINT_ANGULAR_MOTION_DAMPING(18),
+    ANGULAR_MOTION_DAMPING(18),
 
-    SLIDER_JOINT_ANGULAR_ORTHOGONAL_SOFTNESS(19),
+    ANGULAR_ORTHOGONAL_SOFTNESS(19),
 
-    SLIDER_JOINT_ANGULAR_ORTHOGONAL_RESTITUTION(20),
+    ANGULAR_ORTHOGONAL_RESTITUTION(20),
 
-    SLIDER_JOINT_ANGULAR_ORTHOGONAL_DAMPING(21),
+    ANGULAR_ORTHOGONAL_DAMPING(21),
 
-    SLIDER_JOINT_MAX(22);
+    MAX(22);
 
     companion object {
       fun from(value: Int): SliderJointParam {
@@ -1372,21 +1372,21 @@ open class PhysicsServer(
   enum class HingeJointParam(
     val value: Int
   ) {
-    HINGE_JOINT_BIAS(0),
+    BIAS(0),
 
-    HINGE_JOINT_LIMIT_UPPER(1),
+    LIMIT_UPPER(1),
 
-    HINGE_JOINT_LIMIT_LOWER(2),
+    LIMIT_LOWER(2),
 
-    HINGE_JOINT_LIMIT_BIAS(3),
+    LIMIT_BIAS(3),
 
-    HINGE_JOINT_LIMIT_SOFTNESS(4),
+    LIMIT_SOFTNESS(4),
 
-    HINGE_JOINT_LIMIT_RELAXATION(5),
+    LIMIT_RELAXATION(5),
 
-    HINGE_JOINT_MOTOR_TARGET_VELOCITY(6),
+    MOTOR_TARGET_VELOCITY(6),
 
-    HINGE_JOINT_MOTOR_MAX_IMPULSE(7);
+    MOTOR_MAX_IMPULSE(7);
 
     companion object {
       fun from(value: Int): HingeJointParam {
@@ -1426,9 +1426,9 @@ open class PhysicsServer(
   enum class HingeJointFlag(
     val value: Int
   ) {
-    HINGE_JOINT_FLAG_USE_LIMIT(0),
+    USE_LIMIT(0),
 
-    HINGE_JOINT_FLAG_ENABLE_MOTOR(1);
+    ENABLE_MOTOR(1);
 
     companion object {
       fun from(value: Int): HingeJointFlag {
@@ -1445,15 +1445,15 @@ open class PhysicsServer(
   enum class AreaSpaceOverrideMode(
     val value: Int
   ) {
-    AREA_SPACE_OVERRIDE_DISABLED(0),
+    DISABLED(0),
 
-    AREA_SPACE_OVERRIDE_COMBINE(1),
+    COMBINE(1),
 
-    AREA_SPACE_OVERRIDE_COMBINE_REPLACE(2),
+    COMBINE_REPLACE(2),
 
-    AREA_SPACE_OVERRIDE_REPLACE(3),
+    REPLACE(3),
 
-    AREA_SPACE_OVERRIDE_REPLACE_COMBINE(4);
+    REPLACE_COMBINE(4);
 
     companion object {
       fun from(value: Int): AreaSpaceOverrideMode {
@@ -1470,21 +1470,21 @@ open class PhysicsServer(
   enum class AreaParameter(
     val value: Int
   ) {
-    AREA_PARAM_GRAVITY(0),
+    PARAM_GRAVITY(0),
 
-    AREA_PARAM_GRAVITY_VECTOR(1),
+    PARAM_GRAVITY_VECTOR(1),
 
-    AREA_PARAM_GRAVITY_IS_POINT(2),
+    PARAM_GRAVITY_IS_POINT(2),
 
-    AREA_PARAM_GRAVITY_DISTANCE_SCALE(3),
+    PARAM_GRAVITY_DISTANCE_SCALE(3),
 
-    AREA_PARAM_GRAVITY_POINT_ATTENUATION(4),
+    PARAM_GRAVITY_POINT_ATTENUATION(4),
 
-    AREA_PARAM_LINEAR_DAMP(5),
+    PARAM_LINEAR_DAMP(5),
 
-    AREA_PARAM_ANGULAR_DAMP(6),
+    PARAM_ANGULAR_DAMP(6),
 
-    AREA_PARAM_PRIORITY(7);
+    PARAM_PRIORITY(7);
 
     companion object {
       fun from(value: Int): AreaParameter {

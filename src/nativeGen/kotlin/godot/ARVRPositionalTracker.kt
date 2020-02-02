@@ -96,11 +96,11 @@ open class ARVRPositionalTracker(
   enum class TrackerHand(
     val value: Int
   ) {
-    TRACKER_HAND_UNKNOWN(0),
+    UNKNOWN(0),
 
-    TRACKER_LEFT_HAND(1),
+    LEFT_HAND(1),
 
-    TRACKER_RIGHT_HAND(2);
+    RIGHT_HAND(2);
 
     companion object {
       fun from(value: Int): TrackerHand {

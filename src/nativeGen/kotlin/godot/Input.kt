@@ -281,13 +281,13 @@ open class Input(
   enum class MouseMode(
     val value: Int
   ) {
-    MOUSE_MODE_VISIBLE(0),
+    VISIBLE(0),
 
-    MOUSE_MODE_HIDDEN(1),
+    HIDDEN(1),
 
-    MOUSE_MODE_CAPTURED(2),
+    CAPTURED(2),
 
-    MOUSE_MODE_CONFINED(3);
+    CONFINED(3);
 
     companion object {
       fun from(value: Int): MouseMode {
@@ -304,39 +304,39 @@ open class Input(
   enum class CursorShape(
     val value: Int
   ) {
-    CURSOR_ARROW(0),
+    ARROW(0),
 
-    CURSOR_IBEAM(1),
+    IBEAM(1),
 
-    CURSOR_POINTING_HAND(2),
+    POINTING_HAND(2),
 
-    CURSOR_CROSS(3),
+    CROSS(3),
 
-    CURSOR_WAIT(4),
+    WAIT(4),
 
-    CURSOR_BUSY(5),
+    BUSY(5),
 
-    CURSOR_DRAG(6),
+    DRAG(6),
 
-    CURSOR_CAN_DROP(7),
+    CAN_DROP(7),
 
-    CURSOR_FORBIDDEN(8),
+    FORBIDDEN(8),
 
-    CURSOR_VSIZE(9),
+    VSIZE(9),
 
-    CURSOR_HSIZE(10),
+    HSIZE(10),
 
-    CURSOR_BDIAGSIZE(11),
+    BDIAGSIZE(11),
 
-    CURSOR_FDIAGSIZE(12),
+    FDIAGSIZE(12),
 
-    CURSOR_MOVE(13),
+    MOVE(13),
 
-    CURSOR_VSPLIT(14),
+    VSPLIT(14),
 
-    CURSOR_HSPLIT(15),
+    HSPLIT(15),
 
-    CURSOR_HELP(16);
+    HELP(16);
 
     companion object {
       fun from(value: Int): CursorShape {

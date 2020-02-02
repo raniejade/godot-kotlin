@@ -347,13 +347,13 @@ open class AudioServer(
   enum class SpeakerMode(
     val value: Int
   ) {
-    SPEAKER_MODE_STEREO(0),
+    STEREO(0),
 
-    SPEAKER_SURROUND_31(1),
+    SURROUND_31(1),
 
-    SPEAKER_SURROUND_51(2),
+    SURROUND_51(2),
 
-    SPEAKER_SURROUND_71(3);
+    SURROUND_71(3);
 
     companion object {
       fun from(value: Int): SpeakerMode {

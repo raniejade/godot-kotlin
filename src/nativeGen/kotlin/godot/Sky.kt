@@ -39,21 +39,21 @@ open class Sky(
   enum class RadianceSize(
     val value: Int
   ) {
-    RADIANCE_SIZE_32(0),
+    `32`(0),
 
-    RADIANCE_SIZE_64(1),
+    `64`(1),
 
-    RADIANCE_SIZE_128(2),
+    `128`(2),
 
-    RADIANCE_SIZE_256(3),
+    `256`(3),
 
-    RADIANCE_SIZE_512(4),
+    `512`(4),
 
-    RADIANCE_SIZE_1024(5),
+    `1024`(5),
 
-    RADIANCE_SIZE_2048(6),
+    `2048`(6),
 
-    RADIANCE_SIZE_MAX(7);
+    MAX(7);
 
     companion object {
       fun from(value: Int): RadianceSize {

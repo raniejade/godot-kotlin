@@ -229,23 +229,23 @@ open class EditorPlugin(
   enum class DockSlot(
     val value: Int
   ) {
-    DOCK_SLOT_LEFT_UL(0),
+    LEFT_UL(0),
 
-    DOCK_SLOT_LEFT_BL(1),
+    LEFT_BL(1),
 
-    DOCK_SLOT_LEFT_UR(2),
+    LEFT_UR(2),
 
-    DOCK_SLOT_LEFT_BR(3),
+    LEFT_BR(3),
 
-    DOCK_SLOT_RIGHT_UL(4),
+    RIGHT_UL(4),
 
-    DOCK_SLOT_RIGHT_BL(5),
+    RIGHT_BL(5),
 
-    DOCK_SLOT_RIGHT_UR(6),
+    RIGHT_UR(6),
 
-    DOCK_SLOT_RIGHT_BR(7),
+    RIGHT_BR(7),
 
-    DOCK_SLOT_MAX(8);
+    MAX(8);
 
     companion object {
       fun from(value: Int): DockSlot {

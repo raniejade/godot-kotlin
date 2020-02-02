@@ -872,9 +872,9 @@ open class Physics2DServer(
   enum class AreaBodyStatus(
     val value: Int
   ) {
-    AREA_BODY_ADDED(0),
+    ADDED(0),
 
-    AREA_BODY_REMOVED(1);
+    REMOVED(1);
 
     companion object {
       fun from(value: Int): AreaBodyStatus {
@@ -891,11 +891,11 @@ open class Physics2DServer(
   enum class DampedStringParam(
     val value: Int
   ) {
-    DAMPED_STRING_REST_LENGTH(0),
+    REST_LENGTH(0),
 
-    DAMPED_STRING_STIFFNESS(1),
+    STIFFNESS(1),
 
-    DAMPED_STRING_DAMPING(2);
+    DAMPING(2);
 
     companion object {
       fun from(value: Int): DampedStringParam {
@@ -912,13 +912,13 @@ open class Physics2DServer(
   enum class BodyMode(
     val value: Int
   ) {
-    BODY_MODE_STATIC(0),
+    STATIC(0),
 
-    BODY_MODE_KINEMATIC(1),
+    KINEMATIC(1),
 
-    BODY_MODE_RIGID(2),
+    RIGID(2),
 
-    BODY_MODE_CHARACTER(3);
+    CHARACTER(3);
 
     companion object {
       fun from(value: Int): BodyMode {
@@ -935,23 +935,23 @@ open class Physics2DServer(
   enum class ShapeType(
     val value: Int
   ) {
-    SHAPE_LINE(0),
+    LINE(0),
 
-    SHAPE_RAY(1),
+    RAY(1),
 
-    SHAPE_SEGMENT(2),
+    SEGMENT(2),
 
-    SHAPE_CIRCLE(3),
+    CIRCLE(3),
 
-    SHAPE_RECTANGLE(4),
+    RECTANGLE(4),
 
-    SHAPE_CAPSULE(5),
+    CAPSULE(5),
 
-    SHAPE_CONVEX_POLYGON(6),
+    CONVEX_POLYGON(6),
 
-    SHAPE_CONCAVE_POLYGON(7),
+    CONCAVE_POLYGON(7),
 
-    SHAPE_CUSTOM(8);
+    CUSTOM(8);
 
     companion object {
       fun from(value: Int): ShapeType {
@@ -968,11 +968,11 @@ open class Physics2DServer(
   enum class JointParam(
     val value: Int
   ) {
-    JOINT_PARAM_BIAS(0),
+    BIAS(0),
 
-    JOINT_PARAM_MAX_BIAS(1),
+    MAX_BIAS(1),
 
-    JOINT_PARAM_MAX_FORCE(2);
+    MAX_FORCE(2);
 
     companion object {
       fun from(value: Int): JointParam {
@@ -989,21 +989,21 @@ open class Physics2DServer(
   enum class SpaceParameter(
     val value: Int
   ) {
-    SPACE_PARAM_CONTACT_RECYCLE_RADIUS(0),
+    PARAM_CONTACT_RECYCLE_RADIUS(0),
 
-    SPACE_PARAM_CONTACT_MAX_SEPARATION(1),
+    PARAM_CONTACT_MAX_SEPARATION(1),
 
-    SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION(2),
+    PARAM_BODY_MAX_ALLOWED_PENETRATION(2),
 
-    SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD(3),
+    PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD(3),
 
-    SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD(4),
+    PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD(4),
 
-    SPACE_PARAM_BODY_TIME_TO_SLEEP(5),
+    PARAM_BODY_TIME_TO_SLEEP(5),
 
-    SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS(6),
+    PARAM_CONSTRAINT_DEFAULT_BIAS(6),
 
-    SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH(7);
+    PARAM_TEST_MOTION_MIN_CONTACT_DEPTH(7);
 
     companion object {
       fun from(value: Int): SpaceParameter {
@@ -1020,11 +1020,11 @@ open class Physics2DServer(
   enum class JointType(
     val value: Int
   ) {
-    JOINT_PIN(0),
+    PIN(0),
 
-    JOINT_GROOVE(1),
+    GROOVE(1),
 
-    JOINT_DAMPED_SPRING(2);
+    DAMPED_SPRING(2);
 
     companion object {
       fun from(value: Int): JointType {
@@ -1062,15 +1062,15 @@ open class Physics2DServer(
   enum class BodyState(
     val value: Int
   ) {
-    BODY_STATE_TRANSFORM(0),
+    TRANSFORM(0),
 
-    BODY_STATE_LINEAR_VELOCITY(1),
+    LINEAR_VELOCITY(1),
 
-    BODY_STATE_ANGULAR_VELOCITY(2),
+    ANGULAR_VELOCITY(2),
 
-    BODY_STATE_SLEEPING(3),
+    SLEEPING(3),
 
-    BODY_STATE_CAN_SLEEP(4);
+    CAN_SLEEP(4);
 
     companion object {
       fun from(value: Int): BodyState {
@@ -1087,21 +1087,21 @@ open class Physics2DServer(
   enum class BodyParameter(
     val value: Int
   ) {
-    BODY_PARAM_BOUNCE(0),
+    PARAM_BOUNCE(0),
 
-    BODY_PARAM_FRICTION(1),
+    PARAM_FRICTION(1),
 
-    BODY_PARAM_MASS(2),
+    PARAM_MASS(2),
 
-    BODY_PARAM_INERTIA(3),
+    PARAM_INERTIA(3),
 
-    BODY_PARAM_GRAVITY_SCALE(4),
+    PARAM_GRAVITY_SCALE(4),
 
-    BODY_PARAM_LINEAR_DAMP(5),
+    PARAM_LINEAR_DAMP(5),
 
-    BODY_PARAM_ANGULAR_DAMP(6),
+    PARAM_ANGULAR_DAMP(6),
 
-    BODY_PARAM_MAX(7);
+    PARAM_MAX(7);
 
     companion object {
       fun from(value: Int): BodyParameter {
@@ -1118,15 +1118,15 @@ open class Physics2DServer(
   enum class AreaSpaceOverrideMode(
     val value: Int
   ) {
-    AREA_SPACE_OVERRIDE_DISABLED(0),
+    DISABLED(0),
 
-    AREA_SPACE_OVERRIDE_COMBINE(1),
+    COMBINE(1),
 
-    AREA_SPACE_OVERRIDE_COMBINE_REPLACE(2),
+    COMBINE_REPLACE(2),
 
-    AREA_SPACE_OVERRIDE_REPLACE(3),
+    REPLACE(3),
 
-    AREA_SPACE_OVERRIDE_REPLACE_COMBINE(4);
+    REPLACE_COMBINE(4);
 
     companion object {
       fun from(value: Int): AreaSpaceOverrideMode {
@@ -1143,21 +1143,21 @@ open class Physics2DServer(
   enum class AreaParameter(
     val value: Int
   ) {
-    AREA_PARAM_GRAVITY(0),
+    PARAM_GRAVITY(0),
 
-    AREA_PARAM_GRAVITY_VECTOR(1),
+    PARAM_GRAVITY_VECTOR(1),
 
-    AREA_PARAM_GRAVITY_IS_POINT(2),
+    PARAM_GRAVITY_IS_POINT(2),
 
-    AREA_PARAM_GRAVITY_DISTANCE_SCALE(3),
+    PARAM_GRAVITY_DISTANCE_SCALE(3),
 
-    AREA_PARAM_GRAVITY_POINT_ATTENUATION(4),
+    PARAM_GRAVITY_POINT_ATTENUATION(4),
 
-    AREA_PARAM_LINEAR_DAMP(5),
+    PARAM_LINEAR_DAMP(5),
 
-    AREA_PARAM_ANGULAR_DAMP(6),
+    PARAM_ANGULAR_DAMP(6),
 
-    AREA_PARAM_PRIORITY(7);
+    PARAM_PRIORITY(7);
 
     companion object {
       fun from(value: Int): AreaParameter {

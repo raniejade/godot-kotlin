@@ -384,9 +384,9 @@ open class Camera(
   enum class KeepAspect(
     val value: Int
   ) {
-    KEEP_WIDTH(0),
+    WIDTH(0),
 
-    KEEP_HEIGHT(1);
+    HEIGHT(1);
 
     companion object {
       fun from(value: Int): KeepAspect {
@@ -424,11 +424,11 @@ open class Camera(
   enum class DopplerTracking(
     val value: Int
   ) {
-    DOPPLER_TRACKING_DISABLED(0),
+    DISABLED(0),
 
-    DOPPLER_TRACKING_IDLE_STEP(1),
+    IDLE_STEP(1),
 
-    DOPPLER_TRACKING_PHYSICS_STEP(2);
+    PHYSICS_STEP(2);
 
     companion object {
       fun from(value: Int): DopplerTracking {

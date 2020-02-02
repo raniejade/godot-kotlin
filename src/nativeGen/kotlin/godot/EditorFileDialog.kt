@@ -201,9 +201,9 @@ open class EditorFileDialog(
   enum class DisplayMode(
     val value: Int
   ) {
-    DISPLAY_THUMBNAILS(0),
+    THUMBNAILS(0),
 
-    DISPLAY_LIST(1);
+    LIST(1);
 
     companion object {
       fun from(value: Int): DisplayMode {

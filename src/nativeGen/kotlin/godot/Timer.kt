@@ -142,9 +142,9 @@ open class Timer(
   enum class TimerProcessMode(
     val value: Int
   ) {
-    TIMER_PROCESS_PHYSICS(0),
+    PHYSICS(0),
 
-    TIMER_PROCESS_IDLE(1);
+    IDLE(1);
 
     companion object {
       fun from(value: Int): TimerProcessMode {

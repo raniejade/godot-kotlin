@@ -649,13 +649,13 @@ open class Object(
   enum class ConnectFlags(
     val value: Int
   ) {
-    CONNECT_DEFERRED(1),
+    DEFERRED(1),
 
-    CONNECT_PERSIST(2),
+    PERSIST(2),
 
-    CONNECT_ONESHOT(4),
+    ONESHOT(4),
 
-    CONNECT_REFERENCE_COUNTED(8);
+    REFERENCE_COUNTED(8);
 
     companion object {
       fun from(value: Int): ConnectFlags {

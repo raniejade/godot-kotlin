@@ -40,11 +40,11 @@ open class HashingContext(
   enum class HashType(
     val value: Int
   ) {
-    HASH_MD5(0),
+    MD5(0),
 
-    HASH_SHA1(1),
+    SHA1(1),
 
-    HASH_SHA256(2);
+    SHA256(2);
 
     companion object {
       fun from(value: Int): HashType {

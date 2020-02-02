@@ -483,15 +483,15 @@ open class SceneTree(
   enum class StretchAspect(
     val value: Int
   ) {
-    STRETCH_ASPECT_IGNORE(0),
+    IGNORE(0),
 
-    STRETCH_ASPECT_KEEP(1),
+    KEEP(1),
 
-    STRETCH_ASPECT_KEEP_WIDTH(2),
+    KEEP_WIDTH(2),
 
-    STRETCH_ASPECT_KEEP_HEIGHT(3),
+    KEEP_HEIGHT(3),
 
-    STRETCH_ASPECT_EXPAND(4);
+    EXPAND(4);
 
     companion object {
       fun from(value: Int): StretchAspect {
@@ -508,13 +508,13 @@ open class SceneTree(
   enum class GroupCallFlags(
     val value: Int
   ) {
-    GROUP_CALL_DEFAULT(0),
+    DEFAULT(0),
 
-    GROUP_CALL_REVERSE(1),
+    REVERSE(1),
 
-    GROUP_CALL_REALTIME(2),
+    REALTIME(2),
 
-    GROUP_CALL_UNIQUE(4);
+    UNIQUE(4);
 
     companion object {
       fun from(value: Int): GroupCallFlags {
@@ -531,11 +531,11 @@ open class SceneTree(
   enum class StretchMode(
     val value: Int
   ) {
-    STRETCH_MODE_DISABLED(0),
+    DISABLED(0),
 
-    STRETCH_MODE_2D(1),
+    `2D`(1),
 
-    STRETCH_MODE_VIEWPORT(2);
+    VIEWPORT(2);
 
     companion object {
       fun from(value: Int): StretchMode {

@@ -58,11 +58,11 @@ open class LinkButton(
   enum class UnderlineMode(
     val value: Int
   ) {
-    UNDERLINE_MODE_ALWAYS(0),
+    ALWAYS(0),
 
-    UNDERLINE_MODE_ON_HOVER(1),
+    ON_HOVER(1),
 
-    UNDERLINE_MODE_NEVER(2);
+    NEVER(2);
 
     companion object {
       fun from(value: Int): UnderlineMode {

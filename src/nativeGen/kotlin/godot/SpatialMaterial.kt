@@ -1476,9 +1476,9 @@ open class SpatialMaterial(
   enum class EmissionOperator(
     val value: Int
   ) {
-    EMISSION_OP_ADD(0),
+    OP_ADD(0),
 
-    EMISSION_OP_MULTIPLY(1);
+    OP_MULTIPLY(1);
 
     companion object {
       fun from(value: Int): EmissionOperator {
@@ -1495,15 +1495,15 @@ open class SpatialMaterial(
   enum class DiffuseMode(
     val value: Int
   ) {
-    DIFFUSE_BURLEY(0),
+    BURLEY(0),
 
-    DIFFUSE_LAMBERT(1),
+    LAMBERT(1),
 
-    DIFFUSE_LAMBERT_WRAP(2),
+    LAMBERT_WRAP(2),
 
-    DIFFUSE_OREN_NAYAR(3),
+    OREN_NAYAR(3),
 
-    DIFFUSE_TOON(4);
+    TOON(4);
 
     companion object {
       fun from(value: Int): DiffuseMode {
@@ -1520,15 +1520,15 @@ open class SpatialMaterial(
   enum class SpecularMode(
     val value: Int
   ) {
-    SPECULAR_SCHLICK_GGX(0),
+    SCHLICK_GGX(0),
 
-    SPECULAR_BLINN(1),
+    BLINN(1),
 
-    SPECULAR_PHONG(2),
+    PHONG(2),
 
-    SPECULAR_TOON(3),
+    TOON(3),
 
-    SPECULAR_DISABLED(4);
+    DISABLED(4);
 
     companion object {
       fun from(value: Int): SpecularMode {
@@ -1641,11 +1641,11 @@ open class SpatialMaterial(
   enum class CullMode(
     val value: Int
   ) {
-    CULL_BACK(0),
+    BACK(0),
 
-    CULL_FRONT(1),
+    FRONT(1),
 
-    CULL_DISABLED(2);
+    DISABLED(2);
 
     companion object {
       fun from(value: Int): CullMode {
@@ -1662,9 +1662,9 @@ open class SpatialMaterial(
   enum class DetailUV(
     val value: Int
   ) {
-    DETAIL_UV_1(0),
+    `1`(0),
 
-    DETAIL_UV_2(1);
+    `2`(1);
 
     companion object {
       fun from(value: Int): DetailUV {
@@ -1681,13 +1681,13 @@ open class SpatialMaterial(
   enum class DistanceFadeMode(
     val value: Int
   ) {
-    DISTANCE_FADE_DISABLED(0),
+    DISABLED(0),
 
-    DISTANCE_FADE_PIXEL_ALPHA(1),
+    PIXEL_ALPHA(1),
 
-    DISTANCE_FADE_PIXEL_DITHER(2),
+    PIXEL_DITHER(2),
 
-    DISTANCE_FADE_OBJECT_DITHER(3);
+    OBJECT_DITHER(3);
 
     companion object {
       fun from(value: Int): DistanceFadeMode {
@@ -1704,13 +1704,13 @@ open class SpatialMaterial(
   enum class BillboardMode(
     val value: Int
   ) {
-    BILLBOARD_DISABLED(0),
+    DISABLED(0),
 
-    BILLBOARD_ENABLED(1),
+    ENABLED(1),
 
-    BILLBOARD_FIXED_Y(2),
+    FIXED_Y(2),
 
-    BILLBOARD_PARTICLES(3);
+    PARTICLES(3);
 
     companion object {
       fun from(value: Int): BillboardMode {
@@ -1727,13 +1727,13 @@ open class SpatialMaterial(
   enum class DepthDrawMode(
     val value: Int
   ) {
-    DEPTH_DRAW_OPAQUE_ONLY(0),
+    OPAQUE_ONLY(0),
 
-    DEPTH_DRAW_ALWAYS(1),
+    ALWAYS(1),
 
-    DEPTH_DRAW_DISABLED(2),
+    DISABLED(2),
 
-    DEPTH_DRAW_ALPHA_OPAQUE_PREPASS(3);
+    ALPHA_OPAQUE_PREPASS(3);
 
     companion object {
       fun from(value: Int): DepthDrawMode {
@@ -1750,15 +1750,15 @@ open class SpatialMaterial(
   enum class TextureChannel(
     val value: Int
   ) {
-    TEXTURE_CHANNEL_RED(0),
+    RED(0),
 
-    TEXTURE_CHANNEL_GREEN(1),
+    GREEN(1),
 
-    TEXTURE_CHANNEL_BLUE(2),
+    BLUE(2),
 
-    TEXTURE_CHANNEL_ALPHA(3),
+    ALPHA(3),
 
-    TEXTURE_CHANNEL_GRAYSCALE(4);
+    GRAYSCALE(4);
 
     companion object {
       fun from(value: Int): TextureChannel {
@@ -1775,13 +1775,13 @@ open class SpatialMaterial(
   enum class BlendMode(
     val value: Int
   ) {
-    BLEND_MODE_MIX(0),
+    MIX(0),
 
-    BLEND_MODE_ADD(1),
+    ADD(1),
 
-    BLEND_MODE_SUB(2),
+    SUB(2),
 
-    BLEND_MODE_MUL(3);
+    MUL(3);
 
     companion object {
       fun from(value: Int): BlendMode {
@@ -1798,39 +1798,39 @@ open class SpatialMaterial(
   enum class TextureParam(
     val value: Int
   ) {
-    TEXTURE_ALBEDO(0),
+    ALBEDO(0),
 
-    TEXTURE_METALLIC(1),
+    METALLIC(1),
 
-    TEXTURE_ROUGHNESS(2),
+    ROUGHNESS(2),
 
-    TEXTURE_EMISSION(3),
+    EMISSION(3),
 
-    TEXTURE_NORMAL(4),
+    NORMAL(4),
 
-    TEXTURE_RIM(5),
+    RIM(5),
 
-    TEXTURE_CLEARCOAT(6),
+    CLEARCOAT(6),
 
-    TEXTURE_FLOWMAP(7),
+    FLOWMAP(7),
 
-    TEXTURE_AMBIENT_OCCLUSION(8),
+    AMBIENT_OCCLUSION(8),
 
-    TEXTURE_DEPTH(9),
+    DEPTH(9),
 
-    TEXTURE_SUBSURFACE_SCATTERING(10),
+    SUBSURFACE_SCATTERING(10),
 
-    TEXTURE_TRANSMISSION(11),
+    TRANSMISSION(11),
 
-    TEXTURE_REFRACTION(12),
+    REFRACTION(12),
 
-    TEXTURE_DETAIL_MASK(13),
+    DETAIL_MASK(13),
 
-    TEXTURE_DETAIL_ALBEDO(14),
+    DETAIL_ALBEDO(14),
 
-    TEXTURE_DETAIL_NORMAL(15),
+    DETAIL_NORMAL(15),
 
-    TEXTURE_MAX(16);
+    MAX(16);
 
     companion object {
       fun from(value: Int): TextureParam {

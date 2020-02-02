@@ -557,11 +557,11 @@ open class TileMap(
   enum class TileOrigin(
     val value: Int
   ) {
-    TILE_ORIGIN_TOP_LEFT(0),
+    TOP_LEFT(0),
 
-    TILE_ORIGIN_CENTER(1),
+    CENTER(1),
 
-    TILE_ORIGIN_BOTTOM_LEFT(2);
+    BOTTOM_LEFT(2);
 
     companion object {
       fun from(value: Int): TileOrigin {
@@ -578,15 +578,15 @@ open class TileMap(
   enum class HalfOffset(
     val value: Int
   ) {
-    HALF_OFFSET_X(0),
+    X(0),
 
-    HALF_OFFSET_Y(1),
+    Y(1),
 
-    HALF_OFFSET_DISABLED(2),
+    DISABLED(2),
 
-    HALF_OFFSET_NEGATIVE_X(3),
+    NEGATIVE_X(3),
 
-    HALF_OFFSET_NEGATIVE_Y(4);
+    NEGATIVE_Y(4);
 
     companion object {
       fun from(value: Int): HalfOffset {

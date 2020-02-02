@@ -1351,11 +1351,11 @@ open class AnimationNodeBlendSpace2D(
   enum class BlendMode(
     val value: Int
   ) {
-    BLEND_MODE_INTERPOLATED(0),
+    INTERPOLATED(0),
 
-    BLEND_MODE_DISCRETE(1),
+    DISCRETE(1),
 
-    BLEND_MODE_DISCRETE_CARRY(2);
+    DISCRETE_CARRY(2);
 
     companion object {
       fun from(value: Int): BlendMode {

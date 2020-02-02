@@ -516,9 +516,9 @@ open class AnimationTreePlayer(
   enum class AnimationProcessMode(
     val value: Int
   ) {
-    ANIMATION_PROCESS_PHYSICS(0),
+    PHYSICS(0),
 
-    ANIMATION_PROCESS_IDLE(1);
+    IDLE(1);
 
     companion object {
       fun from(value: Int): AnimationProcessMode {
@@ -535,25 +535,25 @@ open class AnimationTreePlayer(
   enum class NodeType(
     val value: Int
   ) {
-    NODE_OUTPUT(0),
+    OUTPUT(0),
 
-    NODE_ANIMATION(1),
+    ANIMATION(1),
 
-    NODE_ONESHOT(2),
+    ONESHOT(2),
 
-    NODE_MIX(3),
+    MIX(3),
 
-    NODE_BLEND2(4),
+    BLEND2(4),
 
-    NODE_BLEND3(5),
+    BLEND3(5),
 
-    NODE_BLEND4(6),
+    BLEND4(6),
 
-    NODE_TIMESCALE(7),
+    TIMESCALE(7),
 
-    NODE_TIMESEEK(8),
+    TIMESEEK(8),
 
-    NODE_TRANSITION(9);
+    TRANSITION(9);
 
     companion object {
       fun from(value: Int): NodeType {

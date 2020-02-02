@@ -85,11 +85,11 @@ open class SplitContainer(
   enum class DraggerVisibility(
     val value: Int
   ) {
-    DRAGGER_VISIBLE(0),
+    VISIBLE(0),
 
-    DRAGGER_HIDDEN(1),
+    HIDDEN(1),
 
-    DRAGGER_HIDDEN_COLLAPSED(2);
+    HIDDEN_COLLAPSED(2);
 
     companion object {
       fun from(value: Int): DraggerVisibility {

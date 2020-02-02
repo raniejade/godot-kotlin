@@ -138,11 +138,11 @@ open class UndoRedo(
   enum class MergeMode(
     val value: Int
   ) {
-    MERGE_DISABLE(0),
+    DISABLE(0),
 
-    MERGE_ENDS(1),
+    ENDS(1),
 
-    MERGE_ALL(2);
+    ALL(2);
 
     companion object {
       fun from(value: Int): MergeMode {

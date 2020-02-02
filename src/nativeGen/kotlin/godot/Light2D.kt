@@ -431,17 +431,17 @@ open class Light2D(
   enum class ShadowFilter(
     val value: Int
   ) {
-    SHADOW_FILTER_NONE(0),
+    NONE(0),
 
-    SHADOW_FILTER_PCF3(1),
+    PCF3(1),
 
-    SHADOW_FILTER_PCF5(2),
+    PCF5(2),
 
-    SHADOW_FILTER_PCF7(3),
+    PCF7(3),
 
-    SHADOW_FILTER_PCF9(4),
+    PCF9(4),
 
-    SHADOW_FILTER_PCF13(5);
+    PCF13(5);
 
     companion object {
       fun from(value: Int): ShadowFilter {

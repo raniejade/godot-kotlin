@@ -382,13 +382,13 @@ open class AudioStreamPlayer3D(
   enum class AttenuationModel(
     val value: Int
   ) {
-    ATTENUATION_INVERSE_DISTANCE(0),
+    INVERSE_DISTANCE(0),
 
-    ATTENUATION_INVERSE_SQUARE_DISTANCE(1),
+    INVERSE_SQUARE_DISTANCE(1),
 
-    ATTENUATION_LOGARITHMIC(2),
+    LOGARITHMIC(2),
 
-    ATTENUATION_DISABLED(3);
+    DISABLED(3);
 
     companion object {
       fun from(value: Int): AttenuationModel {
@@ -405,9 +405,9 @@ open class AudioStreamPlayer3D(
   enum class OutOfRangeMode(
     val value: Int
   ) {
-    OUT_OF_RANGE_MIX(0),
+    MIX(0),
 
-    OUT_OF_RANGE_PAUSE(1);
+    PAUSE(1);
 
     companion object {
       fun from(value: Int): OutOfRangeMode {
@@ -424,11 +424,11 @@ open class AudioStreamPlayer3D(
   enum class DopplerTracking(
     val value: Int
   ) {
-    DOPPLER_TRACKING_DISABLED(0),
+    DISABLED(0),
 
-    DOPPLER_TRACKING_IDLE_STEP(1),
+    IDLE_STEP(1),
 
-    DOPPLER_TRACKING_PHYSICS_STEP(2);
+    PHYSICS_STEP(2);
 
     companion object {
       fun from(value: Int): DopplerTracking {

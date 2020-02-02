@@ -149,15 +149,15 @@ open class PathFollow(
   enum class RotationMode(
     val value: Int
   ) {
-    ROTATION_NONE(0),
+    NONE(0),
 
-    ROTATION_Y(1),
+    Y(1),
 
-    ROTATION_XY(2),
+    XY(2),
 
-    ROTATION_XYZ(3),
+    XYZ(3),
 
-    ROTATION_ORIENTED(4);
+    ORIENTED(4);
 
     companion object {
       fun from(value: Int): RotationMode {

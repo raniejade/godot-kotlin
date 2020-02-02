@@ -85,13 +85,13 @@ open class CameraFeed(
   enum class FeedDataType(
     val value: Int
   ) {
-    FEED_NOIMAGE(0),
+    NOIMAGE(0),
 
-    FEED_RGB(1),
+    RGB(1),
 
-    FEED_YCBCR(2),
+    YCBCR(2),
 
-    FEED_YCBCR_SEP(3);
+    YCBCR_SEP(3);
 
     companion object {
       fun from(value: Int): FeedDataType {
@@ -108,11 +108,11 @@ open class CameraFeed(
   enum class FeedPosition(
     val value: Int
   ) {
-    FEED_UNSPECIFIED(0),
+    UNSPECIFIED(0),
 
-    FEED_FRONT(1),
+    FRONT(1),
 
-    FEED_BACK(2);
+    BACK(2);
 
     companion object {
       fun from(value: Int): FeedPosition {

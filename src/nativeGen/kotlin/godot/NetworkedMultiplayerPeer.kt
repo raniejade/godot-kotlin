@@ -107,11 +107,11 @@ open class NetworkedMultiplayerPeer(
   enum class ConnectionStatus(
     val value: Int
   ) {
-    CONNECTION_DISCONNECTED(0),
+    DISCONNECTED(0),
 
-    CONNECTION_CONNECTING(1),
+    CONNECTING(1),
 
-    CONNECTION_CONNECTED(2);
+    CONNECTED(2);
 
     companion object {
       fun from(value: Int): ConnectionStatus {
@@ -128,11 +128,11 @@ open class NetworkedMultiplayerPeer(
   enum class TransferMode(
     val value: Int
   ) {
-    TRANSFER_MODE_UNRELIABLE(0),
+    UNRELIABLE(0),
 
-    TRANSFER_MODE_UNRELIABLE_ORDERED(1),
+    UNRELIABLE_ORDERED(1),
 
-    TRANSFER_MODE_RELIABLE(2);
+    RELIABLE(2);
 
     companion object {
       fun from(value: Int): TransferMode {

@@ -167,13 +167,13 @@ open class AudioStreamSample(
   enum class LoopMode(
     val value: Int
   ) {
-    LOOP_DISABLED(0),
+    DISABLED(0),
 
-    LOOP_FORWARD(1),
+    FORWARD(1),
 
-    LOOP_PING_PONG(2),
+    PING_PONG(2),
 
-    LOOP_BACKWARD(3);
+    BACKWARD(3);
 
     companion object {
       fun from(value: Int): LoopMode {

@@ -284,11 +284,11 @@ open class StyleBoxTexture(
   enum class AxisStretchMode(
     val value: Int
   ) {
-    AXIS_STRETCH_MODE_STRETCH(0),
+    STRETCH(0),
 
-    AXIS_STRETCH_MODE_TILE(1),
+    TILE(1),
 
-    AXIS_STRETCH_MODE_TILE_FIT(2);
+    TILE_FIT(2);
 
     companion object {
       fun from(value: Int): AxisStretchMode {

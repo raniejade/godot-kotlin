@@ -302,13 +302,13 @@ open class _File(
   enum class CompressionMode(
     val value: Int
   ) {
-    COMPRESSION_FASTLZ(0),
+    FASTLZ(0),
 
-    COMPRESSION_DEFLATE(1),
+    DEFLATE(1),
 
-    COMPRESSION_ZSTD(2),
+    ZSTD(2),
 
-    COMPRESSION_GZIP(3);
+    GZIP(3);
 
     companion object {
       fun from(value: Int): CompressionMode {

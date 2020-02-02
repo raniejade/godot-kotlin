@@ -248,13 +248,13 @@ open class Tabs(
   enum class CloseButtonDisplayPolicy(
     val value: Int
   ) {
-    CLOSE_BUTTON_SHOW_NEVER(0),
+    SHOW_NEVER(0),
 
-    CLOSE_BUTTON_SHOW_ACTIVE_ONLY(1),
+    SHOW_ACTIVE_ONLY(1),
 
-    CLOSE_BUTTON_SHOW_ALWAYS(2),
+    SHOW_ALWAYS(2),
 
-    CLOSE_BUTTON_MAX(3);
+    MAX(3);
 
     companion object {
       fun from(value: Int): CloseButtonDisplayPolicy {

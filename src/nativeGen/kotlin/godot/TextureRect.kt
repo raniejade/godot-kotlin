@@ -112,21 +112,21 @@ open class TextureRect(
   enum class StretchMode(
     val value: Int
   ) {
-    STRETCH_SCALE_ON_EXPAND(0),
+    SCALE_ON_EXPAND(0),
 
-    STRETCH_SCALE(1),
+    SCALE(1),
 
-    STRETCH_TILE(2),
+    TILE(2),
 
-    STRETCH_KEEP(3),
+    KEEP(3),
 
-    STRETCH_KEEP_CENTERED(4),
+    KEEP_CENTERED(4),
 
-    STRETCH_KEEP_ASPECT(5),
+    KEEP_ASPECT(5),
 
-    STRETCH_KEEP_ASPECT_CENTERED(6),
+    KEEP_ASPECT_CENTERED(6),
 
-    STRETCH_KEEP_ASPECT_COVERED(7);
+    KEEP_ASPECT_COVERED(7);
 
     companion object {
       fun from(value: Int): StretchMode {

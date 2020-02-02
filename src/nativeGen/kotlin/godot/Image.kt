@@ -366,11 +366,11 @@ open class Image(
   enum class AlphaMode(
     val value: Int
   ) {
-    ALPHA_NONE(0),
+    NONE(0),
 
-    ALPHA_BIT(1),
+    BIT(1),
 
-    ALPHA_BLEND(2);
+    BLEND(2);
 
     companion object {
       fun from(value: Int): AlphaMode {
@@ -387,11 +387,11 @@ open class Image(
   enum class CompressSource(
     val value: Int
   ) {
-    COMPRESS_SOURCE_GENERIC(0),
+    GENERIC(0),
 
-    COMPRESS_SOURCE_SRGB(1),
+    SRGB(1),
 
-    COMPRESS_SOURCE_NORMAL(2);
+    NORMAL(2);
 
     companion object {
       fun from(value: Int): CompressSource {
@@ -433,15 +433,15 @@ open class Image(
   enum class CompressMode(
     val value: Int
   ) {
-    COMPRESS_S3TC(0),
+    S3TC(0),
 
-    COMPRESS_PVRTC2(1),
+    PVRTC2(1),
 
-    COMPRESS_PVRTC4(2),
+    PVRTC4(2),
 
-    COMPRESS_ETC(3),
+    ETC(3),
 
-    COMPRESS_ETC2(4);
+    ETC2(4);
 
     companion object {
       fun from(value: Int): CompressMode {

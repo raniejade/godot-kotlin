@@ -167,17 +167,17 @@ open class ARVRServer(
   enum class TrackerType(
     val value: Int
   ) {
-    TRACKER_CONTROLLER(1),
+    CONTROLLER(1),
 
-    TRACKER_BASESTATION(2),
+    BASESTATION(2),
 
-    TRACKER_ANCHOR(4),
+    ANCHOR(4),
 
-    TRACKER_ANY_KNOWN(127),
+    ANY_KNOWN(127),
 
-    TRACKER_UNKNOWN(128),
+    UNKNOWN(128),
 
-    TRACKER_ANY(255);
+    ANY(255);
 
     companion object {
       fun from(value: Int): TrackerType {

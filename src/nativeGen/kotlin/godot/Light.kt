@@ -240,11 +240,11 @@ open class Light(
   enum class BakeMode(
     val value: Int
   ) {
-    BAKE_DISABLED(0),
+    DISABLED(0),
 
-    BAKE_INDIRECT(1),
+    INDIRECT(1),
 
-    BAKE_ALL(2);
+    ALL(2);
 
     companion object {
       fun from(value: Int): BakeMode {

@@ -362,11 +362,11 @@ open class Tree(
   enum class SelectMode(
     val value: Int
   ) {
-    SELECT_SINGLE(0),
+    SINGLE(0),
 
-    SELECT_ROW(1),
+    ROW(1),
 
-    SELECT_MULTI(2);
+    MULTI(2);
 
     companion object {
       fun from(value: Int): SelectMode {
@@ -383,11 +383,11 @@ open class Tree(
   enum class DropModeFlags(
     val value: Int
   ) {
-    DROP_MODE_DISABLED(0),
+    DISABLED(0),
 
-    DROP_MODE_ON_ITEM(1),
+    ON_ITEM(1),
 
-    DROP_MODE_INBETWEEN(2);
+    INBETWEEN(2);
 
     companion object {
       fun from(value: Int): DropModeFlags {

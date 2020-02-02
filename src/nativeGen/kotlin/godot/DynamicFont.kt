@@ -214,13 +214,13 @@ open class DynamicFont(
   enum class SpacingType(
     val value: Int
   ) {
-    SPACING_TOP(0),
+    TOP(0),
 
-    SPACING_BOTTOM(1),
+    BOTTOM(1),
 
-    SPACING_CHAR(2),
+    CHAR(2),
 
-    SPACING_SPACE(3);
+    SPACE(3);
 
     companion object {
       fun from(value: Int): SpacingType {

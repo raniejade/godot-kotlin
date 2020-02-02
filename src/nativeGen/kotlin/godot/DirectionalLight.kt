@@ -125,11 +125,11 @@ open class DirectionalLight(
   enum class ShadowMode(
     val value: Int
   ) {
-    SHADOW_ORTHOGONAL(0),
+    ORTHOGONAL(0),
 
-    SHADOW_PARALLEL_2_SPLITS(1),
+    PARALLEL_2_SPLITS(1),
 
-    SHADOW_PARALLEL_4_SPLITS(2);
+    PARALLEL_4_SPLITS(2);
 
     companion object {
       fun from(value: Int): ShadowMode {
@@ -146,9 +146,9 @@ open class DirectionalLight(
   enum class ShadowDepthRange(
     val value: Int
   ) {
-    SHADOW_DEPTH_RANGE_STABLE(0),
+    STABLE(0),
 
-    SHADOW_DEPTH_RANGE_OPTIMIZED(1);
+    OPTIMIZED(1);
 
     companion object {
       fun from(value: Int): ShadowDepthRange {

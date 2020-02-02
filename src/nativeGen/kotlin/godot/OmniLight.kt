@@ -74,9 +74,9 @@ open class OmniLight(
   enum class ShadowMode(
     val value: Int
   ) {
-    SHADOW_DUAL_PARABOLOID(0),
+    DUAL_PARABOLOID(0),
 
-    SHADOW_CUBE(1);
+    CUBE(1);
 
     companion object {
       fun from(value: Int): ShadowMode {
@@ -93,9 +93,9 @@ open class OmniLight(
   enum class ShadowDetail(
     val value: Int
   ) {
-    SHADOW_DETAIL_VERTICAL(0),
+    VERTICAL(0),
 
-    SHADOW_DETAIL_HORIZONTAL(1);
+    HORIZONTAL(1);
 
     companion object {
       fun from(value: Int): ShadowDetail {

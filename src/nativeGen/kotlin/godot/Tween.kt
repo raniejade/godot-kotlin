@@ -411,9 +411,9 @@ open class Tween(
   enum class TweenProcessMode(
     val value: Int
   ) {
-    TWEEN_PROCESS_PHYSICS(0),
+    PHYSICS(0),
 
-    TWEEN_PROCESS_IDLE(1);
+    IDLE(1);
 
     companion object {
       fun from(value: Int): TweenProcessMode {
@@ -430,13 +430,13 @@ open class Tween(
   enum class EaseType(
     val value: Int
   ) {
-    EASE_IN(0),
+    IN(0),
 
-    EASE_OUT(1),
+    OUT(1),
 
-    EASE_IN_OUT(2),
+    IN_OUT(2),
 
-    EASE_OUT_IN(3);
+    OUT_IN(3);
 
     companion object {
       fun from(value: Int): EaseType {

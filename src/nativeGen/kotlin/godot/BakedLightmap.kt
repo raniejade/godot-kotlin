@@ -245,11 +245,11 @@ open class BakedLightmap(
   enum class BakeQuality(
     val value: Int
   ) {
-    BAKE_QUALITY_LOW(0),
+    LOW(0),
 
-    BAKE_QUALITY_MEDIUM(1),
+    MEDIUM(1),
 
-    BAKE_QUALITY_HIGH(2);
+    HIGH(2);
 
     companion object {
       fun from(value: Int): BakeQuality {
@@ -266,15 +266,15 @@ open class BakedLightmap(
   enum class BakeError(
     val value: Int
   ) {
-    BAKE_ERROR_OK(0),
+    OK(0),
 
-    BAKE_ERROR_NO_SAVE_PATH(1),
+    NO_SAVE_PATH(1),
 
-    BAKE_ERROR_NO_MESHES(2),
+    NO_MESHES(2),
 
-    BAKE_ERROR_CANT_CREATE_IMAGE(3),
+    CANT_CREATE_IMAGE(3),
 
-    BAKE_ERROR_USER_ABORTED(4);
+    USER_ABORTED(4);
 
     companion object {
       fun from(value: Int): BakeError {
@@ -291,9 +291,9 @@ open class BakedLightmap(
   enum class BakeMode(
     val value: Int
   ) {
-    BAKE_MODE_CONE_TRACE(0),
+    CONE_TRACE(0),
 
-    BAKE_MODE_RAY_TRACE(1);
+    RAY_TRACE(1);
 
     companion object {
       fun from(value: Int): BakeMode {

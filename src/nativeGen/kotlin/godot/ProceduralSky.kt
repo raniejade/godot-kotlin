@@ -357,17 +357,17 @@ open class ProceduralSky(
   enum class TextureSize(
     val value: Int
   ) {
-    TEXTURE_SIZE_256(0),
+    `256`(0),
 
-    TEXTURE_SIZE_512(1),
+    `512`(1),
 
-    TEXTURE_SIZE_1024(2),
+    `1024`(2),
 
-    TEXTURE_SIZE_2048(3),
+    `2048`(3),
 
-    TEXTURE_SIZE_4096(4),
+    `4096`(4),
 
-    TEXTURE_SIZE_MAX(5);
+    MAX(5);
 
     companion object {
       fun from(value: Int): TextureSize {

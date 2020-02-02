@@ -449,11 +449,11 @@ open class RichTextLabel(
   enum class ListType(
     val value: Int
   ) {
-    LIST_NUMBERS(0),
+    NUMBERS(0),
 
-    LIST_LETTERS(1),
+    LETTERS(1),
 
-    LIST_DOTS(2);
+    DOTS(2);
 
     companion object {
       fun from(value: Int): ListType {
@@ -470,43 +470,43 @@ open class RichTextLabel(
   enum class ItemType(
     val value: Int
   ) {
-    ITEM_FRAME(0),
+    FRAME(0),
 
-    ITEM_TEXT(1),
+    TEXT(1),
 
-    ITEM_IMAGE(2),
+    IMAGE(2),
 
-    ITEM_NEWLINE(3),
+    NEWLINE(3),
 
-    ITEM_FONT(4),
+    FONT(4),
 
-    ITEM_COLOR(5),
+    COLOR(5),
 
-    ITEM_UNDERLINE(6),
+    UNDERLINE(6),
 
-    ITEM_STRIKETHROUGH(7),
+    STRIKETHROUGH(7),
 
-    ITEM_ALIGN(8),
+    ALIGN(8),
 
-    ITEM_INDENT(9),
+    INDENT(9),
 
-    ITEM_LIST(10),
+    LIST(10),
 
-    ITEM_TABLE(11),
+    TABLE(11),
 
-    ITEM_FADE(12),
+    FADE(12),
 
-    ITEM_SHAKE(13),
+    SHAKE(13),
 
-    ITEM_WAVE(14),
+    WAVE(14),
 
-    ITEM_TORNADO(15),
+    TORNADO(15),
 
-    ITEM_RAINBOW(16),
+    RAINBOW(16),
 
-    ITEM_META(17),
+    META(17),
 
-    ITEM_CUSTOMFX(18);
+    CUSTOMFX(18);
 
     companion object {
       fun from(value: Int): ItemType {

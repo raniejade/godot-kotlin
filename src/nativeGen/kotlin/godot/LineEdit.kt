@@ -402,21 +402,21 @@ open class LineEdit(
   enum class MenuItems(
     val value: Int
   ) {
-    MENU_CUT(0),
+    CUT(0),
 
-    MENU_COPY(1),
+    COPY(1),
 
-    MENU_PASTE(2),
+    PASTE(2),
 
-    MENU_CLEAR(3),
+    CLEAR(3),
 
-    MENU_SELECT_ALL(4),
+    SELECT_ALL(4),
 
-    MENU_UNDO(5),
+    UNDO(5),
 
-    MENU_REDO(6),
+    REDO(6),
 
-    MENU_MAX(7);
+    MAX(7);
 
     companion object {
       fun from(value: Int): MenuItems {

@@ -36,9 +36,9 @@ open class AudioEffectSpectrumAnalyzerInstance(
   enum class MagnitudeMode(
     val value: Int
   ) {
-    MAGNITUDE_AVERAGE(0),
+    AVERAGE(0),
 
-    MAGNITUDE_MAX(1);
+    MAX(1);
 
     companion object {
       fun from(value: Int): MagnitudeMode {

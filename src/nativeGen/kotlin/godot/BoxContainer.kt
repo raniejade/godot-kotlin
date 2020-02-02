@@ -45,11 +45,11 @@ open class BoxContainer(
   enum class AlignMode(
     val value: Int
   ) {
-    ALIGN_BEGIN(0),
+    BEGIN(0),
 
-    ALIGN_CENTER(1),
+    CENTER(1),
 
-    ALIGN_END(2);
+    END(2);
 
     companion object {
       fun from(value: Int): AlignMode {

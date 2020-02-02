@@ -232,9 +232,9 @@ open class BaseButton(
   enum class ActionMode(
     val value: Int
   ) {
-    ACTION_MODE_BUTTON_PRESS(0),
+    BUTTON_PRESS(0),
 
-    ACTION_MODE_BUTTON_RELEASE(1);
+    BUTTON_RELEASE(1);
 
     companion object {
       fun from(value: Int): ActionMode {
@@ -251,15 +251,15 @@ open class BaseButton(
   enum class DrawMode(
     val value: Int
   ) {
-    DRAW_NORMAL(0),
+    NORMAL(0),
 
-    DRAW_PRESSED(1),
+    PRESSED(1),
 
-    DRAW_HOVER(2),
+    HOVER(2),
 
-    DRAW_DISABLED(3),
+    DISABLED(3),
 
-    DRAW_HOVER_PRESSED(4);
+    HOVER_PRESSED(4);
 
     companion object {
       fun from(value: Int): DrawMode {

@@ -3094,9 +3094,9 @@ open class VisualServer(
   enum class ReflectionProbeUpdateMode(
     val value: Int
   ) {
-    REFLECTION_PROBE_UPDATE_ONCE(0),
+    ONCE(0),
 
-    REFLECTION_PROBE_UPDATE_ALWAYS(1);
+    ALWAYS(1);
 
     companion object {
       fun from(value: Int): ReflectionProbeUpdateMode {
@@ -3113,9 +3113,9 @@ open class VisualServer(
   enum class LightDirectionalShadowDepthRangeMode(
     val value: Int
   ) {
-    LIGHT_DIRECTIONAL_SHADOW_DEPTH_RANGE_STABLE(0),
+    STABLE(0),
 
-    LIGHT_DIRECTIONAL_SHADOW_DEPTH_RANGE_OPTIMIZED(1);
+    OPTIMIZED(1);
 
     companion object {
       fun from(value: Int): LightDirectionalShadowDepthRangeMode {
@@ -3132,9 +3132,9 @@ open class VisualServer(
   enum class BlendShapeMode(
     val value: Int
   ) {
-    BLEND_SHAPE_MODE_NORMALIZED(0),
+    NORMALIZED(0),
 
-    BLEND_SHAPE_MODE_RELATIVE(1);
+    RELATIVE(1);
 
     companion object {
       fun from(value: Int): BlendShapeMode {
@@ -3151,21 +3151,21 @@ open class VisualServer(
   enum class PrimitiveType(
     val value: Int
   ) {
-    PRIMITIVE_POINTS(0),
+    POINTS(0),
 
-    PRIMITIVE_LINES(1),
+    LINES(1),
 
-    PRIMITIVE_LINE_STRIP(2),
+    LINE_STRIP(2),
 
-    PRIMITIVE_LINE_LOOP(3),
+    LINE_LOOP(3),
 
-    PRIMITIVE_TRIANGLES(4),
+    TRIANGLES(4),
 
-    PRIMITIVE_TRIANGLE_STRIP(5),
+    TRIANGLE_STRIP(5),
 
-    PRIMITIVE_TRIANGLE_FAN(6),
+    TRIANGLE_FAN(6),
 
-    PRIMITIVE_MAX(7);
+    MAX(7);
 
     companion object {
       fun from(value: Int): PrimitiveType {
@@ -3182,13 +3182,13 @@ open class VisualServer(
   enum class TextureType(
     val value: Int
   ) {
-    TEXTURE_TYPE_2D(0),
+    `2D`(0),
 
-    TEXTURE_TYPE_CUBEMAP(1),
+    CUBEMAP(1),
 
-    TEXTURE_TYPE_2D_ARRAY(2),
+    `2D_ARRAY`(2),
 
-    TEXTURE_TYPE_3D(3);
+    `3D`(3);
 
     companion object {
       fun from(value: Int): TextureType {
@@ -3282,11 +3282,11 @@ open class VisualServer(
   enum class NinePatchAxisMode(
     val value: Int
   ) {
-    NINE_PATCH_STRETCH(0),
+    STRETCH(0),
 
-    NINE_PATCH_TILE(1),
+    TILE(1),
 
-    NINE_PATCH_TILE_FIT(2);
+    TILE_FIT(2);
 
     companion object {
       fun from(value: Int): NinePatchAxisMode {
@@ -3303,19 +3303,19 @@ open class VisualServer(
   enum class ViewportRenderInfo(
     val value: Int
   ) {
-    VIEWPORT_RENDER_INFO_OBJECTS_IN_FRAME(0),
+    OBJECTS_IN_FRAME(0),
 
-    VIEWPORT_RENDER_INFO_VERTICES_IN_FRAME(1),
+    VERTICES_IN_FRAME(1),
 
-    VIEWPORT_RENDER_INFO_MATERIAL_CHANGES_IN_FRAME(2),
+    MATERIAL_CHANGES_IN_FRAME(2),
 
-    VIEWPORT_RENDER_INFO_SHADER_CHANGES_IN_FRAME(3),
+    SHADER_CHANGES_IN_FRAME(3),
 
-    VIEWPORT_RENDER_INFO_SURFACE_CHANGES_IN_FRAME(4),
+    SURFACE_CHANGES_IN_FRAME(4),
 
-    VIEWPORT_RENDER_INFO_DRAW_CALLS_IN_FRAME(5),
+    DRAW_CALLS_IN_FRAME(5),
 
-    VIEWPORT_RENDER_INFO_MAX(6);
+    MAX(6);
 
     companion object {
       fun from(value: Int): ViewportRenderInfo {
@@ -3332,11 +3332,11 @@ open class VisualServer(
   enum class ViewportClearMode(
     val value: Int
   ) {
-    VIEWPORT_CLEAR_ALWAYS(0),
+    ALWAYS(0),
 
-    VIEWPORT_CLEAR_NEVER(1),
+    NEVER(1),
 
-    VIEWPORT_CLEAR_ONLY_NEXT_FRAME(2);
+    ONLY_NEXT_FRAME(2);
 
     companion object {
       fun from(value: Int): ViewportClearMode {
@@ -3353,9 +3353,9 @@ open class VisualServer(
   enum class LightOmniShadowDetail(
     val value: Int
   ) {
-    LIGHT_OMNI_SHADOW_DETAIL_VERTICAL(0),
+    VERTICAL(0),
 
-    LIGHT_OMNI_SHADOW_DETAIL_HORIZONTAL(1);
+    HORIZONTAL(1);
 
     companion object {
       fun from(value: Int): LightOmniShadowDetail {
@@ -3372,13 +3372,13 @@ open class VisualServer(
   enum class ShaderMode(
     val value: Int
   ) {
-    SHADER_SPATIAL(0),
+    SPATIAL(0),
 
-    SHADER_CANVAS_ITEM(1),
+    CANVAS_ITEM(1),
 
-    SHADER_PARTICLES(2),
+    PARTICLES(2),
 
-    SHADER_MAX(3);
+    MAX(3);
 
     companion object {
       fun from(value: Int): ShaderMode {
@@ -3395,9 +3395,9 @@ open class VisualServer(
   enum class MultimeshTransformFormat(
     val value: Int
   ) {
-    MULTIMESH_TRANSFORM_2D(0),
+    `2D`(0),
 
-    MULTIMESH_TRANSFORM_3D(1);
+    `3D`(1);
 
     companion object {
       fun from(value: Int): MultimeshTransformFormat {
@@ -3414,13 +3414,13 @@ open class VisualServer(
   enum class ShadowCastingSetting(
     val value: Int
   ) {
-    SHADOW_CASTING_SETTING_OFF(0),
+    OFF(0),
 
-    SHADOW_CASTING_SETTING_ON(1),
+    ON(1),
 
-    SHADOW_CASTING_SETTING_DOUBLE_SIDED(2),
+    DOUBLE_SIDED(2),
 
-    SHADOW_CASTING_SETTING_SHADOWS_ONLY(3);
+    SHADOWS_ONLY(3);
 
     companion object {
       fun from(value: Int): ShadowCastingSetting {
@@ -3437,13 +3437,13 @@ open class VisualServer(
   enum class ViewportDebugDraw(
     val value: Int
   ) {
-    VIEWPORT_DEBUG_DRAW_DISABLED(0),
+    DISABLED(0),
 
-    VIEWPORT_DEBUG_DRAW_UNSHADED(1),
+    UNSHADED(1),
 
-    VIEWPORT_DEBUG_DRAW_OVERDRAW(2),
+    OVERDRAW(2),
 
-    VIEWPORT_DEBUG_DRAW_WIREFRAME(3);
+    WIREFRAME(3);
 
     companion object {
       fun from(value: Int): ViewportDebugDraw {
@@ -3460,13 +3460,13 @@ open class VisualServer(
   enum class ViewportUsage(
     val value: Int
   ) {
-    VIEWPORT_USAGE_2D(0),
+    `2D`(0),
 
-    VIEWPORT_USAGE_2D_NO_SAMPLING(1),
+    `2D_NO_SAMPLING`(1),
 
-    VIEWPORT_USAGE_3D(2),
+    `3D`(2),
 
-    VIEWPORT_USAGE_3D_NO_EFFECTS(3);
+    `3D_NO_EFFECTS`(3);
 
     companion object {
       fun from(value: Int): ViewportUsage {
@@ -3512,11 +3512,11 @@ open class VisualServer(
   enum class MultimeshCustomDataFormat(
     val value: Int
   ) {
-    MULTIMESH_CUSTOM_DATA_NONE(0),
+    NONE(0),
 
-    MULTIMESH_CUSTOM_DATA_8BIT(1),
+    `8BIT`(1),
 
-    MULTIMESH_CUSTOM_DATA_FLOAT(2);
+    FLOAT(2);
 
     companion object {
       fun from(value: Int): MultimeshCustomDataFormat {
@@ -3533,9 +3533,9 @@ open class VisualServer(
   enum class LightOmniShadowMode(
     val value: Int
   ) {
-    LIGHT_OMNI_SHADOW_DUAL_PARABOLOID(0),
+    DUAL_PARABOLOID(0),
 
-    LIGHT_OMNI_SHADOW_CUBE(1);
+    CUBE(1);
 
     companion object {
       fun from(value: Int): LightOmniShadowMode {
@@ -3552,21 +3552,21 @@ open class VisualServer(
   enum class TextureFlags(
     val value: Int
   ) {
-    TEXTURE_FLAG_MIPMAPS(1),
+    FLAG_MIPMAPS(1),
 
-    TEXTURE_FLAG_REPEAT(2),
+    FLAG_REPEAT(2),
 
-    TEXTURE_FLAG_FILTER(4),
+    FLAG_FILTER(4),
 
-    TEXTURE_FLAGS_DEFAULT(7),
+    DEFAULT(7),
 
-    TEXTURE_FLAG_ANISOTROPIC_FILTER(8),
+    FLAG_ANISOTROPIC_FILTER(8),
 
-    TEXTURE_FLAG_CONVERT_TO_LINEAR(16),
+    FLAG_CONVERT_TO_LINEAR(16),
 
-    TEXTURE_FLAG_MIRRORED_REPEAT(32),
+    FLAG_MIRRORED_REPEAT(32),
 
-    TEXTURE_FLAG_USED_FOR_STREAMING(2048);
+    FLAG_USED_FOR_STREAMING(2048);
 
     companion object {
       fun from(value: Int): TextureFlags {
@@ -3602,27 +3602,27 @@ open class VisualServer(
   enum class InstanceType(
     val value: Int
   ) {
-    INSTANCE_NONE(0),
+    NONE(0),
 
-    INSTANCE_MESH(1),
+    MESH(1),
 
-    INSTANCE_MULTIMESH(2),
+    MULTIMESH(2),
 
-    INSTANCE_IMMEDIATE(3),
+    IMMEDIATE(3),
 
-    INSTANCE_PARTICLES(4),
+    PARTICLES(4),
 
-    INSTANCE_LIGHT(5),
+    LIGHT(5),
 
-    INSTANCE_REFLECTION_PROBE(6),
+    REFLECTION_PROBE(6),
 
-    INSTANCE_GI_PROBE(7),
+    GI_PROBE(7),
 
-    INSTANCE_LIGHTMAP_CAPTURE(8),
+    LIGHTMAP_CAPTURE(8),
 
-    INSTANCE_MAX(9),
+    MAX(9),
 
-    INSTANCE_GEOMETRY_MASK(30);
+    GEOMETRY_MASK(30);
 
     companion object {
       fun from(value: Int): InstanceType {
@@ -3708,11 +3708,11 @@ open class VisualServer(
   enum class MultimeshColorFormat(
     val value: Int
   ) {
-    MULTIMESH_COLOR_NONE(0),
+    NONE(0),
 
-    MULTIMESH_COLOR_8BIT(1),
+    `8BIT`(1),
 
-    MULTIMESH_COLOR_FLOAT(2);
+    FLOAT(2);
 
     companion object {
       fun from(value: Int): MultimeshColorFormat {
@@ -3729,17 +3729,17 @@ open class VisualServer(
   enum class CanvasLightShadowFilter(
     val value: Int
   ) {
-    CANVAS_LIGHT_FILTER_NONE(0),
+    FILTER_NONE(0),
 
-    CANVAS_LIGHT_FILTER_PCF3(1),
+    FILTER_PCF3(1),
 
-    CANVAS_LIGHT_FILTER_PCF5(2),
+    FILTER_PCF5(2),
 
-    CANVAS_LIGHT_FILTER_PCF7(3),
+    FILTER_PCF7(3),
 
-    CANVAS_LIGHT_FILTER_PCF9(4),
+    FILTER_PCF9(4),
 
-    CANVAS_LIGHT_FILTER_PCF13(5);
+    FILTER_PCF13(5);
 
     companion object {
       fun from(value: Int): CanvasLightShadowFilter {
@@ -3756,13 +3756,13 @@ open class VisualServer(
   enum class ScenarioDebugMode(
     val value: Int
   ) {
-    SCENARIO_DEBUG_DISABLED(0),
+    DISABLED(0),
 
-    SCENARIO_DEBUG_WIREFRAME(1),
+    WIREFRAME(1),
 
-    SCENARIO_DEBUG_OVERDRAW(2),
+    OVERDRAW(2),
 
-    SCENARIO_DEBUG_SHADELESS(3);
+    SHADELESS(3);
 
     companion object {
       fun from(value: Int): ScenarioDebugMode {
@@ -3779,13 +3779,13 @@ open class VisualServer(
   enum class ViewportUpdateMode(
     val value: Int
   ) {
-    VIEWPORT_UPDATE_DISABLED(0),
+    DISABLED(0),
 
-    VIEWPORT_UPDATE_ONCE(1),
+    ONCE(1),
 
-    VIEWPORT_UPDATE_WHEN_VISIBLE(2),
+    WHEN_VISIBLE(2),
 
-    VIEWPORT_UPDATE_ALWAYS(3);
+    ALWAYS(3);
 
     companion object {
       fun from(value: Int): ViewportUpdateMode {
@@ -3802,47 +3802,47 @@ open class VisualServer(
   enum class ArrayFormat(
     val value: Int
   ) {
-    ARRAY_FORMAT_VERTEX(1),
+    VERTEX(1),
 
-    ARRAY_FORMAT_NORMAL(2),
+    NORMAL(2),
 
-    ARRAY_FORMAT_TANGENT(4),
+    TANGENT(4),
 
-    ARRAY_FORMAT_COLOR(8),
+    COLOR(8),
 
-    ARRAY_FORMAT_TEX_UV(16),
+    TEX_UV(16),
 
-    ARRAY_FORMAT_TEX_UV2(32),
+    TEX_UV2(32),
 
-    ARRAY_FORMAT_BONES(64),
+    BONES(64),
 
-    ARRAY_FORMAT_WEIGHTS(128),
+    WEIGHTS(128),
 
-    ARRAY_FORMAT_INDEX(256),
+    INDEX(256),
 
-    ARRAY_COMPRESS_VERTEX(512),
+    COMPRESS_VERTEX(512),
 
-    ARRAY_COMPRESS_NORMAL(1024),
+    COMPRESS_NORMAL(1024),
 
-    ARRAY_COMPRESS_TANGENT(2048),
+    COMPRESS_TANGENT(2048),
 
-    ARRAY_COMPRESS_COLOR(4096),
+    COMPRESS_COLOR(4096),
 
-    ARRAY_COMPRESS_TEX_UV(8192),
+    COMPRESS_TEX_UV(8192),
 
-    ARRAY_COMPRESS_TEX_UV2(16384),
+    COMPRESS_TEX_UV2(16384),
 
-    ARRAY_COMPRESS_BONES(32768),
+    COMPRESS_BONES(32768),
 
-    ARRAY_COMPRESS_WEIGHTS(65536),
+    COMPRESS_WEIGHTS(65536),
 
-    ARRAY_COMPRESS_DEFAULT(97280),
+    COMPRESS_DEFAULT(97280),
 
-    ARRAY_COMPRESS_INDEX(131072),
+    COMPRESS_INDEX(131072),
 
-    ARRAY_FLAG_USE_2D_VERTICES(262144),
+    FLAG_USE_2D_VERTICES(262144),
 
-    ARRAY_FLAG_USE_16_BIT_BONES(524288);
+    FLAG_USE_16_BIT_BONES(524288);
 
     companion object {
       fun from(value: Int): ArrayFormat {
@@ -3859,11 +3859,11 @@ open class VisualServer(
   enum class ParticlesDrawOrder(
     val value: Int
   ) {
-    PARTICLES_DRAW_ORDER_INDEX(0),
+    INDEX(0),
 
-    PARTICLES_DRAW_ORDER_LIFETIME(1),
+    LIFETIME(1),
 
-    PARTICLES_DRAW_ORDER_VIEW_DEPTH(2);
+    VIEW_DEPTH(2);
 
     companion object {
       fun from(value: Int): ParticlesDrawOrder {
@@ -3880,13 +3880,13 @@ open class VisualServer(
   enum class CanvasLightMode(
     val value: Int
   ) {
-    CANVAS_LIGHT_MODE_ADD(0),
+    ADD(0),
 
-    CANVAS_LIGHT_MODE_SUB(1),
+    SUB(1),
 
-    CANVAS_LIGHT_MODE_MIX(2),
+    MIX(2),
 
-    CANVAS_LIGHT_MODE_MASK(3);
+    MASK(3);
 
     companion object {
       fun from(value: Int): CanvasLightMode {
@@ -3903,11 +3903,11 @@ open class VisualServer(
   enum class LightDirectionalShadowMode(
     val value: Int
   ) {
-    LIGHT_DIRECTIONAL_SHADOW_ORTHOGONAL(0),
+    ORTHOGONAL(0),
 
-    LIGHT_DIRECTIONAL_SHADOW_PARALLEL_2_SPLITS(1),
+    PARALLEL_2_SPLITS(1),
 
-    LIGHT_DIRECTIONAL_SHADOW_PARALLEL_4_SPLITS(2);
+    PARALLEL_4_SPLITS(2);
 
     companion object {
       fun from(value: Int): LightDirectionalShadowMode {
@@ -3924,35 +3924,35 @@ open class VisualServer(
   enum class LightParam(
     val value: Int
   ) {
-    LIGHT_PARAM_ENERGY(0),
+    ENERGY(0),
 
-    LIGHT_PARAM_SPECULAR(2),
+    SPECULAR(2),
 
-    LIGHT_PARAM_RANGE(3),
+    RANGE(3),
 
-    LIGHT_PARAM_ATTENUATION(4),
+    ATTENUATION(4),
 
-    LIGHT_PARAM_SPOT_ANGLE(5),
+    SPOT_ANGLE(5),
 
-    LIGHT_PARAM_SPOT_ATTENUATION(6),
+    SPOT_ATTENUATION(6),
 
-    LIGHT_PARAM_CONTACT_SHADOW_SIZE(7),
+    CONTACT_SHADOW_SIZE(7),
 
-    LIGHT_PARAM_SHADOW_MAX_DISTANCE(8),
+    SHADOW_MAX_DISTANCE(8),
 
-    LIGHT_PARAM_SHADOW_SPLIT_1_OFFSET(9),
+    SHADOW_SPLIT_1_OFFSET(9),
 
-    LIGHT_PARAM_SHADOW_SPLIT_2_OFFSET(10),
+    SHADOW_SPLIT_2_OFFSET(10),
 
-    LIGHT_PARAM_SHADOW_SPLIT_3_OFFSET(11),
+    SHADOW_SPLIT_3_OFFSET(11),
 
-    LIGHT_PARAM_SHADOW_NORMAL_BIAS(12),
+    SHADOW_NORMAL_BIAS(12),
 
-    LIGHT_PARAM_SHADOW_BIAS(13),
+    SHADOW_BIAS(13),
 
-    LIGHT_PARAM_SHADOW_BIAS_SPLIT_SCALE(14),
+    SHADOW_BIAS_SPLIT_SCALE(14),
 
-    LIGHT_PARAM_MAX(15);
+    MAX(15);
 
     companion object {
       fun from(value: Int): LightParam {
@@ -3969,25 +3969,25 @@ open class VisualServer(
   enum class ArrayType(
     val value: Int
   ) {
-    ARRAY_VERTEX(0),
+    VERTEX(0),
 
-    ARRAY_NORMAL(1),
+    NORMAL(1),
 
-    ARRAY_TANGENT(2),
+    TANGENT(2),
 
-    ARRAY_COLOR(3),
+    COLOR(3),
 
-    ARRAY_TEX_UV(4),
+    TEX_UV(4),
 
-    ARRAY_TEX_UV2(5),
+    TEX_UV2(5),
 
-    ARRAY_BONES(6),
+    BONES(6),
 
-    ARRAY_WEIGHTS(7),
+    WEIGHTS(7),
 
-    ARRAY_INDEX(8),
+    INDEX(8),
 
-    ARRAY_MAX(9);
+    MAX(9);
 
     companion object {
       fun from(value: Int): ArrayType {
@@ -4004,11 +4004,11 @@ open class VisualServer(
   enum class CanvasOccluderPolygonCullMode(
     val value: Int
   ) {
-    CANVAS_OCCLUDER_POLYGON_CULL_DISABLED(0),
+    DISABLED(0),
 
-    CANVAS_OCCLUDER_POLYGON_CULL_CLOCKWISE(1),
+    CLOCKWISE(1),
 
-    CANVAS_OCCLUDER_POLYGON_CULL_COUNTER_CLOCKWISE(2);
+    COUNTER_CLOCKWISE(2);
 
     companion object {
       fun from(value: Int): CanvasOccluderPolygonCullMode {
@@ -4025,11 +4025,11 @@ open class VisualServer(
   enum class InstanceFlags(
     val value: Int
   ) {
-    INSTANCE_FLAG_USE_BAKED_LIGHT(0),
+    FLAG_USE_BAKED_LIGHT(0),
 
-    INSTANCE_FLAG_DRAW_NEXT_FRAME_IF_VISIBLE(1),
+    FLAG_DRAW_NEXT_FRAME_IF_VISIBLE(1),
 
-    INSTANCE_FLAG_MAX(2);
+    FLAG_MAX(2);
 
     companion object {
       fun from(value: Int): InstanceFlags {
@@ -4046,19 +4046,19 @@ open class VisualServer(
   enum class ViewportMSAA(
     val value: Int
   ) {
-    VIEWPORT_MSAA_DISABLED(0),
+    DISABLED(0),
 
-    VIEWPORT_MSAA_2X(1),
+    `2X`(1),
 
-    VIEWPORT_MSAA_4X(2),
+    `4X`(2),
 
-    VIEWPORT_MSAA_8X(3),
+    `8X`(3),
 
-    VIEWPORT_MSAA_16X(4),
+    `16X`(4),
 
-    VIEWPORT_MSAA_EXT_2X(5),
+    EXT_2X(5),
 
-    VIEWPORT_MSAA_EXT_4X(6);
+    EXT_4X(6);
 
     companion object {
       fun from(value: Int): ViewportMSAA {
@@ -4075,11 +4075,11 @@ open class VisualServer(
   enum class LightType(
     val value: Int
   ) {
-    LIGHT_DIRECTIONAL(0),
+    DIRECTIONAL(0),
 
-    LIGHT_OMNI(1),
+    OMNI(1),
 
-    LIGHT_SPOT(2);
+    SPOT(2);
 
     companion object {
       fun from(value: Int): LightType {

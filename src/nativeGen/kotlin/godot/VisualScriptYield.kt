@@ -58,11 +58,11 @@ open class VisualScriptYield(
   enum class YieldMode(
     val value: Int
   ) {
-    YIELD_FRAME(1),
+    FRAME(1),
 
-    YIELD_PHYSICS_FRAME(2),
+    PHYSICS_FRAME(2),
 
-    YIELD_WAIT(3);
+    WAIT(3);
 
     companion object {
       fun from(value: Int): YieldMode {

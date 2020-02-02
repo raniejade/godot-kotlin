@@ -45,11 +45,11 @@ open class PackedScene(
   enum class GenEditState(
     val value: Int
   ) {
-    GEN_EDIT_STATE_DISABLED(0),
+    DISABLED(0),
 
-    GEN_EDIT_STATE_INSTANCE(1),
+    INSTANCE(1),
 
-    GEN_EDIT_STATE_MAIN(2);
+    MAIN(2);
 
     companion object {
       fun from(value: Int): GenEditState {
