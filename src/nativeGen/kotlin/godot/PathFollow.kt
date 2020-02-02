@@ -172,16 +172,6 @@ open class PathFollow(
   }
 
   companion object {
-    val ROTATION_NONE: Int = 0
-
-    val ROTATION_ORIENTED: Int = 4
-
-    val ROTATION_XY: Int = 2
-
-    val ROTATION_XYZ: Int = 3
-
-    val ROTATION_Y: Int = 1
-
     fun new(): PathFollow = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PathFollow".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PathFollow" }

@@ -121,24 +121,6 @@ open class VisualShaderNodeTexture(
   }
 
   companion object {
-    val SOURCE_2D_NORMAL: Int = 3
-
-    val SOURCE_2D_TEXTURE: Int = 2
-
-    val SOURCE_DEPTH: Int = 4
-
-    val SOURCE_PORT: Int = 5
-
-    val SOURCE_SCREEN: Int = 1
-
-    val SOURCE_TEXTURE: Int = 0
-
-    val TYPE_COLOR: Int = 1
-
-    val TYPE_DATA: Int = 0
-
-    val TYPE_NORMALMAP: Int = 2
-
     fun new(): VisualShaderNodeTexture = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTexture".cstr.ptr)

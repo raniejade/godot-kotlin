@@ -60,14 +60,6 @@ open class VisualShaderNodeTransformMult(
   }
 
   companion object {
-    val OP_AxB: Int = 0
-
-    val OP_AxB_COMP: Int = 2
-
-    val OP_BxA: Int = 1
-
-    val OP_BxA_COMP: Int = 3
-
     fun new(): VisualShaderNodeTransformMult = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformMult".cstr.ptr)

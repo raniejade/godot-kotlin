@@ -87,14 +87,6 @@ open class CameraServer(
           handle
         )
       }
-    val FEED_CBCR_IMAGE: Int = 1
-
-    val FEED_RGBA_IMAGE: Int = 0
-
-    val FEED_YCBCR_IMAGE: Int = 0
-
-    val FEED_Y_IMAGE: Int = 0
-
     /**
      * Container for method_bind pointers for CameraServer
      */

@@ -218,20 +218,6 @@ open class GeometryInstance(
   }
 
   companion object {
-    val FLAG_DRAW_NEXT_FRAME_IF_VISIBLE: Int = 1
-
-    val FLAG_MAX: Int = 2
-
-    val FLAG_USE_BAKED_LIGHT: Int = 0
-
-    val SHADOW_CASTING_SETTING_DOUBLE_SIDED: Int = 2
-
-    val SHADOW_CASTING_SETTING_OFF: Int = 0
-
-    val SHADOW_CASTING_SETTING_ON: Int = 1
-
-    val SHADOW_CASTING_SETTING_SHADOWS_ONLY: Int = 3
-
     /**
      * Container for method_bind pointers for GeometryInstance
      */

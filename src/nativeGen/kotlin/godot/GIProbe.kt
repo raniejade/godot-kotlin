@@ -248,16 +248,6 @@ open class GIProbe(
   }
 
   companion object {
-    val SUBDIV_128: Int = 1
-
-    val SUBDIV_256: Int = 2
-
-    val SUBDIV_512: Int = 3
-
-    val SUBDIV_64: Int = 0
-
-    val SUBDIV_MAX: Int = 4
-
     fun new(): GIProbe = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GIProbe".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GIProbe" }

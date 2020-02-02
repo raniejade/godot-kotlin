@@ -173,10 +173,6 @@ open class ClippedCamera(
   }
 
   companion object {
-    val CLIP_PROCESS_IDLE: Int = 1
-
-    val CLIP_PROCESS_PHYSICS: Int = 0
-
     fun new(): ClippedCamera = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ClippedCamera".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ClippedCamera" }

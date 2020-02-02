@@ -79,14 +79,6 @@ open class VisualScriptInputAction(
   }
 
   companion object {
-    val MODE_JUST_PRESSED: Int = 2
-
-    val MODE_JUST_RELEASED: Int = 3
-
-    val MODE_PRESSED: Int = 0
-
-    val MODE_RELEASED: Int = 1
-
     fun new(): VisualScriptInputAction = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptInputAction".cstr.ptr)

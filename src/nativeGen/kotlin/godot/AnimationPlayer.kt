@@ -419,16 +419,6 @@ open class AnimationPlayer(
   }
 
   companion object {
-    val ANIMATION_METHOD_CALL_DEFERRED: Int = 0
-
-    val ANIMATION_METHOD_CALL_IMMEDIATE: Int = 1
-
-    val ANIMATION_PROCESS_IDLE: Int = 1
-
-    val ANIMATION_PROCESS_MANUAL: Int = 2
-
-    val ANIMATION_PROCESS_PHYSICS: Int = 0
-
     fun new(): AnimationPlayer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationPlayer".cstr.ptr)

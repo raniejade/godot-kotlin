@@ -84,12 +84,6 @@ open class Shader(
   }
 
   companion object {
-    val MODE_CANVAS_ITEM: Int = 1
-
-    val MODE_PARTICLES: Int = 2
-
-    val MODE_SPATIAL: Int = 0
-
     fun new(): Shader = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Shader".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Shader" }

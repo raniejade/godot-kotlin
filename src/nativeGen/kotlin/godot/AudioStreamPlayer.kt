@@ -203,12 +203,6 @@ open class AudioStreamPlayer(
   }
 
   companion object {
-    val MIX_TARGET_CENTER: Int = 2
-
-    val MIX_TARGET_STEREO: Int = 0
-
-    val MIX_TARGET_SURROUND: Int = 1
-
     fun new(): AudioStreamPlayer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamPlayer".cstr.ptr)

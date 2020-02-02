@@ -500,14 +500,6 @@ open class RigidBody(
   }
 
   companion object {
-    val MODE_CHARACTER: Int = 2
-
-    val MODE_KINEMATIC: Int = 3
-
-    val MODE_RIGID: Int = 0
-
-    val MODE_STATIC: Int = 1
-
     fun new(): RigidBody = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RigidBody".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RigidBody" }

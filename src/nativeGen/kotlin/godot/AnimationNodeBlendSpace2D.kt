@@ -1370,12 +1370,6 @@ open class AnimationNodeBlendSpace2D(
   }
 
   companion object {
-    val BLEND_MODE_DISCRETE: Int = 1
-
-    val BLEND_MODE_DISCRETE_CARRY: Int = 2
-
-    val BLEND_MODE_INTERPOLATED: Int = 0
-
     fun new(): AnimationNodeBlendSpace2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlendSpace2D".cstr.ptr)

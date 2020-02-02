@@ -492,14 +492,6 @@ open class Camera2D(
   }
 
   companion object {
-    val ANCHOR_MODE_DRAG_CENTER: Int = 1
-
-    val ANCHOR_MODE_FIXED_TOP_LEFT: Int = 0
-
-    val CAMERA2D_PROCESS_IDLE: Int = 1
-
-    val CAMERA2D_PROCESS_PHYSICS: Int = 0
-
     fun new(): Camera2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Camera2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Camera2D" }

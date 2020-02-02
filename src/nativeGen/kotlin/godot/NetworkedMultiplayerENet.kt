@@ -208,16 +208,6 @@ open class NetworkedMultiplayerENet(
   }
 
   companion object {
-    val COMPRESS_FASTLZ: Int = 2
-
-    val COMPRESS_NONE: Int = 0
-
-    val COMPRESS_RANGE_CODER: Int = 1
-
-    val COMPRESS_ZLIB: Int = 3
-
-    val COMPRESS_ZSTD: Int = 4
-
     fun new(): NetworkedMultiplayerENet = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NetworkedMultiplayerENet".cstr.ptr)

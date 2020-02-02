@@ -106,12 +106,6 @@ open class OccluderPolygon2D(
   }
 
   companion object {
-    val CULL_CLOCKWISE: Int = 1
-
-    val CULL_COUNTER_CLOCKWISE: Int = 2
-
-    val CULL_DISABLED: Int = 0
-
     fun new(): OccluderPolygon2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("OccluderPolygon2D".cstr.ptr)

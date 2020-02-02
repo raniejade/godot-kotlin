@@ -110,14 +110,6 @@ open class OmniLight(
   }
 
   companion object {
-    val SHADOW_CUBE: Int = 1
-
-    val SHADOW_DETAIL_HORIZONTAL: Int = 1
-
-    val SHADOW_DETAIL_VERTICAL: Int = 0
-
-    val SHADOW_DUAL_PARABOLOID: Int = 0
-
     fun new(): OmniLight = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("OmniLight".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for OmniLight" }

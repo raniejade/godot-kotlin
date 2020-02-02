@@ -127,18 +127,6 @@ open class WebRTCPeerConnection(
   }
 
   companion object {
-    val STATE_CLOSED: Int = 5
-
-    val STATE_CONNECTED: Int = 2
-
-    val STATE_CONNECTING: Int = 1
-
-    val STATE_DISCONNECTED: Int = 3
-
-    val STATE_FAILED: Int = 4
-
-    val STATE_NEW: Int = 0
-
     fun new(): WebRTCPeerConnection = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCPeerConnection".cstr.ptr)

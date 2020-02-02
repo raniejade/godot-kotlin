@@ -592,36 +592,6 @@ open class TileSet(
   }
 
   companion object {
-    val ATLAS_TILE: Int = 2
-
-    val AUTO_TILE: Int = 1
-
-    val BIND_BOTTOM: Int = 128
-
-    val BIND_BOTTOMLEFT: Int = 64
-
-    val BIND_BOTTOMRIGHT: Int = 256
-
-    val BIND_CENTER: Int = 16
-
-    val BIND_LEFT: Int = 8
-
-    val BIND_RIGHT: Int = 32
-
-    val BIND_TOP: Int = 2
-
-    val BIND_TOPLEFT: Int = 1
-
-    val BIND_TOPRIGHT: Int = 4
-
-    val BITMASK_2X2: Int = 0
-
-    val BITMASK_3X3: Int = 2
-
-    val BITMASK_3X3_MINIMAL: Int = 1
-
-    val SINGLE_TILE: Int = 0
-
     fun new(): TileSet = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TileSet".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for TileSet" }

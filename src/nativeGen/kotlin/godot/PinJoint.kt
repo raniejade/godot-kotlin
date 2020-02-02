@@ -78,12 +78,6 @@ open class PinJoint(
   }
 
   companion object {
-    val PARAM_BIAS: Int = 0
-
-    val PARAM_DAMPING: Int = 1
-
-    val PARAM_IMPULSE_CLAMP: Int = 2
-
     fun new(): PinJoint = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PinJoint".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PinJoint" }

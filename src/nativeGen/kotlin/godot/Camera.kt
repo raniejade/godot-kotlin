@@ -443,22 +443,6 @@ open class Camera(
   }
 
   companion object {
-    val DOPPLER_TRACKING_DISABLED: Int = 0
-
-    val DOPPLER_TRACKING_IDLE_STEP: Int = 1
-
-    val DOPPLER_TRACKING_PHYSICS_STEP: Int = 2
-
-    val KEEP_HEIGHT: Int = 1
-
-    val KEEP_WIDTH: Int = 0
-
-    val PROJECTION_FRUSTUM: Int = 2
-
-    val PROJECTION_ORTHOGONAL: Int = 1
-
-    val PROJECTION_PERSPECTIVE: Int = 0
-
     fun new(): Camera = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Camera".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Camera" }

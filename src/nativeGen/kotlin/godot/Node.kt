@@ -661,14 +661,6 @@ open class Node(
   }
 
   companion object {
-    val DUPLICATE_GROUPS: Int = 2
-
-    val DUPLICATE_SCRIPTS: Int = 4
-
-    val DUPLICATE_SIGNALS: Int = 1
-
-    val DUPLICATE_USE_INSTANCING: Int = 8
-
     val NOTIFICATION_APP_PAUSED: Int = 1015
 
     val NOTIFICATION_APP_RESUMED: Int = 1014
@@ -728,12 +720,6 @@ open class Node(
     val NOTIFICATION_WM_QUIT_REQUEST: Int = 1006
 
     val NOTIFICATION_WM_UNFOCUS_REQUEST: Int = 1008
-
-    val PAUSE_MODE_INHERIT: Int = 0
-
-    val PAUSE_MODE_PROCESS: Int = 2
-
-    val PAUSE_MODE_STOP: Int = 1
 
     fun new(): Node = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Node".cstr.ptr)

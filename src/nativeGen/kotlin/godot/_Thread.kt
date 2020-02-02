@@ -73,12 +73,6 @@ open class _Thread(
   }
 
   companion object {
-    val PRIORITY_HIGH: Int = 2
-
-    val PRIORITY_LOW: Int = 0
-
-    val PRIORITY_NORMAL: Int = 1
-
     fun new(): _Thread = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Thread".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for _Thread" }

@@ -77,12 +77,6 @@ open class VisualScriptYield(
   }
 
   companion object {
-    val YIELD_FRAME: Int = 1
-
-    val YIELD_PHYSICS_FRAME: Int = 2
-
-    val YIELD_WAIT: Int = 3
-
     fun new(): VisualScriptYield = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptYield".cstr.ptr)

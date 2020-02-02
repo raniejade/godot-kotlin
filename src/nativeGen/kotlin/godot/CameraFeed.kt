@@ -127,20 +127,6 @@ open class CameraFeed(
   }
 
   companion object {
-    val FEED_BACK: Int = 2
-
-    val FEED_FRONT: Int = 1
-
-    val FEED_NOIMAGE: Int = 0
-
-    val FEED_RGB: Int = 1
-
-    val FEED_UNSPECIFIED: Int = 0
-
-    val FEED_YCBCR: Int = 2
-
-    val FEED_YCBCR_SEP: Int = 3
-
     fun new(): CameraFeed = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CameraFeed".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CameraFeed" }

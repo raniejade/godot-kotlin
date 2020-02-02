@@ -136,18 +136,6 @@ open class WebRTCDataChannel(
   }
 
   companion object {
-    val STATE_CLOSED: Int = 3
-
-    val STATE_CLOSING: Int = 2
-
-    val STATE_CONNECTING: Int = 0
-
-    val STATE_OPEN: Int = 1
-
-    val WRITE_MODE_BINARY: Int = 1
-
-    val WRITE_MODE_TEXT: Int = 0
-
     /**
      * Container for method_bind pointers for WebRTCDataChannel
      */

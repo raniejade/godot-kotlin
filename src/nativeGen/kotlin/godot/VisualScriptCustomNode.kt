@@ -39,12 +39,6 @@ open class VisualScriptCustomNode(
   }
 
   companion object {
-    val START_MODE_BEGIN_SEQUENCE: Int = 0
-
-    val START_MODE_CONTINUE_SEQUENCE: Int = 1
-
-    val START_MODE_RESUME_YIELD: Int = 2
-
     val STEP_EXIT_FUNCTION_BIT: Int = 134217728
 
     val STEP_GO_BACK_BIT: Int = 33554432

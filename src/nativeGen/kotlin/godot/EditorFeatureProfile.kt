@@ -130,22 +130,6 @@ open class EditorFeatureProfile(
   }
 
   companion object {
-    val FEATURE_3D: Int = 0
-
-    val FEATURE_ASSET_LIB: Int = 2
-
-    val FEATURE_FILESYSTEM_DOCK: Int = 6
-
-    val FEATURE_IMPORT_DOCK: Int = 4
-
-    val FEATURE_MAX: Int = 7
-
-    val FEATURE_NODE_DOCK: Int = 5
-
-    val FEATURE_SCENE_TREE: Int = 3
-
-    val FEATURE_SCRIPT: Int = 1
-
     /**
      * Container for method_bind pointers for EditorFeatureProfile
      */

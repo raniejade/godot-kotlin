@@ -551,14 +551,6 @@ open class ItemList(
   }
 
   companion object {
-    val ICON_MODE_LEFT: Int = 1
-
-    val ICON_MODE_TOP: Int = 0
-
-    val SELECT_MULTI: Int = 1
-
-    val SELECT_SINGLE: Int = 0
-
     fun new(): ItemList = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ItemList".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ItemList" }

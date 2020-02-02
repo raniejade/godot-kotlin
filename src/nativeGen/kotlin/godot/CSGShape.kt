@@ -186,12 +186,6 @@ open class CSGShape(
   }
 
   companion object {
-    val OPERATION_INTERSECTION: Int = 1
-
-    val OPERATION_SUBTRACTION: Int = 2
-
-    val OPERATION_UNION: Int = 0
-
     /**
      * Container for method_bind pointers for CSGShape
      */

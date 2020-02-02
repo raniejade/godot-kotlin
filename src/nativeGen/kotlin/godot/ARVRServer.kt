@@ -200,24 +200,6 @@ open class ARVRServer(
           handle
         )
       }
-    val DONT_RESET_ROTATION: Int = 2
-
-    val RESET_BUT_KEEP_TILT: Int = 1
-
-    val RESET_FULL_ROTATION: Int = 0
-
-    val TRACKER_ANCHOR: Int = 4
-
-    val TRACKER_ANY: Int = 255
-
-    val TRACKER_ANY_KNOWN: Int = 127
-
-    val TRACKER_BASESTATION: Int = 2
-
-    val TRACKER_CONTROLLER: Int = 1
-
-    val TRACKER_UNKNOWN: Int = 128
-
     /**
      * Container for method_bind pointers for ARVRServer
      */

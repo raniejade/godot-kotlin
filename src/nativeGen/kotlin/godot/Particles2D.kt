@@ -348,10 +348,6 @@ open class Particles2D(
   }
 
   companion object {
-    val DRAW_ORDER_INDEX: Int = 0
-
-    val DRAW_ORDER_LIFETIME: Int = 1
-
     fun new(): Particles2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Particles2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Particles2D" }

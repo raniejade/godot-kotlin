@@ -217,10 +217,6 @@ open class TouchScreenButton(
   }
 
   companion object {
-    val VISIBILITY_ALWAYS: Int = 0
-
-    val VISIBILITY_TOUCHSCREEN_ONLY: Int = 1
-
     fun new(): TouchScreenButton = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("TouchScreenButton".cstr.ptr)

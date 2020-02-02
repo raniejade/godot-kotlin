@@ -398,16 +398,6 @@ open class Area2D(
   }
 
   companion object {
-    val SPACE_OVERRIDE_COMBINE: Int = 1
-
-    val SPACE_OVERRIDE_COMBINE_REPLACE: Int = 2
-
-    val SPACE_OVERRIDE_DISABLED: Int = 0
-
-    val SPACE_OVERRIDE_REPLACE: Int = 3
-
-    val SPACE_OVERRIDE_REPLACE_COMBINE: Int = 4
-
     fun new(): Area2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Area2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Area2D" }

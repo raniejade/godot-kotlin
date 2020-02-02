@@ -346,22 +346,6 @@ open class _File(
   }
 
   companion object {
-    val COMPRESSION_DEFLATE: Int = 1
-
-    val COMPRESSION_FASTLZ: Int = 0
-
-    val COMPRESSION_GZIP: Int = 3
-
-    val COMPRESSION_ZSTD: Int = 2
-
-    val READ: Int = 1
-
-    val READ_WRITE: Int = 3
-
-    val WRITE: Int = 2
-
-    val WRITE_READ: Int = 7
-
     fun new(): _File = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_File".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for _File" }

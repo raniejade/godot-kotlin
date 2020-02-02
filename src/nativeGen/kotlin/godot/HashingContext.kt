@@ -59,12 +59,6 @@ open class HashingContext(
   }
 
   companion object {
-    val HASH_MD5: Int = 0
-
-    val HASH_SHA1: Int = 1
-
-    val HASH_SHA256: Int = 2
-
     fun new(): HashingContext = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("HashingContext".cstr.ptr)

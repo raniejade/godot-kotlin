@@ -233,14 +233,6 @@ open class VisualShader(
 
     val NODE_ID_OUTPUT: Int = 0
 
-    val TYPE_FRAGMENT: Int = 1
-
-    val TYPE_LIGHT: Int = 2
-
-    val TYPE_MAX: Int = 3
-
-    val TYPE_VERTEX: Int = 0
-
     fun new(): VisualShader = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShader".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShader" }

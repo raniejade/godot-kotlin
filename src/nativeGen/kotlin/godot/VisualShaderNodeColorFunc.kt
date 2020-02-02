@@ -56,10 +56,6 @@ open class VisualShaderNodeColorFunc(
   }
 
   companion object {
-    val FUNC_GRAYSCALE: Int = 0
-
-    val FUNC_SEPIA: Int = 1
-
     fun new(): VisualShaderNodeColorFunc = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeColorFunc".cstr.ptr)

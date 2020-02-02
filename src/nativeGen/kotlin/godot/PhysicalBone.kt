@@ -245,18 +245,6 @@ open class PhysicalBone(
   }
 
   companion object {
-    val JOINT_TYPE_6DOF: Int = 5
-
-    val JOINT_TYPE_CONE: Int = 2
-
-    val JOINT_TYPE_HINGE: Int = 3
-
-    val JOINT_TYPE_NONE: Int = 0
-
-    val JOINT_TYPE_PIN: Int = 1
-
-    val JOINT_TYPE_SLIDER: Int = 4
-
     fun new(): PhysicalBone = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PhysicalBone".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PhysicalBone" }

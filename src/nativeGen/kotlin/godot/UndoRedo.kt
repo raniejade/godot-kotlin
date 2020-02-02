@@ -157,12 +157,6 @@ open class UndoRedo(
   }
 
   companion object {
-    val MERGE_ALL: Int = 2
-
-    val MERGE_DISABLE: Int = 0
-
-    val MERGE_ENDS: Int = 1
-
     fun new(): UndoRedo = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("UndoRedo".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for UndoRedo" }

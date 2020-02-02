@@ -142,30 +142,6 @@ open class VisualShaderNodeCompare(
   }
 
   companion object {
-    val COND_ALL: Int = 0
-
-    val COND_ANY: Int = 1
-
-    val CTYPE_BOOLEAN: Int = 2
-
-    val CTYPE_SCALAR: Int = 0
-
-    val CTYPE_TRANSFORM: Int = 3
-
-    val CTYPE_VECTOR: Int = 1
-
-    val FUNC_EQUAL: Int = 0
-
-    val FUNC_GREATER_THAN: Int = 2
-
-    val FUNC_GREATER_THAN_EQUAL: Int = 3
-
-    val FUNC_LESS_THAN: Int = 4
-
-    val FUNC_LESS_THAN_EQUAL: Int = 5
-
-    val FUNC_NOT_EQUAL: Int = 1
-
     fun new(): VisualShaderNodeCompare = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeCompare".cstr.ptr)

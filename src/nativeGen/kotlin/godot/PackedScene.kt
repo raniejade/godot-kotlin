@@ -64,12 +64,6 @@ open class PackedScene(
   }
 
   companion object {
-    val GEN_EDIT_STATE_DISABLED: Int = 0
-
-    val GEN_EDIT_STATE_INSTANCE: Int = 1
-
-    val GEN_EDIT_STATE_MAIN: Int = 2
-
     fun new(): PackedScene = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PackedScene".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PackedScene" }

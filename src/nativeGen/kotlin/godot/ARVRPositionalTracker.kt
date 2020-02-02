@@ -115,12 +115,6 @@ open class ARVRPositionalTracker(
   }
 
   companion object {
-    val TRACKER_HAND_UNKNOWN: Int = 0
-
-    val TRACKER_LEFT_HAND: Int = 1
-
-    val TRACKER_RIGHT_HAND: Int = 2
-
     fun new(): ARVRPositionalTracker = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRPositionalTracker".cstr.ptr)

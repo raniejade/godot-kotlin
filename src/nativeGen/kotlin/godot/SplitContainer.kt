@@ -104,12 +104,6 @@ open class SplitContainer(
   }
 
   companion object {
-    val DRAGGER_HIDDEN: Int = 1
-
-    val DRAGGER_HIDDEN_COLLAPSED: Int = 2
-
-    val DRAGGER_VISIBLE: Int = 0
-
     /**
      * Container for method_bind pointers for SplitContainer
      */

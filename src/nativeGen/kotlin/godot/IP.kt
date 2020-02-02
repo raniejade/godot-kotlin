@@ -126,22 +126,6 @@ open class IP(
 
     val RESOLVER_MAX_QUERIES: Int = 32
 
-    val RESOLVER_STATUS_DONE: Int = 2
-
-    val RESOLVER_STATUS_ERROR: Int = 3
-
-    val RESOLVER_STATUS_NONE: Int = 0
-
-    val RESOLVER_STATUS_WAITING: Int = 1
-
-    val TYPE_ANY: Int = 3
-
-    val TYPE_IPV4: Int = 1
-
-    val TYPE_IPV6: Int = 2
-
-    val TYPE_NONE: Int = 0
-
     /**
      * Container for method_bind pointers for IP
      */

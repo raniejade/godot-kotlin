@@ -1034,58 +1034,6 @@ open class CPUParticles(
   }
 
   companion object {
-    val DRAW_ORDER_INDEX: Int = 0
-
-    val DRAW_ORDER_LIFETIME: Int = 1
-
-    val DRAW_ORDER_VIEW_DEPTH: Int = 2
-
-    val EMISSION_SHAPE_BOX: Int = 2
-
-    val EMISSION_SHAPE_DIRECTED_POINTS: Int = 4
-
-    val EMISSION_SHAPE_MAX: Int = 5
-
-    val EMISSION_SHAPE_POINT: Int = 0
-
-    val EMISSION_SHAPE_POINTS: Int = 3
-
-    val EMISSION_SHAPE_SPHERE: Int = 1
-
-    val FLAG_ALIGN_Y_TO_VELOCITY: Int = 0
-
-    val FLAG_DISABLE_Z: Int = 2
-
-    val FLAG_MAX: Int = 3
-
-    val FLAG_ROTATE_Y: Int = 1
-
-    val PARAM_ANGLE: Int = 7
-
-    val PARAM_ANGULAR_VELOCITY: Int = 1
-
-    val PARAM_ANIM_OFFSET: Int = 11
-
-    val PARAM_ANIM_SPEED: Int = 10
-
-    val PARAM_DAMPING: Int = 6
-
-    val PARAM_HUE_VARIATION: Int = 9
-
-    val PARAM_INITIAL_LINEAR_VELOCITY: Int = 0
-
-    val PARAM_LINEAR_ACCEL: Int = 3
-
-    val PARAM_MAX: Int = 12
-
-    val PARAM_ORBIT_VELOCITY: Int = 2
-
-    val PARAM_RADIAL_ACCEL: Int = 4
-
-    val PARAM_SCALE: Int = 8
-
-    val PARAM_TANGENTIAL_ACCEL: Int = 5
-
     fun new(): CPUParticles = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CPUParticles".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CPUParticles" }

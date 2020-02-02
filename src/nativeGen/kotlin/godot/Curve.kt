@@ -225,12 +225,6 @@ open class Curve(
   }
 
   companion object {
-    val TANGENT_FREE: Int = 0
-
-    val TANGENT_LINEAR: Int = 1
-
-    val TANGENT_MODE_COUNT: Int = 2
-
     fun new(): Curve = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Curve".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Curve" }

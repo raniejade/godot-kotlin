@@ -158,10 +158,6 @@ open class AnimationNodeOneShot(
   }
 
   companion object {
-    val MIX_MODE_ADD: Int = 1
-
-    val MIX_MODE_BLEND: Int = 0
-
     fun new(): AnimationNodeOneShot = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeOneShot".cstr.ptr)

@@ -77,12 +77,6 @@ open class LinkButton(
   }
 
   companion object {
-    val UNDERLINE_MODE_ALWAYS: Int = 0
-
-    val UNDERLINE_MODE_NEVER: Int = 2
-
-    val UNDERLINE_MODE_ON_HOVER: Int = 1
-
     fun new(): LinkButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LinkButton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for LinkButton" }

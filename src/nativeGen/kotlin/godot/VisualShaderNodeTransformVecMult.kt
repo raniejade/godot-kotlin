@@ -60,14 +60,6 @@ open class VisualShaderNodeTransformVecMult(
   }
 
   companion object {
-    val OP_3x3_AxB: Int = 2
-
-    val OP_3x3_BxA: Int = 3
-
-    val OP_AxB: Int = 0
-
-    val OP_BxA: Int = 1
-
     fun new(): VisualShaderNodeTransformVecMult = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformVecMult".cstr.ptr)

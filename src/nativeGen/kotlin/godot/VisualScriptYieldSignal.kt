@@ -124,12 +124,6 @@ open class VisualScriptYieldSignal(
   }
 
   companion object {
-    val CALL_MODE_INSTANCE: Int = 2
-
-    val CALL_MODE_NODE_PATH: Int = 1
-
-    val CALL_MODE_SELF: Int = 0
-
     fun new(): VisualScriptYieldSignal = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptYieldSignal".cstr.ptr)

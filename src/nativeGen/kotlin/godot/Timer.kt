@@ -159,10 +159,6 @@ open class Timer(
   }
 
   companion object {
-    val TIMER_PROCESS_IDLE: Int = 1
-
-    val TIMER_PROCESS_PHYSICS: Int = 0
-
     fun new(): Timer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Timer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Timer" }

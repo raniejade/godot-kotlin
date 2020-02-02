@@ -286,10 +286,6 @@ open class ReflectionProbe(
   }
 
   companion object {
-    val UPDATE_ALWAYS: Int = 1
-
-    val UPDATE_ONCE: Int = 0
-
     fun new(): ReflectionProbe = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ReflectionProbe".cstr.ptr)

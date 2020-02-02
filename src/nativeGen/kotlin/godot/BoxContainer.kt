@@ -64,12 +64,6 @@ open class BoxContainer(
   }
 
   companion object {
-    val ALIGN_BEGIN: Int = 0
-
-    val ALIGN_CENTER: Int = 1
-
-    val ALIGN_END: Int = 2
-
     /**
      * Container for method_bind pointers for BoxContainer
      */

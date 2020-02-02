@@ -171,12 +171,6 @@ open class AnimationTree(
   }
 
   companion object {
-    val ANIMATION_PROCESS_IDLE: Int = 1
-
-    val ANIMATION_PROCESS_MANUAL: Int = 2
-
-    val ANIMATION_PROCESS_PHYSICS: Int = 0
-
     fun new(): AnimationTree = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationTree".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationTree" }

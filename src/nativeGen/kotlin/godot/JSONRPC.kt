@@ -110,16 +110,6 @@ open class JSONRPC(
   }
 
   companion object {
-    val INTERNAL_ERROR: Int = -32603
-
-    val INVALID_PARAMS: Int = -32602
-
-    val INVALID_REQUEST: Int = -32600
-
-    val METHOD_NOT_FOUND: Int = -32601
-
-    val PARSE_ERROR: Int = -32700
-
     fun new(): JSONRPC = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("JSONRPC".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for JSONRPC" }

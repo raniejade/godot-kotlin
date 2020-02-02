@@ -122,12 +122,6 @@ open class ImageTexture(
   }
 
   companion object {
-    val STORAGE_COMPRESS_LOSSLESS: Int = 2
-
-    val STORAGE_COMPRESS_LOSSY: Int = 1
-
-    val STORAGE_RAW: Int = 0
-
     fun new(): ImageTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ImageTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ImageTexture" }

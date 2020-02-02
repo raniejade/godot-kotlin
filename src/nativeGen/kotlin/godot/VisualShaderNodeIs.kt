@@ -56,10 +56,6 @@ open class VisualShaderNodeIs(
   }
 
   companion object {
-    val FUNC_IS_INF: Int = 0
-
-    val FUNC_IS_NAN: Int = 1
-
     fun new(): VisualShaderNodeIs = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeIs".cstr.ptr)

@@ -141,10 +141,6 @@ open class CollisionPolygon2D(
   }
 
   companion object {
-    val BUILD_SEGMENTS: Int = 1
-
-    val BUILD_SOLIDS: Int = 0
-
     fun new(): CollisionPolygon2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionPolygon2D".cstr.ptr)

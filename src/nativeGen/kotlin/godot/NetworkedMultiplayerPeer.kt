@@ -147,21 +147,9 @@ open class NetworkedMultiplayerPeer(
   }
 
   companion object {
-    val CONNECTION_CONNECTED: Int = 2
-
-    val CONNECTION_CONNECTING: Int = 1
-
-    val CONNECTION_DISCONNECTED: Int = 0
-
     val TARGET_PEER_BROADCAST: Int = 0
 
     val TARGET_PEER_SERVER: Int = 1
-
-    val TRANSFER_MODE_RELIABLE: Int = 2
-
-    val TRANSFER_MODE_UNRELIABLE: Int = 0
-
-    val TRANSFER_MODE_UNRELIABLE_ORDERED: Int = 1
 
     /**
      * Container for method_bind pointers for NetworkedMultiplayerPeer

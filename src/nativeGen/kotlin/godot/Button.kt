@@ -150,12 +150,6 @@ open class Button(
   }
 
   companion object {
-    val ALIGN_CENTER: Int = 1
-
-    val ALIGN_LEFT: Int = 0
-
-    val ALIGN_RIGHT: Int = 2
-
     fun new(): Button = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Button".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Button" }

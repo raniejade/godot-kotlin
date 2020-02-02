@@ -58,12 +58,6 @@ open class VisualShaderNodeScalarDerivativeFunc(
   }
 
   companion object {
-    val FUNC_SUM: Int = 0
-
-    val FUNC_X: Int = 1
-
-    val FUNC_Y: Int = 2
-
     fun new(): VisualShaderNodeScalarDerivativeFunc = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeScalarDerivativeFunc".cstr.ptr)

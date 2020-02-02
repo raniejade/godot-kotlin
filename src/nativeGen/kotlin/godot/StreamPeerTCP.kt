@@ -82,14 +82,6 @@ open class StreamPeerTCP(
   }
 
   companion object {
-    val STATUS_CONNECTED: Int = 2
-
-    val STATUS_CONNECTING: Int = 1
-
-    val STATUS_ERROR: Int = 3
-
-    val STATUS_NONE: Int = 0
-
     fun new(): StreamPeerTCP = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerTCP".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for StreamPeerTCP" }

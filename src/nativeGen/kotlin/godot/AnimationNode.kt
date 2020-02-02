@@ -177,14 +177,6 @@ open class AnimationNode(
   }
 
   companion object {
-    val FILTER_BLEND: Int = 3
-
-    val FILTER_IGNORE: Int = 0
-
-    val FILTER_PASS: Int = 1
-
-    val FILTER_STOP: Int = 2
-
     fun new(): AnimationNode = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNode".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNode" }

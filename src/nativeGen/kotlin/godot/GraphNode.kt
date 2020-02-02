@@ -320,12 +320,6 @@ open class GraphNode(
   }
 
   companion object {
-    val OVERLAY_BREAKPOINT: Int = 1
-
-    val OVERLAY_DISABLED: Int = 0
-
-    val OVERLAY_POSITION: Int = 2
-
     fun new(): GraphNode = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GraphNode".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GraphNode" }

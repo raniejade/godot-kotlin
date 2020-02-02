@@ -192,12 +192,6 @@ open class NinePatchRect(
   }
 
   companion object {
-    val AXIS_STRETCH_MODE_STRETCH: Int = 0
-
-    val AXIS_STRETCH_MODE_TILE: Int = 1
-
-    val AXIS_STRETCH_MODE_TILE_FIT: Int = 2
-
     fun new(): NinePatchRect = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("NinePatchRect".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for NinePatchRect" }

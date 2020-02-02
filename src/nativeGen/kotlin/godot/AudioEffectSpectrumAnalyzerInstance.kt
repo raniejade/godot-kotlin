@@ -53,10 +53,6 @@ open class AudioEffectSpectrumAnalyzerInstance(
   }
 
   companion object {
-    val MAGNITUDE_AVERAGE: Int = 0
-
-    val MAGNITUDE_MAX: Int = 1
-
     /**
      * Container for method_bind pointers for AudioEffectSpectrumAnalyzerInstance
      */

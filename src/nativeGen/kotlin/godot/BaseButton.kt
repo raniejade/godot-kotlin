@@ -274,20 +274,6 @@ open class BaseButton(
   }
 
   companion object {
-    val ACTION_MODE_BUTTON_PRESS: Int = 0
-
-    val ACTION_MODE_BUTTON_RELEASE: Int = 1
-
-    val DRAW_DISABLED: Int = 3
-
-    val DRAW_HOVER: Int = 2
-
-    val DRAW_HOVER_PRESSED: Int = 4
-
-    val DRAW_NORMAL: Int = 0
-
-    val DRAW_PRESSED: Int = 1
-
     /**
      * Container for method_bind pointers for BaseButton
      */

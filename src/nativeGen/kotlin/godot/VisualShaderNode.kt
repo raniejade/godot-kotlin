@@ -100,18 +100,6 @@ open class VisualShaderNode(
   }
 
   companion object {
-    val PORT_TYPE_BOOLEAN: Int = 2
-
-    val PORT_TYPE_MAX: Int = 5
-
-    val PORT_TYPE_SAMPLER: Int = 4
-
-    val PORT_TYPE_SCALAR: Int = 0
-
-    val PORT_TYPE_TRANSFORM: Int = 3
-
-    val PORT_TYPE_VECTOR: Int = 1
-
     /**
      * Container for method_bind pointers for VisualShaderNode
      */

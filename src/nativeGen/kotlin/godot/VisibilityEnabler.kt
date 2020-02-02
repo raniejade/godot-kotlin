@@ -70,12 +70,6 @@ open class VisibilityEnabler(
   }
 
   companion object {
-    val ENABLER_FREEZE_BODIES: Int = 1
-
-    val ENABLER_MAX: Int = 2
-
-    val ENABLER_PAUSE_ANIMATIONS: Int = 0
-
     fun new(): VisibilityEnabler = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityEnabler".cstr.ptr)

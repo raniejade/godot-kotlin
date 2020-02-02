@@ -116,10 +116,6 @@ open class ProximityGroup(
   }
 
   companion object {
-    val MODE_PROXY: Int = 0
-
-    val MODE_SIGNAL: Int = 1
-
     fun new(): ProximityGroup = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProximityGroup".cstr.ptr)

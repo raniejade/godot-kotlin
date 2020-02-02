@@ -390,6 +390,18 @@ class APIGenerator {
     if (cls.constants.isNotEmpty()) {
       companionObjectBuilder.addProperties(
         cls.constants
+          .filter { (name, _) ->
+            var match = false
+            for (gdEnum in cls.enums.values) {
+              for (enumValue in gdEnum.values.keys) {
+                if (enumValue == name) {
+                  match = true
+                  break
+                }
+              }
+            }
+            !match
+          }
           .map { (k, v) ->
             PropertySpec.builder(k, v::class)
               .initializer(getFormatFromConstantValue(v), v)

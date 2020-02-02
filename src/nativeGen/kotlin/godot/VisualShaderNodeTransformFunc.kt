@@ -56,10 +56,6 @@ open class VisualShaderNodeTransformFunc(
   }
 
   companion object {
-    val FUNC_INVERSE: Int = 0
-
-    val FUNC_TRANSPOSE: Int = 1
-
     fun new(): VisualShaderNodeTransformFunc = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformFunc".cstr.ptr)

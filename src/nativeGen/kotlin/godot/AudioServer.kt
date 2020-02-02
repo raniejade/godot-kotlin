@@ -376,14 +376,6 @@ open class AudioServer(
           handle
         )
       }
-    val SPEAKER_MODE_STEREO: Int = 0
-
-    val SPEAKER_SURROUND_31: Int = 1
-
-    val SPEAKER_SURROUND_51: Int = 2
-
-    val SPEAKER_SURROUND_71: Int = 3
-
     /**
      * Container for method_bind pointers for AudioServer
      */
