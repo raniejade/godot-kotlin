@@ -162,6 +162,10 @@ class Transform(
     }
   }
 
+  override fun hashCode(): Int {
+    return _value.hashCode()
+  }
+
   override fun toVariant(): Variant {
     return Variant.new(this)
   }
