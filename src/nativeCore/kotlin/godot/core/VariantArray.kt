@@ -49,7 +49,7 @@ class VariantArray(
     }
   }
 
-  fun binarySearch(value: Variant, before: Boolean = true): Int {
+  fun bsearch(value: Variant, before: Boolean = true): Int {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_array_bsearch)(_value.ptr, value._value.ptr, before)
     }
@@ -63,7 +63,7 @@ class VariantArray(
     }
   }
 
-  fun <T: CoreType<*>> contains(value: T): Boolean {
+  fun <T: CoreType<*>> has(value: T): Boolean {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_array_has)(_value.ptr, value.toVariant()._value.ptr)
     }
@@ -169,6 +169,10 @@ class VariantArray(
       checkNotNull(Godot.gdnative.godot_array_push_front)(_value.ptr, value.toVariant()._value.ptr)
       ptr.pointed.readValue()
     }
+  }
+
+  fun <T: CoreType<*>> pushBack(value: T) {
+    append(value)
   }
 
   fun <T: CoreType<*>> remove(value: T) {
