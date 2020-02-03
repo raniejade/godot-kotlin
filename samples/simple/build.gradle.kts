@@ -33,7 +33,7 @@ kotlin {
     sourceSets {
         val simpleMain by getting {
             dependencies {
-                api(project(":"))
+                api(project(":core"))
             }
         }
     }

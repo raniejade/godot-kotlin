@@ -33,7 +33,7 @@ kotlin {
     sourceSets {
         val rotatingCubeMain by getting {
             dependencies {
-                api(project(":"))
+                api(project(":core"))
             }
         }
     }
