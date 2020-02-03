@@ -179,6 +179,18 @@ class Transform(
   }
 
   companion object {
+    val IDENTITY: Transform
+      get() = new(Vector3.new(1, 0, 0), Vector3.new(0, 1, 0), Vector3.new(0, 0, 1), Vector3.new(0, 0, 0))
+
+    val FLIP_X: Transform
+      get() = new(Vector3.new(-1, 0, 0), Vector3.new(0, 1, 0), Vector3.new(0, 0, 1), Vector3.new(0, 0, 0))
+
+    val FLIP_Y: Transform
+      get() = new(Vector3.new(1, 0, 0), Vector3.new(0, -1, 0), Vector3.new(0, 0, 1), Vector3.new(0, 0, 0))
+
+    val FLIP_Z: Transform
+      get() = new(Vector3.new(1, 0, 0), Vector3.new(0, 1, 0), Vector3.new(0, 0, -1), Vector3.new(0, 0, 0))
+
     fun new(): Transform {
       return allocType(::Transform) {
         checkNotNull(Godot.gdnative.godot_transform_new_identity)(it)

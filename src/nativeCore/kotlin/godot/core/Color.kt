@@ -122,150 +122,295 @@ class Color(
     }
 
     // COLOR CONSTANTS
-    val Gray = rgb(0.75f, 0.75f, 0.75f)
-    val AliceBlue = rgb(0.94f, 0.97f, 1f)
-    val AntiqueWhite = rgb(0.98f, 0.92f, 0.84f)
-    val Aqua = rgb(0f, 1f, 1f)
-    val Aquamarine = rgb(0.5f, 1f, 0.83f)
-    val Azure = rgb(0.94f, 1f, 1f)
-    val Beige = rgb(0.96f, 0.96f, 0.86f)
-    val Bisque = rgb(1f, 0.89f, 0.77f)
-    val Black = rgb(0f, 0f, 0f)
-    val BlanchedAlmond = rgb(1f, 0.92f, 0.8f)
-    val Blue = rgb(0f, 0f, 1f)
-    val BlueViolet = rgb(0.54f, 0.17f, 0.89f)
-    val Brown = rgb(0.65f, 0.16f, 0.16f)
-    val Burlywood = rgb(0.87f, 0.72f, 0.53f)
-    val CadetBlue = rgb(0.37f, 0.62f, 0.63f)
-    val Chartreuse = rgb(0.5f, 1f, 0f)
-    val Chocolate = rgb(0.82f, 0.41f, 0.12f)
-    val Coral = rgb(1f, 0.5f, 0.31f)
-    val CornFlower = rgb(0.39f, 0.58f, 0.93f)
-    val CornSilk = rgb(1f, 0.97f, 0.86f)
-    val Crimson = rgb(0.86f, 0.08f, 0.24f)
-    val Cyan = rgb(0f, 1f, 1f)
-    val DarkBlue = rgb(0f, 0f, 0.55f)
-    val DarkCyan = rgb(0f, 0.55f, 0.55f)
-    val DarkGoldenRod = rgb(0.72f, 0.53f, 0.04f)
-    val DarkGray = rgb(0.66f, 0.66f, 0.66f)
-    val DarkGreen = rgb(0f, 0.39f, 0f)
-    val DarkKhaki = rgb(0.74f, 0.72f, 0.42f)
-    val DarkMagenta = rgb(0.55f, 0f, 0.55f)
-    val DarkOliveGreen = rgb(0.33f, 0.42f, 0.18f)
-    val DarkOrange = rgb(1f, 0.55f, 0f)
-    val DarkOrchid = rgb(0.6f, 0.2f, 0.8f)
-    val DarkRed = rgb(0.55f, 0f, 0f)
-    val DarkSalmon = rgb(0.91f, 0.59f, 0.48f)
-    val DarkSeaGreen = rgb(0.56f, 0.74f, 0.56f)
-    val DarkSlateBlue = rgb(0.28f, 0.24f, 0.55f)
-    val DarkSlateGray = rgb(0.18f, 0.31f, 0.31f)
-    val DarkTurquoise = rgb(0f, 0.81f, 0.82f)
-    val DarkViolet = rgb(0.58f, 0f, 0.83f)
-    val DeepPink = rgb(1f, 0.08f, 0.58f)
-    val DeepSkyBlue = rgb(0f, 0.75f, 1f)
-    val DimGray = rgb(0.41f, 0.41f, 0.41f)
-    val DodgerBlue = rgb(0.12f, 0.56f, 1f)
-    val FireBrick = rgb(0.7f, 0.13f, 0.13f)
-    val FloralWhite = rgb(1f, 0.98f, 0.94f)
-    val ForestGreen = rgb(0.13f, 0.55f, 0.13f)
-    val Fuchsia = rgb(1f, 0f, 1f)
-    val Gainsboro = rgb(0.86f, 0.86f, 0.86f)
-    val GhostWhite = rgb(0.97f, 0.97f, 1f)
-    val Gold = rgb(1f, 0.84f, 0f)
-    val GoldenRod = rgb(0.85f, 0.65f, 0.13f)
-    val Green = rgb(0f, 1f, 0f)
-    val GreenYellow = rgb(0.68f, 1f, 0.18f)
-    val HoneyDew = rgb(0.94f, 1f, 0.94f)
-    val HotPink = rgb(1f, 0.41f, 0.71f)
-    val IndianRed = rgb(0.8f, 0.36f, 0.36f)
-    val Indigo = rgb(0.29f, 0f, 0.51f)
-    val Ivory = rgb(1f, 1f, 0.94f)
-    val Khaki = rgb(0.94f, 0.9f, 0.55f)
-    val Lavender = rgb(0.9f, 0.9f, 0.98f)
-    val LavenderBlush = rgb(1f, 0.94f, 0.96f)
-    val LawnGreen = rgb(0.49f, 0.99f, 0f)
-    val LemonChiffon = rgb(1f, 0.98f, 0.8f)
-    val LightBlue = rgb(0.68f, 0.85f, 0.9f)
-    val LightCoral = rgb(0.94f, 0.5f, 0.5f)
-    val LightCyan = rgb(0.88f, 1f, 1f)
-    val LightGoldenRod = rgb(0.98f, 0.98f, 0.82f)
-    val LightGray = rgb(0.83f, 0.83f, 0.83f)
-    val LightGreen = rgb(0.56f, 0.93f, 0.56f)
-    val LightPink = rgb(1f, 0.71f, 0.76f)
-    val LightSalmon = rgb(1f, 0.63f, 0.48f)
-    val LightSeaGreen = rgb(0.13f, 0.7f, 0.67f)
-    val LightSkyBlue = rgb(0.53f, 0.81f, 0.98f)
-    val LightSlateGray = rgb(0.47f, 0.53f, 0.6f)
-    val LightSteelBlue = rgb(0.69f, 0.77f, 0.87f)
-    val LightYellow = rgb(1f, 1f, 0.88f)
-    val Lime = rgb(0f, 1f, 0f)
-    val LimeGreen = rgb(0.2f, 0.8f, 0.2f)
-    val Linen = rgb(0.98f, 0.94f, 0.9f)
-    val Magenta = rgb(1f, 0f, 1f)
-    val Maroon = rgb(0.69f, 0.19f, 0.38f)
-    val MediumAquamarine = rgb(0.4f, 0.8f, 0.67f)
-    val MediumBlue = rgb(0f, 0f, 0.8f)
-    val MediumOrchid = rgb(0.73f, 0.33f, 0.83f)
-    val MediumPurple = rgb(0.58f, 0.44f, 0.86f)
-    val MediumSeaGreen = rgb(0.24f, 0.7f, 0.44f)
-    val MediumSlateBlue = rgb(0.48f, 0.41f, 0.93f)
-    val MediumSpringGreen = rgb(0f, 0.98f, 0.6f)
-    val MediumTurquoise = rgb(0.28f, 0.82f, 0.8f)
-    val MediumVioletRed = rgb(0.78f, 0.08f, 0.52f)
-    val MidnightBlue = rgb(0.1f, 0.1f, 0.44f)
-    val MintCream = rgb(0.96f, 1f, 0.98f)
-    val MistyRose = rgb(1f, 0.89f, 0.88f)
-    val Moccasin = rgb(1f, 0.89f, 0.71f)
-    val NavajoWhite = rgb(1f, 0.87f, 0.68f)
-    val NavyBlue = rgb(0f, 0f, 0.5f)
-    val OldLace = rgb(0.99f, 0.96f, 0.9f)
-    val Olive = rgb(0.5f, 0.5f, 0f)
-    val OliveDrab = rgb(0.42f, 0.56f, 0.14f)
-    val Orange = rgb(1f, 0.65f, 0f)
-    val OrangeRed = rgb(1f, 0.27f, 0f)
-    val Orchid = rgb(0.85f, 0.44f, 0.84f)
-    val PaleGoldenRod = rgb(0.93f, 0.91f, 0.67f)
-    val PaleGreen = rgb(0.6f, 0.98f, 0.6f)
-    val PaleTurquoise = rgb(0.69f, 0.93f, 0.93f)
-    val PaleVioletRed = rgb(0.86f, 0.44f, 0.58f)
-    val PapayaWhip = rgb(1f, 0.94f, 0.84f)
-    val PeachPuff = rgb(1f, 0.85f, 0.73f)
-    val Peru = rgb(0.8f, 0.52f, 0.25f)
-    val Pink = rgb(1f, 0.75f, 0.8f)
-    val Plum = rgb(0.87f, 0.63f, 0.87f)
-    val PowderBlue = rgb(0.69f, 0.88f, 0.9f)
-    val Purple = rgb(0.63f, 0.13f, 0.94f)
-    val RebeccaPurple = rgb(0.4f, 0.2f, 0.6f)
-    val Red = rgb(1f, 0f, 0f)
-    val RosyBrown = rgb(0.74f, 0.56f, 0.56f)
-    val RoyalBlue = rgb(0.25f, 0.41f, 0.88f)
-    val SaddleBrown = rgb(0.55f, 0.27f, 0.07f)
-    val Salmon = rgb(0.98f, 0.5f, 0.45f)
-    val SandyBrown = rgb(0.96f, 0.64f, 0.38f)
-    val SeaGreen = rgb(0.18f, 0.55f, 0.34f)
-    val Seashell = rgb(1f, 0.96f, 0.93f)
-    val Sienna = rgb(0.63f, 0.32f, 0.18f)
-    val Silver = rgb(0.75f, 0.75f, 0.75f)
-    val SkyBlue = rgb(0.53f, 0.81f, 0.92f)
-    val SlateBlue = rgb(0.42f, 0.35f, 0.8f)
-    val SlateGray = rgb(0.44f, 0.5f, 0.56f)
-    val Snow = rgb(1f, 0.98f, 0.98f)
-    val SpringGreen = rgb(0f, 1f, 0.5f)
-    val SteelBlue = rgb(0.27f, 0.51f, 0.71f)
-    val Tan = rgb(0.82f, 0.71f, 0.55f)
-    val Teal = rgb(0f, 0.5f, 0.5f)
-    val Thistle = rgb(0.85f, 0.75f, 0.85f)
-    val Tomato = rgb(1f, 0.39f, 0.28f)
-    val Turquoise = rgb(0.25f, 0.88f, 0.82f)
-    val Violet = rgb(0.93f, 0.51f, 0.93f)
-    val WebGray = rgb(0.5f, 0.5f, 0.5f)
-    val WebGreen = rgb(0f, 0.5f, 0f)
-    val WebMaroon = rgb(0.5f, 0f, 0f)
-    val WebPurple = rgb(0.5f, 0f, 0.5f)
-    val Wheat = rgb(0.96f, 0.87f, 0.7f)
-    val White = rgb(1f, 1f, 1f)
-    val WhiteSmoke = rgb(0.96f, 0.96f, 0.96f)
-    val Yellow = rgb(1f, 1f, 0f)
-    val YellowGreen = rgb(0.6f, 0.8f, 0.2f)
+    val GRAY: Color
+      get() = rgb(0.75f, 0.75f, 0.75f)
+    val ALICE_BLUE: Color
+      get() = rgb(0.94f, 0.97f, 1f)
+    val ANTIQUE_WHITE: Color
+      get() = rgb(0.98f, 0.92f, 0.84f)
+    val AQUA: Color
+      get() = rgb(0f, 1f, 1f)
+    val AQUAMARINE: Color
+      get() = rgb(0.5f, 1f, 0.83f)
+    val AZURE: Color
+      get() = rgb(0.94f, 1f, 1f)
+    val BEIGE: Color
+      get() = rgb(0.96f, 0.96f, 0.86f)
+    val BISQUE: Color
+      get() = rgb(1f, 0.89f, 0.77f)
+    val BLACK: Color
+      get() = rgb(0f, 0f, 0f)
+    val BLANCHED_ALMOND: Color
+      get() = rgb(1f, 0.92f, 0.8f)
+    val BLUE: Color
+      get() = rgb(0f, 0f, 1f)
+    val BLUE_VIOLET: Color
+      get() = rgb(0.54f, 0.17f, 0.89f)
+    val BROWN: Color
+      get() = rgb(0.65f, 0.16f, 0.16f)
+    val BURLYWOOD: Color
+      get() = rgb(0.87f, 0.72f, 0.53f)
+    val CADET_BLUE: Color
+      get() = rgb(0.37f, 0.62f, 0.63f)
+    val CHARTREUSE: Color
+      get() = rgb(0.5f, 1f, 0f)
+    val CHOCOLATE: Color
+      get() = rgb(0.82f, 0.41f, 0.12f)
+    val CORAL: Color
+      get() = rgb(1f, 0.5f, 0.31f)
+    val CORN_FLOWER: Color
+      get() = rgb(0.39f, 0.58f, 0.93f)
+    val CORN_SILK: Color
+      get() = rgb(1f, 0.97f, 0.86f)
+    val CRIMSON: Color
+      get() = rgb(0.86f, 0.08f, 0.24f)
+    val CYAN: Color
+      get() = rgb(0f, 1f, 1f)
+    val DARK_BLUE: Color
+      get() = rgb(0f, 0f, 0.55f)
+    val DARK_CYAN: Color
+      get() = rgb(0f, 0.55f, 0.55f)
+    val DARK_GOLDEN_ROD: Color
+      get() = rgb(0.72f, 0.53f, 0.04f)
+    val DARK_GRAY: Color
+      get() = rgb(0.66f, 0.66f, 0.66f)
+    val DARK_GREEN: Color
+      get() = rgb(0f, 0.39f, 0f)
+    val DARK_KHAKI: Color
+      get() = rgb(0.74f, 0.72f, 0.42f)
+    val DARK_MAGENTA: Color
+      get() = rgb(0.55f, 0f, 0.55f)
+    val DARK_OLIVE_GREEN: Color
+      get() = rgb(0.33f, 0.42f, 0.18f)
+    val DARK_ORANGE: Color
+      get() = rgb(1f, 0.55f, 0f)
+    val DARK_ORCHID: Color
+      get() = rgb(0.6f, 0.2f, 0.8f)
+    val DARK_RED: Color
+      get() = rgb(0.55f, 0f, 0f)
+    val DARK_SALMON: Color
+      get() = rgb(0.91f, 0.59f, 0.48f)
+    val DARK_SEA_GREEN: Color
+      get() = rgb(0.56f, 0.74f, 0.56f)
+    val DARK_SLATE_BLUE: Color
+      get() = rgb(0.28f, 0.24f, 0.55f)
+    val DARK_SLATE_GRAY: Color
+      get() = rgb(0.18f, 0.31f, 0.31f)
+    val DARK_TURQUOISE: Color
+      get() = rgb(0f, 0.81f, 0.82f)
+    val DARK_VIOLET: Color
+      get() = rgb(0.58f, 0f, 0.83f)
+    val DEEP_PINK: Color
+      get() = rgb(1f, 0.08f, 0.58f)
+    val DEEP_SKY_BLUE: Color
+      get() = rgb(0f, 0.75f, 1f)
+    val DIM_GRAY: Color
+      get() = rgb(0.41f, 0.41f, 0.41f)
+    val DODGER_BLUE: Color
+      get() = rgb(0.12f, 0.56f, 1f)
+    val FIRE_BRICK: Color
+      get() = rgb(0.7f, 0.13f, 0.13f)
+    val FLORAL_WHITE: Color
+      get() = rgb(1f, 0.98f, 0.94f)
+    val FOREST_GREEN: Color
+      get() = rgb(0.13f, 0.55f, 0.13f)
+    val FUCHSIA: Color
+      get() = rgb(1f, 0f, 1f)
+    val GAINSBORO: Color
+      get() = rgb(0.86f, 0.86f, 0.86f)
+    val GHOST_WHITE: Color
+      get() = rgb(0.97f, 0.97f, 1f)
+    val GOLD: Color
+      get() = rgb(1f, 0.84f, 0f)
+    val GOLDEN_ROD: Color
+      get() = rgb(0.85f, 0.65f, 0.13f)
+    val GREEN: Color
+      get() = rgb(0f, 1f, 0f)
+    val GREEN_YELLOW: Color
+      get() = rgb(0.68f, 1f, 0.18f)
+    val HONEY_DEW: Color
+      get() = rgb(0.94f, 1f, 0.94f)
+    val HOT_PINK: Color
+      get() = rgb(1f, 0.41f, 0.71f)
+    val INDIAN_RED: Color
+      get() = rgb(0.8f, 0.36f, 0.36f)
+    val INDIGO: Color
+      get() = rgb(0.29f, 0f, 0.51f)
+    val IVORY: Color
+      get() = rgb(1f, 1f, 0.94f)
+    val KHAKI: Color
+      get() = rgb(0.94f, 0.9f, 0.55f)
+    val LAVENDER: Color
+      get() = rgb(0.9f, 0.9f, 0.98f)
+    val LAVENDER_BLUSH: Color
+      get() = rgb(1f, 0.94f, 0.96f)
+    val LAWN_GREEN: Color
+      get() = rgb(0.49f, 0.99f, 0f)
+    val LEMON_CHIFFON: Color
+      get() = rgb(1f, 0.98f, 0.8f)
+    val LIGHT_BLUE: Color
+      get() = rgb(0.68f, 0.85f, 0.9f)
+    val LIGHT_CORAL: Color
+      get() = rgb(0.94f, 0.5f, 0.5f)
+    val LIGHT_CYAN: Color
+      get() = rgb(0.88f, 1f, 1f)
+    val LIGHT_GOLDEN_ROD: Color
+      get() = rgb(0.98f, 0.98f, 0.82f)
+    val LIGHT_GRAY: Color
+      get() = rgb(0.83f, 0.83f, 0.83f)
+    val LIGHT_GREEN: Color
+      get() = rgb(0.56f, 0.93f, 0.56f)
+    val LIGHT_PINK: Color
+      get() = rgb(1f, 0.71f, 0.76f)
+    val LIGHT_SALMON: Color
+      get() = rgb(1f, 0.63f, 0.48f)
+    val LIGHT_SEA_GREEN: Color
+      get() = rgb(0.13f, 0.7f, 0.67f)
+    val LIGHT_SKY_BLUE: Color
+      get() = rgb(0.53f, 0.81f, 0.98f)
+    val LIGHT_SLATE_GRAY: Color
+      get() = rgb(0.47f, 0.53f, 0.6f)
+    val LIGHT_STEEL_BLUE: Color
+      get() = rgb(0.69f, 0.77f, 0.87f)
+    val LIGHT_YELLOW: Color
+      get() = rgb(1f, 1f, 0.88f)
+    val LIME: Color
+      get() = rgb(0f, 1f, 0f)
+    val LIME_GREEN: Color
+      get() = rgb(0.2f, 0.8f, 0.2f)
+    val LINEN: Color
+      get() = rgb(0.98f, 0.94f, 0.9f)
+    val MAGENTA: Color
+      get() = rgb(1f, 0f, 1f)
+    val MAROON: Color
+      get() = rgb(0.69f, 0.19f, 0.38f)
+    val MEDIUM_AQUAMARINE: Color
+      get() = rgb(0.4f, 0.8f, 0.67f)
+    val MEDIUM_BLUE: Color
+      get() = rgb(0f, 0f, 0.8f)
+    val MEDIUM_ORCHID: Color
+      get() = rgb(0.73f, 0.33f, 0.83f)
+    val MEDIUM_PURPLE: Color
+      get() = rgb(0.58f, 0.44f, 0.86f)
+    val MEDIUM_SEA_GREEN: Color
+      get() = rgb(0.24f, 0.7f, 0.44f)
+    val MEDIUM_SLATE_BLUE: Color
+      get() = rgb(0.48f, 0.41f, 0.93f)
+    val MEDIUM_SPRING_GREEN: Color
+      get() = rgb(0f, 0.98f, 0.6f)
+    val MEDIUM_TURQUOISE: Color
+      get() = rgb(0.28f, 0.82f, 0.8f)
+    val MEDIUM_VIOLET_RED: Color
+      get() = rgb(0.78f, 0.08f, 0.52f)
+    val MIDNIGHT_BLUE: Color
+      get() = rgb(0.1f, 0.1f, 0.44f)
+    val MINT_CREAM: Color
+      get() = rgb(0.96f, 1f, 0.98f)
+    val MISTY_ROSE: Color
+      get() = rgb(1f, 0.89f, 0.88f)
+    val MOCCASIN: Color
+      get() = rgb(1f, 0.89f, 0.71f)
+    val NAVAJO_WHITE: Color
+      get() = rgb(1f, 0.87f, 0.68f)
+    val NAVY_BLUE: Color
+      get() = rgb(0f, 0f, 0.5f)
+    val OLD_LACE: Color
+      get() = rgb(0.99f, 0.96f, 0.9f)
+    val OLIVE: Color
+      get() = rgb(0.5f, 0.5f, 0f)
+    val OLIVE_DRAB: Color
+      get() = rgb(0.42f, 0.56f, 0.14f)
+    val ORANGE: Color
+      get() = rgb(1f, 0.65f, 0f)
+    val ORANGE_RED: Color
+      get() = rgb(1f, 0.27f, 0f)
+    val ORCHID: Color
+      get() = rgb(0.85f, 0.44f, 0.84f)
+    val PALE_GOLDEN_ROD: Color
+      get() = rgb(0.93f, 0.91f, 0.67f)
+    val PALE_GREEN: Color
+      get() = rgb(0.6f, 0.98f, 0.6f)
+    val PALE_TURQUOISE: Color
+      get() = rgb(0.69f, 0.93f, 0.93f)
+    val PALE_VIOLET_RED: Color
+      get() = rgb(0.86f, 0.44f, 0.58f)
+    val PAPAYA_WHIP: Color
+      get() = rgb(1f, 0.94f, 0.84f)
+    val PEACH_PUFF: Color
+      get() = rgb(1f, 0.85f, 0.73f)
+    val PERU: Color
+      get() = rgb(0.8f, 0.52f, 0.25f)
+    val PINK: Color
+      get() = rgb(1f, 0.75f, 0.8f)
+    val PLUM: Color
+      get() = rgb(0.87f, 0.63f, 0.87f)
+    val POWDER_BLUE: Color
+      get() = rgb(0.69f, 0.88f, 0.9f)
+    val PURPLE: Color
+      get() = rgb(0.63f, 0.13f, 0.94f)
+    val REBECCA_PURPLE: Color
+      get() = rgb(0.4f, 0.2f, 0.6f)
+    val RED: Color
+      get() = rgb(1f, 0f, 0f)
+    val ROSY_BROWN: Color
+      get() = rgb(0.74f, 0.56f, 0.56f)
+    val ROYAL_BLUE: Color
+      get() = rgb(0.25f, 0.41f, 0.88f)
+    val SADDLE_BROWN: Color
+      get() = rgb(0.55f, 0.27f, 0.07f)
+    val SALMON: Color
+      get() = rgb(0.98f, 0.5f, 0.45f)
+    val SANDY_BROWN: Color
+      get() = rgb(0.96f, 0.64f, 0.38f)
+    val SEA_GREEN: Color
+      get() = rgb(0.18f, 0.55f, 0.34f)
+    val SEASHELL: Color
+      get() = rgb(1f, 0.96f, 0.93f)
+    val SIENNA: Color
+      get() = rgb(0.63f, 0.32f, 0.18f)
+    val SILVER: Color
+      get() = rgb(0.75f, 0.75f, 0.75f)
+    val SKY_BLUE: Color
+      get() = rgb(0.53f, 0.81f, 0.92f)
+    val SLATE_BLUE: Color
+      get() = rgb(0.42f, 0.35f, 0.8f)
+    val SLATE_GRAY: Color
+      get() = rgb(0.44f, 0.5f, 0.56f)
+    val SNOW: Color
+      get() = rgb(1f, 0.98f, 0.98f)
+    val SPRING_GREEN: Color
+      get() = rgb(0f, 1f, 0.5f)
+    val STEEL_BLUE: Color
+      get() = rgb(0.27f, 0.51f, 0.71f)
+    val TAN: Color
+      get() = rgb(0.82f, 0.71f, 0.55f)
+    val TEAL: Color
+      get() = rgb(0f, 0.5f, 0.5f)
+    val THISTLE: Color
+      get() = rgb(0.85f, 0.75f, 0.85f)
+    val TOMATO: Color
+      get() = rgb(1f, 0.39f, 0.28f)
+    val TURQUOISE: Color
+      get() = rgb(0.25f, 0.88f, 0.82f)
+    val VIOLET: Color
+      get() = rgb(0.93f, 0.51f, 0.93f)
+    val WEB_GRAY: Color
+      get() = rgb(0.5f, 0.5f, 0.5f)
+    val WEB_GREEN: Color
+      get() = rgb(0f, 0.5f, 0f)
+    val WEB_MAROON: Color
+      get() = rgb(0.5f, 0f, 0f)
+    val WEB_PURPLE: Color
+      get() = rgb(0.5f, 0f, 0.5f)
+    val WHEAT: Color
+      get() = rgb(0.96f, 0.87f, 0.7f)
+    val WHITE: Color
+      get() = rgb(1f, 1f, 1f)
+    val WHITE_SMOKE: Color
+      get() = rgb(0.96f, 0.96f, 0.96f)
+    val YELLOW: Color
+      get() = rgb(1f, 1f, 0f)
+    val YELLOW_GREEN: Color
+      get() = rgb(0.6f, 0.8f, 0.2f)
   }
 }
