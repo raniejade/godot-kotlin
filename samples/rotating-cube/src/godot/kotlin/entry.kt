@@ -1,5 +1,7 @@
+// GENERATED FILE, DO NOT EDIT!
 import gdnative.godot_gdnative_init_options
 import gdnative.godot_gdnative_terminate_options
+import kotlin.native.CName
 import kotlinx.cinterop.COpaquePointer
 
 @CName("godot_gdnative_init")

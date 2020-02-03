@@ -1,9 +1,11 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithTests
 import org.apache.tools.ant.taskdefs.condition.Os
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithTests
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
     kotlin("multiplatform")
+    id("com.github.raniejade.godot-kotlin")
 }
 
 repositories {
@@ -39,3 +41,15 @@ kotlin {
     }
 }
 
+godot {
+    libraries {
+        val rotatingCube by creating {
+            targets.set(
+              listOf("rotatingCube")
+            )
+            classes.set(
+              listOf("RotatingCube")
+            )
+        }
+    }
+}
