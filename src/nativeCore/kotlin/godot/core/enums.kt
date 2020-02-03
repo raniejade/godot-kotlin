@@ -418,7 +418,13 @@ enum class JoystickList(val value: Int) {
 }
 
 enum class MidiMessageList(val value: Int) {
-  // TODO
+  AFTERTOUCH(GlobalConstants.MIDI_MESSAGE_AFTERTOUCH),
+  CHANNEL_PRESSURE(GlobalConstants.MIDI_MESSAGE_CHANNEL_PRESSURE),
+  CONTROL_CHANGE(GlobalConstants.MIDI_MESSAGE_CONTROL_CHANGE),
+  NOTE_OFF(GlobalConstants.MIDI_MESSAGE_NOTE_OFF),
+  NOTE_ON(GlobalConstants.MIDI_MESSAGE_NOTE_ON),
+  PITCH_BEND(GlobalConstants.MIDI_MESSAGE_PITCH_BEND),
+  PROGRAM_CHANGE(GlobalConstants.MIDI_MESSAGE_PROGRAM_CHANGE),
   ;
   companion object {
     fun from(value: Int) = values().first { it.value == value }
