@@ -13,7 +13,7 @@ open class GodotPlugin : Plugin<Project> {
 
   private fun configureLinks(project: Project, godotExtension: GodotExtension) {
     project.afterEvaluate {
-      val generatedSourcesDir = "${project.projectDir}/src/godot"
+      val generatedSourcesDir = "${project.projectDir}/build/godot"
       godotExtension.libraries.configureEach {
         val task = project.tasks.create("generate${name.capitalize()}Entry", GenerateEntry::class.java) {
           output.set(project.file("$generatedSourcesDir/kotlin/entry"))

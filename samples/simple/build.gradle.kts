@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
     kotlin("multiplatform")
+    id("com.github.raniejade.godot-kotlin")
 }
 
 repositories {
@@ -39,3 +40,15 @@ kotlin {
     }
 }
 
+godot {
+    libraries {
+        val rotatingCube by creating {
+            targets.set(
+              listOf("simple")
+            )
+            classes.set(
+              listOf("Simple")
+            )
+        }
+    }
+}
