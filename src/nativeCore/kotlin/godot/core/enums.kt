@@ -320,8 +320,22 @@ enum class KeyModifierMask(val value: Int) {
 }
 
 enum class ButtonList(val value: Int) {
-  // TODO
+  LEFT(GlobalConstants.BUTTON_LEFT),
+  MASK_LEFT(GlobalConstants.BUTTON_MASK_LEFT),
+  MASK_MIDDLE(GlobalConstants.BUTTON_MASK_MIDDLE),
+  MASK_RIGHT(GlobalConstants.BUTTON_MASK_RIGHT),
+  MASK_XBUTTON1(GlobalConstants.BUTTON_MASK_XBUTTON1),
+  MASK_XBUTTON2(GlobalConstants.BUTTON_MASK_XBUTTON2),
+  MIDDLE(GlobalConstants.BUTTON_MIDDLE),
+  RIGHT(GlobalConstants.BUTTON_RIGHT),
+  WHEEL_DOWN(GlobalConstants.BUTTON_WHEEL_DOWN),
+  WHEEL_LEFT(GlobalConstants.BUTTON_WHEEL_LEFT),
+  WHEEL_RIGHT(GlobalConstants.BUTTON_WHEEL_RIGHT),
+  WHEEL_UP(GlobalConstants.BUTTON_WHEEL_UP),
+  XBUTTON1(GlobalConstants.BUTTON_XBUTTON1),
+  XBUTTON2(GlobalConstants.BUTTON_XBUTTON2)
   ;
+
   companion object {
     fun from(value: Int) = values().first { it.value == value }
   }
