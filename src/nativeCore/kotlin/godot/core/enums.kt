@@ -101,7 +101,6 @@ enum class KeyList(val value: Int) {
   CEDILLA(GlobalConstants.KEY_CEDILLA),
   CENT(GlobalConstants.KEY_CENT),
   CLEAR(GlobalConstants.KEY_CLEAR),
-  CODE_MASK(GlobalConstants.KEY_CODE_MASK),
   COLON(GlobalConstants.KEY_COLON),
   COMMA(GlobalConstants.KEY_COMMA),
   CONTROL(GlobalConstants.KEY_CONTROL),
@@ -206,13 +205,6 @@ enum class KeyList(val value: Int) {
   M(GlobalConstants.KEY_M),
   MACRON(GlobalConstants.KEY_MACRON),
   MASCULINE(GlobalConstants.KEY_MASCULINE),
-  MASK_ALT(GlobalConstants.KEY_MASK_ALT),
-  MASK_CMD(GlobalConstants.KEY_MASK_CMD),
-  MASK_CTRL(GlobalConstants.KEY_MASK_CTRL),
-  MASK_GROUP_SWITCH(GlobalConstants.KEY_MASK_GROUP_SWITCH),
-  MASK_KPAD(GlobalConstants.KEY_MASK_KPAD),
-  MASK_META(GlobalConstants.KEY_MASK_META),
-  MASK_SHIFT(GlobalConstants.KEY_MASK_SHIFT),
   MEDIANEXT(GlobalConstants.KEY_MEDIANEXT),
   MEDIAPLAY(GlobalConstants.KEY_MEDIAPLAY),
   MEDIAPREVIOUS(GlobalConstants.KEY_MEDIAPREVIOUS),
@@ -221,7 +213,6 @@ enum class KeyList(val value: Int) {
   MENU(GlobalConstants.KEY_MENU),
   META(GlobalConstants.KEY_META),
   MINUS(GlobalConstants.KEY_MINUS),
-  MODIFIER_MASK(GlobalConstants.KEY_MODIFIER_MASK),
   MU(GlobalConstants.KEY_MU),
   MULTIPLY(GlobalConstants.KEY_MULTIPLY),
   N(GlobalConstants.KEY_N),
@@ -313,7 +304,15 @@ enum class KeyList(val value: Int) {
 }
 
 enum class KeyModifierMask(val value: Int) {
-  // TODO
+  CODE_MASK(GlobalConstants.KEY_CODE_MASK),
+  MASK(GlobalConstants.KEY_MODIFIER_MASK),
+  ALT(GlobalConstants.KEY_MASK_ALT),
+  CMD(GlobalConstants.KEY_MASK_CMD),
+  CTRL(GlobalConstants.KEY_MASK_CTRL),
+  GROUP_SWITCH(GlobalConstants.KEY_MASK_GROUP_SWITCH),
+  KPAD(GlobalConstants.KEY_MASK_KPAD),
+  META(GlobalConstants.KEY_MASK_META),
+  SHIFT(GlobalConstants.KEY_MASK_SHIFT),
   ;
   companion object {
     fun from(value: Int) = values().first { it.value == value }
