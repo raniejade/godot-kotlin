@@ -1,8 +1,10 @@
 [gd_resource type="NativeScript" load_steps=2 format=2]
 
-[ext_resource path="res://RotatingCube.gdnlib" type="GDNativeLibrary" id=1]
+[ext_resource path="res://src/godot/gdnlib/RotatingCube.gdnlib" type="GDNativeLibrary" id=1]
 
 [resource]
 resource_name = "RotatingCube"
 class_name = "RotatingCube"
 library = ExtResource( 1 )
+
+

@@ -11,8 +11,6 @@ albedo_color = Color( 0.882353, 0.321569, 0.321569, 1 )
 
 [node name="Cube" type="Spatial" parent="."]
 script = ExtResource( 1 )
-rotationSpeed = 94.5
-reverse = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Cube"]
 mesh = SubResource( 1 )

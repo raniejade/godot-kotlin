@@ -1,7 +1,7 @@
 enableFeaturePreview("GRADLE_METADATA")
 
 include(":core")
-include(":samples:simple")
+//include(":samples:simple")
 include(":samples:rotating-cube")
 
 includeBuild("gradle-plugin") {

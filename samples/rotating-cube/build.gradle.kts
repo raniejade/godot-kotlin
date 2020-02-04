@@ -1,7 +1,4 @@
-import org.apache.tools.ant.taskdefs.condition.Os
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithTests
-import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
     kotlin("multiplatform")
@@ -13,35 +10,23 @@ repositories {
     mavenCentral()
 }
 
-kotlin {
-    macosX64("macos")
-    mingwX64("windows")
-    linuxX64("linux")
-
-    targets.withType<KotlinNativeTarget> {
-        binaries {
-            sharedLib(listOf(NativeBuildType.DEBUG))
-        }
-
-        compilations["main"].defaultSourceSet {
-            dependencies {
-                api(project(":core"))
-            }
-
-            kotlin.srcDirs("src/rotatingCubeMain/kotlin")
+godot {
+    libraries {
+        val rotatingCube by creating {
+            classes.set(
+              listOf("RotatingCube")
+            )
         }
     }
 }
 
-godot {
-    libraries {
-//        val rotatingCube by creating {
-//            targets.set(
-//              listOf("rotatingCube")
-//            )
-//            classes.set(
-//              listOf("RotatingCube")
-//            )
-//        }
+kotlin {
+    targets.withType<KotlinNativeTarget> {
+        compilations.getByName("main").defaultSourceSet {
+            dependencies {
+                api(project(":core"))
+            }
+        }
     }
+
 }

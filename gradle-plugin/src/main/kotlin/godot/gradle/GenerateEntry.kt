@@ -2,19 +2,17 @@ package godot.gradle
 
 import com.squareup.kotlinpoet.*
 import org.gradle.api.DefaultTask
-import org.gradle.api.model.ObjectFactory
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.listProperty
-import javax.inject.Inject
 
-open class GenerateEntry @Inject constructor(objects: ObjectFactory) : DefaultTask() {
+open class GenerateEntry : DefaultTask() {
   @Input
-  val classes = objects.listProperty<String>()
+  val classes = project.objects.listProperty<String>()
 
   @OutputFile
-  internal val output = objects.fileProperty()
+  internal val output = project.objects.fileProperty()
 
   @TaskAction
   fun generate() {
