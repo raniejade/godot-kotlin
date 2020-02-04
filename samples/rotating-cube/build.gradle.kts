@@ -14,42 +14,34 @@ repositories {
 }
 
 kotlin {
-    fun KotlinNativeTargetWithTests.configure() {
+    macosX64("macos")
+    mingwX64("windows")
+    linuxX64("linux")
+
+    targets.withType<KotlinNativeTarget> {
         binaries {
             sharedLib(listOf(NativeBuildType.DEBUG))
         }
-    }
 
-    val target = if (Os.isFamily(Os.FAMILY_MAC)) {
-        macosX64("rotatingCube")
-    } else if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-        mingwX64("rotatingCube")
-    } else if (Os.isFamily(Os.FAMILY_UNIX)) {
-        linuxX64("rotatingCube")
-    } else {
-        throw AssertionError("Unsupported os.")
-    }
-
-    target.configure()
-
-    sourceSets {
-        val rotatingCubeMain by getting {
+        compilations["main"].defaultSourceSet {
             dependencies {
                 api(project(":core"))
             }
+
+            kotlin.srcDirs("src/rotatingCubeMain/kotlin")
         }
     }
 }
 
 godot {
     libraries {
-        val rotatingCube by creating {
-            targets.set(
-              listOf("rotatingCube")
-            )
-            classes.set(
-              listOf("RotatingCube")
-            )
-        }
+//        val rotatingCube by creating {
+//            targets.set(
+//              listOf("rotatingCube")
+//            )
+//            classes.set(
+//              listOf("RotatingCube")
+//            )
+//        }
     }
 }

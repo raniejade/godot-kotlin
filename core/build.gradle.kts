@@ -1,5 +1,6 @@
 import godot.task.GenerateAPI
 import org.apache.tools.ant.taskdefs.condition.Os
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithTests
 
 plugins {
@@ -12,7 +13,11 @@ repositories {
 }
 
 kotlin {
-    fun KotlinNativeTargetWithTests.configure() {
+    macosX64("macosX64")
+    linuxX64("linuxX64")
+    mingwX64("windowsX64")
+
+    targets.withType<KotlinNativeTarget> {
         compilations.getByName("main") {
             defaultSourceSet {
                 kotlin.srcDirs("src/nativeMain/kotlin", "src/nativeCore/kotlin", "src/nativeGen/kotlin")
@@ -23,18 +28,6 @@ kotlin {
             }
         }
     }
-
-    val target = if (Os.isFamily(Os.FAMILY_MAC)) {
-        macosX64("native")
-    } else if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-        mingwX64("native")
-    } else if (Os.isFamily(Os.FAMILY_UNIX)) {
-        linuxX64("native")
-    } else {
-        throw AssertionError("Unsupported os.")
-    }
-
-    target.configure()
 }
 
 // Number of parameters generated for method and signal classes
