@@ -1,0 +1,15 @@
+[entry]
+X11.64="res://build/bin/simpleLinux/debugShared/libsimple.so"
+Windows.64="res://build/bin/simpleWindows/debugShared/simple.dll"
+OSX.64="res://build/bin/simpleMacOS/debugShared/libsimple.dylib"
+
+[dependencies]
+X11.64=[ ]
+Windows.64=[ ]
+OSX.64=[ ]
+
+[general]
+singleton=false
+load_once=true
+symbol_prefix="godot_"
+reloadable=true
