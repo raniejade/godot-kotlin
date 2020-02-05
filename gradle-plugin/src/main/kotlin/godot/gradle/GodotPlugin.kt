@@ -5,8 +5,17 @@ import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithTests
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
+import java.util.*
 
 open class GodotPlugin : Plugin<Project> {
+  private val buildProperties by lazy {
+    val props = Properties()
+    props.load(GodotPlugin::class.java.classLoader.getResourceAsStream("build.properties"))
+    props
+  }
+
+  private val godotKotlinVersion by lazy { buildProperties["godot.kotlin.version"] as String }
+
   override fun apply(project: Project) {
     project.plugins.apply("org.jetbrains.kotlin.multiplatform")
     val godotExtension = project.extensions.create("godot", GodotExtension::class.java, project.objects)
@@ -16,6 +25,7 @@ open class GodotPlugin : Plugin<Project> {
   }
 
   private fun configureDefaults(godot: GodotExtension) {
+    godot.version.set(godotKotlinVersion)
     godot.libraries.all {
       debug.set(true)
       reloadable.set(true)
@@ -53,8 +63,7 @@ open class GodotPlugin : Plugin<Project> {
                 compileKotlinTask.dependsOn(genEntryTask)
 
                 dependencies {
-                  // TODO: change version
-                  api("com.github.raniejade:godot-kotlin-${artifactSuffixFrom(platform)}:0.1.0")
+                  api("com.github.raniejade:godot-kotlin-${artifactSuffixFrom(platform)}:${godot.version.get()}")
                 }
 
                 defaultSourceSet {

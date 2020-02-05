@@ -40,6 +40,3 @@ tasks {
         outputDir.set(project.file("src/nativeGen/kotlin"))
     }
 }
-
-group = "com.github.raniejade"
-version = "0.1.0"
