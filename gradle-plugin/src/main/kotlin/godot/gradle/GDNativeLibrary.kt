@@ -22,12 +22,12 @@ open class GDNativeLibrary(val name: String, objects: ObjectFactory) {
     this.classes.set(classes.toList())
   }
 
+  private val libraryName = "${name.capitalize()}.gdnlib"
   internal val generateEntryTaskName = "generateEntry${name.capitalize()}"
   internal val generateLibraryTaskName = "generateLibrary${name.capitalize()}"
   internal val generateGDClassesTaskName = "generateGDClass${name.capitalize()}"
   internal val generatedEntryDir = "build/godot/kotlin"
-  internal val generatedLibDir = "src/godot/gdnlib"
+  internal val generatedLibraryPath = "src/godot/gdnlib/$libraryName"
   internal val generatedGDClassesDir = "src/godot/gdns"
-  internal val libraryName = "${name.capitalize()}.gdnlib"
   internal val mainSrcDir = "src/${name}Main/kotlin"
 }

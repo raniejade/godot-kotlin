@@ -11,8 +11,8 @@ repositories {
 godot {
     libraries {
         val simple by creating {
-            classes.set(
-              listOf("Simple")
+            classes(
+              "Simple"
             )
         }
     }

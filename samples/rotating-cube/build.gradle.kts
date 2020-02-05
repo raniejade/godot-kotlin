@@ -11,8 +11,8 @@ repositories {
 godot {
     libraries {
         val rotatingCube by creating {
-            classes.set(
-              listOf("RotatingCube")
+            classes(
+              "RotatingCube"
             )
         }
     }

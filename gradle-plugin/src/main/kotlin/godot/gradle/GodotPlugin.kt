@@ -66,14 +66,20 @@ open class GodotPlugin : Plugin<Project> {
 
         val generateLibraryTask = project.tasks.create(library.generateLibraryTaskName, GenerateLibrary::class.java) {
           libraries.set(librariesToBeGenerated)
-          output.set(project.file("${library.generatedLibDir}/${library.libraryName}"))
+          output.set(project.file(library.generatedLibraryPath))
           reloadable.set(library.reloadable)
           loadOnce.set(library.loadOnce)
           singleton.set(library.singleton)
           symbolPrefix.set(library.symbolPrefix)
         }
 
-        genEntryTask.dependsOn(generateLibraryTask)
+        val generateGDClassesTask = project.tasks.create(library.generateGDClassesTaskName, GenerateGDClasses::class.java) {
+          classes.set(library.classes)
+          libraryFile.set("res://${library.generatedLibraryPath}")
+          outputDir.set(project.file(library.generatedGDClassesDir))
+        }
+
+        genEntryTask.dependsOn(generateLibraryTask, generateGDClassesTask)
       }
 
     }
