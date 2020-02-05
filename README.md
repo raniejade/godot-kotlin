@@ -2,7 +2,7 @@
 Kotlin Native bindings for Godot.
 
 ## Status
-Use with caution, this binding is not yet ready for production use. All of the core Godot classes is fully accessible in Kotlin, however, some APIs are a bit clunky and require some tweaking to make it concise (in the Kotlin way). 
+Use with caution, this binding is not yet ready for production use. All of the core Godot classes are fully accessible in Kotlin, however, some APIs are a bit clunky and require some tweaking to make it concise (in the Kotlin way). 
 
 Here are some gotchas when using this binding:
 - Kotlin Native's compile times are horribly slow, it can take almost a minute to re-compile after making a **single line** change.
