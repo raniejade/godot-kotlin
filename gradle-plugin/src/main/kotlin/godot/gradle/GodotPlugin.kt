@@ -45,12 +45,17 @@ open class GodotPlugin : Plugin<Project> {
                   NativeBuildType.RELEASE
                 }
                 sharedLib(listOf(buildType)) {
-                  librariesToBeGenerated[platform] = "res://${outputFile.relativeTo(projectDir).toString()}"
+                  librariesToBeGenerated[platform] = "res://${outputFile.relativeTo(projectDir)}"
                 }
               }
 
               compilations.getByName("main") {
                 compileKotlinTask.dependsOn(genEntryTask)
+
+                dependencies {
+                  // TODO: change version
+                  api("com.github.raniejade:godot-kotlin-${artifactSuffixFrom(platform)}:0.1.0")
+                }
 
                 defaultSourceSet {
                   kotlin.srcDirs(library.generatedEntryDir, library.mainSrcDir)
@@ -79,6 +84,15 @@ open class GodotPlugin : Plugin<Project> {
       TargetPlatform.WINDOWS -> mingwX64("${name}Windows")
       TargetPlatform.LINUX -> linuxX64("${name}Linux")
       TargetPlatform.MACOS -> macosX64("${name}MacOS")
+      else -> throw AssertionError("Unsupported platform $platform")
+    }
+  }
+
+  private fun artifactSuffixFrom(platform: TargetPlatform): String {
+    return when (platform) {
+      TargetPlatform.WINDOWS -> "windows"
+      TargetPlatform.LINUX -> "linux"
+      TargetPlatform.MACOS -> "macos"
       else -> throw AssertionError("Unsupported platform $platform")
     }
   }
