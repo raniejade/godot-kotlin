@@ -33,8 +33,7 @@ dependencies {
 
 tasks {
   val processResources by getting(Copy::class) {
-    // always regenerate
-    onlyIf { true }
+    outputs.upToDateWhen { false }
     val tokens = mapOf("version" to version.toString())
     from("src/main/resources") {
       include("*.properties")
