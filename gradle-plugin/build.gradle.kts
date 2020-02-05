@@ -2,6 +2,12 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
   `kotlin-dsl`
+  id("org.ajoberstar.reckon") version "0.12.0"
+}
+
+reckon {
+  scopeFromProp()
+  stageFromProp("alpha", "rc", "final")
 }
 
 gradlePlugin {
@@ -25,13 +31,11 @@ dependencies {
   implementation("com.squareup:kotlinpoet:1.5.0")
 }
 
-version = "32.0.0"
-
 tasks {
   val processResources by getting(Copy::class) {
     // always regenerate
     onlyIf { true }
-    val tokens = mapOf("version" to version)
+    val tokens = mapOf("version" to version.toString())
     from("src/main/resources") {
       include("*.properties")
       filter<ReplaceTokens>("tokens" to tokens)
