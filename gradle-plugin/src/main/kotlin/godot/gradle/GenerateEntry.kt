@@ -12,7 +12,7 @@ open class GenerateEntry : DefaultTask() {
   val classes = project.objects.listProperty<String>()
 
   @OutputFile
-  internal val output = project.objects.fileProperty()
+  val output = project.objects.fileProperty()
 
   @TaskAction
   fun generate() {
