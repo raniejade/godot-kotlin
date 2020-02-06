@@ -6,13 +6,7 @@ import java.util.*
 
 plugins {
   `kotlin-dsl`
-  id("org.ajoberstar.reckon") version "0.12.0"
   `maven-publish`
-}
-
-reckon {
-  scopeFromProp()
-  stageFromProp("alpha", "rc", "final")
 }
 
 gradlePlugin {

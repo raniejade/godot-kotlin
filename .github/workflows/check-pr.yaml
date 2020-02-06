@@ -1,4 +1,4 @@
-name: Check Pull Request
+name: Check PR
 on: [pull_request]
 jobs:
   build_core:
@@ -30,4 +30,4 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Execute gradle build
-        run: ./gradlew -b gradle-plugin/build.gradle.kts build
+        run: ./gradlew gradle-plugin:build
