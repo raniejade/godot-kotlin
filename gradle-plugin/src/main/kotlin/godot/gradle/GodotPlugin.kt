@@ -63,7 +63,7 @@ open class GodotPlugin : Plugin<Project> {
                 compileKotlinTask.dependsOn(genEntryTask)
 
                 dependencies {
-                  compileOnly("com.github.raniejade:godot-kotlin-${artifactSuffixFrom(platform)}:${godot.version.get()}")
+                  implementation("com.github.raniejade:godot-kotlin-${artifactSuffixFrom(platform)}:${godot.version.get()}")
                 }
 
                 defaultSourceSet {
