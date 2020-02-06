@@ -9,9 +9,9 @@ jobs:
           - os: linux-latest
             build_task: compileKotlinLinuxX64
           - os: windows-latest
-              build_task: compileKotlinWindowsX64
+            build_task: compileKotlinWindowsX64
           - os: macos-latest
-              build_task: compileKotlinMacosX64
+            build_task: compileKotlinMacosX64
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
