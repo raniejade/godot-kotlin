@@ -9,6 +9,7 @@ repositories {
 }
 
 godot {
+    isCompositeBuild.set(true)
     libraries {
         val simple by creating {
             classes(

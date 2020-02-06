@@ -9,6 +9,7 @@ repositories {
 }
 
 godot {
+    isCompositeBuild.set(true)
     libraries {
         val rotatingCube by creating {
             classes(
