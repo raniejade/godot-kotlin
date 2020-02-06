@@ -66,5 +66,5 @@ publishing {
 }
 
 apply {
-  plugin("publish")
+  plugin(BintrayPublish::class.java)
 }
