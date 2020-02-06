@@ -19,7 +19,6 @@ bintray {
   user = bintrayUser
   key = bintrayApiKey
   publish = doPublish
-  dryRun = true
   with(pkg) {
     repo = bintrayRepo
     desc = "Kotlin Native bindings for Godot"
