@@ -1,8 +1,13 @@
 import org.apache.tools.ant.filters.ReplaceTokens
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.util.Properties
+import java.io.FileInputStream
 
 plugins {
   `kotlin-dsl`
   id("org.ajoberstar.reckon") version "0.12.0"
+  `maven-publish`
 }
 
 reckon {
@@ -17,6 +22,7 @@ gradlePlugin {
       implementationClass = "godot.gradle.GodotPlugin"
     }
   }
+  isAutomatedPublishing = false
 }
 
 repositories {
@@ -25,9 +31,9 @@ repositories {
 }
 
 dependencies {
-  implementation(kotlin("stdlib", version = "1.3.61"))
-  implementation(kotlin("gradle-plugin", version = "1.3.61"))
-  implementation(kotlin("gradle-plugin-api", version = "1.3.61"))
+  implementation(kotlin("stdlib"))
+  implementation(kotlin("gradle-plugin"))
+  implementation(kotlin("gradle-plugin-api"))
   implementation("com.squareup:kotlinpoet:1.5.0")
 }
 
@@ -40,4 +46,31 @@ tasks {
       filter<ReplaceTokens>("tokens" to tokens)
     }
   }
+}
+
+if (Files.exists(Paths.get("$rootDir/../local.properties"))) {
+  val localProperties = Properties()
+  localProperties.load(FileInputStream("$rootDir/../local.properties"))
+  localProperties.forEach { prop -> project.extra.set(prop.key as String, prop.value) }
+}
+
+var releaseMode = false
+if ("$version".matches(Regex("^\\d+\\.\\d+\\.\\d+(-rc\\.\\d+)?"))) {
+  releaseMode = true
+}
+project.extra["releaseMode"] = releaseMode
+project.extra["artifacts"] = arrayOf("godotPlugin")
+
+publishing {
+  publications {
+    val godotPlugin by creating(MavenPublication::class) {
+      groupId = "com.github.raniejade"
+      artifactId = "godot-kotlin-gradle-plugin"
+      from(components["java"])
+    }
+  }
+}
+
+apply {
+  plugin("publish")
 }

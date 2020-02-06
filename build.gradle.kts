@@ -11,10 +11,10 @@ reckon {
 }
 
 
-val version = project.version
+val versionString = project.version
 
 subprojects {
-  this.version = version.toString()
+  this.version = versionString.toString()
 
   if (Files.exists(Paths.get("$rootDir/local.properties"))) {
     val localProperties = java.util.Properties()
