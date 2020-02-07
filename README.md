@@ -1,8 +1,8 @@
 # godot-kotlin
-![GitHub](https://img.shields.io/github/license/raniejade/godot-kotlin?style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/raniejade/godot-kotlin/Build?style=flat-square)
-![Bintray](https://img.shields.io/bintray/v/raniejade/godot-kotlin/godot-kotlin?label=release&style=flat-square)
-![Bintray](https://img.shields.io/bintray/v/raniejade/godot-kotlin-dev/godot-kotlin?label=dev&style=flat-square)
+[![GitHub](https://img.shields.io/github/license/raniejade/godot-kotlin?style=flat-square)](LICENSE)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/raniejade/godot-kotlin/Build?style=flat-square)](https://github.com/raniejade/godot-kotlin/actions?query=workflow%3ABuild)
+[![Bintray](https://img.shields.io/bintray/v/raniejade/godot-kotlin/godot-kotlin?label=release&style=flat-square)](https://bintray.com/raniejade/godot-kotlin/godot-kotlin/_latestVersion)
+[![Bintray](https://img.shields.io/bintray/v/raniejade/godot-kotlin-dev/godot-kotlin?label=dev&style=flat-square)](https://bintray.com/raniejade/godot-kotlin-dev/godot-kotlin/_latestVersion)
 
 Kotlin Native bindings for Godot.
 
