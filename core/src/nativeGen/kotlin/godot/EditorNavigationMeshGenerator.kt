@@ -32,7 +32,7 @@ open class EditorNavigationMeshGenerator(
   }
 
   fun clear(navMesh: NavigationMesh) {
-    val _arg = Variant.new(navMesh)
+    val _arg = Variant(navMesh)
     __method_bind.clear.call(this._handle, listOf(_arg))
   }
 

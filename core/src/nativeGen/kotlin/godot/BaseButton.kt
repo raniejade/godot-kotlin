@@ -187,52 +187,52 @@ open class BaseButton(
   }
 
   fun setActionMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setActionMode.call(this._handle, listOf(_arg))
   }
 
   fun setButtonGroup(buttonGroup: ButtonGroup) {
-    val _arg = Variant.new(buttonGroup)
+    val _arg = Variant(buttonGroup)
     __method_bind.setButtonGroup.call(this._handle, listOf(_arg))
   }
 
   fun setButtonMask(mask: Int) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setButtonMask.call(this._handle, listOf(_arg))
   }
 
   fun setDisabled(disabled: Boolean) {
-    val _arg = Variant.new(disabled)
+    val _arg = Variant(disabled)
     __method_bind.setDisabled.call(this._handle, listOf(_arg))
   }
 
   fun setEnabledFocusMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setEnabledFocusMode.call(this._handle, listOf(_arg))
   }
 
   fun setKeepPressedOutside(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setKeepPressedOutside.call(this._handle, listOf(_arg))
   }
 
   fun setPressed(pressed: Boolean) {
-    val _arg = Variant.new(pressed)
+    val _arg = Variant(pressed)
     __method_bind.setPressed.call(this._handle, listOf(_arg))
   }
 
   fun setShortcut(shortcut: ShortCut) {
-    val _arg = Variant.new(shortcut)
+    val _arg = Variant(shortcut)
     __method_bind.setShortcut.call(this._handle, listOf(_arg))
   }
 
   fun setShortcutInTooltip(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setShortcutInTooltip.call(this._handle, listOf(_arg))
   }
 
   fun setToggleMode(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setToggleMode.call(this._handle, listOf(_arg))
   }
 

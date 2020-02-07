@@ -97,27 +97,27 @@ open class GDNativeLibrary(
   }
 
   fun setConfigFile(configFile: ConfigFile) {
-    val _arg = Variant.new(configFile)
+    val _arg = Variant(configFile)
     __method_bind.setConfigFile.call(this._handle, listOf(_arg))
   }
 
   fun setLoadOnce(loadOnce: Boolean) {
-    val _arg = Variant.new(loadOnce)
+    val _arg = Variant(loadOnce)
     __method_bind.setLoadOnce.call(this._handle, listOf(_arg))
   }
 
   fun setReloadable(reloadable: Boolean) {
-    val _arg = Variant.new(reloadable)
+    val _arg = Variant(reloadable)
     __method_bind.setReloadable.call(this._handle, listOf(_arg))
   }
 
   fun setSingleton(singleton: Boolean) {
-    val _arg = Variant.new(singleton)
+    val _arg = Variant(singleton)
     __method_bind.setSingleton.call(this._handle, listOf(_arg))
   }
 
   fun setSymbolPrefix(symbolPrefix: String) {
-    val _arg = Variant.new(symbolPrefix)
+    val _arg = Variant(symbolPrefix)
     __method_bind.setSymbolPrefix.call(this._handle, listOf(_arg))
   }
 

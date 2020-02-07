@@ -25,7 +25,7 @@ open class EditorScript(
   }
 
   fun addRootNode(node: Node) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.addRootNode.call(this._handle, listOf(_arg))
   }
 

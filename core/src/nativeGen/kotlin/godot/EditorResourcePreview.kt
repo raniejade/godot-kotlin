@@ -30,12 +30,12 @@ open class EditorResourcePreview(
   }
 
   fun addPreviewGenerator(generator: EditorResourcePreviewGenerator) {
-    val _arg = Variant.new(generator)
+    val _arg = Variant(generator)
     __method_bind.addPreviewGenerator.call(this._handle, listOf(_arg))
   }
 
   fun checkForInvalidation(path: String) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.checkForInvalidation.call(this._handle, listOf(_arg))
   }
 
@@ -68,7 +68,7 @@ open class EditorResourcePreview(
   }
 
   fun removePreviewGenerator(generator: EditorResourcePreviewGenerator) {
-    val _arg = Variant.new(generator)
+    val _arg = Variant(generator)
     __method_bind.removePreviewGenerator.call(this._handle, listOf(_arg))
   }
 

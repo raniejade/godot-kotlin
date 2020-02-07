@@ -52,12 +52,12 @@ open class VisualShaderNodeTextureUniform(
   }
 
   fun setColorDefault(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.setColorDefault.call(this._handle, listOf(_arg))
   }
 
   fun setTextureType(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.setTextureType.call(this._handle, listOf(_arg))
   }
 

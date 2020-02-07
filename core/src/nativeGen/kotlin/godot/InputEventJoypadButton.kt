@@ -62,17 +62,17 @@ open class InputEventJoypadButton(
   }
 
   fun setButtonIndex(buttonIndex: Int) {
-    val _arg = Variant.new(buttonIndex)
+    val _arg = Variant(buttonIndex)
     __method_bind.setButtonIndex.call(this._handle, listOf(_arg))
   }
 
   fun setPressed(pressed: Boolean) {
-    val _arg = Variant.new(pressed)
+    val _arg = Variant(pressed)
     __method_bind.setPressed.call(this._handle, listOf(_arg))
   }
 
   fun setPressure(pressure: Float) {
-    val _arg = Variant.new(pressure)
+    val _arg = Variant(pressure)
     __method_bind.setPressure.call(this._handle, listOf(_arg))
   }
 

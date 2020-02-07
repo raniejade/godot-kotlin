@@ -145,39 +145,39 @@ open class BakedLightmapData(
   }
 
   fun getUserLightmap(userIdx: Int): Texture {
-    val _arg = Variant.new(userIdx)
+    val _arg = Variant(userIdx)
     val _ret = __method_bind.getUserLightmap.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun getUserPath(userIdx: Int): NodePath {
-    val _arg = Variant.new(userIdx)
+    val _arg = Variant(userIdx)
     val _ret = __method_bind.getUserPath.call(this._handle, listOf(_arg))
     return _ret.asNodePath()
   }
 
   fun setBounds(bounds: AABB) {
-    val _arg = Variant.new(bounds)
+    val _arg = Variant(bounds)
     __method_bind.setBounds.call(this._handle, listOf(_arg))
   }
 
   fun setCellSpaceTransform(xform: Transform) {
-    val _arg = Variant.new(xform)
+    val _arg = Variant(xform)
     __method_bind.setCellSpaceTransform.call(this._handle, listOf(_arg))
   }
 
   fun setCellSubdiv(cellSubdiv: Int) {
-    val _arg = Variant.new(cellSubdiv)
+    val _arg = Variant(cellSubdiv)
     __method_bind.setCellSubdiv.call(this._handle, listOf(_arg))
   }
 
   fun setEnergy(energy: Float) {
-    val _arg = Variant.new(energy)
+    val _arg = Variant(energy)
     __method_bind.setEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setOctree(octree: PoolByteArray) {
-    val _arg = Variant.new(octree)
+    val _arg = Variant(octree)
     __method_bind.setOctree.call(this._handle, listOf(_arg))
   }
 

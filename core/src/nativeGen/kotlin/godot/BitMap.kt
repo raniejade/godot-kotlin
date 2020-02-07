@@ -30,7 +30,7 @@ open class BitMap(
   }
 
   fun create(size: Vector2) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.create.call(this._handle, listOf(_arg))
   }
 
@@ -42,7 +42,7 @@ open class BitMap(
   }
 
   fun getBit(position: Vector2): Boolean {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     val _ret = __method_bind.getBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }

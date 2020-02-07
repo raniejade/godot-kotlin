@@ -26,13 +26,13 @@ open class CryptoKey(
   }
 
   fun load(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.load.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun save(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.save.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

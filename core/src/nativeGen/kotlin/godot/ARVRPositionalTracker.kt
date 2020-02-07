@@ -84,7 +84,7 @@ open class ARVRPositionalTracker(
   }
 
   fun getTransform(adjustByReferenceFrame: Boolean): Transform {
-    val _arg = Variant.new(adjustByReferenceFrame)
+    val _arg = Variant(adjustByReferenceFrame)
     val _ret = __method_bind.getTransform.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
@@ -95,7 +95,7 @@ open class ARVRPositionalTracker(
   }
 
   fun setRumble(rumble: Float) {
-    val _arg = Variant.new(rumble)
+    val _arg = Variant(rumble)
     __method_bind.setRumble.call(this._handle, listOf(_arg))
   }
 

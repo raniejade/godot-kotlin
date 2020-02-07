@@ -109,7 +109,7 @@ open class ColorPicker(
   }
 
   fun addPreset(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.addPreset.call(this._handle, listOf(_arg))
   }
 
@@ -124,7 +124,7 @@ open class ColorPicker(
   }
 
   fun erasePreset(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.erasePreset.call(this._handle, listOf(_arg))
   }
 
@@ -159,37 +159,37 @@ open class ColorPicker(
   }
 
   fun setDeferredMode(mode: Boolean) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setDeferredMode.call(this._handle, listOf(_arg))
   }
 
   fun setEditAlpha(show: Boolean) {
-    val _arg = Variant.new(show)
+    val _arg = Variant(show)
     __method_bind.setEditAlpha.call(this._handle, listOf(_arg))
   }
 
   fun setHsvMode(mode: Boolean) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setHsvMode.call(this._handle, listOf(_arg))
   }
 
   fun setPickColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setPickColor.call(this._handle, listOf(_arg))
   }
 
   fun setPresetsEnabled(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setPresetsEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setPresetsVisible(visible: Boolean) {
-    val _arg = Variant.new(visible)
+    val _arg = Variant(visible)
     __method_bind.setPresetsVisible.call(this._handle, listOf(_arg))
   }
 
   fun setRawMode(mode: Boolean) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setRawMode.call(this._handle, listOf(_arg))
   }
 

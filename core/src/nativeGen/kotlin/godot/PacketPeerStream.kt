@@ -65,17 +65,17 @@ open class PacketPeerStream(
   }
 
   fun setInputBufferMaxSize(maxSizeBytes: Int) {
-    val _arg = Variant.new(maxSizeBytes)
+    val _arg = Variant(maxSizeBytes)
     __method_bind.setInputBufferMaxSize.call(this._handle, listOf(_arg))
   }
 
   fun setOutputBufferMaxSize(maxSizeBytes: Int) {
-    val _arg = Variant.new(maxSizeBytes)
+    val _arg = Variant(maxSizeBytes)
     __method_bind.setOutputBufferMaxSize.call(this._handle, listOf(_arg))
   }
 
   fun setStreamPeer(peer: StreamPeer) {
-    val _arg = Variant.new(peer)
+    val _arg = Variant(peer)
     __method_bind.setStreamPeer.call(this._handle, listOf(_arg))
   }
 

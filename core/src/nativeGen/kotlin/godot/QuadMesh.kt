@@ -49,7 +49,7 @@ open class QuadMesh(
   }
 
   fun setSize(size: Vector2) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 

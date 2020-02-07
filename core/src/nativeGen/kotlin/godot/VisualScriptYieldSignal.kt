@@ -89,22 +89,22 @@ open class VisualScriptYieldSignal(
   }
 
   fun setBasePath(basePath: NodePath) {
-    val _arg = Variant.new(basePath)
+    val _arg = Variant(basePath)
     __method_bind.setBasePath.call(this._handle, listOf(_arg))
   }
 
   fun setBaseType(baseType: String) {
-    val _arg = Variant.new(baseType)
+    val _arg = Variant(baseType)
     __method_bind.setBaseType.call(this._handle, listOf(_arg))
   }
 
   fun setCallMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setCallMode.call(this._handle, listOf(_arg))
   }
 
   fun setSignal(signal: String) {
-    val _arg = Variant.new(signal)
+    val _arg = Variant(signal)
     __method_bind.setSignal.call(this._handle, listOf(_arg))
   }
 

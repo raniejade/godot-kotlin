@@ -74,22 +74,22 @@ open class InputEventKey(
   }
 
   fun setEcho(echo: Boolean) {
-    val _arg = Variant.new(echo)
+    val _arg = Variant(echo)
     __method_bind.setEcho.call(this._handle, listOf(_arg))
   }
 
   fun setPressed(pressed: Boolean) {
-    val _arg = Variant.new(pressed)
+    val _arg = Variant(pressed)
     __method_bind.setPressed.call(this._handle, listOf(_arg))
   }
 
   fun setScancode(scancode: Int) {
-    val _arg = Variant.new(scancode)
+    val _arg = Variant(scancode)
     __method_bind.setScancode.call(this._handle, listOf(_arg))
   }
 
   fun setUnicode(unicode: Int) {
-    val _arg = Variant.new(unicode)
+    val _arg = Variant(unicode)
     __method_bind.setUnicode.call(this._handle, listOf(_arg))
   }
 

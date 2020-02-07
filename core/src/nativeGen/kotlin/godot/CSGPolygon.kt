@@ -218,67 +218,67 @@ open class CSGPolygon(
   }
 
   fun setDepth(depth: Float) {
-    val _arg = Variant.new(depth)
+    val _arg = Variant(depth)
     __method_bind.setDepth.call(this._handle, listOf(_arg))
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant.new(material)
+    val _arg = Variant(material)
     __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setMode.call(this._handle, listOf(_arg))
   }
 
   fun setPathContinuousU(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setPathContinuousU.call(this._handle, listOf(_arg))
   }
 
   fun setPathInterval(distance: Float) {
-    val _arg = Variant.new(distance)
+    val _arg = Variant(distance)
     __method_bind.setPathInterval.call(this._handle, listOf(_arg))
   }
 
   fun setPathJoined(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setPathJoined.call(this._handle, listOf(_arg))
   }
 
   fun setPathLocal(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setPathLocal.call(this._handle, listOf(_arg))
   }
 
   fun setPathNode(path: NodePath) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.setPathNode.call(this._handle, listOf(_arg))
   }
 
   fun setPathRotation(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setPathRotation.call(this._handle, listOf(_arg))
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
-    val _arg = Variant.new(polygon)
+    val _arg = Variant(polygon)
     __method_bind.setPolygon.call(this._handle, listOf(_arg))
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
-    val _arg = Variant.new(smoothFaces)
+    val _arg = Variant(smoothFaces)
     __method_bind.setSmoothFaces.call(this._handle, listOf(_arg))
   }
 
   fun setSpinDegrees(degrees: Float) {
-    val _arg = Variant.new(degrees)
+    val _arg = Variant(degrees)
     __method_bind.setSpinDegrees.call(this._handle, listOf(_arg))
   }
 
   fun setSpinSides(spinSides: Int) {
-    val _arg = Variant.new(spinSides)
+    val _arg = Variant(spinSides)
     __method_bind.setSpinSides.call(this._handle, listOf(_arg))
   }
 

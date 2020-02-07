@@ -52,12 +52,12 @@ open class AudioStreamRandomPitch(
   }
 
   fun setAudioStream(stream: AudioStream) {
-    val _arg = Variant.new(stream)
+    val _arg = Variant(stream)
     __method_bind.setAudioStream.call(this._handle, listOf(_arg))
   }
 
   fun setRandomPitch(scale: Float) {
-    val _arg = Variant.new(scale)
+    val _arg = Variant(scale)
     __method_bind.setRandomPitch.call(this._handle, listOf(_arg))
   }
 

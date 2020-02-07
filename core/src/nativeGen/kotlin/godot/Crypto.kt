@@ -27,13 +27,13 @@ open class Crypto(
   }
 
   fun generateRandomBytes(size: Int): PoolByteArray {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     val _ret = __method_bind.generateRandomBytes.call(this._handle, listOf(_arg))
     return _ret.asPoolByteArray()
   }
 
   fun generateRsa(size: Int): CryptoKey {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     val _ret = __method_bind.generateRsa.call(this._handle, listOf(_arg))
     return _ret.asObject(::CryptoKey)!!
   }

@@ -38,13 +38,13 @@ open class PackedScene(
   }
 
   fun instance(editState: Int = 0): Node {
-    val _arg = Variant.new(editState)
+    val _arg = Variant(editState)
     val _ret = __method_bind.instance.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
 
   fun pack(path: Node): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.pack.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

@@ -199,57 +199,57 @@ open class SkeletonIK(
   }
 
   fun setInterpolation(interpolation: Float) {
-    val _arg = Variant.new(interpolation)
+    val _arg = Variant(interpolation)
     __method_bind.setInterpolation.call(this._handle, listOf(_arg))
   }
 
   fun setMagnetPosition(localPosition: Vector3) {
-    val _arg = Variant.new(localPosition)
+    val _arg = Variant(localPosition)
     __method_bind.setMagnetPosition.call(this._handle, listOf(_arg))
   }
 
   fun setMaxIterations(iterations: Int) {
-    val _arg = Variant.new(iterations)
+    val _arg = Variant(iterations)
     __method_bind.setMaxIterations.call(this._handle, listOf(_arg))
   }
 
   fun setMinDistance(minDistance: Float) {
-    val _arg = Variant.new(minDistance)
+    val _arg = Variant(minDistance)
     __method_bind.setMinDistance.call(this._handle, listOf(_arg))
   }
 
   fun setOverrideTipBasis(override: Boolean) {
-    val _arg = Variant.new(override)
+    val _arg = Variant(override)
     __method_bind.setOverrideTipBasis.call(this._handle, listOf(_arg))
   }
 
   fun setRootBone(rootBone: String) {
-    val _arg = Variant.new(rootBone)
+    val _arg = Variant(rootBone)
     __method_bind.setRootBone.call(this._handle, listOf(_arg))
   }
 
   fun setTargetNode(node: NodePath) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.setTargetNode.call(this._handle, listOf(_arg))
   }
 
   fun setTargetTransform(target: Transform) {
-    val _arg = Variant.new(target)
+    val _arg = Variant(target)
     __method_bind.setTargetTransform.call(this._handle, listOf(_arg))
   }
 
   fun setTipBone(tipBone: String) {
-    val _arg = Variant.new(tipBone)
+    val _arg = Variant(tipBone)
     __method_bind.setTipBone.call(this._handle, listOf(_arg))
   }
 
   fun setUseMagnet(use: Boolean) {
-    val _arg = Variant.new(use)
+    val _arg = Variant(use)
     __method_bind.setUseMagnet.call(this._handle, listOf(_arg))
   }
 
   fun start(oneTime: Boolean = false) {
-    val _arg = Variant.new(oneTime)
+    val _arg = Variant(oneTime)
     __method_bind.start.call(this._handle, listOf(_arg))
   }
 

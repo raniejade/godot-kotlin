@@ -69,17 +69,17 @@ open class MultiMeshInstance2D(
   }
 
   fun setMultimesh(multimesh: MultiMesh) {
-    val _arg = Variant.new(multimesh)
+    val _arg = Variant(multimesh)
     __method_bind.setMultimesh.call(this._handle, listOf(_arg))
   }
 
   fun setNormalMap(normalMap: Texture) {
-    val _arg = Variant.new(normalMap)
+    val _arg = Variant(normalMap)
     __method_bind.setNormalMap.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 

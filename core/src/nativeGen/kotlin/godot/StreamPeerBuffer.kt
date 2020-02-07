@@ -69,17 +69,17 @@ open class StreamPeerBuffer(
   }
 
   fun resize(size: Int) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.resize.call(this._handle, listOf(_arg))
   }
 
   fun seek(position: Int) {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     __method_bind.seek.call(this._handle, listOf(_arg))
   }
 
   fun setDataArray(data: PoolByteArray) {
-    val _arg = Variant.new(data)
+    val _arg = Variant(data)
     __method_bind.setDataArray.call(this._handle, listOf(_arg))
   }
 

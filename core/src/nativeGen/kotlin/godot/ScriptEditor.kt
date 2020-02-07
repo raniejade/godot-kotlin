@@ -81,7 +81,7 @@ open class ScriptEditor(
   }
 
   fun gotoLine(lineNumber: Int) {
-    val _arg = Variant.new(lineNumber)
+    val _arg = Variant(lineNumber)
     __method_bind.gotoLine.call(this._handle, listOf(_arg))
   }
 

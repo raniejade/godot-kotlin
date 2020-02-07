@@ -39,7 +39,7 @@ open class Sky(
   }
 
   fun setRadianceSize(size: Int) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setRadianceSize.call(this._handle, listOf(_arg))
   }
 

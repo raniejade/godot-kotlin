@@ -76,7 +76,7 @@ fun setProperty(
   val propertyHandleRef = checkNotNull(methodData).asStableRef<MutablePropertyHandler<Object, *>>()
   val propertyHandler = propertyHandleRef.get()
   val arg = if (value == null) {
-    Variant.new()
+    Variant()
   } else {
     Variant(value.pointed.readValue())
   }

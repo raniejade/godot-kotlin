@@ -44,13 +44,13 @@ open class LargeTexture(
   }
 
   fun getPieceOffset(idx: Int): Vector2 {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPieceOffset.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getPieceTexture(idx: Int): Texture {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPieceTexture.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
@@ -70,7 +70,7 @@ open class LargeTexture(
   }
 
   fun setSize(size: Vector2) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 

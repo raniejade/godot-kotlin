@@ -53,29 +53,29 @@ open class Popup(
   }
 
   fun popup(bounds: Rect2) {
-    val _arg = Variant.new(bounds)
+    val _arg = Variant(bounds)
     __method_bind.popup.call(this._handle, listOf(_arg))
   }
 
-  fun popupCentered(size: Vector2 = Vector2.new(0, 0)) {
-    val _arg = Variant.new(size)
+  fun popupCentered(size: Vector2 = Vector2(0, 0)) {
+    val _arg = Variant(size)
     __method_bind.popupCentered.call(this._handle, listOf(_arg))
   }
 
-  fun popupCenteredClamped(size: Vector2 = Vector2.new(0, 0), fallbackRatio: Float = 0.75f) {
+  fun popupCenteredClamped(size: Vector2 = Vector2(0, 0), fallbackRatio: Float = 0.75f) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(size))
     _args.add(Variant.fromAny(fallbackRatio))
     __method_bind.popupCenteredClamped.call(this._handle, _args)
   }
 
-  fun popupCenteredMinsize(minsize: Vector2 = Vector2.new(0, 0)) {
-    val _arg = Variant.new(minsize)
+  fun popupCenteredMinsize(minsize: Vector2 = Vector2(0, 0)) {
+    val _arg = Variant(minsize)
     __method_bind.popupCenteredMinsize.call(this._handle, listOf(_arg))
   }
 
   fun popupCenteredRatio(ratio: Float = 0.75f) {
-    val _arg = Variant.new(ratio)
+    val _arg = Variant(ratio)
     __method_bind.popupCenteredRatio.call(this._handle, listOf(_arg))
   }
 
@@ -84,7 +84,7 @@ open class Popup(
   }
 
   fun setExclusive(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setExclusive.call(this._handle, listOf(_arg))
   }
 

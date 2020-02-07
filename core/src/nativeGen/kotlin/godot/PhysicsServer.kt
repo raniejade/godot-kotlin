@@ -48,7 +48,7 @@ open class PhysicsServer(
   }
 
   fun areaClearShapes(area: RID) {
-    val _arg = Variant.new(area)
+    val _arg = Variant(area)
     __method_bind.areaClearShapes.call(this._handle, listOf(_arg))
   }
 
@@ -58,7 +58,7 @@ open class PhysicsServer(
   }
 
   fun areaGetObjectInstanceId(area: RID): Int {
-    val _arg = Variant.new(area)
+    val _arg = Variant(area)
     val _ret = __method_bind.areaGetObjectInstanceId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -80,7 +80,7 @@ open class PhysicsServer(
   }
 
   fun areaGetShapeCount(area: RID): Int {
-    val _arg = Variant.new(area)
+    val _arg = Variant(area)
     val _ret = __method_bind.areaGetShapeCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -94,25 +94,25 @@ open class PhysicsServer(
   }
 
   fun areaGetSpace(area: RID): RID {
-    val _arg = Variant.new(area)
+    val _arg = Variant(area)
     val _ret = __method_bind.areaGetSpace.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }
 
   fun areaGetSpaceOverrideMode(area: RID): AreaSpaceOverrideMode {
-    val _arg = Variant.new(area)
+    val _arg = Variant(area)
     val _ret = __method_bind.areaGetSpaceOverrideMode.call(this._handle, listOf(_arg))
     return PhysicsServer.AreaSpaceOverrideMode.from(_ret.asInt())
   }
 
   fun areaGetTransform(area: RID): Transform {
-    val _arg = Variant.new(area)
+    val _arg = Variant(area)
     val _ret = __method_bind.areaGetTransform.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
 
   fun areaIsRayPickable(area: RID): Boolean {
-    val _arg = Variant.new(area)
+    val _arg = Variant(area)
     val _ret = __method_bind.areaIsRayPickable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -326,7 +326,7 @@ open class PhysicsServer(
   }
 
   fun bodyClearShapes(body: RID) {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     __method_bind.bodyClearShapes.call(this._handle, listOf(_arg))
   }
 
@@ -339,43 +339,43 @@ open class PhysicsServer(
   }
 
   fun bodyGetCollisionLayer(body: RID): Int {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyGetCollisionLayer.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun bodyGetCollisionMask(body: RID): Int {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyGetCollisionMask.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun bodyGetDirectState(body: RID): PhysicsDirectBodyState {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyGetDirectState.call(this._handle, listOf(_arg))
     return _ret.asObject(::PhysicsDirectBodyState)!!
   }
 
   fun bodyGetKinematicSafeMargin(body: RID): Float {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyGetKinematicSafeMargin.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun bodyGetMaxContactsReported(body: RID): Int {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyGetMaxContactsReported.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun bodyGetMode(body: RID): BodyMode {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyGetMode.call(this._handle, listOf(_arg))
     return PhysicsServer.BodyMode.from(_ret.asInt())
   }
 
   fun bodyGetObjectInstanceId(body: RID): Int {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyGetObjectInstanceId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -397,7 +397,7 @@ open class PhysicsServer(
   }
 
   fun bodyGetShapeCount(body: RID): Int {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyGetShapeCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -411,7 +411,7 @@ open class PhysicsServer(
   }
 
   fun bodyGetSpace(body: RID): RID {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyGetSpace.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }
@@ -433,20 +433,20 @@ open class PhysicsServer(
   }
 
   fun bodyIsContinuousCollisionDetectionEnabled(body: RID): Boolean {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyIsContinuousCollisionDetectionEnabled.call(this._handle,
         listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun bodyIsOmittingForceIntegration(body: RID): Boolean {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyIsOmittingForceIntegration.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun bodyIsRayPickable(body: RID): Boolean {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     val _ret = __method_bind.bodyIsRayPickable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -642,7 +642,7 @@ open class PhysicsServer(
   }
 
   fun freeRid(rid: RID) {
-    val _arg = Variant.new(rid)
+    val _arg = Variant(rid)
     __method_bind.freeRid.call(this._handle, listOf(_arg))
   }
 
@@ -701,7 +701,7 @@ open class PhysicsServer(
   }
 
   fun getProcessInfo(processInfo: Int): Int {
-    val _arg = Variant.new(processInfo)
+    val _arg = Variant(processInfo)
     val _ret = __method_bind.getProcessInfo.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -822,13 +822,13 @@ open class PhysicsServer(
   }
 
   fun jointGetSolverPriority(joint: RID): Int {
-    val _arg = Variant.new(joint)
+    val _arg = Variant(joint)
     val _ret = __method_bind.jointGetSolverPriority.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun jointGetType(joint: RID): JointType {
-    val _arg = Variant.new(joint)
+    val _arg = Variant(joint)
     val _ret = __method_bind.jointGetType.call(this._handle, listOf(_arg))
     return PhysicsServer.JointType.from(_ret.asInt())
   }
@@ -841,13 +841,13 @@ open class PhysicsServer(
   }
 
   fun pinJointGetLocalA(joint: RID): Vector3 {
-    val _arg = Variant.new(joint)
+    val _arg = Variant(joint)
     val _ret = __method_bind.pinJointGetLocalA.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun pinJointGetLocalB(joint: RID): Vector3 {
-    val _arg = Variant.new(joint)
+    val _arg = Variant(joint)
     val _ret = __method_bind.pinJointGetLocalB.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
@@ -887,24 +887,24 @@ open class PhysicsServer(
   }
 
   fun setActive(active: Boolean) {
-    val _arg = Variant.new(active)
+    val _arg = Variant(active)
     __method_bind.setActive.call(this._handle, listOf(_arg))
   }
 
   fun shapeCreate(type: Int): RID {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.shapeCreate.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }
 
   fun shapeGetData(shape: RID): Variant {
-    val _arg = Variant.new(shape)
+    val _arg = Variant(shape)
     val _ret = __method_bind.shapeGetData.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun shapeGetType(shape: RID): ShapeType {
-    val _arg = Variant.new(shape)
+    val _arg = Variant(shape)
     val _ret = __method_bind.shapeGetType.call(this._handle, listOf(_arg))
     return PhysicsServer.ShapeType.from(_ret.asInt())
   }
@@ -942,7 +942,7 @@ open class PhysicsServer(
   }
 
   fun spaceGetDirectState(space: RID): PhysicsDirectSpaceState {
-    val _arg = Variant.new(space)
+    val _arg = Variant(space)
     val _ret = __method_bind.spaceGetDirectState.call(this._handle, listOf(_arg))
     return _ret.asObject(::PhysicsDirectSpaceState)!!
   }
@@ -956,7 +956,7 @@ open class PhysicsServer(
   }
 
   fun spaceIsActive(space: RID): Boolean {
-    val _arg = Variant.new(space)
+    val _arg = Variant(space)
     val _ret = __method_bind.spaceIsActive.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }

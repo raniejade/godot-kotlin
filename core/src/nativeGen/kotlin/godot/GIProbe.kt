@@ -180,52 +180,52 @@ open class GIProbe(
   }
 
   fun setBias(max: Float) {
-    val _arg = Variant.new(max)
+    val _arg = Variant(max)
     __method_bind.setBias.call(this._handle, listOf(_arg))
   }
 
   fun setCompress(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCompress.call(this._handle, listOf(_arg))
   }
 
   fun setDynamicRange(max: Int) {
-    val _arg = Variant.new(max)
+    val _arg = Variant(max)
     __method_bind.setDynamicRange.call(this._handle, listOf(_arg))
   }
 
   fun setEnergy(max: Float) {
-    val _arg = Variant.new(max)
+    val _arg = Variant(max)
     __method_bind.setEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setExtents(extents: Vector3) {
-    val _arg = Variant.new(extents)
+    val _arg = Variant(extents)
     __method_bind.setExtents.call(this._handle, listOf(_arg))
   }
 
   fun setInterior(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setInterior.call(this._handle, listOf(_arg))
   }
 
   fun setNormalBias(max: Float) {
-    val _arg = Variant.new(max)
+    val _arg = Variant(max)
     __method_bind.setNormalBias.call(this._handle, listOf(_arg))
   }
 
   fun setProbeData(data: GIProbeData) {
-    val _arg = Variant.new(data)
+    val _arg = Variant(data)
     __method_bind.setProbeData.call(this._handle, listOf(_arg))
   }
 
   fun setPropagation(max: Float) {
-    val _arg = Variant.new(max)
+    val _arg = Variant(max)
     __method_bind.setPropagation.call(this._handle, listOf(_arg))
   }
 
   fun setSubdiv(subdiv: Int) {
-    val _arg = Variant.new(subdiv)
+    val _arg = Variant(subdiv)
     __method_bind.setSubdiv.call(this._handle, listOf(_arg))
   }
 

@@ -119,37 +119,37 @@ open class PathFollow(
   }
 
   fun setCubicInterpolation(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCubicInterpolation.call(this._handle, listOf(_arg))
   }
 
   fun setHOffset(hOffset: Float) {
-    val _arg = Variant.new(hOffset)
+    val _arg = Variant(hOffset)
     __method_bind.setHOffset.call(this._handle, listOf(_arg))
   }
 
   fun setLoop(loop: Boolean) {
-    val _arg = Variant.new(loop)
+    val _arg = Variant(loop)
     __method_bind.setLoop.call(this._handle, listOf(_arg))
   }
 
   fun setOffset(offset: Float) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setOffset.call(this._handle, listOf(_arg))
   }
 
   fun setRotationMode(rotationMode: Int) {
-    val _arg = Variant.new(rotationMode)
+    val _arg = Variant(rotationMode)
     __method_bind.setRotationMode.call(this._handle, listOf(_arg))
   }
 
   fun setUnitOffset(unitOffset: Float) {
-    val _arg = Variant.new(unitOffset)
+    val _arg = Variant(unitOffset)
     __method_bind.setUnitOffset.call(this._handle, listOf(_arg))
   }
 
   fun setVOffset(vOffset: Float) {
-    val _arg = Variant.new(vOffset)
+    val _arg = Variant(vOffset)
     __method_bind.setVOffset.call(this._handle, listOf(_arg))
   }
 

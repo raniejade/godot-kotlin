@@ -23,13 +23,13 @@ open class _Marshalls(
   __ignore: String?
 ) : Reference(null) {
   fun base64ToRaw(base64Str: String): PoolByteArray {
-    val _arg = Variant.new(base64Str)
+    val _arg = Variant(base64Str)
     val _ret = __method_bind.base64ToRaw.call(this._handle, listOf(_arg))
     return _ret.asPoolByteArray()
   }
 
   fun base64ToUtf8(base64Str: String): String {
-    val _arg = Variant.new(base64Str)
+    val _arg = Variant(base64Str)
     val _ret = __method_bind.base64ToUtf8.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -43,13 +43,13 @@ open class _Marshalls(
   }
 
   fun rawToBase64(array: PoolByteArray): String {
-    val _arg = Variant.new(array)
+    val _arg = Variant(array)
     val _ret = __method_bind.rawToBase64.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun utf8ToBase64(utf8Str: String): String {
-    val _arg = Variant.new(utf8Str)
+    val _arg = Variant(utf8Str)
     val _ret = __method_bind.utf8ToBase64.call(this._handle, listOf(_arg))
     return _ret.asString()
   }

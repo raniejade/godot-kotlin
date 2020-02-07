@@ -97,17 +97,17 @@ open class NetworkedMultiplayerPeer(
   }
 
   fun setRefuseNewConnections(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setRefuseNewConnections.call(this._handle, listOf(_arg))
   }
 
   fun setTargetPeer(id: Int) {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     __method_bind.setTargetPeer.call(this._handle, listOf(_arg))
   }
 
   fun setTransferMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setTransferMode.call(this._handle, listOf(_arg))
   }
 

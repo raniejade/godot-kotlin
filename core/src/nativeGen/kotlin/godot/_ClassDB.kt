@@ -26,19 +26,19 @@ open class _ClassDB(
   __ignore: String?
 ) : Object(null) {
   fun canInstance(`class`: String): Boolean {
-    val _arg = Variant.new(`class`)
+    val _arg = Variant(`class`)
     val _ret = __method_bind.canInstance.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun classExists(`class`: String): Boolean {
-    val _arg = Variant.new(`class`)
+    val _arg = Variant(`class`)
     val _ret = __method_bind.classExists.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun classGetCategory(`class`: String): String {
-    val _arg = Variant.new(`class`)
+    val _arg = Variant(`class`)
     val _ret = __method_bind.classGetCategory.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -148,25 +148,25 @@ open class _ClassDB(
   }
 
   fun getInheritersFromClass(`class`: String): PoolStringArray {
-    val _arg = Variant.new(`class`)
+    val _arg = Variant(`class`)
     val _ret = __method_bind.getInheritersFromClass.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
 
   fun getParentClass(`class`: String): String {
-    val _arg = Variant.new(`class`)
+    val _arg = Variant(`class`)
     val _ret = __method_bind.getParentClass.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun instance(`class`: String): Variant {
-    val _arg = Variant.new(`class`)
+    val _arg = Variant(`class`)
     val _ret = __method_bind.instance.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun isClassEnabled(`class`: String): Boolean {
-    val _arg = Variant.new(`class`)
+    val _arg = Variant(`class`)
     val _ret = __method_bind.isClassEnabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }

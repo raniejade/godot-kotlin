@@ -38,7 +38,7 @@ open class Path2D(
   }
 
   fun setCurve(curve: Curve2D) {
-    val _arg = Variant.new(curve)
+    val _arg = Variant(curve)
     __method_bind.setCurve.call(this._handle, listOf(_arg))
   }
 

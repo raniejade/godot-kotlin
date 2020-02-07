@@ -23,7 +23,7 @@ open class Performance(
   __ignore: String?
 ) : Object(null) {
   fun getMonitor(monitor: Int): Float {
-    val _arg = Variant.new(monitor)
+    val _arg = Variant(monitor)
     val _ret = __method_bind.getMonitor.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }

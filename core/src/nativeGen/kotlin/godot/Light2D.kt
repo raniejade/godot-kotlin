@@ -331,107 +331,107 @@ open class Light2D(
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 
   fun setEditorOnly(editorOnly: Boolean) {
-    val _arg = Variant.new(editorOnly)
+    val _arg = Variant(editorOnly)
     __method_bind.setEditorOnly.call(this._handle, listOf(_arg))
   }
 
   fun setEnabled(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setEnergy(energy: Float) {
-    val _arg = Variant.new(energy)
+    val _arg = Variant(energy)
     __method_bind.setEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setHeight(height: Float) {
-    val _arg = Variant.new(height)
+    val _arg = Variant(height)
     __method_bind.setHeight.call(this._handle, listOf(_arg))
   }
 
   fun setItemCullMask(itemCullMask: Int) {
-    val _arg = Variant.new(itemCullMask)
+    val _arg = Variant(itemCullMask)
     __method_bind.setItemCullMask.call(this._handle, listOf(_arg))
   }
 
   fun setItemShadowCullMask(itemShadowCullMask: Int) {
-    val _arg = Variant.new(itemShadowCullMask)
+    val _arg = Variant(itemShadowCullMask)
     __method_bind.setItemShadowCullMask.call(this._handle, listOf(_arg))
   }
 
   fun setLayerRangeMax(layer: Int) {
-    val _arg = Variant.new(layer)
+    val _arg = Variant(layer)
     __method_bind.setLayerRangeMax.call(this._handle, listOf(_arg))
   }
 
   fun setLayerRangeMin(layer: Int) {
-    val _arg = Variant.new(layer)
+    val _arg = Variant(layer)
     __method_bind.setLayerRangeMin.call(this._handle, listOf(_arg))
   }
 
   fun setMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setMode.call(this._handle, listOf(_arg))
   }
 
   fun setShadowBufferSize(size: Int) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setShadowBufferSize.call(this._handle, listOf(_arg))
   }
 
   fun setShadowColor(shadowColor: Color) {
-    val _arg = Variant.new(shadowColor)
+    val _arg = Variant(shadowColor)
     __method_bind.setShadowColor.call(this._handle, listOf(_arg))
   }
 
   fun setShadowEnabled(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setShadowEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setShadowFilter(filter: Int) {
-    val _arg = Variant.new(filter)
+    val _arg = Variant(filter)
     __method_bind.setShadowFilter.call(this._handle, listOf(_arg))
   }
 
   fun setShadowGradientLength(multiplier: Float) {
-    val _arg = Variant.new(multiplier)
+    val _arg = Variant(multiplier)
     __method_bind.setShadowGradientLength.call(this._handle, listOf(_arg))
   }
 
   fun setShadowSmooth(smooth: Float) {
-    val _arg = Variant.new(smooth)
+    val _arg = Variant(smooth)
     __method_bind.setShadowSmooth.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setTextureOffset(textureOffset: Vector2) {
-    val _arg = Variant.new(textureOffset)
+    val _arg = Variant(textureOffset)
     __method_bind.setTextureOffset.call(this._handle, listOf(_arg))
   }
 
   fun setTextureScale(textureScale: Float) {
-    val _arg = Variant.new(textureScale)
+    val _arg = Variant(textureScale)
     __method_bind.setTextureScale.call(this._handle, listOf(_arg))
   }
 
   fun setZRangeMax(z: Int) {
-    val _arg = Variant.new(z)
+    val _arg = Variant(z)
     __method_bind.setZRangeMax.call(this._handle, listOf(_arg))
   }
 
   fun setZRangeMin(z: Int) {
-    val _arg = Variant.new(z)
+    val _arg = Variant(z)
     __method_bind.setZRangeMin.call(this._handle, listOf(_arg))
   }
 

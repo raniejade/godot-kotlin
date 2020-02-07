@@ -7,6 +7,9 @@ class Rect2(
   value: CValue<godot_rect2>
 ) : CoreType<godot_rect2>(value) {
 
+  constructor(position: Vector2, size: Vector2): this(__new(position, size))
+  constructor(x: Float, y: Float, width: Float, height: Float): this(__new(x, y, width, height))
+
   var position: Vector2
     get() = memScoped {
       Vector2(
@@ -142,8 +145,12 @@ class Rect2(
     }
   }
 
+  override fun hashCode(): Int {
+    return _value.hashCode()
+  }
+
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
@@ -155,16 +162,12 @@ class Rect2(
   }
 
   companion object {
-    fun new(position: Vector2, size: Vector2): Rect2 {
-      return allocType(::Rect2) {
-        checkNotNull(Godot.gdnative.godot_rect2_new_with_position_and_size)(it, position._value.ptr, size._value.ptr)
-      }
+    internal fun __new(position: Vector2, size: Vector2) = allocType2<godot_rect2> {
+      checkNotNull(Godot.gdnative.godot_rect2_new_with_position_and_size)(it, position._value.ptr, size._value.ptr)
     }
 
-    fun new(x: Float, y: Float, width: Float, height: Float): Rect2 {
-      return allocType(::Rect2) {
-        checkNotNull(Godot.gdnative.godot_rect2_new)(it, x, y, width, height)
-      }
+    internal fun __new(x: Float, y: Float, width: Float, height: Float) = allocType2<godot_rect2> {
+      checkNotNull(Godot.gdnative.godot_rect2_new)(it, x, y, width, height)
     }
   }
 }

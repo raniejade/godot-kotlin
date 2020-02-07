@@ -52,12 +52,12 @@ open class VisualScriptBasicTypeConstant(
   }
 
   fun setBasicType(name: Int) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setBasicType.call(this._handle, listOf(_arg))
   }
 
   fun setBasicTypeConstant(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setBasicTypeConstant.call(this._handle, listOf(_arg))
   }
 

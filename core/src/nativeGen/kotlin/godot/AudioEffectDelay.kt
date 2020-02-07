@@ -196,67 +196,67 @@ open class AudioEffectDelay(
   }
 
   fun setDry(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setDry.call(this._handle, listOf(_arg))
   }
 
   fun setFeedbackActive(amount: Boolean) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setFeedbackActive.call(this._handle, listOf(_arg))
   }
 
   fun setFeedbackDelayMs(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setFeedbackDelayMs.call(this._handle, listOf(_arg))
   }
 
   fun setFeedbackLevelDb(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setFeedbackLevelDb.call(this._handle, listOf(_arg))
   }
 
   fun setFeedbackLowpass(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setFeedbackLowpass.call(this._handle, listOf(_arg))
   }
 
   fun setTap1Active(amount: Boolean) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setTap1Active.call(this._handle, listOf(_arg))
   }
 
   fun setTap1DelayMs(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setTap1DelayMs.call(this._handle, listOf(_arg))
   }
 
   fun setTap1LevelDb(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setTap1LevelDb.call(this._handle, listOf(_arg))
   }
 
   fun setTap1Pan(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setTap1Pan.call(this._handle, listOf(_arg))
   }
 
   fun setTap2Active(amount: Boolean) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setTap2Active.call(this._handle, listOf(_arg))
   }
 
   fun setTap2DelayMs(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setTap2DelayMs.call(this._handle, listOf(_arg))
   }
 
   fun setTap2LevelDb(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setTap2LevelDb.call(this._handle, listOf(_arg))
   }
 
   fun setTap2Pan(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setTap2Pan.call(this._handle, listOf(_arg))
   }
 

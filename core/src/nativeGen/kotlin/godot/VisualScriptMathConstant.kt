@@ -39,7 +39,7 @@ open class VisualScriptMathConstant(
   }
 
   fun setMathConstant(which: Int) {
-    val _arg = Variant.new(which)
+    val _arg = Variant(which)
     __method_bind.setMathConstant.call(this._handle, listOf(_arg))
   }
 

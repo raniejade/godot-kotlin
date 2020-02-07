@@ -32,7 +32,7 @@ open class AudioEffectEQ(
   }
 
   fun getBandGainDb(bandIdx: Int): Float {
-    val _arg = Variant.new(bandIdx)
+    val _arg = Variant(bandIdx)
     val _ret = __method_bind.getBandGainDb.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }

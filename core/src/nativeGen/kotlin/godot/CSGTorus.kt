@@ -106,32 +106,32 @@ open class CSGTorus(
   }
 
   fun setInnerRadius(radius: Float) {
-    val _arg = Variant.new(radius)
+    val _arg = Variant(radius)
     __method_bind.setInnerRadius.call(this._handle, listOf(_arg))
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant.new(material)
+    val _arg = Variant(material)
     __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setOuterRadius(radius: Float) {
-    val _arg = Variant.new(radius)
+    val _arg = Variant(radius)
     __method_bind.setOuterRadius.call(this._handle, listOf(_arg))
   }
 
   fun setRingSides(sides: Int) {
-    val _arg = Variant.new(sides)
+    val _arg = Variant(sides)
     __method_bind.setRingSides.call(this._handle, listOf(_arg))
   }
 
   fun setSides(sides: Int) {
-    val _arg = Variant.new(sides)
+    val _arg = Variant(sides)
     __method_bind.setSides.call(this._handle, listOf(_arg))
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
-    val _arg = Variant.new(smoothFaces)
+    val _arg = Variant(smoothFaces)
     __method_bind.setSmoothFaces.call(this._handle, listOf(_arg))
   }
 

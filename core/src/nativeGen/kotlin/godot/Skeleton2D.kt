@@ -32,7 +32,7 @@ open class Skeleton2D(
   }
 
   fun getBone(idx: Int): Bone2D {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getBone.call(this._handle, listOf(_arg))
     return _ret.asObject(::Bone2D)!!
   }

@@ -151,32 +151,32 @@ open class ParallaxBackground(
   }
 
   fun setIgnoreCameraZoom(ignore: Boolean) {
-    val _arg = Variant.new(ignore)
+    val _arg = Variant(ignore)
     __method_bind.setIgnoreCameraZoom.call(this._handle, listOf(_arg))
   }
 
   fun setLimitBegin(ofs: Vector2) {
-    val _arg = Variant.new(ofs)
+    val _arg = Variant(ofs)
     __method_bind.setLimitBegin.call(this._handle, listOf(_arg))
   }
 
   fun setLimitEnd(ofs: Vector2) {
-    val _arg = Variant.new(ofs)
+    val _arg = Variant(ofs)
     __method_bind.setLimitEnd.call(this._handle, listOf(_arg))
   }
 
   fun setScrollBaseOffset(ofs: Vector2) {
-    val _arg = Variant.new(ofs)
+    val _arg = Variant(ofs)
     __method_bind.setScrollBaseOffset.call(this._handle, listOf(_arg))
   }
 
   fun setScrollBaseScale(scale: Vector2) {
-    val _arg = Variant.new(scale)
+    val _arg = Variant(scale)
     __method_bind.setScrollBaseScale.call(this._handle, listOf(_arg))
   }
 
   fun setScrollOffset(ofs: Vector2) {
-    val _arg = Variant.new(ofs)
+    val _arg = Variant(ofs)
     __method_bind.setScrollOffset.call(this._handle, listOf(_arg))
   }
 

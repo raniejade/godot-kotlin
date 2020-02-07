@@ -30,13 +30,13 @@ open class Navigation2D(
   }
 
   fun getClosestPoint(toPoint: Vector2): Vector2 {
-    val _arg = Variant.new(toPoint)
+    val _arg = Variant(toPoint)
     val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getClosestPointOwner(toPoint: Vector2): Object {
-    val _arg = Variant.new(toPoint)
+    val _arg = Variant(toPoint)
     val _ret = __method_bind.getClosestPointOwner.call(this._handle, listOf(_arg))
     return _ret.asObject(::Object)!!
   }
@@ -68,7 +68,7 @@ open class Navigation2D(
   }
 
   fun navpolyRemove(id: Int) {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     __method_bind.navpolyRemove.call(this._handle, listOf(_arg))
   }
 

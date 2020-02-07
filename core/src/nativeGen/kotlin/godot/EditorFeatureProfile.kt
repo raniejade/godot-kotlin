@@ -28,19 +28,19 @@ open class EditorFeatureProfile(
   }
 
   fun getFeatureName(feature: Int): String {
-    val _arg = Variant.new(feature)
+    val _arg = Variant(feature)
     val _ret = __method_bind.getFeatureName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun isClassDisabled(className: String): Boolean {
-    val _arg = Variant.new(className)
+    val _arg = Variant(className)
     val _ret = __method_bind.isClassDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isClassEditorDisabled(className: String): Boolean {
-    val _arg = Variant.new(className)
+    val _arg = Variant(className)
     val _ret = __method_bind.isClassEditorDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -54,19 +54,19 @@ open class EditorFeatureProfile(
   }
 
   fun isFeatureDisabled(feature: Int): Boolean {
-    val _arg = Variant.new(feature)
+    val _arg = Variant(feature)
     val _ret = __method_bind.isFeatureDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun loadFromFile(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.loadFromFile.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun saveToFile(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.saveToFile.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

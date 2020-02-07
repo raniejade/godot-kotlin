@@ -49,12 +49,12 @@ open class ConvexPolygonShape2D(
   }
 
   fun setPointCloud(pointCloud: PoolVector2Array) {
-    val _arg = Variant.new(pointCloud)
+    val _arg = Variant(pointCloud)
     __method_bind.setPointCloud.call(this._handle, listOf(_arg))
   }
 
   fun setPoints(points: PoolVector2Array) {
-    val _arg = Variant.new(points)
+    val _arg = Variant(points)
     __method_bind.setPoints.call(this._handle, listOf(_arg))
   }
 

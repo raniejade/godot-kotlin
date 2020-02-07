@@ -88,17 +88,17 @@ open class ProximityGroup(
   }
 
   fun setDispatchMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setDispatchMode.call(this._handle, listOf(_arg))
   }
 
   fun setGridRadius(radius: Vector3) {
-    val _arg = Variant.new(radius)
+    val _arg = Variant(radius)
     __method_bind.setGridRadius.call(this._handle, listOf(_arg))
   }
 
   fun setGroupName(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setGroupName.call(this._handle, listOf(_arg))
   }
 

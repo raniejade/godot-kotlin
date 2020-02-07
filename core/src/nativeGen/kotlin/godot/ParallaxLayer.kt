@@ -93,17 +93,17 @@ open class ParallaxLayer(
   }
 
   fun setMirroring(mirror: Vector2) {
-    val _arg = Variant.new(mirror)
+    val _arg = Variant(mirror)
     __method_bind.setMirroring.call(this._handle, listOf(_arg))
   }
 
   fun setMotionOffset(offset: Vector2) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setMotionOffset.call(this._handle, listOf(_arg))
   }
 
   fun setMotionScale(scale: Vector2) {
-    val _arg = Variant.new(scale)
+    val _arg = Variant(scale)
     __method_bind.setMotionScale.call(this._handle, listOf(_arg))
   }
 

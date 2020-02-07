@@ -163,42 +163,42 @@ open class CharFXTransform(
   }
 
   fun setAbsoluteIndex(index: Int) {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     __method_bind.setAbsoluteIndex.call(this._handle, listOf(_arg))
   }
 
   fun setCharacter(character: Int) {
-    val _arg = Variant.new(character)
+    val _arg = Variant(character)
     __method_bind.setCharacter.call(this._handle, listOf(_arg))
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 
   fun setElapsedTime(time: Float) {
-    val _arg = Variant.new(time)
+    val _arg = Variant(time)
     __method_bind.setElapsedTime.call(this._handle, listOf(_arg))
   }
 
   fun setEnvironment(environment: Dictionary) {
-    val _arg = Variant.new(environment)
+    val _arg = Variant(environment)
     __method_bind.setEnvironment.call(this._handle, listOf(_arg))
   }
 
   fun setOffset(offset: Vector2) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setOffset.call(this._handle, listOf(_arg))
   }
 
   fun setRelativeIndex(index: Int) {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     __method_bind.setRelativeIndex.call(this._handle, listOf(_arg))
   }
 
   fun setVisibility(visibility: Boolean) {
-    val _arg = Variant.new(visibility)
+    val _arg = Variant(visibility)
     __method_bind.setVisibility.call(this._handle, listOf(_arg))
   }
 

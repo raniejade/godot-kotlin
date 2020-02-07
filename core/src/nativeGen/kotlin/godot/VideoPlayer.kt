@@ -182,52 +182,52 @@ open class VideoPlayer(
   }
 
   fun setAudioTrack(track: Int) {
-    val _arg = Variant.new(track)
+    val _arg = Variant(track)
     __method_bind.setAudioTrack.call(this._handle, listOf(_arg))
   }
 
   fun setAutoplay(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setAutoplay.call(this._handle, listOf(_arg))
   }
 
   fun setBufferingMsec(msec: Int) {
-    val _arg = Variant.new(msec)
+    val _arg = Variant(msec)
     __method_bind.setBufferingMsec.call(this._handle, listOf(_arg))
   }
 
   fun setBus(bus: String) {
-    val _arg = Variant.new(bus)
+    val _arg = Variant(bus)
     __method_bind.setBus.call(this._handle, listOf(_arg))
   }
 
   fun setExpand(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setExpand.call(this._handle, listOf(_arg))
   }
 
   fun setPaused(paused: Boolean) {
-    val _arg = Variant.new(paused)
+    val _arg = Variant(paused)
     __method_bind.setPaused.call(this._handle, listOf(_arg))
   }
 
   fun setStream(stream: VideoStream) {
-    val _arg = Variant.new(stream)
+    val _arg = Variant(stream)
     __method_bind.setStream.call(this._handle, listOf(_arg))
   }
 
   fun setStreamPosition(position: Float) {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     __method_bind.setStreamPosition.call(this._handle, listOf(_arg))
   }
 
   fun setVolume(volume: Float) {
-    val _arg = Variant.new(volume)
+    val _arg = Variant(volume)
     __method_bind.setVolume.call(this._handle, listOf(_arg))
   }
 
   fun setVolumeDb(db: Float) {
-    val _arg = Variant.new(db)
+    val _arg = Variant(db)
     __method_bind.setVolumeDb.call(this._handle, listOf(_arg))
   }
 

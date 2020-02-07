@@ -49,7 +49,7 @@ open class PlaneShape(
   }
 
   fun setPlane(plane: Plane) {
-    val _arg = Variant.new(plane)
+    val _arg = Variant(plane)
     __method_bind.setPlane.call(this._handle, listOf(_arg))
   }
 

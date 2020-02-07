@@ -61,7 +61,7 @@ open class KinematicBody2D(
   }
 
   fun getSlideCollision(slideIdx: Int): KinematicCollision2D {
-    val _arg = Variant.new(slideIdx)
+    val _arg = Variant(slideIdx)
     val _ret = __method_bind.getSlideCollision.call(this._handle, listOf(_arg))
     return _ret.asObject(::KinematicCollision2D)!!
   }
@@ -108,7 +108,7 @@ open class KinematicBody2D(
 
   fun moveAndSlide(
     linearVelocity: Vector2,
-    upDirection: Vector2 = Vector2.new(0, 0),
+    upDirection: Vector2 = Vector2(0, 0),
     stopOnSlope: Boolean = false,
     maxSlides: Int = 4,
     floorMaxAngle: Float = 0.785398f,
@@ -128,7 +128,7 @@ open class KinematicBody2D(
   fun moveAndSlideWithSnap(
     linearVelocity: Vector2,
     snap: Vector2,
-    upDirection: Vector2 = Vector2.new(0, 0),
+    upDirection: Vector2 = Vector2(0, 0),
     stopOnSlope: Boolean = false,
     maxSlides: Int = 4,
     floorMaxAngle: Float = 0.785398f,
@@ -147,12 +147,12 @@ open class KinematicBody2D(
   }
 
   fun setSafeMargin(pixels: Float) {
-    val _arg = Variant.new(pixels)
+    val _arg = Variant(pixels)
     __method_bind.setSafeMargin.call(this._handle, listOf(_arg))
   }
 
   fun setSyncToPhysics(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setSyncToPhysics.call(this._handle, listOf(_arg))
   }
 

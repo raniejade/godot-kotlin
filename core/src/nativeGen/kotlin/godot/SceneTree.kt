@@ -222,13 +222,13 @@ open class SceneTree(
   }
 
   fun changeScene(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.changeScene.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun changeSceneTo(packedScene: PackedScene): GDError {
-    val _arg = Variant.new(packedScene)
+    val _arg = Variant(packedScene)
     val _ret = __method_bind.changeSceneTo.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
@@ -282,7 +282,7 @@ open class SceneTree(
   }
 
   fun getNodesInGroup(group: String): VariantArray {
-    val _arg = Variant.new(group)
+    val _arg = Variant(group)
     val _ret = __method_bind.getNodesInGroup.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
@@ -298,7 +298,7 @@ open class SceneTree(
   }
 
   fun hasGroup(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasGroup.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -368,12 +368,12 @@ open class SceneTree(
   }
 
   fun queueDelete(obj: Object) {
-    val _arg = Variant.new(obj)
+    val _arg = Variant(obj)
     __method_bind.queueDelete.call(this._handle, listOf(_arg))
   }
 
   fun quit(exitCode: Int = -1) {
-    val _arg = Variant.new(exitCode)
+    val _arg = Variant(exitCode)
     __method_bind.quit.call(this._handle, listOf(_arg))
   }
 
@@ -383,27 +383,27 @@ open class SceneTree(
   }
 
   fun setAutoAcceptQuit(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setAutoAcceptQuit.call(this._handle, listOf(_arg))
   }
 
   fun setCurrentScene(childNode: Node) {
-    val _arg = Variant.new(childNode)
+    val _arg = Variant(childNode)
     __method_bind.setCurrentScene.call(this._handle, listOf(_arg))
   }
 
   fun setDebugCollisionsHint(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setDebugCollisionsHint.call(this._handle, listOf(_arg))
   }
 
   fun setDebugNavigationHint(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setDebugNavigationHint.call(this._handle, listOf(_arg))
   }
 
   fun setEditedSceneRoot(scene: Node) {
-    val _arg = Variant.new(scene)
+    val _arg = Variant(scene)
     __method_bind.setEditedSceneRoot.call(this._handle, listOf(_arg))
   }
 
@@ -438,32 +438,32 @@ open class SceneTree(
   }
 
   fun setMultiplayer(multiplayer: MultiplayerAPI) {
-    val _arg = Variant.new(multiplayer)
+    val _arg = Variant(multiplayer)
     __method_bind.setMultiplayer.call(this._handle, listOf(_arg))
   }
 
   fun setMultiplayerPollEnabled(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setMultiplayerPollEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
-    val _arg = Variant.new(peer)
+    val _arg = Variant(peer)
     __method_bind.setNetworkPeer.call(this._handle, listOf(_arg))
   }
 
   fun setPause(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setPause.call(this._handle, listOf(_arg))
   }
 
   fun setQuitOnGoBack(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setQuitOnGoBack.call(this._handle, listOf(_arg))
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
-    val _arg = Variant.new(refuse)
+    val _arg = Variant(refuse)
     __method_bind.setRefuseNewNetworkConnections.call(this._handle, listOf(_arg))
   }
 
@@ -482,7 +482,7 @@ open class SceneTree(
   }
 
   fun setUseFontOversampling(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUseFontOversampling.call(this._handle, listOf(_arg))
   }
 

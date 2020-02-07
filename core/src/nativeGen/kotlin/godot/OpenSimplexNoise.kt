@@ -82,7 +82,7 @@ open class OpenSimplexNoise(
   }
 
   fun getNoise1d(x: Float): Float {
-    val _arg = Variant.new(x)
+    val _arg = Variant(x)
     val _ret = __method_bind.getNoise1d.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -96,7 +96,7 @@ open class OpenSimplexNoise(
   }
 
   fun getNoise2dv(pos: Vector2): Float {
-    val _arg = Variant.new(pos)
+    val _arg = Variant(pos)
     val _ret = __method_bind.getNoise2dv.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -115,7 +115,7 @@ open class OpenSimplexNoise(
   }
 
   fun getNoise3dv(pos: Vector3): Float {
-    val _arg = Variant.new(pos)
+    val _arg = Variant(pos)
     val _ret = __method_bind.getNoise3dv.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -151,7 +151,7 @@ open class OpenSimplexNoise(
   }
 
   fun getSeamlessImage(size: Int): Image {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     val _ret = __method_bind.getSeamlessImage.call(this._handle, listOf(_arg))
     return _ret.asObject(::Image)!!
   }
@@ -162,27 +162,27 @@ open class OpenSimplexNoise(
   }
 
   fun setLacunarity(lacunarity: Float) {
-    val _arg = Variant.new(lacunarity)
+    val _arg = Variant(lacunarity)
     __method_bind.setLacunarity.call(this._handle, listOf(_arg))
   }
 
   fun setOctaves(octaveCount: Int) {
-    val _arg = Variant.new(octaveCount)
+    val _arg = Variant(octaveCount)
     __method_bind.setOctaves.call(this._handle, listOf(_arg))
   }
 
   fun setPeriod(period: Float) {
-    val _arg = Variant.new(period)
+    val _arg = Variant(period)
     __method_bind.setPeriod.call(this._handle, listOf(_arg))
   }
 
   fun setPersistence(persistence: Float) {
-    val _arg = Variant.new(persistence)
+    val _arg = Variant(persistence)
     __method_bind.setPersistence.call(this._handle, listOf(_arg))
   }
 
   fun setSeed(seed: Int) {
-    val _arg = Variant.new(seed)
+    val _arg = Variant(seed)
     __method_bind.setSeed.call(this._handle, listOf(_arg))
   }
 

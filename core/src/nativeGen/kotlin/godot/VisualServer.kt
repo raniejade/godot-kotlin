@@ -200,9 +200,8 @@ open class VisualServer(
   fun canvasItemAddMesh(
     item: RID,
     mesh: RID,
-    transform: Transform2D = Transform2D.new(Vector2.new(1, 0), Vector2.new(0, 1), Vector2.new(0,
-        0)),
-    modulate: Color = Color.rgb(1,1,1,1),
+    transform: Transform2D = Transform2D(Vector2(1, 0), Vector2(0, 1), Vector2(0, 0)),
+    modulate: Color = Color(1,1,1,1),
     texture: RID,
     normalMap: RID
   ) {
@@ -240,7 +239,7 @@ open class VisualServer(
     xAxisMode: Int = 0,
     yAxisMode: Int = 0,
     drawCenter: Boolean = true,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     normalMap: RID
   ) {
     val _args = mutableListOf<Variant>()
@@ -352,7 +351,7 @@ open class VisualServer(
     rect: Rect2,
     texture: RID,
     tile: Boolean = false,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     transpose: Boolean = false,
     normalMap: RID
   ) {
@@ -372,7 +371,7 @@ open class VisualServer(
     rect: Rect2,
     texture: RID,
     srcRect: Rect2,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     transpose: Boolean = false,
     normalMap: RID,
     clipUv: Boolean = true
@@ -420,7 +419,7 @@ open class VisualServer(
   }
 
   fun canvasItemClear(item: RID) {
-    val _arg = Variant.new(item)
+    val _arg = Variant(item)
     __method_bind.canvasItemClear.call(this._handle, listOf(_arg))
   }
 
@@ -1109,12 +1108,12 @@ open class VisualServer(
   }
 
   fun freeRid(rid: RID) {
-    val _arg = Variant.new(rid)
+    val _arg = Variant(rid)
     __method_bind.freeRid.call(this._handle, listOf(_arg))
   }
 
   fun getRenderInfo(info: Int): Int {
-    val _arg = Variant.new(info)
+    val _arg = Variant(info)
     val _ret = __method_bind.getRenderInfo.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -1150,67 +1149,67 @@ open class VisualServer(
   }
 
   fun giProbeGetBias(probe: RID): Float {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeGetBias.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun giProbeGetBounds(probe: RID): AABB {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeGetBounds.call(this._handle, listOf(_arg))
     return _ret.asAABB()
   }
 
   fun giProbeGetCellSize(probe: RID): Float {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeGetCellSize.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun giProbeGetDynamicData(probe: RID): PoolIntArray {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeGetDynamicData.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
 
   fun giProbeGetDynamicRange(probe: RID): Int {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeGetDynamicRange.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun giProbeGetEnergy(probe: RID): Float {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeGetEnergy.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun giProbeGetNormalBias(probe: RID): Float {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeGetNormalBias.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun giProbeGetPropagation(probe: RID): Float {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeGetPropagation.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun giProbeGetToCellXform(probe: RID): Transform {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeGetToCellXform.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
 
   fun giProbeIsCompressed(probe: RID): Boolean {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeIsCompressed.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun giProbeIsInterior(probe: RID): Boolean {
-    val _arg = Variant.new(probe)
+    val _arg = Variant(probe)
     val _ret = __method_bind.giProbeIsInterior.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -1298,13 +1297,13 @@ open class VisualServer(
   }
 
   fun hasFeature(feature: Int): Boolean {
-    val _arg = Variant.new(feature)
+    val _arg = Variant(feature)
     val _ret = __method_bind.hasFeature.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasOsFeature(feature: String): Boolean {
-    val _arg = Variant.new(feature)
+    val _arg = Variant(feature)
     val _ret = __method_bind.hasOsFeature.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -1322,7 +1321,7 @@ open class VisualServer(
   }
 
   fun immediateClear(immediate: RID) {
-    val _arg = Variant.new(immediate)
+    val _arg = Variant(immediate)
     __method_bind.immediateClear.call(this._handle, listOf(_arg))
   }
 
@@ -1339,12 +1338,12 @@ open class VisualServer(
   }
 
   fun immediateEnd(immediate: RID) {
-    val _arg = Variant.new(immediate)
+    val _arg = Variant(immediate)
     __method_bind.immediateEnd.call(this._handle, listOf(_arg))
   }
 
   fun immediateGetMaterial(immediate: RID): RID {
-    val _arg = Variant.new(immediate)
+    val _arg = Variant(immediate)
     val _ret = __method_bind.immediateGetMaterial.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }
@@ -1708,31 +1707,31 @@ open class VisualServer(
   }
 
   fun lightmapCaptureGetBounds(capture: RID): AABB {
-    val _arg = Variant.new(capture)
+    val _arg = Variant(capture)
     val _ret = __method_bind.lightmapCaptureGetBounds.call(this._handle, listOf(_arg))
     return _ret.asAABB()
   }
 
   fun lightmapCaptureGetEnergy(capture: RID): Float {
-    val _arg = Variant.new(capture)
+    val _arg = Variant(capture)
     val _ret = __method_bind.lightmapCaptureGetEnergy.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun lightmapCaptureGetOctree(capture: RID): PoolByteArray {
-    val _arg = Variant.new(capture)
+    val _arg = Variant(capture)
     val _ret = __method_bind.lightmapCaptureGetOctree.call(this._handle, listOf(_arg))
     return _ret.asPoolByteArray()
   }
 
   fun lightmapCaptureGetOctreeCellSubdiv(capture: RID): Int {
-    val _arg = Variant.new(capture)
+    val _arg = Variant(capture)
     val _ret = __method_bind.lightmapCaptureGetOctreeCellSubdiv.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun lightmapCaptureGetOctreeCellTransform(capture: RID): Transform {
-    val _arg = Variant.new(capture)
+    val _arg = Variant(capture)
     val _ret = __method_bind.lightmapCaptureGetOctreeCellTransform.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
@@ -1807,7 +1806,7 @@ open class VisualServer(
   }
 
   fun materialGetShader(shaderMaterial: RID): RID {
-    val _arg = Variant.new(shaderMaterial)
+    val _arg = Variant(shaderMaterial)
     val _ret = __method_bind.materialGetShader.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }
@@ -1869,7 +1868,7 @@ open class VisualServer(
   }
 
   fun meshClear(mesh: RID) {
-    val _arg = Variant.new(mesh)
+    val _arg = Variant(mesh)
     __method_bind.meshClear.call(this._handle, listOf(_arg))
   }
 
@@ -1879,25 +1878,25 @@ open class VisualServer(
   }
 
   fun meshGetBlendShapeCount(mesh: RID): Int {
-    val _arg = Variant.new(mesh)
+    val _arg = Variant(mesh)
     val _ret = __method_bind.meshGetBlendShapeCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun meshGetBlendShapeMode(mesh: RID): BlendShapeMode {
-    val _arg = Variant.new(mesh)
+    val _arg = Variant(mesh)
     val _ret = __method_bind.meshGetBlendShapeMode.call(this._handle, listOf(_arg))
     return VisualServer.BlendShapeMode.from(_ret.asInt())
   }
 
   fun meshGetCustomAabb(mesh: RID): AABB {
-    val _arg = Variant.new(mesh)
+    val _arg = Variant(mesh)
     val _ret = __method_bind.meshGetCustomAabb.call(this._handle, listOf(_arg))
     return _ret.asAABB()
   }
 
   fun meshGetSurfaceCount(mesh: RID): Int {
-    val _arg = Variant.new(mesh)
+    val _arg = Variant(mesh)
     val _ret = __method_bind.meshGetSurfaceCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -2094,25 +2093,25 @@ open class VisualServer(
   }
 
   fun multimeshGetAabb(multimesh: RID): AABB {
-    val _arg = Variant.new(multimesh)
+    val _arg = Variant(multimesh)
     val _ret = __method_bind.multimeshGetAabb.call(this._handle, listOf(_arg))
     return _ret.asAABB()
   }
 
   fun multimeshGetInstanceCount(multimesh: RID): Int {
-    val _arg = Variant.new(multimesh)
+    val _arg = Variant(multimesh)
     val _ret = __method_bind.multimeshGetInstanceCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun multimeshGetMesh(multimesh: RID): RID {
-    val _arg = Variant.new(multimesh)
+    val _arg = Variant(multimesh)
     val _ret = __method_bind.multimeshGetMesh.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }
 
   fun multimeshGetVisibleInstances(multimesh: RID): Int {
-    val _arg = Variant.new(multimesh)
+    val _arg = Variant(multimesh)
     val _ret = __method_bind.multimeshGetVisibleInstances.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -2229,30 +2228,30 @@ open class VisualServer(
   }
 
   fun particlesGetCurrentAabb(particles: RID): AABB {
-    val _arg = Variant.new(particles)
+    val _arg = Variant(particles)
     val _ret = __method_bind.particlesGetCurrentAabb.call(this._handle, listOf(_arg))
     return _ret.asAABB()
   }
 
   fun particlesGetEmitting(particles: RID): Boolean {
-    val _arg = Variant.new(particles)
+    val _arg = Variant(particles)
     val _ret = __method_bind.particlesGetEmitting.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun particlesIsInactive(particles: RID): Boolean {
-    val _arg = Variant.new(particles)
+    val _arg = Variant(particles)
     val _ret = __method_bind.particlesIsInactive.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun particlesRequestProcess(particles: RID) {
-    val _arg = Variant.new(particles)
+    val _arg = Variant(particles)
     __method_bind.particlesRequestProcess.call(this._handle, listOf(_arg))
   }
 
   fun particlesRestart(particles: RID) {
-    val _arg = Variant.new(particles)
+    val _arg = Variant(particles)
     __method_bind.particlesRestart.call(this._handle, listOf(_arg))
   }
 
@@ -2534,12 +2533,12 @@ open class VisualServer(
   }
 
   fun setDebugGenerateWireframes(generate: Boolean) {
-    val _arg = Variant.new(generate)
+    val _arg = Variant(generate)
     __method_bind.setDebugGenerateWireframes.call(this._handle, listOf(_arg))
   }
 
   fun setDefaultClearColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setDefaultClearColor.call(this._handle, listOf(_arg))
   }
 
@@ -2549,7 +2548,7 @@ open class VisualServer(
   }
 
   fun shaderGetCode(shader: RID): String {
-    val _arg = Variant.new(shader)
+    val _arg = Variant(shader)
     val _ret = __method_bind.shaderGetCode.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -2563,7 +2562,7 @@ open class VisualServer(
   }
 
   fun shaderGetParamList(shader: RID): VariantArray {
-    val _arg = Variant.new(shader)
+    val _arg = Variant(shader)
     val _ret = __method_bind.shaderGetParamList.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
@@ -2645,7 +2644,7 @@ open class VisualServer(
   }
 
   fun skeletonGetBoneCount(skeleton: RID): Int {
-    val _arg = Variant.new(skeleton)
+    val _arg = Variant(skeleton)
     val _ret = __method_bind.skeletonGetBoneCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -2730,49 +2729,49 @@ open class VisualServer(
   }
 
   fun textureGetDepth(texture: RID): Int {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     val _ret = __method_bind.textureGetDepth.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun textureGetFlags(texture: RID): Int {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     val _ret = __method_bind.textureGetFlags.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun textureGetFormat(texture: RID): Image.Format {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     val _ret = __method_bind.textureGetFormat.call(this._handle, listOf(_arg))
     return Image.Format.from(_ret.asInt())
   }
 
   fun textureGetHeight(texture: RID): Int {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     val _ret = __method_bind.textureGetHeight.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun textureGetPath(texture: RID): String {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     val _ret = __method_bind.textureGetPath.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun textureGetTexid(texture: RID): Int {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     val _ret = __method_bind.textureGetTexid.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun textureGetType(texture: RID): TextureType {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     val _ret = __method_bind.textureGetType.call(this._handle, listOf(_arg))
     return VisualServer.TextureType.from(_ret.asInt())
   }
 
   fun textureGetWidth(texture: RID): Int {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     val _ret = __method_bind.textureGetWidth.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -2830,7 +2829,7 @@ open class VisualServer(
   }
 
   fun textureSetShrinkAllX2OnSetData(shrink: Boolean) {
-    val _arg = Variant.new(shrink)
+    val _arg = Variant(shrink)
     __method_bind.textureSetShrinkAllX2OnSetData.call(this._handle, listOf(_arg))
   }
 
@@ -2849,7 +2848,7 @@ open class VisualServer(
   }
 
   fun texturesKeepOriginal(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.texturesKeepOriginal.call(this._handle, listOf(_arg))
   }
 
@@ -2885,7 +2884,7 @@ open class VisualServer(
   }
 
   fun viewportDetach(viewport: RID) {
-    val _arg = Variant.new(viewport)
+    val _arg = Variant(viewport)
     __method_bind.viewportDetach.call(this._handle, listOf(_arg))
   }
 
@@ -2898,7 +2897,7 @@ open class VisualServer(
   }
 
   fun viewportGetTexture(viewport: RID): RID {
-    val _arg = Variant.new(viewport)
+    val _arg = Variant(viewport)
     val _ret = __method_bind.viewportGetTexture.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }

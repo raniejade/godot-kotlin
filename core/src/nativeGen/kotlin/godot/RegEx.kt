@@ -32,7 +32,7 @@ open class RegEx(
   }
 
   fun compile(pattern: String): GDError {
-    val _arg = Variant.new(pattern)
+    val _arg = Variant(pattern)
     val _ret = __method_bind.compile.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

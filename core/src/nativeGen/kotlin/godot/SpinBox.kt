@@ -88,22 +88,22 @@ open class SpinBox(
   }
 
   fun setAlign(align: Int) {
-    val _arg = Variant.new(align)
+    val _arg = Variant(align)
     __method_bind.setAlign.call(this._handle, listOf(_arg))
   }
 
   fun setEditable(editable: Boolean) {
-    val _arg = Variant.new(editable)
+    val _arg = Variant(editable)
     __method_bind.setEditable.call(this._handle, listOf(_arg))
   }
 
   fun setPrefix(prefix: String) {
-    val _arg = Variant.new(prefix)
+    val _arg = Variant(prefix)
     __method_bind.setPrefix.call(this._handle, listOf(_arg))
   }
 
   fun setSuffix(suffix: String) {
-    val _arg = Variant.new(suffix)
+    val _arg = Variant(suffix)
     __method_bind.setSuffix.call(this._handle, listOf(_arg))
   }
 

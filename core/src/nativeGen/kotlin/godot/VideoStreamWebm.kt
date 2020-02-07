@@ -38,7 +38,7 @@ open class VideoStreamWebm(
   }
 
   fun setFile(file: String) {
-    val _arg = Variant.new(file)
+    val _arg = Variant(file)
     __method_bind.setFile.call(this._handle, listOf(_arg))
   }
 

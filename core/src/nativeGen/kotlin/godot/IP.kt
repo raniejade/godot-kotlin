@@ -22,12 +22,12 @@ open class IP(
   __ignore: String?
 ) : Object(null) {
   fun clearCache(hostname: String = "") {
-    val _arg = Variant.new(hostname)
+    val _arg = Variant(hostname)
     __method_bind.clearCache.call(this._handle, listOf(_arg))
   }
 
   fun eraseResolveItem(id: Int) {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     __method_bind.eraseResolveItem.call(this._handle, listOf(_arg))
   }
 
@@ -42,13 +42,13 @@ open class IP(
   }
 
   fun getResolveItemAddress(id: Int): String {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getResolveItemAddress.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getResolveItemStatus(id: Int): ResolverStatus {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getResolveItemStatus.call(this._handle, listOf(_arg))
     return IP.ResolverStatus.from(_ret.asInt())
   }

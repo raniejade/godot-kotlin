@@ -24,7 +24,7 @@ open class _ResourceSaver(
   __ignore: String?
 ) : Object(null) {
   fun getRecognizedExtensions(type: Resource): PoolStringArray {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getRecognizedExtensions.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }

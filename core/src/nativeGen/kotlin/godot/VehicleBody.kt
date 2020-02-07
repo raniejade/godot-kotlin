@@ -65,17 +65,17 @@ open class VehicleBody(
   }
 
   fun setBrake(brake: Float) {
-    val _arg = Variant.new(brake)
+    val _arg = Variant(brake)
     __method_bind.setBrake.call(this._handle, listOf(_arg))
   }
 
   fun setEngineForce(engineForce: Float) {
-    val _arg = Variant.new(engineForce)
+    val _arg = Variant(engineForce)
     __method_bind.setEngineForce.call(this._handle, listOf(_arg))
   }
 
   fun setSteering(steering: Float) {
-    val _arg = Variant.new(steering)
+    val _arg = Variant(steering)
     __method_bind.setSteering.call(this._handle, listOf(_arg))
   }
 

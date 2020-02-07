@@ -159,47 +159,47 @@ open class TouchScreenButton(
   }
 
   fun setAction(action: String) {
-    val _arg = Variant.new(action)
+    val _arg = Variant(action)
     __method_bind.setAction.call(this._handle, listOf(_arg))
   }
 
   fun setBitmask(bitmask: BitMap) {
-    val _arg = Variant.new(bitmask)
+    val _arg = Variant(bitmask)
     __method_bind.setBitmask.call(this._handle, listOf(_arg))
   }
 
   fun setPassbyPress(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setPassbyPress.call(this._handle, listOf(_arg))
   }
 
   fun setShape(shape: Shape2D) {
-    val _arg = Variant.new(shape)
+    val _arg = Variant(shape)
     __method_bind.setShape.call(this._handle, listOf(_arg))
   }
 
   fun setShapeCentered(bool: Boolean) {
-    val _arg = Variant.new(bool)
+    val _arg = Variant(bool)
     __method_bind.setShapeCentered.call(this._handle, listOf(_arg))
   }
 
   fun setShapeVisible(bool: Boolean) {
-    val _arg = Variant.new(bool)
+    val _arg = Variant(bool)
     __method_bind.setShapeVisible.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setTexturePressed(texturePressed: Texture) {
-    val _arg = Variant.new(texturePressed)
+    val _arg = Variant(texturePressed)
     __method_bind.setTexturePressed.call(this._handle, listOf(_arg))
   }
 
   fun setVisibilityMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setVisibilityMode.call(this._handle, listOf(_arg))
   }
 

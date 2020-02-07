@@ -282,82 +282,82 @@ open class ProceduralSky(
   }
 
   fun setGroundBottomColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setGroundBottomColor.call(this._handle, listOf(_arg))
   }
 
   fun setGroundCurve(curve: Float) {
-    val _arg = Variant.new(curve)
+    val _arg = Variant(curve)
     __method_bind.setGroundCurve.call(this._handle, listOf(_arg))
   }
 
   fun setGroundEnergy(energy: Float) {
-    val _arg = Variant.new(energy)
+    val _arg = Variant(energy)
     __method_bind.setGroundEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setGroundHorizonColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setGroundHorizonColor.call(this._handle, listOf(_arg))
   }
 
   fun setSkyCurve(curve: Float) {
-    val _arg = Variant.new(curve)
+    val _arg = Variant(curve)
     __method_bind.setSkyCurve.call(this._handle, listOf(_arg))
   }
 
   fun setSkyEnergy(energy: Float) {
-    val _arg = Variant.new(energy)
+    val _arg = Variant(energy)
     __method_bind.setSkyEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setSkyHorizonColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setSkyHorizonColor.call(this._handle, listOf(_arg))
   }
 
   fun setSkyTopColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setSkyTopColor.call(this._handle, listOf(_arg))
   }
 
   fun setSunAngleMax(degrees: Float) {
-    val _arg = Variant.new(degrees)
+    val _arg = Variant(degrees)
     __method_bind.setSunAngleMax.call(this._handle, listOf(_arg))
   }
 
   fun setSunAngleMin(degrees: Float) {
-    val _arg = Variant.new(degrees)
+    val _arg = Variant(degrees)
     __method_bind.setSunAngleMin.call(this._handle, listOf(_arg))
   }
 
   fun setSunColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setSunColor.call(this._handle, listOf(_arg))
   }
 
   fun setSunCurve(curve: Float) {
-    val _arg = Variant.new(curve)
+    val _arg = Variant(curve)
     __method_bind.setSunCurve.call(this._handle, listOf(_arg))
   }
 
   fun setSunEnergy(energy: Float) {
-    val _arg = Variant.new(energy)
+    val _arg = Variant(energy)
     __method_bind.setSunEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setSunLatitude(degrees: Float) {
-    val _arg = Variant.new(degrees)
+    val _arg = Variant(degrees)
     __method_bind.setSunLatitude.call(this._handle, listOf(_arg))
   }
 
   fun setSunLongitude(degrees: Float) {
-    val _arg = Variant.new(degrees)
+    val _arg = Variant(degrees)
     __method_bind.setSunLongitude.call(this._handle, listOf(_arg))
   }
 
   fun setTextureSize(size: Int) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setTextureSize.call(this._handle, listOf(_arg))
   }
 

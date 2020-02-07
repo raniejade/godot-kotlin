@@ -202,57 +202,57 @@ open class GIProbeData(
   }
 
   fun setBias(bias: Float) {
-    val _arg = Variant.new(bias)
+    val _arg = Variant(bias)
     __method_bind.setBias.call(this._handle, listOf(_arg))
   }
 
   fun setBounds(bounds: AABB) {
-    val _arg = Variant.new(bounds)
+    val _arg = Variant(bounds)
     __method_bind.setBounds.call(this._handle, listOf(_arg))
   }
 
   fun setCellSize(cellSize: Float) {
-    val _arg = Variant.new(cellSize)
+    val _arg = Variant(cellSize)
     __method_bind.setCellSize.call(this._handle, listOf(_arg))
   }
 
   fun setCompress(compress: Boolean) {
-    val _arg = Variant.new(compress)
+    val _arg = Variant(compress)
     __method_bind.setCompress.call(this._handle, listOf(_arg))
   }
 
   fun setDynamicData(dynamicData: PoolIntArray) {
-    val _arg = Variant.new(dynamicData)
+    val _arg = Variant(dynamicData)
     __method_bind.setDynamicData.call(this._handle, listOf(_arg))
   }
 
   fun setDynamicRange(dynamicRange: Int) {
-    val _arg = Variant.new(dynamicRange)
+    val _arg = Variant(dynamicRange)
     __method_bind.setDynamicRange.call(this._handle, listOf(_arg))
   }
 
   fun setEnergy(energy: Float) {
-    val _arg = Variant.new(energy)
+    val _arg = Variant(energy)
     __method_bind.setEnergy.call(this._handle, listOf(_arg))
   }
 
   fun setInterior(interior: Boolean) {
-    val _arg = Variant.new(interior)
+    val _arg = Variant(interior)
     __method_bind.setInterior.call(this._handle, listOf(_arg))
   }
 
   fun setNormalBias(bias: Float) {
-    val _arg = Variant.new(bias)
+    val _arg = Variant(bias)
     __method_bind.setNormalBias.call(this._handle, listOf(_arg))
   }
 
   fun setPropagation(propagation: Float) {
-    val _arg = Variant.new(propagation)
+    val _arg = Variant(propagation)
     __method_bind.setPropagation.call(this._handle, listOf(_arg))
   }
 
   fun setToCellXform(toCellXform: Transform) {
-    val _arg = Variant.new(toCellXform)
+    val _arg = Variant(toCellXform)
     __method_bind.setToCellXform.call(this._handle, listOf(_arg))
   }
 

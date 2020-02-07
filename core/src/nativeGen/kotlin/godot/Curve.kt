@@ -106,64 +106,64 @@ open class Curve(
   }
 
   fun getPointLeftMode(index: Int): TangentMode {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     val _ret = __method_bind.getPointLeftMode.call(this._handle, listOf(_arg))
     return Curve.TangentMode.from(_ret.asInt())
   }
 
   fun getPointLeftTangent(index: Int): Float {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     val _ret = __method_bind.getPointLeftTangent.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getPointPosition(index: Int): Vector2 {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getPointRightMode(index: Int): TangentMode {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     val _ret = __method_bind.getPointRightMode.call(this._handle, listOf(_arg))
     return Curve.TangentMode.from(_ret.asInt())
   }
 
   fun getPointRightTangent(index: Int): Float {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     val _ret = __method_bind.getPointRightTangent.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun interpolate(offset: Float): Float {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     val _ret = __method_bind.interpolate.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun interpolateBaked(offset: Float): Float {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     val _ret = __method_bind.interpolateBaked.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun removePoint(index: Int) {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     __method_bind.removePoint.call(this._handle, listOf(_arg))
   }
 
   fun setBakeResolution(resolution: Int) {
-    val _arg = Variant.new(resolution)
+    val _arg = Variant(resolution)
     __method_bind.setBakeResolution.call(this._handle, listOf(_arg))
   }
 
   fun setMaxValue(max: Float) {
-    val _arg = Variant.new(max)
+    val _arg = Variant(max)
     __method_bind.setMaxValue.call(this._handle, listOf(_arg))
   }
 
   fun setMinValue(min: Float) {
-    val _arg = Variant.new(min)
+    val _arg = Variant(min)
     __method_bind.setMinValue.call(this._handle, listOf(_arg))
   }
 

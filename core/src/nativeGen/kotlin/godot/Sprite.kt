@@ -231,7 +231,7 @@ open class Sprite(
   }
 
   fun isPixelOpaque(pos: Vector2): Boolean {
-    val _arg = Variant.new(pos)
+    val _arg = Variant(pos)
     val _ret = __method_bind.isPixelOpaque.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -247,67 +247,67 @@ open class Sprite(
   }
 
   fun setCentered(centered: Boolean) {
-    val _arg = Variant.new(centered)
+    val _arg = Variant(centered)
     __method_bind.setCentered.call(this._handle, listOf(_arg))
   }
 
   fun setFlipH(flipH: Boolean) {
-    val _arg = Variant.new(flipH)
+    val _arg = Variant(flipH)
     __method_bind.setFlipH.call(this._handle, listOf(_arg))
   }
 
   fun setFlipV(flipV: Boolean) {
-    val _arg = Variant.new(flipV)
+    val _arg = Variant(flipV)
     __method_bind.setFlipV.call(this._handle, listOf(_arg))
   }
 
   fun setFrame(frame: Int) {
-    val _arg = Variant.new(frame)
+    val _arg = Variant(frame)
     __method_bind.setFrame.call(this._handle, listOf(_arg))
   }
 
   fun setFrameCoords(coords: Vector2) {
-    val _arg = Variant.new(coords)
+    val _arg = Variant(coords)
     __method_bind.setFrameCoords.call(this._handle, listOf(_arg))
   }
 
   fun setHframes(hframes: Int) {
-    val _arg = Variant.new(hframes)
+    val _arg = Variant(hframes)
     __method_bind.setHframes.call(this._handle, listOf(_arg))
   }
 
   fun setNormalMap(normalMap: Texture) {
-    val _arg = Variant.new(normalMap)
+    val _arg = Variant(normalMap)
     __method_bind.setNormalMap.call(this._handle, listOf(_arg))
   }
 
   fun setOffset(offset: Vector2) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setOffset.call(this._handle, listOf(_arg))
   }
 
   fun setRegion(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setRegion.call(this._handle, listOf(_arg))
   }
 
   fun setRegionFilterClip(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setRegionFilterClip.call(this._handle, listOf(_arg))
   }
 
   fun setRegionRect(rect: Rect2) {
-    val _arg = Variant.new(rect)
+    val _arg = Variant(rect)
     __method_bind.setRegionRect.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setVframes(vframes: Int) {
-    val _arg = Variant.new(vframes)
+    val _arg = Variant(vframes)
     __method_bind.setVframes.call(this._handle, listOf(_arg))
   }
 

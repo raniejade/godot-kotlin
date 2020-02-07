@@ -99,22 +99,22 @@ open class Joint(
   }
 
   fun setExcludeNodesFromCollision(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setExcludeNodesFromCollision.call(this._handle, listOf(_arg))
   }
 
   fun setNodeA(node: NodePath) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.setNodeA.call(this._handle, listOf(_arg))
   }
 
   fun setNodeB(node: NodePath) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.setNodeB.call(this._handle, listOf(_arg))
   }
 
   fun setSolverPriority(priority: Int) {
-    val _arg = Variant.new(priority)
+    val _arg = Variant(priority)
     __method_bind.setSolverPriority.call(this._handle, listOf(_arg))
   }
 

@@ -30,7 +30,7 @@ open class AnimationNodeStateMachine(
   fun addNode(
     name: String,
     node: AnimationNode,
-    position: Vector2 = Vector2.new(0, 0)
+    position: Vector2 = Vector2(0, 0)
   ) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(name))
@@ -62,19 +62,19 @@ open class AnimationNodeStateMachine(
   }
 
   fun getNode(name: String): AnimationNode {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
     return _ret.asObject(::AnimationNode)!!
   }
 
   fun getNodeName(node: AnimationNode): String {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     val _ret = __method_bind.getNodeName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getNodePosition(name: String): Vector2 {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getNodePosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
@@ -85,7 +85,7 @@ open class AnimationNodeStateMachine(
   }
 
   fun getTransition(idx: Int): AnimationNodeStateMachineTransition {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getTransition.call(this._handle, listOf(_arg))
     return _ret.asObject(::AnimationNodeStateMachineTransition)!!
   }
@@ -96,19 +96,19 @@ open class AnimationNodeStateMachine(
   }
 
   fun getTransitionFrom(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getTransitionFrom.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getTransitionTo(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getTransitionTo.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun hasNode(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasNode.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -122,7 +122,7 @@ open class AnimationNodeStateMachine(
   }
 
   fun removeNode(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.removeNode.call(this._handle, listOf(_arg))
   }
 
@@ -134,7 +134,7 @@ open class AnimationNodeStateMachine(
   }
 
   fun removeTransitionByIndex(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.removeTransitionByIndex.call(this._handle, listOf(_arg))
   }
 
@@ -146,12 +146,12 @@ open class AnimationNodeStateMachine(
   }
 
   fun setEndNode(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setEndNode.call(this._handle, listOf(_arg))
   }
 
   fun setGraphOffset(offset: Vector2) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setGraphOffset.call(this._handle, listOf(_arg))
   }
 
@@ -163,7 +163,7 @@ open class AnimationNodeStateMachine(
   }
 
   fun setStartNode(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setStartNode.call(this._handle, listOf(_arg))
   }
 

@@ -89,22 +89,22 @@ open class JSONParseResult(
   }
 
   fun setError(error: Int) {
-    val _arg = Variant.new(error)
+    val _arg = Variant(error)
     __method_bind.setError.call(this._handle, listOf(_arg))
   }
 
   fun setErrorLine(errorLine: Int) {
-    val _arg = Variant.new(errorLine)
+    val _arg = Variant(errorLine)
     __method_bind.setErrorLine.call(this._handle, listOf(_arg))
   }
 
   fun setErrorString(errorString: String) {
-    val _arg = Variant.new(errorString)
+    val _arg = Variant(errorString)
     __method_bind.setErrorString.call(this._handle, listOf(_arg))
   }
 
   fun setResult(result: Variant) {
-    val _arg = Variant.new(result)
+    val _arg = Variant(result)
     __method_bind.setResult.call(this._handle, listOf(_arg))
   }
 

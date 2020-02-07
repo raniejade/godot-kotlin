@@ -45,7 +45,7 @@ open class PolygonPathFinder(
   }
 
   fun getClosestPoint(point: Vector2): Vector2 {
-    val _arg = Variant.new(point)
+    val _arg = Variant(point)
     val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
@@ -59,13 +59,13 @@ open class PolygonPathFinder(
   }
 
   fun getPointPenalty(idx: Int): Float {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPointPenalty.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun isPointInside(point: Vector2): Boolean {
-    val _arg = Variant.new(point)
+    val _arg = Variant(point)
     val _ret = __method_bind.isPointInside.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }

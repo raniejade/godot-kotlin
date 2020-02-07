@@ -145,22 +145,22 @@ open class MultiplayerAPI(
   }
 
   fun setAllowObjectDecoding(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setAllowObjectDecoding.call(this._handle, listOf(_arg))
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
-    val _arg = Variant.new(peer)
+    val _arg = Variant(peer)
     __method_bind.setNetworkPeer.call(this._handle, listOf(_arg))
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
-    val _arg = Variant.new(refuse)
+    val _arg = Variant(refuse)
     __method_bind.setRefuseNewNetworkConnections.call(this._handle, listOf(_arg))
   }
 
   fun setRootNode(node: Node) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.setRootNode.call(this._handle, listOf(_arg))
   }
 

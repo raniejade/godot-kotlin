@@ -113,7 +113,7 @@ open class PhysicalBone(
   }
 
   fun applyCentralImpulse(impulse: Vector3) {
-    val _arg = Variant.new(impulse)
+    val _arg = Variant(impulse)
     __method_bind.applyCentralImpulse.call(this._handle, listOf(_arg))
   }
 
@@ -185,42 +185,42 @@ open class PhysicalBone(
   }
 
   fun setBodyOffset(offset: Transform) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setBodyOffset.call(this._handle, listOf(_arg))
   }
 
   fun setBounce(bounce: Float) {
-    val _arg = Variant.new(bounce)
+    val _arg = Variant(bounce)
     __method_bind.setBounce.call(this._handle, listOf(_arg))
   }
 
   fun setFriction(friction: Float) {
-    val _arg = Variant.new(friction)
+    val _arg = Variant(friction)
     __method_bind.setFriction.call(this._handle, listOf(_arg))
   }
 
   fun setGravityScale(gravityScale: Float) {
-    val _arg = Variant.new(gravityScale)
+    val _arg = Variant(gravityScale)
     __method_bind.setGravityScale.call(this._handle, listOf(_arg))
   }
 
   fun setJointOffset(offset: Transform) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setJointOffset.call(this._handle, listOf(_arg))
   }
 
   fun setJointType(jointType: Int) {
-    val _arg = Variant.new(jointType)
+    val _arg = Variant(jointType)
     __method_bind.setJointType.call(this._handle, listOf(_arg))
   }
 
   fun setMass(mass: Float) {
-    val _arg = Variant.new(mass)
+    val _arg = Variant(mass)
     __method_bind.setMass.call(this._handle, listOf(_arg))
   }
 
   fun setWeight(weight: Float) {
-    val _arg = Variant.new(weight)
+    val _arg = Variant(weight)
     __method_bind.setWeight.call(this._handle, listOf(_arg))
   }
 

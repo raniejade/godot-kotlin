@@ -79,7 +79,7 @@ open class ARVRController(
   }
 
   fun getJoystickAxis(axis: Int): Float {
-    val _arg = Variant.new(axis)
+    val _arg = Variant(axis)
     val _ret = __method_bind.getJoystickAxis.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -100,18 +100,18 @@ open class ARVRController(
   }
 
   fun isButtonPressed(button: Int): Int {
-    val _arg = Variant.new(button)
+    val _arg = Variant(button)
     val _ret = __method_bind.isButtonPressed.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun setControllerId(controllerId: Int) {
-    val _arg = Variant.new(controllerId)
+    val _arg = Variant(controllerId)
     __method_bind.setControllerId.call(this._handle, listOf(_arg))
   }
 
   fun setRumble(rumble: Float) {
-    val _arg = Variant.new(rumble)
+    val _arg = Variant(rumble)
     __method_bind.setRumble.call(this._handle, listOf(_arg))
   }
 

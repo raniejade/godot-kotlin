@@ -7,6 +7,8 @@ import kotlinx.cinterop.*
 class PoolByteArray(
   value: CValue<godot_pool_byte_array>
 ) : CoreType<godot_pool_byte_array>(value), Iterable<UByte> {
+  constructor(): this(__new())
+  constructor(from: VariantArray): this(__new(from))
 
   fun append(byte: UByte) {
     _value = memScoped {
@@ -79,11 +81,11 @@ class PoolByteArray(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
-    return GDString.new("PoolByteArray(${size()})")
+    return GDString("PoolByteArray(${size()})")
   }
 
   override fun iterator(): Iterator<UByte> {
@@ -91,16 +93,12 @@ class PoolByteArray(
   }
 
   companion object {
-    fun new(): PoolByteArray {
-      return allocType(::PoolByteArray) {
-        checkNotNull(Godot.gdnative.godot_pool_byte_array_new)(it)
-      }
+    internal fun __new() = allocType2<godot_pool_byte_array> {
+      checkNotNull(Godot.gdnative.godot_pool_byte_array_new)(it)
     }
 
-    fun new(from: VariantArray): PoolByteArray {
-      return allocType(::PoolByteArray) {
-        checkNotNull(Godot.gdnative.godot_pool_byte_array_new_with_array)(it, from._value.ptr)
-      }
+    internal fun __new(from: VariantArray) = allocType2<godot_pool_byte_array> {
+      checkNotNull(Godot.gdnative.godot_pool_byte_array_new_with_array)(it, from._value.ptr)
     }
   }
 }

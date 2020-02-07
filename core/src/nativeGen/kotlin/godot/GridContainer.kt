@@ -39,7 +39,7 @@ open class GridContainer(
   }
 
   fun setColumns(columns: Int) {
-    val _arg = Variant.new(columns)
+    val _arg = Variant(columns)
     __method_bind.setColumns.call(this._handle, listOf(_arg))
   }
 

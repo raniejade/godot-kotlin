@@ -31,7 +31,7 @@ open class _Geometry(
   __ignore: String?
 ) : Object(null) {
   fun buildBoxPlanes(extents: Vector3): VariantArray {
-    val _arg = Variant.new(extents)
+    val _arg = Variant(extents)
     val _ret = __method_bind.buildBoxPlanes.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
@@ -94,7 +94,7 @@ open class _Geometry(
   }
 
   fun convexHull2d(points: PoolVector2Array): PoolVector2Array {
-    val _arg = Variant.new(points)
+    val _arg = Variant(points)
     val _ret = __method_bind.convexHull2d.call(this._handle, listOf(_arg))
     return _ret.asPoolVector2Array()
   }
@@ -190,7 +190,7 @@ open class _Geometry(
   }
 
   fun getUv84NormalBit(normal: Vector3): Int {
-    val _arg = Variant.new(normal)
+    val _arg = Variant(normal)
     val _ret = __method_bind.getUv84NormalBit.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -234,7 +234,7 @@ open class _Geometry(
   }
 
   fun isPolygonClockwise(polygon: PoolVector2Array): Boolean {
-    val _arg = Variant.new(polygon)
+    val _arg = Variant(polygon)
     val _ret = __method_bind.isPolygonClockwise.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -255,7 +255,7 @@ open class _Geometry(
   }
 
   fun makeAtlas(sizes: PoolVector2Array): Dictionary {
-    val _arg = Variant.new(sizes)
+    val _arg = Variant(sizes)
     val _ret = __method_bind.makeAtlas.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
@@ -419,13 +419,13 @@ open class _Geometry(
   }
 
   fun triangulateDelaunay2d(points: PoolVector2Array): PoolIntArray {
-    val _arg = Variant.new(points)
+    val _arg = Variant(points)
     val _ret = __method_bind.triangulateDelaunay2d.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
 
   fun triangulatePolygon(polygon: PoolVector2Array): PoolIntArray {
-    val _arg = Variant.new(polygon)
+    val _arg = Variant(polygon)
     val _ret = __method_bind.triangulatePolygon.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }

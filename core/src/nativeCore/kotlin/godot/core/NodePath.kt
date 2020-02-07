@@ -8,6 +8,7 @@ import kotlinx.cinterop.memScoped
 class NodePath(
   value: CValue<godot_node_path>
 ) : CoreType<godot_node_path>(value) {
+  constructor(path: String): this(__new(path))
 
   fun getAsPropertyPath(): NodePath {
     return memScoped {
@@ -75,7 +76,7 @@ class NodePath(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
@@ -87,11 +88,9 @@ class NodePath(
   }
 
   companion object {
-    fun new(path: String): NodePath {
-      return allocType(::NodePath) {
-        GDString.from(path) { str ->
-          checkNotNull(Godot.gdnative.godot_node_path_new)(it, str._value.ptr)
-        }
+    internal fun __new(path: String) = allocType2<godot_node_path> {
+      GDString.from(path) { str ->
+        checkNotNull(Godot.gdnative.godot_node_path_new)(it, str._value.ptr)
       }
     }
   }

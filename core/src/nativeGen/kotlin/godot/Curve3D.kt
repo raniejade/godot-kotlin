@@ -48,8 +48,8 @@ open class Curve3D(
 
   fun addPoint(
     position: Vector3,
-    `in`: Vector3 = Vector3.new(0, 0, 0),
-    out: Vector3 = Vector3.new(0, 0, 0),
+    `in`: Vector3 = Vector3(0, 0, 0),
+    out: Vector3 = Vector3(0, 0, 0),
     atPosition: Int = -1
   ) {
     val _args = mutableListOf<Variant>()
@@ -90,13 +90,13 @@ open class Curve3D(
   }
 
   fun getClosestOffset(toPoint: Vector3): Float {
-    val _arg = Variant.new(toPoint)
+    val _arg = Variant(toPoint)
     val _ret = __method_bind.getClosestOffset.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getClosestPoint(toPoint: Vector3): Vector3 {
-    val _arg = Variant.new(toPoint)
+    val _arg = Variant(toPoint)
     val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
@@ -107,25 +107,25 @@ open class Curve3D(
   }
 
   fun getPointIn(idx: Int): Vector3 {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPointIn.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun getPointOut(idx: Int): Vector3 {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPointOut.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun getPointPosition(idx: Int): Vector3 {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun getPointTilt(idx: Int): Float {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPointTilt.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -155,7 +155,7 @@ open class Curve3D(
   }
 
   fun interpolatef(fofs: Float): Vector3 {
-    val _arg = Variant.new(fofs)
+    val _arg = Variant(fofs)
     val _ret = __method_bind.interpolatef.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
@@ -166,12 +166,12 @@ open class Curve3D(
   }
 
   fun removePoint(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.removePoint.call(this._handle, listOf(_arg))
   }
 
   fun setBakeInterval(distance: Float) {
-    val _arg = Variant.new(distance)
+    val _arg = Variant(distance)
     __method_bind.setBakeInterval.call(this._handle, listOf(_arg))
   }
 
@@ -204,7 +204,7 @@ open class Curve3D(
   }
 
   fun setUpVectorEnabled(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUpVectorEnabled.call(this._handle, listOf(_arg))
   }
 

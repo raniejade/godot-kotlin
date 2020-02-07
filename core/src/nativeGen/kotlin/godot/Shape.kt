@@ -39,7 +39,7 @@ open class Shape(
   }
 
   fun setMargin(margin: Float) {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     __method_bind.setMargin.call(this._handle, listOf(_arg))
   }
 

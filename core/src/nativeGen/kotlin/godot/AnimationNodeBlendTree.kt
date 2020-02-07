@@ -48,7 +48,7 @@ open class AnimationNodeBlendTree(
   fun addNode(
     name: String,
     node: AnimationNode,
-    position: Vector2 = Vector2.new(0, 0)
+    position: Vector2 = Vector2(0, 0)
   ) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(name))
@@ -82,25 +82,25 @@ open class AnimationNodeBlendTree(
   }
 
   fun getNode(name: String): AnimationNode {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
     return _ret.asObject(::AnimationNode)!!
   }
 
   fun getNodePosition(name: String): Vector2 {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getNodePosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun hasNode(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasNode.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeNode(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.removeNode.call(this._handle, listOf(_arg))
   }
 
@@ -112,7 +112,7 @@ open class AnimationNodeBlendTree(
   }
 
   fun setGraphOffset(offset: Vector2) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setGraphOffset.call(this._handle, listOf(_arg))
   }
 

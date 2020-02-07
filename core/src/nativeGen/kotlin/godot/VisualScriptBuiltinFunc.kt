@@ -39,7 +39,7 @@ open class VisualScriptBuiltinFunc(
   }
 
   fun setFunc(which: Int) {
-    val _arg = Variant.new(which)
+    val _arg = Variant(which)
     __method_bind.setFunc.call(this._handle, listOf(_arg))
   }
 

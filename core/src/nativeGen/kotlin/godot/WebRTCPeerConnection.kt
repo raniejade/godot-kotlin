@@ -79,7 +79,7 @@ open class WebRTCPeerConnection(
   }
 
   fun initialize(configuration: Dictionary): GDError {
-    val _arg = Variant.new(configuration)
+    val _arg = Variant(configuration)
     val _ret = __method_bind.initialize.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

@@ -46,7 +46,7 @@ open class ImmediateGeometry(
   }
 
   fun addVertex(position: Vector3) {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     __method_bind.addVertex.call(this._handle, listOf(_arg))
   }
 
@@ -66,27 +66,27 @@ open class ImmediateGeometry(
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 
   fun setNormal(normal: Vector3) {
-    val _arg = Variant.new(normal)
+    val _arg = Variant(normal)
     __method_bind.setNormal.call(this._handle, listOf(_arg))
   }
 
   fun setTangent(tangent: Plane) {
-    val _arg = Variant.new(tangent)
+    val _arg = Variant(tangent)
     __method_bind.setTangent.call(this._handle, listOf(_arg))
   }
 
   fun setUv(uv: Vector2) {
-    val _arg = Variant.new(uv)
+    val _arg = Variant(uv)
     __method_bind.setUv.call(this._handle, listOf(_arg))
   }
 
   fun setUv2(uv: Vector2) {
-    val _arg = Variant.new(uv)
+    val _arg = Variant(uv)
     __method_bind.setUv2.call(this._handle, listOf(_arg))
   }
 

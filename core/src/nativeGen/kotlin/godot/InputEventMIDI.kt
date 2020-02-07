@@ -130,42 +130,42 @@ open class InputEventMIDI(
   }
 
   fun setChannel(channel: Int) {
-    val _arg = Variant.new(channel)
+    val _arg = Variant(channel)
     __method_bind.setChannel.call(this._handle, listOf(_arg))
   }
 
   fun setControllerNumber(controllerNumber: Int) {
-    val _arg = Variant.new(controllerNumber)
+    val _arg = Variant(controllerNumber)
     __method_bind.setControllerNumber.call(this._handle, listOf(_arg))
   }
 
   fun setControllerValue(controllerValue: Int) {
-    val _arg = Variant.new(controllerValue)
+    val _arg = Variant(controllerValue)
     __method_bind.setControllerValue.call(this._handle, listOf(_arg))
   }
 
   fun setInstrument(instrument: Int) {
-    val _arg = Variant.new(instrument)
+    val _arg = Variant(instrument)
     __method_bind.setInstrument.call(this._handle, listOf(_arg))
   }
 
   fun setMessage(message: Int) {
-    val _arg = Variant.new(message)
+    val _arg = Variant(message)
     __method_bind.setMessage.call(this._handle, listOf(_arg))
   }
 
   fun setPitch(pitch: Int) {
-    val _arg = Variant.new(pitch)
+    val _arg = Variant(pitch)
     __method_bind.setPitch.call(this._handle, listOf(_arg))
   }
 
   fun setPressure(pressure: Int) {
-    val _arg = Variant.new(pressure)
+    val _arg = Variant(pressure)
     __method_bind.setPressure.call(this._handle, listOf(_arg))
   }
 
   fun setVelocity(velocity: Int) {
-    val _arg = Variant.new(velocity)
+    val _arg = Variant(velocity)
     __method_bind.setVelocity.call(this._handle, listOf(_arg))
   }
 

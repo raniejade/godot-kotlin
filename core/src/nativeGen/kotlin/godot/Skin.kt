@@ -38,7 +38,7 @@ open class Skin(
   }
 
   fun getBindBone(bindIndex: Int): Int {
-    val _arg = Variant.new(bindIndex)
+    val _arg = Variant(bindIndex)
     val _ret = __method_bind.getBindBone.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -49,7 +49,7 @@ open class Skin(
   }
 
   fun getBindPose(bindIndex: Int): Transform {
-    val _arg = Variant.new(bindIndex)
+    val _arg = Variant(bindIndex)
     val _ret = __method_bind.getBindPose.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
@@ -62,7 +62,7 @@ open class Skin(
   }
 
   fun setBindCount(bindCount: Int) {
-    val _arg = Variant.new(bindCount)
+    val _arg = Variant(bindCount)
     __method_bind.setBindCount.call(this._handle, listOf(_arg))
   }
 

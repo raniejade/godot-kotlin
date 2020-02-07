@@ -52,12 +52,12 @@ open class LinkButton(
   }
 
   fun setText(text: String) {
-    val _arg = Variant.new(text)
+    val _arg = Variant(text)
     __method_bind.setText.call(this._handle, listOf(_arg))
   }
 
   fun setUnderlineMode(underlineMode: Int) {
-    val _arg = Variant.new(underlineMode)
+    val _arg = Variant(underlineMode)
     __method_bind.setUnderlineMode.call(this._handle, listOf(_arg))
   }
 

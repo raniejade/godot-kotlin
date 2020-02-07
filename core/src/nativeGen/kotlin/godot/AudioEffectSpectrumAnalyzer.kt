@@ -66,17 +66,17 @@ open class AudioEffectSpectrumAnalyzer(
   }
 
   fun setBufferLength(seconds: Float) {
-    val _arg = Variant.new(seconds)
+    val _arg = Variant(seconds)
     __method_bind.setBufferLength.call(this._handle, listOf(_arg))
   }
 
   fun setFftSize(size: Int) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setFftSize.call(this._handle, listOf(_arg))
   }
 
   fun setTapBackPos(seconds: Float) {
-    val _arg = Variant.new(seconds)
+    val _arg = Variant(seconds)
     __method_bind.setTapBackPos.call(this._handle, listOf(_arg))
   }
 

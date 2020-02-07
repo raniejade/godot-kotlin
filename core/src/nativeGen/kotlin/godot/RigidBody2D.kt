@@ -233,7 +233,7 @@ open class RigidBody2D(
   }
 
   fun addCentralForce(force: Vector2) {
-    val _arg = Variant.new(force)
+    val _arg = Variant(force)
     __method_bind.addCentralForce.call(this._handle, listOf(_arg))
   }
 
@@ -245,12 +245,12 @@ open class RigidBody2D(
   }
 
   fun addTorque(torque: Float) {
-    val _arg = Variant.new(torque)
+    val _arg = Variant(torque)
     __method_bind.addTorque.call(this._handle, listOf(_arg))
   }
 
   fun applyCentralImpulse(impulse: Vector2) {
-    val _arg = Variant.new(impulse)
+    val _arg = Variant(impulse)
     __method_bind.applyCentralImpulse.call(this._handle, listOf(_arg))
   }
 
@@ -262,7 +262,7 @@ open class RigidBody2D(
   }
 
   fun applyTorqueImpulse(torque: Float) {
-    val _arg = Variant.new(torque)
+    val _arg = Variant(torque)
     __method_bind.applyTorqueImpulse.call(this._handle, listOf(_arg))
   }
 
@@ -372,107 +372,107 @@ open class RigidBody2D(
   }
 
   fun setAngularDamp(angularDamp: Float) {
-    val _arg = Variant.new(angularDamp)
+    val _arg = Variant(angularDamp)
     __method_bind.setAngularDamp.call(this._handle, listOf(_arg))
   }
 
   fun setAngularVelocity(angularVelocity: Float) {
-    val _arg = Variant.new(angularVelocity)
+    val _arg = Variant(angularVelocity)
     __method_bind.setAngularVelocity.call(this._handle, listOf(_arg))
   }
 
   fun setAppliedForce(force: Vector2) {
-    val _arg = Variant.new(force)
+    val _arg = Variant(force)
     __method_bind.setAppliedForce.call(this._handle, listOf(_arg))
   }
 
   fun setAppliedTorque(torque: Float) {
-    val _arg = Variant.new(torque)
+    val _arg = Variant(torque)
     __method_bind.setAppliedTorque.call(this._handle, listOf(_arg))
   }
 
   fun setAxisVelocity(axisVelocity: Vector2) {
-    val _arg = Variant.new(axisVelocity)
+    val _arg = Variant(axisVelocity)
     __method_bind.setAxisVelocity.call(this._handle, listOf(_arg))
   }
 
   fun setBounce(bounce: Float) {
-    val _arg = Variant.new(bounce)
+    val _arg = Variant(bounce)
     __method_bind.setBounce.call(this._handle, listOf(_arg))
   }
 
   fun setCanSleep(ableToSleep: Boolean) {
-    val _arg = Variant.new(ableToSleep)
+    val _arg = Variant(ableToSleep)
     __method_bind.setCanSleep.call(this._handle, listOf(_arg))
   }
 
   fun setContactMonitor(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setContactMonitor.call(this._handle, listOf(_arg))
   }
 
   fun setContinuousCollisionDetectionMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setContinuousCollisionDetectionMode.call(this._handle, listOf(_arg))
   }
 
   fun setFriction(friction: Float) {
-    val _arg = Variant.new(friction)
+    val _arg = Variant(friction)
     __method_bind.setFriction.call(this._handle, listOf(_arg))
   }
 
   fun setGravityScale(gravityScale: Float) {
-    val _arg = Variant.new(gravityScale)
+    val _arg = Variant(gravityScale)
     __method_bind.setGravityScale.call(this._handle, listOf(_arg))
   }
 
   fun setInertia(inertia: Float) {
-    val _arg = Variant.new(inertia)
+    val _arg = Variant(inertia)
     __method_bind.setInertia.call(this._handle, listOf(_arg))
   }
 
   fun setLinearDamp(linearDamp: Float) {
-    val _arg = Variant.new(linearDamp)
+    val _arg = Variant(linearDamp)
     __method_bind.setLinearDamp.call(this._handle, listOf(_arg))
   }
 
   fun setLinearVelocity(linearVelocity: Vector2) {
-    val _arg = Variant.new(linearVelocity)
+    val _arg = Variant(linearVelocity)
     __method_bind.setLinearVelocity.call(this._handle, listOf(_arg))
   }
 
   fun setMass(mass: Float) {
-    val _arg = Variant.new(mass)
+    val _arg = Variant(mass)
     __method_bind.setMass.call(this._handle, listOf(_arg))
   }
 
   fun setMaxContactsReported(amount: Int) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setMaxContactsReported.call(this._handle, listOf(_arg))
   }
 
   fun setMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setMode.call(this._handle, listOf(_arg))
   }
 
   fun setPhysicsMaterialOverride(physicsMaterialOverride: PhysicsMaterial) {
-    val _arg = Variant.new(physicsMaterialOverride)
+    val _arg = Variant(physicsMaterialOverride)
     __method_bind.setPhysicsMaterialOverride.call(this._handle, listOf(_arg))
   }
 
   fun setSleeping(sleeping: Boolean) {
-    val _arg = Variant.new(sleeping)
+    val _arg = Variant(sleeping)
     __method_bind.setSleeping.call(this._handle, listOf(_arg))
   }
 
   fun setUseCustomIntegrator(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUseCustomIntegrator.call(this._handle, listOf(_arg))
   }
 
   fun setWeight(weight: Float) {
-    val _arg = Variant.new(weight)
+    val _arg = Variant(weight)
     __method_bind.setWeight.call(this._handle, listOf(_arg))
   }
 

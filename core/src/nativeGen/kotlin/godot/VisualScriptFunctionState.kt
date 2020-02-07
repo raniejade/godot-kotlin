@@ -43,7 +43,7 @@ open class VisualScriptFunctionState(
   }
 
   fun resume(args: VariantArray): Variant {
-    val _arg = Variant.new(args)
+    val _arg = Variant(args)
     val _ret = __method_bind.resume.call(this._handle, listOf(_arg))
     return _ret
   }

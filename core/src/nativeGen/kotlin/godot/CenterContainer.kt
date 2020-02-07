@@ -39,7 +39,7 @@ open class CenterContainer(
   }
 
   fun setUseTopLeft(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUseTopLeft.call(this._handle, listOf(_arg))
   }
 

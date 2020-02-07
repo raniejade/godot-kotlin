@@ -51,7 +51,7 @@ open class UPNP(
   }
 
   fun addDevice(device: UPNPDevice) {
-    val _arg = Variant.new(device)
+    val _arg = Variant(device)
     __method_bind.addDevice.call(this._handle, listOf(_arg))
   }
 
@@ -98,7 +98,7 @@ open class UPNP(
   }
 
   fun getDevice(index: Int): UPNPDevice {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     val _ret = __method_bind.getDevice.call(this._handle, listOf(_arg))
     return _ret.asObject(::UPNPDevice)!!
   }
@@ -134,7 +134,7 @@ open class UPNP(
   }
 
   fun removeDevice(index: Int) {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     __method_bind.removeDevice.call(this._handle, listOf(_arg))
   }
 
@@ -146,17 +146,17 @@ open class UPNP(
   }
 
   fun setDiscoverIpv6(ipv6: Boolean) {
-    val _arg = Variant.new(ipv6)
+    val _arg = Variant(ipv6)
     __method_bind.setDiscoverIpv6.call(this._handle, listOf(_arg))
   }
 
   fun setDiscoverLocalPort(port: Int) {
-    val _arg = Variant.new(port)
+    val _arg = Variant(port)
     __method_bind.setDiscoverLocalPort.call(this._handle, listOf(_arg))
   }
 
   fun setDiscoverMulticastIf(mIf: String) {
-    val _arg = Variant.new(mIf)
+    val _arg = Variant(mIf)
     __method_bind.setDiscoverMulticastIf.call(this._handle, listOf(_arg))
   }
 

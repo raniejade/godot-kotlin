@@ -49,7 +49,7 @@ open class ColorRect(
   }
 
   fun setFrameColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setFrameColor.call(this._handle, listOf(_arg))
   }
 

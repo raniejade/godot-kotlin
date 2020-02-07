@@ -111,32 +111,32 @@ open class AnimationNodeStateMachineTransition(
   }
 
   fun setAdvanceCondition(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setAdvanceCondition.call(this._handle, listOf(_arg))
   }
 
   fun setAutoAdvance(autoAdvance: Boolean) {
-    val _arg = Variant.new(autoAdvance)
+    val _arg = Variant(autoAdvance)
     __method_bind.setAutoAdvance.call(this._handle, listOf(_arg))
   }
 
   fun setDisabled(disabled: Boolean) {
-    val _arg = Variant.new(disabled)
+    val _arg = Variant(disabled)
     __method_bind.setDisabled.call(this._handle, listOf(_arg))
   }
 
   fun setPriority(priority: Int) {
-    val _arg = Variant.new(priority)
+    val _arg = Variant(priority)
     __method_bind.setPriority.call(this._handle, listOf(_arg))
   }
 
   fun setSwitchMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setSwitchMode.call(this._handle, listOf(_arg))
   }
 
   fun setXfadeTime(secs: Float) {
-    val _arg = Variant.new(secs)
+    val _arg = Variant(secs)
     __method_bind.setXfadeTime.call(this._handle, listOf(_arg))
   }
 

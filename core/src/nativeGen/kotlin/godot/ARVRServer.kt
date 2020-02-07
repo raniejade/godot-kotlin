@@ -68,7 +68,7 @@ open class ARVRServer(
   }
 
   fun findInterface(name: String): ARVRInterface {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.findInterface.call(this._handle, listOf(_arg))
     return _ret.asObject(::ARVRInterface)!!
   }
@@ -79,7 +79,7 @@ open class ARVRServer(
   }
 
   fun getInterface(idx: Int): ARVRInterface {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getInterface.call(this._handle, listOf(_arg))
     return _ret.asObject(::ARVRInterface)!!
   }
@@ -120,7 +120,7 @@ open class ARVRServer(
   }
 
   fun getTracker(idx: Int): ARVRPositionalTracker {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getTracker.call(this._handle, listOf(_arg))
     return _ret.asObject(::ARVRPositionalTracker)!!
   }
@@ -136,12 +136,12 @@ open class ARVRServer(
   }
 
   fun setPrimaryInterface(`interface`: ARVRInterface) {
-    val _arg = Variant.new(`interface`)
+    val _arg = Variant(`interface`)
     __method_bind.setPrimaryInterface.call(this._handle, listOf(_arg))
   }
 
   fun setWorldScale(arg0: Float) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setWorldScale.call(this._handle, listOf(_arg))
   }
 

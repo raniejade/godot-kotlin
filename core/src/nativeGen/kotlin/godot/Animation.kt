@@ -207,8 +207,8 @@ open class Animation(
     trackIdx: Int,
     time: Float,
     value: Float,
-    inHandle: Vector2 = Vector2.new(0, 0),
-    outHandle: Vector2 = Vector2.new(0, 0)
+    inHandle: Vector2 = Vector2(0, 0),
+    outHandle: Vector2 = Vector2(0, 0)
   ): Int {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(trackIdx))
@@ -276,7 +276,7 @@ open class Animation(
   }
 
   fun findTrack(path: NodePath): Int {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.findTrack.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -331,22 +331,22 @@ open class Animation(
   }
 
   fun removeTrack(trackIdx: Int) {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     __method_bind.removeTrack.call(this._handle, listOf(_arg))
   }
 
   fun setLength(timeSec: Float) {
-    val _arg = Variant.new(timeSec)
+    val _arg = Variant(timeSec)
     __method_bind.setLength.call(this._handle, listOf(_arg))
   }
 
   fun setLoop(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setLoop.call(this._handle, listOf(_arg))
   }
 
   fun setStep(sizeSec: Float) {
-    val _arg = Variant.new(sizeSec)
+    val _arg = Variant(sizeSec)
     __method_bind.setStep.call(this._handle, listOf(_arg))
   }
 
@@ -364,19 +364,19 @@ open class Animation(
   }
 
   fun trackGetInterpolationLoopWrap(trackIdx: Int): Boolean {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     val _ret = __method_bind.trackGetInterpolationLoopWrap.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun trackGetInterpolationType(trackIdx: Int): InterpolationType {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     val _ret = __method_bind.trackGetInterpolationType.call(this._handle, listOf(_arg))
     return Animation.InterpolationType.from(_ret.asInt())
   }
 
   fun trackGetKeyCount(trackIdx: Int): Int {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     val _ret = __method_bind.trackGetKeyCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -406,13 +406,13 @@ open class Animation(
   }
 
   fun trackGetPath(trackIdx: Int): NodePath {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     val _ret = __method_bind.trackGetPath.call(this._handle, listOf(_arg))
     return _ret.asNodePath()
   }
 
   fun trackGetType(trackIdx: Int): TrackType {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     val _ret = __method_bind.trackGetType.call(this._handle, listOf(_arg))
     return Animation.TrackType.from(_ret.asInt())
   }
@@ -432,19 +432,19 @@ open class Animation(
   }
 
   fun trackIsEnabled(trackIdx: Int): Boolean {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     val _ret = __method_bind.trackIsEnabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun trackIsImported(trackIdx: Int): Boolean {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     val _ret = __method_bind.trackIsImported.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun trackMoveDown(trackIdx: Int) {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     __method_bind.trackMoveDown.call(this._handle, listOf(_arg))
   }
 
@@ -456,7 +456,7 @@ open class Animation(
   }
 
   fun trackMoveUp(trackIdx: Int) {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     __method_bind.trackMoveUp.call(this._handle, listOf(_arg))
   }
 
@@ -591,7 +591,7 @@ open class Animation(
   }
 
   fun valueTrackGetUpdateMode(trackIdx: Int): UpdateMode {
-    val _arg = Variant.new(trackIdx)
+    val _arg = Variant(trackIdx)
     val _ret = __method_bind.valueTrackGetUpdateMode.call(this._handle, listOf(_arg))
     return Animation.UpdateMode.from(_ret.asInt())
   }

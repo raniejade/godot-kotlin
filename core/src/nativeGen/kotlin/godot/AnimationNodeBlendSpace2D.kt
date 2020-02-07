@@ -1246,13 +1246,13 @@ open class AnimationNodeBlendSpace2D(
   }
 
   fun getBlendPointNode(point: Int): AnimationRootNode {
-    val _arg = Variant.new(point)
+    val _arg = Variant(point)
     val _ret = __method_bind.getBlendPointNode.call(this._handle, listOf(_arg))
     return _ret.asObject(::AnimationRootNode)!!
   }
 
   fun getBlendPointPosition(point: Int): Vector2 {
-    val _arg = Variant.new(point)
+    val _arg = Variant(point)
     val _ret = __method_bind.getBlendPointPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
@@ -1296,22 +1296,22 @@ open class AnimationNodeBlendSpace2D(
   }
 
   fun removeBlendPoint(point: Int) {
-    val _arg = Variant.new(point)
+    val _arg = Variant(point)
     __method_bind.removeBlendPoint.call(this._handle, listOf(_arg))
   }
 
   fun removeTriangle(triangle: Int) {
-    val _arg = Variant.new(triangle)
+    val _arg = Variant(triangle)
     __method_bind.removeTriangle.call(this._handle, listOf(_arg))
   }
 
   fun setAutoTriangles(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setAutoTriangles.call(this._handle, listOf(_arg))
   }
 
   fun setBlendMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setBlendMode.call(this._handle, listOf(_arg))
   }
 
@@ -1330,27 +1330,27 @@ open class AnimationNodeBlendSpace2D(
   }
 
   fun setMaxSpace(maxSpace: Vector2) {
-    val _arg = Variant.new(maxSpace)
+    val _arg = Variant(maxSpace)
     __method_bind.setMaxSpace.call(this._handle, listOf(_arg))
   }
 
   fun setMinSpace(minSpace: Vector2) {
-    val _arg = Variant.new(minSpace)
+    val _arg = Variant(minSpace)
     __method_bind.setMinSpace.call(this._handle, listOf(_arg))
   }
 
   fun setSnap(snap: Vector2) {
-    val _arg = Variant.new(snap)
+    val _arg = Variant(snap)
     __method_bind.setSnap.call(this._handle, listOf(_arg))
   }
 
   fun setXLabel(text: String) {
-    val _arg = Variant.new(text)
+    val _arg = Variant(text)
     __method_bind.setXLabel.call(this._handle, listOf(_arg))
   }
 
   fun setYLabel(text: String) {
-    val _arg = Variant.new(text)
+    val _arg = Variant(text)
     __method_bind.setYLabel.call(this._handle, listOf(_arg))
   }
 

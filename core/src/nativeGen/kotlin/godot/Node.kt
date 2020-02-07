@@ -139,7 +139,7 @@ open class Node(
   }
 
   fun duplicate(flags: Int = 15): Node {
-    val _arg = Variant.new(flags)
+    val _arg = Variant(flags)
     val _ret = __method_bind.duplicate.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
@@ -158,13 +158,13 @@ open class Node(
   }
 
   fun findParent(mask: String): Node {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     val _ret = __method_bind.findParent.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
 
   fun getChild(idx: Int): Node {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getChild.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
@@ -215,19 +215,19 @@ open class Node(
   }
 
   fun getNode(path: NodePath): Node {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
 
   fun getNodeAndResource(path: NodePath): VariantArray {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.getNodeAndResource.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun getNodeOrNull(path: NodePath): Node {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.getNodeOrNull.call(this._handle, listOf(_arg))
     return _ret.asObject(::Node)!!
   }
@@ -248,7 +248,7 @@ open class Node(
   }
 
   fun getPathTo(node: Node): NodePath {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     val _ret = __method_bind.getPathTo.call(this._handle, listOf(_arg))
     return _ret.asNodePath()
   }
@@ -294,19 +294,19 @@ open class Node(
   }
 
   fun hasNode(path: NodePath): Boolean {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.hasNode.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasNodeAndResource(path: NodePath): Boolean {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.hasNodeAndResource.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isAParentOf(node: Node): Boolean {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     val _ret = __method_bind.isAParentOf.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -317,13 +317,13 @@ open class Node(
   }
 
   fun isGreaterThan(node: Node): Boolean {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     val _ret = __method_bind.isGreaterThan.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isInGroup(group: String): Boolean {
-    val _arg = Variant.new(group)
+    val _arg = Variant(group)
     val _ret = __method_bind.isInGroup.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -405,7 +405,7 @@ open class Node(
   }
 
   fun propagateNotification(what: Int) {
-    val _arg = Variant.new(what)
+    val _arg = Variant(what)
     __method_bind.propagateNotification.call(this._handle, listOf(_arg))
   }
 
@@ -422,12 +422,12 @@ open class Node(
   }
 
   fun removeChild(node: Node) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.removeChild.call(this._handle, listOf(_arg))
   }
 
   fun removeFromGroup(group: String) {
-    val _arg = Variant.new(group)
+    val _arg = Variant(group)
     __method_bind.removeFromGroup.call(this._handle, listOf(_arg))
   }
 
@@ -537,22 +537,22 @@ open class Node(
   }
 
   fun setCustomMultiplayer(api: MultiplayerAPI) {
-    val _arg = Variant.new(api)
+    val _arg = Variant(api)
     __method_bind.setCustomMultiplayer.call(this._handle, listOf(_arg))
   }
 
   fun setDisplayFolded(fold: Boolean) {
-    val _arg = Variant.new(fold)
+    val _arg = Variant(fold)
     __method_bind.setDisplayFolded.call(this._handle, listOf(_arg))
   }
 
   fun setFilename(filename: String) {
-    val _arg = Variant.new(filename)
+    val _arg = Variant(filename)
     __method_bind.setFilename.call(this._handle, listOf(_arg))
   }
 
   fun setName(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setName.call(this._handle, listOf(_arg))
   }
 
@@ -564,57 +564,57 @@ open class Node(
   }
 
   fun setOwner(owner: Node) {
-    val _arg = Variant.new(owner)
+    val _arg = Variant(owner)
     __method_bind.setOwner.call(this._handle, listOf(_arg))
   }
 
   fun setPauseMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setPauseMode.call(this._handle, listOf(_arg))
   }
 
   fun setPhysicsProcess(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setPhysicsProcess.call(this._handle, listOf(_arg))
   }
 
   fun setPhysicsProcessInternal(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setPhysicsProcessInternal.call(this._handle, listOf(_arg))
   }
 
   fun setProcess(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setProcess.call(this._handle, listOf(_arg))
   }
 
   fun setProcessInput(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setProcessInput.call(this._handle, listOf(_arg))
   }
 
   fun setProcessInternal(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setProcessInternal.call(this._handle, listOf(_arg))
   }
 
   fun setProcessPriority(priority: Int) {
-    val _arg = Variant.new(priority)
+    val _arg = Variant(priority)
     __method_bind.setProcessPriority.call(this._handle, listOf(_arg))
   }
 
   fun setProcessUnhandledInput(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setProcessUnhandledInput.call(this._handle, listOf(_arg))
   }
 
   fun setProcessUnhandledKeyInput(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setProcessUnhandledKeyInput.call(this._handle, listOf(_arg))
   }
 
   fun setSceneInstanceLoadPlaceholder(loadPlaceholder: Boolean) {
-    val _arg = Variant.new(loadPlaceholder)
+    val _arg = Variant(loadPlaceholder)
     __method_bind.setSceneInstanceLoadPlaceholder.call(this._handle, listOf(_arg))
   }
 

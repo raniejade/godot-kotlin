@@ -38,7 +38,7 @@ open class VisualShaderNodeExpression(
   }
 
   fun setExpression(expression: String) {
-    val _arg = Variant.new(expression)
+    val _arg = Variant(expression)
     __method_bind.setExpression.call(this._handle, listOf(_arg))
   }
 

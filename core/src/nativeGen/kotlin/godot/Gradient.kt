@@ -72,7 +72,7 @@ open class Gradient(
   }
 
   fun getColor(point: Int): Color {
-    val _arg = Variant.new(point)
+    val _arg = Variant(point)
     val _ret = __method_bind.getColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
@@ -83,7 +83,7 @@ open class Gradient(
   }
 
   fun getOffset(point: Int): Float {
-    val _arg = Variant.new(point)
+    val _arg = Variant(point)
     val _ret = __method_bind.getOffset.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -99,13 +99,13 @@ open class Gradient(
   }
 
   fun interpolate(offset: Float): Color {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     val _ret = __method_bind.interpolate.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun removePoint(offset: Int) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.removePoint.call(this._handle, listOf(_arg))
   }
 
@@ -117,7 +117,7 @@ open class Gradient(
   }
 
   fun setColors(colors: PoolColorArray) {
-    val _arg = Variant.new(colors)
+    val _arg = Variant(colors)
     __method_bind.setColors.call(this._handle, listOf(_arg))
   }
 
@@ -129,7 +129,7 @@ open class Gradient(
   }
 
   fun setOffsets(offsets: PoolRealArray) {
-    val _arg = Variant.new(offsets)
+    val _arg = Variant(offsets)
     __method_bind.setOffsets.call(this._handle, listOf(_arg))
   }
 

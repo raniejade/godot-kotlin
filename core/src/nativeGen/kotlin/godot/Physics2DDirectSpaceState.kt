@@ -29,7 +29,7 @@ open class Physics2DDirectSpaceState(
   }
 
   fun castMotion(shape: Physics2DShapeQueryParameters): VariantArray {
-    val _arg = Variant.new(shape)
+    val _arg = Variant(shape)
     val _ret = __method_bind.castMotion.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
@@ -43,7 +43,7 @@ open class Physics2DDirectSpaceState(
   }
 
   fun getRestInfo(shape: Physics2DShapeQueryParameters): Dictionary {
-    val _arg = Variant.new(shape)
+    val _arg = Variant(shape)
     val _ret = __method_bind.getRestInfo.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }

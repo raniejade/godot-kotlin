@@ -75,17 +75,17 @@ open class VisualScriptComment(
   }
 
   fun setDescription(description: String) {
-    val _arg = Variant.new(description)
+    val _arg = Variant(description)
     __method_bind.setDescription.call(this._handle, listOf(_arg))
   }
 
   fun setSize(size: Vector2) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 
   fun setTitle(title: String) {
-    val _arg = Variant.new(title)
+    val _arg = Variant(title)
     __method_bind.setTitle.call(this._handle, listOf(_arg))
   }
 

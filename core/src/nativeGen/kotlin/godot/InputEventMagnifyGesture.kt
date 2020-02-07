@@ -39,7 +39,7 @@ open class InputEventMagnifyGesture(
   }
 
   fun setFactor(factor: Float) {
-    val _arg = Variant.new(factor)
+    val _arg = Variant(factor)
     __method_bind.setFactor.call(this._handle, listOf(_arg))
   }
 

@@ -57,7 +57,7 @@ open class GDNative(
   }
 
   fun setLibrary(library: GDNativeLibrary) {
-    val _arg = Variant.new(library)
+    val _arg = Variant(library)
     __method_bind.setLibrary.call(this._handle, listOf(_arg))
   }
 

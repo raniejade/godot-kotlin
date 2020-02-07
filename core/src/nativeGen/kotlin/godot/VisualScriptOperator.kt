@@ -52,12 +52,12 @@ open class VisualScriptOperator(
   }
 
   fun setOperator(op: Int) {
-    val _arg = Variant.new(op)
+    val _arg = Variant(op)
     __method_bind.setOperator.call(this._handle, listOf(_arg))
   }
 
   fun setTyped(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.setTyped.call(this._handle, listOf(_arg))
   }
 

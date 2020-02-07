@@ -75,7 +75,7 @@ open class VisibilityEnabler2D(
   }
 
   fun isEnablerEnabled(enabler: Int): Boolean {
-    val _arg = Variant.new(enabler)
+    val _arg = Variant(enabler)
     val _ret = __method_bind.isEnablerEnabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }

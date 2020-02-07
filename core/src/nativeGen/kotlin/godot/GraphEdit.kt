@@ -153,12 +153,12 @@ open class GraphEdit(
   }
 
   fun addValidLeftDisconnectType(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.addValidLeftDisconnectType.call(this._handle, listOf(_arg))
   }
 
   fun addValidRightDisconnectType(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.addValidRightDisconnectType.call(this._handle, listOf(_arg))
   }
 
@@ -261,12 +261,12 @@ open class GraphEdit(
   }
 
   fun removeValidLeftDisconnectType(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.removeValidLeftDisconnectType.call(this._handle, listOf(_arg))
   }
 
   fun removeValidRightDisconnectType(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.removeValidRightDisconnectType.call(this._handle, listOf(_arg))
   }
 
@@ -287,32 +287,32 @@ open class GraphEdit(
   }
 
   fun setRightDisconnects(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setRightDisconnects.call(this._handle, listOf(_arg))
   }
 
   fun setScrollOfs(ofs: Vector2) {
-    val _arg = Variant.new(ofs)
+    val _arg = Variant(ofs)
     __method_bind.setScrollOfs.call(this._handle, listOf(_arg))
   }
 
   fun setSelected(node: Node) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.setSelected.call(this._handle, listOf(_arg))
   }
 
   fun setSnap(pixels: Int) {
-    val _arg = Variant.new(pixels)
+    val _arg = Variant(pixels)
     __method_bind.setSnap.call(this._handle, listOf(_arg))
   }
 
   fun setUseSnap(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUseSnap.call(this._handle, listOf(_arg))
   }
 
   fun setZoom(pZoom: Float) {
-    val _arg = Variant.new(pZoom)
+    val _arg = Variant(pZoom)
     __method_bind.setZoom.call(this._handle, listOf(_arg))
   }
 

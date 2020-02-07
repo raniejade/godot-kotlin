@@ -38,7 +38,7 @@ open class VisualScriptEmitSignal(
   }
 
   fun setSignal(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setSignal.call(this._handle, listOf(_arg))
   }
 

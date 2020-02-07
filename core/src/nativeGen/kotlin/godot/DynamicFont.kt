@@ -118,12 +118,12 @@ open class DynamicFont(
   }
 
   fun addFallback(data: DynamicFontData) {
-    val _arg = Variant.new(data)
+    val _arg = Variant(data)
     __method_bind.addFallback.call(this._handle, listOf(_arg))
   }
 
   fun getFallback(idx: Int): DynamicFontData {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getFallback.call(this._handle, listOf(_arg))
     return _ret.asObject(::DynamicFontData)!!
   }
@@ -154,7 +154,7 @@ open class DynamicFont(
   }
 
   fun getSpacing(type: Int): Int {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getSpacing.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -170,7 +170,7 @@ open class DynamicFont(
   }
 
   fun removeFallback(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.removeFallback.call(this._handle, listOf(_arg))
   }
 
@@ -182,22 +182,22 @@ open class DynamicFont(
   }
 
   fun setFontData(data: DynamicFontData) {
-    val _arg = Variant.new(data)
+    val _arg = Variant(data)
     __method_bind.setFontData.call(this._handle, listOf(_arg))
   }
 
   fun setOutlineColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setOutlineColor.call(this._handle, listOf(_arg))
   }
 
   fun setOutlineSize(size: Int) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setOutlineSize.call(this._handle, listOf(_arg))
   }
 
   fun setSize(data: Int) {
-    val _arg = Variant.new(data)
+    val _arg = Variant(data)
     __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 
@@ -209,12 +209,12 @@ open class DynamicFont(
   }
 
   fun setUseFilter(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUseFilter.call(this._handle, listOf(_arg))
   }
 
   fun setUseMipmaps(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUseMipmaps.call(this._handle, listOf(_arg))
   }
 

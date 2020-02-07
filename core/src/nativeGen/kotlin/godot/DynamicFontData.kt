@@ -66,17 +66,17 @@ open class DynamicFontData(
   }
 
   fun setAntialiased(antialiased: Boolean) {
-    val _arg = Variant.new(antialiased)
+    val _arg = Variant(antialiased)
     __method_bind.setAntialiased.call(this._handle, listOf(_arg))
   }
 
   fun setFontPath(path: String) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.setFontPath.call(this._handle, listOf(_arg))
   }
 
   fun setHinting(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setHinting.call(this._handle, listOf(_arg))
   }
 

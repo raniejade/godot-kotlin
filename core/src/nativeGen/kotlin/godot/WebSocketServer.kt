@@ -103,13 +103,13 @@ open class WebSocketServer(
   }
 
   fun getPeerAddress(id: Int): String {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getPeerAddress.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getPeerPort(id: Int): Int {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getPeerPort.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -125,7 +125,7 @@ open class WebSocketServer(
   }
 
   fun hasPeer(id: Int): Boolean {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.hasPeer.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -149,22 +149,22 @@ open class WebSocketServer(
   }
 
   fun setBindIp(arg0: String) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setBindIp.call(this._handle, listOf(_arg))
   }
 
   fun setCaChain(arg0: X509Certificate) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setCaChain.call(this._handle, listOf(_arg))
   }
 
   fun setPrivateKey(arg0: CryptoKey) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setPrivateKey.call(this._handle, listOf(_arg))
   }
 
   fun setSslCertificate(arg0: X509Certificate) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setSslCertificate.call(this._handle, listOf(_arg))
   }
 

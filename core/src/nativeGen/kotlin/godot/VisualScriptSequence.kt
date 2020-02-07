@@ -39,7 +39,7 @@ open class VisualScriptSequence(
   }
 
   fun setSteps(steps: Int) {
-    val _arg = Variant.new(steps)
+    val _arg = Variant(steps)
     __method_bind.setSteps.call(this._handle, listOf(_arg))
   }
 

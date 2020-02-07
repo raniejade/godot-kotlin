@@ -92,27 +92,27 @@ open class CylinderMesh(
   }
 
   fun setBottomRadius(radius: Float) {
-    val _arg = Variant.new(radius)
+    val _arg = Variant(radius)
     __method_bind.setBottomRadius.call(this._handle, listOf(_arg))
   }
 
   fun setHeight(height: Float) {
-    val _arg = Variant.new(height)
+    val _arg = Variant(height)
     __method_bind.setHeight.call(this._handle, listOf(_arg))
   }
 
   fun setRadialSegments(segments: Int) {
-    val _arg = Variant.new(segments)
+    val _arg = Variant(segments)
     __method_bind.setRadialSegments.call(this._handle, listOf(_arg))
   }
 
   fun setRings(rings: Int) {
-    val _arg = Variant.new(rings)
+    val _arg = Variant(rings)
     __method_bind.setRings.call(this._handle, listOf(_arg))
   }
 
   fun setTopRadius(radius: Float) {
-    val _arg = Variant.new(radius)
+    val _arg = Variant(radius)
     __method_bind.setTopRadius.call(this._handle, listOf(_arg))
   }
 

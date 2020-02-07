@@ -48,19 +48,19 @@ open class Navigation(
   }
 
   fun getClosestPoint(toPoint: Vector3): Vector3 {
-    val _arg = Variant.new(toPoint)
+    val _arg = Variant(toPoint)
     val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun getClosestPointNormal(toPoint: Vector3): Vector3 {
-    val _arg = Variant.new(toPoint)
+    val _arg = Variant(toPoint)
     val _ret = __method_bind.getClosestPointNormal.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun getClosestPointOwner(toPoint: Vector3): Object {
-    val _arg = Variant.new(toPoint)
+    val _arg = Variant(toPoint)
     val _ret = __method_bind.getClosestPointOwner.call(this._handle, listOf(_arg))
     return _ret.asObject(::Object)!!
   }
@@ -110,7 +110,7 @@ open class Navigation(
   }
 
   fun navmeshRemove(id: Int) {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     __method_bind.navmeshRemove.call(this._handle, listOf(_arg))
   }
 
@@ -122,7 +122,7 @@ open class Navigation(
   }
 
   fun setUpVector(up: Vector3) {
-    val _arg = Variant.new(up)
+    val _arg = Variant(up)
     __method_bind.setUpVector.call(this._handle, listOf(_arg))
   }
 

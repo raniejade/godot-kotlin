@@ -38,7 +38,7 @@ open class InputEvent(
   }
 
   fun accumulate(withEvent: InputEvent): Boolean {
-    val _arg = Variant.new(withEvent)
+    val _arg = Variant(withEvent)
     val _ret = __method_bind.accumulate.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -49,7 +49,7 @@ open class InputEvent(
   }
 
   fun getActionStrength(action: String): Float {
-    val _arg = Variant.new(action)
+    val _arg = Variant(action)
     val _ret = __method_bind.getActionStrength.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -60,7 +60,7 @@ open class InputEvent(
   }
 
   fun isAction(action: String): Boolean {
-    val _arg = Variant.new(action)
+    val _arg = Variant(action)
     val _ret = __method_bind.isAction.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -74,7 +74,7 @@ open class InputEvent(
   }
 
   fun isActionReleased(action: String): Boolean {
-    val _arg = Variant.new(action)
+    val _arg = Variant(action)
     val _ret = __method_bind.isActionReleased.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -95,17 +95,17 @@ open class InputEvent(
   }
 
   fun setDevice(device: Int) {
-    val _arg = Variant.new(device)
+    val _arg = Variant(device)
     __method_bind.setDevice.call(this._handle, listOf(_arg))
   }
 
   fun shortcutMatch(event: InputEvent): Boolean {
-    val _arg = Variant.new(event)
+    val _arg = Variant(event)
     val _ret = __method_bind.shortcutMatch.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
-  fun xformedBy(xform: Transform2D, localOfs: Vector2 = Vector2.new(0, 0)): InputEvent {
+  fun xformedBy(xform: Transform2D, localOfs: Vector2 = Vector2(0, 0)): InputEvent {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(xform))
     _args.add(Variant.fromAny(localOfs))

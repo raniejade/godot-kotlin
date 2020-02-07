@@ -62,7 +62,7 @@ open class KinematicBody(
   }
 
   fun getAxisLock(axis: Int): Boolean {
-    val _arg = Variant.new(axis)
+    val _arg = Variant(axis)
     val _ret = __method_bind.getAxisLock.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -83,7 +83,7 @@ open class KinematicBody(
   }
 
   fun getSlideCollision(slideIdx: Int): KinematicCollision {
-    val _arg = Variant.new(slideIdx)
+    val _arg = Variant(slideIdx)
     val _ret = __method_bind.getSlideCollision.call(this._handle, listOf(_arg))
     return _ret.asObject(::KinematicCollision)!!
   }
@@ -125,7 +125,7 @@ open class KinematicBody(
 
   fun moveAndSlide(
     linearVelocity: Vector3,
-    upDirection: Vector3 = Vector3.new(0, 0, 0),
+    upDirection: Vector3 = Vector3(0, 0, 0),
     stopOnSlope: Boolean = false,
     maxSlides: Int = 4,
     floorMaxAngle: Float = 0.785398f,
@@ -145,7 +145,7 @@ open class KinematicBody(
   fun moveAndSlideWithSnap(
     linearVelocity: Vector3,
     snap: Vector3,
-    upDirection: Vector3 = Vector3.new(0, 0, 0),
+    upDirection: Vector3 = Vector3(0, 0, 0),
     stopOnSlope: Boolean = false,
     maxSlides: Int = 4,
     floorMaxAngle: Float = 0.785398f,
@@ -171,7 +171,7 @@ open class KinematicBody(
   }
 
   fun setSafeMargin(pixels: Float) {
-    val _arg = Variant.new(pixels)
+    val _arg = Variant(pixels)
     __method_bind.setSafeMargin.call(this._handle, listOf(_arg))
   }
 

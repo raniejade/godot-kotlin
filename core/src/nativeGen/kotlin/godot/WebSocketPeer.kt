@@ -54,12 +54,12 @@ open class WebSocketPeer(
   }
 
   fun setNoDelay(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setNoDelay.call(this._handle, listOf(_arg))
   }
 
   fun setWriteMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setWriteMode.call(this._handle, listOf(_arg))
   }
 

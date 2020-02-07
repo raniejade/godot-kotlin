@@ -47,12 +47,12 @@ open class GradientTexture(
   }
 
   fun setGradient(gradient: Gradient) {
-    val _arg = Variant.new(gradient)
+    val _arg = Variant(gradient)
     __method_bind.setGradient.call(this._handle, listOf(_arg))
   }
 
   fun setWidth(width: Int) {
-    val _arg = Variant.new(width)
+    val _arg = Variant(width)
     __method_bind.setWidth.call(this._handle, listOf(_arg))
   }
 

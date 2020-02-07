@@ -9,6 +9,11 @@ class Transform2D(
   value: CValue<godot_transform2d>
 ) : CoreType<godot_transform2d>(value) {
 
+  constructor(): this(__new())
+  constructor(from: Transform): this(__new(from))
+  constructor(xAxis: Vector2, yAxis: Vector2, origin: Vector2): this(__new(xAxis, yAxis, origin))
+  constructor(rotation: Float, position: Vector2): this(__new(rotation, position))
+
   val origin: Vector2
     get() = getOrigin()
 
@@ -170,7 +175,7 @@ class Transform2D(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
@@ -183,13 +188,13 @@ class Transform2D(
 
   companion object {
     val IDENTITY: Transform2D
-      get() = new(Vector2.new(1, 0), Vector2.new(0, 1), Vector2.new(1, 0))
+      get() = Transform2D(Vector2(1, 0), Vector2(0, 1), Vector2(1, 0))
 
     val FLIP_X: Transform2D
-      get() = new(Vector2.new(-1, 0), Vector2.new(0, 1), Vector2.new(1, 0))
+      get() = Transform2D(Vector2(-1, 0), Vector2(0, 1), Vector2(1, 0))
 
     val FLIP_Y: Transform2D
-      get() = new(Vector2.new(1, 0), Vector2.new(0, -1), Vector2.new(1, 0))
+      get() = Transform2D(Vector2(1, 0), Vector2(0, -1), Vector2(1, 0))
 
     fun new(): Transform2D {
       return allocType(::Transform2D) {
@@ -197,19 +202,19 @@ class Transform2D(
       }
     }
 
-    @MissingGDNativeAPI("Transform2D::new(Transform)")
-    fun new(from: Transform): Transform2D = missingGDNativeAPI()
-
-    fun new(xAxis: Vector2, yAxis: Vector2, origin: Vector2): Transform2D {
-      return allocType(::Transform2D) {
-        checkNotNull(Godot.gdnative.godot_transform2d_new_axis_origin)(it, xAxis._value.ptr, yAxis._value.ptr, origin._value.ptr)
-      }
+    internal fun __new() = allocType2<godot_transform2d> {
+      checkNotNull(Godot.gdnative.godot_transform2d_new_identity)(it)
     }
 
-    fun new(rotation: Float, position: Vector2): Transform2D {
-      return allocType(::Transform2D) {
-        checkNotNull(Godot.gdnative.godot_transform2d_new)(it, rotation, position._value.ptr)
-      }
+    @MissingGDNativeAPI("Transform2D::new(Transform)")
+    internal fun __new(from: Transform): CValue<godot_transform2d> = missingGDNativeAPI()
+
+    internal fun __new(xAxis: Vector2, yAxis: Vector2, origin: Vector2) = allocType2<godot_transform2d> {
+      checkNotNull(Godot.gdnative.godot_transform2d_new_axis_origin)(it, xAxis._value.ptr, yAxis._value.ptr, origin._value.ptr)
+    }
+
+    internal fun __new(rotation: Float, position: Vector2) = allocType2<godot_transform2d> {
+      checkNotNull(Godot.gdnative.godot_transform2d_new)(it, rotation, position._value.ptr)
     }
   }
 }

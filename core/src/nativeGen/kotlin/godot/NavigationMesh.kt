@@ -216,7 +216,7 @@ open class NavigationMesh(
   }
 
   fun addPolygon(polygon: PoolIntArray) {
-    val _arg = Variant.new(polygon)
+    val _arg = Variant(polygon)
     __method_bind.addPolygon.call(this._handle, listOf(_arg))
   }
 
@@ -225,7 +225,7 @@ open class NavigationMesh(
   }
 
   fun createFromMesh(mesh: Mesh) {
-    val _arg = Variant.new(mesh)
+    val _arg = Variant(mesh)
     __method_bind.createFromMesh.call(this._handle, listOf(_arg))
   }
 
@@ -265,7 +265,7 @@ open class NavigationMesh(
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant.new(bit)
+    val _arg = Variant(bit)
     val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -311,7 +311,7 @@ open class NavigationMesh(
   }
 
   fun getPolygon(idx: Int): PoolIntArray {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPolygon.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
@@ -357,37 +357,37 @@ open class NavigationMesh(
   }
 
   fun setAgentHeight(agentHeight: Float) {
-    val _arg = Variant.new(agentHeight)
+    val _arg = Variant(agentHeight)
     __method_bind.setAgentHeight.call(this._handle, listOf(_arg))
   }
 
   fun setAgentMaxClimb(agentMaxClimb: Float) {
-    val _arg = Variant.new(agentMaxClimb)
+    val _arg = Variant(agentMaxClimb)
     __method_bind.setAgentMaxClimb.call(this._handle, listOf(_arg))
   }
 
   fun setAgentMaxSlope(agentMaxSlope: Float) {
-    val _arg = Variant.new(agentMaxSlope)
+    val _arg = Variant(agentMaxSlope)
     __method_bind.setAgentMaxSlope.call(this._handle, listOf(_arg))
   }
 
   fun setAgentRadius(agentRadius: Float) {
-    val _arg = Variant.new(agentRadius)
+    val _arg = Variant(agentRadius)
     __method_bind.setAgentRadius.call(this._handle, listOf(_arg))
   }
 
   fun setCellHeight(cellHeight: Float) {
-    val _arg = Variant.new(cellHeight)
+    val _arg = Variant(cellHeight)
     __method_bind.setCellHeight.call(this._handle, listOf(_arg))
   }
 
   fun setCellSize(cellSize: Float) {
-    val _arg = Variant.new(cellSize)
+    val _arg = Variant(cellSize)
     __method_bind.setCellSize.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
   }
 
@@ -399,77 +399,77 @@ open class NavigationMesh(
   }
 
   fun setDetailSampleDistance(detailSampleDist: Float) {
-    val _arg = Variant.new(detailSampleDist)
+    val _arg = Variant(detailSampleDist)
     __method_bind.setDetailSampleDistance.call(this._handle, listOf(_arg))
   }
 
   fun setDetailSampleMaxError(detailSampleMaxError: Float) {
-    val _arg = Variant.new(detailSampleMaxError)
+    val _arg = Variant(detailSampleMaxError)
     __method_bind.setDetailSampleMaxError.call(this._handle, listOf(_arg))
   }
 
   fun setEdgeMaxError(edgeMaxError: Float) {
-    val _arg = Variant.new(edgeMaxError)
+    val _arg = Variant(edgeMaxError)
     __method_bind.setEdgeMaxError.call(this._handle, listOf(_arg))
   }
 
   fun setEdgeMaxLength(edgeMaxLength: Float) {
-    val _arg = Variant.new(edgeMaxLength)
+    val _arg = Variant(edgeMaxLength)
     __method_bind.setEdgeMaxLength.call(this._handle, listOf(_arg))
   }
 
   fun setFilterLedgeSpans(filterLedgeSpans: Boolean) {
-    val _arg = Variant.new(filterLedgeSpans)
+    val _arg = Variant(filterLedgeSpans)
     __method_bind.setFilterLedgeSpans.call(this._handle, listOf(_arg))
   }
 
   fun setFilterLowHangingObstacles(filterLowHangingObstacles: Boolean) {
-    val _arg = Variant.new(filterLowHangingObstacles)
+    val _arg = Variant(filterLowHangingObstacles)
     __method_bind.setFilterLowHangingObstacles.call(this._handle, listOf(_arg))
   }
 
   fun setFilterWalkableLowHeightSpans(filterWalkableLowHeightSpans: Boolean) {
-    val _arg = Variant.new(filterWalkableLowHeightSpans)
+    val _arg = Variant(filterWalkableLowHeightSpans)
     __method_bind.setFilterWalkableLowHeightSpans.call(this._handle, listOf(_arg))
   }
 
   fun setParsedGeometryType(geometryType: Int) {
-    val _arg = Variant.new(geometryType)
+    val _arg = Variant(geometryType)
     __method_bind.setParsedGeometryType.call(this._handle, listOf(_arg))
   }
 
   fun setRegionMergeSize(regionMergeSize: Float) {
-    val _arg = Variant.new(regionMergeSize)
+    val _arg = Variant(regionMergeSize)
     __method_bind.setRegionMergeSize.call(this._handle, listOf(_arg))
   }
 
   fun setRegionMinSize(regionMinSize: Float) {
-    val _arg = Variant.new(regionMinSize)
+    val _arg = Variant(regionMinSize)
     __method_bind.setRegionMinSize.call(this._handle, listOf(_arg))
   }
 
   fun setSamplePartitionType(samplePartitionType: Int) {
-    val _arg = Variant.new(samplePartitionType)
+    val _arg = Variant(samplePartitionType)
     __method_bind.setSamplePartitionType.call(this._handle, listOf(_arg))
   }
 
   fun setSourceGeometryMode(mask: Int) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setSourceGeometryMode.call(this._handle, listOf(_arg))
   }
 
   fun setSourceGroupName(mask: String) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setSourceGroupName.call(this._handle, listOf(_arg))
   }
 
   fun setVertices(vertices: PoolVector3Array) {
-    val _arg = Variant.new(vertices)
+    val _arg = Variant(vertices)
     __method_bind.setVertices.call(this._handle, listOf(_arg))
   }
 
   fun setVertsPerPoly(vertsPerPoly: Float) {
-    val _arg = Variant.new(vertsPerPoly)
+    val _arg = Variant(vertsPerPoly)
     __method_bind.setVertsPerPoly.call(this._handle, listOf(_arg))
   }
 

@@ -143,7 +143,7 @@ open class SoftBody(
   }
 
   fun addCollisionExceptionWith(body: Node) {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     __method_bind.addCollisionExceptionWith.call(this._handle, listOf(_arg))
   }
 
@@ -163,7 +163,7 @@ open class SoftBody(
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
-    val _arg = Variant.new(bit)
+    val _arg = Variant(bit)
     val _ret = __method_bind.getCollisionLayerBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -174,7 +174,7 @@ open class SoftBody(
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant.new(bit)
+    val _arg = Variant(bit)
     val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -230,17 +230,17 @@ open class SoftBody(
   }
 
   fun removeCollisionExceptionWith(body: Node) {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     __method_bind.removeCollisionExceptionWith.call(this._handle, listOf(_arg))
   }
 
   fun setAreaAngularStiffness(areaAngularStiffness: Float) {
-    val _arg = Variant.new(areaAngularStiffness)
+    val _arg = Variant(areaAngularStiffness)
     __method_bind.setAreaAngularStiffness.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionLayer(collisionLayer: Int) {
-    val _arg = Variant.new(collisionLayer)
+    val _arg = Variant(collisionLayer)
     __method_bind.setCollisionLayer.call(this._handle, listOf(_arg))
   }
 
@@ -252,7 +252,7 @@ open class SoftBody(
   }
 
   fun setCollisionMask(collisionMask: Int) {
-    val _arg = Variant.new(collisionMask)
+    val _arg = Variant(collisionMask)
     __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
   }
 
@@ -264,52 +264,52 @@ open class SoftBody(
   }
 
   fun setDampingCoefficient(dampingCoefficient: Float) {
-    val _arg = Variant.new(dampingCoefficient)
+    val _arg = Variant(dampingCoefficient)
     __method_bind.setDampingCoefficient.call(this._handle, listOf(_arg))
   }
 
   fun setDragCoefficient(dragCoefficient: Float) {
-    val _arg = Variant.new(dragCoefficient)
+    val _arg = Variant(dragCoefficient)
     __method_bind.setDragCoefficient.call(this._handle, listOf(_arg))
   }
 
   fun setLinearStiffness(linearStiffness: Float) {
-    val _arg = Variant.new(linearStiffness)
+    val _arg = Variant(linearStiffness)
     __method_bind.setLinearStiffness.call(this._handle, listOf(_arg))
   }
 
   fun setParentCollisionIgnore(parentCollisionIgnore: NodePath) {
-    val _arg = Variant.new(parentCollisionIgnore)
+    val _arg = Variant(parentCollisionIgnore)
     __method_bind.setParentCollisionIgnore.call(this._handle, listOf(_arg))
   }
 
   fun setPoseMatchingCoefficient(poseMatchingCoefficient: Float) {
-    val _arg = Variant.new(poseMatchingCoefficient)
+    val _arg = Variant(poseMatchingCoefficient)
     __method_bind.setPoseMatchingCoefficient.call(this._handle, listOf(_arg))
   }
 
   fun setPressureCoefficient(pressureCoefficient: Float) {
-    val _arg = Variant.new(pressureCoefficient)
+    val _arg = Variant(pressureCoefficient)
     __method_bind.setPressureCoefficient.call(this._handle, listOf(_arg))
   }
 
   fun setRayPickable(rayPickable: Boolean) {
-    val _arg = Variant.new(rayPickable)
+    val _arg = Variant(rayPickable)
     __method_bind.setRayPickable.call(this._handle, listOf(_arg))
   }
 
   fun setSimulationPrecision(simulationPrecision: Int) {
-    val _arg = Variant.new(simulationPrecision)
+    val _arg = Variant(simulationPrecision)
     __method_bind.setSimulationPrecision.call(this._handle, listOf(_arg))
   }
 
   fun setTotalMass(mass: Float) {
-    val _arg = Variant.new(mass)
+    val _arg = Variant(mass)
     __method_bind.setTotalMass.call(this._handle, listOf(_arg))
   }
 
   fun setVolumeStiffness(volumeStiffness: Float) {
-    val _arg = Variant.new(volumeStiffness)
+    val _arg = Variant(volumeStiffness)
     __method_bind.setVolumeStiffness.call(this._handle, listOf(_arg))
   }
 

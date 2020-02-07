@@ -151,12 +151,12 @@ open class AnimationPlayer(
   }
 
   fun advance(delta: Float) {
-    val _arg = Variant.new(delta)
+    val _arg = Variant(delta)
     __method_bind.advance.call(this._handle, listOf(_arg))
   }
 
   fun animationGetNext(animFrom: String): String {
-    val _arg = Variant.new(animFrom)
+    val _arg = Variant(animFrom)
     val _ret = __method_bind.animationGetNext.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -177,13 +177,13 @@ open class AnimationPlayer(
   }
 
   fun findAnimation(animation: Animation): String {
-    val _arg = Variant.new(animation)
+    val _arg = Variant(animation)
     val _ret = __method_bind.findAnimation.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getAnimation(name: String): Animation {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getAnimation.call(this._handle, listOf(_arg))
     return _ret.asObject(::Animation)!!
   }
@@ -262,7 +262,7 @@ open class AnimationPlayer(
   }
 
   fun hasAnimation(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasAnimation.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -299,12 +299,12 @@ open class AnimationPlayer(
   }
 
   fun queue(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.queue.call(this._handle, listOf(_arg))
   }
 
   fun removeAnimation(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.removeAnimation.call(this._handle, listOf(_arg))
   }
 
@@ -323,22 +323,22 @@ open class AnimationPlayer(
   }
 
   fun setActive(active: Boolean) {
-    val _arg = Variant.new(active)
+    val _arg = Variant(active)
     __method_bind.setActive.call(this._handle, listOf(_arg))
   }
 
   fun setAnimationProcessMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setAnimationProcessMode.call(this._handle, listOf(_arg))
   }
 
   fun setAssignedAnimation(anim: String) {
-    val _arg = Variant.new(anim)
+    val _arg = Variant(anim)
     __method_bind.setAssignedAnimation.call(this._handle, listOf(_arg))
   }
 
   fun setAutoplay(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setAutoplay.call(this._handle, listOf(_arg))
   }
 
@@ -355,32 +355,32 @@ open class AnimationPlayer(
   }
 
   fun setCurrentAnimation(anim: String) {
-    val _arg = Variant.new(anim)
+    val _arg = Variant(anim)
     __method_bind.setCurrentAnimation.call(this._handle, listOf(_arg))
   }
 
   fun setDefaultBlendTime(sec: Float) {
-    val _arg = Variant.new(sec)
+    val _arg = Variant(sec)
     __method_bind.setDefaultBlendTime.call(this._handle, listOf(_arg))
   }
 
   fun setMethodCallMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setMethodCallMode.call(this._handle, listOf(_arg))
   }
 
   fun setRoot(path: NodePath) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.setRoot.call(this._handle, listOf(_arg))
   }
 
   fun setSpeedScale(speed: Float) {
-    val _arg = Variant.new(speed)
+    val _arg = Variant(speed)
     __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
   }
 
   fun stop(reset: Boolean = true) {
-    val _arg = Variant.new(reset)
+    val _arg = Variant(reset)
     __method_bind.stop.call(this._handle, listOf(_arg))
   }
 

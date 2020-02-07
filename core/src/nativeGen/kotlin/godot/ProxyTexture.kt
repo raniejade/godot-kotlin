@@ -38,7 +38,7 @@ open class ProxyTexture(
   }
 
   fun setBase(base: Texture) {
-    val _arg = Variant.new(base)
+    val _arg = Variant(base)
     __method_bind.setBase.call(this._handle, listOf(_arg))
   }
 

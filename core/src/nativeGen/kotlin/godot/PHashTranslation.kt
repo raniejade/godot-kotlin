@@ -25,7 +25,7 @@ open class PHashTranslation(
   }
 
   fun generate(from: Translation) {
-    val _arg = Variant.new(from)
+    val _arg = Variant(from)
     __method_bind.generate.call(this._handle, listOf(_arg))
   }
 

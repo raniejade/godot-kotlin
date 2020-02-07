@@ -50,12 +50,12 @@ open class AudioEffectRecord(
   }
 
   fun setFormat(format: Int) {
-    val _arg = Variant.new(format)
+    val _arg = Variant(format)
     __method_bind.setFormat.call(this._handle, listOf(_arg))
   }
 
   fun setRecordingActive(record: Boolean) {
-    val _arg = Variant.new(record)
+    val _arg = Variant(record)
     __method_bind.setRecordingActive.call(this._handle, listOf(_arg))
   }
 

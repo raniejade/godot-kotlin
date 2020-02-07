@@ -113,30 +113,30 @@ open class VisualShaderNodeGroupBase(
   }
 
   fun hasInputPort(id: Int): Boolean {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.hasInputPort.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasOutputPort(id: Int): Boolean {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.hasOutputPort.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isValidPortName(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.isValidPortName.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeInputPort(id: Int) {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     __method_bind.removeInputPort.call(this._handle, listOf(_arg))
   }
 
   fun removeOutputPort(id: Int) {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     __method_bind.removeOutputPort.call(this._handle, listOf(_arg))
   }
 
@@ -155,7 +155,7 @@ open class VisualShaderNodeGroupBase(
   }
 
   fun setInputs(inputs: String) {
-    val _arg = Variant.new(inputs)
+    val _arg = Variant(inputs)
     __method_bind.setInputs.call(this._handle, listOf(_arg))
   }
 
@@ -174,12 +174,12 @@ open class VisualShaderNodeGroupBase(
   }
 
   fun setOutputs(outputs: String) {
-    val _arg = Variant.new(outputs)
+    val _arg = Variant(outputs)
     __method_bind.setOutputs.call(this._handle, listOf(_arg))
   }
 
   fun setSize(size: Vector2) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 

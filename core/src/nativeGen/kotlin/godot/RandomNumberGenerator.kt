@@ -78,7 +78,7 @@ open class RandomNumberGenerator(
   }
 
   fun setSeed(seed: Int) {
-    val _arg = Variant.new(seed)
+    val _arg = Variant(seed)
     __method_bind.setSeed.call(this._handle, listOf(_arg))
   }
 

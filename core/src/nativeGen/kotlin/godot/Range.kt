@@ -167,57 +167,57 @@ open class Range(
   }
 
   fun setAllowGreater(allow: Boolean) {
-    val _arg = Variant.new(allow)
+    val _arg = Variant(allow)
     __method_bind.setAllowGreater.call(this._handle, listOf(_arg))
   }
 
   fun setAllowLesser(allow: Boolean) {
-    val _arg = Variant.new(allow)
+    val _arg = Variant(allow)
     __method_bind.setAllowLesser.call(this._handle, listOf(_arg))
   }
 
   fun setAsRatio(value: Float) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setAsRatio.call(this._handle, listOf(_arg))
   }
 
   fun setExpRatio(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setExpRatio.call(this._handle, listOf(_arg))
   }
 
   fun setMax(maximum: Float) {
-    val _arg = Variant.new(maximum)
+    val _arg = Variant(maximum)
     __method_bind.setMax.call(this._handle, listOf(_arg))
   }
 
   fun setMin(minimum: Float) {
-    val _arg = Variant.new(minimum)
+    val _arg = Variant(minimum)
     __method_bind.setMin.call(this._handle, listOf(_arg))
   }
 
   fun setPage(pagesize: Float) {
-    val _arg = Variant.new(pagesize)
+    val _arg = Variant(pagesize)
     __method_bind.setPage.call(this._handle, listOf(_arg))
   }
 
   fun setStep(step: Float) {
-    val _arg = Variant.new(step)
+    val _arg = Variant(step)
     __method_bind.setStep.call(this._handle, listOf(_arg))
   }
 
   fun setUseRoundedValues(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setUseRoundedValues.call(this._handle, listOf(_arg))
   }
 
   fun setValue(value: Float) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setValue.call(this._handle, listOf(_arg))
   }
 
   fun share(with: Node) {
-    val _arg = Variant.new(with)
+    val _arg = Variant(with)
     __method_bind.share.call(this._handle, listOf(_arg))
   }
 

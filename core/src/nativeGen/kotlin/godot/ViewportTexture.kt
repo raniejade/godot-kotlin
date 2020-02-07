@@ -49,7 +49,7 @@ open class ViewportTexture(
   }
 
   fun setViewportPathInScene(path: NodePath) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.setViewportPathInScene.call(this._handle, listOf(_arg))
   }
 

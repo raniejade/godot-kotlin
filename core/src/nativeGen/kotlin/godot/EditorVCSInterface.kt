@@ -27,12 +27,12 @@ open class EditorVCSInterface(
   }
 
   fun commit(msg: String) {
-    val _arg = Variant.new(msg)
+    val _arg = Variant(msg)
     __method_bind.commit.call(this._handle, listOf(_arg))
   }
 
   fun getFileDiff(filePath: String): VariantArray {
-    val _arg = Variant.new(filePath)
+    val _arg = Variant(filePath)
     val _ret = __method_bind.getFileDiff.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
@@ -53,7 +53,7 @@ open class EditorVCSInterface(
   }
 
   fun initialize(projectRootPath: String): Boolean {
-    val _arg = Variant.new(projectRootPath)
+    val _arg = Variant(projectRootPath)
     val _ret = __method_bind.initialize.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -74,12 +74,12 @@ open class EditorVCSInterface(
   }
 
   fun stageFile(filePath: String) {
-    val _arg = Variant.new(filePath)
+    val _arg = Variant(filePath)
     __method_bind.stageFile.call(this._handle, listOf(_arg))
   }
 
   fun unstageFile(filePath: String) {
-    val _arg = Variant.new(filePath)
+    val _arg = Variant(filePath)
     __method_bind.unstageFile.call(this._handle, listOf(_arg))
   }
 

@@ -88,7 +88,7 @@ open class MeshInstance(
   }
 
   fun getSurfaceMaterial(surface: Int): Material {
-    val _arg = Variant.new(surface)
+    val _arg = Variant(surface)
     val _ret = __method_bind.getSurfaceMaterial.call(this._handle, listOf(_arg))
     return _ret.asObject(::Material)!!
   }
@@ -99,17 +99,17 @@ open class MeshInstance(
   }
 
   fun setMesh(mesh: Mesh) {
-    val _arg = Variant.new(mesh)
+    val _arg = Variant(mesh)
     __method_bind.setMesh.call(this._handle, listOf(_arg))
   }
 
   fun setSkeletonPath(skeletonPath: NodePath) {
-    val _arg = Variant.new(skeletonPath)
+    val _arg = Variant(skeletonPath)
     __method_bind.setSkeletonPath.call(this._handle, listOf(_arg))
   }
 
   fun setSkin(skin: Skin) {
-    val _arg = Variant.new(skin)
+    val _arg = Variant(skin)
     __method_bind.setSkin.call(this._handle, listOf(_arg))
   }
 

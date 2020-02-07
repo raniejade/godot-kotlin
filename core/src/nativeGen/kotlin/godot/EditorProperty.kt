@@ -117,7 +117,7 @@ open class EditorProperty(
   }
 
   fun addFocusable(control: Control) {
-    val _arg = Variant.new(control)
+    val _arg = Variant(control)
     __method_bind.addFocusable.call(this._handle, listOf(_arg))
   }
 
@@ -181,37 +181,37 @@ open class EditorProperty(
   }
 
   fun setBottomEditor(editor: Control) {
-    val _arg = Variant.new(editor)
+    val _arg = Variant(editor)
     __method_bind.setBottomEditor.call(this._handle, listOf(_arg))
   }
 
   fun setCheckable(checkable: Boolean) {
-    val _arg = Variant.new(checkable)
+    val _arg = Variant(checkable)
     __method_bind.setCheckable.call(this._handle, listOf(_arg))
   }
 
   fun setChecked(checked: Boolean) {
-    val _arg = Variant.new(checked)
+    val _arg = Variant(checked)
     __method_bind.setChecked.call(this._handle, listOf(_arg))
   }
 
   fun setDrawRed(drawRed: Boolean) {
-    val _arg = Variant.new(drawRed)
+    val _arg = Variant(drawRed)
     __method_bind.setDrawRed.call(this._handle, listOf(_arg))
   }
 
   fun setKeying(keying: Boolean) {
-    val _arg = Variant.new(keying)
+    val _arg = Variant(keying)
     __method_bind.setKeying.call(this._handle, listOf(_arg))
   }
 
   fun setLabel(text: String) {
-    val _arg = Variant.new(text)
+    val _arg = Variant(text)
     __method_bind.setLabel.call(this._handle, listOf(_arg))
   }
 
   fun setReadOnly(readOnly: Boolean) {
-    val _arg = Variant.new(readOnly)
+    val _arg = Variant(readOnly)
     __method_bind.setReadOnly.call(this._handle, listOf(_arg))
   }
 

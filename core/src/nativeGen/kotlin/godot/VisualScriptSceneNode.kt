@@ -49,7 +49,7 @@ open class VisualScriptSceneNode(
   }
 
   fun setNodePath(path: NodePath) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.setNodePath.call(this._handle, listOf(_arg))
   }
 

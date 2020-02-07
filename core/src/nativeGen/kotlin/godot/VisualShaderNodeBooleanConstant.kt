@@ -39,7 +39,7 @@ open class VisualShaderNodeBooleanConstant(
   }
 
   fun setConstant(value: Boolean) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setConstant.call(this._handle, listOf(_arg))
   }
 

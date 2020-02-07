@@ -10,16 +10,16 @@ object DefaultArgHelper {
       INT -> "${value.toInt()}"
       STRING -> "\"$value\""
       BOOL -> "${value.toBoolean()}"
-      COLOR -> "Color.rgb($value)"
-      VECTOR2 -> "Vector2.new$value"
-      VECTOR3 -> "Vector3.new$value"
+      COLOR -> "Color($value)"
+      VECTOR2 -> "Vector2$value"
+      VECTOR3 -> "Vector3$value"
       TRANSFORM2D -> {
         val args = value.drop(1).dropLast(1)
           .split("), ")
           .map { it.replace(")", "").replace("(", "") }
-          .joinToString(", ") { "Vector2.new($it)" }
+          .joinToString(", ") { "Vector2($it)" }
 
-        "Transform2D.new($args)"
+        "Transform2D($args)"
       }
       else -> null
     }

@@ -76,22 +76,22 @@ open class AnimatedSprite3D(
   }
 
   fun play(anim: String = "") {
-    val _arg = Variant.new(anim)
+    val _arg = Variant(anim)
     __method_bind.play.call(this._handle, listOf(_arg))
   }
 
   fun setAnimation(animation: String) {
-    val _arg = Variant.new(animation)
+    val _arg = Variant(animation)
     __method_bind.setAnimation.call(this._handle, listOf(_arg))
   }
 
   fun setFrame(frame: Int) {
-    val _arg = Variant.new(frame)
+    val _arg = Variant(frame)
     __method_bind.setFrame.call(this._handle, listOf(_arg))
   }
 
   fun setSpriteFrames(spriteFrames: SpriteFrames) {
-    val _arg = Variant.new(spriteFrames)
+    val _arg = Variant(spriteFrames)
     __method_bind.setSpriteFrames.call(this._handle, listOf(_arg))
   }
 

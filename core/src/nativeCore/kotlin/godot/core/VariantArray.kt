@@ -9,20 +9,29 @@ class VariantArray(
   value: CValue<godot_array>
 ): CoreType<godot_array>(value) {
 
+  constructor(): this(__new())
+  constructor(from: PoolByteArray): this(__new(from))
+  constructor(from: PoolColorArray): this(__new(from))
+  constructor(from: PoolIntArray): this(__new(from))
+  constructor(from: PoolRealArray): this(__new(from))
+  constructor(from: PoolStringArray): this(__new(from))
+  constructor(from: PoolVector2Array): this(__new(from))
+  constructor(from: PoolVector3Array): this(__new(from))
+
   fun append(value: Int) {
-    append(Variant.new(value))
+    append(Variant(value))
   }
 
   fun append(value: Float) {
-    append(Variant.new(value))
+    append(Variant(value))
   }
 
   fun append(value: Boolean) {
-    append(Variant.new(value))
+    append(Variant(value))
   }
 
   fun append(value: String) {
-    append(Variant.new(value))
+    append(Variant(value))
   }
 
   fun  append(value: Object) {
@@ -219,60 +228,45 @@ class VariantArray(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
-    return GDString.new("GDArray()")
+    return GDString("GDArray()")
   }
 
   companion object {
-    fun new(): VariantArray {
-      return allocType(::VariantArray) {
-        checkNotNull(Godot.gdnative.godot_array_new)(it)
-      }
+    internal fun __new() = allocType2<godot_array> {
+      checkNotNull(Godot.gdnative.godot_array_new)(it)
     }
 
-    fun new(from: PoolByteArray): VariantArray {
-      return allocType(::VariantArray) {
-        checkNotNull(Godot.gdnative.godot_array_new_pool_byte_array)(it, from._value.ptr)
-      }
+    internal fun __new(from: PoolByteArray) = allocType2<godot_array> {
+      checkNotNull(Godot.gdnative.godot_array_new_pool_byte_array)(it, from._value.ptr)
     }
 
-    fun new(from: PoolColorArray): VariantArray {
-      return allocType(::VariantArray) {
-        checkNotNull(Godot.gdnative.godot_array_new_pool_color_array)(it, from._value.ptr)
-      }
+    internal fun __new(from: PoolColorArray) = allocType2<godot_array> {
+      checkNotNull(Godot.gdnative.godot_array_new_pool_color_array)(it, from._value.ptr)
     }
 
-    fun new(from: PoolIntArray): VariantArray {
-      return allocType(::VariantArray) {
-        checkNotNull(Godot.gdnative.godot_array_new_pool_int_array)(it, from._value.ptr)
-      }
+
+    internal fun __new(from: PoolIntArray) = allocType2<godot_array> {
+      checkNotNull(Godot.gdnative.godot_array_new_pool_int_array)(it, from._value.ptr)
     }
 
-    fun new(from: PoolRealArray): VariantArray {
-      return allocType(::VariantArray) {
-        checkNotNull(Godot.gdnative.godot_array_new_pool_real_array)(it, from._value.ptr)
-      }
+    internal fun __new(from: PoolRealArray) = allocType2<godot_array> {
+      checkNotNull(Godot.gdnative.godot_array_new_pool_real_array)(it, from._value.ptr)
     }
 
-    fun new(from: PoolStringArray): VariantArray {
-      return allocType(::VariantArray) {
-        checkNotNull(Godot.gdnative.godot_array_new_pool_string_array)(it, from._value.ptr)
-      }
+    internal fun __new(from: PoolStringArray) = allocType2<godot_array> {
+      checkNotNull(Godot.gdnative.godot_array_new_pool_string_array)(it, from._value.ptr)
     }
 
-    fun new(from: PoolVector2Array): VariantArray {
-      return allocType(::VariantArray) {
-        checkNotNull(Godot.gdnative.godot_array_new_pool_vector2_array)(it, from._value.ptr)
-      }
+    internal fun __new(from: PoolVector2Array) = allocType2<godot_array> {
+      checkNotNull(Godot.gdnative.godot_array_new_pool_vector2_array)(it, from._value.ptr)
     }
 
-    fun new(from: PoolVector3Array): VariantArray {
-      return allocType(::VariantArray) {
-        checkNotNull(Godot.gdnative.godot_array_new_pool_vector3_array)(it, from._value.ptr)
-      }
+    internal fun __new(from: PoolVector3Array) = allocType2<godot_array> {
+      checkNotNull(Godot.gdnative.godot_array_new_pool_vector3_array)(it, from._value.ptr)
     }
   }
 }

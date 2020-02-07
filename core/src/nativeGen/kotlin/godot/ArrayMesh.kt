@@ -57,7 +57,7 @@ open class ArrayMesh(
   }
 
   fun addBlendShape(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.addBlendShape.call(this._handle, listOf(_arg))
   }
 
@@ -90,7 +90,7 @@ open class ArrayMesh(
   }
 
   fun getBlendShapeName(index: Int): String {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     val _ret = __method_bind.getBlendShapeName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -113,53 +113,53 @@ open class ArrayMesh(
   }
 
   fun setBlendShapeMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setBlendShapeMode.call(this._handle, listOf(_arg))
   }
 
   fun setCustomAabb(aabb: AABB) {
-    val _arg = Variant.new(aabb)
+    val _arg = Variant(aabb)
     __method_bind.setCustomAabb.call(this._handle, listOf(_arg))
   }
 
   fun surfaceFindByName(name: String): Int {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.surfaceFindByName.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun surfaceGetArrayIndexLen(surfIdx: Int): Int {
-    val _arg = Variant.new(surfIdx)
+    val _arg = Variant(surfIdx)
     val _ret = __method_bind.surfaceGetArrayIndexLen.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun surfaceGetArrayLen(surfIdx: Int): Int {
-    val _arg = Variant.new(surfIdx)
+    val _arg = Variant(surfIdx)
     val _ret = __method_bind.surfaceGetArrayLen.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun surfaceGetFormat(surfIdx: Int): Int {
-    val _arg = Variant.new(surfIdx)
+    val _arg = Variant(surfIdx)
     val _ret = __method_bind.surfaceGetFormat.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun surfaceGetName(surfIdx: Int): String {
-    val _arg = Variant.new(surfIdx)
+    val _arg = Variant(surfIdx)
     val _ret = __method_bind.surfaceGetName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun surfaceGetPrimitiveType(surfIdx: Int): Mesh.PrimitiveType {
-    val _arg = Variant.new(surfIdx)
+    val _arg = Variant(surfIdx)
     val _ret = __method_bind.surfaceGetPrimitiveType.call(this._handle, listOf(_arg))
     return Mesh.PrimitiveType.from(_ret.asInt())
   }
 
   fun surfaceRemove(surfIdx: Int) {
-    val _arg = Variant.new(surfIdx)
+    val _arg = Variant(surfIdx)
     __method_bind.surfaceRemove.call(this._handle, listOf(_arg))
   }
 

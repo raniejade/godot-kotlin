@@ -124,12 +124,12 @@ open class GraphNode(
   }
 
   fun clearSlot(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.clearSlot.call(this._handle, listOf(_arg))
   }
 
   fun getConnectionInputColor(idx: Int): Color {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getConnectionInputColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
@@ -140,19 +140,19 @@ open class GraphNode(
   }
 
   fun getConnectionInputPosition(idx: Int): Vector2 {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getConnectionInputPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getConnectionInputType(idx: Int): Int {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getConnectionInputType.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getConnectionOutputColor(idx: Int): Color {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getConnectionOutputColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
@@ -163,13 +163,13 @@ open class GraphNode(
   }
 
   fun getConnectionOutputPosition(idx: Int): Vector2 {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getConnectionOutputPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getConnectionOutputType(idx: Int): Int {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getConnectionOutputType.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -185,25 +185,25 @@ open class GraphNode(
   }
 
   fun getSlotColorLeft(idx: Int): Color {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getSlotColorLeft.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getSlotColorRight(idx: Int): Color {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getSlotColorRight.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getSlotTypeLeft(idx: Int): Int {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getSlotTypeLeft.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getSlotTypeRight(idx: Int): Int {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getSlotTypeRight.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -234,44 +234,44 @@ open class GraphNode(
   }
 
   fun isSlotEnabledLeft(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isSlotEnabledLeft.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isSlotEnabledRight(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isSlotEnabledRight.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setComment(comment: Boolean) {
-    val _arg = Variant.new(comment)
+    val _arg = Variant(comment)
     __method_bind.setComment.call(this._handle, listOf(_arg))
   }
 
   fun setOffset(offset: Vector2) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setOffset.call(this._handle, listOf(_arg))
   }
 
   fun setOverlay(overlay: Int) {
-    val _arg = Variant.new(overlay)
+    val _arg = Variant(overlay)
     __method_bind.setOverlay.call(this._handle, listOf(_arg))
   }
 
   fun setResizable(resizable: Boolean) {
-    val _arg = Variant.new(resizable)
+    val _arg = Variant(resizable)
     __method_bind.setResizable.call(this._handle, listOf(_arg))
   }
 
   fun setSelected(selected: Boolean) {
-    val _arg = Variant.new(selected)
+    val _arg = Variant(selected)
     __method_bind.setSelected.call(this._handle, listOf(_arg))
   }
 
   fun setShowCloseButton(show: Boolean) {
-    val _arg = Variant.new(show)
+    val _arg = Variant(show)
     __method_bind.setShowCloseButton.call(this._handle, listOf(_arg))
   }
 
@@ -300,7 +300,7 @@ open class GraphNode(
   }
 
   fun setTitle(title: String) {
-    val _arg = Variant.new(title)
+    val _arg = Variant(title)
     __method_bind.setTitle.call(this._handle, listOf(_arg))
   }
 

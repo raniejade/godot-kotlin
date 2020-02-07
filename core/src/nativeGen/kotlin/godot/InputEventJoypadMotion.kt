@@ -53,12 +53,12 @@ open class InputEventJoypadMotion(
   }
 
   fun setAxis(axis: Int) {
-    val _arg = Variant.new(axis)
+    val _arg = Variant(axis)
     __method_bind.setAxis.call(this._handle, listOf(_arg))
   }
 
   fun setAxisValue(axisValue: Float) {
-    val _arg = Variant.new(axisValue)
+    val _arg = Variant(axisValue)
     __method_bind.setAxisValue.call(this._handle, listOf(_arg))
   }
 

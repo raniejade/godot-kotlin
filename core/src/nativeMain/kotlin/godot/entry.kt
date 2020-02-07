@@ -21,7 +21,7 @@ fun nativescriptInit(handle: COpaquePointer, setup: ClassRegistry.() -> Unit) {
 }
 
 fun gprint(msg: Any) {
-  val str = GDString.new(msg.toString())
+  val str = GDString(msg.toString())
   print(str)
   str.destroy()
 }

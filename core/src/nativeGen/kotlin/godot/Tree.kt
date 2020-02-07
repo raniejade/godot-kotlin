@@ -196,19 +196,19 @@ open class Tree(
   }
 
   fun getColumnAtPosition(position: Vector2): Int {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     val _ret = __method_bind.getColumnAtPosition.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getColumnTitle(column: Int): String {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getColumnTitle.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getColumnWidth(column: Int): Int {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getColumnWidth.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -229,7 +229,7 @@ open class Tree(
   }
 
   fun getDropSectionAtPosition(position: Vector2): Int {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     val _ret = __method_bind.getDropSectionAtPosition.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -253,13 +253,13 @@ open class Tree(
   }
 
   fun getItemAtPosition(position: Vector2): TreeItem {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     val _ret = __method_bind.getItemAtPosition.call(this._handle, listOf(_arg))
     return _ret.asObject(::TreeItem)!!
   }
 
   fun getNextSelected(from: Object): TreeItem {
-    val _arg = Variant.new(from)
+    val _arg = Variant(from)
     val _ret = __method_bind.getNextSelected.call(this._handle, listOf(_arg))
     return _ret.asObject(::TreeItem)!!
   }
@@ -305,12 +305,12 @@ open class Tree(
   }
 
   fun setAllowReselect(allow: Boolean) {
-    val _arg = Variant.new(allow)
+    val _arg = Variant(allow)
     __method_bind.setAllowReselect.call(this._handle, listOf(_arg))
   }
 
   fun setAllowRmbSelect(allow: Boolean) {
-    val _arg = Variant.new(allow)
+    val _arg = Variant(allow)
     __method_bind.setAllowRmbSelect.call(this._handle, listOf(_arg))
   }
 
@@ -336,32 +336,32 @@ open class Tree(
   }
 
   fun setColumnTitlesVisible(visible: Boolean) {
-    val _arg = Variant.new(visible)
+    val _arg = Variant(visible)
     __method_bind.setColumnTitlesVisible.call(this._handle, listOf(_arg))
   }
 
   fun setColumns(amount: Int) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setColumns.call(this._handle, listOf(_arg))
   }
 
   fun setDropModeFlags(flags: Int) {
-    val _arg = Variant.new(flags)
+    val _arg = Variant(flags)
     __method_bind.setDropModeFlags.call(this._handle, listOf(_arg))
   }
 
   fun setHideFolding(hide: Boolean) {
-    val _arg = Variant.new(hide)
+    val _arg = Variant(hide)
     __method_bind.setHideFolding.call(this._handle, listOf(_arg))
   }
 
   fun setHideRoot(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setHideRoot.call(this._handle, listOf(_arg))
   }
 
   fun setSelectMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setSelectMode.call(this._handle, listOf(_arg))
   }
 

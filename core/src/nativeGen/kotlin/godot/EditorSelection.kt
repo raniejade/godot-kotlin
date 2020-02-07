@@ -30,7 +30,7 @@ open class EditorSelection(
   }
 
   fun addNode(node: Node) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.addNode.call(this._handle, listOf(_arg))
   }
 
@@ -49,7 +49,7 @@ open class EditorSelection(
   }
 
   fun removeNode(node: Node) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.removeNode.call(this._handle, listOf(_arg))
   }
 

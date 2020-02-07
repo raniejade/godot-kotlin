@@ -49,7 +49,7 @@ open class RectangleShape2D(
   }
 
   fun setExtents(extents: Vector2) {
-    val _arg = Variant.new(extents)
+    val _arg = Variant(extents)
     __method_bind.setExtents.call(this._handle, listOf(_arg))
   }
 

@@ -60,7 +60,7 @@ open class StreamPeerTCP(
   }
 
   fun setNoDelay(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setNoDelay.call(this._handle, listOf(_arg))
   }
 

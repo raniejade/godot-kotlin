@@ -38,7 +38,7 @@ open class VisualScriptEngineSingleton(
   }
 
   fun setSingleton(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setSingleton.call(this._handle, listOf(_arg))
   }
 

@@ -91,27 +91,27 @@ open class AudioEffectPhaser(
   }
 
   fun setDepth(depth: Float) {
-    val _arg = Variant.new(depth)
+    val _arg = Variant(depth)
     __method_bind.setDepth.call(this._handle, listOf(_arg))
   }
 
   fun setFeedback(fbk: Float) {
-    val _arg = Variant.new(fbk)
+    val _arg = Variant(fbk)
     __method_bind.setFeedback.call(this._handle, listOf(_arg))
   }
 
   fun setRangeMaxHz(hz: Float) {
-    val _arg = Variant.new(hz)
+    val _arg = Variant(hz)
     __method_bind.setRangeMaxHz.call(this._handle, listOf(_arg))
   }
 
   fun setRangeMinHz(hz: Float) {
-    val _arg = Variant.new(hz)
+    val _arg = Variant(hz)
     __method_bind.setRangeMinHz.call(this._handle, listOf(_arg))
   }
 
   fun setRateHz(hz: Float) {
-    val _arg = Variant.new(hz)
+    val _arg = Variant(hz)
     __method_bind.setRateHz.call(this._handle, listOf(_arg))
   }
 

@@ -44,7 +44,7 @@ open class ScrollBar(
   }
 
   fun setCustomStep(step: Float) {
-    val _arg = Variant.new(step)
+    val _arg = Variant(step)
     __method_bind.setCustomStep.call(this._handle, listOf(_arg))
   }
 

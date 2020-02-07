@@ -89,7 +89,7 @@ open class AnimationTree(
   }
 
   fun advance(delta: Float) {
-    val _arg = Variant.new(delta)
+    val _arg = Variant(delta)
     __method_bind.advance.call(this._handle, listOf(_arg))
   }
 
@@ -131,27 +131,27 @@ open class AnimationTree(
   }
 
   fun setActive(active: Boolean) {
-    val _arg = Variant.new(active)
+    val _arg = Variant(active)
     __method_bind.setActive.call(this._handle, listOf(_arg))
   }
 
   fun setAnimationPlayer(root: NodePath) {
-    val _arg = Variant.new(root)
+    val _arg = Variant(root)
     __method_bind.setAnimationPlayer.call(this._handle, listOf(_arg))
   }
 
   fun setProcessMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setProcessMode.call(this._handle, listOf(_arg))
   }
 
   fun setRootMotionTrack(path: NodePath) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.setRootMotionTrack.call(this._handle, listOf(_arg))
   }
 
   fun setTreeRoot(root: AnimationNode) {
-    val _arg = Variant.new(root)
+    val _arg = Variant(root)
     __method_bind.setTreeRoot.call(this._handle, listOf(_arg))
   }
 

@@ -76,7 +76,7 @@ open class PacketPeerUDP(
   }
 
   fun setBroadcastEnabled(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setBroadcastEnabled.call(this._handle, listOf(_arg))
   }
 

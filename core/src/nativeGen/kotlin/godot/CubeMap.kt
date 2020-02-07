@@ -66,7 +66,7 @@ open class CubeMap(
   }
 
   fun getSide(side: Int): Image {
-    val _arg = Variant.new(side)
+    val _arg = Variant(side)
     val _ret = __method_bind.getSide.call(this._handle, listOf(_arg))
     return _ret.asObject(::Image)!!
   }
@@ -82,12 +82,12 @@ open class CubeMap(
   }
 
   fun setFlags(flags: Int) {
-    val _arg = Variant.new(flags)
+    val _arg = Variant(flags)
     __method_bind.setFlags.call(this._handle, listOf(_arg))
   }
 
   fun setLossyStorageQuality(quality: Float) {
-    val _arg = Variant.new(quality)
+    val _arg = Variant(quality)
     __method_bind.setLossyStorageQuality.call(this._handle, listOf(_arg))
   }
 
@@ -99,7 +99,7 @@ open class CubeMap(
   }
 
   fun setStorage(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setStorage.call(this._handle, listOf(_arg))
   }
 

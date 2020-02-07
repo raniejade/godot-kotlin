@@ -7,6 +7,9 @@ import kotlinx.cinterop.*
 class Plane(
   value: CValue<godot_plane>
 ) : CoreType<godot_plane>(value) {
+  constructor(a: Float, b: Float, c: Float, d: Float): this(__new(a, b, c, d))
+  constructor(v1: Vector3, v2: Vector3, v3: Vector3): this(__new(v1, v2, v3))
+  constructor(normal: Vector3, d: Float): this(__new(normal, d))
 
   var d: Float
     get() = memScoped {
@@ -182,7 +185,7 @@ class Plane(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
@@ -194,22 +197,16 @@ class Plane(
   }
 
   companion object {
-    fun new(a: Float, b: Float, c: Float, d: Float): Plane {
-      return allocType(::Plane) {
-        checkNotNull(Godot.gdnative.godot_plane_new_with_reals)(it, a, b, c, d)
-      }
+    internal fun __new(a: Float, b: Float, c: Float, d: Float) = allocType2<godot_plane> {
+      checkNotNull(Godot.gdnative.godot_plane_new_with_reals)(it, a, b, c, d)
     }
 
-    fun new(v1: Vector3, v2: Vector3, v3: Vector3): Plane {
-      return allocType(::Plane) {
-        checkNotNull(Godot.gdnative.godot_plane_new_with_vectors)(it, v1._value.ptr, v2._value.ptr, v3._value.ptr)
-      }
+    internal fun __new(v1: Vector3, v2: Vector3, v3: Vector3) = allocType2<godot_plane> {
+      checkNotNull(Godot.gdnative.godot_plane_new_with_vectors)(it, v1._value.ptr, v2._value.ptr, v3._value.ptr)
     }
 
-    fun new(normal: Vector3, d: Float): Plane {
-      return allocType(::Plane) {
-        checkNotNull(Godot.gdnative.godot_plane_new_with_normal)(it, normal._value.ptr, d)
-      }
+    internal fun __new(normal: Vector3, d: Float) = allocType2<godot_plane> {
+      checkNotNull(Godot.gdnative.godot_plane_new_with_normal)(it, normal._value.ptr, d)
     }
   }
 }

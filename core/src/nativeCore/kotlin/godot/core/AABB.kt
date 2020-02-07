@@ -8,6 +8,7 @@ import kotlinx.cinterop.memScoped
 class AABB(
   value: CValue<godot_aabb>
 ) : CoreType<godot_aabb>(value) {
+  constructor(position: Vector3, size: Vector3): this(__new(position, size))
 
   @MissingGDNativeAPI("AABB::end")
   var end: Vector3
@@ -187,7 +188,7 @@ class AABB(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
@@ -199,10 +200,8 @@ class AABB(
   }
 
   companion object {
-    fun new(position: Vector3, size: Vector3): AABB {
-      return allocType(::AABB) {
-        checkNotNull(Godot.gdnative.godot_aabb_new)(it, position._value.ptr, size._value.ptr)
-      }
+    internal fun __new(position: Vector3, size: Vector3) = allocType2<godot_aabb> {
+      checkNotNull(Godot.gdnative.godot_aabb_new)(it, position._value.ptr, size._value.ptr)
     }
   }
 }

@@ -187,7 +187,7 @@ open class SliderJoint(
   }
 
   fun getParam(param: Int): Float {
-    val _arg = Variant.new(param)
+    val _arg = Variant(param)
     val _ret = __method_bind.getParam.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }

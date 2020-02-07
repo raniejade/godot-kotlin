@@ -49,7 +49,7 @@ open class BoxShape(
   }
 
   fun setExtents(extents: Vector3) {
-    val _arg = Variant.new(extents)
+    val _arg = Variant(extents)
     __method_bind.setExtents.call(this._handle, listOf(_arg))
   }
 

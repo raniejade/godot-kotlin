@@ -62,12 +62,12 @@ open class VisualScriptConstant(
   }
 
   fun setConstantType(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.setConstantType.call(this._handle, listOf(_arg))
   }
 
   fun setConstantValue(value: Variant) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setConstantValue.call(this._handle, listOf(_arg))
   }
 

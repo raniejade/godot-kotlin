@@ -65,7 +65,7 @@ open class PacketPeer(
   }
 
   fun getVar(allowObjects: Boolean = false): Variant {
-    val _arg = Variant.new(allowObjects)
+    val _arg = Variant(allowObjects)
     val _ret = __method_bind.getVar.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -76,7 +76,7 @@ open class PacketPeer(
   }
 
   fun putPacket(buffer: PoolByteArray): GDError {
-    val _arg = Variant.new(buffer)
+    val _arg = Variant(buffer)
     val _ret = __method_bind.putPacket.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
@@ -90,12 +90,12 @@ open class PacketPeer(
   }
 
   fun setAllowObjectDecoding(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setAllowObjectDecoding.call(this._handle, listOf(_arg))
   }
 
   fun setEncodeBufferMaxSize(maxSize: Int) {
-    val _arg = Variant.new(maxSize)
+    val _arg = Variant(maxSize)
     __method_bind.setEncodeBufferMaxSize.call(this._handle, listOf(_arg))
   }
 

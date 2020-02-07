@@ -34,12 +34,12 @@ open class VisualScript(
   }
 
   fun addCustomSignal(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.addCustomSignal.call(this._handle, listOf(_arg))
   }
 
   fun addFunction(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.addFunction.call(this._handle, listOf(_arg))
   }
 
@@ -47,7 +47,7 @@ open class VisualScript(
     func: String,
     id: Int,
     node: VisualScriptNode,
-    position: Vector2 = Vector2.new(0, 0)
+    position: Vector2 = Vector2(0, 0)
   ) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(func))
@@ -84,7 +84,7 @@ open class VisualScript(
   }
 
   fun customSignalGetArgumentCount(name: String): Int {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.customSignalGetArgumentCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -181,13 +181,13 @@ open class VisualScript(
   }
 
   fun getFunctionNodeId(name: String): Int {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getFunctionNodeId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getFunctionScroll(name: String): Vector2 {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getFunctionScroll.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
@@ -209,25 +209,25 @@ open class VisualScript(
   }
 
   fun getVariableDefaultValue(name: String): Variant {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getVariableDefaultValue.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getVariableExport(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getVariableExport.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getVariableInfo(name: String): Dictionary {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getVariableInfo.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
 
   fun hasCustomSignal(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasCustomSignal.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -250,7 +250,7 @@ open class VisualScript(
   }
 
   fun hasFunction(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasFunction.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -279,18 +279,18 @@ open class VisualScript(
   }
 
   fun hasVariable(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasVariable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeCustomSignal(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.removeCustomSignal.call(this._handle, listOf(_arg))
   }
 
   fun removeFunction(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.removeFunction.call(this._handle, listOf(_arg))
   }
 
@@ -302,7 +302,7 @@ open class VisualScript(
   }
 
   fun removeVariable(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.removeVariable.call(this._handle, listOf(_arg))
   }
 
@@ -363,7 +363,7 @@ open class VisualScript(
   }
 
   fun setInstanceBaseType(type: String) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.setInstanceBaseType.call(this._handle, listOf(_arg))
   }
 
