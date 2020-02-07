@@ -104,27 +104,27 @@ open class CollisionPolygon2D(
   }
 
   fun setBuildMode(buildMode: Int) {
-    val _arg = Variant.new(buildMode)
+    val _arg = Variant(buildMode)
     __method_bind.setBuildMode.call(this._handle, listOf(_arg))
   }
 
   fun setDisabled(disabled: Boolean) {
-    val _arg = Variant.new(disabled)
+    val _arg = Variant(disabled)
     __method_bind.setDisabled.call(this._handle, listOf(_arg))
   }
 
   fun setOneWayCollision(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setOneWayCollision.call(this._handle, listOf(_arg))
   }
 
   fun setOneWayCollisionMargin(margin: Float) {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     __method_bind.setOneWayCollisionMargin.call(this._handle, listOf(_arg))
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
-    val _arg = Variant.new(polygon)
+    val _arg = Variant(polygon)
     __method_bind.setPolygon.call(this._handle, listOf(_arg))
   }
 

@@ -65,17 +65,17 @@ open class VisualShaderNodeCompare(
   }
 
   fun setComparisonType(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.setComparisonType.call(this._handle, listOf(_arg))
   }
 
   fun setCondition(condition: Int) {
-    val _arg = Variant.new(condition)
+    val _arg = Variant(condition)
     __method_bind.setCondition.call(this._handle, listOf(_arg))
   }
 
   fun setFunction(func: Int) {
-    val _arg = Variant.new(func)
+    val _arg = Variant(func)
     __method_bind.setFunction.call(this._handle, listOf(_arg))
   }
 

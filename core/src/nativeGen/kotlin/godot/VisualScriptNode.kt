@@ -31,7 +31,7 @@ open class VisualScriptNode(
   }
 
   fun getDefaultInputValue(portIdx: Int): Variant {
-    val _arg = Variant.new(portIdx)
+    val _arg = Variant(portIdx)
     val _ret = __method_bind.getDefaultInputValue.call(this._handle, listOf(_arg))
     return _ret
   }

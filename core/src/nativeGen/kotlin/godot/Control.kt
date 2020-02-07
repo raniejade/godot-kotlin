@@ -404,7 +404,7 @@ open class Control(
   }
 
   fun getAnchor(margin: Int): Float {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     val _ret = __method_bind.getAnchor.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -435,8 +435,8 @@ open class Control(
     return _ret.asInt()
   }
 
-  fun getCursorShape(position: Vector2 = Vector2.new(0, 0)): CursorShape {
-    val _arg = Variant.new(position)
+  fun getCursorShape(position: Vector2 = Vector2(0, 0)): CursorShape {
+    val _arg = Variant(position)
     val _ret = __method_bind.getCursorShape.call(this._handle, listOf(_arg))
     return Control.CursorShape.from(_ret.asInt())
   }
@@ -462,7 +462,7 @@ open class Control(
   }
 
   fun getFocusNeighbour(margin: Int): NodePath {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     val _ret = __method_bind.getFocusNeighbour.call(this._handle, listOf(_arg))
     return _ret.asNodePath()
   }
@@ -519,7 +519,7 @@ open class Control(
   }
 
   fun getMargin(margin: Int): Float {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     val _ret = __method_bind.getMargin.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -597,8 +597,8 @@ open class Control(
     return _ret.asObject(::Theme)!!
   }
 
-  fun getTooltip(atPosition: Vector2 = Vector2.new(0, 0)): String {
-    val _arg = Variant.new(atPosition)
+  fun getTooltip(atPosition: Vector2 = Vector2(0, 0)): String {
+    val _arg = Variant(atPosition)
     val _ret = __method_bind.getTooltip.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -630,7 +630,7 @@ open class Control(
   }
 
   fun hasColorOverride(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasColorOverride.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -644,7 +644,7 @@ open class Control(
   }
 
   fun hasConstantOverride(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasConstantOverride.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -663,7 +663,7 @@ open class Control(
   }
 
   fun hasFontOverride(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasFontOverride.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -677,13 +677,13 @@ open class Control(
   }
 
   fun hasIconOverride(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasIconOverride.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasShaderOverride(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasShaderOverride.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -697,7 +697,7 @@ open class Control(
   }
 
   fun hasStyleboxOverride(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasStyleboxOverride.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -763,42 +763,42 @@ open class Control(
   }
 
   fun setBegin(position: Vector2) {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     __method_bind.setBegin.call(this._handle, listOf(_arg))
   }
 
   fun setClipContents(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setClipContents.call(this._handle, listOf(_arg))
   }
 
   fun setCustomMinimumSize(size: Vector2) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setCustomMinimumSize.call(this._handle, listOf(_arg))
   }
 
   fun setDefaultCursorShape(shape: Int) {
-    val _arg = Variant.new(shape)
+    val _arg = Variant(shape)
     __method_bind.setDefaultCursorShape.call(this._handle, listOf(_arg))
   }
 
   fun setDragForwarding(target: Control) {
-    val _arg = Variant.new(target)
+    val _arg = Variant(target)
     __method_bind.setDragForwarding.call(this._handle, listOf(_arg))
   }
 
   fun setDragPreview(control: Control) {
-    val _arg = Variant.new(control)
+    val _arg = Variant(control)
     __method_bind.setDragPreview.call(this._handle, listOf(_arg))
   }
 
   fun setEnd(position: Vector2) {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     __method_bind.setEnd.call(this._handle, listOf(_arg))
   }
 
   fun setFocusMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setFocusMode.call(this._handle, listOf(_arg))
   }
 
@@ -810,12 +810,12 @@ open class Control(
   }
 
   fun setFocusNext(next: NodePath) {
-    val _arg = Variant.new(next)
+    val _arg = Variant(next)
     __method_bind.setFocusNext.call(this._handle, listOf(_arg))
   }
 
   fun setFocusPrevious(previous: NodePath) {
-    val _arg = Variant.new(previous)
+    val _arg = Variant(previous)
     __method_bind.setFocusPrevious.call(this._handle, listOf(_arg))
   }
 
@@ -827,12 +827,12 @@ open class Control(
   }
 
   fun setHGrowDirection(direction: Int) {
-    val _arg = Variant.new(direction)
+    val _arg = Variant(direction)
     __method_bind.setHGrowDirection.call(this._handle, listOf(_arg))
   }
 
   fun setHSizeFlags(flags: Int) {
-    val _arg = Variant.new(flags)
+    val _arg = Variant(flags)
     __method_bind.setHSizeFlags.call(this._handle, listOf(_arg))
   }
 
@@ -856,12 +856,12 @@ open class Control(
   }
 
   fun setMouseFilter(filter: Int) {
-    val _arg = Variant.new(filter)
+    val _arg = Variant(filter)
     __method_bind.setMouseFilter.call(this._handle, listOf(_arg))
   }
 
   fun setPivotOffset(pivotOffset: Vector2) {
-    val _arg = Variant.new(pivotOffset)
+    val _arg = Variant(pivotOffset)
     __method_bind.setPivotOffset.call(this._handle, listOf(_arg))
   }
 
@@ -873,17 +873,17 @@ open class Control(
   }
 
   fun setRotation(radians: Float) {
-    val _arg = Variant.new(radians)
+    val _arg = Variant(radians)
     __method_bind.setRotation.call(this._handle, listOf(_arg))
   }
 
   fun setRotationDegrees(degrees: Float) {
-    val _arg = Variant.new(degrees)
+    val _arg = Variant(degrees)
     __method_bind.setRotationDegrees.call(this._handle, listOf(_arg))
   }
 
   fun setScale(scale: Vector2) {
-    val _arg = Variant.new(scale)
+    val _arg = Variant(scale)
     __method_bind.setScale.call(this._handle, listOf(_arg))
   }
 
@@ -895,37 +895,37 @@ open class Control(
   }
 
   fun setStretchRatio(ratio: Float) {
-    val _arg = Variant.new(ratio)
+    val _arg = Variant(ratio)
     __method_bind.setStretchRatio.call(this._handle, listOf(_arg))
   }
 
   fun setTheme(theme: Theme) {
-    val _arg = Variant.new(theme)
+    val _arg = Variant(theme)
     __method_bind.setTheme.call(this._handle, listOf(_arg))
   }
 
   fun setTooltip(tooltip: String) {
-    val _arg = Variant.new(tooltip)
+    val _arg = Variant(tooltip)
     __method_bind.setTooltip.call(this._handle, listOf(_arg))
   }
 
   fun setVGrowDirection(direction: Int) {
-    val _arg = Variant.new(direction)
+    val _arg = Variant(direction)
     __method_bind.setVGrowDirection.call(this._handle, listOf(_arg))
   }
 
   fun setVSizeFlags(flags: Int) {
-    val _arg = Variant.new(flags)
+    val _arg = Variant(flags)
     __method_bind.setVSizeFlags.call(this._handle, listOf(_arg))
   }
 
   fun showModal(exclusive: Boolean = false) {
-    val _arg = Variant.new(exclusive)
+    val _arg = Variant(exclusive)
     __method_bind.showModal.call(this._handle, listOf(_arg))
   }
 
   fun warpMouse(toPosition: Vector2) {
-    val _arg = Variant.new(toPosition)
+    val _arg = Variant(toPosition)
     __method_bind.warpMouse.call(this._handle, listOf(_arg))
   }
 

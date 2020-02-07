@@ -660,37 +660,37 @@ open class Generic6DOFJoint(
   }
 
   fun getFlagX(flag: Int): Boolean {
-    val _arg = Variant.new(flag)
+    val _arg = Variant(flag)
     val _ret = __method_bind.getFlagX.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getFlagY(flag: Int): Boolean {
-    val _arg = Variant.new(flag)
+    val _arg = Variant(flag)
     val _ret = __method_bind.getFlagY.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getFlagZ(flag: Int): Boolean {
-    val _arg = Variant.new(flag)
+    val _arg = Variant(flag)
     val _ret = __method_bind.getFlagZ.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getParamX(param: Int): Float {
-    val _arg = Variant.new(param)
+    val _arg = Variant(param)
     val _ret = __method_bind.getParamX.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getParamY(param: Int): Float {
-    val _arg = Variant.new(param)
+    val _arg = Variant(param)
     val _ret = __method_bind.getParamY.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getParamZ(param: Int): Float {
-    val _arg = Variant.new(param)
+    val _arg = Variant(param)
     val _ret = __method_bind.getParamZ.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -743,7 +743,7 @@ open class Generic6DOFJoint(
   }
 
   fun setPrecision(precision: Int) {
-    val _arg = Variant.new(precision)
+    val _arg = Variant(precision)
     __method_bind.setPrecision.call(this._handle, listOf(_arg))
   }
 

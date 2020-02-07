@@ -140,32 +140,32 @@ open class UPNPDevice(
   }
 
   fun setDescriptionUrl(url: String) {
-    val _arg = Variant.new(url)
+    val _arg = Variant(url)
     __method_bind.setDescriptionUrl.call(this._handle, listOf(_arg))
   }
 
   fun setIgdControlUrl(url: String) {
-    val _arg = Variant.new(url)
+    val _arg = Variant(url)
     __method_bind.setIgdControlUrl.call(this._handle, listOf(_arg))
   }
 
   fun setIgdOurAddr(addr: String) {
-    val _arg = Variant.new(addr)
+    val _arg = Variant(addr)
     __method_bind.setIgdOurAddr.call(this._handle, listOf(_arg))
   }
 
   fun setIgdServiceType(type: String) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.setIgdServiceType.call(this._handle, listOf(_arg))
   }
 
   fun setIgdStatus(status: Int) {
-    val _arg = Variant.new(status)
+    val _arg = Variant(status)
     __method_bind.setIgdStatus.call(this._handle, listOf(_arg))
   }
 
   fun setServiceType(type: String) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.setServiceType.call(this._handle, listOf(_arg))
   }
 

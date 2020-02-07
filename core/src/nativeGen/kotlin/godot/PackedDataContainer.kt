@@ -27,7 +27,7 @@ open class PackedDataContainer(
   }
 
   fun pack(value: Variant): GDError {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     val _ret = __method_bind.pack.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

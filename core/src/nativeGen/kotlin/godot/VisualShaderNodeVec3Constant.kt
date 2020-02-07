@@ -49,7 +49,7 @@ open class VisualShaderNodeVec3Constant(
   }
 
   fun setConstant(value: Vector3) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setConstant.call(this._handle, listOf(_arg))
   }
 

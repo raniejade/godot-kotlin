@@ -253,37 +253,37 @@ open class AudioEffectChorus(
   }
 
   fun getVoiceCutoffHz(voiceIdx: Int): Float {
-    val _arg = Variant.new(voiceIdx)
+    val _arg = Variant(voiceIdx)
     val _ret = __method_bind.getVoiceCutoffHz.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getVoiceDelayMs(voiceIdx: Int): Float {
-    val _arg = Variant.new(voiceIdx)
+    val _arg = Variant(voiceIdx)
     val _ret = __method_bind.getVoiceDelayMs.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getVoiceDepthMs(voiceIdx: Int): Float {
-    val _arg = Variant.new(voiceIdx)
+    val _arg = Variant(voiceIdx)
     val _ret = __method_bind.getVoiceDepthMs.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getVoiceLevelDb(voiceIdx: Int): Float {
-    val _arg = Variant.new(voiceIdx)
+    val _arg = Variant(voiceIdx)
     val _ret = __method_bind.getVoiceLevelDb.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getVoicePan(voiceIdx: Int): Float {
-    val _arg = Variant.new(voiceIdx)
+    val _arg = Variant(voiceIdx)
     val _ret = __method_bind.getVoicePan.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getVoiceRateHz(voiceIdx: Int): Float {
-    val _arg = Variant.new(voiceIdx)
+    val _arg = Variant(voiceIdx)
     val _ret = __method_bind.getVoiceRateHz.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -294,12 +294,12 @@ open class AudioEffectChorus(
   }
 
   fun setDry(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setDry.call(this._handle, listOf(_arg))
   }
 
   fun setVoiceCount(voices: Int) {
-    val _arg = Variant.new(voices)
+    val _arg = Variant(voices)
     __method_bind.setVoiceCount.call(this._handle, listOf(_arg))
   }
 
@@ -346,7 +346,7 @@ open class AudioEffectChorus(
   }
 
   fun setWet(amount: Float) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setWet.call(this._handle, listOf(_arg))
   }
 

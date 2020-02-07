@@ -76,17 +76,17 @@ open class HeightMapShape(
   }
 
   fun setMapData(data: PoolRealArray) {
-    val _arg = Variant.new(data)
+    val _arg = Variant(data)
     __method_bind.setMapData.call(this._handle, listOf(_arg))
   }
 
   fun setMapDepth(height: Int) {
-    val _arg = Variant.new(height)
+    val _arg = Variant(height)
     __method_bind.setMapDepth.call(this._handle, listOf(_arg))
   }
 
   fun setMapWidth(width: Int) {
-    val _arg = Variant.new(width)
+    val _arg = Variant(width)
     __method_bind.setMapWidth.call(this._handle, listOf(_arg))
   }
 

@@ -222,7 +222,7 @@ open class TextureProgress(
   }
 
   fun getStretchMargin(margin: Int): Int {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     val _ret = __method_bind.getStretchMargin.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -248,37 +248,37 @@ open class TextureProgress(
   }
 
   fun setFillDegrees(mode: Float) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setFillDegrees.call(this._handle, listOf(_arg))
   }
 
   fun setFillMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setFillMode.call(this._handle, listOf(_arg))
   }
 
   fun setNinePatchStretch(stretch: Boolean) {
-    val _arg = Variant.new(stretch)
+    val _arg = Variant(stretch)
     __method_bind.setNinePatchStretch.call(this._handle, listOf(_arg))
   }
 
   fun setOverTexture(tex: Texture) {
-    val _arg = Variant.new(tex)
+    val _arg = Variant(tex)
     __method_bind.setOverTexture.call(this._handle, listOf(_arg))
   }
 
   fun setProgressTexture(tex: Texture) {
-    val _arg = Variant.new(tex)
+    val _arg = Variant(tex)
     __method_bind.setProgressTexture.call(this._handle, listOf(_arg))
   }
 
   fun setRadialCenterOffset(mode: Vector2) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setRadialCenterOffset.call(this._handle, listOf(_arg))
   }
 
   fun setRadialInitialAngle(mode: Float) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setRadialInitialAngle.call(this._handle, listOf(_arg))
   }
 
@@ -290,22 +290,22 @@ open class TextureProgress(
   }
 
   fun setTintOver(tint: Color) {
-    val _arg = Variant.new(tint)
+    val _arg = Variant(tint)
     __method_bind.setTintOver.call(this._handle, listOf(_arg))
   }
 
   fun setTintProgress(tint: Color) {
-    val _arg = Variant.new(tint)
+    val _arg = Variant(tint)
     __method_bind.setTintProgress.call(this._handle, listOf(_arg))
   }
 
   fun setTintUnder(tint: Color) {
-    val _arg = Variant.new(tint)
+    val _arg = Variant(tint)
     __method_bind.setTintUnder.call(this._handle, listOf(_arg))
   }
 
   fun setUnderTexture(tex: Texture) {
-    val _arg = Variant.new(tex)
+    val _arg = Variant(tex)
     __method_bind.setUnderTexture.call(this._handle, listOf(_arg))
   }
 

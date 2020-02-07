@@ -6,6 +6,9 @@ import kotlinx.cinterop.*
 internal class GDString(
   value: CValue<godot_string>
 ): CoreType<godot_string>(value), Iterable<Char> {
+  constructor(): this(__new())
+  constructor(str: String): this(__new(str))
+
   fun beginsWith(str: GDString): Boolean {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_string_begins_with)(_value.ptr, str._value.ptr)
@@ -19,12 +22,12 @@ internal class GDString(
   }
 
   fun beginsWith(str: String): Boolean {
-    return beginsWith(new(str))
+    return beginsWith(GDString(str))
   }
 
   fun bigrams(): PoolStringArray {
     return memScoped {
-      PoolStringArray.new(
+      PoolStringArray(
         VariantArray(checkNotNull(Godot.gdnative.godot_string_bigrams)(_value.ptr))
       )
     }
@@ -58,7 +61,7 @@ internal class GDString(
 
   fun caseCmpTo(to: String): Int {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_string_casecmp_to)(_value.ptr, new(to)._value.ptr).toInt()
+      checkNotNull(Godot.gdnative.godot_string_casecmp_to)(_value.ptr, GDString(to)._value.ptr).toInt()
     }
   }
 
@@ -81,7 +84,7 @@ internal class GDString(
   }
 
   fun endsWith(str: String): Boolean {
-    return endsWith(new(str))
+    return endsWith(GDString(str))
   }
 
   fun erase(position: Int, count: Int) {
@@ -99,7 +102,7 @@ internal class GDString(
   }
 
   fun find(str: String, from: Int = 0): Int {
-    return find(new(str), from)
+    return find(GDString(str), from)
   }
 
   fun findLast(str: GDString): Int {
@@ -109,7 +112,7 @@ internal class GDString(
   }
 
   fun findLast(str: String): Int {
-    return findLast(new(str))
+    return findLast(GDString(str))
   }
 
   fun findN(str: GDString, from: Int = 0): Int {
@@ -119,7 +122,7 @@ internal class GDString(
   }
 
   fun findN(str: String, from: Int = 0): Int {
-    return findN(new(str), from)
+    return findN(GDString(str), from)
   }
 
   fun format(values: Variant): GDString {
@@ -192,7 +195,7 @@ internal class GDString(
   }
 
   fun insert(position: Int, str: String): GDString {
-    return insert(position, new(str))
+    return insert(position, GDString(str))
   }
 
   fun isAbsPath(): Boolean {
@@ -214,7 +217,7 @@ internal class GDString(
   }
 
   fun isSubsequenceOf(str: String): Boolean {
-    return isSubsequenceOf(new(str))
+    return isSubsequenceOf(GDString(str))
   }
 
   fun isSubsequenceOfI(str: GDString): Boolean {
@@ -224,7 +227,7 @@ internal class GDString(
   }
 
   fun isSubsequenceOfI(str: String): Boolean {
-    return isSubsequenceOfI(new(str))
+    return isSubsequenceOfI(GDString(str))
   }
 
   fun isValidFloat(): Boolean {
@@ -292,7 +295,7 @@ internal class GDString(
   }
 
   fun match(expr: String): Boolean {
-    return match(new(expr))
+    return match(GDString(expr))
   }
 
   fun matchN(expr: GDString): Boolean {
@@ -302,7 +305,7 @@ internal class GDString(
   }
 
   fun matchN(expr: String): Boolean {
-    return matchN(new(expr))
+    return matchN(GDString(expr))
   }
 
   fun md5Buffer(): PoolByteArray {
@@ -374,7 +377,7 @@ internal class GDString(
   }
 
   fun plusFile(file: String): GDString {
-    return plusFile(new(file))
+    return plusFile(GDString(file))
   }
 
   fun replace(what: GDString, with: GDString): GDString {
@@ -386,7 +389,7 @@ internal class GDString(
   }
 
   fun replace(what: String, with: String): GDString {
-    return replace(new(what), new(with))
+    return replace(GDString(what), GDString(with))
   }
 
   fun replaceN(what: GDString, with: GDString): GDString {
@@ -398,7 +401,7 @@ internal class GDString(
   }
 
   fun replaceN(what: String, with: String): GDString {
-    return replaceN(new(what), new(with))
+    return replaceN(GDString(what), GDString(with))
   }
 
   fun rFind(str: GDString, from: Int = -1): Int {
@@ -408,7 +411,7 @@ internal class GDString(
   }
 
   fun rFind(str: String, from: Int = -1): Int {
-    return rFind(new(str), from)
+    return rFind(GDString(str), from)
   }
 
   fun right(position: Int): GDString {
@@ -428,7 +431,7 @@ internal class GDString(
   }
 
   fun rSplit(delimiter: String, allowEmpty: Boolean = true, maxSplit: Int = 0): PoolStringArray {
-    return rSplit(new(delimiter), allowEmpty, maxSplit)
+    return rSplit(GDString(delimiter), allowEmpty, maxSplit)
   }
 
   fun rStrip(str: GDString): GDString {
@@ -440,7 +443,7 @@ internal class GDString(
   }
 
   fun rStrip(str: String): GDString {
-    return rStrip(new(str))
+    return rStrip(GDString(str))
   }
 
   fun sha256Buffer(): PoolByteArray {
@@ -466,7 +469,7 @@ internal class GDString(
   }
 
   fun similarity(str: String): Float {
-    return similarity(new(str))
+    return similarity(GDString(str))
   }
 
   // TODO: split, splitFloats (
@@ -524,7 +527,7 @@ internal class GDString(
   }
 
   fun trimPrefix(prefix: String): GDString {
-    return trimPrefix(new(prefix))
+    return trimPrefix(GDString(prefix))
   }
 
   fun trimSuffix(suffix: GDString): GDString {
@@ -536,7 +539,7 @@ internal class GDString(
   }
 
   fun trimSuffix(suffix: String): GDString {
-    return trimSuffix(new(suffix))
+    return trimSuffix(GDString(suffix))
   }
 
   fun xmlEscape(): GDString {
@@ -567,7 +570,7 @@ internal class GDString(
     return memScoped {
       val ptr = checkNotNull(Godot.gdnative.godot_string_wide_str)(_value.ptr)!!
       // drop the trailing \0
-      ptr.reinterpret<ShortVar>().toString().dropLast(1)
+      ptr.reinterpret<IntVar>().toString().dropLast(1)
     }
   }
 
@@ -581,7 +584,7 @@ internal class GDString(
     return memScoped {
       when(other) {
         is GDString -> eq(_value.ptr, other._value.ptr)
-        is String -> eq(_value.ptr, new(other)._value.ptr)
+        is String -> eq(_value.ptr, GDString(other)._value.ptr)
         else -> false
       }
     }
@@ -590,7 +593,7 @@ internal class GDString(
   operator fun get(position: Int): Char {
     return memScoped {
       val ptr = checkNotNull(Godot.gdnative.godot_string_operator_index_const)(_value.ptr, position)
-      ptr.toShort().toChar()
+      ptr.toInt().toChar()
     }
   }
 
@@ -604,27 +607,17 @@ internal class GDString(
 
   companion object {
     internal fun from(str: String, cb: (GDString) -> Unit) {
-      val gdString = new(str)
+      val gdString = GDString(str)
       cb(gdString)
       gdString.destroy()
     }
 
-    fun new(): GDString {
-      return allocType(::GDString) {
-        checkNotNull(Godot.gdnative.godot_string_new)(it)
-      }
+    internal fun __new() = allocType2<godot_string> {
+      checkNotNull(Godot.gdnative.godot_string_new)(it)
     }
 
-    fun new(str: String): GDString {
-      return allocType(::GDString) {
-        checkNotNull(Godot.gdnative.godot_string_parse_utf8)(it, str.cstr.ptr)
-      }
-    }
-
-    fun new(str: String, len: Int): GDString {
-      return allocType(::GDString) {
-        checkNotNull(Godot.gdnative.godot_string_parse_utf8_with_len)(it, str.cstr.ptr, len)
-      }
+    internal fun __new(str: String) = allocType2<godot_string> {
+      checkNotNull(Godot.gdnative.godot_string_parse_utf8)(it, str.cstr.ptr)
     }
   }
 }

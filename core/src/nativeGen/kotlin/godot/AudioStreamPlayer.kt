@@ -139,47 +139,47 @@ open class AudioStreamPlayer(
   }
 
   fun play(fromPosition: Float = 0.0f) {
-    val _arg = Variant.new(fromPosition)
+    val _arg = Variant(fromPosition)
     __method_bind.play.call(this._handle, listOf(_arg))
   }
 
   fun seek(toPosition: Float) {
-    val _arg = Variant.new(toPosition)
+    val _arg = Variant(toPosition)
     __method_bind.seek.call(this._handle, listOf(_arg))
   }
 
   fun setAutoplay(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setAutoplay.call(this._handle, listOf(_arg))
   }
 
   fun setBus(bus: String) {
-    val _arg = Variant.new(bus)
+    val _arg = Variant(bus)
     __method_bind.setBus.call(this._handle, listOf(_arg))
   }
 
   fun setMixTarget(mixTarget: Int) {
-    val _arg = Variant.new(mixTarget)
+    val _arg = Variant(mixTarget)
     __method_bind.setMixTarget.call(this._handle, listOf(_arg))
   }
 
   fun setPitchScale(pitchScale: Float) {
-    val _arg = Variant.new(pitchScale)
+    val _arg = Variant(pitchScale)
     __method_bind.setPitchScale.call(this._handle, listOf(_arg))
   }
 
   fun setStream(stream: AudioStream) {
-    val _arg = Variant.new(stream)
+    val _arg = Variant(stream)
     __method_bind.setStream.call(this._handle, listOf(_arg))
   }
 
   fun setStreamPaused(pause: Boolean) {
-    val _arg = Variant.new(pause)
+    val _arg = Variant(pause)
     __method_bind.setStreamPaused.call(this._handle, listOf(_arg))
   }
 
   fun setVolumeDb(volumeDb: Float) {
-    val _arg = Variant.new(volumeDb)
+    val _arg = Variant(volumeDb)
     __method_bind.setVolumeDb.call(this._handle, listOf(_arg))
   }
 

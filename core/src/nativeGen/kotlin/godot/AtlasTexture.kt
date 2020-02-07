@@ -98,22 +98,22 @@ open class AtlasTexture(
   }
 
   fun setAtlas(atlas: Texture) {
-    val _arg = Variant.new(atlas)
+    val _arg = Variant(atlas)
     __method_bind.setAtlas.call(this._handle, listOf(_arg))
   }
 
   fun setFilterClip(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setFilterClip.call(this._handle, listOf(_arg))
   }
 
   fun setMargin(margin: Rect2) {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     __method_bind.setMargin.call(this._handle, listOf(_arg))
   }
 
   fun setRegion(region: Rect2) {
-    val _arg = Variant.new(region)
+    val _arg = Variant(region)
     __method_bind.setRegion.call(this._handle, listOf(_arg))
   }
 

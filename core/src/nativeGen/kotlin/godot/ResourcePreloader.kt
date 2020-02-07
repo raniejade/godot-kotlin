@@ -34,7 +34,7 @@ open class ResourcePreloader(
   }
 
   fun getResource(name: String): Resource {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getResource.call(this._handle, listOf(_arg))
     return _ret.asObject(::Resource)!!
   }
@@ -45,13 +45,13 @@ open class ResourcePreloader(
   }
 
   fun hasResource(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasResource.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeResource(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.removeResource.call(this._handle, listOf(_arg))
   }
 

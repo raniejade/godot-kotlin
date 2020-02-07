@@ -75,17 +75,17 @@ open class MeshTexture(
   }
 
   fun setBaseTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setBaseTexture.call(this._handle, listOf(_arg))
   }
 
   fun setImageSize(size: Vector2) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setImageSize.call(this._handle, listOf(_arg))
   }
 
   fun setMesh(mesh: Mesh) {
-    val _arg = Variant.new(mesh)
+    val _arg = Variant(mesh)
     __method_bind.setMesh.call(this._handle, listOf(_arg))
   }
 

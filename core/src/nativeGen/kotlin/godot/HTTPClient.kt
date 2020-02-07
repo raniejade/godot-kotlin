@@ -129,7 +129,7 @@ open class HTTPClient(
   }
 
   fun queryStringFromDict(fields: Dictionary): String {
-    val _arg = Variant.new(fields)
+    val _arg = Variant(fields)
     val _ret = __method_bind.queryStringFromDict.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -170,17 +170,17 @@ open class HTTPClient(
   }
 
   fun setBlockingMode(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setBlockingMode.call(this._handle, listOf(_arg))
   }
 
   fun setConnection(connection: StreamPeer) {
-    val _arg = Variant.new(connection)
+    val _arg = Variant(connection)
     __method_bind.setConnection.call(this._handle, listOf(_arg))
   }
 
   fun setReadChunkSize(bytes: Int) {
-    val _arg = Variant.new(bytes)
+    val _arg = Variant(bytes)
     __method_bind.setReadChunkSize.call(this._handle, listOf(_arg))
   }
 

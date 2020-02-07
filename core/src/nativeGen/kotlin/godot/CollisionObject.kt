@@ -61,7 +61,7 @@ open class CollisionObject(
   }
 
   fun createShapeOwner(owner: Object): Int {
-    val _arg = Variant.new(owner)
+    val _arg = Variant(owner)
     val _ret = __method_bind.createShapeOwner.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -87,28 +87,28 @@ open class CollisionObject(
   }
 
   fun isShapeOwnerDisabled(ownerId: Int): Boolean {
-    val _arg = Variant.new(ownerId)
+    val _arg = Variant(ownerId)
     val _ret = __method_bind.isShapeOwnerDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeShapeOwner(ownerId: Int) {
-    val _arg = Variant.new(ownerId)
+    val _arg = Variant(ownerId)
     __method_bind.removeShapeOwner.call(this._handle, listOf(_arg))
   }
 
   fun setCaptureInputOnDrag(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCaptureInputOnDrag.call(this._handle, listOf(_arg))
   }
 
   fun setRayPickable(rayPickable: Boolean) {
-    val _arg = Variant.new(rayPickable)
+    val _arg = Variant(rayPickable)
     __method_bind.setRayPickable.call(this._handle, listOf(_arg))
   }
 
   fun shapeFindOwner(shapeIndex: Int): Int {
-    val _arg = Variant.new(shapeIndex)
+    val _arg = Variant(shapeIndex)
     val _ret = __method_bind.shapeFindOwner.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -121,12 +121,12 @@ open class CollisionObject(
   }
 
   fun shapeOwnerClearShapes(ownerId: Int) {
-    val _arg = Variant.new(ownerId)
+    val _arg = Variant(ownerId)
     __method_bind.shapeOwnerClearShapes.call(this._handle, listOf(_arg))
   }
 
   fun shapeOwnerGetOwner(ownerId: Int): Object {
-    val _arg = Variant.new(ownerId)
+    val _arg = Variant(ownerId)
     val _ret = __method_bind.shapeOwnerGetOwner.call(this._handle, listOf(_arg))
     return _ret.asObject(::Object)!!
   }
@@ -140,7 +140,7 @@ open class CollisionObject(
   }
 
   fun shapeOwnerGetShapeCount(ownerId: Int): Int {
-    val _arg = Variant.new(ownerId)
+    val _arg = Variant(ownerId)
     val _ret = __method_bind.shapeOwnerGetShapeCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -154,7 +154,7 @@ open class CollisionObject(
   }
 
   fun shapeOwnerGetTransform(ownerId: Int): Transform {
-    val _arg = Variant.new(ownerId)
+    val _arg = Variant(ownerId)
     val _ret = __method_bind.shapeOwnerGetTransform.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }

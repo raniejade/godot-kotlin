@@ -107,22 +107,22 @@ open class InputEventMouseMotion(
   }
 
   fun setPressure(pressure: Float) {
-    val _arg = Variant.new(pressure)
+    val _arg = Variant(pressure)
     __method_bind.setPressure.call(this._handle, listOf(_arg))
   }
 
   fun setRelative(relative: Vector2) {
-    val _arg = Variant.new(relative)
+    val _arg = Variant(relative)
     __method_bind.setRelative.call(this._handle, listOf(_arg))
   }
 
   fun setSpeed(speed: Vector2) {
-    val _arg = Variant.new(speed)
+    val _arg = Variant(speed)
     __method_bind.setSpeed.call(this._handle, listOf(_arg))
   }
 
   fun setTilt(tilt: Vector2) {
-    val _arg = Variant.new(tilt)
+    val _arg = Variant(tilt)
     __method_bind.setTilt.call(this._handle, listOf(_arg))
   }
 

@@ -289,7 +289,7 @@ open class TextEdit(
   }
 
   fun canFold(line: Int): Boolean {
-    val _arg = Variant.new(line)
+    val _arg = Variant(line)
     val _ret = __method_bind.canFold.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -336,17 +336,17 @@ open class TextEdit(
   }
 
   fun cursorSetBlinkEnabled(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.cursorSetBlinkEnabled.call(this._handle, listOf(_arg))
   }
 
   fun cursorSetBlinkSpeed(blinkSpeed: Float) {
-    val _arg = Variant.new(blinkSpeed)
+    val _arg = Variant(blinkSpeed)
     __method_bind.cursorSetBlinkSpeed.call(this._handle, listOf(_arg))
   }
 
   fun cursorSetBlockMode(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.cursorSetBlockMode.call(this._handle, listOf(_arg))
   }
 
@@ -380,7 +380,7 @@ open class TextEdit(
   }
 
   fun drawMinimap(draw: Boolean) {
-    val _arg = Variant.new(draw)
+    val _arg = Variant(draw)
     __method_bind.drawMinimap.call(this._handle, listOf(_arg))
   }
 
@@ -389,7 +389,7 @@ open class TextEdit(
   }
 
   fun foldLine(line: Int) {
-    val _arg = Variant.new(line)
+    val _arg = Variant(line)
     __method_bind.foldLine.call(this._handle, listOf(_arg))
   }
 
@@ -404,13 +404,13 @@ open class TextEdit(
   }
 
   fun getKeywordColor(keyword: String): Color {
-    val _arg = Variant.new(keyword)
+    val _arg = Variant(keyword)
     val _ret = __method_bind.getKeywordColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getLine(line: Int): String {
-    val _arg = Variant.new(line)
+    val _arg = Variant(line)
     val _ret = __method_bind.getLine.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -476,13 +476,13 @@ open class TextEdit(
   }
 
   fun hasKeywordColor(keyword: String): Boolean {
-    val _arg = Variant.new(keyword)
+    val _arg = Variant(keyword)
     val _ret = __method_bind.hasKeywordColor.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun insertTextAtCursor(text: String) {
-    val _arg = Variant.new(text)
+    val _arg = Variant(text)
     __method_bind.insertTextAtCursor.call(this._handle, listOf(_arg))
   }
 
@@ -517,7 +517,7 @@ open class TextEdit(
   }
 
   fun isFolded(line: Int): Boolean {
-    val _arg = Variant.new(line)
+    val _arg = Variant(line)
     val _ret = __method_bind.isFolded.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -538,7 +538,7 @@ open class TextEdit(
   }
 
   fun isLineHidden(line: Int): Boolean {
-    val _arg = Variant.new(line)
+    val _arg = Variant(line)
     val _ret = __method_bind.isLineHidden.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -594,7 +594,7 @@ open class TextEdit(
   }
 
   fun menuOption(option: Int) {
-    val _arg = Variant.new(option)
+    val _arg = Variant(option)
     __method_bind.menuOption.call(this._handle, listOf(_arg))
   }
 
@@ -644,47 +644,47 @@ open class TextEdit(
   }
 
   fun setBreakpointGutterEnabled(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setBreakpointGutterEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setContextMenuEnabled(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setContextMenuEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setDrawFoldGutter(arg0: Boolean) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setDrawFoldGutter.call(this._handle, listOf(_arg))
   }
 
   fun setDrawSpaces(arg0: Boolean) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setDrawSpaces.call(this._handle, listOf(_arg))
   }
 
   fun setDrawTabs(arg0: Boolean) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setDrawTabs.call(this._handle, listOf(_arg))
   }
 
   fun setHScroll(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setHScroll.call(this._handle, listOf(_arg))
   }
 
   fun setHidingEnabled(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setHidingEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setHighlightAllOccurrences(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setHighlightAllOccurrences.call(this._handle, listOf(_arg))
   }
 
   fun setHighlightCurrentLine(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setHighlightCurrentLine.call(this._handle, listOf(_arg))
   }
 
@@ -696,72 +696,72 @@ open class TextEdit(
   }
 
   fun setMinimapWidth(width: Int) {
-    val _arg = Variant.new(width)
+    val _arg = Variant(width)
     __method_bind.setMinimapWidth.call(this._handle, listOf(_arg))
   }
 
   fun setOverrideSelectedFontColor(override: Boolean) {
-    val _arg = Variant.new(override)
+    val _arg = Variant(override)
     __method_bind.setOverrideSelectedFontColor.call(this._handle, listOf(_arg))
   }
 
   fun setReadonly(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setReadonly.call(this._handle, listOf(_arg))
   }
 
   fun setRightClickMovesCaret(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setRightClickMovesCaret.call(this._handle, listOf(_arg))
   }
 
   fun setSelectingEnabled(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setSelectingEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setShortcutKeysEnabled(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setShortcutKeysEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setShowLineNumbers(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setShowLineNumbers.call(this._handle, listOf(_arg))
   }
 
   fun setSmoothScrollEnable(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setSmoothScrollEnable.call(this._handle, listOf(_arg))
   }
 
   fun setSyntaxColoring(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setSyntaxColoring.call(this._handle, listOf(_arg))
   }
 
   fun setText(text: String) {
-    val _arg = Variant.new(text)
+    val _arg = Variant(text)
     __method_bind.setText.call(this._handle, listOf(_arg))
   }
 
   fun setVScroll(value: Float) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setVScroll.call(this._handle, listOf(_arg))
   }
 
   fun setVScrollSpeed(speed: Float) {
-    val _arg = Variant.new(speed)
+    val _arg = Variant(speed)
     __method_bind.setVScrollSpeed.call(this._handle, listOf(_arg))
   }
 
   fun setWrapEnabled(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setWrapEnabled.call(this._handle, listOf(_arg))
   }
 
   fun toggleFoldLine(line: Int) {
-    val _arg = Variant.new(line)
+    val _arg = Variant(line)
     __method_bind.toggleFoldLine.call(this._handle, listOf(_arg))
   }
 
@@ -770,7 +770,7 @@ open class TextEdit(
   }
 
   fun unfoldLine(line: Int) {
-    val _arg = Variant.new(line)
+    val _arg = Variant(line)
     __method_bind.unfoldLine.call(this._handle, listOf(_arg))
   }
 

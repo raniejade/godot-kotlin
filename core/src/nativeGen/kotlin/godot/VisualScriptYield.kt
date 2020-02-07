@@ -53,12 +53,12 @@ open class VisualScriptYield(
   }
 
   fun setWaitTime(sec: Float) {
-    val _arg = Variant.new(sec)
+    val _arg = Variant(sec)
     __method_bind.setWaitTime.call(this._handle, listOf(_arg))
   }
 
   fun setYieldMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setYieldMode.call(this._handle, listOf(_arg))
   }
 

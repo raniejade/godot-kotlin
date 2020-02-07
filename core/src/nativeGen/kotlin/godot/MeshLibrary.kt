@@ -32,12 +32,12 @@ open class MeshLibrary(
   }
 
   fun createItem(id: Int) {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     __method_bind.createItem.call(this._handle, listOf(_arg))
   }
 
   fun findItemByName(name: String): Int {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.findItemByName.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -48,37 +48,37 @@ open class MeshLibrary(
   }
 
   fun getItemMesh(id: Int): Mesh {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getItemMesh.call(this._handle, listOf(_arg))
     return _ret.asObject(::Mesh)!!
   }
 
   fun getItemName(id: Int): String {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getItemName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getItemNavmesh(id: Int): NavigationMesh {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getItemNavmesh.call(this._handle, listOf(_arg))
     return _ret.asObject(::NavigationMesh)!!
   }
 
   fun getItemNavmeshTransform(id: Int): Transform {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getItemNavmeshTransform.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
 
   fun getItemPreview(id: Int): Texture {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getItemPreview.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemShapes(id: Int): VariantArray {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getItemShapes.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
@@ -89,7 +89,7 @@ open class MeshLibrary(
   }
 
   fun removeItem(id: Int) {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     __method_bind.removeItem.call(this._handle, listOf(_arg))
   }
 

@@ -65,17 +65,17 @@ open class VisualShaderNodeTexture(
   }
 
   fun setSource(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setSource.call(this._handle, listOf(_arg))
   }
 
   fun setTexture(value: Texture) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setTexture.call(this._handle, listOf(_arg))
   }
 
   fun setTextureType(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setTextureType.call(this._handle, listOf(_arg))
   }
 

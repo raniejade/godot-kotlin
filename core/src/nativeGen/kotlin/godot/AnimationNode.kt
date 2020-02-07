@@ -47,7 +47,7 @@ open class AnimationNode(
   }
 
   fun addInput(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.addInput.call(this._handle, listOf(_arg))
   }
 
@@ -113,13 +113,13 @@ open class AnimationNode(
   }
 
   fun getInputName(input: Int): String {
-    val _arg = Variant.new(input)
+    val _arg = Variant(input)
     val _ret = __method_bind.getInputName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getParameter(name: String): Variant {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getParameter.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -130,18 +130,18 @@ open class AnimationNode(
   }
 
   fun isPathFiltered(path: NodePath): Boolean {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.isPathFiltered.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeInput(index: Int) {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     __method_bind.removeInput.call(this._handle, listOf(_arg))
   }
 
   fun setFilterEnabled(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setFilterEnabled.call(this._handle, listOf(_arg))
   }
 

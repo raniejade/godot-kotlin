@@ -32,7 +32,7 @@ abstract class Signal(
     binds: List<Any>?,
     flags: Int
   ) {
-    val extraArgs = VariantArray.new()
+    val extraArgs = VariantArray()
     binds?.forEach { extraArgs.append(Variant.fromAny(it)) }
     instance.connect(name, target, method, extraArgs, flags)
   }

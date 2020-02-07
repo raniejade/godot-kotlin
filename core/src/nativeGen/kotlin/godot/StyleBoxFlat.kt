@@ -263,7 +263,7 @@ open class StyleBoxFlat(
   }
 
   fun getBorderWidth(margin: Int): Int {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     val _ret = __method_bind.getBorderWidth.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -279,13 +279,13 @@ open class StyleBoxFlat(
   }
 
   fun getCornerRadius(corner: Int): Int {
-    val _arg = Variant.new(corner)
+    val _arg = Variant(corner)
     val _ret = __method_bind.getCornerRadius.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getExpandMargin(margin: Int): Float {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     val _ret = __method_bind.getExpandMargin.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -316,27 +316,27 @@ open class StyleBoxFlat(
   }
 
   fun setAaSize(size: Int) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setAaSize.call(this._handle, listOf(_arg))
   }
 
   fun setAntiAliased(antiAliased: Boolean) {
-    val _arg = Variant.new(antiAliased)
+    val _arg = Variant(antiAliased)
     __method_bind.setAntiAliased.call(this._handle, listOf(_arg))
   }
 
   fun setBgColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setBgColor.call(this._handle, listOf(_arg))
   }
 
   fun setBorderBlend(blend: Boolean) {
-    val _arg = Variant.new(blend)
+    val _arg = Variant(blend)
     __method_bind.setBorderBlend.call(this._handle, listOf(_arg))
   }
 
   fun setBorderColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setBorderColor.call(this._handle, listOf(_arg))
   }
 
@@ -348,12 +348,12 @@ open class StyleBoxFlat(
   }
 
   fun setBorderWidthAll(width: Int) {
-    val _arg = Variant.new(width)
+    val _arg = Variant(width)
     __method_bind.setBorderWidthAll.call(this._handle, listOf(_arg))
   }
 
   fun setCornerDetail(detail: Int) {
-    val _arg = Variant.new(detail)
+    val _arg = Variant(detail)
     __method_bind.setCornerDetail.call(this._handle, listOf(_arg))
   }
 
@@ -365,7 +365,7 @@ open class StyleBoxFlat(
   }
 
   fun setCornerRadiusAll(radius: Int) {
-    val _arg = Variant.new(radius)
+    val _arg = Variant(radius)
     __method_bind.setCornerRadiusAll.call(this._handle, listOf(_arg))
   }
 
@@ -384,7 +384,7 @@ open class StyleBoxFlat(
   }
 
   fun setDrawCenter(drawCenter: Boolean) {
-    val _arg = Variant.new(drawCenter)
+    val _arg = Variant(drawCenter)
     __method_bind.setDrawCenter.call(this._handle, listOf(_arg))
   }
 
@@ -396,7 +396,7 @@ open class StyleBoxFlat(
   }
 
   fun setExpandMarginAll(size: Float) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setExpandMarginAll.call(this._handle, listOf(_arg))
   }
 
@@ -415,17 +415,17 @@ open class StyleBoxFlat(
   }
 
   fun setShadowColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setShadowColor.call(this._handle, listOf(_arg))
   }
 
   fun setShadowOffset(offset: Vector2) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setShadowOffset.call(this._handle, listOf(_arg))
   }
 
   fun setShadowSize(size: Int) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setShadowSize.call(this._handle, listOf(_arg))
   }
 

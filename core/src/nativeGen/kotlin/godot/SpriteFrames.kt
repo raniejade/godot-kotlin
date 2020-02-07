@@ -29,7 +29,7 @@ open class SpriteFrames(
   }
 
   fun addAnimation(anim: String) {
-    val _arg = Variant.new(anim)
+    val _arg = Variant(anim)
     __method_bind.addAnimation.call(this._handle, listOf(_arg))
   }
 
@@ -46,7 +46,7 @@ open class SpriteFrames(
   }
 
   fun clear(anim: String) {
-    val _arg = Variant.new(anim)
+    val _arg = Variant(anim)
     __method_bind.clear.call(this._handle, listOf(_arg))
   }
 
@@ -55,7 +55,7 @@ open class SpriteFrames(
   }
 
   fun getAnimationLoop(anim: String): Boolean {
-    val _arg = Variant.new(anim)
+    val _arg = Variant(anim)
     val _ret = __method_bind.getAnimationLoop.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -66,7 +66,7 @@ open class SpriteFrames(
   }
 
   fun getAnimationSpeed(anim: String): Float {
-    val _arg = Variant.new(anim)
+    val _arg = Variant(anim)
     val _ret = __method_bind.getAnimationSpeed.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -80,19 +80,19 @@ open class SpriteFrames(
   }
 
   fun getFrameCount(anim: String): Int {
-    val _arg = Variant.new(anim)
+    val _arg = Variant(anim)
     val _ret = __method_bind.getFrameCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun hasAnimation(anim: String): Boolean {
-    val _arg = Variant.new(anim)
+    val _arg = Variant(anim)
     val _ret = __method_bind.hasAnimation.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeAnimation(anim: String) {
-    val _arg = Variant.new(anim)
+    val _arg = Variant(anim)
     __method_bind.removeAnimation.call(this._handle, listOf(_arg))
   }
 

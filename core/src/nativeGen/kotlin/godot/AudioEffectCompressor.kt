@@ -117,37 +117,37 @@ open class AudioEffectCompressor(
   }
 
   fun setAttackUs(attackUs: Float) {
-    val _arg = Variant.new(attackUs)
+    val _arg = Variant(attackUs)
     __method_bind.setAttackUs.call(this._handle, listOf(_arg))
   }
 
   fun setGain(gain: Float) {
-    val _arg = Variant.new(gain)
+    val _arg = Variant(gain)
     __method_bind.setGain.call(this._handle, listOf(_arg))
   }
 
   fun setMix(mix: Float) {
-    val _arg = Variant.new(mix)
+    val _arg = Variant(mix)
     __method_bind.setMix.call(this._handle, listOf(_arg))
   }
 
   fun setRatio(ratio: Float) {
-    val _arg = Variant.new(ratio)
+    val _arg = Variant(ratio)
     __method_bind.setRatio.call(this._handle, listOf(_arg))
   }
 
   fun setReleaseMs(releaseMs: Float) {
-    val _arg = Variant.new(releaseMs)
+    val _arg = Variant(releaseMs)
     __method_bind.setReleaseMs.call(this._handle, listOf(_arg))
   }
 
   fun setSidechain(sidechain: String) {
-    val _arg = Variant.new(sidechain)
+    val _arg = Variant(sidechain)
     __method_bind.setSidechain.call(this._handle, listOf(_arg))
   }
 
   fun setThreshold(threshold: Float) {
-    val _arg = Variant.new(threshold)
+    val _arg = Variant(threshold)
     __method_bind.setThreshold.call(this._handle, listOf(_arg))
   }
 

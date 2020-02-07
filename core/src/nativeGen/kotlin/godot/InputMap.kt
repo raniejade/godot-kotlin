@@ -37,7 +37,7 @@ open class InputMap(
   }
 
   fun actionEraseEvents(action: String) {
-    val _arg = Variant.new(action)
+    val _arg = Variant(action)
     __method_bind.actionEraseEvents.call(this._handle, listOf(_arg))
   }
 
@@ -64,7 +64,7 @@ open class InputMap(
   }
 
   fun eraseAction(action: String) {
-    val _arg = Variant.new(action)
+    val _arg = Variant(action)
     __method_bind.eraseAction.call(this._handle, listOf(_arg))
   }
 
@@ -77,7 +77,7 @@ open class InputMap(
   }
 
   fun getActionList(action: String): VariantArray {
-    val _arg = Variant.new(action)
+    val _arg = Variant(action)
     val _ret = __method_bind.getActionList.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
@@ -88,7 +88,7 @@ open class InputMap(
   }
 
   fun hasAction(action: String): Boolean {
-    val _arg = Variant.new(action)
+    val _arg = Variant(action)
     val _ret = __method_bind.hasAction.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }

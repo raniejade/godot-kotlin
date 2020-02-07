@@ -6,6 +6,10 @@ import kotlinx.cinterop.*
 class Vector2(
   value: CValue<godot_vector2>
 ): CoreType<godot_vector2>(value) {
+
+  constructor(x: Float = 0f, y: Float = 0f): this(__new(x, y))
+  constructor(x: Int, y: Int): this(x.toFloat(), y.toFloat())
+
   enum class Axis(private val value: Int) {
     X(0),
     Y(1);
@@ -221,7 +225,7 @@ class Vector2(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
@@ -320,22 +324,23 @@ class Vector2(
   }
 
   companion object {
-    val ZERO = new()
-    val ONE = new(1f, 1f)
-    val INF = new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
-    val LEFT = new(-1f, 0f)
-    val RIGHT = new(1f, 0f)
-    val UP = new(0f, -1f)
-    val DOWN = new(0f, 1f)
+    val ZERO: Vector2
+      get() = Vector2()
+    val ONE: Vector2
+      get() = Vector2(1f, 1f)
+    val INF: Vector2
+      get() = Vector2(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
+    val LEFT: Vector2
+      get() = Vector2(-1f, 0f)
+    val RIGHT: Vector2
+      get() = Vector2(1f, 0f)
+    val UP: Vector2
+      get() = Vector2(0f, -1f)
+    val DOWN: Vector2
+      get() = Vector2(0f, 1f)
 
-    fun new(x: Float = 0f, y: Float = 0f): Vector2 {
-      return allocType(::Vector2) {
-        checkNotNull(Godot.gdnative.godot_vector2_new)(it, x, y)
-      }
-    }
-
-    fun new(x: Int, y: Int): Vector2 {
-      return new(x.toFloat(), y.toFloat())
+    internal fun __new(x: Float, y: Float) = allocType2<godot_vector2> {
+      checkNotNull(Godot.gdnative.godot_vector2_new)(it, x, y)
     }
   }
 }

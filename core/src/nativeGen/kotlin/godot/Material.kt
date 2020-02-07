@@ -52,12 +52,12 @@ open class Material(
   }
 
   fun setNextPass(nextPass: Material) {
-    val _arg = Variant.new(nextPass)
+    val _arg = Variant(nextPass)
     __method_bind.setNextPass.call(this._handle, listOf(_arg))
   }
 
   fun setRenderPriority(priority: Int) {
-    val _arg = Variant.new(priority)
+    val _arg = Variant(priority)
     __method_bind.setRenderPriority.call(this._handle, listOf(_arg))
   }
 

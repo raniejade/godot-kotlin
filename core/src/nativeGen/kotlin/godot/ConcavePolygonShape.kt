@@ -49,7 +49,7 @@ open class ConcavePolygonShape(
   }
 
   fun setFaces(faces: PoolVector3Array) {
-    val _arg = Variant.new(faces)
+    val _arg = Variant(faces)
     __method_bind.setFaces.call(this._handle, listOf(_arg))
   }
 

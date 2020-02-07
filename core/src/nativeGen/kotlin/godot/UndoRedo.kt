@@ -57,7 +57,7 @@ open class UndoRedo(
   }
 
   fun addDoReference(`object`: Object) {
-    val _arg = Variant.new(`object`)
+    val _arg = Variant(`object`)
     __method_bind.addDoReference.call(this._handle, listOf(_arg))
   }
 
@@ -86,12 +86,12 @@ open class UndoRedo(
   }
 
   fun addUndoReference(`object`: Object) {
-    val _arg = Variant.new(`object`)
+    val _arg = Variant(`object`)
     __method_bind.addUndoReference.call(this._handle, listOf(_arg))
   }
 
   fun clearHistory(increaseVersion: Boolean = true) {
-    val _arg = Variant.new(increaseVersion)
+    val _arg = Variant(increaseVersion)
     __method_bind.clearHistory.call(this._handle, listOf(_arg))
   }
 

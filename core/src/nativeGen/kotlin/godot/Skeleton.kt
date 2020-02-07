@@ -30,7 +30,7 @@ open class Skeleton(
   }
 
   fun addBone(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.addBone.call(this._handle, listOf(_arg))
   }
 
@@ -46,7 +46,7 @@ open class Skeleton(
   }
 
   fun findBone(name: String): Int {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.findBone.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -57,49 +57,49 @@ open class Skeleton(
   }
 
   fun getBoneCustomPose(boneIdx: Int): Transform {
-    val _arg = Variant.new(boneIdx)
+    val _arg = Variant(boneIdx)
     val _ret = __method_bind.getBoneCustomPose.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
 
   fun getBoneGlobalPose(boneIdx: Int): Transform {
-    val _arg = Variant.new(boneIdx)
+    val _arg = Variant(boneIdx)
     val _ret = __method_bind.getBoneGlobalPose.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
 
   fun getBoneName(boneIdx: Int): String {
-    val _arg = Variant.new(boneIdx)
+    val _arg = Variant(boneIdx)
     val _ret = __method_bind.getBoneName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getBoneParent(boneIdx: Int): Int {
-    val _arg = Variant.new(boneIdx)
+    val _arg = Variant(boneIdx)
     val _ret = __method_bind.getBoneParent.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getBonePose(boneIdx: Int): Transform {
-    val _arg = Variant.new(boneIdx)
+    val _arg = Variant(boneIdx)
     val _ret = __method_bind.getBonePose.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
 
   fun getBoneRest(boneIdx: Int): Transform {
-    val _arg = Variant.new(boneIdx)
+    val _arg = Variant(boneIdx)
     val _ret = __method_bind.getBoneRest.call(this._handle, listOf(_arg))
     return _ret.asTransform()
   }
 
   fun getBoundChildNodesToBone(boneIdx: Int): VariantArray {
-    val _arg = Variant.new(boneIdx)
+    val _arg = Variant(boneIdx)
     val _ret = __method_bind.getBoundChildNodesToBone.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun isBoneRestDisabled(boneIdx: Int): Boolean {
-    val _arg = Variant.new(boneIdx)
+    val _arg = Variant(boneIdx)
     val _ret = __method_bind.isBoneRestDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -109,17 +109,17 @@ open class Skeleton(
   }
 
   fun physicalBonesAddCollisionException(exception: RID) {
-    val _arg = Variant.new(exception)
+    val _arg = Variant(exception)
     __method_bind.physicalBonesAddCollisionException.call(this._handle, listOf(_arg))
   }
 
   fun physicalBonesRemoveCollisionException(exception: RID) {
-    val _arg = Variant.new(exception)
+    val _arg = Variant(exception)
     __method_bind.physicalBonesRemoveCollisionException.call(this._handle, listOf(_arg))
   }
 
   fun physicalBonesStartSimulation(bones: VariantArray) {
-    val _arg = Variant.new(bones)
+    val _arg = Variant(bones)
     __method_bind.physicalBonesStartSimulation.call(this._handle, listOf(_arg))
   }
 
@@ -128,7 +128,7 @@ open class Skeleton(
   }
 
   fun registerSkin(skin: Skin): SkinReference {
-    val _arg = Variant.new(skin)
+    val _arg = Variant(skin)
     val _ret = __method_bind.registerSkin.call(this._handle, listOf(_arg))
     return _ret.asObject(::SkinReference)!!
   }
@@ -190,7 +190,7 @@ open class Skeleton(
   }
 
   fun unparentBoneAndRest(boneIdx: Int) {
-    val _arg = Variant.new(boneIdx)
+    val _arg = Variant(boneIdx)
     __method_bind.unparentBoneAndRest.call(this._handle, listOf(_arg))
   }
 

@@ -21,7 +21,7 @@ open class JavaClassWrapper(
   __ignore: String?
 ) : Object(null) {
   fun wrap(name: String): JavaClass {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.wrap.call(this._handle, listOf(_arg))
     return _ret.asObject(::JavaClass)!!
   }

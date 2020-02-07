@@ -150,32 +150,32 @@ open class HTTPRequest(
   }
 
   fun setBodySizeLimit(bytes: Int) {
-    val _arg = Variant.new(bytes)
+    val _arg = Variant(bytes)
     __method_bind.setBodySizeLimit.call(this._handle, listOf(_arg))
   }
 
   fun setDownloadChunkSize(arg0: Int) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setDownloadChunkSize.call(this._handle, listOf(_arg))
   }
 
   fun setDownloadFile(path: String) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.setDownloadFile.call(this._handle, listOf(_arg))
   }
 
   fun setMaxRedirects(amount: Int) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setMaxRedirects.call(this._handle, listOf(_arg))
   }
 
   fun setTimeout(timeout: Int) {
-    val _arg = Variant.new(timeout)
+    val _arg = Variant(timeout)
     __method_bind.setTimeout.call(this._handle, listOf(_arg))
   }
 
   fun setUseThreads(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUseThreads.call(this._handle, listOf(_arg))
   }
 

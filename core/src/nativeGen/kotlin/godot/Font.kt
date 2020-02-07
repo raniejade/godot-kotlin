@@ -34,9 +34,9 @@ open class Font(
     canvasItem: RID,
     position: Vector2,
     string: String,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     clipW: Int = -1,
-    outlineModulate: Color = Color.rgb(1,1,1,1)
+    outlineModulate: Color = Color(1,1,1,1)
   ) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(canvasItem))
@@ -53,7 +53,7 @@ open class Font(
     position: Vector2,
     char: Int,
     next: Int = -1,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     outline: Boolean = false
   ): Float {
     val _args = mutableListOf<Variant>()
@@ -83,7 +83,7 @@ open class Font(
   }
 
   fun getStringSize(string: String): Vector2 {
-    val _arg = Variant.new(string)
+    val _arg = Variant(string)
     val _ret = __method_bind.getStringSize.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }

@@ -52,12 +52,12 @@ open class GrooveJoint2D(
   }
 
   fun setInitialOffset(offset: Float) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setInitialOffset.call(this._handle, listOf(_arg))
   }
 
   fun setLength(length: Float) {
-    val _arg = Variant.new(length)
+    val _arg = Variant(length)
     __method_bind.setLength.call(this._handle, listOf(_arg))
   }
 

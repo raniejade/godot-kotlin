@@ -243,7 +243,7 @@ open class PopupMenu(
   }
 
   fun addSeparator(label: String = "") {
-    val _arg = Variant.new(label)
+    val _arg = Variant(label)
     __method_bind.addSeparator.call(this._handle, listOf(_arg))
   }
 
@@ -281,7 +281,7 @@ open class PopupMenu(
   }
 
   fun getItemAccelerator(idx: Int): Int {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemAccelerator.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -292,49 +292,49 @@ open class PopupMenu(
   }
 
   fun getItemIcon(idx: Int): Texture {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemIcon.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemId(idx: Int): Int {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getItemIndex(id: Int): Int {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getItemIndex.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getItemMetadata(idx: Int): Variant {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemMetadata.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getItemShortcut(idx: Int): ShortCut {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemShortcut.call(this._handle, listOf(_arg))
     return _ret.asObject(::ShortCut)!!
   }
 
   fun getItemSubmenu(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemSubmenu.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getItemText(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemText.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getItemTooltip(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemTooltip.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -365,68 +365,68 @@ open class PopupMenu(
   }
 
   fun isItemCheckable(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemCheckable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemChecked(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemChecked.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemDisabled(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemRadioCheckable(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemRadioCheckable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemSeparator(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemSeparator.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemShortcutDisabled(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemShortcutDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeItem(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.removeItem.call(this._handle, listOf(_arg))
   }
 
   fun setAllowSearch(allow: Boolean) {
-    val _arg = Variant.new(allow)
+    val _arg = Variant(allow)
     __method_bind.setAllowSearch.call(this._handle, listOf(_arg))
   }
 
   fun setHideOnCheckableItemSelection(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setHideOnCheckableItemSelection.call(this._handle, listOf(_arg))
   }
 
   fun setHideOnItemSelection(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setHideOnItemSelection.call(this._handle, listOf(_arg))
   }
 
   fun setHideOnStateItemSelection(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setHideOnStateItemSelection.call(this._handle, listOf(_arg))
   }
 
   fun setHideOnWindowLoseFocus(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setHideOnWindowLoseFocus.call(this._handle, listOf(_arg))
   }
 
@@ -541,17 +541,17 @@ open class PopupMenu(
   }
 
   fun setSubmenuPopupDelay(seconds: Float) {
-    val _arg = Variant.new(seconds)
+    val _arg = Variant(seconds)
     __method_bind.setSubmenuPopupDelay.call(this._handle, listOf(_arg))
   }
 
   fun toggleItemChecked(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.toggleItemChecked.call(this._handle, listOf(_arg))
   }
 
   fun toggleItemMultistate(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.toggleItemMultistate.call(this._handle, listOf(_arg))
   }
 

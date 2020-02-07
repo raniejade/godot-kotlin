@@ -49,7 +49,7 @@ open class ConvexPolygonShape(
   }
 
   fun setPoints(points: PoolVector3Array) {
-    val _arg = Variant.new(points)
+    val _arg = Variant(points)
     __method_bind.setPoints.call(this._handle, listOf(_arg))
   }
 

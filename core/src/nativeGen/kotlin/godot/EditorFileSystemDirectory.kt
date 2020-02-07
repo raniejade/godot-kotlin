@@ -27,19 +27,19 @@ open class EditorFileSystemDirectory(
   }
 
   fun findDirIndex(name: String): Int {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.findDirIndex.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun findFileIndex(name: String): Int {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.findFileIndex.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getFile(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getFile.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -50,31 +50,31 @@ open class EditorFileSystemDirectory(
   }
 
   fun getFileImportIsValid(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getFileImportIsValid.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getFilePath(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getFilePath.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getFileScriptClassExtends(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getFileScriptClassExtends.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getFileScriptClassName(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getFileScriptClassName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getFileType(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getFileType.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -95,7 +95,7 @@ open class EditorFileSystemDirectory(
   }
 
   fun getSubdir(idx: Int): EditorFileSystemDirectory {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getSubdir.call(this._handle, listOf(_arg))
     return _ret.asObject(::EditorFileSystemDirectory)!!
   }

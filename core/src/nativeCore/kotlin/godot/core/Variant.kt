@@ -11,6 +11,39 @@ import kotlin.native.concurrent.freeze
 class Variant(
   value: CValue<godot_variant>
 ) {
+
+  constructor(): this(__new())
+  constructor(from: String): this(__new(from))
+  constructor(from: UInt64): this(__new(from))
+  constructor(from: Int): this(__new(from))
+  constructor(from: Int64): this(__new(from))
+  constructor(from: Float): this(__new(from))
+  constructor(from: Boolean): this(__new(from))
+  constructor(from: Basis): this(__new(from))
+  constructor(from: Color): this(__new(from))
+  constructor(from: VariantArray): this(__new(from))
+  constructor(from: PoolByteArray): this(__new(from))
+  constructor(from: PoolColorArray): this(__new(from))
+  constructor(from: PoolIntArray): this(__new(from))
+  constructor(from: PoolRealArray): this(__new(from))
+  constructor(from: PoolStringArray): this(__new(from))
+  constructor(from: PoolVector2Array): this(__new(from))
+  constructor(from: PoolVector3Array): this(__new(from))
+  constructor(from: Quat): this(__new(from))
+  constructor(from: RID): this(__new(from))
+  constructor(from: Vector2): this(__new(from))
+  constructor(from: Vector3): this(__new(from))
+  constructor(from: Rect2): this(__new(from))
+  constructor(from: Transform2D): this(__new(from))
+  constructor(from: Plane): this(__new(from))
+  constructor(from: AABB): this(__new(from))
+  constructor(from: NodePath): this(__new(from))
+  constructor(from: Transform): this(__new(from))
+  constructor(from: Dictionary): this(__new(from))
+  constructor(from: Object): this(__new(from))
+  // lazy to fix generation api
+  internal constructor(from: Variant): this(from._value)
+
   private val ref = AtomicReference(value.freeze())
   internal var _value: CValue<godot_variant>
     get() = ref.value
@@ -353,198 +386,140 @@ class Variant(
   }
 
   companion object {
-    fun new(): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_nil)(it)
+    internal fun __new() = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_nil)(it)
+    }
+
+    internal fun __new(from: String) = allocType2<godot_variant> {
+      GDString.from(from) { str ->
+        checkNotNull(Godot.gdnative.godot_variant_new_string)(it, str._value.ptr)
       }
     }
 
-    fun new(str: String): Variant {
-      return allocateVariant {
-        GDString.from(str) { str ->
-          checkNotNull(Godot.gdnative.godot_variant_new_string)(it, str._value.ptr)
-        }
-      }
+    internal fun __new(from: UInt64) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_uint)(it, from)
+
     }
 
-    fun new(num: UInt64): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_uint)(it, num)
-      }
+    internal fun __new(from: Int) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_int)(it, from.toLong())
+
     }
 
-    fun new(num: Int): Variant {
-      return new(num.toLong())
+    internal fun __new(from: Int64) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_int)(it, from)
+
     }
 
-    fun new(num: Int64): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_int)(it, num)
-      }
+    internal fun __new(from: Float) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_real)(it, from.toDouble())
     }
 
-    fun new(num: Float): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_real)(it, num.toDouble())
-      }
+    internal fun __new(from: Boolean) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_bool)(it, from)
     }
 
-    fun new(boolean: Boolean): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_bool)(it, boolean)
-      }
+    internal fun __new(from: Basis) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_basis)(it, from._value.ptr)
     }
 
-    fun new(basis: Basis): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_basis)(it, basis._value.ptr)
-      }
+    internal fun __new(from: Color) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_color)(it, from._value.ptr)
     }
 
-    fun new(color: Color): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_color)(it, color._value.ptr)
-      }
+    internal fun __new(from: VariantArray) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_array)(it, from._value.ptr)
     }
 
-    fun new(array: VariantArray): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_array)(it, array._value.ptr)
-      }
+    internal fun __new(from: PoolByteArray) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_pool_byte_array)(it, from._value.ptr)
     }
 
-    fun new(array: PoolByteArray): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_byte_array)(it, array._value.ptr)
-      }
+    internal fun __new(from: PoolColorArray) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_pool_color_array)(it, from._value.ptr)
     }
 
-    fun new(array: PoolColorArray): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_color_array)(it, array._value.ptr)
-      }
+    internal fun __new(from: PoolIntArray) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_pool_int_array)(it, from._value.ptr)
     }
 
-    fun new(array: PoolIntArray): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_int_array)(it, array._value.ptr)
-      }
+    internal fun __new(from: PoolRealArray) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_pool_real_array)(it, from._value.ptr)
     }
 
-    fun new(array: PoolRealArray): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_real_array)(it, array._value.ptr)
-      }
+    internal fun __new(from: PoolStringArray) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_pool_string_array)(it, from._value.ptr)
     }
 
-    fun new(array: PoolStringArray): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_string_array)(it, array._value.ptr)
-      }
+    internal fun __new(from: PoolVector2Array) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_pool_vector2_array)(it, from._value.ptr)
     }
 
-    fun new(array: PoolVector2Array): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_vector2_array)(it, array._value.ptr)
-      }
+    internal fun __new(from: PoolVector3Array) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_pool_vector3_array)(it, from._value.ptr)
     }
 
-    fun new(array: PoolVector3Array): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_vector3_array)(it, array._value.ptr)
-      }
+    internal fun __new(from: Quat) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_quat)(it, from._value.ptr)
     }
 
-    fun new(quat: Quat): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_quat)(it, quat._value.ptr)
-      }
+    internal fun __new(from: RID) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_rid)(it, from._value.ptr)
     }
 
-    fun new(rid: RID): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_rid)(it, rid._value.ptr)
-      }
+    internal fun __new(from: Vector2) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_vector2)(it, from._value.ptr)
     }
 
-    fun new(vec: Vector2): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_vector2)(it, vec._value.ptr)
-      }
+    internal fun __new(from: Vector3) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_vector3)(it, from._value.ptr)
     }
 
-    fun new(vec: Vector3): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_vector3)(it, vec._value.ptr)
-      }
+    internal fun __new(from: Rect2) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_rect2)(it, from._value.ptr)
     }
 
-    fun new(rec: Rect2): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_rect2)(it, rec._value.ptr)
-      }
+    internal fun __new(from: Transform2D) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_transform2d)(it, from._value.ptr)
     }
 
-    fun new(transform: Transform2D): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_transform2d)(it, transform._value.ptr)
-      }
+    internal fun __new(from: Plane) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_plane)(it, from._value.ptr)
     }
 
-    fun new(plane: Plane): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_plane)(it, plane._value.ptr)
-      }
+    internal fun __new(from: AABB) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_aabb)(it, from._value.ptr)
     }
 
-    fun new(aabb: AABB): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_aabb)(it, aabb._value.ptr)
-      }
+    internal fun __new(from: NodePath) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_node_path)(it, from._value.ptr)
     }
 
-    fun new(nodePath: NodePath): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_node_path)(it, nodePath._value.ptr)
-      }
+    internal fun __new(from: Transform) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_transform)(it, from._value.ptr)
     }
 
-    fun new(transform: Transform): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_transform)(it, transform._value.ptr)
-      }
+    internal fun __new(from: Dictionary) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_dictionary)(it, from._value.ptr)
     }
 
-    fun new(dictionary: Dictionary): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_dictionary)(it, dictionary._value.ptr)
-      }
-    }
-
-    fun new(obj: Object): Variant {
-      return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_object)(it, obj._handle)
-      }
-    }
-
-    // I'm lazy to fix API generation
-    fun new(variant: Variant): Variant {
-      return variant
+    internal fun __new(from: Object) = allocType2<godot_variant> {
+      checkNotNull(Godot.gdnative.godot_variant_new_object)(it, from._handle)
     }
 
     fun fromAny(value: Any?): Variant {
       if (value == null) {
-        return new()
+        return Variant()
       }
       return when (value) {
-        is Unit -> new()
-        is Int -> new(value)
-        is Float -> new(value)
-        is String -> new(value)
-        is Boolean -> new(value)
+        is Unit -> Variant()
+        is Int -> Variant(value)
+        is Float -> Variant(value)
+        is String -> Variant(value)
+        is Boolean -> Variant(value)
         is CoreType<*> -> value.toVariant()
         is Variant -> value
-        is Object -> new(value)
+        is Object -> Variant(value)
         else -> throw UnsupportedOperationException("Can't convert type ${value::class} to Variant")
       }
     }
@@ -554,7 +529,7 @@ class Variant(
     // target type
     @PublishedApi
     internal inline fun <reified T: CoreType<*>> defaultForType(): T {
-      val nil = new()
+      val nil = Variant()
       return when (T::class) {
         AABB::class -> nil.asAABB()
         VariantArray::class -> nil.asVariantArray()

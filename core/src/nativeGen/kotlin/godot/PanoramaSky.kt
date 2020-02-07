@@ -38,7 +38,7 @@ open class PanoramaSky(
   }
 
   fun setPanorama(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setPanorama.call(this._handle, listOf(_arg))
   }
 

@@ -4144,13 +4144,13 @@ open class AnimatedTexture(
   }
 
   fun getFrameDelay(frame: Int): Float {
-    val _arg = Variant.new(frame)
+    val _arg = Variant(frame)
     val _ret = __method_bind.getFrameDelay.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getFrameTexture(frame: Int): Texture {
-    val _arg = Variant.new(frame)
+    val _arg = Variant(frame)
     val _ret = __method_bind.getFrameTexture.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
@@ -4161,7 +4161,7 @@ open class AnimatedTexture(
   }
 
   fun setFps(fps: Float) {
-    val _arg = Variant.new(fps)
+    val _arg = Variant(fps)
     __method_bind.setFps.call(this._handle, listOf(_arg))
   }
 
@@ -4180,7 +4180,7 @@ open class AnimatedTexture(
   }
 
   fun setFrames(frames: Int) {
-    val _arg = Variant.new(frames)
+    val _arg = Variant(frames)
     __method_bind.setFrames.call(this._handle, listOf(_arg))
   }
 

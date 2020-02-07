@@ -32,7 +32,7 @@ open class CameraServer(
   val signalCameraFeedRemoved: Signal1<Int> = Signal1("camera_feed_removed")
 
   fun addFeed(feed: CameraFeed) {
-    val _arg = Variant.new(feed)
+    val _arg = Variant(feed)
     __method_bind.addFeed.call(this._handle, listOf(_arg))
   }
 
@@ -42,7 +42,7 @@ open class CameraServer(
   }
 
   fun getFeed(index: Int): CameraFeed {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     val _ret = __method_bind.getFeed.call(this._handle, listOf(_arg))
     return _ret.asObject(::CameraFeed)!!
   }
@@ -53,7 +53,7 @@ open class CameraServer(
   }
 
   fun removeFeed(feed: CameraFeed) {
-    val _arg = Variant.new(feed)
+    val _arg = Variant(feed)
     __method_bind.removeFeed.call(this._handle, listOf(_arg))
   }
 

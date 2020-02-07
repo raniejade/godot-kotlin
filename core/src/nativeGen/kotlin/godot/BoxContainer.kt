@@ -35,7 +35,7 @@ open class BoxContainer(
   }
 
   fun addSpacer(begin: Boolean) {
-    val _arg = Variant.new(begin)
+    val _arg = Variant(begin)
     __method_bind.addSpacer.call(this._handle, listOf(_arg))
   }
 
@@ -45,7 +45,7 @@ open class BoxContainer(
   }
 
   fun setAlignment(alignment: Int) {
-    val _arg = Variant.new(alignment)
+    val _arg = Variant(alignment)
     __method_bind.setAlignment.call(this._handle, listOf(_arg))
   }
 

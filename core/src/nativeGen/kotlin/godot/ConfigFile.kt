@@ -29,7 +29,7 @@ open class ConfigFile(
   }
 
   fun eraseSection(section: String) {
-    val _arg = Variant.new(section)
+    val _arg = Variant(section)
     __method_bind.eraseSection.call(this._handle, listOf(_arg))
   }
 
@@ -41,7 +41,7 @@ open class ConfigFile(
   }
 
   fun getSectionKeys(section: String): PoolStringArray {
-    val _arg = Variant.new(section)
+    val _arg = Variant(section)
     val _ret = __method_bind.getSectionKeys.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
@@ -65,7 +65,7 @@ open class ConfigFile(
   }
 
   fun hasSection(section: String): Boolean {
-    val _arg = Variant.new(section)
+    val _arg = Variant(section)
     val _ret = __method_bind.hasSection.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -79,7 +79,7 @@ open class ConfigFile(
   }
 
   fun load(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.load.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
@@ -101,7 +101,7 @@ open class ConfigFile(
   }
 
   fun save(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.save.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

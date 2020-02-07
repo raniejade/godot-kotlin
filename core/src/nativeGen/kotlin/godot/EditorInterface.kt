@@ -28,7 +28,7 @@ open class EditorInterface(
   }
 
   fun editResource(resource: Resource) {
-    val _arg = Variant.new(resource)
+    val _arg = Variant(resource)
     __method_bind.editResource.call(this._handle, listOf(_arg))
   }
 
@@ -100,7 +100,7 @@ open class EditorInterface(
   }
 
   fun isPluginEnabled(plugin: String): Boolean {
-    val _arg = Variant.new(plugin)
+    val _arg = Variant(plugin)
     val _ret = __method_bind.isPluginEnabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -114,12 +114,12 @@ open class EditorInterface(
   }
 
   fun openSceneFromPath(sceneFilepath: String) {
-    val _arg = Variant.new(sceneFilepath)
+    val _arg = Variant(sceneFilepath)
     __method_bind.openSceneFromPath.call(this._handle, listOf(_arg))
   }
 
   fun reloadSceneFromPath(sceneFilepath: String) {
-    val _arg = Variant.new(sceneFilepath)
+    val _arg = Variant(sceneFilepath)
     __method_bind.reloadSceneFromPath.call(this._handle, listOf(_arg))
   }
 
@@ -136,17 +136,17 @@ open class EditorInterface(
   }
 
   fun selectFile(file: String) {
-    val _arg = Variant.new(file)
+    val _arg = Variant(file)
     __method_bind.selectFile.call(this._handle, listOf(_arg))
   }
 
   fun setDistractionFreeMode(enter: Boolean) {
-    val _arg = Variant.new(enter)
+    val _arg = Variant(enter)
     __method_bind.setDistractionFreeMode.call(this._handle, listOf(_arg))
   }
 
   fun setMainScreenEditor(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setMainScreenEditor.call(this._handle, listOf(_arg))
   }
 

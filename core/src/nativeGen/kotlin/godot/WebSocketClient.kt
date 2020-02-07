@@ -112,12 +112,12 @@ open class WebSocketClient(
   }
 
   fun setTrustedSslCertificate(arg0: X509Certificate) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setTrustedSslCertificate.call(this._handle, listOf(_arg))
   }
 
   fun setVerifySslEnabled(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setVerifySslEnabled.call(this._handle, listOf(_arg))
   }
 

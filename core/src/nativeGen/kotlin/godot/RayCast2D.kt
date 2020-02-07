@@ -87,12 +87,12 @@ open class RayCast2D(
   }
 
   fun addException(node: Object) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.addException.call(this._handle, listOf(_arg))
   }
 
   fun addExceptionRid(rid: RID) {
-    val _arg = Variant.new(rid)
+    val _arg = Variant(rid)
     __method_bind.addExceptionRid.call(this._handle, listOf(_arg))
   }
 
@@ -125,7 +125,7 @@ open class RayCast2D(
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant.new(bit)
+    val _arg = Variant(bit)
     val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -166,32 +166,32 @@ open class RayCast2D(
   }
 
   fun removeException(node: Object) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.removeException.call(this._handle, listOf(_arg))
   }
 
   fun removeExceptionRid(rid: RID) {
-    val _arg = Variant.new(rid)
+    val _arg = Variant(rid)
     __method_bind.removeExceptionRid.call(this._handle, listOf(_arg))
   }
 
   fun setCastTo(localPoint: Vector2) {
-    val _arg = Variant.new(localPoint)
+    val _arg = Variant(localPoint)
     __method_bind.setCastTo.call(this._handle, listOf(_arg))
   }
 
   fun setCollideWithAreas(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCollideWithAreas.call(this._handle, listOf(_arg))
   }
 
   fun setCollideWithBodies(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCollideWithBodies.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
   }
 
@@ -203,12 +203,12 @@ open class RayCast2D(
   }
 
   fun setEnabled(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setExcludeParentBody(mask: Boolean) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setExcludeParentBody.call(this._handle, listOf(_arg))
   }
 

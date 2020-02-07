@@ -92,13 +92,13 @@ open class HingeJoint(
   }
 
   fun getFlag(flag: Int): Boolean {
-    val _arg = Variant.new(flag)
+    val _arg = Variant(flag)
     val _ret = __method_bind.getFlag.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getParam(param: Int): Float {
-    val _arg = Variant.new(param)
+    val _arg = Variant(param)
     val _ret = __method_bind.getParam.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }

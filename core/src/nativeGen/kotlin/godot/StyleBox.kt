@@ -80,13 +80,13 @@ open class StyleBox(
   }
 
   fun getDefaultMargin(margin: Int): Float {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     val _ret = __method_bind.getDefaultMargin.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getMargin(margin: Int): Float {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     val _ret = __method_bind.getMargin.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }

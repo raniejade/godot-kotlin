@@ -91,27 +91,27 @@ open class InputEventWithModifiers(
   }
 
   fun setAlt(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setAlt.call(this._handle, listOf(_arg))
   }
 
   fun setCommand(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCommand.call(this._handle, listOf(_arg))
   }
 
   fun setControl(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setControl.call(this._handle, listOf(_arg))
   }
 
   fun setMetakey(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setMetakey.call(this._handle, listOf(_arg))
   }
 
   fun setShift(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setShift.call(this._handle, listOf(_arg))
   }
 

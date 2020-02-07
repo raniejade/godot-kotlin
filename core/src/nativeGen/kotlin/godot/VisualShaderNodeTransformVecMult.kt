@@ -39,7 +39,7 @@ open class VisualShaderNodeTransformVecMult(
   }
 
   fun setOperator(op: Int) {
-    val _arg = Variant.new(op)
+    val _arg = Variant(op)
     __method_bind.setOperator.call(this._handle, listOf(_arg))
   }
 

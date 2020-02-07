@@ -524,7 +524,7 @@ class APIGenerator {
         if (parameters.isNotEmpty() || method.hasVarargs) {
           if (parameters.size == 1 && !method.hasVarargs) {
             val parameter = parameters[0]
-            builder.addStatement("val _arg = Variant.new(%N)", parameter.name)
+            builder.addStatement("val _arg = Variant(%N)", parameter.name)
             builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, listOf(_arg))", method.name)
           } else {
             builder.addStatement("val _args = mutableListOf<Variant>()")

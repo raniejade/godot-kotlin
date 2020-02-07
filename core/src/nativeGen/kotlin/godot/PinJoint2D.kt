@@ -39,7 +39,7 @@ open class PinJoint2D(
   }
 
   fun setSoftness(softness: Float) {
-    val _arg = Variant.new(softness)
+    val _arg = Variant(softness)
     __method_bind.setSoftness.call(this._handle, listOf(_arg))
   }
 

@@ -49,7 +49,7 @@ open class CanvasModulate(
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.setColor.call(this._handle, listOf(_arg))
   }
 

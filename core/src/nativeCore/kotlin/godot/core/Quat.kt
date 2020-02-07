@@ -6,6 +6,12 @@ import kotlinx.cinterop.*
 class Quat(
   value: CValue<godot_quat>
 ) : CoreType<godot_quat>(value) {
+
+  constructor(x: Float = 0f, y: Float = 0f, z: Float = 0f, w: Float = 1f): this(__new(x, y, z, w))
+  constructor(from: Basis): this(__new(from))
+  constructor(from: Vector3): this(__new(from))
+  constructor(axis: Vector3, angle: Float): this(__new(axis, angle))
+
   var x: Float
     get() {
       return memScoped {
@@ -183,7 +189,7 @@ class Quat(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
@@ -212,28 +218,20 @@ class Quat(
   }
 
   companion object {
-    fun new(x: Float = 0f, y: Float = 0f, z: Float = 0f, w: Float = 1f): Quat {
-      return allocType(::Quat) {
-        checkNotNull(Godot.gdnative.godot_quat_new)(it, x, y, z, w)
-      }
+    internal fun __new(x: Float, y: Float, z: Float, w: Float) = allocType2<godot_quat> {
+      checkNotNull(Godot.gdnative.godot_quat_new)(it, x, y, z, w)
     }
 
-    fun new(basis: Basis): Quat {
-      return allocType(::Quat) {
-        checkNotNull(Godot.gdnative11.godot_quat_new_with_basis)(it, basis._value.ptr)
-      }
+    internal fun __new(from: Basis) = allocType2<godot_quat> {
+      checkNotNull(Godot.gdnative11.godot_quat_new_with_basis)(it, from._value.ptr)
     }
 
-    fun new(vec: Vector3): Quat {
-      return allocType(::Quat) {
-        checkNotNull(Godot.gdnative11.godot_quat_new_with_euler)(it, vec._value.ptr)
-      }
+    internal fun __new(from: Vector3) = allocType2<godot_quat> {
+      checkNotNull(Godot.gdnative11.godot_quat_new_with_euler)(it, from._value.ptr)
     }
 
-    fun new(axis: Vector3, angle: Float): Quat {
-      return allocType(::Quat) {
-        checkNotNull(Godot.gdnative.godot_quat_new_with_axis_angle)(it, axis._value.ptr, angle)
-      }
+    internal fun __new(from: Vector3, angle: Float) = allocType2<godot_quat> {
+      checkNotNull(Godot.gdnative.godot_quat_new_with_axis_angle)(it, from._value.ptr, angle)
     }
   }
 }

@@ -48,7 +48,7 @@ open class _File(
   }
 
   fun fileExists(path: String): Boolean {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.fileExists.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -79,13 +79,13 @@ open class _File(
   }
 
   fun getBuffer(len: Int): PoolByteArray {
-    val _arg = Variant.new(len)
+    val _arg = Variant(len)
     val _ret = __method_bind.getBuffer.call(this._handle, listOf(_arg))
     return _ret.asPoolByteArray()
   }
 
   fun getCsvLine(delim: String = ","): PoolStringArray {
-    val _arg = Variant.new(delim)
+    val _arg = Variant(delim)
     val _ret = __method_bind.getCsvLine.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
@@ -121,13 +121,13 @@ open class _File(
   }
 
   fun getMd5(path: String): String {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.getMd5.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getModifiedTime(file: String): Int {
-    val _arg = Variant.new(file)
+    val _arg = Variant(file)
     val _ret = __method_bind.getModifiedTime.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -158,13 +158,13 @@ open class _File(
   }
 
   fun getSha256(path: String): String {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.getSha256.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getVar(allowObjects: Boolean = false): Variant {
-    val _arg = Variant.new(allowObjects)
+    val _arg = Variant(allowObjects)
     val _ret = __method_bind.getVar.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -222,42 +222,42 @@ open class _File(
   }
 
   fun seek(position: Int) {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     __method_bind.seek.call(this._handle, listOf(_arg))
   }
 
   fun seekEnd(position: Int = 0) {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     __method_bind.seekEnd.call(this._handle, listOf(_arg))
   }
 
   fun setEndianSwap(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setEndianSwap.call(this._handle, listOf(_arg))
   }
 
   fun store16(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.store16.call(this._handle, listOf(_arg))
   }
 
   fun store32(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.store32.call(this._handle, listOf(_arg))
   }
 
   fun store64(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.store64.call(this._handle, listOf(_arg))
   }
 
   fun store8(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.store8.call(this._handle, listOf(_arg))
   }
 
   fun storeBuffer(buffer: PoolByteArray) {
-    val _arg = Variant.new(buffer)
+    val _arg = Variant(buffer)
     __method_bind.storeBuffer.call(this._handle, listOf(_arg))
   }
 
@@ -269,32 +269,32 @@ open class _File(
   }
 
   fun storeDouble(value: Float) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.storeDouble.call(this._handle, listOf(_arg))
   }
 
   fun storeFloat(value: Float) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.storeFloat.call(this._handle, listOf(_arg))
   }
 
   fun storeLine(line: String) {
-    val _arg = Variant.new(line)
+    val _arg = Variant(line)
     __method_bind.storeLine.call(this._handle, listOf(_arg))
   }
 
   fun storePascalString(string: String) {
-    val _arg = Variant.new(string)
+    val _arg = Variant(string)
     __method_bind.storePascalString.call(this._handle, listOf(_arg))
   }
 
   fun storeReal(value: Float) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.storeReal.call(this._handle, listOf(_arg))
   }
 
   fun storeString(string: String) {
-    val _arg = Variant.new(string)
+    val _arg = Variant(string)
     __method_bind.storeString.call(this._handle, listOf(_arg))
   }
 

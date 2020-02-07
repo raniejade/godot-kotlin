@@ -52,12 +52,12 @@ open class VisualScriptLocalVar(
   }
 
   fun setVarName(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setVarName.call(this._handle, listOf(_arg))
   }
 
   fun setVarType(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.setVarType.call(this._handle, listOf(_arg))
   }
 

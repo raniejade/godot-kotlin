@@ -81,7 +81,7 @@ open class CSGShape(
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
-    val _arg = Variant.new(bit)
+    val _arg = Variant(bit)
     val _ret = __method_bind.getCollisionLayerBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -92,7 +92,7 @@ open class CSGShape(
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant.new(bit)
+    val _arg = Variant(bit)
     val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -128,12 +128,12 @@ open class CSGShape(
   }
 
   fun setCalculateTangents(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setCalculateTangents.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionLayer(layer: Int) {
-    val _arg = Variant.new(layer)
+    val _arg = Variant(layer)
     __method_bind.setCollisionLayer.call(this._handle, listOf(_arg))
   }
 
@@ -145,7 +145,7 @@ open class CSGShape(
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
   }
 
@@ -157,17 +157,17 @@ open class CSGShape(
   }
 
   fun setOperation(operation: Int) {
-    val _arg = Variant.new(operation)
+    val _arg = Variant(operation)
     __method_bind.setOperation.call(this._handle, listOf(_arg))
   }
 
   fun setSnap(snap: Float) {
-    val _arg = Variant.new(snap)
+    val _arg = Variant(snap)
     __method_bind.setSnap.call(this._handle, listOf(_arg))
   }
 
   fun setUseCollision(operation: Boolean) {
-    val _arg = Variant.new(operation)
+    val _arg = Variant(operation)
     __method_bind.setUseCollision.call(this._handle, listOf(_arg))
   }
 

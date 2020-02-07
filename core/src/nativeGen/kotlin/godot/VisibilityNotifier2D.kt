@@ -75,7 +75,7 @@ open class VisibilityNotifier2D(
   }
 
   fun setRect(rect: Rect2) {
-    val _arg = Variant.new(rect)
+    val _arg = Variant(rect)
     __method_bind.setRect.call(this._handle, listOf(_arg))
   }
 

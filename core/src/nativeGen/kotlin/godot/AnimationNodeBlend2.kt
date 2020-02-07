@@ -39,7 +39,7 @@ open class AnimationNodeBlend2(
   }
 
   fun setUseSync(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUseSync.call(this._handle, listOf(_arg))
   }
 

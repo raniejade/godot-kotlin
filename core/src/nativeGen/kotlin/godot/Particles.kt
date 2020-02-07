@@ -206,7 +206,7 @@ open class Particles(
   }
 
   fun getDrawPassMesh(pass: Int): Mesh {
-    val _arg = Variant.new(pass)
+    val _arg = Variant(pass)
     val _ret = __method_bind.getDrawPassMesh.call(this._handle, listOf(_arg))
     return _ret.asObject(::Mesh)!!
   }
@@ -281,12 +281,12 @@ open class Particles(
   }
 
   fun setAmount(amount: Int) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setAmount.call(this._handle, listOf(_arg))
   }
 
   fun setDrawOrder(order: Int) {
-    val _arg = Variant.new(order)
+    val _arg = Variant(order)
     __method_bind.setDrawOrder.call(this._handle, listOf(_arg))
   }
 
@@ -298,67 +298,67 @@ open class Particles(
   }
 
   fun setDrawPasses(passes: Int) {
-    val _arg = Variant.new(passes)
+    val _arg = Variant(passes)
     __method_bind.setDrawPasses.call(this._handle, listOf(_arg))
   }
 
   fun setEmitting(emitting: Boolean) {
-    val _arg = Variant.new(emitting)
+    val _arg = Variant(emitting)
     __method_bind.setEmitting.call(this._handle, listOf(_arg))
   }
 
   fun setExplosivenessRatio(ratio: Float) {
-    val _arg = Variant.new(ratio)
+    val _arg = Variant(ratio)
     __method_bind.setExplosivenessRatio.call(this._handle, listOf(_arg))
   }
 
   fun setFixedFps(fps: Int) {
-    val _arg = Variant.new(fps)
+    val _arg = Variant(fps)
     __method_bind.setFixedFps.call(this._handle, listOf(_arg))
   }
 
   fun setFractionalDelta(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setFractionalDelta.call(this._handle, listOf(_arg))
   }
 
   fun setLifetime(secs: Float) {
-    val _arg = Variant.new(secs)
+    val _arg = Variant(secs)
     __method_bind.setLifetime.call(this._handle, listOf(_arg))
   }
 
   fun setOneShot(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setOneShot.call(this._handle, listOf(_arg))
   }
 
   fun setPreProcessTime(secs: Float) {
-    val _arg = Variant.new(secs)
+    val _arg = Variant(secs)
     __method_bind.setPreProcessTime.call(this._handle, listOf(_arg))
   }
 
   fun setProcessMaterial(material: Material) {
-    val _arg = Variant.new(material)
+    val _arg = Variant(material)
     __method_bind.setProcessMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setRandomnessRatio(ratio: Float) {
-    val _arg = Variant.new(ratio)
+    val _arg = Variant(ratio)
     __method_bind.setRandomnessRatio.call(this._handle, listOf(_arg))
   }
 
   fun setSpeedScale(scale: Float) {
-    val _arg = Variant.new(scale)
+    val _arg = Variant(scale)
     __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
   }
 
   fun setUseLocalCoordinates(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUseLocalCoordinates.call(this._handle, listOf(_arg))
   }
 
   fun setVisibilityAabb(aabb: AABB) {
-    val _arg = Variant.new(aabb)
+    val _arg = Variant(aabb)
     __method_bind.setVisibilityAabb.call(this._handle, listOf(_arg))
   }
 

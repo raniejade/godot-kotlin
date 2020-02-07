@@ -61,7 +61,7 @@ open class SpringArm(
   }
 
   fun addExcludedObject(rID: RID) {
-    val _arg = Variant.new(rID)
+    val _arg = Variant(rID)
     __method_bind.addExcludedObject.call(this._handle, listOf(_arg))
   }
 
@@ -95,28 +95,28 @@ open class SpringArm(
   }
 
   fun removeExcludedObject(rID: RID): Boolean {
-    val _arg = Variant.new(rID)
+    val _arg = Variant(rID)
     val _ret = __method_bind.removeExcludedObject.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
   }
 
   fun setLength(length: Float) {
-    val _arg = Variant.new(length)
+    val _arg = Variant(length)
     __method_bind.setLength.call(this._handle, listOf(_arg))
   }
 
   fun setMargin(margin: Float) {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     __method_bind.setMargin.call(this._handle, listOf(_arg))
   }
 
   fun setShape(shape: Shape) {
-    val _arg = Variant.new(shape)
+    val _arg = Variant(shape)
     __method_bind.setShape.call(this._handle, listOf(_arg))
   }
 

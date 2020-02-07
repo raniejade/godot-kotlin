@@ -36,7 +36,7 @@ open class PCKPacker(
   }
 
   fun flush(verbose: Boolean = false): GDError {
-    val _arg = Variant.new(verbose)
+    val _arg = Variant(verbose)
     val _ret = __method_bind.flush.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

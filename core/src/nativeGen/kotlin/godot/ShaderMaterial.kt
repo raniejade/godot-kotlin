@@ -39,25 +39,25 @@ open class ShaderMaterial(
   }
 
   fun getShaderParam(param: String): Variant {
-    val _arg = Variant.new(param)
+    val _arg = Variant(param)
     val _ret = __method_bind.getShaderParam.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun propertyCanRevert(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.propertyCanRevert.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun propertyGetRevert(name: String): Variant {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.propertyGetRevert.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun setShader(shader: Shader) {
-    val _arg = Variant.new(shader)
+    val _arg = Variant(shader)
     __method_bind.setShader.call(this._handle, listOf(_arg))
   }
 

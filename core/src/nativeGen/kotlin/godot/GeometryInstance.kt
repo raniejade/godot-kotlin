@@ -103,7 +103,7 @@ open class GeometryInstance(
   }
 
   fun getFlag(flag: Int): Boolean {
-    val _arg = Variant.new(flag)
+    val _arg = Variant(flag)
     val _ret = __method_bind.getFlag.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -134,17 +134,17 @@ open class GeometryInstance(
   }
 
   fun setCastShadowsSetting(shadowCastingSetting: Int) {
-    val _arg = Variant.new(shadowCastingSetting)
+    val _arg = Variant(shadowCastingSetting)
     __method_bind.setCastShadowsSetting.call(this._handle, listOf(_arg))
   }
 
   fun setCustomAabb(aabb: AABB) {
-    val _arg = Variant.new(aabb)
+    val _arg = Variant(aabb)
     __method_bind.setCustomAabb.call(this._handle, listOf(_arg))
   }
 
   fun setExtraCullMargin(margin: Float) {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     __method_bind.setExtraCullMargin.call(this._handle, listOf(_arg))
   }
 
@@ -156,27 +156,27 @@ open class GeometryInstance(
   }
 
   fun setLodMaxDistance(mode: Float) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setLodMaxDistance.call(this._handle, listOf(_arg))
   }
 
   fun setLodMaxHysteresis(mode: Float) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setLodMaxHysteresis.call(this._handle, listOf(_arg))
   }
 
   fun setLodMinDistance(mode: Float) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setLodMinDistance.call(this._handle, listOf(_arg))
   }
 
   fun setLodMinHysteresis(mode: Float) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setLodMinHysteresis.call(this._handle, listOf(_arg))
   }
 
   fun setMaterialOverride(material: Material) {
-    val _arg = Variant.new(material)
+    val _arg = Variant(material)
     __method_bind.setMaterialOverride.call(this._handle, listOf(_arg))
   }
 

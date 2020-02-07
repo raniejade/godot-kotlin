@@ -49,7 +49,7 @@ open class ConcavePolygonShape2D(
   }
 
   fun setSegments(segments: PoolVector2Array) {
-    val _arg = Variant.new(segments)
+    val _arg = Variant(segments)
     __method_bind.setSegments.call(this._handle, listOf(_arg))
   }
 

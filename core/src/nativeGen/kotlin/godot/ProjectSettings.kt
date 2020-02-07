@@ -25,35 +25,35 @@ open class ProjectSettings(
   __ignore: String?
 ) : Object(null) {
   fun addPropertyInfo(hint: Dictionary) {
-    val _arg = Variant.new(hint)
+    val _arg = Variant(hint)
     __method_bind.addPropertyInfo.call(this._handle, listOf(_arg))
   }
 
   fun clear(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.clear.call(this._handle, listOf(_arg))
   }
 
   fun getOrder(name: String): Int {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getOrder.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getSetting(name: String): Variant {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getSetting.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun globalizePath(path: String): String {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.globalizePath.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun hasSetting(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasSetting.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -67,19 +67,19 @@ open class ProjectSettings(
   }
 
   fun localizePath(path: String): String {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.localizePath.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun propertyCanRevert(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.propertyCanRevert.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun propertyGetRevert(name: String): Variant {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.propertyGetRevert.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -90,7 +90,7 @@ open class ProjectSettings(
   }
 
   fun saveCustom(file: String): GDError {
-    val _arg = Variant.new(file)
+    val _arg = Variant(file)
     val _ret = __method_bind.saveCustom.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

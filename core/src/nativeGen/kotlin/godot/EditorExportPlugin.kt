@@ -40,27 +40,27 @@ open class EditorExportPlugin(
   }
 
   fun addIosBundleFile(path: String) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.addIosBundleFile.call(this._handle, listOf(_arg))
   }
 
   fun addIosCppCode(code: String) {
-    val _arg = Variant.new(code)
+    val _arg = Variant(code)
     __method_bind.addIosCppCode.call(this._handle, listOf(_arg))
   }
 
   fun addIosFramework(path: String) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.addIosFramework.call(this._handle, listOf(_arg))
   }
 
   fun addIosLinkerFlags(flags: String) {
-    val _arg = Variant.new(flags)
+    val _arg = Variant(flags)
     __method_bind.addIosLinkerFlags.call(this._handle, listOf(_arg))
   }
 
   fun addIosPlistContent(plistContent: String) {
-    val _arg = Variant.new(plistContent)
+    val _arg = Variant(plistContent)
     __method_bind.addIosPlistContent.call(this._handle, listOf(_arg))
   }
 

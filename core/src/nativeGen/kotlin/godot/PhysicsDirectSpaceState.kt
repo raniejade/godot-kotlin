@@ -45,7 +45,7 @@ open class PhysicsDirectSpaceState(
   }
 
   fun getRestInfo(shape: PhysicsShapeQueryParameters): Dictionary {
-    val _arg = Variant.new(shape)
+    val _arg = Variant(shape)
     val _ret = __method_bind.getRestInfo.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }

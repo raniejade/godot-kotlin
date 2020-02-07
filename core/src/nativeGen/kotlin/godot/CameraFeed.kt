@@ -79,12 +79,12 @@ open class CameraFeed(
   }
 
   fun setActive(active: Boolean) {
-    val _arg = Variant.new(active)
+    val _arg = Variant(active)
     __method_bind.setActive.call(this._handle, listOf(_arg))
   }
 
   fun setTransform(transform: Transform2D) {
-    val _arg = Variant.new(transform)
+    val _arg = Variant(transform)
     __method_bind.setTransform.call(this._handle, listOf(_arg))
   }
 

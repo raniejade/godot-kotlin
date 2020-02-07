@@ -125,7 +125,7 @@ open class GridMap(
   }
 
   fun getBakeMeshInstance(idx: Int): RID {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getBakeMeshInstance.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }
@@ -192,7 +192,7 @@ open class GridMap(
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
-    val _arg = Variant.new(bit)
+    val _arg = Variant(bit)
     val _ret = __method_bind.getCollisionLayerBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -203,7 +203,7 @@ open class GridMap(
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant.new(bit)
+    val _arg = Variant(bit)
     val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -249,7 +249,7 @@ open class GridMap(
   }
 
   fun resourceChanged(resource: Resource) {
-    val _arg = Variant.new(resource)
+    val _arg = Variant(resource)
     __method_bind.resourceChanged.call(this._handle, listOf(_arg))
   }
 
@@ -270,27 +270,27 @@ open class GridMap(
   }
 
   fun setCellScale(scale: Float) {
-    val _arg = Variant.new(scale)
+    val _arg = Variant(scale)
     __method_bind.setCellScale.call(this._handle, listOf(_arg))
   }
 
   fun setCellSize(size: Vector3) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setCellSize.call(this._handle, listOf(_arg))
   }
 
   fun setCenterX(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCenterX.call(this._handle, listOf(_arg))
   }
 
   fun setCenterY(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCenterY.call(this._handle, listOf(_arg))
   }
 
   fun setCenterZ(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCenterZ.call(this._handle, listOf(_arg))
   }
 
@@ -309,7 +309,7 @@ open class GridMap(
   }
 
   fun setCollisionLayer(layer: Int) {
-    val _arg = Variant.new(layer)
+    val _arg = Variant(layer)
     __method_bind.setCollisionLayer.call(this._handle, listOf(_arg))
   }
 
@@ -321,7 +321,7 @@ open class GridMap(
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
   }
 
@@ -333,17 +333,17 @@ open class GridMap(
   }
 
   fun setMeshLibrary(meshLibrary: MeshLibrary) {
-    val _arg = Variant.new(meshLibrary)
+    val _arg = Variant(meshLibrary)
     __method_bind.setMeshLibrary.call(this._handle, listOf(_arg))
   }
 
   fun setOctantSize(size: Int) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setOctantSize.call(this._handle, listOf(_arg))
   }
 
   fun worldToMap(pos: Vector3): Vector3 {
-    val _arg = Variant.new(pos)
+    val _arg = Variant(pos)
     val _ret = __method_bind.worldToMap.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }

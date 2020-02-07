@@ -7,6 +7,9 @@ import kotlinx.cinterop.*
 class PoolVector2Array(
   value: CValue<godot_pool_vector2_array>
 ) : CoreType<godot_pool_vector2_array>(value), Iterable<Vector2> {
+  constructor(): this(__new())
+  constructor(from: VariantArray): this(__new(from))
+
   fun append(vec: Vector2) {
     _value = memScoped {
       val ptr = _value.ptr
@@ -80,11 +83,11 @@ class PoolVector2Array(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
-    return GDString.new("PoolVector2Array(${size()})")
+    return GDString("PoolVector2Array(${size()})")
   }
 
   override fun iterator(): Iterator<Vector2> {
@@ -92,16 +95,12 @@ class PoolVector2Array(
   }
 
   companion object {
-    fun new(): PoolVector2Array {
-      return allocType(::PoolVector2Array) {
-        checkNotNull(Godot.gdnative.godot_pool_vector2_array_new)(it)
-      }
+    internal fun __new() = allocType2<godot_pool_vector2_array> {
+      checkNotNull(Godot.gdnative.godot_pool_vector2_array_new)(it)
     }
 
-    fun new(from: VariantArray): PoolVector2Array {
-      return allocType(::PoolVector2Array) {
-        checkNotNull(Godot.gdnative.godot_pool_vector2_array_new_with_array)(it, from._value.ptr)
-      }
+    internal fun __new(from: VariantArray) = allocType2<godot_pool_vector2_array> {
+      checkNotNull(Godot.gdnative.godot_pool_vector2_array_new_with_array)(it, from._value.ptr)
     }
   }
 }

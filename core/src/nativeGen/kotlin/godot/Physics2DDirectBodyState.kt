@@ -112,7 +112,7 @@ open class Physics2DDirectBodyState(
   }
 
   fun addCentralForce(force: Vector2) {
-    val _arg = Variant.new(force)
+    val _arg = Variant(force)
     __method_bind.addCentralForce.call(this._handle, listOf(_arg))
   }
 
@@ -124,12 +124,12 @@ open class Physics2DDirectBodyState(
   }
 
   fun addTorque(torque: Float) {
-    val _arg = Variant.new(torque)
+    val _arg = Variant(torque)
     __method_bind.addTorque.call(this._handle, listOf(_arg))
   }
 
   fun applyCentralImpulse(impulse: Vector2) {
-    val _arg = Variant.new(impulse)
+    val _arg = Variant(impulse)
     __method_bind.applyCentralImpulse.call(this._handle, listOf(_arg))
   }
 
@@ -141,7 +141,7 @@ open class Physics2DDirectBodyState(
   }
 
   fun applyTorqueImpulse(impulse: Float) {
-    val _arg = Variant.new(impulse)
+    val _arg = Variant(impulse)
     __method_bind.applyTorqueImpulse.call(this._handle, listOf(_arg))
   }
 
@@ -151,43 +151,43 @@ open class Physics2DDirectBodyState(
   }
 
   fun getContactCollider(contactIdx: Int): RID {
-    val _arg = Variant.new(contactIdx)
+    val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactCollider.call(this._handle, listOf(_arg))
     return _ret.asRID()
   }
 
   fun getContactColliderId(contactIdx: Int): Int {
-    val _arg = Variant.new(contactIdx)
+    val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactColliderId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getContactColliderObject(contactIdx: Int): Object {
-    val _arg = Variant.new(contactIdx)
+    val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactColliderObject.call(this._handle, listOf(_arg))
     return _ret.asObject(::Object)!!
   }
 
   fun getContactColliderPosition(contactIdx: Int): Vector2 {
-    val _arg = Variant.new(contactIdx)
+    val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactColliderPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getContactColliderShape(contactIdx: Int): Int {
-    val _arg = Variant.new(contactIdx)
+    val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactColliderShape.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getContactColliderShapeMetadata(contactIdx: Int): Variant {
-    val _arg = Variant.new(contactIdx)
+    val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactColliderShapeMetadata.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getContactColliderVelocityAtPosition(contactIdx: Int): Vector2 {
-    val _arg = Variant.new(contactIdx)
+    val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactColliderVelocityAtPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
@@ -198,19 +198,19 @@ open class Physics2DDirectBodyState(
   }
 
   fun getContactLocalNormal(contactIdx: Int): Vector2 {
-    val _arg = Variant.new(contactIdx)
+    val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactLocalNormal.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getContactLocalPosition(contactIdx: Int): Vector2 {
-    val _arg = Variant.new(contactIdx)
+    val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactLocalPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getContactLocalShape(contactIdx: Int): Int {
-    val _arg = Variant.new(contactIdx)
+    val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactLocalShape.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -270,22 +270,22 @@ open class Physics2DDirectBodyState(
   }
 
   fun setAngularVelocity(velocity: Float) {
-    val _arg = Variant.new(velocity)
+    val _arg = Variant(velocity)
     __method_bind.setAngularVelocity.call(this._handle, listOf(_arg))
   }
 
   fun setLinearVelocity(velocity: Vector2) {
-    val _arg = Variant.new(velocity)
+    val _arg = Variant(velocity)
     __method_bind.setLinearVelocity.call(this._handle, listOf(_arg))
   }
 
   fun setSleepState(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setSleepState.call(this._handle, listOf(_arg))
   }
 
   fun setTransform(transform: Transform2D) {
-    val _arg = Variant.new(transform)
+    val _arg = Variant(transform)
     __method_bind.setTransform.call(this._handle, listOf(_arg))
   }
 

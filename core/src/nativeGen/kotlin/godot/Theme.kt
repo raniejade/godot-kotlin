@@ -80,7 +80,7 @@ open class Theme(
   }
 
   fun copyTheme(other: Theme) {
-    val _arg = Variant.new(other)
+    val _arg = Variant(other)
     __method_bind.copyTheme.call(this._handle, listOf(_arg))
   }
 
@@ -93,7 +93,7 @@ open class Theme(
   }
 
   fun getColorList(type: String): PoolStringArray {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getColorList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
@@ -107,7 +107,7 @@ open class Theme(
   }
 
   fun getConstantList(type: String): PoolStringArray {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getConstantList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
@@ -126,7 +126,7 @@ open class Theme(
   }
 
   fun getFontList(type: String): PoolStringArray {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getFontList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
@@ -140,7 +140,7 @@ open class Theme(
   }
 
   fun getIconList(type: String): PoolStringArray {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getIconList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
@@ -154,7 +154,7 @@ open class Theme(
   }
 
   fun getStyleboxList(type: String): PoolStringArray {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getStyleboxList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
@@ -165,7 +165,7 @@ open class Theme(
   }
 
   fun getTypeList(type: String): PoolStringArray {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getTypeList.call(this._handle, listOf(_arg))
     return _ret.asPoolStringArray()
   }
@@ -235,7 +235,7 @@ open class Theme(
   }
 
   fun setDefaultFont(font: Font) {
-    val _arg = Variant.new(font)
+    val _arg = Variant(font)
     __method_bind.setDefaultFont.call(this._handle, listOf(_arg))
   }
 

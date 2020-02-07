@@ -111,7 +111,7 @@ open class Object(
   }
 
   fun get(property: String): Variant {
-    val _arg = Variant.new(property)
+    val _arg = Variant(property)
     val _ret = __method_bind.get.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -127,7 +127,7 @@ open class Object(
   }
 
   fun getIndexed(property: NodePath): Variant {
-    val _arg = Variant.new(property)
+    val _arg = Variant(property)
     val _ret = __method_bind.getIndexed.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -138,7 +138,7 @@ open class Object(
   }
 
   fun getMeta(name: String): Variant {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.getMeta.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -164,7 +164,7 @@ open class Object(
   }
 
   fun getSignalConnectionList(signal: String): VariantArray {
-    val _arg = Variant.new(signal)
+    val _arg = Variant(signal)
     val _ret = __method_bind.getSignalConnectionList.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
@@ -175,19 +175,19 @@ open class Object(
   }
 
   fun hasMeta(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasMeta.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasMethod(method: String): Boolean {
-    val _arg = Variant.new(method)
+    val _arg = Variant(method)
     val _ret = __method_bind.hasMethod.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun hasUserSignal(signal: String): Boolean {
-    val _arg = Variant.new(signal)
+    val _arg = Variant(signal)
     val _ret = __method_bind.hasUserSignal.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -198,7 +198,7 @@ open class Object(
   }
 
   fun isClass(`class`: String): Boolean {
-    val _arg = Variant.new(`class`)
+    val _arg = Variant(`class`)
     val _ret = __method_bind.isClass.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -233,7 +233,7 @@ open class Object(
   }
 
   fun removeMeta(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.removeMeta.call(this._handle, listOf(_arg))
   }
 
@@ -245,7 +245,7 @@ open class Object(
   }
 
   fun setBlockSignals(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setBlockSignals.call(this._handle, listOf(_arg))
   }
 
@@ -264,7 +264,7 @@ open class Object(
   }
 
   fun setMessageTranslation(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setMessageTranslation.call(this._handle, listOf(_arg))
   }
 
@@ -276,7 +276,7 @@ open class Object(
   }
 
   fun setScript(script: Reference) {
-    val _arg = Variant.new(script)
+    val _arg = Variant(script)
     __method_bind.setScript.call(this._handle, listOf(_arg))
   }
 
@@ -286,7 +286,7 @@ open class Object(
   }
 
   fun tr(message: String): String {
-    val _arg = Variant.new(message)
+    val _arg = Variant(message)
     val _ret = __method_bind.tr.call(this._handle, listOf(_arg))
     return _ret.asString()
   }

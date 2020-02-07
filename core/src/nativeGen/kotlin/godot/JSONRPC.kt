@@ -78,7 +78,7 @@ open class JSONRPC(
   }
 
   fun processString(action: String): String {
-    val _arg = Variant.new(action)
+    val _arg = Variant(action)
     val _ret = __method_bind.processString.call(this._handle, listOf(_arg))
     return _ret.asString()
   }

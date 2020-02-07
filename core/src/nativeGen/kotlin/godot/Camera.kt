@@ -146,7 +146,7 @@ open class Camera(
   }
 
   fun clearCurrent(enableNext: Boolean = true) {
-    val _arg = Variant.new(enableNext)
+    val _arg = Variant(enableNext)
     __method_bind.clearCurrent.call(this._handle, listOf(_arg))
   }
 
@@ -166,7 +166,7 @@ open class Camera(
   }
 
   fun getCullMaskBit(layer: Int): Boolean {
-    val _arg = Variant.new(layer)
+    val _arg = Variant(layer)
     val _ret = __method_bind.getCullMaskBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -237,7 +237,7 @@ open class Camera(
   }
 
   fun isPositionBehind(worldPoint: Vector3): Boolean {
-    val _arg = Variant.new(worldPoint)
+    val _arg = Variant(worldPoint)
     val _ret = __method_bind.isPositionBehind.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -247,7 +247,7 @@ open class Camera(
   }
 
   fun projectLocalRayNormal(screenPoint: Vector2): Vector3 {
-    val _arg = Variant.new(screenPoint)
+    val _arg = Variant(screenPoint)
     val _ret = __method_bind.projectLocalRayNormal.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
@@ -261,19 +261,19 @@ open class Camera(
   }
 
   fun projectRayNormal(screenPoint: Vector2): Vector3 {
-    val _arg = Variant.new(screenPoint)
+    val _arg = Variant(screenPoint)
     val _ret = __method_bind.projectRayNormal.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun projectRayOrigin(screenPoint: Vector2): Vector3 {
-    val _arg = Variant.new(screenPoint)
+    val _arg = Variant(screenPoint)
     val _ret = __method_bind.projectRayOrigin.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun setCullMask(mask: Int) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setCullMask.call(this._handle, listOf(_arg))
   }
 
@@ -285,22 +285,22 @@ open class Camera(
   }
 
   fun setCurrent(arg0: Boolean) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setCurrent.call(this._handle, listOf(_arg))
   }
 
   fun setDopplerTracking(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setDopplerTracking.call(this._handle, listOf(_arg))
   }
 
   fun setEnvironment(env: Environment) {
-    val _arg = Variant.new(env)
+    val _arg = Variant(env)
     __method_bind.setEnvironment.call(this._handle, listOf(_arg))
   }
 
   fun setFov(arg0: Float) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setFov.call(this._handle, listOf(_arg))
   }
 
@@ -319,17 +319,17 @@ open class Camera(
   }
 
   fun setFrustumOffset(arg0: Vector2) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setFrustumOffset.call(this._handle, listOf(_arg))
   }
 
   fun setHOffset(ofs: Float) {
-    val _arg = Variant.new(ofs)
+    val _arg = Variant(ofs)
     __method_bind.setHOffset.call(this._handle, listOf(_arg))
   }
 
   fun setKeepAspectMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setKeepAspectMode.call(this._handle, listOf(_arg))
   }
 
@@ -358,32 +358,32 @@ open class Camera(
   }
 
   fun setProjection(arg0: Int) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setProjection.call(this._handle, listOf(_arg))
   }
 
   fun setSize(arg0: Float) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setSize.call(this._handle, listOf(_arg))
   }
 
   fun setVOffset(ofs: Float) {
-    val _arg = Variant.new(ofs)
+    val _arg = Variant(ofs)
     __method_bind.setVOffset.call(this._handle, listOf(_arg))
   }
 
   fun setZfar(arg0: Float) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setZfar.call(this._handle, listOf(_arg))
   }
 
   fun setZnear(arg0: Float) {
-    val _arg = Variant.new(arg0)
+    val _arg = Variant(arg0)
     __method_bind.setZnear.call(this._handle, listOf(_arg))
   }
 
   fun unprojectPosition(worldPoint: Vector3): Vector2 {
-    val _arg = Variant.new(worldPoint)
+    val _arg = Variant(worldPoint)
     val _ret = __method_bind.unprojectPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }

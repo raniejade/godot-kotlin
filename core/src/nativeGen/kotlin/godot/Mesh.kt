@@ -53,7 +53,7 @@ open class Mesh(
   }
 
   fun createOutline(margin: Float): Mesh {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     val _ret = __method_bind.createOutline.call(this._handle, listOf(_arg))
     return _ret.asObject(::Mesh)!!
   }
@@ -89,24 +89,24 @@ open class Mesh(
   }
 
   fun setLightmapSizeHint(size: Vector2) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setLightmapSizeHint.call(this._handle, listOf(_arg))
   }
 
   fun surfaceGetArrays(surfIdx: Int): VariantArray {
-    val _arg = Variant.new(surfIdx)
+    val _arg = Variant(surfIdx)
     val _ret = __method_bind.surfaceGetArrays.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun surfaceGetBlendShapeArrays(surfIdx: Int): VariantArray {
-    val _arg = Variant.new(surfIdx)
+    val _arg = Variant(surfIdx)
     val _ret = __method_bind.surfaceGetBlendShapeArrays.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun surfaceGetMaterial(surfIdx: Int): Material {
-    val _arg = Variant.new(surfIdx)
+    val _arg = Variant(surfIdx)
     val _ret = __method_bind.surfaceGetMaterial.call(this._handle, listOf(_arg))
     return _ret.asObject(::Material)!!
   }

@@ -163,47 +163,47 @@ open class Physics2DShapeQueryParameters(
   }
 
   fun setCollideWithAreas(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCollideWithAreas.call(this._handle, listOf(_arg))
   }
 
   fun setCollideWithBodies(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCollideWithBodies.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionLayer(collisionLayer: Int) {
-    val _arg = Variant.new(collisionLayer)
+    val _arg = Variant(collisionLayer)
     __method_bind.setCollisionLayer.call(this._handle, listOf(_arg))
   }
 
   fun setExclude(exclude: VariantArray) {
-    val _arg = Variant.new(exclude)
+    val _arg = Variant(exclude)
     __method_bind.setExclude.call(this._handle, listOf(_arg))
   }
 
   fun setMargin(margin: Float) {
-    val _arg = Variant.new(margin)
+    val _arg = Variant(margin)
     __method_bind.setMargin.call(this._handle, listOf(_arg))
   }
 
   fun setMotion(motion: Vector2) {
-    val _arg = Variant.new(motion)
+    val _arg = Variant(motion)
     __method_bind.setMotion.call(this._handle, listOf(_arg))
   }
 
   fun setShape(shape: Resource) {
-    val _arg = Variant.new(shape)
+    val _arg = Variant(shape)
     __method_bind.setShape.call(this._handle, listOf(_arg))
   }
 
   fun setShapeRid(shape: RID) {
-    val _arg = Variant.new(shape)
+    val _arg = Variant(shape)
     __method_bind.setShapeRid.call(this._handle, listOf(_arg))
   }
 
   fun setTransform(transform: Transform2D) {
-    val _arg = Variant.new(transform)
+    val _arg = Variant(transform)
     __method_bind.setTransform.call(this._handle, listOf(_arg))
   }
 

@@ -210,12 +210,12 @@ open class Spatial(
   }
 
   fun globalScale(scale: Vector3) {
-    val _arg = Variant.new(scale)
+    val _arg = Variant(scale)
     __method_bind.globalScale.call(this._handle, listOf(_arg))
   }
 
   fun globalTranslate(offset: Vector3) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.globalTranslate.call(this._handle, listOf(_arg))
   }
 
@@ -291,42 +291,42 @@ open class Spatial(
   }
 
   fun rotateX(angle: Float) {
-    val _arg = Variant.new(angle)
+    val _arg = Variant(angle)
     __method_bind.rotateX.call(this._handle, listOf(_arg))
   }
 
   fun rotateY(angle: Float) {
-    val _arg = Variant.new(angle)
+    val _arg = Variant(angle)
     __method_bind.rotateY.call(this._handle, listOf(_arg))
   }
 
   fun rotateZ(angle: Float) {
-    val _arg = Variant.new(angle)
+    val _arg = Variant(angle)
     __method_bind.rotateZ.call(this._handle, listOf(_arg))
   }
 
   fun scaleObjectLocal(scale: Vector3) {
-    val _arg = Variant.new(scale)
+    val _arg = Variant(scale)
     __method_bind.scaleObjectLocal.call(this._handle, listOf(_arg))
   }
 
   fun setAsToplevel(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setAsToplevel.call(this._handle, listOf(_arg))
   }
 
   fun setDisableScale(disable: Boolean) {
-    val _arg = Variant.new(disable)
+    val _arg = Variant(disable)
     __method_bind.setDisableScale.call(this._handle, listOf(_arg))
   }
 
   fun setGizmo(gizmo: SpatialGizmo) {
-    val _arg = Variant.new(gizmo)
+    val _arg = Variant(gizmo)
     __method_bind.setGizmo.call(this._handle, listOf(_arg))
   }
 
   fun setGlobalTransform(global: Transform) {
-    val _arg = Variant.new(global)
+    val _arg = Variant(global)
     __method_bind.setGlobalTransform.call(this._handle, listOf(_arg))
   }
 
@@ -335,47 +335,47 @@ open class Spatial(
   }
 
   fun setIgnoreTransformNotification(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setIgnoreTransformNotification.call(this._handle, listOf(_arg))
   }
 
   fun setNotifyLocalTransform(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setNotifyLocalTransform.call(this._handle, listOf(_arg))
   }
 
   fun setNotifyTransform(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setNotifyTransform.call(this._handle, listOf(_arg))
   }
 
   fun setRotation(euler: Vector3) {
-    val _arg = Variant.new(euler)
+    val _arg = Variant(euler)
     __method_bind.setRotation.call(this._handle, listOf(_arg))
   }
 
   fun setRotationDegrees(eulerDegrees: Vector3) {
-    val _arg = Variant.new(eulerDegrees)
+    val _arg = Variant(eulerDegrees)
     __method_bind.setRotationDegrees.call(this._handle, listOf(_arg))
   }
 
   fun setScale(scale: Vector3) {
-    val _arg = Variant.new(scale)
+    val _arg = Variant(scale)
     __method_bind.setScale.call(this._handle, listOf(_arg))
   }
 
   fun setTransform(local: Transform) {
-    val _arg = Variant.new(local)
+    val _arg = Variant(local)
     __method_bind.setTransform.call(this._handle, listOf(_arg))
   }
 
   fun setTranslation(translation: Vector3) {
-    val _arg = Variant.new(translation)
+    val _arg = Variant(translation)
     __method_bind.setTranslation.call(this._handle, listOf(_arg))
   }
 
   fun setVisible(visible: Boolean) {
-    val _arg = Variant.new(visible)
+    val _arg = Variant(visible)
     __method_bind.setVisible.call(this._handle, listOf(_arg))
   }
 
@@ -384,24 +384,24 @@ open class Spatial(
   }
 
   fun toGlobal(localPoint: Vector3): Vector3 {
-    val _arg = Variant.new(localPoint)
+    val _arg = Variant(localPoint)
     val _ret = __method_bind.toGlobal.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun toLocal(globalPoint: Vector3): Vector3 {
-    val _arg = Variant.new(globalPoint)
+    val _arg = Variant(globalPoint)
     val _ret = __method_bind.toLocal.call(this._handle, listOf(_arg))
     return _ret.asVector3()
   }
 
   fun translate(offset: Vector3) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.translate.call(this._handle, listOf(_arg))
   }
 
   fun translateObjectLocal(offset: Vector3) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.translateObjectLocal.call(this._handle, listOf(_arg))
   }
 

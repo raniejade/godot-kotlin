@@ -80,17 +80,17 @@ open class TreeItem(
   }
 
   fun clearCustomBgColor(column: Int) {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     __method_bind.clearCustomBgColor.call(this._handle, listOf(_arg))
   }
 
   fun clearCustomColor(column: Int) {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     __method_bind.clearCustomColor.call(this._handle, listOf(_arg))
   }
 
   fun deselect(column: Int) {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     __method_bind.deselect.call(this._handle, listOf(_arg))
   }
 
@@ -110,7 +110,7 @@ open class TreeItem(
   }
 
   fun getButtonCount(column: Int): Int {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getButtonCount.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -124,7 +124,7 @@ open class TreeItem(
   }
 
   fun getCellMode(column: Int): TreeCellMode {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getCellMode.call(this._handle, listOf(_arg))
     return TreeItem.TreeCellMode.from(_ret.asInt())
   }
@@ -135,13 +135,13 @@ open class TreeItem(
   }
 
   fun getCustomBgColor(column: Int): Color {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getCustomBgColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getCustomColor(column: Int): Color {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getCustomColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
@@ -152,37 +152,37 @@ open class TreeItem(
   }
 
   fun getExpandRight(column: Int): Boolean {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getExpandRight.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun getIcon(column: Int): Texture {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getIcon.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun getIconMaxWidth(column: Int): Int {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getIconMaxWidth.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getIconModulate(column: Int): Color {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getIconModulate.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getIconRegion(column: Int): Rect2 {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getIconRegion.call(this._handle, listOf(_arg))
     return _ret.asRect2()
   }
 
   fun getMetadata(column: Int): Variant {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getMetadata.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -193,7 +193,7 @@ open class TreeItem(
   }
 
   fun getNextVisible(wrap: Boolean = false): TreeItem {
-    val _arg = Variant.new(wrap)
+    val _arg = Variant(wrap)
     val _ret = __method_bind.getNextVisible.call(this._handle, listOf(_arg))
     return _ret.asObject(::TreeItem)!!
   }
@@ -209,37 +209,37 @@ open class TreeItem(
   }
 
   fun getPrevVisible(wrap: Boolean = false): TreeItem {
-    val _arg = Variant.new(wrap)
+    val _arg = Variant(wrap)
     val _ret = __method_bind.getPrevVisible.call(this._handle, listOf(_arg))
     return _ret.asObject(::TreeItem)!!
   }
 
   fun getRange(column: Int): Float {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getRange.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getRangeConfig(column: Int): Dictionary {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getRangeConfig.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
 
   fun getText(column: Int): String {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getText.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getTextAlign(column: Int): TextAlign {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getTextAlign.call(this._handle, listOf(_arg))
     return TreeItem.TextAlign.from(_ret.asInt())
   }
 
   fun getTooltip(column: Int): String {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.getTooltip.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -253,7 +253,7 @@ open class TreeItem(
   }
 
   fun isChecked(column: Int): Boolean {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.isChecked.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -264,13 +264,13 @@ open class TreeItem(
   }
 
   fun isCustomSetAsButton(column: Int): Boolean {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.isCustomSetAsButton.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isEditable(column: Int): Boolean {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.isEditable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -281,13 +281,13 @@ open class TreeItem(
   }
 
   fun isSelectable(column: Int): Boolean {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.isSelectable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isSelected(column: Int): Boolean {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     val _ret = __method_bind.isSelected.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -301,12 +301,12 @@ open class TreeItem(
   }
 
   fun removeChild(child: Object) {
-    val _arg = Variant.new(child)
+    val _arg = Variant(child)
     __method_bind.removeChild.call(this._handle, listOf(_arg))
   }
 
   fun select(column: Int) {
-    val _arg = Variant.new(column)
+    val _arg = Variant(column)
     __method_bind.select.call(this._handle, listOf(_arg))
   }
 
@@ -349,7 +349,7 @@ open class TreeItem(
   }
 
   fun setCollapsed(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setCollapsed.call(this._handle, listOf(_arg))
   }
 
@@ -392,12 +392,12 @@ open class TreeItem(
   }
 
   fun setCustomMinimumHeight(height: Int) {
-    val _arg = Variant.new(height)
+    val _arg = Variant(height)
     __method_bind.setCustomMinimumHeight.call(this._handle, listOf(_arg))
   }
 
   fun setDisableFolding(disable: Boolean) {
-    val _arg = Variant.new(disable)
+    val _arg = Variant(disable)
     __method_bind.setDisableFolding.call(this._handle, listOf(_arg))
   }
 

@@ -44,7 +44,7 @@ open class EditorSpatialGizmoPlugin(
     name: String,
     texture: Texture,
     onTop: Boolean = false,
-    color: Color = Color.rgb(1,1,1,1)
+    color: Color = Color(1,1,1,1)
   ) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(name))

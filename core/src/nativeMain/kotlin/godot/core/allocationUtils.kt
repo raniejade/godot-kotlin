@@ -14,3 +14,11 @@ internal inline fun <reified K: CStructVar, T> allocType(
 
   return factory(value)
 }
+
+internal inline fun <reified K: CStructVar> allocType2(cb: MemScope.(CPointer<K>) -> Unit): CValue<K> {
+  return memScoped {
+    val instance = alloc<K>()
+    cb(this, instance.ptr)
+    instance.readValue()
+  }
+}

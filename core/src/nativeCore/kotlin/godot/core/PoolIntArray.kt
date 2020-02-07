@@ -7,6 +7,9 @@ import kotlinx.cinterop.*
 class PoolIntArray(
   value: CValue<godot_pool_int_array>
 ) : CoreType<godot_pool_int_array>(value), Iterable<Int> {
+  constructor(): this(__new())
+  constructor(from: VariantArray): this(__new(from))
+
   fun append(int: Int) {
     _value = memScoped {
       val ptr = _value.ptr
@@ -78,11 +81,11 @@ class PoolIntArray(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
-    return GDString.new("PoolIntArray(${size()})")
+    return GDString("PoolIntArray(${size()})")
   }
 
   override fun iterator(): Iterator<Int> {
@@ -90,16 +93,12 @@ class PoolIntArray(
   }
 
   companion object {
-    fun new(): PoolIntArray {
-      return allocType(::PoolIntArray) {
-        checkNotNull(Godot.gdnative.godot_pool_int_array_new)(it)
-      }
+    internal fun __new() = allocType2<godot_pool_int_array> {
+      checkNotNull(Godot.gdnative.godot_pool_int_array_new)(it)
     }
 
-    fun new(from: VariantArray): PoolIntArray {
-      return allocType(::PoolIntArray) {
-        checkNotNull(Godot.gdnative.godot_pool_int_array_new_with_array)(it, from._value.ptr)
-      }
+    internal fun __new(from: VariantArray) = allocType2<godot_pool_int_array> {
+      checkNotNull(Godot.gdnative.godot_pool_int_array_new_with_array)(it, from._value.ptr)
     }
   }
 }

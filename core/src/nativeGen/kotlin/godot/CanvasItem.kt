@@ -156,7 +156,7 @@ open class CanvasItem(
     position: Vector2,
     char: String,
     next: String,
-    modulate: Color = Color.rgb(1,1,1,1)
+    modulate: Color = Color(1,1,1,1)
   ): Float {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(font))
@@ -218,9 +218,8 @@ open class CanvasItem(
     mesh: Mesh,
     texture: Texture,
     normalMap: Texture,
-    transform: Transform2D = Transform2D.new(Vector2.new(1, 0), Vector2.new(0, 1), Vector2.new(0,
-        0)),
-    modulate: Color = Color.rgb(1,1,1,1)
+    transform: Transform2D = Transform2D(Vector2(1, 0), Vector2(0, 1), Vector2(0, 0)),
+    modulate: Color = Color(1,1,1,1)
   ) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(mesh))
@@ -364,7 +363,7 @@ open class CanvasItem(
   }
 
   fun drawSetTransformMatrix(xform: Transform2D) {
-    val _arg = Variant.new(xform)
+    val _arg = Variant(xform)
     __method_bind.drawSetTransformMatrix.call(this._handle, listOf(_arg))
   }
 
@@ -372,7 +371,7 @@ open class CanvasItem(
     font: Font,
     position: Vector2,
     text: String,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     clipW: Int = -1
   ) {
     val _args = mutableListOf<Variant>()
@@ -394,7 +393,7 @@ open class CanvasItem(
   fun drawTexture(
     texture: Texture,
     position: Vector2,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     normalMap: Texture
   ) {
     val _args = mutableListOf<Variant>()
@@ -409,7 +408,7 @@ open class CanvasItem(
     texture: Texture,
     rect: Rect2,
     tile: Boolean,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     transpose: Boolean = false,
     normalMap: Texture
   ) {
@@ -427,7 +426,7 @@ open class CanvasItem(
     texture: Texture,
     rect: Rect2,
     srcRect: Rect2,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     transpose: Boolean = false,
     normalMap: Texture,
     clipUv: Boolean = true
@@ -562,64 +561,64 @@ open class CanvasItem(
   }
 
   fun makeCanvasPositionLocal(screenPoint: Vector2): Vector2 {
-    val _arg = Variant.new(screenPoint)
+    val _arg = Variant(screenPoint)
     val _ret = __method_bind.makeCanvasPositionLocal.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun makeInputLocal(event: InputEvent): InputEvent {
-    val _arg = Variant.new(event)
+    val _arg = Variant(event)
     val _ret = __method_bind.makeInputLocal.call(this._handle, listOf(_arg))
     return _ret.asObject(::InputEvent)!!
   }
 
   fun setAsToplevel(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setAsToplevel.call(this._handle, listOf(_arg))
   }
 
   fun setDrawBehindParent(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setDrawBehindParent.call(this._handle, listOf(_arg))
   }
 
   fun setLightMask(lightMask: Int) {
-    val _arg = Variant.new(lightMask)
+    val _arg = Variant(lightMask)
     __method_bind.setLightMask.call(this._handle, listOf(_arg))
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant.new(material)
+    val _arg = Variant(material)
     __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setModulate(modulate: Color) {
-    val _arg = Variant.new(modulate)
+    val _arg = Variant(modulate)
     __method_bind.setModulate.call(this._handle, listOf(_arg))
   }
 
   fun setNotifyLocalTransform(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setNotifyLocalTransform.call(this._handle, listOf(_arg))
   }
 
   fun setNotifyTransform(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setNotifyTransform.call(this._handle, listOf(_arg))
   }
 
   fun setSelfModulate(selfModulate: Color) {
-    val _arg = Variant.new(selfModulate)
+    val _arg = Variant(selfModulate)
     __method_bind.setSelfModulate.call(this._handle, listOf(_arg))
   }
 
   fun setUseParentMaterial(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setUseParentMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setVisible(visible: Boolean) {
-    val _arg = Variant.new(visible)
+    val _arg = Variant(visible)
     __method_bind.setVisible.call(this._handle, listOf(_arg))
   }
 

@@ -230,49 +230,49 @@ open class ItemList(
   }
 
   fun getItemCustomBgColor(idx: Int): Color {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemCustomBgColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getItemCustomFgColor(idx: Int): Color {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemCustomFgColor.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getItemIcon(idx: Int): Texture {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemIcon.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemIconModulate(idx: Int): Color {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemIconModulate.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getItemIconRegion(idx: Int): Rect2 {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemIconRegion.call(this._handle, listOf(_arg))
     return _ret.asRect2()
   }
 
   fun getItemMetadata(idx: Int): Variant {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemMetadata.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getItemText(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemText.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getItemTooltip(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemTooltip.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -313,25 +313,25 @@ open class ItemList(
   }
 
   fun isItemDisabled(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemIconTransposed(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemIconTransposed.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemSelectable(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemSelectable.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isItemTooltipEnabled(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemTooltipEnabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -342,7 +342,7 @@ open class ItemList(
   }
 
   fun isSelected(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isSelected.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -355,7 +355,7 @@ open class ItemList(
   }
 
   fun removeItem(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.removeItem.call(this._handle, listOf(_arg))
   }
 
@@ -367,37 +367,37 @@ open class ItemList(
   }
 
   fun setAllowReselect(allow: Boolean) {
-    val _arg = Variant.new(allow)
+    val _arg = Variant(allow)
     __method_bind.setAllowReselect.call(this._handle, listOf(_arg))
   }
 
   fun setAllowRmbSelect(allow: Boolean) {
-    val _arg = Variant.new(allow)
+    val _arg = Variant(allow)
     __method_bind.setAllowRmbSelect.call(this._handle, listOf(_arg))
   }
 
   fun setAutoHeight(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setAutoHeight.call(this._handle, listOf(_arg))
   }
 
   fun setFixedColumnWidth(width: Int) {
-    val _arg = Variant.new(width)
+    val _arg = Variant(width)
     __method_bind.setFixedColumnWidth.call(this._handle, listOf(_arg))
   }
 
   fun setFixedIconSize(size: Vector2) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setFixedIconSize.call(this._handle, listOf(_arg))
   }
 
   fun setIconMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setIconMode.call(this._handle, listOf(_arg))
   }
 
   fun setIconScale(scale: Float) {
-    val _arg = Variant.new(scale)
+    val _arg = Variant(scale)
     __method_bind.setIconScale.call(this._handle, listOf(_arg))
   }
 
@@ -486,22 +486,22 @@ open class ItemList(
   }
 
   fun setMaxColumns(amount: Int) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setMaxColumns.call(this._handle, listOf(_arg))
   }
 
   fun setMaxTextLines(lines: Int) {
-    val _arg = Variant.new(lines)
+    val _arg = Variant(lines)
     __method_bind.setMaxTextLines.call(this._handle, listOf(_arg))
   }
 
   fun setSameColumnWidth(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setSameColumnWidth.call(this._handle, listOf(_arg))
   }
 
   fun setSelectMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setSelectMode.call(this._handle, listOf(_arg))
   }
 
@@ -510,7 +510,7 @@ open class ItemList(
   }
 
   fun unselect(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.unselect.call(this._handle, listOf(_arg))
   }
 

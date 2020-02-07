@@ -89,27 +89,27 @@ open class EditorPlugin(
   }
 
   fun addExportPlugin(plugin: EditorExportPlugin) {
-    val _arg = Variant.new(plugin)
+    val _arg = Variant(plugin)
     __method_bind.addExportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun addImportPlugin(importer: EditorImportPlugin) {
-    val _arg = Variant.new(importer)
+    val _arg = Variant(importer)
     __method_bind.addImportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun addInspectorPlugin(plugin: EditorInspectorPlugin) {
-    val _arg = Variant.new(plugin)
+    val _arg = Variant(plugin)
     __method_bind.addInspectorPlugin.call(this._handle, listOf(_arg))
   }
 
   fun addSceneImportPlugin(sceneImporter: EditorSceneImporter) {
-    val _arg = Variant.new(sceneImporter)
+    val _arg = Variant(sceneImporter)
     __method_bind.addSceneImportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun addSpatialGizmoPlugin(plugin: EditorSpatialGizmoPlugin) {
-    val _arg = Variant.new(plugin)
+    val _arg = Variant(plugin)
     __method_bind.addSpatialGizmoPlugin.call(this._handle, listOf(_arg))
   }
 
@@ -154,7 +154,7 @@ open class EditorPlugin(
   }
 
   fun makeBottomPanelItemVisible(item: Control) {
-    val _arg = Variant.new(item)
+    val _arg = Variant(item)
     __method_bind.makeBottomPanelItemVisible.call(this._handle, listOf(_arg))
   }
 
@@ -163,12 +163,12 @@ open class EditorPlugin(
   }
 
   fun removeAutoloadSingleton(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.removeAutoloadSingleton.call(this._handle, listOf(_arg))
   }
 
   fun removeControlFromBottomPanel(control: Control) {
-    val _arg = Variant.new(control)
+    val _arg = Variant(control)
     __method_bind.removeControlFromBottomPanel.call(this._handle, listOf(_arg))
   }
 
@@ -180,42 +180,42 @@ open class EditorPlugin(
   }
 
   fun removeControlFromDocks(control: Control) {
-    val _arg = Variant.new(control)
+    val _arg = Variant(control)
     __method_bind.removeControlFromDocks.call(this._handle, listOf(_arg))
   }
 
   fun removeCustomType(type: String) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.removeCustomType.call(this._handle, listOf(_arg))
   }
 
   fun removeExportPlugin(plugin: EditorExportPlugin) {
-    val _arg = Variant.new(plugin)
+    val _arg = Variant(plugin)
     __method_bind.removeExportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun removeImportPlugin(importer: EditorImportPlugin) {
-    val _arg = Variant.new(importer)
+    val _arg = Variant(importer)
     __method_bind.removeImportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun removeInspectorPlugin(plugin: EditorInspectorPlugin) {
-    val _arg = Variant.new(plugin)
+    val _arg = Variant(plugin)
     __method_bind.removeInspectorPlugin.call(this._handle, listOf(_arg))
   }
 
   fun removeSceneImportPlugin(sceneImporter: EditorSceneImporter) {
-    val _arg = Variant.new(sceneImporter)
+    val _arg = Variant(sceneImporter)
     __method_bind.removeSceneImportPlugin.call(this._handle, listOf(_arg))
   }
 
   fun removeSpatialGizmoPlugin(plugin: EditorSpatialGizmoPlugin) {
-    val _arg = Variant.new(plugin)
+    val _arg = Variant(plugin)
     __method_bind.removeSpatialGizmoPlugin.call(this._handle, listOf(_arg))
   }
 
   fun removeToolMenuItem(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.removeToolMenuItem.call(this._handle, listOf(_arg))
   }
 

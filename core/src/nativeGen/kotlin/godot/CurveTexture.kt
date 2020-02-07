@@ -47,12 +47,12 @@ open class CurveTexture(
   }
 
   fun setCurve(curve: Curve) {
-    val _arg = Variant.new(curve)
+    val _arg = Variant(curve)
     __method_bind.setCurve.call(this._handle, listOf(_arg))
   }
 
   fun setWidth(width: Int) {
-    val _arg = Variant.new(width)
+    val _arg = Variant(width)
     __method_bind.setWidth.call(this._handle, listOf(_arg))
   }
 

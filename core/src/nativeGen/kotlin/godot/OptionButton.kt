@@ -69,31 +69,31 @@ open class OptionButton(
   }
 
   fun getItemIcon(idx: Int): Texture {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemIcon.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemId(idx: Int): Int {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getItemIndex(id: Int): Int {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getItemIndex.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
 
   fun getItemMetadata(idx: Int): Variant {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemMetadata.call(this._handle, listOf(_arg))
     return _ret
   }
 
   fun getItemText(idx: Int): String {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getItemText.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -119,18 +119,18 @@ open class OptionButton(
   }
 
   fun isItemDisabled(idx: Int): Boolean {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.isItemDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeItem(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.removeItem.call(this._handle, listOf(_arg))
   }
 
   fun select(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.select.call(this._handle, listOf(_arg))
   }
 

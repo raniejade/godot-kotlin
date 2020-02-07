@@ -102,7 +102,7 @@ open class Shape2D(
   }
 
   fun setCustomSolverBias(bias: Float) {
-    val _arg = Variant.new(bias)
+    val _arg = Variant(bias)
     __method_bind.setCustomSolverBias.call(this._handle, listOf(_arg))
   }
 

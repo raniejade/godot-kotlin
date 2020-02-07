@@ -84,7 +84,7 @@ open class StreamPeerSSL(
   }
 
   fun setBlockingHandshakeEnabled(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setBlockingHandshakeEnabled.call(this._handle, listOf(_arg))
   }
 

@@ -566,24 +566,24 @@ open class AnimationNodeTransition(
   }
 
   fun getInputCaption(input: Int): String {
-    val _arg = Variant.new(input)
+    val _arg = Variant(input)
     val _ret = __method_bind.getInputCaption.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun isInputSetAsAutoAdvance(input: Int): Boolean {
-    val _arg = Variant.new(input)
+    val _arg = Variant(input)
     val _ret = __method_bind.isInputSetAsAutoAdvance.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setCrossFadeTime(time: Float) {
-    val _arg = Variant.new(time)
+    val _arg = Variant(time)
     __method_bind.setCrossFadeTime.call(this._handle, listOf(_arg))
   }
 
   fun setEnabledInputs(amount: Int) {
-    val _arg = Variant.new(amount)
+    val _arg = Variant(amount)
     __method_bind.setEnabledInputs.call(this._handle, listOf(_arg))
   }
 

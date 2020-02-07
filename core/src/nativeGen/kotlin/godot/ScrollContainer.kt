@@ -125,32 +125,32 @@ open class ScrollContainer(
   }
 
   fun setDeadzone(deadzone: Int) {
-    val _arg = Variant.new(deadzone)
+    val _arg = Variant(deadzone)
     __method_bind.setDeadzone.call(this._handle, listOf(_arg))
   }
 
   fun setEnableHScroll(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setEnableHScroll.call(this._handle, listOf(_arg))
   }
 
   fun setEnableVScroll(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setEnableVScroll.call(this._handle, listOf(_arg))
   }
 
   fun setFollowFocus(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setFollowFocus.call(this._handle, listOf(_arg))
   }
 
   fun setHScroll(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setHScroll.call(this._handle, listOf(_arg))
   }
 
   fun setVScroll(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.setVScroll.call(this._handle, listOf(_arg))
   }
 

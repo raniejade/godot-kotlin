@@ -50,12 +50,12 @@ open class VisualScriptLists(
   }
 
   fun removeInputDataPort(index: Int) {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     __method_bind.removeInputDataPort.call(this._handle, listOf(_arg))
   }
 
   fun removeOutputDataPort(index: Int) {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     __method_bind.removeOutputDataPort.call(this._handle, listOf(_arg))
   }
 

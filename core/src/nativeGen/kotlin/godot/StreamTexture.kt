@@ -39,7 +39,7 @@ open class StreamTexture(
   }
 
   fun load(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.load.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

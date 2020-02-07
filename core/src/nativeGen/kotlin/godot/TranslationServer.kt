@@ -21,7 +21,7 @@ open class TranslationServer(
   __ignore: String?
 ) : Object(null) {
   fun addTranslation(translation: Translation) {
-    val _arg = Variant.new(translation)
+    val _arg = Variant(translation)
     __method_bind.addTranslation.call(this._handle, listOf(_arg))
   }
 
@@ -40,23 +40,23 @@ open class TranslationServer(
   }
 
   fun getLocaleName(locale: String): String {
-    val _arg = Variant.new(locale)
+    val _arg = Variant(locale)
     val _ret = __method_bind.getLocaleName.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun removeTranslation(translation: Translation) {
-    val _arg = Variant.new(translation)
+    val _arg = Variant(translation)
     __method_bind.removeTranslation.call(this._handle, listOf(_arg))
   }
 
   fun setLocale(locale: String) {
-    val _arg = Variant.new(locale)
+    val _arg = Variant(locale)
     __method_bind.setLocale.call(this._handle, listOf(_arg))
   }
 
   fun translate(message: String): String {
-    val _arg = Variant.new(message)
+    val _arg = Variant(message)
     val _ret = __method_bind.translate.call(this._handle, listOf(_arg))
     return _ret.asString()
   }

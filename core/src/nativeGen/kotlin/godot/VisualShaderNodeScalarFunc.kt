@@ -39,7 +39,7 @@ open class VisualShaderNodeScalarFunc(
   }
 
   fun setFunction(func: Int) {
-    val _arg = Variant.new(func)
+    val _arg = Variant(func)
     __method_bind.setFunction.call(this._handle, listOf(_arg))
   }
 

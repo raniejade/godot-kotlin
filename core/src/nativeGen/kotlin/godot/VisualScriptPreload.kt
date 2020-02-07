@@ -38,7 +38,7 @@ open class VisualScriptPreload(
   }
 
   fun setPreload(resource: Resource) {
-    val _arg = Variant.new(resource)
+    val _arg = Variant(resource)
     __method_bind.setPreload.call(this._handle, listOf(_arg))
   }
 

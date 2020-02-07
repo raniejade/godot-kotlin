@@ -90,7 +90,7 @@ open class WebRTCDataChannel(
   }
 
   fun setWriteMode(writeMode: Int) {
-    val _arg = Variant.new(writeMode)
+    val _arg = Variant(writeMode)
     __method_bind.setWriteMode.call(this._handle, listOf(_arg))
   }
 

@@ -45,17 +45,17 @@ open class SpatialVelocityTracker(
   }
 
   fun reset(position: Vector3) {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     __method_bind.reset.call(this._handle, listOf(_arg))
   }
 
   fun setTrackPhysicsStep(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setTrackPhysicsStep.call(this._handle, listOf(_arg))
   }
 
   fun updatePosition(position: Vector3) {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     __method_bind.updatePosition.call(this._handle, listOf(_arg))
   }
 

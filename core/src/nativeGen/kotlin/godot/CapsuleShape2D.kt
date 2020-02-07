@@ -52,12 +52,12 @@ open class CapsuleShape2D(
   }
 
   fun setHeight(height: Float) {
-    val _arg = Variant.new(height)
+    val _arg = Variant(height)
     __method_bind.setHeight.call(this._handle, listOf(_arg))
   }
 
   fun setRadius(radius: Float) {
-    val _arg = Variant.new(radius)
+    val _arg = Variant(radius)
     __method_bind.setRadius.call(this._handle, listOf(_arg))
   }
 

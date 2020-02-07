@@ -7,6 +7,9 @@ import kotlinx.cinterop.*
 class Vector3(
   value: CValue<godot_vector3>
 ): CoreType<godot_vector3>(value) {
+  constructor(x: Float = 0f, y: Float = 0f, z: Float = 0f): this(__new(x, y, z))
+  constructor(x: Int, y: Int, z: Int): this(x.toFloat(), y.toFloat(), z.toFloat())
+
   enum class Axis(val value: Int, internal val axis: godot_vector3_axis) {
     X(0, godot_vector3_axis.GODOT_VECTOR3_AXIS_X),
     Y(1, godot_vector3_axis.GODOT_VECTOR3_AXIS_Y),
@@ -247,7 +250,7 @@ class Vector3(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
@@ -346,24 +349,27 @@ class Vector3(
   }
 
   companion object {
-    val ZERO = new()
-    val ONE = new(1f, 1f, 0f)
-    val INF = new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
-    val LEFT = new(-1f, 0f, 0f)
-    val RIGHT = new(1f, 0f, 0f)
-    val UP = new(0f, -1f, 0f)
-    val DOWN = new(0f, 1f, 0f)
-    val FORWARD = new(0f, 0f, -1f)
-    val BACK = new(0f, 0f, 1f)
+    val ZERO: Vector3
+      get() = Vector3()
+    val ONE: Vector3
+      get() = Vector3(1f, 1f, 0f)
+    val INF: Vector3
+      get() = Vector3(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
+    val LEFT: Vector3
+      get() = Vector3(-1f, 0f, 0f)
+    val RIGHT: Vector3
+      get() = Vector3(1f, 0f, 0f)
+    val UP: Vector3
+      get() = Vector3(0f, -1f, 0f)
+    val DOWN: Vector3
+      get() = Vector3(0f, 1f, 0f)
+    val FORWARD: Vector3
+      get() = Vector3(0f, 0f, -1f)
+    val BACK: Vector3
+      get() = Vector3(0f, 0f, 1f)
 
-    fun new(x: Float = 0f, y: Float = 0f, z: Float = 0f): Vector3 {
-      return allocType(::Vector3) {
-        checkNotNull(Godot.gdnative.godot_vector3_new)(it, x, y, z)
-      }
-    }
-
-    fun new(x: Int, y: Int, z: Int): Vector3 {
-      return new(x.toFloat(), y.toFloat(), z.toFloat())
+    internal fun __new(x: Float, y: Float, z: Float) = allocType2<godot_vector3> {
+      checkNotNull(Godot.gdnative.godot_vector3_new)(it, x, y, z)
     }
   }
 }

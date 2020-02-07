@@ -43,7 +43,7 @@ open class PhysicsBody(
   }
 
   fun addCollisionExceptionWith(body: Node) {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     __method_bind.addCollisionExceptionWith.call(this._handle, listOf(_arg))
   }
 
@@ -58,7 +58,7 @@ open class PhysicsBody(
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
-    val _arg = Variant.new(bit)
+    val _arg = Variant(bit)
     val _ret = __method_bind.getCollisionLayerBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -69,18 +69,18 @@ open class PhysicsBody(
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant.new(bit)
+    val _arg = Variant(bit)
     val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removeCollisionExceptionWith(body: Node) {
-    val _arg = Variant.new(body)
+    val _arg = Variant(body)
     __method_bind.removeCollisionExceptionWith.call(this._handle, listOf(_arg))
   }
 
   fun setCollisionLayer(layer: Int) {
-    val _arg = Variant.new(layer)
+    val _arg = Variant(layer)
     __method_bind.setCollisionLayer.call(this._handle, listOf(_arg))
   }
 
@@ -92,7 +92,7 @@ open class PhysicsBody(
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
   }
 

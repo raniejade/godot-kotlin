@@ -48,7 +48,7 @@ open class VisualShaderNodeInput(
   }
 
   fun setInputName(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setInputName.call(this._handle, listOf(_arg))
   }
 

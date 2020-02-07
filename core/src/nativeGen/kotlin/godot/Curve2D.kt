@@ -39,8 +39,8 @@ open class Curve2D(
 
   fun addPoint(
     position: Vector2,
-    `in`: Vector2 = Vector2.new(0, 0),
-    out: Vector2 = Vector2.new(0, 0),
+    `in`: Vector2 = Vector2(0, 0),
+    out: Vector2 = Vector2(0, 0),
     atPosition: Int = -1
   ) {
     val _args = mutableListOf<Variant>()
@@ -71,13 +71,13 @@ open class Curve2D(
   }
 
   fun getClosestOffset(toPoint: Vector2): Float {
-    val _arg = Variant.new(toPoint)
+    val _arg = Variant(toPoint)
     val _ret = __method_bind.getClosestOffset.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
 
   fun getClosestPoint(toPoint: Vector2): Vector2 {
-    val _arg = Variant.new(toPoint)
+    val _arg = Variant(toPoint)
     val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
@@ -88,19 +88,19 @@ open class Curve2D(
   }
 
   fun getPointIn(idx: Int): Vector2 {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPointIn.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getPointOut(idx: Int): Vector2 {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPointOut.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getPointPosition(idx: Int): Vector2 {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
@@ -122,18 +122,18 @@ open class Curve2D(
   }
 
   fun interpolatef(fofs: Float): Vector2 {
-    val _arg = Variant.new(fofs)
+    val _arg = Variant(fofs)
     val _ret = __method_bind.interpolatef.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun removePoint(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.removePoint.call(this._handle, listOf(_arg))
   }
 
   fun setBakeInterval(distance: Float) {
-    val _arg = Variant.new(distance)
+    val _arg = Variant(distance)
     __method_bind.setBakeInterval.call(this._handle, listOf(_arg))
   }
 

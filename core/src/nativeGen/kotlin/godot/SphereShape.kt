@@ -39,7 +39,7 @@ open class SphereShape(
   }
 
   fun setRadius(radius: Float) {
-    val _arg = Variant.new(radius)
+    val _arg = Variant(radius)
     __method_bind.setRadius.call(this._handle, listOf(_arg))
   }
 

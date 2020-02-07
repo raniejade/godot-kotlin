@@ -46,7 +46,7 @@ open class NavigationPolygon(
   }
 
   fun addOutline(outline: PoolVector2Array) {
-    val _arg = Variant.new(outline)
+    val _arg = Variant(outline)
     __method_bind.addOutline.call(this._handle, listOf(_arg))
   }
 
@@ -58,7 +58,7 @@ open class NavigationPolygon(
   }
 
   fun addPolygon(polygon: PoolIntArray) {
-    val _arg = Variant.new(polygon)
+    val _arg = Variant(polygon)
     __method_bind.addPolygon.call(this._handle, listOf(_arg))
   }
 
@@ -71,7 +71,7 @@ open class NavigationPolygon(
   }
 
   fun getOutline(idx: Int): PoolVector2Array {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getOutline.call(this._handle, listOf(_arg))
     return _ret.asPoolVector2Array()
   }
@@ -82,7 +82,7 @@ open class NavigationPolygon(
   }
 
   fun getPolygon(idx: Int): PoolIntArray {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getPolygon.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
@@ -102,7 +102,7 @@ open class NavigationPolygon(
   }
 
   fun removeOutline(idx: Int) {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     __method_bind.removeOutline.call(this._handle, listOf(_arg))
   }
 
@@ -114,7 +114,7 @@ open class NavigationPolygon(
   }
 
   fun setVertices(vertices: PoolVector2Array) {
-    val _arg = Variant.new(vertices)
+    val _arg = Variant(vertices)
     __method_bind.setVertices.call(this._handle, listOf(_arg))
   }
 

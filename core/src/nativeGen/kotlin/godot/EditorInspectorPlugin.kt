@@ -26,7 +26,7 @@ open class EditorInspectorPlugin(
   }
 
   fun addCustomControl(control: Control) {
-    val _arg = Variant.new(control)
+    val _arg = Variant(control)
     __method_bind.addCustomControl.call(this._handle, listOf(_arg))
   }
 

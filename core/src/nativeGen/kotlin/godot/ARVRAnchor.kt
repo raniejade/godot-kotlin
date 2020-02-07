@@ -72,7 +72,7 @@ open class ARVRAnchor(
   }
 
   fun setAnchorId(anchorId: Int) {
-    val _arg = Variant.new(anchorId)
+    val _arg = Variant(anchorId)
     __method_bind.setAnchorId.call(this._handle, listOf(_arg))
   }
 

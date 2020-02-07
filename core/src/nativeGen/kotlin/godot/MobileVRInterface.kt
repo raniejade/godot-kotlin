@@ -117,37 +117,37 @@ open class MobileVRInterface(
   }
 
   fun setDisplayToLens(displayToLens: Float) {
-    val _arg = Variant.new(displayToLens)
+    val _arg = Variant(displayToLens)
     __method_bind.setDisplayToLens.call(this._handle, listOf(_arg))
   }
 
   fun setDisplayWidth(displayWidth: Float) {
-    val _arg = Variant.new(displayWidth)
+    val _arg = Variant(displayWidth)
     __method_bind.setDisplayWidth.call(this._handle, listOf(_arg))
   }
 
   fun setEyeHeight(eyeHeight: Float) {
-    val _arg = Variant.new(eyeHeight)
+    val _arg = Variant(eyeHeight)
     __method_bind.setEyeHeight.call(this._handle, listOf(_arg))
   }
 
   fun setIod(iod: Float) {
-    val _arg = Variant.new(iod)
+    val _arg = Variant(iod)
     __method_bind.setIod.call(this._handle, listOf(_arg))
   }
 
   fun setK1(k: Float) {
-    val _arg = Variant.new(k)
+    val _arg = Variant(k)
     __method_bind.setK1.call(this._handle, listOf(_arg))
   }
 
   fun setK2(k: Float) {
-    val _arg = Variant.new(k)
+    val _arg = Variant(k)
     __method_bind.setK2.call(this._handle, listOf(_arg))
   }
 
   fun setOversample(oversample: Float) {
-    val _arg = Variant.new(oversample)
+    val _arg = Variant(oversample)
     __method_bind.setOversample.call(this._handle, listOf(_arg))
   }
 

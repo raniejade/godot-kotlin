@@ -79,22 +79,22 @@ open class CapsuleMesh(
   }
 
   fun setMidHeight(midHeight: Float) {
-    val _arg = Variant.new(midHeight)
+    val _arg = Variant(midHeight)
     __method_bind.setMidHeight.call(this._handle, listOf(_arg))
   }
 
   fun setRadialSegments(segments: Int) {
-    val _arg = Variant.new(segments)
+    val _arg = Variant(segments)
     __method_bind.setRadialSegments.call(this._handle, listOf(_arg))
   }
 
   fun setRadius(radius: Float) {
-    val _arg = Variant.new(radius)
+    val _arg = Variant(radius)
     __method_bind.setRadius.call(this._handle, listOf(_arg))
   }
 
   fun setRings(rings: Int) {
-    val _arg = Variant.new(rings)
+    val _arg = Variant(rings)
     __method_bind.setRings.call(this._handle, listOf(_arg))
   }
 

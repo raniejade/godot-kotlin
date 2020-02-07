@@ -39,7 +39,7 @@ open class VisualScriptSelect(
   }
 
   fun setTyped(type: Int) {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     __method_bind.setTyped.call(this._handle, listOf(_arg))
   }
 

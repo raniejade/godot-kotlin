@@ -49,7 +49,7 @@ open class InputEventGesture(
   }
 
   fun setPosition(position: Vector2) {
-    val _arg = Variant.new(position)
+    val _arg = Variant(position)
     __method_bind.setPosition.call(this._handle, listOf(_arg))
   }
 

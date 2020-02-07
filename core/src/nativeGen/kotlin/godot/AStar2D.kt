@@ -87,7 +87,7 @@ open class AStar2D(
   }
 
   fun getClosestPositionInSegment(toPosition: Vector2): Vector2 {
-    val _arg = Variant.new(toPosition)
+    val _arg = Variant(toPosition)
     val _ret = __method_bind.getClosestPositionInSegment.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
@@ -106,7 +106,7 @@ open class AStar2D(
   }
 
   fun getPointConnections(id: Int): PoolIntArray {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getPointConnections.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
@@ -125,13 +125,13 @@ open class AStar2D(
   }
 
   fun getPointPosition(id: Int): Vector2 {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
     return _ret.asVector2()
   }
 
   fun getPointWeightScale(id: Int): Float {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getPointWeightScale.call(this._handle, listOf(_arg))
     return _ret.asFloat()
   }
@@ -142,24 +142,24 @@ open class AStar2D(
   }
 
   fun hasPoint(id: Int): Boolean {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.hasPoint.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun isPointDisabled(id: Int): Boolean {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.isPointDisabled.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun removePoint(id: Int) {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     __method_bind.removePoint.call(this._handle, listOf(_arg))
   }
 
   fun reserveSpace(numNodes: Int) {
-    val _arg = Variant.new(numNodes)
+    val _arg = Variant(numNodes)
     __method_bind.reserveSpace.call(this._handle, listOf(_arg))
   }
 

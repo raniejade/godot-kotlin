@@ -51,12 +51,12 @@ open class CSGMesh(
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant.new(material)
+    val _arg = Variant(material)
     __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setMesh(mesh: Mesh) {
-    val _arg = Variant.new(mesh)
+    val _arg = Variant(mesh)
     __method_bind.setMesh.call(this._handle, listOf(_arg))
   }
 

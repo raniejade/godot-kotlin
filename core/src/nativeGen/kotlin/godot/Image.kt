@@ -85,7 +85,7 @@ open class Image(
   }
 
   fun bumpmapToNormalmap(bumpScale: Float = 1.0f) {
-    val _arg = Variant.new(bumpScale)
+    val _arg = Variant(bumpScale)
     __method_bind.bumpmapToNormalmap.call(this._handle, listOf(_arg))
   }
 
@@ -107,12 +107,12 @@ open class Image(
   }
 
   fun convert(format: Int) {
-    val _arg = Variant.new(format)
+    val _arg = Variant(format)
     __method_bind.convert.call(this._handle, listOf(_arg))
   }
 
   fun copyFrom(src: Image) {
-    val _arg = Variant.new(src)
+    val _arg = Variant(src)
     __method_bind.copyFrom.call(this._handle, listOf(_arg))
   }
 
@@ -168,7 +168,7 @@ open class Image(
   }
 
   fun fill(color: Color) {
-    val _arg = Variant.new(color)
+    val _arg = Variant(color)
     __method_bind.fill.call(this._handle, listOf(_arg))
   }
 
@@ -185,7 +185,7 @@ open class Image(
   }
 
   fun generateMipmaps(renormalize: Boolean = false): GDError {
-    val _arg = Variant.new(renormalize)
+    val _arg = Variant(renormalize)
     val _ret = __method_bind.generateMipmaps.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
@@ -206,7 +206,7 @@ open class Image(
   }
 
   fun getMipmapOffset(mipmap: Int): Int {
-    val _arg = Variant.new(mipmap)
+    val _arg = Variant(mipmap)
     val _ret = __method_bind.getMipmapOffset.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -220,13 +220,13 @@ open class Image(
   }
 
   fun getPixelv(src: Vector2): Color {
-    val _arg = Variant.new(src)
+    val _arg = Variant(src)
     val _ret = __method_bind.getPixelv.call(this._handle, listOf(_arg))
     return _ret.asColor()
   }
 
   fun getRect(rect: Rect2): Image {
-    val _arg = Variant.new(rect)
+    val _arg = Variant(rect)
     val _ret = __method_bind.getRect.call(this._handle, listOf(_arg))
     return _ret.asObject(::Image)!!
   }
@@ -267,25 +267,25 @@ open class Image(
   }
 
   fun load(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.load.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun loadJpgFromBuffer(buffer: PoolByteArray): GDError {
-    val _arg = Variant.new(buffer)
+    val _arg = Variant(buffer)
     val _ret = __method_bind.loadJpgFromBuffer.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun loadPngFromBuffer(buffer: PoolByteArray): GDError {
-    val _arg = Variant.new(buffer)
+    val _arg = Variant(buffer)
     val _ret = __method_bind.loadPngFromBuffer.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun loadWebpFromBuffer(buffer: PoolByteArray): GDError {
-    val _arg = Variant.new(buffer)
+    val _arg = Variant(buffer)
     val _ret = __method_bind.loadWebpFromBuffer.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
@@ -315,7 +315,7 @@ open class Image(
   }
 
   fun resizeToPo2(square: Boolean = false) {
-    val _arg = Variant.new(square)
+    val _arg = Variant(square)
     __method_bind.resizeToPo2.call(this._handle, listOf(_arg))
   }
 
@@ -333,7 +333,7 @@ open class Image(
   }
 
   fun savePng(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.savePng.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }

@@ -46,7 +46,7 @@ open class WebRTCMultiplayer(
   }
 
   fun getPeer(peerId: Int): Dictionary {
-    val _arg = Variant.new(peerId)
+    val _arg = Variant(peerId)
     val _ret = __method_bind.getPeer.call(this._handle, listOf(_arg))
     return _ret.asDictionary()
   }
@@ -57,7 +57,7 @@ open class WebRTCMultiplayer(
   }
 
   fun hasPeer(peerId: Int): Boolean {
-    val _arg = Variant.new(peerId)
+    val _arg = Variant(peerId)
     val _ret = __method_bind.hasPeer.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -71,7 +71,7 @@ open class WebRTCMultiplayer(
   }
 
   fun removePeer(peerId: Int) {
-    val _arg = Variant.new(peerId)
+    val _arg = Variant(peerId)
     __method_bind.removePeer.call(this._handle, listOf(_arg))
   }
 

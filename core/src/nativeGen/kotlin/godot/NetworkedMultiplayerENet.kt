@@ -68,7 +68,7 @@ open class NetworkedMultiplayerENet(
   }
 
   fun closeConnection(waitUsec: Int = 100) {
-    val _arg = Variant.new(waitUsec)
+    val _arg = Variant(waitUsec)
     __method_bind.closeConnection.call(this._handle, listOf(_arg))
   }
 
@@ -132,13 +132,13 @@ open class NetworkedMultiplayerENet(
   }
 
   fun getPeerAddress(id: Int): String {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getPeerAddress.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getPeerPort(id: Int): Int {
-    val _arg = Variant.new(id)
+    val _arg = Variant(id)
     val _ret = __method_bind.getPeerPort.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -159,32 +159,32 @@ open class NetworkedMultiplayerENet(
   }
 
   fun setAlwaysOrdered(ordered: Boolean) {
-    val _arg = Variant.new(ordered)
+    val _arg = Variant(ordered)
     __method_bind.setAlwaysOrdered.call(this._handle, listOf(_arg))
   }
 
   fun setBindIp(ip: String) {
-    val _arg = Variant.new(ip)
+    val _arg = Variant(ip)
     __method_bind.setBindIp.call(this._handle, listOf(_arg))
   }
 
   fun setChannelCount(channels: Int) {
-    val _arg = Variant.new(channels)
+    val _arg = Variant(channels)
     __method_bind.setChannelCount.call(this._handle, listOf(_arg))
   }
 
   fun setCompressionMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setCompressionMode.call(this._handle, listOf(_arg))
   }
 
   fun setServerRelayEnabled(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setServerRelayEnabled.call(this._handle, listOf(_arg))
   }
 
   fun setTransferChannel(channel: Int) {
-    val _arg = Variant.new(channel)
+    val _arg = Variant(channel)
     __method_bind.setTransferChannel.call(this._handle, listOf(_arg))
   }
 

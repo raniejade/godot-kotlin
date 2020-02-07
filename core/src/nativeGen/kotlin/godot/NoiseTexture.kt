@@ -96,32 +96,32 @@ open class NoiseTexture(
   }
 
   fun setAsNormalmap(asNormalmap: Boolean) {
-    val _arg = Variant.new(asNormalmap)
+    val _arg = Variant(asNormalmap)
     __method_bind.setAsNormalmap.call(this._handle, listOf(_arg))
   }
 
   fun setBumpStrength(bumpStrength: Float) {
-    val _arg = Variant.new(bumpStrength)
+    val _arg = Variant(bumpStrength)
     __method_bind.setBumpStrength.call(this._handle, listOf(_arg))
   }
 
   fun setHeight(height: Int) {
-    val _arg = Variant.new(height)
+    val _arg = Variant(height)
     __method_bind.setHeight.call(this._handle, listOf(_arg))
   }
 
   fun setNoise(noise: OpenSimplexNoise) {
-    val _arg = Variant.new(noise)
+    val _arg = Variant(noise)
     __method_bind.setNoise.call(this._handle, listOf(_arg))
   }
 
   fun setSeamless(seamless: Boolean) {
-    val _arg = Variant.new(seamless)
+    val _arg = Variant(seamless)
     __method_bind.setSeamless.call(this._handle, listOf(_arg))
   }
 
   fun setWidth(width: Int) {
-    val _arg = Variant.new(width)
+    val _arg = Variant(width)
     __method_bind.setWidth.call(this._handle, listOf(_arg))
   }
 

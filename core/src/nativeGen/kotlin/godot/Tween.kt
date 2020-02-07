@@ -279,28 +279,28 @@ open class Tween(
   }
 
   fun seek(time: Float): Boolean {
-    val _arg = Variant.new(time)
+    val _arg = Variant(time)
     val _ret = __method_bind.seek.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setActive(active: Boolean) {
-    val _arg = Variant.new(active)
+    val _arg = Variant(active)
     __method_bind.setActive.call(this._handle, listOf(_arg))
   }
 
   fun setRepeat(repeat: Boolean) {
-    val _arg = Variant.new(repeat)
+    val _arg = Variant(repeat)
     __method_bind.setRepeat.call(this._handle, listOf(_arg))
   }
 
   fun setSpeedScale(speed: Float) {
-    val _arg = Variant.new(speed)
+    val _arg = Variant(speed)
     __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
   }
 
   fun setTweenProcessMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setTweenProcessMode.call(this._handle, listOf(_arg))
   }
 

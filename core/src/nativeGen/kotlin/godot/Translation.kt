@@ -42,7 +42,7 @@ open class Translation(
   }
 
   fun eraseMessage(srcMessage: String) {
-    val _arg = Variant.new(srcMessage)
+    val _arg = Variant(srcMessage)
     __method_bind.eraseMessage.call(this._handle, listOf(_arg))
   }
 
@@ -52,7 +52,7 @@ open class Translation(
   }
 
   fun getMessage(srcMessage: String): String {
-    val _arg = Variant.new(srcMessage)
+    val _arg = Variant(srcMessage)
     val _ret = __method_bind.getMessage.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -68,7 +68,7 @@ open class Translation(
   }
 
   fun setLocale(locale: String) {
-    val _arg = Variant.new(locale)
+    val _arg = Variant(locale)
     __method_bind.setLocale.call(this._handle, listOf(_arg))
   }
 

@@ -6,6 +6,12 @@ import kotlinx.cinterop.*
 class Transform(
   value: CValue<godot_transform>
 ) : CoreType<godot_transform>(value) {
+
+  constructor(): this(__new())
+  constructor(xAxis: Vector3, yAxis: Vector3, zAxis: Vector3, origin: Vector3): this(__new(xAxis, yAxis, zAxis, origin))
+  constructor(basis: Basis, origin: Vector3): this(__new(basis, origin))
+  constructor(from: Quat): this(__new(from))
+
   var basis: Basis
     get() = memScoped {
       Basis(
@@ -167,7 +173,7 @@ class Transform(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
@@ -180,45 +186,37 @@ class Transform(
 
   companion object {
     val IDENTITY: Transform
-      get() = new(Vector3.new(1, 0, 0), Vector3.new(0, 1, 0), Vector3.new(0, 0, 1), Vector3.new(0, 0, 0))
+      get() = Transform(Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1), Vector3(0, 0, 0))
 
     val FLIP_X: Transform
-      get() = new(Vector3.new(-1, 0, 0), Vector3.new(0, 1, 0), Vector3.new(0, 0, 1), Vector3.new(0, 0, 0))
+      get() = Transform(Vector3(-1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1), Vector3(0, 0, 0))
 
     val FLIP_Y: Transform
-      get() = new(Vector3.new(1, 0, 0), Vector3.new(0, -1, 0), Vector3.new(0, 0, 1), Vector3.new(0, 0, 0))
+      get() = Transform(Vector3(1, 0, 0), Vector3(0, -1, 0), Vector3(0, 0, 1), Vector3(0, 0, 0))
 
     val FLIP_Z: Transform
-      get() = new(Vector3.new(1, 0, 0), Vector3.new(0, 1, 0), Vector3.new(0, 0, -1), Vector3.new(0, 0, 0))
+      get() = Transform(Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, -1), Vector3(0, 0, 0))
 
-    fun new(): Transform {
-      return allocType(::Transform) {
-        checkNotNull(Godot.gdnative.godot_transform_new_identity)(it)
-      }
+    internal fun __new() = allocType2<godot_transform> {
+      checkNotNull(Godot.gdnative.godot_transform_new_identity)(it)
     }
 
-    fun new(xAxis: Vector3, yAxis: Vector3, zAxis: Vector3, origin: Vector3): Transform {
-      return allocType(::Transform) {
-        checkNotNull(Godot.gdnative.godot_transform_new_with_axis_origin)(
-          it,
-          xAxis._value.ptr,
-          yAxis._value.ptr,
-          zAxis._value.ptr,
-          origin._value.ptr
-        )
-      }
+    internal fun __new(xAxis: Vector3, yAxis: Vector3, zAxis: Vector3, origin: Vector3) = allocType2<godot_transform> {
+      checkNotNull(Godot.gdnative.godot_transform_new_with_axis_origin)(
+        it,
+        xAxis._value.ptr,
+        yAxis._value.ptr,
+        zAxis._value.ptr,
+        origin._value.ptr
+      )
     }
 
-    fun new(basis: Basis, origin: Vector3): Transform {
-      return allocType(::Transform) {
-        checkNotNull(Godot.gdnative.godot_transform_new)(it, basis._value.ptr, origin._value.ptr)
-      }
+    internal fun __new(basis: Basis, origin: Vector3) = allocType2<godot_transform> {
+      checkNotNull(Godot.gdnative.godot_transform_new)(it, basis._value.ptr, origin._value.ptr)
     }
 
-    fun new(from: Quat): Transform {
-      return allocType(::Transform) {
-        checkNotNull(Godot.gdnative11.godot_transform_new_with_quat)(it, from._value.ptr)
-      }
+    internal fun __new(from: Quat) = allocType2<godot_transform> {
+      checkNotNull(Godot.gdnative11.godot_transform_new_with_quat)(it, from._value.ptr)
     }
   }
 }

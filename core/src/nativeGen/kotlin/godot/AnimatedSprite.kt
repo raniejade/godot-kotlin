@@ -165,42 +165,42 @@ open class AnimatedSprite(
   }
 
   fun setAnimation(animation: String) {
-    val _arg = Variant.new(animation)
+    val _arg = Variant(animation)
     __method_bind.setAnimation.call(this._handle, listOf(_arg))
   }
 
   fun setCentered(centered: Boolean) {
-    val _arg = Variant.new(centered)
+    val _arg = Variant(centered)
     __method_bind.setCentered.call(this._handle, listOf(_arg))
   }
 
   fun setFlipH(flipH: Boolean) {
-    val _arg = Variant.new(flipH)
+    val _arg = Variant(flipH)
     __method_bind.setFlipH.call(this._handle, listOf(_arg))
   }
 
   fun setFlipV(flipV: Boolean) {
-    val _arg = Variant.new(flipV)
+    val _arg = Variant(flipV)
     __method_bind.setFlipV.call(this._handle, listOf(_arg))
   }
 
   fun setFrame(frame: Int) {
-    val _arg = Variant.new(frame)
+    val _arg = Variant(frame)
     __method_bind.setFrame.call(this._handle, listOf(_arg))
   }
 
   fun setOffset(offset: Vector2) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setOffset.call(this._handle, listOf(_arg))
   }
 
   fun setSpeedScale(speedScale: Float) {
-    val _arg = Variant.new(speedScale)
+    val _arg = Variant(speedScale)
     __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
   }
 
   fun setSpriteFrames(spriteFrames: SpriteFrames) {
-    val _arg = Variant.new(spriteFrames)
+    val _arg = Variant(spriteFrames)
     __method_bind.setSpriteFrames.call(this._handle, listOf(_arg))
   }
 

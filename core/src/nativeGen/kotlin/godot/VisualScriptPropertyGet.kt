@@ -128,37 +128,37 @@ open class VisualScriptPropertyGet(
   }
 
   fun setBasePath(basePath: NodePath) {
-    val _arg = Variant.new(basePath)
+    val _arg = Variant(basePath)
     __method_bind.setBasePath.call(this._handle, listOf(_arg))
   }
 
   fun setBaseScript(baseScript: String) {
-    val _arg = Variant.new(baseScript)
+    val _arg = Variant(baseScript)
     __method_bind.setBaseScript.call(this._handle, listOf(_arg))
   }
 
   fun setBaseType(baseType: String) {
-    val _arg = Variant.new(baseType)
+    val _arg = Variant(baseType)
     __method_bind.setBaseType.call(this._handle, listOf(_arg))
   }
 
   fun setBasicType(basicType: Int) {
-    val _arg = Variant.new(basicType)
+    val _arg = Variant(basicType)
     __method_bind.setBasicType.call(this._handle, listOf(_arg))
   }
 
   fun setCallMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setCallMode.call(this._handle, listOf(_arg))
   }
 
   fun setIndex(index: String) {
-    val _arg = Variant.new(index)
+    val _arg = Variant(index)
     __method_bind.setIndex.call(this._handle, listOf(_arg))
   }
 
   fun setProperty(property: String) {
-    val _arg = Variant.new(property)
+    val _arg = Variant(property)
     __method_bind.setProperty.call(this._handle, listOf(_arg))
   }
 

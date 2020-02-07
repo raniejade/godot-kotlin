@@ -38,7 +38,7 @@ open class VisualShaderNodeUniform(
   }
 
   fun setUniformName(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setUniformName.call(this._handle, listOf(_arg))
   }
 

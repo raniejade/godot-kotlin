@@ -55,7 +55,7 @@ class SignalNGenerator {
               }
             )
             .addParameter("flags", Int::class)
-            .addStatement("val extraArgs = VariantArray.new()")
+            .addStatement("val extraArgs = VariantArray()")
             .addStatement("binds?.forEach { extraArgs.append(Variant.fromAny(it)) }")
             .addStatement("instance.connect(name, target, method, extraArgs, flags)")
             .build()

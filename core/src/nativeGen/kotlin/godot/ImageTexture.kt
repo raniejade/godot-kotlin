@@ -81,28 +81,28 @@ open class ImageTexture(
   }
 
   fun load(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.load.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun setData(image: Image) {
-    val _arg = Variant.new(image)
+    val _arg = Variant(image)
     __method_bind.setData.call(this._handle, listOf(_arg))
   }
 
   fun setLossyStorageQuality(quality: Float) {
-    val _arg = Variant.new(quality)
+    val _arg = Variant(quality)
     __method_bind.setLossyStorageQuality.call(this._handle, listOf(_arg))
   }
 
   fun setSizeOverride(size: Vector2) {
-    val _arg = Variant.new(size)
+    val _arg = Variant(size)
     __method_bind.setSizeOverride.call(this._handle, listOf(_arg))
   }
 
   fun setStorage(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setStorage.call(this._handle, listOf(_arg))
   }
 

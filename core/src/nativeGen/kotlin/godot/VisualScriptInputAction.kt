@@ -52,12 +52,12 @@ open class VisualScriptInputAction(
   }
 
   fun setActionMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setActionMode.call(this._handle, listOf(_arg))
   }
 
   fun setActionName(name: String) {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     __method_bind.setActionName.call(this._handle, listOf(_arg))
   }
 

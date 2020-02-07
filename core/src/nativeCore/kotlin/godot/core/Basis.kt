@@ -1,11 +1,18 @@
 package godot.core
 
 import gdnative.godot_basis
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
 
 class Basis(
   value: CValue<godot_basis>
 ) : CoreType<godot_basis>(value) {
+  constructor(): this(__new())
+  constructor(vec: Vector3): this(__new(vec))
+  constructor(vec: Vector3, phi: Float): this(__new(vec, phi))
+  constructor(quat: Quat): this(__new(quat))
+  constructor(r1: Vector3, r2: Vector3, r3: Vector3): this(__new(r1, r2, r3))
 
   fun determinant(): Float {
     return memScoped {
@@ -159,7 +166,7 @@ class Basis(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    return Variant(this)
   }
 
   override fun toGDString(): GDString {
@@ -171,34 +178,24 @@ class Basis(
   }
 
   companion object {
-    fun new(): Basis {
-      return allocType(::Basis) {
-        checkNotNull(Godot.gdnative.godot_basis_new)(it)
-      }
+    internal fun __new() = allocType2<godot_basis> {
+      checkNotNull(Godot.gdnative.godot_basis_new)(it)
     }
 
-    fun new(vec: Vector3): Basis {
-      return allocType(::Basis) {
-        checkNotNull(Godot.gdnative.godot_basis_new_with_euler)(it, vec._value.ptr)
-      }
+    internal fun __new(vec: Vector3) = allocType2<godot_basis> {
+      checkNotNull(Godot.gdnative.godot_basis_new_with_euler)(it, vec._value.ptr)
     }
 
-    fun new(vec: Vector3, phi: Float): Basis {
-      return allocType(::Basis) {
-        checkNotNull(Godot.gdnative.godot_basis_new_with_axis_and_angle)(it, vec._value.ptr, phi)
-      }
+    internal fun __new(vec: Vector3, phi: Float) = allocType2<godot_basis> {
+      checkNotNull(Godot.gdnative.godot_basis_new_with_axis_and_angle)(it, vec._value.ptr, phi)
     }
 
-    fun new(quat: Quat): Basis {
-      return allocType(::Basis) {
-        checkNotNull(Godot.gdnative.godot_basis_new_with_euler_quat)(it, quat._value.ptr)
-      }
+    internal fun __new(quat: Quat) = allocType2<godot_basis> {
+      checkNotNull(Godot.gdnative.godot_basis_new_with_euler_quat)(it, quat._value.ptr)
     }
 
-    fun new(r1: Vector3, r2: Vector3, r3: Vector3): Basis {
-      return allocType(::Basis) {
-        checkNotNull(Godot.gdnative.godot_basis_new_with_rows)(it, r1._value.ptr, r2._value.ptr, r3._value.ptr)
-      }
+    internal fun __new(r1: Vector3, r2: Vector3, r3: Vector3) = allocType2<godot_basis> {
+      checkNotNull(Godot.gdnative.godot_basis_new_with_rows)(it, r1._value.ptr, r2._value.ptr, r3._value.ptr)
     }
   }
 }

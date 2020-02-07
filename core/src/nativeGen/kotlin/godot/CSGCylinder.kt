@@ -106,32 +106,32 @@ open class CSGCylinder(
   }
 
   fun setCone(cone: Boolean) {
-    val _arg = Variant.new(cone)
+    val _arg = Variant(cone)
     __method_bind.setCone.call(this._handle, listOf(_arg))
   }
 
   fun setHeight(height: Float) {
-    val _arg = Variant.new(height)
+    val _arg = Variant(height)
     __method_bind.setHeight.call(this._handle, listOf(_arg))
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant.new(material)
+    val _arg = Variant(material)
     __method_bind.setMaterial.call(this._handle, listOf(_arg))
   }
 
   fun setRadius(radius: Float) {
-    val _arg = Variant.new(radius)
+    val _arg = Variant(radius)
     __method_bind.setRadius.call(this._handle, listOf(_arg))
   }
 
   fun setSides(sides: Int) {
-    val _arg = Variant.new(sides)
+    val _arg = Variant(sides)
     __method_bind.setSides.call(this._handle, listOf(_arg))
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
-    val _arg = Variant.new(smoothFaces)
+    val _arg = Variant(smoothFaces)
     __method_bind.setSmoothFaces.call(this._handle, listOf(_arg))
   }
 

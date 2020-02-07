@@ -51,7 +51,7 @@ open class Script(
   }
 
   fun getPropertyDefaultValue(property: String): Variant {
-    val _arg = Variant.new(property)
+    val _arg = Variant(property)
     val _ret = __method_bind.getPropertyDefaultValue.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -82,7 +82,7 @@ open class Script(
   }
 
   fun hasScriptSignal(signalName: String): Boolean {
-    val _arg = Variant.new(signalName)
+    val _arg = Variant(signalName)
     val _ret = __method_bind.hasScriptSignal.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -93,7 +93,7 @@ open class Script(
   }
 
   fun instanceHas(baseObject: Object): Boolean {
-    val _arg = Variant.new(baseObject)
+    val _arg = Variant(baseObject)
     val _ret = __method_bind.instanceHas.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
@@ -104,13 +104,13 @@ open class Script(
   }
 
   fun reload(keepState: Boolean = false): GDError {
-    val _arg = Variant.new(keepState)
+    val _arg = Variant(keepState)
     val _ret = __method_bind.reload.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun setSourceCode(source: String) {
-    val _arg = Variant.new(source)
+    val _arg = Variant(source)
     __method_bind.setSourceCode.call(this._handle, listOf(_arg))
   }
 

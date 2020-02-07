@@ -41,7 +41,7 @@ open class Texture(
   fun draw(
     canvasItem: RID,
     position: Vector2,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     transpose: Boolean = false,
     normalMap: Texture
   ) {
@@ -58,7 +58,7 @@ open class Texture(
     canvasItem: RID,
     rect: Rect2,
     tile: Boolean,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     transpose: Boolean = false,
     normalMap: Texture
   ) {
@@ -76,7 +76,7 @@ open class Texture(
     canvasItem: RID,
     rect: Rect2,
     srcRect: Rect2,
-    modulate: Color = Color.rgb(1,1,1,1),
+    modulate: Color = Color(1,1,1,1),
     transpose: Boolean = false,
     normalMap: Texture,
     clipUv: Boolean = true
@@ -123,7 +123,7 @@ open class Texture(
   }
 
   fun setFlags(flags: Int) {
-    val _arg = Variant.new(flags)
+    val _arg = Variant(flags)
     __method_bind.setFlags.call(this._handle, listOf(_arg))
   }
 

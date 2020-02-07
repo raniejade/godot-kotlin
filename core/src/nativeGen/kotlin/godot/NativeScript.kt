@@ -73,13 +73,13 @@ open class NativeScript(
   }
 
   fun getMethodDocumentation(method: String): String {
-    val _arg = Variant.new(method)
+    val _arg = Variant(method)
     val _ret = __method_bind.getMethodDocumentation.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getPropertyDocumentation(path: String): String {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.getPropertyDocumentation.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -95,7 +95,7 @@ open class NativeScript(
   }
 
   fun getSignalDocumentation(signalName: String): String {
-    val _arg = Variant.new(signalName)
+    val _arg = Variant(signalName)
     val _ret = __method_bind.getSignalDocumentation.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -108,22 +108,22 @@ open class NativeScript(
   }
 
   fun setClassName(className: String) {
-    val _arg = Variant.new(className)
+    val _arg = Variant(className)
     __method_bind.setClassName.call(this._handle, listOf(_arg))
   }
 
   fun setLibrary(library: GDNativeLibrary) {
-    val _arg = Variant.new(library)
+    val _arg = Variant(library)
     __method_bind.setLibrary.call(this._handle, listOf(_arg))
   }
 
   fun setScriptClassIconPath(iconPath: String) {
-    val _arg = Variant.new(iconPath)
+    val _arg = Variant(iconPath)
     __method_bind.setScriptClassIconPath.call(this._handle, listOf(_arg))
   }
 
   fun setScriptClassName(className: String) {
-    val _arg = Variant.new(className)
+    val _arg = Variant(className)
     __method_bind.setScriptClassName.call(this._handle, listOf(_arg))
   }
 

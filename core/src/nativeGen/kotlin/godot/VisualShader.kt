@@ -141,13 +141,13 @@ open class VisualShader(
   }
 
   fun getNodeConnections(type: Int): VariantArray {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getNodeConnections.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun getNodeList(type: Int): PoolIntArray {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getNodeList.call(this._handle, listOf(_arg))
     return _ret.asPoolIntArray()
   }
@@ -161,7 +161,7 @@ open class VisualShader(
   }
 
   fun getValidNodeId(type: Int): Int {
-    val _arg = Variant.new(type)
+    val _arg = Variant(type)
     val _ret = __method_bind.getValidNodeId.call(this._handle, listOf(_arg))
     return _ret.asInt()
   }
@@ -191,12 +191,12 @@ open class VisualShader(
   }
 
   fun setGraphOffset(offset: Vector2) {
-    val _arg = Variant.new(offset)
+    val _arg = Variant(offset)
     __method_bind.setGraphOffset.call(this._handle, listOf(_arg))
   }
 
   fun setMode(mode: Int) {
-    val _arg = Variant.new(mode)
+    val _arg = Variant(mode)
     __method_bind.setMode.call(this._handle, listOf(_arg))
   }
 

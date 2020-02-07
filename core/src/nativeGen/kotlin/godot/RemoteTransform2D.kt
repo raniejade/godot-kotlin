@@ -106,27 +106,27 @@ open class RemoteTransform2D(
   }
 
   fun setRemoteNode(path: NodePath) {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     __method_bind.setRemoteNode.call(this._handle, listOf(_arg))
   }
 
   fun setUpdatePosition(updateRemotePosition: Boolean) {
-    val _arg = Variant.new(updateRemotePosition)
+    val _arg = Variant(updateRemotePosition)
     __method_bind.setUpdatePosition.call(this._handle, listOf(_arg))
   }
 
   fun setUpdateRotation(updateRemoteRotation: Boolean) {
-    val _arg = Variant.new(updateRemoteRotation)
+    val _arg = Variant(updateRemoteRotation)
     __method_bind.setUpdateRotation.call(this._handle, listOf(_arg))
   }
 
   fun setUpdateScale(updateRemoteScale: Boolean) {
-    val _arg = Variant.new(updateRemoteScale)
+    val _arg = Variant(updateRemoteScale)
     __method_bind.setUpdateScale.call(this._handle, listOf(_arg))
   }
 
   fun setUseGlobalCoordinates(useGlobalCoordinates: Boolean) {
-    val _arg = Variant.new(useGlobalCoordinates)
+    val _arg = Variant(useGlobalCoordinates)
     __method_bind.setUseGlobalCoordinates.call(this._handle, listOf(_arg))
   }
 

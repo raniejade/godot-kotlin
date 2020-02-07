@@ -63,7 +63,7 @@ open class StreamPeer(
   }
 
   fun getData(bytes: Int): VariantArray {
-    val _arg = Variant.new(bytes)
+    val _arg = Variant(bytes)
     val _ret = __method_bind.getData.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
@@ -79,13 +79,13 @@ open class StreamPeer(
   }
 
   fun getPartialData(bytes: Int): VariantArray {
-    val _arg = Variant.new(bytes)
+    val _arg = Variant(bytes)
     val _ret = __method_bind.getPartialData.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun getString(bytes: Int = -1): String {
-    val _arg = Variant.new(bytes)
+    val _arg = Variant(bytes)
     val _ret = __method_bind.getString.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
@@ -111,13 +111,13 @@ open class StreamPeer(
   }
 
   fun getUtf8String(bytes: Int = -1): String {
-    val _arg = Variant.new(bytes)
+    val _arg = Variant(bytes)
     val _ret = __method_bind.getUtf8String.call(this._handle, listOf(_arg))
     return _ret.asString()
   }
 
   fun getVar(allowObjects: Boolean = false): Variant {
-    val _arg = Variant.new(allowObjects)
+    val _arg = Variant(allowObjects)
     val _ret = __method_bind.getVar.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -128,74 +128,74 @@ open class StreamPeer(
   }
 
   fun put16(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.put16.call(this._handle, listOf(_arg))
   }
 
   fun put32(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.put32.call(this._handle, listOf(_arg))
   }
 
   fun put64(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.put64.call(this._handle, listOf(_arg))
   }
 
   fun put8(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.put8.call(this._handle, listOf(_arg))
   }
 
   fun putData(data: PoolByteArray): GDError {
-    val _arg = Variant.new(data)
+    val _arg = Variant(data)
     val _ret = __method_bind.putData.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
 
   fun putDouble(value: Float) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.putDouble.call(this._handle, listOf(_arg))
   }
 
   fun putFloat(value: Float) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.putFloat.call(this._handle, listOf(_arg))
   }
 
   fun putPartialData(data: PoolByteArray): VariantArray {
-    val _arg = Variant.new(data)
+    val _arg = Variant(data)
     val _ret = __method_bind.putPartialData.call(this._handle, listOf(_arg))
     return _ret.asVariantArray()
   }
 
   fun putString(value: String) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.putString.call(this._handle, listOf(_arg))
   }
 
   fun putU16(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.putU16.call(this._handle, listOf(_arg))
   }
 
   fun putU32(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.putU32.call(this._handle, listOf(_arg))
   }
 
   fun putU64(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.putU64.call(this._handle, listOf(_arg))
   }
 
   fun putU8(value: Int) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.putU8.call(this._handle, listOf(_arg))
   }
 
   fun putUtf8String(value: String) {
-    val _arg = Variant.new(value)
+    val _arg = Variant(value)
     __method_bind.putUtf8String.call(this._handle, listOf(_arg))
   }
 
@@ -207,7 +207,7 @@ open class StreamPeer(
   }
 
   fun setBigEndian(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setBigEndian.call(this._handle, listOf(_arg))
   }
 

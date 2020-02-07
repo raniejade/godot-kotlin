@@ -40,7 +40,7 @@ open class Shader(
   }
 
   fun getDefaultTextureParam(param: String): Texture {
-    val _arg = Variant.new(param)
+    val _arg = Variant(param)
     val _ret = __method_bind.getDefaultTextureParam.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
@@ -51,13 +51,13 @@ open class Shader(
   }
 
   fun hasParam(name: String): Boolean {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.hasParam.call(this._handle, listOf(_arg))
     return _ret.asBoolean()
   }
 
   fun setCode(code: String) {
-    val _arg = Variant.new(code)
+    val _arg = Variant(code)
     __method_bind.setCode.call(this._handle, listOf(_arg))
   }
 

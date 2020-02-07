@@ -73,7 +73,7 @@ open class AcceptDialog(
   }
 
   fun addCancel(name: String): Button {
-    val _arg = Variant.new(name)
+    val _arg = Variant(name)
     val _ret = __method_bind.addCancel.call(this._handle, listOf(_arg))
     return _ret.asObject(::Button)!!
   }
@@ -104,22 +104,22 @@ open class AcceptDialog(
   }
 
   fun registerTextEnter(lineEdit: Node) {
-    val _arg = Variant.new(lineEdit)
+    val _arg = Variant(lineEdit)
     __method_bind.registerTextEnter.call(this._handle, listOf(_arg))
   }
 
   fun setAutowrap(autowrap: Boolean) {
-    val _arg = Variant.new(autowrap)
+    val _arg = Variant(autowrap)
     __method_bind.setAutowrap.call(this._handle, listOf(_arg))
   }
 
   fun setHideOnOk(enabled: Boolean) {
-    val _arg = Variant.new(enabled)
+    val _arg = Variant(enabled)
     __method_bind.setHideOnOk.call(this._handle, listOf(_arg))
   }
 
   fun setText(text: String) {
-    val _arg = Variant.new(text)
+    val _arg = Variant(text)
     __method_bind.setText.call(this._handle, listOf(_arg))
   }
 

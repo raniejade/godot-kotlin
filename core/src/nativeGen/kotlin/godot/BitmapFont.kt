@@ -66,7 +66,7 @@ open class BitmapFont(
     character: Int,
     texture: Int,
     rect: Rect2,
-    align: Vector2 = Vector2.new(0, 0),
+    align: Vector2 = Vector2(0, 0),
     advance: Float = -1.0f
   ) {
     val _args = mutableListOf<Variant>()
@@ -91,7 +91,7 @@ open class BitmapFont(
   }
 
   fun addTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.addTexture.call(this._handle, listOf(_arg))
   }
 
@@ -100,7 +100,7 @@ open class BitmapFont(
   }
 
   fun createFromFnt(path: String): GDError {
-    val _arg = Variant.new(path)
+    val _arg = Variant(path)
     val _ret = __method_bind.createFromFnt.call(this._handle, listOf(_arg))
     return GDError.from(_ret.asInt())
   }
@@ -127,7 +127,7 @@ open class BitmapFont(
   }
 
   fun getTexture(idx: Int): Texture {
-    val _arg = Variant.new(idx)
+    val _arg = Variant(idx)
     val _ret = __method_bind.getTexture.call(this._handle, listOf(_arg))
     return _ret.asObject(::Texture)!!
   }
@@ -138,22 +138,22 @@ open class BitmapFont(
   }
 
   fun setAscent(px: Float) {
-    val _arg = Variant.new(px)
+    val _arg = Variant(px)
     __method_bind.setAscent.call(this._handle, listOf(_arg))
   }
 
   fun setDistanceFieldHint(enable: Boolean) {
-    val _arg = Variant.new(enable)
+    val _arg = Variant(enable)
     __method_bind.setDistanceFieldHint.call(this._handle, listOf(_arg))
   }
 
   fun setFallback(fallback: BitmapFont) {
-    val _arg = Variant.new(fallback)
+    val _arg = Variant(fallback)
     __method_bind.setFallback.call(this._handle, listOf(_arg))
   }
 
   fun setHeight(px: Float) {
-    val _arg = Variant.new(px)
+    val _arg = Variant(px)
     __method_bind.setHeight.call(this._handle, listOf(_arg))
   }
 

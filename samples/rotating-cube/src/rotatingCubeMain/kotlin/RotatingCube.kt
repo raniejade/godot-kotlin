@@ -12,7 +12,7 @@ class RotatingCube: Spatial() {
   var reverse by booleanProperty(signalReverseChanged.asListener())
 
   override fun _onInit() {
-    rotationDegrees = Vector3.new(y = 1f)
+    rotationDegrees = Vector3(y = 1f)
   }
 
   fun _process(delta: Float) {

@@ -52,7 +52,7 @@ open class VisualShaderNode(
   }
 
   fun getInputPortDefaultValue(port: Int): Variant {
-    val _arg = Variant.new(port)
+    val _arg = Variant(port)
     val _ret = __method_bind.getInputPortDefaultValue.call(this._handle, listOf(_arg))
     return _ret
   }
@@ -63,7 +63,7 @@ open class VisualShaderNode(
   }
 
   fun setDefaultInputValues(values: VariantArray) {
-    val _arg = Variant.new(values)
+    val _arg = Variant(values)
     __method_bind.setDefaultInputValues.call(this._handle, listOf(_arg))
   }
 
@@ -75,7 +75,7 @@ open class VisualShaderNode(
   }
 
   fun setOutputPortForPreview(port: Int) {
-    val _arg = Variant.new(port)
+    val _arg = Variant(port)
     __method_bind.setOutputPortForPreview.call(this._handle, listOf(_arg))
   }
 

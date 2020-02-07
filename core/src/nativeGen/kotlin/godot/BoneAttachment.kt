@@ -38,7 +38,7 @@ open class BoneAttachment(
   }
 
   fun setBoneName(boneName: String) {
-    val _arg = Variant.new(boneName)
+    val _arg = Variant(boneName)
     __method_bind.setBoneName.call(this._handle, listOf(_arg))
   }
 

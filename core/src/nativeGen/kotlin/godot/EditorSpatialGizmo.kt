@@ -29,12 +29,12 @@ open class EditorSpatialGizmo(
   }
 
   fun addCollisionSegments(segments: PoolVector3Array) {
-    val _arg = Variant.new(segments)
+    val _arg = Variant(segments)
     __method_bind.addCollisionSegments.call(this._handle, listOf(_arg))
   }
 
   fun addCollisionTriangles(triangles: TriangleMesh) {
-    val _arg = Variant.new(triangles)
+    val _arg = Variant(triangles)
     __method_bind.addCollisionTriangles.call(this._handle, listOf(_arg))
   }
 
@@ -56,7 +56,7 @@ open class EditorSpatialGizmo(
     lines: PoolVector3Array,
     material: Material,
     billboard: Boolean = false,
-    modulate: Color = Color.rgb(1,1,1,1)
+    modulate: Color = Color(1,1,1,1)
   ) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(lines))
@@ -83,7 +83,7 @@ open class EditorSpatialGizmo(
   fun addUnscaledBillboard(
     material: Material,
     defaultScale: Float = 1.0f,
-    modulate: Color = Color.rgb(1,1,1,1)
+    modulate: Color = Color(1,1,1,1)
   ) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(material))
@@ -107,12 +107,12 @@ open class EditorSpatialGizmo(
   }
 
   fun setHidden(hidden: Boolean) {
-    val _arg = Variant.new(hidden)
+    val _arg = Variant(hidden)
     __method_bind.setHidden.call(this._handle, listOf(_arg))
   }
 
   fun setSpatialNode(node: Node) {
-    val _arg = Variant.new(node)
+    val _arg = Variant(node)
     __method_bind.setSpatialNode.call(this._handle, listOf(_arg))
   }
 

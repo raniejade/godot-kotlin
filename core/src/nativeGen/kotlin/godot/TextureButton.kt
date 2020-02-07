@@ -131,42 +131,42 @@ open class TextureButton(
   }
 
   fun setClickMask(mask: BitMap) {
-    val _arg = Variant.new(mask)
+    val _arg = Variant(mask)
     __method_bind.setClickMask.call(this._handle, listOf(_arg))
   }
 
   fun setDisabledTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setDisabledTexture.call(this._handle, listOf(_arg))
   }
 
   fun setExpand(pExpand: Boolean) {
-    val _arg = Variant.new(pExpand)
+    val _arg = Variant(pExpand)
     __method_bind.setExpand.call(this._handle, listOf(_arg))
   }
 
   fun setFocusedTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setFocusedTexture.call(this._handle, listOf(_arg))
   }
 
   fun setHoverTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setHoverTexture.call(this._handle, listOf(_arg))
   }
 
   fun setNormalTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setNormalTexture.call(this._handle, listOf(_arg))
   }
 
   fun setPressedTexture(texture: Texture) {
-    val _arg = Variant.new(texture)
+    val _arg = Variant(texture)
     __method_bind.setPressedTexture.call(this._handle, listOf(_arg))
   }
 
   fun setStretchMode(pMode: Int) {
-    val _arg = Variant.new(pMode)
+    val _arg = Variant(pMode)
     __method_bind.setStretchMode.call(this._handle, listOf(_arg))
   }
 
