@@ -16,10 +16,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      - name: Execute gradle build
-        run: ./gradlew core:build
+      - uses: eskatos/gradle-command-action@v1
+        with:
+          arguments: core:build
 
   build_gradle_plugin:
     runs-on: ubuntu-latest
@@ -29,7 +28,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      - name: Execute gradle build
-        run: ./gradlew gradle-plugin:build
+      - uses: eskatos/gradle-command-action@v1
+        with:
+          arguments: gradle-plugin:build
