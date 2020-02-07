@@ -6,7 +6,7 @@ on:
     tags:
       - '*'
 jobs:
-  build_core:
+  deploy_core:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
@@ -26,7 +26,7 @@ jobs:
           BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
           BINTRAY_API_KEY: ${{ secrets.BINTRAY_API_KEY }}
 
-  build_gradle_plugin:
+  deploy_gradle_plugin:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
