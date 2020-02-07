@@ -25,6 +25,7 @@ open class GodotPlugin : Plugin<Project> {
   }
 
   private fun configureDefaults(godot: GodotExtension) {
+    godot.isCompositeBuild.set(false)
     godot.version.set(godotKotlinVersion)
     godot.libraries.all {
       debug.set(true)
@@ -63,7 +64,9 @@ open class GodotPlugin : Plugin<Project> {
                 compileKotlinTask.dependsOn(genEntryTask)
 
                 dependencies {
-                  api("com.github.raniejade:godot-kotlin-${artifactSuffixFrom(platform)}:${godot.version.get()}")
+                  implementation("com.github.raniejade:godot-kotlin-${artifactSuffixFrom(platform)}:${godot.version.get()}") {
+                    isTransitive = !godot.isCompositeBuild.get()
+                  }
                 }
 
                 defaultSourceSet {

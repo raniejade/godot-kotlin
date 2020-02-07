@@ -12,13 +12,13 @@ import org.gradle.kotlin.dsl.property
 
 open class GenerateAPI: DefaultTask() {
     @InputFile
-    var source: RegularFileProperty = project.objects.fileProperty()
+    val source: RegularFileProperty = project.objects.fileProperty()
 
     @Input
-    var maxSignalParams = project.objects.property<Int>()
+    val maxSignalParams = project.objects.property<Int>()
 
     @OutputDirectory
-    var outputDir: DirectoryProperty = project.objects.directoryProperty()
+    val outputDir: DirectoryProperty = project.objects.directoryProperty()
 
     @TaskAction
     fun generate() {

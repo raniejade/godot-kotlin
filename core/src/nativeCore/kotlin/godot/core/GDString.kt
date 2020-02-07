@@ -329,7 +329,7 @@ internal class GDString(
 
   fun ordAt(position: Int): Int {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_string_ord_at)(_value.ptr, position)
+      checkNotNull(Godot.gdnative.godot_string_ord_at)(_value.ptr, position).toInt()
     }
   }
 
@@ -567,7 +567,7 @@ internal class GDString(
     return memScoped {
       val ptr = checkNotNull(Godot.gdnative.godot_string_wide_str)(_value.ptr)!!
       // drop the trailing \0
-      ptr.toKStringFromUtf32().dropLast(1)
+      ptr.reinterpret<ShortVar>().toString().dropLast(1)
     }
   }
 
@@ -589,7 +589,8 @@ internal class GDString(
 
   operator fun get(position: Int): Char {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_string_operator_index_const)(_value.ptr, position).toChar()
+      val ptr = checkNotNull(Godot.gdnative.godot_string_operator_index_const)(_value.ptr, position)
+      ptr.toShort().toChar()
     }
   }
 
