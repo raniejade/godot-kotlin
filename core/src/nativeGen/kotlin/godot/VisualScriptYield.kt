@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptYield(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var mode: YieldMode
     get() {
        return getYieldMode() 
@@ -34,6 +37,10 @@ open class VisualScriptYield(
     set(value) {
       setWaitTime(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getWaitTime(): Float {
     val _ret = __method_bind.getWaitTime.call(this._handle)
@@ -77,16 +84,13 @@ open class VisualScriptYield(
   }
 
   companion object {
-    fun new(): VisualScriptYield = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptYield".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptYield" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptYield(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptYield = VisualScriptYield(ptr)
     /**
      * Container for method_bind pointers for VisualScriptYield
      */

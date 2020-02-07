@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class UPNP(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var discoverIpv6: Boolean
     get() {
        return isDiscoverIpv6() 
@@ -43,6 +45,10 @@ open class UPNP(
     set(value) {
       setDiscoverMulticastIf(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addDevice(device: UPNPDevice) {
     val _arg = Variant.new(device)
@@ -228,15 +234,12 @@ open class UPNP(
   }
 
   companion object {
-    fun new(): UPNP = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("UPNP".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for UPNP" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      UPNP(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): UPNP = UPNP(ptr)
     /**
      * Container for method_bind pointers for UPNP
      */

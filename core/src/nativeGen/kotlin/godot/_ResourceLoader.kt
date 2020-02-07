@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _ResourceLoader(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun exists(path: String, typeHint: String = ""): Boolean {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(path))
@@ -84,9 +86,9 @@ open class _ResourceLoader(
         val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ResourceLoader".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton _ResourceLoader" }
-        _ResourceLoader(
-          handle
-        )
+        val ret = _ResourceLoader(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for _ResourceLoader

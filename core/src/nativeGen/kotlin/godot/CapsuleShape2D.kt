@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CapsuleShape2D(
-  _handle: COpaquePointer
-) : Shape2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shape2D(null) {
   var height: Float
     get() {
        return getHeight() 
@@ -33,6 +36,10 @@ open class CapsuleShape2D(
     set(value) {
       setRadius(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getHeight(): Float {
     val _ret = __method_bind.getHeight.call(this._handle)
@@ -55,16 +62,13 @@ open class CapsuleShape2D(
   }
 
   companion object {
-    fun new(): CapsuleShape2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CapsuleShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CapsuleShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CapsuleShape2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CapsuleShape2D = CapsuleShape2D(ptr)
     /**
      * Container for method_bind pointers for CapsuleShape2D
      */

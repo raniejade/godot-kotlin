@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ResourcePreloader(
-  _handle: COpaquePointer
-) : Node(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addResource(name: String, resource: Resource) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(name))
@@ -57,16 +63,13 @@ open class ResourcePreloader(
   }
 
   companion object {
-    fun new(): ResourcePreloader = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ResourcePreloader".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ResourcePreloader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ResourcePreloader(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ResourcePreloader = ResourcePreloader(ptr)
     /**
      * Container for method_bind pointers for ResourcePreloader
      */

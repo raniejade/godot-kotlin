@@ -13,6 +13,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -23,8 +24,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class TreeItem(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   var collapsed: Boolean
     get() {
        return isCollapsed() 
@@ -48,6 +50,10 @@ open class TreeItem(
     set(value) {
       setDisableFolding(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addButton(
     column: Int,

@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimatedTexture(
-  _handle: COpaquePointer
-) : Texture(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Texture(null) {
   var fps: Float
     get() {
        return getFps() 
@@ -4131,6 +4134,10 @@ open class AnimatedTexture(
       setFrames(value)
     }
 
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun getFps(): Float {
     val _ret = __method_bind.getFps.call(this._handle)
     return _ret.asFloat()
@@ -4180,16 +4187,13 @@ open class AnimatedTexture(
   companion object {
     val MAX_FRAMES: Int = 256
 
-    fun new(): AnimatedTexture = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimatedTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimatedTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimatedTexture(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimatedTexture = AnimatedTexture(ptr)
     /**
      * Container for method_bind pointers for AnimatedTexture
      */

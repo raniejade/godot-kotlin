@@ -14,6 +14,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -24,8 +25,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class SceneTree(
-  _handle: COpaquePointer
-) : MainLoop(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : MainLoop(null) {
   var currentScene: Node
     get() {
        return getCurrentScene() 
@@ -186,6 +188,10 @@ open class SceneTree(
    * SceneTree::tree_changed signal
    */
   val signalTreeChanged: Signal0 = Signal0("tree_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun callGroup(
     group: String,
@@ -550,15 +556,12 @@ open class SceneTree(
   }
 
   companion object {
-    fun new(): SceneTree = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SceneTree".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SceneTree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      SceneTree(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): SceneTree = SceneTree(ptr)
     /**
      * Container for method_bind pointers for SceneTree
      */

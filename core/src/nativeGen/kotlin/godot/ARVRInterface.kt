@@ -9,6 +9,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ARVRInterface(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var arIsAnchorDetectionEnabled: Boolean
     get() {
        return getAnchorDetectionIsEnabled() 
@@ -44,6 +46,10 @@ open class ARVRInterface(
     set(value) {
       setIsPrimary(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAnchorDetectionIsEnabled(): Boolean {
     val _ret = __method_bind.getAnchorDetectionIsEnabled.call(this._handle)

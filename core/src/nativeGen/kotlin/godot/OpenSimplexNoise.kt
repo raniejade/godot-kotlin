@@ -9,6 +9,8 @@ import godot.core.Vector2
 import godot.core.Vector3
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class OpenSimplexNoise(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var lacunarity: Float
     get() {
        return getLacunarity() 
@@ -60,6 +63,10 @@ open class OpenSimplexNoise(
     set(value) {
       setSeed(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getImage(width: Int, height: Int): Image {
     val _args = mutableListOf<Variant>()
@@ -180,16 +187,13 @@ open class OpenSimplexNoise(
   }
 
   companion object {
-    fun new(): OpenSimplexNoise = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("OpenSimplexNoise".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for OpenSimplexNoise" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      OpenSimplexNoise(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): OpenSimplexNoise = OpenSimplexNoise(ptr)
     /**
      * Container for method_bind pointers for OpenSimplexNoise
      */

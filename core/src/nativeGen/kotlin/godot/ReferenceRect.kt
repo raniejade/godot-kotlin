@@ -7,6 +7,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ReferenceRect(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var borderColor: Color
     get() {
        return getBorderColor() 
@@ -35,6 +38,10 @@ open class ReferenceRect(
     set(value) {
       setEditorOnly(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for borderColor
@@ -66,15 +73,12 @@ open class ReferenceRect(
   }
 
   companion object {
-    fun new(): ReferenceRect = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ReferenceRect".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ReferenceRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ReferenceRect(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ReferenceRect = ReferenceRect(ptr)
     /**
      * Container for method_bind pointers for ReferenceRect
      */

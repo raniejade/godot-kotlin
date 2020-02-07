@@ -10,6 +10,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PhysicsShapeQueryParameters(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var collideWithAreas: Boolean
     get() {
        return isCollideWithAreasEnabled() 
@@ -78,6 +81,10 @@ open class PhysicsShapeQueryParameters(
     set(value) {
       setTransform(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for shapeRid
@@ -173,16 +180,13 @@ open class PhysicsShapeQueryParameters(
   }
 
   companion object {
-    fun new(): PhysicsShapeQueryParameters = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PhysicsShapeQueryParameters".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PhysicsShapeQueryParameters" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PhysicsShapeQueryParameters(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PhysicsShapeQueryParameters = PhysicsShapeQueryParameters(ptr)
     /**
      * Container for method_bind pointers for PhysicsShapeQueryParameters
      */

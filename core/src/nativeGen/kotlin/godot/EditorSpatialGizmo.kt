@@ -9,6 +9,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +21,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorSpatialGizmo(
-  _handle: COpaquePointer
-) : SpatialGizmo(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : SpatialGizmo(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addCollisionSegments(segments: PoolVector3Array) {
     val _arg = Variant.new(segments)
     __method_bind.addCollisionSegments.call(this._handle, listOf(_arg))

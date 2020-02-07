@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Resource(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var resourceLocalToScene: Boolean
     get() {
        return isLocalToScene() 
@@ -48,6 +50,10 @@ open class Resource(
    * Resource::changed signal
    */
   val signalChanged: Signal0 = Signal0("changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun duplicate(subresources: Boolean = false): Resource {
     val _arg = Variant.new(subresources)
@@ -105,15 +111,12 @@ open class Resource(
   }
 
   companion object {
-    fun new(): Resource = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Resource".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Resource" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Resource(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Resource = Resource(ptr)
     /**
      * Container for method_bind pointers for Resource
      */

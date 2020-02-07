@@ -8,6 +8,8 @@ import godot.core.PoolVector2Array
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class NavigationPolygon(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var vertices: PoolVector2Array
     get() {
        return getVertices() 
@@ -28,6 +31,10 @@ open class NavigationPolygon(
     set(value) {
       setVertices(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for vertices
@@ -112,16 +119,13 @@ open class NavigationPolygon(
   }
 
   companion object {
-    fun new(): NavigationPolygon = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NavigationPolygon".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for NavigationPolygon" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      NavigationPolygon(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): NavigationPolygon = NavigationPolygon(ptr)
     /**
      * Container for method_bind pointers for NavigationPolygon
      */

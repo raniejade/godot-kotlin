@@ -7,6 +7,8 @@ import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisibilityNotifier2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var rect: Rect2
     get() {
        return getRect() 
@@ -48,6 +51,10 @@ open class VisibilityNotifier2D(
    */
   val signalViewportExited: Signal1<Viewport> = Signal1("viewport_exited")
 
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   /**
    * Specialized setter for rect
    */
@@ -73,16 +80,13 @@ open class VisibilityNotifier2D(
   }
 
   companion object {
-    fun new(): VisibilityNotifier2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityNotifier2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisibilityNotifier2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisibilityNotifier2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisibilityNotifier2D = VisibilityNotifier2D(ptr)
     /**
      * Container for method_bind pointers for VisibilityNotifier2D
      */

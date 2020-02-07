@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class SegmentShape2D(
-  _handle: COpaquePointer
-) : Shape2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shape2D(null) {
   var a: Vector2
     get() {
        return getA() 
@@ -34,6 +37,10 @@ open class SegmentShape2D(
     set(value) {
       setB(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for a
@@ -74,16 +81,13 @@ open class SegmentShape2D(
   }
 
   companion object {
-    fun new(): SegmentShape2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("SegmentShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SegmentShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      SegmentShape2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): SegmentShape2D = SegmentShape2D(ptr)
     /**
      * Container for method_bind pointers for SegmentShape2D
      */

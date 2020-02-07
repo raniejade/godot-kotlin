@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Performance(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun getMonitor(monitor: Int): Float {
     val _arg = Variant.new(monitor)
     val _ret = __method_bind.getMonitor.call(this._handle, listOf(_arg))
@@ -105,9 +108,9 @@ open class Performance(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("Performance".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton Performance" }
-        Performance(
-          handle
-        )
+        val ret = Performance(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for Performance

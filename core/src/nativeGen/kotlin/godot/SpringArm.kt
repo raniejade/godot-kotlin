@@ -9,6 +9,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class SpringArm(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var collisionMask: Int
     get() {
        return getCollisionMask() 
@@ -52,6 +55,10 @@ open class SpringArm(
     set(value) {
       setLength(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addExcludedObject(rID: RID) {
     val _arg = Variant.new(rID)
@@ -114,15 +121,12 @@ open class SpringArm(
   }
 
   companion object {
-    fun new(): SpringArm = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpringArm".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SpringArm" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      SpringArm(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): SpringArm = SpringArm(ptr)
     /**
      * Container for method_bind pointers for SpringArm
      */

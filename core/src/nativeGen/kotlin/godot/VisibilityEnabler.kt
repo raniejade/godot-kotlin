@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisibilityEnabler(
-  _handle: COpaquePointer
-) : VisibilityNotifier(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisibilityNotifier(null) {
   var freezeBodies: Boolean
     get() {
        return isEnablerEnabled(1) 
@@ -34,6 +37,10 @@ open class VisibilityEnabler(
     set(value) {
       setEnabler(0, value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun isEnablerEnabled(enabler: Int): Boolean {
     val _arg = Variant.new(enabler)
@@ -70,16 +77,13 @@ open class VisibilityEnabler(
   }
 
   companion object {
-    fun new(): VisibilityEnabler = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityEnabler".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisibilityEnabler" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisibilityEnabler(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisibilityEnabler = VisibilityEnabler(ptr)
     /**
      * Container for method_bind pointers for VisibilityEnabler
      */

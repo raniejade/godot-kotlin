@@ -10,6 +10,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class GraphNode(
-  _handle: COpaquePointer
-) : Container(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Container(null) {
   var comment: Boolean
     get() {
        return isComment() 
@@ -103,6 +105,10 @@ open class GraphNode(
    * GraphNode::resize_request signal
    */
   val signalResizeRequest: Signal1<Vector2> = Signal1("resize_request")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for offset
@@ -320,15 +326,12 @@ open class GraphNode(
   }
 
   companion object {
-    fun new(): GraphNode = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GraphNode".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GraphNode" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      GraphNode(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): GraphNode = GraphNode(ptr)
     /**
      * Container for method_bind pointers for GraphNode
      */

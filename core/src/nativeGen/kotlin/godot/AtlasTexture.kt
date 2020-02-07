@@ -7,6 +7,8 @@ import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AtlasTexture(
-  _handle: COpaquePointer
-) : Texture(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Texture(null) {
   var atlas: Texture
     get() {
        return getAtlas() 
@@ -51,6 +54,10 @@ open class AtlasTexture(
     set(value) {
       setRegion(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for margin
@@ -111,15 +118,12 @@ open class AtlasTexture(
   }
 
   companion object {
-    fun new(): AtlasTexture = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AtlasTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AtlasTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AtlasTexture(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AtlasTexture = AtlasTexture(ptr)
     /**
      * Container for method_bind pointers for AtlasTexture
      */

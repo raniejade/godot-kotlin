@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CSGMesh(
-  _handle: COpaquePointer
-) : CSGPrimitive(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : CSGPrimitive(null) {
   var material: Material
     get() {
        return getMaterial() 
@@ -32,6 +35,10 @@ open class CSGMesh(
     set(value) {
       setMesh(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getMaterial(): Material {
     val _ret = __method_bind.getMaterial.call(this._handle)
@@ -54,15 +61,12 @@ open class CSGMesh(
   }
 
   companion object {
-    fun new(): CSGMesh = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CSGMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CSGMesh(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CSGMesh = CSGMesh(ptr)
     /**
      * Container for method_bind pointers for CSGMesh
      */

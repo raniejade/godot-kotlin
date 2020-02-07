@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class RectangleShape2D(
-  _handle: COpaquePointer
-) : Shape2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shape2D(null) {
   var extents: Vector2
     get() {
        return getExtents() 
@@ -26,6 +29,10 @@ open class RectangleShape2D(
     set(value) {
       setExtents(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for extents
@@ -47,16 +54,13 @@ open class RectangleShape2D(
   }
 
   companion object {
-    fun new(): RectangleShape2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("RectangleShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RectangleShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      RectangleShape2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): RectangleShape2D = RectangleShape2D(ptr)
     /**
      * Container for method_bind pointers for RectangleShape2D
      */

@@ -8,6 +8,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class DynamicFont(
-  _handle: COpaquePointer
-) : Font(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Font(null) {
   var extraSpacingBottom: Int
     get() {
        return getSpacing(1) 
@@ -100,6 +103,10 @@ open class DynamicFont(
     set(value) {
       setUseMipmaps(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for outlineColor
@@ -235,15 +242,12 @@ open class DynamicFont(
   }
 
   companion object {
-    fun new(): DynamicFont = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("DynamicFont".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for DynamicFont" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      DynamicFont(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): DynamicFont = DynamicFont(ptr)
     /**
      * Container for method_bind pointers for DynamicFont
      */

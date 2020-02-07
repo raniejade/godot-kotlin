@@ -10,6 +10,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CSGPolygon(
-  _handle: COpaquePointer
-) : CSGPrimitive(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : CSGPrimitive(null) {
   var depth: Float
     get() {
        return getDepth() 
@@ -126,6 +129,10 @@ open class CSGPolygon(
     set(value) {
       setSpinSides(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for pathNode
@@ -318,15 +325,12 @@ open class CSGPolygon(
   }
 
   companion object {
-    fun new(): CSGPolygon = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGPolygon".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CSGPolygon" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CSGPolygon(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CSGPolygon = CSGPolygon(ptr)
     /**
      * Container for method_bind pointers for CSGPolygon
      */

@@ -7,6 +7,8 @@ import godot.core.Transform
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Listener(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun clearCurrent() {
     __method_bind.clearCurrent.call(this._handle)
   }
@@ -38,15 +45,12 @@ open class Listener(
   }
 
   companion object {
-    fun new(): Listener = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Listener".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Listener" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Listener(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Listener = Listener(ptr)
     /**
      * Container for method_bind pointers for Listener
      */

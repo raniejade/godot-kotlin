@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PacketPeerStream(
-  _handle: COpaquePointer
-) : PacketPeer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PacketPeer(null) {
   var inputBufferMaxSize: Int
     get() {
        return getInputBufferMaxSize() 
@@ -41,6 +44,10 @@ open class PacketPeerStream(
     set(value) {
       setStreamPeer(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getInputBufferMaxSize(): Int {
     val _ret = __method_bind.getInputBufferMaxSize.call(this._handle)
@@ -73,16 +80,13 @@ open class PacketPeerStream(
   }
 
   companion object {
-    fun new(): PacketPeerStream = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PacketPeerStream".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PacketPeerStream" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PacketPeerStream(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PacketPeerStream = PacketPeerStream(ptr)
     /**
      * Container for method_bind pointers for PacketPeerStream
      */

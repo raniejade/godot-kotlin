@@ -7,6 +7,8 @@ import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class BackBufferCopy(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var copyMode: CopyMode
     get() {
        return getCopyMode() 
@@ -35,6 +38,10 @@ open class BackBufferCopy(
     set(value) {
       setRect(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for rect
@@ -87,16 +94,13 @@ open class BackBufferCopy(
   }
 
   companion object {
-    fun new(): BackBufferCopy = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("BackBufferCopy".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for BackBufferCopy" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      BackBufferCopy(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): BackBufferCopy = BackBufferCopy(ptr)
     /**
      * Container for method_bind pointers for BackBufferCopy
      */

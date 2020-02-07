@@ -9,6 +9,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +21,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioStreamGeneratorPlayback(
-  _handle: COpaquePointer
-) : AudioStreamPlaybackResampled(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioStreamPlaybackResampled(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun canPushBuffer(amount: Int): Boolean {
     val _arg = Variant.new(amount)
     val _ret = __method_bind.canPushBuffer.call(this._handle, listOf(_arg))

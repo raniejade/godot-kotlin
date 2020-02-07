@@ -7,6 +7,8 @@ import godot.core.NodePath
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class MeshInstance(
-  _handle: COpaquePointer
-) : GeometryInstance(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : GeometryInstance(null) {
   var mesh: Mesh
     get() {
        return getMesh() 
@@ -43,6 +46,10 @@ open class MeshInstance(
     set(value) {
       setSkin(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for skeleton
@@ -114,15 +121,12 @@ open class MeshInstance(
   }
 
   companion object {
-    fun new(): MeshInstance = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshInstance".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MeshInstance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      MeshInstance(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): MeshInstance = MeshInstance(ptr)
     /**
      * Container for method_bind pointers for MeshInstance
      */

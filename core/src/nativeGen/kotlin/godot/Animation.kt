@@ -14,6 +14,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -24,8 +25,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Animation(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var length: Float
     get() {
        return getLength() 
@@ -54,6 +56,10 @@ open class Animation(
    * Animation::tracks_changed signal
    */
   val signalTracksChanged: Signal0 = Signal0("tracks_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addTrack(type: Int, atPosition: Int = -1): Int {
     val _args = mutableListOf<Variant>()
@@ -669,15 +675,12 @@ open class Animation(
   }
 
   companion object {
-    fun new(): Animation = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Animation".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Animation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Animation(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Animation = Animation(ptr)
     /**
      * Container for method_bind pointers for Animation
      */

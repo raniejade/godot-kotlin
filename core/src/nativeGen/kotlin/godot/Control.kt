@@ -13,6 +13,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -24,8 +25,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Control(
-  _handle: COpaquePointer
-) : CanvasItem(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : CanvasItem(null) {
   var focusMode: FocusMode
     get() {
        return getFocusMode() 
@@ -262,6 +264,10 @@ open class Control(
    * Control::size_flags_changed signal
    */
   val signalSizeFlagsChanged: Signal0 = Signal0("size_flags_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for focusNeighbourBottom
@@ -1168,15 +1174,12 @@ open class Control(
 
     val NOTIFICATION_THEME_CHANGED: Int = 45
 
-    fun new(): Control = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Control".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Control" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Control(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Control = Control(ptr)
     /**
      * Container for method_bind pointers for Control
      */

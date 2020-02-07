@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeVectorDerivativeFunc(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var function: Function
     get() {
        return getFunction() 
@@ -25,6 +28,10 @@ open class VisualShaderNodeVectorDerivativeFunc(
     set(value) {
       setFunction(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getFunction(): Function {
     val _ret = __method_bind.getFunction.call(this._handle)
@@ -58,17 +65,13 @@ open class VisualShaderNodeVectorDerivativeFunc(
   }
 
   companion object {
-    fun new(): VisualShaderNodeVectorDerivativeFunc = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorDerivativeFunc".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorDerivativeFunc" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeVectorDerivativeFunc(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeVectorDerivativeFunc =
-        VisualShaderNodeVectorDerivativeFunc(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVectorDerivativeFunc
      */

@@ -7,6 +7,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CryptoKey(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun load(path: String): GDError {
     val _arg = Variant.new(path)
     val _ret = __method_bind.load.call(this._handle, listOf(_arg))
@@ -32,15 +38,12 @@ open class CryptoKey(
   }
 
   companion object {
-    fun new(): CryptoKey = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CryptoKey".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CryptoKey" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CryptoKey(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CryptoKey = CryptoKey(ptr)
     /**
      * Container for method_bind pointers for CryptoKey
      */

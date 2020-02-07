@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Any
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class FuncRef(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun callFunc(vararg varargs: Any?): Variant {
     val _args = mutableListOf<Variant>()
     varargs.forEach { _args.add(Variant.fromAny(it)) }
@@ -49,15 +55,12 @@ open class FuncRef(
   }
 
   companion object {
-    fun new(): FuncRef = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("FuncRef".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for FuncRef" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      FuncRef(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): FuncRef = FuncRef(ptr)
     /**
      * Container for method_bind pointers for FuncRef
      */

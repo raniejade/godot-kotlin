@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Shader(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var code: String
     get() {
        return getCode() 
@@ -27,6 +29,10 @@ open class Shader(
     set(value) {
       setCode(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getCode(): String {
     val _ret = __method_bind.getCode.call(this._handle)
@@ -84,15 +90,12 @@ open class Shader(
   }
 
   companion object {
-    fun new(): Shader = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Shader".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Shader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Shader(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Shader = Shader(ptr)
     /**
      * Container for method_bind pointers for Shader
      */

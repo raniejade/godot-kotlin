@@ -7,6 +7,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,12 +19,17 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class WebSocketMultiplayerPeer(
-  _handle: COpaquePointer
-) : NetworkedMultiplayerPeer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : NetworkedMultiplayerPeer(null) {
   /**
    * WebSocketMultiplayerPeer::peer_packet signal
    */
   val signalPeerPacket: Signal1<Int> = Signal1("peer_packet")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getPeer(peerId: Int): WebSocketPeer {
     val _arg = Variant.new(peerId)

@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CollisionShape(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var disabled: Boolean
     get() {
        return isDisabled() 
@@ -33,6 +36,10 @@ open class CollisionShape(
     set(value) {
       setShape(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getShape(): Shape {
     val _ret = __method_bind.getShape.call(this._handle)
@@ -64,16 +71,13 @@ open class CollisionShape(
   }
 
   companion object {
-    fun new(): CollisionShape = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionShape".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CollisionShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CollisionShape(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CollisionShape = CollisionShape(ptr)
     /**
      * Container for method_bind pointers for CollisionShape
      */

@@ -10,6 +10,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimatedSprite(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var animation: String
     get() {
        return getAnimation() 
@@ -96,6 +98,10 @@ open class AnimatedSprite(
    * AnimatedSprite::frame_changed signal
    */
   val signalFrameChanged: Signal0 = Signal0("frame_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for offset
@@ -203,16 +209,13 @@ open class AnimatedSprite(
   }
 
   companion object {
-    fun new(): AnimatedSprite = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimatedSprite".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimatedSprite" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimatedSprite(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimatedSprite = AnimatedSprite(ptr)
     /**
      * Container for method_bind pointers for AnimatedSprite
      */

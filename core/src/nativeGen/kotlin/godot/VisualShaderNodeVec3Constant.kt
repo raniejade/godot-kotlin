@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeVec3Constant(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var constant: Vector3
     get() {
        return getConstant() 
@@ -26,6 +29,10 @@ open class VisualShaderNodeVec3Constant(
     set(value) {
       setConstant(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for constant
@@ -47,16 +54,13 @@ open class VisualShaderNodeVec3Constant(
   }
 
   companion object {
-    fun new(): VisualShaderNodeVec3Constant = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVec3Constant".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVec3Constant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeVec3Constant(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeVec3Constant = VisualShaderNodeVec3Constant(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVec3Constant
      */

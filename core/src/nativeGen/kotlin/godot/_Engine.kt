@@ -10,6 +10,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _Engine(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   var editorHint: Boolean
     get() {
        return isEditorHint() 
@@ -194,9 +196,9 @@ open class _Engine(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Engine".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton _Engine" }
-        _Engine(
-          handle
-        )
+        val ret = _Engine(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for _Engine

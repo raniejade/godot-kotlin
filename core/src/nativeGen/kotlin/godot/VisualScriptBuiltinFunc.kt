@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptBuiltinFunc(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var function: BuiltinFunc
     get() {
        return getFunc() 
@@ -25,6 +28,10 @@ open class VisualScriptBuiltinFunc(
     set(value) {
       setFunc(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getFunc(): BuiltinFunc {
     val _ret = __method_bind.getFunc.call(this._handle)
@@ -190,16 +197,13 @@ open class VisualScriptBuiltinFunc(
   }
 
   companion object {
-    fun new(): VisualScriptBuiltinFunc = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptBuiltinFunc".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptBuiltinFunc" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptBuiltinFunc(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptBuiltinFunc = VisualScriptBuiltinFunc(ptr)
     /**
      * Container for method_bind pointers for VisualScriptBuiltinFunc
      */

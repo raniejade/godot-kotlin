@@ -12,6 +12,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -22,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _File(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var endianSwap: Boolean
     get() {
        return getEndianSwap() 
@@ -31,6 +33,10 @@ open class _File(
     set(value) {
       setEndianSwap(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun close() {
     __method_bind.close.call(this._handle)
@@ -346,15 +352,12 @@ open class _File(
   }
 
   companion object {
-    fun new(): _File = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_File".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for _File" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      _File(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): _File = _File(ptr)
     /**
      * Container for method_bind pointers for _File
      */

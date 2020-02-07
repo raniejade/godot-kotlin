@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class InputEventPanGesture(
-  _handle: COpaquePointer
-) : InputEventGesture(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : InputEventGesture(null) {
   var delta: Vector2
     get() {
        return getDelta() 
@@ -26,6 +29,10 @@ open class InputEventPanGesture(
     set(value) {
       setDelta(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for delta
@@ -47,16 +54,13 @@ open class InputEventPanGesture(
   }
 
   companion object {
-    fun new(): InputEventPanGesture = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventPanGesture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for InputEventPanGesture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      InputEventPanGesture(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): InputEventPanGesture = InputEventPanGesture(ptr)
     /**
      * Container for method_bind pointers for InputEventPanGesture
      */

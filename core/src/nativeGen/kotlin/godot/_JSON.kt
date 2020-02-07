@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _JSON(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun parse(json: String): JSONParseResult {
     val _arg = Variant.new(json)
     val _ret = __method_bind.parse.call(this._handle, listOf(_arg))
@@ -43,9 +45,9 @@ open class _JSON(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_JSON".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton _JSON" }
-        _JSON(
-          handle
-        )
+        val ret = _JSON(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for _JSON

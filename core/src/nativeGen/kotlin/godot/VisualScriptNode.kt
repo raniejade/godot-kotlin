@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,12 +18,17 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptNode(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   /**
    * VisualScriptNode::ports_changed signal
    */
   val signalPortsChanged: Signal0 = Signal0("ports_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getDefaultInputValue(portIdx: Int): Variant {
     val _arg = Variant.new(portIdx)

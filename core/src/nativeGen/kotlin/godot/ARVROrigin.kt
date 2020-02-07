@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ARVROrigin(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var worldScale: Float
     get() {
        return getWorldScale() 
@@ -25,6 +28,10 @@ open class ARVROrigin(
     set(value) {
       setWorldScale(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getWorldScale(): Float {
     val _ret = __method_bind.getWorldScale.call(this._handle)
@@ -37,15 +44,12 @@ open class ARVROrigin(
   }
 
   companion object {
-    fun new(): ARVROrigin = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVROrigin".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ARVROrigin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ARVROrigin(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ARVROrigin = ARVROrigin(ptr)
     /**
      * Container for method_bind pointers for ARVROrigin
      */

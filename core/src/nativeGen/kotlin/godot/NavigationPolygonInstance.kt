@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class NavigationPolygonInstance(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var enabled: Boolean
     get() {
        return isEnabled() 
@@ -33,6 +36,10 @@ open class NavigationPolygonInstance(
     set(value) {
       setNavigationPolygon(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getNavigationPolygon(): NavigationPolygon {
     val _ret = __method_bind.getNavigationPolygon.call(this._handle)
@@ -55,16 +62,13 @@ open class NavigationPolygonInstance(
   }
 
   companion object {
-    fun new(): NavigationPolygonInstance = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NavigationPolygonInstance".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for NavigationPolygonInstance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      NavigationPolygonInstance(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): NavigationPolygonInstance = NavigationPolygonInstance(ptr)
     /**
      * Container for method_bind pointers for NavigationPolygonInstance
      */

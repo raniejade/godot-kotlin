@@ -7,6 +7,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PackedDataContainer(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun pack(value: Variant): GDError {
     val _arg = Variant.new(value)
     val _ret = __method_bind.pack.call(this._handle, listOf(_arg))
@@ -31,16 +38,13 @@ open class PackedDataContainer(
   }
 
   companion object {
-    fun new(): PackedDataContainer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PackedDataContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PackedDataContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PackedDataContainer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PackedDataContainer = PackedDataContainer(ptr)
     /**
      * Container for method_bind pointers for PackedDataContainer
      */

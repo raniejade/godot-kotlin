@@ -7,6 +7,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ColorPickerButton(
-  _handle: COpaquePointer
-) : Button(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Button(null) {
   var color: Color
     get() {
        return getPickColor() 
@@ -50,6 +53,10 @@ open class ColorPickerButton(
    * ColorPickerButton::popup_closed signal
    */
   val signalPopupClosed: Signal0 = Signal0("popup_closed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for color
@@ -91,16 +98,13 @@ open class ColorPickerButton(
   }
 
   companion object {
-    fun new(): ColorPickerButton = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorPickerButton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ColorPickerButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ColorPickerButton(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ColorPickerButton = ColorPickerButton(ptr)
     /**
      * Container for method_bind pointers for ColorPickerButton
      */

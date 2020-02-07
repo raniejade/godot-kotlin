@@ -10,6 +10,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class StyleBoxTexture(
-  _handle: COpaquePointer
-) : StyleBox(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : StyleBox(null) {
   var axisStretchHorizontal: AxisStretchMode
     get() {
        return getHAxisStretchMode() 
@@ -147,6 +150,10 @@ open class StyleBoxTexture(
    * StyleBoxTexture::texture_changed signal
    */
   val signalTextureChanged: Signal0 = Signal0("texture_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for modulateColor
@@ -303,16 +310,13 @@ open class StyleBoxTexture(
   }
 
   companion object {
-    fun new(): StyleBoxTexture = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("StyleBoxTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for StyleBoxTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      StyleBoxTexture(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): StyleBoxTexture = StyleBoxTexture(ptr)
     /**
      * Container for method_bind pointers for StyleBoxTexture
      */

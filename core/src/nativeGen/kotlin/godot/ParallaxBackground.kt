@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ParallaxBackground(
-  _handle: COpaquePointer
-) : CanvasLayer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : CanvasLayer(null) {
   var scrollBaseOffset: Vector2
     get() {
        return getScrollBaseOffset() 
@@ -67,6 +70,10 @@ open class ParallaxBackground(
     set(value) {
       setScrollOffset(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for scrollBaseOffset
@@ -174,16 +181,13 @@ open class ParallaxBackground(
   }
 
   companion object {
-    fun new(): ParallaxBackground = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ParallaxBackground".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ParallaxBackground" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ParallaxBackground(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ParallaxBackground = ParallaxBackground(ptr)
     /**
      * Container for method_bind pointers for ParallaxBackground
      */

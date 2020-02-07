@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -14,18 +16,20 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PopupDialog(
-  _handle: COpaquePointer
-) : Popup(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Popup(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   companion object {
-    fun new(): PopupDialog = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PopupDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PopupDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PopupDialog(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PopupDialog = PopupDialog(ptr)
     /**
      * Container for method_bind pointers for PopupDialog
      */

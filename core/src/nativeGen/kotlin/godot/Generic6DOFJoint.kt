@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Generic6DOFJoint(
-  _handle: COpaquePointer
-) : Joint(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Joint(null) {
   var angularLimitXDamping: Float
     get() {
        return getParamX(13) 
@@ -652,6 +655,10 @@ open class Generic6DOFJoint(
       setPrecision(value)
     }
 
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun getFlagX(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.getFlagX.call(this._handle, listOf(_arg))
@@ -819,16 +826,13 @@ open class Generic6DOFJoint(
   }
 
   companion object {
-    fun new(): Generic6DOFJoint = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("Generic6DOFJoint".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Generic6DOFJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Generic6DOFJoint(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Generic6DOFJoint = Generic6DOFJoint(ptr)
     /**
      * Container for method_bind pointers for Generic6DOFJoint
      */

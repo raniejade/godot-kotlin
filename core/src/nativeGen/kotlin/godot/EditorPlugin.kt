@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorPlugin(
-  _handle: COpaquePointer
-) : Node(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node(null) {
   /**
    * EditorPlugin::main_screen_changed signal
    */
@@ -38,6 +40,10 @@ open class EditorPlugin(
    * EditorPlugin::scene_closed signal
    */
   val signalSceneClosed: Signal1<String> = Signal1("scene_closed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addAutoloadSingleton(name: String, path: String) {
     val _args = mutableListOf<Variant>()

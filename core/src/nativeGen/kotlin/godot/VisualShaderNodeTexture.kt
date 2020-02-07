@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeTexture(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var source: Source
     get() {
        return getSource() 
@@ -41,6 +44,10 @@ open class VisualShaderNodeTexture(
     set(value) {
       setTextureType(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getSource(): Source {
     val _ret = __method_bind.getSource.call(this._handle)
@@ -121,16 +128,13 @@ open class VisualShaderNodeTexture(
   }
 
   companion object {
-    fun new(): VisualShaderNodeTexture = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeTexture(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeTexture = VisualShaderNodeTexture(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeTexture
      */

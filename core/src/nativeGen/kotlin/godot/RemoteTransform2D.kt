@@ -7,6 +7,8 @@ import godot.core.NodePath
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class RemoteTransform2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var remotePath: NodePath
     get() {
        return getRemoteNode() 
@@ -59,6 +62,10 @@ open class RemoteTransform2D(
     set(value) {
       setUseGlobalCoordinates(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for remotePath
@@ -124,16 +131,13 @@ open class RemoteTransform2D(
   }
 
   companion object {
-    fun new(): RemoteTransform2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("RemoteTransform2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RemoteTransform2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      RemoteTransform2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): RemoteTransform2D = RemoteTransform2D(ptr)
     /**
      * Container for method_bind pointers for RemoteTransform2D
      */

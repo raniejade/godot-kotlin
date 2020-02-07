@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Any
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class NativeScript(
-  _handle: COpaquePointer
-) : Script(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Script(null) {
   var className: String
     get() {
        return getClassName() 
@@ -50,6 +52,10 @@ open class NativeScript(
     set(value) {
       setScriptClassName(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getClassDocumentation(): String {
     val _ret = __method_bind.getClassDocumentation.call(this._handle)
@@ -122,15 +128,12 @@ open class NativeScript(
   }
 
   companion object {
-    fun new(): NativeScript = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("NativeScript".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for NativeScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      NativeScript(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): NativeScript = NativeScript(ptr)
     /**
      * Container for method_bind pointers for NativeScript
      */

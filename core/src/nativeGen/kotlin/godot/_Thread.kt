@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _Thread(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun getId(): String {
     val _ret = __method_bind.getId.call(this._handle)
     return _ret.asString()
@@ -73,15 +79,12 @@ open class _Thread(
   }
 
   companion object {
-    fun new(): _Thread = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Thread".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for _Thread" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      _Thread(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): _Thread = _Thread(ptr)
     /**
      * Container for method_bind pointers for _Thread
      */

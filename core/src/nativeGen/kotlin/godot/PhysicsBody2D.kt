@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PhysicsBody2D(
-  _handle: COpaquePointer
-) : CollisionObject2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : CollisionObject2D(null) {
   var collisionLayer: Int
     get() {
        return getCollisionLayer() 
@@ -34,6 +37,10 @@ open class PhysicsBody2D(
     set(value) {
       setCollisionMask(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addCollisionExceptionWith(body: Node) {
     val _arg = Variant.new(body)

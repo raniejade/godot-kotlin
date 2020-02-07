@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class TabContainer(
-  _handle: COpaquePointer
-) : Container(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Container(null) {
   var currentTab: Int
     get() {
        return getCurrentTab() 
@@ -74,6 +76,10 @@ open class TabContainer(
    * TabContainer::tab_selected signal
    */
   val signalTabSelected: Signal1<Int> = Signal1("tab_selected")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun areTabsVisible(): Boolean {
     val _ret = __method_bind.areTabsVisible.call(this._handle)
@@ -227,15 +233,12 @@ open class TabContainer(
   }
 
   companion object {
-    fun new(): TabContainer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TabContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for TabContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      TabContainer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): TabContainer = TabContainer(ptr)
     /**
      * Container for method_bind pointers for TabContainer
      */

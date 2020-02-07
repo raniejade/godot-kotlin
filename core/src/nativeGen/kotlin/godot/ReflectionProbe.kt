@@ -10,6 +10,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ReflectionProbe(
-  _handle: COpaquePointer
-) : VisualInstance(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualInstance(null) {
   var boxProjection: Boolean
     get() {
        return isBoxProjectionEnabled() 
@@ -118,6 +121,10 @@ open class ReflectionProbe(
     set(value) {
       setUpdateMode(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for extents
@@ -286,16 +293,13 @@ open class ReflectionProbe(
   }
 
   companion object {
-    fun new(): ReflectionProbe = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ReflectionProbe".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ReflectionProbe" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ReflectionProbe(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ReflectionProbe = ReflectionProbe(ptr)
     /**
      * Container for method_bind pointers for ReflectionProbe
      */

@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class TextEdit(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var breakpointGutter: Boolean
     get() {
        return isBreakpointGutterEnabled() 
@@ -260,6 +262,10 @@ open class TextEdit(
    * TextEdit::text_changed signal
    */
   val signalTextChanged: Signal0 = Signal0("text_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addColorRegion(
     beginKey: String,
@@ -844,15 +850,12 @@ open class TextEdit(
   }
 
   companion object {
-    fun new(): TextEdit = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextEdit".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for TextEdit" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      TextEdit(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): TextEdit = TextEdit(ptr)
     /**
      * Container for method_bind pointers for TextEdit
      */

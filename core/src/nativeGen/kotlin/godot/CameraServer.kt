@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CameraServer(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   /**
    * CameraServer::camera_feed_added signal
    */
@@ -83,9 +86,9 @@ open class CameraServer(
         val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("CameraServer".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton CameraServer" }
-        CameraServer(
-          handle
-        )
+        val ret = CameraServer(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for CameraServer

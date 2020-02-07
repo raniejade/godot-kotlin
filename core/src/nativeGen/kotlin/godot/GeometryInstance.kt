@@ -9,6 +9,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class GeometryInstance(
-  _handle: COpaquePointer
-) : VisualInstance(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualInstance(null) {
   var castShadow: ShadowCastingSetting
     get() {
        return getCastShadowsSetting() 
@@ -84,6 +87,10 @@ open class GeometryInstance(
     set(value) {
       setFlag(0, value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getCastShadowsSetting(): ShadowCastingSetting {
     val _ret = __method_bind.getCastShadowsSetting.call(this._handle)

@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioEffectReverb(
-  _handle: COpaquePointer
-) : AudioEffect(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioEffect(null) {
   var damping: Float
     get() {
        return getDamping() 
@@ -81,6 +84,10 @@ open class AudioEffectReverb(
     set(value) {
       setWet(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getDamping(): Float {
     val _ret = __method_bind.getDamping.call(this._handle)
@@ -163,16 +170,13 @@ open class AudioEffectReverb(
   }
 
   companion object {
-    fun new(): AudioEffectReverb = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectReverb".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectReverb" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioEffectReverb(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioEffectReverb = AudioEffectReverb(ptr)
     /**
      * Container for method_bind pointers for AudioEffectReverb
      */

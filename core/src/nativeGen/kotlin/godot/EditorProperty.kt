@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorProperty(
-  _handle: COpaquePointer
-) : Container(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Container(null) {
   var checkable: Boolean
     get() {
        return isCheckable() 
@@ -109,6 +111,10 @@ open class EditorProperty(
    * EditorProperty::selected signal
    */
   val signalSelected: Signal2<String, Int> = Signal2("selected")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addFocusable(control: Control) {
     val _arg = Variant.new(control)

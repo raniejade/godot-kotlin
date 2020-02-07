@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class NavigationMeshInstance(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var enabled: Boolean
     get() {
        return isEnabled() 
@@ -33,6 +36,10 @@ open class NavigationMeshInstance(
     set(value) {
       setNavigationMesh(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getNavigationMesh(): NavigationMesh {
     val _ret = __method_bind.getNavigationMesh.call(this._handle)
@@ -55,16 +62,13 @@ open class NavigationMeshInstance(
   }
 
   companion object {
-    fun new(): NavigationMeshInstance = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NavigationMeshInstance".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for NavigationMeshInstance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      NavigationMeshInstance(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): NavigationMeshInstance = NavigationMeshInstance(ptr)
     /**
      * Container for method_bind pointers for NavigationMeshInstance
      */

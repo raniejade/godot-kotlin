@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +21,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class XMLParser(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun getAttributeCount(): Int {
     val _ret = __method_bind.getAttributeCount.call(this._handle)
     return _ret.asInt()
@@ -144,15 +150,12 @@ open class XMLParser(
   }
 
   companion object {
-    fun new(): XMLParser = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("XMLParser".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for XMLParser" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      XMLParser(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): XMLParser = XMLParser(ptr)
     /**
      * Container for method_bind pointers for XMLParser
      */

@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class TextureButton(
-  _handle: COpaquePointer
-) : BaseButton(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : BaseButton(null) {
   var expand: Boolean
     get() {
        return getExpand() 
@@ -82,6 +85,10 @@ open class TextureButton(
     set(value) {
       setPressedTexture(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getClickMask(): BitMap {
     val _ret = __method_bind.getClickMask.call(this._handle)
@@ -193,15 +200,12 @@ open class TextureButton(
   }
 
   companion object {
-    fun new(): TextureButton = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextureButton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for TextureButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      TextureButton(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): TextureButton = TextureButton(ptr)
     /**
      * Container for method_bind pointers for TextureButton
      */

@@ -10,6 +10,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Light2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var color: Color
     get() {
        return getColor() 
@@ -190,6 +193,10 @@ open class Light2D(
     set(value) {
       setTextureScale(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for color
@@ -479,15 +486,12 @@ open class Light2D(
   }
 
   companion object {
-    fun new(): Light2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Light2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Light2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Light2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Light2D = Light2D(ptr)
     /**
      * Container for method_bind pointers for Light2D
      */

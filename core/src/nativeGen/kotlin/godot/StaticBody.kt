@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class StaticBody(
-  _handle: COpaquePointer
-) : PhysicsBody(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PhysicsBody(null) {
   var bounce: Float
     get() {
        return getBounce() 
@@ -59,6 +62,10 @@ open class StaticBody(
     set(value) {
       setPhysicsMaterialOverride(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for constantAngularVelocity
@@ -129,15 +136,12 @@ open class StaticBody(
   }
 
   companion object {
-    fun new(): StaticBody = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StaticBody".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for StaticBody" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      StaticBody(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): StaticBody = StaticBody(ptr)
     /**
      * Container for method_bind pointers for StaticBody
      */

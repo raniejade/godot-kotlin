@@ -15,6 +15,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -25,8 +27,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _Geometry(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun buildBoxPlanes(extents: Vector3): VariantArray {
     val _arg = Variant.new(extents)
     val _ret = __method_bind.buildBoxPlanes.call(this._handle, listOf(_arg))
@@ -501,9 +504,9 @@ open class _Geometry(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Geometry".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton _Geometry" }
-        _Geometry(
-          handle
-        )
+        val ret = _Geometry(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for _Geometry

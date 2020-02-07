@@ -10,6 +10,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Spatial(
-  _handle: COpaquePointer
-) : Node(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node(null) {
   var gizmo: SpatialGizmo
     get() {
        return getGizmo() 
@@ -91,6 +94,10 @@ open class Spatial(
    * Spatial::visibility_changed signal
    */
   val signalVisibilityChanged: Signal0 = Signal0("visibility_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for globalTransform
@@ -411,15 +418,12 @@ open class Spatial(
 
     val NOTIFICATION_VISIBILITY_CHANGED: Int = 43
 
-    fun new(): Spatial = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Spatial".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Spatial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Spatial(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Spatial = Spatial(ptr)
     /**
      * Container for method_bind pointers for Spatial
      */

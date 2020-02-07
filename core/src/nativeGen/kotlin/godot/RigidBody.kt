@@ -9,6 +9,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class RigidBody(
-  _handle: COpaquePointer
-) : PhysicsBody(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PhysicsBody(null) {
   var angularDamp: Float
     get() {
        return getAngularDamp() 
@@ -230,6 +233,10 @@ open class RigidBody(
    * RigidBody::sleeping_state_changed signal
    */
   val signalSleepingStateChanged: Signal0 = Signal0("sleeping_state_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for angularVelocity
@@ -500,15 +507,12 @@ open class RigidBody(
   }
 
   companion object {
-    fun new(): RigidBody = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RigidBody".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RigidBody" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      RigidBody(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): RigidBody = RigidBody(ptr)
     /**
      * Container for method_bind pointers for RigidBody
      */

@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class MultiMeshInstance2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var multimesh: MultiMesh
     get() {
        return getMultimesh() 
@@ -45,6 +48,10 @@ open class MultiMeshInstance2D(
    * MultiMeshInstance2D::texture_changed signal
    */
   val signalTextureChanged: Signal0 = Signal0("texture_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getMultimesh(): MultiMesh {
     val _ret = __method_bind.getMultimesh.call(this._handle)
@@ -77,16 +84,13 @@ open class MultiMeshInstance2D(
   }
 
   companion object {
-    fun new(): MultiMeshInstance2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiMeshInstance2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MultiMeshInstance2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      MultiMeshInstance2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): MultiMeshInstance2D = MultiMeshInstance2D(ptr)
     /**
      * Container for method_bind pointers for MultiMeshInstance2D
      */

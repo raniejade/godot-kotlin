@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Range(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var allowGreater: Boolean
     get() {
        return isGreaterAllowed() 
@@ -108,6 +111,10 @@ open class Range(
    * Range::value_changed signal
    */
   val signalValueChanged: Signal1<Float> = Signal1("value_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAsRatio(): Float {
     val _ret = __method_bind.getAsRatio.call(this._handle)

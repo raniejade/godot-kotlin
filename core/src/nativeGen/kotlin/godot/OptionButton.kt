@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class OptionButton(
-  _handle: COpaquePointer
-) : Button(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Button(null) {
   /**
    * OptionButton::item_focused signal
    */
@@ -29,6 +31,10 @@ open class OptionButton(
    * OptionButton::item_selected signal
    */
   val signalItemSelected: Signal1<Int> = Signal1("item_selected")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addIconItem(
     texture: Texture,
@@ -164,15 +170,12 @@ open class OptionButton(
   }
 
   companion object {
-    fun new(): OptionButton = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("OptionButton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for OptionButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      OptionButton(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): OptionButton = OptionButton(ptr)
     /**
      * Container for method_bind pointers for OptionButton
      */

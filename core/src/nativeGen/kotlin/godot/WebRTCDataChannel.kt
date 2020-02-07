@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class WebRTCDataChannel(
-  _handle: COpaquePointer
-) : PacketPeer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PacketPeer(null) {
   var writeMode: WriteMode
     get() {
        return getWriteMode() 
@@ -28,6 +30,10 @@ open class WebRTCDataChannel(
     set(value) {
       setWriteMode(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun close() {
     __method_bind.close.call(this._handle)

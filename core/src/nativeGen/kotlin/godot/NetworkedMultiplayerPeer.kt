@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class NetworkedMultiplayerPeer(
-  _handle: COpaquePointer
-) : PacketPeer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PacketPeer(null) {
   var refuseNewConnections: Boolean
     get() {
        return isRefusingNewConnections() 
@@ -59,6 +62,10 @@ open class NetworkedMultiplayerPeer(
    * NetworkedMultiplayerPeer::server_disconnected signal
    */
   val signalServerDisconnected: Signal0 = Signal0("server_disconnected")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getConnectionStatus(): ConnectionStatus {
     val _ret = __method_bind.getConnectionStatus.call(this._handle)

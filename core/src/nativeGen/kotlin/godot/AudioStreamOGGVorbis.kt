@@ -8,6 +8,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioStreamOGGVorbis(
-  _handle: COpaquePointer
-) : AudioStream(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioStream(null) {
   var data: PoolByteArray
     get() {
        return getData() 
@@ -44,6 +47,10 @@ open class AudioStreamOGGVorbis(
     set(value) {
       setLoopOffset(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for data
@@ -85,16 +92,13 @@ open class AudioStreamOGGVorbis(
   }
 
   companion object {
-    fun new(): AudioStreamOGGVorbis = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamOGGVorbis".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioStreamOGGVorbis" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioStreamOGGVorbis(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioStreamOGGVorbis = AudioStreamOGGVorbis(ptr)
     /**
      * Container for method_bind pointers for AudioStreamOGGVorbis
      */

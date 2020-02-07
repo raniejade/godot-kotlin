@@ -9,6 +9,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Script(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var sourceCode: String
     get() {
        return getSourceCode() 
@@ -28,6 +30,10 @@ open class Script(
     set(value) {
       setSourceCode(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun canInstance(): Boolean {
     val _ret = __method_bind.canInstance.call(this._handle)

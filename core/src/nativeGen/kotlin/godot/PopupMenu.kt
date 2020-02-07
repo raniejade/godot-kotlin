@@ -9,6 +9,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PopupMenu(
-  _handle: COpaquePointer
-) : Popup(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Popup(null) {
   var allowSearch: Boolean
     get() {
        return getAllowSearch() 
@@ -75,6 +77,10 @@ open class PopupMenu(
    * PopupMenu::index_pressed signal
    */
   val signalIndexPressed: Signal1<Int> = Signal1("index_pressed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addCheckItem(
     label: String,
@@ -550,15 +556,12 @@ open class PopupMenu(
   }
 
   companion object {
-    fun new(): PopupMenu = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PopupMenu".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PopupMenu" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PopupMenu(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PopupMenu = PopupMenu(ptr)
     /**
      * Container for method_bind pointers for PopupMenu
      */

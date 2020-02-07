@@ -12,6 +12,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -22,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PhysicsServer(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun areaAddShape(
     area: RID,
     shape: RID,
@@ -1504,9 +1506,9 @@ open class PhysicsServer(
         val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("PhysicsServer".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton PhysicsServer" }
-        PhysicsServer(
-          handle
-        )
+        val ret = PhysicsServer(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for PhysicsServer

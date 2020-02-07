@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class OmniLight(
-  _handle: COpaquePointer
-) : Light(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Light(null) {
   var omniAttenuation: Float
     get() {
        return getParam(4) 
@@ -50,6 +53,10 @@ open class OmniLight(
     set(value) {
       setShadowMode(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getShadowDetail(): ShadowDetail {
     val _ret = __method_bind.getShadowDetail.call(this._handle)
@@ -110,15 +117,12 @@ open class OmniLight(
   }
 
   companion object {
-    fun new(): OmniLight = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("OmniLight".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for OmniLight" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      OmniLight(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): OmniLight = OmniLight(ptr)
     /**
      * Container for method_bind pointers for OmniLight
      */

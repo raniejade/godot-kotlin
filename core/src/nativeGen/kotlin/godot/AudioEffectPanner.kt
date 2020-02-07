@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioEffectPanner(
-  _handle: COpaquePointer
-) : AudioEffect(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioEffect(null) {
   var pan: Float
     get() {
        return getPan() 
@@ -25,6 +28,10 @@ open class AudioEffectPanner(
     set(value) {
       setPan(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getPan(): Float {
     val _ret = __method_bind.getPan.call(this._handle)
@@ -37,16 +44,13 @@ open class AudioEffectPanner(
   }
 
   companion object {
-    fun new(): AudioEffectPanner = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectPanner".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectPanner" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioEffectPanner(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioEffectPanner = AudioEffectPanner(ptr)
     /**
      * Container for method_bind pointers for AudioEffectPanner
      */

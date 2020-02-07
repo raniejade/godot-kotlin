@@ -7,6 +7,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptConstructor(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var constructor: Dictionary
     get() {
        return getConstructor() 
@@ -35,6 +38,10 @@ open class VisualScriptConstructor(
     set(value) {
       setConstructorType(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for constructor
@@ -66,16 +73,13 @@ open class VisualScriptConstructor(
   }
 
   companion object {
-    fun new(): VisualScriptConstructor = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptConstructor".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptConstructor" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptConstructor(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptConstructor = VisualScriptConstructor(ptr)
     /**
      * Container for method_bind pointers for VisualScriptConstructor
      */

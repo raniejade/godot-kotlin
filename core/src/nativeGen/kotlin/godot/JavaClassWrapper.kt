@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class JavaClassWrapper(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun wrap(name: String): JavaClass {
     val _arg = Variant.new(name)
     val _ret = __method_bind.wrap.call(this._handle, listOf(_arg))
@@ -30,9 +32,9 @@ open class JavaClassWrapper(
         val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("JavaClassWrapper".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton JavaClassWrapper" }
-        JavaClassWrapper(
-          handle
-        )
+        val ret = JavaClassWrapper(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for JavaClassWrapper

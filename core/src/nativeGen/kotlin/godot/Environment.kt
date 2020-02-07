@@ -11,6 +11,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -22,8 +24,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Environment(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var adjustmentBrightness: Float
     get() {
        return getAdjustmentBrightness() 
@@ -695,6 +698,10 @@ open class Environment(
     set(value) {
       setTonemapWhite(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for ambientLightColor
@@ -1694,15 +1701,12 @@ open class Environment(
   }
 
   companion object {
-    fun new(): Environment = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Environment".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Environment" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Environment(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Environment = Environment(ptr)
     /**
      * Container for method_bind pointers for Environment
      */

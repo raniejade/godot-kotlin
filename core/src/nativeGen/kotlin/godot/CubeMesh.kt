@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CubeMesh(
-  _handle: COpaquePointer
-) : PrimitiveMesh(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PrimitiveMesh(null) {
   var size: Vector3
     get() {
        return getSize() 
@@ -51,6 +54,10 @@ open class CubeMesh(
     set(value) {
       setSubdivideWidth(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for size
@@ -102,15 +109,12 @@ open class CubeMesh(
   }
 
   companion object {
-    fun new(): CubeMesh = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CubeMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CubeMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CubeMesh(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CubeMesh = CubeMesh(ptr)
     /**
      * Container for method_bind pointers for CubeMesh
      */

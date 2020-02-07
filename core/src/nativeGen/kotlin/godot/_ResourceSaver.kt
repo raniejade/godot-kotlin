@@ -9,6 +9,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _ResourceSaver(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun getRecognizedExtensions(type: Resource): PoolStringArray {
     val _arg = Variant.new(type)
     val _ret = __method_bind.getRecognizedExtensions.call(this._handle, listOf(_arg))
@@ -75,9 +77,9 @@ open class _ResourceSaver(
         val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ResourceSaver".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton _ResourceSaver" }
-        _ResourceSaver(
-          handle
-        )
+        val ret = _ResourceSaver(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for _ResourceSaver

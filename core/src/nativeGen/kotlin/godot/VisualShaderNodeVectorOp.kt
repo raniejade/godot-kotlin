@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeVectorOp(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var operator: Operator
     get() {
        return getOperator() 
@@ -25,6 +28,10 @@ open class VisualShaderNodeVectorOp(
     set(value) {
       setOperator(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getOperator(): Operator {
     val _ret = __method_bind.getOperator.call(this._handle)
@@ -76,16 +83,13 @@ open class VisualShaderNodeVectorOp(
   }
 
   companion object {
-    fun new(): VisualShaderNodeVectorOp = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorOp".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorOp" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeVectorOp(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeVectorOp = VisualShaderNodeVectorOp(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVectorOp
      */

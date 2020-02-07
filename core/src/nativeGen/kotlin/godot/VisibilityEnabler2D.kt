@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisibilityEnabler2D(
-  _handle: COpaquePointer
-) : VisibilityNotifier2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisibilityNotifier2D(null) {
   var freezeBodies: Boolean
     get() {
        return isEnablerEnabled(1) 
@@ -67,6 +70,10 @@ open class VisibilityEnabler2D(
       setEnabler(3, value)
     }
 
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun isEnablerEnabled(enabler: Int): Boolean {
     val _arg = Variant.new(enabler)
     val _ret = __method_bind.isEnablerEnabled.call(this._handle, listOf(_arg))
@@ -110,16 +117,13 @@ open class VisibilityEnabler2D(
   }
 
   companion object {
-    fun new(): VisibilityEnabler2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityEnabler2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisibilityEnabler2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisibilityEnabler2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisibilityEnabler2D = VisibilityEnabler2D(ptr)
     /**
      * Container for method_bind pointers for VisibilityEnabler2D
      */

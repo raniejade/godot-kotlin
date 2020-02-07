@@ -18,6 +18,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -28,8 +29,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class SurfaceTool(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addBones(bones: PoolIntArray) {
     val _arg = Variant.new(bones)
     __method_bind.addBones.call(this._handle, listOf(_arg))
@@ -174,15 +180,12 @@ open class SurfaceTool(
   }
 
   companion object {
-    fun new(): SurfaceTool = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SurfaceTool".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SurfaceTool" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      SurfaceTool(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): SurfaceTool = SurfaceTool(ptr)
     /**
      * Container for method_bind pointers for SurfaceTool
      */

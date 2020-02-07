@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -14,18 +16,20 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VBoxContainer(
-  _handle: COpaquePointer
-) : BoxContainer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : BoxContainer(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   companion object {
-    fun new(): VBoxContainer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VBoxContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VBoxContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VBoxContainer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VBoxContainer = VBoxContainer(ptr)
     /**
      * Container for method_bind pointers for VBoxContainer
      */

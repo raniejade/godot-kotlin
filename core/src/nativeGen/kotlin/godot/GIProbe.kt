@@ -9,6 +9,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class GIProbe(
-  _handle: COpaquePointer
-) : VisualInstance(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualInstance(null) {
   var bias: Float
     get() {
        return getBias() 
@@ -101,6 +104,10 @@ open class GIProbe(
     set(value) {
       setSubdiv(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for extents
@@ -248,15 +255,12 @@ open class GIProbe(
   }
 
   companion object {
-    fun new(): GIProbe = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GIProbe".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GIProbe" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      GIProbe(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): GIProbe = GIProbe(ptr)
     /**
      * Container for method_bind pointers for GIProbe
      */

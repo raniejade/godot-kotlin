@@ -9,6 +9,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioStreamPlayer3D(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var areaMask: Int
     get() {
        return getAreaMask() 
@@ -169,6 +171,10 @@ open class AudioStreamPlayer3D(
    * AudioStreamPlayer3D::finished signal
    */
   val signalFinished: Signal0 = Signal0("finished")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAreaMask(): Int {
     val _ret = __method_bind.getAreaMask.call(this._handle)
@@ -443,16 +449,13 @@ open class AudioStreamPlayer3D(
   }
 
   companion object {
-    fun new(): AudioStreamPlayer3D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamPlayer3D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioStreamPlayer3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioStreamPlayer3D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioStreamPlayer3D = AudioStreamPlayer3D(ptr)
     /**
      * Container for method_bind pointers for AudioStreamPlayer3D
      */

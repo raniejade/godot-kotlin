@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptOperator(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var operator: Variant.Operator
     get() {
        return getOperator() 
@@ -33,6 +36,10 @@ open class VisualScriptOperator(
     set(value) {
       setTyped(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getOperator(): Variant.Operator {
     val _ret = __method_bind.getOperator.call(this._handle)
@@ -55,16 +62,13 @@ open class VisualScriptOperator(
   }
 
   companion object {
-    fun new(): VisualScriptOperator = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptOperator".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptOperator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptOperator(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptOperator = VisualScriptOperator(ptr)
     /**
      * Container for method_bind pointers for VisualScriptOperator
      */

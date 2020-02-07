@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeTextureUniform(
-  _handle: COpaquePointer
-) : VisualShaderNodeUniform(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNodeUniform(null) {
   var colorDefault: ColorDefault
     get() {
        return getColorDefault() 
@@ -33,6 +36,10 @@ open class VisualShaderNodeTextureUniform(
     set(value) {
       setTextureType(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getColorDefault(): ColorDefault {
     val _ret = __method_bind.getColorDefault.call(this._handle)
@@ -97,17 +104,13 @@ open class VisualShaderNodeTextureUniform(
   }
 
   companion object {
-    fun new(): VisualShaderNodeTextureUniform = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTextureUniform".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTextureUniform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeTextureUniform(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeTextureUniform =
-        VisualShaderNodeTextureUniform(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeTextureUniform
      */

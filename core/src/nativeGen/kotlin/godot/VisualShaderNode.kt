@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNode(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var defaultInputValues: VariantArray
     get() {
        return getDefaultInputValues() 
@@ -38,6 +41,10 @@ open class VisualShaderNode(
    * VisualShaderNode::editor_refresh_request signal
    */
   val signalEditorRefreshRequest: Signal0 = Signal0("editor_refresh_request")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getDefaultInputValues(): VariantArray {
     val _ret = __method_bind.getDefaultInputValues.call(this._handle)

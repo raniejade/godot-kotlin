@@ -10,6 +10,8 @@ import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CollisionObject(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var inputCaptureOnDrag: Boolean
     get() {
        return getCaptureInputOnDrag() 
@@ -52,6 +55,10 @@ open class CollisionObject(
    * CollisionObject::mouse_exited signal
    */
   val signalMouseExited: Signal0 = Signal0("mouse_exited")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun createShapeOwner(owner: Object): Int {
     val _arg = Variant.new(owner)

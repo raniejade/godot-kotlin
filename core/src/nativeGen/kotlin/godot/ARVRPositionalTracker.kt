@@ -12,6 +12,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -22,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ARVRPositionalTracker(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   var rumble: Float
     get() {
        return getRumble() 
@@ -31,6 +33,10 @@ open class ARVRPositionalTracker(
     set(value) {
       setRumble(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getHand(): TrackerHand {
     val _ret = __method_bind.getHand.call(this._handle)
@@ -115,16 +121,13 @@ open class ARVRPositionalTracker(
   }
 
   companion object {
-    fun new(): ARVRPositionalTracker = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRPositionalTracker".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ARVRPositionalTracker" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ARVRPositionalTracker(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ARVRPositionalTracker = ARVRPositionalTracker(ptr)
     /**
      * Container for method_bind pointers for ARVRPositionalTracker
      */

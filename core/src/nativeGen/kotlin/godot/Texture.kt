@@ -11,6 +11,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Texture(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var flags: Int
     get() {
        return getFlags() 
@@ -30,6 +33,10 @@ open class Texture(
     set(value) {
       setFlags(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun draw(
     canvasItem: RID,

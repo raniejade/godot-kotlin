@@ -10,6 +10,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PhysicalBone(
-  _handle: COpaquePointer
-) : PhysicsBody(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PhysicsBody(null) {
   var bodyOffset: Transform
     get() {
        return getBodyOffset() 
@@ -86,6 +89,10 @@ open class PhysicalBone(
     set(value) {
       setWeight(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for bodyOffset
@@ -245,15 +252,12 @@ open class PhysicalBone(
   }
 
   companion object {
-    fun new(): PhysicalBone = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PhysicalBone".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PhysicalBone" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PhysicalBone(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PhysicalBone = PhysicalBone(ptr)
     /**
      * Container for method_bind pointers for PhysicalBone
      */

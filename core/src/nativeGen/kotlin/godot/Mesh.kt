@@ -10,6 +10,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Mesh(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var lightmapSizeHint: Vector2
     get() {
        return getLightmapSizeHint() 
@@ -30,6 +33,10 @@ open class Mesh(
     set(value) {
       setLightmapSizeHint(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for lightmapSizeHint

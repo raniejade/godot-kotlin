@@ -9,6 +9,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimationNodeStateMachineTransition(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var advanceCondition: String
     get() {
        return getAdvanceCondition() 
@@ -73,6 +75,10 @@ open class AnimationNodeStateMachineTransition(
    * AnimationNodeStateMachineTransition::advance_condition_changed signal
    */
   val signalAdvanceConditionChanged: Signal0 = Signal0("advance_condition_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAdvanceCondition(): String {
     val _ret = __method_bind.getAdvanceCondition.call(this._handle)
@@ -156,17 +162,13 @@ open class AnimationNodeStateMachineTransition(
   }
 
   companion object {
-    fun new(): AnimationNodeStateMachineTransition = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeStateMachineTransition".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNodeStateMachineTransition" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimationNodeStateMachineTransition(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimationNodeStateMachineTransition =
-        AnimationNodeStateMachineTransition(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeStateMachineTransition
      */

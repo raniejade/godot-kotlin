@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimationNodeAnimation(
-  _handle: COpaquePointer
-) : AnimationRootNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AnimationRootNode(null) {
   var animation: String
     get() {
        return getAnimation() 
@@ -25,6 +27,10 @@ open class AnimationNodeAnimation(
     set(value) {
       setAnimation(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAnimation(): String {
     val _ret = __method_bind.getAnimation.call(this._handle)
@@ -37,16 +43,13 @@ open class AnimationNodeAnimation(
   }
 
   companion object {
-    fun new(): AnimationNodeAnimation = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeAnimation".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNodeAnimation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimationNodeAnimation(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimationNodeAnimation = AnimationNodeAnimation(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeAnimation
      */

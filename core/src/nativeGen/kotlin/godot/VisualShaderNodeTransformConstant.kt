@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Transform
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeTransformConstant(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var constant: Transform
     get() {
        return getConstant() 
@@ -26,6 +29,10 @@ open class VisualShaderNodeTransformConstant(
     set(value) {
       setConstant(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for constant
@@ -47,17 +54,13 @@ open class VisualShaderNodeTransformConstant(
   }
 
   companion object {
-    fun new(): VisualShaderNodeTransformConstant = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTransformConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeTransformConstant(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeTransformConstant =
-        VisualShaderNodeTransformConstant(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeTransformConstant
      */

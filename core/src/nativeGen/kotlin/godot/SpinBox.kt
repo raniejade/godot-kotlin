@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class SpinBox(
-  _handle: COpaquePointer
-) : Range(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Range(null) {
   var align: LineEdit.Align
     get() {
        return getAlign() 
@@ -51,6 +53,10 @@ open class SpinBox(
     set(value) {
       setSuffix(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun apply() {
     __method_bind.apply.call(this._handle)
@@ -102,15 +108,12 @@ open class SpinBox(
   }
 
   companion object {
-    fun new(): SpinBox = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpinBox".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SpinBox" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      SpinBox(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): SpinBox = SpinBox(ptr)
     /**
      * Container for method_bind pointers for SpinBox
      */

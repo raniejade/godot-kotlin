@@ -7,6 +7,8 @@ import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,12 +19,17 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Container(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   /**
    * Container::sort_children signal
    */
   val signalSortChildren: Signal0 = Signal0("sort_children")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun fitChildInRect(child: Control, rect: Rect2) {
     val _args = mutableListOf<Variant>()
@@ -38,15 +45,12 @@ open class Container(
   companion object {
     val NOTIFICATION_SORT_CHILDREN: Int = 50
 
-    fun new(): Container = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Container".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Container" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Container(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Container = Container(ptr)
     /**
      * Container for method_bind pointers for Container
      */

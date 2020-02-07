@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class LargeTexture(
-  _handle: COpaquePointer
-) : Texture(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Texture(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addPiece(ofs: Vector2, texture: Texture): Int {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(ofs))
@@ -68,15 +75,12 @@ open class LargeTexture(
   }
 
   companion object {
-    fun new(): LargeTexture = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LargeTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for LargeTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      LargeTexture(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): LargeTexture = LargeTexture(ptr)
     /**
      * Container for method_bind pointers for LargeTexture
      */

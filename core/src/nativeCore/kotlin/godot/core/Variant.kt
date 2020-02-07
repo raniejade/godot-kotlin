@@ -275,17 +275,36 @@ class Variant(
     }
   }
 
-  fun <T: Object> asObject(factory: (COpaquePointer) -> T): T? {
+  fun <T: Object> asObject(factory: () -> T): T? {
     return memScoped {
       val obj = checkNotNull(Godot.gdnative.godot_variant_as_object)(_value.ptr)
-      obj?.let(factory)
+      if (obj == null) {
+        null
+      } else {
+        val ret = factory()
+        ret._handle = obj
+        ret
+      }
+    }
+  }
+
+  fun asObject(): Object? {
+    return memScoped {
+      val obj = checkNotNull(Godot.gdnative.godot_variant_as_object)(_value.ptr)
+      if (obj == null) {
+        null
+      } else {
+        val ret = Object()
+        ret._handle = obj
+        ret
+      }
     }
   }
 
   fun toAny(): Any? {
     return when (type) {
       Type.NIL -> null
-      Type.OBJECT -> asObject(::Object)
+      Type.OBJECT -> asObject()
       Type.BOOL -> asBoolean()
       Type.FLOAT -> asFloat()
       Type.INT -> asInt()

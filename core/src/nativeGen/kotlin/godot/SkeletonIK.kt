@@ -12,6 +12,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -23,8 +24,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class SkeletonIK(
-  _handle: COpaquePointer
-) : Node(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node(null) {
   var interpolation: Float
     get() {
        return getInterpolation() 
@@ -104,6 +106,10 @@ open class SkeletonIK(
     set(value) {
       setUseMagnet(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for magnet
@@ -252,15 +258,12 @@ open class SkeletonIK(
   }
 
   companion object {
-    fun new(): SkeletonIK = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SkeletonIK".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SkeletonIK" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      SkeletonIK(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): SkeletonIK = SkeletonIK(ptr)
     /**
      * Container for method_bind pointers for SkeletonIK
      */

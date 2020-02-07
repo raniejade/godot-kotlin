@@ -12,7 +12,9 @@ class ClassHandle<S: Object, T: S>(
   val info: GodotClass<S, T>
 ) : ClassMemberRegistry<T>(handle, className) {
   fun create(instance: COpaquePointer): T {
-    return info.factory(instance)
+    val ret = info.factory()
+    ret._handle = instance
+    return ret
   }
 
   fun init() {

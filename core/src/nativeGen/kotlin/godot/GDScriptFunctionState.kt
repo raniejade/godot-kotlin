@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,12 +18,17 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class GDScriptFunctionState(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   /**
    * GDScriptFunctionState::completed signal
    */
   val signalCompleted: Signal1<Variant> = Signal1("completed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun isValid(extendedCheck: Boolean = false): Boolean {
     val _arg = Variant.new(extendedCheck)

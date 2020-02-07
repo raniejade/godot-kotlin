@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,8 +17,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ButtonGroup(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun getButtons(): VariantArray {
     val _ret = __method_bind.getButtons.call(this._handle)
     return _ret.asVariantArray()
@@ -28,15 +35,12 @@ open class ButtonGroup(
   }
 
   companion object {
-    fun new(): ButtonGroup = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ButtonGroup".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ButtonGroup" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ButtonGroup(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ButtonGroup = ButtonGroup(ptr)
     /**
      * Container for method_bind pointers for ButtonGroup
      */

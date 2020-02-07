@@ -12,6 +12,7 @@ import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -23,8 +24,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ArrayMesh(
-  _handle: COpaquePointer
-) : Mesh(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Mesh(null) {
   var blendShapeMode: Mesh.BlendShapeMode
     get() {
        return getBlendShapeMode() 
@@ -40,6 +42,10 @@ open class ArrayMesh(
     set(value) {
       setCustomAabb(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for customAabb
@@ -249,15 +255,12 @@ open class ArrayMesh(
 
     val NO_INDEX_ARRAY: Int = -1
 
-    fun new(): ArrayMesh = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ArrayMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ArrayMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ArrayMesh(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ArrayMesh = ArrayMesh(ptr)
     /**
      * Container for method_bind pointers for ArrayMesh
      */

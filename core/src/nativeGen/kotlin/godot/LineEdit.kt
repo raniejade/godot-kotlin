@@ -9,6 +9,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class LineEdit(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var align: Align
     get() {
        return getAlign() 
@@ -171,6 +173,10 @@ open class LineEdit(
    * LineEdit::text_entered signal
    */
   val signalTextEntered: Signal1<String> = Signal1("text_entered")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun appendAtCursor(text: String) {
     val _arg = Variant.new(text)
@@ -431,15 +437,12 @@ open class LineEdit(
   }
 
   companion object {
-    fun new(): LineEdit = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LineEdit".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for LineEdit" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      LineEdit(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): LineEdit = LineEdit(ptr)
     /**
      * Container for method_bind pointers for LineEdit
      */

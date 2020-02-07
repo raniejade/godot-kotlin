@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptMathConstant(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var constant: MathConstant
     get() {
        return getMathConstant() 
@@ -25,6 +28,10 @@ open class VisualScriptMathConstant(
     set(value) {
       setMathConstant(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getMathConstant(): MathConstant {
     val _ret = __method_bind.getMathConstant.call(this._handle)
@@ -70,16 +77,13 @@ open class VisualScriptMathConstant(
   }
 
   companion object {
-    fun new(): VisualScriptMathConstant = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptMathConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptMathConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptMathConstant(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptMathConstant = VisualScriptMathConstant(ptr)
     /**
      * Container for method_bind pointers for VisualScriptMathConstant
      */

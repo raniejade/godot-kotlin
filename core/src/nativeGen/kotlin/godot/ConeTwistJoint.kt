@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ConeTwistJoint(
-  _handle: COpaquePointer
-) : Joint(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Joint(null) {
   var bias: Float
     get() {
        return getParam(2) 
@@ -42,6 +45,10 @@ open class ConeTwistJoint(
     set(value) {
       setParam(3, value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
@@ -84,16 +91,13 @@ open class ConeTwistJoint(
   }
 
   companion object {
-    fun new(): ConeTwistJoint = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConeTwistJoint".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ConeTwistJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ConeTwistJoint(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ConeTwistJoint = ConeTwistJoint(ptr)
     /**
      * Container for method_bind pointers for ConeTwistJoint
      */

@@ -9,6 +9,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PacketPeer(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var allowObjectDecoding: Boolean
     get() {
        return isObjectDecodingAllowed() 
@@ -36,6 +39,10 @@ open class PacketPeer(
     set(value) {
       setEncodeBufferMaxSize(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAvailablePacketCount(): Int {
     val _ret = __method_bind.getAvailablePacketCount.call(this._handle)

@@ -8,6 +8,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Bone2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var defaultLength: Float
     get() {
        return getDefaultLength() 
@@ -36,6 +39,10 @@ open class Bone2D(
     set(value) {
       setRest(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for rest
@@ -81,15 +88,12 @@ open class Bone2D(
   }
 
   companion object {
-    fun new(): Bone2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Bone2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Bone2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Bone2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Bone2D = Bone2D(ptr)
     /**
      * Container for method_bind pointers for Bone2D
      */

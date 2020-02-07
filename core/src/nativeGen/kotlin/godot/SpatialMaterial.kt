@@ -10,6 +10,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class SpatialMaterial(
-  _handle: COpaquePointer
-) : Material(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Material(null) {
   var albedoColor: Color
     get() {
        return getAlbedo() 
@@ -830,6 +833,10 @@ open class SpatialMaterial(
     set(value) {
       setFlag(3, value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for albedoColor
@@ -1845,16 +1852,13 @@ open class SpatialMaterial(
   }
 
   companion object {
-    fun new(): SpatialMaterial = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpatialMaterial".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SpatialMaterial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      SpatialMaterial(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): SpatialMaterial = SpatialMaterial(ptr)
     /**
      * Container for method_bind pointers for SpatialMaterial
      */

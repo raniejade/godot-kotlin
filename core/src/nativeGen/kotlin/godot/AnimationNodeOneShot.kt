@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimationNodeOneShot(
-  _handle: COpaquePointer
-) : AnimationNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AnimationNode(null) {
   var autorestart: Boolean
     get() {
        return hasAutorestart() 
@@ -67,6 +70,10 @@ open class AnimationNodeOneShot(
     set(value) {
       setUseSync(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAutorestartDelay(): Float {
     val _ret = __method_bind.getAutorestartDelay.call(this._handle)
@@ -158,16 +165,13 @@ open class AnimationNodeOneShot(
   }
 
   companion object {
-    fun new(): AnimationNodeOneShot = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeOneShot".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNodeOneShot" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimationNodeOneShot(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimationNodeOneShot = AnimationNodeOneShot(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeOneShot
      */

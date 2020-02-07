@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class GradientTexture(
-  _handle: COpaquePointer
-) : Texture(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Texture(null) {
   var gradient: Gradient
     get() {
        return getGradient() 
@@ -33,6 +36,10 @@ open class GradientTexture(
     set(value) {
       setWidth(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getGradient(): Gradient {
     val _ret = __method_bind.getGradient.call(this._handle)
@@ -50,16 +57,13 @@ open class GradientTexture(
   }
 
   companion object {
-    fun new(): GradientTexture = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("GradientTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GradientTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      GradientTexture(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): GradientTexture = GradientTexture(ptr)
     /**
      * Container for method_bind pointers for GradientTexture
      */

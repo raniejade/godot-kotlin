@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Any
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PluginScript(
-  _handle: COpaquePointer
-) : Script(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Script(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun new(vararg varargs: Any?): Variant {
     val _args = mutableListOf<Variant>()
     varargs.forEach { _args.add(Variant.fromAny(it)) }
@@ -26,15 +33,12 @@ open class PluginScript(
   }
 
   companion object {
-    fun new(): PluginScript = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PluginScript".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PluginScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PluginScript(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PluginScript = PluginScript(ptr)
     /**
      * Container for method_bind pointers for PluginScript
      */

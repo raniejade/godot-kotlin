@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class JSONParseResult(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var error: GDError
     get() {
        return getError() 
@@ -52,6 +54,10 @@ open class JSONParseResult(
     set(value) {
       setResult(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for result
@@ -103,16 +109,13 @@ open class JSONParseResult(
   }
 
   companion object {
-    fun new(): JSONParseResult = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("JSONParseResult".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for JSONParseResult" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      JSONParseResult(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): JSONParseResult = JSONParseResult(ptr)
     /**
      * Container for method_bind pointers for JSONParseResult
      */

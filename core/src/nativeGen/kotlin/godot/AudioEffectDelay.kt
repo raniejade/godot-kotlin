@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioEffectDelay(
-  _handle: COpaquePointer
-) : AudioEffect(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioEffect(null) {
   var dry: Float
     get() {
        return getDry() 
@@ -122,6 +125,10 @@ open class AudioEffectDelay(
     set(value) {
       setTap2Pan(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getDry(): Float {
     val _ret = __method_bind.getDry.call(this._handle)
@@ -254,16 +261,13 @@ open class AudioEffectDelay(
   }
 
   companion object {
-    fun new(): AudioEffectDelay = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectDelay".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectDelay" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioEffectDelay(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioEffectDelay = AudioEffectDelay(ptr)
     /**
      * Container for method_bind pointers for AudioEffectDelay
      */

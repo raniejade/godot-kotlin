@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class SpotLight(
-  _handle: COpaquePointer
-) : Light(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Light(null) {
   var spotAngle: Float
     get() {
        return getParam(5) 
@@ -49,16 +52,17 @@ open class SpotLight(
       setParam(3, value)
     }
 
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   companion object {
-    fun new(): SpotLight = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpotLight".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SpotLight" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      SpotLight(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): SpotLight = SpotLight(ptr)
     /**
      * Container for method_bind pointers for SpotLight
      */

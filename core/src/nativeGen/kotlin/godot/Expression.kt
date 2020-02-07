@@ -9,6 +9,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Expression(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun execute(
     inputs: VariantArray,
     baseInstance: Object,
@@ -53,15 +59,12 @@ open class Expression(
   }
 
   companion object {
-    fun new(): Expression = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Expression".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Expression" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Expression(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Expression = Expression(ptr)
     /**
      * Container for method_bind pointers for Expression
      */

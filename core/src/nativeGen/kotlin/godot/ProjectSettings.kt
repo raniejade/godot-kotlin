@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ProjectSettings(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun addPropertyInfo(hint: Dictionary) {
     val _arg = Variant.new(hint)
     __method_bind.addPropertyInfo.call(this._handle, listOf(_arg))
@@ -120,9 +122,9 @@ open class ProjectSettings(
         val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("ProjectSettings".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton ProjectSettings" }
-        ProjectSettings(
-          handle
-        )
+        val ret = ProjectSettings(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for ProjectSettings

@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,12 +18,17 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ScriptCreateDialog(
-  _handle: COpaquePointer
-) : ConfirmationDialog(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : ConfirmationDialog(null) {
   /**
    * ScriptCreateDialog::script_created signal
    */
   val signalScriptCreated: Signal1<Script> = Signal1("script_created")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun config(
     inherits: String,

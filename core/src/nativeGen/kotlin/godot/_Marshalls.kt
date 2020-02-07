@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _Marshalls(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   fun base64ToRaw(base64Str: String): PoolByteArray {
     val _arg = Variant.new(base64Str)
     val _ret = __method_bind.base64ToRaw.call(this._handle, listOf(_arg))
@@ -65,9 +67,9 @@ open class _Marshalls(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Marshalls".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton _Marshalls" }
-        _Marshalls(
-          handle
-        )
+        val ret = _Marshalls(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for _Marshalls

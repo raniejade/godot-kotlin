@@ -9,6 +9,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioServer(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   var busCount: Int
     get() {
        return getBusCount() 
@@ -372,9 +374,9 @@ open class AudioServer(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("AudioServer".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton AudioServer" }
-        AudioServer(
-          handle
-        )
+        val ret = AudioServer(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for AudioServer

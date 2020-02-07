@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeScalarConstant(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var constant: Float
     get() {
        return getConstant() 
@@ -25,6 +28,10 @@ open class VisualShaderNodeScalarConstant(
     set(value) {
       setConstant(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getConstant(): Float {
     val _ret = __method_bind.getConstant.call(this._handle)
@@ -37,17 +44,13 @@ open class VisualShaderNodeScalarConstant(
   }
 
   companion object {
-    fun new(): VisualShaderNodeScalarConstant = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeScalarConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeScalarConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeScalarConstant(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeScalarConstant =
-        VisualShaderNodeScalarConstant(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeScalarConstant
      */

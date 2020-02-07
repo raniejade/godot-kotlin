@@ -11,6 +11,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -22,8 +24,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CharFXTransform(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var absoluteIndex: Int
     get() {
        return getAbsoluteIndex() 
@@ -87,6 +90,10 @@ open class CharFXTransform(
     set(value) {
       setVisibility(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for color
@@ -196,16 +203,13 @@ open class CharFXTransform(
   }
 
   companion object {
-    fun new(): CharFXTransform = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CharFXTransform".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CharFXTransform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CharFXTransform(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CharFXTransform = CharFXTransform(ptr)
     /**
      * Container for method_bind pointers for CharFXTransform
      */

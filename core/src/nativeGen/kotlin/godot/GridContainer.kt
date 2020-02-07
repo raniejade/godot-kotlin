@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class GridContainer(
-  _handle: COpaquePointer
-) : Container(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Container(null) {
   var columns: Int
     get() {
        return getColumns() 
@@ -25,6 +28,10 @@ open class GridContainer(
     set(value) {
       setColumns(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getColumns(): Int {
     val _ret = __method_bind.getColumns.call(this._handle)
@@ -37,15 +44,12 @@ open class GridContainer(
   }
 
   companion object {
-    fun new(): GridContainer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GridContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GridContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      GridContainer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): GridContainer = GridContainer(ptr)
     /**
      * Container for method_bind pointers for GridContainer
      */

@@ -10,6 +10,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class MultiplayerAPI(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var allowObjectDecoding: Boolean
     get() {
        return isObjectDecodingAllowed() 
@@ -75,6 +78,10 @@ open class MultiplayerAPI(
    * MultiplayerAPI::server_disconnected signal
    */
   val signalServerDisconnected: Signal0 = Signal0("server_disconnected")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun clear() {
     __method_bind.clear.call(this._handle)
@@ -191,16 +198,13 @@ open class MultiplayerAPI(
   }
 
   companion object {
-    fun new(): MultiplayerAPI = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiplayerAPI".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MultiplayerAPI" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      MultiplayerAPI(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): MultiplayerAPI = MultiplayerAPI(ptr)
     /**
      * Container for method_bind pointers for MultiplayerAPI
      */

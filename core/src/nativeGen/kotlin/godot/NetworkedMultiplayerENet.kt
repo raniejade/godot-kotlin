@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class NetworkedMultiplayerENet(
-  _handle: COpaquePointer
-) : NetworkedMultiplayerPeer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : NetworkedMultiplayerPeer(null) {
   var alwaysOrdered: Boolean
     get() {
        return isAlwaysOrdered() 
@@ -60,6 +62,10 @@ open class NetworkedMultiplayerENet(
     set(value) {
       setTransferChannel(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun closeConnection(waitUsec: Int = 100) {
     val _arg = Variant.new(waitUsec)
@@ -208,16 +214,13 @@ open class NetworkedMultiplayerENet(
   }
 
   companion object {
-    fun new(): NetworkedMultiplayerENet = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NetworkedMultiplayerENet".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for NetworkedMultiplayerENet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      NetworkedMultiplayerENet(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): NetworkedMultiplayerENet = NetworkedMultiplayerENet(ptr)
     /**
      * Container for method_bind pointers for NetworkedMultiplayerENet
      */

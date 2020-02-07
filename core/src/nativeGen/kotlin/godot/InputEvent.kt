@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class InputEvent(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var device: Int
     get() {
        return getDevice() 
@@ -30,6 +32,10 @@ open class InputEvent(
     set(value) {
       setDevice(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun accumulate(withEvent: InputEvent): Boolean {
     val _arg = Variant.new(withEvent)

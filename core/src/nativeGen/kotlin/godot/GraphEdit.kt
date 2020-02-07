@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -22,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class GraphEdit(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var rightDisconnects: Boolean
     get() {
        return isRightDisconnectsEnabled() 
@@ -129,6 +131,10 @@ open class GraphEdit(
    * GraphEdit::scroll_offset_changed signal
    */
   val signalScrollOffsetChanged: Signal1<Vector2> = Signal1("scroll_offset_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for scrollOffset
@@ -311,15 +317,12 @@ open class GraphEdit(
   }
 
   companion object {
-    fun new(): GraphEdit = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GraphEdit".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GraphEdit" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      GraphEdit(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): GraphEdit = GraphEdit(ptr)
     /**
      * Container for method_bind pointers for GraphEdit
      */

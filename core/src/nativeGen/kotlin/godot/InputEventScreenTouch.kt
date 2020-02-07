@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class InputEventScreenTouch(
-  _handle: COpaquePointer
-) : InputEvent(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : InputEvent(null) {
   var index: Int
     get() {
        return getIndex() 
@@ -44,6 +47,10 @@ open class InputEventScreenTouch(
     set(value) {
       setPressed(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for position
@@ -80,16 +87,13 @@ open class InputEventScreenTouch(
   }
 
   companion object {
-    fun new(): InputEventScreenTouch = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventScreenTouch".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for InputEventScreenTouch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      InputEventScreenTouch(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): InputEventScreenTouch = InputEventScreenTouch(ptr)
     /**
      * Container for method_bind pointers for InputEventScreenTouch
      */

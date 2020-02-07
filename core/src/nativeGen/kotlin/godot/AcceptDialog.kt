@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AcceptDialog(
-  _handle: COpaquePointer
-) : WindowDialog(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : WindowDialog(null) {
   var dialogAutowrap: Boolean
     get() {
        return hasAutowrap() 
@@ -52,6 +54,10 @@ open class AcceptDialog(
    * AcceptDialog::custom_action signal
    */
   val signalCustomAction: Signal1<String> = Signal1("custom_action")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addButton(
     text: String,
@@ -118,15 +124,12 @@ open class AcceptDialog(
   }
 
   companion object {
-    fun new(): AcceptDialog = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AcceptDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AcceptDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AcceptDialog(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AcceptDialog = AcceptDialog(ptr)
     /**
      * Container for method_bind pointers for AcceptDialog
      */

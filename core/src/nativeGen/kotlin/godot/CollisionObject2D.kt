@@ -10,6 +10,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CollisionObject2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var inputPickable: Boolean
     get() {
        return isPickable() 
@@ -44,6 +47,10 @@ open class CollisionObject2D(
    * CollisionObject2D::mouse_exited signal
    */
   val signalMouseExited: Signal0 = Signal0("mouse_exited")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun createShapeOwner(owner: Object): Int {
     val _arg = Variant.new(owner)

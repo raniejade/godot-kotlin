@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeExpression(
-  _handle: COpaquePointer
-) : VisualShaderNodeGroupBase(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNodeGroupBase(null) {
   var expression: String
     get() {
        return getExpression() 
@@ -25,6 +27,10 @@ open class VisualShaderNodeExpression(
     set(value) {
       setExpression(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getExpression(): String {
     val _ret = __method_bind.getExpression.call(this._handle)
@@ -37,16 +43,13 @@ open class VisualShaderNodeExpression(
   }
 
   companion object {
-    fun new(): VisualShaderNodeExpression = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeExpression".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeExpression" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeExpression(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeExpression = VisualShaderNodeExpression(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeExpression
      */

@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _VisualScriptEditor(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   /**
    * _VisualScriptEditor::custom_nodes_updated signal
    */
@@ -48,9 +50,9 @@ open class _VisualScriptEditor(
         val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("_VisualScriptEditor".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton _VisualScriptEditor" }
-        _VisualScriptEditor(
-          handle
-        )
+        val ret = _VisualScriptEditor(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for _VisualScriptEditor

@@ -12,6 +12,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -22,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class HTTPClient(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var blockingModeEnabled: Boolean
     get() {
        return isBlockingModeEnabled() 
@@ -47,6 +49,10 @@ open class HTTPClient(
     set(value) {
       setReadChunkSize(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun close() {
     __method_bind.close.call(this._handle)
@@ -386,15 +392,12 @@ open class HTTPClient(
   }
 
   companion object {
-    fun new(): HTTPClient = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HTTPClient".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for HTTPClient" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      HTTPClient(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): HTTPClient = HTTPClient(ptr)
     /**
      * Container for method_bind pointers for HTTPClient
      */

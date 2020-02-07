@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimationNodeBlendSpace1D(
-  _handle: COpaquePointer
-) : AnimationRootNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AnimationRootNode(null) {
   var blendPoint0Pos: Float
     get() {
        return getBlendPointPosition(0) 
@@ -564,6 +566,10 @@ open class AnimationNodeBlendSpace1D(
       setValueLabel(value)
     }
 
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addBlendPoint(
     node: AnimationRootNode,
     pos: Float,
@@ -653,16 +659,13 @@ open class AnimationNodeBlendSpace1D(
   }
 
   companion object {
-    fun new(): AnimationNodeBlendSpace1D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlendSpace1D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNodeBlendSpace1D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimationNodeBlendSpace1D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimationNodeBlendSpace1D = AnimationNodeBlendSpace1D(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeBlendSpace1D
      */

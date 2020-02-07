@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class BaseButton(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var actionMode: ActionMode
     get() {
        return getActionMode() 
@@ -118,6 +121,10 @@ open class BaseButton(
    * BaseButton::toggled signal
    */
   val signalToggled: Signal1<Boolean> = Signal1("toggled")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getActionMode(): ActionMode {
     val _ret = __method_bind.getActionMode.call(this._handle)

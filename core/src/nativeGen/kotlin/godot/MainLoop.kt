@@ -9,6 +9,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,13 +20,18 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class MainLoop(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   /**
    * MainLoop::on_request_permissions_result signal
    */
   val signalOnRequestPermissionsResult: Signal2<String, Boolean> =
       Signal2("on_request_permissions_result")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun finish() {
     __method_bind.finish.call(this._handle)
@@ -86,15 +92,12 @@ open class MainLoop(
 
     val NOTIFICATION_WM_UNFOCUS_REQUEST: Int = 1008
 
-    fun new(): MainLoop = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MainLoop".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MainLoop" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      MainLoop(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): MainLoop = MainLoop(ptr)
     /**
      * Container for method_bind pointers for MainLoop
      */

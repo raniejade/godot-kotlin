@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Timer(
-  _handle: COpaquePointer
-) : Node(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node(null) {
   var autostart: Boolean
     get() {
        return hasAutostart() 
@@ -69,6 +72,10 @@ open class Timer(
    * Timer::timeout signal
    */
   val signalTimeout: Signal0 = Signal0("timeout")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getTimeLeft(): Float {
     val _ret = __method_bind.getTimeLeft.call(this._handle)
@@ -159,15 +166,12 @@ open class Timer(
   }
 
   companion object {
-    fun new(): Timer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Timer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Timer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Timer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Timer = Timer(ptr)
     /**
      * Container for method_bind pointers for Timer
      */

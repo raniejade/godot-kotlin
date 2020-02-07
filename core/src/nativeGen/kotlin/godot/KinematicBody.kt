@@ -10,6 +10,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class KinematicBody(
-  _handle: COpaquePointer
-) : PhysicsBody(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PhysicsBody(null) {
   var collisionSafeMargin: Float
     get() {
        return getSafeMargin() 
@@ -53,6 +56,10 @@ open class KinematicBody(
     set(value) {
       setAxisLock(4, value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAxisLock(axis: Int): Boolean {
     val _arg = Variant.new(axis)
@@ -182,15 +189,12 @@ open class KinematicBody(
   }
 
   companion object {
-    fun new(): KinematicBody = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicBody".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for KinematicBody" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      KinematicBody(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): KinematicBody = KinematicBody(ptr)
     /**
      * Container for method_bind pointers for KinematicBody
      */

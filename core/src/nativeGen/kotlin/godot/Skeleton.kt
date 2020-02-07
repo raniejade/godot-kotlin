@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,8 +22,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Skeleton(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addBone(name: String) {
     val _arg = Variant.new(name)
     __method_bind.addBone.call(this._handle, listOf(_arg))
@@ -191,15 +197,12 @@ open class Skeleton(
   companion object {
     val NOTIFICATION_UPDATE_SKELETON: Int = 50
 
-    fun new(): Skeleton = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Skeleton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Skeleton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Skeleton(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Skeleton = Skeleton(ptr)
     /**
      * Container for method_bind pointers for Skeleton
      */

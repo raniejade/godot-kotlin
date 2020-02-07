@@ -6,6 +6,8 @@ import godot.core.Color
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ColorRect(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var color: Color
     get() {
        return getFrameColor() 
@@ -26,6 +29,10 @@ open class ColorRect(
     set(value) {
       setFrameColor(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for color
@@ -47,15 +54,12 @@ open class ColorRect(
   }
 
   companion object {
-    fun new(): ColorRect = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorRect".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ColorRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ColorRect(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ColorRect = ColorRect(ptr)
     /**
      * Container for method_bind pointers for ColorRect
      */

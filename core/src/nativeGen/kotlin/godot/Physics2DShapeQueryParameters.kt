@@ -11,6 +11,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -22,8 +24,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Physics2DShapeQueryParameters(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var collideWithAreas: Boolean
     get() {
        return isCollideWithAreasEnabled() 
@@ -87,6 +90,10 @@ open class Physics2DShapeQueryParameters(
     set(value) {
       setTransform(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for motion
@@ -201,17 +208,13 @@ open class Physics2DShapeQueryParameters(
   }
 
   companion object {
-    fun new(): Physics2DShapeQueryParameters = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("Physics2DShapeQueryParameters".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Physics2DShapeQueryParameters" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Physics2DShapeQueryParameters(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Physics2DShapeQueryParameters =
-        Physics2DShapeQueryParameters(ptr)
     /**
      * Container for method_bind pointers for Physics2DShapeQueryParameters
      */

@@ -7,6 +7,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PrimitiveMesh(
-  _handle: COpaquePointer
-) : Mesh(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Mesh(null) {
   var customAabb: AABB
     get() {
        return getCustomAabb() 
@@ -43,6 +46,10 @@ open class PrimitiveMesh(
     set(value) {
       setMaterial(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for customAabb

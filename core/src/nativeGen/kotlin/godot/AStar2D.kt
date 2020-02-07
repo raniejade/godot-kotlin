@@ -11,6 +11,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,8 +23,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AStar2D(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addPoint(
     id: Int,
     position: Vector2,
@@ -178,15 +185,12 @@ open class AStar2D(
   }
 
   companion object {
-    fun new(): AStar2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AStar2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AStar2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AStar2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AStar2D = AStar2D(ptr)
     /**
      * Container for method_bind pointers for AStar2D
      */

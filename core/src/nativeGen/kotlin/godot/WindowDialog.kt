@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class WindowDialog(
-  _handle: COpaquePointer
-) : Popup(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Popup(null) {
   var resizable: Boolean
     get() {
        return getResizable() 
@@ -34,6 +36,10 @@ open class WindowDialog(
     set(value) {
       setTitle(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getCloseButton(): TextureButton {
     val _ret = __method_bind.getCloseButton.call(this._handle)
@@ -61,15 +67,12 @@ open class WindowDialog(
   }
 
   companion object {
-    fun new(): WindowDialog = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WindowDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for WindowDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      WindowDialog(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): WindowDialog = WindowDialog(ptr)
     /**
      * Container for method_bind pointers for WindowDialog
      */

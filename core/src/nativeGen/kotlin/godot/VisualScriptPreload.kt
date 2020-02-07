@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptPreload(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var resource: Resource
     get() {
        return getPreload() 
@@ -24,6 +27,10 @@ open class VisualScriptPreload(
     set(value) {
       setPreload(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getPreload(): Resource {
     val _ret = __method_bind.getPreload.call(this._handle)
@@ -36,16 +43,13 @@ open class VisualScriptPreload(
   }
 
   companion object {
-    fun new(): VisualScriptPreload = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptPreload".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptPreload" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptPreload(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptPreload = VisualScriptPreload(ptr)
     /**
      * Container for method_bind pointers for VisualScriptPreload
      */
