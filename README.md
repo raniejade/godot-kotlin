@@ -1,4 +1,9 @@
 # godot-kotlin
+![GitHub](https://img.shields.io/github/license/raniejade/godot-kotlin?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/raniejade/godot-kotlin/Build?style=flat-square)
+![Bintray](https://img.shields.io/bintray/v/raniejade/godot-kotlin/godot-kotlin?label=release&style=flat-square)
+![Bintray](https://img.shields.io/bintray/v/raniejade/godot-kotlin-dev/godot-kotlin?label=dev&style=flat-square)
+
 Kotlin Native bindings for Godot.
 
 ## Status
