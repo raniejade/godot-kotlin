@@ -2,7 +2,6 @@ package godot.core
 
 import gdnative.godot_string
 import kotlinx.cinterop.*
-import platform.linux.char16_t
 
 internal class GDString(
   value: CValue<godot_string>
