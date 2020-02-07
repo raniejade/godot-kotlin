@@ -3,7 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.PoolRealArray
+import godot.core.PoolFloatArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
@@ -23,7 +23,7 @@ open class HeightMapShape(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Shape(null) {
-  var mapData: PoolRealArray
+  var mapData: PoolFloatArray
     get() {
        return getMapData() 
     }
@@ -54,15 +54,15 @@ open class HeightMapShape(
   /**
    * Specialized setter for mapData
    */
-  fun mapData(cb: PoolRealArray.() -> Unit) {
+  fun mapData(cb: PoolFloatArray.() -> Unit) {
     val _p = mapData
     cb(_p)
     mapData = _p
   }
 
-  fun getMapData(): PoolRealArray {
+  fun getMapData(): PoolFloatArray {
     val _ret = __method_bind.getMapData.call(this._handle)
-    return _ret.asPoolRealArray()
+    return _ret.asPoolFloatArray()
   }
 
   fun getMapDepth(): Int {
@@ -75,7 +75,7 @@ open class HeightMapShape(
     return _ret.asInt()
   }
 
-  fun setMapData(data: PoolRealArray) {
+  fun setMapData(data: PoolFloatArray) {
     val _arg = Variant(data)
     __method_bind.setMapData.call(this._handle, listOf(_arg))
   }

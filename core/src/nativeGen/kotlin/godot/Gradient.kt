@@ -5,7 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
 import godot.core.PoolColorArray
-import godot.core.PoolRealArray
+import godot.core.PoolFloatArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
@@ -34,7 +34,7 @@ open class Gradient(
       setColors(value)
     }
 
-  var offsets: PoolRealArray
+  var offsets: PoolFloatArray
     get() {
        return getOffsets() 
     }
@@ -58,7 +58,7 @@ open class Gradient(
   /**
    * Specialized setter for offsets
    */
-  fun offsets(cb: PoolRealArray.() -> Unit) {
+  fun offsets(cb: PoolFloatArray.() -> Unit) {
     val _p = offsets
     cb(_p)
     offsets = _p
@@ -88,9 +88,9 @@ open class Gradient(
     return _ret.asFloat()
   }
 
-  fun getOffsets(): PoolRealArray {
+  fun getOffsets(): PoolFloatArray {
     val _ret = __method_bind.getOffsets.call(this._handle)
-    return _ret.asPoolRealArray()
+    return _ret.asPoolFloatArray()
   }
 
   fun getPointCount(): Int {
@@ -128,7 +128,7 @@ open class Gradient(
     __method_bind.setOffset.call(this._handle, _args)
   }
 
-  fun setOffsets(offsets: PoolRealArray) {
+  fun setOffsets(offsets: PoolFloatArray) {
     val _arg = Variant(offsets)
     __method_bind.setOffsets.call(this._handle, listOf(_arg))
   }

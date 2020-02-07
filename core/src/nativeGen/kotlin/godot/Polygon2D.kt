@@ -6,7 +6,7 @@ import godot.core.Color
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.PoolColorArray
-import godot.core.PoolRealArray
+import godot.core.PoolFloatArray
 import godot.core.PoolVector2Array
 import godot.core.Variant
 import godot.core.VariantArray
@@ -234,7 +234,7 @@ open class Polygon2D(
     vertexColors = _p
   }
 
-  fun addBone(path: NodePath, weights: PoolRealArray) {
+  fun addBone(path: NodePath, weights: PoolFloatArray) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(path))
     _args.add(Variant.fromAny(weights))
@@ -266,10 +266,10 @@ open class Polygon2D(
     return _ret.asNodePath()
   }
 
-  fun getBoneWeights(index: Int): PoolRealArray {
+  fun getBoneWeights(index: Int): PoolFloatArray {
     val _arg = Variant(index)
     val _ret = __method_bind.getBoneWeights.call(this._handle, listOf(_arg))
-    return _ret.asPoolRealArray()
+    return _ret.asPoolFloatArray()
   }
 
   fun getColor(): Color {
@@ -359,7 +359,7 @@ open class Polygon2D(
     __method_bind.setBonePath.call(this._handle, _args)
   }
 
-  fun setBoneWeights(index: Int, weights: PoolRealArray) {
+  fun setBoneWeights(index: Int, weights: PoolFloatArray) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(index))
     _args.add(Variant.fromAny(weights))

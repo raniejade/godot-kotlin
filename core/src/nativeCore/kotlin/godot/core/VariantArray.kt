@@ -13,7 +13,7 @@ class VariantArray(
   constructor(from: PoolByteArray): this(__new(from))
   constructor(from: PoolColorArray): this(__new(from))
   constructor(from: PoolIntArray): this(__new(from))
-  constructor(from: PoolRealArray): this(__new(from))
+  constructor(from: PoolFloatArray): this(__new(from))
   constructor(from: PoolStringArray): this(__new(from))
   constructor(from: PoolVector2Array): this(__new(from))
   constructor(from: PoolVector3Array): this(__new(from))
@@ -64,6 +64,13 @@ class VariantArray(
     }
   }
 
+  fun bsearch(value: Int, before: Boolean = true) = bsearch(Variant(value), before)
+  fun bsearch(value: Float, before: Boolean = true) = bsearch(Variant(value), before)
+  fun bsearch(value: String, before: Boolean = true) = bsearch(Variant(value), before)
+  fun bsearch(value: Boolean, before: Boolean = true) = bsearch(Variant(value), before)
+  fun bsearch(value: Object, before: Boolean = true) = bsearch(value.toVariant(), before)
+  fun bsearch(value: CoreType<*>, before: Boolean = true) = bsearch(value.toVariant(), before)
+
   fun clear() {
     _value = memScoped {
       val ptr = _value.ptr
@@ -72,11 +79,18 @@ class VariantArray(
     }
   }
 
-  fun <T: CoreType<*>> has(value: T): Boolean {
+  fun has(value: Variant): Boolean {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_array_has)(_value.ptr, value.toVariant()._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_has)(_value.ptr, value._value.ptr)
     }
   }
+
+  fun has(value: Int) = has(Variant(value))
+  fun has(value: Float) = has(Variant(value))
+  fun has(value: String) = has(Variant(value))
+  fun has(value: Boolean) = has(Variant(value))
+  fun has(value: Object) = has(value.toVariant())
+  fun has(value: CoreType<*>) = has(value.toVariant())
 
   fun copy(deep: Boolean = false): VariantArray {
     return memScoped {
@@ -86,23 +100,44 @@ class VariantArray(
     }
   }
 
-  fun <T: CoreType<*>> count(value: T): Int {
+  fun count(value: Variant): Int {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_array_count)(_value.ptr, value.toVariant()._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_count)(_value.ptr, value._value.ptr)
     }
   }
 
-  fun <T: CoreType<*>> find(value: T, from: Int = 0): Int {
+  fun count(value: Int) = count(Variant(value))
+  fun count(value: Float) = count(Variant(value))
+  fun count(value: String) = count(Variant(value))
+  fun count(value: Boolean) = count(Variant(value))
+  fun count(value: Object) = count(value.toVariant())
+  fun count(value: CoreType<*>) = count(value.toVariant())
+
+  fun find(value: Variant, from: Int = 0): Int {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_array_find)(_value.ptr, value.toVariant()._value.ptr, from)
+      checkNotNull(Godot.gdnative.godot_array_find)(_value.ptr, value._value.ptr, from)
     }
   }
 
-  fun <T: CoreType<*>> findLast(value: T): Int {
+  fun find(value: Int, from: Int = 0) = find(Variant(value))
+  fun find(value: Float, from: Int = 0) = find(Variant(value))
+  fun find(value: String, from: Int = 0) = find(Variant(value))
+  fun find(value: Boolean, from: Int = 0) = find(Variant(value))
+  fun find(value: Object, from: Int = 0) = find(value.toVariant())
+  fun find(value: CoreType<*>, from: Int = 0) = find(value.toVariant())
+
+  fun findLast(value: Variant): Int {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_array_find_last)(_value.ptr, value.toVariant()._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_find_last)(_value.ptr, value._value.ptr)
     }
   }
+
+  fun findLast(value: Int) = findLast(Variant(value))
+  fun findLast(value: Float) = findLast(Variant(value))
+  fun findLast(value: String) = findLast(Variant(value))
+  fun findLast(value: Boolean) = findLast(Variant(value))
+  fun findLast(value: Object) = findLast(value.toVariant())
+  fun findLast(value: CoreType<*>) = findLast(value.toVariant())
 
   fun hash(): Int {
     return memScoped {
@@ -116,13 +151,20 @@ class VariantArray(
     }
   }
 
-  fun <T: CoreType<*>> insert(index: Int, value: T) {
+  fun insert(index: Int, value: Variant) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_array_insert)(_value.ptr, index, value.toVariant()._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_insert)(_value.ptr, index, value._value.ptr)
       ptr.pointed.readValue()
     }
   }
+
+  fun insert(index: Int, value: Int) = insert(index, Variant(value))
+  fun insert(index: Int, value: Float) = insert(index, Variant(value))
+  fun insert(index: Int, value: String) = insert(index, Variant(value))
+  fun insert(index: Int, value: Boolean) = insert(index, Variant(value))
+  fun insert(index: Int, value: Object) = insert(index, value.toVariant())
+  fun insert(index: Int, value: CoreType<*>) = insert(index, value.toVariant())
 
   fun invert() {
     _value = memScoped {
@@ -172,25 +214,47 @@ class VariantArray(
     return ret
   }
 
-  fun <T: CoreType<*>> pushFront(value: T) {
+  fun pushFront(value: Variant) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_array_push_front)(_value.ptr, value.toVariant()._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_push_front)(_value.ptr, value._value.ptr)
       ptr.pointed.readValue()
     }
   }
 
-  fun <T: CoreType<*>> pushBack(value: T) {
+  fun pushFront(value: Int) = pushFront(Variant(value))
+  fun pushFront(value: Float) = pushFront(Variant(value))
+  fun pushFront(value: String) = pushFront(Variant(value))
+  fun pushFront(value: Boolean) = pushFront(Variant(value))
+  fun pushFront(value: Object) = pushFront(value.toVariant())
+  fun pushFront(value: CoreType<*>) = pushFront(value.toVariant())
+
+  fun pushBack(value: Variant) {
     append(value)
   }
 
-  fun <T: CoreType<*>> remove(value: T) {
+  fun pushBack(value: Int) = pushBack(Variant(value))
+  fun pushBack(value: Float) = pushBack(Variant(value))
+  fun pushBack(value: String) = pushBack(Variant(value))
+  fun pushBack(value: Boolean) = pushBack(Variant(value))
+  fun pushBack(value: Object) = pushBack(value.toVariant())
+  fun pushBack(value: CoreType<*>) = pushBack(value.toVariant())
+
+  fun erase(value: Variant) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_array_erase)(_value.ptr, value.toVariant()._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_erase)(_value.ptr, value._value.ptr)
       ptr.pointed.readValue()
     }
   }
+
+  fun erase(value: Int) = erase(Variant(value))
+  fun erase(value: Float) = erase(Variant(value))
+  fun erase(value: String) = erase(Variant(value))
+  fun erase(value: Boolean) = erase(Variant(value))
+  fun erase(value: Object) = erase(value.toVariant())
+  fun erase(value: CoreType<*>) = erase(value.toVariant())
+
 
   fun remove(index: Int) {
     _value = memScoped {
@@ -215,6 +279,13 @@ class VariantArray(
     }
   }
 
+  @Suppress("UNCHECKED_CAST")
+  fun <T: CoreType<*>> get(index: Int, cb: T.() -> Unit) {
+    val value = get(index).toAny() as T
+    cb(value)
+    set(index, value)
+  }
+
   operator fun set(index: Int, value: Variant) {
     _value = memScoped {
       val ptr = _value.ptr
@@ -222,6 +293,13 @@ class VariantArray(
       ptr.pointed.readValue()
     }
   }
+
+  operator fun set(index: Int, value: Int) = set(index, Variant(value))
+  operator fun set(index: Int, value: Float) = set(index, Variant(value))
+  operator fun set(index: Int, value: String) = set(index, Variant(value))
+  operator fun set(index: Int, value: Boolean) = set(index, Variant(value))
+  operator fun set(index: Int, value: Object) = set(index, value.toVariant())
+  operator fun set(index: Int, value: CoreType<*>) = set(index, value.toVariant())
 
   operator fun <T: CoreType<*>> set(index: Int, value: T) {
     set(index, value.toVariant())
@@ -253,7 +331,7 @@ class VariantArray(
       checkNotNull(Godot.gdnative.godot_array_new_pool_int_array)(it, from._value.ptr)
     }
 
-    internal fun __new(from: PoolRealArray) = allocType2<godot_array> {
+    internal fun __new(from: PoolFloatArray) = allocType2<godot_array> {
       checkNotNull(Godot.gdnative.godot_array_new_pool_real_array)(it, from._value.ptr)
     }
 

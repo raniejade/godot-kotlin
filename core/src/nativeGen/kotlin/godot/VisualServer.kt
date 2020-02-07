@@ -9,8 +9,8 @@ import godot.core.Godot
 import godot.core.Plane
 import godot.core.PoolByteArray
 import godot.core.PoolColorArray
+import godot.core.PoolFloatArray
 import godot.core.PoolIntArray
-import godot.core.PoolRealArray
 import godot.core.PoolVector2Array
 import godot.core.RID
 import godot.core.Rect2
@@ -395,7 +395,7 @@ open class VisualServerInternal(
     colors: PoolColorArray,
     uvs: PoolVector2Array,
     bones: PoolIntArray,
-    weights: PoolRealArray,
+    weights: PoolFloatArray,
     texture: RID,
     count: Int = -1,
     normalMap: RID,
@@ -2196,7 +2196,7 @@ open class VisualServerInternal(
     __method_bind.multimeshInstanceSetTransform2d.call(this._handle, _args)
   }
 
-  fun multimeshSetAsBulkArray(multimesh: RID, array: PoolRealArray) {
+  fun multimeshSetAsBulkArray(multimesh: RID, array: PoolFloatArray) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(multimesh))
     _args.add(Variant.fromAny(array))

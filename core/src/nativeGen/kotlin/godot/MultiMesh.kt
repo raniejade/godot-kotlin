@@ -5,7 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.AABB
 import godot.core.Color
 import godot.core.Godot
-import godot.core.PoolRealArray
+import godot.core.PoolFloatArray
 import godot.core.Transform
 import godot.core.Transform2D
 import godot.core.Variant
@@ -137,7 +137,7 @@ open class MultiMesh(
     return _ret.asInt()
   }
 
-  fun setAsBulkArray(array: PoolRealArray) {
+  fun setAsBulkArray(array: PoolFloatArray) {
     val _arg = Variant(array)
     __method_bind.setAsBulkArray.call(this._handle, listOf(_arg))
   }

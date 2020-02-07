@@ -17,7 +17,7 @@ enum class CoreType(val gdName: String, val mappedName: String? = null, val prim
   POOL_BYTE_ARRAY("PoolByteArray"),
   POOL_COLOR_ARRAY("PoolColorArray"),
   POOL_INT_ARRAY("PoolIntArray"),
-  POOL_REAL_ARRAY("PoolRealArray"),
+  POOL_REAL_ARRAY("PoolRealArray", mappedName = "PoolFloatArray"),
   POOL_STRING_ARRAY("PoolStringArray"),
   POOL_VECTOR2_ARRAY("PoolVector2Array"),
   POOL_VECTOR3_ARRAY("PoolVector3Array"),

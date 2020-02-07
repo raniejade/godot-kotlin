@@ -2,10 +2,9 @@ package godot.core
 
 import gdnative.godot_error
 import gdnative.godot_pool_real_array
-import gdnative.godot_property_hint
 import kotlinx.cinterop.*
 
-class PoolRealArray(
+class PoolFloatArray(
   value: CValue<godot_pool_real_array>
 ) : CoreType<godot_pool_real_array>(value), Iterable<Float> {
   constructor(): this(__new())
@@ -19,7 +18,7 @@ class PoolRealArray(
     }
   }
 
-  fun append(array: PoolRealArray) {
+  fun append(array: PoolFloatArray) {
     _value = memScoped {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_real_array_append_array)(ptr, array._value.ptr)

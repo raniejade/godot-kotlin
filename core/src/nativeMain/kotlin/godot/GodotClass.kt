@@ -45,6 +45,6 @@ abstract class GodotClass<S: Object, T: S>(
   fun <T: Object> intProperty(changeListener: ChangeListener<T, Int> = { _, _ -> }): ReadWriteProperty<T, Int> = PropertyDelegate(changeListener)
   fun <T: Object> floatProperty(changeListener: ChangeListener<T, Float> = { _, _ -> }): ReadWriteProperty<T, Float> = PropertyDelegate(changeListener)
   fun <T: Object> stringProperty(changeListener: ChangeListener<T, String> = { _, _ -> }): ReadWriteProperty<T, String> = PropertyDelegate(changeListener)
-  fun <T: Object>booleanProperty(changeListener: ChangeListener<T, Boolean> = { _, _ -> }): ReadWriteProperty<T, Boolean> = PropertyDelegate(changeListener)
+  fun <T: Object> booleanProperty(changeListener: ChangeListener<T, Boolean> = { _, _ -> }): ReadWriteProperty<T, Boolean> = PropertyDelegate(changeListener)
   fun <T: Object, R: CoreType<*>> property(changeListener: ChangeListener<T, R> = { _, _ -> }): ReadWriteProperty<T, R> = PropertyDelegate(changeListener)
 }

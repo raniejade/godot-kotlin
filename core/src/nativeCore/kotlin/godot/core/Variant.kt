@@ -25,7 +25,7 @@ class Variant(
   constructor(from: PoolByteArray): this(__new(from))
   constructor(from: PoolColorArray): this(__new(from))
   constructor(from: PoolIntArray): this(__new(from))
-  constructor(from: PoolRealArray): this(__new(from))
+  constructor(from: PoolFloatArray): this(__new(from))
   constructor(from: PoolStringArray): this(__new(from))
   constructor(from: PoolVector2Array): this(__new(from))
   constructor(from: PoolVector3Array): this(__new(from))
@@ -74,7 +74,7 @@ class Variant(
     ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_ARRAY.value.toInt()),
     POOL_BYTE_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_BYTE_ARRAY.value.toInt()),
     POOL_INT_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_INT_ARRAY.value.toInt()),
-    POOL_REAL_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_REAL_ARRAY.value.toInt()),
+    POOL_FLOAT_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_REAL_ARRAY.value.toInt()),
     POOL_STRING_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_STRING_ARRAY.value.toInt()),
     POOL_COLOR_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_COLOR_ARRAY.value.toInt()),
     POOL_VECTOR2_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_VECTOR2_ARRAY.value.toInt()),
@@ -218,8 +218,8 @@ class Variant(
     }
   }
 
-  fun asPoolRealArray(): PoolRealArray {
-    return transmute(::PoolRealArray) {
+  fun asPoolFloatArray(): PoolFloatArray {
+    return transmute(::PoolFloatArray) {
       checkNotNull(Godot.gdnative.godot_variant_as_pool_real_array)(it)
     }
   }
@@ -352,7 +352,7 @@ class Variant(
       Type.POOL_BYTE_ARRAY -> asPoolByteArray()
       Type.POOL_COLOR_ARRAY -> asPoolColorArray()
       Type.POOL_INT_ARRAY -> asPoolIntArray()
-      Type.POOL_REAL_ARRAY -> asPoolRealArray()
+      Type.POOL_FLOAT_ARRAY -> asPoolFloatArray()
       Type.POOL_STRING_ARRAY -> asPoolStringArray()
       Type.POOL_VECTOR2_ARRAY -> asPoolVector2Array()
       Type.POOL_VECTOR3_ARRAY -> asPoolVector3Array()
@@ -443,7 +443,7 @@ class Variant(
       checkNotNull(Godot.gdnative.godot_variant_new_pool_int_array)(it, from._value.ptr)
     }
 
-    internal fun __new(from: PoolRealArray) = allocType2<godot_variant> {
+    internal fun __new(from: PoolFloatArray) = allocType2<godot_variant> {
       checkNotNull(Godot.gdnative.godot_variant_new_pool_real_array)(it, from._value.ptr)
     }
 
@@ -541,7 +541,7 @@ class Variant(
         PoolByteArray::class -> nil.asPoolByteArray()
         PoolColorArray::class -> nil.asPoolColorArray()
         PoolIntArray::class -> nil.asPoolIntArray()
-        PoolRealArray::class -> nil.asPoolRealArray()
+        PoolFloatArray::class -> nil.asPoolFloatArray()
         PoolStringArray::class -> nil.asPoolStringArray()
         PoolVector2Array::class -> nil.asPoolVector2Array()
         PoolVector3Array::class -> nil.asPoolVector3Array()
@@ -573,7 +573,7 @@ class Variant(
         PoolByteArray::class -> Type.POOL_BYTE_ARRAY
         PoolColorArray::class -> Type.POOL_COLOR_ARRAY
         PoolIntArray::class -> Type.POOL_INT_ARRAY
-        PoolRealArray::class -> Type.POOL_REAL_ARRAY
+        PoolFloatArray::class -> Type.POOL_FLOAT_ARRAY
         PoolStringArray::class -> Type.POOL_STRING_ARRAY
         PoolVector2Array::class -> Type.POOL_VECTOR2_ARRAY
         PoolVector3Array::class -> Type.POOL_VECTOR3_ARRAY

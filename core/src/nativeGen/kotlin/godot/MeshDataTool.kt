@@ -6,8 +6,8 @@ import godot.core.Color
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Plane
+import godot.core.PoolFloatArray
 import godot.core.PoolIntArray
-import godot.core.PoolRealArray
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
@@ -183,10 +183,10 @@ open class MeshDataTool(
     return _ret.asVector2()
   }
 
-  fun getVertexWeights(idx: Int): PoolRealArray {
+  fun getVertexWeights(idx: Int): PoolFloatArray {
     val _arg = Variant(idx)
     val _ret = __method_bind.getVertexWeights.call(this._handle, listOf(_arg))
-    return _ret.asPoolRealArray()
+    return _ret.asPoolFloatArray()
   }
 
   fun setEdgeMeta(idx: Int, meta: Variant) {
@@ -264,7 +264,7 @@ open class MeshDataTool(
     __method_bind.setVertexUv2.call(this._handle, _args)
   }
 
-  fun setVertexWeights(idx: Int, weights: PoolRealArray) {
+  fun setVertexWeights(idx: Int, weights: PoolFloatArray) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(idx))
     _args.add(Variant.fromAny(weights))

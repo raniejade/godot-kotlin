@@ -6,8 +6,8 @@ import godot.core.Color
 import godot.core.Godot
 import godot.core.Plane
 import godot.core.PoolColorArray
+import godot.core.PoolFloatArray
 import godot.core.PoolIntArray
-import godot.core.PoolRealArray
 import godot.core.PoolVector2Array
 import godot.core.PoolVector3Array
 import godot.core.Transform
@@ -99,7 +99,7 @@ open class SurfaceTool(
     __method_bind.addVertex.call(this._handle, listOf(_arg))
   }
 
-  fun addWeights(weights: PoolRealArray) {
+  fun addWeights(weights: PoolFloatArray) {
     val _arg = Variant(weights)
     __method_bind.addWeights.call(this._handle, listOf(_arg))
   }

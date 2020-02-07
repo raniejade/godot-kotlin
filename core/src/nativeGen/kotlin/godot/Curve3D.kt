@@ -3,7 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.PoolRealArray
+import godot.core.PoolFloatArray
 import godot.core.PoolVector3Array
 import godot.core.Variant
 import godot.core.VariantArray
@@ -79,9 +79,9 @@ open class Curve3D(
     return _ret.asPoolVector3Array()
   }
 
-  fun getBakedTilts(): PoolRealArray {
+  fun getBakedTilts(): PoolFloatArray {
     val _ret = __method_bind.getBakedTilts.call(this._handle)
-    return _ret.asPoolRealArray()
+    return _ret.asPoolFloatArray()
   }
 
   fun getBakedUpVectors(): PoolVector3Array {
