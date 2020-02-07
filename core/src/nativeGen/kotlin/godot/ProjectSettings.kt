@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ProjectSettings(
+open class ProjectSettingsInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -117,15 +117,6 @@ open class ProjectSettings(
   }
 
   companion object {
-    val Instance: ProjectSettings
-      get() = memScoped {
-        val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("ProjectSettings".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton ProjectSettings" }
-        val ret = ProjectSettings(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for ProjectSettings
      */
@@ -235,5 +226,16 @@ open class ProjectSettings(
             "set_setting".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_setting" }
         }}
+  }
+}
+
+object ProjectSettings : ProjectSettingsInternal(null) {
+  init {
+    memScoped {
+      val handle =
+          checkNotNull(Godot.gdnative.godot_global_get_singleton)("ProjectSettings".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton ProjectSettings" }
+      _handle = handle
+    }
   }
 }

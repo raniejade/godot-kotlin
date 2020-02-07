@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _VisualScriptEditor(
+open class _VisualScriptEditorInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -45,15 +45,6 @@ open class _VisualScriptEditor(
   }
 
   companion object {
-    val Instance: _VisualScriptEditor
-      get() = memScoped {
-        val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("_VisualScriptEditor".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton _VisualScriptEditor" }
-        val ret = _VisualScriptEditor(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for _VisualScriptEditor
      */
@@ -72,5 +63,16 @@ open class _VisualScriptEditor(
             "remove_custom_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_custom_node" }
         }}
+  }
+}
+
+object _VisualScriptEditor : _VisualScriptEditorInternal(null) {
+  init {
+    memScoped {
+      val handle =
+          checkNotNull(Godot.gdnative.godot_global_get_singleton)("_VisualScriptEditor".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton _VisualScriptEditor" }
+      _handle = handle
+    }
   }
 }

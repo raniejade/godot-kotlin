@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class IP_Unix(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
-) : IP(null) {
+) : IPInternal(null) {
   constructor() : this(null) {
     _handle = __new()
   }

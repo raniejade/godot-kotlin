@@ -1,5 +1,4 @@
 import godot.*
-import kotlinx.cinterop.COpaquePointer
 
 class Simple: Spatial() {
   fun _ready() {

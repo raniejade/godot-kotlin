@@ -64,8 +64,17 @@ open class GodotPlugin : Plugin<Project> {
                 compileKotlinTask.dependsOn(genEntryTask)
 
                 dependencies {
-                  implementation("com.github.raniejade:godot-kotlin-${artifactSuffixFrom(platform)}:${godot.version.get()}") {
-                    isTransitive = !godot.isCompositeBuild.get()
+                  val suffix = artifactSuffixFrom(platform)
+                  if (godot.isCompositeBuild.get()) {
+                    implementation("com.github.raniejade:godot-kotlin-$suffix:${godot.version.get()}") {
+                      targetConfiguration = "${suffix}X64ApiElements"
+                      isTransitive = false
+                    }
+//                    implementation("com.github.raniejade:godot-kotlin-$suffix:${godot.version.get()}") {
+//                      targetConfiguration = "${suffix}GdnativeCInterop"
+//                    }
+                  } else {
+                    implementation("com.github.raniejade:godot-kotlin-$suffix:${godot.version.get()}")
                   }
                 }
 

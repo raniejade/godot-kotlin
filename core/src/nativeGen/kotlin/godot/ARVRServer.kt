@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ARVRServer(
+open class ARVRServerInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -145,63 +145,7 @@ open class ARVRServer(
     __method_bind.setWorldScale.call(this._handle, listOf(_arg))
   }
 
-  enum class RotationMode(
-    val value: Int
-  ) {
-    RESET_FULL_ROTATION(0),
-
-    RESET_BUT_KEEP_TILT(1),
-
-    DONT_RESET_ROTATION(2);
-
-    companion object {
-      fun from(value: Int): RotationMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class TrackerType(
-    val value: Int
-  ) {
-    CONTROLLER(1),
-
-    BASESTATION(2),
-
-    ANCHOR(4),
-
-    ANY_KNOWN(127),
-
-    UNKNOWN(128),
-
-    ANY(255);
-
-    companion object {
-      fun from(value: Int): TrackerType {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
   companion object {
-    val Instance: ARVRServer
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("ARVRServer".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton ARVRServer" }
-        val ret = ARVRServer(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for ARVRServer
      */
@@ -302,5 +246,63 @@ open class ARVRServer(
             "set_world_scale".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_world_scale" }
         }}
+  }
+}
+
+object ARVRServer : ARVRServerInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("ARVRServer".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton ARVRServer" }
+      _handle = handle
+    }
+  }
+
+  enum class RotationMode(
+    val value: Int
+  ) {
+    RESET_FULL_ROTATION(0),
+
+    RESET_BUT_KEEP_TILT(1),
+
+    DONT_RESET_ROTATION(2);
+
+    companion object {
+      fun from(value: Int): RotationMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class TrackerType(
+    val value: Int
+  ) {
+    CONTROLLER(1),
+
+    BASESTATION(2),
+
+    ANCHOR(4),
+
+    ANY_KNOWN(127),
+
+    UNKNOWN(128),
+
+    ANY(255);
+
+    companion object {
+      fun from(value: Int): TrackerType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 }

@@ -25,7 +25,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _OS(
+open class _OSInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -93,7 +93,7 @@ open class _OS(
       setMinWindowSize(value)
     }
 
-  var screenOrientation: ScreenOrientation
+  var screenOrientation: _OS.ScreenOrientation
     get() {
        return getScreenOrientation() 
     }
@@ -321,7 +321,7 @@ open class _OS(
     return _ret.asInt()
   }
 
-  fun getCurrentVideoDriver(): VideoDriver {
+  fun getCurrentVideoDriver(): _OS.VideoDriver {
     val _ret = __method_bind.getCurrentVideoDriver.call(this._handle)
     return _OS.VideoDriver.from(_ret.asInt())
   }
@@ -425,7 +425,7 @@ open class _OS(
     return _ret.asInt()
   }
 
-  fun getPowerState(): PowerState {
+  fun getPowerState(): _OS.PowerState {
     val _ret = __method_bind.getPowerState.call(this._handle)
     return _OS.PowerState.from(_ret.asInt())
   }
@@ -462,7 +462,7 @@ open class _OS(
     return _ret.asInt()
   }
 
-  fun getScreenOrientation(): ScreenOrientation {
+  fun getScreenOrientation(): _OS.ScreenOrientation {
     val _ret = __method_bind.getScreenOrientation.call(this._handle)
     return _OS.ScreenOrientation.from(_ret.asInt())
   }
@@ -948,187 +948,7 @@ open class _OS(
     __method_bind.showVirtualKeyboard.call(this._handle, listOf(_arg))
   }
 
-  enum class VideoDriver(
-    val value: Int
-  ) {
-    GLES3(0),
-
-    GLES2(1);
-
-    companion object {
-      fun from(value: Int): VideoDriver {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class SystemDir(
-    val value: Int
-  ) {
-    DESKTOP(0),
-
-    DCIM(1),
-
-    DOCUMENTS(2),
-
-    DOWNLOADS(3),
-
-    MOVIES(4),
-
-    MUSIC(5),
-
-    PICTURES(6),
-
-    RINGTONES(7);
-
-    companion object {
-      fun from(value: Int): SystemDir {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ScreenOrientation(
-    val value: Int
-  ) {
-    LANDSCAPE(0),
-
-    PORTRAIT(1),
-
-    REVERSE_LANDSCAPE(2),
-
-    REVERSE_PORTRAIT(3),
-
-    SENSOR_LANDSCAPE(4),
-
-    SENSOR_PORTRAIT(5),
-
-    SENSOR(6);
-
-    companion object {
-      fun from(value: Int): ScreenOrientation {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class PowerState(
-    val value: Int
-  ) {
-    POWERSTATE_UNKNOWN(0),
-
-    POWERSTATE_ON_BATTERY(1),
-
-    POWERSTATE_NO_BATTERY(2),
-
-    POWERSTATE_CHARGING(3),
-
-    POWERSTATE_CHARGED(4);
-
-    companion object {
-      fun from(value: Int): PowerState {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class Month(
-    val value: Int
-  ) {
-    JANUARY(1),
-
-    FEBRUARY(2),
-
-    MARCH(3),
-
-    APRIL(4),
-
-    MAY(5),
-
-    JUNE(6),
-
-    JULY(7),
-
-    AUGUST(8),
-
-    SEPTEMBER(9),
-
-    OCTOBER(10),
-
-    NOVEMBER(11),
-
-    DECEMBER(12);
-
-    companion object {
-      fun from(value: Int): Month {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class Weekday(
-    val value: Int
-  ) {
-    DAY_SUNDAY(0),
-
-    DAY_MONDAY(1),
-
-    DAY_TUESDAY(2),
-
-    DAY_WEDNESDAY(3),
-
-    DAY_THURSDAY(4),
-
-    DAY_FRIDAY(5),
-
-    DAY_SATURDAY(6);
-
-    companion object {
-      fun from(value: Int): Weekday {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
   companion object {
-    val Instance: _OS
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_OS".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton _OS" }
-        val ret = _OS(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for _OS
      */
@@ -1960,5 +1780,187 @@ open class _OS(
             "show_virtual_keyboard".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method show_virtual_keyboard" }
         }}
+  }
+}
+
+object _OS : _OSInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_OS".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton _OS" }
+      _handle = handle
+    }
+  }
+
+  enum class VideoDriver(
+    val value: Int
+  ) {
+    GLES3(0),
+
+    GLES2(1);
+
+    companion object {
+      fun from(value: Int): VideoDriver {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class SystemDir(
+    val value: Int
+  ) {
+    DESKTOP(0),
+
+    DCIM(1),
+
+    DOCUMENTS(2),
+
+    DOWNLOADS(3),
+
+    MOVIES(4),
+
+    MUSIC(5),
+
+    PICTURES(6),
+
+    RINGTONES(7);
+
+    companion object {
+      fun from(value: Int): SystemDir {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ScreenOrientation(
+    val value: Int
+  ) {
+    LANDSCAPE(0),
+
+    PORTRAIT(1),
+
+    REVERSE_LANDSCAPE(2),
+
+    REVERSE_PORTRAIT(3),
+
+    SENSOR_LANDSCAPE(4),
+
+    SENSOR_PORTRAIT(5),
+
+    SENSOR(6);
+
+    companion object {
+      fun from(value: Int): ScreenOrientation {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class PowerState(
+    val value: Int
+  ) {
+    POWERSTATE_UNKNOWN(0),
+
+    POWERSTATE_ON_BATTERY(1),
+
+    POWERSTATE_NO_BATTERY(2),
+
+    POWERSTATE_CHARGING(3),
+
+    POWERSTATE_CHARGED(4);
+
+    companion object {
+      fun from(value: Int): PowerState {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class Month(
+    val value: Int
+  ) {
+    JANUARY(1),
+
+    FEBRUARY(2),
+
+    MARCH(3),
+
+    APRIL(4),
+
+    MAY(5),
+
+    JUNE(6),
+
+    JULY(7),
+
+    AUGUST(8),
+
+    SEPTEMBER(9),
+
+    OCTOBER(10),
+
+    NOVEMBER(11),
+
+    DECEMBER(12);
+
+    companion object {
+      fun from(value: Int): Month {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class Weekday(
+    val value: Int
+  ) {
+    DAY_SUNDAY(0),
+
+    DAY_MONDAY(1),
+
+    DAY_TUESDAY(2),
+
+    DAY_WEDNESDAY(3),
+
+    DAY_THURSDAY(4),
+
+    DAY_FRIDAY(5),
+
+    DAY_SATURDAY(6);
+
+    companion object {
+      fun from(value: Int): Weekday {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 }

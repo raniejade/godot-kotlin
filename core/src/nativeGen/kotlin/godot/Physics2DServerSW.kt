@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class Physics2DServerSW(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
-) : Physics2DServer(null) {
+) : Physics2DServerInternal(null) {
   constructor() : this(null) {
     _handle = __new()
   }

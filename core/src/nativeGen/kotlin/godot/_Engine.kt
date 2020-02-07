@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Engine(
+open class _EngineInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -192,14 +192,6 @@ open class _Engine(
   }
 
   companion object {
-    val Instance: _Engine
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Engine".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton _Engine" }
-        val ret = _Engine(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for _Engine
      */
@@ -355,5 +347,15 @@ open class _Engine(
             "set_time_scale".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_time_scale" }
         }}
+  }
+}
+
+object _Engine : _EngineInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Engine".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton _Engine" }
+      _handle = handle
+    }
   }
 }

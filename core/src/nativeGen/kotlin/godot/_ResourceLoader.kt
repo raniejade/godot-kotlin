@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _ResourceLoader(
+open class _ResourceLoaderInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -81,15 +81,6 @@ open class _ResourceLoader(
   }
 
   companion object {
-    val Instance: _ResourceLoader
-      get() = memScoped {
-        val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ResourceLoader".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton _ResourceLoader" }
-        val ret = _ResourceLoader(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for _ResourceLoader
      */
@@ -151,5 +142,16 @@ open class _ResourceLoader(
             "set_abort_on_missing_resources".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_abort_on_missing_resources" }
         }}
+  }
+}
+
+object _ResourceLoader : _ResourceLoaderInternal(null) {
+  init {
+    memScoped {
+      val handle =
+          checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ResourceLoader".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton _ResourceLoader" }
+      _handle = handle
+    }
   }
 }

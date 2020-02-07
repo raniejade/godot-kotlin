@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioServer(
+open class AudioServerInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -192,7 +192,7 @@ open class AudioServer(
     return _ret.asFloat()
   }
 
-  fun getSpeakerMode(): SpeakerMode {
+  fun getSpeakerMode(): AudioServer.SpeakerMode {
     val _ret = __method_bind.getSpeakerMode.call(this._handle)
     return AudioServer.SpeakerMode.from(_ret.asInt())
   }
@@ -346,38 +346,7 @@ open class AudioServer(
     __method_bind.unlock.call(this._handle)
   }
 
-  enum class SpeakerMode(
-    val value: Int
-  ) {
-    STEREO(0),
-
-    SURROUND_31(1),
-
-    SURROUND_51(2),
-
-    SURROUND_71(3);
-
-    companion object {
-      fun from(value: Int): SpeakerMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
   companion object {
-    val Instance: AudioServer
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("AudioServer".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton AudioServer" }
-        val ret = AudioServer(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for AudioServer
      */
@@ -704,5 +673,38 @@ open class AudioServer(
             "unlock".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method unlock" }
         }}
+  }
+}
+
+object AudioServer : AudioServerInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("AudioServer".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton AudioServer" }
+      _handle = handle
+    }
+  }
+
+  enum class SpeakerMode(
+    val value: Int
+  ) {
+    STEREO(0),
+
+    SURROUND_31(1),
+
+    SURROUND_51(2),
+
+    SURROUND_71(3);
+
+    companion object {
+      fun from(value: Int): SpeakerMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 }

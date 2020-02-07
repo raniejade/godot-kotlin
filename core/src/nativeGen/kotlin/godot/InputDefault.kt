@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class InputDefault(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
-) : Input(null) {
+) : InputInternal(null) {
   constructor() : this(null) {
     _handle = __new()
   }

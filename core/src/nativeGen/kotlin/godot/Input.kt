@@ -21,7 +21,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Input(
+open class InputInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -65,7 +65,7 @@ open class Input(
     return _ret.asVariantArray()
   }
 
-  fun getCurrentCursorShape(): CursorShape {
+  fun getCurrentCursorShape(): Input.CursorShape {
     val _ret = __method_bind.getCurrentCursorShape.call(this._handle)
     return Input.CursorShape.from(_ret.asInt())
   }
@@ -151,7 +151,7 @@ open class Input(
     return _ret.asInt()
   }
 
-  fun getMouseMode(): MouseMode {
+  fun getMouseMode(): Input.MouseMode {
     val _ret = __method_bind.getMouseMode.call(this._handle)
     return Input.MouseMode.from(_ret.asInt())
   }
@@ -280,87 +280,7 @@ open class Input(
     __method_bind.warpMousePosition.call(this._handle, listOf(_arg))
   }
 
-  enum class MouseMode(
-    val value: Int
-  ) {
-    VISIBLE(0),
-
-    HIDDEN(1),
-
-    CAPTURED(2),
-
-    CONFINED(3);
-
-    companion object {
-      fun from(value: Int): MouseMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class CursorShape(
-    val value: Int
-  ) {
-    ARROW(0),
-
-    IBEAM(1),
-
-    POINTING_HAND(2),
-
-    CROSS(3),
-
-    WAIT(4),
-
-    BUSY(5),
-
-    DRAG(6),
-
-    CAN_DROP(7),
-
-    FORBIDDEN(8),
-
-    VSIZE(9),
-
-    HSIZE(10),
-
-    BDIAGSIZE(11),
-
-    FDIAGSIZE(12),
-
-    MOVE(13),
-
-    VSPLIT(14),
-
-    HSPLIT(15),
-
-    HELP(16);
-
-    companion object {
-      fun from(value: Int): CursorShape {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
   companion object {
-    val Instance: Input
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("Input".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton Input" }
-        val ret = Input(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for Input
      */
@@ -605,5 +525,87 @@ open class Input(
             "warp_mouse_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method warp_mouse_position" }
         }}
+  }
+}
+
+object Input : InputInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("Input".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton Input" }
+      _handle = handle
+    }
+  }
+
+  enum class MouseMode(
+    val value: Int
+  ) {
+    VISIBLE(0),
+
+    HIDDEN(1),
+
+    CAPTURED(2),
+
+    CONFINED(3);
+
+    companion object {
+      fun from(value: Int): MouseMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class CursorShape(
+    val value: Int
+  ) {
+    ARROW(0),
+
+    IBEAM(1),
+
+    POINTING_HAND(2),
+
+    CROSS(3),
+
+    WAIT(4),
+
+    BUSY(5),
+
+    DRAG(6),
+
+    CAN_DROP(7),
+
+    FORBIDDEN(8),
+
+    VSIZE(9),
+
+    HSIZE(10),
+
+    BDIAGSIZE(11),
+
+    FDIAGSIZE(12),
+
+    MOVE(13),
+
+    VSPLIT(14),
+
+    HSPLIT(15),
+
+    HELP(16);
+
+    companion object {
+      fun from(value: Int): CursorShape {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 }

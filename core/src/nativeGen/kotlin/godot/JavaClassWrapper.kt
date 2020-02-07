@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class JavaClassWrapper(
+open class JavaClassWrapperInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -27,15 +27,6 @@ open class JavaClassWrapper(
   }
 
   companion object {
-    val Instance: JavaClassWrapper
-      get() = memScoped {
-        val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("JavaClassWrapper".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton JavaClassWrapper" }
-        val ret = JavaClassWrapper(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for JavaClassWrapper
      */
@@ -47,5 +38,16 @@ open class JavaClassWrapper(
             "wrap".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method wrap" }
         }}
+  }
+}
+
+object JavaClassWrapper : JavaClassWrapperInternal(null) {
+  init {
+    memScoped {
+      val handle =
+          checkNotNull(Godot.gdnative.godot_global_get_singleton)("JavaClassWrapper".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton JavaClassWrapper" }
+      _handle = handle
+    }
   }
 }

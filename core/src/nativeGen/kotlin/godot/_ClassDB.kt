@@ -21,7 +21,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _ClassDB(
+open class _ClassDBInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -180,14 +180,6 @@ open class _ClassDB(
   }
 
   companion object {
-    val Instance: _ClassDB
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ClassDB".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton _ClassDB" }
-        val ret = _ClassDB(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for _ClassDB
      */
@@ -312,5 +304,15 @@ open class _ClassDB(
             "is_parent_class".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_parent_class" }
         }}
+  }
+}
+
+object _ClassDB : _ClassDBInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ClassDB".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton _ClassDB" }
+      _handle = handle
+    }
   }
 }

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CameraServer(
+open class CameraServerInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -57,39 +57,7 @@ open class CameraServer(
     __method_bind.removeFeed.call(this._handle, listOf(_arg))
   }
 
-  enum class FeedImage(
-    val value: Int
-  ) {
-    RGBA_IMAGE(0),
-
-    YCBCR_IMAGE(0),
-
-    Y_IMAGE(0),
-
-    CBCR_IMAGE(1);
-
-    companion object {
-      fun from(value: Int): FeedImage {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
   companion object {
-    val Instance: CameraServer
-      get() = memScoped {
-        val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("CameraServer".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton CameraServer" }
-        val ret = CameraServer(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for CameraServer
      */
@@ -129,5 +97,38 @@ open class CameraServer(
             "remove_feed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_feed" }
         }}
+  }
+}
+
+object CameraServer : CameraServerInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("CameraServer".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton CameraServer" }
+      _handle = handle
+    }
+  }
+
+  enum class FeedImage(
+    val value: Int
+  ) {
+    RGBA_IMAGE(0),
+
+    YCBCR_IMAGE(0),
+
+    Y_IMAGE(0),
+
+    CBCR_IMAGE(1);
+
+    companion object {
+      fun from(value: Int): FeedImage {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 }

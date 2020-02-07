@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputMap(
+open class InputMapInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -98,14 +98,6 @@ open class InputMap(
   }
 
   companion object {
-    val Instance: InputMap
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("InputMap".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton InputMap" }
-        val ret = InputMap(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for InputMap
      */
@@ -182,5 +174,15 @@ open class InputMap(
             "load_from_globals".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method load_from_globals" }
         }}
+  }
+}
+
+object InputMap : InputMapInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("InputMap".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton InputMap" }
+      _handle = handle
+    }
   }
 }

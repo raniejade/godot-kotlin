@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Performance(
+open class PerformanceInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -26,6 +26,30 @@ open class Performance(
     val _arg = Variant(monitor)
     val _ret = __method_bind.getMonitor.call(this._handle, listOf(_arg))
     return _ret.asFloat()
+  }
+
+  companion object {
+    /**
+     * Container for method_bind pointers for Performance
+     */
+    private object __method_bind {
+      val getMonitor: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Performance".cstr.ptr,
+            "get_monitor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_monitor" }
+        }}
+  }
+}
+
+object Performance : PerformanceInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("Performance".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton Performance" }
+      _handle = handle
+    }
   }
 
   enum class Monitor(
@@ -101,27 +125,5 @@ open class Performance(
         throw AssertionError("""Unsupported enum value: $value""")
       }
     }
-  }
-
-  companion object {
-    val Instance: Performance
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("Performance".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton Performance" }
-        val ret = Performance(null)
-        ret._handle = handle
-        ret
-      }
-    /**
-     * Container for method_bind pointers for Performance
-     */
-    private object __method_bind {
-      val getMonitor: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Performance".cstr.ptr,
-            "get_monitor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_monitor" }
-        }}
   }
 }

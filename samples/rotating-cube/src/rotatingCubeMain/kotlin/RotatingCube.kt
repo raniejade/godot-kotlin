@@ -1,6 +1,5 @@
 import godot.*
 import godot.core.Vector3
-import kotlinx.cinterop.COpaquePointer
 
 class RotatingCube: Spatial() {
   var rotationSpeed by floatProperty()

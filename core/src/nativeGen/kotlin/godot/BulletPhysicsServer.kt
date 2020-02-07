@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class BulletPhysicsServer(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
-) : PhysicsServer(null) {
+) : PhysicsServerInternal(null) {
   constructor() : this(null) {
     _handle = __new()
   }

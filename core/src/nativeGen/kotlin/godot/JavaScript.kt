@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class JavaScript(
+open class JavaScriptInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -30,14 +30,6 @@ open class JavaScript(
   }
 
   companion object {
-    val Instance: JavaScript
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("JavaScript".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton JavaScript" }
-        val ret = JavaScript(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for JavaScript
      */
@@ -48,5 +40,15 @@ open class JavaScript(
             "eval".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method eval" }
         }}
+  }
+}
+
+object JavaScript : JavaScriptInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("JavaScript".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton JavaScript" }
+      _handle = handle
+    }
   }
 }

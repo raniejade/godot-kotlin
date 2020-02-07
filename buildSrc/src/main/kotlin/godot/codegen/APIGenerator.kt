@@ -28,28 +28,55 @@ class APIGenerator {
         DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
       """.trimIndent())
       .addCommonImports(cls)
-      .addType(generateType(cls, maxSignalParam, index))
+      .generateType(cls, maxSignalParam, index)
       .build()
   }
 
-  private fun generateType(cls: GDClass, maxSignalParam: Int, index: GDClassIndex): TypeSpec {
-    return generateInstanceType(cls, maxSignalParam, index)
-  }
+  private fun FileSpec.Builder.generateType(cls: GDClass, maxSignalParam: Int, index: GDClassIndex): FileSpec.Builder {
+    val className = if (cls.isSingleton) {
+      "${cls.name}Internal"
+    } else {
+      cls.name
+    }
 
-  private fun generateInstanceType(cls: GDClass, maxSignalParam: Int, index: GDClassIndex): TypeSpec {
-    val classBuilder = TypeSpec.classBuilder(cls.name)
+    val classBuilder = TypeSpec.classBuilder(className)
       .addModifiers(KModifier.OPEN)
       .generateConstructors(cls)
-      .maybeGenerateInheritance(cls)
-      .generateEnums(cls)
+      .maybeGenerateInheritance(cls, index)
       .generateProperties(cls, index)
       .generateMethods(cls, index)
       .generateSignalHelpers(cls, maxSignalParam)
-      .generateCompanionObject(cls, index)
       .generateSignals(cls)
 
-    return classBuilder
-      .build()
+    if (!cls.isSingleton) {
+      classBuilder.generateEnums(cls)
+    }
+    classBuilder.generateCompanionObject(cls, index)
+
+    addType(classBuilder.build())
+
+    if (cls.isSingleton) {
+      val singletonBuilder = TypeSpec.objectBuilder(cls.name)
+        .superclass(ClassName("godot", className))
+        .addSuperclassConstructorParameter("null")
+        .addInitializerBlock(
+          CodeBlock.builder()
+            .add("memScoped {\n⇥")
+            .addStatement("val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)(%S.cstr.ptr)", cls.name)
+            .addStatement("requireNotNull(handle) { %S }", "No instance found for singleton ${cls.name}")
+            .addStatement("_handle = handle")
+            .add("⇤}\n")
+            .build()
+        )
+        .generateEnums(cls)
+
+      if (cls.constants.isNotEmpty()) {
+        singletonBuilder.generateConstants(cls)
+      }
+      addType(singletonBuilder.build())
+    }
+
+    return this
   }
 
   private fun TypeSpec.Builder.generateSignals(cls: GDClass): TypeSpec.Builder {
@@ -341,10 +368,16 @@ class APIGenerator {
     return this
   }
 
-  private fun TypeSpec.Builder.maybeGenerateInheritance(cls: GDClass): TypeSpec.Builder {
+  private fun TypeSpec.Builder.maybeGenerateInheritance(cls: GDClass, index: GDClassIndex): TypeSpec.Builder {
     if (cls.baseClass.isNotBlank()) {
+      val baseClass = index.classes[cls.baseClass]!!
+      val superClassName = if (baseClass.isSingleton) {
+        "${baseClass.name}Internal"
+      } else {
+        baseClass.name
+      }
       superclass(
-        ClassName(BASE_PACKAGE, cls.baseClass)
+        ClassName(BASE_PACKAGE, superClassName)
       ).addSuperclassConstructorParameter("null")
     }
     return this
@@ -373,53 +406,58 @@ class APIGenerator {
     }
 
     // singleton
-    if (cls.isSingleton) {
-      companionObjectBuilder.addProperty(
-        PropertySpec.builder("Instance", className)
-          .getter(
-            FunSpec.getterBuilder()
-              .addCode("""
-                return memScoped {
-                  val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)(%S.cstr.ptr)
-                  requireNotNull(handle) { %S }
-                  val ret = %L(null)
-                  ret._handle = handle
-                  ret
-                }
-               """.trimIndent(), cls.name, "No instance found for singleton ${cls.name}", cls.name)
-              .build()
-          ).build()
-      )
-    }
+//    if (cls.isSingleton) {
+//      companionObjectBuilder.addProperty(
+//        PropertySpec.builder("Instance", className)
+//          .getter(
+//            FunSpec.getterBuilder()
+//              .addCode("""
+//                return memScoped {
+//                  val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)(%S.cstr.ptr)
+//                  requireNotNull(handle) { %S }
+//                  val ret = %L(null)
+//                  ret._handle = handle
+//                  ret
+//                }
+//               """.trimIndent(), cls.name, "No instance found for singleton ${cls.name}", cls.name)
+//              .build()
+//          ).build()
+//      )
+//    }
 
     // constants
     if (cls.constants.isNotEmpty()) {
-      companionObjectBuilder.addProperties(
-        cls.constants
-          .filter { (name, _) ->
-            var match = false
-            for (gdEnum in cls.enums.values) {
-              for (enumValue in gdEnum.values.keys) {
-                if (enumValue == name) {
-                  match = true
-                  break
-                }
-              }
-            }
-            !match
-          }
-          .map { (k, v) ->
-            PropertySpec.builder(k, v::class)
-              .initializer(getFormatFromConstantValue(v), v)
-              .build()
-          }
-      )
+      companionObjectBuilder.generateConstants(cls)
     }
 
     addType(
       companionObjectBuilder
         .generateMethodBindObject(cls, index)
         .build()
+    )
+    return this
+  }
+
+  private fun TypeSpec.Builder.generateConstants(cls: GDClass): TypeSpec.Builder {
+    addProperties(
+      cls.constants
+        .filter { (name, _) ->
+          var match = false
+          for (gdEnum in cls.enums.values) {
+            for (enumValue in gdEnum.values.keys) {
+              if (enumValue == name) {
+                match = true
+                break
+              }
+            }
+          }
+          !match
+        }
+        .map { (k, v) ->
+          PropertySpec.builder(k, v::class)
+            .initializer(getFormatFromConstantValue(v), v)
+            .build()
+        }
     )
     return this
   }

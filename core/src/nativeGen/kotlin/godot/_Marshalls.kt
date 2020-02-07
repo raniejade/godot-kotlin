@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Marshalls(
+open class _MarshallsInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
@@ -63,14 +63,6 @@ open class _Marshalls(
   }
 
   companion object {
-    val Instance: _Marshalls
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Marshalls".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton _Marshalls" }
-        val ret = _Marshalls(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for _Marshalls
      */
@@ -111,5 +103,15 @@ open class _Marshalls(
             "variant_to_base64".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method variant_to_base64" }
         }}
+  }
+}
+
+object _Marshalls : _MarshallsInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Marshalls".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton _Marshalls" }
+      _handle = handle
+    }
   }
 }

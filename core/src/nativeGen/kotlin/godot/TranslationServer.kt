@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TranslationServer(
+open class TranslationServerInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -62,15 +62,6 @@ open class TranslationServer(
   }
 
   companion object {
-    val Instance: TranslationServer
-      get() = memScoped {
-        val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("TranslationServer".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton TranslationServer" }
-        val ret = TranslationServer(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for TranslationServer
      */
@@ -131,5 +122,16 @@ open class TranslationServer(
             "translate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method translate" }
         }}
+  }
+}
+
+object TranslationServer : TranslationServerInternal(null) {
+  init {
+    memScoped {
+      val handle =
+          checkNotNull(Godot.gdnative.godot_global_get_singleton)("TranslationServer".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton TranslationServer" }
+      _handle = handle
+    }
   }
 }

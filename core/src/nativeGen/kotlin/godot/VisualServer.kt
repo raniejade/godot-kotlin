@@ -34,7 +34,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualServer(
+open class VisualServerInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -1883,7 +1883,7 @@ open class VisualServer(
     return _ret.asInt()
   }
 
-  fun meshGetBlendShapeMode(mesh: RID): BlendShapeMode {
+  fun meshGetBlendShapeMode(mesh: RID): VisualServer.BlendShapeMode {
     val _arg = Variant(mesh)
     val _ret = __method_bind.meshGetBlendShapeMode.call(this._handle, listOf(_arg))
     return VisualServer.BlendShapeMode.from(_ret.asInt())
@@ -2029,7 +2029,7 @@ open class VisualServer(
     return _ret.asRID()
   }
 
-  fun meshSurfaceGetPrimitiveType(mesh: RID, surface: Int): PrimitiveType {
+  fun meshSurfaceGetPrimitiveType(mesh: RID, surface: Int): VisualServer.PrimitiveType {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(mesh))
     _args.add(Variant.fromAny(surface))
@@ -2764,7 +2764,7 @@ open class VisualServer(
     return _ret.asInt()
   }
 
-  fun textureGetType(texture: RID): TextureType {
+  fun textureGetType(texture: RID): VisualServer.TextureType {
     val _arg = Variant(texture)
     val _ret = __method_bind.textureGetType.call(this._handle, listOf(_arg))
     return VisualServer.TextureType.from(_ret.asInt())
@@ -3092,1045 +3092,7 @@ open class VisualServer(
     __method_bind.viewportSetVflip.call(this._handle, _args)
   }
 
-  enum class ReflectionProbeUpdateMode(
-    val value: Int
-  ) {
-    ONCE(0),
-
-    ALWAYS(1);
-
-    companion object {
-      fun from(value: Int): ReflectionProbeUpdateMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class LightDirectionalShadowDepthRangeMode(
-    val value: Int
-  ) {
-    STABLE(0),
-
-    OPTIMIZED(1);
-
-    companion object {
-      fun from(value: Int): LightDirectionalShadowDepthRangeMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class BlendShapeMode(
-    val value: Int
-  ) {
-    NORMALIZED(0),
-
-    RELATIVE(1);
-
-    companion object {
-      fun from(value: Int): BlendShapeMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class PrimitiveType(
-    val value: Int
-  ) {
-    POINTS(0),
-
-    LINES(1),
-
-    LINE_STRIP(2),
-
-    LINE_LOOP(3),
-
-    TRIANGLES(4),
-
-    TRIANGLE_STRIP(5),
-
-    TRIANGLE_FAN(6),
-
-    MAX(7);
-
-    companion object {
-      fun from(value: Int): PrimitiveType {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class TextureType(
-    val value: Int
-  ) {
-    `2D`(0),
-
-    CUBEMAP(1),
-
-    `2D_ARRAY`(2),
-
-    `3D`(3);
-
-    companion object {
-      fun from(value: Int): TextureType {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class EnvironmentSSAOQuality(
-    val value: Int
-  ) {
-    ENV_SSAO_QUALITY_LOW(0),
-
-    ENV_SSAO_QUALITY_MEDIUM(1),
-
-    ENV_SSAO_QUALITY_HIGH(2);
-
-    companion object {
-      fun from(value: Int): EnvironmentSSAOQuality {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class EnvironmentDOFBlurQuality(
-    val value: Int
-  ) {
-    ENV_DOF_BLUR_QUALITY_LOW(0),
-
-    ENV_DOF_BLUR_QUALITY_MEDIUM(1),
-
-    ENV_DOF_BLUR_QUALITY_HIGH(2);
-
-    companion object {
-      fun from(value: Int): EnvironmentDOFBlurQuality {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class RenderInfo(
-    val value: Int
-  ) {
-    INFO_OBJECTS_IN_FRAME(0),
-
-    INFO_VERTICES_IN_FRAME(1),
-
-    INFO_MATERIAL_CHANGES_IN_FRAME(2),
-
-    INFO_SHADER_CHANGES_IN_FRAME(3),
-
-    INFO_SURFACE_CHANGES_IN_FRAME(4),
-
-    INFO_DRAW_CALLS_IN_FRAME(5),
-
-    INFO_USAGE_VIDEO_MEM_TOTAL(6),
-
-    INFO_VIDEO_MEM_USED(7),
-
-    INFO_TEXTURE_MEM_USED(8),
-
-    INFO_VERTEX_MEM_USED(9);
-
-    companion object {
-      fun from(value: Int): RenderInfo {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class NinePatchAxisMode(
-    val value: Int
-  ) {
-    STRETCH(0),
-
-    TILE(1),
-
-    TILE_FIT(2);
-
-    companion object {
-      fun from(value: Int): NinePatchAxisMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ViewportRenderInfo(
-    val value: Int
-  ) {
-    OBJECTS_IN_FRAME(0),
-
-    VERTICES_IN_FRAME(1),
-
-    MATERIAL_CHANGES_IN_FRAME(2),
-
-    SHADER_CHANGES_IN_FRAME(3),
-
-    SURFACE_CHANGES_IN_FRAME(4),
-
-    DRAW_CALLS_IN_FRAME(5),
-
-    MAX(6);
-
-    companion object {
-      fun from(value: Int): ViewportRenderInfo {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ViewportClearMode(
-    val value: Int
-  ) {
-    ALWAYS(0),
-
-    NEVER(1),
-
-    ONLY_NEXT_FRAME(2);
-
-    companion object {
-      fun from(value: Int): ViewportClearMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class LightOmniShadowDetail(
-    val value: Int
-  ) {
-    VERTICAL(0),
-
-    HORIZONTAL(1);
-
-    companion object {
-      fun from(value: Int): LightOmniShadowDetail {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ShaderMode(
-    val value: Int
-  ) {
-    SPATIAL(0),
-
-    CANVAS_ITEM(1),
-
-    PARTICLES(2),
-
-    MAX(3);
-
-    companion object {
-      fun from(value: Int): ShaderMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class MultimeshTransformFormat(
-    val value: Int
-  ) {
-    `2D`(0),
-
-    `3D`(1);
-
-    companion object {
-      fun from(value: Int): MultimeshTransformFormat {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ShadowCastingSetting(
-    val value: Int
-  ) {
-    OFF(0),
-
-    ON(1),
-
-    DOUBLE_SIDED(2),
-
-    SHADOWS_ONLY(3);
-
-    companion object {
-      fun from(value: Int): ShadowCastingSetting {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ViewportDebugDraw(
-    val value: Int
-  ) {
-    DISABLED(0),
-
-    UNSHADED(1),
-
-    OVERDRAW(2),
-
-    WIREFRAME(3);
-
-    companion object {
-      fun from(value: Int): ViewportDebugDraw {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ViewportUsage(
-    val value: Int
-  ) {
-    `2D`(0),
-
-    `2D_NO_SAMPLING`(1),
-
-    `3D`(2),
-
-    `3D_NO_EFFECTS`(3);
-
-    companion object {
-      fun from(value: Int): ViewportUsage {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class EnvironmentBG(
-    val value: Int
-  ) {
-    ENV_BG_CLEAR_COLOR(0),
-
-    ENV_BG_COLOR(1),
-
-    ENV_BG_SKY(2),
-
-    ENV_BG_COLOR_SKY(3),
-
-    ENV_BG_CANVAS(4),
-
-    ENV_BG_KEEP(5),
-
-    ENV_BG_MAX(7);
-
-    companion object {
-      fun from(value: Int): EnvironmentBG {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class MultimeshCustomDataFormat(
-    val value: Int
-  ) {
-    NONE(0),
-
-    `8BIT`(1),
-
-    FLOAT(2);
-
-    companion object {
-      fun from(value: Int): MultimeshCustomDataFormat {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class LightOmniShadowMode(
-    val value: Int
-  ) {
-    DUAL_PARABOLOID(0),
-
-    CUBE(1);
-
-    companion object {
-      fun from(value: Int): LightOmniShadowMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class TextureFlags(
-    val value: Int
-  ) {
-    FLAG_MIPMAPS(1),
-
-    FLAG_REPEAT(2),
-
-    FLAG_FILTER(4),
-
-    DEFAULT(7),
-
-    FLAG_ANISOTROPIC_FILTER(8),
-
-    FLAG_CONVERT_TO_LINEAR(16),
-
-    FLAG_MIRRORED_REPEAT(32),
-
-    FLAG_USED_FOR_STREAMING(2048);
-
-    companion object {
-      fun from(value: Int): TextureFlags {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class Features(
-    val value: Int
-  ) {
-    FEATURE_SHADERS(0),
-
-    FEATURE_MULTITHREADED(1);
-
-    companion object {
-      fun from(value: Int): Features {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class InstanceType(
-    val value: Int
-  ) {
-    NONE(0),
-
-    MESH(1),
-
-    MULTIMESH(2),
-
-    IMMEDIATE(3),
-
-    PARTICLES(4),
-
-    LIGHT(5),
-
-    REFLECTION_PROBE(6),
-
-    GI_PROBE(7),
-
-    LIGHTMAP_CAPTURE(8),
-
-    MAX(9),
-
-    GEOMETRY_MASK(30);
-
-    companion object {
-      fun from(value: Int): InstanceType {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class EnvironmentSSAOBlur(
-    val value: Int
-  ) {
-    ENV_SSAO_BLUR_DISABLED(0),
-
-    ENV_SSAO_BLUR_1x1(1),
-
-    ENV_SSAO_BLUR_2x2(2),
-
-    ENV_SSAO_BLUR_3x3(3);
-
-    companion object {
-      fun from(value: Int): EnvironmentSSAOBlur {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class EnvironmentToneMapper(
-    val value: Int
-  ) {
-    ENV_TONE_MAPPER_LINEAR(0),
-
-    ENV_TONE_MAPPER_REINHARD(1),
-
-    ENV_TONE_MAPPER_FILMIC(2),
-
-    ENV_TONE_MAPPER_ACES(3);
-
-    companion object {
-      fun from(value: Int): EnvironmentToneMapper {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class EnvironmentGlowBlendMode(
-    val value: Int
-  ) {
-    GLOW_BLEND_MODE_ADDITIVE(0),
-
-    GLOW_BLEND_MODE_SCREEN(1),
-
-    GLOW_BLEND_MODE_SOFTLIGHT(2),
-
-    GLOW_BLEND_MODE_REPLACE(3);
-
-    companion object {
-      fun from(value: Int): EnvironmentGlowBlendMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class MultimeshColorFormat(
-    val value: Int
-  ) {
-    NONE(0),
-
-    `8BIT`(1),
-
-    FLOAT(2);
-
-    companion object {
-      fun from(value: Int): MultimeshColorFormat {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class CanvasLightShadowFilter(
-    val value: Int
-  ) {
-    FILTER_NONE(0),
-
-    FILTER_PCF3(1),
-
-    FILTER_PCF5(2),
-
-    FILTER_PCF7(3),
-
-    FILTER_PCF9(4),
-
-    FILTER_PCF13(5);
-
-    companion object {
-      fun from(value: Int): CanvasLightShadowFilter {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ScenarioDebugMode(
-    val value: Int
-  ) {
-    DISABLED(0),
-
-    WIREFRAME(1),
-
-    OVERDRAW(2),
-
-    SHADELESS(3);
-
-    companion object {
-      fun from(value: Int): ScenarioDebugMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ViewportUpdateMode(
-    val value: Int
-  ) {
-    DISABLED(0),
-
-    ONCE(1),
-
-    WHEN_VISIBLE(2),
-
-    ALWAYS(3);
-
-    companion object {
-      fun from(value: Int): ViewportUpdateMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ArrayFormat(
-    val value: Int
-  ) {
-    VERTEX(1),
-
-    NORMAL(2),
-
-    TANGENT(4),
-
-    COLOR(8),
-
-    TEX_UV(16),
-
-    TEX_UV2(32),
-
-    BONES(64),
-
-    WEIGHTS(128),
-
-    INDEX(256),
-
-    COMPRESS_VERTEX(512),
-
-    COMPRESS_NORMAL(1024),
-
-    COMPRESS_TANGENT(2048),
-
-    COMPRESS_COLOR(4096),
-
-    COMPRESS_TEX_UV(8192),
-
-    COMPRESS_TEX_UV2(16384),
-
-    COMPRESS_BONES(32768),
-
-    COMPRESS_WEIGHTS(65536),
-
-    COMPRESS_DEFAULT(97280),
-
-    COMPRESS_INDEX(131072),
-
-    FLAG_USE_2D_VERTICES(262144),
-
-    FLAG_USE_16_BIT_BONES(524288);
-
-    companion object {
-      fun from(value: Int): ArrayFormat {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ParticlesDrawOrder(
-    val value: Int
-  ) {
-    INDEX(0),
-
-    LIFETIME(1),
-
-    VIEW_DEPTH(2);
-
-    companion object {
-      fun from(value: Int): ParticlesDrawOrder {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class CanvasLightMode(
-    val value: Int
-  ) {
-    ADD(0),
-
-    SUB(1),
-
-    MIX(2),
-
-    MASK(3);
-
-    companion object {
-      fun from(value: Int): CanvasLightMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class LightDirectionalShadowMode(
-    val value: Int
-  ) {
-    ORTHOGONAL(0),
-
-    PARALLEL_2_SPLITS(1),
-
-    PARALLEL_4_SPLITS(2);
-
-    companion object {
-      fun from(value: Int): LightDirectionalShadowMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class LightParam(
-    val value: Int
-  ) {
-    ENERGY(0),
-
-    SPECULAR(2),
-
-    RANGE(3),
-
-    ATTENUATION(4),
-
-    SPOT_ANGLE(5),
-
-    SPOT_ATTENUATION(6),
-
-    CONTACT_SHADOW_SIZE(7),
-
-    SHADOW_MAX_DISTANCE(8),
-
-    SHADOW_SPLIT_1_OFFSET(9),
-
-    SHADOW_SPLIT_2_OFFSET(10),
-
-    SHADOW_SPLIT_3_OFFSET(11),
-
-    SHADOW_NORMAL_BIAS(12),
-
-    SHADOW_BIAS(13),
-
-    SHADOW_BIAS_SPLIT_SCALE(14),
-
-    MAX(15);
-
-    companion object {
-      fun from(value: Int): LightParam {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ArrayType(
-    val value: Int
-  ) {
-    VERTEX(0),
-
-    NORMAL(1),
-
-    TANGENT(2),
-
-    COLOR(3),
-
-    TEX_UV(4),
-
-    TEX_UV2(5),
-
-    BONES(6),
-
-    WEIGHTS(7),
-
-    INDEX(8),
-
-    MAX(9);
-
-    companion object {
-      fun from(value: Int): ArrayType {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class CanvasOccluderPolygonCullMode(
-    val value: Int
-  ) {
-    DISABLED(0),
-
-    CLOCKWISE(1),
-
-    COUNTER_CLOCKWISE(2);
-
-    companion object {
-      fun from(value: Int): CanvasOccluderPolygonCullMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class InstanceFlags(
-    val value: Int
-  ) {
-    FLAG_USE_BAKED_LIGHT(0),
-
-    FLAG_DRAW_NEXT_FRAME_IF_VISIBLE(1),
-
-    FLAG_MAX(2);
-
-    companion object {
-      fun from(value: Int): InstanceFlags {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ViewportMSAA(
-    val value: Int
-  ) {
-    DISABLED(0),
-
-    `2X`(1),
-
-    `4X`(2),
-
-    `8X`(3),
-
-    `16X`(4),
-
-    EXT_2X(5),
-
-    EXT_4X(6);
-
-    companion object {
-      fun from(value: Int): ViewportMSAA {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class LightType(
-    val value: Int
-  ) {
-    DIRECTIONAL(0),
-
-    OMNI(1),
-
-    SPOT(2);
-
-    companion object {
-      fun from(value: Int): LightType {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class CubeMapSide(
-    val value: Int
-  ) {
-    CUBEMAP_LEFT(0),
-
-    CUBEMAP_RIGHT(1),
-
-    CUBEMAP_BOTTOM(2),
-
-    CUBEMAP_TOP(3),
-
-    CUBEMAP_FRONT(4),
-
-    CUBEMAP_BACK(5);
-
-    companion object {
-      fun from(value: Int): CubeMapSide {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
   companion object {
-    val Instance: VisualServer
-      get() = memScoped {
-        val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("VisualServer".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton VisualServer" }
-        val ret = VisualServer(null)
-        ret._handle = handle
-        ret
-      }
     val ARRAY_WEIGHTS_SIZE: Int = 4
 
     val CANVAS_ITEM_Z_MAX: Int = 4096
@@ -6758,5 +5720,1060 @@ open class VisualServer(
             "viewport_set_vflip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method viewport_set_vflip" }
         }}
+  }
+}
+
+object VisualServer : VisualServerInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("VisualServer".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton VisualServer" }
+      _handle = handle
+    }
+  }
+
+  val ARRAY_WEIGHTS_SIZE: Int = 4
+
+  val CANVAS_ITEM_Z_MAX: Int = 4096
+
+  val CANVAS_ITEM_Z_MIN: Int = -4096
+
+  val MATERIAL_RENDER_PRIORITY_MAX: Int = 127
+
+  val MATERIAL_RENDER_PRIORITY_MIN: Int = -128
+
+  val MAX_CURSORS: Int = 8
+
+  val MAX_GLOW_LEVELS: Int = 7
+
+  val NO_INDEX_ARRAY: Int = -1
+
+  enum class ReflectionProbeUpdateMode(
+    val value: Int
+  ) {
+    ONCE(0),
+
+    ALWAYS(1);
+
+    companion object {
+      fun from(value: Int): ReflectionProbeUpdateMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class LightDirectionalShadowDepthRangeMode(
+    val value: Int
+  ) {
+    STABLE(0),
+
+    OPTIMIZED(1);
+
+    companion object {
+      fun from(value: Int): LightDirectionalShadowDepthRangeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class BlendShapeMode(
+    val value: Int
+  ) {
+    NORMALIZED(0),
+
+    RELATIVE(1);
+
+    companion object {
+      fun from(value: Int): BlendShapeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class PrimitiveType(
+    val value: Int
+  ) {
+    POINTS(0),
+
+    LINES(1),
+
+    LINE_STRIP(2),
+
+    LINE_LOOP(3),
+
+    TRIANGLES(4),
+
+    TRIANGLE_STRIP(5),
+
+    TRIANGLE_FAN(6),
+
+    MAX(7);
+
+    companion object {
+      fun from(value: Int): PrimitiveType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class TextureType(
+    val value: Int
+  ) {
+    `2D`(0),
+
+    CUBEMAP(1),
+
+    `2D_ARRAY`(2),
+
+    `3D`(3);
+
+    companion object {
+      fun from(value: Int): TextureType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class EnvironmentSSAOQuality(
+    val value: Int
+  ) {
+    ENV_SSAO_QUALITY_LOW(0),
+
+    ENV_SSAO_QUALITY_MEDIUM(1),
+
+    ENV_SSAO_QUALITY_HIGH(2);
+
+    companion object {
+      fun from(value: Int): EnvironmentSSAOQuality {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class EnvironmentDOFBlurQuality(
+    val value: Int
+  ) {
+    ENV_DOF_BLUR_QUALITY_LOW(0),
+
+    ENV_DOF_BLUR_QUALITY_MEDIUM(1),
+
+    ENV_DOF_BLUR_QUALITY_HIGH(2);
+
+    companion object {
+      fun from(value: Int): EnvironmentDOFBlurQuality {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class RenderInfo(
+    val value: Int
+  ) {
+    INFO_OBJECTS_IN_FRAME(0),
+
+    INFO_VERTICES_IN_FRAME(1),
+
+    INFO_MATERIAL_CHANGES_IN_FRAME(2),
+
+    INFO_SHADER_CHANGES_IN_FRAME(3),
+
+    INFO_SURFACE_CHANGES_IN_FRAME(4),
+
+    INFO_DRAW_CALLS_IN_FRAME(5),
+
+    INFO_USAGE_VIDEO_MEM_TOTAL(6),
+
+    INFO_VIDEO_MEM_USED(7),
+
+    INFO_TEXTURE_MEM_USED(8),
+
+    INFO_VERTEX_MEM_USED(9);
+
+    companion object {
+      fun from(value: Int): RenderInfo {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class NinePatchAxisMode(
+    val value: Int
+  ) {
+    STRETCH(0),
+
+    TILE(1),
+
+    TILE_FIT(2);
+
+    companion object {
+      fun from(value: Int): NinePatchAxisMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ViewportRenderInfo(
+    val value: Int
+  ) {
+    OBJECTS_IN_FRAME(0),
+
+    VERTICES_IN_FRAME(1),
+
+    MATERIAL_CHANGES_IN_FRAME(2),
+
+    SHADER_CHANGES_IN_FRAME(3),
+
+    SURFACE_CHANGES_IN_FRAME(4),
+
+    DRAW_CALLS_IN_FRAME(5),
+
+    MAX(6);
+
+    companion object {
+      fun from(value: Int): ViewportRenderInfo {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ViewportClearMode(
+    val value: Int
+  ) {
+    ALWAYS(0),
+
+    NEVER(1),
+
+    ONLY_NEXT_FRAME(2);
+
+    companion object {
+      fun from(value: Int): ViewportClearMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class LightOmniShadowDetail(
+    val value: Int
+  ) {
+    VERTICAL(0),
+
+    HORIZONTAL(1);
+
+    companion object {
+      fun from(value: Int): LightOmniShadowDetail {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ShaderMode(
+    val value: Int
+  ) {
+    SPATIAL(0),
+
+    CANVAS_ITEM(1),
+
+    PARTICLES(2),
+
+    MAX(3);
+
+    companion object {
+      fun from(value: Int): ShaderMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class MultimeshTransformFormat(
+    val value: Int
+  ) {
+    `2D`(0),
+
+    `3D`(1);
+
+    companion object {
+      fun from(value: Int): MultimeshTransformFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ShadowCastingSetting(
+    val value: Int
+  ) {
+    OFF(0),
+
+    ON(1),
+
+    DOUBLE_SIDED(2),
+
+    SHADOWS_ONLY(3);
+
+    companion object {
+      fun from(value: Int): ShadowCastingSetting {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ViewportDebugDraw(
+    val value: Int
+  ) {
+    DISABLED(0),
+
+    UNSHADED(1),
+
+    OVERDRAW(2),
+
+    WIREFRAME(3);
+
+    companion object {
+      fun from(value: Int): ViewportDebugDraw {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ViewportUsage(
+    val value: Int
+  ) {
+    `2D`(0),
+
+    `2D_NO_SAMPLING`(1),
+
+    `3D`(2),
+
+    `3D_NO_EFFECTS`(3);
+
+    companion object {
+      fun from(value: Int): ViewportUsage {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class EnvironmentBG(
+    val value: Int
+  ) {
+    ENV_BG_CLEAR_COLOR(0),
+
+    ENV_BG_COLOR(1),
+
+    ENV_BG_SKY(2),
+
+    ENV_BG_COLOR_SKY(3),
+
+    ENV_BG_CANVAS(4),
+
+    ENV_BG_KEEP(5),
+
+    ENV_BG_MAX(7);
+
+    companion object {
+      fun from(value: Int): EnvironmentBG {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class MultimeshCustomDataFormat(
+    val value: Int
+  ) {
+    NONE(0),
+
+    `8BIT`(1),
+
+    FLOAT(2);
+
+    companion object {
+      fun from(value: Int): MultimeshCustomDataFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class LightOmniShadowMode(
+    val value: Int
+  ) {
+    DUAL_PARABOLOID(0),
+
+    CUBE(1);
+
+    companion object {
+      fun from(value: Int): LightOmniShadowMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class TextureFlags(
+    val value: Int
+  ) {
+    FLAG_MIPMAPS(1),
+
+    FLAG_REPEAT(2),
+
+    FLAG_FILTER(4),
+
+    DEFAULT(7),
+
+    FLAG_ANISOTROPIC_FILTER(8),
+
+    FLAG_CONVERT_TO_LINEAR(16),
+
+    FLAG_MIRRORED_REPEAT(32),
+
+    FLAG_USED_FOR_STREAMING(2048);
+
+    companion object {
+      fun from(value: Int): TextureFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class Features(
+    val value: Int
+  ) {
+    FEATURE_SHADERS(0),
+
+    FEATURE_MULTITHREADED(1);
+
+    companion object {
+      fun from(value: Int): Features {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class InstanceType(
+    val value: Int
+  ) {
+    NONE(0),
+
+    MESH(1),
+
+    MULTIMESH(2),
+
+    IMMEDIATE(3),
+
+    PARTICLES(4),
+
+    LIGHT(5),
+
+    REFLECTION_PROBE(6),
+
+    GI_PROBE(7),
+
+    LIGHTMAP_CAPTURE(8),
+
+    MAX(9),
+
+    GEOMETRY_MASK(30);
+
+    companion object {
+      fun from(value: Int): InstanceType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class EnvironmentSSAOBlur(
+    val value: Int
+  ) {
+    ENV_SSAO_BLUR_DISABLED(0),
+
+    ENV_SSAO_BLUR_1x1(1),
+
+    ENV_SSAO_BLUR_2x2(2),
+
+    ENV_SSAO_BLUR_3x3(3);
+
+    companion object {
+      fun from(value: Int): EnvironmentSSAOBlur {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class EnvironmentToneMapper(
+    val value: Int
+  ) {
+    ENV_TONE_MAPPER_LINEAR(0),
+
+    ENV_TONE_MAPPER_REINHARD(1),
+
+    ENV_TONE_MAPPER_FILMIC(2),
+
+    ENV_TONE_MAPPER_ACES(3);
+
+    companion object {
+      fun from(value: Int): EnvironmentToneMapper {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class EnvironmentGlowBlendMode(
+    val value: Int
+  ) {
+    GLOW_BLEND_MODE_ADDITIVE(0),
+
+    GLOW_BLEND_MODE_SCREEN(1),
+
+    GLOW_BLEND_MODE_SOFTLIGHT(2),
+
+    GLOW_BLEND_MODE_REPLACE(3);
+
+    companion object {
+      fun from(value: Int): EnvironmentGlowBlendMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class MultimeshColorFormat(
+    val value: Int
+  ) {
+    NONE(0),
+
+    `8BIT`(1),
+
+    FLOAT(2);
+
+    companion object {
+      fun from(value: Int): MultimeshColorFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class CanvasLightShadowFilter(
+    val value: Int
+  ) {
+    FILTER_NONE(0),
+
+    FILTER_PCF3(1),
+
+    FILTER_PCF5(2),
+
+    FILTER_PCF7(3),
+
+    FILTER_PCF9(4),
+
+    FILTER_PCF13(5);
+
+    companion object {
+      fun from(value: Int): CanvasLightShadowFilter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ScenarioDebugMode(
+    val value: Int
+  ) {
+    DISABLED(0),
+
+    WIREFRAME(1),
+
+    OVERDRAW(2),
+
+    SHADELESS(3);
+
+    companion object {
+      fun from(value: Int): ScenarioDebugMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ViewportUpdateMode(
+    val value: Int
+  ) {
+    DISABLED(0),
+
+    ONCE(1),
+
+    WHEN_VISIBLE(2),
+
+    ALWAYS(3);
+
+    companion object {
+      fun from(value: Int): ViewportUpdateMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ArrayFormat(
+    val value: Int
+  ) {
+    VERTEX(1),
+
+    NORMAL(2),
+
+    TANGENT(4),
+
+    COLOR(8),
+
+    TEX_UV(16),
+
+    TEX_UV2(32),
+
+    BONES(64),
+
+    WEIGHTS(128),
+
+    INDEX(256),
+
+    COMPRESS_VERTEX(512),
+
+    COMPRESS_NORMAL(1024),
+
+    COMPRESS_TANGENT(2048),
+
+    COMPRESS_COLOR(4096),
+
+    COMPRESS_TEX_UV(8192),
+
+    COMPRESS_TEX_UV2(16384),
+
+    COMPRESS_BONES(32768),
+
+    COMPRESS_WEIGHTS(65536),
+
+    COMPRESS_DEFAULT(97280),
+
+    COMPRESS_INDEX(131072),
+
+    FLAG_USE_2D_VERTICES(262144),
+
+    FLAG_USE_16_BIT_BONES(524288);
+
+    companion object {
+      fun from(value: Int): ArrayFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ParticlesDrawOrder(
+    val value: Int
+  ) {
+    INDEX(0),
+
+    LIFETIME(1),
+
+    VIEW_DEPTH(2);
+
+    companion object {
+      fun from(value: Int): ParticlesDrawOrder {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class CanvasLightMode(
+    val value: Int
+  ) {
+    ADD(0),
+
+    SUB(1),
+
+    MIX(2),
+
+    MASK(3);
+
+    companion object {
+      fun from(value: Int): CanvasLightMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class LightDirectionalShadowMode(
+    val value: Int
+  ) {
+    ORTHOGONAL(0),
+
+    PARALLEL_2_SPLITS(1),
+
+    PARALLEL_4_SPLITS(2);
+
+    companion object {
+      fun from(value: Int): LightDirectionalShadowMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class LightParam(
+    val value: Int
+  ) {
+    ENERGY(0),
+
+    SPECULAR(2),
+
+    RANGE(3),
+
+    ATTENUATION(4),
+
+    SPOT_ANGLE(5),
+
+    SPOT_ATTENUATION(6),
+
+    CONTACT_SHADOW_SIZE(7),
+
+    SHADOW_MAX_DISTANCE(8),
+
+    SHADOW_SPLIT_1_OFFSET(9),
+
+    SHADOW_SPLIT_2_OFFSET(10),
+
+    SHADOW_SPLIT_3_OFFSET(11),
+
+    SHADOW_NORMAL_BIAS(12),
+
+    SHADOW_BIAS(13),
+
+    SHADOW_BIAS_SPLIT_SCALE(14),
+
+    MAX(15);
+
+    companion object {
+      fun from(value: Int): LightParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ArrayType(
+    val value: Int
+  ) {
+    VERTEX(0),
+
+    NORMAL(1),
+
+    TANGENT(2),
+
+    COLOR(3),
+
+    TEX_UV(4),
+
+    TEX_UV2(5),
+
+    BONES(6),
+
+    WEIGHTS(7),
+
+    INDEX(8),
+
+    MAX(9);
+
+    companion object {
+      fun from(value: Int): ArrayType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class CanvasOccluderPolygonCullMode(
+    val value: Int
+  ) {
+    DISABLED(0),
+
+    CLOCKWISE(1),
+
+    COUNTER_CLOCKWISE(2);
+
+    companion object {
+      fun from(value: Int): CanvasOccluderPolygonCullMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class InstanceFlags(
+    val value: Int
+  ) {
+    FLAG_USE_BAKED_LIGHT(0),
+
+    FLAG_DRAW_NEXT_FRAME_IF_VISIBLE(1),
+
+    FLAG_MAX(2);
+
+    companion object {
+      fun from(value: Int): InstanceFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ViewportMSAA(
+    val value: Int
+  ) {
+    DISABLED(0),
+
+    `2X`(1),
+
+    `4X`(2),
+
+    `8X`(3),
+
+    `16X`(4),
+
+    EXT_2X(5),
+
+    EXT_4X(6);
+
+    companion object {
+      fun from(value: Int): ViewportMSAA {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class LightType(
+    val value: Int
+  ) {
+    DIRECTIONAL(0),
+
+    OMNI(1),
+
+    SPOT(2);
+
+    companion object {
+      fun from(value: Int): LightType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class CubeMapSide(
+    val value: Int
+  ) {
+    CUBEMAP_LEFT(0),
+
+    CUBEMAP_RIGHT(1),
+
+    CUBEMAP_BOTTOM(2),
+
+    CUBEMAP_TOP(3),
+
+    CUBEMAP_FRONT(4),
+
+    CUBEMAP_BACK(5);
+
+    companion object {
+      fun from(value: Int): CubeMapSide {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 }

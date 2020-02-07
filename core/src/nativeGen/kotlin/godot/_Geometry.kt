@@ -26,7 +26,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Geometry(
+open class _GeometryInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -430,84 +430,7 @@ open class _Geometry(
     return _ret.asPoolIntArray()
   }
 
-  enum class PolyEndType(
-    val value: Int
-  ) {
-    END_POLYGON(0),
-
-    END_JOINED(1),
-
-    END_BUTT(2),
-
-    END_SQUARE(3),
-
-    END_ROUND(4);
-
-    companion object {
-      fun from(value: Int): PolyEndType {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class PolyBooleanOperation(
-    val value: Int
-  ) {
-    OPERATION_UNION(0),
-
-    OPERATION_DIFFERENCE(1),
-
-    OPERATION_INTERSECTION(2),
-
-    OPERATION_XOR(3);
-
-    companion object {
-      fun from(value: Int): PolyBooleanOperation {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class PolyJoinType(
-    val value: Int
-  ) {
-    JOIN_SQUARE(0),
-
-    JOIN_ROUND(1),
-
-    JOIN_MITER(2);
-
-    companion object {
-      fun from(value: Int): PolyJoinType {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
   companion object {
-    val Instance: _Geometry
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Geometry".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton _Geometry" }
-        val ret = _Geometry(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for _Geometry
      */
@@ -727,5 +650,84 @@ open class _Geometry(
             "triangulate_polygon".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method triangulate_polygon" }
         }}
+  }
+}
+
+object _Geometry : _GeometryInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Geometry".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton _Geometry" }
+      _handle = handle
+    }
+  }
+
+  enum class PolyEndType(
+    val value: Int
+  ) {
+    END_POLYGON(0),
+
+    END_JOINED(1),
+
+    END_BUTT(2),
+
+    END_SQUARE(3),
+
+    END_ROUND(4);
+
+    companion object {
+      fun from(value: Int): PolyEndType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class PolyBooleanOperation(
+    val value: Int
+  ) {
+    OPERATION_UNION(0),
+
+    OPERATION_DIFFERENCE(1),
+
+    OPERATION_INTERSECTION(2),
+
+    OPERATION_XOR(3);
+
+    companion object {
+      fun from(value: Int): PolyBooleanOperation {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class PolyJoinType(
+    val value: Int
+  ) {
+    JOIN_SQUARE(0),
+
+    JOIN_ROUND(1),
+
+    JOIN_MITER(2);
+
+    companion object {
+      fun from(value: Int): PolyJoinType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 }

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class IP(
+open class IPInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -47,7 +47,7 @@ open class IP(
     return _ret.asString()
   }
 
-  fun getResolveItemStatus(id: Int): ResolverStatus {
+  fun getResolveItemStatus(id: Int): IP.ResolverStatus {
     val _arg = Variant(id)
     val _ret = __method_bind.getResolveItemStatus.call(this._handle, listOf(_arg))
     return IP.ResolverStatus.from(_ret.asInt())
@@ -69,61 +69,7 @@ open class IP(
     return _ret.asInt()
   }
 
-  enum class ResolverStatus(
-    val value: Int
-  ) {
-    NONE(0),
-
-    WAITING(1),
-
-    DONE(2),
-
-    ERROR(3);
-
-    companion object {
-      fun from(value: Int): ResolverStatus {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class Type(
-    val value: Int
-  ) {
-    NONE(0),
-
-    IPV4(1),
-
-    IPV6(2),
-
-    ANY(3);
-
-    companion object {
-      fun from(value: Int): Type {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
   companion object {
-    val Instance: IP
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("IP".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton IP" }
-        val ret = IP(null)
-        ret._handle = handle
-        ret
-      }
     val RESOLVER_INVALID_ID: Int = -1
 
     val RESOLVER_MAX_QUERIES: Int = 32
@@ -180,5 +126,65 @@ open class IP(
             "resolve_hostname_queue_item".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method resolve_hostname_queue_item" }
         }}
+  }
+}
+
+object IP : IPInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("IP".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton IP" }
+      _handle = handle
+    }
+  }
+
+  val RESOLVER_INVALID_ID: Int = -1
+
+  val RESOLVER_MAX_QUERIES: Int = 32
+
+  enum class ResolverStatus(
+    val value: Int
+  ) {
+    NONE(0),
+
+    WAITING(1),
+
+    DONE(2),
+
+    ERROR(3);
+
+    companion object {
+      fun from(value: Int): ResolverStatus {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class Type(
+    val value: Int
+  ) {
+    NONE(0),
+
+    IPV4(1),
+
+    IPV6(2),
+
+    ANY(3);
+
+    companion object {
+      fun from(value: Int): Type {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 }

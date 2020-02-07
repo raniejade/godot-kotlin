@@ -22,7 +22,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Physics2DServer(
+open class Physics2DServerInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -112,7 +112,7 @@ open class Physics2DServer(
     return _ret.asRID()
   }
 
-  fun areaGetSpaceOverrideMode(area: RID): AreaSpaceOverrideMode {
+  fun areaGetSpaceOverrideMode(area: RID): Physics2DServer.AreaSpaceOverrideMode {
     val _arg = Variant(area)
     val _ret = __method_bind.areaGetSpaceOverrideMode.call(this._handle, listOf(_arg))
     return Physics2DServer.AreaSpaceOverrideMode.from(_ret.asInt())
@@ -360,7 +360,7 @@ open class Physics2DServer(
     return _ret.asInt()
   }
 
-  fun bodyGetContinuousCollisionDetectionMode(body: RID): CCDMode {
+  fun bodyGetContinuousCollisionDetectionMode(body: RID): Physics2DServer.CCDMode {
     val _arg = Variant(body)
     val _ret = __method_bind.bodyGetContinuousCollisionDetectionMode.call(this._handle,
         listOf(_arg))
@@ -379,7 +379,7 @@ open class Physics2DServer(
     return _ret.asInt()
   }
 
-  fun bodyGetMode(body: RID): BodyMode {
+  fun bodyGetMode(body: RID): Physics2DServer.BodyMode {
     val _arg = Variant(body)
     val _ret = __method_bind.bodyGetMode.call(this._handle, listOf(_arg))
     return Physics2DServer.BodyMode.from(_ret.asInt())
@@ -729,7 +729,7 @@ open class Physics2DServer(
     return _ret.asFloat()
   }
 
-  fun jointGetType(joint: RID): JointType {
+  fun jointGetType(joint: RID): Physics2DServer.JointType {
     val _arg = Variant(joint)
     val _ret = __method_bind.jointGetType.call(this._handle, listOf(_arg))
     return Physics2DServer.JointType.from(_ret.asInt())
@@ -791,7 +791,7 @@ open class Physics2DServer(
     return _ret
   }
 
-  fun shapeGetType(shape: RID): ShapeType {
+  fun shapeGetType(shape: RID): Physics2DServer.ShapeType {
     val _arg = Variant(shape)
     val _ret = __method_bind.shapeGetType.call(this._handle, listOf(_arg))
     return Physics2DServer.ShapeType.from(_ret.asInt())
@@ -848,339 +848,7 @@ open class Physics2DServer(
     __method_bind.spaceSetParam.call(this._handle, _args)
   }
 
-  enum class ProcessInfo(
-    val value: Int
-  ) {
-    INFO_ACTIVE_OBJECTS(0),
-
-    INFO_COLLISION_PAIRS(1),
-
-    INFO_ISLAND_COUNT(2);
-
-    companion object {
-      fun from(value: Int): ProcessInfo {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class AreaBodyStatus(
-    val value: Int
-  ) {
-    ADDED(0),
-
-    REMOVED(1);
-
-    companion object {
-      fun from(value: Int): AreaBodyStatus {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class DampedStringParam(
-    val value: Int
-  ) {
-    REST_LENGTH(0),
-
-    STIFFNESS(1),
-
-    DAMPING(2);
-
-    companion object {
-      fun from(value: Int): DampedStringParam {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class BodyMode(
-    val value: Int
-  ) {
-    STATIC(0),
-
-    KINEMATIC(1),
-
-    RIGID(2),
-
-    CHARACTER(3);
-
-    companion object {
-      fun from(value: Int): BodyMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class ShapeType(
-    val value: Int
-  ) {
-    LINE(0),
-
-    RAY(1),
-
-    SEGMENT(2),
-
-    CIRCLE(3),
-
-    RECTANGLE(4),
-
-    CAPSULE(5),
-
-    CONVEX_POLYGON(6),
-
-    CONCAVE_POLYGON(7),
-
-    CUSTOM(8);
-
-    companion object {
-      fun from(value: Int): ShapeType {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class JointParam(
-    val value: Int
-  ) {
-    BIAS(0),
-
-    MAX_BIAS(1),
-
-    MAX_FORCE(2);
-
-    companion object {
-      fun from(value: Int): JointParam {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class SpaceParameter(
-    val value: Int
-  ) {
-    PARAM_CONTACT_RECYCLE_RADIUS(0),
-
-    PARAM_CONTACT_MAX_SEPARATION(1),
-
-    PARAM_BODY_MAX_ALLOWED_PENETRATION(2),
-
-    PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD(3),
-
-    PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD(4),
-
-    PARAM_BODY_TIME_TO_SLEEP(5),
-
-    PARAM_CONSTRAINT_DEFAULT_BIAS(6),
-
-    PARAM_TEST_MOTION_MIN_CONTACT_DEPTH(7);
-
-    companion object {
-      fun from(value: Int): SpaceParameter {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class JointType(
-    val value: Int
-  ) {
-    PIN(0),
-
-    GROOVE(1),
-
-    DAMPED_SPRING(2);
-
-    companion object {
-      fun from(value: Int): JointType {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class CCDMode(
-    val value: Int
-  ) {
-    CCD_MODE_DISABLED(0),
-
-    CCD_MODE_CAST_RAY(1),
-
-    CCD_MODE_CAST_SHAPE(2);
-
-    companion object {
-      fun from(value: Int): CCDMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class BodyState(
-    val value: Int
-  ) {
-    TRANSFORM(0),
-
-    LINEAR_VELOCITY(1),
-
-    ANGULAR_VELOCITY(2),
-
-    SLEEPING(3),
-
-    CAN_SLEEP(4);
-
-    companion object {
-      fun from(value: Int): BodyState {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class BodyParameter(
-    val value: Int
-  ) {
-    PARAM_BOUNCE(0),
-
-    PARAM_FRICTION(1),
-
-    PARAM_MASS(2),
-
-    PARAM_INERTIA(3),
-
-    PARAM_GRAVITY_SCALE(4),
-
-    PARAM_LINEAR_DAMP(5),
-
-    PARAM_ANGULAR_DAMP(6),
-
-    PARAM_MAX(7);
-
-    companion object {
-      fun from(value: Int): BodyParameter {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class AreaSpaceOverrideMode(
-    val value: Int
-  ) {
-    DISABLED(0),
-
-    COMBINE(1),
-
-    COMBINE_REPLACE(2),
-
-    REPLACE(3),
-
-    REPLACE_COMBINE(4);
-
-    companion object {
-      fun from(value: Int): AreaSpaceOverrideMode {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
-  enum class AreaParameter(
-    val value: Int
-  ) {
-    PARAM_GRAVITY(0),
-
-    PARAM_GRAVITY_VECTOR(1),
-
-    PARAM_GRAVITY_IS_POINT(2),
-
-    PARAM_GRAVITY_DISTANCE_SCALE(3),
-
-    PARAM_GRAVITY_POINT_ATTENUATION(4),
-
-    PARAM_LINEAR_DAMP(5),
-
-    PARAM_ANGULAR_DAMP(6),
-
-    PARAM_PRIORITY(7);
-
-    companion object {
-      fun from(value: Int): AreaParameter {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("""Unsupported enum value: $value""")
-      }
-    }
-  }
-
   companion object {
-    val Instance: Physics2DServer
-      get() = memScoped {
-        val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("Physics2DServer".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton Physics2DServer" }
-        val ret = Physics2DServer(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for Physics2DServer
      */
@@ -1904,5 +1572,339 @@ open class Physics2DServer(
             "space_set_param".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method space_set_param" }
         }}
+  }
+}
+
+object Physics2DServer : Physics2DServerInternal(null) {
+  init {
+    memScoped {
+      val handle =
+          checkNotNull(Godot.gdnative.godot_global_get_singleton)("Physics2DServer".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton Physics2DServer" }
+      _handle = handle
+    }
+  }
+
+  enum class ProcessInfo(
+    val value: Int
+  ) {
+    INFO_ACTIVE_OBJECTS(0),
+
+    INFO_COLLISION_PAIRS(1),
+
+    INFO_ISLAND_COUNT(2);
+
+    companion object {
+      fun from(value: Int): ProcessInfo {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class AreaBodyStatus(
+    val value: Int
+  ) {
+    ADDED(0),
+
+    REMOVED(1);
+
+    companion object {
+      fun from(value: Int): AreaBodyStatus {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class DampedStringParam(
+    val value: Int
+  ) {
+    REST_LENGTH(0),
+
+    STIFFNESS(1),
+
+    DAMPING(2);
+
+    companion object {
+      fun from(value: Int): DampedStringParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class BodyMode(
+    val value: Int
+  ) {
+    STATIC(0),
+
+    KINEMATIC(1),
+
+    RIGID(2),
+
+    CHARACTER(3);
+
+    companion object {
+      fun from(value: Int): BodyMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class ShapeType(
+    val value: Int
+  ) {
+    LINE(0),
+
+    RAY(1),
+
+    SEGMENT(2),
+
+    CIRCLE(3),
+
+    RECTANGLE(4),
+
+    CAPSULE(5),
+
+    CONVEX_POLYGON(6),
+
+    CONCAVE_POLYGON(7),
+
+    CUSTOM(8);
+
+    companion object {
+      fun from(value: Int): ShapeType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class JointParam(
+    val value: Int
+  ) {
+    BIAS(0),
+
+    MAX_BIAS(1),
+
+    MAX_FORCE(2);
+
+    companion object {
+      fun from(value: Int): JointParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class SpaceParameter(
+    val value: Int
+  ) {
+    PARAM_CONTACT_RECYCLE_RADIUS(0),
+
+    PARAM_CONTACT_MAX_SEPARATION(1),
+
+    PARAM_BODY_MAX_ALLOWED_PENETRATION(2),
+
+    PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD(3),
+
+    PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD(4),
+
+    PARAM_BODY_TIME_TO_SLEEP(5),
+
+    PARAM_CONSTRAINT_DEFAULT_BIAS(6),
+
+    PARAM_TEST_MOTION_MIN_CONTACT_DEPTH(7);
+
+    companion object {
+      fun from(value: Int): SpaceParameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class JointType(
+    val value: Int
+  ) {
+    PIN(0),
+
+    GROOVE(1),
+
+    DAMPED_SPRING(2);
+
+    companion object {
+      fun from(value: Int): JointType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class CCDMode(
+    val value: Int
+  ) {
+    CCD_MODE_DISABLED(0),
+
+    CCD_MODE_CAST_RAY(1),
+
+    CCD_MODE_CAST_SHAPE(2);
+
+    companion object {
+      fun from(value: Int): CCDMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class BodyState(
+    val value: Int
+  ) {
+    TRANSFORM(0),
+
+    LINEAR_VELOCITY(1),
+
+    ANGULAR_VELOCITY(2),
+
+    SLEEPING(3),
+
+    CAN_SLEEP(4);
+
+    companion object {
+      fun from(value: Int): BodyState {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class BodyParameter(
+    val value: Int
+  ) {
+    PARAM_BOUNCE(0),
+
+    PARAM_FRICTION(1),
+
+    PARAM_MASS(2),
+
+    PARAM_INERTIA(3),
+
+    PARAM_GRAVITY_SCALE(4),
+
+    PARAM_LINEAR_DAMP(5),
+
+    PARAM_ANGULAR_DAMP(6),
+
+    PARAM_MAX(7);
+
+    companion object {
+      fun from(value: Int): BodyParameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class AreaSpaceOverrideMode(
+    val value: Int
+  ) {
+    DISABLED(0),
+
+    COMBINE(1),
+
+    COMBINE_REPLACE(2),
+
+    REPLACE(3),
+
+    REPLACE_COMBINE(4);
+
+    companion object {
+      fun from(value: Int): AreaSpaceOverrideMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
+  }
+
+  enum class AreaParameter(
+    val value: Int
+  ) {
+    PARAM_GRAVITY(0),
+
+    PARAM_GRAVITY_VECTOR(1),
+
+    PARAM_GRAVITY_IS_POINT(2),
+
+    PARAM_GRAVITY_DISTANCE_SCALE(3),
+
+    PARAM_GRAVITY_POINT_ATTENUATION(4),
+
+    PARAM_LINEAR_DAMP(5),
+
+    PARAM_ANGULAR_DAMP(6),
+
+    PARAM_PRIORITY(7);
+
+    companion object {
+      fun from(value: Int): AreaParameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 }

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _JSON(
+open class _JSONInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -41,14 +41,6 @@ open class _JSON(
   }
 
   companion object {
-    val Instance: _JSON
-      get() = memScoped {
-        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_JSON".cstr.ptr)
-        requireNotNull(handle) { "No instance found for singleton _JSON" }
-        val ret = _JSON(null)
-        ret._handle = handle
-        ret
-      }
     /**
      * Container for method_bind pointers for _JSON
      */
@@ -65,5 +57,15 @@ open class _JSON(
             "print".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method print" }
         }}
+  }
+}
+
+object _JSON : _JSONInternal(null) {
+  init {
+    memScoped {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_JSON".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton _JSON" }
+      _handle = handle
+    }
   }
 }
