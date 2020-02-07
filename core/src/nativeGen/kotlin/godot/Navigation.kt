@@ -10,6 +10,8 @@ import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Navigation(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var upVector: Vector3
     get() {
        return getUpVector() 
@@ -30,6 +33,10 @@ open class Navigation(
     set(value) {
       setUpVector(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for upVector
@@ -120,15 +127,12 @@ open class Navigation(
   }
 
   companion object {
-    fun new(): Navigation = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Navigation".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Navigation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Navigation(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Navigation = Navigation(ptr)
     /**
      * Container for method_bind pointers for Navigation
      */

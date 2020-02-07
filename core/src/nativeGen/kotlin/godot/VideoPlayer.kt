@@ -9,6 +9,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VideoPlayer(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var audioTrack: Int
     get() {
        return getAudioTrack() 
@@ -105,6 +107,10 @@ open class VideoPlayer(
    * VideoPlayer::finished signal
    */
   val signalFinished: Signal0 = Signal0("finished")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAudioTrack(): Int {
     val _ret = __method_bind.getAudioTrack.call(this._handle)
@@ -230,15 +236,12 @@ open class VideoPlayer(
   }
 
   companion object {
-    fun new(): VideoPlayer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VideoPlayer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VideoPlayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VideoPlayer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VideoPlayer = VideoPlayer(ptr)
     /**
      * Container for method_bind pointers for VideoPlayer
      */

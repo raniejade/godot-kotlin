@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioEffectRecord(
-  _handle: COpaquePointer
-) : AudioEffect(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioEffect(null) {
   var format: AudioStreamSample.Format
     get() {
        return getFormat() 
@@ -26,6 +29,10 @@ open class AudioEffectRecord(
     set(value) {
       setFormat(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getFormat(): AudioStreamSample.Format {
     val _ret = __method_bind.getFormat.call(this._handle)
@@ -53,16 +60,13 @@ open class AudioEffectRecord(
   }
 
   companion object {
-    fun new(): AudioEffectRecord = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectRecord".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectRecord" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioEffectRecord(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioEffectRecord = AudioEffectRecord(ptr)
     /**
      * Container for method_bind pointers for AudioEffectRecord
      */

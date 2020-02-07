@@ -9,6 +9,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Shape2D(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var customSolverBias: Float
     get() {
        return getCustomSolverBias() 
@@ -28,6 +31,10 @@ open class Shape2D(
     set(value) {
       setCustomSolverBias(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun collide(
     localXform: Transform2D,

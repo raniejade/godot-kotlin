@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class RegExMatch(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   val names: Dictionary
     get() {
        return getNames() 
@@ -34,6 +36,10 @@ open class RegExMatch(
     get() {
        return getSubject() 
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getEnd(name: Variant): Int {
     val _arg = Variant.new(name)
@@ -74,15 +80,12 @@ open class RegExMatch(
   }
 
   companion object {
-    fun new(): RegExMatch = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RegExMatch".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RegExMatch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      RegExMatch(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): RegExMatch = RegExMatch(ptr)
     /**
      * Container for method_bind pointers for RegExMatch
      */

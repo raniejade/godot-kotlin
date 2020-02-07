@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeCompare(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var condition: Condition
     get() {
        return getCondition() 
@@ -41,6 +44,10 @@ open class VisualShaderNodeCompare(
     set(value) {
       setComparisonType(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getComparisonType(): ComparisonType {
     val _ret = __method_bind.getComparisonType.call(this._handle)
@@ -142,16 +149,13 @@ open class VisualShaderNodeCompare(
   }
 
   companion object {
-    fun new(): VisualShaderNodeCompare = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeCompare".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeCompare" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeCompare(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeCompare = VisualShaderNodeCompare(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeCompare
      */

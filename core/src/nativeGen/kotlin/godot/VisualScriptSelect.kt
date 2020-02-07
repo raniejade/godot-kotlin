@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptSelect(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var type: Variant.Type
     get() {
        return getTyped() 
@@ -25,6 +28,10 @@ open class VisualScriptSelect(
     set(value) {
       setTyped(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getTyped(): Variant.Type {
     val _ret = __method_bind.getTyped.call(this._handle)
@@ -37,16 +44,13 @@ open class VisualScriptSelect(
   }
 
   companion object {
-    fun new(): VisualScriptSelect = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSelect".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptSelect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptSelect(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptSelect = VisualScriptSelect(ptr)
     /**
      * Container for method_bind pointers for VisualScriptSelect
      */

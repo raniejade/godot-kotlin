@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeCubeMap(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var cubeMap: CubeMap
     get() {
        return getCubeMap() 
@@ -41,6 +44,10 @@ open class VisualShaderNodeCubeMap(
     set(value) {
       setTextureType(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getCubeMap(): CubeMap {
     val _ret = __method_bind.getCubeMap.call(this._handle)
@@ -113,16 +120,13 @@ open class VisualShaderNodeCubeMap(
   }
 
   companion object {
-    fun new(): VisualShaderNodeCubeMap = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeCubeMap".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeCubeMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeCubeMap(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeCubeMap = VisualShaderNodeCubeMap(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeCubeMap
      */

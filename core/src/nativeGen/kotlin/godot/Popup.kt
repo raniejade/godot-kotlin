@@ -10,6 +10,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Popup(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var popupExclusive: Boolean
     get() {
        return isExclusive() 
@@ -39,6 +42,10 @@ open class Popup(
    * Popup::popup_hide signal
    */
   val signalPopupHide: Signal0 = Signal0("popup_hide")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun isExclusive(): Boolean {
     val _ret = __method_bind.isExclusive.call(this._handle)
@@ -86,15 +93,12 @@ open class Popup(
 
     val NOTIFICATION_POST_POPUP: Int = 80
 
-    fun new(): Popup = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Popup".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Popup" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Popup(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Popup = Popup(ptr)
     /**
      * Container for method_bind pointers for Popup
      */

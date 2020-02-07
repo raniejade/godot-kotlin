@@ -9,6 +9,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimationNodeStateMachine(
-  _handle: COpaquePointer
-) : AnimationRootNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AnimationRootNode(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addNode(
     name: String,
     node: AnimationNode,
@@ -162,16 +168,13 @@ open class AnimationNodeStateMachine(
   }
 
   companion object {
-    fun new(): AnimationNodeStateMachine = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeStateMachine".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNodeStateMachine" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimationNodeStateMachine(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimationNodeStateMachine = AnimationNodeStateMachine(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeStateMachine
      */

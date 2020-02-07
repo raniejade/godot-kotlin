@@ -12,6 +12,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -23,8 +25,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PhysicsDirectBodyState(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   var angularVelocity: Vector3
     get() {
        return getAngularVelocity() 
@@ -96,6 +99,10 @@ open class PhysicsDirectBodyState(
     set(value) {
       setTransform(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for angularVelocity

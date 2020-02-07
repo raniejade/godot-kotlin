@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,12 +21,17 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorSettings(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   /**
    * EditorSettings::settings_changed signal
    */
   val signalSettingsChanged: Signal0 = Signal0("settings_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addPropertyInfo(info: Dictionary) {
     val _arg = Variant.new(info)

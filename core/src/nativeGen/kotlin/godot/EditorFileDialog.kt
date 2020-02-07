@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorFileDialog(
-  _handle: COpaquePointer
-) : ConfirmationDialog(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : ConfirmationDialog(null) {
   var access: Access
     get() {
        return getAccess() 
@@ -99,6 +101,10 @@ open class EditorFileDialog(
    * EditorFileDialog::files_selected signal
    */
   val signalFilesSelected: Signal1<PoolStringArray> = Signal1("files_selected")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addFilter(filter: String) {
     val _arg = Variant.new(filter)

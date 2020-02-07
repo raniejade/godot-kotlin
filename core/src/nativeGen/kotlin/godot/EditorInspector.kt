@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorInspector(
-  _handle: COpaquePointer
-) : ScrollContainer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : ScrollContainer(null) {
   /**
    * EditorInspector::object_id_selected signal
    */
@@ -54,6 +56,10 @@ open class EditorInspector(
    * EditorInspector::restart_requested signal
    */
   val signalRestartRequested: Signal0 = Signal0("restart_requested")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun refresh() {
     __method_bind.refresh.call(this._handle)

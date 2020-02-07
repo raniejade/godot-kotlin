@@ -10,6 +10,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShader(
-  _handle: COpaquePointer
-) : Shader(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shader(null) {
   var graphOffset: Vector2
     get() {
        return getGraphOffset() 
@@ -30,6 +33,10 @@ open class VisualShader(
     set(value) {
       setGraphOffset(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for graphOffset
@@ -233,15 +240,12 @@ open class VisualShader(
 
     val NODE_ID_OUTPUT: Int = 0
 
-    fun new(): VisualShader = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShader".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShader(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShader = VisualShader(ptr)
     /**
      * Container for method_bind pointers for VisualShader
      */

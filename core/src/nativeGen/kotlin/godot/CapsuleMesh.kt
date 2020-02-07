@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CapsuleMesh(
-  _handle: COpaquePointer
-) : PrimitiveMesh(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PrimitiveMesh(null) {
   var midHeight: Float
     get() {
        return getMidHeight() 
@@ -50,6 +53,10 @@ open class CapsuleMesh(
     set(value) {
       setRings(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getMidHeight(): Float {
     val _ret = __method_bind.getMidHeight.call(this._handle)
@@ -92,15 +99,12 @@ open class CapsuleMesh(
   }
 
   companion object {
-    fun new(): CapsuleMesh = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CapsuleMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CapsuleMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CapsuleMesh(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CapsuleMesh = CapsuleMesh(ptr)
     /**
      * Container for method_bind pointers for CapsuleMesh
      */

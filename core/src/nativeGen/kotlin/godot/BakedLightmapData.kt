@@ -11,6 +11,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -22,8 +24,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class BakedLightmapData(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var bounds: AABB
     get() {
        return getBounds() 
@@ -63,6 +66,10 @@ open class BakedLightmapData(
     set(value) {
       setOctree(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for bounds
@@ -175,16 +182,13 @@ open class BakedLightmapData(
   }
 
   companion object {
-    fun new(): BakedLightmapData = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("BakedLightmapData".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for BakedLightmapData" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      BakedLightmapData(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): BakedLightmapData = BakedLightmapData(ptr)
     /**
      * Container for method_bind pointers for BakedLightmapData
      */

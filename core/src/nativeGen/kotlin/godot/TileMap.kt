@@ -11,6 +11,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -22,8 +24,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class TileMap(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var cellClipUv: Boolean
     get() {
        return getClipUv() 
@@ -172,6 +175,10 @@ open class TileMap(
    * TileMap::settings_changed signal
    */
   val signalSettingsChanged: Signal0 = Signal0("settings_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for cellCustomTransform
@@ -603,15 +610,12 @@ open class TileMap(
   companion object {
     val INVALID_CELL: Int = -1
 
-    fun new(): TileMap = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TileMap".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for TileMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      TileMap(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): TileMap = TileMap(ptr)
     /**
      * Container for method_bind pointers for TileMap
      */

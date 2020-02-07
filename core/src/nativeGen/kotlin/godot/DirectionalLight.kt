@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class DirectionalLight(
-  _handle: COpaquePointer
-) : Light(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Light(null) {
   var directionalShadowBiasSplitScale: Float
     get() {
        return getParam(14) 
@@ -92,6 +95,10 @@ open class DirectionalLight(
       setParam(11, value)
     }
 
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun getShadowDepthRange(): ShadowDepthRange {
     val _ret = __method_bind.getShadowDepthRange.call(this._handle)
     return DirectionalLight.ShadowDepthRange.from(_ret.asInt())
@@ -163,16 +170,13 @@ open class DirectionalLight(
   }
 
   companion object {
-    fun new(): DirectionalLight = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("DirectionalLight".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for DirectionalLight" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      DirectionalLight(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): DirectionalLight = DirectionalLight(ptr)
     /**
      * Container for method_bind pointers for DirectionalLight
      */

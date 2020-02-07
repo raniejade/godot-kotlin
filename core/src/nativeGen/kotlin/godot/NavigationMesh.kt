@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -22,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class NavigationMesh(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var agentHeight: Float
     get() {
        return getAgentHeight() 
@@ -199,6 +201,10 @@ open class NavigationMesh(
     set(value) {
       setVertices(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for vertices
@@ -480,16 +486,13 @@ open class NavigationMesh(
 
     val SAMPLE_PARTITION_WATERSHED: Int = 0
 
-    fun new(): NavigationMesh = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NavigationMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for NavigationMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      NavigationMesh(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): NavigationMesh = NavigationMesh(ptr)
     /**
      * Container for method_bind pointers for NavigationMesh
      */

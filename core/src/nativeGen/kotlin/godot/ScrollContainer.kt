@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ScrollContainer(
-  _handle: COpaquePointer
-) : Container(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Container(null) {
   var followFocus: Boolean
     get() {
        return isFollowingFocus() 
@@ -76,6 +79,10 @@ open class ScrollContainer(
    * ScrollContainer::scroll_started signal
    */
   val signalScrollStarted: Signal0 = Signal0("scroll_started")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getDeadzone(): Int {
     val _ret = __method_bind.getDeadzone.call(this._handle)
@@ -148,16 +155,13 @@ open class ScrollContainer(
   }
 
   companion object {
-    fun new(): ScrollContainer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ScrollContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ScrollContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ScrollContainer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ScrollContainer = ScrollContainer(ptr)
     /**
      * Container for method_bind pointers for ScrollContainer
      */

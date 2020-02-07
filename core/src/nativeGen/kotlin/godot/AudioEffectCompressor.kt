@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioEffectCompressor(
-  _handle: COpaquePointer
-) : AudioEffect(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioEffect(null) {
   var attackUs: Float
     get() {
        return getAttackUs() 
@@ -74,6 +76,10 @@ open class AudioEffectCompressor(
     set(value) {
       setThreshold(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAttackUs(): Float {
     val _ret = __method_bind.getAttackUs.call(this._handle)
@@ -146,16 +152,13 @@ open class AudioEffectCompressor(
   }
 
   companion object {
-    fun new(): AudioEffectCompressor = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectCompressor".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectCompressor" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioEffectCompressor(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioEffectCompressor = AudioEffectCompressor(ptr)
     /**
      * Container for method_bind pointers for AudioEffectCompressor
      */

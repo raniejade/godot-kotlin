@@ -9,6 +9,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ARVRController(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var controllerId: Int
     get() {
        return getControllerId() 
@@ -51,6 +53,10 @@ open class ARVRController(
    * ARVRController::mesh_updated signal
    */
   val signalMeshUpdated: Signal1<Mesh> = Signal1("mesh_updated")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getControllerId(): Int {
     val _ret = __method_bind.getControllerId.call(this._handle)
@@ -110,16 +116,13 @@ open class ARVRController(
   }
 
   companion object {
-    fun new(): ARVRController = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRController".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ARVRController" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ARVRController(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ARVRController = ARVRController(ptr)
     /**
      * Container for method_bind pointers for ARVRController
      */

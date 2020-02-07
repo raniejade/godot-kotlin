@@ -12,6 +12,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -23,8 +25,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CPUParticles(
-  _handle: COpaquePointer
-) : GeometryInstance(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : GeometryInstance(null) {
   var amount: Int
     get() {
        return getAmount() 
@@ -537,6 +540,10 @@ open class CPUParticles(
       setParamRandomness(5, value)
     }
 
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   /**
    * Specialized setter for color
    */
@@ -1034,15 +1041,12 @@ open class CPUParticles(
   }
 
   companion object {
-    fun new(): CPUParticles = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CPUParticles".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CPUParticles" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CPUParticles(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CPUParticles = CPUParticles(ptr)
     /**
      * Container for method_bind pointers for CPUParticles
      */

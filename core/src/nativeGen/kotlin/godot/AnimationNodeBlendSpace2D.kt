@@ -9,6 +9,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -20,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimationNodeBlendSpace2D(
-  _handle: COpaquePointer
-) : AnimationRootNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AnimationRootNode(null) {
   var autoTriangles: Boolean
     get() {
        return getAutoTriangles() 
@@ -594,6 +596,10 @@ open class AnimationNodeBlendSpace2D(
    * AnimationNodeBlendSpace2D::triangles_updated signal
    */
   val signalTrianglesUpdated: Signal0 = Signal0("triangles_updated")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for blendPoint0Pos
@@ -1370,16 +1376,13 @@ open class AnimationNodeBlendSpace2D(
   }
 
   companion object {
-    fun new(): AnimationNodeBlendSpace2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlendSpace2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNodeBlendSpace2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimationNodeBlendSpace2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimationNodeBlendSpace2D = AnimationNodeBlendSpace2D(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeBlendSpace2D
      */

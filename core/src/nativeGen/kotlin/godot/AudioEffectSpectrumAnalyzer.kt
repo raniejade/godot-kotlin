@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioEffectSpectrumAnalyzer(
-  _handle: COpaquePointer
-) : AudioEffect(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioEffect(null) {
   var bufferLength: Float
     get() {
        return getBufferLength() 
@@ -42,6 +45,10 @@ open class AudioEffectSpectrumAnalyzer(
     set(value) {
       setTapBackPos(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getBufferLength(): Float {
     val _ret = __method_bind.getBufferLength.call(this._handle)
@@ -101,16 +108,13 @@ open class AudioEffectSpectrumAnalyzer(
   }
 
   companion object {
-    fun new(): AudioEffectSpectrumAnalyzer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectSpectrumAnalyzer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectSpectrumAnalyzer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioEffectSpectrumAnalyzer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioEffectSpectrumAnalyzer = AudioEffectSpectrumAnalyzer(ptr)
     /**
      * Container for method_bind pointers for AudioEffectSpectrumAnalyzer
      */

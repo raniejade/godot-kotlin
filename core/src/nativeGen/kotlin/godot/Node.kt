@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Node(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   var customMultiplayer: MultiplayerAPI
     get() {
        return getCustomMultiplayer() 
@@ -100,6 +102,10 @@ open class Node(
    * Node::tree_exiting signal
    */
   val signalTreeExiting: Signal0 = Signal0("tree_exiting")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addChild(node: Node, legibleUniqueName: Boolean = false) {
     val _args = mutableListOf<Variant>()
@@ -721,15 +727,12 @@ open class Node(
 
     val NOTIFICATION_WM_UNFOCUS_REQUEST: Int = 1008
 
-    fun new(): Node = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Node".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Node" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Node(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Node = Node(ptr)
     /**
      * Container for method_bind pointers for Node
      */

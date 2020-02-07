@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptYieldSignal(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var baseType: String
     get() {
        return getBaseType() 
@@ -52,6 +54,10 @@ open class VisualScriptYieldSignal(
     set(value) {
       setSignal(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for nodePath
@@ -124,16 +130,13 @@ open class VisualScriptYieldSignal(
   }
 
   companion object {
-    fun new(): VisualScriptYieldSignal = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptYieldSignal".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptYieldSignal" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptYieldSignal(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptYieldSignal = VisualScriptYieldSignal(ptr)
     /**
      * Container for method_bind pointers for VisualScriptYieldSignal
      */

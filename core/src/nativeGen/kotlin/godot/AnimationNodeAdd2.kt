@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimationNodeAdd2(
-  _handle: COpaquePointer
-) : AnimationNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AnimationNode(null) {
   var sync: Boolean
     get() {
        return isUsingSync() 
@@ -25,6 +28,10 @@ open class AnimationNodeAdd2(
     set(value) {
       setUseSync(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun isUsingSync(): Boolean {
     val _ret = __method_bind.isUsingSync.call(this._handle)
@@ -37,16 +44,13 @@ open class AnimationNodeAdd2(
   }
 
   companion object {
-    fun new(): AnimationNodeAdd2 = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeAdd2".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNodeAdd2" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimationNodeAdd2(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimationNodeAdd2 = AnimationNodeAdd2(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeAdd2
      */

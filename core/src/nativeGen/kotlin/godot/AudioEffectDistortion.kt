@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioEffectDistortion(
-  _handle: COpaquePointer
-) : AudioEffect(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioEffect(null) {
   var drive: Float
     get() {
        return getDrive() 
@@ -58,6 +61,10 @@ open class AudioEffectDistortion(
     set(value) {
       setPreGain(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getDrive(): Float {
     val _ret = __method_bind.getDrive.call(this._handle)
@@ -135,16 +142,13 @@ open class AudioEffectDistortion(
   }
 
   companion object {
-    fun new(): AudioEffectDistortion = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectDistortion".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectDistortion" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioEffectDistortion(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioEffectDistortion = AudioEffectDistortion(ptr)
     /**
      * Container for method_bind pointers for AudioEffectDistortion
      */

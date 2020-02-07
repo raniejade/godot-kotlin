@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeUniform(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var uniformName: String
     get() {
        return getUniformName() 
@@ -25,6 +27,10 @@ open class VisualShaderNodeUniform(
     set(value) {
       setUniformName(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getUniformName(): String {
     val _ret = __method_bind.getUniformName.call(this._handle)

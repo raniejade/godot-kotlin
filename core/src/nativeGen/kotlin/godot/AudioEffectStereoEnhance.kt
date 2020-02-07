@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioEffectStereoEnhance(
-  _handle: COpaquePointer
-) : AudioEffect(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioEffect(null) {
   var panPullout: Float
     get() {
        return getPanPullout() 
@@ -41,6 +44,10 @@ open class AudioEffectStereoEnhance(
     set(value) {
       setTimePullout(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getPanPullout(): Float {
     val _ret = __method_bind.getPanPullout.call(this._handle)
@@ -73,16 +80,13 @@ open class AudioEffectStereoEnhance(
   }
 
   companion object {
-    fun new(): AudioEffectStereoEnhance = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectStereoEnhance".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectStereoEnhance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioEffectStereoEnhance(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioEffectStereoEnhance = AudioEffectStereoEnhance(ptr)
     /**
      * Container for method_bind pointers for AudioEffectStereoEnhance
      */

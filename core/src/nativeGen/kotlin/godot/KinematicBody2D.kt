@@ -10,6 +10,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class KinematicBody2D(
-  _handle: COpaquePointer
-) : PhysicsBody2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PhysicsBody2D(null) {
   var collisionSafeMargin: Float
     get() {
        return getSafeMargin() 
@@ -37,6 +40,10 @@ open class KinematicBody2D(
     set(value) {
       setSyncToPhysics(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getFloorNormal(): Vector2 {
     val _ret = __method_bind.getFloorNormal.call(this._handle)
@@ -163,16 +170,13 @@ open class KinematicBody2D(
   }
 
   companion object {
-    fun new(): KinematicBody2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicBody2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for KinematicBody2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      KinematicBody2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): KinematicBody2D = KinematicBody2D(ptr)
     /**
      * Container for method_bind pointers for KinematicBody2D
      */

@@ -9,6 +9,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class RigidBody2D(
-  _handle: COpaquePointer
-) : PhysicsBody2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PhysicsBody2D(null) {
   var angularDamp: Float
     get() {
        return getAngularDamp() 
@@ -206,6 +209,10 @@ open class RigidBody2D(
    * RigidBody2D::sleeping_state_changed signal
    */
   val signalSleepingStateChanged: Signal0 = Signal0("sleeping_state_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for appliedForce
@@ -529,15 +536,12 @@ open class RigidBody2D(
   }
 
   companion object {
-    fun new(): RigidBody2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RigidBody2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RigidBody2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      RigidBody2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): RigidBody2D = RigidBody2D(ptr)
     /**
      * Container for method_bind pointers for RigidBody2D
      */

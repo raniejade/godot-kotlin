@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimatedSprite3D(
-  _handle: COpaquePointer
-) : SpriteBase3D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : SpriteBase3D(null) {
   var animation: String
     get() {
        return getAnimation() 
@@ -48,6 +50,10 @@ open class AnimatedSprite3D(
    * AnimatedSprite3D::frame_changed signal
    */
   val signalFrameChanged: Signal0 = Signal0("frame_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAnimation(): String {
     val _ret = __method_bind.getAnimation.call(this._handle)
@@ -94,16 +100,13 @@ open class AnimatedSprite3D(
   }
 
   companion object {
-    fun new(): AnimatedSprite3D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimatedSprite3D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimatedSprite3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimatedSprite3D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimatedSprite3D = AnimatedSprite3D(ptr)
     /**
      * Container for method_bind pointers for AnimatedSprite3D
      */

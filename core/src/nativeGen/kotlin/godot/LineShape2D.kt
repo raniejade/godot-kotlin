@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class LineShape2D(
-  _handle: COpaquePointer
-) : Shape2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shape2D(null) {
   var d: Float
     get() {
        return getD() 
@@ -35,6 +38,10 @@ open class LineShape2D(
     set(value) {
       setNormal(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for normal
@@ -66,15 +73,12 @@ open class LineShape2D(
   }
 
   companion object {
-    fun new(): LineShape2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LineShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for LineShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      LineShape2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): LineShape2D = LineShape2D(ptr)
     /**
      * Container for method_bind pointers for LineShape2D
      */

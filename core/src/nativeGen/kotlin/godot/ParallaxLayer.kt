@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ParallaxLayer(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var motionMirroring: Vector2
     get() {
        return getMirroring() 
@@ -42,6 +45,10 @@ open class ParallaxLayer(
     set(value) {
       setMotionScale(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for motionMirroring
@@ -101,15 +108,12 @@ open class ParallaxLayer(
   }
 
   companion object {
-    fun new(): ParallaxLayer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ParallaxLayer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ParallaxLayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ParallaxLayer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ParallaxLayer = ParallaxLayer(ptr)
     /**
      * Container for method_bind pointers for ParallaxLayer
      */

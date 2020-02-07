@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EncodedObjectAsID(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var objectId: Int
     get() {
        return getObjectId() 
@@ -25,6 +28,10 @@ open class EncodedObjectAsID(
     set(value) {
       setObjectId(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getObjectId(): Int {
     val _ret = __method_bind.getObjectId.call(this._handle)
@@ -37,16 +44,13 @@ open class EncodedObjectAsID(
   }
 
   companion object {
-    fun new(): EncodedObjectAsID = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EncodedObjectAsID".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for EncodedObjectAsID" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      EncodedObjectAsID(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): EncodedObjectAsID = EncodedObjectAsID(ptr)
     /**
      * Container for method_bind pointers for EncodedObjectAsID
      */

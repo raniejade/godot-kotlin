@@ -9,6 +9,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Sprite3D(
-  _handle: COpaquePointer
-) : SpriteBase3D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : SpriteBase3D(null) {
   var frame: Int
     get() {
        return getFrame() 
@@ -82,6 +85,10 @@ open class Sprite3D(
    * Sprite3D::frame_changed signal
    */
   val signalFrameChanged: Signal0 = Signal0("frame_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for frameCoords
@@ -172,15 +179,12 @@ open class Sprite3D(
   }
 
   companion object {
-    fun new(): Sprite3D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Sprite3D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Sprite3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Sprite3D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Sprite3D = Sprite3D(ptr)
     /**
      * Container for method_bind pointers for Sprite3D
      */

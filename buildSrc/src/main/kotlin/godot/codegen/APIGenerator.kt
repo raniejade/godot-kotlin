@@ -39,7 +39,7 @@ class APIGenerator {
   private fun generateInstanceType(cls: GDClass, maxSignalParam: Int, index: GDClassIndex): TypeSpec {
     val classBuilder = TypeSpec.classBuilder(cls.name)
       .addModifiers(KModifier.OPEN)
-      .generatePrimaryConstructor(cls)
+      .generateConstructors(cls)
       .maybeGenerateInheritance(cls)
       .generateEnums(cls)
       .generateProperties(cls, index)
@@ -304,23 +304,40 @@ class APIGenerator {
     return this
   }
 
-  private fun TypeSpec.Builder.generatePrimaryConstructor(cls: GDClass): TypeSpec.Builder {
+  private fun TypeSpec.Builder.generateConstructors(cls: GDClass): TypeSpec.Builder {
     val handleName = "_handle"
     val cOpaquePointerType = ClassName("kotlinx.cinterop", "COpaquePointer")
 
     if (cls.baseClass.isEmpty()) {
       addProperty(
-        PropertySpec.builder(handleName, cOpaquePointerType, KModifier.INTERNAL)
-          .initializer(handleName)
+        PropertySpec.builder(handleName, cOpaquePointerType, KModifier.LATEINIT, KModifier.INTERNAL)
+          .mutable()
           .build()
       )
     }
 
     primaryConstructor(
       FunSpec.constructorBuilder()
-        .addParameter(handleName, cOpaquePointerType)
+        // for disambiguation
+        .addParameter(
+          ParameterSpec.builder("__ignore", ClassName("kotlin", "String").copy(nullable = true))
+            .addAnnotation(AnnotationSpec.builder(Suppress::class)
+              .addMember("%S", "UNUSED_PARAMETER")
+              .build()
+            )
+            .build()
+        )
         .build()
     )
+
+    if (!cls.isSingleton) {
+      addFunction(
+        FunSpec.constructorBuilder()
+          .callThisConstructor("null")
+          .addCode("_handle = __new()")
+          .build()
+      )
+    }
     return this
   }
 
@@ -328,7 +345,7 @@ class APIGenerator {
     if (cls.baseClass.isNotBlank()) {
       superclass(
         ClassName(BASE_PACKAGE, cls.baseClass)
-      ).addSuperclassConstructorParameter("_handle")
+      ).addSuperclassConstructorParameter("null")
     }
     return this
   }
@@ -340,28 +357,17 @@ class APIGenerator {
     // constructor
     if (cls.isInstanciable) {
       companionObjectBuilder.addFunction(
-        FunSpec.builder("new")
+        FunSpec.builder("__new")
+          .addModifiers(KModifier.INTERNAL)
           .addCode("""
             return memScoped {
               val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)(%S.cstr.ptr)
               requireNotNull(fnPtr) { %S }
               val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-              %L(
-                fn()
-              )
+              fn()
             }
-          """.trimIndent(), cls.name, "No instance found for ${cls.name}", cls.name)
-          .returns(className)
-          .build()
-      )
-
-      companionObjectBuilder.addFunction(
-        FunSpec.builder("from")
-          .addParameter("ptr", ClassName("kotlinx.cinterop", "COpaquePointer"))
-          .returns(className)
-          .addCode("""
-            return %L(ptr)
-          """.trimIndent(), cls.name)
+          """.trimIndent(), cls.name, "No instance found for ${cls.name}")
+          .returns(ClassName("kotlinx.cinterop", "COpaquePointer"))
           .build()
       )
     }
@@ -376,9 +382,9 @@ class APIGenerator {
                 return memScoped {
                   val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)(%S.cstr.ptr)
                   requireNotNull(handle) { %S }
-                  %L(
-                    handle
-                  )
+                  val ret = %L(null)
+                  ret._handle = handle
+                  ret
                 }
                """.trimIndent(), cls.name, "No instance found for singleton ${cls.name}", cls.name)
               .build()

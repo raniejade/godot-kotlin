@@ -10,6 +10,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ARVRAnchor(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var anchorId: Int
     get() {
        return getAnchorId() 
@@ -34,6 +36,10 @@ open class ARVRAnchor(
    * ARVRAnchor::mesh_updated signal
    */
   val signalMeshUpdated: Signal1<Mesh> = Signal1("mesh_updated")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAnchorId(): Int {
     val _ret = __method_bind.getAnchorId.call(this._handle)
@@ -71,15 +77,12 @@ open class ARVRAnchor(
   }
 
   companion object {
-    fun new(): ARVRAnchor = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRAnchor".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ARVRAnchor" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ARVRAnchor(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ARVRAnchor = ARVRAnchor(ptr)
     /**
      * Container for method_bind pointers for ARVRAnchor
      */

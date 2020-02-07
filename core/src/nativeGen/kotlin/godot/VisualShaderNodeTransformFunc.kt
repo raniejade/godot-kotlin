@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeTransformFunc(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var function: Function
     get() {
        return getFunction() 
@@ -25,6 +28,10 @@ open class VisualShaderNodeTransformFunc(
     set(value) {
       setFunction(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getFunction(): Function {
     val _ret = __method_bind.getFunction.call(this._handle)
@@ -56,17 +63,13 @@ open class VisualShaderNodeTransformFunc(
   }
 
   companion object {
-    fun new(): VisualShaderNodeTransformFunc = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformFunc".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTransformFunc" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeTransformFunc(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeTransformFunc =
-        VisualShaderNodeTransformFunc(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeTransformFunc
      */

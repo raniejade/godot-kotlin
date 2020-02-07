@@ -9,6 +9,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ClippedCamera(
-  _handle: COpaquePointer
-) : Camera(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Camera(null) {
   var clipToAreas: Boolean
     get() {
        return isClipToAreasEnabled() 
@@ -60,6 +63,10 @@ open class ClippedCamera(
     set(value) {
       setProcessMode(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addException(node: Object) {
     val _arg = Variant.new(node)
@@ -173,15 +180,12 @@ open class ClippedCamera(
   }
 
   companion object {
-    fun new(): ClippedCamera = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ClippedCamera".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ClippedCamera" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ClippedCamera(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ClippedCamera = ClippedCamera(ptr)
     /**
      * Container for method_bind pointers for ClippedCamera
      */

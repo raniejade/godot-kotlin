@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class SphereMesh(
-  _handle: COpaquePointer
-) : PrimitiveMesh(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PrimitiveMesh(null) {
   var height: Float
     get() {
        return getHeight() 
@@ -59,6 +62,10 @@ open class SphereMesh(
     set(value) {
       setRings(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getHeight(): Float {
     val _ret = __method_bind.getHeight.call(this._handle)
@@ -111,15 +118,12 @@ open class SphereMesh(
   }
 
   companion object {
-    fun new(): SphereMesh = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SphereMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SphereMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      SphereMesh(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): SphereMesh = SphereMesh(ptr)
     /**
      * Container for method_bind pointers for SphereMesh
      */

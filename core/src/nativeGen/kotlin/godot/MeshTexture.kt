@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class MeshTexture(
-  _handle: COpaquePointer
-) : Texture(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Texture(null) {
   var baseTexture: Texture
     get() {
        return getBaseTexture() 
@@ -42,6 +45,10 @@ open class MeshTexture(
     set(value) {
       setMesh(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for imageSize
@@ -83,15 +90,12 @@ open class MeshTexture(
   }
 
   companion object {
-    fun new(): MeshTexture = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MeshTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      MeshTexture(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): MeshTexture = MeshTexture(ptr)
     /**
      * Container for method_bind pointers for MeshTexture
      */

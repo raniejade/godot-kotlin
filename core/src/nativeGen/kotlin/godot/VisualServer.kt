@@ -24,6 +24,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -34,8 +35,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualServer(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   /**
    * VisualServer::frame_post_draw signal
    */
@@ -4126,9 +4128,9 @@ open class VisualServer(
         val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("VisualServer".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton VisualServer" }
-        VisualServer(
-          handle
-        )
+        val ret = VisualServer(null)
+        ret._handle = handle
+        ret
       }
     val ARRAY_WEIGHTS_SIZE: Int = 4
 

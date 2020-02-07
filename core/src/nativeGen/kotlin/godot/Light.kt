@@ -9,6 +9,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Light(
-  _handle: COpaquePointer
-) : VisualInstance(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualInstance(null) {
   var editorOnly: Boolean
     get() {
        return isEditorOnly() 
@@ -125,6 +128,10 @@ open class Light(
     set(value) {
       setShadowReverseCullFace(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for lightColor

@@ -9,6 +9,7 @@ import kotlin.Any
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,12 +20,17 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class UndoRedo(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   /**
    * UndoRedo::version_changed signal
    */
   val signalVersionChanged: Signal0 = Signal0("version_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addDoMethod(
     `object`: Object,
@@ -157,15 +163,12 @@ open class UndoRedo(
   }
 
   companion object {
-    fun new(): UndoRedo = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("UndoRedo".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for UndoRedo" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      UndoRedo(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): UndoRedo = UndoRedo(ptr)
     /**
      * Container for method_bind pointers for UndoRedo
      */

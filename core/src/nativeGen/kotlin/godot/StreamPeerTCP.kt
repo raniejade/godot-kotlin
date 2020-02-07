@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class StreamPeerTCP(
-  _handle: COpaquePointer
-) : StreamPeer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : StreamPeer(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun connectToHost(host: String, port: Int): GDError {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(host))
@@ -82,15 +88,12 @@ open class StreamPeerTCP(
   }
 
   companion object {
-    fun new(): StreamPeerTCP = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerTCP".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for StreamPeerTCP" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      StreamPeerTCP(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): StreamPeerTCP = StreamPeerTCP(ptr)
     /**
      * Container for method_bind pointers for StreamPeerTCP
      */

@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class BoxShape(
-  _handle: COpaquePointer
-) : Shape(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shape(null) {
   var extents: Vector3
     get() {
        return getExtents() 
@@ -26,6 +29,10 @@ open class BoxShape(
     set(value) {
       setExtents(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for extents
@@ -47,15 +54,12 @@ open class BoxShape(
   }
 
   companion object {
-    fun new(): BoxShape = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BoxShape".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for BoxShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      BoxShape(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): BoxShape = BoxShape(ptr)
     /**
      * Container for method_bind pointers for BoxShape
      */

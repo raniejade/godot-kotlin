@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ScrollBar(
-  _handle: COpaquePointer
-) : Range(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Range(null) {
   var customStep: Float
     get() {
        return getCustomStep() 
@@ -30,6 +33,10 @@ open class ScrollBar(
    * ScrollBar::scrolling signal
    */
   val signalScrolling: Signal0 = Signal0("scrolling")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getCustomStep(): Float {
     val _ret = __method_bind.getCustomStep.call(this._handle)

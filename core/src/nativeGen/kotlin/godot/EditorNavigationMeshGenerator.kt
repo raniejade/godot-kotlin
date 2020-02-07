@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,8 +17,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorNavigationMeshGenerator(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun bake(navMesh: NavigationMesh, rootNode: Node) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(navMesh))

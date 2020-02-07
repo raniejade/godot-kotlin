@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -22,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimationTree(
-  _handle: COpaquePointer
-) : Node(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node(null) {
   var active: Boolean
     get() {
        return isActive() 
@@ -63,6 +65,10 @@ open class AnimationTree(
     set(value) {
       setTreeRoot(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for animPlayer
@@ -171,15 +177,12 @@ open class AnimationTree(
   }
 
   companion object {
-    fun new(): AnimationTree = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationTree".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationTree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimationTree(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimationTree = AnimationTree(ptr)
     /**
      * Container for method_bind pointers for AnimationTree
      */

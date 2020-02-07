@@ -52,7 +52,7 @@ val MAX_SIGNAL_PARAMS = 10
 
 tasks {
     val generateAPI by creating(GenerateAPI::class) {
-        source.set(project.file("godot_headers/api.json"))
+        source.set(project.file("$rootDir/godot_headers/api.json"))
         maxSignalParams.set(MAX_SIGNAL_PARAMS)
         outputDir.set(project.file("src/nativeGen/kotlin"))
     }

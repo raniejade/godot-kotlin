@@ -10,6 +10,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,12 +21,17 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScript(
-  _handle: COpaquePointer
-) : Script(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Script(null) {
   /**
    * VisualScript::node_ports_changed signal
    */
   val signalNodePortsChanged: Signal2<String, Int> = Signal2("node_ports_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addCustomSignal(name: String) {
     val _arg = Variant.new(name)
@@ -395,15 +401,12 @@ open class VisualScript(
   }
 
   companion object {
-    fun new(): VisualScript = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScript".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScript(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScript = VisualScript(ptr)
     /**
      * Container for method_bind pointers for VisualScript
      */

@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class WebSocketPeer(
-  _handle: COpaquePointer
-) : PacketPeer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PacketPeer(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun close(code: Int = 1000, reason: String = "") {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(code))
@@ -82,15 +88,12 @@ open class WebSocketPeer(
   }
 
   companion object {
-    fun new(): WebSocketPeer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebSocketPeer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for WebSocketPeer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      WebSocketPeer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): WebSocketPeer = WebSocketPeer(ptr)
     /**
      * Container for method_bind pointers for WebSocketPeer
      */

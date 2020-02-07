@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Shape(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var margin: Float
     get() {
        return getMargin() 
@@ -25,6 +28,10 @@ open class Shape(
     set(value) {
       setMargin(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getMargin(): Float {
     val _ret = __method_bind.getMargin.call(this._handle)

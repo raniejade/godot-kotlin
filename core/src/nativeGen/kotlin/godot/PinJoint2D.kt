@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PinJoint2D(
-  _handle: COpaquePointer
-) : Joint2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Joint2D(null) {
   var softness: Float
     get() {
        return getSoftness() 
@@ -25,6 +28,10 @@ open class PinJoint2D(
     set(value) {
       setSoftness(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getSoftness(): Float {
     val _ret = __method_bind.getSoftness.call(this._handle)
@@ -37,15 +44,12 @@ open class PinJoint2D(
   }
 
   companion object {
-    fun new(): PinJoint2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PinJoint2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PinJoint2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PinJoint2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PinJoint2D = PinJoint2D(ptr)
     /**
      * Container for method_bind pointers for PinJoint2D
      */

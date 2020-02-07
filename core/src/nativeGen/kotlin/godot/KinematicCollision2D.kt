@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class KinematicCollision2D(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   val collider: Object
     get() {
        return getCollider() 
@@ -73,6 +76,10 @@ open class KinematicCollision2D(
     get() {
        return getTravel() 
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getCollider(): Object {
     val _ret = __method_bind.getCollider.call(this._handle)
@@ -130,16 +137,13 @@ open class KinematicCollision2D(
   }
 
   companion object {
-    fun new(): KinematicCollision2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicCollision2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for KinematicCollision2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      KinematicCollision2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): KinematicCollision2D = KinematicCollision2D(ptr)
     /**
      * Container for method_bind pointers for KinematicCollision2D
      */

@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class JavaScript(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun eval(code: String, useGlobalExecutionContext: Boolean = false): Variant {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(code))
@@ -32,9 +34,9 @@ open class JavaScript(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("JavaScript".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton JavaScript" }
-        JavaScript(
-          handle
-        )
+        val ret = JavaScript(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for JavaScript

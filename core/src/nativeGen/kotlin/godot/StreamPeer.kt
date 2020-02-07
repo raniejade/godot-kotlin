@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class StreamPeer(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   var bigEndian: Boolean
     get() {
        return isBigEndianEnabled() 
@@ -30,6 +32,10 @@ open class StreamPeer(
     set(value) {
       setBigEndian(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun get16(): Int {
     val _ret = __method_bind.get16.call(this._handle)

@@ -8,6 +8,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ProceduralSky(
-  _handle: COpaquePointer
-) : Sky(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Sky(null) {
   var groundBottomColor: Color
     get() {
        return getGroundBottomColor() 
@@ -148,6 +151,10 @@ open class ProceduralSky(
     set(value) {
       setTextureSize(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for groundBottomColor
@@ -382,15 +389,12 @@ open class ProceduralSky(
   }
 
   companion object {
-    fun new(): ProceduralSky = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProceduralSky".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ProceduralSky" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ProceduralSky(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ProceduralSky = ProceduralSky(ptr)
     /**
      * Container for method_bind pointers for ProceduralSky
      */

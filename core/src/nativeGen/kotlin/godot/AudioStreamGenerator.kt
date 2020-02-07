@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioStreamGenerator(
-  _handle: COpaquePointer
-) : AudioStream(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioStream(null) {
   var bufferLength: Float
     get() {
        return getBufferLength() 
@@ -33,6 +36,10 @@ open class AudioStreamGenerator(
     set(value) {
       setMixRate(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getBufferLength(): Float {
     val _ret = __method_bind.getBufferLength.call(this._handle)
@@ -55,16 +62,13 @@ open class AudioStreamGenerator(
   }
 
   companion object {
-    fun new(): AudioStreamGenerator = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamGenerator".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioStreamGenerator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioStreamGenerator(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioStreamGenerator = AudioStreamGenerator(ptr)
     /**
      * Container for method_bind pointers for AudioStreamGenerator
      */

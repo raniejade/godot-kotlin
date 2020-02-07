@@ -9,6 +9,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +21,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Physics2DDirectSpaceState(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun castMotion(shape: Physics2DShapeQueryParameters): VariantArray {
     val _arg = Variant.new(shape)
     val _ret = __method_bind.castMotion.call(this._handle, listOf(_arg))

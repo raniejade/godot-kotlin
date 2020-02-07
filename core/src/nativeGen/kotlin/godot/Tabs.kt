@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Tabs(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var currentTab: Int
     get() {
        return getCurrentTab() 
@@ -90,6 +92,10 @@ open class Tabs(
    * Tabs::tab_hover signal
    */
   val signalTabHover: Signal1<Int> = Signal1("tab_hover")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addTab(title: String = "", icon: Texture) {
     val _args = mutableListOf<Variant>()
@@ -292,15 +298,12 @@ open class Tabs(
   }
 
   companion object {
-    fun new(): Tabs = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Tabs".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Tabs" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Tabs(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Tabs = Tabs(ptr)
     /**
      * Container for method_bind pointers for Tabs
      */

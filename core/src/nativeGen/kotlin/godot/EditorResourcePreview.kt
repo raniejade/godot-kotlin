@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,12 +17,17 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorResourcePreview(
-  _handle: COpaquePointer
-) : Node(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node(null) {
   /**
    * EditorResourcePreview::preview_invalidated signal
    */
   val signalPreviewInvalidated: Signal1<String> = Signal1("preview_invalidated")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addPreviewGenerator(generator: EditorResourcePreviewGenerator) {
     val _arg = Variant.new(generator)

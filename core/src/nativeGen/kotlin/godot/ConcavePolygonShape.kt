@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.PoolVector3Array
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ConcavePolygonShape(
-  _handle: COpaquePointer
-) : Shape(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shape(null) {
   var data: PoolVector3Array
     get() {
        return getFaces() 
@@ -26,6 +29,10 @@ open class ConcavePolygonShape(
     set(value) {
       setFaces(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for data
@@ -47,16 +54,13 @@ open class ConcavePolygonShape(
   }
 
   companion object {
-    fun new(): ConcavePolygonShape = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConcavePolygonShape".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ConcavePolygonShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ConcavePolygonShape(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ConcavePolygonShape = ConcavePolygonShape(ptr)
     /**
      * Container for method_bind pointers for ConcavePolygonShape
      */

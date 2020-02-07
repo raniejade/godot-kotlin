@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class WebSocketServer(
-  _handle: COpaquePointer
-) : WebSocketMultiplayerPeer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : WebSocketMultiplayerPeer(null) {
   var bindIp: String
     get() {
        return getBindIp() 
@@ -73,6 +75,10 @@ open class WebSocketServer(
    * WebSocketServer::data_received signal
    */
   val signalDataReceived: Signal1<Int> = Signal1("data_received")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun disconnectPeer(
     id: Int,
@@ -167,16 +173,13 @@ open class WebSocketServer(
   }
 
   companion object {
-    fun new(): WebSocketServer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebSocketServer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for WebSocketServer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      WebSocketServer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): WebSocketServer = WebSocketServer(ptr)
     /**
      * Container for method_bind pointers for WebSocketServer
      */

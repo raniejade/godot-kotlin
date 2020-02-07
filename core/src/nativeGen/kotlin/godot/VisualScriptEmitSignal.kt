@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptEmitSignal(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var signal: String
     get() {
        return getSignal() 
@@ -25,6 +27,10 @@ open class VisualScriptEmitSignal(
     set(value) {
       setSignal(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getSignal(): String {
     val _ret = __method_bind.getSignal.call(this._handle)
@@ -37,16 +43,13 @@ open class VisualScriptEmitSignal(
   }
 
   companion object {
-    fun new(): VisualScriptEmitSignal = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptEmitSignal".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptEmitSignal" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptEmitSignal(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptEmitSignal = VisualScriptEmitSignal(ptr)
     /**
      * Container for method_bind pointers for VisualScriptEmitSignal
      */

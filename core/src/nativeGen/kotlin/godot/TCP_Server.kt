@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class TCP_Server(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun isConnectionAvailable(): Boolean {
     val _ret = __method_bind.isConnectionAvailable.call(this._handle)
     return _ret.asBoolean()
@@ -49,15 +55,12 @@ open class TCP_Server(
   }
 
   companion object {
-    fun new(): TCP_Server = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TCP_Server".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for TCP_Server" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      TCP_Server(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): TCP_Server = TCP_Server(ptr)
     /**
      * Container for method_bind pointers for TCP_Server
      */

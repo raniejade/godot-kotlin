@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class JSONRPC(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun makeNotification(method: String, params: Variant): Dictionary {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(method))
@@ -110,15 +116,12 @@ open class JSONRPC(
   }
 
   companion object {
-    fun new(): JSONRPC = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("JSONRPC".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for JSONRPC" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      JSONRPC(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): JSONRPC = JSONRPC(ptr)
     /**
      * Container for method_bind pointers for JSONRPC
      */

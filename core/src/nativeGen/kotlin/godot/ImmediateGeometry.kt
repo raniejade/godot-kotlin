@@ -12,6 +12,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -22,8 +24,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ImmediateGeometry(
-  _handle: COpaquePointer
-) : GeometryInstance(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : GeometryInstance(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addSphere(
     lats: Int,
     lons: Int,
@@ -84,16 +91,13 @@ open class ImmediateGeometry(
   }
 
   companion object {
-    fun new(): ImmediateGeometry = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ImmediateGeometry".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ImmediateGeometry" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ImmediateGeometry(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ImmediateGeometry = ImmediateGeometry(ptr)
     /**
      * Container for method_bind pointers for ImmediateGeometry
      */

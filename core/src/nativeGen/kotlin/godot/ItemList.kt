@@ -13,6 +13,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -24,8 +25,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ItemList(
-  _handle: COpaquePointer
-) : Control(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Control(null) {
   var allowReselect: Boolean
     get() {
        return getAllowReselect() 
@@ -143,6 +145,10 @@ open class ItemList(
    * ItemList::rmb_clicked signal
    */
   val signalRmbClicked: Signal1<Vector2> = Signal1("rmb_clicked")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for fixedIconSize
@@ -551,15 +557,12 @@ open class ItemList(
   }
 
   companion object {
-    fun new(): ItemList = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ItemList".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ItemList" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ItemList(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ItemList = ItemList(ptr)
     /**
      * Container for method_bind pointers for ItemList
      */

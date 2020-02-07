@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,17 +17,20 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class GlobalConstants(
-  internal val _handle: COpaquePointer
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
 ) {
+  internal lateinit var _handle: COpaquePointer
+
   companion object {
     val Instance: GlobalConstants
       get() = memScoped {
         val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("GlobalConstants".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton GlobalConstants" }
-        GlobalConstants(
-          handle
-        )
+        val ret = GlobalConstants(null)
+        ret._handle = handle
+        ret
       }
     val BUTTON_LEFT: Int = 1
 

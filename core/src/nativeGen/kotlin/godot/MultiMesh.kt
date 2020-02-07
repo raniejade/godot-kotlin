@@ -11,6 +11,8 @@ import godot.core.Transform2D
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class MultiMesh(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var colorFormat: ColorFormat
     get() {
        return getColorFormat() 
@@ -70,6 +73,10 @@ open class MultiMesh(
     set(value) {
       setVisibleInstanceCount(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAabb(): AABB {
     val _ret = __method_bind.getAabb.call(this._handle)
@@ -255,15 +262,12 @@ open class MultiMesh(
   }
 
   companion object {
-    fun new(): MultiMesh = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MultiMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      MultiMesh(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): MultiMesh = MultiMesh(ptr)
     /**
      * Container for method_bind pointers for MultiMesh
      */

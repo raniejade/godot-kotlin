@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class WebSocketClient(
-  _handle: COpaquePointer
-) : WebSocketMultiplayerPeer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : WebSocketMultiplayerPeer(null) {
   var trustedSslCertificate: X509Certificate
     get() {
        return getTrustedSslCertificate() 
@@ -62,6 +64,10 @@ open class WebSocketClient(
    * WebSocketClient::server_close_request signal
    */
   val signalServerCloseRequest: Signal2<Int, String> = Signal2("server_close_request")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun connectToUrl(
     url: String,
@@ -116,16 +122,13 @@ open class WebSocketClient(
   }
 
   companion object {
-    fun new(): WebSocketClient = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebSocketClient".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for WebSocketClient" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      WebSocketClient(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): WebSocketClient = WebSocketClient(ptr)
     /**
      * Container for method_bind pointers for WebSocketClient
      */

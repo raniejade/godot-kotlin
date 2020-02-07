@@ -9,6 +9,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ScriptEditor(
-  _handle: COpaquePointer
-) : PanelContainer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PanelContainer(null) {
   /**
    * ScriptEditor::editor_script_changed signal
    */
@@ -30,6 +32,10 @@ open class ScriptEditor(
    * ScriptEditor::script_close signal
    */
   val signalScriptClose: Signal1<Script> = Signal1("script_close")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun canDropDataFw(
     point: Vector2,

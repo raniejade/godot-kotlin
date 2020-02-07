@@ -10,6 +10,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ARVRServer(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   var primaryInterface: ARVRInterface
     get() {
        return getPrimaryInterface() 
@@ -196,9 +198,9 @@ open class ARVRServer(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("ARVRServer".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton ARVRServer" }
-        ARVRServer(
-          handle
-        )
+        val ret = ARVRServer(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for ARVRServer

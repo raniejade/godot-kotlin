@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class HingeJoint(
-  _handle: COpaquePointer
-) : Joint(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Joint(null) {
   var angularLimitBias: Float
     get() {
        return getParam(3) 
@@ -83,6 +86,10 @@ open class HingeJoint(
     set(value) {
       setParam(0, value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
@@ -165,15 +172,12 @@ open class HingeJoint(
   }
 
   companion object {
-    fun new(): HingeJoint = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HingeJoint".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for HingeJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      HingeJoint(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): HingeJoint = HingeJoint(ptr)
     /**
      * Container for method_bind pointers for HingeJoint
      */

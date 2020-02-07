@@ -7,6 +7,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class StreamTexture(
-  _handle: COpaquePointer
-) : Texture(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Texture(null) {
   var loadPath: String
     get() {
        return getLoadPath() 
@@ -26,6 +28,10 @@ open class StreamTexture(
     set(value) {
       load(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getLoadPath(): String {
     val _ret = __method_bind.getLoadPath.call(this._handle)
@@ -39,15 +45,12 @@ open class StreamTexture(
   }
 
   companion object {
-    fun new(): StreamTexture = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for StreamTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      StreamTexture(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): StreamTexture = StreamTexture(ptr)
     /**
      * Container for method_bind pointers for StreamTexture
      */

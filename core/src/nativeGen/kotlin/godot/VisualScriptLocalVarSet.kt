@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptLocalVarSet(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var type: Variant.Type
     get() {
        return getVarType() 
@@ -34,6 +36,10 @@ open class VisualScriptLocalVarSet(
     set(value) {
       setVarName(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getVarName(): String {
     val _ret = __method_bind.getVarName.call(this._handle)
@@ -56,16 +62,13 @@ open class VisualScriptLocalVarSet(
   }
 
   companion object {
-    fun new(): VisualScriptLocalVarSet = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptLocalVarSet".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptLocalVarSet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptLocalVarSet(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptLocalVarSet = VisualScriptLocalVarSet(ptr)
     /**
      * Container for method_bind pointers for VisualScriptLocalVarSet
      */

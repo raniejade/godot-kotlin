@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class RayShape(
-  _handle: COpaquePointer
-) : Shape(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shape(null) {
   var length: Float
     get() {
        return getLength() 
@@ -34,6 +37,10 @@ open class RayShape(
     set(value) {
       setSlipsOnSlope(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getLength(): Float {
     val _ret = __method_bind.getLength.call(this._handle)
@@ -56,15 +63,12 @@ open class RayShape(
   }
 
   companion object {
-    fun new(): RayShape = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RayShape".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RayShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      RayShape(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): RayShape = RayShape(ptr)
     /**
      * Container for method_bind pointers for RayShape
      */

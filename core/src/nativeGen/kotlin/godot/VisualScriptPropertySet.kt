@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptPropertySet(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var assignOp: AssignOp
     get() {
        return getAssignOp() 
@@ -84,6 +86,10 @@ open class VisualScriptPropertySet(
     set(value) {
       setCallMode(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for nodePath
@@ -235,16 +241,13 @@ open class VisualScriptPropertySet(
   }
 
   companion object {
-    fun new(): VisualScriptPropertySet = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptPropertySet".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptPropertySet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptPropertySet(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptPropertySet = VisualScriptPropertySet(ptr)
     /**
      * Container for method_bind pointers for VisualScriptPropertySet
      */

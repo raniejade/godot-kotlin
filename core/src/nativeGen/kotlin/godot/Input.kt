@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Input(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   /**
    * Input::joy_connection_changed signal
    */
@@ -355,9 +357,9 @@ open class Input(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("Input".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton Input" }
-        Input(
-          handle
-        )
+        val ret = Input(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for Input

@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ProximityGroup(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var dispatchMode: DispatchMode
     get() {
        return getDispatchMode() 
@@ -49,6 +51,10 @@ open class ProximityGroup(
    * ProximityGroup::broadcast signal
    */
   val signalBroadcast: Signal2<String, VariantArray> = Signal2("broadcast")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for gridRadius
@@ -116,16 +122,13 @@ open class ProximityGroup(
   }
 
   companion object {
-    fun new(): ProximityGroup = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProximityGroup".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ProximityGroup" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ProximityGroup(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ProximityGroup = ProximityGroup(ptr)
     /**
      * Container for method_bind pointers for ProximityGroup
      */

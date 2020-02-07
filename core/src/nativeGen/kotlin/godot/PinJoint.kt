@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PinJoint(
-  _handle: COpaquePointer
-) : Joint(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Joint(null) {
   var paramsBias: Float
     get() {
        return getParam(0) 
@@ -42,6 +45,10 @@ open class PinJoint(
     set(value) {
       setParam(2, value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
@@ -78,15 +85,12 @@ open class PinJoint(
   }
 
   companion object {
-    fun new(): PinJoint = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PinJoint".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PinJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PinJoint(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PinJoint = PinJoint(ptr)
     /**
      * Container for method_bind pointers for PinJoint
      */

@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptInputAction(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var action: String
     get() {
        return getActionName() 
@@ -34,6 +36,10 @@ open class VisualScriptInputAction(
     set(value) {
       setActionMode(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getActionMode(): Mode {
     val _ret = __method_bind.getActionMode.call(this._handle)
@@ -79,16 +85,13 @@ open class VisualScriptInputAction(
   }
 
   companion object {
-    fun new(): VisualScriptInputAction = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptInputAction".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptInputAction" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptInputAction(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptInputAction = VisualScriptInputAction(ptr)
     /**
      * Container for method_bind pointers for VisualScriptInputAction
      */

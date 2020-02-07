@@ -11,6 +11,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -22,8 +24,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Viewport(
-  _handle: COpaquePointer
-) : Node(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node(null) {
   var arvr: Boolean
     get() {
        return useArvr() 
@@ -273,6 +276,10 @@ open class Viewport(
    * Viewport::size_changed signal
    */
   val signalSizeChanged: Signal0 = Signal0("size_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for canvasTransform
@@ -871,15 +878,12 @@ open class Viewport(
   }
 
   companion object {
-    fun new(): Viewport = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Viewport".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Viewport" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Viewport(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Viewport = Viewport(ptr)
     /**
      * Container for method_bind pointers for Viewport
      */

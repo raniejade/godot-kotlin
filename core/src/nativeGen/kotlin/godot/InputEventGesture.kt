@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class InputEventGesture(
-  _handle: COpaquePointer
-) : InputEventWithModifiers(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : InputEventWithModifiers(null) {
   var position: Vector2
     get() {
        return getPosition() 
@@ -26,6 +29,10 @@ open class InputEventGesture(
     set(value) {
       setPosition(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for position

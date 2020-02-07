@@ -10,6 +10,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class BakedLightmap(
-  _handle: COpaquePointer
-) : VisualInstance(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualInstance(null) {
   var bakeCellSize: Float
     get() {
        return getBakeCellSize() 
@@ -110,6 +112,10 @@ open class BakedLightmap(
     set(value) {
       setLightData(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for bakeExtents
@@ -308,15 +314,12 @@ open class BakedLightmap(
   }
 
   companion object {
-    fun new(): BakedLightmap = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BakedLightmap".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for BakedLightmap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      BakedLightmap(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): BakedLightmap = BakedLightmap(ptr)
     /**
      * Container for method_bind pointers for BakedLightmap
      */

@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class SplitContainer(
-  _handle: COpaquePointer
-) : Container(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Container(null) {
   var collapsed: Boolean
     get() {
        return isCollapsed() 
@@ -47,6 +50,10 @@ open class SplitContainer(
    * SplitContainer::dragged signal
    */
   val signalDragged: Signal1<Int> = Signal1("dragged")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun clampSplitOffset() {
     __method_bind.clampSplitOffset.call(this._handle)

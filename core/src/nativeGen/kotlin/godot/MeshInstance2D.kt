@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class MeshInstance2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var mesh: Mesh
     get() {
        return getMesh() 
@@ -45,6 +48,10 @@ open class MeshInstance2D(
    * MeshInstance2D::texture_changed signal
    */
   val signalTextureChanged: Signal0 = Signal0("texture_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getMesh(): Mesh {
     val _ret = __method_bind.getMesh.call(this._handle)
@@ -77,16 +84,13 @@ open class MeshInstance2D(
   }
 
   companion object {
-    fun new(): MeshInstance2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshInstance2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MeshInstance2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      MeshInstance2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): MeshInstance2D = MeshInstance2D(ptr)
     /**
      * Container for method_bind pointers for MeshInstance2D
      */

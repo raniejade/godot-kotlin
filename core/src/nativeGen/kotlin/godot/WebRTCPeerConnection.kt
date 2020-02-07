@@ -9,6 +9,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class WebRTCPeerConnection(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
   /**
    * WebRTCPeerConnection::data_channel_received signal
    */
@@ -36,6 +38,10 @@ open class WebRTCPeerConnection(
    */
   val signalSessionDescriptionCreated: Signal2<String, String> =
       Signal2("session_description_created")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addIceCandidate(
     media: String,
@@ -127,16 +133,13 @@ open class WebRTCPeerConnection(
   }
 
   companion object {
-    fun new(): WebRTCPeerConnection = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCPeerConnection".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for WebRTCPeerConnection" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      WebRTCPeerConnection(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): WebRTCPeerConnection = WebRTCPeerConnection(ptr)
     /**
      * Container for method_bind pointers for WebRTCPeerConnection
      */

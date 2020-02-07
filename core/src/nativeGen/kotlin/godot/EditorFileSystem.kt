@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorFileSystem(
-  _handle: COpaquePointer
-) : Node(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node(null) {
   /**
    * EditorFileSystem::filesystem_changed signal
    */
@@ -40,6 +42,10 @@ open class EditorFileSystem(
    * EditorFileSystem::sources_changed signal
    */
   val signalSourcesChanged: Signal1<Boolean> = Signal1("sources_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getFileType(path: String): String {
     val _arg = Variant.new(path)

@@ -7,6 +7,8 @@ import godot.core.PoolByteArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class StreamPeerBuffer(
-  _handle: COpaquePointer
-) : StreamPeer(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : StreamPeer(null) {
   var dataArray: PoolByteArray
     get() {
        return getDataArray() 
@@ -27,6 +30,10 @@ open class StreamPeerBuffer(
     set(value) {
       setDataArray(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for dataArray
@@ -77,16 +84,13 @@ open class StreamPeerBuffer(
   }
 
   companion object {
-    fun new(): StreamPeerBuffer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerBuffer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for StreamPeerBuffer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      StreamPeerBuffer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): StreamPeerBuffer = StreamPeerBuffer(ptr)
     /**
      * Container for method_bind pointers for StreamPeerBuffer
      */

@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class LightOccluder2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var occluder: OccluderPolygon2D
     get() {
        return getOccluderPolygon() 
@@ -25,6 +28,10 @@ open class LightOccluder2D(
     set(value) {
       setOccluderPolygon(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getOccluderLightMask(): Int {
     val _ret = __method_bind.getOccluderLightMask.call(this._handle)
@@ -47,16 +54,13 @@ open class LightOccluder2D(
   }
 
   companion object {
-    fun new(): LightOccluder2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("LightOccluder2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for LightOccluder2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      LightOccluder2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): LightOccluder2D = LightOccluder2D(ptr)
     /**
      * Container for method_bind pointers for LightOccluder2D
      */

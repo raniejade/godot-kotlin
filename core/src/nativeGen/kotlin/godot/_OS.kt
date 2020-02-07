@@ -14,6 +14,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -25,8 +26,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _OS(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   var clipboard: String
     get() {
        return getClipboard() 
@@ -1123,9 +1125,9 @@ open class _OS(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_OS".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton _OS" }
-        _OS(
-          handle
-        )
+        val ret = _OS(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for _OS

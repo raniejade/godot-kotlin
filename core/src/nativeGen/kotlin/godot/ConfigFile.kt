@@ -10,6 +10,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +21,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ConfigFile(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun eraseSection(section: String) {
     val _arg = Variant.new(section)
     __method_bind.eraseSection.call(this._handle, listOf(_arg))
@@ -129,15 +135,12 @@ open class ConfigFile(
   }
 
   companion object {
-    fun new(): ConfigFile = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConfigFile".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ConfigFile" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ConfigFile(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ConfigFile = ConfigFile(ptr)
     /**
      * Container for method_bind pointers for ConfigFile
      */

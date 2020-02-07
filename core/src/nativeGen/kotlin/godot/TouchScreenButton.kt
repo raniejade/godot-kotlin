@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class TouchScreenButton(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var action: String
     get() {
        return getAction() 
@@ -101,6 +103,10 @@ open class TouchScreenButton(
    * TouchScreenButton::released signal
    */
   val signalReleased: Signal0 = Signal0("released")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAction(): String {
     val _ret = __method_bind.getAction.call(this._handle)
@@ -217,16 +223,13 @@ open class TouchScreenButton(
   }
 
   companion object {
-    fun new(): TouchScreenButton = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("TouchScreenButton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for TouchScreenButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      TouchScreenButton(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): TouchScreenButton = TouchScreenButton(ptr)
     /**
      * Container for method_bind pointers for TouchScreenButton
      */

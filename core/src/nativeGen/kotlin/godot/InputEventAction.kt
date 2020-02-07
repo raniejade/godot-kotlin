@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class InputEventAction(
-  _handle: COpaquePointer
-) : InputEvent(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : InputEvent(null) {
   var action: String
     get() {
        return getAction() 
@@ -43,6 +45,10 @@ open class InputEventAction(
     set(value) {
       setStrength(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAction(): String {
     val _ret = __method_bind.getAction.call(this._handle)
@@ -70,16 +76,13 @@ open class InputEventAction(
   }
 
   companion object {
-    fun new(): InputEventAction = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventAction".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for InputEventAction" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      InputEventAction(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): InputEventAction = InputEventAction(ptr)
     /**
      * Container for method_bind pointers for InputEventAction
      */

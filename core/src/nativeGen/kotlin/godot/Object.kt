@@ -25,12 +25,19 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Object(
-  internal val _handle: COpaquePointer
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
 ) {
+  internal lateinit var _handle: COpaquePointer
+
   /**
    * Object::script_changed signal
    */
   val signalScriptChanged: Signal0 = Signal0("script_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addUserSignal(signal: String, arguments: VariantArray) {
     val _args = mutableListOf<Variant>()
@@ -674,15 +681,12 @@ open class Object(
 
     val NOTIFICATION_PREDELETE: Int = 1
 
-    fun new(): Object = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Object".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Object" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Object(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Object = Object(ptr)
     /**
      * Container for method_bind pointers for Object
      */

@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptEngineSingleton(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var constant: String
     get() {
        return getSingleton() 
@@ -25,6 +27,10 @@ open class VisualScriptEngineSingleton(
     set(value) {
       setSingleton(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getSingleton(): String {
     val _ret = __method_bind.getSingleton.call(this._handle)
@@ -37,16 +43,13 @@ open class VisualScriptEngineSingleton(
   }
 
   companion object {
-    fun new(): VisualScriptEngineSingleton = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptEngineSingleton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptEngineSingleton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptEngineSingleton(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptEngineSingleton = VisualScriptEngineSingleton(ptr)
     /**
      * Container for method_bind pointers for VisualScriptEngineSingleton
      */

@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioEffectLimiter(
-  _handle: COpaquePointer
-) : AudioEffect(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioEffect(null) {
   var ceilingDb: Float
     get() {
        return getCeilingDb() 
@@ -49,6 +52,10 @@ open class AudioEffectLimiter(
     set(value) {
       setThresholdDb(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getCeilingDb(): Float {
     val _ret = __method_bind.getCeilingDb.call(this._handle)
@@ -91,16 +98,13 @@ open class AudioEffectLimiter(
   }
 
   companion object {
-    fun new(): AudioEffectLimiter = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectLimiter".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectLimiter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioEffectLimiter(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioEffectLimiter = AudioEffectLimiter(ptr)
     /**
      * Container for method_bind pointers for AudioEffectLimiter
      */

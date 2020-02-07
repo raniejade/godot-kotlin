@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptSceneNode(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var nodePath: NodePath
     get() {
        return getNodePath() 
@@ -26,6 +29,10 @@ open class VisualScriptSceneNode(
     set(value) {
       setNodePath(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for nodePath
@@ -47,16 +54,13 @@ open class VisualScriptSceneNode(
   }
 
   companion object {
-    fun new(): VisualScriptSceneNode = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSceneNode".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptSceneNode" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptSceneNode(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptSceneNode = VisualScriptSceneNode(ptr)
     /**
      * Container for method_bind pointers for VisualScriptSceneNode
      */

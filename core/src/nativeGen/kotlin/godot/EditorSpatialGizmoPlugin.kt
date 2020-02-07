@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +19,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorSpatialGizmoPlugin(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addMaterial(name: String, material: SpatialMaterial) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(name))

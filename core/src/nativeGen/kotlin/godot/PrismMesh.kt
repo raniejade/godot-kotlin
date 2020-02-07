@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PrismMesh(
-  _handle: COpaquePointer
-) : PrimitiveMesh(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PrimitiveMesh(null) {
   var leftToRight: Float
     get() {
        return getLeftToRight() 
@@ -60,6 +63,10 @@ open class PrismMesh(
     set(value) {
       setSubdivideWidth(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for size
@@ -121,15 +128,12 @@ open class PrismMesh(
   }
 
   companion object {
-    fun new(): PrismMesh = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PrismMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PrismMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PrismMesh(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PrismMesh = PrismMesh(ptr)
     /**
      * Container for method_bind pointers for PrismMesh
      */

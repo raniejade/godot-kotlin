@@ -9,6 +9,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualInstance(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var layers: Int
     get() {
        return getLayerMask() 
@@ -28,6 +31,10 @@ open class VisualInstance(
     set(value) {
       setLayerMask(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAabb(): AABB {
     val _ret = __method_bind.getAabb.call(this._handle)

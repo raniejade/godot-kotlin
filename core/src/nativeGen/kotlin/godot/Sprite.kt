@@ -9,6 +9,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Sprite(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var centered: Boolean
     get() {
        return isCentered() 
@@ -135,6 +138,10 @@ open class Sprite(
    * Sprite::texture_changed signal
    */
   val signalTextureChanged: Signal0 = Signal0("texture_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for frameCoords
@@ -305,15 +312,12 @@ open class Sprite(
   }
 
   companion object {
-    fun new(): Sprite = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Sprite".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Sprite" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Sprite(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Sprite = Sprite(ptr)
     /**
      * Container for method_bind pointers for Sprite
      */

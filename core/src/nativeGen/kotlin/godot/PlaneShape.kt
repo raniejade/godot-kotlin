@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Plane
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PlaneShape(
-  _handle: COpaquePointer
-) : Shape(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shape(null) {
   var plane: Plane
     get() {
        return getPlane() 
@@ -26,6 +29,10 @@ open class PlaneShape(
     set(value) {
       setPlane(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for plane
@@ -47,15 +54,12 @@ open class PlaneShape(
   }
 
   companion object {
-    fun new(): PlaneShape = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PlaneShape".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PlaneShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PlaneShape(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PlaneShape = PlaneShape(ptr)
     /**
      * Container for method_bind pointers for PlaneShape
      */

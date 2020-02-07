@@ -1,7 +1,7 @@
 import godot.*
 import kotlinx.cinterop.COpaquePointer
 
-class Simple(value: COpaquePointer): Spatial(value) {
+class Simple: Spatial() {
   fun _ready() {
     gprint("Hello Godot from Kotlin!")
   }
@@ -22,7 +22,5 @@ class Simple(value: COpaquePointer): Spatial(value) {
         registerMethod(Simple::_ready)
       }
     }
-
-    override fun createBaseClass() = Spatial.new()
   }
 }

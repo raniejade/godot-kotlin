@@ -9,6 +9,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -20,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AnimationNodeBlendTree(
-  _handle: COpaquePointer
-) : AnimationRootNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AnimationRootNode(null) {
   var graphOffset: Vector2
     get() {
        return getGraphOffset() 
@@ -29,6 +31,10 @@ open class AnimationNodeBlendTree(
     set(value) {
       setGraphOffset(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for graphOffset
@@ -130,16 +136,13 @@ open class AnimationNodeBlendTree(
 
     val CONNECTION_OK: Int = 0
 
-    fun new(): AnimationNodeBlendTree = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlendTree".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNodeBlendTree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AnimationNodeBlendTree(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AnimationNodeBlendTree = AnimationNodeBlendTree(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeBlendTree
      */

@@ -10,6 +10,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class GridMap(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var cellCenterX: Boolean
     get() {
        return getCenterX() 
@@ -99,6 +102,10 @@ open class GridMap(
    * GridMap::cell_size_changed signal
    */
   val signalCellSizeChanged: Signal1<Vector3> = Signal1("cell_size_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for cellSize
@@ -344,15 +351,12 @@ open class GridMap(
   companion object {
     val INVALID_CELL_ITEM: Int = -1
 
-    fun new(): GridMap = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GridMap".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GridMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      GridMap(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): GridMap = GridMap(ptr)
     /**
      * Container for method_bind pointers for GridMap
      */

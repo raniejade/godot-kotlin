@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class InputEventKey(
-  _handle: COpaquePointer
-) : InputEventWithModifiers(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : InputEventWithModifiers(null) {
   var echo: Boolean
     get() {
        return isEcho() 
@@ -50,6 +53,10 @@ open class InputEventKey(
     set(value) {
       setUnicode(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getScancode(): Int {
     val _ret = __method_bind.getScancode.call(this._handle)
@@ -87,15 +94,12 @@ open class InputEventKey(
   }
 
   companion object {
-    fun new(): InputEventKey = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventKey".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for InputEventKey" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      InputEventKey(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): InputEventKey = InputEventKey(ptr)
     /**
      * Container for method_bind pointers for InputEventKey
      */

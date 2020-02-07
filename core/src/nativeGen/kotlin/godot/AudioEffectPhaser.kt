@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioEffectPhaser(
-  _handle: COpaquePointer
-) : AudioEffect(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioEffect(null) {
   var depth: Float
     get() {
        return getDepth() 
@@ -57,6 +60,10 @@ open class AudioEffectPhaser(
     set(value) {
       setRateHz(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getDepth(): Float {
     val _ret = __method_bind.getDepth.call(this._handle)
@@ -109,16 +116,13 @@ open class AudioEffectPhaser(
   }
 
   companion object {
-    fun new(): AudioEffectPhaser = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectPhaser".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectPhaser" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioEffectPhaser(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioEffectPhaser = AudioEffectPhaser(ptr)
     /**
      * Container for method_bind pointers for AudioEffectPhaser
      */

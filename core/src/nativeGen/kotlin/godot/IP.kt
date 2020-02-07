@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class IP(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun clearCache(hostname: String = "") {
     val _arg = Variant.new(hostname)
     __method_bind.clearCache.call(this._handle, listOf(_arg))
@@ -118,9 +120,9 @@ open class IP(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("IP".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton IP" }
-        IP(
-          handle
-        )
+        val ret = IP(null)
+        ret._handle = handle
+        ret
       }
     val RESOLVER_INVALID_ID: Int = -1
 

@@ -9,6 +9,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Camera2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var anchorMode: AnchorMode
     get() {
        return getAnchorMode() 
@@ -213,6 +216,10 @@ open class Camera2D(
     set(value) {
       setZoom(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for offset
@@ -492,15 +499,12 @@ open class Camera2D(
   }
 
   companion object {
-    fun new(): Camera2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Camera2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Camera2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Camera2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Camera2D = Camera2D(ptr)
     /**
      * Container for method_bind pointers for Camera2D
      */

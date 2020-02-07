@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CSGShape(
-  _handle: COpaquePointer
-) : GeometryInstance(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : GeometryInstance(null) {
   var calculateTangents: Boolean
     get() {
        return isCalculatingTangents() 
@@ -67,6 +70,10 @@ open class CSGShape(
     set(value) {
       setUseCollision(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getCollisionLayer(): Int {
     val _ret = __method_bind.getCollisionLayer.call(this._handle)

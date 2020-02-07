@@ -14,6 +14,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -24,8 +25,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Image(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun blendRect(
     src: Image,
     srcRect: Rect2,
@@ -551,15 +557,12 @@ open class Image(
 
     val MAX_WIDTH: Int = 16384
 
-    fun new(): Image = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Image".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Image" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Image(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Image = Image(ptr)
     /**
      * Container for method_bind pointers for Image
      */

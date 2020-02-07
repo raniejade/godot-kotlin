@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class AudioStreamRandomPitch(
-  _handle: COpaquePointer
-) : AudioStream(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : AudioStream(null) {
   var audioStream: AudioStream
     get() {
        return getAudioStream() 
@@ -33,6 +36,10 @@ open class AudioStreamRandomPitch(
     set(value) {
       setRandomPitch(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getAudioStream(): AudioStream {
     val _ret = __method_bind.getAudioStream.call(this._handle)
@@ -55,16 +62,13 @@ open class AudioStreamRandomPitch(
   }
 
   companion object {
-    fun new(): AudioStreamRandomPitch = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamRandomPitch".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioStreamRandomPitch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      AudioStreamRandomPitch(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): AudioStreamRandomPitch = AudioStreamRandomPitch(ptr)
     /**
      * Container for method_bind pointers for AudioStreamRandomPitch
      */

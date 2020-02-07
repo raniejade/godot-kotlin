@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CurveTexture(
-  _handle: COpaquePointer
-) : Texture(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Texture(null) {
   var curve: Curve
     get() {
        return getCurve() 
@@ -33,6 +36,10 @@ open class CurveTexture(
     set(value) {
       setWidth(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getCurve(): Curve {
     val _ret = __method_bind.getCurve.call(this._handle)
@@ -50,15 +57,12 @@ open class CurveTexture(
   }
 
   companion object {
-    fun new(): CurveTexture = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CurveTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CurveTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CurveTexture(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CurveTexture = CurveTexture(ptr)
     /**
      * Container for method_bind pointers for CurveTexture
      */

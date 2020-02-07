@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CSGCylinder(
-  _handle: COpaquePointer
-) : CSGPrimitive(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : CSGPrimitive(null) {
   var cone: Boolean
     get() {
        return isCone() 
@@ -67,6 +70,10 @@ open class CSGCylinder(
     set(value) {
       setSmoothFaces(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getHeight(): Float {
     val _ret = __method_bind.getHeight.call(this._handle)
@@ -129,15 +136,12 @@ open class CSGCylinder(
   }
 
   companion object {
-    fun new(): CSGCylinder = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGCylinder".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CSGCylinder" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CSGCylinder(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CSGCylinder = CSGCylinder(ptr)
     /**
      * Container for method_bind pointers for CSGCylinder
      */

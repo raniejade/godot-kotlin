@@ -9,6 +9,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -20,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CollisionPolygon2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   var buildMode: BuildMode
     get() {
        return getBuildMode() 
@@ -61,6 +64,10 @@ open class CollisionPolygon2D(
     set(value) {
       setPolygon(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for polygon
@@ -141,16 +148,13 @@ open class CollisionPolygon2D(
   }
 
   companion object {
-    fun new(): CollisionPolygon2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionPolygon2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CollisionPolygon2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CollisionPolygon2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CollisionPolygon2D = CollisionPolygon2D(ptr)
     /**
      * Container for method_bind pointers for CollisionPolygon2D
      */

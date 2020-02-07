@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Reference(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun initRef(): Boolean {
     val _ret = __method_bind.initRef.call(this._handle)
     return _ret.asBoolean()
@@ -34,15 +41,12 @@ open class Reference(
   }
 
   companion object {
-    fun new(): Reference = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Reference".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Reference" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Reference(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Reference = Reference(ptr)
     /**
      * Container for method_bind pointers for Reference
      */

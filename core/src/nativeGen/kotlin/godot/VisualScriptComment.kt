@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptComment(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var description: String
     get() {
        return getDescription() 
@@ -43,6 +45,10 @@ open class VisualScriptComment(
     set(value) {
       setTitle(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for size
@@ -84,16 +90,13 @@ open class VisualScriptComment(
   }
 
   companion object {
-    fun new(): VisualScriptComment = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptComment".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptComment" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptComment(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptComment = VisualScriptComment(ptr)
     /**
      * Container for method_bind pointers for VisualScriptComment
      */

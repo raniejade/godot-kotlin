@@ -10,6 +10,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Node2D(
-  _handle: COpaquePointer
-) : CanvasItem(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : CanvasItem(null) {
   var globalPosition: Vector2
     get() {
        return getGlobalPosition() 
@@ -118,6 +121,10 @@ open class Node2D(
     set(value) {
       setZIndex(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for globalPosition
@@ -347,15 +354,12 @@ open class Node2D(
   }
 
   companion object {
-    fun new(): Node2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Node2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Node2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Node2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Node2D = Node2D(ptr)
     /**
      * Container for method_bind pointers for Node2D
      */

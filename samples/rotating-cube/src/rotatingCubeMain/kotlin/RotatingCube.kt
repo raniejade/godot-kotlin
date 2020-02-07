@@ -2,7 +2,7 @@ import godot.*
 import godot.core.Vector3
 import kotlinx.cinterop.COpaquePointer
 
-class RotatingCube(handle: COpaquePointer): Spatial(handle) {
+class RotatingCube: Spatial() {
   var rotationSpeed by floatProperty()
   // signal emitted when reverse property is changed
   val signalReverseChanged by signal1<Boolean>()
@@ -49,7 +49,5 @@ class RotatingCube(handle: COpaquePointer): Spatial(handle) {
         registerSignal(RotatingCube::signalReverseChanged, "reverse")
       }
     }
-
-    override fun createBaseClass() = Spatial.new()
   }
 }

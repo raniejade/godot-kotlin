@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.PoolVector2Array
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ConvexPolygonShape2D(
-  _handle: COpaquePointer
-) : Shape2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shape2D(null) {
   var points: PoolVector2Array
     get() {
        return getPoints() 
@@ -26,6 +29,10 @@ open class ConvexPolygonShape2D(
     set(value) {
       setPoints(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for points
@@ -52,16 +59,13 @@ open class ConvexPolygonShape2D(
   }
 
   companion object {
-    fun new(): ConvexPolygonShape2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConvexPolygonShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ConvexPolygonShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ConvexPolygonShape2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ConvexPolygonShape2D = ConvexPolygonShape2D(ptr)
     /**
      * Container for method_bind pointers for ConvexPolygonShape2D
      */

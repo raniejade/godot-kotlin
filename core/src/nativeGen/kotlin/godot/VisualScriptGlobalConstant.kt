@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptGlobalConstant(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
   var constant: Int
     get() {
        return getGlobalConstant() 
@@ -25,6 +28,10 @@ open class VisualScriptGlobalConstant(
     set(value) {
       setGlobalConstant(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getGlobalConstant(): Int {
     val _ret = __method_bind.getGlobalConstant.call(this._handle)
@@ -37,16 +44,13 @@ open class VisualScriptGlobalConstant(
   }
 
   companion object {
-    fun new(): VisualScriptGlobalConstant = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptGlobalConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptGlobalConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptGlobalConstant(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptGlobalConstant = VisualScriptGlobalConstant(ptr)
     /**
      * Container for method_bind pointers for VisualScriptGlobalConstant
      */

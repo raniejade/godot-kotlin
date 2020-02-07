@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VehicleWheel(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var brake: Float
     get() {
        return getBrake() 
@@ -130,6 +133,10 @@ open class VehicleWheel(
     set(value) {
       setRollInfluence(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getBrake(): Float {
     val _ret = __method_bind.getBrake.call(this._handle)
@@ -287,15 +294,12 @@ open class VehicleWheel(
   }
 
   companion object {
-    fun new(): VehicleWheel = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VehicleWheel".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VehicleWheel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VehicleWheel(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VehicleWheel = VehicleWheel(ptr)
     /**
      * Container for method_bind pointers for VehicleWheel
      */

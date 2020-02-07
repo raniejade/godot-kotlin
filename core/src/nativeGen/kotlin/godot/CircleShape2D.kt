@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CircleShape2D(
-  _handle: COpaquePointer
-) : Shape2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Shape2D(null) {
   var radius: Float
     get() {
        return getRadius() 
@@ -25,6 +28,10 @@ open class CircleShape2D(
     set(value) {
       setRadius(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getRadius(): Float {
     val _ret = __method_bind.getRadius.call(this._handle)
@@ -37,15 +44,12 @@ open class CircleShape2D(
   }
 
   companion object {
-    fun new(): CircleShape2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CircleShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CircleShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CircleShape2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CircleShape2D = CircleShape2D(ptr)
     /**
      * Container for method_bind pointers for CircleShape2D
      */

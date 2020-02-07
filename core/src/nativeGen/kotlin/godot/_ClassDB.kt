@@ -11,6 +11,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,8 +22,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class _ClassDB(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun canInstance(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
     val _ret = __method_bind.canInstance.call(this._handle, listOf(_arg))
@@ -182,9 +184,9 @@ open class _ClassDB(
       get() = memScoped {
         val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ClassDB".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton _ClassDB" }
-        _ClassDB(
-          handle
-        )
+        val ret = _ClassDB(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for _ClassDB

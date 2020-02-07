@@ -7,6 +7,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisibilityNotifier(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var aabb: AABB
     get() {
        return getAabb() 
@@ -48,6 +51,10 @@ open class VisibilityNotifier(
    */
   val signalScreenExited: Signal0 = Signal0("screen_exited")
 
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   /**
    * Specialized setter for aabb
    */
@@ -73,16 +80,13 @@ open class VisibilityNotifier(
   }
 
   companion object {
-    fun new(): VisibilityNotifier = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityNotifier".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisibilityNotifier" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisibilityNotifier(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisibilityNotifier = VisibilityNotifier(ptr)
     /**
      * Container for method_bind pointers for VisibilityNotifier
      */

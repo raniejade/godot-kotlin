@@ -7,6 +7,8 @@ import godot.core.RID
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PhysicsShapeQueryResult(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun getResultCount(): Int {
     val _ret = __method_bind.getResultCount.call(this._handle)
     return _ret.asInt()

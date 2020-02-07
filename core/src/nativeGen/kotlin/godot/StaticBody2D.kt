@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class StaticBody2D(
-  _handle: COpaquePointer
-) : PhysicsBody2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : PhysicsBody2D(null) {
   var bounce: Float
     get() {
        return getBounce() 
@@ -59,6 +62,10 @@ open class StaticBody2D(
     set(value) {
       setPhysicsMaterialOverride(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for constantLinearVelocity
@@ -120,15 +127,12 @@ open class StaticBody2D(
   }
 
   companion object {
-    fun new(): StaticBody2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StaticBody2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for StaticBody2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      StaticBody2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): StaticBody2D = StaticBody2D(ptr)
     /**
      * Container for method_bind pointers for StaticBody2D
      */

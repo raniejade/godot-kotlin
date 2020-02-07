@@ -10,6 +10,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +22,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class BitMap(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun create(size: Vector2) {
     val _arg = Variant.new(size)
     __method_bind.create.call(this._handle, listOf(_arg))
@@ -80,15 +87,12 @@ open class BitMap(
   }
 
   companion object {
-    fun new(): BitMap = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BitMap".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for BitMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      BitMap(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): BitMap = BitMap(ptr)
     /**
      * Container for method_bind pointers for BitMap
      */

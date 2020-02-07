@@ -10,6 +10,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class StyleBoxFlat(
-  _handle: COpaquePointer
-) : StyleBox(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : StyleBox(null) {
   var antiAliasing: Boolean
     get() {
        return isAntiAliased() 
@@ -198,6 +201,10 @@ open class StyleBoxFlat(
     set(value) {
       setShadowSize(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for bgColor
@@ -423,15 +430,12 @@ open class StyleBoxFlat(
   }
 
   companion object {
-    fun new(): StyleBoxFlat = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StyleBoxFlat".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for StyleBoxFlat" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      StyleBoxFlat(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): StyleBoxFlat = StyleBoxFlat(ptr)
     /**
      * Container for method_bind pointers for StyleBoxFlat
      */

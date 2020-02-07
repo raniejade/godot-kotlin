@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Curve(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var bakeResolution: Int
     get() {
        return getBakeResolution() 
@@ -48,6 +51,10 @@ open class Curve(
    * Curve::range_changed signal
    */
   val signalRangeChanged: Signal0 = Signal0("range_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun addPoint(
     position: Vector2,
@@ -225,15 +232,12 @@ open class Curve(
   }
 
   companion object {
-    fun new(): Curve = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Curve".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Curve" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Curve(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Curve = Curve(ptr)
     /**
      * Container for method_bind pointers for Curve
      */

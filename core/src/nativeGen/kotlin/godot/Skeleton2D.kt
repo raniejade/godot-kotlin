@@ -7,6 +7,8 @@ import godot.core.RID
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,12 +19,17 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Skeleton2D(
-  _handle: COpaquePointer
-) : Node2D(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node2D(null) {
   /**
    * Skeleton2D::bone_setup_changed signal
    */
   val signalBoneSetupChanged: Signal0 = Signal0("bone_setup_changed")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getBone(idx: Int): Bone2D {
     val _arg = Variant.new(idx)
@@ -41,15 +48,12 @@ open class Skeleton2D(
   }
 
   companion object {
-    fun new(): Skeleton2D = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Skeleton2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Skeleton2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Skeleton2D(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Skeleton2D = Skeleton2D(ptr)
     /**
      * Container for method_bind pointers for Skeleton2D
      */

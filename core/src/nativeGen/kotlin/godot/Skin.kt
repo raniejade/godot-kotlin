@@ -7,6 +7,8 @@ import godot.core.Transform
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Skin(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addBind(bone: Int, pose: Transform) {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(bone))
@@ -67,15 +74,12 @@ open class Skin(
   }
 
   companion object {
-    fun new(): Skin = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Skin".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Skin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Skin(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Skin = Skin(ptr)
     /**
      * Container for method_bind pointers for Skin
      */

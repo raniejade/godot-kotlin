@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeScalarOp(
-  _handle: COpaquePointer
-) : VisualShaderNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNode(null) {
   var operator: Operator
     get() {
        return getOperator() 
@@ -25,6 +28,10 @@ open class VisualShaderNodeScalarOp(
     set(value) {
       setOperator(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getOperator(): Operator {
     val _ret = __method_bind.getOperator.call(this._handle)
@@ -72,16 +79,13 @@ open class VisualShaderNodeScalarOp(
   }
 
   companion object {
-    fun new(): VisualShaderNodeScalarOp = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeScalarOp".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeScalarOp" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeScalarOp(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeScalarOp = VisualShaderNodeScalarOp(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeScalarOp
      */

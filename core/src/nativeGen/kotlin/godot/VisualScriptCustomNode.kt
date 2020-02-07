@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,8 +17,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualScriptCustomNode(
-  _handle: COpaquePointer
-) : VisualScriptNode(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualScriptNode(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   enum class StartMode(
     val value: Int
   ) {
@@ -49,16 +56,13 @@ open class VisualScriptCustomNode(
 
     val STEP_YIELD_BIT: Int = 268435456
 
-    fun new(): VisualScriptCustomNode = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptCustomNode".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptCustomNode" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualScriptCustomNode(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualScriptCustomNode = VisualScriptCustomNode(ptr)
     /**
      * Container for method_bind pointers for VisualScriptCustomNode
      */

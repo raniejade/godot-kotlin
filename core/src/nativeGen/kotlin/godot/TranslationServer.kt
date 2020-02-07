@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +17,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class TranslationServer(
-  _handle: COpaquePointer
-) : Object(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Object(null) {
   fun addTranslation(translation: Translation) {
     val _arg = Variant.new(translation)
     __method_bind.addTranslation.call(this._handle, listOf(_arg))
@@ -65,9 +67,9 @@ open class TranslationServer(
         val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("TranslationServer".cstr.ptr)
         requireNotNull(handle) { "No instance found for singleton TranslationServer" }
-        TranslationServer(
-          handle
-        )
+        val ret = TranslationServer(null)
+        ret._handle = handle
+        ret
       }
     /**
      * Container for method_bind pointers for TranslationServer

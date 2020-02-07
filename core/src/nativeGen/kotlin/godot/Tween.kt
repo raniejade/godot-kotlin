@@ -10,6 +10,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Tween(
-  _handle: COpaquePointer
-) : Node(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Node(null) {
   var playbackProcessMode: TweenProcessMode
     get() {
        return getTweenProcessMode() 
@@ -65,6 +67,10 @@ open class Tween(
    * Tween::tween_step signal
    */
   val signalTweenStep: Signal4<Object, NodePath, Float, Object> = Signal4("tween_step")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun followMethod(
     `object`: Object,
@@ -451,15 +457,12 @@ open class Tween(
   }
 
   companion object {
-    fun new(): Tween = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Tween".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Tween" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      Tween(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): Tween = Tween(ptr)
     /**
      * Container for method_bind pointers for Tween
      */

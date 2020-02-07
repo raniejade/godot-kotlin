@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class Material(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
   var nextPass: Material
     get() {
        return getNextPass() 
@@ -33,6 +36,10 @@ open class Material(
     set(value) {
       setRenderPriority(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getNextPass(): Material {
     val _ret = __method_bind.getNextPass.call(this._handle)

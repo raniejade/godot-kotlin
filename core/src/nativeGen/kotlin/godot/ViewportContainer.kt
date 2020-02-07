@@ -7,6 +7,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +19,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ViewportContainer(
-  _handle: COpaquePointer
-) : Container(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Container(null) {
   var stretch: Boolean
     get() {
        return isStretchEnabled() 
@@ -34,6 +37,10 @@ open class ViewportContainer(
     set(value) {
       setStretchShrink(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getStretchShrink(): Int {
     val _ret = __method_bind.getStretchShrink.call(this._handle)
@@ -56,16 +63,13 @@ open class ViewportContainer(
   }
 
   companion object {
-    fun new(): ViewportContainer = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ViewportContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ViewportContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ViewportContainer(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ViewportContainer = ViewportContainer(ptr)
     /**
      * Container for method_bind pointers for ViewportContainer
      */

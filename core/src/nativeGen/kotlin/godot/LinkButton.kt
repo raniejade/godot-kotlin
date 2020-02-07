@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class LinkButton(
-  _handle: COpaquePointer
-) : BaseButton(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : BaseButton(null) {
   var text: String
     get() {
        return getText() 
@@ -34,6 +36,10 @@ open class LinkButton(
     set(value) {
       setUnderlineMode(value.value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getText(): String {
     val _ret = __method_bind.getText.call(this._handle)
@@ -77,15 +83,12 @@ open class LinkButton(
   }
 
   companion object {
-    fun new(): LinkButton = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LinkButton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for LinkButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      LinkButton(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): LinkButton = LinkButton(ptr)
     /**
      * Container for method_bind pointers for LinkButton
      */

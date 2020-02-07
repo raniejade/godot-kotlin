@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -14,20 +16,21 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeScalarUniform(
-  _handle: COpaquePointer
-) : VisualShaderNodeUniform(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : VisualShaderNodeUniform(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   companion object {
-    fun new(): VisualShaderNodeScalarUniform = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeScalarUniform".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeScalarUniform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      VisualShaderNodeScalarUniform(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): VisualShaderNodeScalarUniform =
-        VisualShaderNodeScalarUniform(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeScalarUniform
      */

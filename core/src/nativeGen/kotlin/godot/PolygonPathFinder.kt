@@ -12,6 +12,8 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -22,8 +24,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PolygonPathFinder(
-  _handle: COpaquePointer
-) : Resource(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Resource(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun findPath(from: Vector2, to: Vector2): PoolVector2Array {
     val _args = mutableListOf<Variant>()
     _args.add(Variant.fromAny(from))
@@ -78,16 +85,13 @@ open class PolygonPathFinder(
   }
 
   companion object {
-    fun new(): PolygonPathFinder = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PolygonPathFinder".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PolygonPathFinder" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PolygonPathFinder(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PolygonPathFinder = PolygonPathFinder(ptr)
     /**
      * Container for method_bind pointers for PolygonPathFinder
      */

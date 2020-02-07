@@ -8,7 +8,7 @@ import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 abstract class GodotClass<S: Object, T: S>(
-  val factory: (COpaquePointer) -> T
+  val factory: () -> T
 ) {
 
   internal val _signals = AtomicReference<Map<String, Signal>>(emptyMap())
@@ -24,17 +24,6 @@ abstract class GodotClass<S: Object, T: S>(
   }
 
   open fun init(registry: ClassMemberRegistry<T>) {}
-
-  fun new() : T {
-    val base = createBaseClass()
-    return factory(base._handle)
-  }
-
-  fun from(ptr: COpaquePointer): T {
-    return factory(ptr)
-  }
-
-  protected abstract fun createBaseClass(): S
 
   private class PropertyDelegate<T, R: Any>(val changeListener: ChangeListener<T, R>) : ReadWriteProperty<T, R> {
     private lateinit var value: R

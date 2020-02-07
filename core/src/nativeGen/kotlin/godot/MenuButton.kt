@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,8 +18,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class MenuButton(
-  _handle: COpaquePointer
-) : Button(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Button(null) {
   var switchOnHover: Boolean
     get() {
        return isSwitchOnHover() 
@@ -30,6 +33,10 @@ open class MenuButton(
    * MenuButton::about_to_show signal
    */
   val signalAboutToShow: Signal0 = Signal0("about_to_show")
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getPopup(): PopupMenu {
     val _ret = __method_bind.getPopup.call(this._handle)
@@ -52,15 +59,12 @@ open class MenuButton(
   }
 
   companion object {
-    fun new(): MenuButton = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MenuButton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MenuButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      MenuButton(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): MenuButton = MenuButton(ptr)
     /**
      * Container for method_bind pointers for MenuButton
      */

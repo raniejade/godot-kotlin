@@ -8,6 +8,8 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -19,8 +21,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class CollisionPolygon(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var depth: Float
     get() {
        return getDepth() 
@@ -44,6 +47,10 @@ open class CollisionPolygon(
     set(value) {
       setPolygon(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   /**
    * Specialized setter for polygon
@@ -85,16 +92,13 @@ open class CollisionPolygon(
   }
 
   companion object {
-    fun new(): CollisionPolygon = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionPolygon".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CollisionPolygon" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      CollisionPolygon(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): CollisionPolygon = CollisionPolygon(ptr)
     /**
      * Container for method_bind pointers for CollisionPolygon
      */

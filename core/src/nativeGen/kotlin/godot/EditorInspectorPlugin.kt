@@ -7,6 +7,7 @@ import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,8 +18,13 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class EditorInspectorPlugin(
-  _handle: COpaquePointer
-) : Reference(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Reference(null) {
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   fun addCustomControl(control: Control) {
     val _arg = Variant.new(control)
     __method_bind.addCustomControl.call(this._handle, listOf(_arg))

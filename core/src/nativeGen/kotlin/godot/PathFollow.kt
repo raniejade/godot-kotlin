@@ -8,6 +8,8 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,8 +20,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class PathFollow(
-  _handle: COpaquePointer
-) : Spatial(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Spatial(null) {
   var cubicInterp: Boolean
     get() {
        return getCubicInterpolation() 
@@ -75,6 +78,10 @@ open class PathFollow(
     set(value) {
       setVOffset(value)
     }
+
+  constructor() : this(null) {
+    _handle = __new()
+  }
 
   fun getCubicInterpolation(): Boolean {
     val _ret = __method_bind.getCubicInterpolation.call(this._handle)
@@ -172,15 +179,12 @@ open class PathFollow(
   }
 
   companion object {
-    fun new(): PathFollow = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PathFollow".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PathFollow" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      PathFollow(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): PathFollow = PathFollow(ptr)
     /**
      * Container for method_bind pointers for PathFollow
      */

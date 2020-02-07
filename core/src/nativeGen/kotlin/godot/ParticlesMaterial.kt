@@ -10,6 +10,8 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
+import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
 import kotlinx.cinterop.CFunction
@@ -21,8 +23,9 @@ import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
 open class ParticlesMaterial(
-  _handle: COpaquePointer
-) : Material(_handle) {
+  @Suppress("UNUSED_PARAMETER")
+  __ignore: String?
+) : Material(null) {
   var angle: Float
     get() {
        return getParam(7) 
@@ -463,6 +466,10 @@ open class ParticlesMaterial(
       setTrailSizeModifier(value)
     }
 
+  constructor() : this(null) {
+    _handle = __new()
+  }
+
   /**
    * Specialized setter for color
    */
@@ -813,16 +820,13 @@ open class ParticlesMaterial(
   }
 
   companion object {
-    fun new(): ParticlesMaterial = memScoped {
+    internal fun __new(): COpaquePointer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ParticlesMaterial".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ParticlesMaterial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-      ParticlesMaterial(
-        fn()
-      )
+      fn()
     }
-    fun from(ptr: COpaquePointer): ParticlesMaterial = ParticlesMaterial(ptr)
     /**
      * Container for method_bind pointers for ParticlesMaterial
      */
