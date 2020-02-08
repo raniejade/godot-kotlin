@@ -14,7 +14,8 @@ gradlePlugin {
   plugins {
     create("godotPlugin") {
       id = "com.github.raniejade.godot-kotlin"
-      description = "A plugin for godot-kotlin (Kotlin Native binding for Godot)/"
+      displayName = "Gradle plugin for godot-kotlin"
+      description = "A plugin for godot-kotlin (Kotlin Native binding for Godot)."
       implementationClass = "godot.gradle.GodotPlugin"
     }
   }
