@@ -1,5 +1,3 @@
-# API differences
-
 ## Instance types and singletons
 Creating a new instance of a Godot type can be done like any Kotlin types.
 

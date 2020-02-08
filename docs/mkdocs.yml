@@ -1,10 +1,30 @@
-site_name: godot-kotlin
+site_name: Kotlin Native binding for Godot
 docs_dir: src/doc
 
 theme:
   name: material
+  palette:
+    primary: blue
+    accent: light-blue
+  logo:
+    icon: 'device_hub'
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/raniejade'
+    - type: 'twitter'
+      link: 'https://twitter.com/raniejade'
 
 markdown_extensions:
   - codehilite:
       linenums: true
   - pymdownx.inlinehilite
+
+
+nav:
+  - Overview: index.md
+  - API differences: api-differences.md
+  - Supported platforms: supported-platforms.md
+  - User guide:
+    - Setting up: user-guide/setting-up.md

@@ -1,5 +1,3 @@
-# Setting up
-
 ## Overview
 This binding uses [Gradle](https://gradle.org) as its build tool and provides a plugin to get you started quickly. The following shows a typical project structure.
 
@@ -49,7 +47,7 @@ In the above example, you are telling the plugin to create a library (that can b
 
 The plugin automatically generates the appropriate `gdnlib` and `gdns` files which can be found at `src/godot/gdnlib` and `src/godot/gdns`, respectively. It is up to you whether you want to include those files in source control or not.
 
-By default the plugin is configured to build all [supported platforms](03_supported-platforms.md). This can be changed via the `platforms` property of the library.
+By default the plugin is configured to build all [supported platforms](supported-platforms.md). This can be changed via the `platforms` property of the library.
 
 ```kotlin
 godot {
