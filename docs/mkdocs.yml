@@ -1,0 +1,10 @@
+site_name: godot-kotlin
+docs_dir: src/doc
+
+theme:
+  name: material
+
+markdown_extensions:
+  - codehilite:
+      linenums: true
+  - pymdownx.inlinehilite
