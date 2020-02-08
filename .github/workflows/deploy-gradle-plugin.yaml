@@ -1,4 +1,4 @@
-name: Build
+name: Deploy Gradle Plugin
 on:
   push:
     tags:
