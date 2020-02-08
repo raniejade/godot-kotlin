@@ -5,7 +5,7 @@
 
 `godot-kotlin` is a Kotlin Native binding for the [Godot](https://godotengine.org) game engine which allows you to write your game's logic in [Kotlin](https://kotlinlang.org).
 
-If you are new to this binding, it is recommended to read through the `Getting Started` section of the user guide. The section describes how this project is versioned, API differences between Godot's in-house scripting language `GDScript`, and how to setup a new project.
+If you are new to this binding, it is recommended to read through versioning section of this page and the [API differences](api-differences.md) section which describes main differences between Godot's in-house scripting language `GDScript` and this binding.
 
 ## Versioning
 

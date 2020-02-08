@@ -28,3 +28,7 @@ nav:
   - Supported platforms: supported-platforms.md
   - User guide:
     - Setting up: user-guide/setting-up.md
+    - Classes: user-guide/classes.md
+    - Methods: user-guide/methods.md
+    - Signals: user-guide/signals.md
+    - Properties: user-guide/properties.md

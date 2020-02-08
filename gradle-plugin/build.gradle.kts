@@ -49,6 +49,13 @@ tasks {
       filter<ReplaceTokens>("tokens" to tokens)
     }
   }
+
+  val sourceJar by creating(Jar::class) {
+    archiveBaseName.set("godot-kotlin-gradle-plugin")
+    archiveVersion.set(project.version.toString())
+    archiveClassifier.set("sources")
+    from(sourceSets["main"].allSource)
+  }
 }
 
 if (Files.exists(Paths.get("$rootDir/../local.properties"))) {
@@ -70,6 +77,7 @@ publishing {
       groupId = "com.github.raniejade"
       artifactId = "godot-kotlin-gradle-plugin"
       from(components["java"])
+      artifact(tasks.getByName("sourceJar"))
     }
   }
 }
