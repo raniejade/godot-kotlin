@@ -7,16 +7,24 @@ import java.util.*
 plugins {
   `kotlin-dsl`
   `maven-publish`
+  id("com.gradle.plugin-publish") version "0.10.1"
 }
 
 gradlePlugin {
   plugins {
     create("godotPlugin") {
       id = "com.github.raniejade.godot-kotlin"
+      description = "A plugin for godot-kotlin (Kotlin Native binding for Godot)/"
       implementationClass = "godot.gradle.GodotPlugin"
     }
   }
   isAutomatedPublishing = false
+}
+
+pluginBundle {
+  website = "https://github.com/raniejade/godot-kotlin"
+  vcsUrl = "https://github.com/raniejade/godot-kotlin.git"
+  tags = listOf("kotlin", "godot", "gamedev")
 }
 
 repositories {
