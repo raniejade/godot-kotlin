@@ -28,6 +28,14 @@ class Basis(
     }
   }
 
+  fun getAxis(index: Int): Vector3 {
+    return memScoped {
+      Vector3(
+        checkNotNull(Godot.gdnative.godot_basis_get_axis)(_value.ptr, index)
+      )
+    }
+  }
+
   fun getOrthogonalIndex(): Int {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_basis_get_orthogonal_index)(_value.ptr)
@@ -160,6 +168,8 @@ class Basis(
       }
     }
   }
+
+  operator fun get(index: Int): Vector3 = getAxis(index)
 
   override fun hashCode(): Int {
     return _value.hashCode()
