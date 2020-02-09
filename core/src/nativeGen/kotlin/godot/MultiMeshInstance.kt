@@ -34,7 +34,7 @@ open class MultiMeshInstance(
 
   fun getMultimesh(): MultiMesh {
     val _ret = __method_bind.getMultimesh.call(this._handle)
-    return _ret.asObject(::MultiMesh)!!
+    return _ret.toAny() as MultiMesh
   }
 
   fun setMultimesh(multimesh: MultiMesh) {

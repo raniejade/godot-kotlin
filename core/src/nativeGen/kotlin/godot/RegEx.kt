@@ -67,7 +67,7 @@ open class RegEx(
     _args.add(Variant.fromAny(offset))
     _args.add(Variant.fromAny(end))
     val _ret = __method_bind.search.call(this._handle, _args)
-    return _ret.asObject(::RegExMatch)!!
+    return _ret.toAny() as RegExMatch
   }
 
   fun searchAll(

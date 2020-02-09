@@ -85,7 +85,7 @@ open class KinematicBody(
   fun getSlideCollision(slideIdx: Int): KinematicCollision {
     val _arg = Variant(slideIdx)
     val _ret = __method_bind.getSlideCollision.call(this._handle, listOf(_arg))
-    return _ret.asObject(::KinematicCollision)!!
+    return _ret.toAny() as KinematicCollision
   }
 
   fun getSlideCount(): Int {
@@ -120,7 +120,7 @@ open class KinematicBody(
     _args.add(Variant.fromAny(excludeRaycastShapes))
     _args.add(Variant.fromAny(testOnly))
     val _ret = __method_bind.moveAndCollide.call(this._handle, _args)
-    return _ret.asObject(::KinematicCollision)!!
+    return _ret.toAny() as KinematicCollision
   }
 
   fun moveAndSlide(

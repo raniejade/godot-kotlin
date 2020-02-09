@@ -31,12 +31,12 @@ open class EditorScript(
 
   fun getEditorInterface(): EditorInterface {
     val _ret = __method_bind.getEditorInterface.call(this._handle)
-    return _ret.asObject(::EditorInterface)!!
+    return _ret.toAny() as EditorInterface
   }
 
   fun getScene(): Node {
     val _ret = __method_bind.getScene.call(this._handle)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   companion object {

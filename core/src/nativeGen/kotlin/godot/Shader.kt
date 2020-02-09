@@ -42,7 +42,7 @@ open class Shader(
   fun getDefaultTextureParam(param: String): Texture {
     val _arg = Variant(param)
     val _ret = __method_bind.getDefaultTextureParam.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getMode(): Mode {

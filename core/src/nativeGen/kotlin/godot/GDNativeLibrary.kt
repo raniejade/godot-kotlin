@@ -68,7 +68,7 @@ open class GDNativeLibrary(
 
   fun getConfigFile(): ConfigFile {
     val _ret = __method_bind.getConfigFile.call(this._handle)
-    return _ret.asObject(::ConfigFile)!!
+    return _ret.toAny() as ConfigFile
   }
 
   fun getCurrentDependencies(): PoolStringArray {

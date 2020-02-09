@@ -62,7 +62,7 @@ open class Navigation(
   fun getClosestPointOwner(toPoint: Vector3): Object {
     val _arg = Variant(toPoint)
     val _ret = __method_bind.getClosestPointOwner.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Object)!!
+    return _ret.toAny() as Object
   }
 
   fun getClosestPointToSegment(

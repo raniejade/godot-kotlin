@@ -34,7 +34,7 @@ open class PhysicsShapeQueryResult(
   fun getResultObject(idx: Int): Object {
     val _arg = Variant(idx)
     val _ret = __method_bind.getResultObject.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Object)!!
+    return _ret.toAny() as Object
   }
 
   fun getResultObjectId(idx: Int): Int {

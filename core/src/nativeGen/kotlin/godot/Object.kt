@@ -110,6 +110,10 @@ open class Object(
     __method_bind.emitSignal.call(this._handle, _args)
   }
 
+  fun free() {
+    __method_bind.free.call(this._handle)
+  }
+
   fun get(property: String): Variant {
     val _arg = Variant(property)
     val _ret = __method_bind.get.call(this._handle, listOf(_arg))
@@ -160,7 +164,7 @@ open class Object(
 
   fun getScript(): Reference {
     val _ret = __method_bind.getScript.call(this._handle)
-    return _ret.asObject(::Reference)!!
+    return _ret.toAny() as Reference
   }
 
   fun getSignalConnectionList(signal: String): VariantArray {
@@ -289,10 +293,6 @@ open class Object(
     val _arg = Variant(message)
     val _ret = __method_bind.tr.call(this._handle, listOf(_arg))
     return _ret.asString()
-  }
-
-  fun free() {
-    checkNotNull(Godot.gdnative.godot_object_destroy)(_handle)
   }
 
   open fun _onInit() {
@@ -738,6 +738,12 @@ open class Object(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
             "emit_signal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method emit_signal" }
+        }
+      val free: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+            "free".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method free" }
         }
       val get: CPointer<godot_method_bind>
         get() = memScoped {

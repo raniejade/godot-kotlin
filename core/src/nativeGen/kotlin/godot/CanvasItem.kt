@@ -488,7 +488,7 @@ open class CanvasItem(
 
   fun getMaterial(): Material {
     val _ret = __method_bind.getMaterial.call(this._handle)
-    return _ret.asObject(::Material)!!
+    return _ret.toAny() as Material
   }
 
   fun getModulate(): Color {
@@ -523,7 +523,7 @@ open class CanvasItem(
 
   fun getWorld2d(): World2D {
     val _ret = __method_bind.getWorld2d.call(this._handle)
-    return _ret.asObject(::World2D)!!
+    return _ret.toAny() as World2D
   }
 
   fun hide() {
@@ -569,7 +569,7 @@ open class CanvasItem(
   fun makeInputLocal(event: InputEvent): InputEvent {
     val _arg = Variant(event)
     val _ret = __method_bind.makeInputLocal.call(this._handle, listOf(_arg))
-    return _ret.asObject(::InputEvent)!!
+    return _ret.toAny() as InputEvent
   }
 
   fun setAsToplevel(enable: Boolean) {

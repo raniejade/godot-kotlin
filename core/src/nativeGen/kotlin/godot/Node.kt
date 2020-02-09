@@ -141,7 +141,7 @@ open class Node(
   fun duplicate(flags: Int = 15): Node {
     val _arg = Variant(flags)
     val _ret = __method_bind.duplicate.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun findNode(
@@ -154,19 +154,19 @@ open class Node(
     _args.add(Variant.fromAny(recursive))
     _args.add(Variant.fromAny(owned))
     val _ret = __method_bind.findNode.call(this._handle, _args)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun findParent(mask: String): Node {
     val _arg = Variant(mask)
     val _ret = __method_bind.findParent.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getChild(idx: Int): Node {
     val _arg = Variant(idx)
     val _ret = __method_bind.getChild.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getChildCount(): Int {
@@ -181,7 +181,7 @@ open class Node(
 
   fun getCustomMultiplayer(): MultiplayerAPI {
     val _ret = __method_bind.getCustomMultiplayer.call(this._handle)
-    return _ret.asObject(::MultiplayerAPI)!!
+    return _ret.toAny() as MultiplayerAPI
   }
 
   fun getFilename(): String {
@@ -201,7 +201,7 @@ open class Node(
 
   fun getMultiplayer(): MultiplayerAPI {
     val _ret = __method_bind.getMultiplayer.call(this._handle)
-    return _ret.asObject(::MultiplayerAPI)!!
+    return _ret.toAny() as MultiplayerAPI
   }
 
   fun getName(): String {
@@ -217,7 +217,7 @@ open class Node(
   fun getNode(path: NodePath): Node {
     val _arg = Variant(path)
     val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getNodeAndResource(path: NodePath): VariantArray {
@@ -229,17 +229,17 @@ open class Node(
   fun getNodeOrNull(path: NodePath): Node {
     val _arg = Variant(path)
     val _ret = __method_bind.getNodeOrNull.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getOwner(): Node {
     val _ret = __method_bind.getOwner.call(this._handle)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getParent(): Node {
     val _ret = __method_bind.getParent.call(this._handle)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getPath(): NodePath {
@@ -285,12 +285,12 @@ open class Node(
 
   fun getTree(): SceneTree {
     val _ret = __method_bind.getTree.call(this._handle)
-    return _ret.asObject(::SceneTree)!!
+    return _ret.toAny() as SceneTree
   }
 
   fun getViewport(): Viewport {
     val _ret = __method_bind.getViewport.call(this._handle)
-    return _ret.asObject(::Viewport)!!
+    return _ret.toAny() as Viewport
   }
 
   fun hasNode(path: NodePath): Boolean {

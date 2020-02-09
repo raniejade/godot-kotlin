@@ -217,7 +217,7 @@ open class GraphEdit(
 
   fun getZoomHbox(): HBoxContainer {
     val _ret = __method_bind.getZoomHbox.call(this._handle)
-    return _ret.asObject(::HBoxContainer)!!
+    return _ret.toAny() as HBoxContainer
   }
 
   fun isNodeConnected(

@@ -58,17 +58,17 @@ open class World(
 
   fun getDirectSpaceState(): PhysicsDirectSpaceState {
     val _ret = __method_bind.getDirectSpaceState.call(this._handle)
-    return _ret.asObject(::PhysicsDirectSpaceState)!!
+    return _ret.toAny() as PhysicsDirectSpaceState
   }
 
   fun getEnvironment(): Environment {
     val _ret = __method_bind.getEnvironment.call(this._handle)
-    return _ret.asObject(::Environment)!!
+    return _ret.toAny() as Environment
   }
 
   fun getFallbackEnvironment(): Environment {
     val _ret = __method_bind.getFallbackEnvironment.call(this._handle)
-    return _ret.asObject(::Environment)!!
+    return _ret.toAny() as Environment
   }
 
   fun getScenario(): RID {

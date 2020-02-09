@@ -110,7 +110,7 @@ open class InputEvent(
     _args.add(Variant.fromAny(xform))
     _args.add(Variant.fromAny(localOfs))
     val _ret = __method_bind.xformedBy.call(this._handle, _args)
-    return _ret.asObject(::InputEvent)!!
+    return _ret.toAny() as InputEvent
   }
 
   companion object {

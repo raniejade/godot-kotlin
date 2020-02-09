@@ -43,7 +43,7 @@ open class CurveTexture(
 
   fun getCurve(): Curve {
     val _ret = __method_bind.getCurve.call(this._handle)
-    return _ret.asObject(::Curve)!!
+    return _ret.toAny() as Curve
   }
 
   fun setCurve(curve: Curve) {

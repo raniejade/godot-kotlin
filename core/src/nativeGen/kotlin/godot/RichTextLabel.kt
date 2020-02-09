@@ -211,7 +211,7 @@ open class RichTextLabel(
 
   fun getVScroll(): VScrollBar {
     val _ret = __method_bind.getVScroll.call(this._handle)
-    return _ret.asObject(::VScrollBar)!!
+    return _ret.toAny() as VScrollBar
   }
 
   fun getVisibleCharacters(): Int {

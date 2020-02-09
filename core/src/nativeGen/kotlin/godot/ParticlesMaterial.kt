@@ -513,7 +513,7 @@ open class ParticlesMaterial(
 
   fun getColorRamp(): Texture {
     val _ret = __method_bind.getColorRamp.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getDirection(): Vector3 {
@@ -528,12 +528,12 @@ open class ParticlesMaterial(
 
   fun getEmissionColorTexture(): Texture {
     val _ret = __method_bind.getEmissionColorTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getEmissionNormalTexture(): Texture {
     val _ret = __method_bind.getEmissionNormalTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getEmissionPointCount(): Int {
@@ -543,7 +543,7 @@ open class ParticlesMaterial(
 
   fun getEmissionPointTexture(): Texture {
     val _ret = __method_bind.getEmissionPointTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getEmissionShape(): EmissionShape {
@@ -592,7 +592,7 @@ open class ParticlesMaterial(
   fun getParamTexture(param: Int): Texture {
     val _arg = Variant(param)
     val _ret = __method_bind.getParamTexture.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getSpread(): Float {
@@ -602,7 +602,7 @@ open class ParticlesMaterial(
 
   fun getTrailColorModifier(): GradientTexture {
     val _ret = __method_bind.getTrailColorModifier.call(this._handle)
-    return _ret.asObject(::GradientTexture)!!
+    return _ret.toAny() as GradientTexture
   }
 
   fun getTrailDivisor(): Int {
@@ -612,7 +612,7 @@ open class ParticlesMaterial(
 
   fun getTrailSizeModifier(): CurveTexture {
     val _ret = __method_bind.getTrailSizeModifier.call(this._handle)
-    return _ret.asObject(::CurveTexture)!!
+    return _ret.toAny() as CurveTexture
   }
 
   fun setColor(color: Color) {

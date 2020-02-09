@@ -82,3 +82,15 @@ fun setProperty(
   }
   propertyHandler.set(kotlinInstance, arg)
 }
+
+fun createWrapper(data: COpaquePointer?, tag: COpaquePointer?, instance: COpaquePointer?): COpaquePointer? {
+  val wrapped = Wrapped(
+    checkNotNull(instance),
+    checkNotNull(tag)
+  )
+  return StableRef.create(wrapped).asCPointer()
+}
+
+fun destroyWrapper(data: COpaquePointer?, wrapper: COpaquePointer?) {
+  wrapper?.asStableRef<Wrapped>()?.dispose()
+}

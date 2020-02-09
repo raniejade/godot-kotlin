@@ -370,7 +370,7 @@ open class Physics2DServerInternal(
   fun bodyGetDirectState(body: RID): Physics2DDirectBodyState {
     val _arg = Variant(body)
     val _ret = __method_bind.bodyGetDirectState.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Physics2DDirectBodyState)!!
+    return _ret.toAny() as Physics2DDirectBodyState
   }
 
   fun bodyGetMaxContactsReported(body: RID): Int {
@@ -812,7 +812,7 @@ open class Physics2DServerInternal(
   fun spaceGetDirectState(space: RID): Physics2DDirectSpaceState {
     val _arg = Variant(space)
     val _ret = __method_bind.spaceGetDirectState.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Physics2DDirectSpaceState)!!
+    return _ret.toAny() as Physics2DDirectSpaceState
   }
 
   fun spaceGetParam(space: RID, param: Int): Float {

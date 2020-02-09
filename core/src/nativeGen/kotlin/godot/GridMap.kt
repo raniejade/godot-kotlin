@@ -210,7 +210,7 @@ open class GridMap(
 
   fun getMeshLibrary(): MeshLibrary {
     val _ret = __method_bind.getMeshLibrary.call(this._handle)
-    return _ret.asObject(::MeshLibrary)!!
+    return _ret.toAny() as MeshLibrary
   }
 
   fun getMeshes(): VariantArray {

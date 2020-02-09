@@ -50,7 +50,7 @@ open class MeshLibrary(
   fun getItemMesh(id: Int): Mesh {
     val _arg = Variant(id)
     val _ret = __method_bind.getItemMesh.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Mesh)!!
+    return _ret.toAny() as Mesh
   }
 
   fun getItemName(id: Int): String {
@@ -62,7 +62,7 @@ open class MeshLibrary(
   fun getItemNavmesh(id: Int): NavigationMesh {
     val _arg = Variant(id)
     val _ret = __method_bind.getItemNavmesh.call(this._handle, listOf(_arg))
-    return _ret.asObject(::NavigationMesh)!!
+    return _ret.toAny() as NavigationMesh
   }
 
   fun getItemNavmeshTransform(id: Int): Transform {
@@ -74,7 +74,7 @@ open class MeshLibrary(
   fun getItemPreview(id: Int): Texture {
     val _arg = Variant(id)
     val _ret = __method_bind.getItemPreview.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getItemShapes(id: Int): VariantArray {

@@ -32,18 +32,21 @@ open class GenerateLibrary : DefaultTask() {
     file.delete()
     file.bufferedWriter().use { writer ->
       writer.appendln("[entry]")
+      writer.appendln()
       libraries.get().forEach { (platform, path) ->
         writer.appendln("${platformToKey(platform)}=\"$path\"")
       }
       writer.appendln()
 
       writer.appendln("[dependencies]")
+      writer.appendln()
       libraries.get().forEach { (platform, _) ->
-        writer.appendln("${platformToKey(platform)}=[ ]")
+        writer.appendln("${platformToKey(platform)}=[  ]")
       }
       writer.appendln()
 
       writer.appendln("[general]")
+      writer.appendln()
       writer.appendln("singleton=${singleton.get()}")
       writer.appendln("load_once=${loadOnce.get()}")
       writer.appendln("symbol_prefix=\"${symbolPrefix.get()}\"")

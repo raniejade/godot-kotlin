@@ -73,7 +73,7 @@ open class OpenSimplexNoise(
     _args.add(Variant.fromAny(width))
     _args.add(Variant.fromAny(height))
     val _ret = __method_bind.getImage.call(this._handle, _args)
-    return _ret.asObject(::Image)!!
+    return _ret.toAny() as Image
   }
 
   fun getLacunarity(): Float {
@@ -153,7 +153,7 @@ open class OpenSimplexNoise(
   fun getSeamlessImage(size: Int): Image {
     val _arg = Variant(size)
     val _ret = __method_bind.getSeamlessImage.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Image)!!
+    return _ret.toAny() as Image
   }
 
   fun getSeed(): Int {

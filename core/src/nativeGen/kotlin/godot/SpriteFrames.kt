@@ -76,7 +76,7 @@ open class SpriteFrames(
     _args.add(Variant.fromAny(anim))
     _args.add(Variant.fromAny(idx))
     val _ret = __method_bind.getFrame.call(this._handle, _args)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getFrameCount(anim: String): Int {

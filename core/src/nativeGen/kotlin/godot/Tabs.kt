@@ -158,7 +158,7 @@ open class Tabs(
   fun getTabIcon(tabIdx: Int): Texture {
     val _arg = Variant(tabIdx)
     val _ret = __method_bind.getTabIcon.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getTabOffset(): Int {

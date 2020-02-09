@@ -1248,7 +1248,7 @@ open class AnimationNodeBlendSpace2D(
   fun getBlendPointNode(point: Int): AnimationRootNode {
     val _arg = Variant(point)
     val _ret = __method_bind.getBlendPointNode.call(this._handle, listOf(_arg))
-    return _ret.asObject(::AnimationRootNode)!!
+    return _ret.toAny() as AnimationRootNode
   }
 
   fun getBlendPointPosition(point: Int): Vector2 {

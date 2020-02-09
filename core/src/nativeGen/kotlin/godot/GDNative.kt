@@ -48,7 +48,7 @@ open class GDNative(
 
   fun getLibrary(): GDNativeLibrary {
     val _ret = __method_bind.getLibrary.call(this._handle)
-    return _ret.asObject(::GDNativeLibrary)!!
+    return _ret.toAny() as GDNativeLibrary
   }
 
   fun initialize(): Boolean {

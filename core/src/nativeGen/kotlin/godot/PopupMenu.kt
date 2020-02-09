@@ -294,7 +294,7 @@ open class PopupMenu(
   fun getItemIcon(idx: Int): Texture {
     val _arg = Variant(idx)
     val _ret = __method_bind.getItemIcon.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getItemId(idx: Int): Int {
@@ -318,7 +318,7 @@ open class PopupMenu(
   fun getItemShortcut(idx: Int): ShortCut {
     val _arg = Variant(idx)
     val _ret = __method_bind.getItemShortcut.call(this._handle, listOf(_arg))
-    return _ret.asObject(::ShortCut)!!
+    return _ret.toAny() as ShortCut
   }
 
   fun getItemSubmenu(idx: Int): String {

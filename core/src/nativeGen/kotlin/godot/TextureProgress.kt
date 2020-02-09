@@ -203,12 +203,12 @@ open class TextureProgress(
 
   fun getOverTexture(): Texture {
     val _ret = __method_bind.getOverTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getProgressTexture(): Texture {
     val _ret = __method_bind.getProgressTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getRadialCenterOffset(): Vector2 {
@@ -244,7 +244,7 @@ open class TextureProgress(
 
   fun getUnderTexture(): Texture {
     val _ret = __method_bind.getUnderTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun setFillDegrees(mode: Float) {

@@ -34,7 +34,7 @@ open class EditorInterface(
 
   fun getBaseControl(): Control {
     val _ret = __method_bind.getBaseControl.call(this._handle)
-    return _ret.asObject(::Control)!!
+    return _ret.toAny() as Control
   }
 
   fun getCurrentPath(): String {
@@ -44,22 +44,22 @@ open class EditorInterface(
 
   fun getEditedSceneRoot(): Node {
     val _ret = __method_bind.getEditedSceneRoot.call(this._handle)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getEditorSettings(): EditorSettings {
     val _ret = __method_bind.getEditorSettings.call(this._handle)
-    return _ret.asObject(::EditorSettings)!!
+    return _ret.toAny() as EditorSettings
   }
 
   fun getEditorViewport(): Control {
     val _ret = __method_bind.getEditorViewport.call(this._handle)
-    return _ret.asObject(::Control)!!
+    return _ret.toAny() as Control
   }
 
   fun getInspector(): EditorInspector {
     val _ret = __method_bind.getInspector.call(this._handle)
-    return _ret.asObject(::EditorInspector)!!
+    return _ret.toAny() as EditorInspector
   }
 
   fun getOpenScenes(): VariantArray {
@@ -69,17 +69,17 @@ open class EditorInterface(
 
   fun getResourceFilesystem(): EditorFileSystem {
     val _ret = __method_bind.getResourceFilesystem.call(this._handle)
-    return _ret.asObject(::EditorFileSystem)!!
+    return _ret.toAny() as EditorFileSystem
   }
 
   fun getResourcePreviewer(): EditorResourcePreview {
     val _ret = __method_bind.getResourcePreviewer.call(this._handle)
-    return _ret.asObject(::EditorResourcePreview)!!
+    return _ret.toAny() as EditorResourcePreview
   }
 
   fun getScriptEditor(): ScriptEditor {
     val _ret = __method_bind.getScriptEditor.call(this._handle)
-    return _ret.asObject(::ScriptEditor)!!
+    return _ret.toAny() as ScriptEditor
   }
 
   fun getSelectedPath(): String {
@@ -89,7 +89,7 @@ open class EditorInterface(
 
   fun getSelection(): EditorSelection {
     val _ret = __method_bind.getSelection.call(this._handle)
-    return _ret.asObject(::EditorSelection)!!
+    return _ret.toAny() as EditorSelection
   }
 
   fun inspectObject(`object`: Object, forProperty: String = "") {

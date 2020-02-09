@@ -43,7 +43,7 @@ open class NavigationMeshInstance(
 
   fun getNavigationMesh(): NavigationMesh {
     val _ret = __method_bind.getNavigationMesh.call(this._handle)
-    return _ret.asObject(::NavigationMesh)!!
+    return _ret.toAny() as NavigationMesh
   }
 
   fun isEnabled(): Boolean {

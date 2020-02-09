@@ -69,7 +69,7 @@ open class SpinBox(
 
   fun getLineEdit(): LineEdit {
     val _ret = __method_bind.getLineEdit.call(this._handle)
-    return _ret.asObject(::LineEdit)!!
+    return _ret.toAny() as LineEdit
   }
 
   fun getPrefix(): String {

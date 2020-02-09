@@ -1136,7 +1136,7 @@ open class SpatialMaterial(
   fun getTexture(param: Int): Texture {
     val _arg = Variant(param)
     val _ret = __method_bind.getTexture.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getTransmission(): Color {

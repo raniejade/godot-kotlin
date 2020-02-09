@@ -130,7 +130,7 @@ open class Skeleton(
   fun registerSkin(skin: Skin): SkinReference {
     val _arg = Variant(skin)
     val _ret = __method_bind.registerSkin.call(this._handle, listOf(_arg))
-    return _ret.asObject(::SkinReference)!!
+    return _ret.toAny() as SkinReference
   }
 
   fun setBoneCustomPose(boneIdx: Int, customPose: Transform) {

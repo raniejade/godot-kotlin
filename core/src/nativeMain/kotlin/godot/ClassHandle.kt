@@ -5,7 +5,8 @@ import gdnative.godot_instance_destroy_func
 import godot.core.Godot
 import kotlinx.cinterop.*
 
-class ClassHandle<S: Object, T: S>(
+@PublishedApi
+internal class ClassHandle<S: Object, T: S>(
   handle: COpaquePointer,
   className: String,
   val superClassName: String,
@@ -13,7 +14,7 @@ class ClassHandle<S: Object, T: S>(
 ) : ClassMemberRegistry<T>(handle, className) {
   fun create(instance: COpaquePointer): T {
     val ret = info.factory()
-    ret._handle = instance
+    ret.replaceHandle(instance)
     return ret
   }
 
@@ -38,6 +39,7 @@ class ClassHandle<S: Object, T: S>(
       )
     }
 
+    TagDB.registerType(handle, className, info.factory)
     info.setup(this)
   }
 }

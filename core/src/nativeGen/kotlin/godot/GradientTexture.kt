@@ -43,7 +43,7 @@ open class GradientTexture(
 
   fun getGradient(): Gradient {
     val _ret = __method_bind.getGradient.call(this._handle)
-    return _ret.asObject(::Gradient)!!
+    return _ret.toAny() as Gradient
   }
 
   fun setGradient(gradient: Gradient) {

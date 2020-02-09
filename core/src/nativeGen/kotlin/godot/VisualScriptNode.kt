@@ -38,7 +38,7 @@ open class VisualScriptNode(
 
   fun getVisualScript(): VisualScript {
     val _ret = __method_bind.getVisualScript.call(this._handle)
-    return _ret.asObject(::VisualScript)!!
+    return _ret.toAny() as VisualScript
   }
 
   fun portsChangedNotify() {

@@ -55,17 +55,17 @@ open class MeshInstance2D(
 
   fun getMesh(): Mesh {
     val _ret = __method_bind.getMesh.call(this._handle)
-    return _ret.asObject(::Mesh)!!
+    return _ret.toAny() as Mesh
   }
 
   fun getNormalMap(): Texture {
     val _ret = __method_bind.getNormalMap.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getTexture(): Texture {
     val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun setMesh(mesh: Mesh) {

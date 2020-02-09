@@ -203,7 +203,7 @@ open class Particles2D(
 
   fun getNormalMap(): Texture {
     val _ret = __method_bind.getNormalMap.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getOneShot(): Boolean {
@@ -218,7 +218,7 @@ open class Particles2D(
 
   fun getProcessMaterial(): Material {
     val _ret = __method_bind.getProcessMaterial.call(this._handle)
-    return _ret.asObject(::Material)!!
+    return _ret.toAny() as Material
   }
 
   fun getRandomnessRatio(): Float {
@@ -233,7 +233,7 @@ open class Particles2D(
 
   fun getTexture(): Texture {
     val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getUseLocalCoordinates(): Boolean {

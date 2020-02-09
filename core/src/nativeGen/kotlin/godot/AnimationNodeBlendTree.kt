@@ -84,7 +84,7 @@ open class AnimationNodeBlendTree(
   fun getNode(name: String): AnimationNode {
     val _arg = Variant(name)
     val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
-    return _ret.asObject(::AnimationNode)!!
+    return _ret.toAny() as AnimationNode
   }
 
   fun getNodePosition(name: String): Vector2 {

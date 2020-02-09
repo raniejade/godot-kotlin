@@ -64,7 +64,7 @@ open class AnimationNodeStateMachine(
   fun getNode(name: String): AnimationNode {
     val _arg = Variant(name)
     val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
-    return _ret.asObject(::AnimationNode)!!
+    return _ret.toAny() as AnimationNode
   }
 
   fun getNodeName(node: AnimationNode): String {
@@ -87,7 +87,7 @@ open class AnimationNodeStateMachine(
   fun getTransition(idx: Int): AnimationNodeStateMachineTransition {
     val _arg = Variant(idx)
     val _ret = __method_bind.getTransition.call(this._handle, listOf(_arg))
-    return _ret.asObject(::AnimationNodeStateMachineTransition)!!
+    return _ret.toAny() as AnimationNodeStateMachineTransition
   }
 
   fun getTransitionCount(): Int {

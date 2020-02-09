@@ -123,7 +123,7 @@ open class Animation(
     _args.add(Variant.fromAny(trackIdx))
     _args.add(Variant.fromAny(keyIdx))
     val _ret = __method_bind.audioTrackGetKeyStream.call(this._handle, _args)
-    return _ret.asObject(::Resource)!!
+    return _ret.toAny() as Resource
   }
 
   fun audioTrackInsertKey(

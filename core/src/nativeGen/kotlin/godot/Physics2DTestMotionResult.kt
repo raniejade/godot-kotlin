@@ -74,7 +74,7 @@ open class Physics2DTestMotionResult(
 
   fun getCollider(): Object {
     val _ret = __method_bind.getCollider.call(this._handle)
-    return _ret.asObject(::Object)!!
+    return _ret.toAny() as Object
   }
 
   fun getColliderId(): Int {

@@ -129,7 +129,7 @@ open class VideoPlayer(
 
   fun getStream(): VideoStream {
     val _ret = __method_bind.getStream.call(this._handle)
-    return _ret.asObject(::VideoStream)!!
+    return _ret.toAny() as VideoStream
   }
 
   fun getStreamName(): String {
@@ -144,7 +144,7 @@ open class VideoPlayer(
 
   fun getVideoTexture(): Texture {
     val _ret = __method_bind.getVideoTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getVolume(): Float {

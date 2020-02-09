@@ -86,7 +86,7 @@ open class AudioServerInternal(
 
   fun generateBusLayout(): AudioBusLayout {
     val _ret = __method_bind.generateBusLayout.call(this._handle)
-    return _ret.asObject(::AudioBusLayout)!!
+    return _ret.toAny() as AudioBusLayout
   }
 
   fun getBusChannels(busIdx: Int): Int {
@@ -105,7 +105,7 @@ open class AudioServerInternal(
     _args.add(Variant.fromAny(busIdx))
     _args.add(Variant.fromAny(effectIdx))
     val _ret = __method_bind.getBusEffect.call(this._handle, _args)
-    return _ret.asObject(::AudioEffect)!!
+    return _ret.toAny() as AudioEffect
   }
 
   fun getBusEffectCount(busIdx: Int): Int {
@@ -124,7 +124,7 @@ open class AudioServerInternal(
     _args.add(Variant.fromAny(effectIdx))
     _args.add(Variant.fromAny(channel))
     val _ret = __method_bind.getBusEffectInstance.call(this._handle, _args)
-    return _ret.asObject(::AudioEffectInstance)!!
+    return _ret.toAny() as AudioEffectInstance
   }
 
   fun getBusIndex(busName: String): Int {

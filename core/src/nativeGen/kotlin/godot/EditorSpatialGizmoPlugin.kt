@@ -75,7 +75,7 @@ open class EditorSpatialGizmoPlugin(
     _args.add(Variant.fromAny(name))
     _args.add(Variant.fromAny(gizmo))
     val _ret = __method_bind.getMaterial.call(this._handle, _args)
-    return _ret.asObject(::SpatialMaterial)!!
+    return _ret.toAny() as SpatialMaterial
   }
 
   companion object {

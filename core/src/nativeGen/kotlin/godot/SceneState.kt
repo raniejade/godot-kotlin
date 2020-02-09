@@ -89,7 +89,7 @@ open class SceneState(
   fun getNodeInstance(idx: Int): PackedScene {
     val _arg = Variant(idx)
     val _ret = __method_bind.getNodeInstance.call(this._handle, listOf(_arg))
-    return _ret.asObject(::PackedScene)!!
+    return _ret.toAny() as PackedScene
   }
 
   fun getNodeInstancePlaceholder(idx: Int): String {

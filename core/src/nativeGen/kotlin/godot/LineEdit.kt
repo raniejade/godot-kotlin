@@ -233,7 +233,7 @@ open class LineEdit(
 
   fun getMenu(): PopupMenu {
     val _ret = __method_bind.getMenu.call(this._handle)
-    return _ret.asObject(::PopupMenu)!!
+    return _ret.toAny() as PopupMenu
   }
 
   fun getPlaceholder(): String {
@@ -248,7 +248,7 @@ open class LineEdit(
 
   fun getRightIcon(): Texture {
     val _ret = __method_bind.getRightIcon.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getSecretCharacter(): String {

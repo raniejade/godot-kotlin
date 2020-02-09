@@ -176,7 +176,7 @@ open class Line2D(
 
   fun getCurve(): Curve {
     val _ret = __method_bind.getCurve.call(this._handle)
-    return _ret.asObject(::Curve)!!
+    return _ret.toAny() as Curve
   }
 
   fun getDefaultColor(): Color {
@@ -191,7 +191,7 @@ open class Line2D(
 
   fun getGradient(): Gradient {
     val _ret = __method_bind.getGradient.call(this._handle)
-    return _ret.asObject(::Gradient)!!
+    return _ret.toAny() as Gradient
   }
 
   fun getJointMode(): LineJointMode {
@@ -227,7 +227,7 @@ open class Line2D(
 
   fun getTexture(): Texture {
     val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getTextureMode(): LineTextureMode {

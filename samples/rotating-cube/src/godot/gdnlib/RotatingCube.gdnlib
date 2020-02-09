@@ -1,14 +1,17 @@
 [entry]
+
 X11.64="res://build/bin/rotatingCubeLinux/debugShared/librotating_cube.so"
 Windows.64="res://build/bin/rotatingCubeWindows/debugShared/rotating_cube.dll"
 OSX.64="res://build/bin/rotatingCubeMacOS/debugShared/librotating_cube.dylib"
 
 [dependencies]
-X11.64=[ ]
-Windows.64=[ ]
-OSX.64=[ ]
+
+X11.64=[  ]
+Windows.64=[  ]
+OSX.64=[  ]
 
 [general]
+
 singleton=false
 load_once=true
 symbol_prefix="godot_"

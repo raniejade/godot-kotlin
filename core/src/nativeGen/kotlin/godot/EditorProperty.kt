@@ -137,7 +137,7 @@ open class EditorProperty(
 
   fun getEditedObject(): Object {
     val _ret = __method_bind.getEditedObject.call(this._handle)
-    return _ret.asObject(::Object)!!
+    return _ret.toAny() as Object
   }
 
   fun getEditedProperty(): String {

@@ -608,7 +608,7 @@ open class CPUParticles2D(
 
   fun getColorRamp(): Gradient {
     val _ret = __method_bind.getColorRamp.call(this._handle)
-    return _ret.asObject(::Gradient)!!
+    return _ret.toAny() as Gradient
   }
 
   fun getDirection(): Vector2 {
@@ -683,7 +683,7 @@ open class CPUParticles2D(
 
   fun getNormalmap(): Texture {
     val _ret = __method_bind.getNormalmap.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getOneShot(): Boolean {
@@ -700,7 +700,7 @@ open class CPUParticles2D(
   fun getParamCurve(param: Int): Curve {
     val _arg = Variant(param)
     val _ret = __method_bind.getParamCurve.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Curve)!!
+    return _ret.toAny() as Curve
   }
 
   fun getParamRandomness(param: Int): Float {
@@ -737,7 +737,7 @@ open class CPUParticles2D(
 
   fun getTexture(): Texture {
     val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getUseLocalCoordinates(): Boolean {

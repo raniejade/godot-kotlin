@@ -156,7 +156,7 @@ open class FileDialog(
 
   fun getLineEdit(): LineEdit {
     val _ret = __method_bind.getLineEdit.call(this._handle)
-    return _ret.asObject(::LineEdit)!!
+    return _ret.toAny() as LineEdit
   }
 
   fun getMode(): Mode {
@@ -166,7 +166,7 @@ open class FileDialog(
 
   fun getVbox(): VBoxContainer {
     val _ret = __method_bind.getVbox.call(this._handle)
-    return _ret.asObject(::VBoxContainer)!!
+    return _ret.toAny() as VBoxContainer
   }
 
   fun invalidate() {

@@ -125,7 +125,7 @@ open class DynamicFont(
   fun getFallback(idx: Int): DynamicFontData {
     val _arg = Variant(idx)
     val _ret = __method_bind.getFallback.call(this._handle, listOf(_arg))
-    return _ret.asObject(::DynamicFontData)!!
+    return _ret.toAny() as DynamicFontData
   }
 
   fun getFallbackCount(): Int {
@@ -135,7 +135,7 @@ open class DynamicFont(
 
   fun getFontData(): DynamicFontData {
     val _ret = __method_bind.getFontData.call(this._handle)
-    return _ret.asObject(::DynamicFontData)!!
+    return _ret.toAny() as DynamicFontData
   }
 
   fun getOutlineColor(): Color {

@@ -103,7 +103,7 @@ open class WebSocketClient(
 
   fun getTrustedSslCertificate(): X509Certificate {
     val _ret = __method_bind.getTrustedSslCertificate.call(this._handle)
-    return _ret.asObject(::X509Certificate)!!
+    return _ret.toAny() as X509Certificate
   }
 
   fun isVerifySslEnabled(): Boolean {

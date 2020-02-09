@@ -20,6 +20,24 @@ class APIGenerator {
 
     MethodNGenerator().generate("methods", maxSignalParam, outputDir)
     SignalNGenerator().generate("signals", maxSignalParam, outputDir)
+    generateTagDB(types).writeTo(outputDir)
+  }
+
+  private fun generateTagDB(classes: List<GDClass>): FileSpec {
+    val fs = FileSpec.builder("godot", "initTagDb")
+
+    val initFun = FunSpec.builder("initTagDB")
+      .addModifiers(KModifier.INTERNAL)
+      .receiver(ClassName("godot", "TagDB"))
+
+    classes.filter { it.isInstanciable && !it.isSingleton && it.name != "Object" }
+      .forEach {
+        val className = it.name
+        initFun.addStatement("registerGlobalType(%S, ::%L)", className, className)
+      }
+
+    fs.addFunction(initFun.build())
+    return fs.build()
   }
 
   private fun generateFile(cls: GDClass, maxSignalParam: Int, index: GDClassIndex): FileSpec {
@@ -468,8 +486,6 @@ class APIGenerator {
       .addModifiers(KModifier.PRIVATE)
 
     val methodBindProperties = cls.methods.values.toList()
-      // we generate the free method
-      .filter { method -> method.name != "free" }
       // generate non-virtual methods
       .filter { method -> !method.isVirtual }
       .map { method ->
@@ -512,8 +528,6 @@ class APIGenerator {
 
   private fun TypeSpec.Builder.generateMethods(cls: GDClass, index: GDClassIndex): TypeSpec.Builder {
     val methodSpecs = cls.methods.values.toList()
-      // we generate the free method
-      .filter { method -> method.name != "free" }
       // generate non-virtual methods
       .filter { method -> !method.isVirtual }
       .map { method ->
@@ -599,7 +613,7 @@ class APIGenerator {
               builder.addStatement("return ${parsedType.fqName}.from(_ret.asInt())")
             } else {
               // TODO: what to do with nullability, at the moment assume nothing can be null
-              builder.addStatement("return _ret.asObject(::${parsedType.fqName})!!")
+              builder.addStatement("return _ret.toAny() as %L", parsedType.fqName)
             }
 
           }
@@ -609,22 +623,7 @@ class APIGenerator {
       }
 
     addFunctions(methodSpecs)
-    maybeGenerateFreeForObject(cls.name)
     maybeGenerateLifeCycleForObject(cls.name)
-    return this
-  }
-
-  private fun TypeSpec.Builder.maybeGenerateFreeForObject(className: String): TypeSpec.Builder {
-    if (className == "Object") {
-      addFunction(
-        FunSpec.builder("free")
-          .addCode("""
-            checkNotNull(Godot.gdnative.godot_object_destroy)(_handle)
-          """.trimIndent())
-          .build()
-      )
-    }
-
     return this
   }
 

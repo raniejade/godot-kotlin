@@ -65,7 +65,7 @@ open class CollisionShape2D(
 
   fun getShape(): Shape2D {
     val _ret = __method_bind.getShape.call(this._handle)
-    return _ret.asObject(::Shape2D)!!
+    return _ret.toAny() as Shape2D
   }
 
   fun isDisabled(): Boolean {

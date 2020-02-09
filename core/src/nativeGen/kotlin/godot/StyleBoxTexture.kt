@@ -197,7 +197,7 @@ open class StyleBoxTexture(
 
   fun getNormalMap(): Texture {
     val _ret = __method_bind.getNormalMap.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getRegionRect(): Rect2 {
@@ -207,7 +207,7 @@ open class StyleBoxTexture(
 
   fun getTexture(): Texture {
     val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getVAxisStretchMode(): AxisStretchMode {

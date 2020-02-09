@@ -115,22 +115,22 @@ open class TouchScreenButton(
 
   fun getBitmask(): BitMap {
     val _ret = __method_bind.getBitmask.call(this._handle)
-    return _ret.asObject(::BitMap)!!
+    return _ret.toAny() as BitMap
   }
 
   fun getShape(): Shape2D {
     val _ret = __method_bind.getShape.call(this._handle)
-    return _ret.asObject(::Shape2D)!!
+    return _ret.toAny() as Shape2D
   }
 
   fun getTexture(): Texture {
     val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getTexturePressed(): Texture {
     val _ret = __method_bind.getTexturePressed.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getVisibilityMode(): VisibilityMode {

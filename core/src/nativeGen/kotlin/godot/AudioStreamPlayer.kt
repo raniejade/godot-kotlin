@@ -110,7 +110,7 @@ open class AudioStreamPlayer(
 
   fun getStream(): AudioStream {
     val _ret = __method_bind.getStream.call(this._handle)
-    return _ret.asObject(::AudioStream)!!
+    return _ret.toAny() as AudioStream
   }
 
   fun getStreamPaused(): Boolean {
@@ -120,7 +120,7 @@ open class AudioStreamPlayer(
 
   fun getStreamPlayback(): AudioStreamPlayback {
     val _ret = __method_bind.getStreamPlayback.call(this._handle)
-    return _ret.asObject(::AudioStreamPlayback)!!
+    return _ret.toAny() as AudioStreamPlayback
   }
 
   fun getVolumeDb(): Float {

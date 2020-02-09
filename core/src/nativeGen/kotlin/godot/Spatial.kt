@@ -159,7 +159,7 @@ open class Spatial(
 
   fun getGizmo(): SpatialGizmo {
     val _ret = __method_bind.getGizmo.call(this._handle)
-    return _ret.asObject(::SpatialGizmo)!!
+    return _ret.toAny() as SpatialGizmo
   }
 
   fun getGlobalTransform(): Transform {
@@ -169,7 +169,7 @@ open class Spatial(
 
   fun getParentSpatial(): Spatial {
     val _ret = __method_bind.getParentSpatial.call(this._handle)
-    return _ret.asObject(::Spatial)!!
+    return _ret.toAny() as Spatial
   }
 
   fun getRotation(): Vector3 {
@@ -199,7 +199,7 @@ open class Spatial(
 
   fun getWorld(): World {
     val _ret = __method_bind.getWorld.call(this._handle)
-    return _ret.asObject(::World)!!
+    return _ret.toAny() as World
   }
 
   fun globalRotate(axis: Vector3, angle: Float) {

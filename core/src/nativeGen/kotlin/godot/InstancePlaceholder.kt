@@ -31,7 +31,7 @@ open class InstancePlaceholder(
     _args.add(Variant.fromAny(replace))
     _args.add(Variant.fromAny(customScene))
     val _ret = __method_bind.createInstance.call(this._handle, _args)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getInstancePath(): String {

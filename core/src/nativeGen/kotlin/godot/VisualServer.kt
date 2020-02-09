@@ -2725,7 +2725,7 @@ open class VisualServerInternal(
     _args.add(Variant.fromAny(texture))
     _args.add(Variant.fromAny(cubeSide))
     val _ret = __method_bind.textureGetData.call(this._handle, _args)
-    return _ret.asObject(::Image)!!
+    return _ret.toAny() as Image
   }
 
   fun textureGetDepth(texture: RID): Int {

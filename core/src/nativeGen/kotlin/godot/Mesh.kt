@@ -49,23 +49,23 @@ open class Mesh(
 
   fun createConvexShape(): Shape {
     val _ret = __method_bind.createConvexShape.call(this._handle)
-    return _ret.asObject(::Shape)!!
+    return _ret.toAny() as Shape
   }
 
   fun createOutline(margin: Float): Mesh {
     val _arg = Variant(margin)
     val _ret = __method_bind.createOutline.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Mesh)!!
+    return _ret.toAny() as Mesh
   }
 
   fun createTrimeshShape(): Shape {
     val _ret = __method_bind.createTrimeshShape.call(this._handle)
-    return _ret.asObject(::Shape)!!
+    return _ret.toAny() as Shape
   }
 
   fun generateTriangleMesh(): TriangleMesh {
     val _ret = __method_bind.generateTriangleMesh.call(this._handle)
-    return _ret.asObject(::TriangleMesh)!!
+    return _ret.toAny() as TriangleMesh
   }
 
   fun getAabb(): AABB {
@@ -108,7 +108,7 @@ open class Mesh(
   fun surfaceGetMaterial(surfIdx: Int): Material {
     val _arg = Variant(surfIdx)
     val _ret = __method_bind.surfaceGetMaterial.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Material)!!
+    return _ret.toAny() as Material
   }
 
   fun surfaceSetMaterial(surfIdx: Int, material: Material) {

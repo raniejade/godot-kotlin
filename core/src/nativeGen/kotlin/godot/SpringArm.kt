@@ -91,7 +91,7 @@ open class SpringArm(
 
   fun getShape(): Shape {
     val _ret = __method_bind.getShape.call(this._handle)
-    return _ret.asObject(::Shape)!!
+    return _ret.toAny() as Shape
   }
 
   fun removeExcludedObject(rID: RID): Boolean {

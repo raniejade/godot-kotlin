@@ -82,7 +82,7 @@ open class NoiseTexture(
 
   fun getNoise(): OpenSimplexNoise {
     val _ret = __method_bind.getNoise.call(this._handle)
-    return _ret.asObject(::OpenSimplexNoise)!!
+    return _ret.toAny() as OpenSimplexNoise
   }
 
   fun getSeamless(): Boolean {

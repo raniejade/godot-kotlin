@@ -40,7 +40,7 @@ open class LightOccluder2D(
 
   fun getOccluderPolygon(): OccluderPolygon2D {
     val _ret = __method_bind.getOccluderPolygon.call(this._handle)
-    return _ret.asObject(::OccluderPolygon2D)!!
+    return _ret.toAny() as OccluderPolygon2D
   }
 
   fun setOccluderLightMask(mask: Int) {

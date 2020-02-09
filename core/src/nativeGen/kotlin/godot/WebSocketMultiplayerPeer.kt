@@ -34,7 +34,7 @@ open class WebSocketMultiplayerPeer(
   fun getPeer(peerId: Int): WebSocketPeer {
     val _arg = Variant(peerId)
     val _ret = __method_bind.getPeer.call(this._handle, listOf(_arg))
-    return _ret.asObject(::WebSocketPeer)!!
+    return _ret.toAny() as WebSocketPeer
   }
 
   fun setBuffers(

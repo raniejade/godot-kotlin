@@ -67,7 +67,7 @@ open class AnimatedSprite3D(
 
   fun getSpriteFrames(): SpriteFrames {
     val _ret = __method_bind.getSpriteFrames.call(this._handle)
-    return _ret.asObject(::SpriteFrames)!!
+    return _ret.toAny() as SpriteFrames
   }
 
   fun isPlaying(): Boolean {

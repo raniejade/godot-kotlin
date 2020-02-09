@@ -76,7 +76,7 @@ open class StyleBox(
 
   fun getCurrentItemDrawn(): CanvasItem {
     val _ret = __method_bind.getCurrentItemDrawn.call(this._handle)
-    return _ret.asObject(::CanvasItem)!!
+    return _ret.toAny() as CanvasItem
   }
 
   fun getDefaultMargin(margin: Int): Float {

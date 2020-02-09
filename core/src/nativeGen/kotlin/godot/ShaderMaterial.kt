@@ -35,7 +35,7 @@ open class ShaderMaterial(
 
   fun getShader(): Shader {
     val _ret = __method_bind.getShader.call(this._handle)
-    return _ret.asObject(::Shader)!!
+    return _ret.toAny() as Shader
   }
 
   fun getShaderParam(param: String): Variant {

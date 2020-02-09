@@ -40,7 +40,7 @@ open class MenuButton(
 
   fun getPopup(): PopupMenu {
     val _ret = __method_bind.getPopup.call(this._handle)
-    return _ret.asObject(::PopupMenu)!!
+    return _ret.toAny() as PopupMenu
   }
 
   fun isSwitchOnHover(): Boolean {

@@ -79,7 +79,7 @@ open class AtlasTexture(
 
   fun getAtlas(): Texture {
     val _ret = __method_bind.getAtlas.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getMargin(): Rect2 {

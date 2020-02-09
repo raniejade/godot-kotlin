@@ -238,17 +238,17 @@ open class SceneTree(
     _args.add(Variant.fromAny(timeSec))
     _args.add(Variant.fromAny(pauseModeProcess))
     val _ret = __method_bind.createTimer.call(this._handle, _args)
-    return _ret.asObject(::SceneTreeTimer)!!
+    return _ret.toAny() as SceneTreeTimer
   }
 
   fun getCurrentScene(): Node {
     val _ret = __method_bind.getCurrentScene.call(this._handle)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getEditedSceneRoot(): Node {
     val _ret = __method_bind.getEditedSceneRoot.call(this._handle)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getFrame(): Int {
@@ -258,7 +258,7 @@ open class SceneTree(
 
   fun getMultiplayer(): MultiplayerAPI {
     val _ret = __method_bind.getMultiplayer.call(this._handle)
-    return _ret.asObject(::MultiplayerAPI)!!
+    return _ret.toAny() as MultiplayerAPI
   }
 
   fun getNetworkConnectedPeers(): PoolIntArray {
@@ -268,7 +268,7 @@ open class SceneTree(
 
   fun getNetworkPeer(): NetworkedMultiplayerPeer {
     val _ret = __method_bind.getNetworkPeer.call(this._handle)
-    return _ret.asObject(::NetworkedMultiplayerPeer)!!
+    return _ret.toAny() as NetworkedMultiplayerPeer
   }
 
   fun getNetworkUniqueId(): Int {
@@ -289,7 +289,7 @@ open class SceneTree(
 
   fun getRoot(): Viewport {
     val _ret = __method_bind.getRoot.call(this._handle)
-    return _ret.asObject(::Viewport)!!
+    return _ret.toAny() as Viewport
   }
 
   fun getRpcSenderId(): Int {

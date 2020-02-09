@@ -624,7 +624,7 @@ open class CPUParticles(
 
   fun getColorRamp(): Gradient {
     val _ret = __method_bind.getColorRamp.call(this._handle)
-    return _ret.asObject(::Gradient)!!
+    return _ret.toAny() as Gradient
   }
 
   fun getDirection(): Vector3 {
@@ -704,7 +704,7 @@ open class CPUParticles(
 
   fun getMesh(): Mesh {
     val _ret = __method_bind.getMesh.call(this._handle)
-    return _ret.asObject(::Mesh)!!
+    return _ret.toAny() as Mesh
   }
 
   fun getOneShot(): Boolean {
@@ -721,7 +721,7 @@ open class CPUParticles(
   fun getParamCurve(param: Int): Curve {
     val _arg = Variant(param)
     val _ret = __method_bind.getParamCurve.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Curve)!!
+    return _ret.toAny() as Curve
   }
 
   fun getParamRandomness(param: Int): Float {

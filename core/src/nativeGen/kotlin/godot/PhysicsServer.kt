@@ -353,7 +353,7 @@ open class PhysicsServerInternal(
   fun bodyGetDirectState(body: RID): PhysicsDirectBodyState {
     val _arg = Variant(body)
     val _ret = __method_bind.bodyGetDirectState.call(this._handle, listOf(_arg))
-    return _ret.asObject(::PhysicsDirectBodyState)!!
+    return _ret.toAny() as PhysicsDirectBodyState
   }
 
   fun bodyGetKinematicSafeMargin(body: RID): Float {
@@ -944,7 +944,7 @@ open class PhysicsServerInternal(
   fun spaceGetDirectState(space: RID): PhysicsDirectSpaceState {
     val _arg = Variant(space)
     val _ret = __method_bind.spaceGetDirectState.call(this._handle, listOf(_arg))
-    return _ret.asObject(::PhysicsDirectSpaceState)!!
+    return _ret.toAny() as PhysicsDirectSpaceState
   }
 
   fun spaceGetParam(space: RID, param: Int): Float {

@@ -35,7 +35,7 @@ open class Crypto(
   fun generateRsa(size: Int): CryptoKey {
     val _arg = Variant(size)
     val _ret = __method_bind.generateRsa.call(this._handle, listOf(_arg))
-    return _ret.asObject(::CryptoKey)!!
+    return _ret.toAny() as CryptoKey
   }
 
   fun generateSelfSignedCertificate(
@@ -50,7 +50,7 @@ open class Crypto(
     _args.add(Variant.fromAny(notBefore))
     _args.add(Variant.fromAny(notAfter))
     val _ret = __method_bind.generateSelfSignedCertificate.call(this._handle, _args)
-    return _ret.asObject(::X509Certificate)!!
+    return _ret.toAny() as X509Certificate
   }
 
   companion object {

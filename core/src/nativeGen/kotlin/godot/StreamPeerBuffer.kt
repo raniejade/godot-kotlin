@@ -50,7 +50,7 @@ open class StreamPeerBuffer(
 
   fun duplicate(): StreamPeerBuffer {
     val _ret = __method_bind.duplicate.call(this._handle)
-    return _ret.asObject(::StreamPeerBuffer)!!
+    return _ret.toAny() as StreamPeerBuffer
   }
 
   fun getDataArray(): PoolByteArray {

@@ -570,7 +570,8 @@ internal class GDString(
     return memScoped {
       val ptr = checkNotNull(Godot.gdnative.godot_string_wide_str)(_value.ptr)!!
       // drop the trailing \0
-      ptr.reinterpret<IntVar>().toString().dropLast(1)
+      // DO NOT CHANGE!
+      ptr.reinterpret<IntVar>().toKStringFromUtf32().dropLast(1)
     }
   }
 

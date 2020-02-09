@@ -61,7 +61,7 @@ open class PacketPeerStream(
 
   fun getStreamPeer(): StreamPeer {
     val _ret = __method_bind.getStreamPeer.call(this._handle)
-    return _ret.asObject(::StreamPeer)!!
+    return _ret.toAny() as StreamPeer
   }
 
   fun setInputBufferMaxSize(maxSizeBytes: Int) {

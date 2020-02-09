@@ -98,12 +98,12 @@ open class EditorSpatialGizmo(
 
   fun getPlugin(): EditorSpatialGizmoPlugin {
     val _ret = __method_bind.getPlugin.call(this._handle)
-    return _ret.asObject(::EditorSpatialGizmoPlugin)!!
+    return _ret.toAny() as EditorSpatialGizmoPlugin
   }
 
   fun getSpatialNode(): Spatial {
     val _ret = __method_bind.getSpatialNode.call(this._handle)
-    return _ret.asObject(::Spatial)!!
+    return _ret.toAny() as Spatial
   }
 
   fun setHidden(hidden: Boolean) {

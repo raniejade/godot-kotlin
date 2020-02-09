@@ -92,12 +92,12 @@ open class TextureButton(
 
   fun getClickMask(): BitMap {
     val _ret = __method_bind.getClickMask.call(this._handle)
-    return _ret.asObject(::BitMap)!!
+    return _ret.toAny() as BitMap
   }
 
   fun getDisabledTexture(): Texture {
     val _ret = __method_bind.getDisabledTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getExpand(): Boolean {
@@ -107,22 +107,22 @@ open class TextureButton(
 
   fun getFocusedTexture(): Texture {
     val _ret = __method_bind.getFocusedTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getHoverTexture(): Texture {
     val _ret = __method_bind.getHoverTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getNormalTexture(): Texture {
     val _ret = __method_bind.getNormalTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getPressedTexture(): Texture {
     val _ret = __method_bind.getPressedTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getStretchMode(): StretchMode {

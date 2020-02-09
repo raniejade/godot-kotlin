@@ -42,7 +42,7 @@ open class Script(
 
   fun getBaseScript(): Script {
     val _ret = __method_bind.getBaseScript.call(this._handle)
-    return _ret.asObject(::Script)!!
+    return _ret.toAny() as Script
   }
 
   fun getInstanceBaseType(): String {

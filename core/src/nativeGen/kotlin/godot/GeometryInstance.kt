@@ -130,7 +130,7 @@ open class GeometryInstance(
 
   fun getMaterialOverride(): Material {
     val _ret = __method_bind.getMaterialOverride.call(this._handle)
-    return _ret.asObject(::Material)!!
+    return _ret.toAny() as Material
   }
 
   fun setCastShadowsSetting(shadowCastingSetting: Int) {

@@ -133,7 +133,7 @@ open class BaseButton(
 
   fun getButtonGroup(): ButtonGroup {
     val _ret = __method_bind.getButtonGroup.call(this._handle)
-    return _ret.asObject(::ButtonGroup)!!
+    return _ret.toAny() as ButtonGroup
   }
 
   fun getButtonMask(): Int {
@@ -153,7 +153,7 @@ open class BaseButton(
 
   fun getShortcut(): ShortCut {
     val _ret = __method_bind.getShortcut.call(this._handle)
-    return _ret.asObject(::ShortCut)!!
+    return _ret.toAny() as ShortCut
   }
 
   fun isDisabled(): Boolean {

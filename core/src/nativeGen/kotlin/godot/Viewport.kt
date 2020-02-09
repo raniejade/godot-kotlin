@@ -310,17 +310,17 @@ open class Viewport(
 
   fun findWorld(): World {
     val _ret = __method_bind.findWorld.call(this._handle)
-    return _ret.asObject(::World)!!
+    return _ret.toAny() as World
   }
 
   fun findWorld2d(): World2D {
     val _ret = __method_bind.findWorld2d.call(this._handle)
-    return _ret.asObject(::World2D)!!
+    return _ret.toAny() as World2D
   }
 
   fun getCamera(): Camera {
     val _ret = __method_bind.getCamera.call(this._handle)
-    return _ret.asObject(::Camera)!!
+    return _ret.toAny() as Camera
   }
 
   fun getCanvasTransform(): Transform2D {
@@ -360,7 +360,7 @@ open class Viewport(
 
   fun getModalStackTop(): Control {
     val _ret = __method_bind.getModalStackTop.call(this._handle)
-    return _ret.asObject(::Control)!!
+    return _ret.toAny() as Control
   }
 
   fun getMousePosition(): Vector2 {
@@ -407,7 +407,7 @@ open class Viewport(
 
   fun getTexture(): ViewportTexture {
     val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.asObject(::ViewportTexture)!!
+    return _ret.toAny() as ViewportTexture
   }
 
   fun getUpdateMode(): UpdateMode {
@@ -437,12 +437,12 @@ open class Viewport(
 
   fun getWorld(): World {
     val _ret = __method_bind.getWorld.call(this._handle)
-    return _ret.asObject(::World)!!
+    return _ret.toAny() as World
   }
 
   fun getWorld2d(): World2D {
     val _ret = __method_bind.getWorld2d.call(this._handle)
-    return _ret.asObject(::World2D)!!
+    return _ret.toAny() as World2D
   }
 
   fun guiGetDragData(): Variant {

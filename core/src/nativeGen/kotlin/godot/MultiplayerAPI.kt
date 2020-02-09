@@ -94,7 +94,7 @@ open class MultiplayerAPI(
 
   fun getNetworkPeer(): NetworkedMultiplayerPeer {
     val _ret = __method_bind.getNetworkPeer.call(this._handle)
-    return _ret.asObject(::NetworkedMultiplayerPeer)!!
+    return _ret.toAny() as NetworkedMultiplayerPeer
   }
 
   fun getNetworkUniqueId(): Int {

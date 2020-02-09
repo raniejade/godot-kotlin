@@ -71,7 +71,7 @@ open class OptionButton(
   fun getItemIcon(idx: Int): Texture {
     val _arg = Variant(idx)
     val _ret = __method_bind.getItemIcon.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getItemId(idx: Int): Int {
@@ -100,7 +100,7 @@ open class OptionButton(
 
   fun getPopup(): PopupMenu {
     val _ret = __method_bind.getPopup.call(this._handle)
-    return _ret.asObject(::PopupMenu)!!
+    return _ret.toAny() as PopupMenu
   }
 
   fun getSelected(): Int {

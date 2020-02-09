@@ -96,7 +96,7 @@ open class ScrollContainer(
 
   fun getHScrollbar(): HScrollBar {
     val _ret = __method_bind.getHScrollbar.call(this._handle)
-    return _ret.asObject(::HScrollBar)!!
+    return _ret.toAny() as HScrollBar
   }
 
   fun getVScroll(): Int {
@@ -106,7 +106,7 @@ open class ScrollContainer(
 
   fun getVScrollbar(): VScrollBar {
     val _ret = __method_bind.getVScrollbar.call(this._handle)
-    return _ret.asObject(::VScrollBar)!!
+    return _ret.toAny() as VScrollBar
   }
 
   fun isFollowingFocus(): Boolean {

@@ -147,7 +147,7 @@ open class BakedLightmapData(
   fun getUserLightmap(userIdx: Int): Texture {
     val _arg = Variant(userIdx)
     val _ret = __method_bind.getUserLightmap.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getUserPath(userIdx: Int): NodePath {

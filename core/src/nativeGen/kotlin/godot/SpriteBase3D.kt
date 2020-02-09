@@ -156,7 +156,7 @@ open class SpriteBase3D(
 
   fun generateTriangleMesh(): TriangleMesh {
     val _ret = __method_bind.generateTriangleMesh.call(this._handle)
-    return _ret.asObject(::TriangleMesh)!!
+    return _ret.toAny() as TriangleMesh
   }
 
   fun getAlphaCutMode(): AlphaCutMode {

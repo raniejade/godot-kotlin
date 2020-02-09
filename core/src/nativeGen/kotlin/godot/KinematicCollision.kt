@@ -83,7 +83,7 @@ open class KinematicCollision(
 
   fun getCollider(): Object {
     val _ret = __method_bind.getCollider.call(this._handle)
-    return _ret.asObject(::Object)!!
+    return _ret.toAny() as Object
   }
 
   fun getColliderId(): Int {
@@ -98,7 +98,7 @@ open class KinematicCollision(
 
   fun getColliderShape(): Object {
     val _ret = __method_bind.getColliderShape.call(this._handle)
-    return _ret.asObject(::Object)!!
+    return _ret.toAny() as Object
   }
 
   fun getColliderShapeIndex(): Int {
@@ -113,7 +113,7 @@ open class KinematicCollision(
 
   fun getLocalShape(): Object {
     val _ret = __method_bind.getLocalShape.call(this._handle)
-    return _ret.asObject(::Object)!!
+    return _ret.toAny() as Object
   }
 
   fun getNormal(): Vector3 {

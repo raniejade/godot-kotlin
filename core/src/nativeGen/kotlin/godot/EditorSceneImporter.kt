@@ -35,7 +35,7 @@ open class EditorSceneImporter(
     _args.add(Variant.fromAny(flags))
     _args.add(Variant.fromAny(bakeFps))
     val _ret = __method_bind.importAnimationFromOtherImporter.call(this._handle, _args)
-    return _ret.asObject(::Animation)!!
+    return _ret.toAny() as Animation
   }
 
   fun importSceneFromOtherImporter(
@@ -48,7 +48,7 @@ open class EditorSceneImporter(
     _args.add(Variant.fromAny(flags))
     _args.add(Variant.fromAny(bakeFps))
     val _ret = __method_bind.importSceneFromOtherImporter.call(this._handle, _args)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   companion object {

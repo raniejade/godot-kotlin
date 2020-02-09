@@ -208,7 +208,7 @@ open class Particles(
   fun getDrawPassMesh(pass: Int): Mesh {
     val _arg = Variant(pass)
     val _ret = __method_bind.getDrawPassMesh.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Mesh)!!
+    return _ret.toAny() as Mesh
   }
 
   fun getDrawPasses(): Int {
@@ -248,7 +248,7 @@ open class Particles(
 
   fun getProcessMaterial(): Material {
     val _ret = __method_bind.getProcessMaterial.call(this._handle)
-    return _ret.asObject(::Material)!!
+    return _ret.toAny() as Material
   }
 
   fun getRandomnessRatio(): Float {

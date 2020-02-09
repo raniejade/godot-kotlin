@@ -228,7 +228,7 @@ open class Image(
   fun getRect(rect: Rect2): Image {
     val _arg = Variant(rect)
     val _ret = __method_bind.getRect.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Image)!!
+    return _ret.toAny() as Image
   }
 
   fun getSize(): Vector2 {
@@ -321,7 +321,7 @@ open class Image(
 
   fun rgbeToSrgb(): Image {
     val _ret = __method_bind.rgbeToSrgb.call(this._handle)
-    return _ret.asObject(::Image)!!
+    return _ret.toAny() as Image
   }
 
   fun saveExr(path: String, grayscale: Boolean = false): GDError {

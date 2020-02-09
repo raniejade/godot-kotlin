@@ -74,12 +74,12 @@ open class ColorPickerButton(
 
   fun getPicker(): ColorPicker {
     val _ret = __method_bind.getPicker.call(this._handle)
-    return _ret.asObject(::ColorPicker)!!
+    return _ret.toAny() as ColorPicker
   }
 
   fun getPopup(): PopupPanel {
     val _ret = __method_bind.getPopup.call(this._handle)
-    return _ret.asObject(::PopupPanel)!!
+    return _ret.toAny() as PopupPanel
   }
 
   fun isEditingAlpha(): Boolean {

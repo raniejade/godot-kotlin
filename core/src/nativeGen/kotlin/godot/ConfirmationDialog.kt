@@ -26,7 +26,7 @@ open class ConfirmationDialog(
 
   fun getCancel(): Button {
     val _ret = __method_bind.getCancel.call(this._handle)
-    return _ret.asObject(::Button)!!
+    return _ret.toAny() as Button
   }
 
   companion object {

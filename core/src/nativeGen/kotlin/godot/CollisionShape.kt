@@ -43,7 +43,7 @@ open class CollisionShape(
 
   fun getShape(): Shape {
     val _ret = __method_bind.getShape.call(this._handle)
-    return _ret.asObject(::Shape)!!
+    return _ret.toAny() as Shape
   }
 
   fun isDisabled(): Boolean {

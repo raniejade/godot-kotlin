@@ -187,7 +187,7 @@ open class Sprite(
 
   fun getNormalMap(): Texture {
     val _ret = __method_bind.getNormalMap.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getOffset(): Vector2 {
@@ -207,7 +207,7 @@ open class Sprite(
 
   fun getTexture(): Texture {
     val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getVframes(): Int {

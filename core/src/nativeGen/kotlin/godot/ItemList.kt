@@ -244,7 +244,7 @@ open class ItemList(
   fun getItemIcon(idx: Int): Texture {
     val _arg = Variant(idx)
     val _ret = __method_bind.getItemIcon.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getItemIconModulate(idx: Int): Color {
@@ -299,7 +299,7 @@ open class ItemList(
 
   fun getVScroll(): VScrollBar {
     val _ret = __method_bind.getVScroll.call(this._handle)
-    return _ret.asObject(::VScrollBar)!!
+    return _ret.toAny() as VScrollBar
   }
 
   fun hasAutoHeight(): Boolean {

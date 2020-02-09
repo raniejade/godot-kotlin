@@ -34,7 +34,7 @@ open class VisualScriptPreload(
 
   fun getPreload(): Resource {
     val _ret = __method_bind.getPreload.call(this._handle)
-    return _ret.asObject(::Resource)!!
+    return _ret.toAny() as Resource
   }
 
   fun setPreload(resource: Resource) {

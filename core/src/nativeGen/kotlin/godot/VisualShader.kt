@@ -137,7 +137,7 @@ open class VisualShader(
     _args.add(Variant.fromAny(type))
     _args.add(Variant.fromAny(id))
     val _ret = __method_bind.getNode.call(this._handle, _args)
-    return _ret.asObject(::VisualShaderNode)!!
+    return _ret.toAny() as VisualShaderNode
   }
 
   fun getNodeConnections(type: Int): VariantArray {

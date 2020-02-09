@@ -4,6 +4,8 @@ import gdnative.godot_variant
 import gdnative.godot_variant_operator
 import gdnative.godot_variant_type
 import godot.Object
+import godot.TagDB
+import godot.replaceHandle
 import kotlinx.cinterop.*
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.freeze
@@ -323,13 +325,23 @@ class Variant(
 
   fun asObject(): Object? {
     return memScoped {
-      val obj = checkNotNull(Godot.gdnative.godot_variant_as_object)(_value.ptr)
-      if (obj == null) {
+      val ptr = checkNotNull(Godot.gdnative.godot_variant_as_object)(_value.ptr)
+      if (ptr == null) {
         null
       } else {
-        val ret = Object()
-        ret._handle = obj
-        ret
+        val obj = Object()
+        obj.replaceHandle(ptr)
+        var tag = checkNotNull(Godot.nativescript11.godot_nativescript_get_type_tag)(ptr)
+        if (tag == null) {
+          tag = checkNotNull(Godot.nativescript11.godot_nativescript_get_global_type_tag)(Godot.languageIndex, obj.getClass().cstr.ptr)
+        }
+        if (tag != null) {
+          val cast = TagDB.newInstance(tag)
+          cast.replaceHandle(ptr)
+          cast
+        } else {
+          obj
+        }
       }
     }
   }

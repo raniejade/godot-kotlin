@@ -111,7 +111,7 @@ open class _EngineInternal(
 
   fun getMainLoop(): MainLoop {
     val _ret = __method_bind.getMainLoop.call(this._handle)
-    return _ret.asObject(::MainLoop)!!
+    return _ret.toAny() as MainLoop
   }
 
   fun getPhysicsFrames(): Int {
@@ -132,7 +132,7 @@ open class _EngineInternal(
   fun getSingleton(name: String): Object {
     val _arg = Variant(name)
     val _ret = __method_bind.getSingleton.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Object)!!
+    return _ret.toAny() as Object
   }
 
   fun getTargetFps(): Int {

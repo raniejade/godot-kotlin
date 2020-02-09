@@ -782,7 +782,7 @@ open class Environment(
 
   fun getAdjustmentColorCorrection(): Texture {
     val _ret = __method_bind.getAdjustmentColorCorrection.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getAdjustmentContrast(): Float {
@@ -962,7 +962,7 @@ open class Environment(
 
   fun getSky(): Sky {
     val _ret = __method_bind.getSky.call(this._handle)
-    return _ret.asObject(::Sky)!!
+    return _ret.toAny() as Sky
   }
 
   fun getSkyCustomFov(): Float {

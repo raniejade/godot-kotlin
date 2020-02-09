@@ -82,7 +82,7 @@ open class CSGCylinder(
 
   fun getMaterial(): Material {
     val _ret = __method_bind.getMaterial.call(this._handle)
-    return _ret.asObject(::Material)!!
+    return _ret.toAny() as Material
   }
 
   fun getRadius(): Float {

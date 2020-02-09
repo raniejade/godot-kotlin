@@ -17,7 +17,14 @@ fun terminate(options: godot_gdnative_terminate_options) {
 }
 
 fun nativescriptInit(handle: COpaquePointer, setup: ClassRegistry.() -> Unit) {
+  Godot.nativescriptInit(handle)
+  TagDB.initTagDB()
   setup(ClassRegistry(handle))
+}
+
+fun nativescriptTerminate(handle: COpaquePointer) {
+  TagDB.terminate()
+  Godot.nativescriptTerminate(handle)
 }
 
 fun gprint(msg: Any) {

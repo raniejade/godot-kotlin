@@ -474,7 +474,7 @@ open class Control(
 
   fun getFocusOwner(): Control {
     val _ret = __method_bind.getFocusOwner.call(this._handle)
-    return _ret.asObject(::Control)!!
+    return _ret.toAny() as Control
   }
 
   fun getFocusPrevious(): NodePath {
@@ -487,7 +487,7 @@ open class Control(
     _args.add(Variant.fromAny(name))
     _args.add(Variant.fromAny(type))
     val _ret = __method_bind.getFont.call(this._handle, _args)
-    return _ret.asObject(::Font)!!
+    return _ret.toAny() as Font
   }
 
   fun getGlobalPosition(): Vector2 {
@@ -515,7 +515,7 @@ open class Control(
     _args.add(Variant.fromAny(name))
     _args.add(Variant.fromAny(type))
     val _ret = __method_bind.getIcon.call(this._handle, _args)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getMargin(margin: Int): Float {
@@ -541,7 +541,7 @@ open class Control(
 
   fun getParentControl(): Control {
     val _ret = __method_bind.getParentControl.call(this._handle)
-    return _ret.asObject(::Control)!!
+    return _ret.toAny() as Control
   }
 
   fun getPivotOffset(): Vector2 {
@@ -589,12 +589,12 @@ open class Control(
     _args.add(Variant.fromAny(name))
     _args.add(Variant.fromAny(type))
     val _ret = __method_bind.getStylebox.call(this._handle, _args)
-    return _ret.asObject(::StyleBox)!!
+    return _ret.toAny() as StyleBox
   }
 
   fun getTheme(): Theme {
     val _ret = __method_bind.getTheme.call(this._handle)
-    return _ret.asObject(::Theme)!!
+    return _ret.toAny() as Theme
   }
 
   fun getTooltip(atPosition: Vector2 = Vector2(0, 0)): String {

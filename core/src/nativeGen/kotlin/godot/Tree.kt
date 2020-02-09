@@ -178,7 +178,7 @@ open class Tree(
     _args.add(Variant.fromAny(parent))
     _args.add(Variant.fromAny(idx))
     val _ret = __method_bind.createItem.call(this._handle, _args)
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun ensureCursorIsVisible() {
@@ -236,7 +236,7 @@ open class Tree(
 
   fun getEdited(): TreeItem {
     val _ret = __method_bind.getEdited.call(this._handle)
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getEditedColumn(): Int {
@@ -255,13 +255,13 @@ open class Tree(
   fun getItemAtPosition(position: Vector2): TreeItem {
     val _arg = Variant(position)
     val _ret = __method_bind.getItemAtPosition.call(this._handle, listOf(_arg))
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getNextSelected(from: Object): TreeItem {
     val _arg = Variant(from)
     val _ret = __method_bind.getNextSelected.call(this._handle, listOf(_arg))
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getPressedButton(): Int {
@@ -271,7 +271,7 @@ open class Tree(
 
   fun getRoot(): TreeItem {
     val _ret = __method_bind.getRoot.call(this._handle)
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getScroll(): Vector2 {
@@ -286,7 +286,7 @@ open class Tree(
 
   fun getSelected(): TreeItem {
     val _ret = __method_bind.getSelected.call(this._handle)
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getSelectedColumn(): Int {

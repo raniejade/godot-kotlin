@@ -137,7 +137,7 @@ open class CanvasLayer(
 
   fun getCustomViewport(): Node {
     val _ret = __method_bind.getCustomViewport.call(this._handle)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getFollowViewportScale(): Float {

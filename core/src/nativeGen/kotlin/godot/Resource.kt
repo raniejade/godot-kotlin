@@ -58,12 +58,12 @@ open class Resource(
   fun duplicate(subresources: Boolean = false): Resource {
     val _arg = Variant(subresources)
     val _ret = __method_bind.duplicate.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Resource)!!
+    return _ret.toAny() as Resource
   }
 
   fun getLocalScene(): Node {
     val _ret = __method_bind.getLocalScene.call(this._handle)
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun getName(): String {

@@ -68,7 +68,7 @@ open class CubeMap(
   fun getSide(side: Int): Image {
     val _arg = Variant(side)
     val _ret = __method_bind.getSide.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Image)!!
+    return _ret.toAny() as Image
   }
 
   fun getStorage(): Storage {

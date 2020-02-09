@@ -100,7 +100,7 @@ open class UPNP(
   fun getDevice(index: Int): UPNPDevice {
     val _arg = Variant(index)
     val _ret = __method_bind.getDevice.call(this._handle, listOf(_arg))
-    return _ret.asObject(::UPNPDevice)!!
+    return _ret.toAny() as UPNPDevice
   }
 
   fun getDeviceCount(): Int {
@@ -120,7 +120,7 @@ open class UPNP(
 
   fun getGateway(): UPNPDevice {
     val _ret = __method_bind.getGateway.call(this._handle)
-    return _ret.asObject(::UPNPDevice)!!
+    return _ret.toAny() as UPNPDevice
   }
 
   fun isDiscoverIpv6(): Boolean {

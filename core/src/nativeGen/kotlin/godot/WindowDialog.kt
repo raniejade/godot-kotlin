@@ -43,7 +43,7 @@ open class WindowDialog(
 
   fun getCloseButton(): TextureButton {
     val _ret = __method_bind.getCloseButton.call(this._handle)
-    return _ret.asObject(::TextureButton)!!
+    return _ret.toAny() as TextureButton
   }
 
   fun getResizable(): Boolean {

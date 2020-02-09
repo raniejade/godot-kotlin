@@ -28,7 +28,7 @@ open class ResourceInteractiveLoader(
 
   fun getResource(): Resource {
     val _ret = __method_bind.getResource.call(this._handle)
-    return _ret.asObject(::Resource)!!
+    return _ret.toAny() as Resource
   }
 
   fun getStage(): Int {

@@ -43,7 +43,7 @@ open class NavigationPolygonInstance(
 
   fun getNavigationPolygon(): NavigationPolygon {
     val _ret = __method_bind.getNavigationPolygon.call(this._handle)
-    return _ret.asObject(::NavigationPolygon)!!
+    return _ret.toAny() as NavigationPolygon
   }
 
   fun isEnabled(): Boolean {

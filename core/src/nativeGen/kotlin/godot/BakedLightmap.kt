@@ -180,7 +180,7 @@ open class BakedLightmap(
 
   fun getLightData(): BakedLightmapData {
     val _ret = __method_bind.getLightData.call(this._handle)
-    return _ret.asObject(::BakedLightmapData)!!
+    return _ret.toAny() as BakedLightmapData
   }
 
   fun getPropagation(): Float {

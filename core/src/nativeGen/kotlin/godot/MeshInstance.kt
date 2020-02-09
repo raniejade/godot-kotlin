@@ -74,7 +74,7 @@ open class MeshInstance(
 
   fun getMesh(): Mesh {
     val _ret = __method_bind.getMesh.call(this._handle)
-    return _ret.asObject(::Mesh)!!
+    return _ret.toAny() as Mesh
   }
 
   fun getSkeletonPath(): NodePath {
@@ -84,13 +84,13 @@ open class MeshInstance(
 
   fun getSkin(): Skin {
     val _ret = __method_bind.getSkin.call(this._handle)
-    return _ret.asObject(::Skin)!!
+    return _ret.toAny() as Skin
   }
 
   fun getSurfaceMaterial(surface: Int): Material {
     val _arg = Variant(surface)
     val _ret = __method_bind.getSurfaceMaterial.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Material)!!
+    return _ret.toAny() as Material
   }
 
   fun getSurfaceMaterialCount(): Int {

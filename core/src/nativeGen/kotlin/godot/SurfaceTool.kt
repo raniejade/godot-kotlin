@@ -130,7 +130,7 @@ open class SurfaceTool(
     _args.add(Variant.fromAny(existing))
     _args.add(Variant.fromAny(flags))
     val _ret = __method_bind.commit.call(this._handle, _args)
-    return _ret.asObject(::ArrayMesh)!!
+    return _ret.toAny() as ArrayMesh
   }
 
   fun commitToArrays(): VariantArray {

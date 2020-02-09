@@ -178,7 +178,7 @@ open class Camera(
 
   fun getEnvironment(): Environment {
     val _ret = __method_bind.getEnvironment.call(this._handle)
-    return _ret.asObject(::Environment)!!
+    return _ret.toAny() as Environment
   }
 
   fun getFov(): Float {

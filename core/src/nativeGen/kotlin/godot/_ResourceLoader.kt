@@ -64,7 +64,7 @@ open class _ResourceLoaderInternal(
     _args.add(Variant.fromAny(typeHint))
     _args.add(Variant.fromAny(noCache))
     val _ret = __method_bind.load.call(this._handle, _args)
-    return _ret.asObject(::Resource)!!
+    return _ret.toAny() as Resource
   }
 
   fun loadInteractive(path: String, typeHint: String = ""): ResourceInteractiveLoader {
@@ -72,7 +72,7 @@ open class _ResourceLoaderInternal(
     _args.add(Variant.fromAny(path))
     _args.add(Variant.fromAny(typeHint))
     val _ret = __method_bind.loadInteractive.call(this._handle, _args)
-    return _ret.asObject(::ResourceInteractiveLoader)!!
+    return _ret.toAny() as ResourceInteractiveLoader
   }
 
   fun setAbortOnMissingResources(abort: Boolean) {

@@ -115,7 +115,7 @@ open class BitmapFont(
 
   fun getFallback(): BitmapFont {
     val _ret = __method_bind.getFallback.call(this._handle)
-    return _ret.asObject(::BitmapFont)!!
+    return _ret.toAny() as BitmapFont
   }
 
   fun getKerningPair(charA: Int, charB: Int): Int {
@@ -129,7 +129,7 @@ open class BitmapFont(
   fun getTexture(idx: Int): Texture {
     val _arg = Variant(idx)
     val _ret = __method_bind.getTexture.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getTextureCount(): Int {

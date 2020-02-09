@@ -39,7 +39,7 @@ open class Path(
 
   fun getCurve(): Curve3D {
     val _ret = __method_bind.getCurve.call(this._handle)
-    return _ret.asObject(::Curve3D)!!
+    return _ret.toAny() as Curve3D
   }
 
   fun setCurve(curve: Curve3D) {

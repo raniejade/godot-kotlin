@@ -32,7 +32,7 @@ open class SkinReference(
 
   fun getSkin(): Skin {
     val _ret = __method_bind.getSkin.call(this._handle)
-    return _ret.asObject(::Skin)!!
+    return _ret.toAny() as Skin
   }
 
   companion object {

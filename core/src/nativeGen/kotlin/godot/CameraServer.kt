@@ -44,7 +44,7 @@ open class CameraServerInternal(
   fun getFeed(index: Int): CameraFeed {
     val _arg = Variant(index)
     val _ret = __method_bind.getFeed.call(this._handle, listOf(_arg))
-    return _ret.asObject(::CameraFeed)!!
+    return _ret.toAny() as CameraFeed
   }
 
   fun getFeedCount(): Int {

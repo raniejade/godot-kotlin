@@ -47,7 +47,7 @@ open class World2D(
 
   fun getDirectSpaceState(): Physics2DDirectSpaceState {
     val _ret = __method_bind.getDirectSpaceState.call(this._handle)
-    return _ret.asObject(::Physics2DDirectSpaceState)!!
+    return _ret.toAny() as Physics2DDirectSpaceState
   }
 
   fun getSpace(): RID {

@@ -51,7 +51,7 @@ open class VisualShaderNodeCubeMap(
 
   fun getCubeMap(): CubeMap {
     val _ret = __method_bind.getCubeMap.call(this._handle)
-    return _ret.asObject(::CubeMap)!!
+    return _ret.toAny() as CubeMap
   }
 
   fun getSource(): Source {

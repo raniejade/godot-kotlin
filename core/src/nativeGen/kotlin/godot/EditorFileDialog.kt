@@ -147,7 +147,7 @@ open class EditorFileDialog(
 
   fun getVbox(): VBoxContainer {
     val _ret = __method_bind.getVbox.call(this._handle)
-    return _ret.asObject(::VBoxContainer)!!
+    return _ret.toAny() as VBoxContainer
   }
 
   fun invalidate() {

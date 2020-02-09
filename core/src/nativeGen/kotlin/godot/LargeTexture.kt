@@ -52,7 +52,7 @@ open class LargeTexture(
   fun getPieceTexture(idx: Int): Texture {
     val _arg = Variant(idx)
     val _ret = __method_bind.getPieceTexture.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun setPieceOffset(idx: Int, ofs: Vector2) {

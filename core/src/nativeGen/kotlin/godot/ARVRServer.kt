@@ -70,7 +70,7 @@ open class ARVRServerInternal(
   fun findInterface(name: String): ARVRInterface {
     val _arg = Variant(name)
     val _ret = __method_bind.findInterface.call(this._handle, listOf(_arg))
-    return _ret.asObject(::ARVRInterface)!!
+    return _ret.toAny() as ARVRInterface
   }
 
   fun getHmdTransform(): Transform {
@@ -81,7 +81,7 @@ open class ARVRServerInternal(
   fun getInterface(idx: Int): ARVRInterface {
     val _arg = Variant(idx)
     val _ret = __method_bind.getInterface.call(this._handle, listOf(_arg))
-    return _ret.asObject(::ARVRInterface)!!
+    return _ret.toAny() as ARVRInterface
   }
 
   fun getInterfaceCount(): Int {
@@ -111,7 +111,7 @@ open class ARVRServerInternal(
 
   fun getPrimaryInterface(): ARVRInterface {
     val _ret = __method_bind.getPrimaryInterface.call(this._handle)
-    return _ret.asObject(::ARVRInterface)!!
+    return _ret.toAny() as ARVRInterface
   }
 
   fun getReferenceFrame(): Transform {
@@ -122,7 +122,7 @@ open class ARVRServerInternal(
   fun getTracker(idx: Int): ARVRPositionalTracker {
     val _arg = Variant(idx)
     val _ret = __method_bind.getTracker.call(this._handle, listOf(_arg))
-    return _ret.asObject(::ARVRPositionalTracker)!!
+    return _ret.toAny() as ARVRPositionalTracker
   }
 
   fun getTrackerCount(): Int {

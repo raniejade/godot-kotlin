@@ -115,7 +115,7 @@ open class AnimationTree(
 
   fun getTreeRoot(): AnimationNode {
     val _ret = __method_bind.getTreeRoot.call(this._handle)
-    return _ret.asObject(::AnimationNode)!!
+    return _ret.toAny() as AnimationNode
   }
 
   fun isActive(): Boolean {

@@ -43,7 +43,7 @@ open class Material(
 
   fun getNextPass(): Material {
     val _ret = __method_bind.getNextPass.call(this._handle)
-    return _ret.asObject(::Material)!!
+    return _ret.toAny() as Material
   }
 
   fun getRenderPriority(): Int {

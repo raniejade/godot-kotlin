@@ -24,7 +24,7 @@ open class _JSONInternal(
   fun parse(json: String): JSONParseResult {
     val _arg = Variant(json)
     val _ret = __method_bind.parse.call(this._handle, listOf(_arg))
-    return _ret.asObject(::JSONParseResult)!!
+    return _ret.toAny() as JSONParseResult
   }
 
   fun print(

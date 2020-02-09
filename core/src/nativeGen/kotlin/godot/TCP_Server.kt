@@ -51,7 +51,7 @@ open class TCP_Server(
 
   fun takeConnection(): StreamPeerTCP {
     val _ret = __method_bind.takeConnection.call(this._handle)
-    return _ret.asObject(::StreamPeerTCP)!!
+    return _ret.toAny() as StreamPeerTCP
   }
 
   companion object {

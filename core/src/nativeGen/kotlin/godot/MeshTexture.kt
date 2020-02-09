@@ -61,7 +61,7 @@ open class MeshTexture(
 
   fun getBaseTexture(): Texture {
     val _ret = __method_bind.getBaseTexture.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getImageSize(): Vector2 {
@@ -71,7 +71,7 @@ open class MeshTexture(
 
   fun getMesh(): Mesh {
     val _ret = __method_bind.getMesh.call(this._handle)
-    return _ret.asObject(::Mesh)!!
+    return _ret.toAny() as Mesh
   }
 
   fun setBaseTexture(texture: Texture) {

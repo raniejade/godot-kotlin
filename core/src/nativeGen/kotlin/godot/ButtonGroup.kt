@@ -31,7 +31,7 @@ open class ButtonGroup(
 
   fun getPressedButton(): BaseButton {
     val _ret = __method_bind.getPressedButton.call(this._handle)
-    return _ret.asObject(::BaseButton)!!
+    return _ret.toAny() as BaseButton
   }
 
   companion object {

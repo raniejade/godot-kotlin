@@ -50,7 +50,7 @@ open class ARVRPositionalTracker(
 
   fun getMesh(): Mesh {
     val _ret = __method_bind.getMesh.call(this._handle)
-    return _ret.asObject(::Mesh)!!
+    return _ret.toAny() as Mesh
   }
 
   fun getName(): String {

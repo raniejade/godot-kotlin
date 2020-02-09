@@ -190,7 +190,7 @@ open class PhysicsDirectBodyState(
   fun getContactColliderObject(contactIdx: Int): Object {
     val _arg = Variant(contactIdx)
     val _ret = __method_bind.getContactColliderObject.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Object)!!
+    return _ret.toAny() as Object
   }
 
   fun getContactColliderPosition(contactIdx: Int): Vector3 {
@@ -262,7 +262,7 @@ open class PhysicsDirectBodyState(
 
   fun getSpaceState(): PhysicsDirectSpaceState {
     val _ret = __method_bind.getSpaceState.call(this._handle)
-    return _ret.asObject(::PhysicsDirectSpaceState)!!
+    return _ret.toAny() as PhysicsDirectSpaceState
   }
 
   fun getStep(): Float {

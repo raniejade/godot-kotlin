@@ -69,13 +69,13 @@ open class AcceptDialog(
     _args.add(Variant.fromAny(right))
     _args.add(Variant.fromAny(action))
     val _ret = __method_bind.addButton.call(this._handle, _args)
-    return _ret.asObject(::Button)!!
+    return _ret.toAny() as Button
   }
 
   fun addCancel(name: String): Button {
     val _arg = Variant(name)
     val _ret = __method_bind.addCancel.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Button)!!
+    return _ret.toAny() as Button
   }
 
   fun getHideOnOk(): Boolean {
@@ -85,12 +85,12 @@ open class AcceptDialog(
 
   fun getLabel(): Label {
     val _ret = __method_bind.getLabel.call(this._handle)
-    return _ret.asObject(::Label)!!
+    return _ret.toAny() as Label
   }
 
   fun getOk(): Button {
     val _ret = __method_bind.getOk.call(this._handle)
-    return _ret.asObject(::Button)!!
+    return _ret.toAny() as Button
   }
 
   fun getText(): String {

@@ -422,7 +422,7 @@ open class TextEdit(
 
   fun getMenu(): PopupMenu {
     val _ret = __method_bind.getMenu.call(this._handle)
-    return _ret.asObject(::PopupMenu)!!
+    return _ret.toAny() as PopupMenu
   }
 
   fun getMinimapWidth(): Int {

@@ -156,7 +156,7 @@ open class GIProbe(
 
   fun getProbeData(): GIProbeData {
     val _ret = __method_bind.getProbeData.call(this._handle)
-    return _ret.asObject(::GIProbeData)!!
+    return _ret.toAny() as GIProbeData
   }
 
   fun getPropagation(): Float {

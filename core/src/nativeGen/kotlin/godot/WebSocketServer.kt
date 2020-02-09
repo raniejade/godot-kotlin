@@ -99,7 +99,7 @@ open class WebSocketServer(
 
   fun getCaChain(): X509Certificate {
     val _ret = __method_bind.getCaChain.call(this._handle)
-    return _ret.asObject(::X509Certificate)!!
+    return _ret.toAny() as X509Certificate
   }
 
   fun getPeerAddress(id: Int): String {
@@ -116,12 +116,12 @@ open class WebSocketServer(
 
   fun getPrivateKey(): CryptoKey {
     val _ret = __method_bind.getPrivateKey.call(this._handle)
-    return _ret.asObject(::CryptoKey)!!
+    return _ret.toAny() as CryptoKey
   }
 
   fun getSslCertificate(): X509Certificate {
     val _ret = __method_bind.getSslCertificate.call(this._handle)
-    return _ret.asObject(::X509Certificate)!!
+    return _ret.toAny() as X509Certificate
   }
 
   fun hasPeer(id: Int): Boolean {

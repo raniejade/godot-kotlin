@@ -93,7 +93,7 @@ open class TabContainer(
 
   fun getCurrentTabControl(): Control {
     val _ret = __method_bind.getCurrentTabControl.call(this._handle)
-    return _ret.asObject(::Control)!!
+    return _ret.toAny() as Control
   }
 
   fun getDragToRearrangeEnabled(): Boolean {
@@ -103,7 +103,7 @@ open class TabContainer(
 
   fun getPopup(): Popup {
     val _ret = __method_bind.getPopup.call(this._handle)
-    return _ret.asObject(::Popup)!!
+    return _ret.toAny() as Popup
   }
 
   fun getPreviousTab(): Int {
@@ -119,7 +119,7 @@ open class TabContainer(
   fun getTabControl(idx: Int): Control {
     val _arg = Variant(idx)
     val _ret = __method_bind.getTabControl.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Control)!!
+    return _ret.toAny() as Control
   }
 
   fun getTabCount(): Int {
@@ -136,7 +136,7 @@ open class TabContainer(
   fun getTabIcon(tabIdx: Int): Texture {
     val _arg = Variant(tabIdx)
     val _ret = __method_bind.getTabIcon.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getTabTitle(tabIdx: Int): String {

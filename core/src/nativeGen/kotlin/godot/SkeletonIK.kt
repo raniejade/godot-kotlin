@@ -160,7 +160,7 @@ open class SkeletonIK(
 
   fun getParentSkeleton(): Skeleton {
     val _ret = __method_bind.getParentSkeleton.call(this._handle)
-    return _ret.asObject(::Skeleton)!!
+    return _ret.toAny() as Skeleton
   }
 
   fun getRootBone(): String {

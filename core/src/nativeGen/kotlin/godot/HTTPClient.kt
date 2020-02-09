@@ -75,7 +75,7 @@ open class HTTPClient(
 
   fun getConnection(): StreamPeer {
     val _ret = __method_bind.getConnection.call(this._handle)
-    return _ret.asObject(::StreamPeer)!!
+    return _ret.toAny() as StreamPeer
   }
 
   fun getReadChunkSize(): Int {

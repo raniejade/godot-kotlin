@@ -197,7 +197,7 @@ open class VisualScript(
     _args.add(Variant.fromAny(func))
     _args.add(Variant.fromAny(id))
     val _ret = __method_bind.getNode.call(this._handle, _args)
-    return _ret.asObject(::VisualScriptNode)!!
+    return _ret.toAny() as VisualScriptNode
   }
 
   fun getNodePosition(func: String, id: Int): Vector2 {

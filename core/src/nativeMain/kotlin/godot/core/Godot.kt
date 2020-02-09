@@ -1,10 +1,10 @@
 package godot.core
 
 import gdnative.*
-import kotlinx.cinterop.CPointer
-import kotlinx.cinterop.get
-import kotlinx.cinterop.pointed
-import kotlinx.cinterop.reinterpret
+import godot.createWrapper
+import godot.destroyWrapper
+import kotlinx.cinterop.*
+import kotlin.native.concurrent.AtomicInt
 import kotlin.native.concurrent.AtomicReference
 
 internal object Godot {
@@ -23,6 +23,15 @@ internal object Godot {
   @PublishedApi
   internal val nativescript: godot_gdnative_ext_nativescript_api_struct
     get() = checkNotNull(nativescriptWrapper.value).pointed
+
+  @PublishedApi
+  internal val nativescript11: godot_gdnative_ext_nativescript_1_1_api_struct
+    get() = checkNotNull(nativescript.next).reinterpret<godot_gdnative_ext_nativescript_1_1_api_struct>().pointed
+
+  internal val languageIndex: Int
+    get() = languageIndexRef.value
+
+  private val languageIndexRef = AtomicInt(-1)
 
   fun init(options: godot_gdnative_init_options) {
     val gdnative = checkNotNull(options.api_struct)
@@ -43,6 +52,23 @@ internal object Godot {
 
     gdnativeWrapper.compareAndSwap(null, gdnative)
     nativescriptWrapper.compareAndSwap(null, nativescript)
+  }
+
+  fun nativescriptInit(handle: COpaquePointer) {
+    memScoped {
+      val info = cValue<godot_instance_binding_functions>() {
+        alloc_instance_binding_data = staticCFunction(::createWrapper)
+        free_instance_binding_data = staticCFunction(::destroyWrapper)
+      }
+      val index = checkNotNull(nativescript11.godot_nativescript_register_instance_binding_data_functions)(
+        info
+      )
+      languageIndexRef.compareAndSet(languageIndexRef.value, index)
+    }
+  }
+
+  fun nativescriptTerminate(handle: COpaquePointer) {
+    checkNotNull(nativescript11.godot_nativescript_unregister_instance_binding_data_functions)(languageIndex)
   }
 
   fun terminate(options: godot_gdnative_terminate_options) {

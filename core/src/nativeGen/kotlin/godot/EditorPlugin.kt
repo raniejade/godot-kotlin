@@ -57,7 +57,7 @@ open class EditorPlugin(
     _args.add(Variant.fromAny(control))
     _args.add(Variant.fromAny(title))
     val _ret = __method_bind.addControlToBottomPanel.call(this._handle, _args)
-    return _ret.asObject(::ToolButton)!!
+    return _ret.toAny() as ToolButton
   }
 
   fun addControlToContainer(container: Int, control: Control) {
@@ -136,17 +136,17 @@ open class EditorPlugin(
 
   fun getEditorInterface(): EditorInterface {
     val _ret = __method_bind.getEditorInterface.call(this._handle)
-    return _ret.asObject(::EditorInterface)!!
+    return _ret.toAny() as EditorInterface
   }
 
   fun getScriptCreateDialog(): ScriptCreateDialog {
     val _ret = __method_bind.getScriptCreateDialog.call(this._handle)
-    return _ret.asObject(::ScriptCreateDialog)!!
+    return _ret.toAny() as ScriptCreateDialog
   }
 
   fun getUndoRedo(): UndoRedo {
     val _ret = __method_bind.getUndoRedo.call(this._handle)
-    return _ret.asObject(::UndoRedo)!!
+    return _ret.toAny() as UndoRedo
   }
 
   fun hideBottomPanel() {

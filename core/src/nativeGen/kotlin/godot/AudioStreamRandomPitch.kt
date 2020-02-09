@@ -43,7 +43,7 @@ open class AudioStreamRandomPitch(
 
   fun getAudioStream(): AudioStream {
     val _ret = __method_bind.getAudioStream.call(this._handle)
-    return _ret.asObject(::AudioStream)!!
+    return _ret.toAny() as AudioStream
   }
 
   fun getRandomPitch(): Float {

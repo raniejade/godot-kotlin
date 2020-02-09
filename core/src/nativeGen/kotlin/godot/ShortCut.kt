@@ -40,7 +40,7 @@ open class ShortCut(
 
   fun getShortcut(): InputEvent {
     val _ret = __method_bind.getShortcut.call(this._handle)
-    return _ret.asObject(::InputEvent)!!
+    return _ret.toAny() as InputEvent
   }
 
   fun isShortcut(event: InputEvent): Boolean {

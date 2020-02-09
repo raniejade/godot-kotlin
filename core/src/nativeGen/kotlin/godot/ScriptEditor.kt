@@ -64,7 +64,7 @@ open class ScriptEditor(
 
   fun getCurrentScript(): Script {
     val _ret = __method_bind.getCurrentScript.call(this._handle)
-    return _ret.asObject(::Script)!!
+    return _ret.toAny() as Script
   }
 
   fun getDragDataFw(point: Vector2, from: Control): Variant {

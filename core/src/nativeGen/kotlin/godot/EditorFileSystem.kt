@@ -55,13 +55,13 @@ open class EditorFileSystem(
 
   fun getFilesystem(): EditorFileSystemDirectory {
     val _ret = __method_bind.getFilesystem.call(this._handle)
-    return _ret.asObject(::EditorFileSystemDirectory)!!
+    return _ret.toAny() as EditorFileSystemDirectory
   }
 
   fun getFilesystemPath(path: String): EditorFileSystemDirectory {
     val _arg = Variant(path)
     val _ret = __method_bind.getFilesystemPath.call(this._handle, listOf(_arg))
-    return _ret.asObject(::EditorFileSystemDirectory)!!
+    return _ret.toAny() as EditorFileSystemDirectory
   }
 
   fun getScanningProgress(): Float {

@@ -94,7 +94,7 @@ open class Texture(
 
   fun getData(): Image {
     val _ret = __method_bind.getData.call(this._handle)
-    return _ret.asObject(::Image)!!
+    return _ret.toAny() as Image
   }
 
   fun getFlags(): Int {

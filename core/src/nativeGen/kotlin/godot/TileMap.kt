@@ -312,7 +312,7 @@ open class TileMap(
 
   fun getTileset(): TileSet {
     val _ret = __method_bind.getTileset.call(this._handle)
-    return _ret.asObject(::TileSet)!!
+    return _ret.toAny() as TileSet
   }
 
   fun getUsedCells(): VariantArray {

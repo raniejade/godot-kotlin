@@ -122,7 +122,7 @@ open class CollisionObject2D(
   fun shapeOwnerGetOwner(ownerId: Int): Object {
     val _arg = Variant(ownerId)
     val _ret = __method_bind.shapeOwnerGetOwner.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Object)!!
+    return _ret.toAny() as Object
   }
 
   fun shapeOwnerGetShape(ownerId: Int, shapeId: Int): Shape2D {
@@ -130,7 +130,7 @@ open class CollisionObject2D(
     _args.add(Variant.fromAny(ownerId))
     _args.add(Variant.fromAny(shapeId))
     val _ret = __method_bind.shapeOwnerGetShape.call(this._handle, _args)
-    return _ret.asObject(::Shape2D)!!
+    return _ret.toAny() as Shape2D
   }
 
   fun shapeOwnerGetShapeCount(ownerId: Int): Int {

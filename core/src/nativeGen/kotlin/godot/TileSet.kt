@@ -61,7 +61,7 @@ open class TileSet(
     _args.add(Variant.fromAny(id))
     _args.add(Variant.fromAny(coord))
     val _ret = __method_bind.autotileGetLightOccluder.call(this._handle, _args)
-    return _ret.asObject(::OccluderPolygon2D)!!
+    return _ret.toAny() as OccluderPolygon2D
   }
 
   fun autotileGetNavigationPolygon(id: Int, coord: Vector2): NavigationPolygon {
@@ -69,7 +69,7 @@ open class TileSet(
     _args.add(Variant.fromAny(id))
     _args.add(Variant.fromAny(coord))
     val _ret = __method_bind.autotileGetNavigationPolygon.call(this._handle, _args)
-    return _ret.asObject(::NavigationPolygon)!!
+    return _ret.toAny() as NavigationPolygon
   }
 
   fun autotileGetSize(id: Int): Vector2 {
@@ -237,13 +237,13 @@ open class TileSet(
   fun tileGetLightOccluder(id: Int): OccluderPolygon2D {
     val _arg = Variant(id)
     val _ret = __method_bind.tileGetLightOccluder.call(this._handle, listOf(_arg))
-    return _ret.asObject(::OccluderPolygon2D)!!
+    return _ret.toAny() as OccluderPolygon2D
   }
 
   fun tileGetMaterial(id: Int): ShaderMaterial {
     val _arg = Variant(id)
     val _ret = __method_bind.tileGetMaterial.call(this._handle, listOf(_arg))
-    return _ret.asObject(::ShaderMaterial)!!
+    return _ret.toAny() as ShaderMaterial
   }
 
   fun tileGetModulate(id: Int): Color {
@@ -261,7 +261,7 @@ open class TileSet(
   fun tileGetNavigationPolygon(id: Int): NavigationPolygon {
     val _arg = Variant(id)
     val _ret = __method_bind.tileGetNavigationPolygon.call(this._handle, listOf(_arg))
-    return _ret.asObject(::NavigationPolygon)!!
+    return _ret.toAny() as NavigationPolygon
   }
 
   fun tileGetNavigationPolygonOffset(id: Int): Vector2 {
@@ -273,7 +273,7 @@ open class TileSet(
   fun tileGetNormalMap(id: Int): Texture {
     val _arg = Variant(id)
     val _ret = __method_bind.tileGetNormalMap.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun tileGetOccluderOffset(id: Int): Vector2 {
@@ -293,7 +293,7 @@ open class TileSet(
     _args.add(Variant.fromAny(id))
     _args.add(Variant.fromAny(shapeId))
     val _ret = __method_bind.tileGetShape.call(this._handle, _args)
-    return _ret.asObject(::Shape2D)!!
+    return _ret.toAny() as Shape2D
   }
 
   fun tileGetShapeCount(id: Int): Int {
@@ -343,7 +343,7 @@ open class TileSet(
   fun tileGetTexture(id: Int): Texture {
     val _arg = Variant(id)
     val _ret = __method_bind.tileGetTexture.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun tileGetTextureOffset(id: Int): Vector2 {

@@ -34,7 +34,7 @@ open class PanoramaSky(
 
   fun getPanorama(): Texture {
     val _ret = __method_bind.getPanorama.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun setPanorama(texture: Texture) {

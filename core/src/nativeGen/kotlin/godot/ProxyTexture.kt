@@ -34,7 +34,7 @@ open class ProxyTexture(
 
   fun getBase(): Texture {
     val _ret = __method_bind.getBase.call(this._handle)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun setBase(base: Texture) {

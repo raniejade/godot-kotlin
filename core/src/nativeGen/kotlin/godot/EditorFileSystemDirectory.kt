@@ -86,7 +86,7 @@ open class EditorFileSystemDirectory(
 
   fun getParent(): EditorFileSystemDirectory {
     val _ret = __method_bind.getParent.call(this._handle)
-    return _ret.asObject(::EditorFileSystemDirectory)!!
+    return _ret.toAny() as EditorFileSystemDirectory
   }
 
   fun getPath(): String {
@@ -97,7 +97,7 @@ open class EditorFileSystemDirectory(
   fun getSubdir(idx: Int): EditorFileSystemDirectory {
     val _arg = Variant(idx)
     val _ret = __method_bind.getSubdir.call(this._handle, listOf(_arg))
-    return _ret.asObject(::EditorFileSystemDirectory)!!
+    return _ret.toAny() as EditorFileSystemDirectory
   }
 
   fun getSubdirCount(): Int {

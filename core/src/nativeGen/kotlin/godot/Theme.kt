@@ -114,7 +114,7 @@ open class Theme(
 
   fun getDefaultFont(): Font {
     val _ret = __method_bind.getDefaultFont.call(this._handle)
-    return _ret.asObject(::Font)!!
+    return _ret.toAny() as Font
   }
 
   fun getFont(name: String, type: String): Font {
@@ -122,7 +122,7 @@ open class Theme(
     _args.add(Variant.fromAny(name))
     _args.add(Variant.fromAny(type))
     val _ret = __method_bind.getFont.call(this._handle, _args)
-    return _ret.asObject(::Font)!!
+    return _ret.toAny() as Font
   }
 
   fun getFontList(type: String): PoolStringArray {
@@ -136,7 +136,7 @@ open class Theme(
     _args.add(Variant.fromAny(name))
     _args.add(Variant.fromAny(type))
     val _ret = __method_bind.getIcon.call(this._handle, _args)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getIconList(type: String): PoolStringArray {
@@ -150,7 +150,7 @@ open class Theme(
     _args.add(Variant.fromAny(name))
     _args.add(Variant.fromAny(type))
     val _ret = __method_bind.getStylebox.call(this._handle, _args)
-    return _ret.asObject(::StyleBox)!!
+    return _ret.toAny() as StyleBox
   }
 
   fun getStyleboxList(type: String): PoolStringArray {

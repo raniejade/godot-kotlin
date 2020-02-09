@@ -343,7 +343,7 @@ open class RigidBody2D(
 
   fun getPhysicsMaterialOverride(): PhysicsMaterial {
     val _ret = __method_bind.getPhysicsMaterialOverride.call(this._handle)
-    return _ret.asObject(::PhysicsMaterial)!!
+    return _ret.toAny() as PhysicsMaterial
   }
 
   fun getWeight(): Float {

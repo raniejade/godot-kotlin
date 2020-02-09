@@ -34,13 +34,13 @@ open class PackedScene(
 
   fun getState(): SceneState {
     val _ret = __method_bind.getState.call(this._handle)
-    return _ret.asObject(::SceneState)!!
+    return _ret.toAny() as SceneState
   }
 
   fun instance(editState: Int = 0): Node {
     val _arg = Variant(editState)
     val _ret = __method_bind.instance.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Node)!!
+    return _ret.toAny() as Node
   }
 
   fun pack(path: Node): GDError {

@@ -41,7 +41,7 @@ open class AudioEffectRecord(
 
   fun getRecording(): AudioStreamSample {
     val _ret = __method_bind.getRecording.call(this._handle)
-    return _ret.asObject(::AudioStreamSample)!!
+    return _ret.toAny() as AudioStreamSample
   }
 
   fun isRecordingActive(): Boolean {

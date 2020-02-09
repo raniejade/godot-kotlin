@@ -106,7 +106,7 @@ open class TreeItem(
     _args.add(Variant.fromAny(column))
     _args.add(Variant.fromAny(buttonIdx))
     val _ret = __method_bind.getButton.call(this._handle, _args)
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getButtonCount(column: Int): Int {
@@ -131,7 +131,7 @@ open class TreeItem(
 
   fun getChildren(): TreeItem {
     val _ret = __method_bind.getChildren.call(this._handle)
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getCustomBgColor(column: Int): Color {
@@ -160,7 +160,7 @@ open class TreeItem(
   fun getIcon(column: Int): Texture {
     val _arg = Variant(column)
     val _ret = __method_bind.getIcon.call(this._handle, listOf(_arg))
-    return _ret.asObject(::Texture)!!
+    return _ret.toAny() as Texture
   }
 
   fun getIconMaxWidth(column: Int): Int {
@@ -189,29 +189,29 @@ open class TreeItem(
 
   fun getNext(): TreeItem {
     val _ret = __method_bind.getNext.call(this._handle)
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getNextVisible(wrap: Boolean = false): TreeItem {
     val _arg = Variant(wrap)
     val _ret = __method_bind.getNextVisible.call(this._handle, listOf(_arg))
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getParent(): TreeItem {
     val _ret = __method_bind.getParent.call(this._handle)
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getPrev(): TreeItem {
     val _ret = __method_bind.getPrev.call(this._handle)
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getPrevVisible(wrap: Boolean = false): TreeItem {
     val _arg = Variant(wrap)
     val _ret = __method_bind.getPrevVisible.call(this._handle, listOf(_arg))
-    return _ret.asObject(::TreeItem)!!
+    return _ret.toAny() as TreeItem
   }
 
   fun getRange(column: Int): Float {

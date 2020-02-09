@@ -65,7 +65,7 @@ open class WebRTCPeerConnection(
     _args.add(Variant.fromAny(label))
     _args.add(Variant.fromAny(options))
     val _ret = __method_bind.createDataChannel.call(this._handle, _args)
-    return _ret.asObject(::WebRTCDataChannel)!!
+    return _ret.toAny() as WebRTCDataChannel
   }
 
   fun createOffer(): GDError {

@@ -58,9 +58,20 @@ open class GenerateEntry : DefaultTask() {
 
     nativeScriptInitFun.addCode("⇤}")
 
+    val nativescriptTerminateName = "godot_nativescript_terminate"
+    val nativescriptTerminateFun = FunSpec.builder(nativescriptTerminateName)
+      .addAnnotation(AnnotationSpec.builder(cnameAnnotation).addMember("%S", nativescriptTerminateName).build())
+      .addParameter(
+        ParameterSpec.builder("handle", ClassName("kotlinx.cinterop", "COpaquePointer"))
+          .build()
+      )
+      .addCode("godot.nativescriptTerminate(handle)")
+      .build()
+
     fs.addFunction(godotInitFun)
     fs.addFunction(godotTerminateFun)
     fs.addFunction(nativeScriptInitFun.build())
+    fs.addFunction(nativescriptTerminateFun)
 
     fs.build().writeTo(output.parentFile)
   }
