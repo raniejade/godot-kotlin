@@ -16,12 +16,13 @@ object Allocator {
   private var currentScope = mutableListOf<MemScope>()
 
   internal fun <T> pushContext(cb: () -> T): T {
-    return memScoped {
-      currentScope.add(0, this)
-      val ret = cb()
-      currentScope.removeAt(0)
-      ret
-    }
+//    return memScoped {
+//      currentScope.add(0, this)
+//      val ret = cb()
+//      currentScope.removeAt(0)
+//      ret
+//    }
+    return cb()
   }
 
   internal fun <T> allocationScope(cb: MemScope.() -> T): T {
