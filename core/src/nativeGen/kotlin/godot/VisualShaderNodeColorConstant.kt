@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
 import godot.core.Variant
@@ -31,7 +32,9 @@ open class VisualShaderNodeColorConstant(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -54,7 +57,7 @@ open class VisualShaderNodeColorConstant(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeColorConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeColorConstant" }
@@ -66,14 +69,14 @@ open class VisualShaderNodeColorConstant(
      */
     private object __method_bind {
       val getConstant: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeColorConstant".cstr.ptr,
             "get_constant".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_constant" }
         }
       val setConstant: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeColorConstant".cstr.ptr,
             "set_constant".cstr.ptr)

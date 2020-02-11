@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Color
 import godot.core.Dictionary
 import godot.core.GDError
@@ -139,7 +140,9 @@ open class RichTextLabel(
   val signalMetaHoverStarted: Signal1<Variant> = Signal1("meta_hover_started")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addImage(
@@ -527,7 +530,7 @@ open class RichTextLabel(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RichTextLabel".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RichTextLabel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -538,126 +541,126 @@ open class RichTextLabel(
      */
     private object __method_bind {
       val addImage: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "add_image".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_image" }
         }
       val addText: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "add_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_text" }
         }
       val appendBbcode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "append_bbcode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method append_bbcode" }
         }
       val clear: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
       val getBbcode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_bbcode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bbcode" }
         }
       val getContentHeight: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_content_height".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_content_height" }
         }
       val getEffects: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_effects".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_effects" }
         }
       val getLineCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_line_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_line_count" }
         }
       val getPercentVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_percent_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_percent_visible" }
         }
       val getTabSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_tab_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tab_size" }
         }
       val getText: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_text" }
         }
       val getTotalCharacterCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_total_character_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_total_character_count" }
         }
       val getVScroll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_v_scroll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_v_scroll" }
         }
       val getVisibleCharacters: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_visible_characters".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_visible_characters" }
         }
       val getVisibleLineCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "get_visible_line_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_visible_line_count" }
         }
       val installEffect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "install_effect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method install_effect" }
         }
       val isMetaUnderlined: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "is_meta_underlined".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_meta_underlined" }
         }
       val isOverridingSelectedFontColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "is_overriding_selected_font_color".cstr.ptr)
@@ -665,266 +668,266 @@ open class RichTextLabel(
             }
         }
       val isScrollActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "is_scroll_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_scroll_active" }
         }
       val isScrollFollowing: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "is_scroll_following".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_scroll_following" }
         }
       val isSelectionEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "is_selection_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_selection_enabled" }
         }
       val isUsingBbcode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "is_using_bbcode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_using_bbcode" }
         }
       val newline: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "newline".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method newline" }
         }
       val parseBbcode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "parse_bbcode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method parse_bbcode" }
         }
       val parseExpressionsForValues: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "parse_expressions_for_values".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method parse_expressions_for_values" }
         }
       val pop: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "pop".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method pop" }
         }
       val pushAlign: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_align".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_align" }
         }
       val pushBold: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_bold".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_bold" }
         }
       val pushBoldItalics: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_bold_italics".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_bold_italics" }
         }
       val pushCell: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_cell".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_cell" }
         }
       val pushColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_color" }
         }
       val pushFont: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_font".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_font" }
         }
       val pushIndent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_indent".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_indent" }
         }
       val pushItalics: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_italics".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_italics" }
         }
       val pushList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_list" }
         }
       val pushMeta: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_meta".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_meta" }
         }
       val pushMono: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_mono".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_mono" }
         }
       val pushNormal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_normal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_normal" }
         }
       val pushStrikethrough: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_strikethrough".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_strikethrough" }
         }
       val pushTable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_table".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_table" }
         }
       val pushUnderline: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "push_underline".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_underline" }
         }
       val removeLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "remove_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_line" }
         }
       val scrollToLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "scroll_to_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method scroll_to_line" }
         }
       val setBbcode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_bbcode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bbcode" }
         }
       val setEffects: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_effects".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_effects" }
         }
       val setMetaUnderline: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_meta_underline".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_meta_underline" }
         }
       val setOverrideSelectedFontColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_override_selected_font_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_override_selected_font_color" }
         }
       val setPercentVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_percent_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_percent_visible" }
         }
       val setScrollActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_scroll_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_scroll_active" }
         }
       val setScrollFollow: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_scroll_follow".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_scroll_follow" }
         }
       val setSelectionEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_selection_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_selection_enabled" }
         }
       val setTabSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_tab_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tab_size" }
         }
       val setTableColumnExpand: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_table_column_expand".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_table_column_expand" }
         }
       val setText: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_text" }
         }
       val setUseBbcode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_use_bbcode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_use_bbcode" }
         }
       val setVisibleCharacters: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
             "set_visible_characters".cstr.ptr)

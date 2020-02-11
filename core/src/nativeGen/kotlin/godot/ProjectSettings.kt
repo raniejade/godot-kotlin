@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.GDError
 import godot.core.Godot
@@ -122,105 +123,105 @@ open class ProjectSettingsInternal(
      */
     private object __method_bind {
       val addPropertyInfo: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "add_property_info".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_property_info" }
         }
       val clear: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
       val getOrder: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "get_order".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_order" }
         }
       val getSetting: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "get_setting".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_setting" }
         }
       val globalizePath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "globalize_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method globalize_path" }
         }
       val hasSetting: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "has_setting".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_setting" }
         }
       val loadResourcePack: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "load_resource_pack".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method load_resource_pack" }
         }
       val localizePath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "localize_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method localize_path" }
         }
       val propertyCanRevert: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "property_can_revert".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method property_can_revert" }
         }
       val propertyGetRevert: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "property_get_revert".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method property_get_revert" }
         }
       val save: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "save".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method save" }
         }
       val saveCustom: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "save_custom".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method save_custom" }
         }
       val setInitialValue: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "set_initial_value".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_initial_value" }
         }
       val setOrder: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "set_order".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_order" }
         }
       val setSetting: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
             "set_setting".cstr.ptr)
@@ -231,7 +232,7 @@ open class ProjectSettingsInternal(
 
 object ProjectSettings : ProjectSettingsInternal(null) {
   init {
-    memScoped {
+    Allocator.allocationScope {
       val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("ProjectSettings".cstr.ptr)
       requireNotNull(handle) { "No instance found for singleton ProjectSettings" }

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -46,7 +47,9 @@ open class VisualShaderNodeCubeMap(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getCubeMap(): CubeMap {
@@ -120,7 +123,7 @@ open class VisualShaderNodeCubeMap(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeCubeMap".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeCubeMap" }
@@ -132,42 +135,42 @@ open class VisualShaderNodeCubeMap(
      */
     private object __method_bind {
       val getCubeMap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
             "get_cube_map".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_cube_map" }
         }
       val getSource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
             "get_source".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_source" }
         }
       val getTextureType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
             "get_texture_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_texture_type" }
         }
       val setCubeMap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
             "set_cube_map".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_cube_map" }
         }
       val setSource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
             "set_source".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_source" }
         }
       val setTextureType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
             "set_texture_type".cstr.ptr)

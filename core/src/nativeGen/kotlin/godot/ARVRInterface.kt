@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -47,8 +48,10 @@ open class ARVRInterface(
       setIsPrimary(value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getAnchorDetectionIsEnabled(): Boolean {
@@ -197,98 +200,98 @@ open class ARVRInterface(
      */
     private object __method_bind {
       val getAnchorDetectionIsEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "get_anchor_detection_is_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_anchor_detection_is_enabled" }
         }
       val getCameraFeedId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "get_camera_feed_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_camera_feed_id" }
         }
       val getCapabilities: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "get_capabilities".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_capabilities" }
         }
       val getName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "get_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_name" }
         }
       val getRenderTargetsize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "get_render_targetsize".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_render_targetsize" }
         }
       val getTrackingStatus: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "get_tracking_status".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tracking_status" }
         }
       val initialize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "initialize".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method initialize" }
         }
       val isInitialized: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "is_initialized".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_initialized" }
         }
       val isPrimary: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "is_primary".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_primary" }
         }
       val isStereo: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "is_stereo".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_stereo" }
         }
       val setAnchorDetectionIsEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "set_anchor_detection_is_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_anchor_detection_is_enabled" }
         }
       val setIsInitialized: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "set_is_initialized".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_is_initialized" }
         }
       val setIsPrimary: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "set_is_primary".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_is_primary" }
         }
       val uninitialize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRInterface".cstr.ptr,
             "uninitialize".cstr.ptr)

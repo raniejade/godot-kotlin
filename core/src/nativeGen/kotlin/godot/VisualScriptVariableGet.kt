@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -29,7 +30,9 @@ open class VisualScriptVariableGet(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getVariable(): String {
@@ -43,7 +46,7 @@ open class VisualScriptVariableGet(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptVariableGet".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptVariableGet" }
@@ -55,14 +58,14 @@ open class VisualScriptVariableGet(
      */
     private object __method_bind {
       val getVariable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptVariableGet".cstr.ptr,
             "get_variable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_variable" }
         }
       val setVariable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptVariableGet".cstr.ptr,
             "set_variable".cstr.ptr)

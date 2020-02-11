@@ -3,7 +3,10 @@ package godot.core
 import gdnative.godot_dictionary
 import godot.Object
 import godot.toVariant
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.readValue
 
 class Dictionary(
   value: CValue<godot_dictionary>
@@ -11,21 +14,27 @@ class Dictionary(
   constructor(): this(__new())
 
   fun clear() {
-    memScoped {
+    Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_dictionary_clear)(_value.ptr)
     }
   }
 
   fun duplicate(deep: Boolean = false): Dictionary {
-    return memScoped {
+    return Allocator.allocationScope {
       Dictionary(
         checkNotNull(Godot.gdnative12.godot_dictionary_duplicate)(_value.ptr, deep)
       )
     }
   }
 
+  fun empty(): Boolean {
+    return Allocator.allocationScope {
+      checkNotNull(Godot.gdnative.godot_dictionary_empty)(_value.ptr)
+    }
+  }
+
   fun erase(key: Variant) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_dictionary_erase)(ptr, key._value.ptr)
       ptr.pointed.readValue()
@@ -40,7 +49,7 @@ class Dictionary(
   fun erase(key: CoreType<*>) = erase(key.toVariant())
 
   fun getOrDefault(key: Variant, default: Variant = Variant()): Variant {
-    return memScoped {
+    return Allocator.allocationScope {
       Variant(
         checkNotNull(Godot.gdnative11.godot_dictionary_get_with_default)(_value.ptr, key._value.ptr, default._value.ptr)
       )
@@ -96,7 +105,7 @@ class Dictionary(
   fun getOrDefault(key: CoreType<*>, default: CoreType<*>) = getOrDefault(key.toVariant(), default.toVariant())
 
   operator fun get(key: Variant): Variant {
-    return memScoped {
+    return Allocator.allocationScope {
       Variant(
         checkNotNull(Godot.gdnative.godot_dictionary_get)(_value.ptr, key._value.ptr)
       )
@@ -125,7 +134,7 @@ class Dictionary(
   fun <T: CoreType<*>> get(key: CoreType<*>, cb: T.() -> Unit) = get(key.toVariant(), cb)
 
   operator fun set(key: Variant, value: Variant) {
-    memScoped {
+    Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_dictionary_set)(_value.ptr, key._value.ptr, value._value.ptr)
     }
   }
@@ -179,7 +188,7 @@ class Dictionary(
   operator fun set(key: CoreType<*>, value: CoreType<*>) = set(key.toVariant(), value.toVariant())
 
   fun has(key: Variant): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_dictionary_has)(_value.ptr, key._value.ptr)
     }
   }
@@ -192,19 +201,19 @@ class Dictionary(
   fun has(key: CoreType<*>) = has(key.toVariant())
 
   fun hasAll(keys: VariantArray): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_dictionary_has_all)(_value.ptr, keys._value.ptr)
     }
   }
 
   fun hash(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_dictionary_hash)(_value.ptr)
     }
   }
 
   fun keys(): VariantArray {
-    return memScoped {
+    return Allocator.allocationScope {
       VariantArray(
         checkNotNull(Godot.gdnative.godot_dictionary_keys)(_value.ptr)
       )
@@ -212,13 +221,13 @@ class Dictionary(
   }
 
   fun size(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_dictionary_size)(_value.ptr)
     }
   }
 
   fun values(): VariantArray {
-    return memScoped {
+    return Allocator.allocationScope {
       VariantArray(
         checkNotNull(Godot.gdnative.godot_dictionary_values)(_value.ptr)
       )
@@ -229,7 +238,7 @@ class Dictionary(
     if (other == null || other !is Dictionary) {
       return false
     }
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_dictionary_operator_equal)(_value.ptr, other._value.ptr)
     }
   }

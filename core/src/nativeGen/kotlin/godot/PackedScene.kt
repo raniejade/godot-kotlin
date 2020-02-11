@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -24,7 +25,9 @@ open class PackedScene(
   __ignore: String?
 ) : Resource(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun canInstance(): Boolean {
@@ -71,7 +74,7 @@ open class PackedScene(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PackedScene".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PackedScene" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -82,28 +85,28 @@ open class PackedScene(
      */
     private object __method_bind {
       val canInstance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
             "can_instance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method can_instance" }
         }
       val getState: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
             "get_state".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_state" }
         }
       val instance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
             "instance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method instance" }
         }
       val pack: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
             "pack".cstr.ptr)

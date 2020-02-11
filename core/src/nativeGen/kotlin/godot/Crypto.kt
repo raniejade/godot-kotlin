@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.Variant
@@ -23,7 +24,9 @@ open class Crypto(
   __ignore: String?
 ) : Reference(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun generateRandomBytes(size: Int): PoolByteArray {
@@ -54,7 +57,7 @@ open class Crypto(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Crypto".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Crypto" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -65,19 +68,19 @@ open class Crypto(
      */
     private object __method_bind {
       val generateRandomBytes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Crypto".cstr.ptr,
             "generate_random_bytes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method generate_random_bytes" }
         }
       val generateRsa: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Crypto".cstr.ptr,
             "generate_rsa".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method generate_rsa" }
         }
       val generateSelfSignedCertificate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Crypto".cstr.ptr,
             "generate_self_signed_certificate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method generate_self_signed_certificate" }

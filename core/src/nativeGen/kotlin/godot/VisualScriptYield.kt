@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -39,7 +40,9 @@ open class VisualScriptYield(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getWaitTime(): Float {
@@ -84,7 +87,7 @@ open class VisualScriptYield(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptYield".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptYield" }
@@ -96,28 +99,28 @@ open class VisualScriptYield(
      */
     private object __method_bind {
       val getWaitTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
             "get_wait_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_wait_time" }
         }
       val getYieldMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
             "get_yield_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_yield_mode" }
         }
       val setWaitTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
             "set_wait_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_wait_time" }
         }
       val setYieldMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
             "set_yield_mode".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -46,7 +47,9 @@ open class PacketPeerStream(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getInputBufferMaxSize(): Int {
@@ -80,7 +83,7 @@ open class PacketPeerStream(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PacketPeerStream".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PacketPeerStream" }
@@ -92,42 +95,42 @@ open class PacketPeerStream(
      */
     private object __method_bind {
       val getInputBufferMaxSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
             "get_input_buffer_max_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_input_buffer_max_size" }
         }
       val getOutputBufferMaxSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
             "get_output_buffer_max_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_output_buffer_max_size" }
         }
       val getStreamPeer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
             "get_stream_peer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_stream_peer" }
         }
       val setInputBufferMaxSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
             "set_input_buffer_max_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_input_buffer_max_size" }
         }
       val setOutputBufferMaxSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
             "set_output_buffer_max_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_output_buffer_max_size" }
         }
       val setStreamPeer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
             "set_stream_peer".cstr.ptr)

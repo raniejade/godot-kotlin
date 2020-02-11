@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -19,8 +20,10 @@ open class EditorResourceConversionPlugin(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   companion object {

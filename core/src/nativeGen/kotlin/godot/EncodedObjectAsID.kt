@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class EncodedObjectAsID(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getObjectId(): Int {
@@ -44,7 +47,7 @@ open class EncodedObjectAsID(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EncodedObjectAsID".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for EncodedObjectAsID" }
@@ -56,14 +59,14 @@ open class EncodedObjectAsID(
      */
     private object __method_bind {
       val getObjectId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EncodedObjectAsID".cstr.ptr,
             "get_object_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_object_id" }
         }
       val setObjectId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EncodedObjectAsID".cstr.ptr,
             "set_object_id".cstr.ptr)

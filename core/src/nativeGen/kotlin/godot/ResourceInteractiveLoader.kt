@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -22,8 +23,10 @@ open class ResourceInteractiveLoader(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getResource(): Resource {
@@ -57,35 +60,35 @@ open class ResourceInteractiveLoader(
      */
     private object __method_bind {
       val getResource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
             "get_resource".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_resource" }
         }
       val getStage: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
             "get_stage".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_stage" }
         }
       val getStageCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
             "get_stage_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_stage_count" }
         }
       val poll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
             "poll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method poll" }
         }
       val wait: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
             "wait".cstr.ptr)

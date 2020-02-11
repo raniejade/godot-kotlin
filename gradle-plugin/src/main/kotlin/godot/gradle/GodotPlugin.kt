@@ -43,6 +43,8 @@ open class GodotPlugin : Plugin<Project> {
         val genEntryTask = project.tasks.create(library.generateEntryTaskName, GenerateEntry::class.java) {
           output.set(project.file("${library.generatedEntryDir}/entry"))
           classes.set(library.classes)
+          // this is weird
+          outputs.upToDateWhen { false }
         }
 
         val librariesToBeGenerated = mutableMapOf<TargetPlatform, String>()

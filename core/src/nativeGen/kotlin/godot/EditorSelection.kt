@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -25,8 +26,10 @@ open class EditorSelection(
    */
   val signalSelectionChanged: Signal0 = Signal0("selection_changed")
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addNode(node: Node) {
@@ -59,35 +62,35 @@ open class EditorSelection(
      */
     private object __method_bind {
       val addNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
             "add_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_node" }
         }
       val clear: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
       val getSelectedNodes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
             "get_selected_nodes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_selected_nodes" }
         }
       val getTransformableSelectedNodes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
             "get_transformable_selected_nodes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_transformable_selected_nodes" }
         }
       val removeNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
             "remove_node".cstr.ptr)

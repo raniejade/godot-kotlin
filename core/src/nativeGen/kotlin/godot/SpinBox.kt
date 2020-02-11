@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -55,7 +56,9 @@ open class SpinBox(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun apply() {
@@ -108,7 +111,7 @@ open class SpinBox(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpinBox".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SpinBox" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -119,61 +122,61 @@ open class SpinBox(
      */
     private object __method_bind {
       val apply: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
             "apply".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method apply" }
         }
       val getAlign: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
             "get_align".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_align" }
         }
       val getLineEdit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
             "get_line_edit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_line_edit" }
         }
       val getPrefix: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
             "get_prefix".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_prefix" }
         }
       val getSuffix: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
             "get_suffix".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_suffix" }
         }
       val isEditable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
             "is_editable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_editable" }
         }
       val setAlign: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
             "set_align".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_align" }
         }
       val setEditable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
             "set_editable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_editable" }
         }
       val setPrefix: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
             "set_prefix".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_prefix" }
         }
       val setSuffix: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
             "set_suffix".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_suffix" }

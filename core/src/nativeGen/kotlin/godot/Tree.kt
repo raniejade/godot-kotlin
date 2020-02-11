@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
@@ -161,7 +162,9 @@ open class Tree(
   val signalNothingSelected: Signal0 = Signal0("nothing_selected")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun areColumnTitlesVisible(): Boolean {
@@ -408,7 +411,7 @@ open class Tree(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Tree".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Tree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -419,223 +422,223 @@ open class Tree(
      */
     private object __method_bind {
       val areColumnTitlesVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "are_column_titles_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method are_column_titles_visible" }
         }
       val clear: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
       val createItem: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "create_item".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method create_item" }
         }
       val ensureCursorIsVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "ensure_cursor_is_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method ensure_cursor_is_visible" }
         }
       val getAllowReselect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_allow_reselect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_allow_reselect" }
         }
       val getAllowRmbSelect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_allow_rmb_select".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_allow_rmb_select" }
         }
       val getColumnAtPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_column_at_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_column_at_position" }
         }
       val getColumnTitle: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_column_title".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_column_title" }
         }
       val getColumnWidth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_column_width".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_column_width" }
         }
       val getColumns: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_columns".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_columns" }
         }
       val getCustomPopupRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_custom_popup_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_custom_popup_rect" }
         }
       val getDropModeFlags: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_drop_mode_flags".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_drop_mode_flags" }
         }
       val getDropSectionAtPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_drop_section_at_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_drop_section_at_position" }
         }
       val getEdited: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_edited".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_edited" }
         }
       val getEditedColumn: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_edited_column".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_edited_column" }
         }
       val getItemAreaRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_item_area_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_item_area_rect" }
         }
       val getItemAtPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_item_at_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_item_at_position" }
         }
       val getNextSelected: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_next_selected".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_next_selected" }
         }
       val getPressedButton: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_pressed_button".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_pressed_button" }
         }
       val getRoot: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_root".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_root" }
         }
       val getScroll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_scroll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_scroll" }
         }
       val getSelectMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_select_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_select_mode" }
         }
       val getSelected: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_selected".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_selected" }
         }
       val getSelectedColumn: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "get_selected_column".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_selected_column" }
         }
       val isFoldingHidden: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "is_folding_hidden".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_folding_hidden" }
         }
       val isRootHidden: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "is_root_hidden".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_root_hidden" }
         }
       val setAllowReselect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_allow_reselect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_allow_reselect" }
         }
       val setAllowRmbSelect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_allow_rmb_select".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_allow_rmb_select" }
         }
       val setColumnExpand: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_column_expand".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_column_expand" }
         }
       val setColumnMinWidth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_column_min_width".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_column_min_width" }
         }
       val setColumnTitle: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_column_title".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_column_title" }
         }
       val setColumnTitlesVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_column_titles_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_column_titles_visible" }
         }
       val setColumns: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_columns".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_columns" }
         }
       val setDropModeFlags: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_drop_mode_flags".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_drop_mode_flags" }
         }
       val setHideFolding: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_hide_folding".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_hide_folding" }
         }
       val setHideRoot: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_hide_root".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_hide_root" }
         }
       val setSelectMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
             "set_select_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_select_mode" }

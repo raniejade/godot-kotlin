@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -21,8 +22,10 @@ open class EditorSceneImporter(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun importAnimationFromOtherImporter(
@@ -77,7 +80,7 @@ open class EditorSceneImporter(
      */
     private object __method_bind {
       val importAnimationFromOtherImporter: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
             "import_animation_from_other_importer".cstr.ptr)
@@ -85,7 +88,7 @@ open class EditorSceneImporter(
             "No method_bind found for method import_animation_from_other_importer" }
         }
       val importSceneFromOtherImporter: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
             "import_scene_from_other_importer".cstr.ptr)

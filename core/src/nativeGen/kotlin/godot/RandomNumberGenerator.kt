@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -31,7 +32,9 @@ open class RandomNumberGenerator(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getSeed(): Int {
@@ -83,7 +86,7 @@ open class RandomNumberGenerator(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("RandomNumberGenerator".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RandomNumberGenerator" }
@@ -95,56 +98,56 @@ open class RandomNumberGenerator(
      */
     private object __method_bind {
       val getSeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
             "get_seed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_seed" }
         }
       val randf: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
             "randf".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method randf" }
         }
       val randfRange: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
             "randf_range".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method randf_range" }
         }
       val randfn: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
             "randfn".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method randfn" }
         }
       val randi: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
             "randi".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method randi" }
         }
       val randiRange: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
             "randi_range".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method randi_range" }
         }
       val randomize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
             "randomize".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method randomize" }
         }
       val setSeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
             "set_seed".cstr.ptr)

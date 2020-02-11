@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Variant
@@ -40,7 +41,9 @@ open class VisualScriptConstructor(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -73,7 +76,7 @@ open class VisualScriptConstructor(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptConstructor".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptConstructor" }
@@ -85,28 +88,28 @@ open class VisualScriptConstructor(
      */
     private object __method_bind {
       val getConstructor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstructor".cstr.ptr,
             "get_constructor".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_constructor" }
         }
       val getConstructorType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstructor".cstr.ptr,
             "get_constructor_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_constructor_type" }
         }
       val setConstructor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstructor".cstr.ptr,
             "set_constructor".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_constructor" }
         }
       val setConstructorType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstructor".cstr.ptr,
             "set_constructor_type".cstr.ptr)

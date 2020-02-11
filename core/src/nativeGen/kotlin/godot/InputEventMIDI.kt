@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -86,7 +87,9 @@ open class InputEventMIDI(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getChannel(): Int {
@@ -170,7 +173,7 @@ open class InputEventMIDI(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventMIDI".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for InputEventMIDI" }
@@ -182,112 +185,112 @@ open class InputEventMIDI(
      */
     private object __method_bind {
       val getChannel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "get_channel".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_channel" }
         }
       val getControllerNumber: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "get_controller_number".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_controller_number" }
         }
       val getControllerValue: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "get_controller_value".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_controller_value" }
         }
       val getInstrument: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "get_instrument".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_instrument" }
         }
       val getMessage: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "get_message".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_message" }
         }
       val getPitch: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "get_pitch".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_pitch" }
         }
       val getPressure: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "get_pressure".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_pressure" }
         }
       val getVelocity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "get_velocity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_velocity" }
         }
       val setChannel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "set_channel".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_channel" }
         }
       val setControllerNumber: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "set_controller_number".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_controller_number" }
         }
       val setControllerValue: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "set_controller_value".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_controller_value" }
         }
       val setInstrument: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "set_instrument".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_instrument" }
         }
       val setMessage: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "set_message".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_message" }
         }
       val setPitch: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "set_pitch".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_pitch" }
         }
       val setPressure: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "set_pressure".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_pressure" }
         }
       val setVelocity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMIDI".cstr.ptr,
             "set_velocity".cstr.ptr)

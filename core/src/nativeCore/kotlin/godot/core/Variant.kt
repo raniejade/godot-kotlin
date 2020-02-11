@@ -3,9 +3,9 @@ package godot.core
 import gdnative.godot_variant
 import gdnative.godot_variant_operator
 import gdnative.godot_variant_type
+import godot.ClassDB
 import godot.Object
 import godot.TagDB
-import godot.replaceHandle
 import kotlinx.cinterop.*
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.freeze
@@ -136,7 +136,7 @@ class Variant(
 
   val type: Type
     get() {
-      return memScoped {
+      return Allocator.allocationScope {
         Type.from(checkNotNull(Godot.gdnative.godot_variant_get_type)(_value.ptr).value.toInt())
       }
     }
@@ -310,34 +310,40 @@ class Variant(
     }
   }
 
-  fun <T: Object> asObject(factory: () -> T): T? {
-    return memScoped {
-      val obj = checkNotNull(Godot.gdnative.godot_variant_as_object)(_value.ptr)
-      if (obj == null) {
-        null
-      } else {
-        val ret = factory()
-        ret._handle = obj
-        ret
-      }
-    }
-  }
-
   fun asObject(): Object? {
-    return memScoped {
+    return Allocator.allocationScope {
       val ptr = checkNotNull(Godot.gdnative.godot_variant_as_object)(_value.ptr)
       if (ptr == null) {
         null
       } else {
-        val obj = Object()
-        obj.replaceHandle(ptr)
+        val obj = Godot.noInitZone {
+          Object()
+        }
+        obj._handle = ptr
+        val className = obj.getClass()
+        // binding defined type
+        // this should be first otherwise casting to a user defined type won't work!
         var tag = checkNotNull(Godot.nativescript11.godot_nativescript_get_type_tag)(ptr)
+        // engine type
         if (tag == null) {
-          tag = checkNotNull(Godot.nativescript11.godot_nativescript_get_global_type_tag)(Godot.languageIndex, obj.getClass().cstr.ptr)
+          tag = checkNotNull(Godot.nativescript11.godot_nativescript_get_global_type_tag)(Godot.languageIndex, className.cstr.ptr)
+        }
+        // parent class of an engine type (this is here for types not exposed by gdnative)
+        if (tag == null) {
+          var parentClass = ClassDB.getParentClass(className)
+          while (parentClass.isNotEmpty()) {
+            tag = checkNotNull(Godot.nativescript11.godot_nativescript_get_global_type_tag)(Godot.languageIndex, parentClass.cstr.ptr)
+            if (tag != null) {
+              break
+            }
+            parentClass = ClassDB.getParentClass(parentClass)
+          }
         }
         if (tag != null) {
-          val cast = TagDB.newInstance(tag)
-          cast.replaceHandle(ptr)
+          val cast = Godot.noInitZone {
+            TagDB.newInstance(tag)
+          }
+          cast._handle = ptr
           cast
         } else {
           obj
@@ -384,7 +390,7 @@ class Variant(
   }
 
   private fun <K: CStructVar, T: CoreType<K>> transmute(factory: (CValue<K>) -> T, transformer: (CPointer<godot_variant>) -> CValue<K>): T {
-    return memScoped {
+    return Allocator.allocationScope {
       factory(
         transformer(_value.ptr)
       )
@@ -392,7 +398,7 @@ class Variant(
   }
 
   private fun <T> transmute(transformer: (CPointer<godot_variant>) -> T): T {
-    return memScoped {
+    return Allocator.allocationScope {
       transformer(_value.ptr)
     }
   }
@@ -599,10 +605,6 @@ class Variant(
         // assume an object
         else -> Type.OBJECT
       }
-    }
-
-    private fun allocateVariant(constructor: MemScope.(CPointer<godot_variant>) -> Unit): Variant {
-      return allocType(::Variant, constructor)
     }
   }
 }

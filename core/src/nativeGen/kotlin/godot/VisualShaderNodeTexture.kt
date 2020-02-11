@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -46,7 +47,9 @@ open class VisualShaderNodeTexture(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getSource(): Source {
@@ -128,7 +131,7 @@ open class VisualShaderNodeTexture(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTexture" }
@@ -140,42 +143,42 @@ open class VisualShaderNodeTexture(
      */
     private object __method_bind {
       val getSource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTexture".cstr.ptr,
             "get_source".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_source" }
         }
       val getTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTexture".cstr.ptr,
             "get_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val getTextureType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTexture".cstr.ptr,
             "get_texture_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_texture_type" }
         }
       val setSource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTexture".cstr.ptr,
             "set_source".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_source" }
         }
       val setTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTexture".cstr.ptr,
             "set_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_texture" }
         }
       val setTextureType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTexture".cstr.ptr,
             "set_texture_type".cstr.ptr)

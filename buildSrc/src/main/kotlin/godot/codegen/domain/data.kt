@@ -2,7 +2,7 @@ package godot.codegen.domain
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.squareup.kotlinpoet.ClassName
-import org.jetbrains.kotlin.gradle.utils.loadPropertyFromResources
+import com.squareup.kotlinpoet.TypeName
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class RawGDProperty(
@@ -64,6 +64,7 @@ enum class GDApiType {
 }
 
 data class GDClass(
+  val rawName: String,
   val name: String,
   val baseClass: String,
   val isSingleton: Boolean,
@@ -80,6 +81,7 @@ data class GDClass(
     fun from(raw: RawGDClass): GDClass {
       return GDClass(
         raw.name,
+        raw.name.removePrefix("_"),
         raw.base_class,
         raw.singleton,
         raw.instanciable,
@@ -87,7 +89,7 @@ data class GDClass(
         GDApiType.valueOf(raw.api_type.toUpperCase()),
         raw.enums.map(GDEnum.Companion::from).map { it.name to it }.toMap(),
         raw.properties.map(GDProperty.Companion::from).map { it.name to it }.toMap(),
-        raw.methods.map(GDMethod.Companion::from).map { it.name to it }.toMap(),
+        raw.methods.map { GDMethod.from(raw.name, it) }.map { it.name to it }.toMap(),
         raw.constants,
         raw.signals.map(GDSignal.Companion::from)
       )
@@ -115,7 +117,8 @@ data class GDType(
   val names: List<String>,
   val fqName: String,
   val isEnum: Boolean,
-  val coreType: CoreType?
+  val coreType: CoreType?,
+  val nullable: Boolean
 ) {
   val isCoreType = coreType != null
   val isInnerType = names.size > 1
@@ -123,27 +126,28 @@ data class GDType(
   val isVariant = coreType == CoreType.VARIANT
   val isPrimitive = coreType != null && coreType.primitive
 
-  fun toClassName(): ClassName? {
+  fun toClassName(): TypeName? {
     return when (coreType) {
       CoreType.VOID -> null
-      null -> ClassName("godot", names)
+      null -> ClassName("godot", names).copy(nullable = nullable)
       else -> {
         val packageName = if (isPrimitive) {
           "kotlin"
         } else {
           "godot.core"
         }
-        ClassName(packageName, names)
+        ClassName(packageName, names).copy(nullable = nullable)
       }
     }
   }
 
   companion object {
-    fun from(name: String): GDType {
+    fun from(name: String, nullable: Boolean = false): GDType {
       var processedName = name
       var isEnum = false
       if (processedName.startsWith("enum.")) {
         processedName = processedName.replace("enum.", "")
+          .removePrefix("_")
         isEnum = true
       }
       // can be an inner type
@@ -156,11 +160,16 @@ data class GDType(
         fqName = coreType.kotlinName
       }
 
+      if (nullable) {
+        fqName = "$fqName?"
+      }
+
       return GDType(
         names,
         fqName,
         isEnum,
-        coreType
+        coreType,
+        nullable
       )
     }
   }
@@ -225,11 +234,11 @@ data class GDMethod(
   val arguments: List<GDArgument>
 ) {
   companion object {
-    fun from(raw: RawGDMethod): GDMethod {
+    fun from(className: String, raw: RawGDMethod): GDMethod {
       return GDMethod(
         raw.name,
         normalizeMethodName(raw.name),
-        GDType.from(raw.return_type),
+        GDType.from(raw.return_type, DataEnhancer.isMethodReturnTypeNullable(className, raw.name)),
         raw.is_editor,
         raw.is_noscript,
         raw.is_const,

@@ -1,7 +1,10 @@
 package godot.core
 
 import gdnative.godot_quat
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.readValue
 
 class Quat(
   value: CValue<godot_quat>
@@ -14,12 +17,12 @@ class Quat(
 
   var x: Float
     get() {
-      return memScoped {
+      return Allocator.allocationScope {
         checkNotNull(Godot.gdnative.godot_quat_get_x)(_value.ptr)
       }
     }
     set(value) {
-      _value = memScoped {
+      _value = Allocator.allocationScope {
         val ptr = _value.ptr
         checkNotNull(Godot.gdnative.godot_quat_set_x)(_value.ptr, value)
         ptr.pointed.readValue()
@@ -28,12 +31,12 @@ class Quat(
 
   var y: Float
     get() {
-      return memScoped {
+      return Allocator.allocationScope {
         checkNotNull(Godot.gdnative.godot_quat_get_y)(_value.ptr)
       }
     }
     set(value) {
-      _value = memScoped {
+      _value = Allocator.allocationScope {
         val ptr = _value.ptr
         checkNotNull(Godot.gdnative.godot_quat_set_y)(_value.ptr, value)
         ptr.pointed.readValue()
@@ -42,12 +45,12 @@ class Quat(
 
   var z: Float
     get() {
-      return memScoped {
+      return Allocator.allocationScope {
         checkNotNull(Godot.gdnative.godot_quat_get_z)(_value.ptr)
       }
     }
     set(value) {
-      _value = memScoped {
+      _value = Allocator.allocationScope {
         val ptr = _value.ptr
         checkNotNull(Godot.gdnative.godot_quat_set_z)(_value.ptr, value)
         ptr.pointed.readValue()
@@ -56,12 +59,12 @@ class Quat(
 
   var w: Float
     get() {
-      return memScoped {
+      return Allocator.allocationScope {
         checkNotNull(Godot.gdnative.godot_quat_get_w)(_value.ptr)
       }
     }
     set(value) {
-      _value = memScoped {
+      _value = Allocator.allocationScope {
         val ptr = _value.ptr
         checkNotNull(Godot.gdnative.godot_quat_set_w)(_value.ptr, value)
         ptr.pointed.readValue()
@@ -69,7 +72,7 @@ class Quat(
     }
 
   fun cubicSlerp(b: Quat, preA: Quat, postB: Quat, t: Float): Quat {
-    return memScoped {
+    return Allocator.allocationScope {
       Quat(
         checkNotNull(Godot.gdnative.godot_quat_cubic_slerp)(_value.ptr, b._value.ptr, preA._value.ptr, postB._value.ptr, t)
       )
@@ -77,13 +80,13 @@ class Quat(
   }
 
   fun dot(quat: Quat): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_quat_dot)(_value.ptr, quat._value.ptr)
     }
   }
 
   fun inverse(): Quat {
-    return memScoped {
+    return Allocator.allocationScope {
       Quat(
         checkNotNull(Godot.gdnative.godot_quat_inverse)(_value.ptr)
       )
@@ -91,25 +94,25 @@ class Quat(
   }
 
   fun isNormalized(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_quat_is_normalized)(_value.ptr)
     }
   }
 
   fun length(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_quat_length)(_value.ptr)
     }
   }
 
   fun lengthSquared(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_quat_length_squared)(_value.ptr)
     }
   }
 
   fun normalized(): Quat {
-    return memScoped {
+    return Allocator.allocationScope {
       Quat(
         checkNotNull(Godot.gdnative.godot_quat_normalized)(_value.ptr)
       )
@@ -117,7 +120,7 @@ class Quat(
   }
 
   fun setAxisAngle(axis: Vector3, angle: Float) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative11.godot_quat_set_axis_angle)(_value.ptr, axis._value.ptr, angle)
       ptr.pointed.readValue()
@@ -125,7 +128,7 @@ class Quat(
   }
 
   fun slerp(quat: Quat, t: Float): Quat {
-    return memScoped {
+    return Allocator.allocationScope {
       Quat(
         checkNotNull(Godot.gdnative.godot_quat_slerp)(_value.ptr, quat._value.ptr, t)
       )
@@ -133,7 +136,7 @@ class Quat(
   }
 
   fun slerpni(quat: Quat, t: Float): Quat {
-    return memScoped {
+    return Allocator.allocationScope {
       Quat(
         checkNotNull(Godot.gdnative.godot_quat_slerpni)(_value.ptr, quat._value.ptr, t)
       )
@@ -141,7 +144,7 @@ class Quat(
   }
 
   fun xform(vec: Vector3): Vector3 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector3(
         checkNotNull(Godot.gdnative.godot_quat_xform)(_value.ptr, vec._value.ptr)
       )
@@ -149,7 +152,7 @@ class Quat(
   }
 
   operator fun plus(other: Quat): Quat {
-    return memScoped {
+    return Allocator.allocationScope {
       Quat(
         checkNotNull(Godot.gdnative.godot_quat_operator_add)(_value.ptr, other._value.ptr)
       )
@@ -157,7 +160,7 @@ class Quat(
   }
 
   operator fun minus(other: Quat): Quat {
-    return memScoped {
+    return Allocator.allocationScope {
       Quat(
         checkNotNull(Godot.gdnative.godot_quat_operator_subtract)(_value.ptr, other._value.ptr)
       )
@@ -165,7 +168,7 @@ class Quat(
   }
 
   operator fun times(scalar: Float): Quat {
-    return memScoped {
+    return Allocator.allocationScope {
       Quat(
         checkNotNull(Godot.gdnative.godot_quat_operator_multiply)(_value.ptr, scalar)
       )
@@ -173,7 +176,7 @@ class Quat(
   }
 
   operator fun div(scalar: Float): Quat {
-    return memScoped {
+    return Allocator.allocationScope {
       Quat(
         checkNotNull(Godot.gdnative.godot_quat_operator_divide)(_value.ptr, scalar)
       )
@@ -181,7 +184,7 @@ class Quat(
   }
 
   operator fun unaryMinus(): Quat {
-    return memScoped {
+    return Allocator.allocationScope {
       Quat(
         checkNotNull(Godot.gdnative.godot_quat_operator_neg)(_value.ptr)
       )
@@ -193,7 +196,7 @@ class Quat(
   }
 
   override fun toGDString(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_quat_as_string)(_value.ptr)
       )
@@ -205,7 +208,7 @@ class Quat(
       return false
     }
 
-    return memScoped {
+    return Allocator.allocationScope {
       when (other) {
         is Quat -> checkNotNull(Godot.gdnative.godot_quat_operator_equal)(_value.ptr, other._value.ptr)
         else -> false

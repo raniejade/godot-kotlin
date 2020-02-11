@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -78,7 +79,9 @@ open class TabContainer(
   val signalTabSelected: Signal1<Int> = Signal1("tab_selected")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun areTabsVisible(): Boolean {
@@ -233,7 +236,7 @@ open class TabContainer(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TabContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for TabContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -244,168 +247,168 @@ open class TabContainer(
      */
     private object __method_bind {
       val areTabsVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "are_tabs_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method are_tabs_visible" }
         }
       val getCurrentTab: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_current_tab".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_current_tab" }
         }
       val getCurrentTabControl: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_current_tab_control".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_current_tab_control" }
         }
       val getDragToRearrangeEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_drag_to_rearrange_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_drag_to_rearrange_enabled" }
         }
       val getPopup: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_popup".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_popup" }
         }
       val getPreviousTab: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_previous_tab".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_previous_tab" }
         }
       val getTabAlign: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_tab_align".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tab_align" }
         }
       val getTabControl: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_tab_control".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tab_control" }
         }
       val getTabCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_tab_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tab_count" }
         }
       val getTabDisabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_tab_disabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tab_disabled" }
         }
       val getTabIcon: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_tab_icon".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tab_icon" }
         }
       val getTabTitle: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_tab_title".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tab_title" }
         }
       val getTabsRearrangeGroup: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_tabs_rearrange_group".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tabs_rearrange_group" }
         }
       val getUseHiddenTabsForMinSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "get_use_hidden_tabs_for_min_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_use_hidden_tabs_for_min_size" }
         }
       val setCurrentTab: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_current_tab".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_current_tab" }
         }
       val setDragToRearrangeEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_drag_to_rearrange_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_drag_to_rearrange_enabled" }
         }
       val setPopup: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_popup".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_popup" }
         }
       val setTabAlign: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_tab_align".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tab_align" }
         }
       val setTabDisabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_tab_disabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tab_disabled" }
         }
       val setTabIcon: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_tab_icon".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tab_icon" }
         }
       val setTabTitle: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_tab_title".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tab_title" }
         }
       val setTabsRearrangeGroup: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_tabs_rearrange_group".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tabs_rearrange_group" }
         }
       val setTabsVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_tabs_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tabs_visible" }
         }
       val setUseHiddenTabsForMinSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
             "set_use_hidden_tabs_for_min_size".cstr.ptr)

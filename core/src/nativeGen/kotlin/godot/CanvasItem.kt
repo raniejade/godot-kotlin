@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
 import godot.core.PoolColorArray
@@ -107,8 +108,10 @@ open class CanvasItem(
    */
   val signalVisibilityChanged: Signal0 = Signal0("visibility_changed")
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -673,357 +676,357 @@ open class CanvasItem(
      */
     private object __method_bind {
       val drawArc: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_arc".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_arc" }
         }
       val drawChar: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_char".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_char" }
         }
       val drawCircle: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_circle".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_circle" }
         }
       val drawColoredPolygon: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_colored_polygon".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_colored_polygon" }
         }
       val drawLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_line" }
         }
       val drawMesh: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_mesh".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_mesh" }
         }
       val drawMultiline: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_multiline".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_multiline" }
         }
       val drawMultilineColors: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_multiline_colors".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_multiline_colors" }
         }
       val drawMultimesh: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_multimesh".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_multimesh" }
         }
       val drawPolygon: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_polygon".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_polygon" }
         }
       val drawPolyline: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_polyline".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_polyline" }
         }
       val drawPolylineColors: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_polyline_colors".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_polyline_colors" }
         }
       val drawPrimitive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_primitive".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_primitive" }
         }
       val drawRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_rect" }
         }
       val drawSetTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_set_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_set_transform" }
         }
       val drawSetTransformMatrix: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_set_transform_matrix".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_set_transform_matrix" }
         }
       val drawString: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_string".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_string" }
         }
       val drawStyleBox: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_style_box".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_style_box" }
         }
       val drawTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_texture" }
         }
       val drawTextureRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_texture_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_texture_rect" }
         }
       val drawTextureRectRegion: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "draw_texture_rect_region".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_texture_rect_region" }
         }
       val forceUpdateTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "force_update_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method force_update_transform" }
         }
       val getCanvas: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_canvas".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_canvas" }
         }
       val getCanvasItem: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_canvas_item".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_canvas_item" }
         }
       val getCanvasTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_canvas_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_canvas_transform" }
         }
       val getGlobalMousePosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_global_mouse_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_global_mouse_position" }
         }
       val getGlobalTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_global_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_global_transform" }
         }
       val getGlobalTransformWithCanvas: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_global_transform_with_canvas".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_global_transform_with_canvas" }
         }
       val getLightMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_light_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_light_mask" }
         }
       val getLocalMousePosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_local_mouse_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_local_mouse_position" }
         }
       val getMaterial: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_material".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_material" }
         }
       val getModulate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_modulate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_modulate" }
         }
       val getSelfModulate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_self_modulate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_self_modulate" }
         }
       val getTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_transform" }
         }
       val getUseParentMaterial: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_use_parent_material".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_use_parent_material" }
         }
       val getViewportRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_viewport_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_viewport_rect" }
         }
       val getViewportTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_viewport_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_viewport_transform" }
         }
       val getWorld2d: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "get_world_2d".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_world_2d" }
         }
       val hide: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "hide".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method hide" }
         }
       val isDrawBehindParentEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "is_draw_behind_parent_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_draw_behind_parent_enabled" }
         }
       val isLocalTransformNotificationEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "is_local_transform_notification_enabled".cstr.ptr)
           requireNotNull(ptr) {
             "No method_bind found for method is_local_transform_notification_enabled" }
         }
       val isSetAsToplevel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "is_set_as_toplevel".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_set_as_toplevel" }
         }
       val isTransformNotificationEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "is_transform_notification_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_transform_notification_enabled"
             }
         }
       val isVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "is_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_visible" }
         }
       val isVisibleInTree: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "is_visible_in_tree".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_visible_in_tree" }
         }
       val makeCanvasPositionLocal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "make_canvas_position_local".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method make_canvas_position_local" }
         }
       val makeInputLocal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "make_input_local".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method make_input_local" }
         }
       val setAsToplevel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "set_as_toplevel".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_as_toplevel" }
         }
       val setDrawBehindParent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "set_draw_behind_parent".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_draw_behind_parent" }
         }
       val setLightMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "set_light_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_light_mask" }
         }
       val setMaterial: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "set_material".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_material" }
         }
       val setModulate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "set_modulate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_modulate" }
         }
       val setNotifyLocalTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "set_notify_local_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_notify_local_transform" }
         }
       val setNotifyTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "set_notify_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_notify_transform" }
         }
       val setSelfModulate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "set_self_modulate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_self_modulate" }
         }
       val setUseParentMaterial: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "set_use_parent_material".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_use_parent_material" }
         }
       val setVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "set_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_visible" }
         }
       val show: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "show".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method show" }
         }
       val update: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
             "update".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method update" }

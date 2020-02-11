@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Variant
@@ -53,7 +54,9 @@ open class World(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getDirectSpaceState(): PhysicsDirectSpaceState {
@@ -92,7 +95,7 @@ open class World(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("World".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for World" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -103,43 +106,43 @@ open class World(
      */
     private object __method_bind {
       val getDirectSpaceState: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
             "get_direct_space_state".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_direct_space_state" }
         }
       val getEnvironment: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
             "get_environment".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_environment" }
         }
       val getFallbackEnvironment: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
             "get_fallback_environment".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_fallback_environment" }
         }
       val getScenario: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
             "get_scenario".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_scenario" }
         }
       val getSpace: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
             "get_space".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_space" }
         }
       val setEnvironment: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
             "set_environment".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_environment" }
         }
       val setFallbackEnvironment: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
             "set_fallback_environment".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_fallback_environment" }

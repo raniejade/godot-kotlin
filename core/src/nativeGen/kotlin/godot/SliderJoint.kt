@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -183,7 +184,9 @@ open class SliderJoint(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getParam(param: Int): Float {
@@ -261,7 +264,7 @@ open class SliderJoint(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SliderJoint".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for SliderJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -272,14 +275,14 @@ open class SliderJoint(
      */
     private object __method_bind {
       val getParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SliderJoint".cstr.ptr,
             "get_param".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_param" }
         }
       val setParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SliderJoint".cstr.ptr,
             "set_param".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
 import godot.core.PoolIntArray
@@ -264,7 +265,9 @@ open class TextEdit(
   val signalTextChanged: Signal0 = Signal0("text_changed")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addColorRegion(
@@ -850,7 +853,7 @@ open class TextEdit(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextEdit".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for TextEdit" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -861,574 +864,574 @@ open class TextEdit(
      */
     private object __method_bind {
       val addColorRegion: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "add_color_region".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_color_region" }
         }
       val addKeywordColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "add_keyword_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_keyword_color" }
         }
       val canFold: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "can_fold".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method can_fold" }
         }
       val centerViewportToCursor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "center_viewport_to_cursor".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method center_viewport_to_cursor" }
         }
       val clearColors: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "clear_colors".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_colors" }
         }
       val clearUndoHistory: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "clear_undo_history".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_undo_history" }
         }
       val copy: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "copy".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method copy" }
         }
       val cursorGetBlinkEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cursor_get_blink_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cursor_get_blink_enabled" }
         }
       val cursorGetBlinkSpeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cursor_get_blink_speed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cursor_get_blink_speed" }
         }
       val cursorGetColumn: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cursor_get_column".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cursor_get_column" }
         }
       val cursorGetLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cursor_get_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cursor_get_line" }
         }
       val cursorIsBlockMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cursor_is_block_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cursor_is_block_mode" }
         }
       val cursorSetBlinkEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cursor_set_blink_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cursor_set_blink_enabled" }
         }
       val cursorSetBlinkSpeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cursor_set_blink_speed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cursor_set_blink_speed" }
         }
       val cursorSetBlockMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cursor_set_block_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cursor_set_block_mode" }
         }
       val cursorSetColumn: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cursor_set_column".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cursor_set_column" }
         }
       val cursorSetLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cursor_set_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cursor_set_line" }
         }
       val cut: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "cut".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method cut" }
         }
       val deselect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "deselect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method deselect" }
         }
       val drawMinimap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "draw_minimap".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_minimap" }
         }
       val foldAllLines: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "fold_all_lines".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method fold_all_lines" }
         }
       val foldLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "fold_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method fold_line" }
         }
       val getBreakpoints: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_breakpoints".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_breakpoints" }
         }
       val getHScroll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_h_scroll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_h_scroll" }
         }
       val getKeywordColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_keyword_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_keyword_color" }
         }
       val getLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_line" }
         }
       val getLineCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_line_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_line_count" }
         }
       val getMenu: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_menu".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_menu" }
         }
       val getMinimapWidth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_minimap_width".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_minimap_width" }
         }
       val getSelectionFromColumn: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_selection_from_column".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_selection_from_column" }
         }
       val getSelectionFromLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_selection_from_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_selection_from_line" }
         }
       val getSelectionText: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_selection_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_selection_text" }
         }
       val getSelectionToColumn: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_selection_to_column".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_selection_to_column" }
         }
       val getSelectionToLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_selection_to_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_selection_to_line" }
         }
       val getText: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_text" }
         }
       val getVScroll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_v_scroll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_v_scroll" }
         }
       val getVScrollSpeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_v_scroll_speed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_v_scroll_speed" }
         }
       val getWordUnderCursor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "get_word_under_cursor".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_word_under_cursor" }
         }
       val hasKeywordColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "has_keyword_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_keyword_color" }
         }
       val insertTextAtCursor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "insert_text_at_cursor".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method insert_text_at_cursor" }
         }
       val isBreakpointGutterEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_breakpoint_gutter_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_breakpoint_gutter_enabled" }
         }
       val isContextMenuEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_context_menu_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_context_menu_enabled" }
         }
       val isDrawingFoldGutter: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_drawing_fold_gutter".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_drawing_fold_gutter" }
         }
       val isDrawingMinimap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_drawing_minimap".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_drawing_minimap" }
         }
       val isDrawingSpaces: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_drawing_spaces".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_drawing_spaces" }
         }
       val isDrawingTabs: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_drawing_tabs".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_drawing_tabs" }
         }
       val isFolded: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_folded".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_folded" }
         }
       val isHidingEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_hiding_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_hiding_enabled" }
         }
       val isHighlightAllOccurrencesEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_highlight_all_occurrences_enabled".cstr.ptr)
           requireNotNull(ptr) {
             "No method_bind found for method is_highlight_all_occurrences_enabled" }
         }
       val isHighlightCurrentLineEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_highlight_current_line_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_highlight_current_line_enabled"
             }
         }
       val isLineHidden: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_line_hidden".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_line_hidden" }
         }
       val isOverridingSelectedFontColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_overriding_selected_font_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_overriding_selected_font_color"
             }
         }
       val isReadonly: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_readonly".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_readonly" }
         }
       val isRightClickMovingCaret: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_right_click_moving_caret".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_right_click_moving_caret" }
         }
       val isSelectingEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_selecting_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_selecting_enabled" }
         }
       val isSelectionActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_selection_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_selection_active" }
         }
       val isShortcutKeysEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_shortcut_keys_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_shortcut_keys_enabled" }
         }
       val isShowLineNumbersEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_show_line_numbers_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_show_line_numbers_enabled" }
         }
       val isSmoothScrollEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_smooth_scroll_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_smooth_scroll_enabled" }
         }
       val isSyntaxColoringEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_syntax_coloring_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_syntax_coloring_enabled" }
         }
       val isWrapEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "is_wrap_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_wrap_enabled" }
         }
       val menuOption: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "menu_option".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method menu_option" }
         }
       val paste: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "paste".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method paste" }
         }
       val redo: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "redo".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method redo" }
         }
       val removeBreakpoints: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "remove_breakpoints".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_breakpoints" }
         }
       val search: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "search".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method search" }
         }
       val select: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "select".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method select" }
         }
       val selectAll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "select_all".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method select_all" }
         }
       val setBreakpointGutterEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_breakpoint_gutter_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_breakpoint_gutter_enabled" }
         }
       val setContextMenuEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_context_menu_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_context_menu_enabled" }
         }
       val setDrawFoldGutter: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_draw_fold_gutter".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_draw_fold_gutter" }
         }
       val setDrawSpaces: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_draw_spaces".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_draw_spaces" }
         }
       val setDrawTabs: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_draw_tabs".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_draw_tabs" }
         }
       val setHScroll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_h_scroll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_h_scroll" }
         }
       val setHidingEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_hiding_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_hiding_enabled" }
         }
       val setHighlightAllOccurrences: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_highlight_all_occurrences".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_highlight_all_occurrences" }
         }
       val setHighlightCurrentLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_highlight_current_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_highlight_current_line" }
         }
       val setLineAsHidden: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_line_as_hidden".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_line_as_hidden" }
         }
       val setMinimapWidth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_minimap_width".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_minimap_width" }
         }
       val setOverrideSelectedFontColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_override_selected_font_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_override_selected_font_color" }
         }
       val setReadonly: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_readonly".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_readonly" }
         }
       val setRightClickMovesCaret: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_right_click_moves_caret".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_right_click_moves_caret" }
         }
       val setSelectingEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_selecting_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_selecting_enabled" }
         }
       val setShortcutKeysEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_shortcut_keys_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_shortcut_keys_enabled" }
         }
       val setShowLineNumbers: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_show_line_numbers".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_show_line_numbers" }
         }
       val setSmoothScrollEnable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_smooth_scroll_enable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_smooth_scroll_enable" }
         }
       val setSyntaxColoring: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_syntax_coloring".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_syntax_coloring" }
         }
       val setText: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_text" }
         }
       val setVScroll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_v_scroll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_v_scroll" }
         }
       val setVScrollSpeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_v_scroll_speed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_v_scroll_speed" }
         }
       val setWrapEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "set_wrap_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_wrap_enabled" }
         }
       val toggleFoldLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "toggle_fold_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method toggle_fold_line" }
         }
       val undo: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "undo".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method undo" }
         }
       val unfoldLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "unfold_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method unfold_line" }
         }
       val unhideAllLines: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
             "unhide_all_lines".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method unhide_all_lines" }

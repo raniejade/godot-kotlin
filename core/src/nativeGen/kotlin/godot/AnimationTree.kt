@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Transform
@@ -67,7 +68,9 @@ open class AnimationTree(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -177,7 +180,7 @@ open class AnimationTree(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationTree".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationTree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -188,91 +191,91 @@ open class AnimationTree(
      */
     private object __method_bind {
       val advance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "advance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method advance" }
         }
       val getAnimationPlayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "get_animation_player".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_animation_player" }
         }
       val getProcessMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "get_process_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_process_mode" }
         }
       val getRootMotionTrack: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "get_root_motion_track".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_root_motion_track" }
         }
       val getRootMotionTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "get_root_motion_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_root_motion_transform" }
         }
       val getTreeRoot: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "get_tree_root".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tree_root" }
         }
       val isActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "is_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_active" }
         }
       val renameParameter: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "rename_parameter".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rename_parameter" }
         }
       val setActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "set_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_active" }
         }
       val setAnimationPlayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "set_animation_player".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_animation_player" }
         }
       val setProcessMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "set_process_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_process_mode" }
         }
       val setRootMotionTrack: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "set_root_motion_track".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_root_motion_track" }
         }
       val setTreeRoot: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
             "set_tree_root".cstr.ptr)

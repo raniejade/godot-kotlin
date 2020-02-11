@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -34,7 +35,9 @@ open class VisualShaderNodeInput(
   val signalInputTypeChanged: Signal0 = Signal0("input_type_changed")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getInputName(): String {
@@ -53,7 +56,7 @@ open class VisualShaderNodeInput(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeInput".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeInput" }
@@ -65,21 +68,21 @@ open class VisualShaderNodeInput(
      */
     private object __method_bind {
       val getInputName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeInput".cstr.ptr,
             "get_input_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_input_name" }
         }
       val getInputRealName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeInput".cstr.ptr,
             "get_input_real_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_input_real_name" }
         }
       val setInputName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeInput".cstr.ptr,
             "set_input_name".cstr.ptr)

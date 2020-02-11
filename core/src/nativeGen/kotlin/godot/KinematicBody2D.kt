@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform2D
 import godot.core.Variant
@@ -42,7 +43,9 @@ open class KinematicBody2D(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getFloorNormal(): Vector2 {
@@ -170,7 +173,7 @@ open class KinematicBody2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicBody2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for KinematicBody2D" }
@@ -182,105 +185,105 @@ open class KinematicBody2D(
      */
     private object __method_bind {
       val getFloorNormal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "get_floor_normal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_floor_normal" }
         }
       val getFloorVelocity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "get_floor_velocity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_floor_velocity" }
         }
       val getSafeMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "get_safe_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_safe_margin" }
         }
       val getSlideCollision: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "get_slide_collision".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_slide_collision" }
         }
       val getSlideCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "get_slide_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_slide_count" }
         }
       val isOnCeiling: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "is_on_ceiling".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_on_ceiling" }
         }
       val isOnFloor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "is_on_floor".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_on_floor" }
         }
       val isOnWall: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "is_on_wall".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_on_wall" }
         }
       val isSyncToPhysicsEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "is_sync_to_physics_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_sync_to_physics_enabled" }
         }
       val moveAndCollide: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "move_and_collide".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method move_and_collide" }
         }
       val moveAndSlide: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "move_and_slide".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method move_and_slide" }
         }
       val moveAndSlideWithSnap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "move_and_slide_with_snap".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method move_and_slide_with_snap" }
         }
       val setSafeMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "set_safe_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_safe_margin" }
         }
       val setSyncToPhysics: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "set_sync_to_physics".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_sync_to_physics" }
         }
       val testMove: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
             "test_move".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
@@ -40,7 +41,9 @@ open class BackBufferCopy(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -94,7 +97,7 @@ open class BackBufferCopy(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("BackBufferCopy".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for BackBufferCopy" }
@@ -106,28 +109,28 @@ open class BackBufferCopy(
      */
     private object __method_bind {
       val getCopyMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
             "get_copy_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_copy_mode" }
         }
       val getRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
             "get_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_rect" }
         }
       val setCopyMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
             "set_copy_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_copy_mode" }
         }
       val setRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
             "set_rect".cstr.ptr)

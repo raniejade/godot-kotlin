@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -47,7 +48,9 @@ open class UPNP(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addDevice(device: UPNPDevice) {
@@ -234,7 +237,7 @@ open class UPNP(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("UPNP".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for UPNP" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -245,103 +248,103 @@ open class UPNP(
      */
     private object __method_bind {
       val addDevice: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "add_device".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_device" }
         }
       val addPortMapping: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "add_port_mapping".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_port_mapping" }
         }
       val clearDevices: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "clear_devices".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_devices" }
         }
       val deletePortMapping: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "delete_port_mapping".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method delete_port_mapping" }
         }
       val discover: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "discover".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method discover" }
         }
       val getDevice: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "get_device".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_device" }
         }
       val getDeviceCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "get_device_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_device_count" }
         }
       val getDiscoverLocalPort: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "get_discover_local_port".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_discover_local_port" }
         }
       val getDiscoverMulticastIf: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "get_discover_multicast_if".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_discover_multicast_if" }
         }
       val getGateway: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "get_gateway".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_gateway" }
         }
       val isDiscoverIpv6: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "is_discover_ipv6".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_discover_ipv6" }
         }
       val queryExternalAddress: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "query_external_address".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method query_external_address" }
         }
       val removeDevice: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "remove_device".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_device" }
         }
       val setDevice: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "set_device".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_device" }
         }
       val setDiscoverIpv6: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "set_discover_ipv6".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_discover_ipv6" }
         }
       val setDiscoverLocalPort: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "set_discover_local_port".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_discover_local_port" }
         }
       val setDiscoverMulticastIf: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNP".cstr.ptr,
             "set_discover_multicast_if".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_discover_multicast_if" }

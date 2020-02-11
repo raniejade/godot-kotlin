@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Variant
@@ -104,7 +105,9 @@ open class GridMap(
   val signalCellSizeChanged: Signal1<Vector3> = Signal1("cell_size_changed")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -351,7 +354,7 @@ open class GridMap(
   companion object {
     val INVALID_CELL_ITEM: Int = -1
 
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GridMap".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GridMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -362,217 +365,217 @@ open class GridMap(
      */
     private object __method_bind {
       val clear: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
       val clearBakedMeshes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "clear_baked_meshes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_baked_meshes" }
         }
       val getBakeMeshInstance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_bake_mesh_instance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bake_mesh_instance" }
         }
       val getBakeMeshes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_bake_meshes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bake_meshes" }
         }
       val getCellItem: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_cell_item".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_cell_item" }
         }
       val getCellItemOrientation: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_cell_item_orientation".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_cell_item_orientation" }
         }
       val getCellScale: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_cell_scale".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_cell_scale" }
         }
       val getCellSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_cell_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_cell_size" }
         }
       val getCenterX: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_center_x".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_center_x" }
         }
       val getCenterY: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_center_y".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_center_y" }
         }
       val getCenterZ: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_center_z".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_center_z" }
         }
       val getCollisionLayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_collision_layer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_layer" }
         }
       val getCollisionLayerBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_collision_layer_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_layer_bit" }
         }
       val getCollisionMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_collision_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
         }
       val getCollisionMaskBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_collision_mask_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
         }
       val getMeshLibrary: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_mesh_library".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_mesh_library" }
         }
       val getMeshes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_meshes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_meshes" }
         }
       val getOctantSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_octant_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_octant_size" }
         }
       val getUsedCells: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "get_used_cells".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_used_cells" }
         }
       val makeBakedMeshes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "make_baked_meshes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method make_baked_meshes" }
         }
       val mapToWorld: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "map_to_world".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method map_to_world" }
         }
       val resourceChanged: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "resource_changed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method resource_changed" }
         }
       val setCellItem: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_cell_item".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_cell_item" }
         }
       val setCellScale: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_cell_scale".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_cell_scale" }
         }
       val setCellSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_cell_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_cell_size" }
         }
       val setCenterX: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_center_x".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_center_x" }
         }
       val setCenterY: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_center_y".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_center_y" }
         }
       val setCenterZ: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_center_z".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_center_z" }
         }
       val setClip: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_clip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_clip" }
         }
       val setCollisionLayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_collision_layer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_layer" }
         }
       val setCollisionLayerBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_collision_layer_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_layer_bit" }
         }
       val setCollisionMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_collision_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
         }
       val setCollisionMaskBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_collision_mask_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
         }
       val setMeshLibrary: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_mesh_library".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_mesh_library" }
         }
       val setOctantSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "set_octant_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_octant_size" }
         }
       val worldToMap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridMap".cstr.ptr,
             "world_to_map".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method world_to_map" }

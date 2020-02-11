@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -38,7 +39,9 @@ open class CurveTexture(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getCurve(): Curve {
@@ -57,7 +60,7 @@ open class CurveTexture(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CurveTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CurveTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -68,21 +71,21 @@ open class CurveTexture(
      */
     private object __method_bind {
       val getCurve: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CurveTexture".cstr.ptr,
             "get_curve".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_curve" }
         }
       val setCurve: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CurveTexture".cstr.ptr,
             "set_curve".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_curve" }
         }
       val setWidth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CurveTexture".cstr.ptr,
             "set_width".cstr.ptr)

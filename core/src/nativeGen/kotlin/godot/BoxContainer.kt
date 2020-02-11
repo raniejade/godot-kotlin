@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,8 +31,10 @@ open class BoxContainer(
       setAlignment(value.value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addSpacer(begin: Boolean) {
@@ -76,21 +79,21 @@ open class BoxContainer(
      */
     private object __method_bind {
       val addSpacer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
             "add_spacer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_spacer" }
         }
       val getAlignment: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
             "get_alignment".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_alignment" }
         }
       val setAlignment: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
             "set_alignment".cstr.ptr)

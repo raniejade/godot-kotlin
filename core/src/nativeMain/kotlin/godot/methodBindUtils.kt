@@ -4,12 +4,13 @@ import gdnative.godot_method_bind
 import gdnative.godot_variant
 import gdnative.godot_variant_call_error
 import gdnative.godot_variant_call_error_error
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import kotlinx.cinterop.*
 
 fun CPointer<godot_method_bind>.call(instance: COpaquePointer, args: List<Variant>): Variant {
-  return memScoped {
+  return Allocator.allocationScope {
     val error = alloc<godot_variant_call_error>()
     val ptr = allocArrayOf(args.map { it._value.ptr })
     val ret = checkNotNull(Godot.gdnative.godot_method_bind_call)(
@@ -27,7 +28,7 @@ fun CPointer<godot_method_bind>.call(instance: COpaquePointer, args: List<Varian
 }
 
 fun CPointer<godot_method_bind>.call(instance: COpaquePointer): Variant {
-  return memScoped {
+  return  Allocator.allocationScope {
     val error = alloc<godot_variant_call_error>()
     val ret = checkNotNull(Godot.gdnative.godot_method_bind_call)(
       this@call,

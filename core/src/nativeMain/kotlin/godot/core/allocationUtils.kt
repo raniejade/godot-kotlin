@@ -2,23 +2,40 @@ package godot.core
 
 import kotlinx.cinterop.*
 
-// Helper method to instantiate a CoreType
-internal inline fun <reified K: CStructVar, T> allocType(
-  factory: (CValue<K>) -> T,
-  constructor: MemScope.(CPointer<K>) -> Unit): T {
-  val value = memScoped {
-    val instance = alloc<K>()
-    constructor(this, instance.ptr)
-    instance.readValue()
-  }
-
-  return factory(value)
-}
-
-internal inline fun <reified K: CStructVar> allocType2(cb: MemScope.(CPointer<K>) -> Unit): CValue<K> {
-  return memScoped {
+internal inline fun <reified K: CStructVar> allocType2(noinline cb: MemScope.(CPointer<K>) -> Unit): CValue<K> {
+  return Allocator.allocationScope {
     val instance = alloc<K>()
     cb(this, instance.ptr)
     instance.readValue()
+  }
+}
+
+// TODO: make runtime configurable
+@ThreadLocal
+object Allocator {
+  private var currentScope = mutableListOf<MemScope>()
+
+  internal fun <T> pushContext(cb: () -> T): T {
+    return memScoped {
+      currentScope.add(0, this)
+      val ret = cb()
+      currentScope.removeAt(0)
+      ret
+    }
+  }
+
+  internal fun <T> allocationScope(cb: MemScope.() -> T): T {
+    // return allocationScopeDeferred(cb)
+    return allocationScopeImmediate(cb)
+  }
+
+  // de-allocate early when the scope exits
+  private fun <T> allocationScopeImmediate(cb: MemScope.() -> T): T {
+    return memScoped(cb)
+  }
+
+  // de-allocate everything last
+  internal fun <T> allocationScopeDeferred(cb: MemScope.() -> T): T {
+    return cb(currentScope.first())
   }
 }

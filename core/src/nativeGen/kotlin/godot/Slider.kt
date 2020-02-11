@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -54,8 +55,10 @@ open class Slider(
       setTicksOnBorders(value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getTicks(): Int {
@@ -104,49 +107,49 @@ open class Slider(
      */
     private object __method_bind {
       val getTicks: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
             "get_ticks".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_ticks" }
         }
       val getTicksOnBorders: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
             "get_ticks_on_borders".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_ticks_on_borders" }
         }
       val isEditable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
             "is_editable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_editable" }
         }
       val isScrollable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
             "is_scrollable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_scrollable" }
         }
       val setEditable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
             "set_editable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_editable" }
         }
       val setScrollable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
             "set_scrollable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_scrollable" }
         }
       val setTicks: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
             "set_ticks".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_ticks" }
         }
       val setTicksOnBorders: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
             "set_ticks_on_borders".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_ticks_on_borders" }

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolByteArray
@@ -24,7 +25,9 @@ open class HashingContext(
   __ignore: String?
 ) : Reference(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun finish(): PoolByteArray {
@@ -66,7 +69,7 @@ open class HashingContext(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("HashingContext".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for HashingContext" }
@@ -78,21 +81,21 @@ open class HashingContext(
      */
     private object __method_bind {
       val finish: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HashingContext".cstr.ptr,
             "finish".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method finish" }
         }
       val start: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HashingContext".cstr.ptr,
             "start".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method start" }
         }
       val update: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HashingContext".cstr.ptr,
             "update".cstr.ptr)

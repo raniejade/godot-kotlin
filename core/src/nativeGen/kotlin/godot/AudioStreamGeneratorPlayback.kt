@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolVector2Array
 import godot.core.Variant
@@ -24,8 +25,10 @@ open class AudioStreamGeneratorPlayback(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : AudioStreamPlaybackResampled(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun canPushBuffer(amount: Int): Boolean {
@@ -66,42 +69,42 @@ open class AudioStreamGeneratorPlayback(
      */
     private object __method_bind {
       val canPushBuffer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamGeneratorPlayback".cstr.ptr,
             "can_push_buffer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method can_push_buffer" }
         }
       val clearBuffer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamGeneratorPlayback".cstr.ptr,
             "clear_buffer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_buffer" }
         }
       val getFramesAvailable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamGeneratorPlayback".cstr.ptr,
             "get_frames_available".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_frames_available" }
         }
       val getSkips: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamGeneratorPlayback".cstr.ptr,
             "get_skips".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_skips" }
         }
       val pushBuffer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamGeneratorPlayback".cstr.ptr,
             "push_buffer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method push_buffer" }
         }
       val pushFrame: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamGeneratorPlayback".cstr.ptr,
             "push_frame".cstr.ptr)

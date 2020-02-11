@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -21,7 +22,9 @@ open class WeakRef(
   __ignore: String?
 ) : Reference(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getRef(): Variant {
@@ -30,7 +33,7 @@ open class WeakRef(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WeakRef".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for WeakRef" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -41,7 +44,7 @@ open class WeakRef(
      */
     private object __method_bind {
       val getRef: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WeakRef".cstr.ptr,
             "get_ref".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_ref" }

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -52,7 +53,9 @@ open class AnimatedSprite3D(
   val signalFrameChanged: Signal0 = Signal0("frame_changed")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getAnimation(): String {
@@ -100,7 +103,7 @@ open class AnimatedSprite3D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimatedSprite3D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimatedSprite3D" }
@@ -112,63 +115,63 @@ open class AnimatedSprite3D(
      */
     private object __method_bind {
       val getAnimation: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
             "get_animation".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_animation" }
         }
       val getFrame: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
             "get_frame".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_frame" }
         }
       val getSpriteFrames: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
             "get_sprite_frames".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_sprite_frames" }
         }
       val isPlaying: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
             "is_playing".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_playing" }
         }
       val play: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
             "play".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method play" }
         }
       val setAnimation: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
             "set_animation".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_animation" }
         }
       val setFrame: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
             "set_frame".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_frame" }
         }
       val setSpriteFrames: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
             "set_sprite_frames".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_sprite_frames" }
         }
       val stop: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
             "stop".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -31,7 +32,9 @@ open class Shader(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getCode(): String {
@@ -90,7 +93,7 @@ open class Shader(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Shader".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Shader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -101,37 +104,37 @@ open class Shader(
      */
     private object __method_bind {
       val getCode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
             "get_code".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_code" }
         }
       val getDefaultTextureParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
             "get_default_texture_param".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_default_texture_param" }
         }
       val getMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
             "get_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_mode" }
         }
       val hasParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
             "has_param".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_param" }
         }
       val setCode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
             "set_code".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_code" }
         }
       val setDefaultTextureParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
             "set_default_texture_param".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_default_texture_param" }

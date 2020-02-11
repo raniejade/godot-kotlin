@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolStringArray
@@ -24,7 +25,9 @@ open class Expression(
   __ignore: String?
 ) : Reference(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun execute(
@@ -59,7 +62,7 @@ open class Expression(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Expression".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Expression" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -70,25 +73,25 @@ open class Expression(
      */
     private object __method_bind {
       val execute: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
             "execute".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method execute" }
         }
       val getErrorText: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
             "get_error_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_error_text" }
         }
       val hasExecuteFailed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
             "has_execute_failed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_execute_failed" }
         }
       val parse: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
             "parse".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method parse" }

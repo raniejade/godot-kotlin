@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class VisualScriptGlobalConstant(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getGlobalConstant(): Int {
@@ -44,7 +47,7 @@ open class VisualScriptGlobalConstant(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptGlobalConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptGlobalConstant" }
@@ -56,14 +59,14 @@ open class VisualScriptGlobalConstant(
      */
     private object __method_bind {
       val getGlobalConstant: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptGlobalConstant".cstr.ptr,
             "get_global_constant".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_global_constant" }
         }
       val setGlobalConstant: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptGlobalConstant".cstr.ptr,
             "set_global_constant".cstr.ptr)

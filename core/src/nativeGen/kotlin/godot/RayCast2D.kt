@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Variant
@@ -74,7 +75,9 @@ open class RayCast2D(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -213,7 +216,7 @@ open class RayCast2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RayCast2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RayCast2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -224,151 +227,151 @@ open class RayCast2D(
      */
     private object __method_bind {
       val addException: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "add_exception".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_exception" }
         }
       val addExceptionRid: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "add_exception_rid".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_exception_rid" }
         }
       val clearExceptions: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "clear_exceptions".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_exceptions" }
         }
       val forceRaycastUpdate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "force_raycast_update".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method force_raycast_update" }
         }
       val getCastTo: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "get_cast_to".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_cast_to" }
         }
       val getCollider: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "get_collider".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider" }
         }
       val getColliderShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "get_collider_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider_shape" }
         }
       val getCollisionMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "get_collision_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
         }
       val getCollisionMaskBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "get_collision_mask_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
         }
       val getCollisionNormal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "get_collision_normal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_normal" }
         }
       val getCollisionPoint: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "get_collision_point".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_point" }
         }
       val getExcludeParentBody: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "get_exclude_parent_body".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_exclude_parent_body" }
         }
       val isCollideWithAreasEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "is_collide_with_areas_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_collide_with_areas_enabled" }
         }
       val isCollideWithBodiesEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "is_collide_with_bodies_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_collide_with_bodies_enabled" }
         }
       val isColliding: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "is_colliding".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_colliding" }
         }
       val isEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "is_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_enabled" }
         }
       val removeException: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "remove_exception".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_exception" }
         }
       val removeExceptionRid: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "remove_exception_rid".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_exception_rid" }
         }
       val setCastTo: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "set_cast_to".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_cast_to" }
         }
       val setCollideWithAreas: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "set_collide_with_areas".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collide_with_areas" }
         }
       val setCollideWithBodies: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "set_collide_with_bodies".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collide_with_bodies" }
         }
       val setCollisionMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "set_collision_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
         }
       val setCollisionMaskBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "set_collision_mask_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
         }
       val setEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "set_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_enabled" }
         }
       val setExcludeParentBody: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast2D".cstr.ptr,
             "set_exclude_parent_body".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_exclude_parent_body" }

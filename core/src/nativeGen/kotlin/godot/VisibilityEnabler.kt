@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -39,7 +40,9 @@ open class VisibilityEnabler(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun isEnablerEnabled(enabler: Int): Boolean {
@@ -77,7 +80,7 @@ open class VisibilityEnabler(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityEnabler".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisibilityEnabler" }
@@ -89,14 +92,14 @@ open class VisibilityEnabler(
      */
     private object __method_bind {
       val isEnablerEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler".cstr.ptr,
             "is_enabler_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_enabler_enabled" }
         }
       val setEnabler: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler".cstr.ptr,
             "set_enabler".cstr.ptr)

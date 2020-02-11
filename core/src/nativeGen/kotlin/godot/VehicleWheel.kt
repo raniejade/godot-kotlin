@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -135,7 +136,9 @@ open class VehicleWheel(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getBrake(): Float {
@@ -294,7 +297,7 @@ open class VehicleWheel(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VehicleWheel".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VehicleWheel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -305,217 +308,217 @@ open class VehicleWheel(
      */
     private object __method_bind {
       val getBrake: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_brake".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_brake" }
         }
       val getDampingCompression: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_damping_compression".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_damping_compression" }
         }
       val getDampingRelaxation: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_damping_relaxation".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_damping_relaxation" }
         }
       val getEngineForce: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_engine_force".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_engine_force" }
         }
       val getFrictionSlip: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_friction_slip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_friction_slip" }
         }
       val getRadius: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_radius".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_radius" }
         }
       val getRollInfluence: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_roll_influence".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_roll_influence" }
         }
       val getRpm: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_rpm".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_rpm" }
         }
       val getSkidinfo: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_skidinfo".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_skidinfo" }
         }
       val getSteering: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_steering".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_steering" }
         }
       val getSuspensionMaxForce: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_suspension_max_force".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_suspension_max_force" }
         }
       val getSuspensionRestLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_suspension_rest_length".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_suspension_rest_length" }
         }
       val getSuspensionStiffness: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_suspension_stiffness".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_suspension_stiffness" }
         }
       val getSuspensionTravel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "get_suspension_travel".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_suspension_travel" }
         }
       val isInContact: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "is_in_contact".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_in_contact" }
         }
       val isUsedAsSteering: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "is_used_as_steering".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_used_as_steering" }
         }
       val isUsedAsTraction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "is_used_as_traction".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_used_as_traction" }
         }
       val setBrake: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_brake".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_brake" }
         }
       val setDampingCompression: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_damping_compression".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_damping_compression" }
         }
       val setDampingRelaxation: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_damping_relaxation".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_damping_relaxation" }
         }
       val setEngineForce: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_engine_force".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_engine_force" }
         }
       val setFrictionSlip: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_friction_slip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_friction_slip" }
         }
       val setRadius: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_radius".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_radius" }
         }
       val setRollInfluence: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_roll_influence".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_roll_influence" }
         }
       val setSteering: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_steering".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_steering" }
         }
       val setSuspensionMaxForce: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_suspension_max_force".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_suspension_max_force" }
         }
       val setSuspensionRestLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_suspension_rest_length".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_suspension_rest_length" }
         }
       val setSuspensionStiffness: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_suspension_stiffness".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_suspension_stiffness" }
         }
       val setSuspensionTravel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_suspension_travel".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_suspension_travel" }
         }
       val setUseAsSteering: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_use_as_steering".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_use_as_steering" }
         }
       val setUseAsTraction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleWheel".cstr.ptr,
             "set_use_as_traction".cstr.ptr)

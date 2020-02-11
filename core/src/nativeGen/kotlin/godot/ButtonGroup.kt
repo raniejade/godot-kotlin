@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -21,7 +22,9 @@ open class ButtonGroup(
   __ignore: String?
 ) : Resource(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getButtons(): VariantArray {
@@ -35,7 +38,7 @@ open class ButtonGroup(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ButtonGroup".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ButtonGroup" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -46,14 +49,14 @@ open class ButtonGroup(
      */
     private object __method_bind {
       val getButtons: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ButtonGroup".cstr.ptr,
             "get_buttons".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_buttons" }
         }
       val getPressedButton: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ButtonGroup".cstr.ptr,
             "get_pressed_button".cstr.ptr)

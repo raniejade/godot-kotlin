@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -26,8 +27,10 @@ open class ScriptCreateDialog(
    */
   val signalScriptCreated: Signal1<Script> = Signal1("script_created")
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun config(
@@ -50,7 +53,7 @@ open class ScriptCreateDialog(
      */
     private object __method_bind {
       val config: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptCreateDialog".cstr.ptr,
             "config".cstr.ptr)

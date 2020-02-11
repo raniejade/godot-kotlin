@@ -3,7 +3,6 @@ package godot.core
 import gdnative.godot_node_path
 import kotlinx.cinterop.CValue
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
 
 class NodePath(
   value: CValue<godot_node_path>
@@ -11,7 +10,7 @@ class NodePath(
   constructor(path: String): this(__new(path))
 
   fun getAsPropertyPath(): NodePath {
-    return memScoped {
+    return Allocator.allocationScope {
       NodePath(
         checkNotNull(Godot.gdnative11.godot_node_path_get_as_property_path)(_value.ptr)
       )
@@ -19,7 +18,7 @@ class NodePath(
   }
 
   fun getConcatenatedSubnames(): String {
-    return memScoped {
+    return Allocator.allocationScope {
       val gdString = GDString(
         checkNotNull(Godot.gdnative.godot_node_path_get_concatenated_subnames)(_value.ptr)
       )
@@ -30,47 +29,47 @@ class NodePath(
   }
 
   fun getName(index: Int): String {
-    return memScoped {
+    return Allocator.allocationScope {
       val gdString = GDString(
         checkNotNull(Godot.gdnative.godot_node_path_get_name)(_value.ptr, index)
       )
       val ret = gdString.toKString()
       gdString.destroy()
-      return ret
+      ret
     }
   }
 
   fun getNameCount(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_node_path_get_name_count)(_value.ptr)
     }
   }
 
   fun getSubname(index: Int): String {
-    return memScoped {
+    return Allocator.allocationScope {
       val gdString = GDString(
         checkNotNull(Godot.gdnative.godot_node_path_get_subname)(_value.ptr, index)
       )
       val ret = gdString.toKString()
       gdString.destroy()
-      return ret
+      ret
     }
   }
 
   fun getSubnameCount(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_node_path_get_subname_count)(_value.ptr)
     }
   }
 
   fun isAbsolute(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_node_path_is_absolute)(_value.ptr)
     }
   }
 
   fun isEmpty(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_node_path_is_empty)(_value.ptr)
     }
   }
@@ -80,7 +79,7 @@ class NodePath(
   }
 
   override fun toGDString(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_node_path_as_string)(_value.ptr)
       )

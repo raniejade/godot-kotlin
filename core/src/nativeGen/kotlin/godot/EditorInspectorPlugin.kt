@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
@@ -21,8 +22,10 @@ open class EditorInspectorPlugin(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addCustomControl(control: Control) {
@@ -55,21 +58,21 @@ open class EditorInspectorPlugin(
      */
     private object __method_bind {
       val addCustomControl: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
             "add_custom_control".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_custom_control" }
         }
       val addPropertyEditor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
             "add_property_editor".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_property_editor" }
         }
       val addPropertyEditorForMultipleProperties: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
             "add_property_editor_for_multiple_properties".cstr.ptr)

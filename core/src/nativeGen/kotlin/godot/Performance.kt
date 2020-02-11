@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -34,7 +35,7 @@ open class PerformanceInternal(
      */
     private object __method_bind {
       val getMonitor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Performance".cstr.ptr,
             "get_monitor".cstr.ptr)
@@ -45,7 +46,7 @@ open class PerformanceInternal(
 
 object Performance : PerformanceInternal(null) {
   init {
-    memScoped {
+    Allocator.allocationScope {
       val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("Performance".cstr.ptr)
       requireNotNull(handle) { "No instance found for singleton Performance" }
       _handle = handle

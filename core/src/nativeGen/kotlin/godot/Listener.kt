@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform
 import godot.core.Variant
@@ -23,7 +24,9 @@ open class Listener(
   __ignore: String?
 ) : Spatial(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun clearCurrent() {
@@ -45,7 +48,7 @@ open class Listener(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Listener".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Listener" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -56,25 +59,25 @@ open class Listener(
      */
     private object __method_bind {
       val clearCurrent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
             "clear_current".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_current" }
         }
       val getListenerTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
             "get_listener_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_listener_transform" }
         }
       val isCurrent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
             "is_current".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_current" }
         }
       val makeCurrent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
             "make_current".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method make_current" }

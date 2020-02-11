@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -55,7 +56,9 @@ open class InputEventKey(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getScancode(): Int {
@@ -94,7 +97,7 @@ open class InputEventKey(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventKey".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for InputEventKey" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -105,49 +108,49 @@ open class InputEventKey(
      */
     private object __method_bind {
       val getScancode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
             "get_scancode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_scancode" }
         }
       val getScancodeWithModifiers: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
             "get_scancode_with_modifiers".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_scancode_with_modifiers" }
         }
       val getUnicode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
             "get_unicode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_unicode" }
         }
       val setEcho: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
             "set_echo".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_echo" }
         }
       val setPressed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
             "set_pressed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_pressed" }
         }
       val setScancode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
             "set_scancode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_scancode" }
         }
       val setUnicode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
             "set_unicode".cstr.ptr)

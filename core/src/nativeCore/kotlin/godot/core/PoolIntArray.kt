@@ -2,7 +2,10 @@ package godot.core
 
 import gdnative.godot_error
 import gdnative.godot_pool_int_array
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.readValue
 
 class PoolIntArray(
   value: CValue<godot_pool_int_array>
@@ -11,7 +14,7 @@ class PoolIntArray(
   constructor(from: VariantArray): this(__new(from))
 
   fun append(int: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_int_array_append)(ptr, int)
       ptr.pointed.readValue()
@@ -19,7 +22,7 @@ class PoolIntArray(
   }
 
   fun append(array: PoolIntArray) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_int_array_append_array)(ptr, array._value.ptr)
       ptr.pointed.readValue()
@@ -28,7 +31,7 @@ class PoolIntArray(
 
   fun insert(index: Int, int: Int): godot_error {
     lateinit var ret: godot_error
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       ret = checkNotNull(Godot.gdnative.godot_pool_int_array_insert)(ptr, index, int)
       ptr.pointed.readValue()
@@ -37,7 +40,7 @@ class PoolIntArray(
   }
 
   fun invert() {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_int_array_invert)(ptr)
       ptr.pointed.readValue()
@@ -45,7 +48,7 @@ class PoolIntArray(
   }
 
   fun remove(index: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_int_array_remove)(ptr, index)
       ptr.pointed.readValue()
@@ -53,7 +56,7 @@ class PoolIntArray(
   }
 
   fun resize(size: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_int_array_resize)(ptr, size)
       ptr.pointed.readValue()
@@ -61,7 +64,7 @@ class PoolIntArray(
   }
 
   operator fun set(index: Int, int: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_int_array_set)(ptr, index, int)
       ptr.pointed.readValue()
@@ -69,13 +72,13 @@ class PoolIntArray(
   }
 
   operator fun get(index: Int): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_pool_int_array_get)(_value.ptr, index)
     }
   }
 
   fun size(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_pool_int_array_size)(_value.ptr)
     }
   }

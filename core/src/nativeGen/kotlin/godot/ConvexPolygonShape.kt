@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolVector3Array
 import godot.core.Variant
@@ -31,7 +32,9 @@ open class ConvexPolygonShape(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -54,7 +57,7 @@ open class ConvexPolygonShape(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConvexPolygonShape".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ConvexPolygonShape" }
@@ -66,14 +69,14 @@ open class ConvexPolygonShape(
      */
     private object __method_bind {
       val getPoints: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape".cstr.ptr,
             "get_points".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_points" }
         }
       val setPoints: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape".cstr.ptr,
             "set_points".cstr.ptr)

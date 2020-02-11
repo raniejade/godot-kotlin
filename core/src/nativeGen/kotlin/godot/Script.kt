@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.GDError
 import godot.core.Godot
@@ -31,8 +32,10 @@ open class Script(
       setSourceCode(value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun canInstance(): Boolean {
@@ -120,91 +123,91 @@ open class Script(
      */
     private object __method_bind {
       val canInstance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "can_instance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method can_instance" }
         }
       val getBaseScript: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "get_base_script".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_base_script" }
         }
       val getInstanceBaseType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "get_instance_base_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_instance_base_type" }
         }
       val getPropertyDefaultValue: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "get_property_default_value".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_property_default_value" }
         }
       val getScriptConstantMap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "get_script_constant_map".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_script_constant_map" }
         }
       val getScriptMethodList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "get_script_method_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_script_method_list" }
         }
       val getScriptPropertyList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "get_script_property_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_script_property_list" }
         }
       val getScriptSignalList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "get_script_signal_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_script_signal_list" }
         }
       val getSourceCode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "get_source_code".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_source_code" }
         }
       val hasScriptSignal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "has_script_signal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_script_signal" }
         }
       val hasSourceCode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "has_source_code".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_source_code" }
         }
       val instanceHas: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "instance_has".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method instance_has" }
         }
       val isTool: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "is_tool".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_tool" }
         }
       val reload: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "reload".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method reload" }
         }
       val setSourceCode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
             "set_source_code".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_source_code" }

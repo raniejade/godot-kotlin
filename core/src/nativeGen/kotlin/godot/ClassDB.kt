@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.GDError
 import godot.core.Godot
@@ -21,7 +22,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _ClassDBInternal(
+open class ClassDBInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -181,125 +182,125 @@ open class _ClassDBInternal(
 
   companion object {
     /**
-     * Container for method_bind pointers for _ClassDB
+     * Container for method_bind pointers for ClassDB
      */
     private object __method_bind {
       val canInstance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "can_instance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method can_instance" }
         }
       val classExists: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_exists".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_exists" }
         }
       val classGetCategory: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_get_category".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_get_category" }
         }
       val classGetIntegerConstant: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_get_integer_constant".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_get_integer_constant" }
         }
       val classGetIntegerConstantList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_get_integer_constant_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_get_integer_constant_list" }
         }
       val classGetMethodList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_get_method_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_get_method_list" }
         }
       val classGetProperty: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_get_property".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_get_property" }
         }
       val classGetPropertyList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_get_property_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_get_property_list" }
         }
       val classGetSignal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_get_signal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_get_signal" }
         }
       val classGetSignalList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_get_signal_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_get_signal_list" }
         }
       val classHasIntegerConstant: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_has_integer_constant".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_has_integer_constant" }
         }
       val classHasMethod: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_has_method".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_has_method" }
         }
       val classHasSignal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_has_signal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_has_signal" }
         }
       val classSetProperty: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "class_set_property".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method class_set_property" }
         }
       val getClassList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "get_class_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_class_list" }
         }
       val getInheritersFromClass: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "get_inheriters_from_class".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_inheriters_from_class" }
         }
       val getParentClass: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "get_parent_class".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_parent_class" }
         }
       val instance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "instance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method instance" }
         }
       val isClassEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "is_class_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_class_enabled" }
         }
       val isParentClass: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
             "is_parent_class".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_parent_class" }
@@ -307,11 +308,11 @@ open class _ClassDBInternal(
   }
 }
 
-object _ClassDB : _ClassDBInternal(null) {
+object ClassDB : ClassDBInternal(null) {
   init {
-    memScoped {
-      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ClassDB".cstr.ptr)
-      requireNotNull(handle) { "No instance found for singleton _ClassDB" }
+    Allocator.allocationScope {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("ClassDB".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton ClassDB" }
       _handle = handle
     }
   }

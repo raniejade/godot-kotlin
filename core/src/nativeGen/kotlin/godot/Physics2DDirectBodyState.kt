@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Transform2D
@@ -89,8 +90,10 @@ open class Physics2DDirectBodyState(
       setTransform(value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -295,91 +298,91 @@ open class Physics2DDirectBodyState(
      */
     private object __method_bind {
       val addCentralForce: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "add_central_force".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_central_force" }
         }
       val addForce: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "add_force".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_force" }
         }
       val addTorque: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "add_torque".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_torque" }
         }
       val applyCentralImpulse: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "apply_central_impulse".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method apply_central_impulse" }
         }
       val applyImpulse: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "apply_impulse".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method apply_impulse" }
         }
       val applyTorqueImpulse: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "apply_torque_impulse".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method apply_torque_impulse" }
         }
       val getAngularVelocity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_angular_velocity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_angular_velocity" }
         }
       val getContactCollider: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_collider".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_contact_collider" }
         }
       val getContactColliderId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_collider_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_contact_collider_id" }
         }
       val getContactColliderObject: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_collider_object".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_contact_collider_object" }
         }
       val getContactColliderPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_collider_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_contact_collider_position" }
         }
       val getContactColliderShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_collider_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_contact_collider_shape" }
         }
       val getContactColliderShapeMetadata: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_collider_shape_metadata".cstr.ptr)
@@ -387,7 +390,7 @@ open class Physics2DDirectBodyState(
             "No method_bind found for method get_contact_collider_shape_metadata" }
         }
       val getContactColliderVelocityAtPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_collider_velocity_at_position".cstr.ptr)
@@ -395,133 +398,133 @@ open class Physics2DDirectBodyState(
             "No method_bind found for method get_contact_collider_velocity_at_position" }
         }
       val getContactCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_contact_count" }
         }
       val getContactLocalNormal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_local_normal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_contact_local_normal" }
         }
       val getContactLocalPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_local_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_contact_local_position" }
         }
       val getContactLocalShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_contact_local_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_contact_local_shape" }
         }
       val getInverseInertia: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_inverse_inertia".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_inverse_inertia" }
         }
       val getInverseMass: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_inverse_mass".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_inverse_mass" }
         }
       val getLinearVelocity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_linear_velocity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_linear_velocity" }
         }
       val getSpaceState: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_space_state".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_space_state" }
         }
       val getStep: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_step".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_step" }
         }
       val getTotalAngularDamp: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_total_angular_damp".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_total_angular_damp" }
         }
       val getTotalGravity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_total_gravity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_total_gravity" }
         }
       val getTotalLinearDamp: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_total_linear_damp".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_total_linear_damp" }
         }
       val getTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "get_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_transform" }
         }
       val integrateForces: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "integrate_forces".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method integrate_forces" }
         }
       val isSleeping: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "is_sleeping".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_sleeping" }
         }
       val setAngularVelocity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "set_angular_velocity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_angular_velocity" }
         }
       val setLinearVelocity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "set_linear_velocity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_linear_velocity" }
         }
       val setSleepState: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "set_sleep_state".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_sleep_state" }
         }
       val setTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectBodyState".cstr.ptr,
             "set_transform".cstr.ptr)

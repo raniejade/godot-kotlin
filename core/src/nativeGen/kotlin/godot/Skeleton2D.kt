@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Variant
@@ -28,7 +29,9 @@ open class Skeleton2D(
   val signalBoneSetupChanged: Signal0 = Signal0("bone_setup_changed")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getBone(idx: Int): Bone2D {
@@ -48,7 +51,7 @@ open class Skeleton2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Skeleton2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Skeleton2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -59,19 +62,19 @@ open class Skeleton2D(
      */
     private object __method_bind {
       val getBone: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
             "get_bone".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bone" }
         }
       val getBoneCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
             "get_bone_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
         }
       val getSkeleton: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
             "get_skeleton".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_skeleton" }

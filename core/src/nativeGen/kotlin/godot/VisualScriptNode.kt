@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -26,8 +27,10 @@ open class VisualScriptNode(
    */
   val signalPortsChanged: Signal0 = Signal0("ports_changed")
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getDefaultInputValue(portIdx: Int): Variant {
@@ -58,28 +61,28 @@ open class VisualScriptNode(
      */
     private object __method_bind {
       val getDefaultInputValue: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
             "get_default_input_value".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_default_input_value" }
         }
       val getVisualScript: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
             "get_visual_script".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_visual_script" }
         }
       val portsChangedNotify: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
             "ports_changed_notify".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method ports_changed_notify" }
         }
       val setDefaultInputValue: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
             "set_default_input_value".cstr.ptr)

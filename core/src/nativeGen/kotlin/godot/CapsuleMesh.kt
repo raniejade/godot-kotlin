@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -55,7 +56,9 @@ open class CapsuleMesh(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getMidHeight(): Float {
@@ -99,7 +102,7 @@ open class CapsuleMesh(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CapsuleMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CapsuleMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -110,56 +113,56 @@ open class CapsuleMesh(
      */
     private object __method_bind {
       val getMidHeight: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
             "get_mid_height".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_mid_height" }
         }
       val getRadialSegments: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
             "get_radial_segments".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_radial_segments" }
         }
       val getRadius: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
             "get_radius".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_radius" }
         }
       val getRings: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
             "get_rings".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_rings" }
         }
       val setMidHeight: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
             "set_mid_height".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_mid_height" }
         }
       val setRadialSegments: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
             "set_radial_segments".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_radial_segments" }
         }
       val setRadius: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
             "set_radius".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_radius" }
         }
       val setRings: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
             "set_rings".cstr.ptr)

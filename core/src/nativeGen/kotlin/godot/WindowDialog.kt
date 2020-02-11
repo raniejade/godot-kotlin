@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -38,7 +39,9 @@ open class WindowDialog(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getCloseButton(): TextureButton {
@@ -67,7 +70,7 @@ open class WindowDialog(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WindowDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for WindowDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -78,35 +81,35 @@ open class WindowDialog(
      */
     private object __method_bind {
       val getCloseButton: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
             "get_close_button".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_close_button" }
         }
       val getResizable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
             "get_resizable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_resizable" }
         }
       val getTitle: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
             "get_title".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_title" }
         }
       val setResizable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
             "set_resizable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_resizable" }
         }
       val setTitle: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
             "set_title".cstr.ptr)

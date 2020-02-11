@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -4135,7 +4136,9 @@ open class AnimatedTexture(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getFps(): Float {
@@ -4187,7 +4190,7 @@ open class AnimatedTexture(
   companion object {
     val MAX_FRAMES: Int = 256
 
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimatedTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimatedTexture" }
@@ -4199,56 +4202,56 @@ open class AnimatedTexture(
      */
     private object __method_bind {
       val getFps: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
             "get_fps".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_fps" }
         }
       val getFrameDelay: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
             "get_frame_delay".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_frame_delay" }
         }
       val getFrameTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
             "get_frame_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_frame_texture" }
         }
       val getFrames: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
             "get_frames".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_frames" }
         }
       val setFps: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
             "set_fps".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_fps" }
         }
       val setFrameDelay: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
             "set_frame_delay".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_frame_delay" }
         }
       val setFrameTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
             "set_frame_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_frame_texture" }
         }
       val setFrames: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
             "set_frames".cstr.ptr)

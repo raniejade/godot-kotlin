@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -64,7 +65,9 @@ open class CSGSphere(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getMaterial(): Material {
@@ -118,7 +121,7 @@ open class CSGSphere(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGSphere".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CSGSphere" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -129,61 +132,61 @@ open class CSGSphere(
      */
     private object __method_bind {
       val getMaterial: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGSphere".cstr.ptr,
             "get_material".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_material" }
         }
       val getRadialSegments: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGSphere".cstr.ptr,
             "get_radial_segments".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_radial_segments" }
         }
       val getRadius: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGSphere".cstr.ptr,
             "get_radius".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_radius" }
         }
       val getRings: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGSphere".cstr.ptr,
             "get_rings".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_rings" }
         }
       val getSmoothFaces: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGSphere".cstr.ptr,
             "get_smooth_faces".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_smooth_faces" }
         }
       val setMaterial: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGSphere".cstr.ptr,
             "set_material".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_material" }
         }
       val setRadialSegments: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGSphere".cstr.ptr,
             "set_radial_segments".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_radial_segments" }
         }
       val setRadius: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGSphere".cstr.ptr,
             "set_radius".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_radius" }
         }
       val setRings: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGSphere".cstr.ptr,
             "set_rings".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_rings" }
         }
       val setSmoothFaces: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGSphere".cstr.ptr,
             "set_smooth_faces".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_smooth_faces" }

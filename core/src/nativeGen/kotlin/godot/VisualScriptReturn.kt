@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -39,7 +40,9 @@ open class VisualScriptReturn(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getReturnType(): Variant.Type {
@@ -63,7 +66,7 @@ open class VisualScriptReturn(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptReturn".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptReturn" }
@@ -75,28 +78,28 @@ open class VisualScriptReturn(
      */
     private object __method_bind {
       val getReturnType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
             "get_return_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_return_type" }
         }
       val isReturnValueEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
             "is_return_value_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_return_value_enabled" }
         }
       val setEnableReturnValue: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
             "set_enable_return_value".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_enable_return_value" }
         }
       val setReturnType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
             "set_return_type".cstr.ptr)

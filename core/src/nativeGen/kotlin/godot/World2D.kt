@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Variant
@@ -37,7 +38,9 @@ open class World2D(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getCanvas(): RID {
@@ -56,7 +59,7 @@ open class World2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("World2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for World2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -67,19 +70,19 @@ open class World2D(
      */
     private object __method_bind {
       val getCanvas: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
             "get_canvas".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_canvas" }
         }
       val getDirectSpaceState: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
             "get_direct_space_state".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_direct_space_state" }
         }
       val getSpace: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
             "get_space".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_space" }

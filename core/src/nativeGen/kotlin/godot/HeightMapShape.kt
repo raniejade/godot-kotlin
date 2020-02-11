@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolFloatArray
 import godot.core.Variant
@@ -48,7 +49,9 @@ open class HeightMapShape(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -91,7 +94,7 @@ open class HeightMapShape(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("HeightMapShape".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for HeightMapShape" }
@@ -103,42 +106,42 @@ open class HeightMapShape(
      */
     private object __method_bind {
       val getMapData: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
             "get_map_data".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_map_data" }
         }
       val getMapDepth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
             "get_map_depth".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_map_depth" }
         }
       val getMapWidth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
             "get_map_width".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_map_width" }
         }
       val setMapData: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
             "set_map_data".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_map_data" }
         }
       val setMapDepth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
             "set_map_depth".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_map_depth" }
         }
       val setMapWidth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
             "set_map_width".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolStringArray
@@ -19,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _ResourceSaverInternal(
+open class ResourceSaverInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -44,18 +45,18 @@ open class _ResourceSaverInternal(
 
   companion object {
     /**
-     * Container for method_bind pointers for _ResourceSaver
+     * Container for method_bind pointers for ResourceSaver
      */
     private object __method_bind {
       val getRecognizedExtensions: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
             "get_recognized_extensions".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_recognized_extensions" }
         }
       val save: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
             "save".cstr.ptr)
@@ -64,12 +65,11 @@ open class _ResourceSaverInternal(
   }
 }
 
-object _ResourceSaver : _ResourceSaverInternal(null) {
+object ResourceSaver : ResourceSaverInternal(null) {
   init {
-    memScoped {
-      val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ResourceSaver".cstr.ptr)
-      requireNotNull(handle) { "No instance found for singleton _ResourceSaver" }
+    Allocator.allocationScope {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("ResourceSaver".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton ResourceSaver" }
       _handle = handle
     }
   }

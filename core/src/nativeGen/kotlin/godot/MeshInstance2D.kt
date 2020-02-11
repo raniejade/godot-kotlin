@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -50,7 +51,9 @@ open class MeshInstance2D(
   val signalTextureChanged: Signal0 = Signal0("texture_changed")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getMesh(): Mesh {
@@ -84,7 +87,7 @@ open class MeshInstance2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshInstance2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MeshInstance2D" }
@@ -96,42 +99,42 @@ open class MeshInstance2D(
      */
     private object __method_bind {
       val getMesh: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
             "get_mesh".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_mesh" }
         }
       val getNormalMap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
             "get_normal_map".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_normal_map" }
         }
       val getTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
             "get_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val setMesh: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
             "set_mesh".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_mesh" }
         }
       val setNormalMap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
             "set_normal_map".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_normal_map" }
         }
       val setTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
             "set_texture".cstr.ptr)

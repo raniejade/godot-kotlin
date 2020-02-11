@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -56,7 +57,9 @@ open class InputEventMouseMotion(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -127,7 +130,7 @@ open class InputEventMouseMotion(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventMouseMotion".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for InputEventMouseMotion" }
@@ -139,56 +142,56 @@ open class InputEventMouseMotion(
      */
     private object __method_bind {
       val getPressure: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
             "get_pressure".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_pressure" }
         }
       val getRelative: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
             "get_relative".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_relative" }
         }
       val getSpeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
             "get_speed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_speed" }
         }
       val getTilt: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
             "get_tilt".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tilt" }
         }
       val setPressure: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
             "set_pressure".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_pressure" }
         }
       val setRelative: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
             "set_relative".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_relative" }
         }
       val setSpeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
             "set_speed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_speed" }
         }
       val setTilt: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
             "set_tilt".cstr.ptr)

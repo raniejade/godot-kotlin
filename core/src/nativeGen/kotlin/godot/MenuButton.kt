@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -35,7 +36,9 @@ open class MenuButton(
   val signalAboutToShow: Signal0 = Signal0("about_to_show")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getPopup(): PopupMenu {
@@ -59,7 +62,7 @@ open class MenuButton(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MenuButton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MenuButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -70,25 +73,25 @@ open class MenuButton(
      */
     private object __method_bind {
       val getPopup: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
             "get_popup".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_popup" }
         }
       val isSwitchOnHover: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
             "is_switch_on_hover".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_switch_on_hover" }
         }
       val setDisableShortcuts: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
             "set_disable_shortcuts".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_disable_shortcuts" }
         }
       val setSwitchOnHover: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
             "set_switch_on_hover".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_switch_on_hover" }

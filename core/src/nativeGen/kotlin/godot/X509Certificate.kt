@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -22,7 +23,9 @@ open class X509Certificate(
   __ignore: String?
 ) : Resource(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun load(path: String): GDError {
@@ -38,7 +41,7 @@ open class X509Certificate(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("X509Certificate".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for X509Certificate" }
@@ -50,14 +53,14 @@ open class X509Certificate(
      */
     private object __method_bind {
       val load: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("X509Certificate".cstr.ptr,
             "load".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method load" }
         }
       val save: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("X509Certificate".cstr.ptr,
             "save".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
@@ -26,7 +27,9 @@ open class BitMap(
   __ignore: String?
 ) : Resource(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun create(size: Vector2) {
@@ -87,7 +90,7 @@ open class BitMap(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BitMap".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for BitMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -98,55 +101,55 @@ open class BitMap(
      */
     private object __method_bind {
       val create: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
             "create".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method create" }
         }
       val createFromImageAlpha: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
             "create_from_image_alpha".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method create_from_image_alpha" }
         }
       val getBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
             "get_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bit" }
         }
       val getSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
             "get_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_size" }
         }
       val getTrueBitCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
             "get_true_bit_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_true_bit_count" }
         }
       val growMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
             "grow_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method grow_mask" }
         }
       val opaqueToPolygons: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
             "opaque_to_polygons".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method opaque_to_polygons" }
         }
       val setBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
             "set_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bit" }
         }
       val setBitRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
             "set_bit_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bit_rect" }

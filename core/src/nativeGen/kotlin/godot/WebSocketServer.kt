@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolStringArray
@@ -77,7 +78,9 @@ open class WebSocketServer(
   val signalDataReceived: Signal1<Int> = Signal1("data_received")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun disconnectPeer(
@@ -173,7 +176,7 @@ open class WebSocketServer(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebSocketServer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for WebSocketServer" }
@@ -185,105 +188,105 @@ open class WebSocketServer(
      */
     private object __method_bind {
       val disconnectPeer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "disconnect_peer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method disconnect_peer" }
         }
       val getBindIp: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "get_bind_ip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bind_ip" }
         }
       val getCaChain: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "get_ca_chain".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_ca_chain" }
         }
       val getPeerAddress: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "get_peer_address".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_peer_address" }
         }
       val getPeerPort: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "get_peer_port".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_peer_port" }
         }
       val getPrivateKey: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "get_private_key".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_private_key" }
         }
       val getSslCertificate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "get_ssl_certificate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_ssl_certificate" }
         }
       val hasPeer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "has_peer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_peer" }
         }
       val isListening: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "is_listening".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_listening" }
         }
       val listen: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "listen".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method listen" }
         }
       val setBindIp: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "set_bind_ip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bind_ip" }
         }
       val setCaChain: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "set_ca_chain".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_ca_chain" }
         }
       val setPrivateKey: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "set_private_key".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_private_key" }
         }
       val setSslCertificate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "set_ssl_certificate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_ssl_certificate" }
         }
       val stop: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
             "stop".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -78,7 +79,9 @@ open class KinematicCollision2D(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getCollider(): Object {
@@ -137,7 +140,7 @@ open class KinematicCollision2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicCollision2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for KinematicCollision2D" }
@@ -149,77 +152,77 @@ open class KinematicCollision2D(
      */
     private object __method_bind {
       val getCollider: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_collider".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider" }
         }
       val getColliderId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_collider_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider_id" }
         }
       val getColliderMetadata: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_collider_metadata".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider_metadata" }
         }
       val getColliderShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_collider_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider_shape" }
         }
       val getColliderShapeIndex: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_collider_shape_index".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider_shape_index" }
         }
       val getColliderVelocity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_collider_velocity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider_velocity" }
         }
       val getLocalShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_local_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_local_shape" }
         }
       val getNormal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_normal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_normal" }
         }
       val getPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_position" }
         }
       val getRemainder: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_remainder".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_remainder" }
         }
       val getTravel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision2D".cstr.ptr,
             "get_travel".cstr.ptr)

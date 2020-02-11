@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -47,7 +48,9 @@ open class MeshTexture(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -90,7 +93,7 @@ open class MeshTexture(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MeshTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -101,42 +104,42 @@ open class MeshTexture(
      */
     private object __method_bind {
       val getBaseTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
             "get_base_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_base_texture" }
         }
       val getImageSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
             "get_image_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_image_size" }
         }
       val getMesh: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
             "get_mesh".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_mesh" }
         }
       val setBaseTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
             "set_base_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_base_texture" }
         }
       val setImageSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
             "set_image_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_image_size" }
         }
       val setMesh: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
             "set_mesh".cstr.ptr)

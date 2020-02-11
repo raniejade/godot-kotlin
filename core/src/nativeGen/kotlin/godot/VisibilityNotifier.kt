@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.AABB
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -52,7 +53,9 @@ open class VisibilityNotifier(
   val signalScreenExited: Signal0 = Signal0("screen_exited")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -80,7 +83,7 @@ open class VisibilityNotifier(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityNotifier".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisibilityNotifier" }
@@ -92,21 +95,21 @@ open class VisibilityNotifier(
      */
     private object __method_bind {
       val getAabb: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
             "get_aabb".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_aabb" }
         }
       val isOnScreen: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
             "is_on_screen".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_on_screen" }
         }
       val setAabb: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
             "set_aabb".cstr.ptr)

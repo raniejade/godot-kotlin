@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Variant
@@ -21,8 +22,10 @@ open class SkinReference(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getSkeleton(): RID {
@@ -41,14 +44,14 @@ open class SkinReference(
      */
     private object __method_bind {
       val getSkeleton: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkinReference".cstr.ptr,
             "get_skeleton".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_skeleton" }
         }
       val getSkin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkinReference".cstr.ptr,
             "get_skin".cstr.ptr)

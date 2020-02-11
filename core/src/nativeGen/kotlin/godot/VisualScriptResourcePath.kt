@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -29,7 +30,9 @@ open class VisualScriptResourcePath(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getResourcePath(): String {
@@ -43,7 +46,7 @@ open class VisualScriptResourcePath(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptResourcePath".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptResourcePath" }
@@ -55,14 +58,14 @@ open class VisualScriptResourcePath(
      */
     private object __method_bind {
       val getResourcePath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptResourcePath".cstr.ptr,
             "get_resource_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_resource_path" }
         }
       val setResourcePath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptResourcePath".cstr.ptr,
             "set_resource_path".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
 import godot.core.RID
@@ -34,8 +35,10 @@ open class Texture(
       setFlags(value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun draw(
@@ -164,61 +167,61 @@ open class Texture(
      */
     private object __method_bind {
       val draw: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Texture".cstr.ptr,
             "draw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw" }
         }
       val drawRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Texture".cstr.ptr,
             "draw_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_rect" }
         }
       val drawRectRegion: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Texture".cstr.ptr,
             "draw_rect_region".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw_rect_region" }
         }
       val getData: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Texture".cstr.ptr,
             "get_data".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_data" }
         }
       val getFlags: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Texture".cstr.ptr,
             "get_flags".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_flags" }
         }
       val getHeight: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Texture".cstr.ptr,
             "get_height".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_height" }
         }
       val getSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Texture".cstr.ptr,
             "get_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_size" }
         }
       val getWidth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Texture".cstr.ptr,
             "get_width".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_width" }
         }
       val hasAlpha: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Texture".cstr.ptr,
             "has_alpha".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_alpha" }
         }
       val setFlags: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Texture".cstr.ptr,
             "set_flags".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_flags" }

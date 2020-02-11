@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
@@ -104,7 +105,9 @@ open class FileDialog(
   val signalFilesSelected: Signal1<PoolStringArray> = Signal1("files_selected")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -270,7 +273,7 @@ open class FileDialog(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("FileDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for FileDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -281,133 +284,133 @@ open class FileDialog(
      */
     private object __method_bind {
       val addFilter: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "add_filter".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_filter" }
         }
       val clearFilters: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "clear_filters".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_filters" }
         }
       val deselectItems: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "deselect_items".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method deselect_items" }
         }
       val getAccess: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "get_access".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_access" }
         }
       val getCurrentDir: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "get_current_dir".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_current_dir" }
         }
       val getCurrentFile: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "get_current_file".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_current_file" }
         }
       val getCurrentPath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "get_current_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_current_path" }
         }
       val getFilters: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "get_filters".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_filters" }
         }
       val getLineEdit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "get_line_edit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_line_edit" }
         }
       val getMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "get_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_mode" }
         }
       val getVbox: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "get_vbox".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_vbox" }
         }
       val invalidate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "invalidate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method invalidate" }
         }
       val isModeOverridingTitle: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "is_mode_overriding_title".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_mode_overriding_title" }
         }
       val isShowingHiddenFiles: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "is_showing_hidden_files".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_showing_hidden_files" }
         }
       val setAccess: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "set_access".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_access" }
         }
       val setCurrentDir: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "set_current_dir".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_current_dir" }
         }
       val setCurrentFile: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "set_current_file".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_current_file" }
         }
       val setCurrentPath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "set_current_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_current_path" }
         }
       val setFilters: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "set_filters".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_filters" }
         }
       val setMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "set_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_mode" }
         }
       val setModeOverridesTitle: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "set_mode_overrides_title".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_mode_overrides_title" }
         }
       val setShowHiddenFiles: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
             "set_show_hidden_files".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_show_hidden_files" }

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -21,7 +22,9 @@ open class PHashTranslation(
   __ignore: String?
 ) : Translation(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun generate(from: Translation) {
@@ -30,7 +33,7 @@ open class PHashTranslation(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PHashTranslation".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PHashTranslation" }
@@ -42,7 +45,7 @@ open class PHashTranslation(
      */
     private object __method_bind {
       val generate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PHashTranslation".cstr.ptr,
             "generate".cstr.ptr)

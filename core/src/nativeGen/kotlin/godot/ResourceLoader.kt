@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
@@ -18,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _ResourceLoaderInternal(
+open class ResourceLoaderInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
@@ -82,25 +83,25 @@ open class _ResourceLoaderInternal(
 
   companion object {
     /**
-     * Container for method_bind pointers for _ResourceLoader
+     * Container for method_bind pointers for ResourceLoader
      */
     private object __method_bind {
       val exists: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
             "exists".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method exists" }
         }
       val getDependencies: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
             "get_dependencies".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_dependencies" }
         }
       val getRecognizedExtensionsForType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
             "get_recognized_extensions_for_type".cstr.ptr)
@@ -108,35 +109,35 @@ open class _ResourceLoaderInternal(
             }
         }
       val has: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
             "has".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has" }
         }
       val hasCached: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
             "has_cached".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_cached" }
         }
       val load: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
             "load".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method load" }
         }
       val loadInteractive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
             "load_interactive".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method load_interactive" }
         }
       val setAbortOnMissingResources: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
             "set_abort_on_missing_resources".cstr.ptr)
@@ -145,12 +146,12 @@ open class _ResourceLoaderInternal(
   }
 }
 
-object _ResourceLoader : _ResourceLoaderInternal(null) {
+object ResourceLoader : ResourceLoaderInternal(null) {
   init {
-    memScoped {
+    Allocator.allocationScope {
       val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ResourceLoader".cstr.ptr)
-      requireNotNull(handle) { "No instance found for singleton _ResourceLoader" }
+          checkNotNull(Godot.gdnative.godot_global_get_singleton)("ResourceLoader".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton ResourceLoader" }
       _handle = handle
     }
   }

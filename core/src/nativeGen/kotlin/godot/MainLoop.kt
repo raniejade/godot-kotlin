@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class MainLoop(
       Signal2("on_request_permissions_result")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun finish() {
@@ -92,7 +95,7 @@ open class MainLoop(
 
     val NOTIFICATION_WM_UNFOCUS_REQUEST: Int = 1008
 
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MainLoop".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for MainLoop" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -103,37 +106,37 @@ open class MainLoop(
      */
     private object __method_bind {
       val finish: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
             "finish".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method finish" }
         }
       val idle: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
             "idle".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method idle" }
         }
       val init: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
             "init".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method init" }
         }
       val inputEvent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
             "input_event".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method input_event" }
         }
       val inputText: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
             "input_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method input_text" }
         }
       val iteration: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
             "iteration".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method iteration" }

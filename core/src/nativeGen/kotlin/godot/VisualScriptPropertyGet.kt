@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
@@ -80,7 +81,9 @@ open class VisualScriptPropertyGet(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -184,7 +187,7 @@ open class VisualScriptPropertyGet(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptPropertyGet".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptPropertyGet" }
@@ -196,98 +199,98 @@ open class VisualScriptPropertyGet(
      */
     private object __method_bind {
       val getBasePath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "get_base_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_base_path" }
         }
       val getBaseScript: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "get_base_script".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_base_script" }
         }
       val getBaseType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "get_base_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_base_type" }
         }
       val getBasicType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "get_basic_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_basic_type" }
         }
       val getCallMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "get_call_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_call_mode" }
         }
       val getIndex: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "get_index".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_index" }
         }
       val getProperty: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "get_property".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_property" }
         }
       val setBasePath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "set_base_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_base_path" }
         }
       val setBaseScript: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "set_base_script".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_base_script" }
         }
       val setBaseType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "set_base_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_base_type" }
         }
       val setBasicType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "set_basic_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_basic_type" }
         }
       val setCallMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "set_call_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_call_mode" }
         }
       val setIndex: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "set_index".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_index" }
         }
       val setProperty: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
             "set_property".cstr.ptr)

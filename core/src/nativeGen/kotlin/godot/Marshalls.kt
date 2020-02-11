@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.Variant
@@ -18,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _MarshallsInternal(
+open class MarshallsInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
@@ -64,41 +65,41 @@ open class _MarshallsInternal(
 
   companion object {
     /**
-     * Container for method_bind pointers for _Marshalls
+     * Container for method_bind pointers for Marshalls
      */
     private object __method_bind {
       val base64ToRaw: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
             "base64_to_raw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method base64_to_raw" }
         }
       val base64ToUtf8: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
             "base64_to_utf8".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method base64_to_utf8" }
         }
       val base64ToVariant: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
             "base64_to_variant".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method base64_to_variant" }
         }
       val rawToBase64: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
             "raw_to_base64".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method raw_to_base64" }
         }
       val utf8ToBase64: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
             "utf8_to_base64".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method utf8_to_base64" }
         }
       val variantToBase64: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
             "variant_to_base64".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method variant_to_base64" }
@@ -106,11 +107,11 @@ open class _MarshallsInternal(
   }
 }
 
-object _Marshalls : _MarshallsInternal(null) {
+object Marshalls : MarshallsInternal(null) {
   init {
-    memScoped {
-      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Marshalls".cstr.ptr)
-      requireNotNull(handle) { "No instance found for singleton _Marshalls" }
+    Allocator.allocationScope {
+      val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("Marshalls".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton Marshalls" }
       _handle = handle
     }
   }

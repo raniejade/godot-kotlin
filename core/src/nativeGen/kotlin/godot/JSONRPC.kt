@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Variant
@@ -24,7 +25,9 @@ open class JSONRPC(
   __ignore: String?
 ) : Object(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun makeNotification(method: String, params: Variant): Dictionary {
@@ -116,7 +119,7 @@ open class JSONRPC(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("JSONRPC".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for JSONRPC" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -127,43 +130,43 @@ open class JSONRPC(
      */
     private object __method_bind {
       val makeNotification: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONRPC".cstr.ptr,
             "make_notification".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method make_notification" }
         }
       val makeRequest: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONRPC".cstr.ptr,
             "make_request".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method make_request" }
         }
       val makeResponse: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONRPC".cstr.ptr,
             "make_response".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method make_response" }
         }
       val makeResponseError: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONRPC".cstr.ptr,
             "make_response_error".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method make_response_error" }
         }
       val processAction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONRPC".cstr.ptr,
             "process_action".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method process_action" }
         }
       val processString: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONRPC".cstr.ptr,
             "process_string".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method process_string" }
         }
       val setScope: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONRPC".cstr.ptr,
             "set_scope".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_scope" }

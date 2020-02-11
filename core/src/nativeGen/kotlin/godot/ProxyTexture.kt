@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -29,7 +30,9 @@ open class ProxyTexture(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getBase(): Texture {
@@ -43,7 +46,7 @@ open class ProxyTexture(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProxyTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ProxyTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -54,14 +57,14 @@ open class ProxyTexture(
      */
     private object __method_bind {
       val getBase: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProxyTexture".cstr.ptr,
             "get_base".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_base" }
         }
       val setBase: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProxyTexture".cstr.ptr,
             "set_base".cstr.ptr)

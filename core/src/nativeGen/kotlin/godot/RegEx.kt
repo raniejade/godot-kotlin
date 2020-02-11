@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -24,7 +25,9 @@ open class RegEx(
   __ignore: String?
 ) : Reference(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun clear() {
@@ -101,7 +104,7 @@ open class RegEx(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RegEx".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for RegEx" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -112,55 +115,55 @@ open class RegEx(
      */
     private object __method_bind {
       val clear: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
       val compile: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
             "compile".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method compile" }
         }
       val getGroupCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
             "get_group_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_group_count" }
         }
       val getNames: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
             "get_names".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_names" }
         }
       val getPattern: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
             "get_pattern".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_pattern" }
         }
       val isValid: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
             "is_valid".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_valid" }
         }
       val search: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
             "search".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method search" }
         }
       val searchAll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
             "search_all".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method search_all" }
         }
       val sub: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
             "sub".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method sub" }

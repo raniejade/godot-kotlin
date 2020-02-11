@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -127,7 +128,9 @@ open class AudioEffectDelay(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getDry(): Float {
@@ -261,7 +264,7 @@ open class AudioEffectDelay(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectDelay".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectDelay" }
@@ -273,182 +276,182 @@ open class AudioEffectDelay(
      */
     private object __method_bind {
       val getDry: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "get_dry".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_dry" }
         }
       val getFeedbackDelayMs: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "get_feedback_delay_ms".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_feedback_delay_ms" }
         }
       val getFeedbackLevelDb: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "get_feedback_level_db".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_feedback_level_db" }
         }
       val getFeedbackLowpass: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "get_feedback_lowpass".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_feedback_lowpass" }
         }
       val getTap1DelayMs: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "get_tap1_delay_ms".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tap1_delay_ms" }
         }
       val getTap1LevelDb: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "get_tap1_level_db".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tap1_level_db" }
         }
       val getTap1Pan: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "get_tap1_pan".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tap1_pan" }
         }
       val getTap2DelayMs: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "get_tap2_delay_ms".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tap2_delay_ms" }
         }
       val getTap2LevelDb: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "get_tap2_level_db".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tap2_level_db" }
         }
       val getTap2Pan: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "get_tap2_pan".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tap2_pan" }
         }
       val isFeedbackActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "is_feedback_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_feedback_active" }
         }
       val isTap1Active: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "is_tap1_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_tap1_active" }
         }
       val isTap2Active: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "is_tap2_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_tap2_active" }
         }
       val setDry: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_dry".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_dry" }
         }
       val setFeedbackActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_feedback_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_feedback_active" }
         }
       val setFeedbackDelayMs: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_feedback_delay_ms".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_feedback_delay_ms" }
         }
       val setFeedbackLevelDb: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_feedback_level_db".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_feedback_level_db" }
         }
       val setFeedbackLowpass: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_feedback_lowpass".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_feedback_lowpass" }
         }
       val setTap1Active: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_tap1_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tap1_active" }
         }
       val setTap1DelayMs: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_tap1_delay_ms".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tap1_delay_ms" }
         }
       val setTap1LevelDb: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_tap1_level_db".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tap1_level_db" }
         }
       val setTap1Pan: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_tap1_pan".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tap1_pan" }
         }
       val setTap2Active: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_tap2_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tap2_active" }
         }
       val setTap2DelayMs: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_tap2_delay_ms".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tap2_delay_ms" }
         }
       val setTap2LevelDb: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_tap2_level_db".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_tap2_level_db" }
         }
       val setTap2Pan: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDelay".cstr.ptr,
             "set_tap2_pan".cstr.ptr)

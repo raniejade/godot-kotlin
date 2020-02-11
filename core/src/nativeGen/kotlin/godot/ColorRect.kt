@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
 import godot.core.Variant
@@ -31,7 +32,9 @@ open class ColorRect(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -54,7 +57,7 @@ open class ColorRect(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorRect".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ColorRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -65,13 +68,13 @@ open class ColorRect(
      */
     private object __method_bind {
       val getFrameColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorRect".cstr.ptr,
             "get_frame_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_frame_color" }
         }
       val setFrameColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorRect".cstr.ptr,
             "set_frame_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_frame_color" }

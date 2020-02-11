@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -1044,7 +1045,7 @@ open class GlobalConstantsInternal(
 
 object GlobalConstants : GlobalConstantsInternal(null) {
   init {
-    memScoped {
+    Allocator.allocationScope {
       val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("GlobalConstants".cstr.ptr)
       requireNotNull(handle) { "No instance found for singleton GlobalConstants" }

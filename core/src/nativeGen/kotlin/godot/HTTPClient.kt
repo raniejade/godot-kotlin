@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.GDError
 import godot.core.Godot
@@ -51,7 +52,9 @@ open class HTTPClient(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun close() {
@@ -392,7 +395,7 @@ open class HTTPClient(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HTTPClient".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for HTTPClient" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -403,122 +406,122 @@ open class HTTPClient(
      */
     private object __method_bind {
       val close: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "close".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method close" }
         }
       val connectToHost: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "connect_to_host".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method connect_to_host" }
         }
       val getConnection: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "get_connection".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_connection" }
         }
       val getReadChunkSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "get_read_chunk_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_read_chunk_size" }
         }
       val getResponseBodyLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "get_response_body_length".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_response_body_length" }
         }
       val getResponseCode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "get_response_code".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_response_code" }
         }
       val getResponseHeaders: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "get_response_headers".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_response_headers" }
         }
       val getResponseHeadersAsDictionary: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "get_response_headers_as_dictionary".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_response_headers_as_dictionary"
             }
         }
       val getStatus: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "get_status".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_status" }
         }
       val hasResponse: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "has_response".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_response" }
         }
       val isBlockingModeEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "is_blocking_mode_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_blocking_mode_enabled" }
         }
       val isResponseChunked: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "is_response_chunked".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_response_chunked" }
         }
       val poll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "poll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method poll" }
         }
       val queryStringFromDict: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "query_string_from_dict".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method query_string_from_dict" }
         }
       val readResponseBodyChunk: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "read_response_body_chunk".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method read_response_body_chunk" }
         }
       val request: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "request".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method request" }
         }
       val requestRaw: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "request_raw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method request_raw" }
         }
       val setBlockingMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "set_blocking_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_blocking_mode" }
         }
       val setConnection: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "set_connection".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_connection" }
         }
       val setReadChunkSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPClient".cstr.ptr,
             "set_read_chunk_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_read_chunk_size" }

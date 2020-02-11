@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
@@ -23,7 +24,9 @@ open class ResourcePreloader(
   __ignore: String?
 ) : Node(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addResource(name: String, resource: Resource) {
@@ -63,7 +66,7 @@ open class ResourcePreloader(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ResourcePreloader".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ResourcePreloader" }
@@ -75,42 +78,42 @@ open class ResourcePreloader(
      */
     private object __method_bind {
       val addResource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
             "add_resource".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_resource" }
         }
       val getResource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
             "get_resource".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_resource" }
         }
       val getResourceList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
             "get_resource_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_resource_list" }
         }
       val hasResource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
             "has_resource".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_resource" }
         }
       val removeResource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
             "remove_resource".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_resource" }
         }
       val renameResource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
             "rename_resource".cstr.ptr)

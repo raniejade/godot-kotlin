@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -39,7 +40,9 @@ open class InputEventJoypadMotion(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getAxis(): Int {
@@ -63,7 +66,7 @@ open class InputEventJoypadMotion(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventJoypadMotion".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for InputEventJoypadMotion" }
@@ -75,28 +78,28 @@ open class InputEventJoypadMotion(
      */
     private object __method_bind {
       val getAxis: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
             "get_axis".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_axis" }
         }
       val getAxisValue: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
             "get_axis_value".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_axis_value" }
         }
       val setAxis: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
             "set_axis".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_axis" }
         }
       val setAxisValue: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
             "set_axis_value".cstr.ptr)

@@ -1,7 +1,10 @@
 package godot.core
 
 import gdnative.godot_rect2
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.readValue
 
 class Rect2(
   value: CValue<godot_rect2>
@@ -11,13 +14,13 @@ class Rect2(
   constructor(x: Float, y: Float, width: Float, height: Float): this(__new(x, y, width, height))
 
   var position: Vector2
-    get() = memScoped {
+    get() = Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_rect2_get_position)(_value.ptr)
       )
     }
     set(value) {
-      _value = memScoped {
+      _value = Allocator.allocationScope {
         val ptr = _value.ptr
         checkNotNull(Godot.gdnative.godot_rect2_set_position)(ptr, value._value.ptr)
         ptr.pointed.readValue()
@@ -31,13 +34,13 @@ class Rect2(
   }
 
   var size: Vector2
-    get() = memScoped {
+    get() = Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_rect2_get_size)(_value.ptr)
       )
     }
     set(value) {
-      _value = memScoped {
+      _value = Allocator.allocationScope {
         val ptr = _value.ptr
         checkNotNull(Godot.gdnative.godot_rect2_set_size)(ptr, value._value.ptr)
         ptr.pointed.readValue()
@@ -51,7 +54,7 @@ class Rect2(
   }
 
   fun abs(): Rect2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Rect2(
         checkNotNull(Godot.gdnative11.godot_rect2_abs)(_value.ptr)
       )
@@ -59,7 +62,7 @@ class Rect2(
   }
 
   fun clip(b: Rect2): Rect2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Rect2(
         checkNotNull(Godot.gdnative.godot_rect2_clip)(_value.ptr, b._value.ptr)
       )
@@ -67,13 +70,13 @@ class Rect2(
   }
 
   fun encloses(b: Rect2): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_rect2_encloses)(_value.ptr, b._value.ptr)
     }
   }
 
   fun expand(to: Vector2): Rect2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Rect2(
         checkNotNull(Godot.gdnative.godot_rect2_expand)(_value.ptr, to._value.ptr)
       )
@@ -81,13 +84,13 @@ class Rect2(
   }
 
   fun getArea(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_rect2_get_area)(_value.ptr)
     }
   }
 
   fun grow(by: Float): Rect2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Rect2(
         checkNotNull(Godot.gdnative.godot_rect2_grow)(_value.ptr, by)
       )
@@ -95,7 +98,7 @@ class Rect2(
   }
 
   fun growIndividual(left: Float, top: Float, right: Float, bottom: Float): Rect2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Rect2(
         checkNotNull(Godot.gdnative11.godot_rect2_grow_individual)(_value.ptr, left, top, right, bottom)
       )
@@ -103,7 +106,7 @@ class Rect2(
   }
 
   fun growMargin(margin: Margin, by: Float): Rect2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Rect2(
         checkNotNull(Godot.gdnative11.godot_rect2_grow_margin)(_value.ptr, margin.value, by)
       )
@@ -111,25 +114,25 @@ class Rect2(
   }
 
   fun hasNoArea(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_rect2_has_no_area)(_value.ptr)
     }
   }
 
   fun hasPoint(point: Vector2): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_rect2_has_point)(_value.ptr, point._value.ptr)
     }
   }
 
   fun intersects(b: Rect2): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_rect2_intersects)(_value.ptr, b._value.ptr)
     }
   }
 
   fun merge(b: Rect2): Rect2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Rect2(
         checkNotNull(Godot.gdnative.godot_rect2_merge)(_value.ptr, b._value.ptr)
       )
@@ -140,7 +143,7 @@ class Rect2(
     if (other == null || other !is Rect2) {
       return false
     }
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_rect2_operator_equal)(_value.ptr, other._value.ptr)
     }
   }
@@ -154,7 +157,7 @@ class Rect2(
   }
 
   override fun toGDString(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_rect2_as_string)(_value.ptr)
       )

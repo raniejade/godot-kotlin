@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.AABB
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -47,8 +48,10 @@ open class PrimitiveMesh(
       setMaterial(value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -101,49 +104,49 @@ open class PrimitiveMesh(
      */
     private object __method_bind {
       val getCustomAabb: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrimitiveMesh".cstr.ptr,
             "get_custom_aabb".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_custom_aabb" }
         }
       val getFlipFaces: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrimitiveMesh".cstr.ptr,
             "get_flip_faces".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_flip_faces" }
         }
       val getMaterial: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrimitiveMesh".cstr.ptr,
             "get_material".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_material" }
         }
       val getMeshArrays: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrimitiveMesh".cstr.ptr,
             "get_mesh_arrays".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_mesh_arrays" }
         }
       val setCustomAabb: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrimitiveMesh".cstr.ptr,
             "set_custom_aabb".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_custom_aabb" }
         }
       val setFlipFaces: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrimitiveMesh".cstr.ptr,
             "set_flip_faces".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_flip_faces" }
         }
       val setMaterial: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrimitiveMesh".cstr.ptr,
             "set_material".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -24,7 +25,9 @@ open class PCKPacker(
   __ignore: String?
 ) : Reference(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addFile(pckPath: String, sourcePath: String): GDError {
@@ -50,7 +53,7 @@ open class PCKPacker(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PCKPacker".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PCKPacker" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -61,19 +64,19 @@ open class PCKPacker(
      */
     private object __method_bind {
       val addFile: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
             "add_file".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_file" }
         }
       val flush: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
             "flush".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method flush" }
         }
       val pckStart: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
             "pck_start".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method pck_start" }

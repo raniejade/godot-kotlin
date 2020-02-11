@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -63,8 +64,10 @@ open class NetworkedMultiplayerPeer(
    */
   val signalServerDisconnected: Signal0 = Signal0("server_disconnected")
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getConnectionStatus(): ConnectionStatus {
@@ -163,63 +166,63 @@ open class NetworkedMultiplayerPeer(
      */
     private object __method_bind {
       val getConnectionStatus: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
             "get_connection_status".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_connection_status" }
         }
       val getPacketPeer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
             "get_packet_peer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_packet_peer" }
         }
       val getTransferMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
             "get_transfer_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_transfer_mode" }
         }
       val getUniqueId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
             "get_unique_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_unique_id" }
         }
       val isRefusingNewConnections: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
             "is_refusing_new_connections".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_refusing_new_connections" }
         }
       val poll: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
             "poll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method poll" }
         }
       val setRefuseNewConnections: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
             "set_refuse_new_connections".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_refuse_new_connections" }
         }
       val setTargetPeer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
             "set_target_peer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_target_peer" }
         }
       val setTransferMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
             "set_transfer_mode".cstr.ptr)

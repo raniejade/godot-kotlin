@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class VisualShaderNodeVectorFunc(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getFunction(): Function {
@@ -129,7 +132,7 @@ open class VisualShaderNodeVectorFunc(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorFunc".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorFunc" }
@@ -141,14 +144,14 @@ open class VisualShaderNodeVectorFunc(
      */
     private object __method_bind {
       val getFunction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVectorFunc".cstr.ptr,
             "get_function".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_function" }
         }
       val setFunction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVectorFunc".cstr.ptr,
             "set_function".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class ShaderMaterial(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getShader(): Shader {
@@ -69,7 +72,7 @@ open class ShaderMaterial(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ShaderMaterial".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ShaderMaterial" }
@@ -81,42 +84,42 @@ open class ShaderMaterial(
      */
     private object __method_bind {
       val getShader: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
             "get_shader".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_shader" }
         }
       val getShaderParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
             "get_shader_param".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_shader_param" }
         }
       val propertyCanRevert: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
             "property_can_revert".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method property_can_revert" }
         }
       val propertyGetRevert: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
             "property_get_revert".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method property_get_revert" }
         }
       val setShader: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
             "set_shader".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_shader" }
         }
       val setShaderParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
             "set_shader_param".cstr.ptr)

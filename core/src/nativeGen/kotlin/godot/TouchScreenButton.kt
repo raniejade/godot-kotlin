@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -105,7 +106,9 @@ open class TouchScreenButton(
   val signalReleased: Signal0 = Signal0("released")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getAction(): String {
@@ -223,7 +226,7 @@ open class TouchScreenButton(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("TouchScreenButton".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for TouchScreenButton" }
@@ -235,133 +238,133 @@ open class TouchScreenButton(
      */
     private object __method_bind {
       val getAction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "get_action".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_action" }
         }
       val getBitmask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "get_bitmask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bitmask" }
         }
       val getShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "get_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_shape" }
         }
       val getTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "get_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val getTexturePressed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "get_texture_pressed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_texture_pressed" }
         }
       val getVisibilityMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "get_visibility_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_visibility_mode" }
         }
       val isPassbyPressEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "is_passby_press_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_passby_press_enabled" }
         }
       val isPressed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "is_pressed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_pressed" }
         }
       val isShapeCentered: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "is_shape_centered".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_shape_centered" }
         }
       val isShapeVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "is_shape_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_shape_visible" }
         }
       val setAction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "set_action".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_action" }
         }
       val setBitmask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "set_bitmask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bitmask" }
         }
       val setPassbyPress: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "set_passby_press".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_passby_press" }
         }
       val setShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "set_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_shape" }
         }
       val setShapeCentered: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "set_shape_centered".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_shape_centered" }
         }
       val setShapeVisible: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "set_shape_visible".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_shape_visible" }
         }
       val setTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "set_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_texture" }
         }
       val setTexturePressed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "set_texture_pressed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_texture_pressed" }
         }
       val setVisibilityMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
             "set_visibility_mode".cstr.ptr)

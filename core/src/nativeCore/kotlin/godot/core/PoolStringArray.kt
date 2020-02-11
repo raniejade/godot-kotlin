@@ -2,7 +2,10 @@ package godot.core
 
 import gdnative.godot_error
 import gdnative.godot_pool_string_array
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.readValue
 
 class PoolStringArray(
   value: CValue<godot_pool_string_array>
@@ -11,7 +14,7 @@ class PoolStringArray(
   constructor(from: VariantArray): this(__new(from))
 
   fun append(string: String) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       GDString.from(string) {
         checkNotNull(Godot.gdnative.godot_pool_string_array_append)(ptr, it._value.ptr)
@@ -21,7 +24,7 @@ class PoolStringArray(
   }
 
   fun append(array: PoolStringArray) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_string_array_append_array)(ptr, array._value.ptr)
       ptr.pointed.readValue()
@@ -29,14 +32,14 @@ class PoolStringArray(
   }
 
   fun destroy() {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_pool_string_array_destroy)(_value.ptr)
     }
   }
 
   fun insert(index: Int, string: String): godot_error {
     lateinit var ret: godot_error
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       GDString.from(string) {
         ret = checkNotNull(Godot.gdnative.godot_pool_string_array_insert)(ptr, index, it._value.ptr)
@@ -47,7 +50,7 @@ class PoolStringArray(
   }
 
   fun invert() {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_string_array_invert)(ptr)
       ptr.pointed.readValue()
@@ -55,7 +58,7 @@ class PoolStringArray(
   }
 
   fun remove(index: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_string_array_remove)(ptr, index)
       ptr.pointed.readValue()
@@ -63,7 +66,7 @@ class PoolStringArray(
   }
 
   fun resize(size: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_string_array_resize)(ptr, size)
       ptr.pointed.readValue()
@@ -71,7 +74,7 @@ class PoolStringArray(
   }
 
   operator fun set(index: Int, string: String) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       GDString.from(string) {
         checkNotNull(Godot.gdnative.godot_pool_string_array_set)(ptr, index, it._value.ptr)
@@ -81,7 +84,7 @@ class PoolStringArray(
   }
 
   operator fun get(index: Int): String {
-    return memScoped {
+    return Allocator.allocationScope {
       val gdString = GDString(
         checkNotNull(Godot.gdnative.godot_pool_string_array_get)(_value.ptr, index)
       )
@@ -92,7 +95,7 @@ class PoolStringArray(
   }
 
   fun size(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_pool_string_array_size)(_value.ptr)
     }
   }

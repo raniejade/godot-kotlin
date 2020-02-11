@@ -1,6 +1,7 @@
 package godot
 
 import godot.core.Godot
+import godot.core.NodePath
 import godot.core.Variant
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.invoke
@@ -18,3 +19,17 @@ internal fun Object.replaceHandle(replacement: COpaquePointer) {
     }
     _handle = replacement
 }
+
+@Suppress("UNCHECKED_CAST")
+fun <T: Node?> Node.getNode(path: String): T {
+    return getNode(NodePath(path)) as T
+}
+
+@Suppress("UNCHECKED_CAST")
+fun <T: Node?> Node.getParent(): T = getParent() as T
+
+@Suppress("UNCHECKED_CAST")
+fun <T: Resource?> ResourceLoader.load(path: String, typeHint: String = "", noCache: Boolean = false) = load(path, typeHint, noCache) as T
+
+@Suppress("UNCHECKED_CAST")
+fun <T: Node?> PackedScene.instance(editState: PackedScene.GenEditState = PackedScene.GenEditState.DISABLED) = instance(editState.value) as T

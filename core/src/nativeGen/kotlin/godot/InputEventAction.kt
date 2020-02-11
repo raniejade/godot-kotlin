@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -47,7 +48,9 @@ open class InputEventAction(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getAction(): String {
@@ -76,7 +79,7 @@ open class InputEventAction(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventAction".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for InputEventAction" }
@@ -88,35 +91,35 @@ open class InputEventAction(
      */
     private object __method_bind {
       val getAction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
             "get_action".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_action" }
         }
       val getStrength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
             "get_strength".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_strength" }
         }
       val setAction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
             "set_action".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_action" }
         }
       val setPressed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
             "set_pressed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_pressed" }
         }
       val setStrength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
             "set_strength".cstr.ptr)

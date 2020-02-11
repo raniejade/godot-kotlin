@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -29,7 +30,9 @@ open class WorldEnvironment(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getEnvironment(): Environment {
@@ -43,7 +46,7 @@ open class WorldEnvironment(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WorldEnvironment".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for WorldEnvironment" }
@@ -55,14 +58,14 @@ open class WorldEnvironment(
      */
     private object __method_bind {
       val getEnvironment: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WorldEnvironment".cstr.ptr,
             "get_environment".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_environment" }
         }
       val setEnvironment: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WorldEnvironment".cstr.ptr,
             "set_environment".cstr.ptr)

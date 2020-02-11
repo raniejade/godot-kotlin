@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -88,7 +89,9 @@ open class HingeJoint(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getFlag(flag: Int): Boolean {
@@ -172,7 +175,7 @@ open class HingeJoint(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HingeJoint".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for HingeJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -183,25 +186,25 @@ open class HingeJoint(
      */
     private object __method_bind {
       val getFlag: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
             "get_flag".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_flag" }
         }
       val getParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
             "get_param".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_param" }
         }
       val setFlag: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
             "set_flag".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_flag" }
         }
       val setParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
             "set_param".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_param" }

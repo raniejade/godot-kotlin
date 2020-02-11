@@ -10,13 +10,13 @@ internal class GDString(
   constructor(str: String): this(__new(str))
 
   fun beginsWith(str: GDString): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_begins_with)(_value.ptr, str._value.ptr)
     }
   }
 
   fun destroy() {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_destroy)(_value.ptr)
     }
   }
@@ -26,7 +26,7 @@ internal class GDString(
   }
 
   fun bigrams(): PoolStringArray {
-    return memScoped {
+    return Allocator.allocationScope {
       PoolStringArray(
         VariantArray(checkNotNull(Godot.gdnative.godot_string_bigrams)(_value.ptr))
       )
@@ -34,19 +34,19 @@ internal class GDString(
   }
 
   fun cEscape(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(checkNotNull(Godot.gdnative.godot_string_c_escape)(_value.ptr))
     }
   }
 
   fun cUnEscape(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(checkNotNull(Godot.gdnative.godot_string_c_unescape)(_value.ptr))
     }
   }
 
   fun capitalize(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_capitalize)(_value.ptr)
       )
@@ -54,31 +54,31 @@ internal class GDString(
   }
 
   fun caseCmpTo(to: GDString): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_casecmp_to)(_value.ptr, to._value.ptr).toInt()
     }
   }
 
   fun caseCmpTo(to: String): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_casecmp_to)(_value.ptr, GDString(to)._value.ptr).toInt()
     }
   }
 
   fun dedent(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(checkNotNull(Godot.gdnative11.godot_string_dedent)(_value.ptr))
     }
   }
 
   fun isEmpty(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_empty)(_value.ptr)
     }
   }
 
   fun endsWith(str: GDString): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_ends_with)(_value.ptr, str._value.ptr)
     }
   }
@@ -88,7 +88,7 @@ internal class GDString(
   }
 
   fun erase(position: Int, count: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_string_erase)(ptr, position, count)
       ptr.pointed.readValue()
@@ -96,7 +96,7 @@ internal class GDString(
   }
 
   fun find(str: GDString, from: Int = 0): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_find_from)(_value.ptr, str._value, from)
     }
   }
@@ -106,7 +106,7 @@ internal class GDString(
   }
 
   fun findLast(str: GDString): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_find_last)(_value.ptr, str._value)
     }
   }
@@ -116,7 +116,7 @@ internal class GDString(
   }
 
   fun findN(str: GDString, from: Int = 0): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_findn_from)(_value.ptr, str._value, from)
     }
   }
@@ -126,7 +126,7 @@ internal class GDString(
   }
 
   fun format(values: Variant): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_format)(_value.ptr, values._value.ptr)
       )
@@ -134,7 +134,7 @@ internal class GDString(
   }
 
   fun format(values: Variant, placeholder: String): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_format_with_custom_placeholder)(_value.ptr, values._value.ptr, placeholder.cstr.ptr)
       )
@@ -142,7 +142,7 @@ internal class GDString(
   }
 
   fun getBaseDir(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_get_base_dir)(_value.ptr)
       )
@@ -150,7 +150,7 @@ internal class GDString(
   }
 
   fun getBaseName(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_get_basename)(_value.ptr)
       )
@@ -158,7 +158,7 @@ internal class GDString(
   }
 
   fun getExtension(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_get_extension)(_value.ptr)
       )
@@ -166,7 +166,7 @@ internal class GDString(
   }
 
   fun getFile(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_get_file)(_value.ptr)
       )
@@ -175,19 +175,19 @@ internal class GDString(
 
   // TODO: pass UINT?
   fun hash(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_hash)(_value.ptr).toInt()
     }
   }
 
   fun hexToInt(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_hex_to_int)(_value.ptr)
     }
   }
 
   fun insert(position: Int, str: GDString): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_insert)(_value.ptr, position, str._value)
       )
@@ -199,19 +199,19 @@ internal class GDString(
   }
 
   fun isAbsPath(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_is_abs_path)(_value.ptr)
     }
   }
 
   fun isRelPath(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_is_rel_path)(_value.ptr)
     }
   }
 
   fun isSubsequenceOf(str: GDString): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_is_subsequence_of)(_value.ptr, str._value.ptr)
     }
   }
@@ -221,7 +221,7 @@ internal class GDString(
   }
 
   fun isSubsequenceOfI(str: GDString): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_is_subsequence_ofi)(_value.ptr, str._value.ptr)
     }
   }
@@ -231,43 +231,43 @@ internal class GDString(
   }
 
   fun isValidFloat(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_is_valid_float)(_value.ptr)
     }
   }
 
   fun isValidHexNumber(withPrefix: Boolean = false): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_is_valid_hex_number)(_value.ptr, withPrefix)
     }
   }
 
   fun isValidHtmlColor(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_is_valid_html_color)(_value.ptr)
     }
   }
 
   fun isValidIdentifier(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_is_valid_identifier)(_value.ptr)
     }
   }
 
   fun isValidInteger(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_is_valid_integer)(_value.ptr)
     }
   }
 
   fun isValidIpAddress(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_is_valid_ip_address)(_value.ptr)
     }
   }
 
   fun jsonEscape(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_json_escape)(_value.ptr)
       )
@@ -275,7 +275,7 @@ internal class GDString(
   }
 
   fun left(position: Int): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_left)(_value.ptr, position)
       )
@@ -283,13 +283,13 @@ internal class GDString(
   }
 
   fun length(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_length)(_value.ptr)
     }
   }
 
   fun match(expr: GDString): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_match)(_value.ptr, expr._value.ptr)
     }
   }
@@ -299,7 +299,7 @@ internal class GDString(
   }
 
   fun matchN(expr: GDString): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_matchn)(_value.ptr, expr._value.ptr)
     }
   }
@@ -309,7 +309,7 @@ internal class GDString(
   }
 
   fun md5Buffer(): PoolByteArray {
-    return memScoped {
+    return Allocator.allocationScope {
       PoolByteArray(
         checkNotNull(Godot.gdnative.godot_string_md5_buffer)(_value.ptr)
       )
@@ -317,7 +317,7 @@ internal class GDString(
   }
 
   fun md5Text(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_md5_text)(_value.ptr)
       )
@@ -325,19 +325,19 @@ internal class GDString(
   }
 
   fun noCaseCmpTo(str: GDString): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_nocasecmp_to)(_value.ptr, str._value.ptr).toInt()
     }
   }
 
   fun ordAt(position: Int): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_ord_at)(_value.ptr, position).toInt()
     }
   }
 
   fun padDecimals(digits: Int): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_pad_decimals)(_value.ptr, digits)
       )
@@ -345,7 +345,7 @@ internal class GDString(
   }
 
   fun padZeros(digits: Int): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_pad_zeros)(_value.ptr, digits)
       )
@@ -353,7 +353,7 @@ internal class GDString(
   }
 
   fun percentDecode(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_percent_decode)(_value.ptr)
       )
@@ -361,7 +361,7 @@ internal class GDString(
   }
 
   fun percentEncode(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_percent_encode)(_value.ptr)
       )
@@ -369,7 +369,7 @@ internal class GDString(
   }
 
   fun plusFile(file: GDString): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_plus_file)(_value.ptr, file._value.ptr)
       )
@@ -381,7 +381,7 @@ internal class GDString(
   }
 
   fun replace(what: GDString, with: GDString): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_replace)(_value.ptr, what._value, with._value)
       )
@@ -393,7 +393,7 @@ internal class GDString(
   }
 
   fun replaceN(what: GDString, with: GDString): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_replacen)(_value.ptr, what._value, with._value)
       )
@@ -405,7 +405,7 @@ internal class GDString(
   }
 
   fun rFind(str: GDString, from: Int = -1): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_rfind_from)(_value.ptr, str._value, from)
     }
   }
@@ -415,7 +415,7 @@ internal class GDString(
   }
 
   fun right(position: Int): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_right)(_value.ptr, position)
       )
@@ -423,7 +423,7 @@ internal class GDString(
   }
 
   fun rSplit(delimiter: GDString, allowEmpty: Boolean = true, maxSplit: Int = 0): PoolStringArray {
-    return memScoped {
+    return Allocator.allocationScope {
       PoolStringArray(
         checkNotNull(Godot.gdnative11.godot_string_rsplit)(_value.ptr, delimiter._value.ptr, allowEmpty, maxSplit)
       )
@@ -435,7 +435,7 @@ internal class GDString(
   }
 
   fun rStrip(str: GDString): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative11.godot_string_rstrip)(_value.ptr, str._value.ptr)
       )
@@ -447,7 +447,7 @@ internal class GDString(
   }
 
   fun sha256Buffer(): PoolByteArray {
-    return memScoped {
+    return Allocator.allocationScope {
       PoolByteArray(
         checkNotNull(Godot.gdnative.godot_string_sha256_buffer)(_value.ptr)
       )
@@ -455,7 +455,7 @@ internal class GDString(
   }
 
   fun sha256Text(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_sha256_text)(_value.ptr)
       )
@@ -463,7 +463,7 @@ internal class GDString(
   }
 
   fun similarity(str: GDString): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_similarity)(_value.ptr, str._value.ptr)
     }
   }
@@ -475,7 +475,7 @@ internal class GDString(
   // TODO: split, splitFloats (
 
   fun stripEdges(left: Boolean = true, right: Boolean = true): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_strip_edges)(_value.ptr, left, right)
       )
@@ -483,7 +483,7 @@ internal class GDString(
   }
 
   fun subStr(from: Int, length: Int): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_substr)(_value.ptr, from, length)
       )
@@ -491,19 +491,19 @@ internal class GDString(
   }
 
   fun toFloat(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_to_float)(_value.ptr)
     }
   }
 
   fun toInt(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_string_to_int)(_value.ptr)
     }
   }
 
   fun toUpper(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_to_upper)(_value.ptr)
       )
@@ -511,7 +511,7 @@ internal class GDString(
   }
 
   fun toLower(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_to_lower)(_value.ptr)
       )
@@ -519,7 +519,7 @@ internal class GDString(
   }
 
   fun trimPrefix(prefix: GDString): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative11.godot_string_trim_prefix)(_value.ptr, prefix._value.ptr)
       )
@@ -531,7 +531,7 @@ internal class GDString(
   }
 
   fun trimSuffix(suffix: GDString): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative11.godot_string_trim_suffix)(_value.ptr, suffix._value.ptr)
       )
@@ -543,7 +543,7 @@ internal class GDString(
   }
 
   fun xmlEscape(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_xml_escape)(_value.ptr)
       )
@@ -551,7 +551,7 @@ internal class GDString(
   }
 
   fun xmlUnEscape(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_string_xml_unescape)(_value.ptr)
       )
@@ -567,7 +567,7 @@ internal class GDString(
   }
 
   fun toKString(): String {
-    return memScoped {
+    return Allocator.allocationScope {
       val ptr = checkNotNull(Godot.gdnative.godot_string_wide_str)(_value.ptr)!!
       // drop the trailing \0
       // DO NOT CHANGE!
@@ -582,7 +582,7 @@ internal class GDString(
 
     val eq = checkNotNull(Godot.gdnative.godot_string_operator_equal)
 
-    return memScoped {
+    return Allocator.allocationScope {
       when(other) {
         is GDString -> eq(_value.ptr, other._value.ptr)
         is String -> eq(_value.ptr, GDString(other)._value.ptr)
@@ -592,7 +592,7 @@ internal class GDString(
   }
 
   operator fun get(position: Int): Char {
-    return memScoped {
+    return Allocator.allocationScope {
       val ptr = checkNotNull(Godot.gdnative.godot_string_operator_index_const)(_value.ptr, position)
       ptr.toInt().toChar()
     }

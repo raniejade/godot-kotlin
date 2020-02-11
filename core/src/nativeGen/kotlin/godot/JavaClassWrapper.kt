@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -32,7 +33,7 @@ open class JavaClassWrapperInternal(
      */
     private object __method_bind {
       val wrap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JavaClassWrapper".cstr.ptr,
             "wrap".cstr.ptr)
@@ -43,7 +44,7 @@ open class JavaClassWrapperInternal(
 
 object JavaClassWrapper : JavaClassWrapperInternal(null) {
   init {
-    memScoped {
+    Allocator.allocationScope {
       val handle =
           checkNotNull(Godot.gdnative.godot_global_get_singleton)("JavaClassWrapper".cstr.ptr)
       requireNotNull(handle) { "No instance found for singleton JavaClassWrapper" }

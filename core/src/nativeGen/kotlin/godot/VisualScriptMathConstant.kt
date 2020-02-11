@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class VisualScriptMathConstant(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getMathConstant(): MathConstant {
@@ -77,7 +80,7 @@ open class VisualScriptMathConstant(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptMathConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptMathConstant" }
@@ -89,14 +92,14 @@ open class VisualScriptMathConstant(
      */
     private object __method_bind {
       val getMathConstant: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptMathConstant".cstr.ptr,
             "get_math_constant".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_math_constant" }
         }
       val setMathConstant: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptMathConstant".cstr.ptr,
             "set_math_constant".cstr.ptr)

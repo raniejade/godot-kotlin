@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -33,7 +34,9 @@ open class AnimationNodeBlendTree(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -136,7 +139,7 @@ open class AnimationNodeBlendTree(
 
     val CONNECTION_OK: Int = 0
 
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlendTree".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNodeBlendTree" }
@@ -148,77 +151,77 @@ open class AnimationNodeBlendTree(
      */
     private object __method_bind {
       val addNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "add_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_node" }
         }
       val connectNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "connect_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method connect_node" }
         }
       val disconnectNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "disconnect_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method disconnect_node" }
         }
       val getGraphOffset: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "get_graph_offset".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_graph_offset" }
         }
       val getNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "get_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_node" }
         }
       val getNodePosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "get_node_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_node_position" }
         }
       val hasNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "has_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_node" }
         }
       val removeNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "remove_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_node" }
         }
       val renameNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "rename_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rename_node" }
         }
       val setGraphOffset: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "set_graph_offset".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_graph_offset" }
         }
       val setNodePosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendTree".cstr.ptr,
             "set_node_position".cstr.ptr)

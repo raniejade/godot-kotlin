@@ -33,6 +33,8 @@ internal object Godot {
 
   private val languageIndexRef = AtomicInt(-1)
 
+  private val initHandle = AtomicInt(0)
+
   fun init(options: godot_gdnative_init_options) {
     val gdnative = checkNotNull(options.api_struct)
     val extensionCount = gdnative.pointed.num_extensions.toInt()
@@ -74,5 +76,14 @@ internal object Godot {
   fun terminate(options: godot_gdnative_terminate_options) {
     gdnativeWrapper.compareAndSwap(gdnativeWrapper.value, null)
     nativescriptWrapper.compareAndSwap(nativescriptWrapper.value, null)
+  }
+
+  fun shouldInitHandle(): Boolean = initHandle.value == 0
+
+  fun <T> noInitZone(cb: () -> T): T {
+    initHandle.compareAndSet(initHandle.value, 1)
+    val ret = cb()
+    initHandle.compareAndSet(initHandle.value, 0)
+    return ret
   }
 }

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -21,8 +22,10 @@ open class AudioStream(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Resource(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getLength(): Float {
@@ -36,7 +39,7 @@ open class AudioStream(
      */
     private object __method_bind {
       val getLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStream".cstr.ptr,
             "get_length".cstr.ptr)

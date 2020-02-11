@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -19,12 +20,14 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Thread(
+open class Thread(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getId(): String {
@@ -79,36 +82,36 @@ open class _Thread(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
-      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Thread".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for _Thread" }
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Thread".cstr.ptr)
+      requireNotNull(fnPtr) { "No instance found for Thread" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       fn()
     }
     /**
-     * Container for method_bind pointers for _Thread
+     * Container for method_bind pointers for Thread
      */
     private object __method_bind {
       val getId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
             "get_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_id" }
         }
       val isActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
             "is_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_active" }
         }
       val start: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
             "start".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method start" }
         }
       val waitToFinish: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
             "wait_to_finish".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method wait_to_finish" }

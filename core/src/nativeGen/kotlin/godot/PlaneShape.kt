@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Plane
 import godot.core.Variant
@@ -31,7 +32,9 @@ open class PlaneShape(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -54,7 +57,7 @@ open class PlaneShape(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PlaneShape".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PlaneShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -65,13 +68,13 @@ open class PlaneShape(
      */
     private object __method_bind {
       val getPlane: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneShape".cstr.ptr,
             "get_plane".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_plane" }
         }
       val setPlane: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneShape".cstr.ptr,
             "set_plane".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_plane" }

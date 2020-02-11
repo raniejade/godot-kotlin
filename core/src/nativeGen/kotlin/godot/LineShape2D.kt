@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -40,7 +41,9 @@ open class LineShape2D(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -73,7 +76,7 @@ open class LineShape2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LineShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for LineShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -84,28 +87,28 @@ open class LineShape2D(
      */
     private object __method_bind {
       val getD: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
             "get_d".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_d" }
         }
       val getNormal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
             "get_normal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_normal" }
         }
       val setD: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
             "set_d".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_d" }
         }
       val setNormal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
             "set_normal".cstr.ptr)

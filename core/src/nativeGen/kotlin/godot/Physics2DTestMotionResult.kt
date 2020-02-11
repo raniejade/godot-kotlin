@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Variant
@@ -69,7 +70,9 @@ open class Physics2DTestMotionResult(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getCollider(): Object {
@@ -118,7 +121,7 @@ open class Physics2DTestMotionResult(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("Physics2DTestMotionResult".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Physics2DTestMotionResult" }
@@ -130,63 +133,63 @@ open class Physics2DTestMotionResult(
      */
     private object __method_bind {
       val getCollider: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
             "get_collider".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider" }
         }
       val getColliderId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
             "get_collider_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider_id" }
         }
       val getColliderRid: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
             "get_collider_rid".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider_rid" }
         }
       val getColliderShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
             "get_collider_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider_shape" }
         }
       val getColliderVelocity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
             "get_collider_velocity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collider_velocity" }
         }
       val getCollisionNormal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
             "get_collision_normal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_normal" }
         }
       val getCollisionPoint: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
             "get_collision_point".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_point" }
         }
       val getMotion: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
             "get_motion".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_motion" }
         }
       val getMotionRemainder: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
             "get_motion_remainder".cstr.ptr)

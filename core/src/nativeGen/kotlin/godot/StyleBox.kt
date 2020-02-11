@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Rect2
@@ -58,8 +59,10 @@ open class StyleBox(
       setDefaultMargin(1, value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun draw(canvasItem: RID, rect: Rect2) {
@@ -122,55 +125,55 @@ open class StyleBox(
      */
     private object __method_bind {
       val draw: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
             "draw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw" }
         }
       val getCenterSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
             "get_center_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_center_size" }
         }
       val getCurrentItemDrawn: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
             "get_current_item_drawn".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_current_item_drawn" }
         }
       val getDefaultMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
             "get_default_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_default_margin" }
         }
       val getMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
             "get_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_margin" }
         }
       val getMinimumSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
             "get_minimum_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_minimum_size" }
         }
       val getOffset: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
             "get_offset".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_offset" }
         }
       val setDefaultMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
             "set_default_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_default_margin" }
         }
       val testMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
             "test_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method test_mask" }

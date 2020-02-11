@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -20,8 +21,10 @@ open class EditorNavigationMeshGenerator(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun bake(navMesh: NavigationMesh, rootNode: Node) {
@@ -42,14 +45,14 @@ open class EditorNavigationMeshGenerator(
      */
     private object __method_bind {
       val bake: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorNavigationMeshGenerator".cstr.ptr,
             "bake".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method bake" }
         }
       val clear: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorNavigationMeshGenerator".cstr.ptr,
             "clear".cstr.ptr)

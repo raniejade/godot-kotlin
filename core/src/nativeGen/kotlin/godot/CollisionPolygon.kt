@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolVector2Array
 import godot.core.Variant
@@ -49,7 +50,9 @@ open class CollisionPolygon(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -92,7 +95,7 @@ open class CollisionPolygon(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionPolygon".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CollisionPolygon" }
@@ -104,42 +107,42 @@ open class CollisionPolygon(
      */
     private object __method_bind {
       val getDepth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
             "get_depth".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_depth" }
         }
       val getPolygon: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
             "get_polygon".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_polygon" }
         }
       val isDisabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
             "is_disabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_disabled" }
         }
       val setDepth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
             "set_depth".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_depth" }
         }
       val setDisabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
             "set_disabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_disabled" }
         }
       val setPolygon: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
             "set_polygon".cstr.ptr)

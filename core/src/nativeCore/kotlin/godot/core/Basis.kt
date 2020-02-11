@@ -3,7 +3,8 @@ package godot.core
 import gdnative.godot_basis
 import kotlinx.cinterop.CValue
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.readValue
 
 class Basis(
   value: CValue<godot_basis>
@@ -12,38 +13,103 @@ class Basis(
   constructor(vec: Vector3): this(__new(vec))
   constructor(vec: Vector3, phi: Float): this(__new(vec, phi))
   constructor(quat: Quat): this(__new(quat))
-  constructor(r1: Vector3, r2: Vector3, r3: Vector3): this(__new(r1, r2, r3))
+  constructor(xAxis: Vector3, yAxis: Vector3, zAxis: Vector3): this(__new()) {
+    x = xAxis
+    y = yAxis
+    z = zAxis
+  }
+
+  var x: Vector3
+    get() = getAxis(Axis.X)
+    set(value) {
+      setAxis(Axis.X, value)
+    }
+
+  fun x(cb: Vector3.() -> Unit) {
+    val value = x
+    cb(x)
+    x = value
+  }
+
+  var y: Vector3
+    get() = getAxis(Axis.Y)
+    set(value) {
+      setAxis(Axis.Y, value)
+    }
+
+  fun y(cb: Vector3.() -> Unit) {
+    val value = y
+    cb(value)
+    y = value
+  }
+
+  var z: Vector3
+    get() = getAxis(Axis.Z)
+    set(value) {
+      setAxis(Axis.Z, value)
+    }
+
+  fun z(cb: Vector3.() -> Unit) {
+    val value = z
+    cb(value)
+    z = value
+  }
+
+  enum class Axis(val value: Int) {
+    X(0),
+    Y(1),
+    Z(2);
+
+    companion object {
+      fun from(value: Int): Axis {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("Unsupported enum value $value")
+      }
+    }
+  }
 
   fun determinant(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_basis_determinant)(_value.ptr)
     }
   }
 
   fun getEuler(): Vector3 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector3(
         checkNotNull(Godot.gdnative.godot_basis_get_euler)(_value.ptr)
       )
     }
   }
 
-  fun getAxis(index: Int): Vector3 {
-    return memScoped {
+  fun getAxis(axis: Axis): Vector3 {
+    return Allocator.allocationScope {
       Vector3(
-        checkNotNull(Godot.gdnative.godot_basis_get_axis)(_value.ptr, index)
+        checkNotNull(Godot.gdnative.godot_basis_get_axis)(_value.ptr, axis.value)
       )
     }
   }
 
+  fun setAxis(axis: Axis, value: Vector3) {
+    _value = Allocator.allocationScope {
+      val ptr = _value.ptr
+      checkNotNull(Godot.gdnative.godot_basis_set_axis)(ptr, axis.value, value._value.ptr)
+      ptr.pointed.readValue()
+    }
+  }
+
   fun getOrthogonalIndex(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_basis_get_orthogonal_index)(_value.ptr)
     }
   }
 
   fun getScale(): Vector3 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector3(
         checkNotNull(Godot.gdnative.godot_basis_get_scale)(_value.ptr)
       )
@@ -51,7 +117,7 @@ class Basis(
   }
 
   fun orthonormalized(): Basis {
-    return memScoped {
+    return Allocator.allocationScope {
       Basis(
         checkNotNull(Godot.gdnative.godot_basis_orthonormalized)(_value.ptr)
       )
@@ -59,7 +125,7 @@ class Basis(
   }
 
   fun rotated(axis: Vector3, phi: Float): Basis {
-    return memScoped {
+    return Allocator.allocationScope {
       Basis(
         checkNotNull(Godot.gdnative.godot_basis_rotated)(_value.ptr, axis._value.ptr, phi)
       )
@@ -67,7 +133,7 @@ class Basis(
   }
 
   fun scaled(scale: Vector3): Basis {
-    return memScoped {
+    return Allocator.allocationScope {
       Basis(
         checkNotNull(Godot.gdnative.godot_basis_scaled)(_value.ptr, scale._value.ptr)
       )
@@ -75,7 +141,7 @@ class Basis(
   }
 
   fun slerp(basis: Basis, t: Float): Basis {
-    return memScoped {
+    return Allocator.allocationScope {
       Basis(
         checkNotNull(Godot.gdnative11.godot_basis_slerp)(_value.ptr, basis._value.ptr, t)
       )
@@ -83,25 +149,25 @@ class Basis(
   }
 
   fun tdox(vec: Vector3): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_basis_tdotx)(_value.ptr, vec._value.ptr)
     }
   }
 
   fun tdoy(vec: Vector3): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_basis_tdoty)(_value.ptr, vec._value.ptr)
     }
   }
 
   fun tdoz(vec: Vector3): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_basis_tdotz)(_value.ptr, vec._value.ptr)
     }
   }
 
   fun transposed(): Basis {
-    return memScoped {
+    return Allocator.allocationScope {
       Basis(
         checkNotNull(Godot.gdnative.godot_basis_transposed)(_value.ptr)
       )
@@ -109,7 +175,7 @@ class Basis(
   }
 
   fun xform(vec: Vector3): Vector3 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector3(
         checkNotNull(Godot.gdnative.godot_basis_xform)(_value.ptr, vec._value.ptr)
       )
@@ -117,7 +183,7 @@ class Basis(
   }
 
   fun xformInverse(vec: Vector3): Vector3 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector3(
         checkNotNull(Godot.gdnative.godot_basis_xform_inv)(_value.ptr, vec._value.ptr)
       )
@@ -125,7 +191,7 @@ class Basis(
   }
 
   operator fun plus(basis: Basis): Basis {
-    return memScoped {
+    return Allocator.allocationScope {
       Basis(
         checkNotNull(Godot.gdnative.godot_basis_operator_add)(_value.ptr, basis._value.ptr)
       )
@@ -133,7 +199,7 @@ class Basis(
   }
 
   operator fun minus(basis: Basis): Basis {
-    return memScoped {
+    return Allocator.allocationScope {
       Basis(
         checkNotNull(Godot.gdnative.godot_basis_operator_subtract)(_value.ptr, basis._value.ptr)
       )
@@ -141,7 +207,7 @@ class Basis(
   }
 
   operator fun times(scalar: Float): Basis {
-    return memScoped {
+    return Allocator.allocationScope {
       Basis(
         checkNotNull(Godot.gdnative.godot_basis_operator_multiply_scalar)(_value.ptr, scalar)
       )
@@ -149,7 +215,7 @@ class Basis(
   }
 
   operator fun times(basis: Basis): Basis {
-    return memScoped {
+    return Allocator.allocationScope {
       Basis(
         checkNotNull(Godot.gdnative.godot_basis_operator_multiply_vector)(_value.ptr, basis._value.ptr)
       )
@@ -161,7 +227,7 @@ class Basis(
       return false
     }
 
-    return memScoped {
+    return Allocator.allocationScope {
       when(other) {
         is Basis -> checkNotNull(Godot.gdnative.godot_basis_operator_equal)(_value.ptr, other._value.ptr)
         else -> false
@@ -169,7 +235,13 @@ class Basis(
     }
   }
 
-  operator fun get(index: Int): Vector3 = getAxis(index)
+  operator fun get(axis: Int): Vector3 {
+    return getAxis(Axis.from(axis))
+  }
+
+  operator fun set(axis: Int, value: Vector3) {
+    setAxis(Axis.from(axis), value)
+  }
 
   override fun hashCode(): Int {
     return _value.hashCode()
@@ -180,7 +252,7 @@ class Basis(
   }
 
   override fun toGDString(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_basis_as_string)(_value.ptr)
       )
@@ -202,10 +274,6 @@ class Basis(
 
     internal fun __new(quat: Quat) = allocType2<godot_basis> {
       checkNotNull(Godot.gdnative.godot_basis_new_with_euler_quat)(it, quat._value.ptr)
-    }
-
-    internal fun __new(r1: Vector3, r2: Vector3, r3: Vector3) = allocType2<godot_basis> {
-      checkNotNull(Godot.gdnative.godot_basis_new_with_rows)(it, r1._value.ptr, r2._value.ptr, r3._value.ptr)
     }
   }
 }

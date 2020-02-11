@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -29,8 +30,10 @@ open class CSGPrimitive(
       setInvertFaces(value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun isInvertingFaces(): Boolean {
@@ -49,14 +52,14 @@ open class CSGPrimitive(
      */
     private object __method_bind {
       val isInvertingFaces: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
             "is_inverting_faces".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_inverting_faces" }
         }
       val setInvertFaces: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
             "set_invert_faces".cstr.ptr)

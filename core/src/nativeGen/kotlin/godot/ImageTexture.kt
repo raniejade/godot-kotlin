@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -41,7 +42,9 @@ open class ImageTexture(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun create(
@@ -128,7 +131,7 @@ open class ImageTexture(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ImageTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ImageTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -139,70 +142,70 @@ open class ImageTexture(
      */
     private object __method_bind {
       val create: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
             "create".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method create" }
         }
       val createFromImage: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
             "create_from_image".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method create_from_image" }
         }
       val getFormat: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
             "get_format".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_format" }
         }
       val getLossyStorageQuality: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
             "get_lossy_storage_quality".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_lossy_storage_quality" }
         }
       val getStorage: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
             "get_storage".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_storage" }
         }
       val load: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
             "load".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method load" }
         }
       val setData: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
             "set_data".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_data" }
         }
       val setLossyStorageQuality: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
             "set_lossy_storage_quality".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_lossy_storage_quality" }
         }
       val setSizeOverride: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
             "set_size_override".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_size_override" }
         }
       val setStorage: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
             "set_storage".cstr.ptr)

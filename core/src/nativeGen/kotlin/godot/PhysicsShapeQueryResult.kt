@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Variant
@@ -22,8 +23,10 @@ open class PhysicsShapeQueryResult(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getResultCount(): Int {
@@ -61,35 +64,35 @@ open class PhysicsShapeQueryResult(
      */
     private object __method_bind {
       val getResultCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryResult".cstr.ptr,
             "get_result_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_result_count" }
         }
       val getResultObject: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryResult".cstr.ptr,
             "get_result_object".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_result_object" }
         }
       val getResultObjectId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryResult".cstr.ptr,
             "get_result_object_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_result_object_id" }
         }
       val getResultObjectShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryResult".cstr.ptr,
             "get_result_object_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_result_object_shape" }
         }
       val getResultRid: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryResult".cstr.ptr,
             "get_result_rid".cstr.ptr)

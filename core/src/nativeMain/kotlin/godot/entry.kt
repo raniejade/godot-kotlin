@@ -2,6 +2,7 @@ package godot
 
 import gdnative.godot_gdnative_init_options
 import gdnative.godot_gdnative_terminate_options
+import godot.core.Allocator
 import godot.core.GDString
 import godot.core.Godot
 import kotlinx.cinterop.COpaquePointer
@@ -17,9 +18,11 @@ fun terminate(options: godot_gdnative_terminate_options) {
 }
 
 fun nativescriptInit(handle: COpaquePointer, setup: ClassRegistry.() -> Unit) {
-  Godot.nativescriptInit(handle)
-  TagDB.initTagDB()
-  setup(ClassRegistry(handle))
+  Allocator.pushContext {
+    Godot.nativescriptInit(handle)
+    TagDB.initTagDB()
+    setup(ClassRegistry(handle))
+  }
 }
 
 fun nativescriptTerminate(handle: COpaquePointer) {

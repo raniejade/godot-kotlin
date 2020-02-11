@@ -2,7 +2,10 @@ package godot.core
 
 import gdnative.godot_error
 import gdnative.godot_pool_real_array
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.readValue
 
 class PoolFloatArray(
   value: CValue<godot_pool_real_array>
@@ -11,7 +14,7 @@ class PoolFloatArray(
   constructor(from: VariantArray): this(__new(from))
 
   fun append(real: Float) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_real_array_append)(ptr, real)
       ptr.pointed.readValue()
@@ -19,7 +22,7 @@ class PoolFloatArray(
   }
 
   fun append(array: PoolFloatArray) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_real_array_append_array)(ptr, array._value.ptr)
       ptr.pointed.readValue()
@@ -28,7 +31,7 @@ class PoolFloatArray(
 
   fun insert(index: Int, real: Float): godot_error {
     lateinit var ret: godot_error
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       ret = checkNotNull(Godot.gdnative.godot_pool_real_array_insert)(ptr, index, real)
       ptr.pointed.readValue()
@@ -37,7 +40,7 @@ class PoolFloatArray(
   }
 
   fun invert() {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_real_array_invert)(ptr)
       ptr.pointed.readValue()
@@ -45,7 +48,7 @@ class PoolFloatArray(
   }
 
   fun remove(index: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_real_array_remove)(ptr, index)
       ptr.pointed.readValue()
@@ -53,7 +56,7 @@ class PoolFloatArray(
   }
 
   fun resize(size: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_real_array_resize)(ptr, size)
       ptr.pointed.readValue()
@@ -61,7 +64,7 @@ class PoolFloatArray(
   }
 
   operator fun set(index: Int, real: Float) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_real_array_set)(ptr, index, real)
       ptr.pointed.readValue()
@@ -69,7 +72,7 @@ class PoolFloatArray(
   }
 
   operator fun get(index: Int): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_pool_real_array_get)(_value.ptr, index)
     }
   }
@@ -83,7 +86,7 @@ class PoolFloatArray(
   }
 
   fun size(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_pool_real_array_size)(_value.ptr)
     }
   }

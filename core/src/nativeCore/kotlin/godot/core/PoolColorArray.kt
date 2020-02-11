@@ -2,7 +2,10 @@ package godot.core
 
 import gdnative.godot_error
 import gdnative.godot_pool_color_array
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.readValue
 
 class PoolColorArray(
   value: CValue<godot_pool_color_array>
@@ -11,7 +14,7 @@ class PoolColorArray(
   constructor(from: VariantArray): this(__new(from))
 
   fun append(color: Color) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_color_array_append)(ptr, color._value.ptr)
       ptr.pointed.readValue()
@@ -19,7 +22,7 @@ class PoolColorArray(
   }
 
   fun append(array: PoolColorArray) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_color_array_append_array)(ptr, array._value.ptr)
       ptr.pointed.readValue()
@@ -28,7 +31,7 @@ class PoolColorArray(
 
   fun insert(index: Int, color: Color): godot_error {
     lateinit var ret: godot_error
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       ret = checkNotNull(Godot.gdnative.godot_pool_color_array_insert)(ptr, index, color._value.ptr)
       ptr.pointed.readValue()
@@ -37,7 +40,7 @@ class PoolColorArray(
   }
 
   fun invert() {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_color_array_invert)(ptr)
       ptr.pointed.readValue()
@@ -45,7 +48,7 @@ class PoolColorArray(
   }
 
   fun remove(index: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_color_array_remove)(ptr, index)
       ptr.pointed.readValue()
@@ -53,7 +56,7 @@ class PoolColorArray(
   }
 
   fun resize(size: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_color_array_resize)(ptr, size)
       ptr.pointed.readValue()
@@ -61,7 +64,7 @@ class PoolColorArray(
   }
 
   operator fun set(index: Int, color: Color) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_color_array_set)(ptr, index, color._value.ptr)
       ptr.pointed.readValue()
@@ -69,7 +72,7 @@ class PoolColorArray(
   }
 
   operator fun get(index: Int): Color {
-    return memScoped {
+    return Allocator.allocationScope {
       Color(
         checkNotNull(Godot.gdnative.godot_pool_color_array_get)(_value.ptr, index)
       )
@@ -77,7 +80,7 @@ class PoolColorArray(
   }
 
   fun size(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_pool_color_array_size)(_value.ptr)
     }
   }

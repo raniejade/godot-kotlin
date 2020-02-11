@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -22,7 +23,9 @@ open class Reference(
   __ignore: String?
 ) : Object(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun initRef(): Boolean {
@@ -41,7 +44,7 @@ open class Reference(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Reference".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Reference" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -52,19 +55,19 @@ open class Reference(
      */
     private object __method_bind {
       val initRef: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Reference".cstr.ptr,
             "init_ref".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method init_ref" }
         }
       val reference: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Reference".cstr.ptr,
             "reference".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method reference" }
         }
       val unreference: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Reference".cstr.ptr,
             "unreference".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method unreference" }

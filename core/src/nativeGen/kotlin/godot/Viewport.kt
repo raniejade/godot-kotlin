@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Rect2
@@ -278,7 +279,9 @@ open class Viewport(
   val signalSizeChanged: Signal0 = Signal0("size_changed")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -878,7 +881,7 @@ open class Viewport(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Viewport".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Viewport" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -889,464 +892,464 @@ open class Viewport(
      */
     private object __method_bind {
       val findWorld: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "find_world".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method find_world" }
         }
       val findWorld2d: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "find_world_2d".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method find_world_2d" }
         }
       val getCamera: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_camera".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_camera" }
         }
       val getCanvasTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_canvas_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_canvas_transform" }
         }
       val getClearMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_clear_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_clear_mode" }
         }
       val getDebugDraw: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_debug_draw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_debug_draw" }
         }
       val getFinalTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_final_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_final_transform" }
         }
       val getGlobalCanvasTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_global_canvas_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_global_canvas_transform" }
         }
       val getHdr: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_hdr".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_hdr" }
         }
       val getKeep3dLinear: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_keep_3d_linear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_keep_3d_linear" }
         }
       val getModalStackTop: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_modal_stack_top".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_modal_stack_top" }
         }
       val getMousePosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_mouse_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_mouse_position" }
         }
       val getMsaa: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_msaa".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_msaa" }
         }
       val getPhysicsObjectPicking: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_physics_object_picking".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_physics_object_picking" }
         }
       val getRenderInfo: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_render_info".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_render_info" }
         }
       val getShadowAtlasQuadrantSubdiv: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_shadow_atlas_quadrant_subdiv".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_shadow_atlas_quadrant_subdiv" }
         }
       val getShadowAtlasSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_shadow_atlas_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_shadow_atlas_size" }
         }
       val getSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_size" }
         }
       val getSizeOverride: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_size_override".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_size_override" }
         }
       val getTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val getUpdateMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_update_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_update_mode" }
         }
       val getUsage: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_usage".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_usage" }
         }
       val getVflip: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_vflip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_vflip" }
         }
       val getViewportRid: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_viewport_rid".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_viewport_rid" }
         }
       val getVisibleRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_visible_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_visible_rect" }
         }
       val getWorld: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_world".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_world" }
         }
       val getWorld2d: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "get_world_2d".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_world_2d" }
         }
       val guiGetDragData: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "gui_get_drag_data".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method gui_get_drag_data" }
         }
       val guiHasModalStack: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "gui_has_modal_stack".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method gui_has_modal_stack" }
         }
       val guiIsDragging: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "gui_is_dragging".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method gui_is_dragging" }
         }
       val hasTransparentBackground: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "has_transparent_background".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_transparent_background" }
         }
       val input: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "input".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method input" }
         }
       val is3dDisabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_3d_disabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_3d_disabled" }
         }
       val isAudioListener: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_audio_listener".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_audio_listener" }
         }
       val isAudioListener2d: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_audio_listener_2d".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_audio_listener_2d" }
         }
       val isHandlingInputLocally: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_handling_input_locally".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_handling_input_locally" }
         }
       val isInputDisabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_input_disabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_input_disabled" }
         }
       val isInputHandled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_input_handled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_input_handled" }
         }
       val isSizeOverrideEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_size_override_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_size_override_enabled" }
         }
       val isSizeOverrideStretchEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_size_override_stretch_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_size_override_stretch_enabled" }
         }
       val isSnapControlsToPixelsEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_snap_controls_to_pixels_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_snap_controls_to_pixels_enabled"
             }
         }
       val isUsingOwnWorld: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_using_own_world".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_using_own_world" }
         }
       val isUsingRenderDirectToScreen: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "is_using_render_direct_to_screen".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_using_render_direct_to_screen" }
         }
       val setAsAudioListener: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_as_audio_listener".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_as_audio_listener" }
         }
       val setAsAudioListener2d: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_as_audio_listener_2d".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_as_audio_listener_2d" }
         }
       val setAttachToScreenRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_attach_to_screen_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_attach_to_screen_rect" }
         }
       val setCanvasTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_canvas_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_canvas_transform" }
         }
       val setClearMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_clear_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_clear_mode" }
         }
       val setDebugDraw: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_debug_draw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_debug_draw" }
         }
       val setDisable3d: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_disable_3d".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_disable_3d" }
         }
       val setDisableInput: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_disable_input".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_disable_input" }
         }
       val setGlobalCanvasTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_global_canvas_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_global_canvas_transform" }
         }
       val setHandleInputLocally: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_handle_input_locally".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_handle_input_locally" }
         }
       val setHdr: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_hdr".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_hdr" }
         }
       val setInputAsHandled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_input_as_handled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_input_as_handled" }
         }
       val setKeep3dLinear: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_keep_3d_linear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_keep_3d_linear" }
         }
       val setMsaa: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_msaa".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_msaa" }
         }
       val setPhysicsObjectPicking: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_physics_object_picking".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_physics_object_picking" }
         }
       val setShadowAtlasQuadrantSubdiv: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_shadow_atlas_quadrant_subdiv".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_shadow_atlas_quadrant_subdiv" }
         }
       val setShadowAtlasSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_shadow_atlas_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_shadow_atlas_size" }
         }
       val setSize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_size".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_size" }
         }
       val setSizeOverride: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_size_override".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_size_override" }
         }
       val setSizeOverrideStretch: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_size_override_stretch".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_size_override_stretch" }
         }
       val setSnapControlsToPixels: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_snap_controls_to_pixels".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_snap_controls_to_pixels" }
         }
       val setTransparentBackground: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_transparent_background".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_transparent_background" }
         }
       val setUpdateMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_update_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_update_mode" }
         }
       val setUsage: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_usage".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_usage" }
         }
       val setUseArvr: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_use_arvr".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_use_arvr" }
         }
       val setUseOwnWorld: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_use_own_world".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_use_own_world" }
         }
       val setUseRenderDirectToScreen: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_use_render_direct_to_screen".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_use_render_direct_to_screen" }
         }
       val setVflip: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_vflip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_vflip" }
         }
       val setWorld: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_world".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_world" }
         }
       val setWorld2d: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "set_world_2d".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_world_2d" }
         }
       val unhandledInput: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "unhandled_input".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method unhandled_input" }
         }
       val updateWorlds: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "update_worlds".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method update_worlds" }
         }
       val useArvr: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "use_arvr".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method use_arvr" }
         }
       val warpMouse: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
             "warp_mouse".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method warp_mouse" }

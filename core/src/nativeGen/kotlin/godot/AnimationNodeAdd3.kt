@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class AnimationNodeAdd3(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun isUsingSync(): Boolean {
@@ -44,7 +47,7 @@ open class AnimationNodeAdd3(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeAdd3".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationNodeAdd3" }
@@ -56,14 +59,14 @@ open class AnimationNodeAdd3(
      */
     private object __method_bind {
       val isUsingSync: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAdd3".cstr.ptr,
             "is_using_sync".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_using_sync" }
         }
       val setUseSync: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAdd3".cstr.ptr,
             "set_use_sync".cstr.ptr)

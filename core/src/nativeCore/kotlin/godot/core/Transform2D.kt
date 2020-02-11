@@ -3,7 +3,6 @@ package godot.core
 import gdnative.godot_transform2d
 import kotlinx.cinterop.CValue
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
 
 class Transform2D(
   value: CValue<godot_transform2d>
@@ -27,7 +26,7 @@ class Transform2D(
 
 
   fun affineInverse(): Transform2D {
-    return memScoped {
+    return Allocator.allocationScope {
       Transform2D(
         checkNotNull(Godot.gdnative.godot_transform2d_affine_inverse)(_value.ptr)
       )
@@ -35,7 +34,7 @@ class Transform2D(
   }
 
   fun basisXform(v: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_transform2d_basis_xform_vector2)(_value.ptr, v._value.ptr)
       )
@@ -43,7 +42,7 @@ class Transform2D(
   }
 
   fun basisXformInv(v: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_transform2d_basis_xform_inv_vector2)(_value.ptr, v._value.ptr)
       )
@@ -51,7 +50,7 @@ class Transform2D(
   }
 
   fun getOrigin(): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_transform2d_get_origin)(_value.ptr)
       )
@@ -59,13 +58,13 @@ class Transform2D(
   }
 
   fun getRotation(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_transform2d_get_rotation)(_value.ptr)
     }
   }
 
   fun getScale(): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_transform2d_get_scale)(_value.ptr)
       )
@@ -73,7 +72,7 @@ class Transform2D(
   }
 
   fun interpolateWith(transform: Transform2D, weight: Float): Transform2D {
-    return memScoped {
+    return Allocator.allocationScope {
       Transform2D(
         checkNotNull(Godot.gdnative.godot_transform2d_interpolate_with)(_value.ptr, transform._value.ptr, weight)
       )
@@ -81,7 +80,7 @@ class Transform2D(
   }
 
   fun inverse(): Transform2D {
-    return memScoped {
+    return Allocator.allocationScope {
       Transform2D(
         checkNotNull(Godot.gdnative.godot_transform2d_inverse)(_value.ptr)
       )
@@ -89,7 +88,7 @@ class Transform2D(
   }
 
   fun orthonormalized(): Transform2D {
-    return memScoped {
+    return Allocator.allocationScope {
       Transform2D(
         checkNotNull(Godot.gdnative.godot_transform2d_orthonormalized)(_value.ptr)
       )
@@ -97,7 +96,7 @@ class Transform2D(
   }
 
   fun rotated(phi: Float): Transform2D {
-    return memScoped {
+    return Allocator.allocationScope {
       Transform2D(
         checkNotNull(Godot.gdnative.godot_transform2d_rotated)(_value.ptr, phi)
       )
@@ -105,7 +104,7 @@ class Transform2D(
   }
 
   fun scaled(scale: Vector2): Transform2D {
-    return memScoped {
+    return Allocator.allocationScope {
       Transform2D(
         checkNotNull(Godot.gdnative.godot_transform2d_scaled)(_value.ptr, scale._value.ptr)
       )
@@ -113,7 +112,7 @@ class Transform2D(
   }
 
   fun translated(offset: Vector2): Transform2D {
-    return memScoped {
+    return Allocator.allocationScope {
       Transform2D(
         checkNotNull(Godot.gdnative.godot_transform2d_translated)(_value.ptr, offset._value.ptr)
       )
@@ -121,7 +120,7 @@ class Transform2D(
   }
 
   fun xform(rect: Rect2): Rect2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Rect2(
         checkNotNull(Godot.gdnative.godot_transform2d_xform_rect2)(_value.ptr, rect._value.ptr)
       )
@@ -129,7 +128,7 @@ class Transform2D(
   }
 
   fun xform(vec: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_transform2d_xform_vector2)(_value.ptr, vec._value.ptr)
       )
@@ -137,7 +136,7 @@ class Transform2D(
   }
 
   fun xformInv(rect: Rect2): Rect2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Rect2(
         checkNotNull(Godot.gdnative.godot_transform2d_xform_inv_rect2)(_value.ptr, rect._value.ptr)
       )
@@ -145,7 +144,7 @@ class Transform2D(
   }
 
   fun xformInv(vec: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_transform2d_xform_inv_vector2)(_value.ptr, vec._value.ptr)
       )
@@ -153,7 +152,7 @@ class Transform2D(
   }
 
   operator fun times(other: Transform2D): Transform2D {
-    return memScoped {
+    return Allocator.allocationScope {
       Transform2D(
         checkNotNull(Godot.gdnative.godot_transform2d_operator_multiply)(_value.ptr, other._value.ptr)
       )
@@ -165,7 +164,7 @@ class Transform2D(
       return false
     }
 
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_transform2d_operator_equal)(_value.ptr, other._value.ptr)
     }
   }
@@ -179,7 +178,7 @@ class Transform2D(
   }
 
   override fun toGDString(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_transform2d_as_string)(_value.ptr)
       )
@@ -195,12 +194,6 @@ class Transform2D(
 
     val FLIP_Y: Transform2D
       get() = Transform2D(Vector2(1, 0), Vector2(0, -1), Vector2(1, 0))
-
-    fun new(): Transform2D {
-      return allocType(::Transform2D) {
-        checkNotNull(Godot.gdnative.godot_transform2d_new_identity)(it)
-      }
-    }
 
     internal fun __new() = allocType2<godot_transform2d> {
       checkNotNull(Godot.gdnative.godot_transform2d_new_identity)(it)

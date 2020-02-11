@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -16,12 +17,12 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _VisualScriptEditorInternal(
+open class VisualScriptEditorInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
   /**
-   * _VisualScriptEditor::custom_nodes_updated signal
+   * VisualScriptEditor::custom_nodes_updated signal
    */
   val signalCustomNodesUpdated: Signal0 = Signal0("custom_nodes_updated")
 
@@ -46,18 +47,18 @@ open class _VisualScriptEditorInternal(
 
   companion object {
     /**
-     * Container for method_bind pointers for _VisualScriptEditor
+     * Container for method_bind pointers for VisualScriptEditor
      */
     private object __method_bind {
       val addCustomNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
             "add_custom_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_custom_node" }
         }
       val removeCustomNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
             "remove_custom_node".cstr.ptr)
@@ -66,12 +67,12 @@ open class _VisualScriptEditorInternal(
   }
 }
 
-object _VisualScriptEditor : _VisualScriptEditorInternal(null) {
+object VisualScriptEditor : VisualScriptEditorInternal(null) {
   init {
-    memScoped {
+    Allocator.allocationScope {
       val handle =
-          checkNotNull(Godot.gdnative.godot_global_get_singleton)("_VisualScriptEditor".cstr.ptr)
-      requireNotNull(handle) { "No instance found for singleton _VisualScriptEditor" }
+          checkNotNull(Godot.gdnative.godot_global_get_singleton)("VisualScriptEditor".cstr.ptr)
+      requireNotNull(handle) { "No instance found for singleton VisualScriptEditor" }
       _handle = handle
     }
   }

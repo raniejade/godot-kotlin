@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class ARVROrigin(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getWorldScale(): Float {
@@ -44,7 +47,7 @@ open class ARVROrigin(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVROrigin".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ARVROrigin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -55,13 +58,13 @@ open class ARVROrigin(
      */
     private object __method_bind {
       val getWorldScale: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVROrigin".cstr.ptr,
             "get_world_scale".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_world_scale" }
         }
       val setWorldScale: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVROrigin".cstr.ptr,
             "set_world_scale".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_world_scale" }

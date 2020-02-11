@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -23,8 +24,10 @@ open class AudioEffectSpectrumAnalyzerInstance(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : AudioEffectInstance(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getMagnitudeForFrequencyRange(
@@ -65,7 +68,7 @@ open class AudioEffectSpectrumAnalyzerInstance(
      */
     private object __method_bind {
       val getMagnitudeForFrequencyRange: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzerInstance".cstr.ptr,
             "get_magnitude_for_frequency_range".cstr.ptr)

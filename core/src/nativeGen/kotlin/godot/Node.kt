@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
@@ -104,7 +105,9 @@ open class Node(
   val signalTreeExiting: Signal0 = Signal0("tree_exiting")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addChild(node: Node, legibleUniqueName: Boolean = false) {
@@ -214,10 +217,10 @@ open class Node(
     return _ret.asInt()
   }
 
-  fun getNode(path: NodePath): Node {
+  fun getNode(path: NodePath): Node? {
     val _arg = Variant(path)
     val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Node
+    return _ret.toAny() as Node?
   }
 
   fun getNodeAndResource(path: NodePath): VariantArray {
@@ -237,9 +240,9 @@ open class Node(
     return _ret.toAny() as Node
   }
 
-  fun getParent(): Node {
+  fun getParent(): Node? {
     val _ret = __method_bind.getParent.call(this._handle)
-    return _ret.toAny() as Node
+    return _ret.toAny() as Node?
   }
 
   fun getPath(): NodePath {
@@ -727,7 +730,7 @@ open class Node(
 
     val NOTIFICATION_WM_UNFOCUS_REQUEST: Int = 1008
 
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Node".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Node" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -738,526 +741,526 @@ open class Node(
      */
     private object __method_bind {
       val addChild: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "add_child".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_child" }
         }
       val addChildBelowNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "add_child_below_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_child_below_node" }
         }
       val addToGroup: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "add_to_group".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_to_group" }
         }
       val canProcess: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "can_process".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method can_process" }
         }
       val duplicate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "duplicate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method duplicate" }
         }
       val findNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "find_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method find_node" }
         }
       val findParent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "find_parent".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method find_parent" }
         }
       val getChild: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_child".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_child" }
         }
       val getChildCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_child_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_child_count" }
         }
       val getChildren: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_children".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_children" }
         }
       val getCustomMultiplayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_custom_multiplayer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_custom_multiplayer" }
         }
       val getFilename: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_filename".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_filename" }
         }
       val getGroups: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_groups".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_groups" }
         }
       val getIndex: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_index".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_index" }
         }
       val getMultiplayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_multiplayer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_multiplayer" }
         }
       val getName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_name" }
         }
       val getNetworkMaster: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_network_master".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_network_master" }
         }
       val getNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_node" }
         }
       val getNodeAndResource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_node_and_resource".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_node_and_resource" }
         }
       val getNodeOrNull: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_node_or_null".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_node_or_null" }
         }
       val getOwner: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_owner".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_owner" }
         }
       val getParent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_parent".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_parent" }
         }
       val getPath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_path" }
         }
       val getPathTo: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_path_to".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_path_to" }
         }
       val getPauseMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_pause_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_pause_mode" }
         }
       val getPhysicsProcessDeltaTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_physics_process_delta_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_physics_process_delta_time" }
         }
       val getPositionInParent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_position_in_parent".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_position_in_parent" }
         }
       val getProcessDeltaTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_process_delta_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_process_delta_time" }
         }
       val getProcessPriority: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_process_priority".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_process_priority" }
         }
       val getSceneInstanceLoadPlaceholder: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_scene_instance_load_placeholder".cstr.ptr)
           requireNotNull(ptr) {
             "No method_bind found for method get_scene_instance_load_placeholder" }
         }
       val getTree: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_tree".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_tree" }
         }
       val getViewport: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "get_viewport".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_viewport" }
         }
       val hasNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "has_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_node" }
         }
       val hasNodeAndResource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "has_node_and_resource".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_node_and_resource" }
         }
       val isAParentOf: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_a_parent_of".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_a_parent_of" }
         }
       val isDisplayedFolded: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_displayed_folded".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_displayed_folded" }
         }
       val isGreaterThan: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_greater_than".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_greater_than" }
         }
       val isInGroup: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_in_group".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_in_group" }
         }
       val isInsideTree: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_inside_tree".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_inside_tree" }
         }
       val isNetworkMaster: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_network_master".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_network_master" }
         }
       val isPhysicsProcessing: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_physics_processing".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_physics_processing" }
         }
       val isPhysicsProcessingInternal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_physics_processing_internal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_physics_processing_internal" }
         }
       val isProcessing: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_processing".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_processing" }
         }
       val isProcessingInput: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_processing_input".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_processing_input" }
         }
       val isProcessingInternal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_processing_internal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_processing_internal" }
         }
       val isProcessingUnhandledInput: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_processing_unhandled_input".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_processing_unhandled_input" }
         }
       val isProcessingUnhandledKeyInput: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "is_processing_unhandled_key_input".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_processing_unhandled_key_input"
             }
         }
       val moveChild: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "move_child".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method move_child" }
         }
       val printStrayNodes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "print_stray_nodes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method print_stray_nodes" }
         }
       val printTree: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "print_tree".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method print_tree" }
         }
       val printTreePretty: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "print_tree_pretty".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method print_tree_pretty" }
         }
       val propagateCall: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "propagate_call".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method propagate_call" }
         }
       val propagateNotification: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "propagate_notification".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method propagate_notification" }
         }
       val queueFree: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "queue_free".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method queue_free" }
         }
       val raise: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "raise".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method raise" }
         }
       val removeAndSkip: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "remove_and_skip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_and_skip" }
         }
       val removeChild: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "remove_child".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_child" }
         }
       val removeFromGroup: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "remove_from_group".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_from_group" }
         }
       val replaceBy: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "replace_by".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method replace_by" }
         }
       val requestReady: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "request_ready".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method request_ready" }
         }
       val rpc: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "rpc".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rpc" }
         }
       val rpcConfig: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "rpc_config".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rpc_config" }
         }
       val rpcId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "rpc_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rpc_id" }
         }
       val rpcUnreliable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "rpc_unreliable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rpc_unreliable" }
         }
       val rpcUnreliableId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "rpc_unreliable_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rpc_unreliable_id" }
         }
       val rset: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "rset".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rset" }
         }
       val rsetConfig: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "rset_config".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rset_config" }
         }
       val rsetId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "rset_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rset_id" }
         }
       val rsetUnreliable: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "rset_unreliable".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rset_unreliable" }
         }
       val rsetUnreliableId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "rset_unreliable_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rset_unreliable_id" }
         }
       val setCustomMultiplayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_custom_multiplayer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_custom_multiplayer" }
         }
       val setDisplayFolded: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_display_folded".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_display_folded" }
         }
       val setFilename: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_filename".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_filename" }
         }
       val setName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_name" }
         }
       val setNetworkMaster: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_network_master".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_network_master" }
         }
       val setOwner: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_owner".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_owner" }
         }
       val setPauseMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_pause_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_pause_mode" }
         }
       val setPhysicsProcess: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_physics_process".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_physics_process" }
         }
       val setPhysicsProcessInternal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_physics_process_internal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_physics_process_internal" }
         }
       val setProcess: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_process".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_process" }
         }
       val setProcessInput: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_process_input".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_process_input" }
         }
       val setProcessInternal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_process_internal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_process_internal" }
         }
       val setProcessPriority: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_process_priority".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_process_priority" }
         }
       val setProcessUnhandledInput: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_process_unhandled_input".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_process_unhandled_input" }
         }
       val setProcessUnhandledKeyInput: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_process_unhandled_key_input".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_process_unhandled_key_input" }
         }
       val setSceneInstanceLoadPlaceholder: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "set_scene_instance_load_placeholder".cstr.ptr)
           requireNotNull(ptr) {
             "No method_bind found for method set_scene_instance_load_placeholder" }
         }
       val updateConfigurationWarning: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
             "update_configuration_warning".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method update_configuration_warning" }

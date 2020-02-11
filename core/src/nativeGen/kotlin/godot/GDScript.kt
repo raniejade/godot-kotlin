@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.Variant
@@ -23,7 +24,9 @@ open class GDScript(
   __ignore: String?
 ) : Script(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getAsByteCode(): PoolByteArray {
@@ -39,7 +42,7 @@ open class GDScript(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GDScript".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GDScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -50,13 +53,13 @@ open class GDScript(
      */
     private object __method_bind {
       val getAsByteCode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDScript".cstr.ptr,
             "get_as_byte_code".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_as_byte_code" }
         }
       val new: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDScript".cstr.ptr,
             "new".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method new" }

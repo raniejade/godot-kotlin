@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -33,8 +34,10 @@ open class ScriptEditor(
    */
   val signalScriptClose: Signal1<Script> = Signal1("script_close")
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun canDropDataFw(
@@ -98,49 +101,49 @@ open class ScriptEditor(
      */
     private object __method_bind {
       val canDropDataFw: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
             "can_drop_data_fw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method can_drop_data_fw" }
         }
       val dropDataFw: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
             "drop_data_fw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method drop_data_fw" }
         }
       val getCurrentScript: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
             "get_current_script".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_current_script" }
         }
       val getDragDataFw: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
             "get_drag_data_fw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_drag_data_fw" }
         }
       val getOpenScripts: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
             "get_open_scripts".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_open_scripts" }
         }
       val gotoLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
             "goto_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method goto_line" }
         }
       val openScriptCreateDialog: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
             "open_script_create_dialog".cstr.ptr)

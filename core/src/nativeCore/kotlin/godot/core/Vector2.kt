@@ -1,7 +1,10 @@
 package godot.core
 
 import gdnative.godot_vector2
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.readValue
 
 class Vector2(
   value: CValue<godot_vector2>
@@ -28,12 +31,12 @@ class Vector2(
 
   var x: Float
     get() {
-      return memScoped {
+      return Allocator.allocationScope {
         checkNotNull(Godot.gdnative.godot_vector2_get_x)(_value.ptr)
       }
     }
     set(value) {
-      _value = memScoped {
+      _value = Allocator.allocationScope {
         val ptr = _value.ptr
         checkNotNull(Godot.gdnative.godot_vector2_set_x)(ptr, value)
         ptr.pointed.readValue()
@@ -42,12 +45,12 @@ class Vector2(
 
   var y: Float
     get() {
-      return memScoped {
+      return Allocator.allocationScope {
         checkNotNull(Godot.gdnative.godot_vector2_get_y)(_value.ptr)
       }
     }
     set(value) {
-      _value = memScoped {
+      _value = Allocator.allocationScope {
         val ptr = _value.ptr
         checkNotNull(Godot.gdnative.godot_vector2_set_y)(ptr, value)
         ptr.pointed.readValue()
@@ -55,7 +58,7 @@ class Vector2(
     }
 
   fun abs(): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_abs)(_value.ptr)
       )
@@ -63,31 +66,31 @@ class Vector2(
   }
 
   fun angle(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_vector2_angle)(_value.ptr)
     }
   }
 
   fun angleTo(vec: Vector2): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_vector2_angle_to)(_value.ptr, vec._value.ptr)
     }
   }
 
   fun angleToPoint(vec: Vector2): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_vector2_angle_to_point)(_value.ptr, vec._value.ptr)
     }
   }
 
   fun aspect(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_vector2_aspect)(_value.ptr)
     }
   }
 
   fun bounce(vec: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_bounce)(_value.ptr, vec._value.ptr)
       )
@@ -95,7 +98,7 @@ class Vector2(
   }
 
   fun clamped(length: Float): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_clamped)(_value.ptr, length)
       )
@@ -103,7 +106,7 @@ class Vector2(
   }
 
   fun cubicInterpolate(b: Vector2, preA: Vector2, postB: Vector2, t: Float): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_cubic_interpolate)(
           _value.ptr,
@@ -117,25 +120,25 @@ class Vector2(
   }
 
   fun distanceTo(vec: Vector2): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_vector2_distance_to)(_value.ptr, vec._value.ptr)
     }
   }
 
   fun distanceSquaredTo(vec: Vector2): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_vector2_distance_squared_to)(_value.ptr, vec._value.ptr)
     }
   }
 
   fun dot(vec: Vector2): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_vector2_dot)(_value.ptr, vec._value.ptr)
     }
   }
 
   fun floor(): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_floor)(_value.ptr)
       )
@@ -143,25 +146,25 @@ class Vector2(
   }
 
   fun isNormalized(): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_vector2_is_normalized)(_value.ptr)
     }
   }
 
   fun length(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_vector2_length)(_value.ptr)
     }
   }
 
   fun lengthSquared(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_vector2_length_squared)(_value.ptr)
     }
   }
 
   fun linearInterpolate(b: Vector2, t: Float): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_linear_interpolate)(_value.ptr, b._value.ptr, t)
       )
@@ -169,7 +172,7 @@ class Vector2(
   }
 
   fun moveToward(vec: Vector2, delta: Float): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative12.godot_vector2_move_toward)(_value.ptr, vec._value.ptr, delta)
       )
@@ -177,7 +180,7 @@ class Vector2(
   }
 
   fun normalized(): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_normalized)(_value.ptr)
       )
@@ -185,7 +188,7 @@ class Vector2(
   }
 
   fun reflect(vec: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_reflect)(_value.ptr, vec._value.ptr)
       )
@@ -193,7 +196,7 @@ class Vector2(
   }
 
   fun rotated(phi: Float): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_rotated)(_value.ptr, phi)
       )
@@ -201,7 +204,7 @@ class Vector2(
   }
 
   fun slide(vec: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_slide)(_value.ptr, vec._value.ptr)
       )
@@ -209,7 +212,7 @@ class Vector2(
   }
 
   fun snapped(vec: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_snapped)(_value.ptr, vec._value.ptr)
       )
@@ -217,7 +220,7 @@ class Vector2(
   }
 
   fun tangent(): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_tangent)(_value.ptr)
       )
@@ -229,7 +232,7 @@ class Vector2(
   }
 
   override fun toGDString(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_vector2_as_string)(_value.ptr)
       )
@@ -237,7 +240,7 @@ class Vector2(
   }
 
   operator fun plus(vec: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_operator_add)(_value.ptr, vec._value.ptr)
       )
@@ -245,7 +248,7 @@ class Vector2(
   }
 
   operator fun minus(vec: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_operator_subtract)(_value.ptr, vec._value.ptr)
       )
@@ -253,7 +256,7 @@ class Vector2(
   }
 
   operator fun times(vec: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_operator_multiply_vector)(_value.ptr, vec._value.ptr)
       )
@@ -261,7 +264,7 @@ class Vector2(
   }
 
   operator fun times(value: Float): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_operator_multiply_scalar)(_value.ptr, value)
       )
@@ -269,7 +272,7 @@ class Vector2(
   }
 
   operator fun div(vec: Vector2): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_operator_divide_vector)(_value.ptr, vec._value.ptr)
       )
@@ -277,7 +280,7 @@ class Vector2(
   }
 
   operator fun div(value: Float): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_operator_divide_scalar)(_value.ptr, value)
       )
@@ -285,7 +288,7 @@ class Vector2(
   }
 
   operator fun unaryMinus(): Vector2 {
-    return memScoped {
+    return Allocator.allocationScope {
       Vector2(
         checkNotNull(Godot.gdnative.godot_vector2_operator_neg)(_value.ptr)
       )
@@ -297,7 +300,7 @@ class Vector2(
       return 0
     }
 
-    return memScoped {
+    return Allocator.allocationScope {
       if (checkNotNull(Godot.gdnative.godot_vector2_operator_less)(_value.ptr, other._value.ptr)) {
         -1
       } else {
@@ -311,7 +314,7 @@ class Vector2(
       return false
     }
 
-    return memScoped {
+    return Allocator.allocationScope {
       when (other) {
         is Vector2 -> checkNotNull(Godot.gdnative.godot_vector2_operator_equal)(_value.ptr, other._value.ptr)
         else -> false

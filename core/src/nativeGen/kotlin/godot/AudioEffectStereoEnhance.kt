@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -46,7 +47,9 @@ open class AudioEffectStereoEnhance(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getPanPullout(): Float {
@@ -80,7 +83,7 @@ open class AudioEffectStereoEnhance(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectStereoEnhance".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioEffectStereoEnhance" }
@@ -92,42 +95,42 @@ open class AudioEffectStereoEnhance(
      */
     private object __method_bind {
       val getPanPullout: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectStereoEnhance".cstr.ptr,
             "get_pan_pullout".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_pan_pullout" }
         }
       val getSurround: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectStereoEnhance".cstr.ptr,
             "get_surround".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_surround" }
         }
       val getTimePullout: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectStereoEnhance".cstr.ptr,
             "get_time_pullout".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_time_pullout" }
         }
       val setPanPullout: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectStereoEnhance".cstr.ptr,
             "set_pan_pullout".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_pan_pullout" }
         }
       val setSurround: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectStereoEnhance".cstr.ptr,
             "set_surround".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_surround" }
         }
       val setTimePullout: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectStereoEnhance".cstr.ptr,
             "set_time_pullout".cstr.ptr)

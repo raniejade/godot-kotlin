@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -38,8 +39,10 @@ open class PhysicsBody2D(
       setCollisionMask(value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addCollisionExceptionWith(body: Node) {
@@ -109,77 +112,77 @@ open class PhysicsBody2D(
      */
     private object __method_bind {
       val addCollisionExceptionWith: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "add_collision_exception_with".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_collision_exception_with" }
         }
       val getCollisionExceptions: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "get_collision_exceptions".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_exceptions" }
         }
       val getCollisionLayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "get_collision_layer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_layer" }
         }
       val getCollisionLayerBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "get_collision_layer_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_layer_bit" }
         }
       val getCollisionMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "get_collision_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
         }
       val getCollisionMaskBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "get_collision_mask_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
         }
       val removeCollisionExceptionWith: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "remove_collision_exception_with".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_collision_exception_with" }
         }
       val setCollisionLayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "set_collision_layer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_layer" }
         }
       val setCollisionLayerBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "set_collision_layer_bit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_layer_bit" }
         }
       val setCollisionMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "set_collision_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
         }
       val setCollisionMaskBit: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody2D".cstr.ptr,
             "set_collision_mask_bit".cstr.ptr)

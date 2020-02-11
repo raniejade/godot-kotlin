@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -55,7 +56,9 @@ open class ARVRController(
   val signalMeshUpdated: Signal1<Mesh> = Signal1("mesh_updated")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getControllerId(): Int {
@@ -116,7 +119,7 @@ open class ARVRController(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRController".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ARVRController" }
@@ -128,77 +131,77 @@ open class ARVRController(
      */
     private object __method_bind {
       val getControllerId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "get_controller_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_controller_id" }
         }
       val getControllerName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "get_controller_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_controller_name" }
         }
       val getHand: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "get_hand".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_hand" }
         }
       val getIsActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "get_is_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_is_active" }
         }
       val getJoystickAxis: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "get_joystick_axis".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_joystick_axis" }
         }
       val getJoystickId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "get_joystick_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_joystick_id" }
         }
       val getMesh: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "get_mesh".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_mesh" }
         }
       val getRumble: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "get_rumble".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_rumble" }
         }
       val isButtonPressed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "is_button_pressed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_button_pressed" }
         }
       val setControllerId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "set_controller_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_controller_id" }
         }
       val setRumble: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
             "set_rumble".cstr.ptr)

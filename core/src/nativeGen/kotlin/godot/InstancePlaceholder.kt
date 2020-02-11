@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Variant
@@ -22,8 +23,10 @@ open class InstancePlaceholder(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Node(null) {
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun createInstance(replace: Boolean = false, customScene: PackedScene): Node {
@@ -56,28 +59,28 @@ open class InstancePlaceholder(
      */
     private object __method_bind {
       val createInstance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
             "create_instance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method create_instance" }
         }
       val getInstancePath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
             "get_instance_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_instance_path" }
         }
       val getStoredValues: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
             "get_stored_values".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_stored_values" }
         }
       val replaceByInstance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
             "replace_by_instance".cstr.ptr)

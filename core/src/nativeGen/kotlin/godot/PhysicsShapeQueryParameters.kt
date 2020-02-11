@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Transform
@@ -83,7 +84,9 @@ open class PhysicsShapeQueryParameters(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -180,7 +183,7 @@ open class PhysicsShapeQueryParameters(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PhysicsShapeQueryParameters".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PhysicsShapeQueryParameters" }
@@ -192,105 +195,105 @@ open class PhysicsShapeQueryParameters(
      */
     private object __method_bind {
       val getCollisionMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "get_collision_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
         }
       val getExclude: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "get_exclude".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_exclude" }
         }
       val getMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "get_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_margin" }
         }
       val getShapeRid: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "get_shape_rid".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_shape_rid" }
         }
       val getTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "get_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_transform" }
         }
       val isCollideWithAreasEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "is_collide_with_areas_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_collide_with_areas_enabled" }
         }
       val isCollideWithBodiesEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "is_collide_with_bodies_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_collide_with_bodies_enabled" }
         }
       val setCollideWithAreas: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "set_collide_with_areas".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collide_with_areas" }
         }
       val setCollideWithBodies: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "set_collide_with_bodies".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collide_with_bodies" }
         }
       val setCollisionMask: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "set_collision_mask".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
         }
       val setExclude: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "set_exclude".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_exclude" }
         }
       val setMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "set_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_margin" }
         }
       val setShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "set_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_shape" }
         }
       val setShapeRid: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "set_shape_rid".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_shape_rid" }
         }
       val setTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
             "set_transform".cstr.ptr)

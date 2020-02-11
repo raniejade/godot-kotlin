@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -38,7 +39,9 @@ open class AudioStreamGenerator(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getBufferLength(): Float {
@@ -62,7 +65,7 @@ open class AudioStreamGenerator(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamGenerator".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AudioStreamGenerator" }
@@ -74,28 +77,28 @@ open class AudioStreamGenerator(
      */
     private object __method_bind {
       val getBufferLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamGenerator".cstr.ptr,
             "get_buffer_length".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_buffer_length" }
         }
       val getMixRate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamGenerator".cstr.ptr,
             "get_mix_rate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_mix_rate" }
         }
       val setBufferLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamGenerator".cstr.ptr,
             "set_buffer_length".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_buffer_length" }
         }
       val setMixRate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamGenerator".cstr.ptr,
             "set_mix_rate".cstr.ptr)

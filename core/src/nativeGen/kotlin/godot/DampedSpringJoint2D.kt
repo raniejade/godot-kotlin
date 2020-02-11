@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -54,7 +55,9 @@ open class DampedSpringJoint2D(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getDamping(): Float {
@@ -98,7 +101,7 @@ open class DampedSpringJoint2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("DampedSpringJoint2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for DampedSpringJoint2D" }
@@ -110,56 +113,56 @@ open class DampedSpringJoint2D(
      */
     private object __method_bind {
       val getDamping: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
             "get_damping".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_damping" }
         }
       val getLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
             "get_length".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_length" }
         }
       val getRestLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
             "get_rest_length".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_rest_length" }
         }
       val getStiffness: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
             "get_stiffness".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_stiffness" }
         }
       val setDamping: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
             "set_damping".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_damping" }
         }
       val setLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
             "set_length".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_length" }
         }
       val setRestLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
             "set_rest_length".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_rest_length" }
         }
       val setStiffness: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
             "set_stiffness".cstr.ptr)

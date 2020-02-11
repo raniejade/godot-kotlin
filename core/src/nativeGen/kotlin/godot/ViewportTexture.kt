@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
@@ -31,7 +32,9 @@ open class ViewportTexture(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -54,7 +57,7 @@ open class ViewportTexture(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ViewportTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ViewportTexture" }
@@ -66,14 +69,14 @@ open class ViewportTexture(
      */
     private object __method_bind {
       val getViewportPathInScene: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportTexture".cstr.ptr,
             "get_viewport_path_in_scene".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_viewport_path_in_scene" }
         }
       val setViewportPathInScene: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportTexture".cstr.ptr,
             "set_viewport_path_in_scene".cstr.ptr)

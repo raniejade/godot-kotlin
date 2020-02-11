@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform2D
 import godot.core.Variant
@@ -41,7 +42,9 @@ open class CameraFeed(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -133,7 +136,7 @@ open class CameraFeed(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CameraFeed".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CameraFeed" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -144,43 +147,43 @@ open class CameraFeed(
      */
     private object __method_bind {
       val getId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
             "get_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_id" }
         }
       val getName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
             "get_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_name" }
         }
       val getPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
             "get_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_position" }
         }
       val getTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
             "get_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_transform" }
         }
       val isActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
             "is_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_active" }
         }
       val setActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
             "set_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_active" }
         }
       val setTransform: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
             "set_transform".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_transform" }

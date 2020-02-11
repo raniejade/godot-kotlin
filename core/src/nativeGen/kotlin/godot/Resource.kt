@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Variant
@@ -52,7 +53,9 @@ open class Resource(
   val signalChanged: Signal0 = Signal0("changed")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun duplicate(subresources: Boolean = false): Resource {
@@ -111,7 +114,7 @@ open class Resource(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Resource".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Resource" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -122,67 +125,67 @@ open class Resource(
      */
     private object __method_bind {
       val duplicate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "duplicate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method duplicate" }
         }
       val getLocalScene: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "get_local_scene".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_local_scene" }
         }
       val getName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "get_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_name" }
         }
       val getPath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "get_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_path" }
         }
       val getRid: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "get_rid".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_rid" }
         }
       val isLocalToScene: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "is_local_to_scene".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_local_to_scene" }
         }
       val setLocalToScene: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "set_local_to_scene".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_local_to_scene" }
         }
       val setName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "set_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_name" }
         }
       val setPath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "set_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_path" }
         }
       val setupLocalToScene: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "setup_local_to_scene".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method setup_local_to_scene" }
         }
       val takeOverPath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
             "take_over_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method take_over_path" }

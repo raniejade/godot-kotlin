@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -29,8 +30,10 @@ open class TextureLayered(
       setFlags(value)
     }
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun create(
@@ -137,70 +140,70 @@ open class TextureLayered(
      */
     private object __method_bind {
       val create: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
             "create".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method create" }
         }
       val getDepth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
             "get_depth".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_depth" }
         }
       val getFlags: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
             "get_flags".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_flags" }
         }
       val getFormat: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
             "get_format".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_format" }
         }
       val getHeight: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
             "get_height".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_height" }
         }
       val getLayerData: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
             "get_layer_data".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_layer_data" }
         }
       val getWidth: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
             "get_width".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_width" }
         }
       val setDataPartial: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
             "set_data_partial".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_data_partial" }
         }
       val setFlags: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
             "set_flags".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_flags" }
         }
       val setLayerData: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
             "set_layer_data".cstr.ptr)

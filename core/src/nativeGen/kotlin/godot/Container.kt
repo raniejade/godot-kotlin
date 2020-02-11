@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
@@ -28,7 +29,9 @@ open class Container(
   val signalSortChildren: Signal0 = Signal0("sort_children")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun fitChildInRect(child: Control, rect: Rect2) {
@@ -45,7 +48,7 @@ open class Container(
   companion object {
     val NOTIFICATION_SORT_CHILDREN: Int = 50
 
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Container".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Container" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -56,13 +59,13 @@ open class Container(
      */
     private object __method_bind {
       val fitChildInRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
             "fit_child_in_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method fit_child_in_rect" }
         }
       val queueSort: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
             "queue_sort".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method queue_sort" }

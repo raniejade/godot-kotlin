@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -63,35 +64,35 @@ open class CameraServerInternal(
      */
     private object __method_bind {
       val addFeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
             "add_feed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_feed" }
         }
       val feeds: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
             "feeds".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method feeds" }
         }
       val getFeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
             "get_feed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_feed" }
         }
       val getFeedCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
             "get_feed_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_feed_count" }
         }
       val removeFeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
             "remove_feed".cstr.ptr)
@@ -102,7 +103,7 @@ open class CameraServerInternal(
 
 object CameraServer : CameraServerInternal(null) {
   init {
-    memScoped {
+    Allocator.allocationScope {
       val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("CameraServer".cstr.ptr)
       requireNotNull(handle) { "No instance found for singleton CameraServer" }
       _handle = handle

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -27,8 +28,10 @@ open class WebSocketMultiplayerPeer(
    */
   val signalPeerPacket: Signal1<Int> = Signal1("peer_packet")
 
-  constructor() : this(null) {
-    _handle = __new()
+  internal constructor() : this(null) {
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getPeer(peerId: Int): WebSocketPeer {
@@ -58,14 +61,14 @@ open class WebSocketMultiplayerPeer(
      */
     private object __method_bind {
       val getPeer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketMultiplayerPeer".cstr.ptr,
             "get_peer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_peer" }
         }
       val setBuffers: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketMultiplayerPeer".cstr.ptr,
             "set_buffers".cstr.ptr)

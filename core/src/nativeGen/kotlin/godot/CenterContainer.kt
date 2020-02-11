@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class CenterContainer(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun isUsingTopLeft(): Boolean {
@@ -44,7 +47,7 @@ open class CenterContainer(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CenterContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CenterContainer" }
@@ -56,14 +59,14 @@ open class CenterContainer(
      */
     private object __method_bind {
       val isUsingTopLeft: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CenterContainer".cstr.ptr,
             "is_using_top_left".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_using_top_left" }
         }
       val setUseTopLeft: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CenterContainer".cstr.ptr,
             "set_use_top_left".cstr.ptr)

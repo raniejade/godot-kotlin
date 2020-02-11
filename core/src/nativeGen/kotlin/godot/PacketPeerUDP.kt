@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -24,7 +25,9 @@ open class PacketPeerUDP(
   __ignore: String?
 ) : PacketPeer(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun close() {
@@ -94,7 +97,7 @@ open class PacketPeerUDP(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PacketPeerUDP".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PacketPeerUDP" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -105,70 +108,70 @@ open class PacketPeerUDP(
      */
     private object __method_bind {
       val close: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "close".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method close" }
         }
       val getPacketIp: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "get_packet_ip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_packet_ip" }
         }
       val getPacketPort: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "get_packet_port".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_packet_port" }
         }
       val isListening: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "is_listening".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_listening" }
         }
       val joinMulticastGroup: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "join_multicast_group".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method join_multicast_group" }
         }
       val leaveMulticastGroup: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "leave_multicast_group".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method leave_multicast_group" }
         }
       val listen: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "listen".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method listen" }
         }
       val setBroadcastEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "set_broadcast_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_broadcast_enabled" }
         }
       val setDestAddress: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "set_dest_address".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_dest_address" }
         }
       val wait: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
             "wait".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class YSort(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun isSortEnabled(): Boolean {
@@ -44,7 +47,7 @@ open class YSort(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("YSort".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for YSort" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -55,13 +58,13 @@ open class YSort(
      */
     private object __method_bind {
       val isSortEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("YSort".cstr.ptr,
             "is_sort_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_sort_enabled" }
         }
       val setSortEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("YSort".cstr.ptr,
             "set_sort_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_sort_enabled" }

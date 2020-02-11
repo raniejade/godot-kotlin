@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -46,7 +47,9 @@ open class VisualShaderNodeCompare(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getComparisonType(): ComparisonType {
@@ -149,7 +152,7 @@ open class VisualShaderNodeCompare(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeCompare".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeCompare" }
@@ -161,42 +164,42 @@ open class VisualShaderNodeCompare(
      */
     private object __method_bind {
       val getComparisonType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCompare".cstr.ptr,
             "get_comparison_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_comparison_type" }
         }
       val getCondition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCompare".cstr.ptr,
             "get_condition".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_condition" }
         }
       val getFunction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCompare".cstr.ptr,
             "get_function".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_function" }
         }
       val setComparisonType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCompare".cstr.ptr,
             "set_comparison_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_comparison_type" }
         }
       val setCondition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCompare".cstr.ptr,
             "set_condition".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_condition" }
         }
       val setFunction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCompare".cstr.ptr,
             "set_function".cstr.ptr)

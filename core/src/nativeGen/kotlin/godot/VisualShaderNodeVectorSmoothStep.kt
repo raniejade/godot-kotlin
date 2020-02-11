@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -20,11 +21,13 @@ open class VisualShaderNodeVectorSmoothStep(
   __ignore: String?
 ) : VisualShaderNode(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorSmoothStep".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorSmoothStep" }

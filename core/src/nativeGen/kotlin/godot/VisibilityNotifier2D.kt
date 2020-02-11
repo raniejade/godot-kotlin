@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
@@ -52,7 +53,9 @@ open class VisibilityNotifier2D(
   val signalViewportExited: Signal1<Viewport> = Signal1("viewport_exited")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -80,7 +83,7 @@ open class VisibilityNotifier2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityNotifier2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisibilityNotifier2D" }
@@ -92,21 +95,21 @@ open class VisibilityNotifier2D(
      */
     private object __method_bind {
       val getRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
             "get_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_rect" }
         }
       val isOnScreen: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
             "is_on_screen".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_on_screen" }
         }
       val setRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
             "set_rect".cstr.ptr)

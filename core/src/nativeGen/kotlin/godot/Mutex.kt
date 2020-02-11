@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -17,12 +18,14 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Mutex(
+open class Mutex(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun lock() {
@@ -39,30 +42,30 @@ open class _Mutex(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
-      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Mutex".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for _Mutex" }
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Mutex".cstr.ptr)
+      requireNotNull(fnPtr) { "No instance found for Mutex" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       fn()
     }
     /**
-     * Container for method_bind pointers for _Mutex
+     * Container for method_bind pointers for Mutex
      */
     private object __method_bind {
       val lock: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
             "lock".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method lock" }
         }
       val tryLock: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
             "try_lock".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method try_lock" }
         }
       val unlock: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
             "unlock".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method unlock" }

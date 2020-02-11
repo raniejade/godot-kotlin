@@ -4,7 +4,6 @@ import gdnative.godot_rid
 import godot.Object
 import kotlinx.cinterop.CValue
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
 
 class RID(
   value: CValue<godot_rid>
@@ -14,7 +13,7 @@ class RID(
   constructor(resource: Object): this(__new(resource))
 
   val id: Int
-    get() = memScoped {
+    get() = Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_rid_get_id)(_value.ptr)
     }
 
@@ -30,7 +29,7 @@ class RID(
     if (other == null) {
       return false
     }
-    return memScoped {
+    return Allocator.allocationScope {
       when (other) {
         is RID -> checkNotNull(Godot.gdnative.godot_rid_operator_equal)(_value.ptr, other._value.ptr)
         else -> false

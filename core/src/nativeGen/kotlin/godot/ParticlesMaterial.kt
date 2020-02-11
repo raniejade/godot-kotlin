@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
 import godot.core.Variant
@@ -467,7 +468,9 @@ open class ParticlesMaterial(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -820,7 +823,7 @@ open class ParticlesMaterial(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ParticlesMaterial".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for ParticlesMaterial" }
@@ -832,294 +835,294 @@ open class ParticlesMaterial(
      */
     private object __method_bind {
       val getColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_color" }
         }
       val getColorRamp: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_color_ramp".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_color_ramp" }
         }
       val getDirection: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_direction".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_direction" }
         }
       val getEmissionBoxExtents: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_emission_box_extents".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_emission_box_extents" }
         }
       val getEmissionColorTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_emission_color_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_emission_color_texture" }
         }
       val getEmissionNormalTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_emission_normal_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_emission_normal_texture" }
         }
       val getEmissionPointCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_emission_point_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_emission_point_count" }
         }
       val getEmissionPointTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_emission_point_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_emission_point_texture" }
         }
       val getEmissionShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_emission_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_emission_shape" }
         }
       val getEmissionSphereRadius: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_emission_sphere_radius".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_emission_sphere_radius" }
         }
       val getFlag: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_flag".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_flag" }
         }
       val getFlatness: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_flatness".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_flatness" }
         }
       val getGravity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_gravity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_gravity" }
         }
       val getLifetimeRandomness: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_lifetime_randomness".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_lifetime_randomness" }
         }
       val getParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_param".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_param" }
         }
       val getParamRandomness: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_param_randomness".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_param_randomness" }
         }
       val getParamTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_param_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_param_texture" }
         }
       val getSpread: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_spread".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_spread" }
         }
       val getTrailColorModifier: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_trail_color_modifier".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_trail_color_modifier" }
         }
       val getTrailDivisor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_trail_divisor".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_trail_divisor" }
         }
       val getTrailSizeModifier: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "get_trail_size_modifier".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_trail_size_modifier" }
         }
       val setColor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_color".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_color" }
         }
       val setColorRamp: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_color_ramp".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_color_ramp" }
         }
       val setDirection: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_direction".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_direction" }
         }
       val setEmissionBoxExtents: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_emission_box_extents".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_emission_box_extents" }
         }
       val setEmissionColorTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_emission_color_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_emission_color_texture" }
         }
       val setEmissionNormalTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_emission_normal_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_emission_normal_texture" }
         }
       val setEmissionPointCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_emission_point_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_emission_point_count" }
         }
       val setEmissionPointTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_emission_point_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_emission_point_texture" }
         }
       val setEmissionShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_emission_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_emission_shape" }
         }
       val setEmissionSphereRadius: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_emission_sphere_radius".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_emission_sphere_radius" }
         }
       val setFlag: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_flag".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_flag" }
         }
       val setFlatness: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_flatness".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_flatness" }
         }
       val setGravity: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_gravity".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_gravity" }
         }
       val setLifetimeRandomness: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_lifetime_randomness".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_lifetime_randomness" }
         }
       val setParam: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_param".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_param" }
         }
       val setParamRandomness: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_param_randomness".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_param_randomness" }
         }
       val setParamTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_param_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_param_texture" }
         }
       val setSpread: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_spread".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_spread" }
         }
       val setTrailColorModifier: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_trail_color_modifier".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_trail_color_modifier" }
         }
       val setTrailDivisor: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_trail_divisor".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_trail_divisor" }
         }
       val setTrailSizeModifier: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParticlesMaterial".cstr.ptr,
             "set_trail_size_modifier".cstr.ptr)

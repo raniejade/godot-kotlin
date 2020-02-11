@@ -20,17 +20,17 @@ class APIGenerator {
 
     MethodNGenerator().generate("methods", maxSignalParam, outputDir)
     SignalNGenerator().generate("signals", maxSignalParam, outputDir)
-    generateTagDB(types).writeTo(outputDir)
+    generateInitTagDB(types).writeTo(outputDir)
   }
 
-  private fun generateTagDB(classes: List<GDClass>): FileSpec {
+  private fun generateInitTagDB(classes: List<GDClass>): FileSpec {
     val fs = FileSpec.builder("godot", "initTagDb")
 
     val initFun = FunSpec.builder("initTagDB")
       .addModifiers(KModifier.INTERNAL)
       .receiver(ClassName("godot", "TagDB"))
 
-    classes.filter { it.isInstanciable && !it.isSingleton && it.name != "Object" }
+    classes.filter { !it.isSingleton && it.name != "Object" }
       .forEach {
         val className = it.name
         initFun.addStatement("registerGlobalType(%S, ::%L)", className, className)
@@ -79,7 +79,7 @@ class APIGenerator {
         .addSuperclassConstructorParameter("null")
         .addInitializerBlock(
           CodeBlock.builder()
-            .add("memScoped {\n⇥")
+            .add("Allocator.allocationScope {\n⇥")
             .addStatement("val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)(%S.cstr.ptr)", cls.name)
             .addStatement("requireNotNull(handle) { %S }", "No instance found for singleton ${cls.name}")
             .addStatement("_handle = handle")
@@ -376,10 +376,21 @@ class APIGenerator {
     )
 
     if (!cls.isSingleton) {
+      val secondaryConstructor = FunSpec.constructorBuilder()
+        .callThisConstructor("null")
+        .addCode("""
+          if (Godot.shouldInitHandle()) {
+            _handle = __new()
+          }
+        """.trimIndent())
+        .addStatement("")
+
+      if (!cls.isInstanciable) {
+        secondaryConstructor.addModifiers(KModifier.INTERNAL)
+      }
+
       addFunction(
-        FunSpec.constructorBuilder()
-          .callThisConstructor("null")
-          .addCode("_handle = __new()")
+        secondaryConstructor
           .build()
       )
     }
@@ -411,7 +422,7 @@ class APIGenerator {
         FunSpec.builder("__new")
           .addModifiers(KModifier.INTERNAL)
           .addCode("""
-            return memScoped {
+            return Allocator.allocationScope {
               val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)(%S.cstr.ptr)
               requireNotNull(fnPtr) { %S }
               val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -422,26 +433,6 @@ class APIGenerator {
           .build()
       )
     }
-
-    // singleton
-//    if (cls.isSingleton) {
-//      companionObjectBuilder.addProperty(
-//        PropertySpec.builder("Instance", className)
-//          .getter(
-//            FunSpec.getterBuilder()
-//              .addCode("""
-//                return memScoped {
-//                  val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)(%S.cstr.ptr)
-//                  requireNotNull(handle) { %S }
-//                  val ret = %L(null)
-//                  ret._handle = handle
-//                  ret
-//                }
-//               """.trimIndent(), cls.name, "No instance found for singleton ${cls.name}", cls.name)
-//              .build()
-//          ).build()
-//      )
-//    }
 
     // constants
     if (cls.constants.isNotEmpty()) {
@@ -492,11 +483,11 @@ class APIGenerator {
         PropertySpec.builder(method.name, METHOD_BIND_TYPE)
           .getter(FunSpec.getterBuilder()
             .addCode("""
-                return memScoped {
+                return Allocator.allocationScope {
                   val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)(%S.cstr.ptr, %S.cstr.ptr)
                   requireNotNull(ptr) { %S }
                 }
-              """.trimIndent(), cls.name, method.rawName, "No method_bind found for method ${method.rawName}")
+              """.trimIndent(), cls.rawName, method.rawName, "No method_bind found for method ${method.rawName}")
             .build()
           ).build()
       }
@@ -507,7 +498,7 @@ class APIGenerator {
   }
 
   private fun FileSpec.Builder.addCommonImports(cls: GDClass): FileSpec.Builder {
-    addImport("godot.core", "Godot", "Variant", "VariantArray")
+    addImport("godot.core", "Godot", "Variant", "VariantArray", "Allocator")
     addImport("gdnative", "godot_method_bind")
     addImport("kotlin.reflect", "KCallable")
     addImport(
@@ -612,7 +603,6 @@ class APIGenerator {
             if (parsedType.isEnum) {
               builder.addStatement("return ${parsedType.fqName}.from(_ret.asInt())")
             } else {
-              // TODO: what to do with nullability, at the moment assume nothing can be null
               builder.addStatement("return _ret.toAny() as %L", parsedType.fqName)
             }
 

@@ -13,8 +13,10 @@ internal class ClassHandle<S: Object, T: S>(
   val info: GodotClass<S, T>
 ) : ClassMemberRegistry<T>(handle, className) {
   fun create(instance: COpaquePointer): T {
-    val ret = info.factory()
-    ret.replaceHandle(instance)
+    val ret = Godot.noInitZone {
+      info.factory()
+    }
+    ret._handle = instance
     return ret
   }
 
@@ -24,6 +26,7 @@ internal class ClassHandle<S: Object, T: S>(
       // register constructor and destructor
       val create = cValue<godot_instance_create_func> {
         create_func = staticCFunction(::createInstance)
+        free_func = staticCFunction(::disposeClassHandle)
         method_data = methodData
       }
       val destroy = cValue<godot_instance_destroy_func> {

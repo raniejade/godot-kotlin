@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.NodePath
@@ -61,7 +62,9 @@ open class AnimationTreePlayer(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -574,7 +577,7 @@ open class AnimationTreePlayer(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationTreePlayer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AnimationTreePlayer" }
@@ -586,28 +589,28 @@ open class AnimationTreePlayer(
      */
     private object __method_bind {
       val addNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "add_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_node" }
         }
       val advance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "advance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method advance" }
         }
       val animationNodeGetAnimation: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "animation_node_get_animation".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method animation_node_get_animation" }
         }
       val animationNodeGetMasterAnimation: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "animation_node_get_master_animation".cstr.ptr)
@@ -615,28 +618,28 @@ open class AnimationTreePlayer(
             "No method_bind found for method animation_node_get_master_animation" }
         }
       val animationNodeGetPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "animation_node_get_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method animation_node_get_position" }
         }
       val animationNodeSetAnimation: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "animation_node_set_animation".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method animation_node_set_animation" }
         }
       val animationNodeSetFilterPath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "animation_node_set_filter_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method animation_node_set_filter_path" }
         }
       val animationNodeSetMasterAnimation: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "animation_node_set_master_animation".cstr.ptr)
@@ -644,175 +647,175 @@ open class AnimationTreePlayer(
             "No method_bind found for method animation_node_set_master_animation" }
         }
       val areNodesConnected: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "are_nodes_connected".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method are_nodes_connected" }
         }
       val blend2NodeGetAmount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "blend2_node_get_amount".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method blend2_node_get_amount" }
         }
       val blend2NodeSetAmount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "blend2_node_set_amount".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method blend2_node_set_amount" }
         }
       val blend2NodeSetFilterPath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "blend2_node_set_filter_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method blend2_node_set_filter_path" }
         }
       val blend3NodeGetAmount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "blend3_node_get_amount".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method blend3_node_get_amount" }
         }
       val blend3NodeSetAmount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "blend3_node_set_amount".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method blend3_node_set_amount" }
         }
       val blend4NodeGetAmount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "blend4_node_get_amount".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method blend4_node_get_amount" }
         }
       val blend4NodeSetAmount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "blend4_node_set_amount".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method blend4_node_set_amount" }
         }
       val connectNodes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "connect_nodes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method connect_nodes" }
         }
       val disconnectNodes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "disconnect_nodes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method disconnect_nodes" }
         }
       val getAnimationProcessMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "get_animation_process_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_animation_process_mode" }
         }
       val getBasePath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "get_base_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_base_path" }
         }
       val getMasterPlayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "get_master_player".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_master_player" }
         }
       val getNodeList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "get_node_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_node_list" }
         }
       val isActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "is_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_active" }
         }
       val mixNodeGetAmount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "mix_node_get_amount".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method mix_node_get_amount" }
         }
       val mixNodeSetAmount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "mix_node_set_amount".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method mix_node_set_amount" }
         }
       val nodeExists: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "node_exists".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method node_exists" }
         }
       val nodeGetInputCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "node_get_input_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method node_get_input_count" }
         }
       val nodeGetInputSource: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "node_get_input_source".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method node_get_input_source" }
         }
       val nodeGetPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "node_get_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method node_get_position" }
         }
       val nodeGetType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "node_get_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method node_get_type" }
         }
       val nodeRename: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "node_rename".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method node_rename" }
         }
       val nodeSetPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "node_set_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method node_set_position" }
         }
       val oneshotNodeGetAutorestartDelay: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_get_autorestart_delay".cstr.ptr)
@@ -820,7 +823,7 @@ open class AnimationTreePlayer(
             }
         }
       val oneshotNodeGetAutorestartRandomDelay: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_get_autorestart_random_delay".cstr.ptr)
@@ -828,42 +831,42 @@ open class AnimationTreePlayer(
             "No method_bind found for method oneshot_node_get_autorestart_random_delay" }
         }
       val oneshotNodeGetFadeinTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_get_fadein_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method oneshot_node_get_fadein_time" }
         }
       val oneshotNodeGetFadeoutTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_get_fadeout_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method oneshot_node_get_fadeout_time" }
         }
       val oneshotNodeHasAutorestart: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_has_autorestart".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method oneshot_node_has_autorestart" }
         }
       val oneshotNodeIsActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_is_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method oneshot_node_is_active" }
         }
       val oneshotNodeSetAutorestart: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_set_autorestart".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method oneshot_node_set_autorestart" }
         }
       val oneshotNodeSetAutorestartDelay: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_set_autorestart_delay".cstr.ptr)
@@ -871,7 +874,7 @@ open class AnimationTreePlayer(
             }
         }
       val oneshotNodeSetAutorestartRandomDelay: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_set_autorestart_random_delay".cstr.ptr)
@@ -879,140 +882,140 @@ open class AnimationTreePlayer(
             "No method_bind found for method oneshot_node_set_autorestart_random_delay" }
         }
       val oneshotNodeSetFadeinTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_set_fadein_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method oneshot_node_set_fadein_time" }
         }
       val oneshotNodeSetFadeoutTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_set_fadeout_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method oneshot_node_set_fadeout_time" }
         }
       val oneshotNodeSetFilterPath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_set_filter_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method oneshot_node_set_filter_path" }
         }
       val oneshotNodeStart: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_start".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method oneshot_node_start" }
         }
       val oneshotNodeStop: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "oneshot_node_stop".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method oneshot_node_stop" }
         }
       val recomputeCaches: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "recompute_caches".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method recompute_caches" }
         }
       val removeNode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "remove_node".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_node" }
         }
       val reset: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "reset".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method reset" }
         }
       val setActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "set_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_active" }
         }
       val setAnimationProcessMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "set_animation_process_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_animation_process_mode" }
         }
       val setBasePath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "set_base_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_base_path" }
         }
       val setMasterPlayer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "set_master_player".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_master_player" }
         }
       val timescaleNodeGetScale: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "timescale_node_get_scale".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method timescale_node_get_scale" }
         }
       val timescaleNodeSetScale: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "timescale_node_set_scale".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method timescale_node_set_scale" }
         }
       val timeseekNodeSeek: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "timeseek_node_seek".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method timeseek_node_seek" }
         }
       val transitionNodeDeleteInput: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "transition_node_delete_input".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method transition_node_delete_input" }
         }
       val transitionNodeGetCurrent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "transition_node_get_current".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method transition_node_get_current" }
         }
       val transitionNodeGetInputCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "transition_node_get_input_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method transition_node_get_input_count" }
         }
       val transitionNodeGetXfadeTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "transition_node_get_xfade_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method transition_node_get_xfade_time" }
         }
       val transitionNodeHasInputAutoAdvance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "transition_node_has_input_auto_advance".cstr.ptr)
@@ -1020,14 +1023,14 @@ open class AnimationTreePlayer(
             "No method_bind found for method transition_node_has_input_auto_advance" }
         }
       val transitionNodeSetCurrent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "transition_node_set_current".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method transition_node_set_current" }
         }
       val transitionNodeSetInputAutoAdvance: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "transition_node_set_input_auto_advance".cstr.ptr)
@@ -1035,14 +1038,14 @@ open class AnimationTreePlayer(
             "No method_bind found for method transition_node_set_input_auto_advance" }
         }
       val transitionNodeSetInputCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "transition_node_set_input_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method transition_node_set_input_count" }
         }
       val transitionNodeSetXfadeTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTreePlayer".cstr.ptr,
             "transition_node_set_xfade_time".cstr.ptr)

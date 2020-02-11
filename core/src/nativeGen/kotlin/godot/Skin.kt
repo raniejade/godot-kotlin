@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform
 import godot.core.Variant
@@ -23,7 +24,9 @@ open class Skin(
   __ignore: String?
 ) : Resource(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addBind(bone: Int, pose: Transform) {
@@ -74,7 +77,7 @@ open class Skin(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Skin".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Skin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -85,49 +88,49 @@ open class Skin(
      */
     private object __method_bind {
       val addBind: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skin".cstr.ptr,
             "add_bind".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_bind" }
         }
       val clearBinds: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skin".cstr.ptr,
             "clear_binds".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_binds" }
         }
       val getBindBone: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skin".cstr.ptr,
             "get_bind_bone".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bind_bone" }
         }
       val getBindCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skin".cstr.ptr,
             "get_bind_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bind_count" }
         }
       val getBindPose: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skin".cstr.ptr,
             "get_bind_pose".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bind_pose" }
         }
       val setBindBone: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skin".cstr.ptr,
             "set_bind_bone".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bind_bone" }
         }
       val setBindCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skin".cstr.ptr,
             "set_bind_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bind_count" }
         }
       val setBindPose: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skin".cstr.ptr,
             "set_bind_pose".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bind_pose" }

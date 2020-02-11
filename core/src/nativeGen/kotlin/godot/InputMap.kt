@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -103,73 +104,73 @@ open class InputMapInternal(
      */
     private object __method_bind {
       val actionAddEvent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "action_add_event".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method action_add_event" }
         }
       val actionEraseEvent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "action_erase_event".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method action_erase_event" }
         }
       val actionEraseEvents: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "action_erase_events".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method action_erase_events" }
         }
       val actionHasEvent: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "action_has_event".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method action_has_event" }
         }
       val actionSetDeadzone: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "action_set_deadzone".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method action_set_deadzone" }
         }
       val addAction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "add_action".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_action" }
         }
       val eraseAction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "erase_action".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method erase_action" }
         }
       val eventIsAction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "event_is_action".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method event_is_action" }
         }
       val getActionList: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "get_action_list".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_action_list" }
         }
       val getActions: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "get_actions".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_actions" }
         }
       val hasAction: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "has_action".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_action" }
         }
       val loadFromGlobals: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputMap".cstr.ptr,
             "load_from_globals".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method load_from_globals" }
@@ -179,7 +180,7 @@ open class InputMapInternal(
 
 object InputMap : InputMapInternal(null) {
   init {
-    memScoped {
+    Allocator.allocationScope {
       val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("InputMap".cstr.ptr)
       requireNotNull(handle) { "No instance found for singleton InputMap" }
       _handle = handle

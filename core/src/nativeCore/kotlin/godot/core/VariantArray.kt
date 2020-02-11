@@ -3,7 +3,10 @@ package godot.core
 import gdnative.godot_array
 import godot.Object
 import godot.toVariant
-import kotlinx.cinterop.*
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.readValue
 
 class VariantArray(
   value: CValue<godot_array>
@@ -43,7 +46,7 @@ class VariantArray(
   }
 
   fun append(value: Variant) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_append)(_value.ptr, value._value.ptr)
       ptr.pointed.readValue()
@@ -51,7 +54,7 @@ class VariantArray(
   }
 
   fun back(): Variant {
-    return memScoped {
+    return Allocator.allocationScope {
       Variant(
         checkNotNull(Godot.gdnative.godot_array_back)(_value.ptr)
       )
@@ -59,7 +62,7 @@ class VariantArray(
   }
 
   fun bsearch(value: Variant, before: Boolean = true): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_array_bsearch)(_value.ptr, value._value.ptr, before)
     }
   }
@@ -72,7 +75,7 @@ class VariantArray(
   fun bsearch(value: CoreType<*>, before: Boolean = true) = bsearch(value.toVariant(), before)
 
   fun clear() {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_clear)(_value.ptr)
       ptr.pointed.readValue()
@@ -80,7 +83,7 @@ class VariantArray(
   }
 
   fun has(value: Variant): Boolean {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_array_has)(_value.ptr, value._value.ptr)
     }
   }
@@ -93,7 +96,7 @@ class VariantArray(
   fun has(value: CoreType<*>) = has(value.toVariant())
 
   fun copy(deep: Boolean = false): VariantArray {
-    return memScoped {
+    return Allocator.allocationScope {
       VariantArray(
         checkNotNull(Godot.gdnative11.godot_array_duplicate)(_value.ptr, deep)
       )
@@ -101,7 +104,7 @@ class VariantArray(
   }
 
   fun count(value: Variant): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_array_count)(_value.ptr, value._value.ptr)
     }
   }
@@ -114,7 +117,7 @@ class VariantArray(
   fun count(value: CoreType<*>) = count(value.toVariant())
 
   fun find(value: Variant, from: Int = 0): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_array_find)(_value.ptr, value._value.ptr, from)
     }
   }
@@ -127,7 +130,7 @@ class VariantArray(
   fun find(value: CoreType<*>, from: Int = 0) = find(value.toVariant())
 
   fun findLast(value: Variant): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_array_find_last)(_value.ptr, value._value.ptr)
     }
   }
@@ -140,19 +143,19 @@ class VariantArray(
   fun findLast(value: CoreType<*>) = findLast(value.toVariant())
 
   fun hash(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_array_hash)(_value.ptr)
     }
   }
 
-  fun isEmpty(): Boolean {
-    return memScoped {
+  fun empty(): Boolean {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_array_empty)(_value.ptr)
     }
   }
 
   fun insert(index: Int, value: Variant) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_insert)(_value.ptr, index, value._value.ptr)
       ptr.pointed.readValue()
@@ -167,7 +170,7 @@ class VariantArray(
   fun insert(index: Int, value: CoreType<*>) = insert(index, value.toVariant())
 
   fun invert() {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_invert)(_value.ptr)
       ptr.pointed.readValue()
@@ -175,7 +178,7 @@ class VariantArray(
   }
 
   fun max(): Variant {
-    return memScoped {
+    return Allocator.allocationScope {
       Variant(
         checkNotNull(Godot.gdnative11.godot_array_max)(_value.ptr)
       )
@@ -183,7 +186,7 @@ class VariantArray(
   }
 
   fun min(): Variant {
-    return memScoped {
+    return Allocator.allocationScope {
       Variant(
         checkNotNull(Godot.gdnative11.godot_array_min)(_value.ptr)
       )
@@ -192,7 +195,7 @@ class VariantArray(
 
   fun popBack(): Variant {
     lateinit var ret: Variant
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       ret = Variant(
         checkNotNull(Godot.gdnative.godot_array_pop_back)(_value.ptr)
@@ -204,7 +207,7 @@ class VariantArray(
 
   fun popFront(): Variant {
     lateinit var ret: Variant
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       ret = Variant(
         checkNotNull(Godot.gdnative.godot_array_pop_back)(_value.ptr)
@@ -215,7 +218,7 @@ class VariantArray(
   }
 
   fun pushFront(value: Variant) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_push_front)(_value.ptr, value._value.ptr)
       ptr.pointed.readValue()
@@ -241,7 +244,7 @@ class VariantArray(
   fun pushBack(value: CoreType<*>) = pushBack(value.toVariant())
 
   fun erase(value: Variant) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_erase)(_value.ptr, value._value.ptr)
       ptr.pointed.readValue()
@@ -257,7 +260,7 @@ class VariantArray(
 
 
   fun remove(index: Int) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_remove)(_value.ptr, index)
       ptr.pointed.readValue()
@@ -265,7 +268,7 @@ class VariantArray(
   }
 
   fun sort() {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_sort)(_value.ptr)
       ptr.pointed.readValue()
@@ -273,7 +276,7 @@ class VariantArray(
   }
 
   operator fun get(index: Int): Variant {
-    return memScoped {
+    return Allocator.allocationScope {
       val ptr = checkNotNull(Godot.gdnative.godot_array_operator_index_const)(_value.ptr, index)
       Variant(checkNotNull(ptr).pointed.readValue())
     }
@@ -287,7 +290,7 @@ class VariantArray(
   }
 
   operator fun set(index: Int, value: Variant) {
-    _value = memScoped {
+    _value = Allocator.allocationScope {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_set)(ptr, index, value._value.ptr)
       ptr.pointed.readValue()

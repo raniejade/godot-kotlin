@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolByteArray
@@ -22,7 +23,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _File(
+open class File(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
@@ -35,7 +36,9 @@ open class _File(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun close() {
@@ -352,288 +355,288 @@ open class _File(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
-      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_File".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for _File" }
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("File".cstr.ptr)
+      requireNotNull(fnPtr) { "No instance found for File" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       fn()
     }
     /**
-     * Container for method_bind pointers for _File
+     * Container for method_bind pointers for File
      */
     private object __method_bind {
       val close: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "close".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method close" }
         }
       val eofReached: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "eof_reached".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method eof_reached" }
         }
       val fileExists: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "file_exists".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method file_exists" }
         }
       val get16: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_16".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_16" }
         }
       val get32: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_32".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_32" }
         }
       val get64: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_64".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_64" }
         }
       val get8: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_8".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_8" }
         }
       val getAsText: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_as_text".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_as_text" }
         }
       val getBuffer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_buffer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_buffer" }
         }
       val getCsvLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_csv_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_csv_line" }
         }
       val getDouble: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_double".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_double" }
         }
       val getEndianSwap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_endian_swap".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_endian_swap" }
         }
       val getError: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_error".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_error" }
         }
       val getFloat: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_float".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_float" }
         }
       val getLen: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_len".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_len" }
         }
       val getLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_line" }
         }
       val getMd5: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_md5".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_md5" }
         }
       val getModifiedTime: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_modified_time".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_modified_time" }
         }
       val getPascalString: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_pascal_string".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_pascal_string" }
         }
       val getPath: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_path".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_path" }
         }
       val getPathAbsolute: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_path_absolute".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_path_absolute" }
         }
       val getPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_position" }
         }
       val getReal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_real".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_real" }
         }
       val getSha256: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_sha256".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_sha256" }
         }
       val getVar: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "get_var".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_var" }
         }
       val isOpen: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "is_open".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_open" }
         }
       val open: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "open".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method open" }
         }
       val openCompressed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "open_compressed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method open_compressed" }
         }
       val openEncrypted: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "open_encrypted".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method open_encrypted" }
         }
       val openEncryptedWithPass: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "open_encrypted_with_pass".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method open_encrypted_with_pass" }
         }
       val seek: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "seek".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method seek" }
         }
       val seekEnd: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "seek_end".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method seek_end" }
         }
       val setEndianSwap: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "set_endian_swap".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_endian_swap" }
         }
       val store16: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_16".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_16" }
         }
       val store32: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_32".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_32" }
         }
       val store64: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_64".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_64" }
         }
       val store8: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_8".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_8" }
         }
       val storeBuffer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_buffer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_buffer" }
         }
       val storeCsvLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_csv_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_csv_line" }
         }
       val storeDouble: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_double".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_double" }
         }
       val storeFloat: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_float".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_float" }
         }
       val storeLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_line" }
         }
       val storePascalString: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_pascal_string".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_pascal_string" }
         }
       val storeReal: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_real".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_real" }
         }
       val storeString: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_string".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_string" }
         }
       val storeVar: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_File".cstr.ptr,
             "store_var".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method store_var" }

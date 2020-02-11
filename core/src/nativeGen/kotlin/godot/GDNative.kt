@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class GDNative(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun callNative(
@@ -67,7 +70,7 @@ open class GDNative(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GDNative".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -78,31 +81,31 @@ open class GDNative(
      */
     private object __method_bind {
       val callNative: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNative".cstr.ptr,
             "call_native".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method call_native" }
         }
       val getLibrary: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNative".cstr.ptr,
             "get_library".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_library" }
         }
       val initialize: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNative".cstr.ptr,
             "initialize".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method initialize" }
         }
       val setLibrary: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNative".cstr.ptr,
             "set_library".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_library" }
         }
       val terminate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNative".cstr.ptr,
             "terminate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method terminate" }

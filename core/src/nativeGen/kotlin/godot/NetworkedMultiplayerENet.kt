@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -64,7 +65,9 @@ open class NetworkedMultiplayerENet(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun closeConnection(waitUsec: Int = 100) {
@@ -214,7 +217,7 @@ open class NetworkedMultiplayerENet(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NetworkedMultiplayerENet".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for NetworkedMultiplayerENet" }
@@ -226,133 +229,133 @@ open class NetworkedMultiplayerENet(
      */
     private object __method_bind {
       val closeConnection: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "close_connection".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method close_connection" }
         }
       val createClient: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "create_client".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method create_client" }
         }
       val createServer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "create_server".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method create_server" }
         }
       val disconnectPeer: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "disconnect_peer".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method disconnect_peer" }
         }
       val getChannelCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "get_channel_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_channel_count" }
         }
       val getCompressionMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "get_compression_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_compression_mode" }
         }
       val getLastPacketChannel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "get_last_packet_channel".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_last_packet_channel" }
         }
       val getPacketChannel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "get_packet_channel".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_packet_channel" }
         }
       val getPeerAddress: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "get_peer_address".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_peer_address" }
         }
       val getPeerPort: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "get_peer_port".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_peer_port" }
         }
       val getTransferChannel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "get_transfer_channel".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_transfer_channel" }
         }
       val isAlwaysOrdered: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "is_always_ordered".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_always_ordered" }
         }
       val isServerRelayEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "is_server_relay_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_server_relay_enabled" }
         }
       val setAlwaysOrdered: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "set_always_ordered".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_always_ordered" }
         }
       val setBindIp: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "set_bind_ip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bind_ip" }
         }
       val setChannelCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "set_channel_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_channel_count" }
         }
       val setCompressionMode: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "set_compression_mode".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_compression_mode" }
         }
       val setServerRelayEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "set_server_relay_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_server_relay_enabled" }
         }
       val setTransferChannel: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
             "set_transfer_channel".cstr.ptr)

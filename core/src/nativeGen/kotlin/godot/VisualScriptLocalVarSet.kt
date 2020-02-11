@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -38,7 +39,9 @@ open class VisualScriptLocalVarSet(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getVarName(): String {
@@ -62,7 +65,7 @@ open class VisualScriptLocalVarSet(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptLocalVarSet".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptLocalVarSet" }
@@ -74,28 +77,28 @@ open class VisualScriptLocalVarSet(
      */
     private object __method_bind {
       val getVarName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
             "get_var_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_var_name" }
         }
       val getVarType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
             "get_var_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_var_type" }
         }
       val setVarName: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
             "set_var_name".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_var_name" }
         }
       val setVarType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
             "set_var_type".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
@@ -56,7 +57,9 @@ open class AtlasTexture(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -118,7 +121,7 @@ open class AtlasTexture(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AtlasTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for AtlasTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -129,56 +132,56 @@ open class AtlasTexture(
      */
     private object __method_bind {
       val getAtlas: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
             "get_atlas".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_atlas" }
         }
       val getMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
             "get_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_margin" }
         }
       val getRegion: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
             "get_region".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_region" }
         }
       val hasFilterClip: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
             "has_filter_clip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has_filter_clip" }
         }
       val setAtlas: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
             "set_atlas".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_atlas" }
         }
       val setFilterClip: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
             "set_filter_clip".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_filter_clip" }
         }
       val setMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
             "set_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_margin" }
         }
       val setRegion: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
             "set_region".cstr.ptr)

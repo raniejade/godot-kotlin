@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
@@ -87,7 +88,9 @@ open class Sprite3D(
   val signalFrameChanged: Signal0 = Signal0("frame_changed")
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -179,7 +182,7 @@ open class Sprite3D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Sprite3D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Sprite3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -190,85 +193,85 @@ open class Sprite3D(
      */
     private object __method_bind {
       val getFrame: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "get_frame".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_frame" }
         }
       val getFrameCoords: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "get_frame_coords".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_frame_coords" }
         }
       val getHframes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "get_hframes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_hframes" }
         }
       val getRegionRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "get_region_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_region_rect" }
         }
       val getTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "get_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val getVframes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "get_vframes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_vframes" }
         }
       val isRegion: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "is_region".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_region" }
         }
       val setFrame: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "set_frame".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_frame" }
         }
       val setFrameCoords: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "set_frame_coords".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_frame_coords" }
         }
       val setHframes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "set_hframes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_hframes" }
         }
       val setRegion: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "set_region".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_region" }
         }
       val setRegionRect: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "set_region_rect".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_region_rect" }
         }
       val setTexture: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "set_texture".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_texture" }
         }
       val setVframes: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
             "set_vframes".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_vframes" }

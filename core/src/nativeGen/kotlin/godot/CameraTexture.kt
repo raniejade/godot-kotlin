@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -47,7 +48,9 @@ open class CameraTexture(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getCameraActive(): Boolean {
@@ -81,7 +84,7 @@ open class CameraTexture(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CameraTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CameraTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -92,42 +95,42 @@ open class CameraTexture(
      */
     private object __method_bind {
       val getCameraActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
             "get_camera_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_camera_active" }
         }
       val getCameraFeedId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
             "get_camera_feed_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_camera_feed_id" }
         }
       val getWhichFeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
             "get_which_feed".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_which_feed" }
         }
       val setCameraActive: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
             "set_camera_active".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_camera_active" }
         }
       val setCameraFeedId: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
             "set_camera_feed_id".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_camera_feed_id" }
         }
       val setWhichFeed: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
             "set_which_feed".cstr.ptr)

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -30,7 +31,9 @@ open class GridContainer(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getColumns(): Int {
@@ -44,7 +47,7 @@ open class GridContainer(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GridContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for GridContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -55,14 +58,14 @@ open class GridContainer(
      */
     private object __method_bind {
       val getColumns: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridContainer".cstr.ptr,
             "get_columns".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_columns" }
         }
       val setColumns: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridContainer".cstr.ptr,
             "set_columns".cstr.ptr)

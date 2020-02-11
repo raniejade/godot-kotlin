@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -55,7 +56,9 @@ open class CollisionShape2D(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getOneWayCollisionMargin(): Float {
@@ -99,7 +102,7 @@ open class CollisionShape2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for CollisionShape2D" }
@@ -111,56 +114,56 @@ open class CollisionShape2D(
      */
     private object __method_bind {
       val getOneWayCollisionMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape2D".cstr.ptr,
             "get_one_way_collision_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_one_way_collision_margin" }
         }
       val getShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape2D".cstr.ptr,
             "get_shape".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_shape" }
         }
       val isDisabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape2D".cstr.ptr,
             "is_disabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_disabled" }
         }
       val isOneWayCollisionEnabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape2D".cstr.ptr,
             "is_one_way_collision_enabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_one_way_collision_enabled" }
         }
       val setDisabled: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape2D".cstr.ptr,
             "set_disabled".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_disabled" }
         }
       val setOneWayCollision: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape2D".cstr.ptr,
             "set_one_way_collision".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_one_way_collision" }
         }
       val setOneWayCollisionMargin: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape2D".cstr.ptr,
             "set_one_way_collision_margin".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_one_way_collision_margin" }
         }
       val setShape: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape2D".cstr.ptr,
             "set_shape".cstr.ptr)

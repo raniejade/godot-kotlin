@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolVector2Array
 import godot.core.Variant
@@ -34,7 +35,9 @@ open class Curve2D(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun addPoint(
@@ -167,7 +170,7 @@ open class Curve2D(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Curve2D".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for Curve2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -178,121 +181,121 @@ open class Curve2D(
      */
     private object __method_bind {
       val addPoint: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "add_point".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method add_point" }
         }
       val clearPoints: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "clear_points".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear_points" }
         }
       val getBakeInterval: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "get_bake_interval".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_bake_interval" }
         }
       val getBakedLength: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "get_baked_length".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_baked_length" }
         }
       val getBakedPoints: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "get_baked_points".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_baked_points" }
         }
       val getClosestOffset: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "get_closest_offset".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_closest_offset" }
         }
       val getClosestPoint: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "get_closest_point".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_closest_point" }
         }
       val getPointCount: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "get_point_count".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_point_count" }
         }
       val getPointIn: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "get_point_in".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_point_in" }
         }
       val getPointOut: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "get_point_out".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_point_out" }
         }
       val getPointPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "get_point_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_point_position" }
         }
       val interpolate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "interpolate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method interpolate" }
         }
       val interpolateBaked: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "interpolate_baked".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method interpolate_baked" }
         }
       val interpolatef: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "interpolatef".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method interpolatef" }
         }
       val removePoint: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "remove_point".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove_point" }
         }
       val setBakeInterval: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "set_bake_interval".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_bake_interval" }
         }
       val setPointIn: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "set_point_in".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_point_in" }
         }
       val setPointOut: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "set_point_out".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_point_out" }
         }
       val setPointPosition: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "set_point_position".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_point_position" }
         }
       val tessellate: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve2D".cstr.ptr,
             "tessellate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method tessellate" }

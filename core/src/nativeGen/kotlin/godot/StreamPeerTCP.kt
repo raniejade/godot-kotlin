@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -24,7 +25,9 @@ open class StreamPeerTCP(
   __ignore: String?
 ) : StreamPeer(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun connectToHost(host: String, port: Int): GDError {
@@ -88,7 +91,7 @@ open class StreamPeerTCP(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerTCP".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for StreamPeerTCP" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -99,49 +102,49 @@ open class StreamPeerTCP(
      */
     private object __method_bind {
       val connectToHost: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerTCP".cstr.ptr,
             "connect_to_host".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method connect_to_host" }
         }
       val disconnectFromHost: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerTCP".cstr.ptr,
             "disconnect_from_host".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method disconnect_from_host" }
         }
       val getConnectedHost: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerTCP".cstr.ptr,
             "get_connected_host".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_connected_host" }
         }
       val getConnectedPort: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerTCP".cstr.ptr,
             "get_connected_port".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_connected_port" }
         }
       val getStatus: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerTCP".cstr.ptr,
             "get_status".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_status" }
         }
       val isConnectedToHost: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerTCP".cstr.ptr,
             "is_connected_to_host".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method is_connected_to_host" }
         }
       val setNoDelay: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerTCP".cstr.ptr,
             "set_no_delay".cstr.ptr)

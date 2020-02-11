@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -37,7 +38,9 @@ open class VisualScriptTypeCast(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun getBaseScript(): String {
@@ -61,7 +64,7 @@ open class VisualScriptTypeCast(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptTypeCast".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for VisualScriptTypeCast" }
@@ -73,28 +76,28 @@ open class VisualScriptTypeCast(
      */
     private object __method_bind {
       val getBaseScript: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
             "get_base_script".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_base_script" }
         }
       val getBaseType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
             "get_base_type".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_base_type" }
         }
       val setBaseScript: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
             "set_base_script".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_base_script" }
         }
       val setBaseType: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
             "set_base_type".cstr.ptr)

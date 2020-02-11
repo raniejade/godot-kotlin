@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -22,7 +23,9 @@ open class PluginScript(
   __ignore: String?
 ) : Script(null) {
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   fun new(vararg varargs: Any?): Variant {
@@ -33,7 +36,7 @@ open class PluginScript(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PluginScript".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for PluginScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
@@ -44,7 +47,7 @@ open class PluginScript(
      */
     private object __method_bind {
       val new: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PluginScript".cstr.ptr,
             "new".cstr.ptr)

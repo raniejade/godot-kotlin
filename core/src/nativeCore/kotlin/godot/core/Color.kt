@@ -3,7 +3,6 @@ package godot.core
 import gdnative.godot_color
 import kotlinx.cinterop.CValue
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
 
 class Color(
   value: CValue<godot_color>
@@ -13,37 +12,37 @@ class Color(
 
   val r: Float
     get() {
-      return memScoped { checkNotNull(Godot.gdnative.godot_color_get_r)(_value.ptr) }
+      return Allocator.allocationScope { checkNotNull(Godot.gdnative.godot_color_get_r)(_value.ptr) }
     }
   val g: Float
     get() {
-      return memScoped { checkNotNull(Godot.gdnative.godot_color_get_g)(_value.ptr) }
+      return Allocator.allocationScope { checkNotNull(Godot.gdnative.godot_color_get_g)(_value.ptr) }
     }
   val b: Float
     get() {
-      return memScoped { checkNotNull(Godot.gdnative.godot_color_get_b)(_value.ptr) }
+      return Allocator.allocationScope { checkNotNull(Godot.gdnative.godot_color_get_b)(_value.ptr) }
     }
 
   val h: Float
     get() {
-      return memScoped { checkNotNull(Godot.gdnative.godot_color_get_h)(_value.ptr) }
+      return Allocator.allocationScope { checkNotNull(Godot.gdnative.godot_color_get_h)(_value.ptr) }
     }
   val s: Float
     get() {
-      return memScoped { checkNotNull(Godot.gdnative.godot_color_get_s)(_value.ptr) }
+      return Allocator.allocationScope { checkNotNull(Godot.gdnative.godot_color_get_s)(_value.ptr) }
     }
   val v: Float
     get() {
-      return memScoped { checkNotNull(Godot.gdnative.godot_color_get_v)(_value.ptr) }
+      return Allocator.allocationScope { checkNotNull(Godot.gdnative.godot_color_get_v)(_value.ptr) }
     }
 
   val a: Float
     get() {
-      return memScoped { checkNotNull(Godot.gdnative.godot_color_get_a)(_value.ptr) }
+      return Allocator.allocationScope { checkNotNull(Godot.gdnative.godot_color_get_a)(_value.ptr) }
     }
 
   fun blend(over: Color): Color {
-    return memScoped {
+    return Allocator.allocationScope {
       Color(
         checkNotNull(Godot.gdnative.godot_color_blend)(_value.ptr, over._value.ptr)
       )
@@ -51,7 +50,7 @@ class Color(
   }
 
   fun contrasted(): Color {
-    return memScoped {
+    return Allocator.allocationScope {
       Color(
         checkNotNull(Godot.gdnative.godot_color_contrasted)(_value.ptr)
       )
@@ -59,13 +58,13 @@ class Color(
   }
 
   fun gray(): Float {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_color_gray)(_value.ptr)
     }
   }
 
   fun inverted(): Color {
-    return memScoped {
+    return Allocator.allocationScope {
       Color(
         checkNotNull(Godot.gdnative.godot_color_inverted)(_value.ptr)
       )
@@ -73,7 +72,7 @@ class Color(
   }
 
   fun linearInterpolate(b: Color, t: Float): Color {
-    return memScoped {
+    return Allocator.allocationScope {
       Color(
         checkNotNull(Godot.gdnative.godot_color_linear_interpolate)(_value.ptr, b._value.ptr, t)
       )
@@ -81,19 +80,19 @@ class Color(
   }
 
   fun toABGR32(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_color_to_argb32)(_value.ptr)
     }
   }
 
   fun toRGBA32(): Int {
-    return memScoped {
+    return Allocator.allocationScope {
       checkNotNull(Godot.gdnative.godot_color_to_rgba32)(_value.ptr)
     }
   }
 
   fun toHtml(withAlpha: Boolean = true): String {
-    return memScoped {
+    return Allocator.allocationScope {
       val gdString = GDString(
         checkNotNull(Godot.gdnative.godot_color_to_html)(_value.ptr, withAlpha)
       )
@@ -108,7 +107,7 @@ class Color(
   }
 
   override fun toGDString(): GDString {
-    return memScoped {
+    return Allocator.allocationScope {
       GDString(
         checkNotNull(Godot.gdnative.godot_color_as_string)(_value.ptr)
       )

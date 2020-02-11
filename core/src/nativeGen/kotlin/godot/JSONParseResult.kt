@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -56,7 +57,9 @@ open class JSONParseResult(
     }
 
   constructor() : this(null) {
-    _handle = __new()
+    if (Godot.shouldInitHandle()) {
+      _handle = __new()
+    }
   }
 
   /**
@@ -109,7 +112,7 @@ open class JSONParseResult(
   }
 
   companion object {
-    internal fun __new(): COpaquePointer = memScoped {
+    internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("JSONParseResult".cstr.ptr)
       requireNotNull(fnPtr) { "No instance found for JSONParseResult" }
@@ -121,56 +124,56 @@ open class JSONParseResult(
      */
     private object __method_bind {
       val getError: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONParseResult".cstr.ptr,
             "get_error".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_error" }
         }
       val getErrorLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONParseResult".cstr.ptr,
             "get_error_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_error_line" }
         }
       val getErrorString: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONParseResult".cstr.ptr,
             "get_error_string".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_error_string" }
         }
       val getResult: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONParseResult".cstr.ptr,
             "get_result".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method get_result" }
         }
       val setError: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONParseResult".cstr.ptr,
             "set_error".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_error" }
         }
       val setErrorLine: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONParseResult".cstr.ptr,
             "set_error_line".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_error_line" }
         }
       val setErrorString: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONParseResult".cstr.ptr,
             "set_error_string".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method set_error_string" }
         }
       val setResult: CPointer<godot_method_bind>
-        get() = memScoped {
+        get() = Allocator.allocationScope {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JSONParseResult".cstr.ptr,
             "set_result".cstr.ptr)
