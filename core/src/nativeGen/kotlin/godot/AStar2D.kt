@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolIntArray
@@ -15,13 +16,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AStar2D(
   @Suppress("UNUSED_PARAMETER")
@@ -38,23 +47,34 @@ open class AStar2D(
     position: Vector2,
     weightScale: Float = 1.0f
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(weightScale))
-    __method_bind.addPoint.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(position)
+      _args.add(weightScale)
+      __method_bind.addPoint.call(self._handle, _args, null)
+    }
   }
 
   fun arePointsConnected(id: Int, toId: Int): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(toId))
-    val _ret = __method_bind.arePointsConnected.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(toId)
+      __method_bind.arePointsConnected.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun connectPoints(
@@ -62,129 +82,213 @@ open class AStar2D(
     toId: Int,
     bidirectional: Boolean = true
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(toId))
-    _args.add(Variant.fromAny(bidirectional))
-    __method_bind.connectPoints.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(toId)
+      _args.add(bidirectional)
+      __method_bind.connectPoints.call(self._handle, _args, null)
+    }
   }
 
   fun disconnectPoints(id: Int, toId: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(toId))
-    __method_bind.disconnectPoints.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(toId)
+      __method_bind.disconnectPoints.call(self._handle, _args, null)
+    }
   }
 
   fun getAvailablePointId(): Int {
-    val _ret = __method_bind.getAvailablePointId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAvailablePointId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getClosestPoint(toPosition: Vector2, includeDisabled: Boolean = false): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(toPosition))
-    _args.add(Variant.fromAny(includeDisabled))
-    val _ret = __method_bind.getClosestPoint.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(toPosition)
+      _args.add(includeDisabled)
+      __method_bind.getClosestPoint.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getClosestPositionInSegment(toPosition: Vector2): Vector2 {
-    val _arg = Variant(toPosition)
-    val _ret = __method_bind.getClosestPositionInSegment.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getClosestPositionInSegment.call(self._handle, listOf(toPosition), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getIdPath(fromId: Int, toId: Int): PoolIntArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(fromId))
-    _args.add(Variant.fromAny(toId))
-    val _ret = __method_bind.getIdPath.call(this._handle, _args)
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(fromId)
+      _args.add(toId)
+      __method_bind.getIdPath.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointCapacity(): Int {
-    val _ret = __method_bind.getPointCapacity.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointCapacity.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPointConnections(id: Int): PoolIntArray {
-    val _arg = Variant(id)
-    val _ret = __method_bind.getPointConnections.call(this._handle, listOf(_arg))
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPointConnections.call(self._handle, listOf(id), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointCount(): Int {
-    val _ret = __method_bind.getPointCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPointPath(fromId: Int, toId: Int): PoolVector2Array {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(fromId))
-    _args.add(Variant.fromAny(toId))
-    val _ret = __method_bind.getPointPath.call(this._handle, _args)
-    return _ret.asPoolVector2Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector2Array()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(fromId)
+      _args.add(toId)
+      __method_bind.getPointPath.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointPosition(id: Int): Vector2 {
-    val _arg = Variant(id)
-    val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPointPosition.call(self._handle, listOf(id), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointWeightScale(id: Int): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.getPointWeightScale.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointWeightScale.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPoints(): VariantArray {
-    val _ret = __method_bind.getPoints.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPoints.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun hasPoint(id: Int): Boolean {
-    val _arg = Variant(id)
-    val _ret = __method_bind.hasPoint.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasPoint.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPointDisabled(id: Int): Boolean {
-    val _arg = Variant(id)
-    val _ret = __method_bind.isPointDisabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPointDisabled.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun removePoint(id: Int) {
-    val _arg = Variant(id)
-    __method_bind.removePoint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removePoint.call(self._handle, listOf(id), null)
+    }
   }
 
   fun reserveSpace(numNodes: Int) {
-    val _arg = Variant(numNodes)
-    __method_bind.reserveSpace.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.reserveSpace.call(self._handle, listOf(numNodes), null)
+    }
   }
 
   fun setPointDisabled(id: Int, disabled: Boolean = true) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.setPointDisabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(disabled)
+      __method_bind.setPointDisabled.call(self._handle, _args, null)
+    }
   }
 
   fun setPointPosition(id: Int, position: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(position))
-    __method_bind.setPointPosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(position)
+      __method_bind.setPointPosition.call(self._handle, _args, null)
+    }
   }
 
   fun setPointWeightScale(id: Int, weightScale: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(weightScale))
-    __method_bind.setPointWeightScale.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(weightScale)
+      __method_bind.setPointWeightScale.call(self._handle, _args, null)
+    }
   }
 
   companion object {

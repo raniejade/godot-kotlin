@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,64 +11,108 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class IPInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
   fun clearCache(hostname: String = "") {
-    val _arg = Variant(hostname)
-    __method_bind.clearCache.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearCache.call(self._handle, listOf(hostname), null)
+    }
   }
 
   fun eraseResolveItem(id: Int) {
-    val _arg = Variant(id)
-    __method_bind.eraseResolveItem.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.eraseResolveItem.call(self._handle, listOf(id), null)
+    }
   }
 
   fun getLocalAddresses(): VariantArray {
-    val _ret = __method_bind.getLocalAddresses.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getLocalAddresses.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLocalInterfaces(): VariantArray {
-    val _ret = __method_bind.getLocalInterfaces.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getLocalInterfaces.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getResolveItemAddress(id: Int): String {
-    val _arg = Variant(id)
-    val _ret = __method_bind.getResolveItemAddress.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getResolveItemAddress.call(self._handle, listOf(id), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getResolveItemStatus(id: Int): IP.ResolverStatus {
-    val _arg = Variant(id)
-    val _ret = __method_bind.getResolveItemStatus.call(this._handle, listOf(_arg))
-    return IP.ResolverStatus.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getResolveItemStatus.call(self._handle, listOf(id), _retPtr)
+      IP.ResolverStatus.from(_ret.value)
+    }
   }
 
   fun resolveHostname(host: String, ipType: Int = 3): String {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(host))
-    _args.add(Variant.fromAny(ipType))
-    val _ret = __method_bind.resolveHostname.call(this._handle, _args)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      val _args = mutableListOf<Any?>()
+      _args.add(host)
+      _args.add(ipType)
+      __method_bind.resolveHostname.call(self._handle, _args, _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun resolveHostnameQueueItem(host: String, ipType: Int = 3): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(host))
-    _args.add(Variant.fromAny(ipType))
-    val _ret = __method_bind.resolveHostnameQueueItem.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(host)
+      _args.add(ipType)
+      __method_bind.resolveHostnameQueueItem.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   companion object {

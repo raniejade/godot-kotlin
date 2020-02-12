@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -17,13 +18,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Animation(
   @Suppress("UNUSED_PARAMETER")
@@ -65,19 +74,30 @@ open class Animation(
   }
 
   fun addTrack(type: Int, atPosition: Int = -1): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(atPosition))
-    val _ret = __method_bind.addTrack.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(atPosition)
+      __method_bind.addTrack.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun animationTrackGetKeyAnimation(trackIdx: Int, keyIdx: Int): String {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.animationTrackGetKeyAnimation.call(this._handle, _args)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.animationTrackGetKeyAnimation.call(self._handle, _args, _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun animationTrackInsertKey(
@@ -85,12 +105,17 @@ open class Animation(
     time: Float,
     animation: String
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(time))
-    _args.add(Variant.fromAny(animation))
-    val _ret = __method_bind.animationTrackInsertKey.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(time)
+      _args.add(animation)
+      __method_bind.animationTrackInsertKey.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun animationTrackSetKeyAnimation(
@@ -98,35 +123,55 @@ open class Animation(
     keyIdx: Int,
     animation: String
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    _args.add(Variant.fromAny(animation))
-    __method_bind.animationTrackSetKeyAnimation.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      _args.add(animation)
+      __method_bind.animationTrackSetKeyAnimation.call(self._handle, _args, null)
+    }
   }
 
   fun audioTrackGetKeyEndOffset(trackIdx: Int, keyIdx: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.audioTrackGetKeyEndOffset.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.audioTrackGetKeyEndOffset.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun audioTrackGetKeyStartOffset(trackIdx: Int, keyIdx: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.audioTrackGetKeyStartOffset.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.audioTrackGetKeyStartOffset.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun audioTrackGetKeyStream(trackIdx: Int, keyIdx: Int): Resource {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.audioTrackGetKeyStream.call(this._handle, _args)
-    return _ret.toAny() as Resource
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Resource
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.audioTrackGetKeyStream.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Resource>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun audioTrackInsertKey(
@@ -136,14 +181,19 @@ open class Animation(
     startOffset: Float = 0.0f,
     endOffset: Float = 0.0f
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(time))
-    _args.add(Variant.fromAny(stream))
-    _args.add(Variant.fromAny(startOffset))
-    _args.add(Variant.fromAny(endOffset))
-    val _ret = __method_bind.audioTrackInsertKey.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(time)
+      _args.add(stream)
+      _args.add(startOffset)
+      _args.add(endOffset)
+      __method_bind.audioTrackInsertKey.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun audioTrackSetKeyEndOffset(
@@ -151,11 +201,14 @@ open class Animation(
     keyIdx: Int,
     offset: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    _args.add(Variant.fromAny(offset))
-    __method_bind.audioTrackSetKeyEndOffset.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      _args.add(offset)
+      __method_bind.audioTrackSetKeyEndOffset.call(self._handle, _args, null)
+    }
   }
 
   fun audioTrackSetKeyStartOffset(
@@ -163,11 +216,14 @@ open class Animation(
     keyIdx: Int,
     offset: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    _args.add(Variant.fromAny(offset))
-    __method_bind.audioTrackSetKeyStartOffset.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      _args.add(offset)
+      __method_bind.audioTrackSetKeyStartOffset.call(self._handle, _args, null)
+    }
   }
 
   fun audioTrackSetKeyStream(
@@ -175,35 +231,55 @@ open class Animation(
     keyIdx: Int,
     stream: Resource
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    _args.add(Variant.fromAny(stream))
-    __method_bind.audioTrackSetKeyStream.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      _args.add(stream)
+      __method_bind.audioTrackSetKeyStream.call(self._handle, _args, null)
+    }
   }
 
   fun bezierTrackGetKeyInHandle(trackIdx: Int, keyIdx: Int): Vector2 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.bezierTrackGetKeyInHandle.call(this._handle, _args)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.bezierTrackGetKeyInHandle.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun bezierTrackGetKeyOutHandle(trackIdx: Int, keyIdx: Int): Vector2 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.bezierTrackGetKeyOutHandle.call(this._handle, _args)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.bezierTrackGetKeyOutHandle.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun bezierTrackGetKeyValue(trackIdx: Int, keyIdx: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.bezierTrackGetKeyValue.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.bezierTrackGetKeyValue.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun bezierTrackInsertKey(
@@ -213,22 +289,32 @@ open class Animation(
     inHandle: Vector2 = Vector2(0, 0),
     outHandle: Vector2 = Vector2(0, 0)
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(time))
-    _args.add(Variant.fromAny(value))
-    _args.add(Variant.fromAny(inHandle))
-    _args.add(Variant.fromAny(outHandle))
-    val _ret = __method_bind.bezierTrackInsertKey.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(time)
+      _args.add(value)
+      _args.add(inHandle)
+      _args.add(outHandle)
+      __method_bind.bezierTrackInsertKey.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun bezierTrackInterpolate(trackIdx: Int, time: Float): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(time))
-    val _ret = __method_bind.bezierTrackInterpolate.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(time)
+      __method_bind.bezierTrackInterpolate.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun bezierTrackSetKeyInHandle(
@@ -236,11 +322,14 @@ open class Animation(
     keyIdx: Int,
     inHandle: Vector2
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    _args.add(Variant.fromAny(inHandle))
-    __method_bind.bezierTrackSetKeyInHandle.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      _args.add(inHandle)
+      __method_bind.bezierTrackSetKeyInHandle.call(self._handle, _args, null)
+    }
   }
 
   fun bezierTrackSetKeyOutHandle(
@@ -248,11 +337,14 @@ open class Animation(
     keyIdx: Int,
     outHandle: Vector2
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    _args.add(Variant.fromAny(outHandle))
-    __method_bind.bezierTrackSetKeyOutHandle.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      _args.add(outHandle)
+      __method_bind.bezierTrackSetKeyOutHandle.call(self._handle, _args, null)
+    }
   }
 
   fun bezierTrackSetKeyValue(
@@ -260,48 +352,81 @@ open class Animation(
     keyIdx: Int,
     value: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    _args.add(Variant.fromAny(value))
-    __method_bind.bezierTrackSetKeyValue.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      _args.add(value)
+      __method_bind.bezierTrackSetKeyValue.call(self._handle, _args, null)
+    }
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun copyTrack(trackIdx: Int, toAnimation: Animation) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(toAnimation))
-    __method_bind.copyTrack.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(toAnimation)
+      __method_bind.copyTrack.call(self._handle, _args, null)
+    }
   }
 
   fun findTrack(path: NodePath): Int {
-    val _arg = Variant(path)
-    val _ret = __method_bind.findTrack.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.findTrack.call(self._handle, listOf(path), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLength(): Float {
-    val _ret = __method_bind.getLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getStep(): Float {
-    val _ret = __method_bind.getStep.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStep.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTrackCount(): Int {
-    val _ret = __method_bind.getTrackCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTrackCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasLoop(): Boolean {
-    val _ret = __method_bind.hasLoop.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasLoop.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun methodTrackGetKeyIndices(
@@ -309,48 +434,74 @@ open class Animation(
     timeSec: Float,
     delta: Float
   ): PoolIntArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(timeSec))
-    _args.add(Variant.fromAny(delta))
-    val _ret = __method_bind.methodTrackGetKeyIndices.call(this._handle, _args)
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(timeSec)
+      _args.add(delta)
+      __method_bind.methodTrackGetKeyIndices.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun methodTrackGetName(trackIdx: Int, keyIdx: Int): String {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.methodTrackGetName.call(this._handle, _args)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.methodTrackGetName.call(self._handle, _args, _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun methodTrackGetParams(trackIdx: Int, keyIdx: Int): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.methodTrackGetParams.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.methodTrackGetParams.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun removeTrack(trackIdx: Int) {
-    val _arg = Variant(trackIdx)
-    __method_bind.removeTrack.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeTrack.call(self._handle, listOf(trackIdx), null)
+    }
   }
 
   fun setLength(timeSec: Float) {
-    val _arg = Variant(timeSec)
-    __method_bind.setLength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLength.call(self._handle, listOf(timeSec), null)
+    }
   }
 
   fun setLoop(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setLoop.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLoop.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setStep(sizeSec: Float) {
-    val _arg = Variant(sizeSec)
-    __method_bind.setStep.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStep.call(self._handle, listOf(sizeSec), null)
+    }
   }
 
   fun trackFindKey(
@@ -358,66 +509,108 @@ open class Animation(
     time: Float,
     exact: Boolean = false
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(time))
-    _args.add(Variant.fromAny(exact))
-    val _ret = __method_bind.trackFindKey.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(time)
+      _args.add(exact)
+      __method_bind.trackFindKey.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun trackGetInterpolationLoopWrap(trackIdx: Int): Boolean {
-    val _arg = Variant(trackIdx)
-    val _ret = __method_bind.trackGetInterpolationLoopWrap.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.trackGetInterpolationLoopWrap.call(self._handle, listOf(trackIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun trackGetInterpolationType(trackIdx: Int): InterpolationType {
-    val _arg = Variant(trackIdx)
-    val _ret = __method_bind.trackGetInterpolationType.call(this._handle, listOf(_arg))
-    return Animation.InterpolationType.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.trackGetInterpolationType.call(self._handle, listOf(trackIdx), _retPtr)
+      Animation.InterpolationType.from(_ret.value)
+    }
   }
 
   fun trackGetKeyCount(trackIdx: Int): Int {
-    val _arg = Variant(trackIdx)
-    val _ret = __method_bind.trackGetKeyCount.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.trackGetKeyCount.call(self._handle, listOf(trackIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun trackGetKeyTime(trackIdx: Int, keyIdx: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.trackGetKeyTime.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.trackGetKeyTime.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun trackGetKeyTransition(trackIdx: Int, keyIdx: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.trackGetKeyTransition.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.trackGetKeyTransition.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun trackGetKeyValue(trackIdx: Int, keyIdx: Int): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    val _ret = __method_bind.trackGetKeyValue.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.trackGetKeyValue.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun trackGetPath(trackIdx: Int): NodePath {
-    val _arg = Variant(trackIdx)
-    val _ret = __method_bind.trackGetPath.call(this._handle, listOf(_arg))
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.trackGetPath.call(self._handle, listOf(trackIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun trackGetType(trackIdx: Int): TrackType {
-    val _arg = Variant(trackIdx)
-    val _ret = __method_bind.trackGetType.call(this._handle, listOf(_arg))
-    return Animation.TrackType.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.trackGetType.call(self._handle, listOf(trackIdx), _retPtr)
+      Animation.TrackType.from(_ret.value)
+    }
   }
 
   fun trackInsertKey(
@@ -426,83 +619,119 @@ open class Animation(
     key: Variant,
     transition: Float = 1.0f
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(time))
-    _args.add(Variant.fromAny(key))
-    _args.add(Variant.fromAny(transition))
-    __method_bind.trackInsertKey.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(time)
+      _args.add(key)
+      _args.add(transition)
+      __method_bind.trackInsertKey.call(self._handle, _args, null)
+    }
   }
 
   fun trackIsEnabled(trackIdx: Int): Boolean {
-    val _arg = Variant(trackIdx)
-    val _ret = __method_bind.trackIsEnabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.trackIsEnabled.call(self._handle, listOf(trackIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun trackIsImported(trackIdx: Int): Boolean {
-    val _arg = Variant(trackIdx)
-    val _ret = __method_bind.trackIsImported.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.trackIsImported.call(self._handle, listOf(trackIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun trackMoveDown(trackIdx: Int) {
-    val _arg = Variant(trackIdx)
-    __method_bind.trackMoveDown.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.trackMoveDown.call(self._handle, listOf(trackIdx), null)
+    }
   }
 
   fun trackMoveTo(trackIdx: Int, toIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(toIdx))
-    __method_bind.trackMoveTo.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(toIdx)
+      __method_bind.trackMoveTo.call(self._handle, _args, null)
+    }
   }
 
   fun trackMoveUp(trackIdx: Int) {
-    val _arg = Variant(trackIdx)
-    __method_bind.trackMoveUp.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.trackMoveUp.call(self._handle, listOf(trackIdx), null)
+    }
   }
 
   fun trackRemoveKey(trackIdx: Int, keyIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    __method_bind.trackRemoveKey.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      __method_bind.trackRemoveKey.call(self._handle, _args, null)
+    }
   }
 
   fun trackRemoveKeyAtPosition(trackIdx: Int, position: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(position))
-    __method_bind.trackRemoveKeyAtPosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(position)
+      __method_bind.trackRemoveKeyAtPosition.call(self._handle, _args, null)
+    }
   }
 
   fun trackSetEnabled(trackIdx: Int, enabled: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(enabled))
-    __method_bind.trackSetEnabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(enabled)
+      __method_bind.trackSetEnabled.call(self._handle, _args, null)
+    }
   }
 
   fun trackSetImported(trackIdx: Int, imported: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(imported))
-    __method_bind.trackSetImported.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(imported)
+      __method_bind.trackSetImported.call(self._handle, _args, null)
+    }
   }
 
   fun trackSetInterpolationLoopWrap(trackIdx: Int, interpolation: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(interpolation))
-    __method_bind.trackSetInterpolationLoopWrap.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(interpolation)
+      __method_bind.trackSetInterpolationLoopWrap.call(self._handle, _args, null)
+    }
   }
 
   fun trackSetInterpolationType(trackIdx: Int, interpolation: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(interpolation))
-    __method_bind.trackSetInterpolationType.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(interpolation)
+      __method_bind.trackSetInterpolationType.call(self._handle, _args, null)
+    }
   }
 
   fun trackSetKeyTime(
@@ -510,11 +739,14 @@ open class Animation(
     keyIdx: Int,
     time: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    _args.add(Variant.fromAny(time))
-    __method_bind.trackSetKeyTime.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      _args.add(time)
+      __method_bind.trackSetKeyTime.call(self._handle, _args, null)
+    }
   }
 
   fun trackSetKeyTransition(
@@ -522,11 +754,14 @@ open class Animation(
     keyIdx: Int,
     transition: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(keyIdx))
-    _args.add(Variant.fromAny(transition))
-    __method_bind.trackSetKeyTransition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(keyIdx)
+      _args.add(transition)
+      __method_bind.trackSetKeyTransition.call(self._handle, _args, null)
+    }
   }
 
   fun trackSetKeyValue(
@@ -534,25 +769,34 @@ open class Animation(
     key: Int,
     value: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(key))
-    _args.add(Variant.fromAny(value))
-    __method_bind.trackSetKeyValue.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(key)
+      _args.add(value)
+      __method_bind.trackSetKeyValue.call(self._handle, _args, null)
+    }
   }
 
   fun trackSetPath(trackIdx: Int, path: NodePath) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(path))
-    __method_bind.trackSetPath.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(path)
+      __method_bind.trackSetPath.call(self._handle, _args, null)
+    }
   }
 
   fun trackSwap(trackIdx: Int, withIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(withIdx))
-    __method_bind.trackSwap.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(withIdx)
+      __method_bind.trackSwap.call(self._handle, _args, null)
+    }
   }
 
   fun transformTrackInsertKey(
@@ -562,22 +806,33 @@ open class Animation(
     rotation: Quat,
     scale: Vector3
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(time))
-    _args.add(Variant.fromAny(location))
-    _args.add(Variant.fromAny(rotation))
-    _args.add(Variant.fromAny(scale))
-    val _ret = __method_bind.transformTrackInsertKey.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(time)
+      _args.add(location)
+      _args.add(rotation)
+      _args.add(scale)
+      __method_bind.transformTrackInsertKey.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun transformTrackInterpolate(trackIdx: Int, timeSec: Float): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(timeSec))
-    val _ret = __method_bind.transformTrackInterpolate.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(timeSec)
+      __method_bind.transformTrackInterpolate.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun valueTrackGetKeyIndices(
@@ -585,25 +840,38 @@ open class Animation(
     timeSec: Float,
     delta: Float
   ): PoolIntArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(timeSec))
-    _args.add(Variant.fromAny(delta))
-    val _ret = __method_bind.valueTrackGetKeyIndices.call(this._handle, _args)
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(timeSec)
+      _args.add(delta)
+      __method_bind.valueTrackGetKeyIndices.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun valueTrackGetUpdateMode(trackIdx: Int): UpdateMode {
-    val _arg = Variant(trackIdx)
-    val _ret = __method_bind.valueTrackGetUpdateMode.call(this._handle, listOf(_arg))
-    return Animation.UpdateMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.valueTrackGetUpdateMode.call(self._handle, listOf(trackIdx), _retPtr)
+      Animation.UpdateMode.from(_ret.value)
+    }
   }
 
   fun valueTrackSetUpdateMode(trackIdx: Int, mode: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(trackIdx))
-    _args.add(Variant.fromAny(mode))
-    __method_bind.valueTrackSetUpdateMode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(trackIdx)
+      _args.add(mode)
+      __method_bind.valueTrackSetUpdateMode.call(self._handle, _args, null)
+    }
   }
 
   enum class TrackType(

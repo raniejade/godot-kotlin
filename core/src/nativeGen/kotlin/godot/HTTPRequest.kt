@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -14,13 +15,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class HTTPRequest(
   @Suppress("UNUSED_PARAMETER")
@@ -87,52 +96,101 @@ open class HTTPRequest(
   }
 
   fun cancelRequest() {
-    __method_bind.cancelRequest.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.cancelRequest.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getBodySize(): Int {
-    val _ret = __method_bind.getBodySize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBodySize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBodySizeLimit(): Int {
-    val _ret = __method_bind.getBodySizeLimit.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBodySizeLimit.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDownloadChunkSize(): Int {
-    val _ret = __method_bind.getDownloadChunkSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDownloadChunkSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDownloadFile(): String {
-    val _ret = __method_bind.getDownloadFile.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getDownloadFile.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getDownloadedBytes(): Int {
-    val _ret = __method_bind.getDownloadedBytes.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDownloadedBytes.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getHttpClientStatus(): HTTPClient.Status {
-    val _ret = __method_bind.getHttpClientStatus.call(this._handle)
-    return HTTPClient.Status.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHttpClientStatus.call(self._handle, emptyList(), _retPtr)
+      HTTPClient.Status.from(_ret.value)
+    }
   }
 
   fun getMaxRedirects(): Int {
-    val _ret = __method_bind.getMaxRedirects.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMaxRedirects.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTimeout(): Int {
-    val _ret = __method_bind.getTimeout.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTimeout.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingThreads(): Boolean {
-    val _ret = __method_bind.isUsingThreads.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingThreads.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun request(
@@ -142,44 +200,61 @@ open class HTTPRequest(
     method: Int = 0,
     requestData: String = ""
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(url))
-    _args.add(Variant.fromAny(customHeaders))
-    _args.add(Variant.fromAny(sslValidateDomain))
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(requestData))
-    val _ret = __method_bind.request.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(url)
+      _args.add(customHeaders)
+      _args.add(sslValidateDomain)
+      _args.add(method)
+      _args.add(requestData)
+      __method_bind.request.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setBodySizeLimit(bytes: Int) {
-    val _arg = Variant(bytes)
-    __method_bind.setBodySizeLimit.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBodySizeLimit.call(self._handle, listOf(bytes), null)
+    }
   }
 
   fun setDownloadChunkSize(arg0: Int) {
-    val _arg = Variant(arg0)
-    __method_bind.setDownloadChunkSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDownloadChunkSize.call(self._handle, listOf(arg0), null)
+    }
   }
 
   fun setDownloadFile(path: String) {
-    val _arg = Variant(path)
-    __method_bind.setDownloadFile.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDownloadFile.call(self._handle, listOf(path), null)
+    }
   }
 
   fun setMaxRedirects(amount: Int) {
-    val _arg = Variant(amount)
-    __method_bind.setMaxRedirects.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaxRedirects.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setTimeout(timeout: Int) {
-    val _arg = Variant(timeout)
-    __method_bind.setTimeout.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTimeout.call(self._handle, listOf(timeout), null)
+    }
   }
 
   fun setUseThreads(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseThreads.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseThreads.call(self._handle, listOf(enable), null)
+    }
   }
 
   enum class Result(

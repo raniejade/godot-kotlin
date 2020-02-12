@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ClippedCamera(
   @Suppress("UNUSED_PARAMETER")
@@ -72,95 +81,153 @@ open class ClippedCamera(
   }
 
   fun addException(node: Object) {
-    val _arg = Variant(node)
-    __method_bind.addException.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addException.call(self._handle, listOf(node), null)
+    }
   }
 
   fun addExceptionRid(rid: RID) {
-    val _arg = Variant(rid)
-    __method_bind.addExceptionRid.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addExceptionRid.call(self._handle, listOf(rid), null)
+    }
   }
 
   fun clearExceptions() {
-    __method_bind.clearExceptions.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearExceptions.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getClipOffset(): Float {
-    val _ret = __method_bind.getClipOffset.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getClipOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.getCollisionMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant(bit)
-    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMaskBit.call(self._handle, listOf(bit), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMargin(): Float {
-    val _ret = __method_bind.getMargin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMargin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getProcessMode(): ProcessMode {
-    val _ret = __method_bind.getProcessMode.call(this._handle)
-    return ClippedCamera.ProcessMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getProcessMode.call(self._handle, emptyList(), _retPtr)
+      ClippedCamera.ProcessMode.from(_ret.value)
+    }
   }
 
   fun isClipToAreasEnabled(): Boolean {
-    val _ret = __method_bind.isClipToAreasEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isClipToAreasEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isClipToBodiesEnabled(): Boolean {
-    val _ret = __method_bind.isClipToBodiesEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isClipToBodiesEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeException(node: Object) {
-    val _arg = Variant(node)
-    __method_bind.removeException.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeException.call(self._handle, listOf(node), null)
+    }
   }
 
   fun removeExceptionRid(rid: RID) {
-    val _arg = Variant(rid)
-    __method_bind.removeExceptionRid.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeExceptionRid.call(self._handle, listOf(rid), null)
+    }
   }
 
   fun setClipToAreas(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setClipToAreas.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setClipToAreas.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setClipToBodies(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setClipToBodies.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setClipToBodies.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant(mask)
-    __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionMask.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bit))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setCollisionMaskBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bit)
+      _args.add(value)
+      __method_bind.setCollisionMaskBit.call(self._handle, _args, null)
+    }
   }
 
   fun setMargin(margin: Float) {
-    val _arg = Variant(margin)
-    __method_bind.setMargin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMargin.call(self._handle, listOf(margin), null)
+    }
   }
 
   fun setProcessMode(processMode: Int) {
-    val _arg = Variant(processMode)
-    __method_bind.setProcessMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProcessMode.call(self._handle, listOf(processMode), null)
+    }
   }
 
   enum class ProcessMode(

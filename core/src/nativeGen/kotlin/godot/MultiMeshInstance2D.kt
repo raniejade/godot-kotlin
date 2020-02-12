@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -9,13 +10,21 @@ import godot.core.VariantArray
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class MultiMeshInstance2D(
   @Suppress("UNUSED_PARAMETER")
@@ -57,33 +66,60 @@ open class MultiMeshInstance2D(
   }
 
   fun getMultimesh(): MultiMesh {
-    val _ret = __method_bind.getMultimesh.call(this._handle)
-    return _ret.toAny() as MultiMesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: MultiMesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMultimesh.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<MultiMesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNormalMap(): Texture {
-    val _ret = __method_bind.getNormalMap.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNormalMap.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun setMultimesh(multimesh: MultiMesh) {
-    val _arg = Variant(multimesh)
-    __method_bind.setMultimesh.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMultimesh.call(self._handle, listOf(multimesh), null)
+    }
   }
 
   fun setNormalMap(normalMap: Texture) {
-    val _arg = Variant(normalMap)
-    __method_bind.setNormalMap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNormalMap.call(self._handle, listOf(normalMap), null)
+    }
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   companion object {

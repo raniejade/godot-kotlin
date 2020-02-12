@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class CameraServerInternal(
   @Suppress("UNUSED_PARAMETER")
@@ -33,29 +42,50 @@ open class CameraServerInternal(
   val signalCameraFeedRemoved: Signal1<Int> = Signal1("camera_feed_removed")
 
   fun addFeed(feed: CameraFeed) {
-    val _arg = Variant(feed)
-    __method_bind.addFeed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addFeed.call(self._handle, listOf(feed), null)
+    }
   }
 
   fun feeds(): VariantArray {
-    val _ret = __method_bind.feeds.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.feeds.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFeed(index: Int): CameraFeed {
-    val _arg = Variant(index)
-    val _ret = __method_bind.getFeed.call(this._handle, listOf(_arg))
-    return _ret.toAny() as CameraFeed
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: CameraFeed
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getFeed.call(self._handle, listOf(index), _retPtr)
+      _ret = objectToType<CameraFeed>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getFeedCount(): Int {
-    val _ret = __method_bind.getFeedCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFeedCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeFeed(feed: CameraFeed) {
-    val _arg = Variant(feed)
-    __method_bind.removeFeed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeFeed.call(self._handle, listOf(feed), null)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ProceduralSky(
   @Suppress("UNUSED_PARAMETER")
@@ -205,163 +214,280 @@ open class ProceduralSky(
   }
 
   fun getGroundBottomColor(): Color {
-    val _ret = __method_bind.getGroundBottomColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGroundBottomColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getGroundCurve(): Float {
-    val _ret = __method_bind.getGroundCurve.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGroundCurve.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGroundEnergy(): Float {
-    val _ret = __method_bind.getGroundEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGroundEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGroundHorizonColor(): Color {
-    val _ret = __method_bind.getGroundHorizonColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGroundHorizonColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSkyCurve(): Float {
-    val _ret = __method_bind.getSkyCurve.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSkyCurve.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSkyEnergy(): Float {
-    val _ret = __method_bind.getSkyEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSkyEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSkyHorizonColor(): Color {
-    val _ret = __method_bind.getSkyHorizonColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSkyHorizonColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSkyTopColor(): Color {
-    val _ret = __method_bind.getSkyTopColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSkyTopColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSunAngleMax(): Float {
-    val _ret = __method_bind.getSunAngleMax.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSunAngleMax.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSunAngleMin(): Float {
-    val _ret = __method_bind.getSunAngleMin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSunAngleMin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSunColor(): Color {
-    val _ret = __method_bind.getSunColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSunColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSunCurve(): Float {
-    val _ret = __method_bind.getSunCurve.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSunCurve.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSunEnergy(): Float {
-    val _ret = __method_bind.getSunEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSunEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSunLatitude(): Float {
-    val _ret = __method_bind.getSunLatitude.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSunLatitude.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSunLongitude(): Float {
-    val _ret = __method_bind.getSunLongitude.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSunLongitude.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTextureSize(): TextureSize {
-    val _ret = __method_bind.getTextureSize.call(this._handle)
-    return ProceduralSky.TextureSize.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTextureSize.call(self._handle, emptyList(), _retPtr)
+      ProceduralSky.TextureSize.from(_ret.value)
+    }
   }
 
   fun setGroundBottomColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setGroundBottomColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGroundBottomColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setGroundCurve(curve: Float) {
-    val _arg = Variant(curve)
-    __method_bind.setGroundCurve.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGroundCurve.call(self._handle, listOf(curve), null)
+    }
   }
 
   fun setGroundEnergy(energy: Float) {
-    val _arg = Variant(energy)
-    __method_bind.setGroundEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGroundEnergy.call(self._handle, listOf(energy), null)
+    }
   }
 
   fun setGroundHorizonColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setGroundHorizonColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGroundHorizonColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setSkyCurve(curve: Float) {
-    val _arg = Variant(curve)
-    __method_bind.setSkyCurve.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkyCurve.call(self._handle, listOf(curve), null)
+    }
   }
 
   fun setSkyEnergy(energy: Float) {
-    val _arg = Variant(energy)
-    __method_bind.setSkyEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkyEnergy.call(self._handle, listOf(energy), null)
+    }
   }
 
   fun setSkyHorizonColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setSkyHorizonColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkyHorizonColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setSkyTopColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setSkyTopColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkyTopColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setSunAngleMax(degrees: Float) {
-    val _arg = Variant(degrees)
-    __method_bind.setSunAngleMax.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSunAngleMax.call(self._handle, listOf(degrees), null)
+    }
   }
 
   fun setSunAngleMin(degrees: Float) {
-    val _arg = Variant(degrees)
-    __method_bind.setSunAngleMin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSunAngleMin.call(self._handle, listOf(degrees), null)
+    }
   }
 
   fun setSunColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setSunColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSunColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setSunCurve(curve: Float) {
-    val _arg = Variant(curve)
-    __method_bind.setSunCurve.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSunCurve.call(self._handle, listOf(curve), null)
+    }
   }
 
   fun setSunEnergy(energy: Float) {
-    val _arg = Variant(energy)
-    __method_bind.setSunEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSunEnergy.call(self._handle, listOf(energy), null)
+    }
   }
 
   fun setSunLatitude(degrees: Float) {
-    val _arg = Variant(degrees)
-    __method_bind.setSunLatitude.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSunLatitude.call(self._handle, listOf(degrees), null)
+    }
   }
 
   fun setSunLongitude(degrees: Float) {
-    val _arg = Variant(degrees)
-    __method_bind.setSunLongitude.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSunLongitude.call(self._handle, listOf(degrees), null)
+    }
   }
 
   fun setTextureSize(size: Int) {
-    val _arg = Variant(size)
-    __method_bind.setTextureSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTextureSize.call(self._handle, listOf(size), null)
+    }
   }
 
   enum class TextureSize(

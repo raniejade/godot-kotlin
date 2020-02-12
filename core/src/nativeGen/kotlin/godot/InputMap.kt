@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,91 +12,143 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class InputMapInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
   fun actionAddEvent(action: String, event: InputEvent) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(action))
-    _args.add(Variant.fromAny(event))
-    __method_bind.actionAddEvent.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(action)
+      _args.add(event)
+      __method_bind.actionAddEvent.call(self._handle, _args, null)
+    }
   }
 
   fun actionEraseEvent(action: String, event: InputEvent) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(action))
-    _args.add(Variant.fromAny(event))
-    __method_bind.actionEraseEvent.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(action)
+      _args.add(event)
+      __method_bind.actionEraseEvent.call(self._handle, _args, null)
+    }
   }
 
   fun actionEraseEvents(action: String) {
-    val _arg = Variant(action)
-    __method_bind.actionEraseEvents.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.actionEraseEvents.call(self._handle, listOf(action), null)
+    }
   }
 
   fun actionHasEvent(action: String, event: InputEvent): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(action))
-    _args.add(Variant.fromAny(event))
-    val _ret = __method_bind.actionHasEvent.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(action)
+      _args.add(event)
+      __method_bind.actionHasEvent.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun actionSetDeadzone(action: String, deadzone: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(action))
-    _args.add(Variant.fromAny(deadzone))
-    __method_bind.actionSetDeadzone.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(action)
+      _args.add(deadzone)
+      __method_bind.actionSetDeadzone.call(self._handle, _args, null)
+    }
   }
 
   fun addAction(action: String, deadzone: Float = 0.5f) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(action))
-    _args.add(Variant.fromAny(deadzone))
-    __method_bind.addAction.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(action)
+      _args.add(deadzone)
+      __method_bind.addAction.call(self._handle, _args, null)
+    }
   }
 
   fun eraseAction(action: String) {
-    val _arg = Variant(action)
-    __method_bind.eraseAction.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.eraseAction.call(self._handle, listOf(action), null)
+    }
   }
 
   fun eventIsAction(event: InputEvent, action: String): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(event))
-    _args.add(Variant.fromAny(action))
-    val _ret = __method_bind.eventIsAction.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(event)
+      _args.add(action)
+      __method_bind.eventIsAction.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getActionList(action: String): VariantArray {
-    val _arg = Variant(action)
-    val _ret = __method_bind.getActionList.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getActionList.call(self._handle, listOf(action), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getActions(): VariantArray {
-    val _ret = __method_bind.getActions.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getActions.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun hasAction(action: String): Boolean {
-    val _arg = Variant(action)
-    val _ret = __method_bind.hasAction.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAction.call(self._handle, listOf(action), _retPtr)
+      _ret.value
+    }
   }
 
   fun loadFromGlobals() {
-    __method_bind.loadFromGlobals.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.loadFromGlobals.call(self._handle, emptyList(), null)
+    }
   }
 
   companion object {

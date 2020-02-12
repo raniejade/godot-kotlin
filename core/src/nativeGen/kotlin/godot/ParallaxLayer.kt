@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ParallaxLayer(
   @Suppress("UNUSED_PARAMETER")
@@ -81,33 +90,57 @@ open class ParallaxLayer(
   }
 
   fun getMirroring(): Vector2 {
-    val _ret = __method_bind.getMirroring.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMirroring.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMotionOffset(): Vector2 {
-    val _ret = __method_bind.getMotionOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMotionOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMotionScale(): Vector2 {
-    val _ret = __method_bind.getMotionScale.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMotionScale.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setMirroring(mirror: Vector2) {
-    val _arg = Variant(mirror)
-    __method_bind.setMirroring.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMirroring.call(self._handle, listOf(mirror), null)
+    }
   }
 
   fun setMotionOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setMotionOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMotionOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setMotionScale(scale: Vector2) {
-    val _arg = Variant(scale)
-    __method_bind.setMotionScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMotionScale.call(self._handle, listOf(scale), null)
+    }
   }
 
   companion object {

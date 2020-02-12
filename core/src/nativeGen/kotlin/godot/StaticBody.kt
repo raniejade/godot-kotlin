@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class StaticBody(
   @Suppress("UNUSED_PARAMETER")
@@ -89,53 +98,93 @@ open class StaticBody(
   }
 
   fun getBounce(): Float {
-    val _ret = __method_bind.getBounce.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBounce.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getConstantAngularVelocity(): Vector3 {
-    val _ret = __method_bind.getConstantAngularVelocity.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConstantAngularVelocity.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getConstantLinearVelocity(): Vector3 {
-    val _ret = __method_bind.getConstantLinearVelocity.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConstantLinearVelocity.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFriction(): Float {
-    val _ret = __method_bind.getFriction.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFriction.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPhysicsMaterialOverride(): PhysicsMaterial {
-    val _ret = __method_bind.getPhysicsMaterialOverride.call(this._handle)
-    return _ret.toAny() as PhysicsMaterial
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: PhysicsMaterial
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPhysicsMaterialOverride.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<PhysicsMaterial>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun setBounce(bounce: Float) {
-    val _arg = Variant(bounce)
-    __method_bind.setBounce.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBounce.call(self._handle, listOf(bounce), null)
+    }
   }
 
   fun setConstantAngularVelocity(vel: Vector3) {
-    val _arg = Variant(vel)
-    __method_bind.setConstantAngularVelocity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setConstantAngularVelocity.call(self._handle, listOf(vel), null)
+    }
   }
 
   fun setConstantLinearVelocity(vel: Vector3) {
-    val _arg = Variant(vel)
-    __method_bind.setConstantLinearVelocity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setConstantLinearVelocity.call(self._handle, listOf(vel), null)
+    }
   }
 
   fun setFriction(friction: Float) {
-    val _arg = Variant(friction)
-    __method_bind.setFriction.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFriction.call(self._handle, listOf(friction), null)
+    }
   }
 
   fun setPhysicsMaterialOverride(physicsMaterialOverride: PhysicsMaterial) {
-    val _arg = Variant(physicsMaterialOverride)
-    __method_bind.setPhysicsMaterialOverride.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPhysicsMaterialOverride.call(self._handle, listOf(physicsMaterialOverride),
+          null)
+    }
   }
 
   companion object {

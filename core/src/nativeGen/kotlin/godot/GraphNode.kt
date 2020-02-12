@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class GraphNode(
   @Suppress("UNUSED_PARAMETER")
@@ -123,159 +132,277 @@ open class GraphNode(
   }
 
   fun clearAllSlots() {
-    __method_bind.clearAllSlots.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearAllSlots.call(self._handle, emptyList(), null)
+    }
   }
 
   fun clearSlot(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.clearSlot.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearSlot.call(self._handle, listOf(idx), null)
+    }
   }
 
   fun getConnectionInputColor(idx: Int): Color {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionInputColor.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConnectionInputColor.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getConnectionInputCount(): Int {
-    val _ret = __method_bind.getConnectionInputCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getConnectionInputCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getConnectionInputPosition(idx: Int): Vector2 {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionInputPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConnectionInputPosition.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getConnectionInputType(idx: Int): Int {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionInputType.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getConnectionInputType.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getConnectionOutputColor(idx: Int): Color {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionOutputColor.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConnectionOutputColor.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getConnectionOutputCount(): Int {
-    val _ret = __method_bind.getConnectionOutputCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getConnectionOutputCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getConnectionOutputPosition(idx: Int): Vector2 {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionOutputPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConnectionOutputPosition.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getConnectionOutputType(idx: Int): Int {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionOutputType.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getConnectionOutputType.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.getOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOverlay(): Overlay {
-    val _ret = __method_bind.getOverlay.call(this._handle)
-    return GraphNode.Overlay.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOverlay.call(self._handle, emptyList(), _retPtr)
+      GraphNode.Overlay.from(_ret.value)
+    }
   }
 
   fun getSlotColorLeft(idx: Int): Color {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getSlotColorLeft.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSlotColorLeft.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSlotColorRight(idx: Int): Color {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getSlotColorRight.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSlotColorRight.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSlotTypeLeft(idx: Int): Int {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getSlotTypeLeft.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSlotTypeLeft.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSlotTypeRight(idx: Int): Int {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getSlotTypeRight.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSlotTypeRight.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTitle(): String {
-    val _ret = __method_bind.getTitle.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getTitle.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun isCloseButtonVisible(): Boolean {
-    val _ret = __method_bind.isCloseButtonVisible.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCloseButtonVisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isComment(): Boolean {
-    val _ret = __method_bind.isComment.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isComment.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isResizable(): Boolean {
-    val _ret = __method_bind.isResizable.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isResizable.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSelected(): Boolean {
-    val _ret = __method_bind.isSelected.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSelected.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSlotEnabledLeft(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isSlotEnabledLeft.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSlotEnabledLeft.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSlotEnabledRight(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isSlotEnabledRight.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSlotEnabledRight.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun setComment(comment: Boolean) {
-    val _arg = Variant(comment)
-    __method_bind.setComment.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setComment.call(self._handle, listOf(comment), null)
+    }
   }
 
   fun setOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setOverlay(overlay: Int) {
-    val _arg = Variant(overlay)
-    __method_bind.setOverlay.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOverlay.call(self._handle, listOf(overlay), null)
+    }
   }
 
   fun setResizable(resizable: Boolean) {
-    val _arg = Variant(resizable)
-    __method_bind.setResizable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setResizable.call(self._handle, listOf(resizable), null)
+    }
   }
 
   fun setSelected(selected: Boolean) {
-    val _arg = Variant(selected)
-    __method_bind.setSelected.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSelected.call(self._handle, listOf(selected), null)
+    }
   }
 
   fun setShowCloseButton(show: Boolean) {
-    val _arg = Variant(show)
-    __method_bind.setShowCloseButton.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShowCloseButton.call(self._handle, listOf(show), null)
+    }
   }
 
   fun setSlot(
@@ -289,22 +416,27 @@ open class GraphNode(
     customLeft: Texture,
     customRight: Texture
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(enableLeft))
-    _args.add(Variant.fromAny(typeLeft))
-    _args.add(Variant.fromAny(colorLeft))
-    _args.add(Variant.fromAny(enableRight))
-    _args.add(Variant.fromAny(typeRight))
-    _args.add(Variant.fromAny(colorRight))
-    _args.add(Variant.fromAny(customLeft))
-    _args.add(Variant.fromAny(customRight))
-    __method_bind.setSlot.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(enableLeft)
+      _args.add(typeLeft)
+      _args.add(colorLeft)
+      _args.add(enableRight)
+      _args.add(typeRight)
+      _args.add(colorRight)
+      _args.add(customLeft)
+      _args.add(customRight)
+      __method_bind.setSlot.call(self._handle, _args, null)
+    }
   }
 
   fun setTitle(title: String) {
-    val _arg = Variant(title)
-    __method_bind.setTitle.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTitle.call(self._handle, listOf(title), null)
+    }
   }
 
   enum class Overlay(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Any
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class NativeScript(
   @Suppress("UNUSED_PARAMETER")
@@ -61,73 +70,133 @@ open class NativeScript(
   }
 
   fun getClassDocumentation(): String {
-    val _ret = __method_bind.getClassDocumentation.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getClassDocumentation.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getClassName(): String {
-    val _ret = __method_bind.getClassName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getClassName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getLibrary(): GDNativeLibrary {
-    val _ret = __method_bind.getLibrary.call(this._handle)
-    return _ret.toAny() as GDNativeLibrary
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: GDNativeLibrary
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getLibrary.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<GDNativeLibrary>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getMethodDocumentation(method: String): String {
-    val _arg = Variant(method)
-    val _ret = __method_bind.getMethodDocumentation.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getMethodDocumentation.call(self._handle, listOf(method), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPropertyDocumentation(path: String): String {
-    val _arg = Variant(path)
-    val _ret = __method_bind.getPropertyDocumentation.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getPropertyDocumentation.call(self._handle, listOf(path), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getScriptClassIconPath(): String {
-    val _ret = __method_bind.getScriptClassIconPath.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getScriptClassIconPath.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getScriptClassName(): String {
-    val _ret = __method_bind.getScriptClassName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getScriptClassName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getSignalDocumentation(signalName: String): String {
-    val _arg = Variant(signalName)
-    val _ret = __method_bind.getSignalDocumentation.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSignalDocumentation.call(self._handle, listOf(signalName), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun new(vararg varargs: Any?): Variant {
-    val _args = mutableListOf<Variant>()
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    val _ret = __method_bind.new.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      varargs.forEach { _args.add(it) }
+      __method_bind.new.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setClassName(className: String) {
-    val _arg = Variant(className)
-    __method_bind.setClassName.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setClassName.call(self._handle, listOf(className), null)
+    }
   }
 
   fun setLibrary(library: GDNativeLibrary) {
-    val _arg = Variant(library)
-    __method_bind.setLibrary.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLibrary.call(self._handle, listOf(library), null)
+    }
   }
 
   fun setScriptClassIconPath(iconPath: String) {
-    val _arg = Variant(iconPath)
-    __method_bind.setScriptClassIconPath.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScriptClassIconPath.call(self._handle, listOf(iconPath), null)
+    }
   }
 
   fun setScriptClassName(className: String) {
-    val _arg = Variant(className)
-    __method_bind.setScriptClassName.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScriptClassName.call(self._handle, listOf(className), null)
+    }
   }
 
   companion object {

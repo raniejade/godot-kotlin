@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -15,13 +16,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class StyleBox(
   @Suppress("UNUSED_PARAMETER")
@@ -66,57 +75,101 @@ open class StyleBox(
   }
 
   fun draw(canvasItem: RID, rect: Rect2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(canvasItem))
-    _args.add(Variant.fromAny(rect))
-    __method_bind.draw.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(canvasItem)
+      _args.add(rect)
+      __method_bind.draw.call(self._handle, _args, null)
+    }
   }
 
   fun getCenterSize(): Vector2 {
-    val _ret = __method_bind.getCenterSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCenterSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCurrentItemDrawn(): CanvasItem {
-    val _ret = __method_bind.getCurrentItemDrawn.call(this._handle)
-    return _ret.toAny() as CanvasItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: CanvasItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getCurrentItemDrawn.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<CanvasItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getDefaultMargin(margin: Int): Float {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getDefaultMargin.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDefaultMargin.call(self._handle, listOf(margin), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMargin(margin: Int): Float {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getMargin.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMargin.call(self._handle, listOf(margin), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMinimumSize(): Vector2 {
-    val _ret = __method_bind.getMinimumSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMinimumSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.getOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setDefaultMargin(margin: Int, offset: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(offset))
-    __method_bind.setDefaultMargin.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(offset)
+      __method_bind.setDefaultMargin.call(self._handle, _args, null)
+    }
   }
 
   fun testMask(point: Vector2, rect: Rect2): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(point))
-    _args.add(Variant.fromAny(rect))
-    val _ret = __method_bind.testMask.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(point)
+      _args.add(rect)
+      __method_bind.testMask.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   companion object {

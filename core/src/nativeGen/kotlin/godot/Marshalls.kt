@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolByteArray
@@ -11,56 +12,96 @@ import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class MarshallsInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Reference(null) {
   fun base64ToRaw(base64Str: String): PoolByteArray {
-    val _arg = Variant(base64Str)
-    val _ret = __method_bind.base64ToRaw.call(this._handle, listOf(_arg))
-    return _ret.asPoolByteArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolByteArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.base64ToRaw.call(self._handle, listOf(base64Str), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun base64ToUtf8(base64Str: String): String {
-    val _arg = Variant(base64Str)
-    val _ret = __method_bind.base64ToUtf8.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.base64ToUtf8.call(self._handle, listOf(base64Str), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun base64ToVariant(base64Str: String, allowObjects: Boolean = false): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(base64Str))
-    _args.add(Variant.fromAny(allowObjects))
-    val _ret = __method_bind.base64ToVariant.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(base64Str)
+      _args.add(allowObjects)
+      __method_bind.base64ToVariant.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun rawToBase64(array: PoolByteArray): String {
-    val _arg = Variant(array)
-    val _ret = __method_bind.rawToBase64.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.rawToBase64.call(self._handle, listOf(array), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun utf8ToBase64(utf8Str: String): String {
-    val _arg = Variant(utf8Str)
-    val _ret = __method_bind.utf8ToBase64.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.utf8ToBase64.call(self._handle, listOf(utf8Str), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun variantToBase64(variant: Variant, fullObjects: Boolean = false): String {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(variant))
-    _args.add(Variant.fromAny(fullObjects))
-    val _ret = __method_bind.variantToBase64.call(this._handle, _args)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      val _args = mutableListOf<Any?>()
+      _args.add(variant)
+      _args.add(fullObjects)
+      __method_bind.variantToBase64.call(self._handle, _args, _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   companion object {

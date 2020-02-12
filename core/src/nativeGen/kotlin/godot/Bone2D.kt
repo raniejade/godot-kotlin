@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform2D
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Bone2D(
   @Suppress("UNUSED_PARAMETER")
@@ -57,37 +66,66 @@ open class Bone2D(
   }
 
   fun applyRest() {
-    __method_bind.applyRest.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.applyRest.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getDefaultLength(): Float {
-    val _ret = __method_bind.getDefaultLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDefaultLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getIndexInSkeleton(): Int {
-    val _ret = __method_bind.getIndexInSkeleton.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getIndexInSkeleton.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getRest(): Transform2D {
-    val _ret = __method_bind.getRest.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRest.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSkeletonRest(): Transform2D {
-    val _ret = __method_bind.getSkeletonRest.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSkeletonRest.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setDefaultLength(defaultLength: Float) {
-    val _arg = Variant(defaultLength)
-    __method_bind.setDefaultLength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDefaultLength.call(self._handle, listOf(defaultLength), null)
+    }
   }
 
   fun setRest(rest: Transform2D) {
-    val _arg = Variant(rest)
-    __method_bind.setRest.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRest.call(self._handle, listOf(rest), null)
+    }
   }
 
   companion object {

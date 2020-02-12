@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AnimationNodeBlendTree(
   @Suppress("UNUSED_PARAMETER")
@@ -53,11 +62,14 @@ open class AnimationNodeBlendTree(
     node: AnimationNode,
     position: Vector2 = Vector2(0, 0)
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(node))
-    _args.add(Variant.fromAny(position))
-    __method_bind.addNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(node)
+      _args.add(position)
+      __method_bind.addNode.call(self._handle, _args, null)
+    }
   }
 
   fun connectNode(
@@ -65,65 +77,102 @@ open class AnimationNodeBlendTree(
     inputIndex: Int,
     outputNode: String
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(inputNode))
-    _args.add(Variant.fromAny(inputIndex))
-    _args.add(Variant.fromAny(outputNode))
-    __method_bind.connectNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(inputNode)
+      _args.add(inputIndex)
+      _args.add(outputNode)
+      __method_bind.connectNode.call(self._handle, _args, null)
+    }
   }
 
   fun disconnectNode(inputNode: String, inputIndex: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(inputNode))
-    _args.add(Variant.fromAny(inputIndex))
-    __method_bind.disconnectNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(inputNode)
+      _args.add(inputIndex)
+      __method_bind.disconnectNode.call(self._handle, _args, null)
+    }
   }
 
   fun getGraphOffset(): Vector2 {
-    val _ret = __method_bind.getGraphOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGraphOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNode(name: String): AnimationNode {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
-    return _ret.toAny() as AnimationNode
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: AnimationNode
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNode.call(self._handle, listOf(name), _retPtr)
+      _ret = objectToType<AnimationNode>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNodePosition(name: String): Vector2 {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getNodePosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodePosition.call(self._handle, listOf(name), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun hasNode(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasNode.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasNode.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeNode(name: String) {
-    val _arg = Variant(name)
-    __method_bind.removeNode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeNode.call(self._handle, listOf(name), null)
+    }
   }
 
   fun renameNode(name: String, newName: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(newName))
-    __method_bind.renameNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(newName)
+      __method_bind.renameNode.call(self._handle, _args, null)
+    }
   }
 
   fun setGraphOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setGraphOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGraphOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setNodePosition(name: String, position: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(position))
-    __method_bind.setNodePosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(position)
+      __method_bind.setNodePosition.call(self._handle, _args, null)
+    }
   }
 
   companion object {

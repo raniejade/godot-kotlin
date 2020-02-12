@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Area2D(
   @Suppress("UNUSED_PARAMETER")
@@ -194,191 +203,325 @@ open class Area2D(
   }
 
   fun getAngularDamp(): Float {
-    val _ret = __method_bind.getAngularDamp.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAngularDamp.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAudioBusName(): String {
-    val _ret = __method_bind.getAudioBusName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAudioBusName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getCollisionLayer(): Int {
-    val _ret = __method_bind.getCollisionLayer.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionLayer.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
-    val _arg = Variant(bit)
-    val _ret = __method_bind.getCollisionLayerBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionLayerBit.call(self._handle, listOf(bit), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.getCollisionMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant(bit)
-    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMaskBit.call(self._handle, listOf(bit), _retPtr)
+      _ret.value
+    }
   }
 
   fun getGravity(): Float {
-    val _ret = __method_bind.getGravity.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGravity.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGravityDistanceScale(): Float {
-    val _ret = __method_bind.getGravityDistanceScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGravityDistanceScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGravityVector(): Vector2 {
-    val _ret = __method_bind.getGravityVector.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGravityVector.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLinearDamp(): Float {
-    val _ret = __method_bind.getLinearDamp.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLinearDamp.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getOverlappingAreas(): VariantArray {
-    val _ret = __method_bind.getOverlappingAreas.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOverlappingAreas.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOverlappingBodies(): VariantArray {
-    val _ret = __method_bind.getOverlappingBodies.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOverlappingBodies.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPriority(): Float {
-    val _ret = __method_bind.getPriority.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPriority.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSpaceOverrideMode(): SpaceOverride {
-    val _ret = __method_bind.getSpaceOverrideMode.call(this._handle)
-    return Area2D.SpaceOverride.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpaceOverrideMode.call(self._handle, emptyList(), _retPtr)
+      Area2D.SpaceOverride.from(_ret.value)
+    }
   }
 
   fun isGravityAPoint(): Boolean {
-    val _ret = __method_bind.isGravityAPoint.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isGravityAPoint.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isMonitorable(): Boolean {
-    val _ret = __method_bind.isMonitorable.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isMonitorable.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isMonitoring(): Boolean {
-    val _ret = __method_bind.isMonitoring.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isMonitoring.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isOverridingAudioBus(): Boolean {
-    val _ret = __method_bind.isOverridingAudioBus.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOverridingAudioBus.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun overlapsArea(area: Node): Boolean {
-    val _arg = Variant(area)
-    val _ret = __method_bind.overlapsArea.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.overlapsArea.call(self._handle, listOf(area), _retPtr)
+      _ret.value
+    }
   }
 
   fun overlapsBody(body: Node): Boolean {
-    val _arg = Variant(body)
-    val _ret = __method_bind.overlapsBody.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.overlapsBody.call(self._handle, listOf(body), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAngularDamp(angularDamp: Float) {
-    val _arg = Variant(angularDamp)
-    __method_bind.setAngularDamp.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAngularDamp.call(self._handle, listOf(angularDamp), null)
+    }
   }
 
   fun setAudioBusName(name: String) {
-    val _arg = Variant(name)
-    __method_bind.setAudioBusName.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAudioBusName.call(self._handle, listOf(name), null)
+    }
   }
 
   fun setAudioBusOverride(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAudioBusOverride.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAudioBusOverride.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCollisionLayer(collisionLayer: Int) {
-    val _arg = Variant(collisionLayer)
-    __method_bind.setCollisionLayer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionLayer.call(self._handle, listOf(collisionLayer), null)
+    }
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bit))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setCollisionLayerBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bit)
+      _args.add(value)
+      __method_bind.setCollisionLayerBit.call(self._handle, _args, null)
+    }
   }
 
   fun setCollisionMask(collisionMask: Int) {
-    val _arg = Variant(collisionMask)
-    __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionMask.call(self._handle, listOf(collisionMask), null)
+    }
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bit))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setCollisionMaskBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bit)
+      _args.add(value)
+      __method_bind.setCollisionMaskBit.call(self._handle, _args, null)
+    }
   }
 
   fun setGravity(gravity: Float) {
-    val _arg = Variant(gravity)
-    __method_bind.setGravity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGravity.call(self._handle, listOf(gravity), null)
+    }
   }
 
   fun setGravityDistanceScale(distanceScale: Float) {
-    val _arg = Variant(distanceScale)
-    __method_bind.setGravityDistanceScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGravityDistanceScale.call(self._handle, listOf(distanceScale), null)
+    }
   }
 
   fun setGravityIsPoint(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setGravityIsPoint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGravityIsPoint.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setGravityVector(vector: Vector2) {
-    val _arg = Variant(vector)
-    __method_bind.setGravityVector.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGravityVector.call(self._handle, listOf(vector), null)
+    }
   }
 
   fun setLinearDamp(linearDamp: Float) {
-    val _arg = Variant(linearDamp)
-    __method_bind.setLinearDamp.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLinearDamp.call(self._handle, listOf(linearDamp), null)
+    }
   }
 
   fun setMonitorable(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setMonitorable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMonitorable.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setMonitoring(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setMonitoring.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMonitoring.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setPriority(priority: Float) {
-    val _arg = Variant(priority)
-    __method_bind.setPriority.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPriority.call(self._handle, listOf(priority), null)
+    }
   }
 
   fun setSpaceOverrideMode(spaceOverrideMode: Int) {
-    val _arg = Variant(spaceOverrideMode)
-    __method_bind.setSpaceOverrideMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSpaceOverrideMode.call(self._handle, listOf(spaceOverrideMode), null)
+    }
   }
 
   enum class SpaceOverride(

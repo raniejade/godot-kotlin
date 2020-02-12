@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Skin(
   @Suppress("UNUSED_PARAMETER")
@@ -30,50 +39,78 @@ open class Skin(
   }
 
   fun addBind(bone: Int, pose: Transform) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bone))
-    _args.add(Variant.fromAny(pose))
-    __method_bind.addBind.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bone)
+      _args.add(pose)
+      __method_bind.addBind.call(self._handle, _args, null)
+    }
   }
 
   fun clearBinds() {
-    __method_bind.clearBinds.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearBinds.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getBindBone(bindIndex: Int): Int {
-    val _arg = Variant(bindIndex)
-    val _ret = __method_bind.getBindBone.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBindBone.call(self._handle, listOf(bindIndex), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBindCount(): Int {
-    val _ret = __method_bind.getBindCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBindCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBindPose(bindIndex: Int): Transform {
-    val _arg = Variant(bindIndex)
-    val _ret = __method_bind.getBindPose.call(this._handle, listOf(_arg))
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBindPose.call(self._handle, listOf(bindIndex), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setBindBone(bindIndex: Int, bone: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bindIndex))
-    _args.add(Variant.fromAny(bone))
-    __method_bind.setBindBone.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bindIndex)
+      _args.add(bone)
+      __method_bind.setBindBone.call(self._handle, _args, null)
+    }
   }
 
   fun setBindCount(bindCount: Int) {
-    val _arg = Variant(bindCount)
-    __method_bind.setBindCount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBindCount.call(self._handle, listOf(bindCount), null)
+    }
   }
 
   fun setBindPose(bindIndex: Int, pose: Transform) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bindIndex))
-    _args.add(Variant.fromAny(pose))
-    __method_bind.setBindPose.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bindIndex)
+      _args.add(pose)
+      __method_bind.setBindPose.call(self._handle, _args, null)
+    }
   }
 
   companion object {

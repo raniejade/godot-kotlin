@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class StyleBoxTexture(
   @Suppress("UNUSED_PARAMETER")
@@ -177,60 +186,113 @@ open class StyleBoxTexture(
   }
 
   fun getExpandMarginSize(margin: Int): Float {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getExpandMarginSize.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getExpandMarginSize.call(self._handle, listOf(margin), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getHAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.getHAxisStretchMode.call(this._handle)
-    return StyleBoxTexture.AxisStretchMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHAxisStretchMode.call(self._handle, emptyList(), _retPtr)
+      StyleBoxTexture.AxisStretchMode.from(_ret.value)
+    }
   }
 
   fun getMarginSize(margin: Int): Float {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getMarginSize.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMarginSize.call(self._handle, listOf(margin), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getModulate(): Color {
-    val _ret = __method_bind.getModulate.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getModulate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNormalMap(): Texture {
-    val _ret = __method_bind.getNormalMap.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNormalMap.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getRegionRect(): Rect2 {
-    val _ret = __method_bind.getRegionRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRegionRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getVAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.getVAxisStretchMode.call(this._handle)
-    return StyleBoxTexture.AxisStretchMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVAxisStretchMode.call(self._handle, emptyList(), _retPtr)
+      StyleBoxTexture.AxisStretchMode.from(_ret.value)
+    }
   }
 
   fun isDrawCenterEnabled(): Boolean {
-    val _ret = __method_bind.isDrawCenterEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDrawCenterEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setDrawCenter(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setDrawCenter.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDrawCenter.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setExpandMarginAll(size: Float) {
-    val _arg = Variant(size)
-    __method_bind.setExpandMarginAll.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExpandMarginAll.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setExpandMarginIndividual(
@@ -239,56 +301,77 @@ open class StyleBoxTexture(
     sizeRight: Float,
     sizeBottom: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(sizeLeft))
-    _args.add(Variant.fromAny(sizeTop))
-    _args.add(Variant.fromAny(sizeRight))
-    _args.add(Variant.fromAny(sizeBottom))
-    __method_bind.setExpandMarginIndividual.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(sizeLeft)
+      _args.add(sizeTop)
+      _args.add(sizeRight)
+      _args.add(sizeBottom)
+      __method_bind.setExpandMarginIndividual.call(self._handle, _args, null)
+    }
   }
 
   fun setExpandMarginSize(margin: Int, size: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(size))
-    __method_bind.setExpandMarginSize.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(size)
+      __method_bind.setExpandMarginSize.call(self._handle, _args, null)
+    }
   }
 
   fun setHAxisStretchMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setHAxisStretchMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHAxisStretchMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setMarginSize(margin: Int, size: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(size))
-    __method_bind.setMarginSize.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(size)
+      __method_bind.setMarginSize.call(self._handle, _args, null)
+    }
   }
 
   fun setModulate(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setModulate.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setModulate.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setNormalMap(normalMap: Texture) {
-    val _arg = Variant(normalMap)
-    __method_bind.setNormalMap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNormalMap.call(self._handle, listOf(normalMap), null)
+    }
   }
 
   fun setRegionRect(region: Rect2) {
-    val _arg = Variant(region)
-    __method_bind.setRegionRect.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRegionRect.call(self._handle, listOf(region), null)
+    }
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setVAxisStretchMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setVAxisStretchMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVAxisStretchMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   enum class AxisStretchMode(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -12,22 +13,35 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ResourceSaverInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
   fun getRecognizedExtensions(type: Resource): PoolStringArray {
-    val _arg = Variant(type)
-    val _ret = __method_bind.getRecognizedExtensions.call(this._handle, listOf(_arg))
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRecognizedExtensions.call(self._handle, listOf(type), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun save(
@@ -35,12 +49,17 @@ open class ResourceSaverInternal(
     resource: Resource,
     flags: Int = 0
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(resource))
-    _args.add(Variant.fromAny(flags))
-    val _ret = __method_bind.save.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(resource)
+      _args.add(flags)
+      __method_bind.save.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
@@ -12,13 +13,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AtlasTexture(
   @Suppress("UNUSED_PARAMETER")
@@ -81,43 +90,75 @@ open class AtlasTexture(
   }
 
   fun getAtlas(): Texture {
-    val _ret = __method_bind.getAtlas.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getAtlas.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getMargin(): Rect2 {
-    val _ret = __method_bind.getMargin.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMargin.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRegion(): Rect2 {
-    val _ret = __method_bind.getRegion.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRegion.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun hasFilterClip(): Boolean {
-    val _ret = __method_bind.hasFilterClip.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasFilterClip.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAtlas(atlas: Texture) {
-    val _arg = Variant(atlas)
-    __method_bind.setAtlas.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAtlas.call(self._handle, listOf(atlas), null)
+    }
   }
 
   fun setFilterClip(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setFilterClip.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFilterClip.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setMargin(margin: Rect2) {
-    val _arg = Variant(margin)
-    __method_bind.setMargin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMargin.call(self._handle, listOf(margin), null)
+    }
   }
 
   fun setRegion(region: Rect2) {
-    val _arg = Variant(region)
-    __method_bind.setRegion.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRegion.call(self._handle, listOf(region), null)
+    }
   }
 
   companion object {

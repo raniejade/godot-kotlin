@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AcceptDialog(
   @Suppress("UNUSED_PARAMETER")
@@ -67,63 +76,114 @@ open class AcceptDialog(
     right: Boolean = false,
     action: String = ""
   ): Button {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(text))
-    _args.add(Variant.fromAny(right))
-    _args.add(Variant.fromAny(action))
-    val _ret = __method_bind.addButton.call(this._handle, _args)
-    return _ret.toAny() as Button
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Button
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(text)
+      _args.add(right)
+      _args.add(action)
+      __method_bind.addButton.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Button>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun addCancel(name: String): Button {
-    val _arg = Variant(name)
-    val _ret = __method_bind.addCancel.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Button
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Button
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.addCancel.call(self._handle, listOf(name), _retPtr)
+      _ret = objectToType<Button>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getHideOnOk(): Boolean {
-    val _ret = __method_bind.getHideOnOk.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHideOnOk.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLabel(): Label {
-    val _ret = __method_bind.getLabel.call(this._handle)
-    return _ret.toAny() as Label
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Label
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getLabel.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Label>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getOk(): Button {
-    val _ret = __method_bind.getOk.call(this._handle)
-    return _ret.toAny() as Button
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Button
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getOk.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Button>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getText(): String {
-    val _ret = __method_bind.getText.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getText.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun hasAutowrap(): Boolean {
-    val _ret = __method_bind.hasAutowrap.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAutowrap.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun registerTextEnter(lineEdit: Node) {
-    val _arg = Variant(lineEdit)
-    __method_bind.registerTextEnter.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.registerTextEnter.call(self._handle, listOf(lineEdit), null)
+    }
   }
 
   fun setAutowrap(autowrap: Boolean) {
-    val _arg = Variant(autowrap)
-    __method_bind.setAutowrap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutowrap.call(self._handle, listOf(autowrap), null)
+    }
   }
 
   fun setHideOnOk(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setHideOnOk.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHideOnOk.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setText(text: String) {
-    val _arg = Variant(text)
-    __method_bind.setText.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setText.call(self._handle, listOf(text), null)
+    }
   }
 
   companion object {

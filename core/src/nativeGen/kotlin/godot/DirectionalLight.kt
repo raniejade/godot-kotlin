@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class DirectionalLight(
   @Suppress("UNUSED_PARAMETER")
@@ -103,33 +112,54 @@ open class DirectionalLight(
   }
 
   fun getShadowDepthRange(): ShadowDepthRange {
-    val _ret = __method_bind.getShadowDepthRange.call(this._handle)
-    return DirectionalLight.ShadowDepthRange.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getShadowDepthRange.call(self._handle, emptyList(), _retPtr)
+      DirectionalLight.ShadowDepthRange.from(_ret.value)
+    }
   }
 
   fun getShadowMode(): ShadowMode {
-    val _ret = __method_bind.getShadowMode.call(this._handle)
-    return DirectionalLight.ShadowMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getShadowMode.call(self._handle, emptyList(), _retPtr)
+      DirectionalLight.ShadowMode.from(_ret.value)
+    }
   }
 
   fun isBlendSplitsEnabled(): Boolean {
-    val _ret = __method_bind.isBlendSplitsEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isBlendSplitsEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBlendSplits(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setBlendSplits.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBlendSplits.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setShadowDepthRange(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setShadowDepthRange.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowDepthRange.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setShadowMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setShadowMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   enum class ShadowMode(

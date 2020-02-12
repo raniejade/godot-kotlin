@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class CanvasItemMaterial(
   @Suppress("UNUSED_PARAMETER")
@@ -78,63 +87,105 @@ open class CanvasItemMaterial(
   }
 
   fun getBlendMode(): BlendMode {
-    val _ret = __method_bind.getBlendMode.call(this._handle)
-    return CanvasItemMaterial.BlendMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBlendMode.call(self._handle, emptyList(), _retPtr)
+      CanvasItemMaterial.BlendMode.from(_ret.value)
+    }
   }
 
   fun getLightMode(): LightMode {
-    val _ret = __method_bind.getLightMode.call(this._handle)
-    return CanvasItemMaterial.LightMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLightMode.call(self._handle, emptyList(), _retPtr)
+      CanvasItemMaterial.LightMode.from(_ret.value)
+    }
   }
 
   fun getParticlesAnimHFrames(): Int {
-    val _ret = __method_bind.getParticlesAnimHFrames.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParticlesAnimHFrames.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getParticlesAnimLoop(): Boolean {
-    val _ret = __method_bind.getParticlesAnimLoop.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParticlesAnimLoop.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getParticlesAnimVFrames(): Int {
-    val _ret = __method_bind.getParticlesAnimVFrames.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParticlesAnimVFrames.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getParticlesAnimation(): Boolean {
-    val _ret = __method_bind.getParticlesAnimation.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParticlesAnimation.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBlendMode(blendMode: Int) {
-    val _arg = Variant(blendMode)
-    __method_bind.setBlendMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBlendMode.call(self._handle, listOf(blendMode), null)
+    }
   }
 
   fun setLightMode(lightMode: Int) {
-    val _arg = Variant(lightMode)
-    __method_bind.setLightMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLightMode.call(self._handle, listOf(lightMode), null)
+    }
   }
 
   fun setParticlesAnimHFrames(frames: Int) {
-    val _arg = Variant(frames)
-    __method_bind.setParticlesAnimHFrames.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setParticlesAnimHFrames.call(self._handle, listOf(frames), null)
+    }
   }
 
   fun setParticlesAnimLoop(loop: Boolean) {
-    val _arg = Variant(loop)
-    __method_bind.setParticlesAnimLoop.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setParticlesAnimLoop.call(self._handle, listOf(loop), null)
+    }
   }
 
   fun setParticlesAnimVFrames(frames: Int) {
-    val _arg = Variant(frames)
-    __method_bind.setParticlesAnimVFrames.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setParticlesAnimVFrames.call(self._handle, listOf(frames), null)
+    }
   }
 
   fun setParticlesAnimation(particlesAnim: Boolean) {
-    val _arg = Variant(particlesAnim)
-    __method_bind.setParticlesAnimation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setParticlesAnimation.call(self._handle, listOf(particlesAnim), null)
+    }
   }
 
   enum class LightMode(

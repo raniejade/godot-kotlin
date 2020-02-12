@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class TextureRect(
   @Suppress("UNUSED_PARAMETER")
@@ -70,53 +79,90 @@ open class TextureRect(
   }
 
   fun getStretchMode(): StretchMode {
-    val _ret = __method_bind.getStretchMode.call(this._handle)
-    return TextureRect.StretchMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStretchMode.call(self._handle, emptyList(), _retPtr)
+      TextureRect.StretchMode.from(_ret.value)
+    }
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun hasExpand(): Boolean {
-    val _ret = __method_bind.hasExpand.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasExpand.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFlippedH(): Boolean {
-    val _ret = __method_bind.isFlippedH.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFlippedH.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFlippedV(): Boolean {
-    val _ret = __method_bind.isFlippedV.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFlippedV.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setExpand(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setExpand.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExpand.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setFlipH(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setFlipH.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFlipH.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setFlipV(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setFlipV.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFlipV.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setStretchMode(stretchMode: Int) {
-    val _arg = Variant(stretchMode)
-    __method_bind.setStretchMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStretchMode.call(self._handle, listOf(stretchMode), null)
+    }
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   enum class StretchMode(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform2D
@@ -14,13 +15,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class InputEvent(
   @Suppress("UNUSED_PARAMETER")
@@ -41,79 +50,139 @@ open class InputEvent(
   }
 
   fun accumulate(withEvent: InputEvent): Boolean {
-    val _arg = Variant(withEvent)
-    val _ret = __method_bind.accumulate.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.accumulate.call(self._handle, listOf(withEvent), _retPtr)
+      _ret.value
+    }
   }
 
   fun asText(): String {
-    val _ret = __method_bind.asText.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.asText.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getActionStrength(action: String): Float {
-    val _arg = Variant(action)
-    val _ret = __method_bind.getActionStrength.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getActionStrength.call(self._handle, listOf(action), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDevice(): Int {
-    val _ret = __method_bind.getDevice.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDevice.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isAction(action: String): Boolean {
-    val _arg = Variant(action)
-    val _ret = __method_bind.isAction.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAction.call(self._handle, listOf(action), _retPtr)
+      _ret.value
+    }
   }
 
   fun isActionPressed(action: String, allowEcho: Boolean = false): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(action))
-    _args.add(Variant.fromAny(allowEcho))
-    val _ret = __method_bind.isActionPressed.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(action)
+      _args.add(allowEcho)
+      __method_bind.isActionPressed.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isActionReleased(action: String): Boolean {
-    val _arg = Variant(action)
-    val _ret = __method_bind.isActionReleased.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isActionReleased.call(self._handle, listOf(action), _retPtr)
+      _ret.value
+    }
   }
 
   fun isActionType(): Boolean {
-    val _ret = __method_bind.isActionType.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isActionType.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEcho(): Boolean {
-    val _ret = __method_bind.isEcho.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEcho.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPressed(): Boolean {
-    val _ret = __method_bind.isPressed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPressed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setDevice(device: Int) {
-    val _arg = Variant(device)
-    __method_bind.setDevice.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDevice.call(self._handle, listOf(device), null)
+    }
   }
 
   fun shortcutMatch(event: InputEvent): Boolean {
-    val _arg = Variant(event)
-    val _ret = __method_bind.shortcutMatch.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.shortcutMatch.call(self._handle, listOf(event), _retPtr)
+      _ret.value
+    }
   }
 
   fun xformedBy(xform: Transform2D, localOfs: Vector2 = Vector2(0, 0)): InputEvent {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(xform))
-    _args.add(Variant.fromAny(localOfs))
-    val _ret = __method_bind.xformedBy.call(this._handle, _args)
-    return _ret.toAny() as InputEvent
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: InputEvent
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(xform)
+      _args.add(localOfs)
+      __method_bind.xformedBy.call(self._handle, _args, _retPtr)
+      _ret = objectToType<InputEvent>(_tmp.value!!)
+      _ret
+    }
   }
 
   companion object {

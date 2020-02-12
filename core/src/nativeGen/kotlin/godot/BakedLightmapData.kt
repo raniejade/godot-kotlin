@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.AABB
 import godot.core.Allocator
 import godot.core.Godot
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class BakedLightmapData(
   @Suppress("UNUSED_PARAMETER")
@@ -106,82 +115,142 @@ open class BakedLightmapData(
     lightmap: Texture,
     instance: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(lightmap))
-    _args.add(Variant.fromAny(instance))
-    __method_bind.addUser.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(lightmap)
+      _args.add(instance)
+      __method_bind.addUser.call(self._handle, _args, null)
+    }
   }
 
   fun clearUsers() {
-    __method_bind.clearUsers.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearUsers.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getBounds(): AABB {
-    val _ret = __method_bind.getBounds.call(this._handle)
-    return _ret.asAABB()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = AABB()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBounds.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCellSpaceTransform(): Transform {
-    val _ret = __method_bind.getCellSpaceTransform.call(this._handle)
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCellSpaceTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCellSubdiv(): Int {
-    val _ret = __method_bind.getCellSubdiv.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCellSubdiv.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getEnergy(): Float {
-    val _ret = __method_bind.getEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getOctree(): PoolByteArray {
-    val _ret = __method_bind.getOctree.call(this._handle)
-    return _ret.asPoolByteArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolByteArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOctree.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getUserCount(): Int {
-    val _ret = __method_bind.getUserCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUserCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getUserLightmap(userIdx: Int): Texture {
-    val _arg = Variant(userIdx)
-    val _ret = __method_bind.getUserLightmap.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getUserLightmap.call(self._handle, listOf(userIdx), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getUserPath(userIdx: Int): NodePath {
-    val _arg = Variant(userIdx)
-    val _ret = __method_bind.getUserPath.call(this._handle, listOf(_arg))
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getUserPath.call(self._handle, listOf(userIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setBounds(bounds: AABB) {
-    val _arg = Variant(bounds)
-    __method_bind.setBounds.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBounds.call(self._handle, listOf(bounds), null)
+    }
   }
 
   fun setCellSpaceTransform(xform: Transform) {
-    val _arg = Variant(xform)
-    __method_bind.setCellSpaceTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCellSpaceTransform.call(self._handle, listOf(xform), null)
+    }
   }
 
   fun setCellSubdiv(cellSubdiv: Int) {
-    val _arg = Variant(cellSubdiv)
-    __method_bind.setCellSubdiv.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCellSubdiv.call(self._handle, listOf(cellSubdiv), null)
+    }
   }
 
   fun setEnergy(energy: Float) {
-    val _arg = Variant(energy)
-    __method_bind.setEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnergy.call(self._handle, listOf(energy), null)
+    }
   }
 
   fun setOctree(octree: PoolByteArray) {
-    val _arg = Variant(octree)
-    __method_bind.setOctree.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOctree.call(self._handle, listOf(octree), null)
+    }
   }
 
   companion object {

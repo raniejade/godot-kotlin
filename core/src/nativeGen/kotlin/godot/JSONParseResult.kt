@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class JSONParseResult(
   @Suppress("UNUSED_PARAMETER")
@@ -72,43 +81,73 @@ open class JSONParseResult(
   }
 
   fun getError(): GDError {
-    val _ret = __method_bind.getError.call(this._handle)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getError.call(self._handle, emptyList(), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun getErrorLine(): Int {
-    val _ret = __method_bind.getErrorLine.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getErrorLine.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getErrorString(): String {
-    val _ret = __method_bind.getErrorString.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getErrorString.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getResult(): Variant {
-    val _ret = __method_bind.getResult.call(this._handle)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getResult.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setError(error: Int) {
-    val _arg = Variant(error)
-    __method_bind.setError.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setError.call(self._handle, listOf(error), null)
+    }
   }
 
   fun setErrorLine(errorLine: Int) {
-    val _arg = Variant(errorLine)
-    __method_bind.setErrorLine.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setErrorLine.call(self._handle, listOf(errorLine), null)
+    }
   }
 
   fun setErrorString(errorString: String) {
-    val _arg = Variant(errorString)
-    __method_bind.setErrorString.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setErrorString.call(self._handle, listOf(errorString), null)
+    }
   }
 
   fun setResult(result: Variant) {
-    val _arg = Variant(result)
-    __method_bind.setResult.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setResult.call(self._handle, listOf(result), null)
+    }
   }
 
   companion object {

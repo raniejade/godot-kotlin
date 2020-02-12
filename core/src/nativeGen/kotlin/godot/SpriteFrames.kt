@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolStringArray
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class SpriteFrames(
   @Suppress("UNUSED_PARAMETER")
@@ -32,8 +41,10 @@ open class SpriteFrames(
   }
 
   fun addAnimation(anim: String) {
-    val _arg = Variant(anim)
-    __method_bind.addAnimation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addAnimation.call(self._handle, listOf(anim), null)
+    }
   }
 
   fun addFrame(
@@ -41,90 +52,141 @@ open class SpriteFrames(
     frame: Texture,
     atPosition: Int = -1
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(anim))
-    _args.add(Variant.fromAny(frame))
-    _args.add(Variant.fromAny(atPosition))
-    __method_bind.addFrame.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(anim)
+      _args.add(frame)
+      _args.add(atPosition)
+      __method_bind.addFrame.call(self._handle, _args, null)
+    }
   }
 
   fun clear(anim: String) {
-    val _arg = Variant(anim)
-    __method_bind.clear.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, listOf(anim), null)
+    }
   }
 
   fun clearAll() {
-    __method_bind.clearAll.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearAll.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getAnimationLoop(anim: String): Boolean {
-    val _arg = Variant(anim)
-    val _ret = __method_bind.getAnimationLoop.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAnimationLoop.call(self._handle, listOf(anim), _retPtr)
+      _ret.value
+    }
   }
 
   fun getAnimationNames(): PoolStringArray {
-    val _ret = __method_bind.getAnimationNames.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getAnimationNames.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getAnimationSpeed(anim: String): Float {
-    val _arg = Variant(anim)
-    val _ret = __method_bind.getAnimationSpeed.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAnimationSpeed.call(self._handle, listOf(anim), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFrame(anim: String, idx: Int): Texture {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(anim))
-    _args.add(Variant.fromAny(idx))
-    val _ret = __method_bind.getFrame.call(this._handle, _args)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(anim)
+      _args.add(idx)
+      __method_bind.getFrame.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getFrameCount(anim: String): Int {
-    val _arg = Variant(anim)
-    val _ret = __method_bind.getFrameCount.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFrameCount.call(self._handle, listOf(anim), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasAnimation(anim: String): Boolean {
-    val _arg = Variant(anim)
-    val _ret = __method_bind.hasAnimation.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAnimation.call(self._handle, listOf(anim), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeAnimation(anim: String) {
-    val _arg = Variant(anim)
-    __method_bind.removeAnimation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeAnimation.call(self._handle, listOf(anim), null)
+    }
   }
 
   fun removeFrame(anim: String, idx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(anim))
-    _args.add(Variant.fromAny(idx))
-    __method_bind.removeFrame.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(anim)
+      _args.add(idx)
+      __method_bind.removeFrame.call(self._handle, _args, null)
+    }
   }
 
   fun renameAnimation(anim: String, newname: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(anim))
-    _args.add(Variant.fromAny(newname))
-    __method_bind.renameAnimation.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(anim)
+      _args.add(newname)
+      __method_bind.renameAnimation.call(self._handle, _args, null)
+    }
   }
 
   fun setAnimationLoop(anim: String, loop: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(anim))
-    _args.add(Variant.fromAny(loop))
-    __method_bind.setAnimationLoop.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(anim)
+      _args.add(loop)
+      __method_bind.setAnimationLoop.call(self._handle, _args, null)
+    }
   }
 
   fun setAnimationSpeed(anim: String, speed: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(anim))
-    _args.add(Variant.fromAny(speed))
-    __method_bind.setAnimationSpeed.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(anim)
+      _args.add(speed)
+      __method_bind.setAnimationSpeed.call(self._handle, _args, null)
+    }
   }
 
   fun setFrame(
@@ -132,11 +194,14 @@ open class SpriteFrames(
     idx: Int,
     txt: Texture
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(anim))
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(txt))
-    __method_bind.setFrame.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(anim)
+      _args.add(idx)
+      _args.add(txt)
+      __method_bind.setFrame.call(self._handle, _args, null)
+    }
   }
 
   companion object {

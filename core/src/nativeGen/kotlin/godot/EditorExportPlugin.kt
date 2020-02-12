@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolByteArray
@@ -12,13 +13,21 @@ import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorExportPlugin(
   @Suppress("UNUSED_PARAMETER")
@@ -35,47 +44,66 @@ open class EditorExportPlugin(
     file: PoolByteArray,
     remap: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(file))
-    _args.add(Variant.fromAny(remap))
-    __method_bind.addFile.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(file)
+      _args.add(remap)
+      __method_bind.addFile.call(self._handle, _args, null)
+    }
   }
 
   fun addIosBundleFile(path: String) {
-    val _arg = Variant(path)
-    __method_bind.addIosBundleFile.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addIosBundleFile.call(self._handle, listOf(path), null)
+    }
   }
 
   fun addIosCppCode(code: String) {
-    val _arg = Variant(code)
-    __method_bind.addIosCppCode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addIosCppCode.call(self._handle, listOf(code), null)
+    }
   }
 
   fun addIosFramework(path: String) {
-    val _arg = Variant(path)
-    __method_bind.addIosFramework.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addIosFramework.call(self._handle, listOf(path), null)
+    }
   }
 
   fun addIosLinkerFlags(flags: String) {
-    val _arg = Variant(flags)
-    __method_bind.addIosLinkerFlags.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addIosLinkerFlags.call(self._handle, listOf(flags), null)
+    }
   }
 
   fun addIosPlistContent(plistContent: String) {
-    val _arg = Variant(plistContent)
-    __method_bind.addIosPlistContent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addIosPlistContent.call(self._handle, listOf(plistContent), null)
+    }
   }
 
   fun addSharedObject(path: String, tags: PoolStringArray) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(tags))
-    __method_bind.addSharedObject.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(tags)
+      __method_bind.addSharedObject.call(self._handle, _args, null)
+    }
   }
 
   fun skip() {
-    __method_bind.skip.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.skip.call(self._handle, emptyList(), null)
+    }
   }
 
   companion object {

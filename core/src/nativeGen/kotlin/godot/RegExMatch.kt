@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.Godot
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class RegExMatch(
   @Suppress("UNUSED_PARAMETER")
@@ -45,41 +54,77 @@ open class RegExMatch(
   }
 
   fun getEnd(name: Variant): Int {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getEnd.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEnd.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun getGroupCount(): Int {
-    val _ret = __method_bind.getGroupCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGroupCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNames(): Dictionary {
-    val _ret = __method_bind.getNames.call(this._handle)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNames.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getStart(name: Variant): Int {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getStart.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStart.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun getString(name: Variant): String {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getString.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getString.call(self._handle, listOf(name), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getStrings(): VariantArray {
-    val _ret = __method_bind.getStrings.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getStrings.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSubject(): String {
-    val _ret = __method_bind.getSubject.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSubject.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   companion object {

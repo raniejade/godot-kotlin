@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class GIProbe(
   @Suppress("UNUSED_PARAMETER")
@@ -122,114 +131,193 @@ open class GIProbe(
   }
 
   fun bake(fromNode: Node, createVisualDebug: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(fromNode))
-    _args.add(Variant.fromAny(createVisualDebug))
-    __method_bind.bake.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(fromNode)
+      _args.add(createVisualDebug)
+      __method_bind.bake.call(self._handle, _args, null)
+    }
   }
 
   fun debugBake() {
-    __method_bind.debugBake.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.debugBake.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getBias(): Float {
-    val _ret = __method_bind.getBias.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBias.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDynamicRange(): Int {
-    val _ret = __method_bind.getDynamicRange.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDynamicRange.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getEnergy(): Float {
-    val _ret = __method_bind.getEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getExtents(): Vector3 {
-    val _ret = __method_bind.getExtents.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getExtents.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNormalBias(): Float {
-    val _ret = __method_bind.getNormalBias.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNormalBias.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getProbeData(): GIProbeData {
-    val _ret = __method_bind.getProbeData.call(this._handle)
-    return _ret.toAny() as GIProbeData
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: GIProbeData
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getProbeData.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<GIProbeData>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPropagation(): Float {
-    val _ret = __method_bind.getPropagation.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPropagation.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSubdiv(): Subdiv {
-    val _ret = __method_bind.getSubdiv.call(this._handle)
-    return GIProbe.Subdiv.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSubdiv.call(self._handle, emptyList(), _retPtr)
+      GIProbe.Subdiv.from(_ret.value)
+    }
   }
 
   fun isCompressed(): Boolean {
-    val _ret = __method_bind.isCompressed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCompressed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInterior(): Boolean {
-    val _ret = __method_bind.isInterior.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInterior.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBias(max: Float) {
-    val _arg = Variant(max)
-    __method_bind.setBias.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBias.call(self._handle, listOf(max), null)
+    }
   }
 
   fun setCompress(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setCompress.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCompress.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setDynamicRange(max: Int) {
-    val _arg = Variant(max)
-    __method_bind.setDynamicRange.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDynamicRange.call(self._handle, listOf(max), null)
+    }
   }
 
   fun setEnergy(max: Float) {
-    val _arg = Variant(max)
-    __method_bind.setEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnergy.call(self._handle, listOf(max), null)
+    }
   }
 
   fun setExtents(extents: Vector3) {
-    val _arg = Variant(extents)
-    __method_bind.setExtents.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExtents.call(self._handle, listOf(extents), null)
+    }
   }
 
   fun setInterior(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setInterior.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInterior.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setNormalBias(max: Float) {
-    val _arg = Variant(max)
-    __method_bind.setNormalBias.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNormalBias.call(self._handle, listOf(max), null)
+    }
   }
 
   fun setProbeData(data: GIProbeData) {
-    val _arg = Variant(data)
-    __method_bind.setProbeData.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProbeData.call(self._handle, listOf(data), null)
+    }
   }
 
   fun setPropagation(max: Float) {
-    val _arg = Variant(max)
-    __method_bind.setPropagation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPropagation.call(self._handle, listOf(max), null)
+    }
   }
 
   fun setSubdiv(subdiv: Int) {
-    val _arg = Variant(subdiv)
-    __method_bind.setSubdiv.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSubdiv.call(self._handle, listOf(subdiv), null)
+    }
   }
 
   enum class Subdiv(

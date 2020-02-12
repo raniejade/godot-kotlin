@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.AABB
 import godot.core.Allocator
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VisualInstance(
   @Suppress("UNUSED_PARAMETER")
@@ -40,51 +49,91 @@ open class VisualInstance(
   }
 
   fun getAabb(): AABB {
-    val _ret = __method_bind.getAabb.call(this._handle)
-    return _ret.asAABB()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = AABB()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getAabb.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBase(): RID {
-    val _ret = __method_bind.getBase.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBase.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getInstance(): RID {
-    val _ret = __method_bind.getInstance.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getInstance.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLayerMask(): Int {
-    val _ret = __method_bind.getLayerMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLayerMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLayerMaskBit(layer: Int): Boolean {
-    val _arg = Variant(layer)
-    val _ret = __method_bind.getLayerMaskBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLayerMaskBit.call(self._handle, listOf(layer), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTransformedAabb(): AABB {
-    val _ret = __method_bind.getTransformedAabb.call(this._handle)
-    return _ret.asAABB()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = AABB()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTransformedAabb.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setBase(base: RID) {
-    val _arg = Variant(base)
-    __method_bind.setBase.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBase.call(self._handle, listOf(base), null)
+    }
   }
 
   fun setLayerMask(mask: Int) {
-    val _arg = Variant(mask)
-    __method_bind.setLayerMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLayerMask.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setLayerMaskBit(layer: Int, enabled: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(layer))
-    _args.add(Variant.fromAny(enabled))
-    __method_bind.setLayerMaskBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(layer)
+      _args.add(enabled)
+      __method_bind.setLayerMaskBit.call(self._handle, _args, null)
+    }
   }
 
   companion object {

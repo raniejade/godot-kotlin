@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EngineInternal(
   @Suppress("UNUSED_PARAMETER")
@@ -66,130 +75,248 @@ open class EngineInternal(
     }
 
   fun getAuthorInfo(): Dictionary {
-    val _ret = __method_bind.getAuthorInfo.call(this._handle)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getAuthorInfo.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCopyrightInfo(): VariantArray {
-    val _ret = __method_bind.getCopyrightInfo.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCopyrightInfo.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getDonorInfo(): Dictionary {
-    val _ret = __method_bind.getDonorInfo.call(this._handle)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getDonorInfo.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFramesDrawn(): Int {
-    val _ret = __method_bind.getFramesDrawn.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFramesDrawn.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFramesPerSecond(): Float {
-    val _ret = __method_bind.getFramesPerSecond.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFramesPerSecond.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getIdleFrames(): Int {
-    val _ret = __method_bind.getIdleFrames.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getIdleFrames.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getIterationsPerSecond(): Int {
-    val _ret = __method_bind.getIterationsPerSecond.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getIterationsPerSecond.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLicenseInfo(): Dictionary {
-    val _ret = __method_bind.getLicenseInfo.call(this._handle)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getLicenseInfo.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLicenseText(): String {
-    val _ret = __method_bind.getLicenseText.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getLicenseText.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getMainLoop(): MainLoop {
-    val _ret = __method_bind.getMainLoop.call(this._handle)
-    return _ret.toAny() as MainLoop
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: MainLoop
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMainLoop.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<MainLoop>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPhysicsFrames(): Int {
-    val _ret = __method_bind.getPhysicsFrames.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPhysicsFrames.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPhysicsInterpolationFraction(): Float {
-    val _ret = __method_bind.getPhysicsInterpolationFraction.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPhysicsInterpolationFraction.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPhysicsJitterFix(): Float {
-    val _ret = __method_bind.getPhysicsJitterFix.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPhysicsJitterFix.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSingleton(name: String): Object {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getSingleton.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Object
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Object
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSingleton.call(self._handle, listOf(name), _retPtr)
+      _ret = objectToType<Object>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTargetFps(): Int {
-    val _ret = __method_bind.getTargetFps.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTargetFps.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTimeScale(): Float {
-    val _ret = __method_bind.getTimeScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTimeScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVersionInfo(): Dictionary {
-    val _ret = __method_bind.getVersionInfo.call(this._handle)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVersionInfo.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun hasSingleton(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasSingleton.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasSingleton.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEditorHint(): Boolean {
-    val _ret = __method_bind.isEditorHint.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEditorHint.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInPhysicsFrame(): Boolean {
-    val _ret = __method_bind.isInPhysicsFrame.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInPhysicsFrame.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setEditorHint(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setEditorHint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEditorHint.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setIterationsPerSecond(iterationsPerSecond: Int) {
-    val _arg = Variant(iterationsPerSecond)
-    __method_bind.setIterationsPerSecond.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setIterationsPerSecond.call(self._handle, listOf(iterationsPerSecond), null)
+    }
   }
 
   fun setPhysicsJitterFix(physicsJitterFix: Float) {
-    val _arg = Variant(physicsJitterFix)
-    __method_bind.setPhysicsJitterFix.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPhysicsJitterFix.call(self._handle, listOf(physicsJitterFix), null)
+    }
   }
 
   fun setTargetFps(targetFps: Int) {
-    val _arg = Variant(targetFps)
-    __method_bind.setTargetFps.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTargetFps.call(self._handle, listOf(targetFps), null)
+    }
   }
 
   fun setTimeScale(timeScale: Float) {
-    val _arg = Variant(timeScale)
-    __method_bind.setTimeScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTimeScale.call(self._handle, listOf(timeScale), null)
+    }
   }
 
   companion object {

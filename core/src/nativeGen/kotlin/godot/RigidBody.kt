@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class RigidBody(
   @Suppress("UNUSED_PARAMETER")
@@ -260,230 +269,383 @@ open class RigidBody(
   }
 
   fun addCentralForce(force: Vector3) {
-    val _arg = Variant(force)
-    __method_bind.addCentralForce.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addCentralForce.call(self._handle, listOf(force), null)
+    }
   }
 
   fun addForce(force: Vector3, position: Vector3) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(force))
-    _args.add(Variant.fromAny(position))
-    __method_bind.addForce.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(force)
+      _args.add(position)
+      __method_bind.addForce.call(self._handle, _args, null)
+    }
   }
 
   fun addTorque(torque: Vector3) {
-    val _arg = Variant(torque)
-    __method_bind.addTorque.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addTorque.call(self._handle, listOf(torque), null)
+    }
   }
 
   fun applyCentralImpulse(impulse: Vector3) {
-    val _arg = Variant(impulse)
-    __method_bind.applyCentralImpulse.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.applyCentralImpulse.call(self._handle, listOf(impulse), null)
+    }
   }
 
   fun applyImpulse(position: Vector3, impulse: Vector3) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(impulse))
-    __method_bind.applyImpulse.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(position)
+      _args.add(impulse)
+      __method_bind.applyImpulse.call(self._handle, _args, null)
+    }
   }
 
   fun applyTorqueImpulse(impulse: Vector3) {
-    val _arg = Variant(impulse)
-    __method_bind.applyTorqueImpulse.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.applyTorqueImpulse.call(self._handle, listOf(impulse), null)
+    }
   }
 
   fun getAngularDamp(): Float {
-    val _ret = __method_bind.getAngularDamp.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAngularDamp.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAngularVelocity(): Vector3 {
-    val _ret = __method_bind.getAngularVelocity.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getAngularVelocity.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getAxisLock(axis: Int): Boolean {
-    val _arg = Variant(axis)
-    val _ret = __method_bind.getAxisLock.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAxisLock.call(self._handle, listOf(axis), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBounce(): Float {
-    val _ret = __method_bind.getBounce.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBounce.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCollidingBodies(): VariantArray {
-    val _ret = __method_bind.getCollidingBodies.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCollidingBodies.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFriction(): Float {
-    val _ret = __method_bind.getFriction.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFriction.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGravityScale(): Float {
-    val _ret = __method_bind.getGravityScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGravityScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLinearDamp(): Float {
-    val _ret = __method_bind.getLinearDamp.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLinearDamp.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLinearVelocity(): Vector3 {
-    val _ret = __method_bind.getLinearVelocity.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getLinearVelocity.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMass(): Float {
-    val _ret = __method_bind.getMass.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMass.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMaxContactsReported(): Int {
-    val _ret = __method_bind.getMaxContactsReported.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMaxContactsReported.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMode(): Mode {
-    val _ret = __method_bind.getMode.call(this._handle)
-    return RigidBody.Mode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMode.call(self._handle, emptyList(), _retPtr)
+      RigidBody.Mode.from(_ret.value)
+    }
   }
 
   fun getPhysicsMaterialOverride(): PhysicsMaterial {
-    val _ret = __method_bind.getPhysicsMaterialOverride.call(this._handle)
-    return _ret.toAny() as PhysicsMaterial
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: PhysicsMaterial
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPhysicsMaterialOverride.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<PhysicsMaterial>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getWeight(): Float {
-    val _ret = __method_bind.getWeight.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isAbleToSleep(): Boolean {
-    val _ret = __method_bind.isAbleToSleep.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAbleToSleep.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isContactMonitorEnabled(): Boolean {
-    val _ret = __method_bind.isContactMonitorEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isContactMonitorEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSleeping(): Boolean {
-    val _ret = __method_bind.isSleeping.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSleeping.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingContinuousCollisionDetection(): Boolean {
-    val _ret = __method_bind.isUsingContinuousCollisionDetection.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingContinuousCollisionDetection.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingCustomIntegrator(): Boolean {
-    val _ret = __method_bind.isUsingCustomIntegrator.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingCustomIntegrator.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAngularDamp(angularDamp: Float) {
-    val _arg = Variant(angularDamp)
-    __method_bind.setAngularDamp.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAngularDamp.call(self._handle, listOf(angularDamp), null)
+    }
   }
 
   fun setAngularVelocity(angularVelocity: Vector3) {
-    val _arg = Variant(angularVelocity)
-    __method_bind.setAngularVelocity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAngularVelocity.call(self._handle, listOf(angularVelocity), null)
+    }
   }
 
   fun setAxisLock(axis: Int, lock: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(axis))
-    _args.add(Variant.fromAny(lock))
-    __method_bind.setAxisLock.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(axis)
+      _args.add(lock)
+      __method_bind.setAxisLock.call(self._handle, _args, null)
+    }
   }
 
   fun setAxisVelocity(axisVelocity: Vector3) {
-    val _arg = Variant(axisVelocity)
-    __method_bind.setAxisVelocity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAxisVelocity.call(self._handle, listOf(axisVelocity), null)
+    }
   }
 
   fun setBounce(bounce: Float) {
-    val _arg = Variant(bounce)
-    __method_bind.setBounce.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBounce.call(self._handle, listOf(bounce), null)
+    }
   }
 
   fun setCanSleep(ableToSleep: Boolean) {
-    val _arg = Variant(ableToSleep)
-    __method_bind.setCanSleep.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCanSleep.call(self._handle, listOf(ableToSleep), null)
+    }
   }
 
   fun setContactMonitor(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setContactMonitor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setContactMonitor.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setFriction(friction: Float) {
-    val _arg = Variant(friction)
-    __method_bind.setFriction.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFriction.call(self._handle, listOf(friction), null)
+    }
   }
 
   fun setGravityScale(gravityScale: Float) {
-    val _arg = Variant(gravityScale)
-    __method_bind.setGravityScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGravityScale.call(self._handle, listOf(gravityScale), null)
+    }
   }
 
   fun setLinearDamp(linearDamp: Float) {
-    val _arg = Variant(linearDamp)
-    __method_bind.setLinearDamp.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLinearDamp.call(self._handle, listOf(linearDamp), null)
+    }
   }
 
   fun setLinearVelocity(linearVelocity: Vector3) {
-    val _arg = Variant(linearVelocity)
-    __method_bind.setLinearVelocity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLinearVelocity.call(self._handle, listOf(linearVelocity), null)
+    }
   }
 
   fun setMass(mass: Float) {
-    val _arg = Variant(mass)
-    __method_bind.setMass.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMass.call(self._handle, listOf(mass), null)
+    }
   }
 
   fun setMaxContactsReported(amount: Int) {
-    val _arg = Variant(amount)
-    __method_bind.setMaxContactsReported.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaxContactsReported.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setPhysicsMaterialOverride(physicsMaterialOverride: PhysicsMaterial) {
-    val _arg = Variant(physicsMaterialOverride)
-    __method_bind.setPhysicsMaterialOverride.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPhysicsMaterialOverride.call(self._handle, listOf(physicsMaterialOverride),
+          null)
+    }
   }
 
   fun setSleeping(sleeping: Boolean) {
-    val _arg = Variant(sleeping)
-    __method_bind.setSleeping.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSleeping.call(self._handle, listOf(sleeping), null)
+    }
   }
 
   fun setUseContinuousCollisionDetection(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseContinuousCollisionDetection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseContinuousCollisionDetection.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setUseCustomIntegrator(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseCustomIntegrator.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseCustomIntegrator.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setWeight(weight: Float) {
-    val _arg = Variant(weight)
-    __method_bind.setWeight.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWeight.call(self._handle, listOf(weight), null)
+    }
   }
 
   enum class Mode(

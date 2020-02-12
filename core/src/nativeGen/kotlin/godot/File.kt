@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class File(
   @Suppress("UNUSED_PARAMETER")
@@ -42,147 +51,283 @@ open class File(
   }
 
   fun close() {
-    __method_bind.close.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.close.call(self._handle, emptyList(), null)
+    }
   }
 
   fun eofReached(): Boolean {
-    val _ret = __method_bind.eofReached.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.eofReached.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun fileExists(path: String): Boolean {
-    val _arg = Variant(path)
-    val _ret = __method_bind.fileExists.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.fileExists.call(self._handle, listOf(path), _retPtr)
+      _ret.value
+    }
   }
 
   fun get16(): Int {
-    val _ret = __method_bind.get16.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.get16.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun get32(): Int {
-    val _ret = __method_bind.get32.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.get32.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun get64(): Int {
-    val _ret = __method_bind.get64.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.get64.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun get8(): Int {
-    val _ret = __method_bind.get8.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.get8.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getAsText(): String {
-    val _ret = __method_bind.getAsText.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAsText.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getBuffer(len: Int): PoolByteArray {
-    val _arg = Variant(len)
-    val _ret = __method_bind.getBuffer.call(this._handle, listOf(_arg))
-    return _ret.asPoolByteArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolByteArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBuffer.call(self._handle, listOf(len), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCsvLine(delim: String = ","): PoolStringArray {
-    val _arg = Variant(delim)
-    val _ret = __method_bind.getCsvLine.call(this._handle, listOf(_arg))
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCsvLine.call(self._handle, listOf(delim), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getDouble(): Float {
-    val _ret = __method_bind.getDouble.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDouble.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getEndianSwap(): Boolean {
-    val _ret = __method_bind.getEndianSwap.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEndianSwap.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getError(): GDError {
-    val _ret = __method_bind.getError.call(this._handle)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getError.call(self._handle, emptyList(), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun getFloat(): Float {
-    val _ret = __method_bind.getFloat.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFloat.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLen(): Int {
-    val _ret = __method_bind.getLen.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLen.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLine(): String {
-    val _ret = __method_bind.getLine.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getLine.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getMd5(path: String): String {
-    val _arg = Variant(path)
-    val _ret = __method_bind.getMd5.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getMd5.call(self._handle, listOf(path), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getModifiedTime(file: String): Int {
-    val _arg = Variant(file)
-    val _ret = __method_bind.getModifiedTime.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getModifiedTime.call(self._handle, listOf(file), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPascalString(): String {
-    val _ret = __method_bind.getPascalString.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getPascalString.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPath(): String {
-    val _ret = __method_bind.getPath.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getPath.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPathAbsolute(): String {
-    val _ret = __method_bind.getPathAbsolute.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getPathAbsolute.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPosition(): Int {
-    val _ret = __method_bind.getPosition.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPosition.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getReal(): Float {
-    val _ret = __method_bind.getReal.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getReal.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSha256(path: String): String {
-    val _arg = Variant(path)
-    val _ret = __method_bind.getSha256.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSha256.call(self._handle, listOf(path), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getVar(allowObjects: Boolean = false): Variant {
-    val _arg = Variant(allowObjects)
-    val _ret = __method_bind.getVar.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVar.call(self._handle, listOf(allowObjects), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isOpen(): Boolean {
-    val _ret = __method_bind.isOpen.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOpen.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun open(path: String, flags: Int): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(flags))
-    val _ret = __method_bind.open.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(flags)
+      __method_bind.open.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun openCompressed(
@@ -190,12 +335,17 @@ open class File(
     modeFlags: Int,
     compressionMode: Int = 0
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(modeFlags))
-    _args.add(Variant.fromAny(compressionMode))
-    val _ret = __method_bind.openCompressed.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(modeFlags)
+      _args.add(compressionMode)
+      __method_bind.openCompressed.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun openEncrypted(
@@ -203,12 +353,17 @@ open class File(
     modeFlags: Int,
     key: PoolByteArray
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(modeFlags))
-    _args.add(Variant.fromAny(key))
-    val _ret = __method_bind.openEncrypted.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(modeFlags)
+      _args.add(key)
+      __method_bind.openEncrypted.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun openEncryptedWithPass(
@@ -216,96 +371,135 @@ open class File(
     modeFlags: Int,
     pass: String
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(modeFlags))
-    _args.add(Variant.fromAny(pass))
-    val _ret = __method_bind.openEncryptedWithPass.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(modeFlags)
+      _args.add(pass)
+      __method_bind.openEncryptedWithPass.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun seek(position: Int) {
-    val _arg = Variant(position)
-    __method_bind.seek.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.seek.call(self._handle, listOf(position), null)
+    }
   }
 
   fun seekEnd(position: Int = 0) {
-    val _arg = Variant(position)
-    __method_bind.seekEnd.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.seekEnd.call(self._handle, listOf(position), null)
+    }
   }
 
   fun setEndianSwap(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setEndianSwap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEndianSwap.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun store16(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.store16.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.store16.call(self._handle, listOf(value), null)
+    }
   }
 
   fun store32(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.store32.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.store32.call(self._handle, listOf(value), null)
+    }
   }
 
   fun store64(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.store64.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.store64.call(self._handle, listOf(value), null)
+    }
   }
 
   fun store8(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.store8.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.store8.call(self._handle, listOf(value), null)
+    }
   }
 
   fun storeBuffer(buffer: PoolByteArray) {
-    val _arg = Variant(buffer)
-    __method_bind.storeBuffer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.storeBuffer.call(self._handle, listOf(buffer), null)
+    }
   }
 
   fun storeCsvLine(values: PoolStringArray, delim: String = ",") {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(values))
-    _args.add(Variant.fromAny(delim))
-    __method_bind.storeCsvLine.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(values)
+      _args.add(delim)
+      __method_bind.storeCsvLine.call(self._handle, _args, null)
+    }
   }
 
   fun storeDouble(value: Float) {
-    val _arg = Variant(value)
-    __method_bind.storeDouble.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.storeDouble.call(self._handle, listOf(value), null)
+    }
   }
 
   fun storeFloat(value: Float) {
-    val _arg = Variant(value)
-    __method_bind.storeFloat.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.storeFloat.call(self._handle, listOf(value), null)
+    }
   }
 
   fun storeLine(line: String) {
-    val _arg = Variant(line)
-    __method_bind.storeLine.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.storeLine.call(self._handle, listOf(line), null)
+    }
   }
 
   fun storePascalString(string: String) {
-    val _arg = Variant(string)
-    __method_bind.storePascalString.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.storePascalString.call(self._handle, listOf(string), null)
+    }
   }
 
   fun storeReal(value: Float) {
-    val _arg = Variant(value)
-    __method_bind.storeReal.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.storeReal.call(self._handle, listOf(value), null)
+    }
   }
 
   fun storeString(string: String) {
-    val _arg = Variant(string)
-    __method_bind.storeString.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.storeString.call(self._handle, listOf(string), null)
+    }
   }
 
   fun storeVar(value: Variant, fullObjects: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(value))
-    _args.add(Variant.fromAny(fullObjects))
-    __method_bind.storeVar.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(value)
+      _args.add(fullObjects)
+      __method_bind.storeVar.call(self._handle, _args, null)
+    }
   }
 
   enum class CompressionMode(

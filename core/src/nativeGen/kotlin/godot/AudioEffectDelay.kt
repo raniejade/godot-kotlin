@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AudioEffectDelay(
   @Suppress("UNUSED_PARAMETER")
@@ -134,133 +143,224 @@ open class AudioEffectDelay(
   }
 
   fun getDry(): Float {
-    val _ret = __method_bind.getDry.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDry.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFeedbackDelayMs(): Float {
-    val _ret = __method_bind.getFeedbackDelayMs.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFeedbackDelayMs.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFeedbackLevelDb(): Float {
-    val _ret = __method_bind.getFeedbackLevelDb.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFeedbackLevelDb.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFeedbackLowpass(): Float {
-    val _ret = __method_bind.getFeedbackLowpass.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFeedbackLowpass.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTap1DelayMs(): Float {
-    val _ret = __method_bind.getTap1DelayMs.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTap1DelayMs.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTap1LevelDb(): Float {
-    val _ret = __method_bind.getTap1LevelDb.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTap1LevelDb.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTap1Pan(): Float {
-    val _ret = __method_bind.getTap1Pan.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTap1Pan.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTap2DelayMs(): Float {
-    val _ret = __method_bind.getTap2DelayMs.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTap2DelayMs.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTap2LevelDb(): Float {
-    val _ret = __method_bind.getTap2LevelDb.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTap2LevelDb.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTap2Pan(): Float {
-    val _ret = __method_bind.getTap2Pan.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTap2Pan.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isFeedbackActive(): Boolean {
-    val _ret = __method_bind.isFeedbackActive.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFeedbackActive.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isTap1Active(): Boolean {
-    val _ret = __method_bind.isTap1Active.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isTap1Active.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isTap2Active(): Boolean {
-    val _ret = __method_bind.isTap2Active.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isTap2Active.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setDry(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setDry.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDry.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setFeedbackActive(amount: Boolean) {
-    val _arg = Variant(amount)
-    __method_bind.setFeedbackActive.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFeedbackActive.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setFeedbackDelayMs(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setFeedbackDelayMs.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFeedbackDelayMs.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setFeedbackLevelDb(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setFeedbackLevelDb.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFeedbackLevelDb.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setFeedbackLowpass(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setFeedbackLowpass.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFeedbackLowpass.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setTap1Active(amount: Boolean) {
-    val _arg = Variant(amount)
-    __method_bind.setTap1Active.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTap1Active.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setTap1DelayMs(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setTap1DelayMs.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTap1DelayMs.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setTap1LevelDb(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setTap1LevelDb.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTap1LevelDb.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setTap1Pan(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setTap1Pan.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTap1Pan.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setTap2Active(amount: Boolean) {
-    val _arg = Variant(amount)
-    __method_bind.setTap2Active.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTap2Active.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setTap2DelayMs(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setTap2DelayMs.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTap2DelayMs.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setTap2LevelDb(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setTap2LevelDb.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTap2LevelDb.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setTap2Pan(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setTap2Pan.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTap2Pan.call(self._handle, listOf(amount), null)
+    }
   }
 
   companion object {

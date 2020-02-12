@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Generic6DOFJoint(
   @Suppress("UNUSED_PARAMETER")
@@ -663,91 +672,140 @@ open class Generic6DOFJoint(
   }
 
   fun getFlagX(flag: Int): Boolean {
-    val _arg = Variant(flag)
-    val _ret = __method_bind.getFlagX.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFlagX.call(self._handle, listOf(flag), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFlagY(flag: Int): Boolean {
-    val _arg = Variant(flag)
-    val _ret = __method_bind.getFlagY.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFlagY.call(self._handle, listOf(flag), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFlagZ(flag: Int): Boolean {
-    val _arg = Variant(flag)
-    val _ret = __method_bind.getFlagZ.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFlagZ.call(self._handle, listOf(flag), _retPtr)
+      _ret.value
+    }
   }
 
   fun getParamX(param: Int): Float {
-    val _arg = Variant(param)
-    val _ret = __method_bind.getParamX.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParamX.call(self._handle, listOf(param), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getParamY(param: Int): Float {
-    val _arg = Variant(param)
-    val _ret = __method_bind.getParamY.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParamY.call(self._handle, listOf(param), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getParamZ(param: Int): Float {
-    val _arg = Variant(param)
-    val _ret = __method_bind.getParamZ.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParamZ.call(self._handle, listOf(param), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPrecision(): Int {
-    val _ret = __method_bind.getPrecision.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPrecision.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setFlagX(flag: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(flag))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setFlagX.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(flag)
+      _args.add(value)
+      __method_bind.setFlagX.call(self._handle, _args, null)
+    }
   }
 
   fun setFlagY(flag: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(flag))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setFlagY.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(flag)
+      _args.add(value)
+      __method_bind.setFlagY.call(self._handle, _args, null)
+    }
   }
 
   fun setFlagZ(flag: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(flag))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setFlagZ.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(flag)
+      _args.add(value)
+      __method_bind.setFlagZ.call(self._handle, _args, null)
+    }
   }
 
   fun setParamX(param: Int, value: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setParamX.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(param)
+      _args.add(value)
+      __method_bind.setParamX.call(self._handle, _args, null)
+    }
   }
 
   fun setParamY(param: Int, value: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setParamY.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(param)
+      _args.add(value)
+      __method_bind.setParamY.call(self._handle, _args, null)
+    }
   }
 
   fun setParamZ(param: Int, value: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setParamZ.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(param)
+      _args.add(value)
+      __method_bind.setParamZ.call(self._handle, _args, null)
+    }
   }
 
   fun setPrecision(precision: Int) {
-    val _arg = Variant(precision)
-    __method_bind.setPrecision.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPrecision.call(self._handle, listOf(precision), null)
+    }
   }
 
   enum class Param(

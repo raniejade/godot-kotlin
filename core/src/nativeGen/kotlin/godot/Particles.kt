@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.AABB
 import godot.core.Allocator
 import godot.core.Godot
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Particles(
   @Suppress("UNUSED_PARAMETER")
@@ -194,175 +203,301 @@ open class Particles(
   }
 
   fun captureAabb(): AABB {
-    val _ret = __method_bind.captureAabb.call(this._handle)
-    return _ret.asAABB()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = AABB()
+      val _retPtr = _ret._value.ptr
+      __method_bind.captureAabb.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getAmount(): Int {
-    val _ret = __method_bind.getAmount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAmount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDrawOrder(): DrawOrder {
-    val _ret = __method_bind.getDrawOrder.call(this._handle)
-    return Particles.DrawOrder.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDrawOrder.call(self._handle, emptyList(), _retPtr)
+      Particles.DrawOrder.from(_ret.value)
+    }
   }
 
   fun getDrawPassMesh(pass: Int): Mesh {
-    val _arg = Variant(pass)
-    val _ret = __method_bind.getDrawPassMesh.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Mesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Mesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getDrawPassMesh.call(self._handle, listOf(pass), _retPtr)
+      _ret = objectToType<Mesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getDrawPasses(): Int {
-    val _ret = __method_bind.getDrawPasses.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDrawPasses.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getExplosivenessRatio(): Float {
-    val _ret = __method_bind.getExplosivenessRatio.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getExplosivenessRatio.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFixedFps(): Int {
-    val _ret = __method_bind.getFixedFps.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFixedFps.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFractionalDelta(): Boolean {
-    val _ret = __method_bind.getFractionalDelta.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFractionalDelta.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLifetime(): Float {
-    val _ret = __method_bind.getLifetime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLifetime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getOneShot(): Boolean {
-    val _ret = __method_bind.getOneShot.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOneShot.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPreProcessTime(): Float {
-    val _ret = __method_bind.getPreProcessTime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPreProcessTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getProcessMaterial(): Material {
-    val _ret = __method_bind.getProcessMaterial.call(this._handle)
-    return _ret.toAny() as Material
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Material
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getProcessMaterial.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Material>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getRandomnessRatio(): Float {
-    val _ret = __method_bind.getRandomnessRatio.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRandomnessRatio.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSpeedScale(): Float {
-    val _ret = __method_bind.getSpeedScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpeedScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getUseLocalCoordinates(): Boolean {
-    val _ret = __method_bind.getUseLocalCoordinates.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUseLocalCoordinates.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getVisibilityAabb(): AABB {
-    val _ret = __method_bind.getVisibilityAabb.call(this._handle)
-    return _ret.asAABB()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = AABB()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVisibilityAabb.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isEmitting(): Boolean {
-    val _ret = __method_bind.isEmitting.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEmitting.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun restart() {
-    __method_bind.restart.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.restart.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setAmount(amount: Int) {
-    val _arg = Variant(amount)
-    __method_bind.setAmount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAmount.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setDrawOrder(order: Int) {
-    val _arg = Variant(order)
-    __method_bind.setDrawOrder.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDrawOrder.call(self._handle, listOf(order), null)
+    }
   }
 
   fun setDrawPassMesh(pass: Int, mesh: Mesh) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(pass))
-    _args.add(Variant.fromAny(mesh))
-    __method_bind.setDrawPassMesh.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(pass)
+      _args.add(mesh)
+      __method_bind.setDrawPassMesh.call(self._handle, _args, null)
+    }
   }
 
   fun setDrawPasses(passes: Int) {
-    val _arg = Variant(passes)
-    __method_bind.setDrawPasses.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDrawPasses.call(self._handle, listOf(passes), null)
+    }
   }
 
   fun setEmitting(emitting: Boolean) {
-    val _arg = Variant(emitting)
-    __method_bind.setEmitting.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEmitting.call(self._handle, listOf(emitting), null)
+    }
   }
 
   fun setExplosivenessRatio(ratio: Float) {
-    val _arg = Variant(ratio)
-    __method_bind.setExplosivenessRatio.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExplosivenessRatio.call(self._handle, listOf(ratio), null)
+    }
   }
 
   fun setFixedFps(fps: Int) {
-    val _arg = Variant(fps)
-    __method_bind.setFixedFps.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFixedFps.call(self._handle, listOf(fps), null)
+    }
   }
 
   fun setFractionalDelta(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setFractionalDelta.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFractionalDelta.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setLifetime(secs: Float) {
-    val _arg = Variant(secs)
-    __method_bind.setLifetime.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLifetime.call(self._handle, listOf(secs), null)
+    }
   }
 
   fun setOneShot(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setOneShot.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOneShot.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setPreProcessTime(secs: Float) {
-    val _arg = Variant(secs)
-    __method_bind.setPreProcessTime.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPreProcessTime.call(self._handle, listOf(secs), null)
+    }
   }
 
   fun setProcessMaterial(material: Material) {
-    val _arg = Variant(material)
-    __method_bind.setProcessMaterial.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProcessMaterial.call(self._handle, listOf(material), null)
+    }
   }
 
   fun setRandomnessRatio(ratio: Float) {
-    val _arg = Variant(ratio)
-    __method_bind.setRandomnessRatio.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRandomnessRatio.call(self._handle, listOf(ratio), null)
+    }
   }
 
   fun setSpeedScale(scale: Float) {
-    val _arg = Variant(scale)
-    __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSpeedScale.call(self._handle, listOf(scale), null)
+    }
   }
 
   fun setUseLocalCoordinates(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseLocalCoordinates.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseLocalCoordinates.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setVisibilityAabb(aabb: AABB) {
-    val _arg = Variant(aabb)
-    __method_bind.setVisibilityAabb.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVisibilityAabb.call(self._handle, listOf(aabb), null)
+    }
   }
 
   enum class DrawOrder(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -12,13 +13,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class RemoteTransform2D(
   @Suppress("UNUSED_PARAMETER")
@@ -80,57 +89,96 @@ open class RemoteTransform2D(
   }
 
   fun forceUpdateCache() {
-    __method_bind.forceUpdateCache.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.forceUpdateCache.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getRemoteNode(): NodePath {
-    val _ret = __method_bind.getRemoteNode.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRemoteNode.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getUpdatePosition(): Boolean {
-    val _ret = __method_bind.getUpdatePosition.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUpdatePosition.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getUpdateRotation(): Boolean {
-    val _ret = __method_bind.getUpdateRotation.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUpdateRotation.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getUpdateScale(): Boolean {
-    val _ret = __method_bind.getUpdateScale.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUpdateScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getUseGlobalCoordinates(): Boolean {
-    val _ret = __method_bind.getUseGlobalCoordinates.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUseGlobalCoordinates.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setRemoteNode(path: NodePath) {
-    val _arg = Variant(path)
-    __method_bind.setRemoteNode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRemoteNode.call(self._handle, listOf(path), null)
+    }
   }
 
   fun setUpdatePosition(updateRemotePosition: Boolean) {
-    val _arg = Variant(updateRemotePosition)
-    __method_bind.setUpdatePosition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUpdatePosition.call(self._handle, listOf(updateRemotePosition), null)
+    }
   }
 
   fun setUpdateRotation(updateRemoteRotation: Boolean) {
-    val _arg = Variant(updateRemoteRotation)
-    __method_bind.setUpdateRotation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUpdateRotation.call(self._handle, listOf(updateRemoteRotation), null)
+    }
   }
 
   fun setUpdateScale(updateRemoteScale: Boolean) {
-    val _arg = Variant(updateRemoteScale)
-    __method_bind.setUpdateScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUpdateScale.call(self._handle, listOf(updateRemoteScale), null)
+    }
   }
 
   fun setUseGlobalCoordinates(useGlobalCoordinates: Boolean) {
-    val _arg = Variant(useGlobalCoordinates)
-    __method_bind.setUseGlobalCoordinates.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseGlobalCoordinates.call(self._handle, listOf(useGlobalCoordinates), null)
+    }
   }
 
   companion object {

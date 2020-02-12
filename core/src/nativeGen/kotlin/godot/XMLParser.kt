@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class XMLParser(
   @Suppress("UNUSED_PARAMETER")
@@ -32,95 +41,176 @@ open class XMLParser(
   }
 
   fun getAttributeCount(): Int {
-    val _ret = __method_bind.getAttributeCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAttributeCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getAttributeName(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getAttributeName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAttributeName.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getAttributeValue(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getAttributeValue.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAttributeValue.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getCurrentLine(): Int {
-    val _ret = __method_bind.getCurrentLine.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCurrentLine.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNamedAttributeValue(name: String): String {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getNamedAttributeValue.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getNamedAttributeValue.call(self._handle, listOf(name), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getNamedAttributeValueSafe(name: String): String {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getNamedAttributeValueSafe.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getNamedAttributeValueSafe.call(self._handle, listOf(name), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getNodeData(): String {
-    val _ret = __method_bind.getNodeData.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getNodeData.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getNodeName(): String {
-    val _ret = __method_bind.getNodeName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getNodeName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getNodeOffset(): Int {
-    val _ret = __method_bind.getNodeOffset.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNodeOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNodeType(): NodeType {
-    val _ret = __method_bind.getNodeType.call(this._handle)
-    return XMLParser.NodeType.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNodeType.call(self._handle, emptyList(), _retPtr)
+      XMLParser.NodeType.from(_ret.value)
+    }
   }
 
   fun hasAttribute(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasAttribute.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAttribute.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEmpty(): Boolean {
-    val _ret = __method_bind.isEmpty.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEmpty.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun open(file: String): GDError {
-    val _arg = Variant(file)
-    val _ret = __method_bind.open.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.open.call(self._handle, listOf(file), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun openBuffer(buffer: PoolByteArray): GDError {
-    val _arg = Variant(buffer)
-    val _ret = __method_bind.openBuffer.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.openBuffer.call(self._handle, listOf(buffer), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun read(): GDError {
-    val _ret = __method_bind.read.call(this._handle)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.read.call(self._handle, emptyList(), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun seek(position: Int): GDError {
-    val _arg = Variant(position)
-    val _ret = __method_bind.seek.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.seek.call(self._handle, listOf(position), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun skipSection() {
-    __method_bind.skipSection.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.skipSection.call(self._handle, emptyList(), null)
+    }
   }
 
   enum class NodeType(

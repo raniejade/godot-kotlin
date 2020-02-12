@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -17,13 +18,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Camera(
   @Suppress("UNUSED_PARAMETER")
@@ -149,162 +158,295 @@ open class Camera(
   }
 
   fun clearCurrent(enableNext: Boolean = true) {
-    val _arg = Variant(enableNext)
-    __method_bind.clearCurrent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearCurrent.call(self._handle, listOf(enableNext), null)
+    }
   }
 
   fun getCameraRid(): RID {
-    val _ret = __method_bind.getCameraRid.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCameraRid.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCameraTransform(): Transform {
-    val _ret = __method_bind.getCameraTransform.call(this._handle)
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCameraTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCullMask(): Int {
-    val _ret = __method_bind.getCullMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCullMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCullMaskBit(layer: Int): Boolean {
-    val _arg = Variant(layer)
-    val _ret = __method_bind.getCullMaskBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCullMaskBit.call(self._handle, listOf(layer), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDopplerTracking(): DopplerTracking {
-    val _ret = __method_bind.getDopplerTracking.call(this._handle)
-    return Camera.DopplerTracking.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDopplerTracking.call(self._handle, emptyList(), _retPtr)
+      Camera.DopplerTracking.from(_ret.value)
+    }
   }
 
   fun getEnvironment(): Environment {
-    val _ret = __method_bind.getEnvironment.call(this._handle)
-    return _ret.toAny() as Environment
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Environment
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getEnvironment.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Environment>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getFov(): Float {
-    val _ret = __method_bind.getFov.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFov.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFrustum(): VariantArray {
-    val _ret = __method_bind.getFrustum.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFrustum.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFrustumOffset(): Vector2 {
-    val _ret = __method_bind.getFrustumOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFrustumOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getHOffset(): Float {
-    val _ret = __method_bind.getHOffset.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getKeepAspectMode(): KeepAspect {
-    val _ret = __method_bind.getKeepAspectMode.call(this._handle)
-    return Camera.KeepAspect.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getKeepAspectMode.call(self._handle, emptyList(), _retPtr)
+      Camera.KeepAspect.from(_ret.value)
+    }
   }
 
   fun getProjection(): Projection {
-    val _ret = __method_bind.getProjection.call(this._handle)
-    return Camera.Projection.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getProjection.call(self._handle, emptyList(), _retPtr)
+      Camera.Projection.from(_ret.value)
+    }
   }
 
   fun getSize(): Float {
-    val _ret = __method_bind.getSize.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVOffset(): Float {
-    val _ret = __method_bind.getVOffset.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getZfar(): Float {
-    val _ret = __method_bind.getZfar.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getZfar.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getZnear(): Float {
-    val _ret = __method_bind.getZnear.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getZnear.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isCurrent(): Boolean {
-    val _ret = __method_bind.isCurrent.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCurrent.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPositionBehind(worldPoint: Vector3): Boolean {
-    val _arg = Variant(worldPoint)
-    val _ret = __method_bind.isPositionBehind.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPositionBehind.call(self._handle, listOf(worldPoint), _retPtr)
+      _ret.value
+    }
   }
 
   fun makeCurrent() {
-    __method_bind.makeCurrent.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.makeCurrent.call(self._handle, emptyList(), null)
+    }
   }
 
   fun projectLocalRayNormal(screenPoint: Vector2): Vector3 {
-    val _arg = Variant(screenPoint)
-    val _ret = __method_bind.projectLocalRayNormal.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.projectLocalRayNormal.call(self._handle, listOf(screenPoint), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun projectPosition(screenPoint: Vector2, zDepth: Float): Vector3 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(screenPoint))
-    _args.add(Variant.fromAny(zDepth))
-    val _ret = __method_bind.projectPosition.call(this._handle, _args)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(screenPoint)
+      _args.add(zDepth)
+      __method_bind.projectPosition.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun projectRayNormal(screenPoint: Vector2): Vector3 {
-    val _arg = Variant(screenPoint)
-    val _ret = __method_bind.projectRayNormal.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.projectRayNormal.call(self._handle, listOf(screenPoint), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun projectRayOrigin(screenPoint: Vector2): Vector3 {
-    val _arg = Variant(screenPoint)
-    val _ret = __method_bind.projectRayOrigin.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.projectRayOrigin.call(self._handle, listOf(screenPoint), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setCullMask(mask: Int) {
-    val _arg = Variant(mask)
-    __method_bind.setCullMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCullMask.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setCullMaskBit(layer: Int, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(layer))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setCullMaskBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(layer)
+      _args.add(enable)
+      __method_bind.setCullMaskBit.call(self._handle, _args, null)
+    }
   }
 
   fun setCurrent(arg0: Boolean) {
-    val _arg = Variant(arg0)
-    __method_bind.setCurrent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCurrent.call(self._handle, listOf(arg0), null)
+    }
   }
 
   fun setDopplerTracking(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setDopplerTracking.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDopplerTracking.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setEnvironment(env: Environment) {
-    val _arg = Variant(env)
-    __method_bind.setEnvironment.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnvironment.call(self._handle, listOf(env), null)
+    }
   }
 
   fun setFov(arg0: Float) {
-    val _arg = Variant(arg0)
-    __method_bind.setFov.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFov.call(self._handle, listOf(arg0), null)
+    }
   }
 
   fun setFrustum(
@@ -313,27 +455,36 @@ open class Camera(
     zNear: Float,
     zFar: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(size))
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(zNear))
-    _args.add(Variant.fromAny(zFar))
-    __method_bind.setFrustum.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(size)
+      _args.add(offset)
+      _args.add(zNear)
+      _args.add(zFar)
+      __method_bind.setFrustum.call(self._handle, _args, null)
+    }
   }
 
   fun setFrustumOffset(arg0: Vector2) {
-    val _arg = Variant(arg0)
-    __method_bind.setFrustumOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFrustumOffset.call(self._handle, listOf(arg0), null)
+    }
   }
 
   fun setHOffset(ofs: Float) {
-    val _arg = Variant(ofs)
-    __method_bind.setHOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHOffset.call(self._handle, listOf(ofs), null)
+    }
   }
 
   fun setKeepAspectMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setKeepAspectMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setKeepAspectMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setOrthogonal(
@@ -341,11 +492,14 @@ open class Camera(
     zNear: Float,
     zFar: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(size))
-    _args.add(Variant.fromAny(zNear))
-    _args.add(Variant.fromAny(zFar))
-    __method_bind.setOrthogonal.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(size)
+      _args.add(zNear)
+      _args.add(zFar)
+      __method_bind.setOrthogonal.call(self._handle, _args, null)
+    }
   }
 
   fun setPerspective(
@@ -353,42 +507,60 @@ open class Camera(
     zNear: Float,
     zFar: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(fov))
-    _args.add(Variant.fromAny(zNear))
-    _args.add(Variant.fromAny(zFar))
-    __method_bind.setPerspective.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(fov)
+      _args.add(zNear)
+      _args.add(zFar)
+      __method_bind.setPerspective.call(self._handle, _args, null)
+    }
   }
 
   fun setProjection(arg0: Int) {
-    val _arg = Variant(arg0)
-    __method_bind.setProjection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProjection.call(self._handle, listOf(arg0), null)
+    }
   }
 
   fun setSize(arg0: Float) {
-    val _arg = Variant(arg0)
-    __method_bind.setSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSize.call(self._handle, listOf(arg0), null)
+    }
   }
 
   fun setVOffset(ofs: Float) {
-    val _arg = Variant(ofs)
-    __method_bind.setVOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVOffset.call(self._handle, listOf(ofs), null)
+    }
   }
 
   fun setZfar(arg0: Float) {
-    val _arg = Variant(arg0)
-    __method_bind.setZfar.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setZfar.call(self._handle, listOf(arg0), null)
+    }
   }
 
   fun setZnear(arg0: Float) {
-    val _arg = Variant(arg0)
-    __method_bind.setZnear.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setZnear.call(self._handle, listOf(arg0), null)
+    }
   }
 
   fun unprojectPosition(worldPoint: Vector3): Vector2 {
-    val _arg = Variant(worldPoint)
-    val _ret = __method_bind.unprojectPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.unprojectPosition.call(self._handle, listOf(worldPoint), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   enum class KeepAspect(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class PacketPeerUDP(
   @Suppress("UNUSED_PARAMETER")
@@ -31,38 +40,67 @@ open class PacketPeerUDP(
   }
 
   fun close() {
-    __method_bind.close.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.close.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getPacketIp(): String {
-    val _ret = __method_bind.getPacketIp.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getPacketIp.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPacketPort(): Int {
-    val _ret = __method_bind.getPacketPort.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPacketPort.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isListening(): Boolean {
-    val _ret = __method_bind.isListening.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isListening.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun joinMulticastGroup(multicastAddress: String, interfaceName: String): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(multicastAddress))
-    _args.add(Variant.fromAny(interfaceName))
-    val _ret = __method_bind.joinMulticastGroup.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(multicastAddress)
+      _args.add(interfaceName)
+      __method_bind.joinMulticastGroup.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun leaveMulticastGroup(multicastAddress: String, interfaceName: String): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(multicastAddress))
-    _args.add(Variant.fromAny(interfaceName))
-    val _ret = __method_bind.leaveMulticastGroup.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(multicastAddress)
+      _args.add(interfaceName)
+      __method_bind.leaveMulticastGroup.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun listen(
@@ -70,30 +108,47 @@ open class PacketPeerUDP(
     bindAddress: String = "*",
     recvBufSize: Int = 65536
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(port))
-    _args.add(Variant.fromAny(bindAddress))
-    _args.add(Variant.fromAny(recvBufSize))
-    val _ret = __method_bind.listen.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(port)
+      _args.add(bindAddress)
+      _args.add(recvBufSize)
+      __method_bind.listen.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setBroadcastEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setBroadcastEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBroadcastEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setDestAddress(host: String, port: Int): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(host))
-    _args.add(Variant.fromAny(port))
-    val _ret = __method_bind.setDestAddress.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(host)
+      _args.add(port)
+      __method_bind.setDestAddress.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun wait(): GDError {
-    val _ret = __method_bind.wait.call(this._handle)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.wait.call(self._handle, emptyList(), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   companion object {

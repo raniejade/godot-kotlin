@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolStringArray
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorProperty(
   @Suppress("UNUSED_PARAMETER")
@@ -120,8 +129,10 @@ open class EditorProperty(
   }
 
   fun addFocusable(control: Control) {
-    val _arg = Variant(control)
-    __method_bind.addFocusable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addFocusable.call(self._handle, listOf(control), null)
+    }
   }
 
   fun emitChanged(
@@ -130,92 +141,159 @@ open class EditorProperty(
     field: String = "",
     changing: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    _args.add(Variant.fromAny(field))
-    _args.add(Variant.fromAny(changing))
-    __method_bind.emitChanged.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(property)
+      _args.add(value)
+      _args.add(field)
+      _args.add(changing)
+      __method_bind.emitChanged.call(self._handle, _args, null)
+    }
   }
 
   fun getEditedObject(): Object {
-    val _ret = __method_bind.getEditedObject.call(this._handle)
-    return _ret.toAny() as Object
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Object
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getEditedObject.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Object>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getEditedProperty(): String {
-    val _ret = __method_bind.getEditedProperty.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getEditedProperty.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getLabel(): String {
-    val _ret = __method_bind.getLabel.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getLabel.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getTooltipText(): String {
-    val _ret = __method_bind.getTooltipText.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getTooltipText.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun isCheckable(): Boolean {
-    val _ret = __method_bind.isCheckable.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCheckable.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isChecked(): Boolean {
-    val _ret = __method_bind.isChecked.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isChecked.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isDrawRed(): Boolean {
-    val _ret = __method_bind.isDrawRed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDrawRed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isKeying(): Boolean {
-    val _ret = __method_bind.isKeying.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isKeying.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isReadOnly(): Boolean {
-    val _ret = __method_bind.isReadOnly.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isReadOnly.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBottomEditor(editor: Control) {
-    val _arg = Variant(editor)
-    __method_bind.setBottomEditor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBottomEditor.call(self._handle, listOf(editor), null)
+    }
   }
 
   fun setCheckable(checkable: Boolean) {
-    val _arg = Variant(checkable)
-    __method_bind.setCheckable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCheckable.call(self._handle, listOf(checkable), null)
+    }
   }
 
   fun setChecked(checked: Boolean) {
-    val _arg = Variant(checked)
-    __method_bind.setChecked.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setChecked.call(self._handle, listOf(checked), null)
+    }
   }
 
   fun setDrawRed(drawRed: Boolean) {
-    val _arg = Variant(drawRed)
-    __method_bind.setDrawRed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDrawRed.call(self._handle, listOf(drawRed), null)
+    }
   }
 
   fun setKeying(keying: Boolean) {
-    val _arg = Variant(keying)
-    __method_bind.setKeying.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setKeying.call(self._handle, listOf(keying), null)
+    }
   }
 
   fun setLabel(text: String) {
-    val _arg = Variant(text)
-    __method_bind.setLabel.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLabel.call(self._handle, listOf(text), null)
+    }
   }
 
   fun setReadOnly(readOnly: Boolean) {
-    val _arg = Variant(readOnly)
-    __method_bind.setReadOnly.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setReadOnly.call(self._handle, listOf(readOnly), null)
+    }
   }
 
   companion object {

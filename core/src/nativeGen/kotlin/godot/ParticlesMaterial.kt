@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ParticlesMaterial(
   @Suppress("UNUSED_PARAMETER")
@@ -510,225 +519,390 @@ open class ParticlesMaterial(
   }
 
   fun getColor(): Color {
-    val _ret = __method_bind.getColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getColorRamp(): Texture {
-    val _ret = __method_bind.getColorRamp.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getColorRamp.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getDirection(): Vector3 {
-    val _ret = __method_bind.getDirection.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getDirection.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getEmissionBoxExtents(): Vector3 {
-    val _ret = __method_bind.getEmissionBoxExtents.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getEmissionBoxExtents.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getEmissionColorTexture(): Texture {
-    val _ret = __method_bind.getEmissionColorTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getEmissionColorTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getEmissionNormalTexture(): Texture {
-    val _ret = __method_bind.getEmissionNormalTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getEmissionNormalTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getEmissionPointCount(): Int {
-    val _ret = __method_bind.getEmissionPointCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEmissionPointCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getEmissionPointTexture(): Texture {
-    val _ret = __method_bind.getEmissionPointTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getEmissionPointTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getEmissionShape(): EmissionShape {
-    val _ret = __method_bind.getEmissionShape.call(this._handle)
-    return ParticlesMaterial.EmissionShape.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEmissionShape.call(self._handle, emptyList(), _retPtr)
+      ParticlesMaterial.EmissionShape.from(_ret.value)
+    }
   }
 
   fun getEmissionSphereRadius(): Float {
-    val _ret = __method_bind.getEmissionSphereRadius.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEmissionSphereRadius.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFlag(flag: Int): Boolean {
-    val _arg = Variant(flag)
-    val _ret = __method_bind.getFlag.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFlag.call(self._handle, listOf(flag), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFlatness(): Float {
-    val _ret = __method_bind.getFlatness.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFlatness.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGravity(): Vector3 {
-    val _ret = __method_bind.getGravity.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGravity.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLifetimeRandomness(): Float {
-    val _ret = __method_bind.getLifetimeRandomness.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLifetimeRandomness.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getParam(param: Int): Float {
-    val _arg = Variant(param)
-    val _ret = __method_bind.getParam.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParam.call(self._handle, listOf(param), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getParamRandomness(param: Int): Float {
-    val _arg = Variant(param)
-    val _ret = __method_bind.getParamRandomness.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParamRandomness.call(self._handle, listOf(param), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getParamTexture(param: Int): Texture {
-    val _arg = Variant(param)
-    val _ret = __method_bind.getParamTexture.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getParamTexture.call(self._handle, listOf(param), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSpread(): Float {
-    val _ret = __method_bind.getSpread.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpread.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTrailColorModifier(): GradientTexture {
-    val _ret = __method_bind.getTrailColorModifier.call(this._handle)
-    return _ret.toAny() as GradientTexture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: GradientTexture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTrailColorModifier.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<GradientTexture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTrailDivisor(): Int {
-    val _ret = __method_bind.getTrailDivisor.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTrailDivisor.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTrailSizeModifier(): CurveTexture {
-    val _ret = __method_bind.getTrailSizeModifier.call(this._handle)
-    return _ret.toAny() as CurveTexture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: CurveTexture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTrailSizeModifier.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<CurveTexture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setColorRamp(ramp: Texture) {
-    val _arg = Variant(ramp)
-    __method_bind.setColorRamp.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColorRamp.call(self._handle, listOf(ramp), null)
+    }
   }
 
   fun setDirection(degrees: Vector3) {
-    val _arg = Variant(degrees)
-    __method_bind.setDirection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDirection.call(self._handle, listOf(degrees), null)
+    }
   }
 
   fun setEmissionBoxExtents(extents: Vector3) {
-    val _arg = Variant(extents)
-    __method_bind.setEmissionBoxExtents.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEmissionBoxExtents.call(self._handle, listOf(extents), null)
+    }
   }
 
   fun setEmissionColorTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setEmissionColorTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEmissionColorTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setEmissionNormalTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setEmissionNormalTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEmissionNormalTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setEmissionPointCount(pointCount: Int) {
-    val _arg = Variant(pointCount)
-    __method_bind.setEmissionPointCount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEmissionPointCount.call(self._handle, listOf(pointCount), null)
+    }
   }
 
   fun setEmissionPointTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setEmissionPointTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEmissionPointTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setEmissionShape(shape: Int) {
-    val _arg = Variant(shape)
-    __method_bind.setEmissionShape.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEmissionShape.call(self._handle, listOf(shape), null)
+    }
   }
 
   fun setEmissionSphereRadius(radius: Float) {
-    val _arg = Variant(radius)
-    __method_bind.setEmissionSphereRadius.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEmissionSphereRadius.call(self._handle, listOf(radius), null)
+    }
   }
 
   fun setFlag(flag: Int, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(flag))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setFlag.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(flag)
+      _args.add(enable)
+      __method_bind.setFlag.call(self._handle, _args, null)
+    }
   }
 
   fun setFlatness(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setFlatness.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFlatness.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setGravity(accelVec: Vector3) {
-    val _arg = Variant(accelVec)
-    __method_bind.setGravity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGravity.call(self._handle, listOf(accelVec), null)
+    }
   }
 
   fun setLifetimeRandomness(randomness: Float) {
-    val _arg = Variant(randomness)
-    __method_bind.setLifetimeRandomness.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLifetimeRandomness.call(self._handle, listOf(randomness), null)
+    }
   }
 
   fun setParam(param: Int, value: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setParam.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(param)
+      _args.add(value)
+      __method_bind.setParam.call(self._handle, _args, null)
+    }
   }
 
   fun setParamRandomness(param: Int, randomness: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(randomness))
-    __method_bind.setParamRandomness.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(param)
+      _args.add(randomness)
+      __method_bind.setParamRandomness.call(self._handle, _args, null)
+    }
   }
 
   fun setParamTexture(param: Int, texture: Texture) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(texture))
-    __method_bind.setParamTexture.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(param)
+      _args.add(texture)
+      __method_bind.setParamTexture.call(self._handle, _args, null)
+    }
   }
 
   fun setSpread(degrees: Float) {
-    val _arg = Variant(degrees)
-    __method_bind.setSpread.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSpread.call(self._handle, listOf(degrees), null)
+    }
   }
 
   fun setTrailColorModifier(texture: GradientTexture) {
-    val _arg = Variant(texture)
-    __method_bind.setTrailColorModifier.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTrailColorModifier.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setTrailDivisor(divisor: Int) {
-    val _arg = Variant(divisor)
-    __method_bind.setTrailDivisor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTrailDivisor.call(self._handle, listOf(divisor), null)
+    }
   }
 
   fun setTrailSizeModifier(texture: CurveTexture) {
-    val _arg = Variant(texture)
-    __method_bind.setTrailSizeModifier.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTrailSizeModifier.call(self._handle, listOf(texture), null)
+    }
   }
 
   enum class Flags(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -12,13 +13,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class MeshInstance(
   @Suppress("UNUSED_PARAMETER")
@@ -64,63 +73,112 @@ open class MeshInstance(
   }
 
   fun createConvexCollision() {
-    __method_bind.createConvexCollision.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.createConvexCollision.call(self._handle, emptyList(), null)
+    }
   }
 
   fun createDebugTangents() {
-    __method_bind.createDebugTangents.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.createDebugTangents.call(self._handle, emptyList(), null)
+    }
   }
 
   fun createTrimeshCollision() {
-    __method_bind.createTrimeshCollision.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.createTrimeshCollision.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.getMesh.call(this._handle)
-    return _ret.toAny() as Mesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Mesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMesh.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Mesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSkeletonPath(): NodePath {
-    val _ret = __method_bind.getSkeletonPath.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSkeletonPath.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSkin(): Skin {
-    val _ret = __method_bind.getSkin.call(this._handle)
-    return _ret.toAny() as Skin
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Skin
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSkin.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Skin>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSurfaceMaterial(surface: Int): Material {
-    val _arg = Variant(surface)
-    val _ret = __method_bind.getSurfaceMaterial.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Material
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Material
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSurfaceMaterial.call(self._handle, listOf(surface), _retPtr)
+      _ret = objectToType<Material>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSurfaceMaterialCount(): Int {
-    val _ret = __method_bind.getSurfaceMaterialCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSurfaceMaterialCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setMesh(mesh: Mesh) {
-    val _arg = Variant(mesh)
-    __method_bind.setMesh.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMesh.call(self._handle, listOf(mesh), null)
+    }
   }
 
   fun setSkeletonPath(skeletonPath: NodePath) {
-    val _arg = Variant(skeletonPath)
-    __method_bind.setSkeletonPath.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkeletonPath.call(self._handle, listOf(skeletonPath), null)
+    }
   }
 
   fun setSkin(skin: Skin) {
-    val _arg = Variant(skin)
-    __method_bind.setSkin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkin.call(self._handle, listOf(skin), null)
+    }
   }
 
   fun setSurfaceMaterial(surface: Int, material: Material) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(surface))
-    _args.add(Variant.fromAny(material))
-    __method_bind.setSurfaceMaterial.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(surface)
+      _args.add(material)
+      __method_bind.setSurfaceMaterial.call(self._handle, _args, null)
+    }
   }
 
   companion object {

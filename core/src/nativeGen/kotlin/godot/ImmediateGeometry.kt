@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -16,13 +17,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ImmediateGeometry(
   @Suppress("UNUSED_PARAMETER")
@@ -40,57 +49,81 @@ open class ImmediateGeometry(
     radius: Float,
     addUv: Boolean = true
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(lats))
-    _args.add(Variant.fromAny(lons))
-    _args.add(Variant.fromAny(radius))
-    _args.add(Variant.fromAny(addUv))
-    __method_bind.addSphere.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(lats)
+      _args.add(lons)
+      _args.add(radius)
+      _args.add(addUv)
+      __method_bind.addSphere.call(self._handle, _args, null)
+    }
   }
 
   fun addVertex(position: Vector3) {
-    val _arg = Variant(position)
-    __method_bind.addVertex.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addVertex.call(self._handle, listOf(position), null)
+    }
   }
 
   fun begin(primitive: Int, texture: Texture) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(primitive))
-    _args.add(Variant.fromAny(texture))
-    __method_bind.begin.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(primitive)
+      _args.add(texture)
+      __method_bind.begin.call(self._handle, _args, null)
+    }
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun end() {
-    __method_bind.end.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.end.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setNormal(normal: Vector3) {
-    val _arg = Variant(normal)
-    __method_bind.setNormal.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNormal.call(self._handle, listOf(normal), null)
+    }
   }
 
   fun setTangent(tangent: Plane) {
-    val _arg = Variant(tangent)
-    __method_bind.setTangent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTangent.call(self._handle, listOf(tangent), null)
+    }
   }
 
   fun setUv(uv: Vector2) {
-    val _arg = Variant(uv)
-    __method_bind.setUv.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUv.call(self._handle, listOf(uv), null)
+    }
   }
 
   fun setUv2(uv: Vector2) {
-    val _arg = Variant(uv)
-    __method_bind.setUv2.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUv2.call(self._handle, listOf(uv), null)
+    }
   }
 
   companion object {

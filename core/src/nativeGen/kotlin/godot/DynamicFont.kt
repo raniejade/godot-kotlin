@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class DynamicFont(
   @Suppress("UNUSED_PARAMETER")
@@ -121,104 +130,174 @@ open class DynamicFont(
   }
 
   fun addFallback(data: DynamicFontData) {
-    val _arg = Variant(data)
-    __method_bind.addFallback.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addFallback.call(self._handle, listOf(data), null)
+    }
   }
 
   fun getFallback(idx: Int): DynamicFontData {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getFallback.call(this._handle, listOf(_arg))
-    return _ret.toAny() as DynamicFontData
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: DynamicFontData
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getFallback.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<DynamicFontData>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getFallbackCount(): Int {
-    val _ret = __method_bind.getFallbackCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFallbackCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFontData(): DynamicFontData {
-    val _ret = __method_bind.getFontData.call(this._handle)
-    return _ret.toAny() as DynamicFontData
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: DynamicFontData
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getFontData.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<DynamicFontData>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getOutlineColor(): Color {
-    val _ret = __method_bind.getOutlineColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOutlineColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOutlineSize(): Int {
-    val _ret = __method_bind.getOutlineSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOutlineSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSize(): Int {
-    val _ret = __method_bind.getSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSpacing(type: Int): Int {
-    val _arg = Variant(type)
-    val _ret = __method_bind.getSpacing.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpacing.call(self._handle, listOf(type), _retPtr)
+      _ret.value
+    }
   }
 
   fun getUseFilter(): Boolean {
-    val _ret = __method_bind.getUseFilter.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUseFilter.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getUseMipmaps(): Boolean {
-    val _ret = __method_bind.getUseMipmaps.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUseMipmaps.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeFallback(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.removeFallback.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeFallback.call(self._handle, listOf(idx), null)
+    }
   }
 
   fun setFallback(idx: Int, data: DynamicFontData) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(data))
-    __method_bind.setFallback.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(data)
+      __method_bind.setFallback.call(self._handle, _args, null)
+    }
   }
 
   fun setFontData(data: DynamicFontData) {
-    val _arg = Variant(data)
-    __method_bind.setFontData.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFontData.call(self._handle, listOf(data), null)
+    }
   }
 
   fun setOutlineColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setOutlineColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOutlineColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setOutlineSize(size: Int) {
-    val _arg = Variant(size)
-    __method_bind.setOutlineSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOutlineSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setSize(data: Int) {
-    val _arg = Variant(data)
-    __method_bind.setSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSize.call(self._handle, listOf(data), null)
+    }
   }
 
   fun setSpacing(type: Int, value: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setSpacing.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(value)
+      __method_bind.setSpacing.call(self._handle, _args, null)
+    }
   }
 
   fun setUseFilter(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseFilter.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseFilter.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setUseMipmaps(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseMipmaps.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseMipmaps.call(self._handle, listOf(enable), null)
+    }
   }
 
   enum class SpacingType(

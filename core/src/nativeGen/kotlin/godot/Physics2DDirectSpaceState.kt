@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Physics2DDirectSpaceState(
   @Suppress("UNUSED_PARAMETER")
@@ -32,23 +41,39 @@ open class Physics2DDirectSpaceState(
   }
 
   fun castMotion(shape: Physics2DShapeQueryParameters): VariantArray {
-    val _arg = Variant(shape)
-    val _ret = __method_bind.castMotion.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.castMotion.call(self._handle, listOf(shape), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun collideShape(shape: Physics2DShapeQueryParameters, maxResults: Int = 32): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(shape))
-    _args.add(Variant.fromAny(maxResults))
-    val _ret = __method_bind.collideShape.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(shape)
+      _args.add(maxResults)
+      __method_bind.collideShape.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRestInfo(shape: Physics2DShapeQueryParameters): Dictionary {
-    val _arg = Variant(shape)
-    val _ret = __method_bind.getRestInfo.call(this._handle, listOf(_arg))
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRestInfo.call(self._handle, listOf(shape), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun intersectPoint(
@@ -59,15 +84,21 @@ open class Physics2DDirectSpaceState(
     collideWithBodies: Boolean = true,
     collideWithAreas: Boolean = false
   ): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(point))
-    _args.add(Variant.fromAny(maxResults))
-    _args.add(Variant.fromAny(exclude))
-    _args.add(Variant.fromAny(collisionLayer))
-    _args.add(Variant.fromAny(collideWithBodies))
-    _args.add(Variant.fromAny(collideWithAreas))
-    val _ret = __method_bind.intersectPoint.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(point)
+      _args.add(maxResults)
+      _args.add(exclude)
+      _args.add(collisionLayer)
+      _args.add(collideWithBodies)
+      _args.add(collideWithAreas)
+      __method_bind.intersectPoint.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun intersectPointOnCanvas(
@@ -79,16 +110,22 @@ open class Physics2DDirectSpaceState(
     collideWithBodies: Boolean = true,
     collideWithAreas: Boolean = false
   ): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(point))
-    _args.add(Variant.fromAny(canvasInstanceId))
-    _args.add(Variant.fromAny(maxResults))
-    _args.add(Variant.fromAny(exclude))
-    _args.add(Variant.fromAny(collisionLayer))
-    _args.add(Variant.fromAny(collideWithBodies))
-    _args.add(Variant.fromAny(collideWithAreas))
-    val _ret = __method_bind.intersectPointOnCanvas.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(point)
+      _args.add(canvasInstanceId)
+      _args.add(maxResults)
+      _args.add(exclude)
+      _args.add(collisionLayer)
+      _args.add(collideWithBodies)
+      _args.add(collideWithAreas)
+      __method_bind.intersectPointOnCanvas.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun intersectRay(
@@ -99,23 +136,35 @@ open class Physics2DDirectSpaceState(
     collideWithBodies: Boolean = true,
     collideWithAreas: Boolean = false
   ): Dictionary {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    _args.add(Variant.fromAny(exclude))
-    _args.add(Variant.fromAny(collisionLayer))
-    _args.add(Variant.fromAny(collideWithBodies))
-    _args.add(Variant.fromAny(collideWithAreas))
-    val _ret = __method_bind.intersectRay.call(this._handle, _args)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      _args.add(exclude)
+      _args.add(collisionLayer)
+      _args.add(collideWithBodies)
+      _args.add(collideWithAreas)
+      __method_bind.intersectRay.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun intersectShape(shape: Physics2DShapeQueryParameters, maxResults: Int = 32): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(shape))
-    _args.add(Variant.fromAny(maxResults))
-    val _ret = __method_bind.intersectShape.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(shape)
+      _args.add(maxResults)
+      __method_bind.intersectShape.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   companion object {

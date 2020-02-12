@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class DampedSpringJoint2D(
   @Suppress("UNUSED_PARAMETER")
@@ -61,43 +70,71 @@ open class DampedSpringJoint2D(
   }
 
   fun getDamping(): Float {
-    val _ret = __method_bind.getDamping.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDamping.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLength(): Float {
-    val _ret = __method_bind.getLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRestLength(): Float {
-    val _ret = __method_bind.getRestLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRestLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getStiffness(): Float {
-    val _ret = __method_bind.getStiffness.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStiffness.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun setDamping(damping: Float) {
-    val _arg = Variant(damping)
-    __method_bind.setDamping.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDamping.call(self._handle, listOf(damping), null)
+    }
   }
 
   fun setLength(length: Float) {
-    val _arg = Variant(length)
-    __method_bind.setLength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLength.call(self._handle, listOf(length), null)
+    }
   }
 
   fun setRestLength(restLength: Float) {
-    val _arg = Variant(restLength)
-    __method_bind.setRestLength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRestLength.call(self._handle, listOf(restLength), null)
+    }
   }
 
   fun setStiffness(stiffness: Float) {
-    val _arg = Variant(stiffness)
-    __method_bind.setStiffness.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStiffness.call(self._handle, listOf(stiffness), null)
+    }
   }
 
   companion object {

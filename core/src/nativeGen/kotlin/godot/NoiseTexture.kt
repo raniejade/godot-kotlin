@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class NoiseTexture(
   @Suppress("UNUSED_PARAMETER")
@@ -79,53 +88,87 @@ open class NoiseTexture(
   }
 
   fun getBumpStrength(): Float {
-    val _ret = __method_bind.getBumpStrength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBumpStrength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getNoise(): OpenSimplexNoise {
-    val _ret = __method_bind.getNoise.call(this._handle)
-    return _ret.toAny() as OpenSimplexNoise
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: OpenSimplexNoise
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNoise.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<OpenSimplexNoise>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSeamless(): Boolean {
-    val _ret = __method_bind.getSeamless.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSeamless.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isNormalmap(): Boolean {
-    val _ret = __method_bind.isNormalmap.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isNormalmap.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAsNormalmap(asNormalmap: Boolean) {
-    val _arg = Variant(asNormalmap)
-    __method_bind.setAsNormalmap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAsNormalmap.call(self._handle, listOf(asNormalmap), null)
+    }
   }
 
   fun setBumpStrength(bumpStrength: Float) {
-    val _arg = Variant(bumpStrength)
-    __method_bind.setBumpStrength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBumpStrength.call(self._handle, listOf(bumpStrength), null)
+    }
   }
 
   fun setHeight(height: Int) {
-    val _arg = Variant(height)
-    __method_bind.setHeight.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHeight.call(self._handle, listOf(height), null)
+    }
   }
 
   fun setNoise(noise: OpenSimplexNoise) {
-    val _arg = Variant(noise)
-    __method_bind.setNoise.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNoise.call(self._handle, listOf(noise), null)
+    }
   }
 
   fun setSeamless(seamless: Boolean) {
-    val _arg = Variant(seamless)
-    __method_bind.setSeamless.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSeamless.call(self._handle, listOf(seamless), null)
+    }
   }
 
   fun setWidth(width: Int) {
-    val _arg = Variant(width)
-    __method_bind.setWidth.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWidth.call(self._handle, listOf(width), null)
+    }
   }
 
   companion object {

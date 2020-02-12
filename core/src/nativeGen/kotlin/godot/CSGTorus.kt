@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class CSGTorus(
   @Suppress("UNUSED_PARAMETER")
@@ -79,63 +88,107 @@ open class CSGTorus(
   }
 
   fun getInnerRadius(): Float {
-    val _ret = __method_bind.getInnerRadius.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInnerRadius.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.getMaterial.call(this._handle)
-    return _ret.toAny() as Material
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Material
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMaterial.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Material>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getOuterRadius(): Float {
-    val _ret = __method_bind.getOuterRadius.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOuterRadius.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRingSides(): Int {
-    val _ret = __method_bind.getRingSides.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRingSides.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSides(): Int {
-    val _ret = __method_bind.getSides.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSides.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSmoothFaces(): Boolean {
-    val _ret = __method_bind.getSmoothFaces.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSmoothFaces.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setInnerRadius(radius: Float) {
-    val _arg = Variant(radius)
-    __method_bind.setInnerRadius.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInnerRadius.call(self._handle, listOf(radius), null)
+    }
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant(material)
-    __method_bind.setMaterial.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaterial.call(self._handle, listOf(material), null)
+    }
   }
 
   fun setOuterRadius(radius: Float) {
-    val _arg = Variant(radius)
-    __method_bind.setOuterRadius.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOuterRadius.call(self._handle, listOf(radius), null)
+    }
   }
 
   fun setRingSides(sides: Int) {
-    val _arg = Variant(sides)
-    __method_bind.setRingSides.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRingSides.call(self._handle, listOf(sides), null)
+    }
   }
 
   fun setSides(sides: Int) {
-    val _arg = Variant(sides)
-    __method_bind.setSides.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSides.call(self._handle, listOf(sides), null)
+    }
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
-    val _arg = Variant(smoothFaces)
-    __method_bind.setSmoothFaces.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSmoothFaces.call(self._handle, listOf(smoothFaces), null)
+    }
   }
 
   companion object {

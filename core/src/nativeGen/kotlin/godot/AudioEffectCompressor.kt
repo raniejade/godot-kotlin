@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AudioEffectCompressor(
   @Suppress("UNUSED_PARAMETER")
@@ -85,73 +94,123 @@ open class AudioEffectCompressor(
   }
 
   fun getAttackUs(): Float {
-    val _ret = __method_bind.getAttackUs.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAttackUs.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGain(): Float {
-    val _ret = __method_bind.getGain.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGain.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMix(): Float {
-    val _ret = __method_bind.getMix.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMix.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRatio(): Float {
-    val _ret = __method_bind.getRatio.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRatio.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getReleaseMs(): Float {
-    val _ret = __method_bind.getReleaseMs.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getReleaseMs.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSidechain(): String {
-    val _ret = __method_bind.getSidechain.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSidechain.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getThreshold(): Float {
-    val _ret = __method_bind.getThreshold.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getThreshold.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun setAttackUs(attackUs: Float) {
-    val _arg = Variant(attackUs)
-    __method_bind.setAttackUs.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAttackUs.call(self._handle, listOf(attackUs), null)
+    }
   }
 
   fun setGain(gain: Float) {
-    val _arg = Variant(gain)
-    __method_bind.setGain.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGain.call(self._handle, listOf(gain), null)
+    }
   }
 
   fun setMix(mix: Float) {
-    val _arg = Variant(mix)
-    __method_bind.setMix.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMix.call(self._handle, listOf(mix), null)
+    }
   }
 
   fun setRatio(ratio: Float) {
-    val _arg = Variant(ratio)
-    __method_bind.setRatio.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRatio.call(self._handle, listOf(ratio), null)
+    }
   }
 
   fun setReleaseMs(releaseMs: Float) {
-    val _arg = Variant(releaseMs)
-    __method_bind.setReleaseMs.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setReleaseMs.call(self._handle, listOf(releaseMs), null)
+    }
   }
 
   fun setSidechain(sidechain: String) {
-    val _arg = Variant(sidechain)
-    __method_bind.setSidechain.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSidechain.call(self._handle, listOf(sidechain), null)
+    }
   }
 
   fun setThreshold(threshold: Float) {
-    val _arg = Variant(threshold)
-    __method_bind.setThreshold.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setThreshold.call(self._handle, listOf(threshold), null)
+    }
   }
 
   companion object {

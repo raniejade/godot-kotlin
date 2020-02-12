@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class InputEventKey(
   @Suppress("UNUSED_PARAMETER")
@@ -62,38 +71,61 @@ open class InputEventKey(
   }
 
   fun getScancode(): Int {
-    val _ret = __method_bind.getScancode.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getScancode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getScancodeWithModifiers(): Int {
-    val _ret = __method_bind.getScancodeWithModifiers.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getScancodeWithModifiers.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getUnicode(): Int {
-    val _ret = __method_bind.getUnicode.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUnicode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setEcho(echo: Boolean) {
-    val _arg = Variant(echo)
-    __method_bind.setEcho.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEcho.call(self._handle, listOf(echo), null)
+    }
   }
 
   fun setPressed(pressed: Boolean) {
-    val _arg = Variant(pressed)
-    __method_bind.setPressed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPressed.call(self._handle, listOf(pressed), null)
+    }
   }
 
   fun setScancode(scancode: Int) {
-    val _arg = Variant(scancode)
-    __method_bind.setScancode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScancode.call(self._handle, listOf(scancode), null)
+    }
   }
 
   fun setUnicode(unicode: Int) {
-    val _arg = Variant(unicode)
-    __method_bind.setUnicode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUnicode.call(self._handle, listOf(unicode), null)
+    }
   }
 
   companion object {

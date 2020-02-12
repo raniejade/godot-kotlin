@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.AABB
 import godot.core.Allocator
 import godot.core.Color
@@ -15,13 +16,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class MultiMesh(
   @Suppress("UNUSED_PARAMETER")
@@ -82,125 +91,209 @@ open class MultiMesh(
   }
 
   fun getAabb(): AABB {
-    val _ret = __method_bind.getAabb.call(this._handle)
-    return _ret.asAABB()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = AABB()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getAabb.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getColorFormat(): ColorFormat {
-    val _ret = __method_bind.getColorFormat.call(this._handle)
-    return MultiMesh.ColorFormat.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getColorFormat.call(self._handle, emptyList(), _retPtr)
+      MultiMesh.ColorFormat.from(_ret.value)
+    }
   }
 
   fun getCustomDataFormat(): CustomDataFormat {
-    val _ret = __method_bind.getCustomDataFormat.call(this._handle)
-    return MultiMesh.CustomDataFormat.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCustomDataFormat.call(self._handle, emptyList(), _retPtr)
+      MultiMesh.CustomDataFormat.from(_ret.value)
+    }
   }
 
   fun getInstanceColor(instance: Int): Color {
-    val _arg = Variant(instance)
-    val _ret = __method_bind.getInstanceColor.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getInstanceColor.call(self._handle, listOf(instance), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getInstanceCount(): Int {
-    val _ret = __method_bind.getInstanceCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInstanceCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getInstanceCustomData(instance: Int): Color {
-    val _arg = Variant(instance)
-    val _ret = __method_bind.getInstanceCustomData.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getInstanceCustomData.call(self._handle, listOf(instance), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getInstanceTransform(instance: Int): Transform {
-    val _arg = Variant(instance)
-    val _ret = __method_bind.getInstanceTransform.call(this._handle, listOf(_arg))
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getInstanceTransform.call(self._handle, listOf(instance), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getInstanceTransform2d(instance: Int): Transform2D {
-    val _arg = Variant(instance)
-    val _ret = __method_bind.getInstanceTransform2d.call(this._handle, listOf(_arg))
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getInstanceTransform2d.call(self._handle, listOf(instance), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.getMesh.call(this._handle)
-    return _ret.toAny() as Mesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Mesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMesh.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Mesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTransformFormat(): TransformFormat {
-    val _ret = __method_bind.getTransformFormat.call(this._handle)
-    return MultiMesh.TransformFormat.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTransformFormat.call(self._handle, emptyList(), _retPtr)
+      MultiMesh.TransformFormat.from(_ret.value)
+    }
   }
 
   fun getVisibleInstanceCount(): Int {
-    val _ret = __method_bind.getVisibleInstanceCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVisibleInstanceCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAsBulkArray(array: PoolFloatArray) {
-    val _arg = Variant(array)
-    __method_bind.setAsBulkArray.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAsBulkArray.call(self._handle, listOf(array), null)
+    }
   }
 
   fun setColorFormat(format: Int) {
-    val _arg = Variant(format)
-    __method_bind.setColorFormat.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColorFormat.call(self._handle, listOf(format), null)
+    }
   }
 
   fun setCustomDataFormat(format: Int) {
-    val _arg = Variant(format)
-    __method_bind.setCustomDataFormat.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCustomDataFormat.call(self._handle, listOf(format), null)
+    }
   }
 
   fun setInstanceColor(instance: Int, color: Color) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(instance))
-    _args.add(Variant.fromAny(color))
-    __method_bind.setInstanceColor.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(instance)
+      _args.add(color)
+      __method_bind.setInstanceColor.call(self._handle, _args, null)
+    }
   }
 
   fun setInstanceCount(count: Int) {
-    val _arg = Variant(count)
-    __method_bind.setInstanceCount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInstanceCount.call(self._handle, listOf(count), null)
+    }
   }
 
   fun setInstanceCustomData(instance: Int, customData: Color) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(instance))
-    _args.add(Variant.fromAny(customData))
-    __method_bind.setInstanceCustomData.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(instance)
+      _args.add(customData)
+      __method_bind.setInstanceCustomData.call(self._handle, _args, null)
+    }
   }
 
   fun setInstanceTransform(instance: Int, transform: Transform) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(instance))
-    _args.add(Variant.fromAny(transform))
-    __method_bind.setInstanceTransform.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(instance)
+      _args.add(transform)
+      __method_bind.setInstanceTransform.call(self._handle, _args, null)
+    }
   }
 
   fun setInstanceTransform2d(instance: Int, transform: Transform2D) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(instance))
-    _args.add(Variant.fromAny(transform))
-    __method_bind.setInstanceTransform2d.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(instance)
+      _args.add(transform)
+      __method_bind.setInstanceTransform2d.call(self._handle, _args, null)
+    }
   }
 
   fun setMesh(mesh: Mesh) {
-    val _arg = Variant(mesh)
-    __method_bind.setMesh.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMesh.call(self._handle, listOf(mesh), null)
+    }
   }
 
   fun setTransformFormat(format: Int) {
-    val _arg = Variant(format)
-    __method_bind.setTransformFormat.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTransformFormat.call(self._handle, listOf(format), null)
+    }
   }
 
   fun setVisibleInstanceCount(count: Int) {
-    val _arg = Variant(count)
-    __method_bind.setVisibleInstanceCount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVisibleInstanceCount.call(self._handle, listOf(count), null)
+    }
   }
 
   enum class TransformFormat(

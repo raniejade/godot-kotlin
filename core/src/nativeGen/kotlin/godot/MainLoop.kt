@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class MainLoop(
   @Suppress("UNUSED_PARAMETER")
@@ -37,33 +46,51 @@ open class MainLoop(
   }
 
   fun finish() {
-    __method_bind.finish.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.finish.call(self._handle, emptyList(), null)
+    }
   }
 
   fun idle(delta: Float): Boolean {
-    val _arg = Variant(delta)
-    val _ret = __method_bind.idle.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.idle.call(self._handle, listOf(delta), _retPtr)
+      _ret.value
+    }
   }
 
   fun init() {
-    __method_bind.init.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.init.call(self._handle, emptyList(), null)
+    }
   }
 
   fun inputEvent(event: InputEvent) {
-    val _arg = Variant(event)
-    __method_bind.inputEvent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.inputEvent.call(self._handle, listOf(event), null)
+    }
   }
 
   fun inputText(text: String) {
-    val _arg = Variant(text)
-    __method_bind.inputText.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.inputText.call(self._handle, listOf(text), null)
+    }
   }
 
   fun iteration(delta: Float): Boolean {
-    val _arg = Variant(delta)
-    val _ret = __method_bind.iteration.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.iteration.call(self._handle, listOf(delta), _retPtr)
+      _ret.value
+    }
   }
 
   companion object {

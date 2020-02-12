@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class UPNPDevice(
   @Suppress("UNUSED_PARAMETER")
@@ -84,92 +93,160 @@ open class UPNPDevice(
     proto: String = "UDP",
     duration: Int = 0
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(port))
-    _args.add(Variant.fromAny(portInternal))
-    _args.add(Variant.fromAny(desc))
-    _args.add(Variant.fromAny(proto))
-    _args.add(Variant.fromAny(duration))
-    val _ret = __method_bind.addPortMapping.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(port)
+      _args.add(portInternal)
+      _args.add(desc)
+      _args.add(proto)
+      _args.add(duration)
+      __method_bind.addPortMapping.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun deletePortMapping(port: Int, proto: String = "UDP"): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(port))
-    _args.add(Variant.fromAny(proto))
-    val _ret = __method_bind.deletePortMapping.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(port)
+      _args.add(proto)
+      __method_bind.deletePortMapping.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getDescriptionUrl(): String {
-    val _ret = __method_bind.getDescriptionUrl.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getDescriptionUrl.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getIgdControlUrl(): String {
-    val _ret = __method_bind.getIgdControlUrl.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getIgdControlUrl.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getIgdOurAddr(): String {
-    val _ret = __method_bind.getIgdOurAddr.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getIgdOurAddr.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getIgdServiceType(): String {
-    val _ret = __method_bind.getIgdServiceType.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getIgdServiceType.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getIgdStatus(): IGDStatus {
-    val _ret = __method_bind.getIgdStatus.call(this._handle)
-    return UPNPDevice.IGDStatus.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getIgdStatus.call(self._handle, emptyList(), _retPtr)
+      UPNPDevice.IGDStatus.from(_ret.value)
+    }
   }
 
   fun getServiceType(): String {
-    val _ret = __method_bind.getServiceType.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getServiceType.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun isValidGateway(): Boolean {
-    val _ret = __method_bind.isValidGateway.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isValidGateway.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun queryExternalAddress(): String {
-    val _ret = __method_bind.queryExternalAddress.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.queryExternalAddress.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun setDescriptionUrl(url: String) {
-    val _arg = Variant(url)
-    __method_bind.setDescriptionUrl.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDescriptionUrl.call(self._handle, listOf(url), null)
+    }
   }
 
   fun setIgdControlUrl(url: String) {
-    val _arg = Variant(url)
-    __method_bind.setIgdControlUrl.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setIgdControlUrl.call(self._handle, listOf(url), null)
+    }
   }
 
   fun setIgdOurAddr(addr: String) {
-    val _arg = Variant(addr)
-    __method_bind.setIgdOurAddr.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setIgdOurAddr.call(self._handle, listOf(addr), null)
+    }
   }
 
   fun setIgdServiceType(type: String) {
-    val _arg = Variant(type)
-    __method_bind.setIgdServiceType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setIgdServiceType.call(self._handle, listOf(type), null)
+    }
   }
 
   fun setIgdStatus(status: Int) {
-    val _arg = Variant(status)
-    __method_bind.setIgdStatus.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setIgdStatus.call(self._handle, listOf(status), null)
+    }
   }
 
   fun setServiceType(type: String) {
-    val _arg = Variant(type)
-    __method_bind.setServiceType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setServiceType.call(self._handle, listOf(type), null)
+    }
   }
 
   enum class IGDStatus(

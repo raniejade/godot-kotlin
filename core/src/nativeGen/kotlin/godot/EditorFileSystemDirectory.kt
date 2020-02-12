@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorFileSystemDirectory(
   @Suppress("UNUSED_PARAMETER")
@@ -30,82 +39,154 @@ open class EditorFileSystemDirectory(
   }
 
   fun findDirIndex(name: String): Int {
-    val _arg = Variant(name)
-    val _ret = __method_bind.findDirIndex.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.findDirIndex.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun findFileIndex(name: String): Int {
-    val _arg = Variant(name)
-    val _ret = __method_bind.findFileIndex.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.findFileIndex.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFile(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getFile.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getFile.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getFileCount(): Int {
-    val _ret = __method_bind.getFileCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFileCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFileImportIsValid(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getFileImportIsValid.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFileImportIsValid.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFilePath(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getFilePath.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getFilePath.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getFileScriptClassExtends(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getFileScriptClassExtends.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getFileScriptClassExtends.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getFileScriptClassName(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getFileScriptClassName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getFileScriptClassName.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getFileType(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getFileType.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getFileType.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getName(): String {
-    val _ret = __method_bind.getName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getParent(): EditorFileSystemDirectory {
-    val _ret = __method_bind.getParent.call(this._handle)
-    return _ret.toAny() as EditorFileSystemDirectory
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: EditorFileSystemDirectory
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getParent.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<EditorFileSystemDirectory>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPath(): String {
-    val _ret = __method_bind.getPath.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getPath.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getSubdir(idx: Int): EditorFileSystemDirectory {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getSubdir.call(this._handle, listOf(_arg))
-    return _ret.toAny() as EditorFileSystemDirectory
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: EditorFileSystemDirectory
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSubdir.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<EditorFileSystemDirectory>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSubdirCount(): Int {
-    val _ret = __method_bind.getSubdirCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSubdirCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   companion object {

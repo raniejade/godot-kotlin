@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Tabs(
   @Suppress("UNUSED_PARAMETER")
@@ -101,157 +110,260 @@ open class Tabs(
   }
 
   fun addTab(title: String = "", icon: Texture) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(title))
-    _args.add(Variant.fromAny(icon))
-    __method_bind.addTab.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(title)
+      _args.add(icon)
+      __method_bind.addTab.call(self._handle, _args, null)
+    }
   }
 
   fun ensureTabVisible(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.ensureTabVisible.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.ensureTabVisible.call(self._handle, listOf(idx), null)
+    }
   }
 
   fun getCurrentTab(): Int {
-    val _ret = __method_bind.getCurrentTab.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCurrentTab.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDragToRearrangeEnabled(): Boolean {
-    val _ret = __method_bind.getDragToRearrangeEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDragToRearrangeEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getOffsetButtonsVisible(): Boolean {
-    val _ret = __method_bind.getOffsetButtonsVisible.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOffsetButtonsVisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getScrollingEnabled(): Boolean {
-    val _ret = __method_bind.getScrollingEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getScrollingEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSelectWithRmb(): Boolean {
-    val _ret = __method_bind.getSelectWithRmb.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSelectWithRmb.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTabAlign(): TabAlign {
-    val _ret = __method_bind.getTabAlign.call(this._handle)
-    return Tabs.TabAlign.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTabAlign.call(self._handle, emptyList(), _retPtr)
+      Tabs.TabAlign.from(_ret.value)
+    }
   }
 
   fun getTabCloseDisplayPolicy(): CloseButtonDisplayPolicy {
-    val _ret = __method_bind.getTabCloseDisplayPolicy.call(this._handle)
-    return Tabs.CloseButtonDisplayPolicy.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTabCloseDisplayPolicy.call(self._handle, emptyList(), _retPtr)
+      Tabs.CloseButtonDisplayPolicy.from(_ret.value)
+    }
   }
 
   fun getTabCount(): Int {
-    val _ret = __method_bind.getTabCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTabCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTabDisabled(tabIdx: Int): Boolean {
-    val _arg = Variant(tabIdx)
-    val _ret = __method_bind.getTabDisabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTabDisabled.call(self._handle, listOf(tabIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTabIcon(tabIdx: Int): Texture {
-    val _arg = Variant(tabIdx)
-    val _ret = __method_bind.getTabIcon.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTabIcon.call(self._handle, listOf(tabIdx), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTabOffset(): Int {
-    val _ret = __method_bind.getTabOffset.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTabOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTabRect(tabIdx: Int): Rect2 {
-    val _arg = Variant(tabIdx)
-    val _ret = __method_bind.getTabRect.call(this._handle, listOf(_arg))
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTabRect.call(self._handle, listOf(tabIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTabTitle(tabIdx: Int): String {
-    val _arg = Variant(tabIdx)
-    val _ret = __method_bind.getTabTitle.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getTabTitle.call(self._handle, listOf(tabIdx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getTabsRearrangeGroup(): Int {
-    val _ret = __method_bind.getTabsRearrangeGroup.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTabsRearrangeGroup.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun moveTab(from: Int, to: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    __method_bind.moveTab.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      __method_bind.moveTab.call(self._handle, _args, null)
+    }
   }
 
   fun removeTab(tabIdx: Int) {
-    val _arg = Variant(tabIdx)
-    __method_bind.removeTab.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeTab.call(self._handle, listOf(tabIdx), null)
+    }
   }
 
   fun setCurrentTab(tabIdx: Int) {
-    val _arg = Variant(tabIdx)
-    __method_bind.setCurrentTab.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCurrentTab.call(self._handle, listOf(tabIdx), null)
+    }
   }
 
   fun setDragToRearrangeEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setDragToRearrangeEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDragToRearrangeEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setScrollingEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setScrollingEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScrollingEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setSelectWithRmb(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setSelectWithRmb.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSelectWithRmb.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setTabAlign(align: Int) {
-    val _arg = Variant(align)
-    __method_bind.setTabAlign.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTabAlign.call(self._handle, listOf(align), null)
+    }
   }
 
   fun setTabCloseDisplayPolicy(policy: Int) {
-    val _arg = Variant(policy)
-    __method_bind.setTabCloseDisplayPolicy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTabCloseDisplayPolicy.call(self._handle, listOf(policy), null)
+    }
   }
 
   fun setTabDisabled(tabIdx: Int, disabled: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(tabIdx))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.setTabDisabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(tabIdx)
+      _args.add(disabled)
+      __method_bind.setTabDisabled.call(self._handle, _args, null)
+    }
   }
 
   fun setTabIcon(tabIdx: Int, icon: Texture) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(tabIdx))
-    _args.add(Variant.fromAny(icon))
-    __method_bind.setTabIcon.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(tabIdx)
+      _args.add(icon)
+      __method_bind.setTabIcon.call(self._handle, _args, null)
+    }
   }
 
   fun setTabTitle(tabIdx: Int, title: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(tabIdx))
-    _args.add(Variant.fromAny(title))
-    __method_bind.setTabTitle.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(tabIdx)
+      _args.add(title)
+      __method_bind.setTabTitle.call(self._handle, _args, null)
+    }
   }
 
   fun setTabsRearrangeGroup(groupId: Int) {
-    val _arg = Variant(groupId)
-    __method_bind.setTabsRearrangeGroup.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTabsRearrangeGroup.call(self._handle, listOf(groupId), null)
+    }
   }
 
   enum class CloseButtonDisplayPolicy(

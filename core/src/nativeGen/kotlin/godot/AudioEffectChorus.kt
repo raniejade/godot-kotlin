@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AudioEffectChorus(
   @Suppress("UNUSED_PARAMETER")
@@ -246,111 +255,174 @@ open class AudioEffectChorus(
   }
 
   fun getDry(): Float {
-    val _ret = __method_bind.getDry.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDry.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVoiceCount(): Int {
-    val _ret = __method_bind.getVoiceCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVoiceCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getVoiceCutoffHz(voiceIdx: Int): Float {
-    val _arg = Variant(voiceIdx)
-    val _ret = __method_bind.getVoiceCutoffHz.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVoiceCutoffHz.call(self._handle, listOf(voiceIdx), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVoiceDelayMs(voiceIdx: Int): Float {
-    val _arg = Variant(voiceIdx)
-    val _ret = __method_bind.getVoiceDelayMs.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVoiceDelayMs.call(self._handle, listOf(voiceIdx), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVoiceDepthMs(voiceIdx: Int): Float {
-    val _arg = Variant(voiceIdx)
-    val _ret = __method_bind.getVoiceDepthMs.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVoiceDepthMs.call(self._handle, listOf(voiceIdx), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVoiceLevelDb(voiceIdx: Int): Float {
-    val _arg = Variant(voiceIdx)
-    val _ret = __method_bind.getVoiceLevelDb.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVoiceLevelDb.call(self._handle, listOf(voiceIdx), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVoicePan(voiceIdx: Int): Float {
-    val _arg = Variant(voiceIdx)
-    val _ret = __method_bind.getVoicePan.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVoicePan.call(self._handle, listOf(voiceIdx), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVoiceRateHz(voiceIdx: Int): Float {
-    val _arg = Variant(voiceIdx)
-    val _ret = __method_bind.getVoiceRateHz.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVoiceRateHz.call(self._handle, listOf(voiceIdx), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getWet(): Float {
-    val _ret = __method_bind.getWet.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWet.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun setDry(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setDry.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDry.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setVoiceCount(voices: Int) {
-    val _arg = Variant(voices)
-    __method_bind.setVoiceCount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVoiceCount.call(self._handle, listOf(voices), null)
+    }
   }
 
   fun setVoiceCutoffHz(voiceIdx: Int, cutoffHz: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(voiceIdx))
-    _args.add(Variant.fromAny(cutoffHz))
-    __method_bind.setVoiceCutoffHz.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(voiceIdx)
+      _args.add(cutoffHz)
+      __method_bind.setVoiceCutoffHz.call(self._handle, _args, null)
+    }
   }
 
   fun setVoiceDelayMs(voiceIdx: Int, delayMs: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(voiceIdx))
-    _args.add(Variant.fromAny(delayMs))
-    __method_bind.setVoiceDelayMs.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(voiceIdx)
+      _args.add(delayMs)
+      __method_bind.setVoiceDelayMs.call(self._handle, _args, null)
+    }
   }
 
   fun setVoiceDepthMs(voiceIdx: Int, depthMs: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(voiceIdx))
-    _args.add(Variant.fromAny(depthMs))
-    __method_bind.setVoiceDepthMs.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(voiceIdx)
+      _args.add(depthMs)
+      __method_bind.setVoiceDepthMs.call(self._handle, _args, null)
+    }
   }
 
   fun setVoiceLevelDb(voiceIdx: Int, levelDb: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(voiceIdx))
-    _args.add(Variant.fromAny(levelDb))
-    __method_bind.setVoiceLevelDb.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(voiceIdx)
+      _args.add(levelDb)
+      __method_bind.setVoiceLevelDb.call(self._handle, _args, null)
+    }
   }
 
   fun setVoicePan(voiceIdx: Int, pan: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(voiceIdx))
-    _args.add(Variant.fromAny(pan))
-    __method_bind.setVoicePan.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(voiceIdx)
+      _args.add(pan)
+      __method_bind.setVoicePan.call(self._handle, _args, null)
+    }
   }
 
   fun setVoiceRateHz(voiceIdx: Int, rateHz: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(voiceIdx))
-    _args.add(Variant.fromAny(rateHz))
-    __method_bind.setVoiceRateHz.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(voiceIdx)
+      _args.add(rateHz)
+      __method_bind.setVoiceRateHz.call(self._handle, _args, null)
+    }
   }
 
   fun setWet(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setWet.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWet.call(self._handle, listOf(amount), null)
+    }
   }
 
   companion object {

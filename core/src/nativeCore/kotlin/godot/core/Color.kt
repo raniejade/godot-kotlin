@@ -7,6 +7,7 @@ import kotlinx.cinterop.invoke
 class Color(
   value: CValue<godot_color>
 ) : CoreType<godot_color>(value) {
+  internal constructor(): this(__new(0, 0, 0, 1))
   constructor(r: Float, g: Float, b: Float, a: Float = 1f): this(__new(r, g, b, a))
   constructor(r: Int, g: Int, b: Int, a: Int): this(__new(r, g, b, a))
 

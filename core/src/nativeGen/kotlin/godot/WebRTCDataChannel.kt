@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class WebRTCDataChannel(
   @Suppress("UNUSED_PARAMETER")
@@ -39,67 +48,129 @@ open class WebRTCDataChannel(
   }
 
   fun close() {
-    __method_bind.close.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.close.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getId(): Int {
-    val _ret = __method_bind.getId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLabel(): String {
-    val _ret = __method_bind.getLabel.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getLabel.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getMaxPacketLifeTime(): Int {
-    val _ret = __method_bind.getMaxPacketLifeTime.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMaxPacketLifeTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMaxRetransmits(): Int {
-    val _ret = __method_bind.getMaxRetransmits.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMaxRetransmits.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getProtocol(): String {
-    val _ret = __method_bind.getProtocol.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getProtocol.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getReadyState(): ChannelState {
-    val _ret = __method_bind.getReadyState.call(this._handle)
-    return WebRTCDataChannel.ChannelState.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getReadyState.call(self._handle, emptyList(), _retPtr)
+      WebRTCDataChannel.ChannelState.from(_ret.value)
+    }
   }
 
   fun getWriteMode(): WriteMode {
-    val _ret = __method_bind.getWriteMode.call(this._handle)
-    return WebRTCDataChannel.WriteMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWriteMode.call(self._handle, emptyList(), _retPtr)
+      WebRTCDataChannel.WriteMode.from(_ret.value)
+    }
   }
 
   fun isNegotiated(): Boolean {
-    val _ret = __method_bind.isNegotiated.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isNegotiated.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isOrdered(): Boolean {
-    val _ret = __method_bind.isOrdered.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOrdered.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun poll(): GDError {
-    val _ret = __method_bind.poll.call(this._handle)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.poll.call(self._handle, emptyList(), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setWriteMode(writeMode: Int) {
-    val _arg = Variant(writeMode)
-    __method_bind.setWriteMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWriteMode.call(self._handle, listOf(writeMode), null)
+    }
   }
 
   fun wasStringPacket(): Boolean {
-    val _ret = __method_bind.wasStringPacket.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.wasStringPacket.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   enum class WriteMode(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -14,13 +15,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class StreamPeer(
   @Suppress("UNUSED_PARAMETER")
@@ -41,177 +50,300 @@ open class StreamPeer(
   }
 
   fun get16(): Int {
-    val _ret = __method_bind.get16.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.get16.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun get32(): Int {
-    val _ret = __method_bind.get32.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.get32.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun get64(): Int {
-    val _ret = __method_bind.get64.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.get64.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun get8(): Int {
-    val _ret = __method_bind.get8.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.get8.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getAvailableBytes(): Int {
-    val _ret = __method_bind.getAvailableBytes.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAvailableBytes.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getData(bytes: Int): VariantArray {
-    val _arg = Variant(bytes)
-    val _ret = __method_bind.getData.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getData.call(self._handle, listOf(bytes), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getDouble(): Float {
-    val _ret = __method_bind.getDouble.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDouble.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFloat(): Float {
-    val _ret = __method_bind.getFloat.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFloat.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPartialData(bytes: Int): VariantArray {
-    val _arg = Variant(bytes)
-    val _ret = __method_bind.getPartialData.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPartialData.call(self._handle, listOf(bytes), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getString(bytes: Int = -1): String {
-    val _arg = Variant(bytes)
-    val _ret = __method_bind.getString.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getString.call(self._handle, listOf(bytes), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getU16(): Int {
-    val _ret = __method_bind.getU16.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getU16.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getU32(): Int {
-    val _ret = __method_bind.getU32.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getU32.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getU64(): Int {
-    val _ret = __method_bind.getU64.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getU64.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getU8(): Int {
-    val _ret = __method_bind.getU8.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getU8.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getUtf8String(bytes: Int = -1): String {
-    val _arg = Variant(bytes)
-    val _ret = __method_bind.getUtf8String.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getUtf8String.call(self._handle, listOf(bytes), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getVar(allowObjects: Boolean = false): Variant {
-    val _arg = Variant(allowObjects)
-    val _ret = __method_bind.getVar.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVar.call(self._handle, listOf(allowObjects), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isBigEndianEnabled(): Boolean {
-    val _ret = __method_bind.isBigEndianEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isBigEndianEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun put16(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.put16.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.put16.call(self._handle, listOf(value), null)
+    }
   }
 
   fun put32(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.put32.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.put32.call(self._handle, listOf(value), null)
+    }
   }
 
   fun put64(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.put64.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.put64.call(self._handle, listOf(value), null)
+    }
   }
 
   fun put8(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.put8.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.put8.call(self._handle, listOf(value), null)
+    }
   }
 
   fun putData(data: PoolByteArray): GDError {
-    val _arg = Variant(data)
-    val _ret = __method_bind.putData.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.putData.call(self._handle, listOf(data), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun putDouble(value: Float) {
-    val _arg = Variant(value)
-    __method_bind.putDouble.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.putDouble.call(self._handle, listOf(value), null)
+    }
   }
 
   fun putFloat(value: Float) {
-    val _arg = Variant(value)
-    __method_bind.putFloat.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.putFloat.call(self._handle, listOf(value), null)
+    }
   }
 
   fun putPartialData(data: PoolByteArray): VariantArray {
-    val _arg = Variant(data)
-    val _ret = __method_bind.putPartialData.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.putPartialData.call(self._handle, listOf(data), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun putString(value: String) {
-    val _arg = Variant(value)
-    __method_bind.putString.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.putString.call(self._handle, listOf(value), null)
+    }
   }
 
   fun putU16(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.putU16.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.putU16.call(self._handle, listOf(value), null)
+    }
   }
 
   fun putU32(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.putU32.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.putU32.call(self._handle, listOf(value), null)
+    }
   }
 
   fun putU64(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.putU64.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.putU64.call(self._handle, listOf(value), null)
+    }
   }
 
   fun putU8(value: Int) {
-    val _arg = Variant(value)
-    __method_bind.putU8.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.putU8.call(self._handle, listOf(value), null)
+    }
   }
 
   fun putUtf8String(value: String) {
-    val _arg = Variant(value)
-    __method_bind.putUtf8String.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.putUtf8String.call(self._handle, listOf(value), null)
+    }
   }
 
   fun putVar(value: Variant, fullObjects: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(value))
-    _args.add(Variant.fromAny(fullObjects))
-    __method_bind.putVar.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(value)
+      _args.add(fullObjects)
+      __method_bind.putVar.call(self._handle, _args, null)
+    }
   }
 
   fun setBigEndian(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setBigEndian.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBigEndian.call(self._handle, listOf(enable), null)
+    }
   }
 
   companion object {

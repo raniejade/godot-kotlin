@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Plane
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ARVRAnchor(
   @Suppress("UNUSED_PARAMETER")
@@ -45,38 +54,75 @@ open class ARVRAnchor(
   }
 
   fun getAnchorId(): Int {
-    val _ret = __method_bind.getAnchorId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAnchorId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getAnchorName(): String {
-    val _ret = __method_bind.getAnchorName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAnchorName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getIsActive(): Boolean {
-    val _ret = __method_bind.getIsActive.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getIsActive.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.getMesh.call(this._handle)
-    return _ret.toAny() as Mesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Mesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMesh.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Mesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPlane(): Plane {
-    val _ret = __method_bind.getPlane.call(this._handle)
-    return _ret.asPlane()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Plane()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPlane.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSize(): Vector3 {
-    val _ret = __method_bind.getSize.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setAnchorId(anchorId: Int) {
-    val _arg = Variant(anchorId)
-    __method_bind.setAnchorId.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAnchorId.call(self._handle, listOf(anchorId), null)
+    }
   }
 
   companion object {

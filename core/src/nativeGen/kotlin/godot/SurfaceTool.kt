@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -21,13 +22,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class SurfaceTool(
   @Suppress("UNUSED_PARAMETER")
@@ -40,33 +49,45 @@ open class SurfaceTool(
   }
 
   fun addBones(bones: PoolIntArray) {
-    val _arg = Variant(bones)
-    __method_bind.addBones.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addBones.call(self._handle, listOf(bones), null)
+    }
   }
 
   fun addColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.addColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun addIndex(index: Int) {
-    val _arg = Variant(index)
-    __method_bind.addIndex.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addIndex.call(self._handle, listOf(index), null)
+    }
   }
 
   fun addNormal(normal: Vector3) {
-    val _arg = Variant(normal)
-    __method_bind.addNormal.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addNormal.call(self._handle, listOf(normal), null)
+    }
   }
 
   fun addSmoothGroup(smooth: Boolean) {
-    val _arg = Variant(smooth)
-    __method_bind.addSmoothGroup.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addSmoothGroup.call(self._handle, listOf(smooth), null)
+    }
   }
 
   fun addTangent(tangent: Plane) {
-    val _arg = Variant(tangent)
-    __method_bind.addTangent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addTangent.call(self._handle, listOf(tangent), null)
+    }
   }
 
   fun addTriangleFan(
@@ -77,34 +98,45 @@ open class SurfaceTool(
     normals: PoolVector3Array,
     tangents: VariantArray
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(vertices))
-    _args.add(Variant.fromAny(uvs))
-    _args.add(Variant.fromAny(colors))
-    _args.add(Variant.fromAny(uv2s))
-    _args.add(Variant.fromAny(normals))
-    _args.add(Variant.fromAny(tangents))
-    __method_bind.addTriangleFan.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(vertices)
+      _args.add(uvs)
+      _args.add(colors)
+      _args.add(uv2s)
+      _args.add(normals)
+      _args.add(tangents)
+      __method_bind.addTriangleFan.call(self._handle, _args, null)
+    }
   }
 
   fun addUv(uv: Vector2) {
-    val _arg = Variant(uv)
-    __method_bind.addUv.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addUv.call(self._handle, listOf(uv), null)
+    }
   }
 
   fun addUv2(uv2: Vector2) {
-    val _arg = Variant(uv2)
-    __method_bind.addUv2.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addUv2.call(self._handle, listOf(uv2), null)
+    }
   }
 
   fun addVertex(vertex: Vector3) {
-    val _arg = Variant(vertex)
-    __method_bind.addVertex.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addVertex.call(self._handle, listOf(vertex), null)
+    }
   }
 
   fun addWeights(weights: PoolFloatArray) {
-    val _arg = Variant(weights)
-    __method_bind.addWeights.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addWeights.call(self._handle, listOf(weights), null)
+    }
   }
 
   fun appendFrom(
@@ -112,40 +144,64 @@ open class SurfaceTool(
     surface: Int,
     transform: Transform
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(existing))
-    _args.add(Variant.fromAny(surface))
-    _args.add(Variant.fromAny(transform))
-    __method_bind.appendFrom.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(existing)
+      _args.add(surface)
+      _args.add(transform)
+      __method_bind.appendFrom.call(self._handle, _args, null)
+    }
   }
 
   fun begin(primitive: Int) {
-    val _arg = Variant(primitive)
-    __method_bind.begin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.begin.call(self._handle, listOf(primitive), null)
+    }
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun commit(existing: ArrayMesh, flags: Int = 97280): ArrayMesh {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(existing))
-    _args.add(Variant.fromAny(flags))
-    val _ret = __method_bind.commit.call(this._handle, _args)
-    return _ret.toAny() as ArrayMesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ArrayMesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(existing)
+      _args.add(flags)
+      __method_bind.commit.call(self._handle, _args, _retPtr)
+      _ret = objectToType<ArrayMesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun commitToArrays(): VariantArray {
-    val _ret = __method_bind.commitToArrays.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.commitToArrays.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun createFrom(existing: Mesh, surface: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(existing))
-    _args.add(Variant.fromAny(surface))
-    __method_bind.createFrom.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(existing)
+      _args.add(surface)
+      __method_bind.createFrom.call(self._handle, _args, null)
+    }
   }
 
   fun createFromBlendShape(
@@ -153,33 +209,49 @@ open class SurfaceTool(
     surface: Int,
     blendShape: String
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(existing))
-    _args.add(Variant.fromAny(surface))
-    _args.add(Variant.fromAny(blendShape))
-    __method_bind.createFromBlendShape.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(existing)
+      _args.add(surface)
+      _args.add(blendShape)
+      __method_bind.createFromBlendShape.call(self._handle, _args, null)
+    }
   }
 
   fun deindex() {
-    __method_bind.deindex.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.deindex.call(self._handle, emptyList(), null)
+    }
   }
 
   fun generateNormals(flip: Boolean = false) {
-    val _arg = Variant(flip)
-    __method_bind.generateNormals.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.generateNormals.call(self._handle, listOf(flip), null)
+    }
   }
 
   fun generateTangents() {
-    __method_bind.generateTangents.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.generateTangents.call(self._handle, emptyList(), null)
+    }
   }
 
   fun index() {
-    __method_bind.index.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.index.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant(material)
-    __method_bind.setMaterial.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaterial.call(self._handle, listOf(material), null)
+    }
   }
 
   companion object {

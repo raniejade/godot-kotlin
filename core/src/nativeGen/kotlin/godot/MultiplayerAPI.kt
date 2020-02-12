@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -14,13 +15,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class MultiplayerAPI(
   @Suppress("UNUSED_PARAMETER")
@@ -87,51 +96,100 @@ open class MultiplayerAPI(
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getNetworkConnectedPeers(): PoolIntArray {
-    val _ret = __method_bind.getNetworkConnectedPeers.call(this._handle)
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNetworkConnectedPeers.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNetworkPeer(): NetworkedMultiplayerPeer {
-    val _ret = __method_bind.getNetworkPeer.call(this._handle)
-    return _ret.toAny() as NetworkedMultiplayerPeer
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: NetworkedMultiplayerPeer
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNetworkPeer.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<NetworkedMultiplayerPeer>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNetworkUniqueId(): Int {
-    val _ret = __method_bind.getNetworkUniqueId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNetworkUniqueId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getRpcSenderId(): Int {
-    val _ret = __method_bind.getRpcSenderId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRpcSenderId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasNetworkPeer(): Boolean {
-    val _ret = __method_bind.hasNetworkPeer.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasNetworkPeer.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isNetworkServer(): Boolean {
-    val _ret = __method_bind.isNetworkServer.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isNetworkServer.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isObjectDecodingAllowed(): Boolean {
-    val _ret = __method_bind.isObjectDecodingAllowed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isObjectDecodingAllowed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRefusingNewNetworkConnections(): Boolean {
-    val _ret = __method_bind.isRefusingNewNetworkConnections.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRefusingNewNetworkConnections.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun poll() {
-    __method_bind.poll.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.poll.call(self._handle, emptyList(), null)
+    }
   }
 
   fun sendBytes(
@@ -139,32 +197,45 @@ open class MultiplayerAPI(
     id: Int = 0,
     mode: Int = 2
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bytes))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(mode))
-    val _ret = __method_bind.sendBytes.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(bytes)
+      _args.add(id)
+      _args.add(mode)
+      __method_bind.sendBytes.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setAllowObjectDecoding(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAllowObjectDecoding.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAllowObjectDecoding.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
-    val _arg = Variant(peer)
-    __method_bind.setNetworkPeer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNetworkPeer.call(self._handle, listOf(peer), null)
+    }
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
-    val _arg = Variant(refuse)
-    __method_bind.setRefuseNewNetworkConnections.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRefuseNewNetworkConnections.call(self._handle, listOf(refuse), null)
+    }
   }
 
   fun setRootNode(node: Node) {
-    val _arg = Variant(node)
-    __method_bind.setRootNode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRootNode.call(self._handle, listOf(node), null)
+    }
   }
 
   enum class RPCMode(

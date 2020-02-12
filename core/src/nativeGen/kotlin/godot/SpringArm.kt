@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class SpringArm(
   @Suppress("UNUSED_PARAMETER")
@@ -64,63 +73,107 @@ open class SpringArm(
   }
 
   fun addExcludedObject(rID: RID) {
-    val _arg = Variant(rID)
-    __method_bind.addExcludedObject.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addExcludedObject.call(self._handle, listOf(rID), null)
+    }
   }
 
   fun clearExcludedObjects() {
-    __method_bind.clearExcludedObjects.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearExcludedObjects.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.getCollisionMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getHitLength(): Float {
-    val _ret = __method_bind.getHitLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHitLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLength(): Float {
-    val _ret = __method_bind.getLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMargin(): Float {
-    val _ret = __method_bind.getMargin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMargin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getShape(): Shape {
-    val _ret = __method_bind.getShape.call(this._handle)
-    return _ret.toAny() as Shape
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Shape
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getShape.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Shape>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun removeExcludedObject(rID: RID): Boolean {
-    val _arg = Variant(rID)
-    val _ret = __method_bind.removeExcludedObject.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.removeExcludedObject.call(self._handle, listOf(rID), _retPtr)
+      _ret.value
+    }
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant(mask)
-    __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionMask.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setLength(length: Float) {
-    val _arg = Variant(length)
-    __method_bind.setLength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLength.call(self._handle, listOf(length), null)
+    }
   }
 
   fun setMargin(margin: Float) {
-    val _arg = Variant(margin)
-    __method_bind.setMargin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMargin.call(self._handle, listOf(margin), null)
+    }
   }
 
   fun setShape(shape: Shape) {
-    val _arg = Variant(shape)
-    __method_bind.setShape.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShape.call(self._handle, listOf(shape), null)
+    }
   }
 
   companion object {

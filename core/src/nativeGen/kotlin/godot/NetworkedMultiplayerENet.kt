@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class NetworkedMultiplayerENet(
   @Suppress("UNUSED_PARAMETER")
@@ -71,8 +80,10 @@ open class NetworkedMultiplayerENet(
   }
 
   fun closeConnection(waitUsec: Int = 100) {
-    val _arg = Variant(waitUsec)
-    __method_bind.closeConnection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.closeConnection.call(self._handle, listOf(waitUsec), null)
+    }
   }
 
   fun createClient(
@@ -82,14 +93,19 @@ open class NetworkedMultiplayerENet(
     outBandwidth: Int = 0,
     clientPort: Int = 0
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(address))
-    _args.add(Variant.fromAny(port))
-    _args.add(Variant.fromAny(inBandwidth))
-    _args.add(Variant.fromAny(outBandwidth))
-    _args.add(Variant.fromAny(clientPort))
-    val _ret = __method_bind.createClient.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(address)
+      _args.add(port)
+      _args.add(inBandwidth)
+      _args.add(outBandwidth)
+      _args.add(clientPort)
+      __method_bind.createClient.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun createServer(
@@ -98,97 +114,161 @@ open class NetworkedMultiplayerENet(
     inBandwidth: Int = 0,
     outBandwidth: Int = 0
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(port))
-    _args.add(Variant.fromAny(maxClients))
-    _args.add(Variant.fromAny(inBandwidth))
-    _args.add(Variant.fromAny(outBandwidth))
-    val _ret = __method_bind.createServer.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(port)
+      _args.add(maxClients)
+      _args.add(inBandwidth)
+      _args.add(outBandwidth)
+      __method_bind.createServer.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun disconnectPeer(id: Int, now: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(now))
-    __method_bind.disconnectPeer.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(now)
+      __method_bind.disconnectPeer.call(self._handle, _args, null)
+    }
   }
 
   fun getChannelCount(): Int {
-    val _ret = __method_bind.getChannelCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getChannelCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCompressionMode(): CompressionMode {
-    val _ret = __method_bind.getCompressionMode.call(this._handle)
-    return NetworkedMultiplayerENet.CompressionMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCompressionMode.call(self._handle, emptyList(), _retPtr)
+      NetworkedMultiplayerENet.CompressionMode.from(_ret.value)
+    }
   }
 
   fun getLastPacketChannel(): Int {
-    val _ret = __method_bind.getLastPacketChannel.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLastPacketChannel.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPacketChannel(): Int {
-    val _ret = __method_bind.getPacketChannel.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPacketChannel.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPeerAddress(id: Int): String {
-    val _arg = Variant(id)
-    val _ret = __method_bind.getPeerAddress.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getPeerAddress.call(self._handle, listOf(id), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPeerPort(id: Int): Int {
-    val _arg = Variant(id)
-    val _ret = __method_bind.getPeerPort.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPeerPort.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTransferChannel(): Int {
-    val _ret = __method_bind.getTransferChannel.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTransferChannel.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isAlwaysOrdered(): Boolean {
-    val _ret = __method_bind.isAlwaysOrdered.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAlwaysOrdered.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isServerRelayEnabled(): Boolean {
-    val _ret = __method_bind.isServerRelayEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isServerRelayEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAlwaysOrdered(ordered: Boolean) {
-    val _arg = Variant(ordered)
-    __method_bind.setAlwaysOrdered.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAlwaysOrdered.call(self._handle, listOf(ordered), null)
+    }
   }
 
   fun setBindIp(ip: String) {
-    val _arg = Variant(ip)
-    __method_bind.setBindIp.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBindIp.call(self._handle, listOf(ip), null)
+    }
   }
 
   fun setChannelCount(channels: Int) {
-    val _arg = Variant(channels)
-    __method_bind.setChannelCount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setChannelCount.call(self._handle, listOf(channels), null)
+    }
   }
 
   fun setCompressionMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setCompressionMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCompressionMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setServerRelayEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setServerRelayEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setServerRelayEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setTransferChannel(channel: Int) {
-    val _arg = Variant(channel)
-    __method_bind.setTransferChannel.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTransferChannel.call(self._handle, listOf(channel), null)
+    }
   }
 
   enum class CompressionMode(

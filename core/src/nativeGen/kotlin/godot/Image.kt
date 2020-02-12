@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.GDError
@@ -17,13 +18,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Image(
   @Suppress("UNUSED_PARAMETER")
@@ -40,11 +49,14 @@ open class Image(
     srcRect: Rect2,
     dst: Vector2
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(src))
-    _args.add(Variant.fromAny(srcRect))
-    _args.add(Variant.fromAny(dst))
-    __method_bind.blendRect.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(src)
+      _args.add(srcRect)
+      _args.add(dst)
+      __method_bind.blendRect.call(self._handle, _args, null)
+    }
   }
 
   fun blendRectMask(
@@ -53,12 +65,15 @@ open class Image(
     srcRect: Rect2,
     dst: Vector2
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(src))
-    _args.add(Variant.fromAny(mask))
-    _args.add(Variant.fromAny(srcRect))
-    _args.add(Variant.fromAny(dst))
-    __method_bind.blendRectMask.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(src)
+      _args.add(mask)
+      _args.add(srcRect)
+      _args.add(dst)
+      __method_bind.blendRectMask.call(self._handle, _args, null)
+    }
   }
 
   fun blitRect(
@@ -66,11 +81,14 @@ open class Image(
     srcRect: Rect2,
     dst: Vector2
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(src))
-    _args.add(Variant.fromAny(srcRect))
-    _args.add(Variant.fromAny(dst))
-    __method_bind.blitRect.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(src)
+      _args.add(srcRect)
+      _args.add(dst)
+      __method_bind.blitRect.call(self._handle, _args, null)
+    }
   }
 
   fun blitRectMask(
@@ -79,21 +97,29 @@ open class Image(
     srcRect: Rect2,
     dst: Vector2
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(src))
-    _args.add(Variant.fromAny(mask))
-    _args.add(Variant.fromAny(srcRect))
-    _args.add(Variant.fromAny(dst))
-    __method_bind.blitRectMask.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(src)
+      _args.add(mask)
+      _args.add(srcRect)
+      _args.add(dst)
+      __method_bind.blitRectMask.call(self._handle, _args, null)
+    }
   }
 
   fun bumpmapToNormalmap(bumpScale: Float = 1.0f) {
-    val _arg = Variant(bumpScale)
-    __method_bind.bumpmapToNormalmap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.bumpmapToNormalmap.call(self._handle, listOf(bumpScale), null)
+    }
   }
 
   fun clearMipmaps() {
-    __method_bind.clearMipmaps.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearMipmaps.call(self._handle, emptyList(), null)
+    }
   }
 
   fun compress(
@@ -101,22 +127,31 @@ open class Image(
     source: Int,
     lossyQuality: Float
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(mode))
-    _args.add(Variant.fromAny(source))
-    _args.add(Variant.fromAny(lossyQuality))
-    val _ret = __method_bind.compress.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(mode)
+      _args.add(source)
+      _args.add(lossyQuality)
+      __method_bind.compress.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun convert(format: Int) {
-    val _arg = Variant(format)
-    __method_bind.convert.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.convert.call(self._handle, listOf(format), null)
+    }
   }
 
   fun copyFrom(src: Image) {
-    val _arg = Variant(src)
-    __method_bind.copyFrom.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.copyFrom.call(self._handle, listOf(src), null)
+    }
   }
 
   fun create(
@@ -125,12 +160,15 @@ open class Image(
     useMipmaps: Boolean,
     format: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(height))
-    _args.add(Variant.fromAny(useMipmaps))
-    _args.add(Variant.fromAny(format))
-    __method_bind.create.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(width)
+      _args.add(height)
+      _args.add(useMipmaps)
+      _args.add(format)
+      __method_bind.create.call(self._handle, _args, null)
+    }
   }
 
   fun createFromData(
@@ -140,169 +178,302 @@ open class Image(
     format: Int,
     data: PoolByteArray
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(height))
-    _args.add(Variant.fromAny(useMipmaps))
-    _args.add(Variant.fromAny(format))
-    _args.add(Variant.fromAny(data))
-    __method_bind.createFromData.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(width)
+      _args.add(height)
+      _args.add(useMipmaps)
+      _args.add(format)
+      _args.add(data)
+      __method_bind.createFromData.call(self._handle, _args, null)
+    }
   }
 
   fun crop(width: Int, height: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(height))
-    __method_bind.crop.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(width)
+      _args.add(height)
+      __method_bind.crop.call(self._handle, _args, null)
+    }
   }
 
   fun decompress(): GDError {
-    val _ret = __method_bind.decompress.call(this._handle)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.decompress.call(self._handle, emptyList(), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun detectAlpha(): AlphaMode {
-    val _ret = __method_bind.detectAlpha.call(this._handle)
-    return Image.AlphaMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.detectAlpha.call(self._handle, emptyList(), _retPtr)
+      Image.AlphaMode.from(_ret.value)
+    }
   }
 
   fun expandX2Hq2x() {
-    __method_bind.expandX2Hq2x.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.expandX2Hq2x.call(self._handle, emptyList(), null)
+    }
   }
 
   fun fill(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.fill.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.fill.call(self._handle, listOf(color), null)
+    }
   }
 
   fun fixAlphaEdges() {
-    __method_bind.fixAlphaEdges.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.fixAlphaEdges.call(self._handle, emptyList(), null)
+    }
   }
 
   fun flipX() {
-    __method_bind.flipX.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.flipX.call(self._handle, emptyList(), null)
+    }
   }
 
   fun flipY() {
-    __method_bind.flipY.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.flipY.call(self._handle, emptyList(), null)
+    }
   }
 
   fun generateMipmaps(renormalize: Boolean = false): GDError {
-    val _arg = Variant(renormalize)
-    val _ret = __method_bind.generateMipmaps.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.generateMipmaps.call(self._handle, listOf(renormalize), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun getData(): PoolByteArray {
-    val _ret = __method_bind.getData.call(this._handle)
-    return _ret.asPoolByteArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolByteArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getData.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFormat(): Format {
-    val _ret = __method_bind.getFormat.call(this._handle)
-    return Image.Format.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFormat.call(self._handle, emptyList(), _retPtr)
+      Image.Format.from(_ret.value)
+    }
   }
 
   fun getHeight(): Int {
-    val _ret = __method_bind.getHeight.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMipmapOffset(mipmap: Int): Int {
-    val _arg = Variant(mipmap)
-    val _ret = __method_bind.getMipmapOffset.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMipmapOffset.call(self._handle, listOf(mipmap), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPixel(x: Int, y: Int): Color {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    val _ret = __method_bind.getPixel.call(this._handle, _args)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      __method_bind.getPixel.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPixelv(src: Vector2): Color {
-    val _arg = Variant(src)
-    val _ret = __method_bind.getPixelv.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPixelv.call(self._handle, listOf(src), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRect(rect: Rect2): Image {
-    val _arg = Variant(rect)
-    val _ret = __method_bind.getRect.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Image
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Image
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getRect.call(self._handle, listOf(rect), _retPtr)
+      _ret = objectToType<Image>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.getSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getUsedRect(): Rect2 {
-    val _ret = __method_bind.getUsedRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getUsedRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getWidth(): Int {
-    val _ret = __method_bind.getWidth.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWidth.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasMipmaps(): Boolean {
-    val _ret = __method_bind.hasMipmaps.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasMipmaps.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isCompressed(): Boolean {
-    val _ret = __method_bind.isCompressed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCompressed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEmpty(): Boolean {
-    val _ret = __method_bind.isEmpty.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEmpty.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInvisible(): Boolean {
-    val _ret = __method_bind.isInvisible.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInvisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun load(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.load.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.load.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun loadJpgFromBuffer(buffer: PoolByteArray): GDError {
-    val _arg = Variant(buffer)
-    val _ret = __method_bind.loadJpgFromBuffer.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.loadJpgFromBuffer.call(self._handle, listOf(buffer), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun loadPngFromBuffer(buffer: PoolByteArray): GDError {
-    val _arg = Variant(buffer)
-    val _ret = __method_bind.loadPngFromBuffer.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.loadPngFromBuffer.call(self._handle, listOf(buffer), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun loadWebpFromBuffer(buffer: PoolByteArray): GDError {
-    val _arg = Variant(buffer)
-    val _ret = __method_bind.loadWebpFromBuffer.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.loadWebpFromBuffer.call(self._handle, listOf(buffer), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun lock() {
-    __method_bind.lock.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.lock.call(self._handle, emptyList(), null)
+    }
   }
 
   fun normalmapToXy() {
-    __method_bind.normalmapToXy.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.normalmapToXy.call(self._handle, emptyList(), null)
+    }
   }
 
   fun premultiplyAlpha() {
-    __method_bind.premultiplyAlpha.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.premultiplyAlpha.call(self._handle, emptyList(), null)
+    }
   }
 
   fun resize(
@@ -310,35 +481,56 @@ open class Image(
     height: Int,
     interpolation: Int = 1
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(height))
-    _args.add(Variant.fromAny(interpolation))
-    __method_bind.resize.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(width)
+      _args.add(height)
+      _args.add(interpolation)
+      __method_bind.resize.call(self._handle, _args, null)
+    }
   }
 
   fun resizeToPo2(square: Boolean = false) {
-    val _arg = Variant(square)
-    __method_bind.resizeToPo2.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.resizeToPo2.call(self._handle, listOf(square), null)
+    }
   }
 
   fun rgbeToSrgb(): Image {
-    val _ret = __method_bind.rgbeToSrgb.call(this._handle)
-    return _ret.toAny() as Image
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Image
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.rgbeToSrgb.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Image>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun saveExr(path: String, grayscale: Boolean = false): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(grayscale))
-    val _ret = __method_bind.saveExr.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(grayscale)
+      __method_bind.saveExr.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun savePng(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.savePng.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.savePng.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setPixel(
@@ -346,30 +538,45 @@ open class Image(
     y: Int,
     color: Color
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    _args.add(Variant.fromAny(color))
-    __method_bind.setPixel.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      _args.add(color)
+      __method_bind.setPixel.call(self._handle, _args, null)
+    }
   }
 
   fun setPixelv(dst: Vector2, color: Color) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(dst))
-    _args.add(Variant.fromAny(color))
-    __method_bind.setPixelv.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(dst)
+      _args.add(color)
+      __method_bind.setPixelv.call(self._handle, _args, null)
+    }
   }
 
   fun shrinkX2() {
-    __method_bind.shrinkX2.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.shrinkX2.call(self._handle, emptyList(), null)
+    }
   }
 
   fun srgbToLinear() {
-    __method_bind.srgbToLinear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.srgbToLinear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun unlock() {
-    __method_bind.unlock.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.unlock.call(self._handle, emptyList(), null)
+    }
   }
 
   enum class AlphaMode(

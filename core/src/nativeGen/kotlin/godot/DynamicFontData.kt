@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class DynamicFontData(
   @Suppress("UNUSED_PARAMETER")
@@ -54,33 +63,55 @@ open class DynamicFontData(
   }
 
   fun getFontPath(): String {
-    val _ret = __method_bind.getFontPath.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getFontPath.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getHinting(): Hinting {
-    val _ret = __method_bind.getHinting.call(this._handle)
-    return DynamicFontData.Hinting.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHinting.call(self._handle, emptyList(), _retPtr)
+      DynamicFontData.Hinting.from(_ret.value)
+    }
   }
 
   fun isAntialiased(): Boolean {
-    val _ret = __method_bind.isAntialiased.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAntialiased.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAntialiased(antialiased: Boolean) {
-    val _arg = Variant(antialiased)
-    __method_bind.setAntialiased.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAntialiased.call(self._handle, listOf(antialiased), null)
+    }
   }
 
   fun setFontPath(path: String) {
-    val _arg = Variant(path)
-    __method_bind.setFontPath.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFontPath.call(self._handle, listOf(path), null)
+    }
   }
 
   fun setHinting(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setHinting.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHinting.call(self._handle, listOf(mode), null)
+    }
   }
 
   enum class Hinting(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.GDError
@@ -13,108 +14,175 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ProjectSettingsInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
   fun addPropertyInfo(hint: Dictionary) {
-    val _arg = Variant(hint)
-    __method_bind.addPropertyInfo.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addPropertyInfo.call(self._handle, listOf(hint), null)
+    }
   }
 
   fun clear(name: String) {
-    val _arg = Variant(name)
-    __method_bind.clear.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, listOf(name), null)
+    }
   }
 
   fun getOrder(name: String): Int {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getOrder.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOrder.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSetting(name: String): Variant {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getSetting.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSetting.call(self._handle, listOf(name), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun globalizePath(path: String): String {
-    val _arg = Variant(path)
-    val _ret = __method_bind.globalizePath.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.globalizePath.call(self._handle, listOf(path), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun hasSetting(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasSetting.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasSetting.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun loadResourcePack(pack: String, replaceFiles: Boolean = true): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(pack))
-    _args.add(Variant.fromAny(replaceFiles))
-    val _ret = __method_bind.loadResourcePack.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(pack)
+      _args.add(replaceFiles)
+      __method_bind.loadResourcePack.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun localizePath(path: String): String {
-    val _arg = Variant(path)
-    val _ret = __method_bind.localizePath.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.localizePath.call(self._handle, listOf(path), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun propertyCanRevert(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.propertyCanRevert.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.propertyCanRevert.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun propertyGetRevert(name: String): Variant {
-    val _arg = Variant(name)
-    val _ret = __method_bind.propertyGetRevert.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.propertyGetRevert.call(self._handle, listOf(name), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun save(): GDError {
-    val _ret = __method_bind.save.call(this._handle)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.save.call(self._handle, emptyList(), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun saveCustom(file: String): GDError {
-    val _arg = Variant(file)
-    val _ret = __method_bind.saveCustom.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.saveCustom.call(self._handle, listOf(file), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setInitialValue(name: String, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setInitialValue.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(value)
+      __method_bind.setInitialValue.call(self._handle, _args, null)
+    }
   }
 
   fun setOrder(name: String, position: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(position))
-    __method_bind.setOrder.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(position)
+      __method_bind.setOrder.call(self._handle, _args, null)
+    }
   }
 
   fun setSetting(name: String, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setSetting.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(value)
+      __method_bind.setSetting.call(self._handle, _args, null)
+    }
   }
 
   companion object {

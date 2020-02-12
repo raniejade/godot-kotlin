@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Tween(
   @Suppress("UNUSED_PARAMETER")
@@ -86,18 +95,23 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(initialVal))
-    _args.add(Variant.fromAny(target))
-    _args.add(Variant.fromAny(targetMethod))
-    _args.add(Variant.fromAny(duration))
-    _args.add(Variant.fromAny(transType))
-    _args.add(Variant.fromAny(easeType))
-    _args.add(Variant.fromAny(delay))
-    val _ret = __method_bind.followMethod.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(method)
+      _args.add(initialVal)
+      _args.add(target)
+      _args.add(targetMethod)
+      _args.add(duration)
+      _args.add(transType)
+      _args.add(easeType)
+      _args.add(delay)
+      __method_bind.followMethod.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun followProperty(
@@ -111,33 +125,53 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(initialVal))
-    _args.add(Variant.fromAny(target))
-    _args.add(Variant.fromAny(targetProperty))
-    _args.add(Variant.fromAny(duration))
-    _args.add(Variant.fromAny(transType))
-    _args.add(Variant.fromAny(easeType))
-    _args.add(Variant.fromAny(delay))
-    val _ret = __method_bind.followProperty.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(property)
+      _args.add(initialVal)
+      _args.add(target)
+      _args.add(targetProperty)
+      _args.add(duration)
+      _args.add(transType)
+      _args.add(easeType)
+      _args.add(delay)
+      __method_bind.followProperty.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getRuntime(): Float {
-    val _ret = __method_bind.getRuntime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRuntime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSpeedScale(): Float {
-    val _ret = __method_bind.getSpeedScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpeedScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTweenProcessMode(): TweenProcessMode {
-    val _ret = __method_bind.getTweenProcessMode.call(this._handle)
-    return Tween.TweenProcessMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTweenProcessMode.call(self._handle, emptyList(), _retPtr)
+      Tween.TweenProcessMode.from(_ret.value)
+    }
   }
 
   fun interpolateCallback(
@@ -150,17 +184,22 @@ open class Tween(
     arg4: Variant,
     arg5: Variant
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(duration))
-    _args.add(Variant.fromAny(callback))
-    _args.add(Variant.fromAny(arg1))
-    _args.add(Variant.fromAny(arg2))
-    _args.add(Variant.fromAny(arg3))
-    _args.add(Variant.fromAny(arg4))
-    _args.add(Variant.fromAny(arg5))
-    val _ret = __method_bind.interpolateCallback.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(duration)
+      _args.add(callback)
+      _args.add(arg1)
+      _args.add(arg2)
+      _args.add(arg3)
+      _args.add(arg4)
+      _args.add(arg5)
+      __method_bind.interpolateCallback.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun interpolateDeferredCallback(
@@ -173,17 +212,22 @@ open class Tween(
     arg4: Variant,
     arg5: Variant
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(duration))
-    _args.add(Variant.fromAny(callback))
-    _args.add(Variant.fromAny(arg1))
-    _args.add(Variant.fromAny(arg2))
-    _args.add(Variant.fromAny(arg3))
-    _args.add(Variant.fromAny(arg4))
-    _args.add(Variant.fromAny(arg5))
-    val _ret = __method_bind.interpolateDeferredCallback.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(duration)
+      _args.add(callback)
+      _args.add(arg1)
+      _args.add(arg2)
+      _args.add(arg3)
+      _args.add(arg4)
+      _args.add(arg5)
+      __method_bind.interpolateDeferredCallback.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun interpolateMethod(
@@ -196,17 +240,22 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(initialVal))
-    _args.add(Variant.fromAny(finalVal))
-    _args.add(Variant.fromAny(duration))
-    _args.add(Variant.fromAny(transType))
-    _args.add(Variant.fromAny(easeType))
-    _args.add(Variant.fromAny(delay))
-    val _ret = __method_bind.interpolateMethod.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(method)
+      _args.add(initialVal)
+      _args.add(finalVal)
+      _args.add(duration)
+      _args.add(transType)
+      _args.add(easeType)
+      _args.add(delay)
+      __method_bind.interpolateMethod.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun interpolateProperty(
@@ -219,110 +268,182 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(initialVal))
-    _args.add(Variant.fromAny(finalVal))
-    _args.add(Variant.fromAny(duration))
-    _args.add(Variant.fromAny(transType))
-    _args.add(Variant.fromAny(easeType))
-    _args.add(Variant.fromAny(delay))
-    val _ret = __method_bind.interpolateProperty.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(property)
+      _args.add(initialVal)
+      _args.add(finalVal)
+      _args.add(duration)
+      _args.add(transType)
+      _args.add(easeType)
+      _args.add(delay)
+      __method_bind.interpolateProperty.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isActive(): Boolean {
-    val _ret = __method_bind.isActive.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isActive.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRepeat(): Boolean {
-    val _ret = __method_bind.isRepeat.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRepeat.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun remove(`object`: Object, key: String = ""): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(key))
-    val _ret = __method_bind.remove.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(key)
+      __method_bind.remove.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun removeAll(): Boolean {
-    val _ret = __method_bind.removeAll.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.removeAll.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun reset(`object`: Object, key: String = ""): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(key))
-    val _ret = __method_bind.reset.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(key)
+      __method_bind.reset.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun resetAll(): Boolean {
-    val _ret = __method_bind.resetAll.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.resetAll.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun resume(`object`: Object, key: String = ""): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(key))
-    val _ret = __method_bind.resume.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(key)
+      __method_bind.resume.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun resumeAll(): Boolean {
-    val _ret = __method_bind.resumeAll.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.resumeAll.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun seek(time: Float): Boolean {
-    val _arg = Variant(time)
-    val _ret = __method_bind.seek.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.seek.call(self._handle, listOf(time), _retPtr)
+      _ret.value
+    }
   }
 
   fun setActive(active: Boolean) {
-    val _arg = Variant(active)
-    __method_bind.setActive.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setActive.call(self._handle, listOf(active), null)
+    }
   }
 
   fun setRepeat(repeat: Boolean) {
-    val _arg = Variant(repeat)
-    __method_bind.setRepeat.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRepeat.call(self._handle, listOf(repeat), null)
+    }
   }
 
   fun setSpeedScale(speed: Float) {
-    val _arg = Variant(speed)
-    __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSpeedScale.call(self._handle, listOf(speed), null)
+    }
   }
 
   fun setTweenProcessMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setTweenProcessMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTweenProcessMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun start(): Boolean {
-    val _ret = __method_bind.start.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.start.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun stop(`object`: Object, key: String = ""): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(key))
-    val _ret = __method_bind.stop.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(key)
+      __method_bind.stop.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun stopAll(): Boolean {
-    val _ret = __method_bind.stopAll.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.stopAll.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun targetingMethod(
@@ -336,18 +457,23 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(initial))
-    _args.add(Variant.fromAny(initialMethod))
-    _args.add(Variant.fromAny(finalVal))
-    _args.add(Variant.fromAny(duration))
-    _args.add(Variant.fromAny(transType))
-    _args.add(Variant.fromAny(easeType))
-    _args.add(Variant.fromAny(delay))
-    val _ret = __method_bind.targetingMethod.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(method)
+      _args.add(initial)
+      _args.add(initialMethod)
+      _args.add(finalVal)
+      _args.add(duration)
+      _args.add(transType)
+      _args.add(easeType)
+      _args.add(delay)
+      __method_bind.targetingMethod.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun targetingProperty(
@@ -361,23 +487,33 @@ open class Tween(
     easeType: Int = 2,
     delay: Float = 0.0f
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(initial))
-    _args.add(Variant.fromAny(initialVal))
-    _args.add(Variant.fromAny(finalVal))
-    _args.add(Variant.fromAny(duration))
-    _args.add(Variant.fromAny(transType))
-    _args.add(Variant.fromAny(easeType))
-    _args.add(Variant.fromAny(delay))
-    val _ret = __method_bind.targetingProperty.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(property)
+      _args.add(initial)
+      _args.add(initialVal)
+      _args.add(finalVal)
+      _args.add(duration)
+      _args.add(transType)
+      _args.add(easeType)
+      _args.add(delay)
+      __method_bind.targetingProperty.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun tell(): Float {
-    val _ret = __method_bind.tell.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.tell.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   enum class TransitionType(

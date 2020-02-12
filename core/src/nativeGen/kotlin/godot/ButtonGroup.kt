@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -9,13 +10,21 @@ import godot.core.VariantArray
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ButtonGroup(
   @Suppress("UNUSED_PARAMETER")
@@ -28,13 +37,26 @@ open class ButtonGroup(
   }
 
   fun getButtons(): VariantArray {
-    val _ret = __method_bind.getButtons.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getButtons.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPressedButton(): BaseButton {
-    val _ret = __method_bind.getPressedButton.call(this._handle)
-    return _ret.toAny() as BaseButton
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: BaseButton
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPressedButton.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<BaseButton>(_tmp.value!!)
+      _ret
+    }
   }
 
   companion object {

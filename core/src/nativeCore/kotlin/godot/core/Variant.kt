@@ -3,10 +3,12 @@ package godot.core
 import gdnative.godot_variant
 import gdnative.godot_variant_operator
 import gdnative.godot_variant_type
-import godot.ClassDB
 import godot.Object
-import godot.TagDB
-import kotlinx.cinterop.*
+import godot.ptrToObject
+import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.CStructVar
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.invoke
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.freeze
 
@@ -316,38 +318,7 @@ class Variant(
       if (ptr == null) {
         null
       } else {
-        val obj = Godot.noInitZone {
-          Object()
-        }
-        obj._handle = ptr
-        val className = obj.getClass()
-        // binding defined type
-        // this should be first otherwise casting to a user defined type won't work!
-        var tag = checkNotNull(Godot.nativescript11.godot_nativescript_get_type_tag)(ptr)
-        // engine type
-        if (tag == null) {
-          tag = checkNotNull(Godot.nativescript11.godot_nativescript_get_global_type_tag)(Godot.languageIndex, className.cstr.ptr)
-        }
-        // parent class of an engine type (this is here for types not exposed by gdnative)
-        if (tag == null) {
-          var parentClass = ClassDB.getParentClass(className)
-          while (parentClass.isNotEmpty()) {
-            tag = checkNotNull(Godot.nativescript11.godot_nativescript_get_global_type_tag)(Godot.languageIndex, parentClass.cstr.ptr)
-            if (tag != null) {
-              break
-            }
-            parentClass = ClassDB.getParentClass(parentClass)
-          }
-        }
-        if (tag != null) {
-          val cast = Godot.noInitZone {
-            TagDB.newInstance(tag)
-          }
-          cast._handle = ptr
-          cast
-        } else {
-          obj
-        }
+        ptrToObject(ptr)
       }
     }
   }

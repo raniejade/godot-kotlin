@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -17,13 +18,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class SpriteBase3D(
   @Suppress("UNUSED_PARAMETER")
@@ -158,126 +167,218 @@ open class SpriteBase3D(
   }
 
   fun generateTriangleMesh(): TriangleMesh {
-    val _ret = __method_bind.generateTriangleMesh.call(this._handle)
-    return _ret.toAny() as TriangleMesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TriangleMesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.generateTriangleMesh.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<TriangleMesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getAlphaCutMode(): AlphaCutMode {
-    val _ret = __method_bind.getAlphaCutMode.call(this._handle)
-    return SpriteBase3D.AlphaCutMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAlphaCutMode.call(self._handle, emptyList(), _retPtr)
+      SpriteBase3D.AlphaCutMode.from(_ret.value)
+    }
   }
 
   fun getAxis(): Vector3.Axis {
-    val _ret = __method_bind.getAxis.call(this._handle)
-    return Vector3.Axis.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAxis.call(self._handle, emptyList(), _retPtr)
+      Vector3.Axis.from(_ret.value)
+    }
   }
 
   fun getBillboardMode(): SpatialMaterial.BillboardMode {
-    val _ret = __method_bind.getBillboardMode.call(this._handle)
-    return SpatialMaterial.BillboardMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBillboardMode.call(self._handle, emptyList(), _retPtr)
+      SpatialMaterial.BillboardMode.from(_ret.value)
+    }
   }
 
   fun getDrawFlag(flag: Int): Boolean {
-    val _arg = Variant(flag)
-    val _ret = __method_bind.getDrawFlag.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDrawFlag.call(self._handle, listOf(flag), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemRect(): Rect2 {
-    val _ret = __method_bind.getItemRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getItemRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getModulate(): Color {
-    val _ret = __method_bind.getModulate.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getModulate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.getOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOpacity(): Float {
-    val _ret = __method_bind.getOpacity.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOpacity.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPixelSize(): Float {
-    val _ret = __method_bind.getPixelSize.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPixelSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isCentered(): Boolean {
-    val _ret = __method_bind.isCentered.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCentered.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFlippedH(): Boolean {
-    val _ret = __method_bind.isFlippedH.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFlippedH.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFlippedV(): Boolean {
-    val _ret = __method_bind.isFlippedV.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFlippedV.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAlphaCutMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setAlphaCutMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAlphaCutMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setAxis(axis: Int) {
-    val _arg = Variant(axis)
-    __method_bind.setAxis.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAxis.call(self._handle, listOf(axis), null)
+    }
   }
 
   fun setBillboardMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setBillboardMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBillboardMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setCentered(centered: Boolean) {
-    val _arg = Variant(centered)
-    __method_bind.setCentered.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCentered.call(self._handle, listOf(centered), null)
+    }
   }
 
   fun setDrawFlag(flag: Int, enabled: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(flag))
-    _args.add(Variant.fromAny(enabled))
-    __method_bind.setDrawFlag.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(flag)
+      _args.add(enabled)
+      __method_bind.setDrawFlag.call(self._handle, _args, null)
+    }
   }
 
   fun setFlipH(flipH: Boolean) {
-    val _arg = Variant(flipH)
-    __method_bind.setFlipH.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFlipH.call(self._handle, listOf(flipH), null)
+    }
   }
 
   fun setFlipV(flipV: Boolean) {
-    val _arg = Variant(flipV)
-    __method_bind.setFlipV.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFlipV.call(self._handle, listOf(flipV), null)
+    }
   }
 
   fun setModulate(modulate: Color) {
-    val _arg = Variant(modulate)
-    __method_bind.setModulate.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setModulate.call(self._handle, listOf(modulate), null)
+    }
   }
 
   fun setOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setOpacity(opacity: Float) {
-    val _arg = Variant(opacity)
-    __method_bind.setOpacity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOpacity.call(self._handle, listOf(opacity), null)
+    }
   }
 
   fun setPixelSize(pixelSize: Float) {
-    val _arg = Variant(pixelSize)
-    __method_bind.setPixelSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPixelSize.call(self._handle, listOf(pixelSize), null)
+    }
   }
 
   enum class DrawFlags(

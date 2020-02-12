@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.GDError
@@ -12,13 +13,21 @@ import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Script(
   @Suppress("UNUSED_PARAMETER")
@@ -39,82 +48,159 @@ open class Script(
   }
 
   fun canInstance(): Boolean {
-    val _ret = __method_bind.canInstance.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.canInstance.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBaseScript(): Script {
-    val _ret = __method_bind.getBaseScript.call(this._handle)
-    return _ret.toAny() as Script
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Script
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getBaseScript.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Script>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getInstanceBaseType(): String {
-    val _ret = __method_bind.getInstanceBaseType.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getInstanceBaseType.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPropertyDefaultValue(property: String): Variant {
-    val _arg = Variant(property)
-    val _ret = __method_bind.getPropertyDefaultValue.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPropertyDefaultValue.call(self._handle, listOf(property), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getScriptConstantMap(): Dictionary {
-    val _ret = __method_bind.getScriptConstantMap.call(this._handle)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScriptConstantMap.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getScriptMethodList(): VariantArray {
-    val _ret = __method_bind.getScriptMethodList.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScriptMethodList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getScriptPropertyList(): VariantArray {
-    val _ret = __method_bind.getScriptPropertyList.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScriptPropertyList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getScriptSignalList(): VariantArray {
-    val _ret = __method_bind.getScriptSignalList.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScriptSignalList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSourceCode(): String {
-    val _ret = __method_bind.getSourceCode.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSourceCode.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun hasScriptSignal(signalName: String): Boolean {
-    val _arg = Variant(signalName)
-    val _ret = __method_bind.hasScriptSignal.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasScriptSignal.call(self._handle, listOf(signalName), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasSourceCode(): Boolean {
-    val _ret = __method_bind.hasSourceCode.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasSourceCode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun instanceHas(baseObject: Object): Boolean {
-    val _arg = Variant(baseObject)
-    val _ret = __method_bind.instanceHas.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.instanceHas.call(self._handle, listOf(baseObject), _retPtr)
+      _ret.value
+    }
   }
 
   fun isTool(): Boolean {
-    val _ret = __method_bind.isTool.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isTool.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun reload(keepState: Boolean = false): GDError {
-    val _arg = Variant(keepState)
-    val _ret = __method_bind.reload.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.reload.call(self._handle, listOf(keepState), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setSourceCode(source: String) {
-    val _arg = Variant(source)
-    __method_bind.setSourceCode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSourceCode.call(self._handle, listOf(source), null)
+    }
   }
 
   companion object {

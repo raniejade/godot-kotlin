@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolStringArray
@@ -12,13 +13,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorFileSystem(
   @Suppress("UNUSED_PARAMETER")
@@ -51,47 +60,86 @@ open class EditorFileSystem(
   }
 
   fun getFileType(path: String): String {
-    val _arg = Variant(path)
-    val _ret = __method_bind.getFileType.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getFileType.call(self._handle, listOf(path), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getFilesystem(): EditorFileSystemDirectory {
-    val _ret = __method_bind.getFilesystem.call(this._handle)
-    return _ret.toAny() as EditorFileSystemDirectory
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: EditorFileSystemDirectory
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getFilesystem.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<EditorFileSystemDirectory>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getFilesystemPath(path: String): EditorFileSystemDirectory {
-    val _arg = Variant(path)
-    val _ret = __method_bind.getFilesystemPath.call(this._handle, listOf(_arg))
-    return _ret.toAny() as EditorFileSystemDirectory
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: EditorFileSystemDirectory
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getFilesystemPath.call(self._handle, listOf(path), _retPtr)
+      _ret = objectToType<EditorFileSystemDirectory>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getScanningProgress(): Float {
-    val _ret = __method_bind.getScanningProgress.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getScanningProgress.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isScanning(): Boolean {
-    val _ret = __method_bind.isScanning.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isScanning.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun scan() {
-    __method_bind.scan.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.scan.call(self._handle, emptyList(), null)
+    }
   }
 
   fun scanSources() {
-    __method_bind.scanSources.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.scanSources.call(self._handle, emptyList(), null)
+    }
   }
 
   fun updateFile(path: String) {
-    val _arg = Variant(path)
-    __method_bind.updateFile.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.updateFile.call(self._handle, listOf(path), null)
+    }
   }
 
   fun updateScriptClasses() {
-    __method_bind.updateScriptClasses.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.updateScriptClasses.call(self._handle, emptyList(), null)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.GDError
@@ -18,13 +19,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class OSInternal(
   @Suppress("UNUSED_PARAMETER")
@@ -219,48 +228,75 @@ open class OSInternal(
   }
 
   fun alert(text: String, title: String = "Alert!") {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(text))
-    _args.add(Variant.fromAny(title))
-    __method_bind.alert.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(text)
+      _args.add(title)
+      __method_bind.alert.call(self._handle, _args, null)
+    }
   }
 
   fun canDraw(): Boolean {
-    val _ret = __method_bind.canDraw.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.canDraw.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun canUseThreads(): Boolean {
-    val _ret = __method_bind.canUseThreads.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.canUseThreads.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun centerWindow() {
-    __method_bind.centerWindow.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.centerWindow.call(self._handle, emptyList(), null)
+    }
   }
 
   fun closeMidiInputs() {
-    __method_bind.closeMidiInputs.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.closeMidiInputs.call(self._handle, emptyList(), null)
+    }
   }
 
   fun delayMsec(msec: Int) {
-    val _arg = Variant(msec)
-    __method_bind.delayMsec.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.delayMsec.call(self._handle, listOf(msec), null)
+    }
   }
 
   fun delayUsec(usec: Int) {
-    val _arg = Variant(usec)
-    __method_bind.delayUsec.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.delayUsec.call(self._handle, listOf(usec), null)
+    }
   }
 
   fun dumpMemoryToFile(file: String) {
-    val _arg = Variant(file)
-    __method_bind.dumpMemoryToFile.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.dumpMemoryToFile.call(self._handle, listOf(file), null)
+    }
   }
 
   fun dumpResourcesToFile(file: String) {
-    val _arg = Variant(file)
-    __method_bind.dumpResourcesToFile.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.dumpResourcesToFile.call(self._handle, listOf(file), null)
+    }
   }
 
   fun execute(
@@ -270,323 +306,640 @@ open class OSInternal(
     output: VariantArray,
     readStderr: Boolean = false
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(arguments))
-    _args.add(Variant.fromAny(blocking))
-    _args.add(Variant.fromAny(output))
-    _args.add(Variant.fromAny(readStderr))
-    val _ret = __method_bind.execute.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(arguments)
+      _args.add(blocking)
+      _args.add(output)
+      _args.add(readStderr)
+      __method_bind.execute.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun findScancodeFromString(string: String): Int {
-    val _arg = Variant(string)
-    val _ret = __method_bind.findScancodeFromString.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.findScancodeFromString.call(self._handle, listOf(string), _retPtr)
+      _ret.value
+    }
   }
 
   fun getAudioDriverCount(): Int {
-    val _ret = __method_bind.getAudioDriverCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAudioDriverCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getAudioDriverName(driver: Int): String {
-    val _arg = Variant(driver)
-    val _ret = __method_bind.getAudioDriverName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAudioDriverName.call(self._handle, listOf(driver), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getBorderlessWindow(): Boolean {
-    val _ret = __method_bind.getBorderlessWindow.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBorderlessWindow.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getClipboard(): String {
-    val _ret = __method_bind.getClipboard.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getClipboard.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getCmdlineArgs(): PoolStringArray {
-    val _ret = __method_bind.getCmdlineArgs.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCmdlineArgs.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getConnectedMidiInputs(): PoolStringArray {
-    val _ret = __method_bind.getConnectedMidiInputs.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConnectedMidiInputs.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCurrentScreen(): Int {
-    val _ret = __method_bind.getCurrentScreen.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCurrentScreen.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCurrentVideoDriver(): OS.VideoDriver {
-    val _ret = __method_bind.getCurrentVideoDriver.call(this._handle)
-    return OS.VideoDriver.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCurrentVideoDriver.call(self._handle, emptyList(), _retPtr)
+      OS.VideoDriver.from(_ret.value)
+    }
   }
 
   fun getDate(utc: Boolean = false): Dictionary {
-    val _arg = Variant(utc)
-    val _ret = __method_bind.getDate.call(this._handle, listOf(_arg))
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getDate.call(self._handle, listOf(utc), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getDatetime(utc: Boolean = false): Dictionary {
-    val _arg = Variant(utc)
-    val _ret = __method_bind.getDatetime.call(this._handle, listOf(_arg))
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getDatetime.call(self._handle, listOf(utc), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getDatetimeFromUnixTime(unixTimeVal: Int): Dictionary {
-    val _arg = Variant(unixTimeVal)
-    val _ret = __method_bind.getDatetimeFromUnixTime.call(this._handle, listOf(_arg))
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getDatetimeFromUnixTime.call(self._handle, listOf(unixTimeVal), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getDynamicMemoryUsage(): Int {
-    val _ret = __method_bind.getDynamicMemoryUsage.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDynamicMemoryUsage.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getEnvironment(environment: String): String {
-    val _arg = Variant(environment)
-    val _ret = __method_bind.getEnvironment.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getEnvironment.call(self._handle, listOf(environment), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getExecutablePath(): String {
-    val _ret = __method_bind.getExecutablePath.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getExecutablePath.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getExitCode(): Int {
-    val _ret = __method_bind.getExitCode.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getExitCode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getGrantedPermissions(): PoolStringArray {
-    val _ret = __method_bind.getGrantedPermissions.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGrantedPermissions.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getImeSelection(): Vector2 {
-    val _ret = __method_bind.getImeSelection.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getImeSelection.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getImeText(): String {
-    val _ret = __method_bind.getImeText.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getImeText.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getLatinKeyboardVariant(): String {
-    val _ret = __method_bind.getLatinKeyboardVariant.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getLatinKeyboardVariant.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getLocale(): String {
-    val _ret = __method_bind.getLocale.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getLocale.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getLowProcessorUsageModeSleepUsec(): Int {
-    val _ret = __method_bind.getLowProcessorUsageModeSleepUsec.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLowProcessorUsageModeSleepUsec.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMaxWindowSize(): Vector2 {
-    val _ret = __method_bind.getMaxWindowSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMaxWindowSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMinWindowSize(): Vector2 {
-    val _ret = __method_bind.getMinWindowSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMinWindowSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getModelName(): String {
-    val _ret = __method_bind.getModelName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getModelName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getName(): String {
-    val _ret = __method_bind.getName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPowerPercentLeft(): Int {
-    val _ret = __method_bind.getPowerPercentLeft.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPowerPercentLeft.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPowerSecondsLeft(): Int {
-    val _ret = __method_bind.getPowerSecondsLeft.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPowerSecondsLeft.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPowerState(): OS.PowerState {
-    val _ret = __method_bind.getPowerState.call(this._handle)
-    return OS.PowerState.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPowerState.call(self._handle, emptyList(), _retPtr)
+      OS.PowerState.from(_ret.value)
+    }
   }
 
   fun getProcessId(): Int {
-    val _ret = __method_bind.getProcessId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getProcessId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getProcessorCount(): Int {
-    val _ret = __method_bind.getProcessorCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getProcessorCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getRealWindowSize(): Vector2 {
-    val _ret = __method_bind.getRealWindowSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRealWindowSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getScancodeString(code: Int): String {
-    val _arg = Variant(code)
-    val _ret = __method_bind.getScancodeString.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getScancodeString.call(self._handle, listOf(code), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getScreenCount(): Int {
-    val _ret = __method_bind.getScreenCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getScreenCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getScreenDpi(screen: Int = -1): Int {
-    val _arg = Variant(screen)
-    val _ret = __method_bind.getScreenDpi.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getScreenDpi.call(self._handle, listOf(screen), _retPtr)
+      _ret.value
+    }
   }
 
   fun getScreenOrientation(): OS.ScreenOrientation {
-    val _ret = __method_bind.getScreenOrientation.call(this._handle)
-    return OS.ScreenOrientation.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getScreenOrientation.call(self._handle, emptyList(), _retPtr)
+      OS.ScreenOrientation.from(_ret.value)
+    }
   }
 
   fun getScreenPosition(screen: Int = -1): Vector2 {
-    val _arg = Variant(screen)
-    val _ret = __method_bind.getScreenPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScreenPosition.call(self._handle, listOf(screen), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getScreenSize(screen: Int = -1): Vector2 {
-    val _arg = Variant(screen)
-    val _ret = __method_bind.getScreenSize.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScreenSize.call(self._handle, listOf(screen), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSplashTickMsec(): Int {
-    val _ret = __method_bind.getSplashTickMsec.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSplashTickMsec.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getStaticMemoryPeakUsage(): Int {
-    val _ret = __method_bind.getStaticMemoryPeakUsage.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStaticMemoryPeakUsage.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getStaticMemoryUsage(): Int {
-    val _ret = __method_bind.getStaticMemoryUsage.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStaticMemoryUsage.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSystemDir(dir: Int): String {
-    val _arg = Variant(dir)
-    val _ret = __method_bind.getSystemDir.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSystemDir.call(self._handle, listOf(dir), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getSystemTimeMsecs(): Int {
-    val _ret = __method_bind.getSystemTimeMsecs.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSystemTimeMsecs.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSystemTimeSecs(): Int {
-    val _ret = __method_bind.getSystemTimeSecs.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSystemTimeSecs.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTicksMsec(): Int {
-    val _ret = __method_bind.getTicksMsec.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTicksMsec.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTicksUsec(): Int {
-    val _ret = __method_bind.getTicksUsec.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTicksUsec.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTime(utc: Boolean = false): Dictionary {
-    val _arg = Variant(utc)
-    val _ret = __method_bind.getTime.call(this._handle, listOf(_arg))
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTime.call(self._handle, listOf(utc), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTimeZoneInfo(): Dictionary {
-    val _ret = __method_bind.getTimeZoneInfo.call(this._handle)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTimeZoneInfo.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getUniqueId(): String {
-    val _ret = __method_bind.getUniqueId.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getUniqueId.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getUnixTime(): Int {
-    val _ret = __method_bind.getUnixTime.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUnixTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getUnixTimeFromDatetime(datetime: Dictionary): Int {
-    val _arg = Variant(datetime)
-    val _ret = __method_bind.getUnixTimeFromDatetime.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUnixTimeFromDatetime.call(self._handle, listOf(datetime), _retPtr)
+      _ret.value
+    }
   }
 
   fun getUserDataDir(): String {
-    val _ret = __method_bind.getUserDataDir.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getUserDataDir.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getVideoDriverCount(): Int {
-    val _ret = __method_bind.getVideoDriverCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVideoDriverCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getVideoDriverName(driver: Int): String {
-    val _arg = Variant(driver)
-    val _ret = __method_bind.getVideoDriverName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getVideoDriverName.call(self._handle, listOf(driver), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getVirtualKeyboardHeight(): Int {
-    val _ret = __method_bind.getVirtualKeyboardHeight.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVirtualKeyboardHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getWindowPerPixelTransparencyEnabled(): Boolean {
-    val _ret = __method_bind.getWindowPerPixelTransparencyEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWindowPerPixelTransparencyEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getWindowPosition(): Vector2 {
-    val _ret = __method_bind.getWindowPosition.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getWindowPosition.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getWindowSafeArea(): Rect2 {
-    val _ret = __method_bind.getWindowSafeArea.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getWindowSafeArea.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getWindowSize(): Vector2 {
-    val _ret = __method_bind.getWindowSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getWindowSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun globalMenuAddItem(
@@ -595,150 +948,270 @@ open class OSInternal(
     id: Variant,
     meta: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(menu))
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(meta))
-    __method_bind.globalMenuAddItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(menu)
+      _args.add(label)
+      _args.add(id)
+      _args.add(meta)
+      __method_bind.globalMenuAddItem.call(self._handle, _args, null)
+    }
   }
 
   fun globalMenuAddSeparator(menu: String) {
-    val _arg = Variant(menu)
-    __method_bind.globalMenuAddSeparator.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.globalMenuAddSeparator.call(self._handle, listOf(menu), null)
+    }
   }
 
   fun globalMenuClear(menu: String) {
-    val _arg = Variant(menu)
-    __method_bind.globalMenuClear.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.globalMenuClear.call(self._handle, listOf(menu), null)
+    }
   }
 
   fun globalMenuRemoveItem(menu: String, idx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(menu))
-    _args.add(Variant.fromAny(idx))
-    __method_bind.globalMenuRemoveItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(menu)
+      _args.add(idx)
+      __method_bind.globalMenuRemoveItem.call(self._handle, _args, null)
+    }
   }
 
   fun hasEnvironment(environment: String): Boolean {
-    val _arg = Variant(environment)
-    val _ret = __method_bind.hasEnvironment.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasEnvironment.call(self._handle, listOf(environment), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasFeature(tagName: String): Boolean {
-    val _arg = Variant(tagName)
-    val _ret = __method_bind.hasFeature.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasFeature.call(self._handle, listOf(tagName), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasTouchscreenUiHint(): Boolean {
-    val _ret = __method_bind.hasTouchscreenUiHint.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasTouchscreenUiHint.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasVirtualKeyboard(): Boolean {
-    val _ret = __method_bind.hasVirtualKeyboard.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasVirtualKeyboard.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hideVirtualKeyboard() {
-    __method_bind.hideVirtualKeyboard.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.hideVirtualKeyboard.call(self._handle, emptyList(), null)
+    }
   }
 
   fun isDebugBuild(): Boolean {
-    val _ret = __method_bind.isDebugBuild.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDebugBuild.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInLowProcessorUsageMode(): Boolean {
-    val _ret = __method_bind.isInLowProcessorUsageMode.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInLowProcessorUsageMode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isKeepScreenOn(): Boolean {
-    val _ret = __method_bind.isKeepScreenOn.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isKeepScreenOn.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isOkLeftAndCancelRight(): Boolean {
-    val _ret = __method_bind.isOkLeftAndCancelRight.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOkLeftAndCancelRight.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isScancodeUnicode(code: Int): Boolean {
-    val _arg = Variant(code)
-    val _ret = __method_bind.isScancodeUnicode.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isScancodeUnicode.call(self._handle, listOf(code), _retPtr)
+      _ret.value
+    }
   }
 
   fun isStdoutVerbose(): Boolean {
-    val _ret = __method_bind.isStdoutVerbose.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isStdoutVerbose.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUserfsPersistent(): Boolean {
-    val _ret = __method_bind.isUserfsPersistent.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUserfsPersistent.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isVsyncEnabled(): Boolean {
-    val _ret = __method_bind.isVsyncEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isVsyncEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isVsyncViaCompositorEnabled(): Boolean {
-    val _ret = __method_bind.isVsyncViaCompositorEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isVsyncViaCompositorEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isWindowAlwaysOnTop(): Boolean {
-    val _ret = __method_bind.isWindowAlwaysOnTop.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isWindowAlwaysOnTop.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isWindowFocused(): Boolean {
-    val _ret = __method_bind.isWindowFocused.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isWindowFocused.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isWindowFullscreen(): Boolean {
-    val _ret = __method_bind.isWindowFullscreen.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isWindowFullscreen.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isWindowMaximized(): Boolean {
-    val _ret = __method_bind.isWindowMaximized.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isWindowMaximized.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isWindowMinimized(): Boolean {
-    val _ret = __method_bind.isWindowMinimized.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isWindowMinimized.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isWindowResizable(): Boolean {
-    val _ret = __method_bind.isWindowResizable.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isWindowResizable.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun kill(pid: Int): GDError {
-    val _arg = Variant(pid)
-    val _ret = __method_bind.kill.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.kill.call(self._handle, listOf(pid), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun moveWindowToForeground() {
-    __method_bind.moveWindowToForeground.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.moveWindowToForeground.call(self._handle, emptyList(), null)
+    }
   }
 
   fun nativeVideoIsPlaying(): Boolean {
-    val _ret = __method_bind.nativeVideoIsPlaying.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.nativeVideoIsPlaying.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun nativeVideoPause() {
-    __method_bind.nativeVideoPause.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.nativeVideoPause.call(self._handle, emptyList(), null)
+    }
   }
 
   fun nativeVideoPlay(
@@ -747,206 +1220,303 @@ open class OSInternal(
     audioTrack: String,
     subtitleTrack: String
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(volume))
-    _args.add(Variant.fromAny(audioTrack))
-    _args.add(Variant.fromAny(subtitleTrack))
-    val _ret = __method_bind.nativeVideoPlay.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(volume)
+      _args.add(audioTrack)
+      _args.add(subtitleTrack)
+      __method_bind.nativeVideoPlay.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun nativeVideoStop() {
-    __method_bind.nativeVideoStop.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.nativeVideoStop.call(self._handle, emptyList(), null)
+    }
   }
 
   fun nativeVideoUnpause() {
-    __method_bind.nativeVideoUnpause.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.nativeVideoUnpause.call(self._handle, emptyList(), null)
+    }
   }
 
   fun openMidiInputs() {
-    __method_bind.openMidiInputs.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.openMidiInputs.call(self._handle, emptyList(), null)
+    }
   }
 
   fun printAllResources(tofile: String = "") {
-    val _arg = Variant(tofile)
-    __method_bind.printAllResources.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.printAllResources.call(self._handle, listOf(tofile), null)
+    }
   }
 
   fun printAllTexturesBySize() {
-    __method_bind.printAllTexturesBySize.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.printAllTexturesBySize.call(self._handle, emptyList(), null)
+    }
   }
 
   fun printResourcesByType(types: PoolStringArray) {
-    val _arg = Variant(types)
-    __method_bind.printResourcesByType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.printResourcesByType.call(self._handle, listOf(types), null)
+    }
   }
 
   fun printResourcesInUse(short: Boolean = false) {
-    val _arg = Variant(short)
-    __method_bind.printResourcesInUse.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.printResourcesInUse.call(self._handle, listOf(short), null)
+    }
   }
 
   fun requestAttention() {
-    __method_bind.requestAttention.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.requestAttention.call(self._handle, emptyList(), null)
+    }
   }
 
   fun requestPermission(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.requestPermission.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.requestPermission.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun requestPermissions(): Boolean {
-    val _ret = __method_bind.requestPermissions.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.requestPermissions.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBorderlessWindow(borderless: Boolean) {
-    val _arg = Variant(borderless)
-    __method_bind.setBorderlessWindow.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBorderlessWindow.call(self._handle, listOf(borderless), null)
+    }
   }
 
   fun setClipboard(clipboard: String) {
-    val _arg = Variant(clipboard)
-    __method_bind.setClipboard.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setClipboard.call(self._handle, listOf(clipboard), null)
+    }
   }
 
   fun setCurrentScreen(screen: Int) {
-    val _arg = Variant(screen)
-    __method_bind.setCurrentScreen.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCurrentScreen.call(self._handle, listOf(screen), null)
+    }
   }
 
   fun setExitCode(code: Int) {
-    val _arg = Variant(code)
-    __method_bind.setExitCode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExitCode.call(self._handle, listOf(code), null)
+    }
   }
 
   fun setIcon(icon: Image) {
-    val _arg = Variant(icon)
-    __method_bind.setIcon.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setIcon.call(self._handle, listOf(icon), null)
+    }
   }
 
   fun setImeActive(active: Boolean) {
-    val _arg = Variant(active)
-    __method_bind.setImeActive.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setImeActive.call(self._handle, listOf(active), null)
+    }
   }
 
   fun setImePosition(position: Vector2) {
-    val _arg = Variant(position)
-    __method_bind.setImePosition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setImePosition.call(self._handle, listOf(position), null)
+    }
   }
 
   fun setKeepScreenOn(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setKeepScreenOn.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setKeepScreenOn.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setLowProcessorUsageMode(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setLowProcessorUsageMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLowProcessorUsageMode.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setLowProcessorUsageModeSleepUsec(usec: Int) {
-    val _arg = Variant(usec)
-    __method_bind.setLowProcessorUsageModeSleepUsec.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLowProcessorUsageModeSleepUsec.call(self._handle, listOf(usec), null)
+    }
   }
 
   fun setMaxWindowSize(size: Vector2) {
-    val _arg = Variant(size)
-    __method_bind.setMaxWindowSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaxWindowSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setMinWindowSize(size: Vector2) {
-    val _arg = Variant(size)
-    __method_bind.setMinWindowSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMinWindowSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setNativeIcon(filename: String) {
-    val _arg = Variant(filename)
-    __method_bind.setNativeIcon.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNativeIcon.call(self._handle, listOf(filename), null)
+    }
   }
 
   fun setScreenOrientation(orientation: Int) {
-    val _arg = Variant(orientation)
-    __method_bind.setScreenOrientation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScreenOrientation.call(self._handle, listOf(orientation), null)
+    }
   }
 
   fun setThreadName(name: String): GDError {
-    val _arg = Variant(name)
-    val _ret = __method_bind.setThreadName.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.setThreadName.call(self._handle, listOf(name), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setUseFileAccessSaveAndSwap(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setUseFileAccessSaveAndSwap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseFileAccessSaveAndSwap.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setUseVsync(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseVsync.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseVsync.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setVsyncViaCompositor(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setVsyncViaCompositor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVsyncViaCompositor.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setWindowAlwaysOnTop(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setWindowAlwaysOnTop.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWindowAlwaysOnTop.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setWindowFullscreen(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setWindowFullscreen.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWindowFullscreen.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setWindowMaximized(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setWindowMaximized.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWindowMaximized.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setWindowMinimized(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setWindowMinimized.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWindowMinimized.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setWindowPerPixelTransparencyEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setWindowPerPixelTransparencyEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWindowPerPixelTransparencyEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setWindowPosition(position: Vector2) {
-    val _arg = Variant(position)
-    __method_bind.setWindowPosition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWindowPosition.call(self._handle, listOf(position), null)
+    }
   }
 
   fun setWindowResizable(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setWindowResizable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWindowResizable.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setWindowSize(size: Vector2) {
-    val _arg = Variant(size)
-    __method_bind.setWindowSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWindowSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setWindowTitle(title: String) {
-    val _arg = Variant(title)
-    __method_bind.setWindowTitle.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWindowTitle.call(self._handle, listOf(title), null)
+    }
   }
 
   fun shellOpen(uri: String): GDError {
-    val _arg = Variant(uri)
-    val _ret = __method_bind.shellOpen.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.shellOpen.call(self._handle, listOf(uri), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun showVirtualKeyboard(existingText: String = "") {
-    val _arg = Variant(existingText)
-    __method_bind.showVirtualKeyboard.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.showVirtualKeyboard.call(self._handle, listOf(existingText), null)
+    }
   }
 
   companion object {

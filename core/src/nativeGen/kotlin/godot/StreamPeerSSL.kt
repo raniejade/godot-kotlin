@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class StreamPeerSSL(
   @Suppress("UNUSED_PARAMETER")
@@ -44,13 +53,18 @@ open class StreamPeerSSL(
     certificate: X509Certificate,
     chain: X509Certificate
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(stream))
-    _args.add(Variant.fromAny(privateKey))
-    _args.add(Variant.fromAny(certificate))
-    _args.add(Variant.fromAny(chain))
-    val _ret = __method_bind.acceptStream.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(stream)
+      _args.add(privateKey)
+      _args.add(certificate)
+      _args.add(chain)
+      __method_bind.acceptStream.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun connectToStream(
@@ -59,36 +73,59 @@ open class StreamPeerSSL(
     forHostname: String = "",
     validCertificate: X509Certificate
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(stream))
-    _args.add(Variant.fromAny(validateCerts))
-    _args.add(Variant.fromAny(forHostname))
-    _args.add(Variant.fromAny(validCertificate))
-    val _ret = __method_bind.connectToStream.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(stream)
+      _args.add(validateCerts)
+      _args.add(forHostname)
+      _args.add(validCertificate)
+      __method_bind.connectToStream.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun disconnectFromStream() {
-    __method_bind.disconnectFromStream.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.disconnectFromStream.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getStatus(): Status {
-    val _ret = __method_bind.getStatus.call(this._handle)
-    return StreamPeerSSL.Status.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStatus.call(self._handle, emptyList(), _retPtr)
+      StreamPeerSSL.Status.from(_ret.value)
+    }
   }
 
   fun isBlockingHandshakeEnabled(): Boolean {
-    val _ret = __method_bind.isBlockingHandshakeEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isBlockingHandshakeEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun poll() {
-    __method_bind.poll.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.poll.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setBlockingHandshakeEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setBlockingHandshakeEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBlockingHandshakeEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   enum class Status(

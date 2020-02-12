@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.GDError
@@ -17,13 +18,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class MeshDataTool(
   @Suppress("UNUSED_PARAMETER")
@@ -36,242 +45,406 @@ open class MeshDataTool(
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun commitToSurface(mesh: ArrayMesh): GDError {
-    val _arg = Variant(mesh)
-    val _ret = __method_bind.commitToSurface.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.commitToSurface.call(self._handle, listOf(mesh), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun createFromSurface(mesh: ArrayMesh, surface: Int): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(mesh))
-    _args.add(Variant.fromAny(surface))
-    val _ret = __method_bind.createFromSurface.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(mesh)
+      _args.add(surface)
+      __method_bind.createFromSurface.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun getEdgeCount(): Int {
-    val _ret = __method_bind.getEdgeCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEdgeCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getEdgeFaces(idx: Int): PoolIntArray {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getEdgeFaces.call(this._handle, listOf(_arg))
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getEdgeFaces.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getEdgeMeta(idx: Int): Variant {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getEdgeMeta.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getEdgeMeta.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getEdgeVertex(idx: Int, vertex: Int): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(vertex))
-    val _ret = __method_bind.getEdgeVertex.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(vertex)
+      __method_bind.getEdgeVertex.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getFaceCount(): Int {
-    val _ret = __method_bind.getFaceCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFaceCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFaceEdge(idx: Int, edge: Int): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(edge))
-    val _ret = __method_bind.getFaceEdge.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(edge)
+      __method_bind.getFaceEdge.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getFaceMeta(idx: Int): Variant {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getFaceMeta.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFaceMeta.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFaceNormal(idx: Int): Vector3 {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getFaceNormal.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFaceNormal.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFaceVertex(idx: Int, vertex: Int): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(vertex))
-    val _ret = __method_bind.getFaceVertex.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(vertex)
+      __method_bind.getFaceVertex.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getFormat(): Int {
-    val _ret = __method_bind.getFormat.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFormat.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.getMaterial.call(this._handle)
-    return _ret.toAny() as Material
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Material
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMaterial.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Material>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getVertex(idx: Int): Vector3 {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertex.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertex.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexBones(idx: Int): PoolIntArray {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertexBones.call(this._handle, listOf(_arg))
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexBones.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexColor(idx: Int): Color {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertexColor.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexColor.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexCount(): Int {
-    val _ret = __method_bind.getVertexCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVertexCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getVertexEdges(idx: Int): PoolIntArray {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertexEdges.call(this._handle, listOf(_arg))
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexEdges.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexFaces(idx: Int): PoolIntArray {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertexFaces.call(this._handle, listOf(_arg))
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexFaces.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexMeta(idx: Int): Variant {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertexMeta.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexMeta.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexNormal(idx: Int): Vector3 {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertexNormal.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexNormal.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexTangent(idx: Int): Plane {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertexTangent.call(this._handle, listOf(_arg))
-    return _ret.asPlane()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Plane()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexTangent.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexUv(idx: Int): Vector2 {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertexUv.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexUv.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexUv2(idx: Int): Vector2 {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertexUv2.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexUv2.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexWeights(idx: Int): PoolFloatArray {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getVertexWeights.call(this._handle, listOf(_arg))
-    return _ret.asPoolFloatArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolFloatArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexWeights.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setEdgeMeta(idx: Int, meta: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(meta))
-    __method_bind.setEdgeMeta.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(meta)
+      __method_bind.setEdgeMeta.call(self._handle, _args, null)
+    }
   }
 
   fun setFaceMeta(idx: Int, meta: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(meta))
-    __method_bind.setFaceMeta.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(meta)
+      __method_bind.setFaceMeta.call(self._handle, _args, null)
+    }
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant(material)
-    __method_bind.setMaterial.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaterial.call(self._handle, listOf(material), null)
+    }
   }
 
   fun setVertex(idx: Int, vertex: Vector3) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(vertex))
-    __method_bind.setVertex.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(vertex)
+      __method_bind.setVertex.call(self._handle, _args, null)
+    }
   }
 
   fun setVertexBones(idx: Int, bones: PoolIntArray) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(bones))
-    __method_bind.setVertexBones.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(bones)
+      __method_bind.setVertexBones.call(self._handle, _args, null)
+    }
   }
 
   fun setVertexColor(idx: Int, color: Color) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(color))
-    __method_bind.setVertexColor.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(color)
+      __method_bind.setVertexColor.call(self._handle, _args, null)
+    }
   }
 
   fun setVertexMeta(idx: Int, meta: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(meta))
-    __method_bind.setVertexMeta.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(meta)
+      __method_bind.setVertexMeta.call(self._handle, _args, null)
+    }
   }
 
   fun setVertexNormal(idx: Int, normal: Vector3) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(normal))
-    __method_bind.setVertexNormal.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(normal)
+      __method_bind.setVertexNormal.call(self._handle, _args, null)
+    }
   }
 
   fun setVertexTangent(idx: Int, tangent: Plane) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(tangent))
-    __method_bind.setVertexTangent.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(tangent)
+      __method_bind.setVertexTangent.call(self._handle, _args, null)
+    }
   }
 
   fun setVertexUv(idx: Int, uv: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(uv))
-    __method_bind.setVertexUv.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(uv)
+      __method_bind.setVertexUv.call(self._handle, _args, null)
+    }
   }
 
   fun setVertexUv2(idx: Int, uv2: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(uv2))
-    __method_bind.setVertexUv2.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(uv2)
+      __method_bind.setVertexUv2.call(self._handle, _args, null)
+    }
   }
 
   fun setVertexWeights(idx: Int, weights: PoolFloatArray) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(weights))
-    __method_bind.setVertexWeights.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(weights)
+      __method_bind.setVertexWeights.call(self._handle, _args, null)
+    }
   }
 
   companion object {

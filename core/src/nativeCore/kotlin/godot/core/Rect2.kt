@@ -9,7 +9,7 @@ import kotlinx.cinterop.readValue
 class Rect2(
   value: CValue<godot_rect2>
 ) : CoreType<godot_rect2>(value) {
-
+  internal constructor(): this(__new(Vector2.ZERO, Vector2.ONE))
   constructor(position: Vector2, size: Vector2): this(__new(position, size))
   constructor(x: Float, y: Float, width: Float, height: Float): this(__new(x, y, width, height))
 

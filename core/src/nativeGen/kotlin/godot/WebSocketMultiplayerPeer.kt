@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class WebSocketMultiplayerPeer(
   @Suppress("UNUSED_PARAMETER")
@@ -35,9 +44,15 @@ open class WebSocketMultiplayerPeer(
   }
 
   fun getPeer(peerId: Int): WebSocketPeer {
-    val _arg = Variant(peerId)
-    val _ret = __method_bind.getPeer.call(this._handle, listOf(_arg))
-    return _ret.toAny() as WebSocketPeer
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: WebSocketPeer
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPeer.call(self._handle, listOf(peerId), _retPtr)
+      _ret = objectToType<WebSocketPeer>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun setBuffers(
@@ -46,13 +61,18 @@ open class WebSocketMultiplayerPeer(
     outputBufferSizeKb: Int,
     outputMaxPackets: Int
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(inputBufferSizeKb))
-    _args.add(Variant.fromAny(inputMaxPackets))
-    _args.add(Variant.fromAny(outputBufferSizeKb))
-    _args.add(Variant.fromAny(outputMaxPackets))
-    val _ret = __method_bind.setBuffers.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(inputBufferSizeKb)
+      _args.add(inputMaxPackets)
+      _args.add(outputBufferSizeKb)
+      _args.add(outputMaxPackets)
+      __method_bind.setBuffers.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class SoftBody(
   @Suppress("UNUSED_PARAMETER")
@@ -146,174 +155,291 @@ open class SoftBody(
   }
 
   fun addCollisionExceptionWith(body: Node) {
-    val _arg = Variant(body)
-    __method_bind.addCollisionExceptionWith.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addCollisionExceptionWith.call(self._handle, listOf(body), null)
+    }
   }
 
   fun getAreaAngularStiffness(): Float {
-    val _ret = __method_bind.getAreaAngularStiffness.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAreaAngularStiffness.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCollisionExceptions(): VariantArray {
-    val _ret = __method_bind.getCollisionExceptions.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCollisionExceptions.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCollisionLayer(): Int {
-    val _ret = __method_bind.getCollisionLayer.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionLayer.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
-    val _arg = Variant(bit)
-    val _ret = __method_bind.getCollisionLayerBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionLayerBit.call(self._handle, listOf(bit), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.getCollisionMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant(bit)
-    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMaskBit.call(self._handle, listOf(bit), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDampingCoefficient(): Float {
-    val _ret = __method_bind.getDampingCoefficient.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDampingCoefficient.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDragCoefficient(): Float {
-    val _ret = __method_bind.getDragCoefficient.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDragCoefficient.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLinearStiffness(): Float {
-    val _ret = __method_bind.getLinearStiffness.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLinearStiffness.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getParentCollisionIgnore(): NodePath {
-    val _ret = __method_bind.getParentCollisionIgnore.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getParentCollisionIgnore.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPoseMatchingCoefficient(): Float {
-    val _ret = __method_bind.getPoseMatchingCoefficient.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPoseMatchingCoefficient.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPressureCoefficient(): Float {
-    val _ret = __method_bind.getPressureCoefficient.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPressureCoefficient.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSimulationPrecision(): Int {
-    val _ret = __method_bind.getSimulationPrecision.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSimulationPrecision.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTotalMass(): Float {
-    val _ret = __method_bind.getTotalMass.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTotalMass.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVolumeStiffness(): Float {
-    val _ret = __method_bind.getVolumeStiffness.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVolumeStiffness.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isRayPickable(): Boolean {
-    val _ret = __method_bind.isRayPickable.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRayPickable.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeCollisionExceptionWith(body: Node) {
-    val _arg = Variant(body)
-    __method_bind.removeCollisionExceptionWith.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeCollisionExceptionWith.call(self._handle, listOf(body), null)
+    }
   }
 
   fun setAreaAngularStiffness(areaAngularStiffness: Float) {
-    val _arg = Variant(areaAngularStiffness)
-    __method_bind.setAreaAngularStiffness.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAreaAngularStiffness.call(self._handle, listOf(areaAngularStiffness), null)
+    }
   }
 
   fun setCollisionLayer(collisionLayer: Int) {
-    val _arg = Variant(collisionLayer)
-    __method_bind.setCollisionLayer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionLayer.call(self._handle, listOf(collisionLayer), null)
+    }
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bit))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setCollisionLayerBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bit)
+      _args.add(value)
+      __method_bind.setCollisionLayerBit.call(self._handle, _args, null)
+    }
   }
 
   fun setCollisionMask(collisionMask: Int) {
-    val _arg = Variant(collisionMask)
-    __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionMask.call(self._handle, listOf(collisionMask), null)
+    }
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bit))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setCollisionMaskBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bit)
+      _args.add(value)
+      __method_bind.setCollisionMaskBit.call(self._handle, _args, null)
+    }
   }
 
   fun setDampingCoefficient(dampingCoefficient: Float) {
-    val _arg = Variant(dampingCoefficient)
-    __method_bind.setDampingCoefficient.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDampingCoefficient.call(self._handle, listOf(dampingCoefficient), null)
+    }
   }
 
   fun setDragCoefficient(dragCoefficient: Float) {
-    val _arg = Variant(dragCoefficient)
-    __method_bind.setDragCoefficient.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDragCoefficient.call(self._handle, listOf(dragCoefficient), null)
+    }
   }
 
   fun setLinearStiffness(linearStiffness: Float) {
-    val _arg = Variant(linearStiffness)
-    __method_bind.setLinearStiffness.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLinearStiffness.call(self._handle, listOf(linearStiffness), null)
+    }
   }
 
   fun setParentCollisionIgnore(parentCollisionIgnore: NodePath) {
-    val _arg = Variant(parentCollisionIgnore)
-    __method_bind.setParentCollisionIgnore.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setParentCollisionIgnore.call(self._handle, listOf(parentCollisionIgnore), null)
+    }
   }
 
   fun setPoseMatchingCoefficient(poseMatchingCoefficient: Float) {
-    val _arg = Variant(poseMatchingCoefficient)
-    __method_bind.setPoseMatchingCoefficient.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPoseMatchingCoefficient.call(self._handle, listOf(poseMatchingCoefficient),
+          null)
+    }
   }
 
   fun setPressureCoefficient(pressureCoefficient: Float) {
-    val _arg = Variant(pressureCoefficient)
-    __method_bind.setPressureCoefficient.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPressureCoefficient.call(self._handle, listOf(pressureCoefficient), null)
+    }
   }
 
   fun setRayPickable(rayPickable: Boolean) {
-    val _arg = Variant(rayPickable)
-    __method_bind.setRayPickable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRayPickable.call(self._handle, listOf(rayPickable), null)
+    }
   }
 
   fun setSimulationPrecision(simulationPrecision: Int) {
-    val _arg = Variant(simulationPrecision)
-    __method_bind.setSimulationPrecision.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSimulationPrecision.call(self._handle, listOf(simulationPrecision), null)
+    }
   }
 
   fun setTotalMass(mass: Float) {
-    val _arg = Variant(mass)
-    __method_bind.setTotalMass.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTotalMass.call(self._handle, listOf(mass), null)
+    }
   }
 
   fun setVolumeStiffness(volumeStiffness: Float) {
-    val _arg = Variant(volumeStiffness)
-    __method_bind.setVolumeStiffness.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVolumeStiffness.call(self._handle, listOf(volumeStiffness), null)
+    }
   }
 
   companion object {

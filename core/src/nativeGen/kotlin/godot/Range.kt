@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Range(
   @Suppress("UNUSED_PARAMETER")
@@ -120,112 +129,187 @@ open class Range(
   }
 
   fun getAsRatio(): Float {
-    val _ret = __method_bind.getAsRatio.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAsRatio.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMax(): Float {
-    val _ret = __method_bind.getMax.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMax.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMin(): Float {
-    val _ret = __method_bind.getMin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPage(): Float {
-    val _ret = __method_bind.getPage.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPage.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getStep(): Float {
-    val _ret = __method_bind.getStep.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStep.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getValue(): Float {
-    val _ret = __method_bind.getValue.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getValue.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isGreaterAllowed(): Boolean {
-    val _ret = __method_bind.isGreaterAllowed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isGreaterAllowed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isLesserAllowed(): Boolean {
-    val _ret = __method_bind.isLesserAllowed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isLesserAllowed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRatioExp(): Boolean {
-    val _ret = __method_bind.isRatioExp.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRatioExp.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingRoundedValues(): Boolean {
-    val _ret = __method_bind.isUsingRoundedValues.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingRoundedValues.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAllowGreater(allow: Boolean) {
-    val _arg = Variant(allow)
-    __method_bind.setAllowGreater.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAllowGreater.call(self._handle, listOf(allow), null)
+    }
   }
 
   fun setAllowLesser(allow: Boolean) {
-    val _arg = Variant(allow)
-    __method_bind.setAllowLesser.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAllowLesser.call(self._handle, listOf(allow), null)
+    }
   }
 
   fun setAsRatio(value: Float) {
-    val _arg = Variant(value)
-    __method_bind.setAsRatio.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAsRatio.call(self._handle, listOf(value), null)
+    }
   }
 
   fun setExpRatio(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setExpRatio.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExpRatio.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setMax(maximum: Float) {
-    val _arg = Variant(maximum)
-    __method_bind.setMax.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMax.call(self._handle, listOf(maximum), null)
+    }
   }
 
   fun setMin(minimum: Float) {
-    val _arg = Variant(minimum)
-    __method_bind.setMin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMin.call(self._handle, listOf(minimum), null)
+    }
   }
 
   fun setPage(pagesize: Float) {
-    val _arg = Variant(pagesize)
-    __method_bind.setPage.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPage.call(self._handle, listOf(pagesize), null)
+    }
   }
 
   fun setStep(step: Float) {
-    val _arg = Variant(step)
-    __method_bind.setStep.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStep.call(self._handle, listOf(step), null)
+    }
   }
 
   fun setUseRoundedValues(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setUseRoundedValues.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseRoundedValues.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setValue(value: Float) {
-    val _arg = Variant(value)
-    __method_bind.setValue.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setValue.call(self._handle, listOf(value), null)
+    }
   }
 
   fun share(with: Node) {
-    val _arg = Variant(with)
-    __method_bind.share.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.share.call(self._handle, listOf(with), null)
+    }
   }
 
   fun unshare() {
-    __method_bind.unshare.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.unshare.call(self._handle, emptyList(), null)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Texture(
   @Suppress("UNUSED_PARAMETER")
@@ -48,13 +57,16 @@ open class Texture(
     transpose: Boolean = false,
     normalMap: Texture
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(canvasItem))
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(modulate))
-    _args.add(Variant.fromAny(transpose))
-    _args.add(Variant.fromAny(normalMap))
-    __method_bind.draw.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(canvasItem)
+      _args.add(position)
+      _args.add(modulate)
+      _args.add(transpose)
+      _args.add(normalMap)
+      __method_bind.draw.call(self._handle, _args, null)
+    }
   }
 
   fun drawRect(
@@ -65,14 +77,17 @@ open class Texture(
     transpose: Boolean = false,
     normalMap: Texture
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(canvasItem))
-    _args.add(Variant.fromAny(rect))
-    _args.add(Variant.fromAny(tile))
-    _args.add(Variant.fromAny(modulate))
-    _args.add(Variant.fromAny(transpose))
-    _args.add(Variant.fromAny(normalMap))
-    __method_bind.drawRect.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(canvasItem)
+      _args.add(rect)
+      _args.add(tile)
+      _args.add(modulate)
+      _args.add(transpose)
+      _args.add(normalMap)
+      __method_bind.drawRect.call(self._handle, _args, null)
+    }
   }
 
   fun drawRectRegion(
@@ -84,50 +99,88 @@ open class Texture(
     normalMap: Texture,
     clipUv: Boolean = true
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(canvasItem))
-    _args.add(Variant.fromAny(rect))
-    _args.add(Variant.fromAny(srcRect))
-    _args.add(Variant.fromAny(modulate))
-    _args.add(Variant.fromAny(transpose))
-    _args.add(Variant.fromAny(normalMap))
-    _args.add(Variant.fromAny(clipUv))
-    __method_bind.drawRectRegion.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(canvasItem)
+      _args.add(rect)
+      _args.add(srcRect)
+      _args.add(modulate)
+      _args.add(transpose)
+      _args.add(normalMap)
+      _args.add(clipUv)
+      __method_bind.drawRectRegion.call(self._handle, _args, null)
+    }
   }
 
   fun getData(): Image {
-    val _ret = __method_bind.getData.call(this._handle)
-    return _ret.toAny() as Image
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Image
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getData.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Image>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getFlags(): Int {
-    val _ret = __method_bind.getFlags.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFlags.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getHeight(): Int {
-    val _ret = __method_bind.getHeight.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.getSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getWidth(): Int {
-    val _ret = __method_bind.getWidth.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWidth.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasAlpha(): Boolean {
-    val _ret = __method_bind.hasAlpha.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAlpha.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setFlags(flags: Int) {
-    val _arg = Variant(flags)
-    __method_bind.setFlags.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFlags.call(self._handle, listOf(flags), null)
+    }
   }
 
   enum class Flags(

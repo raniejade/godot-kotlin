@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class StyleBoxLine(
   @Suppress("UNUSED_PARAMETER")
@@ -82,53 +91,89 @@ open class StyleBoxLine(
   }
 
   fun getColor(): Color {
-    val _ret = __method_bind.getColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getGrowBegin(): Float {
-    val _ret = __method_bind.getGrowBegin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGrowBegin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGrowEnd(): Float {
-    val _ret = __method_bind.getGrowEnd.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGrowEnd.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getThickness(): Int {
-    val _ret = __method_bind.getThickness.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getThickness.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isVertical(): Boolean {
-    val _ret = __method_bind.isVertical.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isVertical.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setGrowBegin(offset: Float) {
-    val _arg = Variant(offset)
-    __method_bind.setGrowBegin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGrowBegin.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setGrowEnd(offset: Float) {
-    val _arg = Variant(offset)
-    __method_bind.setGrowEnd.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGrowEnd.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setThickness(thickness: Int) {
-    val _arg = Variant(thickness)
-    __method_bind.setThickness.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setThickness.call(self._handle, listOf(thickness), null)
+    }
   }
 
   fun setVertical(vertical: Boolean) {
-    val _arg = Variant(vertical)
-    __method_bind.setVertical.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVertical.call(self._handle, listOf(vertical), null)
+    }
   }
 
   companion object {

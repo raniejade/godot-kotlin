@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class TextureButton(
   @Suppress("UNUSED_PARAMETER")
@@ -94,83 +103,151 @@ open class TextureButton(
   }
 
   fun getClickMask(): BitMap {
-    val _ret = __method_bind.getClickMask.call(this._handle)
-    return _ret.toAny() as BitMap
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: BitMap
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getClickMask.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<BitMap>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getDisabledTexture(): Texture {
-    val _ret = __method_bind.getDisabledTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getDisabledTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getExpand(): Boolean {
-    val _ret = __method_bind.getExpand.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getExpand.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFocusedTexture(): Texture {
-    val _ret = __method_bind.getFocusedTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getFocusedTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getHoverTexture(): Texture {
-    val _ret = __method_bind.getHoverTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getHoverTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNormalTexture(): Texture {
-    val _ret = __method_bind.getNormalTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNormalTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPressedTexture(): Texture {
-    val _ret = __method_bind.getPressedTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPressedTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getStretchMode(): StretchMode {
-    val _ret = __method_bind.getStretchMode.call(this._handle)
-    return TextureButton.StretchMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStretchMode.call(self._handle, emptyList(), _retPtr)
+      TextureButton.StretchMode.from(_ret.value)
+    }
   }
 
   fun setClickMask(mask: BitMap) {
-    val _arg = Variant(mask)
-    __method_bind.setClickMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setClickMask.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setDisabledTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setDisabledTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDisabledTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setExpand(pExpand: Boolean) {
-    val _arg = Variant(pExpand)
-    __method_bind.setExpand.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExpand.call(self._handle, listOf(pExpand), null)
+    }
   }
 
   fun setFocusedTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setFocusedTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFocusedTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setHoverTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setHoverTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHoverTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setNormalTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setNormalTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNormalTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setPressedTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setPressedTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPressedTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setStretchMode(pMode: Int) {
-    val _arg = Variant(pMode)
-    __method_bind.setStretchMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStretchMode.call(self._handle, listOf(pMode), null)
+    }
   }
 
   enum class StretchMode(

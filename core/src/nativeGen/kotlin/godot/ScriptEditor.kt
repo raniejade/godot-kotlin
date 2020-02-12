@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ScriptEditor(
   @Suppress("UNUSED_PARAMETER")
@@ -45,12 +54,17 @@ open class ScriptEditor(
     data: Variant,
     from: Control
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(point))
-    _args.add(Variant.fromAny(data))
-    _args.add(Variant.fromAny(from))
-    val _ret = __method_bind.canDropDataFw.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(point)
+      _args.add(data)
+      _args.add(from)
+      __method_bind.canDropDataFw.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun dropDataFw(
@@ -58,41 +72,68 @@ open class ScriptEditor(
     data: Variant,
     from: Control
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(point))
-    _args.add(Variant.fromAny(data))
-    _args.add(Variant.fromAny(from))
-    __method_bind.dropDataFw.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(point)
+      _args.add(data)
+      _args.add(from)
+      __method_bind.dropDataFw.call(self._handle, _args, null)
+    }
   }
 
   fun getCurrentScript(): Script {
-    val _ret = __method_bind.getCurrentScript.call(this._handle)
-    return _ret.toAny() as Script
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Script
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getCurrentScript.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Script>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getDragDataFw(point: Vector2, from: Control): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(point))
-    _args.add(Variant.fromAny(from))
-    val _ret = __method_bind.getDragDataFw.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(point)
+      _args.add(from)
+      __method_bind.getDragDataFw.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOpenScripts(): VariantArray {
-    val _ret = __method_bind.getOpenScripts.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOpenScripts.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun gotoLine(lineNumber: Int) {
-    val _arg = Variant(lineNumber)
-    __method_bind.gotoLine.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.gotoLine.call(self._handle, listOf(lineNumber), null)
+    }
   }
 
   fun openScriptCreateDialog(baseName: String, basePath: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(baseName))
-    _args.add(Variant.fromAny(basePath))
-    __method_bind.openScriptCreateDialog.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(baseName)
+      _args.add(basePath)
+      __method_bind.openScriptCreateDialog.call(self._handle, _args, null)
+    }
   }
 
   companion object {

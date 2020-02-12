@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.AABB
 import godot.core.Allocator
 import godot.core.Godot
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class GIProbeData(
   @Suppress("UNUSED_PARAMETER")
@@ -150,113 +159,193 @@ open class GIProbeData(
   }
 
   fun getBias(): Float {
-    val _ret = __method_bind.getBias.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBias.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getBounds(): AABB {
-    val _ret = __method_bind.getBounds.call(this._handle)
-    return _ret.asAABB()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = AABB()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBounds.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCellSize(): Float {
-    val _ret = __method_bind.getCellSize.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCellSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDynamicData(): PoolIntArray {
-    val _ret = __method_bind.getDynamicData.call(this._handle)
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getDynamicData.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getDynamicRange(): Int {
-    val _ret = __method_bind.getDynamicRange.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDynamicRange.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getEnergy(): Float {
-    val _ret = __method_bind.getEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getNormalBias(): Float {
-    val _ret = __method_bind.getNormalBias.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNormalBias.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPropagation(): Float {
-    val _ret = __method_bind.getPropagation.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPropagation.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getToCellXform(): Transform {
-    val _ret = __method_bind.getToCellXform.call(this._handle)
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getToCellXform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isCompressed(): Boolean {
-    val _ret = __method_bind.isCompressed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCompressed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInterior(): Boolean {
-    val _ret = __method_bind.isInterior.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInterior.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBias(bias: Float) {
-    val _arg = Variant(bias)
-    __method_bind.setBias.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBias.call(self._handle, listOf(bias), null)
+    }
   }
 
   fun setBounds(bounds: AABB) {
-    val _arg = Variant(bounds)
-    __method_bind.setBounds.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBounds.call(self._handle, listOf(bounds), null)
+    }
   }
 
   fun setCellSize(cellSize: Float) {
-    val _arg = Variant(cellSize)
-    __method_bind.setCellSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCellSize.call(self._handle, listOf(cellSize), null)
+    }
   }
 
   fun setCompress(compress: Boolean) {
-    val _arg = Variant(compress)
-    __method_bind.setCompress.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCompress.call(self._handle, listOf(compress), null)
+    }
   }
 
   fun setDynamicData(dynamicData: PoolIntArray) {
-    val _arg = Variant(dynamicData)
-    __method_bind.setDynamicData.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDynamicData.call(self._handle, listOf(dynamicData), null)
+    }
   }
 
   fun setDynamicRange(dynamicRange: Int) {
-    val _arg = Variant(dynamicRange)
-    __method_bind.setDynamicRange.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDynamicRange.call(self._handle, listOf(dynamicRange), null)
+    }
   }
 
   fun setEnergy(energy: Float) {
-    val _arg = Variant(energy)
-    __method_bind.setEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnergy.call(self._handle, listOf(energy), null)
+    }
   }
 
   fun setInterior(interior: Boolean) {
-    val _arg = Variant(interior)
-    __method_bind.setInterior.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInterior.call(self._handle, listOf(interior), null)
+    }
   }
 
   fun setNormalBias(bias: Float) {
-    val _arg = Variant(bias)
-    __method_bind.setNormalBias.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNormalBias.call(self._handle, listOf(bias), null)
+    }
   }
 
   fun setPropagation(propagation: Float) {
-    val _arg = Variant(propagation)
-    __method_bind.setPropagation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPropagation.call(self._handle, listOf(propagation), null)
+    }
   }
 
   fun setToCellXform(toCellXform: Transform) {
-    val _arg = Variant(toCellXform)
-    __method_bind.setToCellXform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setToCellXform.call(self._handle, listOf(toCellXform), null)
+    }
   }
 
   companion object {

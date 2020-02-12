@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform2D
@@ -13,13 +14,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Shape2D(
   @Suppress("UNUSED_PARAMETER")
@@ -44,12 +53,17 @@ open class Shape2D(
     withShape: Shape2D,
     shapeXform: Transform2D
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(localXform))
-    _args.add(Variant.fromAny(withShape))
-    _args.add(Variant.fromAny(shapeXform))
-    val _ret = __method_bind.collide.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(localXform)
+      _args.add(withShape)
+      _args.add(shapeXform)
+      __method_bind.collide.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun collideAndGetContacts(
@@ -57,12 +71,18 @@ open class Shape2D(
     withShape: Shape2D,
     shapeXform: Transform2D
   ): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(localXform))
-    _args.add(Variant.fromAny(withShape))
-    _args.add(Variant.fromAny(shapeXform))
-    val _ret = __method_bind.collideAndGetContacts.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(localXform)
+      _args.add(withShape)
+      _args.add(shapeXform)
+      __method_bind.collideAndGetContacts.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun collideWithMotion(
@@ -72,14 +92,19 @@ open class Shape2D(
     shapeXform: Transform2D,
     shapeMotion: Vector2
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(localXform))
-    _args.add(Variant.fromAny(localMotion))
-    _args.add(Variant.fromAny(withShape))
-    _args.add(Variant.fromAny(shapeXform))
-    _args.add(Variant.fromAny(shapeMotion))
-    val _ret = __method_bind.collideWithMotion.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(localXform)
+      _args.add(localMotion)
+      _args.add(withShape)
+      _args.add(shapeXform)
+      _args.add(shapeMotion)
+      __method_bind.collideWithMotion.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun collideWithMotionAndGetContacts(
@@ -89,24 +114,37 @@ open class Shape2D(
     shapeXform: Transform2D,
     shapeMotion: Vector2
   ): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(localXform))
-    _args.add(Variant.fromAny(localMotion))
-    _args.add(Variant.fromAny(withShape))
-    _args.add(Variant.fromAny(shapeXform))
-    _args.add(Variant.fromAny(shapeMotion))
-    val _ret = __method_bind.collideWithMotionAndGetContacts.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(localXform)
+      _args.add(localMotion)
+      _args.add(withShape)
+      _args.add(shapeXform)
+      _args.add(shapeMotion)
+      __method_bind.collideWithMotionAndGetContacts.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCustomSolverBias(): Float {
-    val _ret = __method_bind.getCustomSolverBias.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCustomSolverBias.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun setCustomSolverBias(bias: Float) {
-    val _arg = Variant(bias)
-    __method_bind.setCustomSolverBias.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCustomSolverBias.call(self._handle, listOf(bias), null)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class PhysicalBone(
   @Suppress("UNUSED_PARAMETER")
@@ -116,115 +125,198 @@ open class PhysicalBone(
   }
 
   fun applyCentralImpulse(impulse: Vector3) {
-    val _arg = Variant(impulse)
-    __method_bind.applyCentralImpulse.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.applyCentralImpulse.call(self._handle, listOf(impulse), null)
+    }
   }
 
   fun applyImpulse(position: Vector3, impulse: Vector3) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(impulse))
-    __method_bind.applyImpulse.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(position)
+      _args.add(impulse)
+      __method_bind.applyImpulse.call(self._handle, _args, null)
+    }
   }
 
   fun getBodyOffset(): Transform {
-    val _ret = __method_bind.getBodyOffset.call(this._handle)
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBodyOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBoneId(): Int {
-    val _ret = __method_bind.getBoneId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBoneId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBounce(): Float {
-    val _ret = __method_bind.getBounce.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBounce.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFriction(): Float {
-    val _ret = __method_bind.getFriction.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFriction.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGravityScale(): Float {
-    val _ret = __method_bind.getGravityScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGravityScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getJointOffset(): Transform {
-    val _ret = __method_bind.getJointOffset.call(this._handle)
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getJointOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getJointType(): JointType {
-    val _ret = __method_bind.getJointType.call(this._handle)
-    return PhysicalBone.JointType.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getJointType.call(self._handle, emptyList(), _retPtr)
+      PhysicalBone.JointType.from(_ret.value)
+    }
   }
 
   fun getMass(): Float {
-    val _ret = __method_bind.getMass.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMass.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSimulatePhysics(): Boolean {
-    val _ret = __method_bind.getSimulatePhysics.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSimulatePhysics.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getWeight(): Float {
-    val _ret = __method_bind.getWeight.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isSimulatingPhysics(): Boolean {
-    val _ret = __method_bind.isSimulatingPhysics.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSimulatingPhysics.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isStaticBody(): Boolean {
-    val _ret = __method_bind.isStaticBody.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isStaticBody.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBodyOffset(offset: Transform) {
-    val _arg = Variant(offset)
-    __method_bind.setBodyOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBodyOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setBounce(bounce: Float) {
-    val _arg = Variant(bounce)
-    __method_bind.setBounce.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBounce.call(self._handle, listOf(bounce), null)
+    }
   }
 
   fun setFriction(friction: Float) {
-    val _arg = Variant(friction)
-    __method_bind.setFriction.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFriction.call(self._handle, listOf(friction), null)
+    }
   }
 
   fun setGravityScale(gravityScale: Float) {
-    val _arg = Variant(gravityScale)
-    __method_bind.setGravityScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGravityScale.call(self._handle, listOf(gravityScale), null)
+    }
   }
 
   fun setJointOffset(offset: Transform) {
-    val _arg = Variant(offset)
-    __method_bind.setJointOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setJointOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setJointType(jointType: Int) {
-    val _arg = Variant(jointType)
-    __method_bind.setJointType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setJointType.call(self._handle, listOf(jointType), null)
+    }
   }
 
   fun setMass(mass: Float) {
-    val _arg = Variant(mass)
-    __method_bind.setMass.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMass.call(self._handle, listOf(mass), null)
+    }
   }
 
   fun setWeight(weight: Float) {
-    val _arg = Variant(weight)
-    __method_bind.setWeight.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWeight.call(self._handle, listOf(weight), null)
+    }
   }
 
   enum class JointType(

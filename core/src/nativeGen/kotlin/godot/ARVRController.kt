@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ARVRController(
   @Suppress("UNUSED_PARAMETER")
@@ -62,60 +71,110 @@ open class ARVRController(
   }
 
   fun getControllerId(): Int {
-    val _ret = __method_bind.getControllerId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getControllerId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getControllerName(): String {
-    val _ret = __method_bind.getControllerName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getControllerName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getHand(): ARVRPositionalTracker.TrackerHand {
-    val _ret = __method_bind.getHand.call(this._handle)
-    return ARVRPositionalTracker.TrackerHand.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHand.call(self._handle, emptyList(), _retPtr)
+      ARVRPositionalTracker.TrackerHand.from(_ret.value)
+    }
   }
 
   fun getIsActive(): Boolean {
-    val _ret = __method_bind.getIsActive.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getIsActive.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getJoystickAxis(axis: Int): Float {
-    val _arg = Variant(axis)
-    val _ret = __method_bind.getJoystickAxis.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getJoystickAxis.call(self._handle, listOf(axis), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getJoystickId(): Int {
-    val _ret = __method_bind.getJoystickId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getJoystickId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.getMesh.call(this._handle)
-    return _ret.toAny() as Mesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Mesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMesh.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Mesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getRumble(): Float {
-    val _ret = __method_bind.getRumble.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRumble.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isButtonPressed(button: Int): Int {
-    val _arg = Variant(button)
-    val _ret = __method_bind.isButtonPressed.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isButtonPressed.call(self._handle, listOf(button), _retPtr)
+      _ret.value
+    }
   }
 
   fun setControllerId(controllerId: Int) {
-    val _arg = Variant(controllerId)
-    __method_bind.setControllerId.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setControllerId.call(self._handle, listOf(controllerId), null)
+    }
   }
 
   fun setRumble(rumble: Float) {
-    val _arg = Variant(rumble)
-    __method_bind.setRumble.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRumble.call(self._handle, listOf(rumble), null)
+    }
   }
 
   companion object {

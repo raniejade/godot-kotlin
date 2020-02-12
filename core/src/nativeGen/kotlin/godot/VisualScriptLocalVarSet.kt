@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VisualScriptLocalVarSet(
   @Suppress("UNUSED_PARAMETER")
@@ -45,23 +54,38 @@ open class VisualScriptLocalVarSet(
   }
 
   fun getVarName(): String {
-    val _ret = __method_bind.getVarName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getVarName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getVarType(): Variant.Type {
-    val _ret = __method_bind.getVarType.call(this._handle)
-    return Variant.Type.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVarType.call(self._handle, emptyList(), _retPtr)
+      Variant.Type.from(_ret.value)
+    }
   }
 
   fun setVarName(name: String) {
-    val _arg = Variant(name)
-    __method_bind.setVarName.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVarName.call(self._handle, listOf(name), null)
+    }
   }
 
   fun setVarType(type: Int) {
-    val _arg = Variant(type)
-    __method_bind.setVarType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVarType.call(self._handle, listOf(type), null)
+    }
   }
 
   companion object {

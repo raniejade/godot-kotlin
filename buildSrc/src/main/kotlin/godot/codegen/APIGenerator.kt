@@ -499,7 +499,7 @@ class APIGenerator {
 
   private fun FileSpec.Builder.addCommonImports(cls: GDClass): FileSpec.Builder {
     addImport("godot.core", "Godot", "Variant", "VariantArray", "Allocator")
-    addImport("gdnative", "godot_method_bind")
+    addImport("gdnative", "godot_method_bind", "godot_string")
     addImport("kotlin.reflect", "KCallable")
     addImport(
       "kotlinx.cinterop",
@@ -507,8 +507,16 @@ class APIGenerator {
       "COpaquePointer",
       "cstr",
       "invoke",
-      "memScoped",
-      "reinterpret"
+      "reinterpret",
+      "IntVar",
+      "DoubleVar",
+      "BooleanVar",
+      "alloc",
+      "ptr",
+      "value",
+      "COpaquePointerVar",
+      "pointed",
+      "readValue"
     )
     return this
   }
@@ -558,57 +566,108 @@ class APIGenerator {
           builder.addParameter("varargs", nullableAny, KModifier.VARARG)
         }
 
-        val returnVar = if (parsedType.isVoid) {
-          ""
+        builder.addStatement("val self = this")
+        builder.addCode("return Allocator.allocationScope {⇥\n")
+
+        val ret = if (parsedType.isVoid) {
+          "null"
         } else {
-          "val _ret = "
+          when {
+            parsedType.isCoreType -> {
+              if (parsedType.isPrimitive) {
+                if (parsedType.coreType == CoreType.STRING) {
+                  builder.addStatement("val _ret = alloc<godot_string>()")
+                  builder.addStatement("val _retPtr = _ret.ptr")
+                  builder.addStatement("checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)")
+                } else {
+                  val primitiveType = when (parsedType.coreType) {
+                    CoreType.INT -> "IntVar"
+                    CoreType.FLOAT -> "DoubleVar"
+                    CoreType.BOOL -> "BooleanVar"
+                    else -> throw AssertionError("Unknown primitive type ${parsedType.coreType}")
+                  }
+                  builder.addStatement("val _ret = alloc<%L>()", primitiveType)
+                  builder.addStatement("val _retPtr = _ret.ptr")
+                }
+              } else if (parsedType.isEnum) {
+                builder.addStatement("val _ret = alloc<IntVar>()")
+                builder.addStatement("val _retPtr = _ret.ptr")
+              } else {
+                builder.addStatement("val _ret = %T()", returnTypeClassName!!)
+                builder.addStatement("val _retPtr = _ret._value.ptr")
+              }
+            }
+            parsedType.isEnum -> {
+              builder.addStatement("val _ret = alloc<IntVar>()")
+              builder.addStatement("val _retPtr = _ret.ptr")
+            }
+            else -> {
+              // most likely an object
+              if (parsedType.nullable) {
+                builder.addStatement("var _ret: %T = null", returnTypeClassName!!)
+              } else {
+                builder.addStatement("lateinit var _ret: %T", returnTypeClassName!!)
+              }
+              builder.addStatement("val _tmp = alloc<COpaquePointerVar>()")
+              builder.addStatement("val _retPtr = _tmp.ptr")
+            }
+          }
+          "_retPtr"
         }
 
         if (parameters.isNotEmpty() || method.hasVarargs) {
           if (parameters.size == 1 && !method.hasVarargs) {
             val parameter = parameters[0]
-            builder.addStatement("val _arg = Variant(%N)", parameter.name)
-            builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, listOf(_arg))", method.name)
+            //builder.addStatement("val _arg = Variant(%N)", parameter.name)
+            builder.addStatement("__method_bind.%L.call(self._handle, listOf(%N), %L)", method.name, parameter.name, ret)
           } else {
-            builder.addStatement("val _args = mutableListOf<Variant>()")
+            builder.addStatement("val _args = mutableListOf<Any?>()")
 
             parameters.forEach { parameter ->
-              builder.addStatement("_args.add(Variant.fromAny(%N))", parameter)
+              builder.addStatement("_args.add(%N)", parameter)
             }
 
             if (method.hasVarargs) {
-              builder.addStatement("varargs.forEach { _args.add(Variant.fromAny(it)) }")
+              builder.addStatement("varargs.forEach { _args.add(it) }")
             }
 
-            builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, _args)", method.name)
+            builder.addStatement("__method_bind.%L.call(self._handle, _args, %L)", method.name, ret)
           }
         } else {
-          builder.addStatement("${returnVar}__method_bind.%L.call(this._handle)", method.name)
+          builder.addStatement("__method_bind.%L.call(self._handle, emptyList(), %L)", method.name, ret)
         }
 
-        if (returnVar.isNotEmpty()) {
-          if (parsedType.isCoreType) {
-            when {
-              parsedType.isEnum -> {
-                builder.addStatement("return ${parsedType.fqName}.from(_ret.asInt())")
-              }
-              !parsedType.isVariant -> {
-                builder.addStatement("return _ret.as${parsedType.fqName.capitalize()}()")
-              }
-              else -> {
-                builder.addStatement("return _ret")
+        if (!parsedType.isVoid) {
+
+          if (!parsedType.isPrimitive && parsedType.isCoreType && !parsedType.isEnum) {
+            builder.addStatement("_ret._value = _retPtr.pointed.readValue()")
+          } else if (!parsedType.isCoreType) {
+            // object
+            if (parsedType.nullable) {
+              builder.addStatement("if (_tmp.value != null) { _ret = objectToType<%T>(_tmp.value!!) }", returnTypeClassName!!.copy(nullable = false))
+            } else if (!parsedType.isEnum) {
+              builder.addStatement("_ret = objectToType<%T>(_tmp.value!!)", returnTypeClassName!!)
+            }
+          }
+
+          if (parsedType.isEnum) {
+            builder.addStatement("${parsedType.fqName}.from(_ret.value)")
+          } else if (parsedType.isPrimitive) {
+            if (parsedType.coreType == CoreType.STRING) {
+              builder.addStatement("_ret.toKStringAndDestroy()")
+            } else {
+              if (parsedType.coreType == CoreType.FLOAT) {
+                builder.addStatement("_ret.value.toFloat()")
+              } else {
+                builder.addStatement("_ret.value")
               }
             }
           } else {
-            if (parsedType.isEnum) {
-              builder.addStatement("return ${parsedType.fqName}.from(_ret.asInt())")
-            } else {
-              builder.addStatement("return _ret.toAny() as %L", parsedType.fqName)
-            }
-
+            builder.addStatement("_ret")
           }
         }
 
+        builder.addCode("⇤}\n")
         builder.build()
       }
 

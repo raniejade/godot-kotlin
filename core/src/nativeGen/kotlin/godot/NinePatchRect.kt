@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class NinePatchRect(
   @Suppress("UNUSED_PARAMETER")
@@ -118,66 +127,111 @@ open class NinePatchRect(
   }
 
   fun getHAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.getHAxisStretchMode.call(this._handle)
-    return NinePatchRect.AxisStretchMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHAxisStretchMode.call(self._handle, emptyList(), _retPtr)
+      NinePatchRect.AxisStretchMode.from(_ret.value)
+    }
   }
 
   fun getPatchMargin(margin: Int): Int {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getPatchMargin.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPatchMargin.call(self._handle, listOf(margin), _retPtr)
+      _ret.value
+    }
   }
 
   fun getRegionRect(): Rect2 {
-    val _ret = __method_bind.getRegionRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRegionRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getVAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.getVAxisStretchMode.call(this._handle)
-    return NinePatchRect.AxisStretchMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVAxisStretchMode.call(self._handle, emptyList(), _retPtr)
+      NinePatchRect.AxisStretchMode.from(_ret.value)
+    }
   }
 
   fun isDrawCenterEnabled(): Boolean {
-    val _ret = __method_bind.isDrawCenterEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDrawCenterEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setDrawCenter(drawCenter: Boolean) {
-    val _arg = Variant(drawCenter)
-    __method_bind.setDrawCenter.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDrawCenter.call(self._handle, listOf(drawCenter), null)
+    }
   }
 
   fun setHAxisStretchMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setHAxisStretchMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHAxisStretchMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setPatchMargin(margin: Int, value: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setPatchMargin.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(value)
+      __method_bind.setPatchMargin.call(self._handle, _args, null)
+    }
   }
 
   fun setRegionRect(rect: Rect2) {
-    val _arg = Variant(rect)
-    __method_bind.setRegionRect.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRegionRect.call(self._handle, listOf(rect), null)
+    }
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setVAxisStretchMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setVAxisStretchMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVAxisStretchMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   enum class AxisStretchMode(

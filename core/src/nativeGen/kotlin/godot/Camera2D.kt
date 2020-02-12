@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Camera2D(
   @Suppress("UNUSED_PARAMETER")
@@ -243,224 +252,386 @@ open class Camera2D(
   }
 
   fun align() {
-    __method_bind.align.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.align.call(self._handle, emptyList(), null)
+    }
   }
 
   fun clearCurrent() {
-    __method_bind.clearCurrent.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearCurrent.call(self._handle, emptyList(), null)
+    }
   }
 
   fun forceUpdateScroll() {
-    __method_bind.forceUpdateScroll.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.forceUpdateScroll.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getAnchorMode(): AnchorMode {
-    val _ret = __method_bind.getAnchorMode.call(this._handle)
-    return Camera2D.AnchorMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAnchorMode.call(self._handle, emptyList(), _retPtr)
+      Camera2D.AnchorMode.from(_ret.value)
+    }
   }
 
   fun getCameraPosition(): Vector2 {
-    val _ret = __method_bind.getCameraPosition.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCameraPosition.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCameraScreenCenter(): Vector2 {
-    val _ret = __method_bind.getCameraScreenCenter.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCameraScreenCenter.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCustomViewport(): Node {
-    val _ret = __method_bind.getCustomViewport.call(this._handle)
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getCustomViewport.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getDragMargin(margin: Int): Float {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getDragMargin.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDragMargin.call(self._handle, listOf(margin), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFollowSmoothing(): Float {
-    val _ret = __method_bind.getFollowSmoothing.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFollowSmoothing.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getHOffset(): Float {
-    val _ret = __method_bind.getHOffset.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLimit(margin: Int): Int {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getLimit.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLimit.call(self._handle, listOf(margin), _retPtr)
+      _ret.value
+    }
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.getOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getProcessMode(): Camera2DProcessMode {
-    val _ret = __method_bind.getProcessMode.call(this._handle)
-    return Camera2D.Camera2DProcessMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getProcessMode.call(self._handle, emptyList(), _retPtr)
+      Camera2D.Camera2DProcessMode.from(_ret.value)
+    }
   }
 
   fun getVOffset(): Float {
-    val _ret = __method_bind.getVOffset.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getZoom(): Vector2 {
-    val _ret = __method_bind.getZoom.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getZoom.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isCurrent(): Boolean {
-    val _ret = __method_bind.isCurrent.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCurrent.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFollowSmoothingEnabled(): Boolean {
-    val _ret = __method_bind.isFollowSmoothingEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFollowSmoothingEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isHDragEnabled(): Boolean {
-    val _ret = __method_bind.isHDragEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isHDragEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isLimitDrawingEnabled(): Boolean {
-    val _ret = __method_bind.isLimitDrawingEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isLimitDrawingEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isLimitSmoothingEnabled(): Boolean {
-    val _ret = __method_bind.isLimitSmoothingEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isLimitSmoothingEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isMarginDrawingEnabled(): Boolean {
-    val _ret = __method_bind.isMarginDrawingEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isMarginDrawingEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRotating(): Boolean {
-    val _ret = __method_bind.isRotating.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRotating.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isScreenDrawingEnabled(): Boolean {
-    val _ret = __method_bind.isScreenDrawingEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isScreenDrawingEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isVDragEnabled(): Boolean {
-    val _ret = __method_bind.isVDragEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isVDragEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun makeCurrent() {
-    __method_bind.makeCurrent.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.makeCurrent.call(self._handle, emptyList(), null)
+    }
   }
 
   fun resetSmoothing() {
-    __method_bind.resetSmoothing.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.resetSmoothing.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setAnchorMode(anchorMode: Int) {
-    val _arg = Variant(anchorMode)
-    __method_bind.setAnchorMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAnchorMode.call(self._handle, listOf(anchorMode), null)
+    }
   }
 
   fun setCustomViewport(viewport: Node) {
-    val _arg = Variant(viewport)
-    __method_bind.setCustomViewport.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCustomViewport.call(self._handle, listOf(viewport), null)
+    }
   }
 
   fun setDragMargin(margin: Int, dragMargin: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(dragMargin))
-    __method_bind.setDragMargin.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(dragMargin)
+      __method_bind.setDragMargin.call(self._handle, _args, null)
+    }
   }
 
   fun setEnableFollowSmoothing(followSmoothing: Boolean) {
-    val _arg = Variant(followSmoothing)
-    __method_bind.setEnableFollowSmoothing.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnableFollowSmoothing.call(self._handle, listOf(followSmoothing), null)
+    }
   }
 
   fun setFollowSmoothing(followSmoothing: Float) {
-    val _arg = Variant(followSmoothing)
-    __method_bind.setFollowSmoothing.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFollowSmoothing.call(self._handle, listOf(followSmoothing), null)
+    }
   }
 
   fun setHDragEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setHDragEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHDragEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setHOffset(ofs: Float) {
-    val _arg = Variant(ofs)
-    __method_bind.setHOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHOffset.call(self._handle, listOf(ofs), null)
+    }
   }
 
   fun setLimit(margin: Int, limit: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(limit))
-    __method_bind.setLimit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(limit)
+      __method_bind.setLimit.call(self._handle, _args, null)
+    }
   }
 
   fun setLimitDrawingEnabled(limitDrawingEnabled: Boolean) {
-    val _arg = Variant(limitDrawingEnabled)
-    __method_bind.setLimitDrawingEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLimitDrawingEnabled.call(self._handle, listOf(limitDrawingEnabled), null)
+    }
   }
 
   fun setLimitSmoothingEnabled(limitSmoothingEnabled: Boolean) {
-    val _arg = Variant(limitSmoothingEnabled)
-    __method_bind.setLimitSmoothingEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLimitSmoothingEnabled.call(self._handle, listOf(limitSmoothingEnabled), null)
+    }
   }
 
   fun setMarginDrawingEnabled(marginDrawingEnabled: Boolean) {
-    val _arg = Variant(marginDrawingEnabled)
-    __method_bind.setMarginDrawingEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMarginDrawingEnabled.call(self._handle, listOf(marginDrawingEnabled), null)
+    }
   }
 
   fun setOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setProcessMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setProcessMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProcessMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setRotating(rotating: Boolean) {
-    val _arg = Variant(rotating)
-    __method_bind.setRotating.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRotating.call(self._handle, listOf(rotating), null)
+    }
   }
 
   fun setScreenDrawingEnabled(screenDrawingEnabled: Boolean) {
-    val _arg = Variant(screenDrawingEnabled)
-    __method_bind.setScreenDrawingEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScreenDrawingEnabled.call(self._handle, listOf(screenDrawingEnabled), null)
+    }
   }
 
   fun setVDragEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setVDragEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVDragEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setVOffset(ofs: Float) {
-    val _arg = Variant(ofs)
-    __method_bind.setVOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVOffset.call(self._handle, listOf(ofs), null)
+    }
   }
 
   fun setZoom(zoom: Vector2) {
-    val _arg = Variant(zoom)
-    __method_bind.setZoom.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setZoom.call(self._handle, listOf(zoom), null)
+    }
   }
 
   enum class Camera2DProcessMode(

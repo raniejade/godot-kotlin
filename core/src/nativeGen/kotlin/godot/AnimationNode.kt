@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AnimationNode(
   @Suppress("UNUSED_PARAMETER")
@@ -50,8 +59,10 @@ open class AnimationNode(
   }
 
   fun addInput(name: String) {
-    val _arg = Variant(name)
-    __method_bind.addInput.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addInput.call(self._handle, listOf(name), null)
+    }
   }
 
   fun blendAnimation(
@@ -61,13 +72,16 @@ open class AnimationNode(
     seeked: Boolean,
     blend: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(animation))
-    _args.add(Variant.fromAny(time))
-    _args.add(Variant.fromAny(delta))
-    _args.add(Variant.fromAny(seeked))
-    _args.add(Variant.fromAny(blend))
-    __method_bind.blendAnimation.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(animation)
+      _args.add(time)
+      _args.add(delta)
+      _args.add(seeked)
+      _args.add(blend)
+      __method_bind.blendAnimation.call(self._handle, _args, null)
+    }
   }
 
   fun blendInput(
@@ -78,15 +92,20 @@ open class AnimationNode(
     filter: Int = 0,
     optimize: Boolean = true
   ): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(inputIndex))
-    _args.add(Variant.fromAny(time))
-    _args.add(Variant.fromAny(seek))
-    _args.add(Variant.fromAny(blend))
-    _args.add(Variant.fromAny(filter))
-    _args.add(Variant.fromAny(optimize))
-    val _ret = __method_bind.blendInput.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(inputIndex)
+      _args.add(time)
+      _args.add(seek)
+      _args.add(blend)
+      _args.add(filter)
+      _args.add(optimize)
+      __method_bind.blendInput.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun blendNode(
@@ -98,68 +117,107 @@ open class AnimationNode(
     filter: Int = 0,
     optimize: Boolean = true
   ): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(node))
-    _args.add(Variant.fromAny(time))
-    _args.add(Variant.fromAny(seek))
-    _args.add(Variant.fromAny(blend))
-    _args.add(Variant.fromAny(filter))
-    _args.add(Variant.fromAny(optimize))
-    val _ret = __method_bind.blendNode.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(node)
+      _args.add(time)
+      _args.add(seek)
+      _args.add(blend)
+      _args.add(filter)
+      _args.add(optimize)
+      __method_bind.blendNode.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getInputCount(): Int {
-    val _ret = __method_bind.getInputCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInputCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getInputName(input: Int): String {
-    val _arg = Variant(input)
-    val _ret = __method_bind.getInputName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getInputName.call(self._handle, listOf(input), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getParameter(name: String): Variant {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getParameter.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getParameter.call(self._handle, listOf(name), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isFilterEnabled(): Boolean {
-    val _ret = __method_bind.isFilterEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFilterEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPathFiltered(path: NodePath): Boolean {
-    val _arg = Variant(path)
-    val _ret = __method_bind.isPathFiltered.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPathFiltered.call(self._handle, listOf(path), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeInput(index: Int) {
-    val _arg = Variant(index)
-    __method_bind.removeInput.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeInput.call(self._handle, listOf(index), null)
+    }
   }
 
   fun setFilterEnabled(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setFilterEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFilterEnabled.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setFilterPath(path: NodePath, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setFilterPath.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(enable)
+      __method_bind.setFilterPath.call(self._handle, _args, null)
+    }
   }
 
   fun setParameter(name: String, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setParameter.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(value)
+      __method_bind.setParameter.call(self._handle, _args, null)
+    }
   }
 
   enum class FilterAction(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Timer(
   @Suppress("UNUSED_PARAMETER")
@@ -81,72 +90,122 @@ open class Timer(
   }
 
   fun getTimeLeft(): Float {
-    val _ret = __method_bind.getTimeLeft.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTimeLeft.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTimerProcessMode(): TimerProcessMode {
-    val _ret = __method_bind.getTimerProcessMode.call(this._handle)
-    return Timer.TimerProcessMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTimerProcessMode.call(self._handle, emptyList(), _retPtr)
+      Timer.TimerProcessMode.from(_ret.value)
+    }
   }
 
   fun getWaitTime(): Float {
-    val _ret = __method_bind.getWaitTime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWaitTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun hasAutostart(): Boolean {
-    val _ret = __method_bind.hasAutostart.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAutostart.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isOneShot(): Boolean {
-    val _ret = __method_bind.isOneShot.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOneShot.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPaused(): Boolean {
-    val _ret = __method_bind.isPaused.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPaused.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isStopped(): Boolean {
-    val _ret = __method_bind.isStopped.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isStopped.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAutostart(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAutostart.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutostart.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setOneShot(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setOneShot.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOneShot.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setPaused(paused: Boolean) {
-    val _arg = Variant(paused)
-    __method_bind.setPaused.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPaused.call(self._handle, listOf(paused), null)
+    }
   }
 
   fun setTimerProcessMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setTimerProcessMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTimerProcessMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setWaitTime(timeSec: Float) {
-    val _arg = Variant(timeSec)
-    __method_bind.setWaitTime.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWaitTime.call(self._handle, listOf(timeSec), null)
+    }
   }
 
   fun start(timeSec: Float = -1.0f) {
-    val _arg = Variant(timeSec)
-    __method_bind.start.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.start.call(self._handle, listOf(timeSec), null)
+    }
   }
 
   fun stop() {
-    __method_bind.stop.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.stop.call(self._handle, emptyList(), null)
+    }
   }
 
   enum class TimerProcessMode(

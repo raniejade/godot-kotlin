@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -11,13 +12,21 @@ import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorSpatialGizmoPlugin(
   @Suppress("UNUSED_PARAMETER")
@@ -30,17 +39,23 @@ open class EditorSpatialGizmoPlugin(
   }
 
   fun addMaterial(name: String, material: SpatialMaterial) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(material))
-    __method_bind.addMaterial.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(material)
+      __method_bind.addMaterial.call(self._handle, _args, null)
+    }
   }
 
   fun createHandleMaterial(name: String, billboard: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(billboard))
-    __method_bind.createHandleMaterial.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(billboard)
+      __method_bind.createHandleMaterial.call(self._handle, _args, null)
+    }
   }
 
   fun createIconMaterial(
@@ -49,12 +64,15 @@ open class EditorSpatialGizmoPlugin(
     onTop: Boolean = false,
     color: Color = Color(1,1,1,1)
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(onTop))
-    _args.add(Variant.fromAny(color))
-    __method_bind.createIconMaterial.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(texture)
+      _args.add(onTop)
+      _args.add(color)
+      __method_bind.createIconMaterial.call(self._handle, _args, null)
+    }
   }
 
   fun createMaterial(
@@ -64,21 +82,31 @@ open class EditorSpatialGizmoPlugin(
     onTop: Boolean = false,
     useVertexColor: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(color))
-    _args.add(Variant.fromAny(billboard))
-    _args.add(Variant.fromAny(onTop))
-    _args.add(Variant.fromAny(useVertexColor))
-    __method_bind.createMaterial.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(color)
+      _args.add(billboard)
+      _args.add(onTop)
+      _args.add(useVertexColor)
+      __method_bind.createMaterial.call(self._handle, _args, null)
+    }
   }
 
   fun getMaterial(name: String, gizmo: EditorSpatialGizmo): SpatialMaterial {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(gizmo))
-    val _ret = __method_bind.getMaterial.call(this._handle, _args)
-    return _ret.toAny() as SpatialMaterial
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: SpatialMaterial
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(gizmo)
+      __method_bind.getMaterial.call(self._handle, _args, _retPtr)
+      _ret = objectToType<SpatialMaterial>(_tmp.value!!)
+      _ret
+    }
   }
 
   companion object {

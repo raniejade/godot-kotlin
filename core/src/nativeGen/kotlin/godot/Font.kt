@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Font(
   @Suppress("UNUSED_PARAMETER")
@@ -41,14 +50,17 @@ open class Font(
     clipW: Int = -1,
     outlineModulate: Color = Color(1,1,1,1)
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(canvasItem))
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(string))
-    _args.add(Variant.fromAny(modulate))
-    _args.add(Variant.fromAny(clipW))
-    _args.add(Variant.fromAny(outlineModulate))
-    __method_bind.draw.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(canvasItem)
+      _args.add(position)
+      _args.add(string)
+      _args.add(modulate)
+      _args.add(clipW)
+      _args.add(outlineModulate)
+      __method_bind.draw.call(self._handle, _args, null)
+    }
   }
 
   fun drawChar(
@@ -59,58 +71,102 @@ open class Font(
     modulate: Color = Color(1,1,1,1),
     outline: Boolean = false
   ): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(canvasItem))
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(char))
-    _args.add(Variant.fromAny(next))
-    _args.add(Variant.fromAny(modulate))
-    _args.add(Variant.fromAny(outline))
-    val _ret = __method_bind.drawChar.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(canvasItem)
+      _args.add(position)
+      _args.add(char)
+      _args.add(next)
+      _args.add(modulate)
+      _args.add(outline)
+      __method_bind.drawChar.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAscent(): Float {
-    val _ret = __method_bind.getAscent.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAscent.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDescent(): Float {
-    val _ret = __method_bind.getDescent.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDescent.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getHeight(): Float {
-    val _ret = __method_bind.getHeight.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getStringSize(string: String): Vector2 {
-    val _arg = Variant(string)
-    val _ret = __method_bind.getStringSize.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getStringSize.call(self._handle, listOf(string), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getWordwrapStringSize(string: String, width: Float): Vector2 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(string))
-    _args.add(Variant.fromAny(width))
-    val _ret = __method_bind.getWordwrapStringSize.call(this._handle, _args)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(string)
+      _args.add(width)
+      __method_bind.getWordwrapStringSize.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun hasOutline(): Boolean {
-    val _ret = __method_bind.hasOutline.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasOutline.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isDistanceFieldHint(): Boolean {
-    val _ret = __method_bind.isDistanceFieldHint.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDistanceFieldHint.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun updateChanges() {
-    __method_bind.updateChanges.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.updateChanges.call(self._handle, emptyList(), null)
+    }
   }
 
   companion object {

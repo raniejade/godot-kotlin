@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolIntArray
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class NavigationMesh(
   @Suppress("UNUSED_PARAMETER")
@@ -219,261 +228,443 @@ open class NavigationMesh(
   }
 
   fun addPolygon(polygon: PoolIntArray) {
-    val _arg = Variant(polygon)
-    __method_bind.addPolygon.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addPolygon.call(self._handle, listOf(polygon), null)
+    }
   }
 
   fun clearPolygons() {
-    __method_bind.clearPolygons.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearPolygons.call(self._handle, emptyList(), null)
+    }
   }
 
   fun createFromMesh(mesh: Mesh) {
-    val _arg = Variant(mesh)
-    __method_bind.createFromMesh.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.createFromMesh.call(self._handle, listOf(mesh), null)
+    }
   }
 
   fun getAgentHeight(): Float {
-    val _ret = __method_bind.getAgentHeight.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAgentHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAgentMaxClimb(): Float {
-    val _ret = __method_bind.getAgentMaxClimb.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAgentMaxClimb.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAgentMaxSlope(): Float {
-    val _ret = __method_bind.getAgentMaxSlope.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAgentMaxSlope.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAgentRadius(): Float {
-    val _ret = __method_bind.getAgentRadius.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAgentRadius.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCellHeight(): Float {
-    val _ret = __method_bind.getCellHeight.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCellHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCellSize(): Float {
-    val _ret = __method_bind.getCellSize.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCellSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.getCollisionMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant(bit)
-    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMaskBit.call(self._handle, listOf(bit), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDetailSampleDistance(): Float {
-    val _ret = __method_bind.getDetailSampleDistance.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDetailSampleDistance.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDetailSampleMaxError(): Float {
-    val _ret = __method_bind.getDetailSampleMaxError.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDetailSampleMaxError.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getEdgeMaxError(): Float {
-    val _ret = __method_bind.getEdgeMaxError.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEdgeMaxError.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getEdgeMaxLength(): Float {
-    val _ret = __method_bind.getEdgeMaxLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEdgeMaxLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFilterLedgeSpans(): Boolean {
-    val _ret = __method_bind.getFilterLedgeSpans.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFilterLedgeSpans.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFilterLowHangingObstacles(): Boolean {
-    val _ret = __method_bind.getFilterLowHangingObstacles.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFilterLowHangingObstacles.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFilterWalkableLowHeightSpans(): Boolean {
-    val _ret = __method_bind.getFilterWalkableLowHeightSpans.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFilterWalkableLowHeightSpans.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getParsedGeometryType(): Int {
-    val _ret = __method_bind.getParsedGeometryType.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParsedGeometryType.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPolygon(idx: Int): PoolIntArray {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getPolygon.call(this._handle, listOf(_arg))
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPolygon.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPolygonCount(): Int {
-    val _ret = __method_bind.getPolygonCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPolygonCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getRegionMergeSize(): Float {
-    val _ret = __method_bind.getRegionMergeSize.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRegionMergeSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRegionMinSize(): Float {
-    val _ret = __method_bind.getRegionMinSize.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRegionMinSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSamplePartitionType(): Int {
-    val _ret = __method_bind.getSamplePartitionType.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSamplePartitionType.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSourceGeometryMode(): Int {
-    val _ret = __method_bind.getSourceGeometryMode.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSourceGeometryMode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSourceGroupName(): String {
-    val _ret = __method_bind.getSourceGroupName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSourceGroupName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getVertices(): PoolVector3Array {
-    val _ret = __method_bind.getVertices.call(this._handle)
-    return _ret.asPoolVector3Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector3Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertices.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertsPerPoly(): Float {
-    val _ret = __method_bind.getVertsPerPoly.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVertsPerPoly.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun setAgentHeight(agentHeight: Float) {
-    val _arg = Variant(agentHeight)
-    __method_bind.setAgentHeight.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAgentHeight.call(self._handle, listOf(agentHeight), null)
+    }
   }
 
   fun setAgentMaxClimb(agentMaxClimb: Float) {
-    val _arg = Variant(agentMaxClimb)
-    __method_bind.setAgentMaxClimb.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAgentMaxClimb.call(self._handle, listOf(agentMaxClimb), null)
+    }
   }
 
   fun setAgentMaxSlope(agentMaxSlope: Float) {
-    val _arg = Variant(agentMaxSlope)
-    __method_bind.setAgentMaxSlope.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAgentMaxSlope.call(self._handle, listOf(agentMaxSlope), null)
+    }
   }
 
   fun setAgentRadius(agentRadius: Float) {
-    val _arg = Variant(agentRadius)
-    __method_bind.setAgentRadius.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAgentRadius.call(self._handle, listOf(agentRadius), null)
+    }
   }
 
   fun setCellHeight(cellHeight: Float) {
-    val _arg = Variant(cellHeight)
-    __method_bind.setCellHeight.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCellHeight.call(self._handle, listOf(cellHeight), null)
+    }
   }
 
   fun setCellSize(cellSize: Float) {
-    val _arg = Variant(cellSize)
-    __method_bind.setCellSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCellSize.call(self._handle, listOf(cellSize), null)
+    }
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant(mask)
-    __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionMask.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bit))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setCollisionMaskBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bit)
+      _args.add(value)
+      __method_bind.setCollisionMaskBit.call(self._handle, _args, null)
+    }
   }
 
   fun setDetailSampleDistance(detailSampleDist: Float) {
-    val _arg = Variant(detailSampleDist)
-    __method_bind.setDetailSampleDistance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDetailSampleDistance.call(self._handle, listOf(detailSampleDist), null)
+    }
   }
 
   fun setDetailSampleMaxError(detailSampleMaxError: Float) {
-    val _arg = Variant(detailSampleMaxError)
-    __method_bind.setDetailSampleMaxError.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDetailSampleMaxError.call(self._handle, listOf(detailSampleMaxError), null)
+    }
   }
 
   fun setEdgeMaxError(edgeMaxError: Float) {
-    val _arg = Variant(edgeMaxError)
-    __method_bind.setEdgeMaxError.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEdgeMaxError.call(self._handle, listOf(edgeMaxError), null)
+    }
   }
 
   fun setEdgeMaxLength(edgeMaxLength: Float) {
-    val _arg = Variant(edgeMaxLength)
-    __method_bind.setEdgeMaxLength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEdgeMaxLength.call(self._handle, listOf(edgeMaxLength), null)
+    }
   }
 
   fun setFilterLedgeSpans(filterLedgeSpans: Boolean) {
-    val _arg = Variant(filterLedgeSpans)
-    __method_bind.setFilterLedgeSpans.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFilterLedgeSpans.call(self._handle, listOf(filterLedgeSpans), null)
+    }
   }
 
   fun setFilterLowHangingObstacles(filterLowHangingObstacles: Boolean) {
-    val _arg = Variant(filterLowHangingObstacles)
-    __method_bind.setFilterLowHangingObstacles.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFilterLowHangingObstacles.call(self._handle,
+          listOf(filterLowHangingObstacles), null)
+    }
   }
 
   fun setFilterWalkableLowHeightSpans(filterWalkableLowHeightSpans: Boolean) {
-    val _arg = Variant(filterWalkableLowHeightSpans)
-    __method_bind.setFilterWalkableLowHeightSpans.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFilterWalkableLowHeightSpans.call(self._handle,
+          listOf(filterWalkableLowHeightSpans), null)
+    }
   }
 
   fun setParsedGeometryType(geometryType: Int) {
-    val _arg = Variant(geometryType)
-    __method_bind.setParsedGeometryType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setParsedGeometryType.call(self._handle, listOf(geometryType), null)
+    }
   }
 
   fun setRegionMergeSize(regionMergeSize: Float) {
-    val _arg = Variant(regionMergeSize)
-    __method_bind.setRegionMergeSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRegionMergeSize.call(self._handle, listOf(regionMergeSize), null)
+    }
   }
 
   fun setRegionMinSize(regionMinSize: Float) {
-    val _arg = Variant(regionMinSize)
-    __method_bind.setRegionMinSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRegionMinSize.call(self._handle, listOf(regionMinSize), null)
+    }
   }
 
   fun setSamplePartitionType(samplePartitionType: Int) {
-    val _arg = Variant(samplePartitionType)
-    __method_bind.setSamplePartitionType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSamplePartitionType.call(self._handle, listOf(samplePartitionType), null)
+    }
   }
 
   fun setSourceGeometryMode(mask: Int) {
-    val _arg = Variant(mask)
-    __method_bind.setSourceGeometryMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSourceGeometryMode.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setSourceGroupName(mask: String) {
-    val _arg = Variant(mask)
-    __method_bind.setSourceGroupName.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSourceGroupName.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setVertices(vertices: PoolVector3Array) {
-    val _arg = Variant(vertices)
-    __method_bind.setVertices.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVertices.call(self._handle, listOf(vertices), null)
+    }
   }
 
   fun setVertsPerPoly(vertsPerPoly: Float) {
-    val _arg = Variant(vertsPerPoly)
-    __method_bind.setVertsPerPoly.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVertsPerPoly.call(self._handle, listOf(vertsPerPoly), null)
+    }
   }
 
   companion object {

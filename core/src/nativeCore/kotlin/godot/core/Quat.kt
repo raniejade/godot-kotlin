@@ -9,7 +9,7 @@ import kotlinx.cinterop.readValue
 class Quat(
   value: CValue<godot_quat>
 ) : CoreType<godot_quat>(value) {
-
+  internal constructor(): this(__new(Basis()))
   constructor(x: Float = 0f, y: Float = 0f, z: Float = 0f, w: Float = 1f): this(__new(x, y, z, w))
   constructor(from: Basis): this(__new(from))
   constructor(from: Vector3): this(__new(from))

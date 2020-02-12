@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ConfigFile(
   @Suppress("UNUSED_PARAMETER")
@@ -32,26 +41,42 @@ open class ConfigFile(
   }
 
   fun eraseSection(section: String) {
-    val _arg = Variant(section)
-    __method_bind.eraseSection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.eraseSection.call(self._handle, listOf(section), null)
+    }
   }
 
   fun eraseSectionKey(section: String, key: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(section))
-    _args.add(Variant.fromAny(key))
-    __method_bind.eraseSectionKey.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(section)
+      _args.add(key)
+      __method_bind.eraseSectionKey.call(self._handle, _args, null)
+    }
   }
 
   fun getSectionKeys(section: String): PoolStringArray {
-    val _arg = Variant(section)
-    val _ret = __method_bind.getSectionKeys.call(this._handle, listOf(_arg))
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSectionKeys.call(self._handle, listOf(section), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSections(): PoolStringArray {
-    val _ret = __method_bind.getSections.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSections.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getValue(
@@ -59,70 +84,113 @@ open class ConfigFile(
     key: String,
     default: Variant
   ): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(section))
-    _args.add(Variant.fromAny(key))
-    _args.add(Variant.fromAny(default))
-    val _ret = __method_bind.getValue.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(section)
+      _args.add(key)
+      _args.add(default)
+      __method_bind.getValue.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun hasSection(section: String): Boolean {
-    val _arg = Variant(section)
-    val _ret = __method_bind.hasSection.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasSection.call(self._handle, listOf(section), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasSectionKey(section: String, key: String): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(section))
-    _args.add(Variant.fromAny(key))
-    val _ret = __method_bind.hasSectionKey.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(section)
+      _args.add(key)
+      __method_bind.hasSectionKey.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun load(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.load.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.load.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun loadEncrypted(path: String, key: PoolByteArray): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(key))
-    val _ret = __method_bind.loadEncrypted.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(key)
+      __method_bind.loadEncrypted.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun loadEncryptedPass(path: String, pass: String): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(pass))
-    val _ret = __method_bind.loadEncryptedPass.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(pass)
+      __method_bind.loadEncryptedPass.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun save(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.save.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.save.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun saveEncrypted(path: String, key: PoolByteArray): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(key))
-    val _ret = __method_bind.saveEncrypted.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(key)
+      __method_bind.saveEncrypted.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun saveEncryptedPass(path: String, pass: String): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(pass))
-    val _ret = __method_bind.saveEncryptedPass.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(pass)
+      __method_bind.saveEncryptedPass.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setValue(
@@ -130,11 +198,14 @@ open class ConfigFile(
     key: String,
     value: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(section))
-    _args.add(Variant.fromAny(key))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setValue.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(section)
+      _args.add(key)
+      _args.add(value)
+      __method_bind.setValue.call(self._handle, _args, null)
+    }
   }
 
   companion object {

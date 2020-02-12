@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class RandomNumberGenerator(
   @Suppress("UNUSED_PARAMETER")
@@ -38,51 +47,86 @@ open class RandomNumberGenerator(
   }
 
   fun getSeed(): Int {
-    val _ret = __method_bind.getSeed.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSeed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun randf(): Float {
-    val _ret = __method_bind.randf.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.randf.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun randfRange(from: Float, to: Float): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    val _ret = __method_bind.randfRange.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      __method_bind.randfRange.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun randfn(mean: Float = 0.0f, deviation: Float = 1.0f): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(mean))
-    _args.add(Variant.fromAny(deviation))
-    val _ret = __method_bind.randfn.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(mean)
+      _args.add(deviation)
+      __method_bind.randfn.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun randi(): Int {
-    val _ret = __method_bind.randi.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.randi.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun randiRange(from: Int, to: Int): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    val _ret = __method_bind.randiRange.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      __method_bind.randiRange.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun randomize() {
-    __method_bind.randomize.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.randomize.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setSeed(seed: Int) {
-    val _arg = Variant(seed)
-    __method_bind.setSeed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSeed.call(self._handle, listOf(seed), null)
+    }
   }
 
   companion object {

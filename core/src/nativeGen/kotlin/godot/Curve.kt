@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Curve(
   @Suppress("UNUSED_PARAMETER")
@@ -66,151 +75,242 @@ open class Curve(
     leftMode: Int = 0,
     rightMode: Int = 0
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(leftTangent))
-    _args.add(Variant.fromAny(rightTangent))
-    _args.add(Variant.fromAny(leftMode))
-    _args.add(Variant.fromAny(rightMode))
-    val _ret = __method_bind.addPoint.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(position)
+      _args.add(leftTangent)
+      _args.add(rightTangent)
+      _args.add(leftMode)
+      _args.add(rightMode)
+      __method_bind.addPoint.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun bake() {
-    __method_bind.bake.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.bake.call(self._handle, emptyList(), null)
+    }
   }
 
   fun cleanDupes() {
-    __method_bind.cleanDupes.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.cleanDupes.call(self._handle, emptyList(), null)
+    }
   }
 
   fun clearPoints() {
-    __method_bind.clearPoints.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearPoints.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getBakeResolution(): Int {
-    val _ret = __method_bind.getBakeResolution.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBakeResolution.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMaxValue(): Float {
-    val _ret = __method_bind.getMaxValue.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMaxValue.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMinValue(): Float {
-    val _ret = __method_bind.getMinValue.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMinValue.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPointCount(): Int {
-    val _ret = __method_bind.getPointCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPointLeftMode(index: Int): TangentMode {
-    val _arg = Variant(index)
-    val _ret = __method_bind.getPointLeftMode.call(this._handle, listOf(_arg))
-    return Curve.TangentMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointLeftMode.call(self._handle, listOf(index), _retPtr)
+      Curve.TangentMode.from(_ret.value)
+    }
   }
 
   fun getPointLeftTangent(index: Int): Float {
-    val _arg = Variant(index)
-    val _ret = __method_bind.getPointLeftTangent.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointLeftTangent.call(self._handle, listOf(index), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPointPosition(index: Int): Vector2 {
-    val _arg = Variant(index)
-    val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPointPosition.call(self._handle, listOf(index), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointRightMode(index: Int): TangentMode {
-    val _arg = Variant(index)
-    val _ret = __method_bind.getPointRightMode.call(this._handle, listOf(_arg))
-    return Curve.TangentMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointRightMode.call(self._handle, listOf(index), _retPtr)
+      Curve.TangentMode.from(_ret.value)
+    }
   }
 
   fun getPointRightTangent(index: Int): Float {
-    val _arg = Variant(index)
-    val _ret = __method_bind.getPointRightTangent.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointRightTangent.call(self._handle, listOf(index), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun interpolate(offset: Float): Float {
-    val _arg = Variant(offset)
-    val _ret = __method_bind.interpolate.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.interpolate.call(self._handle, listOf(offset), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun interpolateBaked(offset: Float): Float {
-    val _arg = Variant(offset)
-    val _ret = __method_bind.interpolateBaked.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.interpolateBaked.call(self._handle, listOf(offset), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun removePoint(index: Int) {
-    val _arg = Variant(index)
-    __method_bind.removePoint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removePoint.call(self._handle, listOf(index), null)
+    }
   }
 
   fun setBakeResolution(resolution: Int) {
-    val _arg = Variant(resolution)
-    __method_bind.setBakeResolution.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBakeResolution.call(self._handle, listOf(resolution), null)
+    }
   }
 
   fun setMaxValue(max: Float) {
-    val _arg = Variant(max)
-    __method_bind.setMaxValue.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaxValue.call(self._handle, listOf(max), null)
+    }
   }
 
   fun setMinValue(min: Float) {
-    val _arg = Variant(min)
-    __method_bind.setMinValue.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMinValue.call(self._handle, listOf(min), null)
+    }
   }
 
   fun setPointLeftMode(index: Int, mode: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(mode))
-    __method_bind.setPointLeftMode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(mode)
+      __method_bind.setPointLeftMode.call(self._handle, _args, null)
+    }
   }
 
   fun setPointLeftTangent(index: Int, tangent: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(tangent))
-    __method_bind.setPointLeftTangent.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(tangent)
+      __method_bind.setPointLeftTangent.call(self._handle, _args, null)
+    }
   }
 
   fun setPointOffset(index: Int, offset: Float): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(offset))
-    val _ret = __method_bind.setPointOffset.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(offset)
+      __method_bind.setPointOffset.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun setPointRightMode(index: Int, mode: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(mode))
-    __method_bind.setPointRightMode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(mode)
+      __method_bind.setPointRightMode.call(self._handle, _args, null)
+    }
   }
 
   fun setPointRightTangent(index: Int, tangent: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(tangent))
-    __method_bind.setPointRightTangent.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(tangent)
+      __method_bind.setPointRightTangent.call(self._handle, _args, null)
+    }
   }
 
   fun setPointValue(index: Int, y: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(y))
-    __method_bind.setPointValue.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(y)
+      __method_bind.setPointValue.call(self._handle, _args, null)
+    }
   }
 
   enum class TangentMode(

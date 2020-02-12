@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Gradient(
   @Suppress("UNUSED_PARAMETER")
@@ -68,72 +77,118 @@ open class Gradient(
   }
 
   fun addPoint(offset: Float, color: Color) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(color))
-    __method_bind.addPoint.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(offset)
+      _args.add(color)
+      __method_bind.addPoint.call(self._handle, _args, null)
+    }
   }
 
   fun getColor(point: Int): Color {
-    val _arg = Variant(point)
-    val _ret = __method_bind.getColor.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getColor.call(self._handle, listOf(point), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getColors(): PoolColorArray {
-    val _ret = __method_bind.getColors.call(this._handle)
-    return _ret.asPoolColorArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolColorArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getColors.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOffset(point: Int): Float {
-    val _arg = Variant(point)
-    val _ret = __method_bind.getOffset.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOffset.call(self._handle, listOf(point), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getOffsets(): PoolFloatArray {
-    val _ret = __method_bind.getOffsets.call(this._handle)
-    return _ret.asPoolFloatArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolFloatArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOffsets.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointCount(): Int {
-    val _ret = __method_bind.getPointCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun interpolate(offset: Float): Color {
-    val _arg = Variant(offset)
-    val _ret = __method_bind.interpolate.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.interpolate.call(self._handle, listOf(offset), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun removePoint(offset: Int) {
-    val _arg = Variant(offset)
-    __method_bind.removePoint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removePoint.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setColor(point: Int, color: Color) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(point))
-    _args.add(Variant.fromAny(color))
-    __method_bind.setColor.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(point)
+      _args.add(color)
+      __method_bind.setColor.call(self._handle, _args, null)
+    }
   }
 
   fun setColors(colors: PoolColorArray) {
-    val _arg = Variant(colors)
-    __method_bind.setColors.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColors.call(self._handle, listOf(colors), null)
+    }
   }
 
   fun setOffset(point: Int, offset: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(point))
-    _args.add(Variant.fromAny(offset))
-    __method_bind.setOffset.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(point)
+      _args.add(offset)
+      __method_bind.setOffset.call(self._handle, _args, null)
+    }
   }
 
   fun setOffsets(offsets: PoolFloatArray) {
-    val _arg = Variant(offsets)
-    __method_bind.setOffsets.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOffsets.call(self._handle, listOf(offsets), null)
+    }
   }
 
   companion object {

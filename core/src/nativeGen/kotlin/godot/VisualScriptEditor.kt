@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -9,13 +10,21 @@ import godot.core.VariantArray
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VisualScriptEditorInternal(
   @Suppress("UNUSED_PARAMETER")
@@ -31,18 +40,24 @@ open class VisualScriptEditorInternal(
     category: String,
     script: Script
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(category))
-    _args.add(Variant.fromAny(script))
-    __method_bind.addCustomNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(category)
+      _args.add(script)
+      __method_bind.addCustomNode.call(self._handle, _args, null)
+    }
   }
 
   fun removeCustomNode(name: String, category: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(category))
-    __method_bind.removeCustomNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(category)
+      __method_bind.removeCustomNode.call(self._handle, _args, null)
+    }
   }
 
   companion object {

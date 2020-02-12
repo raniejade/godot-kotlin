@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Viewport(
   @Suppress("UNUSED_PARAMETER")
@@ -312,311 +321,582 @@ open class Viewport(
   }
 
   fun findWorld(): World {
-    val _ret = __method_bind.findWorld.call(this._handle)
-    return _ret.toAny() as World
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: World
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.findWorld.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<World>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun findWorld2d(): World2D {
-    val _ret = __method_bind.findWorld2d.call(this._handle)
-    return _ret.toAny() as World2D
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: World2D
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.findWorld2d.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<World2D>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getCamera(): Camera {
-    val _ret = __method_bind.getCamera.call(this._handle)
-    return _ret.toAny() as Camera
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Camera
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getCamera.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Camera>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getCanvasTransform(): Transform2D {
-    val _ret = __method_bind.getCanvasTransform.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCanvasTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getClearMode(): ClearMode {
-    val _ret = __method_bind.getClearMode.call(this._handle)
-    return Viewport.ClearMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getClearMode.call(self._handle, emptyList(), _retPtr)
+      Viewport.ClearMode.from(_ret.value)
+    }
   }
 
   fun getDebugDraw(): DebugDraw {
-    val _ret = __method_bind.getDebugDraw.call(this._handle)
-    return Viewport.DebugDraw.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDebugDraw.call(self._handle, emptyList(), _retPtr)
+      Viewport.DebugDraw.from(_ret.value)
+    }
   }
 
   fun getFinalTransform(): Transform2D {
-    val _ret = __method_bind.getFinalTransform.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFinalTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getGlobalCanvasTransform(): Transform2D {
-    val _ret = __method_bind.getGlobalCanvasTransform.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGlobalCanvasTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getHdr(): Boolean {
-    val _ret = __method_bind.getHdr.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHdr.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getKeep3dLinear(): Boolean {
-    val _ret = __method_bind.getKeep3dLinear.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getKeep3dLinear.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getModalStackTop(): Control {
-    val _ret = __method_bind.getModalStackTop.call(this._handle)
-    return _ret.toAny() as Control
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Control
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getModalStackTop.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Control>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getMousePosition(): Vector2 {
-    val _ret = __method_bind.getMousePosition.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMousePosition.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMsaa(): MSAA {
-    val _ret = __method_bind.getMsaa.call(this._handle)
-    return Viewport.MSAA.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMsaa.call(self._handle, emptyList(), _retPtr)
+      Viewport.MSAA.from(_ret.value)
+    }
   }
 
   fun getPhysicsObjectPicking(): Boolean {
-    val _ret = __method_bind.getPhysicsObjectPicking.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPhysicsObjectPicking.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getRenderInfo(info: Int): Int {
-    val _arg = Variant(info)
-    val _ret = __method_bind.getRenderInfo.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRenderInfo.call(self._handle, listOf(info), _retPtr)
+      _ret.value
+    }
   }
 
   fun getShadowAtlasQuadrantSubdiv(quadrant: Int): ShadowAtlasQuadrantSubdiv {
-    val _arg = Variant(quadrant)
-    val _ret = __method_bind.getShadowAtlasQuadrantSubdiv.call(this._handle, listOf(_arg))
-    return Viewport.ShadowAtlasQuadrantSubdiv.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getShadowAtlasQuadrantSubdiv.call(self._handle, listOf(quadrant), _retPtr)
+      Viewport.ShadowAtlasQuadrantSubdiv.from(_ret.value)
+    }
   }
 
   fun getShadowAtlasSize(): Int {
-    val _ret = __method_bind.getShadowAtlasSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getShadowAtlasSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.getSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSizeOverride(): Vector2 {
-    val _ret = __method_bind.getSizeOverride.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSizeOverride.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTexture(): ViewportTexture {
-    val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.toAny() as ViewportTexture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ViewportTexture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<ViewportTexture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getUpdateMode(): UpdateMode {
-    val _ret = __method_bind.getUpdateMode.call(this._handle)
-    return Viewport.UpdateMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUpdateMode.call(self._handle, emptyList(), _retPtr)
+      Viewport.UpdateMode.from(_ret.value)
+    }
   }
 
   fun getUsage(): Usage {
-    val _ret = __method_bind.getUsage.call(this._handle)
-    return Viewport.Usage.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUsage.call(self._handle, emptyList(), _retPtr)
+      Viewport.Usage.from(_ret.value)
+    }
   }
 
   fun getVflip(): Boolean {
-    val _ret = __method_bind.getVflip.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVflip.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getViewportRid(): RID {
-    val _ret = __method_bind.getViewportRid.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getViewportRid.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVisibleRect(): Rect2 {
-    val _ret = __method_bind.getVisibleRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVisibleRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getWorld(): World {
-    val _ret = __method_bind.getWorld.call(this._handle)
-    return _ret.toAny() as World
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: World
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getWorld.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<World>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getWorld2d(): World2D {
-    val _ret = __method_bind.getWorld2d.call(this._handle)
-    return _ret.toAny() as World2D
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: World2D
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getWorld2d.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<World2D>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun guiGetDragData(): Variant {
-    val _ret = __method_bind.guiGetDragData.call(this._handle)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.guiGetDragData.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun guiHasModalStack(): Boolean {
-    val _ret = __method_bind.guiHasModalStack.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.guiHasModalStack.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun guiIsDragging(): Boolean {
-    val _ret = __method_bind.guiIsDragging.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.guiIsDragging.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasTransparentBackground(): Boolean {
-    val _ret = __method_bind.hasTransparentBackground.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasTransparentBackground.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun input(localEvent: InputEvent) {
-    val _arg = Variant(localEvent)
-    __method_bind.input.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.input.call(self._handle, listOf(localEvent), null)
+    }
   }
 
   fun is3dDisabled(): Boolean {
-    val _ret = __method_bind.is3dDisabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.is3dDisabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isAudioListener(): Boolean {
-    val _ret = __method_bind.isAudioListener.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAudioListener.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isAudioListener2d(): Boolean {
-    val _ret = __method_bind.isAudioListener2d.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAudioListener2d.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isHandlingInputLocally(): Boolean {
-    val _ret = __method_bind.isHandlingInputLocally.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isHandlingInputLocally.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInputDisabled(): Boolean {
-    val _ret = __method_bind.isInputDisabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInputDisabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInputHandled(): Boolean {
-    val _ret = __method_bind.isInputHandled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInputHandled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSizeOverrideEnabled(): Boolean {
-    val _ret = __method_bind.isSizeOverrideEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSizeOverrideEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSizeOverrideStretchEnabled(): Boolean {
-    val _ret = __method_bind.isSizeOverrideStretchEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSizeOverrideStretchEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSnapControlsToPixelsEnabled(): Boolean {
-    val _ret = __method_bind.isSnapControlsToPixelsEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSnapControlsToPixelsEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingOwnWorld(): Boolean {
-    val _ret = __method_bind.isUsingOwnWorld.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingOwnWorld.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingRenderDirectToScreen(): Boolean {
-    val _ret = __method_bind.isUsingRenderDirectToScreen.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingRenderDirectToScreen.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAsAudioListener(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAsAudioListener.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAsAudioListener.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setAsAudioListener2d(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAsAudioListener2d.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAsAudioListener2d.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setAttachToScreenRect(rect: Rect2) {
-    val _arg = Variant(rect)
-    __method_bind.setAttachToScreenRect.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAttachToScreenRect.call(self._handle, listOf(rect), null)
+    }
   }
 
   fun setCanvasTransform(xform: Transform2D) {
-    val _arg = Variant(xform)
-    __method_bind.setCanvasTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCanvasTransform.call(self._handle, listOf(xform), null)
+    }
   }
 
   fun setClearMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setClearMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setClearMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setDebugDraw(debugDraw: Int) {
-    val _arg = Variant(debugDraw)
-    __method_bind.setDebugDraw.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDebugDraw.call(self._handle, listOf(debugDraw), null)
+    }
   }
 
   fun setDisable3d(disable: Boolean) {
-    val _arg = Variant(disable)
-    __method_bind.setDisable3d.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDisable3d.call(self._handle, listOf(disable), null)
+    }
   }
 
   fun setDisableInput(disable: Boolean) {
-    val _arg = Variant(disable)
-    __method_bind.setDisableInput.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDisableInput.call(self._handle, listOf(disable), null)
+    }
   }
 
   fun setGlobalCanvasTransform(xform: Transform2D) {
-    val _arg = Variant(xform)
-    __method_bind.setGlobalCanvasTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlobalCanvasTransform.call(self._handle, listOf(xform), null)
+    }
   }
 
   fun setHandleInputLocally(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setHandleInputLocally.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHandleInputLocally.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setHdr(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setHdr.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHdr.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setInputAsHandled() {
-    __method_bind.setInputAsHandled.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInputAsHandled.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setKeep3dLinear(keep3dLinear: Boolean) {
-    val _arg = Variant(keep3dLinear)
-    __method_bind.setKeep3dLinear.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setKeep3dLinear.call(self._handle, listOf(keep3dLinear), null)
+    }
   }
 
   fun setMsaa(msaa: Int) {
-    val _arg = Variant(msaa)
-    __method_bind.setMsaa.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMsaa.call(self._handle, listOf(msaa), null)
+    }
   }
 
   fun setPhysicsObjectPicking(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setPhysicsObjectPicking.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPhysicsObjectPicking.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setShadowAtlasQuadrantSubdiv(quadrant: Int, subdiv: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(quadrant))
-    _args.add(Variant.fromAny(subdiv))
-    __method_bind.setShadowAtlasQuadrantSubdiv.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(quadrant)
+      _args.add(subdiv)
+      __method_bind.setShadowAtlasQuadrantSubdiv.call(self._handle, _args, null)
+    }
   }
 
   fun setShadowAtlasSize(size: Int) {
-    val _arg = Variant(size)
-    __method_bind.setShadowAtlasSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowAtlasSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setSize(size: Vector2) {
-    val _arg = Variant(size)
-    __method_bind.setSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setSizeOverride(
@@ -624,85 +904,122 @@ open class Viewport(
     size: Vector2 = Vector2(-1, -1),
     margin: Vector2 = Vector2(0, 0)
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(enable))
-    _args.add(Variant.fromAny(size))
-    _args.add(Variant.fromAny(margin))
-    __method_bind.setSizeOverride.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(enable)
+      _args.add(size)
+      _args.add(margin)
+      __method_bind.setSizeOverride.call(self._handle, _args, null)
+    }
   }
 
   fun setSizeOverrideStretch(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setSizeOverrideStretch.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSizeOverrideStretch.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setSnapControlsToPixels(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setSnapControlsToPixels.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSnapControlsToPixels.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setTransparentBackground(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setTransparentBackground.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTransparentBackground.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setUpdateMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setUpdateMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUpdateMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setUsage(usage: Int) {
-    val _arg = Variant(usage)
-    __method_bind.setUsage.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUsage.call(self._handle, listOf(usage), null)
+    }
   }
 
   fun setUseArvr(use: Boolean) {
-    val _arg = Variant(use)
-    __method_bind.setUseArvr.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseArvr.call(self._handle, listOf(use), null)
+    }
   }
 
   fun setUseOwnWorld(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseOwnWorld.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseOwnWorld.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setUseRenderDirectToScreen(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseRenderDirectToScreen.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseRenderDirectToScreen.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setVflip(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setVflip.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVflip.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setWorld(world: World) {
-    val _arg = Variant(world)
-    __method_bind.setWorld.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWorld.call(self._handle, listOf(world), null)
+    }
   }
 
   fun setWorld2d(world2d: World2D) {
-    val _arg = Variant(world2d)
-    __method_bind.setWorld2d.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWorld2d.call(self._handle, listOf(world2d), null)
+    }
   }
 
   fun unhandledInput(localEvent: InputEvent) {
-    val _arg = Variant(localEvent)
-    __method_bind.unhandledInput.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.unhandledInput.call(self._handle, listOf(localEvent), null)
+    }
   }
 
   fun updateWorlds() {
-    __method_bind.updateWorlds.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.updateWorlds.call(self._handle, emptyList(), null)
+    }
   }
 
   fun useArvr(): Boolean {
-    val _ret = __method_bind.useArvr.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.useArvr.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun warpMouse(toPosition: Vector2) {
-    val _arg = Variant(toPosition)
-    __method_bind.warpMouse.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.warpMouse.call(self._handle, listOf(toPosition), null)
+    }
   }
 
   enum class ClearMode(

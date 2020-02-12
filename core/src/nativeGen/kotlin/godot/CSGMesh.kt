@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -9,13 +10,21 @@ import godot.core.VariantArray
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class CSGMesh(
   @Suppress("UNUSED_PARAMETER")
@@ -44,23 +53,41 @@ open class CSGMesh(
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.getMaterial.call(this._handle)
-    return _ret.toAny() as Material
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Material
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMaterial.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Material>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.getMesh.call(this._handle)
-    return _ret.toAny() as Mesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Mesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMesh.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Mesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant(material)
-    __method_bind.setMaterial.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaterial.call(self._handle, listOf(material), null)
+    }
   }
 
   fun setMesh(mesh: Mesh) {
-    val _arg = Variant(mesh)
-    __method_bind.setMesh.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMesh.call(self._handle, listOf(mesh), null)
+    }
   }
 
   companion object {

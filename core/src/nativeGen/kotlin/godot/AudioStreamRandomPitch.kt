@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AudioStreamRandomPitch(
   @Suppress("UNUSED_PARAMETER")
@@ -45,23 +54,39 @@ open class AudioStreamRandomPitch(
   }
 
   fun getAudioStream(): AudioStream {
-    val _ret = __method_bind.getAudioStream.call(this._handle)
-    return _ret.toAny() as AudioStream
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: AudioStream
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getAudioStream.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<AudioStream>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getRandomPitch(): Float {
-    val _ret = __method_bind.getRandomPitch.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRandomPitch.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun setAudioStream(stream: AudioStream) {
-    val _arg = Variant(stream)
-    __method_bind.setAudioStream.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAudioStream.call(self._handle, listOf(stream), null)
+    }
   }
 
   fun setRandomPitch(scale: Float) {
-    val _arg = Variant(scale)
-    __method_bind.setRandomPitch.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRandomPitch.call(self._handle, listOf(scale), null)
+    }
   }
 
   companion object {

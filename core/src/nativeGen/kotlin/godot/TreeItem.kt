@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Dictionary
@@ -16,13 +17,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class TreeItem(
   @Suppress("UNUSED_PARAMETER")
@@ -65,252 +74,443 @@ open class TreeItem(
     disabled: Boolean = false,
     tooltip: String = ""
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(button))
-    _args.add(Variant.fromAny(buttonIdx))
-    _args.add(Variant.fromAny(disabled))
-    _args.add(Variant.fromAny(tooltip))
-    __method_bind.addButton.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(button)
+      _args.add(buttonIdx)
+      _args.add(disabled)
+      _args.add(tooltip)
+      __method_bind.addButton.call(self._handle, _args, null)
+    }
   }
 
   fun callRecursive(method: String, vararg varargs: Any?): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    val _ret = __method_bind.callRecursive.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.callRecursive.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun clearCustomBgColor(column: Int) {
-    val _arg = Variant(column)
-    __method_bind.clearCustomBgColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearCustomBgColor.call(self._handle, listOf(column), null)
+    }
   }
 
   fun clearCustomColor(column: Int) {
-    val _arg = Variant(column)
-    __method_bind.clearCustomColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearCustomColor.call(self._handle, listOf(column), null)
+    }
   }
 
   fun deselect(column: Int) {
-    val _arg = Variant(column)
-    __method_bind.deselect.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.deselect.call(self._handle, listOf(column), null)
+    }
   }
 
   fun eraseButton(column: Int, buttonIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(buttonIdx))
-    __method_bind.eraseButton.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(buttonIdx)
+      __method_bind.eraseButton.call(self._handle, _args, null)
+    }
   }
 
   fun getButton(column: Int, buttonIdx: Int): Texture {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(buttonIdx))
-    val _ret = __method_bind.getButton.call(this._handle, _args)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(buttonIdx)
+      __method_bind.getButton.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getButtonCount(column: Int): Int {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getButtonCount.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getButtonCount.call(self._handle, listOf(column), _retPtr)
+      _ret.value
+    }
   }
 
   fun getButtonTooltip(column: Int, buttonIdx: Int): String {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(buttonIdx))
-    val _ret = __method_bind.getButtonTooltip.call(this._handle, _args)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(buttonIdx)
+      __method_bind.getButtonTooltip.call(self._handle, _args, _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getCellMode(column: Int): TreeCellMode {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getCellMode.call(this._handle, listOf(_arg))
-    return TreeItem.TreeCellMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCellMode.call(self._handle, listOf(column), _retPtr)
+      TreeItem.TreeCellMode.from(_ret.value)
+    }
   }
 
   fun getChildren(): TreeItem {
-    val _ret = __method_bind.getChildren.call(this._handle)
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getChildren.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getCustomBgColor(column: Int): Color {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getCustomBgColor.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCustomBgColor.call(self._handle, listOf(column), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCustomColor(column: Int): Color {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getCustomColor.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCustomColor.call(self._handle, listOf(column), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCustomMinimumHeight(): Int {
-    val _ret = __method_bind.getCustomMinimumHeight.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCustomMinimumHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getExpandRight(column: Int): Boolean {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getExpandRight.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getExpandRight.call(self._handle, listOf(column), _retPtr)
+      _ret.value
+    }
   }
 
   fun getIcon(column: Int): Texture {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getIcon.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getIcon.call(self._handle, listOf(column), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getIconMaxWidth(column: Int): Int {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getIconMaxWidth.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getIconMaxWidth.call(self._handle, listOf(column), _retPtr)
+      _ret.value
+    }
   }
 
   fun getIconModulate(column: Int): Color {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getIconModulate.call(this._handle, listOf(_arg))
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getIconModulate.call(self._handle, listOf(column), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getIconRegion(column: Int): Rect2 {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getIconRegion.call(this._handle, listOf(_arg))
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getIconRegion.call(self._handle, listOf(column), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMetadata(column: Int): Variant {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getMetadata.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMetadata.call(self._handle, listOf(column), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNext(): TreeItem {
-    val _ret = __method_bind.getNext.call(this._handle)
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNext.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNextVisible(wrap: Boolean = false): TreeItem {
-    val _arg = Variant(wrap)
-    val _ret = __method_bind.getNextVisible.call(this._handle, listOf(_arg))
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNextVisible.call(self._handle, listOf(wrap), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getParent(): TreeItem {
-    val _ret = __method_bind.getParent.call(this._handle)
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getParent.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPrev(): TreeItem {
-    val _ret = __method_bind.getPrev.call(this._handle)
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPrev.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPrevVisible(wrap: Boolean = false): TreeItem {
-    val _arg = Variant(wrap)
-    val _ret = __method_bind.getPrevVisible.call(this._handle, listOf(_arg))
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPrevVisible.call(self._handle, listOf(wrap), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getRange(column: Int): Float {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getRange.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRange.call(self._handle, listOf(column), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRangeConfig(column: Int): Dictionary {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getRangeConfig.call(this._handle, listOf(_arg))
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRangeConfig.call(self._handle, listOf(column), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getText(column: Int): String {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getText.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getText.call(self._handle, listOf(column), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getTextAlign(column: Int): TextAlign {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getTextAlign.call(this._handle, listOf(_arg))
-    return TreeItem.TextAlign.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTextAlign.call(self._handle, listOf(column), _retPtr)
+      TreeItem.TextAlign.from(_ret.value)
+    }
   }
 
   fun getTooltip(column: Int): String {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getTooltip.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getTooltip.call(self._handle, listOf(column), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun isButtonDisabled(column: Int, buttonIdx: Int): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(buttonIdx))
-    val _ret = __method_bind.isButtonDisabled.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(buttonIdx)
+      __method_bind.isButtonDisabled.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isChecked(column: Int): Boolean {
-    val _arg = Variant(column)
-    val _ret = __method_bind.isChecked.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isChecked.call(self._handle, listOf(column), _retPtr)
+      _ret.value
+    }
   }
 
   fun isCollapsed(): Boolean {
-    val _ret = __method_bind.isCollapsed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCollapsed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isCustomSetAsButton(column: Int): Boolean {
-    val _arg = Variant(column)
-    val _ret = __method_bind.isCustomSetAsButton.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCustomSetAsButton.call(self._handle, listOf(column), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEditable(column: Int): Boolean {
-    val _arg = Variant(column)
-    val _ret = __method_bind.isEditable.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEditable.call(self._handle, listOf(column), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFoldingDisabled(): Boolean {
-    val _ret = __method_bind.isFoldingDisabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFoldingDisabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSelectable(column: Int): Boolean {
-    val _arg = Variant(column)
-    val _ret = __method_bind.isSelectable.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSelectable.call(self._handle, listOf(column), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSelected(column: Int): Boolean {
-    val _arg = Variant(column)
-    val _ret = __method_bind.isSelected.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSelected.call(self._handle, listOf(column), _retPtr)
+      _ret.value
+    }
   }
 
   fun moveToBottom() {
-    __method_bind.moveToBottom.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.moveToBottom.call(self._handle, emptyList(), null)
+    }
   }
 
   fun moveToTop() {
-    __method_bind.moveToTop.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.moveToTop.call(self._handle, emptyList(), null)
+    }
   }
 
   fun removeChild(child: Object) {
-    val _arg = Variant(child)
-    __method_bind.removeChild.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeChild.call(self._handle, listOf(child), null)
+    }
   }
 
   fun select(column: Int) {
-    val _arg = Variant(column)
-    __method_bind.select.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.select.call(self._handle, listOf(column), null)
+    }
   }
 
   fun setButton(
@@ -318,11 +518,14 @@ open class TreeItem(
     buttonIdx: Int,
     button: Texture
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(buttonIdx))
-    _args.add(Variant.fromAny(button))
-    __method_bind.setButton.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(buttonIdx)
+      _args.add(button)
+      __method_bind.setButton.call(self._handle, _args, null)
+    }
   }
 
   fun setButtonDisabled(
@@ -330,37 +533,51 @@ open class TreeItem(
     buttonIdx: Int,
     disabled: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(buttonIdx))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.setButtonDisabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(buttonIdx)
+      _args.add(disabled)
+      __method_bind.setButtonDisabled.call(self._handle, _args, null)
+    }
   }
 
   fun setCellMode(column: Int, mode: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(mode))
-    __method_bind.setCellMode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(mode)
+      __method_bind.setCellMode.call(self._handle, _args, null)
+    }
   }
 
   fun setChecked(column: Int, checked: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(checked))
-    __method_bind.setChecked.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(checked)
+      __method_bind.setChecked.call(self._handle, _args, null)
+    }
   }
 
   fun setCollapsed(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setCollapsed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollapsed.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCustomAsButton(column: Int, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setCustomAsButton.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(enable)
+      __method_bind.setCustomAsButton.call(self._handle, _args, null)
+    }
   }
 
   fun setCustomBgColor(
@@ -368,18 +585,24 @@ open class TreeItem(
     color: Color,
     justOutline: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(color))
-    _args.add(Variant.fromAny(justOutline))
-    __method_bind.setCustomBgColor.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(color)
+      _args.add(justOutline)
+      __method_bind.setCustomBgColor.call(self._handle, _args, null)
+    }
   }
 
   fun setCustomColor(column: Int, color: Color) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(color))
-    __method_bind.setCustomColor.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(color)
+      __method_bind.setCustomColor.call(self._handle, _args, null)
+    }
   }
 
   fun setCustomDraw(
@@ -387,77 +610,108 @@ open class TreeItem(
     `object`: Object,
     callback: String
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(callback))
-    __method_bind.setCustomDraw.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(`object`)
+      _args.add(callback)
+      __method_bind.setCustomDraw.call(self._handle, _args, null)
+    }
   }
 
   fun setCustomMinimumHeight(height: Int) {
-    val _arg = Variant(height)
-    __method_bind.setCustomMinimumHeight.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCustomMinimumHeight.call(self._handle, listOf(height), null)
+    }
   }
 
   fun setDisableFolding(disable: Boolean) {
-    val _arg = Variant(disable)
-    __method_bind.setDisableFolding.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDisableFolding.call(self._handle, listOf(disable), null)
+    }
   }
 
   fun setEditable(column: Int, enabled: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(enabled))
-    __method_bind.setEditable.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(enabled)
+      __method_bind.setEditable.call(self._handle, _args, null)
+    }
   }
 
   fun setExpandRight(column: Int, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setExpandRight.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(enable)
+      __method_bind.setExpandRight.call(self._handle, _args, null)
+    }
   }
 
   fun setIcon(column: Int, texture: Texture) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(texture))
-    __method_bind.setIcon.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(texture)
+      __method_bind.setIcon.call(self._handle, _args, null)
+    }
   }
 
   fun setIconMaxWidth(column: Int, width: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(width))
-    __method_bind.setIconMaxWidth.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(width)
+      __method_bind.setIconMaxWidth.call(self._handle, _args, null)
+    }
   }
 
   fun setIconModulate(column: Int, modulate: Color) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(modulate))
-    __method_bind.setIconModulate.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(modulate)
+      __method_bind.setIconModulate.call(self._handle, _args, null)
+    }
   }
 
   fun setIconRegion(column: Int, region: Rect2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(region))
-    __method_bind.setIconRegion.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(region)
+      __method_bind.setIconRegion.call(self._handle, _args, null)
+    }
   }
 
   fun setMetadata(column: Int, meta: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(meta))
-    __method_bind.setMetadata.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(meta)
+      __method_bind.setMetadata.call(self._handle, _args, null)
+    }
   }
 
   fun setRange(column: Int, value: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setRange.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(value)
+      __method_bind.setRange.call(self._handle, _args, null)
+    }
   }
 
   fun setRangeConfig(
@@ -467,41 +721,56 @@ open class TreeItem(
     step: Float,
     expr: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(min))
-    _args.add(Variant.fromAny(max))
-    _args.add(Variant.fromAny(step))
-    _args.add(Variant.fromAny(expr))
-    __method_bind.setRangeConfig.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(min)
+      _args.add(max)
+      _args.add(step)
+      _args.add(expr)
+      __method_bind.setRangeConfig.call(self._handle, _args, null)
+    }
   }
 
   fun setSelectable(column: Int, selectable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(selectable))
-    __method_bind.setSelectable.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(selectable)
+      __method_bind.setSelectable.call(self._handle, _args, null)
+    }
   }
 
   fun setText(column: Int, text: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(text))
-    __method_bind.setText.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(text)
+      __method_bind.setText.call(self._handle, _args, null)
+    }
   }
 
   fun setTextAlign(column: Int, textAlign: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(textAlign))
-    __method_bind.setTextAlign.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(textAlign)
+      __method_bind.setTextAlign.call(self._handle, _args, null)
+    }
   }
 
   fun setTooltip(column: Int, tooltip: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(tooltip))
-    __method_bind.setTooltip.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(tooltip)
+      __method_bind.setTooltip.call(self._handle, _args, null)
+    }
   }
 
   enum class TreeCellMode(

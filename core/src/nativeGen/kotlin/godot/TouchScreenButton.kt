@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class TouchScreenButton(
   @Suppress("UNUSED_PARAMETER")
@@ -112,98 +121,175 @@ open class TouchScreenButton(
   }
 
   fun getAction(): String {
-    val _ret = __method_bind.getAction.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAction.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getBitmask(): BitMap {
-    val _ret = __method_bind.getBitmask.call(this._handle)
-    return _ret.toAny() as BitMap
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: BitMap
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getBitmask.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<BitMap>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getShape(): Shape2D {
-    val _ret = __method_bind.getShape.call(this._handle)
-    return _ret.toAny() as Shape2D
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Shape2D
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getShape.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Shape2D>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTexturePressed(): Texture {
-    val _ret = __method_bind.getTexturePressed.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexturePressed.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getVisibilityMode(): VisibilityMode {
-    val _ret = __method_bind.getVisibilityMode.call(this._handle)
-    return TouchScreenButton.VisibilityMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVisibilityMode.call(self._handle, emptyList(), _retPtr)
+      TouchScreenButton.VisibilityMode.from(_ret.value)
+    }
   }
 
   fun isPassbyPressEnabled(): Boolean {
-    val _ret = __method_bind.isPassbyPressEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPassbyPressEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPressed(): Boolean {
-    val _ret = __method_bind.isPressed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPressed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isShapeCentered(): Boolean {
-    val _ret = __method_bind.isShapeCentered.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isShapeCentered.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isShapeVisible(): Boolean {
-    val _ret = __method_bind.isShapeVisible.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isShapeVisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAction(action: String) {
-    val _arg = Variant(action)
-    __method_bind.setAction.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAction.call(self._handle, listOf(action), null)
+    }
   }
 
   fun setBitmask(bitmask: BitMap) {
-    val _arg = Variant(bitmask)
-    __method_bind.setBitmask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBitmask.call(self._handle, listOf(bitmask), null)
+    }
   }
 
   fun setPassbyPress(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setPassbyPress.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPassbyPress.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setShape(shape: Shape2D) {
-    val _arg = Variant(shape)
-    __method_bind.setShape.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShape.call(self._handle, listOf(shape), null)
+    }
   }
 
   fun setShapeCentered(bool: Boolean) {
-    val _arg = Variant(bool)
-    __method_bind.setShapeCentered.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShapeCentered.call(self._handle, listOf(bool), null)
+    }
   }
 
   fun setShapeVisible(bool: Boolean) {
-    val _arg = Variant(bool)
-    __method_bind.setShapeVisible.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShapeVisible.call(self._handle, listOf(bool), null)
+    }
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setTexturePressed(texturePressed: Texture) {
-    val _arg = Variant(texturePressed)
-    __method_bind.setTexturePressed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTexturePressed.call(self._handle, listOf(texturePressed), null)
+    }
   }
 
   fun setVisibilityMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setVisibilityMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVisibilityMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   enum class VisibilityMode(

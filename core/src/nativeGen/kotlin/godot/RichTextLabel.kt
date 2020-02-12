@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Dictionary
@@ -16,13 +17,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class RichTextLabel(
   @Suppress("UNUSED_PARAMETER")
@@ -150,259 +159,440 @@ open class RichTextLabel(
     width: Int = 0,
     height: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(image))
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(height))
-    __method_bind.addImage.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(image)
+      _args.add(width)
+      _args.add(height)
+      __method_bind.addImage.call(self._handle, _args, null)
+    }
   }
 
   fun addText(text: String) {
-    val _arg = Variant(text)
-    __method_bind.addText.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addText.call(self._handle, listOf(text), null)
+    }
   }
 
   fun appendBbcode(bbcode: String): GDError {
-    val _arg = Variant(bbcode)
-    val _ret = __method_bind.appendBbcode.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.appendBbcode.call(self._handle, listOf(bbcode), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getBbcode(): String {
-    val _ret = __method_bind.getBbcode.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getBbcode.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getContentHeight(): Int {
-    val _ret = __method_bind.getContentHeight.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getContentHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getEffects(): VariantArray {
-    val _ret = __method_bind.getEffects.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getEffects.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLineCount(): Int {
-    val _ret = __method_bind.getLineCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLineCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPercentVisible(): Float {
-    val _ret = __method_bind.getPercentVisible.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPercentVisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTabSize(): Int {
-    val _ret = __method_bind.getTabSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTabSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getText(): String {
-    val _ret = __method_bind.getText.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getText.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getTotalCharacterCount(): Int {
-    val _ret = __method_bind.getTotalCharacterCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTotalCharacterCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getVScroll(): VScrollBar {
-    val _ret = __method_bind.getVScroll.call(this._handle)
-    return _ret.toAny() as VScrollBar
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: VScrollBar
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getVScroll.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<VScrollBar>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getVisibleCharacters(): Int {
-    val _ret = __method_bind.getVisibleCharacters.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVisibleCharacters.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getVisibleLineCount(): Int {
-    val _ret = __method_bind.getVisibleLineCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVisibleLineCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun installEffect(effect: Variant) {
-    val _arg = Variant(effect)
-    __method_bind.installEffect.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.installEffect.call(self._handle, listOf(effect), null)
+    }
   }
 
   fun isMetaUnderlined(): Boolean {
-    val _ret = __method_bind.isMetaUnderlined.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isMetaUnderlined.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isOverridingSelectedFontColor(): Boolean {
-    val _ret = __method_bind.isOverridingSelectedFontColor.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOverridingSelectedFontColor.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isScrollActive(): Boolean {
-    val _ret = __method_bind.isScrollActive.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isScrollActive.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isScrollFollowing(): Boolean {
-    val _ret = __method_bind.isScrollFollowing.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isScrollFollowing.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSelectionEnabled(): Boolean {
-    val _ret = __method_bind.isSelectionEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSelectionEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingBbcode(): Boolean {
-    val _ret = __method_bind.isUsingBbcode.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingBbcode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun newline() {
-    __method_bind.newline.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.newline.call(self._handle, emptyList(), null)
+    }
   }
 
   fun parseBbcode(bbcode: String): GDError {
-    val _arg = Variant(bbcode)
-    val _ret = __method_bind.parseBbcode.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.parseBbcode.call(self._handle, listOf(bbcode), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun parseExpressionsForValues(expressions: PoolStringArray): Dictionary {
-    val _arg = Variant(expressions)
-    val _ret = __method_bind.parseExpressionsForValues.call(this._handle, listOf(_arg))
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.parseExpressionsForValues.call(self._handle, listOf(expressions), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun pop() {
-    __method_bind.pop.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pop.call(self._handle, emptyList(), null)
+    }
   }
 
   fun pushAlign(align: Int) {
-    val _arg = Variant(align)
-    __method_bind.pushAlign.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushAlign.call(self._handle, listOf(align), null)
+    }
   }
 
   fun pushBold() {
-    __method_bind.pushBold.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushBold.call(self._handle, emptyList(), null)
+    }
   }
 
   fun pushBoldItalics() {
-    __method_bind.pushBoldItalics.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushBoldItalics.call(self._handle, emptyList(), null)
+    }
   }
 
   fun pushCell() {
-    __method_bind.pushCell.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushCell.call(self._handle, emptyList(), null)
+    }
   }
 
   fun pushColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.pushColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun pushFont(font: Font) {
-    val _arg = Variant(font)
-    __method_bind.pushFont.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushFont.call(self._handle, listOf(font), null)
+    }
   }
 
   fun pushIndent(level: Int) {
-    val _arg = Variant(level)
-    __method_bind.pushIndent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushIndent.call(self._handle, listOf(level), null)
+    }
   }
 
   fun pushItalics() {
-    __method_bind.pushItalics.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushItalics.call(self._handle, emptyList(), null)
+    }
   }
 
   fun pushList(type: Int) {
-    val _arg = Variant(type)
-    __method_bind.pushList.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushList.call(self._handle, listOf(type), null)
+    }
   }
 
   fun pushMeta(data: Variant) {
-    val _arg = Variant(data)
-    __method_bind.pushMeta.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushMeta.call(self._handle, listOf(data), null)
+    }
   }
 
   fun pushMono() {
-    __method_bind.pushMono.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushMono.call(self._handle, emptyList(), null)
+    }
   }
 
   fun pushNormal() {
-    __method_bind.pushNormal.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushNormal.call(self._handle, emptyList(), null)
+    }
   }
 
   fun pushStrikethrough() {
-    __method_bind.pushStrikethrough.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushStrikethrough.call(self._handle, emptyList(), null)
+    }
   }
 
   fun pushTable(columns: Int) {
-    val _arg = Variant(columns)
-    __method_bind.pushTable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushTable.call(self._handle, listOf(columns), null)
+    }
   }
 
   fun pushUnderline() {
-    __method_bind.pushUnderline.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.pushUnderline.call(self._handle, emptyList(), null)
+    }
   }
 
   fun removeLine(line: Int): Boolean {
-    val _arg = Variant(line)
-    val _ret = __method_bind.removeLine.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.removeLine.call(self._handle, listOf(line), _retPtr)
+      _ret.value
+    }
   }
 
   fun scrollToLine(line: Int) {
-    val _arg = Variant(line)
-    __method_bind.scrollToLine.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.scrollToLine.call(self._handle, listOf(line), null)
+    }
   }
 
   fun setBbcode(text: String) {
-    val _arg = Variant(text)
-    __method_bind.setBbcode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBbcode.call(self._handle, listOf(text), null)
+    }
   }
 
   fun setEffects(effects: VariantArray) {
-    val _arg = Variant(effects)
-    __method_bind.setEffects.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEffects.call(self._handle, listOf(effects), null)
+    }
   }
 
   fun setMetaUnderline(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setMetaUnderline.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMetaUnderline.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setOverrideSelectedFontColor(override: Boolean) {
-    val _arg = Variant(override)
-    __method_bind.setOverrideSelectedFontColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOverrideSelectedFontColor.call(self._handle, listOf(override), null)
+    }
   }
 
   fun setPercentVisible(percentVisible: Float) {
-    val _arg = Variant(percentVisible)
-    __method_bind.setPercentVisible.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPercentVisible.call(self._handle, listOf(percentVisible), null)
+    }
   }
 
   fun setScrollActive(active: Boolean) {
-    val _arg = Variant(active)
-    __method_bind.setScrollActive.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScrollActive.call(self._handle, listOf(active), null)
+    }
   }
 
   fun setScrollFollow(follow: Boolean) {
-    val _arg = Variant(follow)
-    __method_bind.setScrollFollow.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScrollFollow.call(self._handle, listOf(follow), null)
+    }
   }
 
   fun setSelectionEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setSelectionEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSelectionEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setTabSize(spaces: Int) {
-    val _arg = Variant(spaces)
-    __method_bind.setTabSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTabSize.call(self._handle, listOf(spaces), null)
+    }
   }
 
   fun setTableColumnExpand(
@@ -410,26 +600,35 @@ open class RichTextLabel(
     expand: Boolean,
     ratio: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(expand))
-    _args.add(Variant.fromAny(ratio))
-    __method_bind.setTableColumnExpand.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(expand)
+      _args.add(ratio)
+      __method_bind.setTableColumnExpand.call(self._handle, _args, null)
+    }
   }
 
   fun setText(text: String) {
-    val _arg = Variant(text)
-    __method_bind.setText.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setText.call(self._handle, listOf(text), null)
+    }
   }
 
   fun setUseBbcode(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseBbcode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseBbcode.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setVisibleCharacters(amount: Int) {
-    val _arg = Variant(amount)
-    __method_bind.setVisibleCharacters.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVisibleCharacters.call(self._handle, listOf(amount), null)
+    }
   }
 
   enum class Align(

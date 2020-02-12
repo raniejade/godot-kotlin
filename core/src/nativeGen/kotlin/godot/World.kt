@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -10,13 +11,21 @@ import godot.core.VariantArray
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class World(
   @Suppress("UNUSED_PARAMETER")
@@ -60,38 +69,75 @@ open class World(
   }
 
   fun getDirectSpaceState(): PhysicsDirectSpaceState {
-    val _ret = __method_bind.getDirectSpaceState.call(this._handle)
-    return _ret.toAny() as PhysicsDirectSpaceState
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: PhysicsDirectSpaceState
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getDirectSpaceState.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<PhysicsDirectSpaceState>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getEnvironment(): Environment {
-    val _ret = __method_bind.getEnvironment.call(this._handle)
-    return _ret.toAny() as Environment
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Environment
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getEnvironment.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Environment>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getFallbackEnvironment(): Environment {
-    val _ret = __method_bind.getFallbackEnvironment.call(this._handle)
-    return _ret.toAny() as Environment
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Environment
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getFallbackEnvironment.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Environment>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getScenario(): RID {
-    val _ret = __method_bind.getScenario.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScenario.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSpace(): RID {
-    val _ret = __method_bind.getSpace.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSpace.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setEnvironment(env: Environment) {
-    val _arg = Variant(env)
-    __method_bind.setEnvironment.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnvironment.call(self._handle, listOf(env), null)
+    }
   }
 
   fun setFallbackEnvironment(env: Environment) {
-    val _arg = Variant(env)
-    __method_bind.setFallbackEnvironment.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFallbackEnvironment.call(self._handle, listOf(env), null)
+    }
   }
 
   companion object {

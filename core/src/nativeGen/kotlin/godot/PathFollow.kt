@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class PathFollow(
   @Suppress("UNUSED_PARAMETER")
@@ -87,73 +96,122 @@ open class PathFollow(
   }
 
   fun getCubicInterpolation(): Boolean {
-    val _ret = __method_bind.getCubicInterpolation.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCubicInterpolation.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getHOffset(): Float {
-    val _ret = __method_bind.getHOffset.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getOffset(): Float {
-    val _ret = __method_bind.getOffset.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRotationMode(): RotationMode {
-    val _ret = __method_bind.getRotationMode.call(this._handle)
-    return PathFollow.RotationMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRotationMode.call(self._handle, emptyList(), _retPtr)
+      PathFollow.RotationMode.from(_ret.value)
+    }
   }
 
   fun getUnitOffset(): Float {
-    val _ret = __method_bind.getUnitOffset.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUnitOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVOffset(): Float {
-    val _ret = __method_bind.getVOffset.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun hasLoop(): Boolean {
-    val _ret = __method_bind.hasLoop.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasLoop.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setCubicInterpolation(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setCubicInterpolation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCubicInterpolation.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setHOffset(hOffset: Float) {
-    val _arg = Variant(hOffset)
-    __method_bind.setHOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHOffset.call(self._handle, listOf(hOffset), null)
+    }
   }
 
   fun setLoop(loop: Boolean) {
-    val _arg = Variant(loop)
-    __method_bind.setLoop.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLoop.call(self._handle, listOf(loop), null)
+    }
   }
 
   fun setOffset(offset: Float) {
-    val _arg = Variant(offset)
-    __method_bind.setOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setRotationMode(rotationMode: Int) {
-    val _arg = Variant(rotationMode)
-    __method_bind.setRotationMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRotationMode.call(self._handle, listOf(rotationMode), null)
+    }
   }
 
   fun setUnitOffset(unitOffset: Float) {
-    val _arg = Variant(unitOffset)
-    __method_bind.setUnitOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUnitOffset.call(self._handle, listOf(unitOffset), null)
+    }
   }
 
   fun setVOffset(vOffset: Float) {
-    val _arg = Variant(vOffset)
-    __method_bind.setVOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVOffset.call(self._handle, listOf(vOffset), null)
+    }
   }
 
   enum class RotationMode(

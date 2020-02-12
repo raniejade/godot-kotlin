@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -17,13 +18,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class SceneTree(
   @Suppress("UNUSED_PARAMETER")
@@ -201,12 +210,18 @@ open class SceneTree(
     method: String,
     vararg varargs: Any?
   ): godot.core.Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(group))
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    val _ret = __method_bind.callGroup.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = godot.core.Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(group)
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.callGroup.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun callGroupFlags(
@@ -215,147 +230,286 @@ open class SceneTree(
     method: String,
     vararg varargs: Any?
   ): godot.core.Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(flags))
-    _args.add(Variant.fromAny(group))
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    val _ret = __method_bind.callGroupFlags.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = godot.core.Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(flags)
+      _args.add(group)
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.callGroupFlags.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun changeScene(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.changeScene.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.changeScene.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun changeSceneTo(packedScene: PackedScene): GDError {
-    val _arg = Variant(packedScene)
-    val _ret = __method_bind.changeSceneTo.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.changeSceneTo.call(self._handle, listOf(packedScene), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun createTimer(timeSec: Float, pauseModeProcess: Boolean = true): SceneTreeTimer {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(timeSec))
-    _args.add(Variant.fromAny(pauseModeProcess))
-    val _ret = __method_bind.createTimer.call(this._handle, _args)
-    return _ret.toAny() as SceneTreeTimer
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: SceneTreeTimer
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(timeSec)
+      _args.add(pauseModeProcess)
+      __method_bind.createTimer.call(self._handle, _args, _retPtr)
+      _ret = objectToType<SceneTreeTimer>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getCurrentScene(): Node {
-    val _ret = __method_bind.getCurrentScene.call(this._handle)
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getCurrentScene.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getEditedSceneRoot(): Node {
-    val _ret = __method_bind.getEditedSceneRoot.call(this._handle)
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getEditedSceneRoot.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getFrame(): Int {
-    val _ret = __method_bind.getFrame.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFrame.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMultiplayer(): MultiplayerAPI {
-    val _ret = __method_bind.getMultiplayer.call(this._handle)
-    return _ret.toAny() as MultiplayerAPI
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: MultiplayerAPI
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMultiplayer.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<MultiplayerAPI>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNetworkConnectedPeers(): PoolIntArray {
-    val _ret = __method_bind.getNetworkConnectedPeers.call(this._handle)
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNetworkConnectedPeers.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNetworkPeer(): NetworkedMultiplayerPeer {
-    val _ret = __method_bind.getNetworkPeer.call(this._handle)
-    return _ret.toAny() as NetworkedMultiplayerPeer
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: NetworkedMultiplayerPeer
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNetworkPeer.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<NetworkedMultiplayerPeer>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNetworkUniqueId(): Int {
-    val _ret = __method_bind.getNetworkUniqueId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNetworkUniqueId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNodeCount(): Int {
-    val _ret = __method_bind.getNodeCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNodeCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNodesInGroup(group: String): VariantArray {
-    val _arg = Variant(group)
-    val _ret = __method_bind.getNodesInGroup.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodesInGroup.call(self._handle, listOf(group), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRoot(): Viewport {
-    val _ret = __method_bind.getRoot.call(this._handle)
-    return _ret.toAny() as Viewport
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Viewport
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getRoot.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Viewport>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getRpcSenderId(): Int {
-    val _ret = __method_bind.getRpcSenderId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRpcSenderId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasGroup(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasGroup.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasGroup.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasNetworkPeer(): Boolean {
-    val _ret = __method_bind.hasNetworkPeer.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasNetworkPeer.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isDebuggingCollisionsHint(): Boolean {
-    val _ret = __method_bind.isDebuggingCollisionsHint.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDebuggingCollisionsHint.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isDebuggingNavigationHint(): Boolean {
-    val _ret = __method_bind.isDebuggingNavigationHint.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDebuggingNavigationHint.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInputHandled(): Boolean {
-    val _ret = __method_bind.isInputHandled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInputHandled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isMultiplayerPollEnabled(): Boolean {
-    val _ret = __method_bind.isMultiplayerPollEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isMultiplayerPollEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isNetworkServer(): Boolean {
-    val _ret = __method_bind.isNetworkServer.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isNetworkServer.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPaused(): Boolean {
-    val _ret = __method_bind.isPaused.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPaused.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRefusingNewNetworkConnections(): Boolean {
-    val _ret = __method_bind.isRefusingNewNetworkConnections.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRefusingNewNetworkConnections.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingFontOversampling(): Boolean {
-    val _ret = __method_bind.isUsingFontOversampling.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingFontOversampling.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun notifyGroup(group: String, notification: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(group))
-    _args.add(Variant.fromAny(notification))
-    __method_bind.notifyGroup.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(group)
+      _args.add(notification)
+      __method_bind.notifyGroup.call(self._handle, _args, null)
+    }
   }
 
   fun notifyGroupFlags(
@@ -363,51 +517,73 @@ open class SceneTree(
     group: String,
     notification: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(callFlags))
-    _args.add(Variant.fromAny(group))
-    _args.add(Variant.fromAny(notification))
-    __method_bind.notifyGroupFlags.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(callFlags)
+      _args.add(group)
+      _args.add(notification)
+      __method_bind.notifyGroupFlags.call(self._handle, _args, null)
+    }
   }
 
   fun queueDelete(obj: Object) {
-    val _arg = Variant(obj)
-    __method_bind.queueDelete.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.queueDelete.call(self._handle, listOf(obj), null)
+    }
   }
 
   fun quit(exitCode: Int = -1) {
-    val _arg = Variant(exitCode)
-    __method_bind.quit.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.quit.call(self._handle, listOf(exitCode), null)
+    }
   }
 
   fun reloadCurrentScene(): GDError {
-    val _ret = __method_bind.reloadCurrentScene.call(this._handle)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.reloadCurrentScene.call(self._handle, emptyList(), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setAutoAcceptQuit(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setAutoAcceptQuit.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutoAcceptQuit.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setCurrentScene(childNode: Node) {
-    val _arg = Variant(childNode)
-    __method_bind.setCurrentScene.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCurrentScene.call(self._handle, listOf(childNode), null)
+    }
   }
 
   fun setDebugCollisionsHint(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setDebugCollisionsHint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDebugCollisionsHint.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setDebugNavigationHint(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setDebugNavigationHint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDebugNavigationHint.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setEditedSceneRoot(scene: Node) {
-    val _arg = Variant(scene)
-    __method_bind.setEditedSceneRoot.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEditedSceneRoot.call(self._handle, listOf(scene), null)
+    }
   }
 
   fun setGroup(
@@ -415,11 +591,14 @@ open class SceneTree(
     property: String,
     value: godot.core.Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(group))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setGroup.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(group)
+      _args.add(property)
+      _args.add(value)
+      __method_bind.setGroup.call(self._handle, _args, null)
+    }
   }
 
   fun setGroupFlags(
@@ -428,46 +607,64 @@ open class SceneTree(
     property: String,
     value: godot.core.Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(callFlags))
-    _args.add(Variant.fromAny(group))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setGroupFlags.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(callFlags)
+      _args.add(group)
+      _args.add(property)
+      _args.add(value)
+      __method_bind.setGroupFlags.call(self._handle, _args, null)
+    }
   }
 
   fun setInputAsHandled() {
-    __method_bind.setInputAsHandled.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInputAsHandled.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setMultiplayer(multiplayer: MultiplayerAPI) {
-    val _arg = Variant(multiplayer)
-    __method_bind.setMultiplayer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMultiplayer.call(self._handle, listOf(multiplayer), null)
+    }
   }
 
   fun setMultiplayerPollEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setMultiplayerPollEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMultiplayerPollEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
-    val _arg = Variant(peer)
-    __method_bind.setNetworkPeer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNetworkPeer.call(self._handle, listOf(peer), null)
+    }
   }
 
   fun setPause(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setPause.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPause.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setQuitOnGoBack(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setQuitOnGoBack.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setQuitOnGoBack.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
-    val _arg = Variant(refuse)
-    __method_bind.setRefuseNewNetworkConnections.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRefuseNewNetworkConnections.call(self._handle, listOf(refuse), null)
+    }
   }
 
   fun setScreenStretch(
@@ -476,17 +673,22 @@ open class SceneTree(
     minsize: Vector2,
     shrink: Float = 1.0f
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(mode))
-    _args.add(Variant.fromAny(aspect))
-    _args.add(Variant.fromAny(minsize))
-    _args.add(Variant.fromAny(shrink))
-    __method_bind.setScreenStretch.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(mode)
+      _args.add(aspect)
+      _args.add(minsize)
+      _args.add(shrink)
+      __method_bind.setScreenStretch.call(self._handle, _args, null)
+    }
   }
 
   fun setUseFontOversampling(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseFontOversampling.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseFontOversampling.call(self._handle, listOf(enable), null)
+    }
   }
 
   enum class StretchAspect(

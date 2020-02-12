@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AudioServerInternal(
   @Suppress("UNUSED_PARAMETER")
@@ -54,8 +63,10 @@ open class AudioServerInternal(
   val signalBusLayoutChanged: Signal0 = Signal0("bus_layout_changed")
 
   fun addBus(atPosition: Int = -1) {
-    val _arg = Variant(atPosition)
-    __method_bind.addBus.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addBus.call(self._handle, listOf(atPosition), null)
+    }
   }
 
   fun addBusEffect(
@@ -63,56 +74,100 @@ open class AudioServerInternal(
     effect: AudioEffect,
     atPosition: Int = -1
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(effect))
-    _args.add(Variant.fromAny(atPosition))
-    __method_bind.addBusEffect.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(effect)
+      _args.add(atPosition)
+      __method_bind.addBusEffect.call(self._handle, _args, null)
+    }
   }
 
   fun captureGetDevice(): String {
-    val _ret = __method_bind.captureGetDevice.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.captureGetDevice.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun captureGetDeviceList(): VariantArray {
-    val _ret = __method_bind.captureGetDeviceList.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.captureGetDeviceList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun captureSetDevice(name: String) {
-    val _arg = Variant(name)
-    __method_bind.captureSetDevice.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.captureSetDevice.call(self._handle, listOf(name), null)
+    }
   }
 
   fun generateBusLayout(): AudioBusLayout {
-    val _ret = __method_bind.generateBusLayout.call(this._handle)
-    return _ret.toAny() as AudioBusLayout
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: AudioBusLayout
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.generateBusLayout.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<AudioBusLayout>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getBusChannels(busIdx: Int): Int {
-    val _arg = Variant(busIdx)
-    val _ret = __method_bind.getBusChannels.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBusChannels.call(self._handle, listOf(busIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBusCount(): Int {
-    val _ret = __method_bind.getBusCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBusCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBusEffect(busIdx: Int, effectIdx: Int): AudioEffect {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(effectIdx))
-    val _ret = __method_bind.getBusEffect.call(this._handle, _args)
-    return _ret.toAny() as AudioEffect
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: AudioEffect
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(effectIdx)
+      __method_bind.getBusEffect.call(self._handle, _args, _retPtr)
+      _ret = objectToType<AudioEffect>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getBusEffectCount(busIdx: Int): Int {
-    val _arg = Variant(busIdx)
-    val _ret = __method_bind.getBusEffectCount.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBusEffectCount.call(self._handle, listOf(busIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBusEffectInstance(
@@ -120,153 +175,263 @@ open class AudioServerInternal(
     effectIdx: Int,
     channel: Int = 0
   ): AudioEffectInstance {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(effectIdx))
-    _args.add(Variant.fromAny(channel))
-    val _ret = __method_bind.getBusEffectInstance.call(this._handle, _args)
-    return _ret.toAny() as AudioEffectInstance
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: AudioEffectInstance
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(effectIdx)
+      _args.add(channel)
+      __method_bind.getBusEffectInstance.call(self._handle, _args, _retPtr)
+      _ret = objectToType<AudioEffectInstance>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getBusIndex(busName: String): Int {
-    val _arg = Variant(busName)
-    val _ret = __method_bind.getBusIndex.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBusIndex.call(self._handle, listOf(busName), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBusName(busIdx: Int): String {
-    val _arg = Variant(busIdx)
-    val _ret = __method_bind.getBusName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getBusName.call(self._handle, listOf(busIdx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getBusPeakVolumeLeftDb(busIdx: Int, channel: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(channel))
-    val _ret = __method_bind.getBusPeakVolumeLeftDb.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(channel)
+      __method_bind.getBusPeakVolumeLeftDb.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getBusPeakVolumeRightDb(busIdx: Int, channel: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(channel))
-    val _ret = __method_bind.getBusPeakVolumeRightDb.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(channel)
+      __method_bind.getBusPeakVolumeRightDb.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getBusSend(busIdx: Int): String {
-    val _arg = Variant(busIdx)
-    val _ret = __method_bind.getBusSend.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getBusSend.call(self._handle, listOf(busIdx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getBusVolumeDb(busIdx: Int): Float {
-    val _arg = Variant(busIdx)
-    val _ret = __method_bind.getBusVolumeDb.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBusVolumeDb.call(self._handle, listOf(busIdx), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDevice(): String {
-    val _ret = __method_bind.getDevice.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getDevice.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getDeviceList(): VariantArray {
-    val _ret = __method_bind.getDeviceList.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getDeviceList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getGlobalRateScale(): Float {
-    val _ret = __method_bind.getGlobalRateScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGlobalRateScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMixRate(): Float {
-    val _ret = __method_bind.getMixRate.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMixRate.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getOutputLatency(): Float {
-    val _ret = __method_bind.getOutputLatency.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOutputLatency.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSpeakerMode(): AudioServer.SpeakerMode {
-    val _ret = __method_bind.getSpeakerMode.call(this._handle)
-    return AudioServer.SpeakerMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpeakerMode.call(self._handle, emptyList(), _retPtr)
+      AudioServer.SpeakerMode.from(_ret.value)
+    }
   }
 
   fun getTimeSinceLastMix(): Float {
-    val _ret = __method_bind.getTimeSinceLastMix.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTimeSinceLastMix.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTimeToNextMix(): Float {
-    val _ret = __method_bind.getTimeToNextMix.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTimeToNextMix.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isBusBypassingEffects(busIdx: Int): Boolean {
-    val _arg = Variant(busIdx)
-    val _ret = __method_bind.isBusBypassingEffects.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isBusBypassingEffects.call(self._handle, listOf(busIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun isBusEffectEnabled(busIdx: Int, effectIdx: Int): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(effectIdx))
-    val _ret = __method_bind.isBusEffectEnabled.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(effectIdx)
+      __method_bind.isBusEffectEnabled.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isBusMute(busIdx: Int): Boolean {
-    val _arg = Variant(busIdx)
-    val _ret = __method_bind.isBusMute.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isBusMute.call(self._handle, listOf(busIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun isBusSolo(busIdx: Int): Boolean {
-    val _arg = Variant(busIdx)
-    val _ret = __method_bind.isBusSolo.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isBusSolo.call(self._handle, listOf(busIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun lock() {
-    __method_bind.lock.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.lock.call(self._handle, emptyList(), null)
+    }
   }
 
   fun moveBus(index: Int, toIndex: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(toIndex))
-    __method_bind.moveBus.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(toIndex)
+      __method_bind.moveBus.call(self._handle, _args, null)
+    }
   }
 
   fun removeBus(index: Int) {
-    val _arg = Variant(index)
-    __method_bind.removeBus.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeBus.call(self._handle, listOf(index), null)
+    }
   }
 
   fun removeBusEffect(busIdx: Int, effectIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(effectIdx))
-    __method_bind.removeBusEffect.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(effectIdx)
+      __method_bind.removeBusEffect.call(self._handle, _args, null)
+    }
   }
 
   fun setBusBypassEffects(busIdx: Int, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setBusBypassEffects.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(enable)
+      __method_bind.setBusBypassEffects.call(self._handle, _args, null)
+    }
   }
 
   fun setBusCount(amount: Int) {
-    val _arg = Variant(amount)
-    __method_bind.setBusCount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBusCount.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setBusEffectEnabled(
@@ -274,61 +439,85 @@ open class AudioServerInternal(
     effectIdx: Int,
     enabled: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(effectIdx))
-    _args.add(Variant.fromAny(enabled))
-    __method_bind.setBusEffectEnabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(effectIdx)
+      _args.add(enabled)
+      __method_bind.setBusEffectEnabled.call(self._handle, _args, null)
+    }
   }
 
   fun setBusLayout(busLayout: AudioBusLayout) {
-    val _arg = Variant(busLayout)
-    __method_bind.setBusLayout.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBusLayout.call(self._handle, listOf(busLayout), null)
+    }
   }
 
   fun setBusMute(busIdx: Int, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setBusMute.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(enable)
+      __method_bind.setBusMute.call(self._handle, _args, null)
+    }
   }
 
   fun setBusName(busIdx: Int, name: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(name))
-    __method_bind.setBusName.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(name)
+      __method_bind.setBusName.call(self._handle, _args, null)
+    }
   }
 
   fun setBusSend(busIdx: Int, send: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(send))
-    __method_bind.setBusSend.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(send)
+      __method_bind.setBusSend.call(self._handle, _args, null)
+    }
   }
 
   fun setBusSolo(busIdx: Int, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setBusSolo.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(enable)
+      __method_bind.setBusSolo.call(self._handle, _args, null)
+    }
   }
 
   fun setBusVolumeDb(busIdx: Int, volumeDb: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(volumeDb))
-    __method_bind.setBusVolumeDb.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(volumeDb)
+      __method_bind.setBusVolumeDb.call(self._handle, _args, null)
+    }
   }
 
   fun setDevice(device: String) {
-    val _arg = Variant(device)
-    __method_bind.setDevice.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDevice.call(self._handle, listOf(device), null)
+    }
   }
 
   fun setGlobalRateScale(scale: Float) {
-    val _arg = Variant(scale)
-    __method_bind.setGlobalRateScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlobalRateScale.call(self._handle, listOf(scale), null)
+    }
   }
 
   fun swapBusEffects(
@@ -336,15 +525,21 @@ open class AudioServerInternal(
     effectIdx: Int,
     byEffectIdx: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(busIdx))
-    _args.add(Variant.fromAny(effectIdx))
-    _args.add(Variant.fromAny(byEffectIdx))
-    __method_bind.swapBusEffects.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(busIdx)
+      _args.add(effectIdx)
+      _args.add(byEffectIdx)
+      __method_bind.swapBusEffects.call(self._handle, _args, null)
+    }
   }
 
   fun unlock() {
-    __method_bind.unlock.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.unlock.call(self._handle, emptyList(), null)
+    }
   }
 
   companion object {

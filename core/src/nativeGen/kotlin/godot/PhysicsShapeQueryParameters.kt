@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class PhysicsShapeQueryParameters(
   @Suppress("UNUSED_PARAMETER")
@@ -108,78 +117,132 @@ open class PhysicsShapeQueryParameters(
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.getCollisionMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getExclude(): VariantArray {
-    val _ret = __method_bind.getExclude.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getExclude.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMargin(): Float {
-    val _ret = __method_bind.getMargin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMargin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getShapeRid(): RID {
-    val _ret = __method_bind.getShapeRid.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getShapeRid.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTransform(): Transform {
-    val _ret = __method_bind.getTransform.call(this._handle)
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isCollideWithAreasEnabled(): Boolean {
-    val _ret = __method_bind.isCollideWithAreasEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCollideWithAreasEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isCollideWithBodiesEnabled(): Boolean {
-    val _ret = __method_bind.isCollideWithBodiesEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCollideWithBodiesEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setCollideWithAreas(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setCollideWithAreas.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollideWithAreas.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCollideWithBodies(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setCollideWithBodies.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollideWithBodies.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCollisionMask(collisionMask: Int) {
-    val _arg = Variant(collisionMask)
-    __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionMask.call(self._handle, listOf(collisionMask), null)
+    }
   }
 
   fun setExclude(exclude: VariantArray) {
-    val _arg = Variant(exclude)
-    __method_bind.setExclude.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExclude.call(self._handle, listOf(exclude), null)
+    }
   }
 
   fun setMargin(margin: Float) {
-    val _arg = Variant(margin)
-    __method_bind.setMargin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMargin.call(self._handle, listOf(margin), null)
+    }
   }
 
   fun setShape(shape: Resource) {
-    val _arg = Variant(shape)
-    __method_bind.setShape.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShape.call(self._handle, listOf(shape), null)
+    }
   }
 
   fun setShapeRid(shape: RID) {
-    val _arg = Variant(shape)
-    __method_bind.setShapeRid.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShapeRid.call(self._handle, listOf(shape), null)
+    }
   }
 
   fun setTransform(transform: Transform) {
-    val _arg = Variant(transform)
-    __method_bind.setTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTransform.call(self._handle, listOf(transform), null)
+    }
   }
 
   companion object {

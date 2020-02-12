@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolIntArray
@@ -16,13 +17,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class PolygonPathFinder(
   @Suppress("UNUSED_PARAMETER")
@@ -35,56 +44,93 @@ open class PolygonPathFinder(
   }
 
   fun findPath(from: Vector2, to: Vector2): PoolVector2Array {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    val _ret = __method_bind.findPath.call(this._handle, _args)
-    return _ret.asPoolVector2Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector2Array()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      __method_bind.findPath.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBounds(): Rect2 {
-    val _ret = __method_bind.getBounds.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBounds.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getClosestPoint(point: Vector2): Vector2 {
-    val _arg = Variant(point)
-    val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getClosestPoint.call(self._handle, listOf(point), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getIntersections(from: Vector2, to: Vector2): PoolVector2Array {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    val _ret = __method_bind.getIntersections.call(this._handle, _args)
-    return _ret.asPoolVector2Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector2Array()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      __method_bind.getIntersections.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointPenalty(idx: Int): Float {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getPointPenalty.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointPenalty.call(self._handle, listOf(idx), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isPointInside(point: Vector2): Boolean {
-    val _arg = Variant(point)
-    val _ret = __method_bind.isPointInside.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPointInside.call(self._handle, listOf(point), _retPtr)
+      _ret.value
+    }
   }
 
   fun setPointPenalty(idx: Int, penalty: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(penalty))
-    __method_bind.setPointPenalty.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(penalty)
+      __method_bind.setPointPenalty.call(self._handle, _args, null)
+    }
   }
 
   fun setup(points: PoolVector2Array, connections: PoolIntArray) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(points))
-    _args.add(Variant.fromAny(connections))
-    __method_bind.setup.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(points)
+      _args.add(connections)
+      __method_bind.setup.call(self._handle, _args, null)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Basis
 import godot.core.Color
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Environment(
   @Suppress("UNUSED_PARAMETER")
@@ -779,786 +788,1344 @@ open class Environment(
   }
 
   fun getAdjustmentBrightness(): Float {
-    val _ret = __method_bind.getAdjustmentBrightness.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAdjustmentBrightness.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAdjustmentColorCorrection(): Texture {
-    val _ret = __method_bind.getAdjustmentColorCorrection.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getAdjustmentColorCorrection.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getAdjustmentContrast(): Float {
-    val _ret = __method_bind.getAdjustmentContrast.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAdjustmentContrast.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAdjustmentSaturation(): Float {
-    val _ret = __method_bind.getAdjustmentSaturation.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAdjustmentSaturation.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAmbientLightColor(): Color {
-    val _ret = __method_bind.getAmbientLightColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getAmbientLightColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getAmbientLightEnergy(): Float {
-    val _ret = __method_bind.getAmbientLightEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAmbientLightEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAmbientLightSkyContribution(): Float {
-    val _ret = __method_bind.getAmbientLightSkyContribution.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAmbientLightSkyContribution.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getBackground(): BGMode {
-    val _ret = __method_bind.getBackground.call(this._handle)
-    return Environment.BGMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBackground.call(self._handle, emptyList(), _retPtr)
+      Environment.BGMode.from(_ret.value)
+    }
   }
 
   fun getBgColor(): Color {
-    val _ret = __method_bind.getBgColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBgColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBgEnergy(): Float {
-    val _ret = __method_bind.getBgEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBgEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCameraFeedId(): Int {
-    val _ret = __method_bind.getCameraFeedId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCameraFeedId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCanvasMaxLayer(): Int {
-    val _ret = __method_bind.getCanvasMaxLayer.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCanvasMaxLayer.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDofBlurFarAmount(): Float {
-    val _ret = __method_bind.getDofBlurFarAmount.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDofBlurFarAmount.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDofBlurFarDistance(): Float {
-    val _ret = __method_bind.getDofBlurFarDistance.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDofBlurFarDistance.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDofBlurFarQuality(): DOFBlurQuality {
-    val _ret = __method_bind.getDofBlurFarQuality.call(this._handle)
-    return Environment.DOFBlurQuality.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDofBlurFarQuality.call(self._handle, emptyList(), _retPtr)
+      Environment.DOFBlurQuality.from(_ret.value)
+    }
   }
 
   fun getDofBlurFarTransition(): Float {
-    val _ret = __method_bind.getDofBlurFarTransition.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDofBlurFarTransition.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDofBlurNearAmount(): Float {
-    val _ret = __method_bind.getDofBlurNearAmount.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDofBlurNearAmount.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDofBlurNearDistance(): Float {
-    val _ret = __method_bind.getDofBlurNearDistance.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDofBlurNearDistance.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDofBlurNearQuality(): DOFBlurQuality {
-    val _ret = __method_bind.getDofBlurNearQuality.call(this._handle)
-    return Environment.DOFBlurQuality.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDofBlurNearQuality.call(self._handle, emptyList(), _retPtr)
+      Environment.DOFBlurQuality.from(_ret.value)
+    }
   }
 
   fun getDofBlurNearTransition(): Float {
-    val _ret = __method_bind.getDofBlurNearTransition.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDofBlurNearTransition.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFogColor(): Color {
-    val _ret = __method_bind.getFogColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFogColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFogDepthBegin(): Float {
-    val _ret = __method_bind.getFogDepthBegin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFogDepthBegin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFogDepthCurve(): Float {
-    val _ret = __method_bind.getFogDepthCurve.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFogDepthCurve.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFogDepthEnd(): Float {
-    val _ret = __method_bind.getFogDepthEnd.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFogDepthEnd.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFogHeightCurve(): Float {
-    val _ret = __method_bind.getFogHeightCurve.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFogHeightCurve.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFogHeightMax(): Float {
-    val _ret = __method_bind.getFogHeightMax.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFogHeightMax.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFogHeightMin(): Float {
-    val _ret = __method_bind.getFogHeightMin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFogHeightMin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFogSunAmount(): Float {
-    val _ret = __method_bind.getFogSunAmount.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFogSunAmount.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFogSunColor(): Color {
-    val _ret = __method_bind.getFogSunColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFogSunColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFogTransmitCurve(): Float {
-    val _ret = __method_bind.getFogTransmitCurve.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFogTransmitCurve.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGlowBlendMode(): GlowBlendMode {
-    val _ret = __method_bind.getGlowBlendMode.call(this._handle)
-    return Environment.GlowBlendMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGlowBlendMode.call(self._handle, emptyList(), _retPtr)
+      Environment.GlowBlendMode.from(_ret.value)
+    }
   }
 
   fun getGlowBloom(): Float {
-    val _ret = __method_bind.getGlowBloom.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGlowBloom.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGlowHdrBleedScale(): Float {
-    val _ret = __method_bind.getGlowHdrBleedScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGlowHdrBleedScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGlowHdrBleedThreshold(): Float {
-    val _ret = __method_bind.getGlowHdrBleedThreshold.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGlowHdrBleedThreshold.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGlowHdrLuminanceCap(): Float {
-    val _ret = __method_bind.getGlowHdrLuminanceCap.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGlowHdrLuminanceCap.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGlowIntensity(): Float {
-    val _ret = __method_bind.getGlowIntensity.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGlowIntensity.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGlowStrength(): Float {
-    val _ret = __method_bind.getGlowStrength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGlowStrength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSky(): Sky {
-    val _ret = __method_bind.getSky.call(this._handle)
-    return _ret.toAny() as Sky
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Sky
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSky.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Sky>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSkyCustomFov(): Float {
-    val _ret = __method_bind.getSkyCustomFov.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSkyCustomFov.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSkyOrientation(): Basis {
-    val _ret = __method_bind.getSkyOrientation.call(this._handle)
-    return _ret.asBasis()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Basis()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSkyOrientation.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSkyRotation(): Vector3 {
-    val _ret = __method_bind.getSkyRotation.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSkyRotation.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSkyRotationDegrees(): Vector3 {
-    val _ret = __method_bind.getSkyRotationDegrees.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSkyRotationDegrees.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSsaoAoChannelAffect(): Float {
-    val _ret = __method_bind.getSsaoAoChannelAffect.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsaoAoChannelAffect.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsaoBias(): Float {
-    val _ret = __method_bind.getSsaoBias.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsaoBias.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsaoBlur(): SSAOBlur {
-    val _ret = __method_bind.getSsaoBlur.call(this._handle)
-    return Environment.SSAOBlur.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsaoBlur.call(self._handle, emptyList(), _retPtr)
+      Environment.SSAOBlur.from(_ret.value)
+    }
   }
 
   fun getSsaoColor(): Color {
-    val _ret = __method_bind.getSsaoColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSsaoColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSsaoDirectLightAffect(): Float {
-    val _ret = __method_bind.getSsaoDirectLightAffect.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsaoDirectLightAffect.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsaoEdgeSharpness(): Float {
-    val _ret = __method_bind.getSsaoEdgeSharpness.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsaoEdgeSharpness.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsaoIntensity(): Float {
-    val _ret = __method_bind.getSsaoIntensity.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsaoIntensity.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsaoIntensity2(): Float {
-    val _ret = __method_bind.getSsaoIntensity2.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsaoIntensity2.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsaoQuality(): SSAOQuality {
-    val _ret = __method_bind.getSsaoQuality.call(this._handle)
-    return Environment.SSAOQuality.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsaoQuality.call(self._handle, emptyList(), _retPtr)
+      Environment.SSAOQuality.from(_ret.value)
+    }
   }
 
   fun getSsaoRadius(): Float {
-    val _ret = __method_bind.getSsaoRadius.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsaoRadius.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsaoRadius2(): Float {
-    val _ret = __method_bind.getSsaoRadius2.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsaoRadius2.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsrDepthTolerance(): Float {
-    val _ret = __method_bind.getSsrDepthTolerance.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsrDepthTolerance.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsrFadeIn(): Float {
-    val _ret = __method_bind.getSsrFadeIn.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsrFadeIn.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsrFadeOut(): Float {
-    val _ret = __method_bind.getSsrFadeOut.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsrFadeOut.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSsrMaxSteps(): Int {
-    val _ret = __method_bind.getSsrMaxSteps.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSsrMaxSteps.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTonemapAutoExposure(): Boolean {
-    val _ret = __method_bind.getTonemapAutoExposure.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTonemapAutoExposure.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTonemapAutoExposureGrey(): Float {
-    val _ret = __method_bind.getTonemapAutoExposureGrey.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTonemapAutoExposureGrey.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTonemapAutoExposureMax(): Float {
-    val _ret = __method_bind.getTonemapAutoExposureMax.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTonemapAutoExposureMax.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTonemapAutoExposureMin(): Float {
-    val _ret = __method_bind.getTonemapAutoExposureMin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTonemapAutoExposureMin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTonemapAutoExposureSpeed(): Float {
-    val _ret = __method_bind.getTonemapAutoExposureSpeed.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTonemapAutoExposureSpeed.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTonemapExposure(): Float {
-    val _ret = __method_bind.getTonemapExposure.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTonemapExposure.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTonemapWhite(): Float {
-    val _ret = __method_bind.getTonemapWhite.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTonemapWhite.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTonemapper(): ToneMapper {
-    val _ret = __method_bind.getTonemapper.call(this._handle)
-    return Environment.ToneMapper.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTonemapper.call(self._handle, emptyList(), _retPtr)
+      Environment.ToneMapper.from(_ret.value)
+    }
   }
 
   fun isAdjustmentEnabled(): Boolean {
-    val _ret = __method_bind.isAdjustmentEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAdjustmentEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isDofBlurFarEnabled(): Boolean {
-    val _ret = __method_bind.isDofBlurFarEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDofBlurFarEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isDofBlurNearEnabled(): Boolean {
-    val _ret = __method_bind.isDofBlurNearEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDofBlurNearEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFogDepthEnabled(): Boolean {
-    val _ret = __method_bind.isFogDepthEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFogDepthEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFogEnabled(): Boolean {
-    val _ret = __method_bind.isFogEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFogEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFogHeightEnabled(): Boolean {
-    val _ret = __method_bind.isFogHeightEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFogHeightEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFogTransmitEnabled(): Boolean {
-    val _ret = __method_bind.isFogTransmitEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFogTransmitEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isGlowBicubicUpscaleEnabled(): Boolean {
-    val _ret = __method_bind.isGlowBicubicUpscaleEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isGlowBicubicUpscaleEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isGlowEnabled(): Boolean {
-    val _ret = __method_bind.isGlowEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isGlowEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isGlowLevelEnabled(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isGlowLevelEnabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isGlowLevelEnabled.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSsaoEnabled(): Boolean {
-    val _ret = __method_bind.isSsaoEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSsaoEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSsrEnabled(): Boolean {
-    val _ret = __method_bind.isSsrEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSsrEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSsrRough(): Boolean {
-    val _ret = __method_bind.isSsrRough.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSsrRough.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAdjustmentBrightness(brightness: Float) {
-    val _arg = Variant(brightness)
-    __method_bind.setAdjustmentBrightness.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAdjustmentBrightness.call(self._handle, listOf(brightness), null)
+    }
   }
 
   fun setAdjustmentColorCorrection(colorCorrection: Texture) {
-    val _arg = Variant(colorCorrection)
-    __method_bind.setAdjustmentColorCorrection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAdjustmentColorCorrection.call(self._handle, listOf(colorCorrection), null)
+    }
   }
 
   fun setAdjustmentContrast(contrast: Float) {
-    val _arg = Variant(contrast)
-    __method_bind.setAdjustmentContrast.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAdjustmentContrast.call(self._handle, listOf(contrast), null)
+    }
   }
 
   fun setAdjustmentEnable(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setAdjustmentEnable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAdjustmentEnable.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setAdjustmentSaturation(saturation: Float) {
-    val _arg = Variant(saturation)
-    __method_bind.setAdjustmentSaturation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAdjustmentSaturation.call(self._handle, listOf(saturation), null)
+    }
   }
 
   fun setAmbientLightColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setAmbientLightColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAmbientLightColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setAmbientLightEnergy(energy: Float) {
-    val _arg = Variant(energy)
-    __method_bind.setAmbientLightEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAmbientLightEnergy.call(self._handle, listOf(energy), null)
+    }
   }
 
   fun setAmbientLightSkyContribution(energy: Float) {
-    val _arg = Variant(energy)
-    __method_bind.setAmbientLightSkyContribution.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAmbientLightSkyContribution.call(self._handle, listOf(energy), null)
+    }
   }
 
   fun setBackground(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setBackground.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBackground.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setBgColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setBgColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBgColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setBgEnergy(energy: Float) {
-    val _arg = Variant(energy)
-    __method_bind.setBgEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBgEnergy.call(self._handle, listOf(energy), null)
+    }
   }
 
   fun setCameraFeedId(cameraFeedId: Int) {
-    val _arg = Variant(cameraFeedId)
-    __method_bind.setCameraFeedId.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCameraFeedId.call(self._handle, listOf(cameraFeedId), null)
+    }
   }
 
   fun setCanvasMaxLayer(layer: Int) {
-    val _arg = Variant(layer)
-    __method_bind.setCanvasMaxLayer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCanvasMaxLayer.call(self._handle, listOf(layer), null)
+    }
   }
 
   fun setDofBlurFarAmount(intensity: Float) {
-    val _arg = Variant(intensity)
-    __method_bind.setDofBlurFarAmount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDofBlurFarAmount.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setDofBlurFarDistance(intensity: Float) {
-    val _arg = Variant(intensity)
-    __method_bind.setDofBlurFarDistance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDofBlurFarDistance.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setDofBlurFarEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setDofBlurFarEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDofBlurFarEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setDofBlurFarQuality(intensity: Int) {
-    val _arg = Variant(intensity)
-    __method_bind.setDofBlurFarQuality.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDofBlurFarQuality.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setDofBlurFarTransition(intensity: Float) {
-    val _arg = Variant(intensity)
-    __method_bind.setDofBlurFarTransition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDofBlurFarTransition.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setDofBlurNearAmount(intensity: Float) {
-    val _arg = Variant(intensity)
-    __method_bind.setDofBlurNearAmount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDofBlurNearAmount.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setDofBlurNearDistance(intensity: Float) {
-    val _arg = Variant(intensity)
-    __method_bind.setDofBlurNearDistance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDofBlurNearDistance.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setDofBlurNearEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setDofBlurNearEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDofBlurNearEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setDofBlurNearQuality(level: Int) {
-    val _arg = Variant(level)
-    __method_bind.setDofBlurNearQuality.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDofBlurNearQuality.call(self._handle, listOf(level), null)
+    }
   }
 
   fun setDofBlurNearTransition(intensity: Float) {
-    val _arg = Variant(intensity)
-    __method_bind.setDofBlurNearTransition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDofBlurNearTransition.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setFogColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setFogColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setFogDepthBegin(distance: Float) {
-    val _arg = Variant(distance)
-    __method_bind.setFogDepthBegin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogDepthBegin.call(self._handle, listOf(distance), null)
+    }
   }
 
   fun setFogDepthCurve(curve: Float) {
-    val _arg = Variant(curve)
-    __method_bind.setFogDepthCurve.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogDepthCurve.call(self._handle, listOf(curve), null)
+    }
   }
 
   fun setFogDepthEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setFogDepthEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogDepthEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setFogDepthEnd(distance: Float) {
-    val _arg = Variant(distance)
-    __method_bind.setFogDepthEnd.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogDepthEnd.call(self._handle, listOf(distance), null)
+    }
   }
 
   fun setFogEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setFogEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setFogHeightCurve(curve: Float) {
-    val _arg = Variant(curve)
-    __method_bind.setFogHeightCurve.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogHeightCurve.call(self._handle, listOf(curve), null)
+    }
   }
 
   fun setFogHeightEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setFogHeightEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogHeightEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setFogHeightMax(height: Float) {
-    val _arg = Variant(height)
-    __method_bind.setFogHeightMax.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogHeightMax.call(self._handle, listOf(height), null)
+    }
   }
 
   fun setFogHeightMin(height: Float) {
-    val _arg = Variant(height)
-    __method_bind.setFogHeightMin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogHeightMin.call(self._handle, listOf(height), null)
+    }
   }
 
   fun setFogSunAmount(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setFogSunAmount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogSunAmount.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setFogSunColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setFogSunColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogSunColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setFogTransmitCurve(curve: Float) {
-    val _arg = Variant(curve)
-    __method_bind.setFogTransmitCurve.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogTransmitCurve.call(self._handle, listOf(curve), null)
+    }
   }
 
   fun setFogTransmitEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setFogTransmitEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFogTransmitEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setGlowBicubicUpscale(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setGlowBicubicUpscale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlowBicubicUpscale.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setGlowBlendMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setGlowBlendMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlowBlendMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setGlowBloom(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setGlowBloom.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlowBloom.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setGlowEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setGlowEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlowEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setGlowHdrBleedScale(scale: Float) {
-    val _arg = Variant(scale)
-    __method_bind.setGlowHdrBleedScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlowHdrBleedScale.call(self._handle, listOf(scale), null)
+    }
   }
 
   fun setGlowHdrBleedThreshold(threshold: Float) {
-    val _arg = Variant(threshold)
-    __method_bind.setGlowHdrBleedThreshold.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlowHdrBleedThreshold.call(self._handle, listOf(threshold), null)
+    }
   }
 
   fun setGlowHdrLuminanceCap(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setGlowHdrLuminanceCap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlowHdrLuminanceCap.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setGlowIntensity(intensity: Float) {
-    val _arg = Variant(intensity)
-    __method_bind.setGlowIntensity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlowIntensity.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setGlowLevel(idx: Int, enabled: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(enabled))
-    __method_bind.setGlowLevel.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(enabled)
+      __method_bind.setGlowLevel.call(self._handle, _args, null)
+    }
   }
 
   fun setGlowStrength(strength: Float) {
-    val _arg = Variant(strength)
-    __method_bind.setGlowStrength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlowStrength.call(self._handle, listOf(strength), null)
+    }
   }
 
   fun setSky(sky: Sky) {
-    val _arg = Variant(sky)
-    __method_bind.setSky.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSky.call(self._handle, listOf(sky), null)
+    }
   }
 
   fun setSkyCustomFov(scale: Float) {
-    val _arg = Variant(scale)
-    __method_bind.setSkyCustomFov.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkyCustomFov.call(self._handle, listOf(scale), null)
+    }
   }
 
   fun setSkyOrientation(orientation: Basis) {
-    val _arg = Variant(orientation)
-    __method_bind.setSkyOrientation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkyOrientation.call(self._handle, listOf(orientation), null)
+    }
   }
 
   fun setSkyRotation(eulerRadians: Vector3) {
-    val _arg = Variant(eulerRadians)
-    __method_bind.setSkyRotation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkyRotation.call(self._handle, listOf(eulerRadians), null)
+    }
   }
 
   fun setSkyRotationDegrees(eulerDegrees: Vector3) {
-    val _arg = Variant(eulerDegrees)
-    __method_bind.setSkyRotationDegrees.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkyRotationDegrees.call(self._handle, listOf(eulerDegrees), null)
+    }
   }
 
   fun setSsaoAoChannelAffect(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setSsaoAoChannelAffect.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoAoChannelAffect.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setSsaoBias(bias: Float) {
-    val _arg = Variant(bias)
-    __method_bind.setSsaoBias.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoBias.call(self._handle, listOf(bias), null)
+    }
   }
 
   fun setSsaoBlur(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setSsaoBlur.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoBlur.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setSsaoColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setSsaoColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setSsaoDirectLightAffect(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setSsaoDirectLightAffect.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoDirectLightAffect.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setSsaoEdgeSharpness(edgeSharpness: Float) {
-    val _arg = Variant(edgeSharpness)
-    __method_bind.setSsaoEdgeSharpness.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoEdgeSharpness.call(self._handle, listOf(edgeSharpness), null)
+    }
   }
 
   fun setSsaoEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setSsaoEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setSsaoIntensity(intensity: Float) {
-    val _arg = Variant(intensity)
-    __method_bind.setSsaoIntensity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoIntensity.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setSsaoIntensity2(intensity: Float) {
-    val _arg = Variant(intensity)
-    __method_bind.setSsaoIntensity2.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoIntensity2.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setSsaoQuality(quality: Int) {
-    val _arg = Variant(quality)
-    __method_bind.setSsaoQuality.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoQuality.call(self._handle, listOf(quality), null)
+    }
   }
 
   fun setSsaoRadius(radius: Float) {
-    val _arg = Variant(radius)
-    __method_bind.setSsaoRadius.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoRadius.call(self._handle, listOf(radius), null)
+    }
   }
 
   fun setSsaoRadius2(radius: Float) {
-    val _arg = Variant(radius)
-    __method_bind.setSsaoRadius2.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsaoRadius2.call(self._handle, listOf(radius), null)
+    }
   }
 
   fun setSsrDepthTolerance(depthTolerance: Float) {
-    val _arg = Variant(depthTolerance)
-    __method_bind.setSsrDepthTolerance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsrDepthTolerance.call(self._handle, listOf(depthTolerance), null)
+    }
   }
 
   fun setSsrEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setSsrEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsrEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setSsrFadeIn(fadeIn: Float) {
-    val _arg = Variant(fadeIn)
-    __method_bind.setSsrFadeIn.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsrFadeIn.call(self._handle, listOf(fadeIn), null)
+    }
   }
 
   fun setSsrFadeOut(fadeOut: Float) {
-    val _arg = Variant(fadeOut)
-    __method_bind.setSsrFadeOut.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsrFadeOut.call(self._handle, listOf(fadeOut), null)
+    }
   }
 
   fun setSsrMaxSteps(maxSteps: Int) {
-    val _arg = Variant(maxSteps)
-    __method_bind.setSsrMaxSteps.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsrMaxSteps.call(self._handle, listOf(maxSteps), null)
+    }
   }
 
   fun setSsrRough(rough: Boolean) {
-    val _arg = Variant(rough)
-    __method_bind.setSsrRough.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSsrRough.call(self._handle, listOf(rough), null)
+    }
   }
 
   fun setTonemapAutoExposure(autoExposure: Boolean) {
-    val _arg = Variant(autoExposure)
-    __method_bind.setTonemapAutoExposure.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTonemapAutoExposure.call(self._handle, listOf(autoExposure), null)
+    }
   }
 
   fun setTonemapAutoExposureGrey(exposureGrey: Float) {
-    val _arg = Variant(exposureGrey)
-    __method_bind.setTonemapAutoExposureGrey.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTonemapAutoExposureGrey.call(self._handle, listOf(exposureGrey), null)
+    }
   }
 
   fun setTonemapAutoExposureMax(exposureMax: Float) {
-    val _arg = Variant(exposureMax)
-    __method_bind.setTonemapAutoExposureMax.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTonemapAutoExposureMax.call(self._handle, listOf(exposureMax), null)
+    }
   }
 
   fun setTonemapAutoExposureMin(exposureMin: Float) {
-    val _arg = Variant(exposureMin)
-    __method_bind.setTonemapAutoExposureMin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTonemapAutoExposureMin.call(self._handle, listOf(exposureMin), null)
+    }
   }
 
   fun setTonemapAutoExposureSpeed(exposureSpeed: Float) {
-    val _arg = Variant(exposureSpeed)
-    __method_bind.setTonemapAutoExposureSpeed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTonemapAutoExposureSpeed.call(self._handle, listOf(exposureSpeed), null)
+    }
   }
 
   fun setTonemapExposure(exposure: Float) {
-    val _arg = Variant(exposure)
-    __method_bind.setTonemapExposure.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTonemapExposure.call(self._handle, listOf(exposure), null)
+    }
   }
 
   fun setTonemapWhite(white: Float) {
-    val _arg = Variant(white)
-    __method_bind.setTonemapWhite.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTonemapWhite.call(self._handle, listOf(white), null)
+    }
   }
 
   fun setTonemapper(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setTonemapper.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTonemapper.call(self._handle, listOf(mode), null)
+    }
   }
 
   enum class SSAOBlur(

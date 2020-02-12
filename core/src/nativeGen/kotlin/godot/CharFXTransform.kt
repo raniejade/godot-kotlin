@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Dictionary
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class CharFXTransform(
   @Suppress("UNUSED_PARAMETER")
@@ -126,83 +135,142 @@ open class CharFXTransform(
   }
 
   fun getAbsoluteIndex(): Int {
-    val _ret = __method_bind.getAbsoluteIndex.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAbsoluteIndex.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCharacter(): Int {
-    val _ret = __method_bind.getCharacter.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCharacter.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getColor(): Color {
-    val _ret = __method_bind.getColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getElapsedTime(): Float {
-    val _ret = __method_bind.getElapsedTime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getElapsedTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getEnvironment(): Dictionary {
-    val _ret = __method_bind.getEnvironment.call(this._handle)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getEnvironment.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.getOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRelativeIndex(): Int {
-    val _ret = __method_bind.getRelativeIndex.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRelativeIndex.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isVisible(): Boolean {
-    val _ret = __method_bind.isVisible.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isVisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAbsoluteIndex(index: Int) {
-    val _arg = Variant(index)
-    __method_bind.setAbsoluteIndex.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAbsoluteIndex.call(self._handle, listOf(index), null)
+    }
   }
 
   fun setCharacter(character: Int) {
-    val _arg = Variant(character)
-    __method_bind.setCharacter.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCharacter.call(self._handle, listOf(character), null)
+    }
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setElapsedTime(time: Float) {
-    val _arg = Variant(time)
-    __method_bind.setElapsedTime.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setElapsedTime.call(self._handle, listOf(time), null)
+    }
   }
 
   fun setEnvironment(environment: Dictionary) {
-    val _arg = Variant(environment)
-    __method_bind.setEnvironment.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnvironment.call(self._handle, listOf(environment), null)
+    }
   }
 
   fun setOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setRelativeIndex(index: Int) {
-    val _arg = Variant(index)
-    __method_bind.setRelativeIndex.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRelativeIndex.call(self._handle, listOf(index), null)
+    }
   }
 
   fun setVisibility(visibility: Boolean) {
-    val _arg = Variant(visibility)
-    __method_bind.setVisibility.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVisibility.call(self._handle, listOf(visibility), null)
+    }
   }
 
   companion object {

@@ -7,6 +7,7 @@ import kotlinx.cinterop.invoke
 class NodePath(
   value: CValue<godot_node_path>
 ) : CoreType<godot_node_path>(value) {
+  internal constructor(): this(__new(""))
   constructor(path: String): this(__new(path))
 
   fun getAsPropertyPath(): NodePath {

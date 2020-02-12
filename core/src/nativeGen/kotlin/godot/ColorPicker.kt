@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ColorPicker(
   @Suppress("UNUSED_PARAMETER")
@@ -112,88 +121,148 @@ open class ColorPicker(
   }
 
   fun addPreset(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.addPreset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addPreset.call(self._handle, listOf(color), null)
+    }
   }
 
   fun arePresetsEnabled(): Boolean {
-    val _ret = __method_bind.arePresetsEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.arePresetsEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun arePresetsVisible(): Boolean {
-    val _ret = __method_bind.arePresetsVisible.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.arePresetsVisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun erasePreset(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.erasePreset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.erasePreset.call(self._handle, listOf(color), null)
+    }
   }
 
   fun getPickColor(): Color {
-    val _ret = __method_bind.getPickColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPickColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPresets(): PoolColorArray {
-    val _ret = __method_bind.getPresets.call(this._handle)
-    return _ret.asPoolColorArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolColorArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPresets.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isDeferredMode(): Boolean {
-    val _ret = __method_bind.isDeferredMode.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDeferredMode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEditingAlpha(): Boolean {
-    val _ret = __method_bind.isEditingAlpha.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEditingAlpha.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isHsvMode(): Boolean {
-    val _ret = __method_bind.isHsvMode.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isHsvMode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRawMode(): Boolean {
-    val _ret = __method_bind.isRawMode.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRawMode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setDeferredMode(mode: Boolean) {
-    val _arg = Variant(mode)
-    __method_bind.setDeferredMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDeferredMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setEditAlpha(show: Boolean) {
-    val _arg = Variant(show)
-    __method_bind.setEditAlpha.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEditAlpha.call(self._handle, listOf(show), null)
+    }
   }
 
   fun setHsvMode(mode: Boolean) {
-    val _arg = Variant(mode)
-    __method_bind.setHsvMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHsvMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setPickColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setPickColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPickColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setPresetsEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setPresetsEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPresetsEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setPresetsVisible(visible: Boolean) {
-    val _arg = Variant(visible)
-    __method_bind.setPresetsVisible.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPresetsVisible.call(self._handle, listOf(visible), null)
+    }
   }
 
   fun setRawMode(mode: Boolean) {
-    val _arg = Variant(mode)
-    __method_bind.setRawMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRawMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   companion object {

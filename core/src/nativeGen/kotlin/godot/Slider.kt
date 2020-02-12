@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Slider(
   @Suppress("UNUSED_PARAMETER")
@@ -62,43 +71,71 @@ open class Slider(
   }
 
   fun getTicks(): Int {
-    val _ret = __method_bind.getTicks.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTicks.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTicksOnBorders(): Boolean {
-    val _ret = __method_bind.getTicksOnBorders.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTicksOnBorders.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEditable(): Boolean {
-    val _ret = __method_bind.isEditable.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEditable.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isScrollable(): Boolean {
-    val _ret = __method_bind.isScrollable.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isScrollable.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setEditable(editable: Boolean) {
-    val _arg = Variant(editable)
-    __method_bind.setEditable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEditable.call(self._handle, listOf(editable), null)
+    }
   }
 
   fun setScrollable(scrollable: Boolean) {
-    val _arg = Variant(scrollable)
-    __method_bind.setScrollable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScrollable.call(self._handle, listOf(scrollable), null)
+    }
   }
 
   fun setTicks(count: Int) {
-    val _arg = Variant(count)
-    __method_bind.setTicks.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTicks.call(self._handle, listOf(count), null)
+    }
   }
 
   fun setTicksOnBorders(ticksOnBorder: Boolean) {
-    val _arg = Variant(ticksOnBorder)
-    __method_bind.setTicksOnBorders.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTicksOnBorders.call(self._handle, listOf(ticksOnBorder), null)
+    }
   }
 
   companion object {

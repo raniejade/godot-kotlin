@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class SceneState(
   @Suppress("UNUSED_PARAMETER")
@@ -32,127 +41,227 @@ open class SceneState(
   }
 
   fun getConnectionBinds(idx: Int): VariantArray {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionBinds.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConnectionBinds.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getConnectionCount(): Int {
-    val _ret = __method_bind.getConnectionCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getConnectionCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getConnectionFlags(idx: Int): Int {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionFlags.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getConnectionFlags.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getConnectionMethod(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionMethod.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getConnectionMethod.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getConnectionSignal(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionSignal.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getConnectionSignal.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getConnectionSource(idx: Int): NodePath {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionSource.call(this._handle, listOf(_arg))
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConnectionSource.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getConnectionTarget(idx: Int): NodePath {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getConnectionTarget.call(this._handle, listOf(_arg))
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConnectionTarget.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNodeCount(): Int {
-    val _ret = __method_bind.getNodeCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNodeCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNodeGroups(idx: Int): PoolStringArray {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getNodeGroups.call(this._handle, listOf(_arg))
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodeGroups.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNodeIndex(idx: Int): Int {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getNodeIndex.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNodeIndex.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNodeInstance(idx: Int): PackedScene {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getNodeInstance.call(this._handle, listOf(_arg))
-    return _ret.toAny() as PackedScene
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: PackedScene
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNodeInstance.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<PackedScene>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNodeInstancePlaceholder(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getNodeInstancePlaceholder.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getNodeInstancePlaceholder.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getNodeName(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getNodeName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getNodeName.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getNodeOwnerPath(idx: Int): NodePath {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getNodeOwnerPath.call(this._handle, listOf(_arg))
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodeOwnerPath.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNodePath(idx: Int, forParent: Boolean = false): NodePath {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(forParent))
-    val _ret = __method_bind.getNodePath.call(this._handle, _args)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(forParent)
+      __method_bind.getNodePath.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNodePropertyCount(idx: Int): Int {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getNodePropertyCount.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNodePropertyCount.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNodePropertyName(idx: Int, propIdx: Int): String {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(propIdx))
-    val _ret = __method_bind.getNodePropertyName.call(this._handle, _args)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(propIdx)
+      __method_bind.getNodePropertyName.call(self._handle, _args, _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getNodePropertyValue(idx: Int, propIdx: Int): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(propIdx))
-    val _ret = __method_bind.getNodePropertyValue.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(propIdx)
+      __method_bind.getNodePropertyValue.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNodeType(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getNodeType.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getNodeType.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun isNodeInstancePlaceholder(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isNodeInstancePlaceholder.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isNodeInstancePlaceholder.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   enum class GenEditState(

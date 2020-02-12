@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Physics2DDirectBodyState(
   @Suppress("UNUSED_PARAMETER")
@@ -115,181 +124,320 @@ open class Physics2DDirectBodyState(
   }
 
   fun addCentralForce(force: Vector2) {
-    val _arg = Variant(force)
-    __method_bind.addCentralForce.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addCentralForce.call(self._handle, listOf(force), null)
+    }
   }
 
   fun addForce(offset: Vector2, force: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(force))
-    __method_bind.addForce.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(offset)
+      _args.add(force)
+      __method_bind.addForce.call(self._handle, _args, null)
+    }
   }
 
   fun addTorque(torque: Float) {
-    val _arg = Variant(torque)
-    __method_bind.addTorque.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addTorque.call(self._handle, listOf(torque), null)
+    }
   }
 
   fun applyCentralImpulse(impulse: Vector2) {
-    val _arg = Variant(impulse)
-    __method_bind.applyCentralImpulse.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.applyCentralImpulse.call(self._handle, listOf(impulse), null)
+    }
   }
 
   fun applyImpulse(offset: Vector2, impulse: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(impulse))
-    __method_bind.applyImpulse.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(offset)
+      _args.add(impulse)
+      __method_bind.applyImpulse.call(self._handle, _args, null)
+    }
   }
 
   fun applyTorqueImpulse(impulse: Float) {
-    val _arg = Variant(impulse)
-    __method_bind.applyTorqueImpulse.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.applyTorqueImpulse.call(self._handle, listOf(impulse), null)
+    }
   }
 
   fun getAngularVelocity(): Float {
-    val _ret = __method_bind.getAngularVelocity.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAngularVelocity.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getContactCollider(contactIdx: Int): RID {
-    val _arg = Variant(contactIdx)
-    val _ret = __method_bind.getContactCollider.call(this._handle, listOf(_arg))
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getContactCollider.call(self._handle, listOf(contactIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getContactColliderId(contactIdx: Int): Int {
-    val _arg = Variant(contactIdx)
-    val _ret = __method_bind.getContactColliderId.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getContactColliderId.call(self._handle, listOf(contactIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getContactColliderObject(contactIdx: Int): Object {
-    val _arg = Variant(contactIdx)
-    val _ret = __method_bind.getContactColliderObject.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Object
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Object
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getContactColliderObject.call(self._handle, listOf(contactIdx), _retPtr)
+      _ret = objectToType<Object>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getContactColliderPosition(contactIdx: Int): Vector2 {
-    val _arg = Variant(contactIdx)
-    val _ret = __method_bind.getContactColliderPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getContactColliderPosition.call(self._handle, listOf(contactIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getContactColliderShape(contactIdx: Int): Int {
-    val _arg = Variant(contactIdx)
-    val _ret = __method_bind.getContactColliderShape.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getContactColliderShape.call(self._handle, listOf(contactIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getContactColliderShapeMetadata(contactIdx: Int): Variant {
-    val _arg = Variant(contactIdx)
-    val _ret = __method_bind.getContactColliderShapeMetadata.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getContactColliderShapeMetadata.call(self._handle, listOf(contactIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getContactColliderVelocityAtPosition(contactIdx: Int): Vector2 {
-    val _arg = Variant(contactIdx)
-    val _ret = __method_bind.getContactColliderVelocityAtPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getContactColliderVelocityAtPosition.call(self._handle, listOf(contactIdx),
+          _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getContactCount(): Int {
-    val _ret = __method_bind.getContactCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getContactCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getContactLocalNormal(contactIdx: Int): Vector2 {
-    val _arg = Variant(contactIdx)
-    val _ret = __method_bind.getContactLocalNormal.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getContactLocalNormal.call(self._handle, listOf(contactIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getContactLocalPosition(contactIdx: Int): Vector2 {
-    val _arg = Variant(contactIdx)
-    val _ret = __method_bind.getContactLocalPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getContactLocalPosition.call(self._handle, listOf(contactIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getContactLocalShape(contactIdx: Int): Int {
-    val _arg = Variant(contactIdx)
-    val _ret = __method_bind.getContactLocalShape.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getContactLocalShape.call(self._handle, listOf(contactIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getInverseInertia(): Float {
-    val _ret = __method_bind.getInverseInertia.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInverseInertia.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getInverseMass(): Float {
-    val _ret = __method_bind.getInverseMass.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInverseMass.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLinearVelocity(): Vector2 {
-    val _ret = __method_bind.getLinearVelocity.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getLinearVelocity.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSpaceState(): Physics2DDirectSpaceState {
-    val _ret = __method_bind.getSpaceState.call(this._handle)
-    return _ret.toAny() as Physics2DDirectSpaceState
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Physics2DDirectSpaceState
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSpaceState.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Physics2DDirectSpaceState>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getStep(): Float {
-    val _ret = __method_bind.getStep.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStep.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTotalAngularDamp(): Float {
-    val _ret = __method_bind.getTotalAngularDamp.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTotalAngularDamp.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTotalGravity(): Vector2 {
-    val _ret = __method_bind.getTotalGravity.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTotalGravity.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTotalLinearDamp(): Float {
-    val _ret = __method_bind.getTotalLinearDamp.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTotalLinearDamp.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTransform(): Transform2D {
-    val _ret = __method_bind.getTransform.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun integrateForces() {
-    __method_bind.integrateForces.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.integrateForces.call(self._handle, emptyList(), null)
+    }
   }
 
   fun isSleeping(): Boolean {
-    val _ret = __method_bind.isSleeping.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSleeping.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAngularVelocity(velocity: Float) {
-    val _arg = Variant(velocity)
-    __method_bind.setAngularVelocity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAngularVelocity.call(self._handle, listOf(velocity), null)
+    }
   }
 
   fun setLinearVelocity(velocity: Vector2) {
-    val _arg = Variant(velocity)
-    __method_bind.setLinearVelocity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLinearVelocity.call(self._handle, listOf(velocity), null)
+    }
   }
 
   fun setSleepState(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setSleepState.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSleepState.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setTransform(transform: Transform2D) {
-    val _arg = Variant(transform)
-    __method_bind.setTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTransform.call(self._handle, listOf(transform), null)
+    }
   }
 
   companion object {

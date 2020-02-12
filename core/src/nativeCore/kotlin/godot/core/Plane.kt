@@ -7,6 +7,7 @@ import kotlinx.cinterop.*
 class Plane(
   value: CValue<godot_plane>
 ) : CoreType<godot_plane>(value) {
+  internal constructor(): this(__new(Vector3.UP, 1f))
   constructor(a: Float, b: Float, c: Float, d: Float): this(__new(a, b, c, d))
   constructor(v1: Vector3, v2: Vector3, v3: Vector3): this(__new(v1, v2, v3))
   constructor(normal: Vector3, d: Float): this(__new(normal, d))

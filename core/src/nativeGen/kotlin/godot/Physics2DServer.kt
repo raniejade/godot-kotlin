@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -15,13 +16,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Physics2DServerInternal(
   @Suppress("UNUSED_PARAMETER")
@@ -33,103 +42,167 @@ open class Physics2DServerInternal(
     transform: Transform2D = Transform2D(Vector2(1, 0), Vector2(0, 1), Vector2(0, 0)),
     disabled: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(shape))
-    _args.add(Variant.fromAny(transform))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.areaAddShape.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(shape)
+      _args.add(transform)
+      _args.add(disabled)
+      __method_bind.areaAddShape.call(self._handle, _args, null)
+    }
   }
 
   fun areaAttachCanvasInstanceId(area: RID, id: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(id))
-    __method_bind.areaAttachCanvasInstanceId.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(id)
+      __method_bind.areaAttachCanvasInstanceId.call(self._handle, _args, null)
+    }
   }
 
   fun areaAttachObjectInstanceId(area: RID, id: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(id))
-    __method_bind.areaAttachObjectInstanceId.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(id)
+      __method_bind.areaAttachObjectInstanceId.call(self._handle, _args, null)
+    }
   }
 
   fun areaClearShapes(area: RID) {
-    val _arg = Variant(area)
-    __method_bind.areaClearShapes.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.areaClearShapes.call(self._handle, listOf(area), null)
+    }
   }
 
   fun areaCreate(): RID {
-    val _ret = __method_bind.areaCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.areaCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun areaGetCanvasInstanceId(area: RID): Int {
-    val _arg = Variant(area)
-    val _ret = __method_bind.areaGetCanvasInstanceId.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.areaGetCanvasInstanceId.call(self._handle, listOf(area), _retPtr)
+      _ret.value
+    }
   }
 
   fun areaGetObjectInstanceId(area: RID): Int {
-    val _arg = Variant(area)
-    val _ret = __method_bind.areaGetObjectInstanceId.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.areaGetObjectInstanceId.call(self._handle, listOf(area), _retPtr)
+      _ret.value
+    }
   }
 
   fun areaGetParam(area: RID, param: Int): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(param))
-    val _ret = __method_bind.areaGetParam.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(param)
+      __method_bind.areaGetParam.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun areaGetShape(area: RID, shapeIdx: Int): RID {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(shapeIdx))
-    val _ret = __method_bind.areaGetShape.call(this._handle, _args)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(shapeIdx)
+      __method_bind.areaGetShape.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun areaGetShapeCount(area: RID): Int {
-    val _arg = Variant(area)
-    val _ret = __method_bind.areaGetShapeCount.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.areaGetShapeCount.call(self._handle, listOf(area), _retPtr)
+      _ret.value
+    }
   }
 
   fun areaGetShapeTransform(area: RID, shapeIdx: Int): Transform2D {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(shapeIdx))
-    val _ret = __method_bind.areaGetShapeTransform.call(this._handle, _args)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(shapeIdx)
+      __method_bind.areaGetShapeTransform.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun areaGetSpace(area: RID): RID {
-    val _arg = Variant(area)
-    val _ret = __method_bind.areaGetSpace.call(this._handle, listOf(_arg))
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.areaGetSpace.call(self._handle, listOf(area), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun areaGetSpaceOverrideMode(area: RID): Physics2DServer.AreaSpaceOverrideMode {
-    val _arg = Variant(area)
-    val _ret = __method_bind.areaGetSpaceOverrideMode.call(this._handle, listOf(_arg))
-    return Physics2DServer.AreaSpaceOverrideMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.areaGetSpaceOverrideMode.call(self._handle, listOf(area), _retPtr)
+      Physics2DServer.AreaSpaceOverrideMode.from(_ret.value)
+    }
   }
 
   fun areaGetTransform(area: RID): Transform2D {
-    val _arg = Variant(area)
-    val _ret = __method_bind.areaGetTransform.call(this._handle, listOf(_arg))
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.areaGetTransform.call(self._handle, listOf(area), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun areaRemoveShape(area: RID, shapeIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(shapeIdx))
-    __method_bind.areaRemoveShape.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(shapeIdx)
+      __method_bind.areaRemoveShape.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetAreaMonitorCallback(
@@ -137,25 +210,34 @@ open class Physics2DServerInternal(
     receiver: Object,
     method: String
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(receiver))
-    _args.add(Variant.fromAny(method))
-    __method_bind.areaSetAreaMonitorCallback.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(receiver)
+      _args.add(method)
+      __method_bind.areaSetAreaMonitorCallback.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetCollisionLayer(area: RID, layer: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(layer))
-    __method_bind.areaSetCollisionLayer.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(layer)
+      __method_bind.areaSetCollisionLayer.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetCollisionMask(area: RID, mask: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(mask))
-    __method_bind.areaSetCollisionMask.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(mask)
+      __method_bind.areaSetCollisionMask.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetMonitorCallback(
@@ -163,18 +245,24 @@ open class Physics2DServerInternal(
     receiver: Object,
     method: String
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(receiver))
-    _args.add(Variant.fromAny(method))
-    __method_bind.areaSetMonitorCallback.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(receiver)
+      _args.add(method)
+      __method_bind.areaSetMonitorCallback.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetMonitorable(area: RID, monitorable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(monitorable))
-    __method_bind.areaSetMonitorable.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(monitorable)
+      __method_bind.areaSetMonitorable.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetParam(
@@ -182,11 +270,14 @@ open class Physics2DServerInternal(
     param: Int,
     value: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(value))
-    __method_bind.areaSetParam.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(param)
+      _args.add(value)
+      __method_bind.areaSetParam.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetShape(
@@ -194,11 +285,14 @@ open class Physics2DServerInternal(
     shapeIdx: Int,
     shape: RID
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(shapeIdx))
-    _args.add(Variant.fromAny(shape))
-    __method_bind.areaSetShape.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(shapeIdx)
+      _args.add(shape)
+      __method_bind.areaSetShape.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetShapeDisabled(
@@ -206,11 +300,14 @@ open class Physics2DServerInternal(
     shapeIdx: Int,
     disabled: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(shapeIdx))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.areaSetShapeDisabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(shapeIdx)
+      _args.add(disabled)
+      __method_bind.areaSetShapeDisabled.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetShapeTransform(
@@ -218,46 +315,64 @@ open class Physics2DServerInternal(
     shapeIdx: Int,
     transform: Transform2D
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(shapeIdx))
-    _args.add(Variant.fromAny(transform))
-    __method_bind.areaSetShapeTransform.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(shapeIdx)
+      _args.add(transform)
+      __method_bind.areaSetShapeTransform.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetSpace(area: RID, space: RID) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(space))
-    __method_bind.areaSetSpace.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(space)
+      __method_bind.areaSetSpace.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetSpaceOverrideMode(area: RID, mode: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(mode))
-    __method_bind.areaSetSpaceOverrideMode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(mode)
+      __method_bind.areaSetSpaceOverrideMode.call(self._handle, _args, null)
+    }
   }
 
   fun areaSetTransform(area: RID, transform: Transform2D) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(area))
-    _args.add(Variant.fromAny(transform))
-    __method_bind.areaSetTransform.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(area)
+      _args.add(transform)
+      __method_bind.areaSetTransform.call(self._handle, _args, null)
+    }
   }
 
   fun bodyAddCentralForce(body: RID, force: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(force))
-    __method_bind.bodyAddCentralForce.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(force)
+      __method_bind.bodyAddCentralForce.call(self._handle, _args, null)
+    }
   }
 
   fun bodyAddCollisionException(body: RID, exceptedBody: RID) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(exceptedBody))
-    __method_bind.bodyAddCollisionException.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(exceptedBody)
+      __method_bind.bodyAddCollisionException.call(self._handle, _args, null)
+    }
   }
 
   fun bodyAddForce(
@@ -265,11 +380,14 @@ open class Physics2DServerInternal(
     offset: Vector2,
     force: Vector2
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(force))
-    __method_bind.bodyAddForce.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(offset)
+      _args.add(force)
+      __method_bind.bodyAddForce.call(self._handle, _args, null)
+    }
   }
 
   fun bodyAddShape(
@@ -278,26 +396,35 @@ open class Physics2DServerInternal(
     transform: Transform2D = Transform2D(Vector2(1, 0), Vector2(0, 1), Vector2(0, 0)),
     disabled: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(shape))
-    _args.add(Variant.fromAny(transform))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.bodyAddShape.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(shape)
+      _args.add(transform)
+      _args.add(disabled)
+      __method_bind.bodyAddShape.call(self._handle, _args, null)
+    }
   }
 
   fun bodyAddTorque(body: RID, torque: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(torque))
-    __method_bind.bodyAddTorque.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(torque)
+      __method_bind.bodyAddTorque.call(self._handle, _args, null)
+    }
   }
 
   fun bodyApplyCentralImpulse(body: RID, impulse: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(impulse))
-    __method_bind.bodyApplyCentralImpulse.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(impulse)
+      __method_bind.bodyApplyCentralImpulse.call(self._handle, _args, null)
+    }
   }
 
   fun bodyApplyImpulse(
@@ -305,191 +432,305 @@ open class Physics2DServerInternal(
     position: Vector2,
     impulse: Vector2
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(impulse))
-    __method_bind.bodyApplyImpulse.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(position)
+      _args.add(impulse)
+      __method_bind.bodyApplyImpulse.call(self._handle, _args, null)
+    }
   }
 
   fun bodyApplyTorqueImpulse(body: RID, impulse: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(impulse))
-    __method_bind.bodyApplyTorqueImpulse.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(impulse)
+      __method_bind.bodyApplyTorqueImpulse.call(self._handle, _args, null)
+    }
   }
 
   fun bodyAttachCanvasInstanceId(body: RID, id: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(id))
-    __method_bind.bodyAttachCanvasInstanceId.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(id)
+      __method_bind.bodyAttachCanvasInstanceId.call(self._handle, _args, null)
+    }
   }
 
   fun bodyAttachObjectInstanceId(body: RID, id: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(id))
-    __method_bind.bodyAttachObjectInstanceId.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(id)
+      __method_bind.bodyAttachObjectInstanceId.call(self._handle, _args, null)
+    }
   }
 
   fun bodyClearShapes(body: RID) {
-    val _arg = Variant(body)
-    __method_bind.bodyClearShapes.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.bodyClearShapes.call(self._handle, listOf(body), null)
+    }
   }
 
   fun bodyCreate(): RID {
-    val _ret = __method_bind.bodyCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.bodyCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun bodyGetCanvasInstanceId(body: RID): Int {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyGetCanvasInstanceId.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.bodyGetCanvasInstanceId.call(self._handle, listOf(body), _retPtr)
+      _ret.value
+    }
   }
 
   fun bodyGetCollisionLayer(body: RID): Int {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyGetCollisionLayer.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.bodyGetCollisionLayer.call(self._handle, listOf(body), _retPtr)
+      _ret.value
+    }
   }
 
   fun bodyGetCollisionMask(body: RID): Int {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyGetCollisionMask.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.bodyGetCollisionMask.call(self._handle, listOf(body), _retPtr)
+      _ret.value
+    }
   }
 
   fun bodyGetContinuousCollisionDetectionMode(body: RID): Physics2DServer.CCDMode {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyGetContinuousCollisionDetectionMode.call(this._handle,
-        listOf(_arg))
-    return Physics2DServer.CCDMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.bodyGetContinuousCollisionDetectionMode.call(self._handle, listOf(body),
+          _retPtr)
+      Physics2DServer.CCDMode.from(_ret.value)
+    }
   }
 
   fun bodyGetDirectState(body: RID): Physics2DDirectBodyState {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyGetDirectState.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Physics2DDirectBodyState
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Physics2DDirectBodyState
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.bodyGetDirectState.call(self._handle, listOf(body), _retPtr)
+      _ret = objectToType<Physics2DDirectBodyState>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun bodyGetMaxContactsReported(body: RID): Int {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyGetMaxContactsReported.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.bodyGetMaxContactsReported.call(self._handle, listOf(body), _retPtr)
+      _ret.value
+    }
   }
 
   fun bodyGetMode(body: RID): Physics2DServer.BodyMode {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyGetMode.call(this._handle, listOf(_arg))
-    return Physics2DServer.BodyMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.bodyGetMode.call(self._handle, listOf(body), _retPtr)
+      Physics2DServer.BodyMode.from(_ret.value)
+    }
   }
 
   fun bodyGetObjectInstanceId(body: RID): Int {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyGetObjectInstanceId.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.bodyGetObjectInstanceId.call(self._handle, listOf(body), _retPtr)
+      _ret.value
+    }
   }
 
   fun bodyGetParam(body: RID, param: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(param))
-    val _ret = __method_bind.bodyGetParam.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(param)
+      __method_bind.bodyGetParam.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun bodyGetShape(body: RID, shapeIdx: Int): RID {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(shapeIdx))
-    val _ret = __method_bind.bodyGetShape.call(this._handle, _args)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(shapeIdx)
+      __method_bind.bodyGetShape.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun bodyGetShapeCount(body: RID): Int {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyGetShapeCount.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.bodyGetShapeCount.call(self._handle, listOf(body), _retPtr)
+      _ret.value
+    }
   }
 
   fun bodyGetShapeMetadata(body: RID, shapeIdx: Int): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(shapeIdx))
-    val _ret = __method_bind.bodyGetShapeMetadata.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(shapeIdx)
+      __method_bind.bodyGetShapeMetadata.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun bodyGetShapeTransform(body: RID, shapeIdx: Int): Transform2D {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(shapeIdx))
-    val _ret = __method_bind.bodyGetShapeTransform.call(this._handle, _args)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(shapeIdx)
+      __method_bind.bodyGetShapeTransform.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun bodyGetSpace(body: RID): RID {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyGetSpace.call(this._handle, listOf(_arg))
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.bodyGetSpace.call(self._handle, listOf(body), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun bodyGetState(body: RID, state: Int): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(state))
-    val _ret = __method_bind.bodyGetState.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(state)
+      __method_bind.bodyGetState.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun bodyIsOmittingForceIntegration(body: RID): Boolean {
-    val _arg = Variant(body)
-    val _ret = __method_bind.bodyIsOmittingForceIntegration.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.bodyIsOmittingForceIntegration.call(self._handle, listOf(body), _retPtr)
+      _ret.value
+    }
   }
 
   fun bodyRemoveCollisionException(body: RID, exceptedBody: RID) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(exceptedBody))
-    __method_bind.bodyRemoveCollisionException.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(exceptedBody)
+      __method_bind.bodyRemoveCollisionException.call(self._handle, _args, null)
+    }
   }
 
   fun bodyRemoveShape(body: RID, shapeIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(shapeIdx))
-    __method_bind.bodyRemoveShape.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(shapeIdx)
+      __method_bind.bodyRemoveShape.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetAxisVelocity(body: RID, axisVelocity: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(axisVelocity))
-    __method_bind.bodySetAxisVelocity.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(axisVelocity)
+      __method_bind.bodySetAxisVelocity.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetCollisionLayer(body: RID, layer: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(layer))
-    __method_bind.bodySetCollisionLayer.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(layer)
+      __method_bind.bodySetCollisionLayer.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetCollisionMask(body: RID, mask: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(mask))
-    __method_bind.bodySetCollisionMask.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(mask)
+      __method_bind.bodySetCollisionMask.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetContinuousCollisionDetectionMode(body: RID, mode: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(mode))
-    __method_bind.bodySetContinuousCollisionDetectionMode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(mode)
+      __method_bind.bodySetContinuousCollisionDetectionMode.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetForceIntegrationCallback(
@@ -498,33 +739,45 @@ open class Physics2DServerInternal(
     method: String,
     userdata: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(receiver))
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(userdata))
-    __method_bind.bodySetForceIntegrationCallback.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(receiver)
+      _args.add(method)
+      _args.add(userdata)
+      __method_bind.bodySetForceIntegrationCallback.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetMaxContactsReported(body: RID, amount: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(amount))
-    __method_bind.bodySetMaxContactsReported.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(amount)
+      __method_bind.bodySetMaxContactsReported.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetMode(body: RID, mode: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(mode))
-    __method_bind.bodySetMode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(mode)
+      __method_bind.bodySetMode.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetOmitForceIntegration(body: RID, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.bodySetOmitForceIntegration.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(enable)
+      __method_bind.bodySetOmitForceIntegration.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetParam(
@@ -532,11 +785,14 @@ open class Physics2DServerInternal(
     param: Int,
     value: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(value))
-    __method_bind.bodySetParam.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(param)
+      _args.add(value)
+      __method_bind.bodySetParam.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetShape(
@@ -544,11 +800,14 @@ open class Physics2DServerInternal(
     shapeIdx: Int,
     shape: RID
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(shapeIdx))
-    _args.add(Variant.fromAny(shape))
-    __method_bind.bodySetShape.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(shapeIdx)
+      _args.add(shape)
+      __method_bind.bodySetShape.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetShapeAsOneWayCollision(
@@ -557,12 +816,15 @@ open class Physics2DServerInternal(
     enable: Boolean,
     margin: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(shapeIdx))
-    _args.add(Variant.fromAny(enable))
-    _args.add(Variant.fromAny(margin))
-    __method_bind.bodySetShapeAsOneWayCollision.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(shapeIdx)
+      _args.add(enable)
+      _args.add(margin)
+      __method_bind.bodySetShapeAsOneWayCollision.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetShapeDisabled(
@@ -570,11 +832,14 @@ open class Physics2DServerInternal(
     shapeIdx: Int,
     disabled: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(shapeIdx))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.bodySetShapeDisabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(shapeIdx)
+      _args.add(disabled)
+      __method_bind.bodySetShapeDisabled.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetShapeMetadata(
@@ -582,11 +847,14 @@ open class Physics2DServerInternal(
     shapeIdx: Int,
     metadata: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(shapeIdx))
-    _args.add(Variant.fromAny(metadata))
-    __method_bind.bodySetShapeMetadata.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(shapeIdx)
+      _args.add(metadata)
+      __method_bind.bodySetShapeMetadata.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetShapeTransform(
@@ -594,18 +862,24 @@ open class Physics2DServerInternal(
     shapeIdx: Int,
     transform: Transform2D
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(shapeIdx))
-    _args.add(Variant.fromAny(transform))
-    __method_bind.bodySetShapeTransform.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(shapeIdx)
+      _args.add(transform)
+      __method_bind.bodySetShapeTransform.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetSpace(body: RID, space: RID) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(space))
-    __method_bind.bodySetSpace.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(space)
+      __method_bind.bodySetSpace.call(self._handle, _args, null)
+    }
   }
 
   fun bodySetState(
@@ -613,11 +887,14 @@ open class Physics2DServerInternal(
     state: Int,
     value: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(state))
-    _args.add(Variant.fromAny(value))
-    __method_bind.bodySetState.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(state)
+      _args.add(value)
+      __method_bind.bodySetState.call(self._handle, _args, null)
+    }
   }
 
   fun bodyTestMotion(
@@ -628,35 +905,64 @@ open class Physics2DServerInternal(
     margin: Float = 0.08f,
     result: Physics2DTestMotionResult
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(body))
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(motion))
-    _args.add(Variant.fromAny(infiniteInertia))
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(result))
-    val _ret = __method_bind.bodyTestMotion.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(body)
+      _args.add(from)
+      _args.add(motion)
+      _args.add(infiniteInertia)
+      _args.add(margin)
+      _args.add(result)
+      __method_bind.bodyTestMotion.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun capsuleShapeCreate(): RID {
-    val _ret = __method_bind.capsuleShapeCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.capsuleShapeCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun circleShapeCreate(): RID {
-    val _ret = __method_bind.circleShapeCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.circleShapeCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun concavePolygonShapeCreate(): RID {
-    val _ret = __method_bind.concavePolygonShapeCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.concavePolygonShapeCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun convexPolygonShapeCreate(): RID {
-    val _ret = __method_bind.convexPolygonShapeCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.convexPolygonShapeCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun dampedSpringJointCreate(
@@ -665,21 +971,32 @@ open class Physics2DServerInternal(
     bodyA: RID,
     bodyB: RID
   ): RID {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(anchorA))
-    _args.add(Variant.fromAny(anchorB))
-    _args.add(Variant.fromAny(bodyA))
-    _args.add(Variant.fromAny(bodyB))
-    val _ret = __method_bind.dampedSpringJointCreate.call(this._handle, _args)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(anchorA)
+      _args.add(anchorB)
+      _args.add(bodyA)
+      _args.add(bodyB)
+      __method_bind.dampedSpringJointCreate.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun dampedStringJointGetParam(joint: RID, param: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(joint))
-    _args.add(Variant.fromAny(param))
-    val _ret = __method_bind.dampedStringJointGetParam.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(joint)
+      _args.add(param)
+      __method_bind.dampedStringJointGetParam.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun dampedStringJointSetParam(
@@ -687,22 +1004,31 @@ open class Physics2DServerInternal(
     param: Int,
     value: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(joint))
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(value))
-    __method_bind.dampedStringJointSetParam.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(joint)
+      _args.add(param)
+      _args.add(value)
+      __method_bind.dampedStringJointSetParam.call(self._handle, _args, null)
+    }
   }
 
   fun freeRid(rid: RID) {
-    val _arg = Variant(rid)
-    __method_bind.freeRid.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.freeRid.call(self._handle, listOf(rid), null)
+    }
   }
 
   fun getProcessInfo(processInfo: Int): Int {
-    val _arg = Variant(processInfo)
-    val _ret = __method_bind.getProcessInfo.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getProcessInfo.call(self._handle, listOf(processInfo), _retPtr)
+      _ret.value
+    }
   }
 
   fun grooveJointCreate(
@@ -712,28 +1038,43 @@ open class Physics2DServerInternal(
     bodyA: RID,
     bodyB: RID
   ): RID {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(groove1A))
-    _args.add(Variant.fromAny(groove2A))
-    _args.add(Variant.fromAny(anchorB))
-    _args.add(Variant.fromAny(bodyA))
-    _args.add(Variant.fromAny(bodyB))
-    val _ret = __method_bind.grooveJointCreate.call(this._handle, _args)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(groove1A)
+      _args.add(groove2A)
+      _args.add(anchorB)
+      _args.add(bodyA)
+      _args.add(bodyB)
+      __method_bind.grooveJointCreate.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun jointGetParam(joint: RID, param: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(joint))
-    _args.add(Variant.fromAny(param))
-    val _ret = __method_bind.jointGetParam.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(joint)
+      _args.add(param)
+      __method_bind.jointGetParam.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun jointGetType(joint: RID): Physics2DServer.JointType {
-    val _arg = Variant(joint)
-    val _ret = __method_bind.jointGetType.call(this._handle, listOf(_arg))
-    return Physics2DServer.JointType.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.jointGetType.call(self._handle, listOf(joint), _retPtr)
+      Physics2DServer.JointType.from(_ret.value)
+    }
   }
 
   fun jointSetParam(
@@ -741,16 +1082,25 @@ open class Physics2DServerInternal(
     param: Int,
     value: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(joint))
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(value))
-    __method_bind.jointSetParam.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(joint)
+      _args.add(param)
+      _args.add(value)
+      __method_bind.jointSetParam.call(self._handle, _args, null)
+    }
   }
 
   fun lineShapeCreate(): RID {
-    val _ret = __method_bind.lineShapeCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.lineShapeCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun pinJointCreate(
@@ -758,83 +1108,145 @@ open class Physics2DServerInternal(
     bodyA: RID,
     bodyB: RID
   ): RID {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(anchor))
-    _args.add(Variant.fromAny(bodyA))
-    _args.add(Variant.fromAny(bodyB))
-    val _ret = __method_bind.pinJointCreate.call(this._handle, _args)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(anchor)
+      _args.add(bodyA)
+      _args.add(bodyB)
+      __method_bind.pinJointCreate.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun rayShapeCreate(): RID {
-    val _ret = __method_bind.rayShapeCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.rayShapeCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun rectangleShapeCreate(): RID {
-    val _ret = __method_bind.rectangleShapeCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.rectangleShapeCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun segmentShapeCreate(): RID {
-    val _ret = __method_bind.segmentShapeCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.segmentShapeCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setActive(active: Boolean) {
-    val _arg = Variant(active)
-    __method_bind.setActive.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setActive.call(self._handle, listOf(active), null)
+    }
   }
 
   fun shapeGetData(shape: RID): Variant {
-    val _arg = Variant(shape)
-    val _ret = __method_bind.shapeGetData.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.shapeGetData.call(self._handle, listOf(shape), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun shapeGetType(shape: RID): Physics2DServer.ShapeType {
-    val _arg = Variant(shape)
-    val _ret = __method_bind.shapeGetType.call(this._handle, listOf(_arg))
-    return Physics2DServer.ShapeType.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.shapeGetType.call(self._handle, listOf(shape), _retPtr)
+      Physics2DServer.ShapeType.from(_ret.value)
+    }
   }
 
   fun shapeSetData(shape: RID, data: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(shape))
-    _args.add(Variant.fromAny(data))
-    __method_bind.shapeSetData.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(shape)
+      _args.add(data)
+      __method_bind.shapeSetData.call(self._handle, _args, null)
+    }
   }
 
   fun spaceCreate(): RID {
-    val _ret = __method_bind.spaceCreate.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.spaceCreate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun spaceGetDirectState(space: RID): Physics2DDirectSpaceState {
-    val _arg = Variant(space)
-    val _ret = __method_bind.spaceGetDirectState.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Physics2DDirectSpaceState
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Physics2DDirectSpaceState
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.spaceGetDirectState.call(self._handle, listOf(space), _retPtr)
+      _ret = objectToType<Physics2DDirectSpaceState>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun spaceGetParam(space: RID, param: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(space))
-    _args.add(Variant.fromAny(param))
-    val _ret = __method_bind.spaceGetParam.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(space)
+      _args.add(param)
+      __method_bind.spaceGetParam.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun spaceIsActive(space: RID): Boolean {
-    val _arg = Variant(space)
-    val _ret = __method_bind.spaceIsActive.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.spaceIsActive.call(self._handle, listOf(space), _retPtr)
+      _ret.value
+    }
   }
 
   fun spaceSetActive(space: RID, active: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(space))
-    _args.add(Variant.fromAny(active))
-    __method_bind.spaceSetActive.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(space)
+      _args.add(active)
+      __method_bind.spaceSetActive.call(self._handle, _args, null)
+    }
   }
 
   fun spaceSetParam(
@@ -842,11 +1254,14 @@ open class Physics2DServerInternal(
     param: Int,
     value: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(space))
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(value))
-    __method_bind.spaceSetParam.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(space)
+      _args.add(param)
+      _args.add(value)
+      __method_bind.spaceSetParam.call(self._handle, _args, null)
+    }
   }
 
   companion object {

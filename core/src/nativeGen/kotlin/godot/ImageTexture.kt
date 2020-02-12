@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ImageTexture(
   @Suppress("UNUSED_PARAMETER")
@@ -53,60 +62,93 @@ open class ImageTexture(
     format: Int,
     flags: Int = 7
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(height))
-    _args.add(Variant.fromAny(format))
-    _args.add(Variant.fromAny(flags))
-    __method_bind.create.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(width)
+      _args.add(height)
+      _args.add(format)
+      _args.add(flags)
+      __method_bind.create.call(self._handle, _args, null)
+    }
   }
 
   fun createFromImage(image: Image, flags: Int = 7) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(image))
-    _args.add(Variant.fromAny(flags))
-    __method_bind.createFromImage.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(image)
+      _args.add(flags)
+      __method_bind.createFromImage.call(self._handle, _args, null)
+    }
   }
 
   fun getFormat(): Image.Format {
-    val _ret = __method_bind.getFormat.call(this._handle)
-    return Image.Format.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFormat.call(self._handle, emptyList(), _retPtr)
+      Image.Format.from(_ret.value)
+    }
   }
 
   fun getLossyStorageQuality(): Float {
-    val _ret = __method_bind.getLossyStorageQuality.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLossyStorageQuality.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getStorage(): Storage {
-    val _ret = __method_bind.getStorage.call(this._handle)
-    return ImageTexture.Storage.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStorage.call(self._handle, emptyList(), _retPtr)
+      ImageTexture.Storage.from(_ret.value)
+    }
   }
 
   fun load(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.load.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.load.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setData(image: Image) {
-    val _arg = Variant(image)
-    __method_bind.setData.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setData.call(self._handle, listOf(image), null)
+    }
   }
 
   fun setLossyStorageQuality(quality: Float) {
-    val _arg = Variant(quality)
-    __method_bind.setLossyStorageQuality.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLossyStorageQuality.call(self._handle, listOf(quality), null)
+    }
   }
 
   fun setSizeOverride(size: Vector2) {
-    val _arg = Variant(size)
-    __method_bind.setSizeOverride.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSizeOverride.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setStorage(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setStorage.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStorage.call(self._handle, listOf(mode), null)
+    }
   }
 
   enum class Storage(

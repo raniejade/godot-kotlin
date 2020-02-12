@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AudioStreamSample(
   @Suppress("UNUSED_PARAMETER")
@@ -98,79 +107,133 @@ open class AudioStreamSample(
   }
 
   fun getData(): PoolByteArray {
-    val _ret = __method_bind.getData.call(this._handle)
-    return _ret.asPoolByteArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolByteArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getData.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFormat(): Format {
-    val _ret = __method_bind.getFormat.call(this._handle)
-    return AudioStreamSample.Format.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFormat.call(self._handle, emptyList(), _retPtr)
+      AudioStreamSample.Format.from(_ret.value)
+    }
   }
 
   fun getLoopBegin(): Int {
-    val _ret = __method_bind.getLoopBegin.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLoopBegin.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLoopEnd(): Int {
-    val _ret = __method_bind.getLoopEnd.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLoopEnd.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLoopMode(): LoopMode {
-    val _ret = __method_bind.getLoopMode.call(this._handle)
-    return AudioStreamSample.LoopMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLoopMode.call(self._handle, emptyList(), _retPtr)
+      AudioStreamSample.LoopMode.from(_ret.value)
+    }
   }
 
   fun getMixRate(): Int {
-    val _ret = __method_bind.getMixRate.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMixRate.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isStereo(): Boolean {
-    val _ret = __method_bind.isStereo.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isStereo.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun saveToWav(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.saveToWav.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.saveToWav.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setData(data: PoolByteArray) {
-    val _arg = Variant(data)
-    __method_bind.setData.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setData.call(self._handle, listOf(data), null)
+    }
   }
 
   fun setFormat(format: Int) {
-    val _arg = Variant(format)
-    __method_bind.setFormat.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFormat.call(self._handle, listOf(format), null)
+    }
   }
 
   fun setLoopBegin(loopBegin: Int) {
-    val _arg = Variant(loopBegin)
-    __method_bind.setLoopBegin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLoopBegin.call(self._handle, listOf(loopBegin), null)
+    }
   }
 
   fun setLoopEnd(loopEnd: Int) {
-    val _arg = Variant(loopEnd)
-    __method_bind.setLoopEnd.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLoopEnd.call(self._handle, listOf(loopEnd), null)
+    }
   }
 
   fun setLoopMode(loopMode: Int) {
-    val _arg = Variant(loopMode)
-    __method_bind.setLoopMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLoopMode.call(self._handle, listOf(loopMode), null)
+    }
   }
 
   fun setMixRate(mixRate: Int) {
-    val _arg = Variant(mixRate)
-    __method_bind.setMixRate.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMixRate.call(self._handle, listOf(mixRate), null)
+    }
   }
 
   fun setStereo(stereo: Boolean) {
-    val _arg = Variant(stereo)
-    __method_bind.setStereo.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStereo.call(self._handle, listOf(stereo), null)
+    }
   }
 
   enum class LoopMode(

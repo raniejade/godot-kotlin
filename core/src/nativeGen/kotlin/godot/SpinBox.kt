@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class SpinBox(
   @Suppress("UNUSED_PARAMETER")
@@ -62,52 +71,92 @@ open class SpinBox(
   }
 
   fun apply() {
-    __method_bind.apply.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.apply.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getAlign(): LineEdit.Align {
-    val _ret = __method_bind.getAlign.call(this._handle)
-    return LineEdit.Align.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAlign.call(self._handle, emptyList(), _retPtr)
+      LineEdit.Align.from(_ret.value)
+    }
   }
 
   fun getLineEdit(): LineEdit {
-    val _ret = __method_bind.getLineEdit.call(this._handle)
-    return _ret.toAny() as LineEdit
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: LineEdit
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getLineEdit.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<LineEdit>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPrefix(): String {
-    val _ret = __method_bind.getPrefix.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getPrefix.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getSuffix(): String {
-    val _ret = __method_bind.getSuffix.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSuffix.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun isEditable(): Boolean {
-    val _ret = __method_bind.isEditable.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEditable.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAlign(align: Int) {
-    val _arg = Variant(align)
-    __method_bind.setAlign.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAlign.call(self._handle, listOf(align), null)
+    }
   }
 
   fun setEditable(editable: Boolean) {
-    val _arg = Variant(editable)
-    __method_bind.setEditable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEditable.call(self._handle, listOf(editable), null)
+    }
   }
 
   fun setPrefix(prefix: String) {
-    val _arg = Variant(prefix)
-    __method_bind.setPrefix.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPrefix.call(self._handle, listOf(prefix), null)
+    }
   }
 
   fun setSuffix(suffix: String) {
-    val _arg = Variant(suffix)
-    __method_bind.setSuffix.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSuffix.call(self._handle, listOf(suffix), null)
+    }
   }
 
   companion object {

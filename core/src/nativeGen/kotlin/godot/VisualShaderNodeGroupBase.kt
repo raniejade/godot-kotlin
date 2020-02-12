@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VisualShaderNodeGroupBase(
   @Suppress("UNUSED_PARAMETER")
@@ -53,11 +62,14 @@ open class VisualShaderNodeGroupBase(
     type: Int,
     name: String
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(name))
-    __method_bind.addInputPort.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(type)
+      _args.add(name)
+      __method_bind.addInputPort.call(self._handle, _args, null)
+    }
   }
 
   fun addOutputPort(
@@ -65,125 +77,206 @@ open class VisualShaderNodeGroupBase(
     type: Int,
     name: String
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(name))
-    __method_bind.addOutputPort.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(type)
+      _args.add(name)
+      __method_bind.addOutputPort.call(self._handle, _args, null)
+    }
   }
 
   fun clearInputPorts() {
-    __method_bind.clearInputPorts.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearInputPorts.call(self._handle, emptyList(), null)
+    }
   }
 
   fun clearOutputPorts() {
-    __method_bind.clearOutputPorts.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearOutputPorts.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getFreeInputPortId(): Int {
-    val _ret = __method_bind.getFreeInputPortId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFreeInputPortId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFreeOutputPortId(): Int {
-    val _ret = __method_bind.getFreeOutputPortId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFreeOutputPortId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getInputPortCount(): Int {
-    val _ret = __method_bind.getInputPortCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInputPortCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getInputs(): String {
-    val _ret = __method_bind.getInputs.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getInputs.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getOutputPortCount(): Int {
-    val _ret = __method_bind.getOutputPortCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOutputPortCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getOutputs(): String {
-    val _ret = __method_bind.getOutputs.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getOutputs.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.getSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun hasInputPort(id: Int): Boolean {
-    val _arg = Variant(id)
-    val _ret = __method_bind.hasInputPort.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasInputPort.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasOutputPort(id: Int): Boolean {
-    val _arg = Variant(id)
-    val _ret = __method_bind.hasOutputPort.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasOutputPort.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun isValidPortName(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.isValidPortName.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isValidPortName.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeInputPort(id: Int) {
-    val _arg = Variant(id)
-    __method_bind.removeInputPort.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeInputPort.call(self._handle, listOf(id), null)
+    }
   }
 
   fun removeOutputPort(id: Int) {
-    val _arg = Variant(id)
-    __method_bind.removeOutputPort.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeOutputPort.call(self._handle, listOf(id), null)
+    }
   }
 
   fun setInputPortName(id: Int, name: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(name))
-    __method_bind.setInputPortName.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(name)
+      __method_bind.setInputPortName.call(self._handle, _args, null)
+    }
   }
 
   fun setInputPortType(id: Int, type: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(type))
-    __method_bind.setInputPortType.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(type)
+      __method_bind.setInputPortType.call(self._handle, _args, null)
+    }
   }
 
   fun setInputs(inputs: String) {
-    val _arg = Variant(inputs)
-    __method_bind.setInputs.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInputs.call(self._handle, listOf(inputs), null)
+    }
   }
 
   fun setOutputPortName(id: Int, name: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(name))
-    __method_bind.setOutputPortName.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(name)
+      __method_bind.setOutputPortName.call(self._handle, _args, null)
+    }
   }
 
   fun setOutputPortType(id: Int, type: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(type))
-    __method_bind.setOutputPortType.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(type)
+      __method_bind.setOutputPortType.call(self._handle, _args, null)
+    }
   }
 
   fun setOutputs(outputs: String) {
-    val _arg = Variant(outputs)
-    __method_bind.setOutputs.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOutputs.call(self._handle, listOf(outputs), null)
+    }
   }
 
   fun setSize(size: Vector2) {
-    val _arg = Variant(size)
-    __method_bind.setSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSize.call(self._handle, listOf(size), null)
+    }
   }
 
   companion object {

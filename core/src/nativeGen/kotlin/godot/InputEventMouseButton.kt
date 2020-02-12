@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class InputEventMouseButton(
   @Suppress("UNUSED_PARAMETER")
@@ -63,38 +72,61 @@ open class InputEventMouseButton(
   }
 
   fun getButtonIndex(): Int {
-    val _ret = __method_bind.getButtonIndex.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getButtonIndex.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFactor(): Float {
-    val _ret = __method_bind.getFactor.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFactor.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isDoubleclick(): Boolean {
-    val _ret = __method_bind.isDoubleclick.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDoubleclick.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setButtonIndex(buttonIndex: Int) {
-    val _arg = Variant(buttonIndex)
-    __method_bind.setButtonIndex.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setButtonIndex.call(self._handle, listOf(buttonIndex), null)
+    }
   }
 
   fun setDoubleclick(doubleclick: Boolean) {
-    val _arg = Variant(doubleclick)
-    __method_bind.setDoubleclick.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDoubleclick.call(self._handle, listOf(doubleclick), null)
+    }
   }
 
   fun setFactor(factor: Float) {
-    val _arg = Variant(factor)
-    __method_bind.setFactor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFactor.call(self._handle, listOf(factor), null)
+    }
   }
 
   fun setPressed(pressed: Boolean) {
-    val _arg = Variant(pressed)
-    __method_bind.setPressed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPressed.call(self._handle, listOf(pressed), null)
+    }
   }
 
   companion object {

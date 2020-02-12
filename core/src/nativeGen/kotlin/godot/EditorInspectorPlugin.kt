@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolStringArray
@@ -10,13 +11,21 @@ import godot.core.VariantArray
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorInspectorPlugin(
   @Suppress("UNUSED_PARAMETER")
@@ -29,15 +38,20 @@ open class EditorInspectorPlugin(
   }
 
   fun addCustomControl(control: Control) {
-    val _arg = Variant(control)
-    __method_bind.addCustomControl.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addCustomControl.call(self._handle, listOf(control), null)
+    }
   }
 
   fun addPropertyEditor(property: String, editor: Control) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(editor))
-    __method_bind.addPropertyEditor.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(property)
+      _args.add(editor)
+      __method_bind.addPropertyEditor.call(self._handle, _args, null)
+    }
   }
 
   fun addPropertyEditorForMultipleProperties(
@@ -45,11 +59,14 @@ open class EditorInspectorPlugin(
     properties: PoolStringArray,
     editor: Control
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(properties))
-    _args.add(Variant.fromAny(editor))
-    __method_bind.addPropertyEditorForMultipleProperties.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(label)
+      _args.add(properties)
+      _args.add(editor)
+      __method_bind.addPropertyEditorForMultipleProperties.call(self._handle, _args, null)
+    }
   }
 
   companion object {

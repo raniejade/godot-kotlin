@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ReflectionProbe(
   @Suppress("UNUSED_PARAMETER")
@@ -157,123 +166,211 @@ open class ReflectionProbe(
   }
 
   fun areShadowsEnabled(): Boolean {
-    val _ret = __method_bind.areShadowsEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.areShadowsEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCullMask(): Int {
-    val _ret = __method_bind.getCullMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCullMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getExtents(): Vector3 {
-    val _ret = __method_bind.getExtents.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getExtents.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getIntensity(): Float {
-    val _ret = __method_bind.getIntensity.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getIntensity.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getInteriorAmbient(): Color {
-    val _ret = __method_bind.getInteriorAmbient.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getInteriorAmbient.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getInteriorAmbientEnergy(): Float {
-    val _ret = __method_bind.getInteriorAmbientEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInteriorAmbientEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getInteriorAmbientProbeContribution(): Float {
-    val _ret = __method_bind.getInteriorAmbientProbeContribution.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInteriorAmbientProbeContribution.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMaxDistance(): Float {
-    val _ret = __method_bind.getMaxDistance.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMaxDistance.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getOriginOffset(): Vector3 {
-    val _ret = __method_bind.getOriginOffset.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOriginOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getUpdateMode(): UpdateMode {
-    val _ret = __method_bind.getUpdateMode.call(this._handle)
-    return ReflectionProbe.UpdateMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUpdateMode.call(self._handle, emptyList(), _retPtr)
+      ReflectionProbe.UpdateMode.from(_ret.value)
+    }
   }
 
   fun isBoxProjectionEnabled(): Boolean {
-    val _ret = __method_bind.isBoxProjectionEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isBoxProjectionEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSetAsInterior(): Boolean {
-    val _ret = __method_bind.isSetAsInterior.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSetAsInterior.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAsInterior(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAsInterior.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAsInterior.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCullMask(layers: Int) {
-    val _arg = Variant(layers)
-    __method_bind.setCullMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCullMask.call(self._handle, listOf(layers), null)
+    }
   }
 
   fun setEnableBoxProjection(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setEnableBoxProjection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnableBoxProjection.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setEnableShadows(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setEnableShadows.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnableShadows.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setExtents(extents: Vector3) {
-    val _arg = Variant(extents)
-    __method_bind.setExtents.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExtents.call(self._handle, listOf(extents), null)
+    }
   }
 
   fun setIntensity(intensity: Float) {
-    val _arg = Variant(intensity)
-    __method_bind.setIntensity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setIntensity.call(self._handle, listOf(intensity), null)
+    }
   }
 
   fun setInteriorAmbient(ambient: Color) {
-    val _arg = Variant(ambient)
-    __method_bind.setInteriorAmbient.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInteriorAmbient.call(self._handle, listOf(ambient), null)
+    }
   }
 
   fun setInteriorAmbientEnergy(ambientEnergy: Float) {
-    val _arg = Variant(ambientEnergy)
-    __method_bind.setInteriorAmbientEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInteriorAmbientEnergy.call(self._handle, listOf(ambientEnergy), null)
+    }
   }
 
   fun setInteriorAmbientProbeContribution(ambientProbeContribution: Float) {
-    val _arg = Variant(ambientProbeContribution)
-    __method_bind.setInteriorAmbientProbeContribution.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInteriorAmbientProbeContribution.call(self._handle,
+          listOf(ambientProbeContribution), null)
+    }
   }
 
   fun setMaxDistance(maxDistance: Float) {
-    val _arg = Variant(maxDistance)
-    __method_bind.setMaxDistance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaxDistance.call(self._handle, listOf(maxDistance), null)
+    }
   }
 
   fun setOriginOffset(originOffset: Vector3) {
-    val _arg = Variant(originOffset)
-    __method_bind.setOriginOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOriginOffset.call(self._handle, listOf(originOffset), null)
+    }
   }
 
   fun setUpdateMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setUpdateMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUpdateMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   enum class UpdateMode(

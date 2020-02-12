@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VisualShaderNode(
   @Suppress("UNUSED_PARAMETER")
@@ -50,36 +59,59 @@ open class VisualShaderNode(
   }
 
   fun getDefaultInputValues(): VariantArray {
-    val _ret = __method_bind.getDefaultInputValues.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getDefaultInputValues.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getInputPortDefaultValue(port: Int): Variant {
-    val _arg = Variant(port)
-    val _ret = __method_bind.getInputPortDefaultValue.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getInputPortDefaultValue.call(self._handle, listOf(port), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOutputPortForPreview(): Int {
-    val _ret = __method_bind.getOutputPortForPreview.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOutputPortForPreview.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setDefaultInputValues(values: VariantArray) {
-    val _arg = Variant(values)
-    __method_bind.setDefaultInputValues.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDefaultInputValues.call(self._handle, listOf(values), null)
+    }
   }
 
   fun setInputPortDefaultValue(port: Int, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(port))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setInputPortDefaultValue.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(port)
+      _args.add(value)
+      __method_bind.setInputPortDefaultValue.call(self._handle, _args, null)
+    }
   }
 
   fun setOutputPortForPreview(port: Int) {
-    val _arg = Variant(port)
-    __method_bind.setOutputPortForPreview.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOutputPortForPreview.call(self._handle, listOf(port), null)
+    }
   }
 
   enum class PortType(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AnimatedSprite3D(
   @Suppress("UNUSED_PARAMETER")
@@ -59,47 +68,81 @@ open class AnimatedSprite3D(
   }
 
   fun getAnimation(): String {
-    val _ret = __method_bind.getAnimation.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAnimation.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getFrame(): Int {
-    val _ret = __method_bind.getFrame.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFrame.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSpriteFrames(): SpriteFrames {
-    val _ret = __method_bind.getSpriteFrames.call(this._handle)
-    return _ret.toAny() as SpriteFrames
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: SpriteFrames
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSpriteFrames.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<SpriteFrames>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun isPlaying(): Boolean {
-    val _ret = __method_bind.isPlaying.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPlaying.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun play(anim: String = "") {
-    val _arg = Variant(anim)
-    __method_bind.play.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.play.call(self._handle, listOf(anim), null)
+    }
   }
 
   fun setAnimation(animation: String) {
-    val _arg = Variant(animation)
-    __method_bind.setAnimation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAnimation.call(self._handle, listOf(animation), null)
+    }
   }
 
   fun setFrame(frame: Int) {
-    val _arg = Variant(frame)
-    __method_bind.setFrame.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFrame.call(self._handle, listOf(frame), null)
+    }
   }
 
   fun setSpriteFrames(spriteFrames: SpriteFrames) {
-    val _arg = Variant(spriteFrames)
-    __method_bind.setSpriteFrames.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSpriteFrames.call(self._handle, listOf(spriteFrames), null)
+    }
   }
 
   fun stop() {
-    __method_bind.stop.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.stop.call(self._handle, emptyList(), null)
+    }
   }
 
   companion object {

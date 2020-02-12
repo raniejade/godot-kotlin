@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Tree(
   @Suppress("UNUSED_PARAMETER")
@@ -168,204 +177,365 @@ open class Tree(
   }
 
   fun areColumnTitlesVisible(): Boolean {
-    val _ret = __method_bind.areColumnTitlesVisible.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.areColumnTitlesVisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun createItem(parent: Object, idx: Int = -1): TreeItem {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(parent))
-    _args.add(Variant.fromAny(idx))
-    val _ret = __method_bind.createItem.call(this._handle, _args)
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(parent)
+      _args.add(idx)
+      __method_bind.createItem.call(self._handle, _args, _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun ensureCursorIsVisible() {
-    __method_bind.ensureCursorIsVisible.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.ensureCursorIsVisible.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getAllowReselect(): Boolean {
-    val _ret = __method_bind.getAllowReselect.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAllowReselect.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getAllowRmbSelect(): Boolean {
-    val _ret = __method_bind.getAllowRmbSelect.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAllowRmbSelect.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getColumnAtPosition(position: Vector2): Int {
-    val _arg = Variant(position)
-    val _ret = __method_bind.getColumnAtPosition.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getColumnAtPosition.call(self._handle, listOf(position), _retPtr)
+      _ret.value
+    }
   }
 
   fun getColumnTitle(column: Int): String {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getColumnTitle.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getColumnTitle.call(self._handle, listOf(column), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getColumnWidth(column: Int): Int {
-    val _arg = Variant(column)
-    val _ret = __method_bind.getColumnWidth.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getColumnWidth.call(self._handle, listOf(column), _retPtr)
+      _ret.value
+    }
   }
 
   fun getColumns(): Int {
-    val _ret = __method_bind.getColumns.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getColumns.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCustomPopupRect(): Rect2 {
-    val _ret = __method_bind.getCustomPopupRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCustomPopupRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getDropModeFlags(): Int {
-    val _ret = __method_bind.getDropModeFlags.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDropModeFlags.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDropSectionAtPosition(position: Vector2): Int {
-    val _arg = Variant(position)
-    val _ret = __method_bind.getDropSectionAtPosition.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDropSectionAtPosition.call(self._handle, listOf(position), _retPtr)
+      _ret.value
+    }
   }
 
   fun getEdited(): TreeItem {
-    val _ret = __method_bind.getEdited.call(this._handle)
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getEdited.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getEditedColumn(): Int {
-    val _ret = __method_bind.getEditedColumn.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEditedColumn.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemAreaRect(item: Object, column: Int = -1): Rect2 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(item))
-    _args.add(Variant.fromAny(column))
-    val _ret = __method_bind.getItemAreaRect.call(this._handle, _args)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(item)
+      _args.add(column)
+      __method_bind.getItemAreaRect.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getItemAtPosition(position: Vector2): TreeItem {
-    val _arg = Variant(position)
-    val _ret = __method_bind.getItemAtPosition.call(this._handle, listOf(_arg))
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getItemAtPosition.call(self._handle, listOf(position), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNextSelected(from: Object): TreeItem {
-    val _arg = Variant(from)
-    val _ret = __method_bind.getNextSelected.call(this._handle, listOf(_arg))
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNextSelected.call(self._handle, listOf(from), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPressedButton(): Int {
-    val _ret = __method_bind.getPressedButton.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPressedButton.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getRoot(): TreeItem {
-    val _ret = __method_bind.getRoot.call(this._handle)
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getRoot.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getScroll(): Vector2 {
-    val _ret = __method_bind.getScroll.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScroll.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSelectMode(): SelectMode {
-    val _ret = __method_bind.getSelectMode.call(this._handle)
-    return Tree.SelectMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSelectMode.call(self._handle, emptyList(), _retPtr)
+      Tree.SelectMode.from(_ret.value)
+    }
   }
 
   fun getSelected(): TreeItem {
-    val _ret = __method_bind.getSelected.call(this._handle)
-    return _ret.toAny() as TreeItem
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TreeItem
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSelected.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<TreeItem>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSelectedColumn(): Int {
-    val _ret = __method_bind.getSelectedColumn.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSelectedColumn.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFoldingHidden(): Boolean {
-    val _ret = __method_bind.isFoldingHidden.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFoldingHidden.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRootHidden(): Boolean {
-    val _ret = __method_bind.isRootHidden.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRootHidden.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAllowReselect(allow: Boolean) {
-    val _arg = Variant(allow)
-    __method_bind.setAllowReselect.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAllowReselect.call(self._handle, listOf(allow), null)
+    }
   }
 
   fun setAllowRmbSelect(allow: Boolean) {
-    val _arg = Variant(allow)
-    __method_bind.setAllowRmbSelect.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAllowRmbSelect.call(self._handle, listOf(allow), null)
+    }
   }
 
   fun setColumnExpand(column: Int, expand: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(expand))
-    __method_bind.setColumnExpand.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(expand)
+      __method_bind.setColumnExpand.call(self._handle, _args, null)
+    }
   }
 
   fun setColumnMinWidth(column: Int, minWidth: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(minWidth))
-    __method_bind.setColumnMinWidth.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(minWidth)
+      __method_bind.setColumnMinWidth.call(self._handle, _args, null)
+    }
   }
 
   fun setColumnTitle(column: Int, title: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(column))
-    _args.add(Variant.fromAny(title))
-    __method_bind.setColumnTitle.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(column)
+      _args.add(title)
+      __method_bind.setColumnTitle.call(self._handle, _args, null)
+    }
   }
 
   fun setColumnTitlesVisible(visible: Boolean) {
-    val _arg = Variant(visible)
-    __method_bind.setColumnTitlesVisible.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColumnTitlesVisible.call(self._handle, listOf(visible), null)
+    }
   }
 
   fun setColumns(amount: Int) {
-    val _arg = Variant(amount)
-    __method_bind.setColumns.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColumns.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setDropModeFlags(flags: Int) {
-    val _arg = Variant(flags)
-    __method_bind.setDropModeFlags.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDropModeFlags.call(self._handle, listOf(flags), null)
+    }
   }
 
   fun setHideFolding(hide: Boolean) {
-    val _arg = Variant(hide)
-    __method_bind.setHideFolding.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHideFolding.call(self._handle, listOf(hide), null)
+    }
   }
 
   fun setHideRoot(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setHideRoot.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHideRoot.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setSelectMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setSelectMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSelectMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   enum class SelectMode(

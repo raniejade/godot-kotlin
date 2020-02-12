@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorSettings(
   @Suppress("UNUSED_PARAMETER")
@@ -37,18 +46,28 @@ open class EditorSettings(
   }
 
   fun addPropertyInfo(info: Dictionary) {
-    val _arg = Variant(info)
-    __method_bind.addPropertyInfo.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addPropertyInfo.call(self._handle, listOf(info), null)
+    }
   }
 
   fun erase(property: String) {
-    val _arg = Variant(property)
-    __method_bind.erase.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.erase.call(self._handle, listOf(property), null)
+    }
   }
 
   fun getFavorites(): PoolStringArray {
-    val _ret = __method_bind.getFavorites.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFavorites.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getProjectMetadata(
@@ -56,56 +75,100 @@ open class EditorSettings(
     key: String,
     default: Variant
   ): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(section))
-    _args.add(Variant.fromAny(key))
-    _args.add(Variant.fromAny(default))
-    val _ret = __method_bind.getProjectMetadata.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(section)
+      _args.add(key)
+      _args.add(default)
+      __method_bind.getProjectMetadata.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getProjectSettingsDir(): String {
-    val _ret = __method_bind.getProjectSettingsDir.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getProjectSettingsDir.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getRecentDirs(): PoolStringArray {
-    val _ret = __method_bind.getRecentDirs.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRecentDirs.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSetting(name: String): Variant {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getSetting.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSetting.call(self._handle, listOf(name), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSettingsDir(): String {
-    val _ret = __method_bind.getSettingsDir.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSettingsDir.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun hasSetting(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasSetting.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasSetting.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun propertyCanRevert(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.propertyCanRevert.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.propertyCanRevert.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun propertyGetRevert(name: String): Variant {
-    val _arg = Variant(name)
-    val _ret = __method_bind.propertyGetRevert.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.propertyGetRevert.call(self._handle, listOf(name), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setFavorites(dirs: PoolStringArray) {
-    val _arg = Variant(dirs)
-    __method_bind.setFavorites.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFavorites.call(self._handle, listOf(dirs), null)
+    }
   }
 
   fun setInitialValue(
@@ -113,11 +176,14 @@ open class EditorSettings(
     value: Variant,
     updateCurrent: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(value))
-    _args.add(Variant.fromAny(updateCurrent))
-    __method_bind.setInitialValue.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(value)
+      _args.add(updateCurrent)
+      __method_bind.setInitialValue.call(self._handle, _args, null)
+    }
   }
 
   fun setProjectMetadata(
@@ -125,23 +191,31 @@ open class EditorSettings(
     key: String,
     data: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(section))
-    _args.add(Variant.fromAny(key))
-    _args.add(Variant.fromAny(data))
-    __method_bind.setProjectMetadata.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(section)
+      _args.add(key)
+      _args.add(data)
+      __method_bind.setProjectMetadata.call(self._handle, _args, null)
+    }
   }
 
   fun setRecentDirs(dirs: PoolStringArray) {
-    val _arg = Variant(dirs)
-    __method_bind.setRecentDirs.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRecentDirs.call(self._handle, listOf(dirs), null)
+    }
   }
 
   fun setSetting(name: String, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setSetting.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(value)
+      __method_bind.setSetting.call(self._handle, _args, null)
+    }
   }
 
   companion object {

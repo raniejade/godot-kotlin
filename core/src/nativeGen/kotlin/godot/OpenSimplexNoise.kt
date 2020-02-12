@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class OpenSimplexNoise(
   @Suppress("UNUSED_PARAMETER")
@@ -72,36 +81,61 @@ open class OpenSimplexNoise(
   }
 
   fun getImage(width: Int, height: Int): Image {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(height))
-    val _ret = __method_bind.getImage.call(this._handle, _args)
-    return _ret.toAny() as Image
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Image
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(width)
+      _args.add(height)
+      __method_bind.getImage.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Image>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getLacunarity(): Float {
-    val _ret = __method_bind.getLacunarity.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLacunarity.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getNoise1d(x: Float): Float {
-    val _arg = Variant(x)
-    val _ret = __method_bind.getNoise1d.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNoise1d.call(self._handle, listOf(x), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getNoise2d(x: Float, y: Float): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    val _ret = __method_bind.getNoise2d.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      __method_bind.getNoise2d.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getNoise2dv(pos: Vector2): Float {
-    val _arg = Variant(pos)
-    val _ret = __method_bind.getNoise2dv.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNoise2dv.call(self._handle, listOf(pos), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getNoise3d(
@@ -109,18 +143,27 @@ open class OpenSimplexNoise(
     y: Float,
     z: Float
   ): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    _args.add(Variant.fromAny(z))
-    val _ret = __method_bind.getNoise3d.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      _args.add(z)
+      __method_bind.getNoise3d.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getNoise3dv(pos: Vector3): Float {
-    val _arg = Variant(pos)
-    val _ret = __method_bind.getNoise3dv.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNoise3dv.call(self._handle, listOf(pos), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getNoise4d(
@@ -129,64 +172,105 @@ open class OpenSimplexNoise(
     z: Float,
     w: Float
   ): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    _args.add(Variant.fromAny(z))
-    _args.add(Variant.fromAny(w))
-    val _ret = __method_bind.getNoise4d.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      _args.add(z)
+      _args.add(w)
+      __method_bind.getNoise4d.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getOctaves(): Int {
-    val _ret = __method_bind.getOctaves.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOctaves.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPeriod(): Float {
-    val _ret = __method_bind.getPeriod.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPeriod.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPersistence(): Float {
-    val _ret = __method_bind.getPersistence.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPersistence.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSeamlessImage(size: Int): Image {
-    val _arg = Variant(size)
-    val _ret = __method_bind.getSeamlessImage.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Image
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Image
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSeamlessImage.call(self._handle, listOf(size), _retPtr)
+      _ret = objectToType<Image>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSeed(): Int {
-    val _ret = __method_bind.getSeed.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSeed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setLacunarity(lacunarity: Float) {
-    val _arg = Variant(lacunarity)
-    __method_bind.setLacunarity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLacunarity.call(self._handle, listOf(lacunarity), null)
+    }
   }
 
   fun setOctaves(octaveCount: Int) {
-    val _arg = Variant(octaveCount)
-    __method_bind.setOctaves.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOctaves.call(self._handle, listOf(octaveCount), null)
+    }
   }
 
   fun setPeriod(period: Float) {
-    val _arg = Variant(period)
-    __method_bind.setPeriod.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPeriod.call(self._handle, listOf(period), null)
+    }
   }
 
   fun setPersistence(persistence: Float) {
-    val _arg = Variant(persistence)
-    __method_bind.setPersistence.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPersistence.call(self._handle, listOf(persistence), null)
+    }
   }
 
   fun setSeed(seed: Int) {
-    val _arg = Variant(seed)
-    __method_bind.setSeed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSeed.call(self._handle, listOf(seed), null)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Sprite(
   @Suppress("UNUSED_PARAMETER")
@@ -174,144 +183,252 @@ open class Sprite(
   }
 
   fun getFrame(): Int {
-    val _ret = __method_bind.getFrame.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFrame.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFrameCoords(): Vector2 {
-    val _ret = __method_bind.getFrameCoords.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFrameCoords.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getHframes(): Int {
-    val _ret = __method_bind.getHframes.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHframes.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNormalMap(): Texture {
-    val _ret = __method_bind.getNormalMap.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNormalMap.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.getOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRect(): Rect2 {
-    val _ret = __method_bind.getRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRegionRect(): Rect2 {
-    val _ret = __method_bind.getRegionRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRegionRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getVframes(): Int {
-    val _ret = __method_bind.getVframes.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVframes.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isCentered(): Boolean {
-    val _ret = __method_bind.isCentered.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCentered.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFlippedH(): Boolean {
-    val _ret = __method_bind.isFlippedH.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFlippedH.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isFlippedV(): Boolean {
-    val _ret = __method_bind.isFlippedV.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFlippedV.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPixelOpaque(pos: Vector2): Boolean {
-    val _arg = Variant(pos)
-    val _ret = __method_bind.isPixelOpaque.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPixelOpaque.call(self._handle, listOf(pos), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRegion(): Boolean {
-    val _ret = __method_bind.isRegion.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRegion.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRegionFilterClipEnabled(): Boolean {
-    val _ret = __method_bind.isRegionFilterClipEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRegionFilterClipEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setCentered(centered: Boolean) {
-    val _arg = Variant(centered)
-    __method_bind.setCentered.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCentered.call(self._handle, listOf(centered), null)
+    }
   }
 
   fun setFlipH(flipH: Boolean) {
-    val _arg = Variant(flipH)
-    __method_bind.setFlipH.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFlipH.call(self._handle, listOf(flipH), null)
+    }
   }
 
   fun setFlipV(flipV: Boolean) {
-    val _arg = Variant(flipV)
-    __method_bind.setFlipV.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFlipV.call(self._handle, listOf(flipV), null)
+    }
   }
 
   fun setFrame(frame: Int) {
-    val _arg = Variant(frame)
-    __method_bind.setFrame.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFrame.call(self._handle, listOf(frame), null)
+    }
   }
 
   fun setFrameCoords(coords: Vector2) {
-    val _arg = Variant(coords)
-    __method_bind.setFrameCoords.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFrameCoords.call(self._handle, listOf(coords), null)
+    }
   }
 
   fun setHframes(hframes: Int) {
-    val _arg = Variant(hframes)
-    __method_bind.setHframes.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHframes.call(self._handle, listOf(hframes), null)
+    }
   }
 
   fun setNormalMap(normalMap: Texture) {
-    val _arg = Variant(normalMap)
-    __method_bind.setNormalMap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNormalMap.call(self._handle, listOf(normalMap), null)
+    }
   }
 
   fun setOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setRegion(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setRegion.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRegion.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setRegionFilterClip(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setRegionFilterClip.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRegionFilterClip.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setRegionRect(rect: Rect2) {
-    val _arg = Variant(rect)
-    __method_bind.setRegionRect.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRegionRect.call(self._handle, listOf(rect), null)
+    }
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setVframes(vframes: Int) {
-    val _arg = Variant(vframes)
-    __method_bind.setVframes.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVframes.call(self._handle, listOf(vframes), null)
+    }
   }
 
   companion object {

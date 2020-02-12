@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ARVRInterface(
   @Suppress("UNUSED_PARAMETER")
@@ -55,72 +64,133 @@ open class ARVRInterface(
   }
 
   fun getAnchorDetectionIsEnabled(): Boolean {
-    val _ret = __method_bind.getAnchorDetectionIsEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAnchorDetectionIsEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCameraFeedId(): Int {
-    val _ret = __method_bind.getCameraFeedId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCameraFeedId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCapabilities(): Int {
-    val _ret = __method_bind.getCapabilities.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCapabilities.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getName(): String {
-    val _ret = __method_bind.getName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getRenderTargetsize(): Vector2 {
-    val _ret = __method_bind.getRenderTargetsize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRenderTargetsize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTrackingStatus(): Tracking_status {
-    val _ret = __method_bind.getTrackingStatus.call(this._handle)
-    return ARVRInterface.Tracking_status.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTrackingStatus.call(self._handle, emptyList(), _retPtr)
+      ARVRInterface.Tracking_status.from(_ret.value)
+    }
   }
 
   fun initialize(): Boolean {
-    val _ret = __method_bind.initialize.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.initialize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInitialized(): Boolean {
-    val _ret = __method_bind.isInitialized.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInitialized.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPrimary(): Boolean {
-    val _ret = __method_bind.isPrimary.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPrimary.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isStereo(): Boolean {
-    val _ret = __method_bind.isStereo.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isStereo.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAnchorDetectionIsEnabled(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAnchorDetectionIsEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAnchorDetectionIsEnabled.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setIsInitialized(initialized: Boolean) {
-    val _arg = Variant(initialized)
-    __method_bind.setIsInitialized.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setIsInitialized.call(self._handle, listOf(initialized), null)
+    }
   }
 
   fun setIsPrimary(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setIsPrimary.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setIsPrimary.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun uninitialize() {
-    __method_bind.uninitialize.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.uninitialize.call(self._handle, emptyList(), null)
+    }
   }
 
   enum class Tracking_status(

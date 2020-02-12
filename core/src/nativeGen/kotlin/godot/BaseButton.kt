@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class BaseButton(
   @Suppress("UNUSED_PARAMETER")
@@ -130,113 +139,197 @@ open class BaseButton(
   }
 
   fun getActionMode(): ActionMode {
-    val _ret = __method_bind.getActionMode.call(this._handle)
-    return BaseButton.ActionMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getActionMode.call(self._handle, emptyList(), _retPtr)
+      BaseButton.ActionMode.from(_ret.value)
+    }
   }
 
   fun getButtonGroup(): ButtonGroup {
-    val _ret = __method_bind.getButtonGroup.call(this._handle)
-    return _ret.toAny() as ButtonGroup
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ButtonGroup
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getButtonGroup.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<ButtonGroup>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getButtonMask(): Int {
-    val _ret = __method_bind.getButtonMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getButtonMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDrawMode(): DrawMode {
-    val _ret = __method_bind.getDrawMode.call(this._handle)
-    return BaseButton.DrawMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDrawMode.call(self._handle, emptyList(), _retPtr)
+      BaseButton.DrawMode.from(_ret.value)
+    }
   }
 
   fun getEnabledFocusMode(): Control.FocusMode {
-    val _ret = __method_bind.getEnabledFocusMode.call(this._handle)
-    return Control.FocusMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEnabledFocusMode.call(self._handle, emptyList(), _retPtr)
+      Control.FocusMode.from(_ret.value)
+    }
   }
 
   fun getShortcut(): ShortCut {
-    val _ret = __method_bind.getShortcut.call(this._handle)
-    return _ret.toAny() as ShortCut
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ShortCut
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getShortcut.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<ShortCut>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun isDisabled(): Boolean {
-    val _ret = __method_bind.isDisabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDisabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isHovered(): Boolean {
-    val _ret = __method_bind.isHovered.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isHovered.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isKeepPressedOutside(): Boolean {
-    val _ret = __method_bind.isKeepPressedOutside.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isKeepPressedOutside.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPressed(): Boolean {
-    val _ret = __method_bind.isPressed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPressed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isShortcutInTooltipEnabled(): Boolean {
-    val _ret = __method_bind.isShortcutInTooltipEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isShortcutInTooltipEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isToggleMode(): Boolean {
-    val _ret = __method_bind.isToggleMode.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isToggleMode.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setActionMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setActionMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setActionMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setButtonGroup(buttonGroup: ButtonGroup) {
-    val _arg = Variant(buttonGroup)
-    __method_bind.setButtonGroup.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setButtonGroup.call(self._handle, listOf(buttonGroup), null)
+    }
   }
 
   fun setButtonMask(mask: Int) {
-    val _arg = Variant(mask)
-    __method_bind.setButtonMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setButtonMask.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setDisabled(disabled: Boolean) {
-    val _arg = Variant(disabled)
-    __method_bind.setDisabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDisabled.call(self._handle, listOf(disabled), null)
+    }
   }
 
   fun setEnabledFocusMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setEnabledFocusMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnabledFocusMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setKeepPressedOutside(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setKeepPressedOutside.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setKeepPressedOutside.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setPressed(pressed: Boolean) {
-    val _arg = Variant(pressed)
-    __method_bind.setPressed.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPressed.call(self._handle, listOf(pressed), null)
+    }
   }
 
   fun setShortcut(shortcut: ShortCut) {
-    val _arg = Variant(shortcut)
-    __method_bind.setShortcut.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShortcut.call(self._handle, listOf(shortcut), null)
+    }
   }
 
   fun setShortcutInTooltip(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setShortcutInTooltip.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShortcutInTooltip.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setToggleMode(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setToggleMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setToggleMode.call(self._handle, listOf(enabled), null)
+    }
   }
 
   enum class ActionMode(

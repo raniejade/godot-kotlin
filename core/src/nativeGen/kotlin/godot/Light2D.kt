@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Light2D(
   @Suppress("UNUSED_PARAMETER")
@@ -229,213 +238,365 @@ open class Light2D(
   }
 
   fun getColor(): Color {
-    val _ret = __method_bind.getColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getEnergy(): Float {
-    val _ret = __method_bind.getEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getHeight(): Float {
-    val _ret = __method_bind.getHeight.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getItemCullMask(): Int {
-    val _ret = __method_bind.getItemCullMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getItemCullMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemShadowCullMask(): Int {
-    val _ret = __method_bind.getItemShadowCullMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getItemShadowCullMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLayerRangeMax(): Int {
-    val _ret = __method_bind.getLayerRangeMax.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLayerRangeMax.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLayerRangeMin(): Int {
-    val _ret = __method_bind.getLayerRangeMin.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLayerRangeMin.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMode(): Mode {
-    val _ret = __method_bind.getMode.call(this._handle)
-    return Light2D.Mode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMode.call(self._handle, emptyList(), _retPtr)
+      Light2D.Mode.from(_ret.value)
+    }
   }
 
   fun getShadowBufferSize(): Int {
-    val _ret = __method_bind.getShadowBufferSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getShadowBufferSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getShadowColor(): Color {
-    val _ret = __method_bind.getShadowColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getShadowColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getShadowFilter(): ShadowFilter {
-    val _ret = __method_bind.getShadowFilter.call(this._handle)
-    return Light2D.ShadowFilter.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getShadowFilter.call(self._handle, emptyList(), _retPtr)
+      Light2D.ShadowFilter.from(_ret.value)
+    }
   }
 
   fun getShadowGradientLength(): Float {
-    val _ret = __method_bind.getShadowGradientLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getShadowGradientLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getShadowSmooth(): Float {
-    val _ret = __method_bind.getShadowSmooth.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getShadowSmooth.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTextureOffset(): Vector2 {
-    val _ret = __method_bind.getTextureOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTextureOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTextureScale(): Float {
-    val _ret = __method_bind.getTextureScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTextureScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getZRangeMax(): Int {
-    val _ret = __method_bind.getZRangeMax.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getZRangeMax.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getZRangeMin(): Int {
-    val _ret = __method_bind.getZRangeMin.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getZRangeMin.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEditorOnly(): Boolean {
-    val _ret = __method_bind.isEditorOnly.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEditorOnly.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEnabled(): Boolean {
-    val _ret = __method_bind.isEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isShadowEnabled(): Boolean {
-    val _ret = __method_bind.isShadowEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isShadowEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setEditorOnly(editorOnly: Boolean) {
-    val _arg = Variant(editorOnly)
-    __method_bind.setEditorOnly.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEditorOnly.call(self._handle, listOf(editorOnly), null)
+    }
   }
 
   fun setEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setEnergy(energy: Float) {
-    val _arg = Variant(energy)
-    __method_bind.setEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnergy.call(self._handle, listOf(energy), null)
+    }
   }
 
   fun setHeight(height: Float) {
-    val _arg = Variant(height)
-    __method_bind.setHeight.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHeight.call(self._handle, listOf(height), null)
+    }
   }
 
   fun setItemCullMask(itemCullMask: Int) {
-    val _arg = Variant(itemCullMask)
-    __method_bind.setItemCullMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setItemCullMask.call(self._handle, listOf(itemCullMask), null)
+    }
   }
 
   fun setItemShadowCullMask(itemShadowCullMask: Int) {
-    val _arg = Variant(itemShadowCullMask)
-    __method_bind.setItemShadowCullMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setItemShadowCullMask.call(self._handle, listOf(itemShadowCullMask), null)
+    }
   }
 
   fun setLayerRangeMax(layer: Int) {
-    val _arg = Variant(layer)
-    __method_bind.setLayerRangeMax.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLayerRangeMax.call(self._handle, listOf(layer), null)
+    }
   }
 
   fun setLayerRangeMin(layer: Int) {
-    val _arg = Variant(layer)
-    __method_bind.setLayerRangeMin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLayerRangeMin.call(self._handle, listOf(layer), null)
+    }
   }
 
   fun setMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setShadowBufferSize(size: Int) {
-    val _arg = Variant(size)
-    __method_bind.setShadowBufferSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowBufferSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setShadowColor(shadowColor: Color) {
-    val _arg = Variant(shadowColor)
-    __method_bind.setShadowColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowColor.call(self._handle, listOf(shadowColor), null)
+    }
   }
 
   fun setShadowEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setShadowEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setShadowFilter(filter: Int) {
-    val _arg = Variant(filter)
-    __method_bind.setShadowFilter.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowFilter.call(self._handle, listOf(filter), null)
+    }
   }
 
   fun setShadowGradientLength(multiplier: Float) {
-    val _arg = Variant(multiplier)
-    __method_bind.setShadowGradientLength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowGradientLength.call(self._handle, listOf(multiplier), null)
+    }
   }
 
   fun setShadowSmooth(smooth: Float) {
-    val _arg = Variant(smooth)
-    __method_bind.setShadowSmooth.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowSmooth.call(self._handle, listOf(smooth), null)
+    }
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setTextureOffset(textureOffset: Vector2) {
-    val _arg = Variant(textureOffset)
-    __method_bind.setTextureOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTextureOffset.call(self._handle, listOf(textureOffset), null)
+    }
   }
 
   fun setTextureScale(textureScale: Float) {
-    val _arg = Variant(textureScale)
-    __method_bind.setTextureScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTextureScale.call(self._handle, listOf(textureScale), null)
+    }
   }
 
   fun setZRangeMax(z: Int) {
-    val _arg = Variant(z)
-    __method_bind.setZRangeMax.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setZRangeMax.call(self._handle, listOf(z), null)
+    }
   }
 
   fun setZRangeMin(z: Int) {
-    val _arg = Variant(z)
-    __method_bind.setZRangeMin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setZRangeMin.call(self._handle, listOf(z), null)
+    }
   }
 
   enum class ShadowFilter(

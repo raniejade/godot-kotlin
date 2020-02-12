@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class BakedLightmap(
   @Suppress("UNUSED_PARAMETER")
@@ -130,125 +139,214 @@ open class BakedLightmap(
   }
 
   fun bake(fromNode: Node, createVisualDebug: Boolean = false): BakeError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(fromNode))
-    _args.add(Variant.fromAny(createVisualDebug))
-    val _ret = __method_bind.bake.call(this._handle, _args)
-    return BakedLightmap.BakeError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(fromNode)
+      _args.add(createVisualDebug)
+      __method_bind.bake.call(self._handle, _args, _retPtr)
+      BakedLightmap.BakeError.from(_ret.value)
+    }
   }
 
   fun debugBake() {
-    __method_bind.debugBake.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.debugBake.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getBakeCellSize(): Float {
-    val _ret = __method_bind.getBakeCellSize.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBakeCellSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getBakeDefaultTexelsPerUnit(): Float {
-    val _ret = __method_bind.getBakeDefaultTexelsPerUnit.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBakeDefaultTexelsPerUnit.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getBakeMode(): BakeMode {
-    val _ret = __method_bind.getBakeMode.call(this._handle)
-    return BakedLightmap.BakeMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBakeMode.call(self._handle, emptyList(), _retPtr)
+      BakedLightmap.BakeMode.from(_ret.value)
+    }
   }
 
   fun getBakeQuality(): BakeQuality {
-    val _ret = __method_bind.getBakeQuality.call(this._handle)
-    return BakedLightmap.BakeQuality.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBakeQuality.call(self._handle, emptyList(), _retPtr)
+      BakedLightmap.BakeQuality.from(_ret.value)
+    }
   }
 
   fun getCaptureCellSize(): Float {
-    val _ret = __method_bind.getCaptureCellSize.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCaptureCellSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getEnergy(): Float {
-    val _ret = __method_bind.getEnergy.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEnergy.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getExtents(): Vector3 {
-    val _ret = __method_bind.getExtents.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getExtents.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getImagePath(): String {
-    val _ret = __method_bind.getImagePath.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getImagePath.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getLightData(): BakedLightmapData {
-    val _ret = __method_bind.getLightData.call(this._handle)
-    return _ret.toAny() as BakedLightmapData
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: BakedLightmapData
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getLightData.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<BakedLightmapData>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPropagation(): Float {
-    val _ret = __method_bind.getPropagation.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPropagation.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isHdr(): Boolean {
-    val _ret = __method_bind.isHdr.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isHdr.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBakeCellSize(bakeCellSize: Float) {
-    val _arg = Variant(bakeCellSize)
-    __method_bind.setBakeCellSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBakeCellSize.call(self._handle, listOf(bakeCellSize), null)
+    }
   }
 
   fun setBakeDefaultTexelsPerUnit(texels: Float) {
-    val _arg = Variant(texels)
-    __method_bind.setBakeDefaultTexelsPerUnit.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBakeDefaultTexelsPerUnit.call(self._handle, listOf(texels), null)
+    }
   }
 
   fun setBakeMode(bakeMode: Int) {
-    val _arg = Variant(bakeMode)
-    __method_bind.setBakeMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBakeMode.call(self._handle, listOf(bakeMode), null)
+    }
   }
 
   fun setBakeQuality(bakeQuality: Int) {
-    val _arg = Variant(bakeQuality)
-    __method_bind.setBakeQuality.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBakeQuality.call(self._handle, listOf(bakeQuality), null)
+    }
   }
 
   fun setCaptureCellSize(captureCellSize: Float) {
-    val _arg = Variant(captureCellSize)
-    __method_bind.setCaptureCellSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCaptureCellSize.call(self._handle, listOf(captureCellSize), null)
+    }
   }
 
   fun setEnergy(energy: Float) {
-    val _arg = Variant(energy)
-    __method_bind.setEnergy.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnergy.call(self._handle, listOf(energy), null)
+    }
   }
 
   fun setExtents(extents: Vector3) {
-    val _arg = Variant(extents)
-    __method_bind.setExtents.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExtents.call(self._handle, listOf(extents), null)
+    }
   }
 
   fun setHdr(hdr: Boolean) {
-    val _arg = Variant(hdr)
-    __method_bind.setHdr.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHdr.call(self._handle, listOf(hdr), null)
+    }
   }
 
   fun setImagePath(imagePath: String) {
-    val _arg = Variant(imagePath)
-    __method_bind.setImagePath.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setImagePath.call(self._handle, listOf(imagePath), null)
+    }
   }
 
   fun setLightData(data: BakedLightmapData) {
-    val _arg = Variant(data)
-    __method_bind.setLightData.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLightData.call(self._handle, listOf(data), null)
+    }
   }
 
   fun setPropagation(propagation: Float) {
-    val _arg = Variant(propagation)
-    __method_bind.setPropagation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPropagation.call(self._handle, listOf(propagation), null)
+    }
   }
 
   enum class BakeQuality(

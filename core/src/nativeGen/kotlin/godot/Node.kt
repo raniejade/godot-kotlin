@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -14,13 +15,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Node(
   @Suppress("UNUSED_PARAMETER")
@@ -111,10 +120,13 @@ open class Node(
   }
 
   fun addChild(node: Node, legibleUniqueName: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(node))
-    _args.add(Variant.fromAny(legibleUniqueName))
-    __method_bind.addChild.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(node)
+      _args.add(legibleUniqueName)
+      __method_bind.addChild.call(self._handle, _args, null)
+    }
   }
 
   fun addChildBelowNode(
@@ -122,29 +134,46 @@ open class Node(
     childNode: Node,
     legibleUniqueName: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(node))
-    _args.add(Variant.fromAny(childNode))
-    _args.add(Variant.fromAny(legibleUniqueName))
-    __method_bind.addChildBelowNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(node)
+      _args.add(childNode)
+      _args.add(legibleUniqueName)
+      __method_bind.addChildBelowNode.call(self._handle, _args, null)
+    }
   }
 
   fun addToGroup(group: String, persistent: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(group))
-    _args.add(Variant.fromAny(persistent))
-    __method_bind.addToGroup.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(group)
+      _args.add(persistent)
+      __method_bind.addToGroup.call(self._handle, _args, null)
+    }
   }
 
   fun canProcess(): Boolean {
-    val _ret = __method_bind.canProcess.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.canProcess.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun duplicate(flags: Int = 15): Node {
-    val _arg = Variant(flags)
-    val _ret = __method_bind.duplicate.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.duplicate.call(self._handle, listOf(flags), _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun findNode(
@@ -152,247 +181,487 @@ open class Node(
     recursive: Boolean = true,
     owned: Boolean = true
   ): Node {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(mask))
-    _args.add(Variant.fromAny(recursive))
-    _args.add(Variant.fromAny(owned))
-    val _ret = __method_bind.findNode.call(this._handle, _args)
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(mask)
+      _args.add(recursive)
+      _args.add(owned)
+      __method_bind.findNode.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun findParent(mask: String): Node {
-    val _arg = Variant(mask)
-    val _ret = __method_bind.findParent.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.findParent.call(self._handle, listOf(mask), _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getChild(idx: Int): Node {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getChild.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getChild.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getChildCount(): Int {
-    val _ret = __method_bind.getChildCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getChildCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getChildren(): VariantArray {
-    val _ret = __method_bind.getChildren.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getChildren.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCustomMultiplayer(): MultiplayerAPI {
-    val _ret = __method_bind.getCustomMultiplayer.call(this._handle)
-    return _ret.toAny() as MultiplayerAPI
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: MultiplayerAPI
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getCustomMultiplayer.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<MultiplayerAPI>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getFilename(): String {
-    val _ret = __method_bind.getFilename.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getFilename.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getGroups(): VariantArray {
-    val _ret = __method_bind.getGroups.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGroups.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getIndex(): Int {
-    val _ret = __method_bind.getIndex.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getIndex.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMultiplayer(): MultiplayerAPI {
-    val _ret = __method_bind.getMultiplayer.call(this._handle)
-    return _ret.toAny() as MultiplayerAPI
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: MultiplayerAPI
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMultiplayer.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<MultiplayerAPI>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getName(): String {
-    val _ret = __method_bind.getName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getNetworkMaster(): Int {
-    val _ret = __method_bind.getNetworkMaster.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getNetworkMaster.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNode(path: NodePath): Node? {
-    val _arg = Variant(path)
-    val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Node?
+    val self = this
+    return Allocator.allocationScope {
+      var _ret: Node? = null
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNode.call(self._handle, listOf(path), _retPtr)
+      if (_tmp.value != null) { _ret = objectToType<Node>(_tmp.value!!) }
+      _ret
+    }
   }
 
   fun getNodeAndResource(path: NodePath): VariantArray {
-    val _arg = Variant(path)
-    val _ret = __method_bind.getNodeAndResource.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodeAndResource.call(self._handle, listOf(path), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNodeOrNull(path: NodePath): Node {
-    val _arg = Variant(path)
-    val _ret = __method_bind.getNodeOrNull.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNodeOrNull.call(self._handle, listOf(path), _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getOwner(): Node {
-    val _ret = __method_bind.getOwner.call(this._handle)
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getOwner.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getParent(): Node? {
-    val _ret = __method_bind.getParent.call(this._handle)
-    return _ret.toAny() as Node?
+    val self = this
+    return Allocator.allocationScope {
+      var _ret: Node? = null
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getParent.call(self._handle, emptyList(), _retPtr)
+      if (_tmp.value != null) { _ret = objectToType<Node>(_tmp.value!!) }
+      _ret
+    }
   }
 
   fun getPath(): NodePath {
-    val _ret = __method_bind.getPath.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPath.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPathTo(node: Node): NodePath {
-    val _arg = Variant(node)
-    val _ret = __method_bind.getPathTo.call(this._handle, listOf(_arg))
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPathTo.call(self._handle, listOf(node), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPauseMode(): PauseMode {
-    val _ret = __method_bind.getPauseMode.call(this._handle)
-    return Node.PauseMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPauseMode.call(self._handle, emptyList(), _retPtr)
+      Node.PauseMode.from(_ret.value)
+    }
   }
 
   fun getPhysicsProcessDeltaTime(): Float {
-    val _ret = __method_bind.getPhysicsProcessDeltaTime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPhysicsProcessDeltaTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPositionInParent(): Int {
-    val _ret = __method_bind.getPositionInParent.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPositionInParent.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getProcessDeltaTime(): Float {
-    val _ret = __method_bind.getProcessDeltaTime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getProcessDeltaTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getProcessPriority(): Int {
-    val _ret = __method_bind.getProcessPriority.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getProcessPriority.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSceneInstanceLoadPlaceholder(): Boolean {
-    val _ret = __method_bind.getSceneInstanceLoadPlaceholder.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSceneInstanceLoadPlaceholder.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTree(): SceneTree {
-    val _ret = __method_bind.getTree.call(this._handle)
-    return _ret.toAny() as SceneTree
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: SceneTree
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTree.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<SceneTree>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getViewport(): Viewport {
-    val _ret = __method_bind.getViewport.call(this._handle)
-    return _ret.toAny() as Viewport
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Viewport
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getViewport.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Viewport>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun hasNode(path: NodePath): Boolean {
-    val _arg = Variant(path)
-    val _ret = __method_bind.hasNode.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasNode.call(self._handle, listOf(path), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasNodeAndResource(path: NodePath): Boolean {
-    val _arg = Variant(path)
-    val _ret = __method_bind.hasNodeAndResource.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasNodeAndResource.call(self._handle, listOf(path), _retPtr)
+      _ret.value
+    }
   }
 
   fun isAParentOf(node: Node): Boolean {
-    val _arg = Variant(node)
-    val _ret = __method_bind.isAParentOf.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAParentOf.call(self._handle, listOf(node), _retPtr)
+      _ret.value
+    }
   }
 
   fun isDisplayedFolded(): Boolean {
-    val _ret = __method_bind.isDisplayedFolded.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDisplayedFolded.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isGreaterThan(node: Node): Boolean {
-    val _arg = Variant(node)
-    val _ret = __method_bind.isGreaterThan.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isGreaterThan.call(self._handle, listOf(node), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInGroup(group: String): Boolean {
-    val _arg = Variant(group)
-    val _ret = __method_bind.isInGroup.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInGroup.call(self._handle, listOf(group), _retPtr)
+      _ret.value
+    }
   }
 
   fun isInsideTree(): Boolean {
-    val _ret = __method_bind.isInsideTree.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInsideTree.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isNetworkMaster(): Boolean {
-    val _ret = __method_bind.isNetworkMaster.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isNetworkMaster.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPhysicsProcessing(): Boolean {
-    val _ret = __method_bind.isPhysicsProcessing.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPhysicsProcessing.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPhysicsProcessingInternal(): Boolean {
-    val _ret = __method_bind.isPhysicsProcessingInternal.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPhysicsProcessingInternal.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isProcessing(): Boolean {
-    val _ret = __method_bind.isProcessing.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isProcessing.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isProcessingInput(): Boolean {
-    val _ret = __method_bind.isProcessingInput.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isProcessingInput.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isProcessingInternal(): Boolean {
-    val _ret = __method_bind.isProcessingInternal.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isProcessingInternal.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isProcessingUnhandledInput(): Boolean {
-    val _ret = __method_bind.isProcessingUnhandledInput.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isProcessingUnhandledInput.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isProcessingUnhandledKeyInput(): Boolean {
-    val _ret = __method_bind.isProcessingUnhandledKeyInput.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isProcessingUnhandledKeyInput.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun moveChild(childNode: Node, toPosition: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(childNode))
-    _args.add(Variant.fromAny(toPosition))
-    __method_bind.moveChild.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(childNode)
+      _args.add(toPosition)
+      __method_bind.moveChild.call(self._handle, _args, null)
+    }
   }
 
   fun printStrayNodes() {
-    __method_bind.printStrayNodes.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.printStrayNodes.call(self._handle, emptyList(), null)
+    }
   }
 
   fun printTree() {
-    __method_bind.printTree.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.printTree.call(self._handle, emptyList(), null)
+    }
   }
 
   fun printTreePretty() {
-    __method_bind.printTreePretty.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.printTreePretty.call(self._handle, emptyList(), null)
+    }
   }
 
   fun propagateCall(
@@ -400,64 +669,97 @@ open class Node(
     args: VariantArray,
     parentFirst: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(args))
-    _args.add(Variant.fromAny(parentFirst))
-    __method_bind.propagateCall.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(method)
+      _args.add(args)
+      _args.add(parentFirst)
+      __method_bind.propagateCall.call(self._handle, _args, null)
+    }
   }
 
   fun propagateNotification(what: Int) {
-    val _arg = Variant(what)
-    __method_bind.propagateNotification.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.propagateNotification.call(self._handle, listOf(what), null)
+    }
   }
 
   fun queueFree() {
-    __method_bind.queueFree.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.queueFree.call(self._handle, emptyList(), null)
+    }
   }
 
   fun raise() {
-    __method_bind.raise.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.raise.call(self._handle, emptyList(), null)
+    }
   }
 
   fun removeAndSkip() {
-    __method_bind.removeAndSkip.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeAndSkip.call(self._handle, emptyList(), null)
+    }
   }
 
   fun removeChild(node: Node) {
-    val _arg = Variant(node)
-    __method_bind.removeChild.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeChild.call(self._handle, listOf(node), null)
+    }
   }
 
   fun removeFromGroup(group: String) {
-    val _arg = Variant(group)
-    __method_bind.removeFromGroup.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeFromGroup.call(self._handle, listOf(group), null)
+    }
   }
 
   fun replaceBy(node: Node, keepData: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(node))
-    _args.add(Variant.fromAny(keepData))
-    __method_bind.replaceBy.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(node)
+      _args.add(keepData)
+      __method_bind.replaceBy.call(self._handle, _args, null)
+    }
   }
 
   fun requestReady() {
-    __method_bind.requestReady.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.requestReady.call(self._handle, emptyList(), null)
+    }
   }
 
   fun rpc(method: String, vararg varargs: Any?): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpc.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.rpc.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun rpcConfig(method: String, mode: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(mode))
-    __method_bind.rpcConfig.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(method)
+      _args.add(mode)
+      __method_bind.rpcConfig.call(self._handle, _args, null)
+    }
   }
 
   fun rpcId(
@@ -465,20 +767,32 @@ open class Node(
     method: String,
     vararg varargs: Any?
   ): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(peerId))
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpcId.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(peerId)
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.rpcId.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun rpcUnreliable(method: String, vararg varargs: Any?): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpcUnreliable.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.rpcUnreliable.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun rpcUnreliableId(
@@ -486,26 +800,38 @@ open class Node(
     method: String,
     vararg varargs: Any?
   ): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(peerId))
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    val _ret = __method_bind.rpcUnreliableId.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(peerId)
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.rpcUnreliableId.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun rset(property: String, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.rset.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(property)
+      _args.add(value)
+      __method_bind.rset.call(self._handle, _args, null)
+    }
   }
 
   fun rsetConfig(property: String, mode: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(mode))
-    __method_bind.rsetConfig.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(property)
+      _args.add(mode)
+      __method_bind.rsetConfig.call(self._handle, _args, null)
+    }
   }
 
   fun rsetId(
@@ -513,18 +839,24 @@ open class Node(
     property: String,
     value: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(peerId))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.rsetId.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(peerId)
+      _args.add(property)
+      _args.add(value)
+      __method_bind.rsetId.call(self._handle, _args, null)
+    }
   }
 
   fun rsetUnreliable(property: String, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.rsetUnreliable.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(property)
+      _args.add(value)
+      __method_bind.rsetUnreliable.call(self._handle, _args, null)
+    }
   }
 
   fun rsetUnreliableId(
@@ -532,97 +864,137 @@ open class Node(
     property: String,
     value: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(peerId))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.rsetUnreliableId.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(peerId)
+      _args.add(property)
+      _args.add(value)
+      __method_bind.rsetUnreliableId.call(self._handle, _args, null)
+    }
   }
 
   fun setCustomMultiplayer(api: MultiplayerAPI) {
-    val _arg = Variant(api)
-    __method_bind.setCustomMultiplayer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCustomMultiplayer.call(self._handle, listOf(api), null)
+    }
   }
 
   fun setDisplayFolded(fold: Boolean) {
-    val _arg = Variant(fold)
-    __method_bind.setDisplayFolded.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDisplayFolded.call(self._handle, listOf(fold), null)
+    }
   }
 
   fun setFilename(filename: String) {
-    val _arg = Variant(filename)
-    __method_bind.setFilename.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFilename.call(self._handle, listOf(filename), null)
+    }
   }
 
   fun setName(name: String) {
-    val _arg = Variant(name)
-    __method_bind.setName.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setName.call(self._handle, listOf(name), null)
+    }
   }
 
   fun setNetworkMaster(id: Int, recursive: Boolean = true) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(recursive))
-    __method_bind.setNetworkMaster.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(recursive)
+      __method_bind.setNetworkMaster.call(self._handle, _args, null)
+    }
   }
 
   fun setOwner(owner: Node) {
-    val _arg = Variant(owner)
-    __method_bind.setOwner.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOwner.call(self._handle, listOf(owner), null)
+    }
   }
 
   fun setPauseMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setPauseMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPauseMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setPhysicsProcess(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setPhysicsProcess.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPhysicsProcess.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setPhysicsProcessInternal(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setPhysicsProcessInternal.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPhysicsProcessInternal.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setProcess(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setProcess.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProcess.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setProcessInput(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setProcessInput.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProcessInput.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setProcessInternal(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setProcessInternal.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProcessInternal.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setProcessPriority(priority: Int) {
-    val _arg = Variant(priority)
-    __method_bind.setProcessPriority.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProcessPriority.call(self._handle, listOf(priority), null)
+    }
   }
 
   fun setProcessUnhandledInput(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setProcessUnhandledInput.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProcessUnhandledInput.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setProcessUnhandledKeyInput(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setProcessUnhandledKeyInput.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setProcessUnhandledKeyInput.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setSceneInstanceLoadPlaceholder(loadPlaceholder: Boolean) {
-    val _arg = Variant(loadPlaceholder)
-    __method_bind.setSceneInstanceLoadPlaceholder.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSceneInstanceLoadPlaceholder.call(self._handle, listOf(loadPlaceholder),
+          null)
+    }
   }
 
   fun updateConfigurationWarning() {
-    __method_bind.updateConfigurationWarning.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.updateConfigurationWarning.call(self._handle, emptyList(), null)
+    }
   }
 
   enum class PauseMode(

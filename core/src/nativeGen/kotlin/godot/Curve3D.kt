@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolFloatArray
@@ -15,13 +16,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Curve3D(
   @Suppress("UNUSED_PARAMETER")
@@ -55,168 +64,287 @@ open class Curve3D(
     out: Vector3 = Vector3(0, 0, 0),
     atPosition: Int = -1
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(`in`))
-    _args.add(Variant.fromAny(out))
-    _args.add(Variant.fromAny(atPosition))
-    __method_bind.addPoint.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(position)
+      _args.add(`in`)
+      _args.add(out)
+      _args.add(atPosition)
+      __method_bind.addPoint.call(self._handle, _args, null)
+    }
   }
 
   fun clearPoints() {
-    __method_bind.clearPoints.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearPoints.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getBakeInterval(): Float {
-    val _ret = __method_bind.getBakeInterval.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBakeInterval.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getBakedLength(): Float {
-    val _ret = __method_bind.getBakedLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBakedLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getBakedPoints(): PoolVector3Array {
-    val _ret = __method_bind.getBakedPoints.call(this._handle)
-    return _ret.asPoolVector3Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector3Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBakedPoints.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBakedTilts(): PoolFloatArray {
-    val _ret = __method_bind.getBakedTilts.call(this._handle)
-    return _ret.asPoolFloatArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolFloatArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBakedTilts.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBakedUpVectors(): PoolVector3Array {
-    val _ret = __method_bind.getBakedUpVectors.call(this._handle)
-    return _ret.asPoolVector3Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector3Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBakedUpVectors.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getClosestOffset(toPoint: Vector3): Float {
-    val _arg = Variant(toPoint)
-    val _ret = __method_bind.getClosestOffset.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getClosestOffset.call(self._handle, listOf(toPoint), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getClosestPoint(toPoint: Vector3): Vector3 {
-    val _arg = Variant(toPoint)
-    val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getClosestPoint.call(self._handle, listOf(toPoint), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointCount(): Int {
-    val _ret = __method_bind.getPointCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPointIn(idx: Int): Vector3 {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getPointIn.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPointIn.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointOut(idx: Int): Vector3 {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getPointOut.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPointOut.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointPosition(idx: Int): Vector3 {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPointPosition.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPointTilt(idx: Int): Float {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getPointTilt.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointTilt.call(self._handle, listOf(idx), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun interpolate(idx: Int, t: Float): Vector3 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(t))
-    val _ret = __method_bind.interpolate.call(this._handle, _args)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(t)
+      __method_bind.interpolate.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun interpolateBaked(offset: Float, cubic: Boolean = false): Vector3 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(cubic))
-    val _ret = __method_bind.interpolateBaked.call(this._handle, _args)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(offset)
+      _args.add(cubic)
+      __method_bind.interpolateBaked.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun interpolateBakedUpVector(offset: Float, applyTilt: Boolean = false): Vector3 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(applyTilt))
-    val _ret = __method_bind.interpolateBakedUpVector.call(this._handle, _args)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(offset)
+      _args.add(applyTilt)
+      __method_bind.interpolateBakedUpVector.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun interpolatef(fofs: Float): Vector3 {
-    val _arg = Variant(fofs)
-    val _ret = __method_bind.interpolatef.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.interpolatef.call(self._handle, listOf(fofs), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isUpVectorEnabled(): Boolean {
-    val _ret = __method_bind.isUpVectorEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUpVectorEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun removePoint(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.removePoint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removePoint.call(self._handle, listOf(idx), null)
+    }
   }
 
   fun setBakeInterval(distance: Float) {
-    val _arg = Variant(distance)
-    __method_bind.setBakeInterval.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBakeInterval.call(self._handle, listOf(distance), null)
+    }
   }
 
   fun setPointIn(idx: Int, position: Vector3) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(position))
-    __method_bind.setPointIn.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(position)
+      __method_bind.setPointIn.call(self._handle, _args, null)
+    }
   }
 
   fun setPointOut(idx: Int, position: Vector3) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(position))
-    __method_bind.setPointOut.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(position)
+      __method_bind.setPointOut.call(self._handle, _args, null)
+    }
   }
 
   fun setPointPosition(idx: Int, position: Vector3) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(position))
-    __method_bind.setPointPosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(position)
+      __method_bind.setPointPosition.call(self._handle, _args, null)
+    }
   }
 
   fun setPointTilt(idx: Int, tilt: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(tilt))
-    __method_bind.setPointTilt.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(tilt)
+      __method_bind.setPointTilt.call(self._handle, _args, null)
+    }
   }
 
   fun setUpVectorEnabled(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUpVectorEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUpVectorEnabled.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun tessellate(maxStages: Int = 5, toleranceDegrees: Float = 4.0f): PoolVector3Array {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(maxStages))
-    _args.add(Variant.fromAny(toleranceDegrees))
-    val _ret = __method_bind.tessellate.call(this._handle, _args)
-    return _ret.asPoolVector3Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector3Array()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(maxStages)
+      _args.add(toleranceDegrees)
+      __method_bind.tessellate.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorSceneImporter(
   @Suppress("UNUSED_PARAMETER")
@@ -33,12 +42,19 @@ open class EditorSceneImporter(
     flags: Int,
     bakeFps: Int
   ): Animation {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(flags))
-    _args.add(Variant.fromAny(bakeFps))
-    val _ret = __method_bind.importAnimationFromOtherImporter.call(this._handle, _args)
-    return _ret.toAny() as Animation
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Animation
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(flags)
+      _args.add(bakeFps)
+      __method_bind.importAnimationFromOtherImporter.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Animation>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun importSceneFromOtherImporter(
@@ -46,12 +62,19 @@ open class EditorSceneImporter(
     flags: Int,
     bakeFps: Int
   ): Node {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(flags))
-    _args.add(Variant.fromAny(bakeFps))
-    val _ret = __method_bind.importSceneFromOtherImporter.call(this._handle, _args)
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(flags)
+      _args.add(bakeFps)
+      __method_bind.importSceneFromOtherImporter.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   companion object {

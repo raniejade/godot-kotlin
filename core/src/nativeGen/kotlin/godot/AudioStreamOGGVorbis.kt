@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolByteArray
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AudioStreamOGGVorbis(
   @Suppress("UNUSED_PARAMETER")
@@ -65,33 +74,55 @@ open class AudioStreamOGGVorbis(
   }
 
   fun getData(): PoolByteArray {
-    val _ret = __method_bind.getData.call(this._handle)
-    return _ret.asPoolByteArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolByteArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getData.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLoopOffset(): Float {
-    val _ret = __method_bind.getLoopOffset.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLoopOffset.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun hasLoop(): Boolean {
-    val _ret = __method_bind.hasLoop.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasLoop.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setData(data: PoolByteArray) {
-    val _arg = Variant(data)
-    __method_bind.setData.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setData.call(self._handle, listOf(data), null)
+    }
   }
 
   fun setLoop(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setLoop.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLoop.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setLoopOffset(seconds: Float) {
-    val _arg = Variant(seconds)
-    __method_bind.setLoopOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLoopOffset.call(self._handle, listOf(seconds), null)
+    }
   }
 
   companion object {

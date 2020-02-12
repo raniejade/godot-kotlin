@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
@@ -14,13 +15,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Popup(
   @Suppress("UNUSED_PARAMETER")
@@ -51,44 +60,65 @@ open class Popup(
   }
 
   fun isExclusive(): Boolean {
-    val _ret = __method_bind.isExclusive.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isExclusive.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun popup(bounds: Rect2) {
-    val _arg = Variant(bounds)
-    __method_bind.popup.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.popup.call(self._handle, listOf(bounds), null)
+    }
   }
 
   fun popupCentered(size: Vector2 = Vector2(0, 0)) {
-    val _arg = Variant(size)
-    __method_bind.popupCentered.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.popupCentered.call(self._handle, listOf(size), null)
+    }
   }
 
   fun popupCenteredClamped(size: Vector2 = Vector2(0, 0), fallbackRatio: Float = 0.75f) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(size))
-    _args.add(Variant.fromAny(fallbackRatio))
-    __method_bind.popupCenteredClamped.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(size)
+      _args.add(fallbackRatio)
+      __method_bind.popupCenteredClamped.call(self._handle, _args, null)
+    }
   }
 
   fun popupCenteredMinsize(minsize: Vector2 = Vector2(0, 0)) {
-    val _arg = Variant(minsize)
-    __method_bind.popupCenteredMinsize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.popupCenteredMinsize.call(self._handle, listOf(minsize), null)
+    }
   }
 
   fun popupCenteredRatio(ratio: Float = 0.75f) {
-    val _arg = Variant(ratio)
-    __method_bind.popupCenteredRatio.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.popupCenteredRatio.call(self._handle, listOf(ratio), null)
+    }
   }
 
   fun setAsMinsize() {
-    __method_bind.setAsMinsize.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAsMinsize.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setExclusive(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setExclusive.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExclusive.call(self._handle, listOf(enable), null)
+    }
   }
 
   companion object {

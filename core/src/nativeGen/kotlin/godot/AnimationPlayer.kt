@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AnimationPlayer(
   @Suppress("UNUSED_PARAMETER")
@@ -146,138 +155,260 @@ open class AnimationPlayer(
   }
 
   fun addAnimation(name: String, animation: Animation): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(animation))
-    val _ret = __method_bind.addAnimation.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(animation)
+      __method_bind.addAnimation.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun advance(delta: Float) {
-    val _arg = Variant(delta)
-    __method_bind.advance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.advance.call(self._handle, listOf(delta), null)
+    }
   }
 
   fun animationGetNext(animFrom: String): String {
-    val _arg = Variant(animFrom)
-    val _ret = __method_bind.animationGetNext.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.animationGetNext.call(self._handle, listOf(animFrom), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun animationSetNext(animFrom: String, animTo: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(animFrom))
-    _args.add(Variant.fromAny(animTo))
-    __method_bind.animationSetNext.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(animFrom)
+      _args.add(animTo)
+      __method_bind.animationSetNext.call(self._handle, _args, null)
+    }
   }
 
   fun clearCaches() {
-    __method_bind.clearCaches.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearCaches.call(self._handle, emptyList(), null)
+    }
   }
 
   fun clearQueue() {
-    __method_bind.clearQueue.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearQueue.call(self._handle, emptyList(), null)
+    }
   }
 
   fun findAnimation(animation: Animation): String {
-    val _arg = Variant(animation)
-    val _ret = __method_bind.findAnimation.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.findAnimation.call(self._handle, listOf(animation), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getAnimation(name: String): Animation {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getAnimation.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Animation
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Animation
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getAnimation.call(self._handle, listOf(name), _retPtr)
+      _ret = objectToType<Animation>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getAnimationList(): PoolStringArray {
-    val _ret = __method_bind.getAnimationList.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getAnimationList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getAnimationProcessMode(): AnimationProcessMode {
-    val _ret = __method_bind.getAnimationProcessMode.call(this._handle)
-    return AnimationPlayer.AnimationProcessMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAnimationProcessMode.call(self._handle, emptyList(), _retPtr)
+      AnimationPlayer.AnimationProcessMode.from(_ret.value)
+    }
   }
 
   fun getAssignedAnimation(): String {
-    val _ret = __method_bind.getAssignedAnimation.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAssignedAnimation.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getAutoplay(): String {
-    val _ret = __method_bind.getAutoplay.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAutoplay.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getBlendTime(animFrom: String, animTo: String): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(animFrom))
-    _args.add(Variant.fromAny(animTo))
-    val _ret = __method_bind.getBlendTime.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(animFrom)
+      _args.add(animTo)
+      __method_bind.getBlendTime.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCurrentAnimation(): String {
-    val _ret = __method_bind.getCurrentAnimation.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getCurrentAnimation.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getCurrentAnimationLength(): Float {
-    val _ret = __method_bind.getCurrentAnimationLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCurrentAnimationLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCurrentAnimationPosition(): Float {
-    val _ret = __method_bind.getCurrentAnimationPosition.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCurrentAnimationPosition.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDefaultBlendTime(): Float {
-    val _ret = __method_bind.getDefaultBlendTime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDefaultBlendTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMethodCallMode(): AnimationMethodCallMode {
-    val _ret = __method_bind.getMethodCallMode.call(this._handle)
-    return AnimationPlayer.AnimationMethodCallMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMethodCallMode.call(self._handle, emptyList(), _retPtr)
+      AnimationPlayer.AnimationMethodCallMode.from(_ret.value)
+    }
   }
 
   fun getPlayingSpeed(): Float {
-    val _ret = __method_bind.getPlayingSpeed.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPlayingSpeed.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getQueue(): PoolStringArray {
-    val _ret = __method_bind.getQueue.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getQueue.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRoot(): NodePath {
-    val _ret = __method_bind.getRoot.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRoot.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSpeedScale(): Float {
-    val _ret = __method_bind.getSpeedScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpeedScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun hasAnimation(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasAnimation.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAnimation.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun isActive(): Boolean {
-    val _ret = __method_bind.isActive.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isActive.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPlaying(): Boolean {
-    val _ret = __method_bind.isPlaying.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPlaying.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun play(
@@ -286,63 +417,87 @@ open class AnimationPlayer(
     customSpeed: Float = 1.0f,
     fromEnd: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(customBlend))
-    _args.add(Variant.fromAny(customSpeed))
-    _args.add(Variant.fromAny(fromEnd))
-    __method_bind.play.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(customBlend)
+      _args.add(customSpeed)
+      _args.add(fromEnd)
+      __method_bind.play.call(self._handle, _args, null)
+    }
   }
 
   fun playBackwards(name: String = "", customBlend: Float = -1.0f) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(customBlend))
-    __method_bind.playBackwards.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(customBlend)
+      __method_bind.playBackwards.call(self._handle, _args, null)
+    }
   }
 
   fun queue(name: String) {
-    val _arg = Variant(name)
-    __method_bind.queue.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.queue.call(self._handle, listOf(name), null)
+    }
   }
 
   fun removeAnimation(name: String) {
-    val _arg = Variant(name)
-    __method_bind.removeAnimation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeAnimation.call(self._handle, listOf(name), null)
+    }
   }
 
   fun renameAnimation(name: String, newname: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(newname))
-    __method_bind.renameAnimation.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(newname)
+      __method_bind.renameAnimation.call(self._handle, _args, null)
+    }
   }
 
   fun seek(seconds: Float, update: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(seconds))
-    _args.add(Variant.fromAny(update))
-    __method_bind.seek.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(seconds)
+      _args.add(update)
+      __method_bind.seek.call(self._handle, _args, null)
+    }
   }
 
   fun setActive(active: Boolean) {
-    val _arg = Variant(active)
-    __method_bind.setActive.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setActive.call(self._handle, listOf(active), null)
+    }
   }
 
   fun setAnimationProcessMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setAnimationProcessMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAnimationProcessMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setAssignedAnimation(anim: String) {
-    val _arg = Variant(anim)
-    __method_bind.setAssignedAnimation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAssignedAnimation.call(self._handle, listOf(anim), null)
+    }
   }
 
   fun setAutoplay(name: String) {
-    val _arg = Variant(name)
-    __method_bind.setAutoplay.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutoplay.call(self._handle, listOf(name), null)
+    }
   }
 
   fun setBlendTime(
@@ -350,41 +505,56 @@ open class AnimationPlayer(
     animTo: String,
     sec: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(animFrom))
-    _args.add(Variant.fromAny(animTo))
-    _args.add(Variant.fromAny(sec))
-    __method_bind.setBlendTime.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(animFrom)
+      _args.add(animTo)
+      _args.add(sec)
+      __method_bind.setBlendTime.call(self._handle, _args, null)
+    }
   }
 
   fun setCurrentAnimation(anim: String) {
-    val _arg = Variant(anim)
-    __method_bind.setCurrentAnimation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCurrentAnimation.call(self._handle, listOf(anim), null)
+    }
   }
 
   fun setDefaultBlendTime(sec: Float) {
-    val _arg = Variant(sec)
-    __method_bind.setDefaultBlendTime.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDefaultBlendTime.call(self._handle, listOf(sec), null)
+    }
   }
 
   fun setMethodCallMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setMethodCallMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMethodCallMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setRoot(path: NodePath) {
-    val _arg = Variant(path)
-    __method_bind.setRoot.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRoot.call(self._handle, listOf(path), null)
+    }
   }
 
   fun setSpeedScale(speed: Float) {
-    val _arg = Variant(speed)
-    __method_bind.setSpeedScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSpeedScale.call(self._handle, listOf(speed), null)
+    }
   }
 
   fun stop(reset: Boolean = true) {
-    val _arg = Variant(reset)
-    __method_bind.stop.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.stop.call(self._handle, listOf(reset), null)
+    }
   }
 
   enum class AnimationProcessMode(

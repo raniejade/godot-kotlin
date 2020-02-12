@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class TextureLayered(
   @Suppress("UNUSED_PARAMETER")
@@ -43,44 +52,78 @@ open class TextureLayered(
     format: Int,
     flags: Int = 4
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(height))
-    _args.add(Variant.fromAny(depth))
-    _args.add(Variant.fromAny(format))
-    _args.add(Variant.fromAny(flags))
-    __method_bind.create.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(width)
+      _args.add(height)
+      _args.add(depth)
+      _args.add(format)
+      _args.add(flags)
+      __method_bind.create.call(self._handle, _args, null)
+    }
   }
 
   fun getDepth(): Int {
-    val _ret = __method_bind.getDepth.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDepth.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFlags(): Int {
-    val _ret = __method_bind.getFlags.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFlags.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFormat(): Image.Format {
-    val _ret = __method_bind.getFormat.call(this._handle)
-    return Image.Format.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFormat.call(self._handle, emptyList(), _retPtr)
+      Image.Format.from(_ret.value)
+    }
   }
 
   fun getHeight(): Int {
-    val _ret = __method_bind.getHeight.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLayerData(layer: Int): Image {
-    val _arg = Variant(layer)
-    val _ret = __method_bind.getLayerData.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Image
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Image
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getLayerData.call(self._handle, listOf(layer), _retPtr)
+      _ret = objectToType<Image>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getWidth(): Int {
-    val _ret = __method_bind.getWidth.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWidth.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setDataPartial(
@@ -90,25 +133,33 @@ open class TextureLayered(
     layer: Int,
     mipmap: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(image))
-    _args.add(Variant.fromAny(xOffset))
-    _args.add(Variant.fromAny(yOffset))
-    _args.add(Variant.fromAny(layer))
-    _args.add(Variant.fromAny(mipmap))
-    __method_bind.setDataPartial.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(image)
+      _args.add(xOffset)
+      _args.add(yOffset)
+      _args.add(layer)
+      _args.add(mipmap)
+      __method_bind.setDataPartial.call(self._handle, _args, null)
+    }
   }
 
   fun setFlags(flags: Int) {
-    val _arg = Variant(flags)
-    __method_bind.setFlags.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFlags.call(self._handle, listOf(flags), null)
+    }
   }
 
   fun setLayerData(image: Image, layer: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(image))
-    _args.add(Variant.fromAny(layer))
-    __method_bind.setLayerData.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(image)
+      _args.add(layer)
+      __method_bind.setLayerData.call(self._handle, _args, null)
+    }
   }
 
   enum class Flags(

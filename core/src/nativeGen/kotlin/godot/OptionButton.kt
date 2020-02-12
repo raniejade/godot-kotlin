@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class OptionButton(
   @Suppress("UNUSED_PARAMETER")
@@ -44,132 +53,219 @@ open class OptionButton(
     label: String,
     id: Int = -1
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(id))
-    __method_bind.addIconItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(texture)
+      _args.add(label)
+      _args.add(id)
+      __method_bind.addIconItem.call(self._handle, _args, null)
+    }
   }
 
   fun addItem(label: String, id: Int = -1) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(id))
-    __method_bind.addItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(label)
+      _args.add(id)
+      __method_bind.addItem.call(self._handle, _args, null)
+    }
   }
 
   fun addSeparator() {
-    __method_bind.addSeparator.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addSeparator.call(self._handle, emptyList(), null)
+    }
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getItemCount(): Int {
-    val _ret = __method_bind.getItemCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getItemCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemIcon(idx: Int): Texture {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemIcon.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getItemIcon.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getItemId(idx: Int): Int {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemId.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getItemId.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemIndex(id: Int): Int {
-    val _arg = Variant(id)
-    val _ret = __method_bind.getItemIndex.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getItemIndex.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemMetadata(idx: Int): Variant {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemMetadata.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getItemMetadata.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getItemText(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemText.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getItemText.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPopup(): PopupMenu {
-    val _ret = __method_bind.getPopup.call(this._handle)
-    return _ret.toAny() as PopupMenu
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: PopupMenu
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPopup.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<PopupMenu>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSelected(): Int {
-    val _ret = __method_bind.getSelected.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSelected.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSelectedId(): Int {
-    val _ret = __method_bind.getSelectedId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSelectedId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSelectedMetadata(): Variant {
-    val _ret = __method_bind.getSelectedMetadata.call(this._handle)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSelectedMetadata.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isItemDisabled(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isItemDisabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isItemDisabled.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeItem(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.removeItem.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeItem.call(self._handle, listOf(idx), null)
+    }
   }
 
   fun select(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.select.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.select.call(self._handle, listOf(idx), null)
+    }
   }
 
   fun setItemDisabled(idx: Int, disabled: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.setItemDisabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(disabled)
+      __method_bind.setItemDisabled.call(self._handle, _args, null)
+    }
   }
 
   fun setItemIcon(idx: Int, texture: Texture) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(texture))
-    __method_bind.setItemIcon.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(texture)
+      __method_bind.setItemIcon.call(self._handle, _args, null)
+    }
   }
 
   fun setItemId(idx: Int, id: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(id))
-    __method_bind.setItemId.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(id)
+      __method_bind.setItemId.call(self._handle, _args, null)
+    }
   }
 
   fun setItemMetadata(idx: Int, metadata: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(metadata))
-    __method_bind.setItemMetadata.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(metadata)
+      __method_bind.setItemMetadata.call(self._handle, _args, null)
+    }
   }
 
   fun setItemText(idx: Int, text: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(text))
-    __method_bind.setItemText.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(text)
+      __method_bind.setItemText.call(self._handle, _args, null)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class UPNP(
   @Suppress("UNUSED_PARAMETER")
@@ -54,8 +63,10 @@ open class UPNP(
   }
 
   fun addDevice(device: UPNPDevice) {
-    val _arg = Variant(device)
-    __method_bind.addDevice.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addDevice.call(self._handle, listOf(device), null)
+    }
   }
 
   fun addPortMapping(
@@ -65,26 +76,39 @@ open class UPNP(
     proto: String = "UDP",
     duration: Int = 0
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(port))
-    _args.add(Variant.fromAny(portInternal))
-    _args.add(Variant.fromAny(desc))
-    _args.add(Variant.fromAny(proto))
-    _args.add(Variant.fromAny(duration))
-    val _ret = __method_bind.addPortMapping.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(port)
+      _args.add(portInternal)
+      _args.add(desc)
+      _args.add(proto)
+      _args.add(duration)
+      __method_bind.addPortMapping.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun clearDevices() {
-    __method_bind.clearDevices.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearDevices.call(self._handle, emptyList(), null)
+    }
   }
 
   fun deletePortMapping(port: Int, proto: String = "UDP"): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(port))
-    _args.add(Variant.fromAny(proto))
-    val _ret = __method_bind.deletePortMapping.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(port)
+      _args.add(proto)
+      __method_bind.deletePortMapping.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun discover(
@@ -92,75 +116,131 @@ open class UPNP(
     ttl: Int = 2,
     deviceFilter: String = "InternetGatewayDevice"
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(timeout))
-    _args.add(Variant.fromAny(ttl))
-    _args.add(Variant.fromAny(deviceFilter))
-    val _ret = __method_bind.discover.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(timeout)
+      _args.add(ttl)
+      _args.add(deviceFilter)
+      __method_bind.discover.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getDevice(index: Int): UPNPDevice {
-    val _arg = Variant(index)
-    val _ret = __method_bind.getDevice.call(this._handle, listOf(_arg))
-    return _ret.toAny() as UPNPDevice
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: UPNPDevice
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getDevice.call(self._handle, listOf(index), _retPtr)
+      _ret = objectToType<UPNPDevice>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getDeviceCount(): Int {
-    val _ret = __method_bind.getDeviceCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDeviceCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDiscoverLocalPort(): Int {
-    val _ret = __method_bind.getDiscoverLocalPort.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDiscoverLocalPort.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDiscoverMulticastIf(): String {
-    val _ret = __method_bind.getDiscoverMulticastIf.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getDiscoverMulticastIf.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getGateway(): UPNPDevice {
-    val _ret = __method_bind.getGateway.call(this._handle)
-    return _ret.toAny() as UPNPDevice
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: UPNPDevice
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getGateway.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<UPNPDevice>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun isDiscoverIpv6(): Boolean {
-    val _ret = __method_bind.isDiscoverIpv6.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDiscoverIpv6.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun queryExternalAddress(): String {
-    val _ret = __method_bind.queryExternalAddress.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.queryExternalAddress.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun removeDevice(index: Int) {
-    val _arg = Variant(index)
-    __method_bind.removeDevice.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeDevice.call(self._handle, listOf(index), null)
+    }
   }
 
   fun setDevice(index: Int, device: UPNPDevice) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(device))
-    __method_bind.setDevice.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(device)
+      __method_bind.setDevice.call(self._handle, _args, null)
+    }
   }
 
   fun setDiscoverIpv6(ipv6: Boolean) {
-    val _arg = Variant(ipv6)
-    __method_bind.setDiscoverIpv6.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDiscoverIpv6.call(self._handle, listOf(ipv6), null)
+    }
   }
 
   fun setDiscoverLocalPort(port: Int) {
-    val _arg = Variant(port)
-    __method_bind.setDiscoverLocalPort.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDiscoverLocalPort.call(self._handle, listOf(port), null)
+    }
   }
 
   fun setDiscoverMulticastIf(mIf: String) {
-    val _arg = Variant(mIf)
-    __method_bind.setDiscoverMulticastIf.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDiscoverMulticastIf.call(self._handle, listOf(mIf), null)
+    }
   }
 
   enum class UPNPResult(

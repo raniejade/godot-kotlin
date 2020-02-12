@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform
@@ -14,13 +15,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class KinematicBody(
   @Suppress("UNUSED_PARAMETER")
@@ -65,50 +74,97 @@ open class KinematicBody(
   }
 
   fun getAxisLock(axis: Int): Boolean {
-    val _arg = Variant(axis)
-    val _ret = __method_bind.getAxisLock.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAxisLock.call(self._handle, listOf(axis), _retPtr)
+      _ret.value
+    }
   }
 
   fun getFloorNormal(): Vector3 {
-    val _ret = __method_bind.getFloorNormal.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFloorNormal.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFloorVelocity(): Vector3 {
-    val _ret = __method_bind.getFloorVelocity.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFloorVelocity.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSafeMargin(): Float {
-    val _ret = __method_bind.getSafeMargin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSafeMargin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSlideCollision(slideIdx: Int): KinematicCollision {
-    val _arg = Variant(slideIdx)
-    val _ret = __method_bind.getSlideCollision.call(this._handle, listOf(_arg))
-    return _ret.toAny() as KinematicCollision
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: KinematicCollision
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSlideCollision.call(self._handle, listOf(slideIdx), _retPtr)
+      _ret = objectToType<KinematicCollision>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSlideCount(): Int {
-    val _ret = __method_bind.getSlideCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSlideCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isOnCeiling(): Boolean {
-    val _ret = __method_bind.isOnCeiling.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOnCeiling.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isOnFloor(): Boolean {
-    val _ret = __method_bind.isOnFloor.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOnFloor.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isOnWall(): Boolean {
-    val _ret = __method_bind.isOnWall.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOnWall.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun moveAndCollide(
@@ -117,13 +173,20 @@ open class KinematicBody(
     excludeRaycastShapes: Boolean = true,
     testOnly: Boolean = false
   ): KinematicCollision {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(relVec))
-    _args.add(Variant.fromAny(infiniteInertia))
-    _args.add(Variant.fromAny(excludeRaycastShapes))
-    _args.add(Variant.fromAny(testOnly))
-    val _ret = __method_bind.moveAndCollide.call(this._handle, _args)
-    return _ret.toAny() as KinematicCollision
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: KinematicCollision
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(relVec)
+      _args.add(infiniteInertia)
+      _args.add(excludeRaycastShapes)
+      _args.add(testOnly)
+      __method_bind.moveAndCollide.call(self._handle, _args, _retPtr)
+      _ret = objectToType<KinematicCollision>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun moveAndSlide(
@@ -134,15 +197,21 @@ open class KinematicBody(
     floorMaxAngle: Float = 0.785398f,
     infiniteInertia: Boolean = true
   ): Vector3 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(linearVelocity))
-    _args.add(Variant.fromAny(upDirection))
-    _args.add(Variant.fromAny(stopOnSlope))
-    _args.add(Variant.fromAny(maxSlides))
-    _args.add(Variant.fromAny(floorMaxAngle))
-    _args.add(Variant.fromAny(infiniteInertia))
-    val _ret = __method_bind.moveAndSlide.call(this._handle, _args)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(linearVelocity)
+      _args.add(upDirection)
+      _args.add(stopOnSlope)
+      _args.add(maxSlides)
+      _args.add(floorMaxAngle)
+      _args.add(infiniteInertia)
+      __method_bind.moveAndSlide.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun moveAndSlideWithSnap(
@@ -154,28 +223,39 @@ open class KinematicBody(
     floorMaxAngle: Float = 0.785398f,
     infiniteInertia: Boolean = true
   ): Vector3 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(linearVelocity))
-    _args.add(Variant.fromAny(snap))
-    _args.add(Variant.fromAny(upDirection))
-    _args.add(Variant.fromAny(stopOnSlope))
-    _args.add(Variant.fromAny(maxSlides))
-    _args.add(Variant.fromAny(floorMaxAngle))
-    _args.add(Variant.fromAny(infiniteInertia))
-    val _ret = __method_bind.moveAndSlideWithSnap.call(this._handle, _args)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(linearVelocity)
+      _args.add(snap)
+      _args.add(upDirection)
+      _args.add(stopOnSlope)
+      _args.add(maxSlides)
+      _args.add(floorMaxAngle)
+      _args.add(infiniteInertia)
+      __method_bind.moveAndSlideWithSnap.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setAxisLock(axis: Int, lock: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(axis))
-    _args.add(Variant.fromAny(lock))
-    __method_bind.setAxisLock.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(axis)
+      _args.add(lock)
+      __method_bind.setAxisLock.call(self._handle, _args, null)
+    }
   }
 
   fun setSafeMargin(pixels: Float) {
-    val _arg = Variant(pixels)
-    __method_bind.setSafeMargin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSafeMargin.call(self._handle, listOf(pixels), null)
+    }
   }
 
   fun testMove(
@@ -183,12 +263,17 @@ open class KinematicBody(
     relVec: Vector3,
     infiniteInertia: Boolean = true
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(relVec))
-    _args.add(Variant.fromAny(infiniteInertia))
-    val _ret = __method_bind.testMove.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(relVec)
+      _args.add(infiniteInertia)
+      __method_bind.testMove.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   companion object {

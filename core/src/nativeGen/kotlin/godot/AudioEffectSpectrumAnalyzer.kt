@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AudioEffectSpectrumAnalyzer(
   @Suppress("UNUSED_PARAMETER")
@@ -54,33 +63,54 @@ open class AudioEffectSpectrumAnalyzer(
   }
 
   fun getBufferLength(): Float {
-    val _ret = __method_bind.getBufferLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBufferLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFftSize(): FFT_Size {
-    val _ret = __method_bind.getFftSize.call(this._handle)
-    return AudioEffectSpectrumAnalyzer.FFT_Size.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFftSize.call(self._handle, emptyList(), _retPtr)
+      AudioEffectSpectrumAnalyzer.FFT_Size.from(_ret.value)
+    }
   }
 
   fun getTapBackPos(): Float {
-    val _ret = __method_bind.getTapBackPos.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTapBackPos.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun setBufferLength(seconds: Float) {
-    val _arg = Variant(seconds)
-    __method_bind.setBufferLength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBufferLength.call(self._handle, listOf(seconds), null)
+    }
   }
 
   fun setFftSize(size: Int) {
-    val _arg = Variant(size)
-    __method_bind.setFftSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFftSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setTapBackPos(seconds: Float) {
-    val _arg = Variant(seconds)
-    __method_bind.setTapBackPos.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTapBackPos.call(self._handle, listOf(seconds), null)
+    }
   }
 
   enum class FFT_Size(

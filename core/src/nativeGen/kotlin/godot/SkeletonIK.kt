@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class SkeletonIK(
   @Suppress("UNUSED_PARAMETER")
@@ -142,122 +151,214 @@ open class SkeletonIK(
   }
 
   fun getInterpolation(): Float {
-    val _ret = __method_bind.getInterpolation.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInterpolation.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMagnetPosition(): Vector3 {
-    val _ret = __method_bind.getMagnetPosition.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMagnetPosition.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMaxIterations(): Int {
-    val _ret = __method_bind.getMaxIterations.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMaxIterations.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMinDistance(): Float {
-    val _ret = __method_bind.getMinDistance.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMinDistance.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getParentSkeleton(): Skeleton {
-    val _ret = __method_bind.getParentSkeleton.call(this._handle)
-    return _ret.toAny() as Skeleton
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Skeleton
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getParentSkeleton.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Skeleton>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getRootBone(): String {
-    val _ret = __method_bind.getRootBone.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getRootBone.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getTargetNode(): NodePath {
-    val _ret = __method_bind.getTargetNode.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTargetNode.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTargetTransform(): Transform {
-    val _ret = __method_bind.getTargetTransform.call(this._handle)
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTargetTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTipBone(): String {
-    val _ret = __method_bind.getTipBone.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getTipBone.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun isOverrideTipBasis(): Boolean {
-    val _ret = __method_bind.isOverrideTipBasis.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOverrideTipBasis.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRunning(): Boolean {
-    val _ret = __method_bind.isRunning.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRunning.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingMagnet(): Boolean {
-    val _ret = __method_bind.isUsingMagnet.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingMagnet.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setInterpolation(interpolation: Float) {
-    val _arg = Variant(interpolation)
-    __method_bind.setInterpolation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInterpolation.call(self._handle, listOf(interpolation), null)
+    }
   }
 
   fun setMagnetPosition(localPosition: Vector3) {
-    val _arg = Variant(localPosition)
-    __method_bind.setMagnetPosition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMagnetPosition.call(self._handle, listOf(localPosition), null)
+    }
   }
 
   fun setMaxIterations(iterations: Int) {
-    val _arg = Variant(iterations)
-    __method_bind.setMaxIterations.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaxIterations.call(self._handle, listOf(iterations), null)
+    }
   }
 
   fun setMinDistance(minDistance: Float) {
-    val _arg = Variant(minDistance)
-    __method_bind.setMinDistance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMinDistance.call(self._handle, listOf(minDistance), null)
+    }
   }
 
   fun setOverrideTipBasis(override: Boolean) {
-    val _arg = Variant(override)
-    __method_bind.setOverrideTipBasis.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOverrideTipBasis.call(self._handle, listOf(override), null)
+    }
   }
 
   fun setRootBone(rootBone: String) {
-    val _arg = Variant(rootBone)
-    __method_bind.setRootBone.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRootBone.call(self._handle, listOf(rootBone), null)
+    }
   }
 
   fun setTargetNode(node: NodePath) {
-    val _arg = Variant(node)
-    __method_bind.setTargetNode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTargetNode.call(self._handle, listOf(node), null)
+    }
   }
 
   fun setTargetTransform(target: Transform) {
-    val _arg = Variant(target)
-    __method_bind.setTargetTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTargetTransform.call(self._handle, listOf(target), null)
+    }
   }
 
   fun setTipBone(tipBone: String) {
-    val _arg = Variant(tipBone)
-    __method_bind.setTipBone.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTipBone.call(self._handle, listOf(tipBone), null)
+    }
   }
 
   fun setUseMagnet(use: Boolean) {
-    val _arg = Variant(use)
-    __method_bind.setUseMagnet.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseMagnet.call(self._handle, listOf(use), null)
+    }
   }
 
   fun start(oneTime: Boolean = false) {
-    val _arg = Variant(oneTime)
-    __method_bind.start.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.start.call(self._handle, listOf(oneTime), null)
+    }
   }
 
   fun stop() {
-    __method_bind.stop.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.stop.call(self._handle, emptyList(), null)
+    }
   }
 
   companion object {

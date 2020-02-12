@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class CSGPolygon(
   @Suppress("UNUSED_PARAMETER")
@@ -156,133 +165,228 @@ open class CSGPolygon(
   }
 
   fun getDepth(): Float {
-    val _ret = __method_bind.getDepth.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDepth.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.getMaterial.call(this._handle)
-    return _ret.toAny() as Material
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Material
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMaterial.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Material>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getMode(): Mode {
-    val _ret = __method_bind.getMode.call(this._handle)
-    return CSGPolygon.Mode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMode.call(self._handle, emptyList(), _retPtr)
+      CSGPolygon.Mode.from(_ret.value)
+    }
   }
 
   fun getPathInterval(): Float {
-    val _ret = __method_bind.getPathInterval.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPathInterval.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPathNode(): NodePath {
-    val _ret = __method_bind.getPathNode.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPathNode.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPathRotation(): PathRotation {
-    val _ret = __method_bind.getPathRotation.call(this._handle)
-    return CSGPolygon.PathRotation.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPathRotation.call(self._handle, emptyList(), _retPtr)
+      CSGPolygon.PathRotation.from(_ret.value)
+    }
   }
 
   fun getPolygon(): PoolVector2Array {
-    val _ret = __method_bind.getPolygon.call(this._handle)
-    return _ret.asPoolVector2Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector2Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPolygon.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSmoothFaces(): Boolean {
-    val _ret = __method_bind.getSmoothFaces.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSmoothFaces.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSpinDegrees(): Float {
-    val _ret = __method_bind.getSpinDegrees.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpinDegrees.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSpinSides(): Int {
-    val _ret = __method_bind.getSpinSides.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpinSides.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPathContinuousU(): Boolean {
-    val _ret = __method_bind.isPathContinuousU.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPathContinuousU.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPathJoined(): Boolean {
-    val _ret = __method_bind.isPathJoined.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPathJoined.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPathLocal(): Boolean {
-    val _ret = __method_bind.isPathLocal.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPathLocal.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setDepth(depth: Float) {
-    val _arg = Variant(depth)
-    __method_bind.setDepth.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDepth.call(self._handle, listOf(depth), null)
+    }
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant(material)
-    __method_bind.setMaterial.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaterial.call(self._handle, listOf(material), null)
+    }
   }
 
   fun setMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setPathContinuousU(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setPathContinuousU.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPathContinuousU.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setPathInterval(distance: Float) {
-    val _arg = Variant(distance)
-    __method_bind.setPathInterval.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPathInterval.call(self._handle, listOf(distance), null)
+    }
   }
 
   fun setPathJoined(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setPathJoined.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPathJoined.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setPathLocal(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setPathLocal.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPathLocal.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setPathNode(path: NodePath) {
-    val _arg = Variant(path)
-    __method_bind.setPathNode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPathNode.call(self._handle, listOf(path), null)
+    }
   }
 
   fun setPathRotation(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setPathRotation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPathRotation.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
-    val _arg = Variant(polygon)
-    __method_bind.setPolygon.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPolygon.call(self._handle, listOf(polygon), null)
+    }
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
-    val _arg = Variant(smoothFaces)
-    __method_bind.setSmoothFaces.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSmoothFaces.call(self._handle, listOf(smoothFaces), null)
+    }
   }
 
   fun setSpinDegrees(degrees: Float) {
-    val _arg = Variant(degrees)
-    __method_bind.setSpinDegrees.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSpinDegrees.call(self._handle, listOf(degrees), null)
+    }
   }
 
   fun setSpinSides(spinSides: Int) {
-    val _arg = Variant(spinSides)
-    __method_bind.setSpinSides.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSpinSides.call(self._handle, listOf(spinSides), null)
+    }
   }
 
   enum class PathRotation(

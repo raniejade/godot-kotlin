@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AudioEffectReverb(
   @Suppress("UNUSED_PARAMETER")
@@ -93,83 +102,139 @@ open class AudioEffectReverb(
   }
 
   fun getDamping(): Float {
-    val _ret = __method_bind.getDamping.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDamping.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDry(): Float {
-    val _ret = __method_bind.getDry.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDry.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getHpf(): Float {
-    val _ret = __method_bind.getHpf.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHpf.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPredelayFeedback(): Float {
-    val _ret = __method_bind.getPredelayFeedback.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPredelayFeedback.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPredelayMsec(): Float {
-    val _ret = __method_bind.getPredelayMsec.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPredelayMsec.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRoomSize(): Float {
-    val _ret = __method_bind.getRoomSize.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRoomSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSpread(): Float {
-    val _ret = __method_bind.getSpread.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpread.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getWet(): Float {
-    val _ret = __method_bind.getWet.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWet.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun setDamping(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setDamping.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDamping.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setDry(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setDry.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDry.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setHpf(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setHpf.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHpf.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setPredelayFeedback(feedback: Float) {
-    val _arg = Variant(feedback)
-    __method_bind.setPredelayFeedback.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPredelayFeedback.call(self._handle, listOf(feedback), null)
+    }
   }
 
   fun setPredelayMsec(msec: Float) {
-    val _arg = Variant(msec)
-    __method_bind.setPredelayMsec.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPredelayMsec.call(self._handle, listOf(msec), null)
+    }
   }
 
   fun setRoomSize(size: Float) {
-    val _arg = Variant(size)
-    __method_bind.setRoomSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRoomSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setSpread(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setSpread.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSpread.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setWet(amount: Float) {
-    val _arg = Variant(amount)
-    __method_bind.setWet.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWet.call(self._handle, listOf(amount), null)
+    }
   }
 
   companion object {

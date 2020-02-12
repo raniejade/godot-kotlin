@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class GraphEdit(
   @Suppress("UNUSED_PARAMETER")
@@ -149,24 +158,34 @@ open class GraphEdit(
   }
 
   fun addValidConnectionType(fromType: Int, toType: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(fromType))
-    _args.add(Variant.fromAny(toType))
-    __method_bind.addValidConnectionType.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(fromType)
+      _args.add(toType)
+      __method_bind.addValidConnectionType.call(self._handle, _args, null)
+    }
   }
 
   fun addValidLeftDisconnectType(type: Int) {
-    val _arg = Variant(type)
-    __method_bind.addValidLeftDisconnectType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addValidLeftDisconnectType.call(self._handle, listOf(type), null)
+    }
   }
 
   fun addValidRightDisconnectType(type: Int) {
-    val _arg = Variant(type)
-    __method_bind.addValidRightDisconnectType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addValidRightDisconnectType.call(self._handle, listOf(type), null)
+    }
   }
 
   fun clearConnections() {
-    __method_bind.clearConnections.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearConnections.call(self._handle, emptyList(), null)
+    }
   }
 
   fun connectNode(
@@ -175,13 +194,18 @@ open class GraphEdit(
     to: String,
     toPort: Int
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(fromPort))
-    _args.add(Variant.fromAny(to))
-    _args.add(Variant.fromAny(toPort))
-    val _ret = __method_bind.connectNode.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(fromPort)
+      _args.add(to)
+      _args.add(toPort)
+      __method_bind.connectNode.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun disconnectNode(
@@ -190,37 +214,69 @@ open class GraphEdit(
     to: String,
     toPort: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(fromPort))
-    _args.add(Variant.fromAny(to))
-    _args.add(Variant.fromAny(toPort))
-    __method_bind.disconnectNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(fromPort)
+      _args.add(to)
+      _args.add(toPort)
+      __method_bind.disconnectNode.call(self._handle, _args, null)
+    }
   }
 
   fun getConnectionList(): VariantArray {
-    val _ret = __method_bind.getConnectionList.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConnectionList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getScrollOfs(): Vector2 {
-    val _ret = __method_bind.getScrollOfs.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScrollOfs.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSnap(): Int {
-    val _ret = __method_bind.getSnap.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSnap.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getZoom(): Float {
-    val _ret = __method_bind.getZoom.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getZoom.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getZoomHbox(): HBoxContainer {
-    val _ret = __method_bind.getZoomHbox.call(this._handle)
-    return _ret.toAny() as HBoxContainer
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: HBoxContainer
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getZoomHbox.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<HBoxContainer>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun isNodeConnected(
@@ -229,48 +285,75 @@ open class GraphEdit(
     to: String,
     toPort: Int
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(fromPort))
-    _args.add(Variant.fromAny(to))
-    _args.add(Variant.fromAny(toPort))
-    val _ret = __method_bind.isNodeConnected.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(fromPort)
+      _args.add(to)
+      _args.add(toPort)
+      __method_bind.isNodeConnected.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isRightDisconnectsEnabled(): Boolean {
-    val _ret = __method_bind.isRightDisconnectsEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRightDisconnectsEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingSnap(): Boolean {
-    val _ret = __method_bind.isUsingSnap.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingSnap.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isValidConnectionType(fromType: Int, toType: Int): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(fromType))
-    _args.add(Variant.fromAny(toType))
-    val _ret = __method_bind.isValidConnectionType.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(fromType)
+      _args.add(toType)
+      __method_bind.isValidConnectionType.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun removeValidConnectionType(fromType: Int, toType: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(fromType))
-    _args.add(Variant.fromAny(toType))
-    __method_bind.removeValidConnectionType.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(fromType)
+      _args.add(toType)
+      __method_bind.removeValidConnectionType.call(self._handle, _args, null)
+    }
   }
 
   fun removeValidLeftDisconnectType(type: Int) {
-    val _arg = Variant(type)
-    __method_bind.removeValidLeftDisconnectType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeValidLeftDisconnectType.call(self._handle, listOf(type), null)
+    }
   }
 
   fun removeValidRightDisconnectType(type: Int) {
-    val _arg = Variant(type)
-    __method_bind.removeValidRightDisconnectType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeValidRightDisconnectType.call(self._handle, listOf(type), null)
+    }
   }
 
   fun setConnectionActivity(
@@ -280,43 +363,58 @@ open class GraphEdit(
     toPort: Int,
     amount: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(fromPort))
-    _args.add(Variant.fromAny(to))
-    _args.add(Variant.fromAny(toPort))
-    _args.add(Variant.fromAny(amount))
-    __method_bind.setConnectionActivity.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(fromPort)
+      _args.add(to)
+      _args.add(toPort)
+      _args.add(amount)
+      __method_bind.setConnectionActivity.call(self._handle, _args, null)
+    }
   }
 
   fun setRightDisconnects(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setRightDisconnects.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRightDisconnects.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setScrollOfs(ofs: Vector2) {
-    val _arg = Variant(ofs)
-    __method_bind.setScrollOfs.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScrollOfs.call(self._handle, listOf(ofs), null)
+    }
   }
 
   fun setSelected(node: Node) {
-    val _arg = Variant(node)
-    __method_bind.setSelected.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSelected.call(self._handle, listOf(node), null)
+    }
   }
 
   fun setSnap(pixels: Int) {
-    val _arg = Variant(pixels)
-    __method_bind.setSnap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSnap.call(self._handle, listOf(pixels), null)
+    }
   }
 
   fun setUseSnap(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseSnap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseSnap.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setZoom(pZoom: Float) {
-    val _arg = Variant(pZoom)
-    __method_bind.setZoom.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setZoom.call(self._handle, listOf(pZoom), null)
+    }
   }
 
   companion object {

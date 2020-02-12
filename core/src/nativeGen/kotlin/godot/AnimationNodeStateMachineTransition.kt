@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AnimationNodeStateMachineTransition(
   @Suppress("UNUSED_PARAMETER")
@@ -84,63 +93,106 @@ open class AnimationNodeStateMachineTransition(
   }
 
   fun getAdvanceCondition(): String {
-    val _ret = __method_bind.getAdvanceCondition.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getAdvanceCondition.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPriority(): Int {
-    val _ret = __method_bind.getPriority.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPriority.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSwitchMode(): SwitchMode {
-    val _ret = __method_bind.getSwitchMode.call(this._handle)
-    return AnimationNodeStateMachineTransition.SwitchMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSwitchMode.call(self._handle, emptyList(), _retPtr)
+      AnimationNodeStateMachineTransition.SwitchMode.from(_ret.value)
+    }
   }
 
   fun getXfadeTime(): Float {
-    val _ret = __method_bind.getXfadeTime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getXfadeTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun hasAutoAdvance(): Boolean {
-    val _ret = __method_bind.hasAutoAdvance.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAutoAdvance.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isDisabled(): Boolean {
-    val _ret = __method_bind.isDisabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDisabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAdvanceCondition(name: String) {
-    val _arg = Variant(name)
-    __method_bind.setAdvanceCondition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAdvanceCondition.call(self._handle, listOf(name), null)
+    }
   }
 
   fun setAutoAdvance(autoAdvance: Boolean) {
-    val _arg = Variant(autoAdvance)
-    __method_bind.setAutoAdvance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutoAdvance.call(self._handle, listOf(autoAdvance), null)
+    }
   }
 
   fun setDisabled(disabled: Boolean) {
-    val _arg = Variant(disabled)
-    __method_bind.setDisabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDisabled.call(self._handle, listOf(disabled), null)
+    }
   }
 
   fun setPriority(priority: Int) {
-    val _arg = Variant(priority)
-    __method_bind.setPriority.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPriority.call(self._handle, listOf(priority), null)
+    }
   }
 
   fun setSwitchMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setSwitchMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSwitchMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setXfadeTime(secs: Float) {
-    val _arg = Variant(secs)
-    __method_bind.setXfadeTime.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setXfadeTime.call(self._handle, listOf(secs), null)
+    }
   }
 
   enum class SwitchMode(

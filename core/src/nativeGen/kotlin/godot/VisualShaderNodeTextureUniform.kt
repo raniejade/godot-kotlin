@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VisualShaderNodeTextureUniform(
   @Suppress("UNUSED_PARAMETER")
@@ -45,23 +54,37 @@ open class VisualShaderNodeTextureUniform(
   }
 
   fun getColorDefault(): ColorDefault {
-    val _ret = __method_bind.getColorDefault.call(this._handle)
-    return VisualShaderNodeTextureUniform.ColorDefault.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getColorDefault.call(self._handle, emptyList(), _retPtr)
+      VisualShaderNodeTextureUniform.ColorDefault.from(_ret.value)
+    }
   }
 
   fun getTextureType(): TextureType {
-    val _ret = __method_bind.getTextureType.call(this._handle)
-    return VisualShaderNodeTextureUniform.TextureType.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTextureType.call(self._handle, emptyList(), _retPtr)
+      VisualShaderNodeTextureUniform.TextureType.from(_ret.value)
+    }
   }
 
   fun setColorDefault(type: Int) {
-    val _arg = Variant(type)
-    __method_bind.setColorDefault.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColorDefault.call(self._handle, listOf(type), null)
+    }
   }
 
   fun setTextureType(type: Int) {
-    val _arg = Variant(type)
-    __method_bind.setTextureType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTextureType.call(self._handle, listOf(type), null)
+    }
   }
 
   enum class TextureType(

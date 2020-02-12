@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class RayCast(
   @Suppress("UNUSED_PARAMETER")
@@ -90,129 +99,222 @@ open class RayCast(
   }
 
   fun addException(node: Object) {
-    val _arg = Variant(node)
-    __method_bind.addException.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addException.call(self._handle, listOf(node), null)
+    }
   }
 
   fun addExceptionRid(rid: RID) {
-    val _arg = Variant(rid)
-    __method_bind.addExceptionRid.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addExceptionRid.call(self._handle, listOf(rid), null)
+    }
   }
 
   fun clearExceptions() {
-    __method_bind.clearExceptions.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearExceptions.call(self._handle, emptyList(), null)
+    }
   }
 
   fun forceRaycastUpdate() {
-    __method_bind.forceRaycastUpdate.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.forceRaycastUpdate.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getCastTo(): Vector3 {
-    val _ret = __method_bind.getCastTo.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCastTo.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCollider(): Object {
-    val _ret = __method_bind.getCollider.call(this._handle)
-    return _ret.toAny() as Object
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Object
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getCollider.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Object>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getColliderShape(): Int {
-    val _ret = __method_bind.getColliderShape.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getColliderShape.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.getCollisionMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant(bit)
-    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMaskBit.call(self._handle, listOf(bit), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionNormal(): Vector3 {
-    val _ret = __method_bind.getCollisionNormal.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCollisionNormal.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCollisionPoint(): Vector3 {
-    val _ret = __method_bind.getCollisionPoint.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCollisionPoint.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getExcludeParentBody(): Boolean {
-    val _ret = __method_bind.getExcludeParentBody.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getExcludeParentBody.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isCollideWithAreasEnabled(): Boolean {
-    val _ret = __method_bind.isCollideWithAreasEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCollideWithAreasEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isCollideWithBodiesEnabled(): Boolean {
-    val _ret = __method_bind.isCollideWithBodiesEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCollideWithBodiesEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isColliding(): Boolean {
-    val _ret = __method_bind.isColliding.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isColliding.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEnabled(): Boolean {
-    val _ret = __method_bind.isEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeException(node: Object) {
-    val _arg = Variant(node)
-    __method_bind.removeException.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeException.call(self._handle, listOf(node), null)
+    }
   }
 
   fun removeExceptionRid(rid: RID) {
-    val _arg = Variant(rid)
-    __method_bind.removeExceptionRid.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeExceptionRid.call(self._handle, listOf(rid), null)
+    }
   }
 
   fun setCastTo(localPoint: Vector3) {
-    val _arg = Variant(localPoint)
-    __method_bind.setCastTo.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCastTo.call(self._handle, listOf(localPoint), null)
+    }
   }
 
   fun setCollideWithAreas(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setCollideWithAreas.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollideWithAreas.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCollideWithBodies(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setCollideWithBodies.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollideWithBodies.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant(mask)
-    __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionMask.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bit))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setCollisionMaskBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bit)
+      _args.add(value)
+      __method_bind.setCollisionMaskBit.call(self._handle, _args, null)
+    }
   }
 
   fun setEnabled(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setEnabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnabled.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setExcludeParentBody(mask: Boolean) {
-    val _arg = Variant(mask)
-    __method_bind.setExcludeParentBody.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExcludeParentBody.call(self._handle, listOf(mask), null)
+    }
   }
 
   companion object {

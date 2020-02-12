@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ARVRServerInternal(
   @Suppress("UNUSED_PARAMETER")
@@ -62,88 +71,168 @@ open class ARVRServerInternal(
   val signalTrackerRemoved: Signal3<String, Int, Int> = Signal3("tracker_removed")
 
   fun centerOnHmd(rotationMode: Int, keepHeight: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(rotationMode))
-    _args.add(Variant.fromAny(keepHeight))
-    __method_bind.centerOnHmd.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(rotationMode)
+      _args.add(keepHeight)
+      __method_bind.centerOnHmd.call(self._handle, _args, null)
+    }
   }
 
   fun findInterface(name: String): ARVRInterface {
-    val _arg = Variant(name)
-    val _ret = __method_bind.findInterface.call(this._handle, listOf(_arg))
-    return _ret.toAny() as ARVRInterface
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ARVRInterface
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.findInterface.call(self._handle, listOf(name), _retPtr)
+      _ret = objectToType<ARVRInterface>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getHmdTransform(): Transform {
-    val _ret = __method_bind.getHmdTransform.call(this._handle)
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getHmdTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getInterface(idx: Int): ARVRInterface {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getInterface.call(this._handle, listOf(_arg))
-    return _ret.toAny() as ARVRInterface
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ARVRInterface
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getInterface.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<ARVRInterface>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getInterfaceCount(): Int {
-    val _ret = __method_bind.getInterfaceCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInterfaceCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getInterfaces(): VariantArray {
-    val _ret = __method_bind.getInterfaces.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getInterfaces.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLastCommitUsec(): Int {
-    val _ret = __method_bind.getLastCommitUsec.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLastCommitUsec.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLastFrameUsec(): Int {
-    val _ret = __method_bind.getLastFrameUsec.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLastFrameUsec.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLastProcessUsec(): Int {
-    val _ret = __method_bind.getLastProcessUsec.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLastProcessUsec.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPrimaryInterface(): ARVRInterface {
-    val _ret = __method_bind.getPrimaryInterface.call(this._handle)
-    return _ret.toAny() as ARVRInterface
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ARVRInterface
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPrimaryInterface.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<ARVRInterface>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getReferenceFrame(): Transform {
-    val _ret = __method_bind.getReferenceFrame.call(this._handle)
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getReferenceFrame.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTracker(idx: Int): ARVRPositionalTracker {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getTracker.call(this._handle, listOf(_arg))
-    return _ret.toAny() as ARVRPositionalTracker
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ARVRPositionalTracker
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTracker.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<ARVRPositionalTracker>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTrackerCount(): Int {
-    val _ret = __method_bind.getTrackerCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTrackerCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getWorldScale(): Float {
-    val _ret = __method_bind.getWorldScale.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWorldScale.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun setPrimaryInterface(`interface`: ARVRInterface) {
-    val _arg = Variant(`interface`)
-    __method_bind.setPrimaryInterface.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPrimaryInterface.call(self._handle, listOf(`interface`), null)
+    }
   }
 
   fun setWorldScale(arg0: Float) {
-    val _arg = Variant(arg0)
-    __method_bind.setWorldScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWorldScale.call(self._handle, listOf(arg0), null)
+    }
   }
 
   companion object {

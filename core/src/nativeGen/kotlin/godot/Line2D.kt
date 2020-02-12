@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Line2D(
   @Suppress("UNUSED_PARAMETER")
@@ -157,167 +166,287 @@ open class Line2D(
   }
 
   fun addPoint(position: Vector2, atPosition: Int = -1) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(atPosition))
-    __method_bind.addPoint.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(position)
+      _args.add(atPosition)
+      __method_bind.addPoint.call(self._handle, _args, null)
+    }
   }
 
   fun clearPoints() {
-    __method_bind.clearPoints.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearPoints.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getAntialiased(): Boolean {
-    val _ret = __method_bind.getAntialiased.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAntialiased.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBeginCapMode(): LineCapMode {
-    val _ret = __method_bind.getBeginCapMode.call(this._handle)
-    return Line2D.LineCapMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBeginCapMode.call(self._handle, emptyList(), _retPtr)
+      Line2D.LineCapMode.from(_ret.value)
+    }
   }
 
   fun getCurve(): Curve {
-    val _ret = __method_bind.getCurve.call(this._handle)
-    return _ret.toAny() as Curve
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Curve
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getCurve.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Curve>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getDefaultColor(): Color {
-    val _ret = __method_bind.getDefaultColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getDefaultColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getEndCapMode(): LineCapMode {
-    val _ret = __method_bind.getEndCapMode.call(this._handle)
-    return Line2D.LineCapMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEndCapMode.call(self._handle, emptyList(), _retPtr)
+      Line2D.LineCapMode.from(_ret.value)
+    }
   }
 
   fun getGradient(): Gradient {
-    val _ret = __method_bind.getGradient.call(this._handle)
-    return _ret.toAny() as Gradient
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Gradient
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getGradient.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Gradient>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getJointMode(): LineJointMode {
-    val _ret = __method_bind.getJointMode.call(this._handle)
-    return Line2D.LineJointMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getJointMode.call(self._handle, emptyList(), _retPtr)
+      Line2D.LineJointMode.from(_ret.value)
+    }
   }
 
   fun getPointCount(): Int {
-    val _ret = __method_bind.getPointCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPointCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPointPosition(i: Int): Vector2 {
-    val _arg = Variant(i)
-    val _ret = __method_bind.getPointPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPointPosition.call(self._handle, listOf(i), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPoints(): PoolVector2Array {
-    val _ret = __method_bind.getPoints.call(this._handle)
-    return _ret.asPoolVector2Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector2Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPoints.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRoundPrecision(): Int {
-    val _ret = __method_bind.getRoundPrecision.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRoundPrecision.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getSharpLimit(): Float {
-    val _ret = __method_bind.getSharpLimit.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSharpLimit.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTextureMode(): LineTextureMode {
-    val _ret = __method_bind.getTextureMode.call(this._handle)
-    return Line2D.LineTextureMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTextureMode.call(self._handle, emptyList(), _retPtr)
+      Line2D.LineTextureMode.from(_ret.value)
+    }
   }
 
   fun getWidth(): Float {
-    val _ret = __method_bind.getWidth.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getWidth.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun removePoint(i: Int) {
-    val _arg = Variant(i)
-    __method_bind.removePoint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removePoint.call(self._handle, listOf(i), null)
+    }
   }
 
   fun setAntialiased(antialiased: Boolean) {
-    val _arg = Variant(antialiased)
-    __method_bind.setAntialiased.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAntialiased.call(self._handle, listOf(antialiased), null)
+    }
   }
 
   fun setBeginCapMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setBeginCapMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBeginCapMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setCurve(curve: Curve) {
-    val _arg = Variant(curve)
-    __method_bind.setCurve.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCurve.call(self._handle, listOf(curve), null)
+    }
   }
 
   fun setDefaultColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setDefaultColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDefaultColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setEndCapMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setEndCapMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEndCapMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setGradient(color: Gradient) {
-    val _arg = Variant(color)
-    __method_bind.setGradient.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGradient.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setJointMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setJointMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setJointMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setPointPosition(i: Int, position: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(i))
-    _args.add(Variant.fromAny(position))
-    __method_bind.setPointPosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(i)
+      _args.add(position)
+      __method_bind.setPointPosition.call(self._handle, _args, null)
+    }
   }
 
   fun setPoints(points: PoolVector2Array) {
-    val _arg = Variant(points)
-    __method_bind.setPoints.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPoints.call(self._handle, listOf(points), null)
+    }
   }
 
   fun setRoundPrecision(precision: Int) {
-    val _arg = Variant(precision)
-    __method_bind.setRoundPrecision.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRoundPrecision.call(self._handle, listOf(precision), null)
+    }
   }
 
   fun setSharpLimit(limit: Float) {
-    val _arg = Variant(limit)
-    __method_bind.setSharpLimit.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSharpLimit.call(self._handle, listOf(limit), null)
+    }
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setTextureMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setTextureMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTextureMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setWidth(width: Float) {
-    val _arg = Variant(width)
-    __method_bind.setWidth.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setWidth.call(self._handle, listOf(width), null)
+    }
   }
 
   enum class LineTextureMode(

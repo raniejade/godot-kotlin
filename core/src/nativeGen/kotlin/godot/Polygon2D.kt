@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -19,13 +20,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Polygon2D(
   @Suppress("UNUSED_PARAMETER")
@@ -238,210 +247,362 @@ open class Polygon2D(
   }
 
   fun addBone(path: NodePath, weights: PoolFloatArray) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(weights))
-    __method_bind.addBone.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(path)
+      _args.add(weights)
+      __method_bind.addBone.call(self._handle, _args, null)
+    }
   }
 
   fun clearBones() {
-    __method_bind.clearBones.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearBones.call(self._handle, emptyList(), null)
+    }
   }
 
   fun eraseBone(index: Int) {
-    val _arg = Variant(index)
-    __method_bind.eraseBone.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.eraseBone.call(self._handle, listOf(index), null)
+    }
   }
 
   fun getAntialiased(): Boolean {
-    val _ret = __method_bind.getAntialiased.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAntialiased.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBoneCount(): Int {
-    val _ret = __method_bind.getBoneCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBoneCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBonePath(index: Int): NodePath {
-    val _arg = Variant(index)
-    val _ret = __method_bind.getBonePath.call(this._handle, listOf(_arg))
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBonePath.call(self._handle, listOf(index), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBoneWeights(index: Int): PoolFloatArray {
-    val _arg = Variant(index)
-    val _ret = __method_bind.getBoneWeights.call(this._handle, listOf(_arg))
-    return _ret.asPoolFloatArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolFloatArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBoneWeights.call(self._handle, listOf(index), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getColor(): Color {
-    val _ret = __method_bind.getColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getInternalVertexCount(): Int {
-    val _ret = __method_bind.getInternalVertexCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInternalVertexCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getInvert(): Boolean {
-    val _ret = __method_bind.getInvert.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInvert.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getInvertBorder(): Float {
-    val _ret = __method_bind.getInvertBorder.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInvertBorder.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.getOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPolygon(): PoolVector2Array {
-    val _ret = __method_bind.getPolygon.call(this._handle)
-    return _ret.asPoolVector2Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector2Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPolygon.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPolygons(): VariantArray {
-    val _ret = __method_bind.getPolygons.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPolygons.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSkeleton(): NodePath {
-    val _ret = __method_bind.getSkeleton.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSkeleton.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.getTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTextureOffset(): Vector2 {
-    val _ret = __method_bind.getTextureOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTextureOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTextureRotation(): Float {
-    val _ret = __method_bind.getTextureRotation.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTextureRotation.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTextureRotationDegrees(): Float {
-    val _ret = __method_bind.getTextureRotationDegrees.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTextureRotationDegrees.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getTextureScale(): Vector2 {
-    val _ret = __method_bind.getTextureScale.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTextureScale.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getUv(): PoolVector2Array {
-    val _ret = __method_bind.getUv.call(this._handle)
-    return _ret.asPoolVector2Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector2Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getUv.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getVertexColors(): PoolColorArray {
-    val _ret = __method_bind.getVertexColors.call(this._handle)
-    return _ret.asPoolColorArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolColorArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertexColors.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setAntialiased(antialiased: Boolean) {
-    val _arg = Variant(antialiased)
-    __method_bind.setAntialiased.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAntialiased.call(self._handle, listOf(antialiased), null)
+    }
   }
 
   fun setBonePath(index: Int, path: NodePath) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(path))
-    __method_bind.setBonePath.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(path)
+      __method_bind.setBonePath.call(self._handle, _args, null)
+    }
   }
 
   fun setBoneWeights(index: Int, weights: PoolFloatArray) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(weights))
-    __method_bind.setBoneWeights.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(weights)
+      __method_bind.setBoneWeights.call(self._handle, _args, null)
+    }
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setInternalVertexCount(internalVertexCount: Int) {
-    val _arg = Variant(internalVertexCount)
-    __method_bind.setInternalVertexCount.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInternalVertexCount.call(self._handle, listOf(internalVertexCount), null)
+    }
   }
 
   fun setInvert(invert: Boolean) {
-    val _arg = Variant(invert)
-    __method_bind.setInvert.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInvert.call(self._handle, listOf(invert), null)
+    }
   }
 
   fun setInvertBorder(invertBorder: Float) {
-    val _arg = Variant(invertBorder)
-    __method_bind.setInvertBorder.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInvertBorder.call(self._handle, listOf(invertBorder), null)
+    }
   }
 
   fun setOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
-    val _arg = Variant(polygon)
-    __method_bind.setPolygon.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPolygon.call(self._handle, listOf(polygon), null)
+    }
   }
 
   fun setPolygons(polygons: VariantArray) {
-    val _arg = Variant(polygons)
-    __method_bind.setPolygons.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPolygons.call(self._handle, listOf(polygons), null)
+    }
   }
 
   fun setSkeleton(skeleton: NodePath) {
-    val _arg = Variant(skeleton)
-    __method_bind.setSkeleton.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSkeleton.call(self._handle, listOf(skeleton), null)
+    }
   }
 
   fun setTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.setTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun setTextureOffset(textureOffset: Vector2) {
-    val _arg = Variant(textureOffset)
-    __method_bind.setTextureOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTextureOffset.call(self._handle, listOf(textureOffset), null)
+    }
   }
 
   fun setTextureRotation(textureRotation: Float) {
-    val _arg = Variant(textureRotation)
-    __method_bind.setTextureRotation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTextureRotation.call(self._handle, listOf(textureRotation), null)
+    }
   }
 
   fun setTextureRotationDegrees(textureRotation: Float) {
-    val _arg = Variant(textureRotation)
-    __method_bind.setTextureRotationDegrees.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTextureRotationDegrees.call(self._handle, listOf(textureRotation), null)
+    }
   }
 
   fun setTextureScale(textureScale: Vector2) {
-    val _arg = Variant(textureScale)
-    __method_bind.setTextureScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTextureScale.call(self._handle, listOf(textureScale), null)
+    }
   }
 
   fun setUv(uv: PoolVector2Array) {
-    val _arg = Variant(uv)
-    __method_bind.setUv.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUv.call(self._handle, listOf(uv), null)
+    }
   }
 
   fun setVertexColors(vertexColors: PoolColorArray) {
-    val _arg = Variant(vertexColors)
-    __method_bind.setVertexColors.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVertexColors.call(self._handle, listOf(vertexColors), null)
+    }
   }
 
   companion object {

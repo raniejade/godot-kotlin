@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class UndoRedo(
   @Suppress("UNUSED_PARAMETER")
@@ -40,11 +49,14 @@ open class UndoRedo(
     method: String,
     vararg varargs: Any?
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    __method_bind.addDoMethod.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.addDoMethod.call(self._handle, _args, null)
+    }
   }
 
   fun addDoProperty(
@@ -52,16 +64,21 @@ open class UndoRedo(
     property: String,
     value: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.addDoProperty.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(property)
+      _args.add(value)
+      __method_bind.addDoProperty.call(self._handle, _args, null)
+    }
   }
 
   fun addDoReference(`object`: Object) {
-    val _arg = Variant(`object`)
-    __method_bind.addDoReference.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addDoReference.call(self._handle, listOf(`object`), null)
+    }
   }
 
   fun addUndoMethod(
@@ -69,11 +86,14 @@ open class UndoRedo(
     method: String,
     vararg varargs: Any?
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    __method_bind.addUndoMethod.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.addUndoMethod.call(self._handle, _args, null)
+    }
   }
 
   fun addUndoProperty(
@@ -81,67 +101,116 @@ open class UndoRedo(
     property: String,
     value: Variant
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.addUndoProperty.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(property)
+      _args.add(value)
+      __method_bind.addUndoProperty.call(self._handle, _args, null)
+    }
   }
 
   fun addUndoReference(`object`: Object) {
-    val _arg = Variant(`object`)
-    __method_bind.addUndoReference.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addUndoReference.call(self._handle, listOf(`object`), null)
+    }
   }
 
   fun clearHistory(increaseVersion: Boolean = true) {
-    val _arg = Variant(increaseVersion)
-    __method_bind.clearHistory.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearHistory.call(self._handle, listOf(increaseVersion), null)
+    }
   }
 
   fun commitAction() {
-    __method_bind.commitAction.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.commitAction.call(self._handle, emptyList(), null)
+    }
   }
 
   fun createAction(name: String, mergeMode: Int = 0) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(mergeMode))
-    __method_bind.createAction.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(mergeMode)
+      __method_bind.createAction.call(self._handle, _args, null)
+    }
   }
 
   fun getCurrentActionName(): String {
-    val _ret = __method_bind.getCurrentActionName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getCurrentActionName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getVersion(): Int {
-    val _ret = __method_bind.getVersion.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVersion.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasRedo(): Boolean {
-    val _ret = __method_bind.hasRedo.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasRedo.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasUndo(): Boolean {
-    val _ret = __method_bind.hasUndo.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasUndo.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isCommitingAction(): Boolean {
-    val _ret = __method_bind.isCommitingAction.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCommitingAction.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun redo(): Boolean {
-    val _ret = __method_bind.redo.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.redo.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun undo(): Boolean {
-    val _ret = __method_bind.undo.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.undo.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   enum class MergeMode(

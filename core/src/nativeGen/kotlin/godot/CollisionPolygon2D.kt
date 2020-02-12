@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolVector2Array
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class CollisionPolygon2D(
   @Suppress("UNUSED_PARAMETER")
@@ -82,53 +91,89 @@ open class CollisionPolygon2D(
   }
 
   fun getBuildMode(): BuildMode {
-    val _ret = __method_bind.getBuildMode.call(this._handle)
-    return CollisionPolygon2D.BuildMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBuildMode.call(self._handle, emptyList(), _retPtr)
+      CollisionPolygon2D.BuildMode.from(_ret.value)
+    }
   }
 
   fun getOneWayCollisionMargin(): Float {
-    val _ret = __method_bind.getOneWayCollisionMargin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOneWayCollisionMargin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getPolygon(): PoolVector2Array {
-    val _ret = __method_bind.getPolygon.call(this._handle)
-    return _ret.asPoolVector2Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector2Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPolygon.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isDisabled(): Boolean {
-    val _ret = __method_bind.isDisabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDisabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isOneWayCollisionEnabled(): Boolean {
-    val _ret = __method_bind.isOneWayCollisionEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isOneWayCollisionEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBuildMode(buildMode: Int) {
-    val _arg = Variant(buildMode)
-    __method_bind.setBuildMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBuildMode.call(self._handle, listOf(buildMode), null)
+    }
   }
 
   fun setDisabled(disabled: Boolean) {
-    val _arg = Variant(disabled)
-    __method_bind.setDisabled.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDisabled.call(self._handle, listOf(disabled), null)
+    }
   }
 
   fun setOneWayCollision(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setOneWayCollision.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOneWayCollision.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setOneWayCollisionMargin(margin: Float) {
-    val _arg = Variant(margin)
-    __method_bind.setOneWayCollisionMargin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOneWayCollisionMargin.call(self._handle, listOf(margin), null)
+    }
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
-    val _arg = Variant(polygon)
-    __method_bind.setPolygon.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPolygon.call(self._handle, listOf(polygon), null)
+    }
   }
 
   enum class BuildMode(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -17,13 +18,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AnimationTreePlayer(
   @Suppress("UNUSED_PARAMETER")
@@ -86,40 +95,63 @@ open class AnimationTreePlayer(
   }
 
   fun addNode(type: Int, id: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(id))
-    __method_bind.addNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(id)
+      __method_bind.addNode.call(self._handle, _args, null)
+    }
   }
 
   fun advance(delta: Float) {
-    val _arg = Variant(delta)
-    __method_bind.advance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.advance.call(self._handle, listOf(delta), null)
+    }
   }
 
   fun animationNodeGetAnimation(id: String): Animation {
-    val _arg = Variant(id)
-    val _ret = __method_bind.animationNodeGetAnimation.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Animation
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Animation
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.animationNodeGetAnimation.call(self._handle, listOf(id), _retPtr)
+      _ret = objectToType<Animation>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun animationNodeGetMasterAnimation(id: String): String {
-    val _arg = Variant(id)
-    val _ret = __method_bind.animationNodeGetMasterAnimation.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.animationNodeGetMasterAnimation.call(self._handle, listOf(id), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun animationNodeGetPosition(id: String): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.animationNodeGetPosition.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.animationNodeGetPosition.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun animationNodeSetAnimation(id: String, animation: Animation) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(animation))
-    __method_bind.animationNodeSetAnimation.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(animation)
+      __method_bind.animationNodeSetAnimation.call(self._handle, _args, null)
+    }
   }
 
   fun animationNodeSetFilterPath(
@@ -127,18 +159,24 @@ open class AnimationTreePlayer(
     path: NodePath,
     enable: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.animationNodeSetFilterPath.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(path)
+      _args.add(enable)
+      __method_bind.animationNodeSetFilterPath.call(self._handle, _args, null)
+    }
   }
 
   fun animationNodeSetMasterAnimation(id: String, source: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(source))
-    __method_bind.animationNodeSetMasterAnimation.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(source)
+      __method_bind.animationNodeSetMasterAnimation.call(self._handle, _args, null)
+    }
   }
 
   fun areNodesConnected(
@@ -146,25 +184,37 @@ open class AnimationTreePlayer(
     dstId: String,
     dstInputIdx: Int
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(dstId))
-    _args.add(Variant.fromAny(dstInputIdx))
-    val _ret = __method_bind.areNodesConnected.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(dstId)
+      _args.add(dstInputIdx)
+      __method_bind.areNodesConnected.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun blend2NodeGetAmount(id: String): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.blend2NodeGetAmount.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.blend2NodeGetAmount.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun blend2NodeSetAmount(id: String, blend: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(blend))
-    __method_bind.blend2NodeSetAmount.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(blend)
+      __method_bind.blend2NodeSetAmount.call(self._handle, _args, null)
+    }
   }
 
   fun blend2NodeSetFilterPath(
@@ -172,37 +222,55 @@ open class AnimationTreePlayer(
     path: NodePath,
     enable: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.blend2NodeSetFilterPath.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(path)
+      _args.add(enable)
+      __method_bind.blend2NodeSetFilterPath.call(self._handle, _args, null)
+    }
   }
 
   fun blend3NodeGetAmount(id: String): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.blend3NodeGetAmount.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.blend3NodeGetAmount.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun blend3NodeSetAmount(id: String, blend: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(blend))
-    __method_bind.blend3NodeSetAmount.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(blend)
+      __method_bind.blend3NodeSetAmount.call(self._handle, _args, null)
+    }
   }
 
   fun blend4NodeGetAmount(id: String): Vector2 {
-    val _arg = Variant(id)
-    val _ret = __method_bind.blend4NodeGetAmount.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.blend4NodeGetAmount.call(self._handle, listOf(id), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun blend4NodeSetAmount(id: String, blend: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(blend))
-    __method_bind.blend4NodeSetAmount.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(blend)
+      __method_bind.blend4NodeSetAmount.call(self._handle, _args, null)
+    }
   }
 
   fun connectNodes(
@@ -210,175 +278,288 @@ open class AnimationTreePlayer(
     dstId: String,
     dstInputIdx: Int
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(dstId))
-    _args.add(Variant.fromAny(dstInputIdx))
-    val _ret = __method_bind.connectNodes.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(dstId)
+      _args.add(dstInputIdx)
+      __method_bind.connectNodes.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun disconnectNodes(id: String, dstInputIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(dstInputIdx))
-    __method_bind.disconnectNodes.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(dstInputIdx)
+      __method_bind.disconnectNodes.call(self._handle, _args, null)
+    }
   }
 
   fun getAnimationProcessMode(): AnimationProcessMode {
-    val _ret = __method_bind.getAnimationProcessMode.call(this._handle)
-    return AnimationTreePlayer.AnimationProcessMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAnimationProcessMode.call(self._handle, emptyList(), _retPtr)
+      AnimationTreePlayer.AnimationProcessMode.from(_ret.value)
+    }
   }
 
   fun getBasePath(): NodePath {
-    val _ret = __method_bind.getBasePath.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBasePath.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMasterPlayer(): NodePath {
-    val _ret = __method_bind.getMasterPlayer.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMasterPlayer.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNodeList(): PoolStringArray {
-    val _ret = __method_bind.getNodeList.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodeList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isActive(): Boolean {
-    val _ret = __method_bind.isActive.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isActive.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun mixNodeGetAmount(id: String): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.mixNodeGetAmount.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.mixNodeGetAmount.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun mixNodeSetAmount(id: String, ratio: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(ratio))
-    __method_bind.mixNodeSetAmount.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(ratio)
+      __method_bind.mixNodeSetAmount.call(self._handle, _args, null)
+    }
   }
 
   fun nodeExists(node: String): Boolean {
-    val _arg = Variant(node)
-    val _ret = __method_bind.nodeExists.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.nodeExists.call(self._handle, listOf(node), _retPtr)
+      _ret.value
+    }
   }
 
   fun nodeGetInputCount(id: String): Int {
-    val _arg = Variant(id)
-    val _ret = __method_bind.nodeGetInputCount.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.nodeGetInputCount.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun nodeGetInputSource(id: String, idx: Int): String {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(idx))
-    val _ret = __method_bind.nodeGetInputSource.call(this._handle, _args)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(idx)
+      __method_bind.nodeGetInputSource.call(self._handle, _args, _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun nodeGetPosition(id: String): Vector2 {
-    val _arg = Variant(id)
-    val _ret = __method_bind.nodeGetPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.nodeGetPosition.call(self._handle, listOf(id), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun nodeGetType(id: String): NodeType {
-    val _arg = Variant(id)
-    val _ret = __method_bind.nodeGetType.call(this._handle, listOf(_arg))
-    return AnimationTreePlayer.NodeType.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.nodeGetType.call(self._handle, listOf(id), _retPtr)
+      AnimationTreePlayer.NodeType.from(_ret.value)
+    }
   }
 
   fun nodeRename(node: String, newName: String): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(node))
-    _args.add(Variant.fromAny(newName))
-    val _ret = __method_bind.nodeRename.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(node)
+      _args.add(newName)
+      __method_bind.nodeRename.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun nodeSetPosition(id: String, screenPosition: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(screenPosition))
-    __method_bind.nodeSetPosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(screenPosition)
+      __method_bind.nodeSetPosition.call(self._handle, _args, null)
+    }
   }
 
   fun oneshotNodeGetAutorestartDelay(id: String): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.oneshotNodeGetAutorestartDelay.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.oneshotNodeGetAutorestartDelay.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun oneshotNodeGetAutorestartRandomDelay(id: String): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.oneshotNodeGetAutorestartRandomDelay.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.oneshotNodeGetAutorestartRandomDelay.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun oneshotNodeGetFadeinTime(id: String): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.oneshotNodeGetFadeinTime.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.oneshotNodeGetFadeinTime.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun oneshotNodeGetFadeoutTime(id: String): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.oneshotNodeGetFadeoutTime.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.oneshotNodeGetFadeoutTime.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun oneshotNodeHasAutorestart(id: String): Boolean {
-    val _arg = Variant(id)
-    val _ret = __method_bind.oneshotNodeHasAutorestart.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.oneshotNodeHasAutorestart.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun oneshotNodeIsActive(id: String): Boolean {
-    val _arg = Variant(id)
-    val _ret = __method_bind.oneshotNodeIsActive.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.oneshotNodeIsActive.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun oneshotNodeSetAutorestart(id: String, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.oneshotNodeSetAutorestart.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(enable)
+      __method_bind.oneshotNodeSetAutorestart.call(self._handle, _args, null)
+    }
   }
 
   fun oneshotNodeSetAutorestartDelay(id: String, delaySec: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(delaySec))
-    __method_bind.oneshotNodeSetAutorestartDelay.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(delaySec)
+      __method_bind.oneshotNodeSetAutorestartDelay.call(self._handle, _args, null)
+    }
   }
 
   fun oneshotNodeSetAutorestartRandomDelay(id: String, randSec: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(randSec))
-    __method_bind.oneshotNodeSetAutorestartRandomDelay.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(randSec)
+      __method_bind.oneshotNodeSetAutorestartRandomDelay.call(self._handle, _args, null)
+    }
   }
 
   fun oneshotNodeSetFadeinTime(id: String, timeSec: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(timeSec))
-    __method_bind.oneshotNodeSetFadeinTime.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(timeSec)
+      __method_bind.oneshotNodeSetFadeinTime.call(self._handle, _args, null)
+    }
   }
 
   fun oneshotNodeSetFadeoutTime(id: String, timeSec: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(timeSec))
-    __method_bind.oneshotNodeSetFadeoutTime.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(timeSec)
+      __method_bind.oneshotNodeSetFadeoutTime.call(self._handle, _args, null)
+    }
   }
 
   fun oneshotNodeSetFilterPath(
@@ -386,114 +567,170 @@ open class AnimationTreePlayer(
     path: NodePath,
     enable: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(path))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.oneshotNodeSetFilterPath.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(path)
+      _args.add(enable)
+      __method_bind.oneshotNodeSetFilterPath.call(self._handle, _args, null)
+    }
   }
 
   fun oneshotNodeStart(id: String) {
-    val _arg = Variant(id)
-    __method_bind.oneshotNodeStart.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.oneshotNodeStart.call(self._handle, listOf(id), null)
+    }
   }
 
   fun oneshotNodeStop(id: String) {
-    val _arg = Variant(id)
-    __method_bind.oneshotNodeStop.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.oneshotNodeStop.call(self._handle, listOf(id), null)
+    }
   }
 
   fun recomputeCaches() {
-    __method_bind.recomputeCaches.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.recomputeCaches.call(self._handle, emptyList(), null)
+    }
   }
 
   fun removeNode(id: String) {
-    val _arg = Variant(id)
-    __method_bind.removeNode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeNode.call(self._handle, listOf(id), null)
+    }
   }
 
   fun reset() {
-    __method_bind.reset.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.reset.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setActive(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setActive.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setActive.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setAnimationProcessMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setAnimationProcessMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAnimationProcessMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setBasePath(path: NodePath) {
-    val _arg = Variant(path)
-    __method_bind.setBasePath.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBasePath.call(self._handle, listOf(path), null)
+    }
   }
 
   fun setMasterPlayer(nodepath: NodePath) {
-    val _arg = Variant(nodepath)
-    __method_bind.setMasterPlayer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMasterPlayer.call(self._handle, listOf(nodepath), null)
+    }
   }
 
   fun timescaleNodeGetScale(id: String): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.timescaleNodeGetScale.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.timescaleNodeGetScale.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun timescaleNodeSetScale(id: String, scale: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(scale))
-    __method_bind.timescaleNodeSetScale.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(scale)
+      __method_bind.timescaleNodeSetScale.call(self._handle, _args, null)
+    }
   }
 
   fun timeseekNodeSeek(id: String, seconds: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(seconds))
-    __method_bind.timeseekNodeSeek.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(seconds)
+      __method_bind.timeseekNodeSeek.call(self._handle, _args, null)
+    }
   }
 
   fun transitionNodeDeleteInput(id: String, inputIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(inputIdx))
-    __method_bind.transitionNodeDeleteInput.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(inputIdx)
+      __method_bind.transitionNodeDeleteInput.call(self._handle, _args, null)
+    }
   }
 
   fun transitionNodeGetCurrent(id: String): Int {
-    val _arg = Variant(id)
-    val _ret = __method_bind.transitionNodeGetCurrent.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.transitionNodeGetCurrent.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun transitionNodeGetInputCount(id: String): Int {
-    val _arg = Variant(id)
-    val _ret = __method_bind.transitionNodeGetInputCount.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.transitionNodeGetInputCount.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun transitionNodeGetXfadeTime(id: String): Float {
-    val _arg = Variant(id)
-    val _ret = __method_bind.transitionNodeGetXfadeTime.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.transitionNodeGetXfadeTime.call(self._handle, listOf(id), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun transitionNodeHasInputAutoAdvance(id: String, inputIdx: Int): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(inputIdx))
-    val _ret = __method_bind.transitionNodeHasInputAutoAdvance.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(inputIdx)
+      __method_bind.transitionNodeHasInputAutoAdvance.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun transitionNodeSetCurrent(id: String, inputIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(inputIdx))
-    __method_bind.transitionNodeSetCurrent.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(inputIdx)
+      __method_bind.transitionNodeSetCurrent.call(self._handle, _args, null)
+    }
   }
 
   fun transitionNodeSetInputAutoAdvance(
@@ -501,25 +738,34 @@ open class AnimationTreePlayer(
     inputIdx: Int,
     enable: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(inputIdx))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.transitionNodeSetInputAutoAdvance.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(inputIdx)
+      _args.add(enable)
+      __method_bind.transitionNodeSetInputAutoAdvance.call(self._handle, _args, null)
+    }
   }
 
   fun transitionNodeSetInputCount(id: String, count: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(count))
-    __method_bind.transitionNodeSetInputCount.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(count)
+      __method_bind.transitionNodeSetInputCount.call(self._handle, _args, null)
+    }
   }
 
   fun transitionNodeSetXfadeTime(id: String, timeSec: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(timeSec))
-    __method_bind.transitionNodeSetXfadeTime.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(timeSec)
+      __method_bind.transitionNodeSetXfadeTime.call(self._handle, _args, null)
+    }
   }
 
   enum class AnimationProcessMode(

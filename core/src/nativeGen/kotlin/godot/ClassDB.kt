@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.GDError
@@ -14,99 +15,166 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ClassDBInternal(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Object(null) {
   fun canInstance(`class`: String): Boolean {
-    val _arg = Variant(`class`)
-    val _ret = __method_bind.canInstance.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.canInstance.call(self._handle, listOf(`class`), _retPtr)
+      _ret.value
+    }
   }
 
   fun classExists(`class`: String): Boolean {
-    val _arg = Variant(`class`)
-    val _ret = __method_bind.classExists.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.classExists.call(self._handle, listOf(`class`), _retPtr)
+      _ret.value
+    }
   }
 
   fun classGetCategory(`class`: String): String {
-    val _arg = Variant(`class`)
-    val _ret = __method_bind.classGetCategory.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.classGetCategory.call(self._handle, listOf(`class`), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun classGetIntegerConstant(`class`: String, name: String): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`class`))
-    _args.add(Variant.fromAny(name))
-    val _ret = __method_bind.classGetIntegerConstant.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`class`)
+      _args.add(name)
+      __method_bind.classGetIntegerConstant.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun classGetIntegerConstantList(`class`: String, noInheritance: Boolean = false):
       PoolStringArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`class`))
-    _args.add(Variant.fromAny(noInheritance))
-    val _ret = __method_bind.classGetIntegerConstantList.call(this._handle, _args)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`class`)
+      _args.add(noInheritance)
+      __method_bind.classGetIntegerConstantList.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun classGetMethodList(`class`: String, noInheritance: Boolean = false): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`class`))
-    _args.add(Variant.fromAny(noInheritance))
-    val _ret = __method_bind.classGetMethodList.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`class`)
+      _args.add(noInheritance)
+      __method_bind.classGetMethodList.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun classGetProperty(`object`: Object, property: String): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(property))
-    val _ret = __method_bind.classGetProperty.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(property)
+      __method_bind.classGetProperty.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun classGetPropertyList(`class`: String, noInheritance: Boolean = false): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`class`))
-    _args.add(Variant.fromAny(noInheritance))
-    val _ret = __method_bind.classGetPropertyList.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`class`)
+      _args.add(noInheritance)
+      __method_bind.classGetPropertyList.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun classGetSignal(`class`: String, signal: String): Dictionary {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`class`))
-    _args.add(Variant.fromAny(signal))
-    val _ret = __method_bind.classGetSignal.call(this._handle, _args)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`class`)
+      _args.add(signal)
+      __method_bind.classGetSignal.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun classGetSignalList(`class`: String, noInheritance: Boolean = false): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`class`))
-    _args.add(Variant.fromAny(noInheritance))
-    val _ret = __method_bind.classGetSignalList.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`class`)
+      _args.add(noInheritance)
+      __method_bind.classGetSignalList.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun classHasIntegerConstant(`class`: String, name: String): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`class`))
-    _args.add(Variant.fromAny(name))
-    val _ret = __method_bind.classHasIntegerConstant.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`class`)
+      _args.add(name)
+      __method_bind.classHasIntegerConstant.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun classHasMethod(
@@ -114,20 +182,30 @@ open class ClassDBInternal(
     method: String,
     noInheritance: Boolean = false
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`class`))
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(noInheritance))
-    val _ret = __method_bind.classHasMethod.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`class`)
+      _args.add(method)
+      _args.add(noInheritance)
+      __method_bind.classHasMethod.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun classHasSignal(`class`: String, signal: String): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`class`))
-    _args.add(Variant.fromAny(signal))
-    val _ret = __method_bind.classHasSignal.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`class`)
+      _args.add(signal)
+      __method_bind.classHasSignal.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun classSetProperty(
@@ -135,49 +213,84 @@ open class ClassDBInternal(
     property: String,
     value: Variant
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`object`))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    val _ret = __method_bind.classSetProperty.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`object`)
+      _args.add(property)
+      _args.add(value)
+      __method_bind.classSetProperty.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun getClassList(): PoolStringArray {
-    val _ret = __method_bind.getClassList.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getClassList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getInheritersFromClass(`class`: String): PoolStringArray {
-    val _arg = Variant(`class`)
-    val _ret = __method_bind.getInheritersFromClass.call(this._handle, listOf(_arg))
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getInheritersFromClass.call(self._handle, listOf(`class`), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getParentClass(`class`: String): String {
-    val _arg = Variant(`class`)
-    val _ret = __method_bind.getParentClass.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getParentClass.call(self._handle, listOf(`class`), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun instance(`class`: String): Variant {
-    val _arg = Variant(`class`)
-    val _ret = __method_bind.instance.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.instance.call(self._handle, listOf(`class`), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isClassEnabled(`class`: String): Boolean {
-    val _arg = Variant(`class`)
-    val _ret = __method_bind.isClassEnabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isClassEnabled.call(self._handle, listOf(`class`), _retPtr)
+      _ret.value
+    }
   }
 
   fun isParentClass(`class`: String, inherits: String): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`class`))
-    _args.add(Variant.fromAny(inherits))
-    val _ret = __method_bind.isParentClass.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`class`)
+      _args.add(inherits)
+      __method_bind.isParentClass.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   companion object {

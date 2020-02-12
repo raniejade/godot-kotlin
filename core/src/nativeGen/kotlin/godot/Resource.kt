@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -11,13 +12,21 @@ import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Resource(
   @Suppress("UNUSED_PARAMETER")
@@ -59,58 +68,105 @@ open class Resource(
   }
 
   fun duplicate(subresources: Boolean = false): Resource {
-    val _arg = Variant(subresources)
-    val _ret = __method_bind.duplicate.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Resource
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Resource
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.duplicate.call(self._handle, listOf(subresources), _retPtr)
+      _ret = objectToType<Resource>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getLocalScene(): Node {
-    val _ret = __method_bind.getLocalScene.call(this._handle)
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getLocalScene.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getName(): String {
-    val _ret = __method_bind.getName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getPath(): String {
-    val _ret = __method_bind.getPath.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getPath.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getRid(): RID {
-    val _ret = __method_bind.getRid.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRid.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isLocalToScene(): Boolean {
-    val _ret = __method_bind.isLocalToScene.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isLocalToScene.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setLocalToScene(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setLocalToScene.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLocalToScene.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setName(name: String) {
-    val _arg = Variant(name)
-    __method_bind.setName.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setName.call(self._handle, listOf(name), null)
+    }
   }
 
   fun setPath(path: String) {
-    val _arg = Variant(path)
-    __method_bind.setPath.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPath.call(self._handle, listOf(path), null)
+    }
   }
 
   fun setupLocalToScene() {
-    __method_bind.setupLocalToScene.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setupLocalToScene.call(self._handle, emptyList(), null)
+    }
   }
 
   fun takeOverPath(path: String) {
-    val _arg = Variant(path)
-    __method_bind.takeOverPath.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.takeOverPath.call(self._handle, listOf(path), null)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -14,13 +15,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class CollisionObject(
   @Suppress("UNUSED_PARAMETER")
@@ -64,123 +73,204 @@ open class CollisionObject(
   }
 
   fun createShapeOwner(owner: Object): Int {
-    val _arg = Variant(owner)
-    val _ret = __method_bind.createShapeOwner.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.createShapeOwner.call(self._handle, listOf(owner), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCaptureInputOnDrag(): Boolean {
-    val _ret = __method_bind.getCaptureInputOnDrag.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCaptureInputOnDrag.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getRid(): RID {
-    val _ret = __method_bind.getRid.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRid.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getShapeOwners(): VariantArray {
-    val _ret = __method_bind.getShapeOwners.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getShapeOwners.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isRayPickable(): Boolean {
-    val _ret = __method_bind.isRayPickable.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRayPickable.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isShapeOwnerDisabled(ownerId: Int): Boolean {
-    val _arg = Variant(ownerId)
-    val _ret = __method_bind.isShapeOwnerDisabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isShapeOwnerDisabled.call(self._handle, listOf(ownerId), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeShapeOwner(ownerId: Int) {
-    val _arg = Variant(ownerId)
-    __method_bind.removeShapeOwner.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeShapeOwner.call(self._handle, listOf(ownerId), null)
+    }
   }
 
   fun setCaptureInputOnDrag(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setCaptureInputOnDrag.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCaptureInputOnDrag.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setRayPickable(rayPickable: Boolean) {
-    val _arg = Variant(rayPickable)
-    __method_bind.setRayPickable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRayPickable.call(self._handle, listOf(rayPickable), null)
+    }
   }
 
   fun shapeFindOwner(shapeIndex: Int): Int {
-    val _arg = Variant(shapeIndex)
-    val _ret = __method_bind.shapeFindOwner.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.shapeFindOwner.call(self._handle, listOf(shapeIndex), _retPtr)
+      _ret.value
+    }
   }
 
   fun shapeOwnerAddShape(ownerId: Int, shape: Shape) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(ownerId))
-    _args.add(Variant.fromAny(shape))
-    __method_bind.shapeOwnerAddShape.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(ownerId)
+      _args.add(shape)
+      __method_bind.shapeOwnerAddShape.call(self._handle, _args, null)
+    }
   }
 
   fun shapeOwnerClearShapes(ownerId: Int) {
-    val _arg = Variant(ownerId)
-    __method_bind.shapeOwnerClearShapes.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.shapeOwnerClearShapes.call(self._handle, listOf(ownerId), null)
+    }
   }
 
   fun shapeOwnerGetOwner(ownerId: Int): Object {
-    val _arg = Variant(ownerId)
-    val _ret = __method_bind.shapeOwnerGetOwner.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Object
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Object
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.shapeOwnerGetOwner.call(self._handle, listOf(ownerId), _retPtr)
+      _ret = objectToType<Object>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun shapeOwnerGetShape(ownerId: Int, shapeId: Int): Shape {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(ownerId))
-    _args.add(Variant.fromAny(shapeId))
-    val _ret = __method_bind.shapeOwnerGetShape.call(this._handle, _args)
-    return _ret.toAny() as Shape
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Shape
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(ownerId)
+      _args.add(shapeId)
+      __method_bind.shapeOwnerGetShape.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Shape>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun shapeOwnerGetShapeCount(ownerId: Int): Int {
-    val _arg = Variant(ownerId)
-    val _ret = __method_bind.shapeOwnerGetShapeCount.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.shapeOwnerGetShapeCount.call(self._handle, listOf(ownerId), _retPtr)
+      _ret.value
+    }
   }
 
   fun shapeOwnerGetShapeIndex(ownerId: Int, shapeId: Int): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(ownerId))
-    _args.add(Variant.fromAny(shapeId))
-    val _ret = __method_bind.shapeOwnerGetShapeIndex.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(ownerId)
+      _args.add(shapeId)
+      __method_bind.shapeOwnerGetShapeIndex.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun shapeOwnerGetTransform(ownerId: Int): Transform {
-    val _arg = Variant(ownerId)
-    val _ret = __method_bind.shapeOwnerGetTransform.call(this._handle, listOf(_arg))
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.shapeOwnerGetTransform.call(self._handle, listOf(ownerId), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun shapeOwnerRemoveShape(ownerId: Int, shapeId: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(ownerId))
-    _args.add(Variant.fromAny(shapeId))
-    __method_bind.shapeOwnerRemoveShape.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(ownerId)
+      _args.add(shapeId)
+      __method_bind.shapeOwnerRemoveShape.call(self._handle, _args, null)
+    }
   }
 
   fun shapeOwnerSetDisabled(ownerId: Int, disabled: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(ownerId))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.shapeOwnerSetDisabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(ownerId)
+      _args.add(disabled)
+      __method_bind.shapeOwnerSetDisabled.call(self._handle, _args, null)
+    }
   }
 
   fun shapeOwnerSetTransform(ownerId: Int, transform: Transform) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(ownerId))
-    _args.add(Variant.fromAny(transform))
-    __method_bind.shapeOwnerSetTransform.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(ownerId)
+      _args.add(transform)
+      __method_bind.shapeOwnerSetTransform.call(self._handle, _args, null)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.AABB
 import godot.core.Allocator
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class GeometryInstance(
   @Suppress("UNUSED_PARAMETER")
@@ -96,91 +105,151 @@ open class GeometryInstance(
   }
 
   fun getCastShadowsSetting(): ShadowCastingSetting {
-    val _ret = __method_bind.getCastShadowsSetting.call(this._handle)
-    return GeometryInstance.ShadowCastingSetting.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCastShadowsSetting.call(self._handle, emptyList(), _retPtr)
+      GeometryInstance.ShadowCastingSetting.from(_ret.value)
+    }
   }
 
   fun getExtraCullMargin(): Float {
-    val _ret = __method_bind.getExtraCullMargin.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getExtraCullMargin.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFlag(flag: Int): Boolean {
-    val _arg = Variant(flag)
-    val _ret = __method_bind.getFlag.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFlag.call(self._handle, listOf(flag), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLodMaxDistance(): Float {
-    val _ret = __method_bind.getLodMaxDistance.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLodMaxDistance.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLodMaxHysteresis(): Float {
-    val _ret = __method_bind.getLodMaxHysteresis.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLodMaxHysteresis.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLodMinDistance(): Float {
-    val _ret = __method_bind.getLodMinDistance.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLodMinDistance.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getLodMinHysteresis(): Float {
-    val _ret = __method_bind.getLodMinHysteresis.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLodMinHysteresis.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMaterialOverride(): Material {
-    val _ret = __method_bind.getMaterialOverride.call(this._handle)
-    return _ret.toAny() as Material
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Material
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMaterialOverride.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Material>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun setCastShadowsSetting(shadowCastingSetting: Int) {
-    val _arg = Variant(shadowCastingSetting)
-    __method_bind.setCastShadowsSetting.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCastShadowsSetting.call(self._handle, listOf(shadowCastingSetting), null)
+    }
   }
 
   fun setCustomAabb(aabb: AABB) {
-    val _arg = Variant(aabb)
-    __method_bind.setCustomAabb.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCustomAabb.call(self._handle, listOf(aabb), null)
+    }
   }
 
   fun setExtraCullMargin(margin: Float) {
-    val _arg = Variant(margin)
-    __method_bind.setExtraCullMargin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExtraCullMargin.call(self._handle, listOf(margin), null)
+    }
   }
 
   fun setFlag(flag: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(flag))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setFlag.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(flag)
+      _args.add(value)
+      __method_bind.setFlag.call(self._handle, _args, null)
+    }
   }
 
   fun setLodMaxDistance(mode: Float) {
-    val _arg = Variant(mode)
-    __method_bind.setLodMaxDistance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLodMaxDistance.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setLodMaxHysteresis(mode: Float) {
-    val _arg = Variant(mode)
-    __method_bind.setLodMaxHysteresis.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLodMaxHysteresis.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setLodMinDistance(mode: Float) {
-    val _arg = Variant(mode)
-    __method_bind.setLodMinDistance.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLodMinDistance.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setLodMinHysteresis(mode: Float) {
-    val _arg = Variant(mode)
-    __method_bind.setLodMinHysteresis.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLodMinHysteresis.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setMaterialOverride(material: Material) {
-    val _arg = Variant(material)
-    __method_bind.setMaterialOverride.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaterialOverride.call(self._handle, listOf(material), null)
+    }
   }
 
   enum class Flags(

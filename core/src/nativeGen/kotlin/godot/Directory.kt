@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Directory(
   @Suppress("UNUSED_PARAMETER")
@@ -31,109 +40,192 @@ open class Directory(
   }
 
   fun changeDir(todir: String): GDError {
-    val _arg = Variant(todir)
-    val _ret = __method_bind.changeDir.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.changeDir.call(self._handle, listOf(todir), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun copy(from: String, to: String): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    val _ret = __method_bind.copy.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      __method_bind.copy.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun currentIsDir(): Boolean {
-    val _ret = __method_bind.currentIsDir.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.currentIsDir.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun dirExists(path: String): Boolean {
-    val _arg = Variant(path)
-    val _ret = __method_bind.dirExists.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.dirExists.call(self._handle, listOf(path), _retPtr)
+      _ret.value
+    }
   }
 
   fun fileExists(path: String): Boolean {
-    val _arg = Variant(path)
-    val _ret = __method_bind.fileExists.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.fileExists.call(self._handle, listOf(path), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCurrentDir(): String {
-    val _ret = __method_bind.getCurrentDir.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getCurrentDir.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getCurrentDrive(): Int {
-    val _ret = __method_bind.getCurrentDrive.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCurrentDrive.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getDrive(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getDrive.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getDrive.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getDriveCount(): Int {
-    val _ret = __method_bind.getDriveCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDriveCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNext(): String {
-    val _ret = __method_bind.getNext.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getNext.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getSpaceLeft(): Int {
-    val _ret = __method_bind.getSpaceLeft.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSpaceLeft.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun listDirBegin(skipNavigational: Boolean = false, skipHidden: Boolean = false): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(skipNavigational))
-    _args.add(Variant.fromAny(skipHidden))
-    val _ret = __method_bind.listDirBegin.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(skipNavigational)
+      _args.add(skipHidden)
+      __method_bind.listDirBegin.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun listDirEnd() {
-    __method_bind.listDirEnd.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.listDirEnd.call(self._handle, emptyList(), null)
+    }
   }
 
   fun makeDir(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.makeDir.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.makeDir.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun makeDirRecursive(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.makeDirRecursive.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.makeDirRecursive.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun open(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.open.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.open.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun remove(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.remove.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.remove.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun rename(from: String, to: String): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    val _ret = __method_bind.rename.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      __method_bind.rename.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   companion object {

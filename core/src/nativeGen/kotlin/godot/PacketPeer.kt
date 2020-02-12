@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class PacketPeer(
   @Suppress("UNUSED_PARAMETER")
@@ -48,58 +57,102 @@ open class PacketPeer(
   }
 
   fun getAvailablePacketCount(): Int {
-    val _ret = __method_bind.getAvailablePacketCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAvailablePacketCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getEncodeBufferMaxSize(): Int {
-    val _ret = __method_bind.getEncodeBufferMaxSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEncodeBufferMaxSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPacket(): PoolByteArray {
-    val _ret = __method_bind.getPacket.call(this._handle)
-    return _ret.asPoolByteArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolByteArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPacket.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPacketError(): GDError {
-    val _ret = __method_bind.getPacketError.call(this._handle)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPacketError.call(self._handle, emptyList(), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun getVar(allowObjects: Boolean = false): Variant {
-    val _arg = Variant(allowObjects)
-    val _ret = __method_bind.getVar.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVar.call(self._handle, listOf(allowObjects), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isObjectDecodingAllowed(): Boolean {
-    val _ret = __method_bind.isObjectDecodingAllowed.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isObjectDecodingAllowed.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun putPacket(buffer: PoolByteArray): GDError {
-    val _arg = Variant(buffer)
-    val _ret = __method_bind.putPacket.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.putPacket.call(self._handle, listOf(buffer), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun putVar(`var`: Variant, fullObjects: Boolean = false): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(`var`))
-    _args.add(Variant.fromAny(fullObjects))
-    val _ret = __method_bind.putVar.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(`var`)
+      _args.add(fullObjects)
+      __method_bind.putVar.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setAllowObjectDecoding(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAllowObjectDecoding.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAllowObjectDecoding.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setEncodeBufferMaxSize(maxSize: Int) {
-    val _arg = Variant(maxSize)
-    __method_bind.setEncodeBufferMaxSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEncodeBufferMaxSize.call(self._handle, listOf(maxSize), null)
+    }
   }
 
   companion object {

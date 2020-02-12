@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorFeatureProfile(
   @Suppress("UNUSED_PARAMETER")
@@ -31,61 +40,97 @@ open class EditorFeatureProfile(
   }
 
   fun getFeatureName(feature: Int): String {
-    val _arg = Variant(feature)
-    val _ret = __method_bind.getFeatureName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getFeatureName.call(self._handle, listOf(feature), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun isClassDisabled(className: String): Boolean {
-    val _arg = Variant(className)
-    val _ret = __method_bind.isClassDisabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isClassDisabled.call(self._handle, listOf(className), _retPtr)
+      _ret.value
+    }
   }
 
   fun isClassEditorDisabled(className: String): Boolean {
-    val _arg = Variant(className)
-    val _ret = __method_bind.isClassEditorDisabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isClassEditorDisabled.call(self._handle, listOf(className), _retPtr)
+      _ret.value
+    }
   }
 
   fun isClassPropertyDisabled(className: String, property: String): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(className))
-    _args.add(Variant.fromAny(property))
-    val _ret = __method_bind.isClassPropertyDisabled.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(className)
+      _args.add(property)
+      __method_bind.isClassPropertyDisabled.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isFeatureDisabled(feature: Int): Boolean {
-    val _arg = Variant(feature)
-    val _ret = __method_bind.isFeatureDisabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isFeatureDisabled.call(self._handle, listOf(feature), _retPtr)
+      _ret.value
+    }
   }
 
   fun loadFromFile(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.loadFromFile.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.loadFromFile.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun saveToFile(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.saveToFile.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.saveToFile.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun setDisableClass(className: String, disable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(className))
-    _args.add(Variant.fromAny(disable))
-    __method_bind.setDisableClass.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(className)
+      _args.add(disable)
+      __method_bind.setDisableClass.call(self._handle, _args, null)
+    }
   }
 
   fun setDisableClassEditor(className: String, disable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(className))
-    _args.add(Variant.fromAny(disable))
-    __method_bind.setDisableClassEditor.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(className)
+      _args.add(disable)
+      __method_bind.setDisableClassEditor.call(self._handle, _args, null)
+    }
   }
 
   fun setDisableClassProperty(
@@ -93,18 +138,24 @@ open class EditorFeatureProfile(
     property: String,
     disable: Boolean
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(className))
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(disable))
-    __method_bind.setDisableClassProperty.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(className)
+      _args.add(property)
+      _args.add(disable)
+      __method_bind.setDisableClassProperty.call(self._handle, _args, null)
+    }
   }
 
   fun setDisableFeature(feature: Int, disable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(feature))
-    _args.add(Variant.fromAny(disable))
-    __method_bind.setDisableFeature.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(feature)
+      _args.add(disable)
+      __method_bind.setDisableFeature.call(self._handle, _args, null)
+    }
   }
 
   enum class Feature(

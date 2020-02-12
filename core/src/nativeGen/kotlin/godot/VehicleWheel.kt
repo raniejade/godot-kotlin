@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VehicleWheel(
   @Suppress("UNUSED_PARAMETER")
@@ -142,158 +151,271 @@ open class VehicleWheel(
   }
 
   fun getBrake(): Float {
-    val _ret = __method_bind.getBrake.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBrake.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDampingCompression(): Float {
-    val _ret = __method_bind.getDampingCompression.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDampingCompression.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getDampingRelaxation(): Float {
-    val _ret = __method_bind.getDampingRelaxation.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDampingRelaxation.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getEngineForce(): Float {
-    val _ret = __method_bind.getEngineForce.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getEngineForce.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFrictionSlip(): Float {
-    val _ret = __method_bind.getFrictionSlip.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFrictionSlip.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRadius(): Float {
-    val _ret = __method_bind.getRadius.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRadius.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRollInfluence(): Float {
-    val _ret = __method_bind.getRollInfluence.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRollInfluence.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRpm(): Float {
-    val _ret = __method_bind.getRpm.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRpm.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSkidinfo(): Float {
-    val _ret = __method_bind.getSkidinfo.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSkidinfo.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSteering(): Float {
-    val _ret = __method_bind.getSteering.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSteering.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSuspensionMaxForce(): Float {
-    val _ret = __method_bind.getSuspensionMaxForce.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSuspensionMaxForce.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSuspensionRestLength(): Float {
-    val _ret = __method_bind.getSuspensionRestLength.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSuspensionRestLength.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSuspensionStiffness(): Float {
-    val _ret = __method_bind.getSuspensionStiffness.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSuspensionStiffness.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getSuspensionTravel(): Float {
-    val _ret = __method_bind.getSuspensionTravel.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSuspensionTravel.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isInContact(): Boolean {
-    val _ret = __method_bind.isInContact.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isInContact.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsedAsSteering(): Boolean {
-    val _ret = __method_bind.isUsedAsSteering.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsedAsSteering.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsedAsTraction(): Boolean {
-    val _ret = __method_bind.isUsedAsTraction.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsedAsTraction.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBrake(brake: Float) {
-    val _arg = Variant(brake)
-    __method_bind.setBrake.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBrake.call(self._handle, listOf(brake), null)
+    }
   }
 
   fun setDampingCompression(length: Float) {
-    val _arg = Variant(length)
-    __method_bind.setDampingCompression.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDampingCompression.call(self._handle, listOf(length), null)
+    }
   }
 
   fun setDampingRelaxation(length: Float) {
-    val _arg = Variant(length)
-    __method_bind.setDampingRelaxation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDampingRelaxation.call(self._handle, listOf(length), null)
+    }
   }
 
   fun setEngineForce(engineForce: Float) {
-    val _arg = Variant(engineForce)
-    __method_bind.setEngineForce.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEngineForce.call(self._handle, listOf(engineForce), null)
+    }
   }
 
   fun setFrictionSlip(length: Float) {
-    val _arg = Variant(length)
-    __method_bind.setFrictionSlip.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFrictionSlip.call(self._handle, listOf(length), null)
+    }
   }
 
   fun setRadius(length: Float) {
-    val _arg = Variant(length)
-    __method_bind.setRadius.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRadius.call(self._handle, listOf(length), null)
+    }
   }
 
   fun setRollInfluence(rollInfluence: Float) {
-    val _arg = Variant(rollInfluence)
-    __method_bind.setRollInfluence.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRollInfluence.call(self._handle, listOf(rollInfluence), null)
+    }
   }
 
   fun setSteering(steering: Float) {
-    val _arg = Variant(steering)
-    __method_bind.setSteering.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSteering.call(self._handle, listOf(steering), null)
+    }
   }
 
   fun setSuspensionMaxForce(length: Float) {
-    val _arg = Variant(length)
-    __method_bind.setSuspensionMaxForce.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSuspensionMaxForce.call(self._handle, listOf(length), null)
+    }
   }
 
   fun setSuspensionRestLength(length: Float) {
-    val _arg = Variant(length)
-    __method_bind.setSuspensionRestLength.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSuspensionRestLength.call(self._handle, listOf(length), null)
+    }
   }
 
   fun setSuspensionStiffness(length: Float) {
-    val _arg = Variant(length)
-    __method_bind.setSuspensionStiffness.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSuspensionStiffness.call(self._handle, listOf(length), null)
+    }
   }
 
   fun setSuspensionTravel(length: Float) {
-    val _arg = Variant(length)
-    __method_bind.setSuspensionTravel.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSuspensionTravel.call(self._handle, listOf(length), null)
+    }
   }
 
   fun setUseAsSteering(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseAsSteering.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseAsSteering.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setUseAsTraction(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseAsTraction.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseAsTraction.call(self._handle, listOf(enable), null)
+    }
   }
 
   companion object {

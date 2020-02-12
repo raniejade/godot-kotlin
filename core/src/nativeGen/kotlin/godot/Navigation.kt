@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolVector3Array
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Navigation(
   @Suppress("UNUSED_PARAMETER")
@@ -51,21 +60,37 @@ open class Navigation(
   }
 
   fun getClosestPoint(toPoint: Vector3): Vector3 {
-    val _arg = Variant(toPoint)
-    val _ret = __method_bind.getClosestPoint.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getClosestPoint.call(self._handle, listOf(toPoint), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getClosestPointNormal(toPoint: Vector3): Vector3 {
-    val _arg = Variant(toPoint)
-    val _ret = __method_bind.getClosestPointNormal.call(this._handle, listOf(_arg))
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getClosestPointNormal.call(self._handle, listOf(toPoint), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getClosestPointOwner(toPoint: Vector3): Object {
-    val _arg = Variant(toPoint)
-    val _ret = __method_bind.getClosestPointOwner.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Object
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Object
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getClosestPointOwner.call(self._handle, listOf(toPoint), _retPtr)
+      _ret = objectToType<Object>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getClosestPointToSegment(
@@ -73,12 +98,18 @@ open class Navigation(
     end: Vector3,
     useCollision: Boolean = false
   ): Vector3 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(start))
-    _args.add(Variant.fromAny(end))
-    _args.add(Variant.fromAny(useCollision))
-    val _ret = __method_bind.getClosestPointToSegment.call(this._handle, _args)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(start)
+      _args.add(end)
+      _args.add(useCollision)
+      __method_bind.getClosestPointToSegment.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSimplePath(
@@ -86,17 +117,29 @@ open class Navigation(
     end: Vector3,
     optimize: Boolean = true
   ): PoolVector3Array {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(start))
-    _args.add(Variant.fromAny(end))
-    _args.add(Variant.fromAny(optimize))
-    val _ret = __method_bind.getSimplePath.call(this._handle, _args)
-    return _ret.asPoolVector3Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector3Array()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(start)
+      _args.add(end)
+      _args.add(optimize)
+      __method_bind.getSimplePath.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getUpVector(): Vector3 {
-    val _ret = __method_bind.getUpVector.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getUpVector.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun navmeshAdd(
@@ -104,29 +147,41 @@ open class Navigation(
     xform: Transform,
     owner: Object
   ): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(mesh))
-    _args.add(Variant.fromAny(xform))
-    _args.add(Variant.fromAny(owner))
-    val _ret = __method_bind.navmeshAdd.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(mesh)
+      _args.add(xform)
+      _args.add(owner)
+      __method_bind.navmeshAdd.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun navmeshRemove(id: Int) {
-    val _arg = Variant(id)
-    __method_bind.navmeshRemove.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.navmeshRemove.call(self._handle, listOf(id), null)
+    }
   }
 
   fun navmeshSetTransform(id: Int, xform: Transform) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(xform))
-    __method_bind.navmeshSetTransform.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(id)
+      _args.add(xform)
+      __method_bind.navmeshSetTransform.call(self._handle, _args, null)
+    }
   }
 
   fun setUpVector(up: Vector3) {
-    val _arg = Variant(up)
-    __method_bind.setUpVector.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUpVector.call(self._handle, listOf(up), null)
+    }
   }
 
   companion object {

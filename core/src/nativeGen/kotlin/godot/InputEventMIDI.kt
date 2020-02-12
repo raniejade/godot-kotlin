@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class InputEventMIDI(
   @Suppress("UNUSED_PARAMETER")
@@ -93,83 +102,139 @@ open class InputEventMIDI(
   }
 
   fun getChannel(): Int {
-    val _ret = __method_bind.getChannel.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getChannel.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getControllerNumber(): Int {
-    val _ret = __method_bind.getControllerNumber.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getControllerNumber.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getControllerValue(): Int {
-    val _ret = __method_bind.getControllerValue.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getControllerValue.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getInstrument(): Int {
-    val _ret = __method_bind.getInstrument.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInstrument.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMessage(): Int {
-    val _ret = __method_bind.getMessage.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMessage.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPitch(): Int {
-    val _ret = __method_bind.getPitch.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPitch.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPressure(): Int {
-    val _ret = __method_bind.getPressure.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPressure.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getVelocity(): Int {
-    val _ret = __method_bind.getVelocity.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVelocity.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setChannel(channel: Int) {
-    val _arg = Variant(channel)
-    __method_bind.setChannel.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setChannel.call(self._handle, listOf(channel), null)
+    }
   }
 
   fun setControllerNumber(controllerNumber: Int) {
-    val _arg = Variant(controllerNumber)
-    __method_bind.setControllerNumber.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setControllerNumber.call(self._handle, listOf(controllerNumber), null)
+    }
   }
 
   fun setControllerValue(controllerValue: Int) {
-    val _arg = Variant(controllerValue)
-    __method_bind.setControllerValue.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setControllerValue.call(self._handle, listOf(controllerValue), null)
+    }
   }
 
   fun setInstrument(instrument: Int) {
-    val _arg = Variant(instrument)
-    __method_bind.setInstrument.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInstrument.call(self._handle, listOf(instrument), null)
+    }
   }
 
   fun setMessage(message: Int) {
-    val _arg = Variant(message)
-    __method_bind.setMessage.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMessage.call(self._handle, listOf(message), null)
+    }
   }
 
   fun setPitch(pitch: Int) {
-    val _arg = Variant(pitch)
-    __method_bind.setPitch.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPitch.call(self._handle, listOf(pitch), null)
+    }
   }
 
   fun setPressure(pressure: Int) {
-    val _arg = Variant(pressure)
-    __method_bind.setPressure.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPressure.call(self._handle, listOf(pressure), null)
+    }
   }
 
   fun setVelocity(velocity: Int) {
-    val _arg = Variant(velocity)
-    __method_bind.setVelocity.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVelocity.call(self._handle, listOf(velocity), null)
+    }
   }
 
   companion object {

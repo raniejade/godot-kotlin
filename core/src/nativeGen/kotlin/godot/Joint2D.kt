@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Joint2D(
   @Suppress("UNUSED_PARAMETER")
@@ -82,43 +91,73 @@ open class Joint2D(
   }
 
   fun getBias(): Float {
-    val _ret = __method_bind.getBias.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBias.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getExcludeNodesFromCollision(): Boolean {
-    val _ret = __method_bind.getExcludeNodesFromCollision.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getExcludeNodesFromCollision.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNodeA(): NodePath {
-    val _ret = __method_bind.getNodeA.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodeA.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNodeB(): NodePath {
-    val _ret = __method_bind.getNodeB.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodeB.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setBias(bias: Float) {
-    val _arg = Variant(bias)
-    __method_bind.setBias.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBias.call(self._handle, listOf(bias), null)
+    }
   }
 
   fun setExcludeNodesFromCollision(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setExcludeNodesFromCollision.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExcludeNodesFromCollision.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setNodeA(node: NodePath) {
-    val _arg = Variant(node)
-    __method_bind.setNodeA.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNodeA.call(self._handle, listOf(node), null)
+    }
   }
 
   fun setNodeB(node: NodePath) {
-    val _arg = Variant(node)
-    __method_bind.setNodeB.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNodeB.call(self._handle, listOf(node), null)
+    }
   }
 
   companion object {

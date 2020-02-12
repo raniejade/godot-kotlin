@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -17,13 +18,21 @@ import kotlin.Suppress
 import kotlin.Unit
 import kotlin.collections.List
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Object(
   @Suppress("UNUSED_PARAMETER")
@@ -43,38 +52,61 @@ open class Object(
   }
 
   fun addUserSignal(signal: String, arguments: VariantArray) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(signal))
-    _args.add(Variant.fromAny(arguments))
-    __method_bind.addUserSignal.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(signal)
+      _args.add(arguments)
+      __method_bind.addUserSignal.call(self._handle, _args, null)
+    }
   }
 
   fun call(method: String, vararg varargs: Any?): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    val _ret = __method_bind.call.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.call.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun callDeferred(method: String, vararg varargs: Any?) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(method))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    __method_bind.callDeferred.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(method)
+      varargs.forEach { _args.add(it) }
+      __method_bind.callDeferred.call(self._handle, _args, null)
+    }
   }
 
   fun callv(method: String, argArray: VariantArray): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(argArray))
-    val _ret = __method_bind.callv.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(method)
+      _args.add(argArray)
+      __method_bind.callv.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun canTranslateMessages(): Boolean {
-    val _ret = __method_bind.canTranslateMessages.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.canTranslateMessages.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun connect(
@@ -84,14 +116,19 @@ open class Object(
     binds: VariantArray,
     flags: Int = 0
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(signal))
-    _args.add(Variant.fromAny(target))
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(binds))
-    _args.add(Variant.fromAny(flags))
-    val _ret = __method_bind.connect.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(signal)
+      _args.add(target)
+      _args.add(method)
+      _args.add(binds)
+      _args.add(flags)
+      __method_bind.connect.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun disconnect(
@@ -99,115 +136,213 @@ open class Object(
     target: Object,
     method: String
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(signal))
-    _args.add(Variant.fromAny(target))
-    _args.add(Variant.fromAny(method))
-    __method_bind.disconnect.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(signal)
+      _args.add(target)
+      _args.add(method)
+      __method_bind.disconnect.call(self._handle, _args, null)
+    }
   }
 
   fun emitSignal(signal: String, vararg varargs: Any?) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(signal))
-    varargs.forEach { _args.add(Variant.fromAny(it)) }
-    __method_bind.emitSignal.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(signal)
+      varargs.forEach { _args.add(it) }
+      __method_bind.emitSignal.call(self._handle, _args, null)
+    }
   }
 
   fun free() {
-    __method_bind.free.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.free.call(self._handle, emptyList(), null)
+    }
   }
 
   fun get(property: String): Variant {
-    val _arg = Variant(property)
-    val _ret = __method_bind.get.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.get.call(self._handle, listOf(property), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getClass(): String {
-    val _ret = __method_bind.getClass.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getClass.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getIncomingConnections(): VariantArray {
-    val _ret = __method_bind.getIncomingConnections.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getIncomingConnections.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getIndexed(property: NodePath): Variant {
-    val _arg = Variant(property)
-    val _ret = __method_bind.getIndexed.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getIndexed.call(self._handle, listOf(property), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getInstanceId(): Int {
-    val _ret = __method_bind.getInstanceId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInstanceId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMeta(name: String): Variant {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getMeta.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMeta.call(self._handle, listOf(name), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMetaList(): PoolStringArray {
-    val _ret = __method_bind.getMetaList.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMetaList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMethodList(): VariantArray {
-    val _ret = __method_bind.getMethodList.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMethodList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPropertyList(): VariantArray {
-    val _ret = __method_bind.getPropertyList.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPropertyList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getScript(): Reference {
-    val _ret = __method_bind.getScript.call(this._handle)
-    return _ret.toAny() as Reference
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Reference
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getScript.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Reference>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSignalConnectionList(signal: String): VariantArray {
-    val _arg = Variant(signal)
-    val _ret = __method_bind.getSignalConnectionList.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSignalConnectionList.call(self._handle, listOf(signal), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSignalList(): VariantArray {
-    val _ret = __method_bind.getSignalList.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSignalList.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun hasMeta(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasMeta.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasMeta.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasMethod(method: String): Boolean {
-    val _arg = Variant(method)
-    val _ret = __method_bind.hasMethod.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasMethod.call(self._handle, listOf(method), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasUserSignal(signal: String): Boolean {
-    val _arg = Variant(signal)
-    val _ret = __method_bind.hasUserSignal.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasUserSignal.call(self._handle, listOf(signal), _retPtr)
+      _ret.value
+    }
   }
 
   fun isBlockingSignals(): Boolean {
-    val _ret = __method_bind.isBlockingSignals.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isBlockingSignals.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isClass(`class`: String): Boolean {
-    val _arg = Variant(`class`)
-    val _ret = __method_bind.isClass.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isClass.call(self._handle, listOf(`class`), _retPtr)
+      _ret.value
+    }
   }
 
   fun isConnected(
@@ -215,87 +350,134 @@ open class Object(
     target: Object,
     method: String
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(signal))
-    _args.add(Variant.fromAny(target))
-    _args.add(Variant.fromAny(method))
-    val _ret = __method_bind.isConnected.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(signal)
+      _args.add(target)
+      _args.add(method)
+      __method_bind.isConnected.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isQueuedForDeletion(): Boolean {
-    val _ret = __method_bind.isQueuedForDeletion.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isQueuedForDeletion.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun notification(what: Int, reversed: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(what))
-    _args.add(Variant.fromAny(reversed))
-    __method_bind.notification.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(what)
+      _args.add(reversed)
+      __method_bind.notification.call(self._handle, _args, null)
+    }
   }
 
   fun propertyListChangedNotify() {
-    __method_bind.propertyListChangedNotify.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.propertyListChangedNotify.call(self._handle, emptyList(), null)
+    }
   }
 
   fun removeMeta(name: String) {
-    val _arg = Variant(name)
-    __method_bind.removeMeta.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeMeta.call(self._handle, listOf(name), null)
+    }
   }
 
   fun set(property: String, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.set.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(property)
+      _args.add(value)
+      __method_bind.set.call(self._handle, _args, null)
+    }
   }
 
   fun setBlockSignals(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setBlockSignals.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBlockSignals.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setDeferred(property: String, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setDeferred.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(property)
+      _args.add(value)
+      __method_bind.setDeferred.call(self._handle, _args, null)
+    }
   }
 
   fun setIndexed(property: NodePath, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(property))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setIndexed.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(property)
+      _args.add(value)
+      __method_bind.setIndexed.call(self._handle, _args, null)
+    }
   }
 
   fun setMessageTranslation(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setMessageTranslation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMessageTranslation.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setMeta(name: String, value: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setMeta.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(value)
+      __method_bind.setMeta.call(self._handle, _args, null)
+    }
   }
 
   fun setScript(script: Reference) {
-    val _arg = Variant(script)
-    __method_bind.setScript.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScript.call(self._handle, listOf(script), null)
+    }
   }
 
   override fun toString(): String {
-    val _ret = __method_bind.toString.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.toString.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun tr(message: String): String {
-    val _arg = Variant(message)
-    val _ret = __method_bind.tr.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.tr.call(self._handle, listOf(message), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   open fun _onInit() {

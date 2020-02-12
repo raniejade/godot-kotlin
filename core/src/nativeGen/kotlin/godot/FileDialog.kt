@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolStringArray
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class FileDialog(
   @Suppress("UNUSED_PARAMETER")
@@ -120,110 +129,195 @@ open class FileDialog(
   }
 
   fun addFilter(filter: String) {
-    val _arg = Variant(filter)
-    __method_bind.addFilter.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addFilter.call(self._handle, listOf(filter), null)
+    }
   }
 
   fun clearFilters() {
-    __method_bind.clearFilters.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearFilters.call(self._handle, emptyList(), null)
+    }
   }
 
   fun deselectItems() {
-    __method_bind.deselectItems.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.deselectItems.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getAccess(): Access {
-    val _ret = __method_bind.getAccess.call(this._handle)
-    return FileDialog.Access.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAccess.call(self._handle, emptyList(), _retPtr)
+      FileDialog.Access.from(_ret.value)
+    }
   }
 
   fun getCurrentDir(): String {
-    val _ret = __method_bind.getCurrentDir.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getCurrentDir.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getCurrentFile(): String {
-    val _ret = __method_bind.getCurrentFile.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getCurrentFile.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getCurrentPath(): String {
-    val _ret = __method_bind.getCurrentPath.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getCurrentPath.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getFilters(): PoolStringArray {
-    val _ret = __method_bind.getFilters.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFilters.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLineEdit(): LineEdit {
-    val _ret = __method_bind.getLineEdit.call(this._handle)
-    return _ret.toAny() as LineEdit
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: LineEdit
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getLineEdit.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<LineEdit>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getMode(): Mode {
-    val _ret = __method_bind.getMode.call(this._handle)
-    return FileDialog.Mode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMode.call(self._handle, emptyList(), _retPtr)
+      FileDialog.Mode.from(_ret.value)
+    }
   }
 
   fun getVbox(): VBoxContainer {
-    val _ret = __method_bind.getVbox.call(this._handle)
-    return _ret.toAny() as VBoxContainer
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: VBoxContainer
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getVbox.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<VBoxContainer>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun invalidate() {
-    __method_bind.invalidate.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.invalidate.call(self._handle, emptyList(), null)
+    }
   }
 
   fun isModeOverridingTitle(): Boolean {
-    val _ret = __method_bind.isModeOverridingTitle.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isModeOverridingTitle.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isShowingHiddenFiles(): Boolean {
-    val _ret = __method_bind.isShowingHiddenFiles.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isShowingHiddenFiles.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAccess(access: Int) {
-    val _arg = Variant(access)
-    __method_bind.setAccess.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAccess.call(self._handle, listOf(access), null)
+    }
   }
 
   fun setCurrentDir(dir: String) {
-    val _arg = Variant(dir)
-    __method_bind.setCurrentDir.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCurrentDir.call(self._handle, listOf(dir), null)
+    }
   }
 
   fun setCurrentFile(file: String) {
-    val _arg = Variant(file)
-    __method_bind.setCurrentFile.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCurrentFile.call(self._handle, listOf(file), null)
+    }
   }
 
   fun setCurrentPath(path: String) {
-    val _arg = Variant(path)
-    __method_bind.setCurrentPath.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCurrentPath.call(self._handle, listOf(path), null)
+    }
   }
 
   fun setFilters(filters: PoolStringArray) {
-    val _arg = Variant(filters)
-    __method_bind.setFilters.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFilters.call(self._handle, listOf(filters), null)
+    }
   }
 
   fun setMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setModeOverridesTitle(override: Boolean) {
-    val _arg = Variant(override)
-    __method_bind.setModeOverridesTitle.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setModeOverridesTitle.call(self._handle, listOf(override), null)
+    }
   }
 
   fun setShowHiddenFiles(show: Boolean) {
-    val _arg = Variant(show)
-    __method_bind.setShowHiddenFiles.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShowHiddenFiles.call(self._handle, listOf(show), null)
+    }
   }
 
   enum class Mode(

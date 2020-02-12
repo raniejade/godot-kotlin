@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Label(
   @Suppress("UNUSED_PARAMETER")
@@ -111,123 +120,214 @@ open class Label(
   }
 
   fun getAlign(): Align {
-    val _ret = __method_bind.getAlign.call(this._handle)
-    return Label.Align.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAlign.call(self._handle, emptyList(), _retPtr)
+      Label.Align.from(_ret.value)
+    }
   }
 
   fun getLineCount(): Int {
-    val _ret = __method_bind.getLineCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLineCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLineHeight(): Int {
-    val _ret = __method_bind.getLineHeight.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLineHeight.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLinesSkipped(): Int {
-    val _ret = __method_bind.getLinesSkipped.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLinesSkipped.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMaxLinesVisible(): Int {
-    val _ret = __method_bind.getMaxLinesVisible.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMaxLinesVisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPercentVisible(): Float {
-    val _ret = __method_bind.getPercentVisible.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPercentVisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getText(): String {
-    val _ret = __method_bind.getText.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getText.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getTotalCharacterCount(): Int {
-    val _ret = __method_bind.getTotalCharacterCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTotalCharacterCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getValign(): VAlign {
-    val _ret = __method_bind.getValign.call(this._handle)
-    return Label.VAlign.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getValign.call(self._handle, emptyList(), _retPtr)
+      Label.VAlign.from(_ret.value)
+    }
   }
 
   fun getVisibleCharacters(): Int {
-    val _ret = __method_bind.getVisibleCharacters.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVisibleCharacters.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getVisibleLineCount(): Int {
-    val _ret = __method_bind.getVisibleLineCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVisibleLineCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasAutowrap(): Boolean {
-    val _ret = __method_bind.hasAutowrap.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAutowrap.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isClippingText(): Boolean {
-    val _ret = __method_bind.isClippingText.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isClippingText.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUppercase(): Boolean {
-    val _ret = __method_bind.isUppercase.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUppercase.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAlign(align: Int) {
-    val _arg = Variant(align)
-    __method_bind.setAlign.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAlign.call(self._handle, listOf(align), null)
+    }
   }
 
   fun setAutowrap(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAutowrap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutowrap.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setClipText(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setClipText.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setClipText.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setLinesSkipped(linesSkipped: Int) {
-    val _arg = Variant(linesSkipped)
-    __method_bind.setLinesSkipped.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLinesSkipped.call(self._handle, listOf(linesSkipped), null)
+    }
   }
 
   fun setMaxLinesVisible(linesVisible: Int) {
-    val _arg = Variant(linesVisible)
-    __method_bind.setMaxLinesVisible.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaxLinesVisible.call(self._handle, listOf(linesVisible), null)
+    }
   }
 
   fun setPercentVisible(percentVisible: Float) {
-    val _arg = Variant(percentVisible)
-    __method_bind.setPercentVisible.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPercentVisible.call(self._handle, listOf(percentVisible), null)
+    }
   }
 
   fun setText(text: String) {
-    val _arg = Variant(text)
-    __method_bind.setText.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setText.call(self._handle, listOf(text), null)
+    }
   }
 
   fun setUppercase(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUppercase.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUppercase.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setValign(valign: Int) {
-    val _arg = Variant(valign)
-    __method_bind.setValign.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setValign.call(self._handle, listOf(valign), null)
+    }
   }
 
   fun setVisibleCharacters(amount: Int) {
-    val _arg = Variant(amount)
-    __method_bind.setVisibleCharacters.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVisibleCharacters.call(self._handle, listOf(amount), null)
+    }
   }
 
   enum class Align(

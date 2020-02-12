@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Rect2
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class TileMap(
   @Suppress("UNUSED_PARAMETER")
@@ -202,183 +211,344 @@ open class TileMap(
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun fixInvalidTiles() {
-    __method_bind.fixInvalidTiles.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.fixInvalidTiles.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getCell(x: Int, y: Int): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    val _ret = __method_bind.getCell.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      __method_bind.getCell.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getCellAutotileCoord(x: Int, y: Int): Vector2 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    val _ret = __method_bind.getCellAutotileCoord.call(this._handle, _args)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      __method_bind.getCellAutotileCoord.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCellSize(): Vector2 {
-    val _ret = __method_bind.getCellSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCellSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCellv(position: Vector2): Int {
-    val _arg = Variant(position)
-    val _ret = __method_bind.getCellv.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCellv.call(self._handle, listOf(position), _retPtr)
+      _ret.value
+    }
   }
 
   fun getClipUv(): Boolean {
-    val _ret = __method_bind.getClipUv.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getClipUv.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionBounce(): Float {
-    val _ret = __method_bind.getCollisionBounce.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionBounce.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCollisionFriction(): Float {
-    val _ret = __method_bind.getCollisionFriction.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionFriction.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getCollisionLayer(): Int {
-    val _ret = __method_bind.getCollisionLayer.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionLayer.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
-    val _arg = Variant(bit)
-    val _ret = __method_bind.getCollisionLayerBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionLayerBit.call(self._handle, listOf(bit), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.getCollisionMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _arg = Variant(bit)
-    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionMaskBit.call(self._handle, listOf(bit), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionUseKinematic(): Boolean {
-    val _ret = __method_bind.getCollisionUseKinematic.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionUseKinematic.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCollisionUseParent(): Boolean {
-    val _ret = __method_bind.getCollisionUseParent.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCollisionUseParent.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCustomTransform(): Transform2D {
-    val _ret = __method_bind.getCustomTransform.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCustomTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getHalfOffset(): HalfOffset {
-    val _ret = __method_bind.getHalfOffset.call(this._handle)
-    return TileMap.HalfOffset.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHalfOffset.call(self._handle, emptyList(), _retPtr)
+      TileMap.HalfOffset.from(_ret.value)
+    }
   }
 
   fun getMode(): Mode {
-    val _ret = __method_bind.getMode.call(this._handle)
-    return TileMap.Mode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMode.call(self._handle, emptyList(), _retPtr)
+      TileMap.Mode.from(_ret.value)
+    }
   }
 
   fun getOccluderLightMask(): Int {
-    val _ret = __method_bind.getOccluderLightMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOccluderLightMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getQuadrantSize(): Int {
-    val _ret = __method_bind.getQuadrantSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getQuadrantSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTileOrigin(): TileOrigin {
-    val _ret = __method_bind.getTileOrigin.call(this._handle)
-    return TileMap.TileOrigin.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTileOrigin.call(self._handle, emptyList(), _retPtr)
+      TileMap.TileOrigin.from(_ret.value)
+    }
   }
 
   fun getTileset(): TileSet {
-    val _ret = __method_bind.getTileset.call(this._handle)
-    return _ret.toAny() as TileSet
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TileSet
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTileset.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<TileSet>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getUsedCells(): VariantArray {
-    val _ret = __method_bind.getUsedCells.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getUsedCells.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getUsedCellsById(id: Int): VariantArray {
-    val _arg = Variant(id)
-    val _ret = __method_bind.getUsedCellsById.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getUsedCellsById.call(self._handle, listOf(id), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getUsedRect(): Rect2 {
-    val _ret = __method_bind.getUsedRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getUsedRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isCellTransposed(x: Int, y: Int): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    val _ret = __method_bind.isCellTransposed.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      __method_bind.isCellTransposed.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isCellXFlipped(x: Int, y: Int): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    val _ret = __method_bind.isCellXFlipped.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      __method_bind.isCellXFlipped.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isCellYFlipped(x: Int, y: Int): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    val _ret = __method_bind.isCellYFlipped.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      __method_bind.isCellYFlipped.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isCenteredTexturesEnabled(): Boolean {
-    val _ret = __method_bind.isCenteredTexturesEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCenteredTexturesEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isCompatibilityModeEnabled(): Boolean {
-    val _ret = __method_bind.isCompatibilityModeEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isCompatibilityModeEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isYSortModeEnabled(): Boolean {
-    val _ret = __method_bind.isYSortModeEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isYSortModeEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun mapToWorld(mapPosition: Vector2, ignoreHalfOfs: Boolean = false): Vector2 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(mapPosition))
-    _args.add(Variant.fromAny(ignoreHalfOfs))
-    val _ret = __method_bind.mapToWorld.call(this._handle, _args)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(mapPosition)
+      _args.add(ignoreHalfOfs)
+      __method_bind.mapToWorld.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun setCell(
@@ -390,20 +560,25 @@ open class TileMap(
     transpose: Boolean = false,
     autotileCoord: Vector2 = Vector2(0, 0)
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    _args.add(Variant.fromAny(tile))
-    _args.add(Variant.fromAny(flipX))
-    _args.add(Variant.fromAny(flipY))
-    _args.add(Variant.fromAny(transpose))
-    _args.add(Variant.fromAny(autotileCoord))
-    __method_bind.setCell.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      _args.add(tile)
+      _args.add(flipX)
+      _args.add(flipY)
+      _args.add(transpose)
+      _args.add(autotileCoord)
+      __method_bind.setCell.call(self._handle, _args, null)
+    }
   }
 
   fun setCellSize(size: Vector2) {
-    val _arg = Variant(size)
-    __method_bind.setCellSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCellSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setCellv(
@@ -413,134 +588,190 @@ open class TileMap(
     flipY: Boolean = false,
     transpose: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(tile))
-    _args.add(Variant.fromAny(flipX))
-    _args.add(Variant.fromAny(flipY))
-    _args.add(Variant.fromAny(transpose))
-    __method_bind.setCellv.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(position)
+      _args.add(tile)
+      _args.add(flipX)
+      _args.add(flipY)
+      _args.add(transpose)
+      __method_bind.setCellv.call(self._handle, _args, null)
+    }
   }
 
   fun setCenteredTextures(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setCenteredTextures.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCenteredTextures.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setClipUv(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setClipUv.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setClipUv.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCollisionBounce(value: Float) {
-    val _arg = Variant(value)
-    __method_bind.setCollisionBounce.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionBounce.call(self._handle, listOf(value), null)
+    }
   }
 
   fun setCollisionFriction(value: Float) {
-    val _arg = Variant(value)
-    __method_bind.setCollisionFriction.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionFriction.call(self._handle, listOf(value), null)
+    }
   }
 
   fun setCollisionLayer(layer: Int) {
-    val _arg = Variant(layer)
-    __method_bind.setCollisionLayer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionLayer.call(self._handle, listOf(layer), null)
+    }
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bit))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setCollisionLayerBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bit)
+      _args.add(value)
+      __method_bind.setCollisionLayerBit.call(self._handle, _args, null)
+    }
   }
 
   fun setCollisionMask(mask: Int) {
-    val _arg = Variant(mask)
-    __method_bind.setCollisionMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionMask.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(bit))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setCollisionMaskBit.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(bit)
+      _args.add(value)
+      __method_bind.setCollisionMaskBit.call(self._handle, _args, null)
+    }
   }
 
   fun setCollisionUseKinematic(useKinematic: Boolean) {
-    val _arg = Variant(useKinematic)
-    __method_bind.setCollisionUseKinematic.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionUseKinematic.call(self._handle, listOf(useKinematic), null)
+    }
   }
 
   fun setCollisionUseParent(useParent: Boolean) {
-    val _arg = Variant(useParent)
-    __method_bind.setCollisionUseParent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCollisionUseParent.call(self._handle, listOf(useParent), null)
+    }
   }
 
   fun setCompatibilityMode(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setCompatibilityMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCompatibilityMode.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCustomTransform(customTransform: Transform2D) {
-    val _arg = Variant(customTransform)
-    __method_bind.setCustomTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCustomTransform.call(self._handle, listOf(customTransform), null)
+    }
   }
 
   fun setHalfOffset(halfOffset: Int) {
-    val _arg = Variant(halfOffset)
-    __method_bind.setHalfOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHalfOffset.call(self._handle, listOf(halfOffset), null)
+    }
   }
 
   fun setMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setOccluderLightMask(mask: Int) {
-    val _arg = Variant(mask)
-    __method_bind.setOccluderLightMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOccluderLightMask.call(self._handle, listOf(mask), null)
+    }
   }
 
   fun setQuadrantSize(size: Int) {
-    val _arg = Variant(size)
-    __method_bind.setQuadrantSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setQuadrantSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setTileOrigin(origin: Int) {
-    val _arg = Variant(origin)
-    __method_bind.setTileOrigin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTileOrigin.call(self._handle, listOf(origin), null)
+    }
   }
 
   fun setTileset(tileset: TileSet) {
-    val _arg = Variant(tileset)
-    __method_bind.setTileset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTileset.call(self._handle, listOf(tileset), null)
+    }
   }
 
   fun setYSortMode(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setYSortMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setYSortMode.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun updateBitmaskArea(position: Vector2) {
-    val _arg = Variant(position)
-    __method_bind.updateBitmaskArea.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.updateBitmaskArea.call(self._handle, listOf(position), null)
+    }
   }
 
   fun updateBitmaskRegion(start: Vector2 = Vector2(0, 0), end: Vector2 = Vector2(0, 0)) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(start))
-    _args.add(Variant.fromAny(end))
-    __method_bind.updateBitmaskRegion.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(start)
+      _args.add(end)
+      __method_bind.updateBitmaskRegion.call(self._handle, _args, null)
+    }
   }
 
   fun updateDirtyQuadrants() {
-    __method_bind.updateDirtyQuadrants.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.updateDirtyQuadrants.call(self._handle, emptyList(), null)
+    }
   }
 
   fun worldToMap(worldPosition: Vector2): Vector2 {
-    val _arg = Variant(worldPosition)
-    val _ret = __method_bind.worldToMap.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.worldToMap.call(self._handle, listOf(worldPosition), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   enum class Mode(

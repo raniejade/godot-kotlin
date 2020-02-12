@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -14,13 +15,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class InputInternal(
   @Suppress("UNUSED_PARAMETER")
@@ -32,173 +41,307 @@ open class InputInternal(
   val signalJoyConnectionChanged: Signal2<Int, Boolean> = Signal2("joy_connection_changed")
 
   fun actionPress(action: String, strength: Float = 1.0f) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(action))
-    _args.add(Variant.fromAny(strength))
-    __method_bind.actionPress.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(action)
+      _args.add(strength)
+      __method_bind.actionPress.call(self._handle, _args, null)
+    }
   }
 
   fun actionRelease(action: String) {
-    val _arg = Variant(action)
-    __method_bind.actionRelease.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.actionRelease.call(self._handle, listOf(action), null)
+    }
   }
 
   fun addJoyMapping(mapping: String, updateExisting: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(mapping))
-    _args.add(Variant.fromAny(updateExisting))
-    __method_bind.addJoyMapping.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(mapping)
+      _args.add(updateExisting)
+      __method_bind.addJoyMapping.call(self._handle, _args, null)
+    }
   }
 
   fun getAccelerometer(): Vector3 {
-    val _ret = __method_bind.getAccelerometer.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getAccelerometer.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getActionStrength(action: String): Float {
-    val _arg = Variant(action)
-    val _ret = __method_bind.getActionStrength.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getActionStrength.call(self._handle, listOf(action), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getConnectedJoypads(): VariantArray {
-    val _ret = __method_bind.getConnectedJoypads.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getConnectedJoypads.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCurrentCursorShape(): Input.CursorShape {
-    val _ret = __method_bind.getCurrentCursorShape.call(this._handle)
-    return Input.CursorShape.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCurrentCursorShape.call(self._handle, emptyList(), _retPtr)
+      Input.CursorShape.from(_ret.value)
+    }
   }
 
   fun getGravity(): Vector3 {
-    val _ret = __method_bind.getGravity.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGravity.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getGyroscope(): Vector3 {
-    val _ret = __method_bind.getGyroscope.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGyroscope.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getJoyAxis(device: Int, axis: Int): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(device))
-    _args.add(Variant.fromAny(axis))
-    val _ret = __method_bind.getJoyAxis.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(device)
+      _args.add(axis)
+      __method_bind.getJoyAxis.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getJoyAxisIndexFromString(axis: String): Int {
-    val _arg = Variant(axis)
-    val _ret = __method_bind.getJoyAxisIndexFromString.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getJoyAxisIndexFromString.call(self._handle, listOf(axis), _retPtr)
+      _ret.value
+    }
   }
 
   fun getJoyAxisString(axisIndex: Int): String {
-    val _arg = Variant(axisIndex)
-    val _ret = __method_bind.getJoyAxisString.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getJoyAxisString.call(self._handle, listOf(axisIndex), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getJoyButtonIndexFromString(button: String): Int {
-    val _arg = Variant(button)
-    val _ret = __method_bind.getJoyButtonIndexFromString.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getJoyButtonIndexFromString.call(self._handle, listOf(button), _retPtr)
+      _ret.value
+    }
   }
 
   fun getJoyButtonString(buttonIndex: Int): String {
-    val _arg = Variant(buttonIndex)
-    val _ret = __method_bind.getJoyButtonString.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getJoyButtonString.call(self._handle, listOf(buttonIndex), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getJoyGuid(device: Int): String {
-    val _arg = Variant(device)
-    val _ret = __method_bind.getJoyGuid.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getJoyGuid.call(self._handle, listOf(device), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getJoyName(device: Int): String {
-    val _arg = Variant(device)
-    val _ret = __method_bind.getJoyName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getJoyName.call(self._handle, listOf(device), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getJoyVibrationDuration(device: Int): Float {
-    val _arg = Variant(device)
-    val _ret = __method_bind.getJoyVibrationDuration.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getJoyVibrationDuration.call(self._handle, listOf(device), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getJoyVibrationStrength(device: Int): Vector2 {
-    val _arg = Variant(device)
-    val _ret = __method_bind.getJoyVibrationStrength.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getJoyVibrationStrength.call(self._handle, listOf(device), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLastMouseSpeed(): Vector2 {
-    val _ret = __method_bind.getLastMouseSpeed.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getLastMouseSpeed.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMagnetometer(): Vector3 {
-    val _ret = __method_bind.getMagnetometer.call(this._handle)
-    return _ret.asVector3()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector3()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMagnetometer.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMouseButtonMask(): Int {
-    val _ret = __method_bind.getMouseButtonMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMouseButtonMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getMouseMode(): Input.MouseMode {
-    val _ret = __method_bind.getMouseMode.call(this._handle)
-    return Input.MouseMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMouseMode.call(self._handle, emptyList(), _retPtr)
+      Input.MouseMode.from(_ret.value)
+    }
   }
 
   fun isActionJustPressed(action: String): Boolean {
-    val _arg = Variant(action)
-    val _ret = __method_bind.isActionJustPressed.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isActionJustPressed.call(self._handle, listOf(action), _retPtr)
+      _ret.value
+    }
   }
 
   fun isActionJustReleased(action: String): Boolean {
-    val _arg = Variant(action)
-    val _ret = __method_bind.isActionJustReleased.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isActionJustReleased.call(self._handle, listOf(action), _retPtr)
+      _ret.value
+    }
   }
 
   fun isActionPressed(action: String): Boolean {
-    val _arg = Variant(action)
-    val _ret = __method_bind.isActionPressed.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isActionPressed.call(self._handle, listOf(action), _retPtr)
+      _ret.value
+    }
   }
 
   fun isJoyButtonPressed(device: Int, button: Int): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(device))
-    _args.add(Variant.fromAny(button))
-    val _ret = __method_bind.isJoyButtonPressed.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(device)
+      _args.add(button)
+      __method_bind.isJoyButtonPressed.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun isJoyKnown(device: Int): Boolean {
-    val _arg = Variant(device)
-    val _ret = __method_bind.isJoyKnown.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isJoyKnown.call(self._handle, listOf(device), _retPtr)
+      _ret.value
+    }
   }
 
   fun isKeyPressed(scancode: Int): Boolean {
-    val _arg = Variant(scancode)
-    val _ret = __method_bind.isKeyPressed.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isKeyPressed.call(self._handle, listOf(scancode), _retPtr)
+      _ret.value
+    }
   }
 
   fun isMouseButtonPressed(button: Int): Boolean {
-    val _arg = Variant(button)
-    val _ret = __method_bind.isMouseButtonPressed.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isMouseButtonPressed.call(self._handle, listOf(button), _retPtr)
+      _ret.value
+    }
   }
 
   fun joyConnectionChanged(
@@ -207,22 +350,29 @@ open class InputInternal(
     name: String,
     guid: String
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(device))
-    _args.add(Variant.fromAny(connected))
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(guid))
-    __method_bind.joyConnectionChanged.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(device)
+      _args.add(connected)
+      _args.add(name)
+      _args.add(guid)
+      __method_bind.joyConnectionChanged.call(self._handle, _args, null)
+    }
   }
 
   fun parseInputEvent(event: InputEvent) {
-    val _arg = Variant(event)
-    __method_bind.parseInputEvent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.parseInputEvent.call(self._handle, listOf(event), null)
+    }
   }
 
   fun removeJoyMapping(guid: String) {
-    val _arg = Variant(guid)
-    __method_bind.removeJoyMapping.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeJoyMapping.call(self._handle, listOf(guid), null)
+    }
   }
 
   fun setCustomMouseCursor(
@@ -230,26 +380,35 @@ open class InputInternal(
     shape: Int = 0,
     hotspot: Vector2 = Vector2(0, 0)
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(image))
-    _args.add(Variant.fromAny(shape))
-    _args.add(Variant.fromAny(hotspot))
-    __method_bind.setCustomMouseCursor.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(image)
+      _args.add(shape)
+      _args.add(hotspot)
+      __method_bind.setCustomMouseCursor.call(self._handle, _args, null)
+    }
   }
 
   fun setDefaultCursorShape(shape: Int = 0) {
-    val _arg = Variant(shape)
-    __method_bind.setDefaultCursorShape.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDefaultCursorShape.call(self._handle, listOf(shape), null)
+    }
   }
 
   fun setMouseMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setMouseMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMouseMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setUseAccumulatedInput(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseAccumulatedInput.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseAccumulatedInput.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun startJoyVibration(
@@ -258,27 +417,36 @@ open class InputInternal(
     strongMagnitude: Float,
     duration: Float = 0.0f
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(device))
-    _args.add(Variant.fromAny(weakMagnitude))
-    _args.add(Variant.fromAny(strongMagnitude))
-    _args.add(Variant.fromAny(duration))
-    __method_bind.startJoyVibration.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(device)
+      _args.add(weakMagnitude)
+      _args.add(strongMagnitude)
+      _args.add(duration)
+      __method_bind.startJoyVibration.call(self._handle, _args, null)
+    }
   }
 
   fun stopJoyVibration(device: Int) {
-    val _arg = Variant(device)
-    __method_bind.stopJoyVibration.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.stopJoyVibration.call(self._handle, listOf(device), null)
+    }
   }
 
   fun vibrateHandheld(durationMs: Int = 500) {
-    val _arg = Variant(durationMs)
-    __method_bind.vibrateHandheld.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.vibrateHandheld.call(self._handle, listOf(durationMs), null)
+    }
   }
 
   fun warpMousePosition(to: Vector2) {
-    val _arg = Variant(to)
-    __method_bind.warpMousePosition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.warpMousePosition.call(self._handle, listOf(to), null)
+    }
   }
 
   companion object {

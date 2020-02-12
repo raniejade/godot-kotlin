@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ColorPickerButton(
   @Suppress("UNUSED_PARAMETER")
@@ -71,33 +80,62 @@ open class ColorPickerButton(
   }
 
   fun getPickColor(): Color {
-    val _ret = __method_bind.getPickColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPickColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPicker(): ColorPicker {
-    val _ret = __method_bind.getPicker.call(this._handle)
-    return _ret.toAny() as ColorPicker
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ColorPicker
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPicker.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<ColorPicker>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPopup(): PopupPanel {
-    val _ret = __method_bind.getPopup.call(this._handle)
-    return _ret.toAny() as PopupPanel
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: PopupPanel
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPopup.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<PopupPanel>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun isEditingAlpha(): Boolean {
-    val _ret = __method_bind.isEditingAlpha.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEditingAlpha.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setEditAlpha(show: Boolean) {
-    val _arg = Variant(show)
-    __method_bind.setEditAlpha.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEditAlpha.call(self._handle, listOf(show), null)
+    }
   }
 
   fun setPickColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setPickColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPickColor.call(self._handle, listOf(color), null)
+    }
   }
 
   companion object {

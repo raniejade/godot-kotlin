@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VisualShader(
   @Suppress("UNUSED_PARAMETER")
@@ -56,12 +65,15 @@ open class VisualShader(
     position: Vector2,
     id: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(node))
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(id))
-    __method_bind.addNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(node)
+      _args.add(position)
+      _args.add(id)
+      __method_bind.addNode.call(self._handle, _args, null)
+    }
   }
 
   fun canConnectNodes(
@@ -71,14 +83,19 @@ open class VisualShader(
     toNode: Int,
     toPort: Int
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(fromNode))
-    _args.add(Variant.fromAny(fromPort))
-    _args.add(Variant.fromAny(toNode))
-    _args.add(Variant.fromAny(toPort))
-    val _ret = __method_bind.canConnectNodes.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(fromNode)
+      _args.add(fromPort)
+      _args.add(toNode)
+      _args.add(toPort)
+      __method_bind.canConnectNodes.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun connectNodes(
@@ -88,14 +105,19 @@ open class VisualShader(
     toNode: Int,
     toPort: Int
   ): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(fromNode))
-    _args.add(Variant.fromAny(fromPort))
-    _args.add(Variant.fromAny(toNode))
-    _args.add(Variant.fromAny(toPort))
-    val _ret = __method_bind.connectNodes.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(fromNode)
+      _args.add(fromPort)
+      _args.add(toNode)
+      _args.add(toPort)
+      __method_bind.connectNodes.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun connectNodesForced(
@@ -105,13 +127,16 @@ open class VisualShader(
     toNode: Int,
     toPort: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(fromNode))
-    _args.add(Variant.fromAny(fromPort))
-    _args.add(Variant.fromAny(toNode))
-    _args.add(Variant.fromAny(toPort))
-    __method_bind.connectNodesForced.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(fromNode)
+      _args.add(fromPort)
+      _args.add(toNode)
+      _args.add(toPort)
+      __method_bind.connectNodesForced.call(self._handle, _args, null)
+    }
   }
 
   fun disconnectNodes(
@@ -121,52 +146,88 @@ open class VisualShader(
     toNode: Int,
     toPort: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(fromNode))
-    _args.add(Variant.fromAny(fromPort))
-    _args.add(Variant.fromAny(toNode))
-    _args.add(Variant.fromAny(toPort))
-    __method_bind.disconnectNodes.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(fromNode)
+      _args.add(fromPort)
+      _args.add(toNode)
+      _args.add(toPort)
+      __method_bind.disconnectNodes.call(self._handle, _args, null)
+    }
   }
 
   fun getGraphOffset(): Vector2 {
-    val _ret = __method_bind.getGraphOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGraphOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNode(type: Int, id: Int): VisualShaderNode {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(id))
-    val _ret = __method_bind.getNode.call(this._handle, _args)
-    return _ret.toAny() as VisualShaderNode
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: VisualShaderNode
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(id)
+      __method_bind.getNode.call(self._handle, _args, _retPtr)
+      _ret = objectToType<VisualShaderNode>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNodeConnections(type: Int): VariantArray {
-    val _arg = Variant(type)
-    val _ret = __method_bind.getNodeConnections.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodeConnections.call(self._handle, listOf(type), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNodeList(type: Int): PoolIntArray {
-    val _arg = Variant(type)
-    val _ret = __method_bind.getNodeList.call(this._handle, listOf(_arg))
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodeList.call(self._handle, listOf(type), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNodePosition(type: Int, id: Int): Vector2 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(id))
-    val _ret = __method_bind.getNodePosition.call(this._handle, _args)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(id)
+      __method_bind.getNodePosition.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getValidNodeId(type: Int): Int {
-    val _arg = Variant(type)
-    val _ret = __method_bind.getValidNodeId.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getValidNodeId.call(self._handle, listOf(type), _retPtr)
+      _ret.value
+    }
   }
 
   fun isNodeConnection(
@@ -176,31 +237,43 @@ open class VisualShader(
     toNode: Int,
     toPort: Int
   ): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(fromNode))
-    _args.add(Variant.fromAny(fromPort))
-    _args.add(Variant.fromAny(toNode))
-    _args.add(Variant.fromAny(toPort))
-    val _ret = __method_bind.isNodeConnection.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(fromNode)
+      _args.add(fromPort)
+      _args.add(toNode)
+      _args.add(toPort)
+      __method_bind.isNodeConnection.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun removeNode(type: Int, id: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(id))
-    __method_bind.removeNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(id)
+      __method_bind.removeNode.call(self._handle, _args, null)
+    }
   }
 
   fun setGraphOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setGraphOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGraphOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setNodePosition(
@@ -208,11 +281,14 @@ open class VisualShader(
     id: Int,
     position: Vector2
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(position))
-    __method_bind.setNodePosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(id)
+      _args.add(position)
+      __method_bind.setNodePosition.call(self._handle, _args, null)
+    }
   }
 
   enum class Type(

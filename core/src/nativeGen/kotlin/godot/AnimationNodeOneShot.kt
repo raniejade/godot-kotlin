@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AnimationNodeOneShot(
   @Suppress("UNUSED_PARAMETER")
@@ -79,73 +88,122 @@ open class AnimationNodeOneShot(
   }
 
   fun getAutorestartDelay(): Float {
-    val _ret = __method_bind.getAutorestartDelay.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAutorestartDelay.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getAutorestartRandomDelay(): Float {
-    val _ret = __method_bind.getAutorestartRandomDelay.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAutorestartRandomDelay.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFadeinTime(): Float {
-    val _ret = __method_bind.getFadeinTime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFadeinTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFadeoutTime(): Float {
-    val _ret = __method_bind.getFadeoutTime.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFadeoutTime.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMixMode(): MixMode {
-    val _ret = __method_bind.getMixMode.call(this._handle)
-    return AnimationNodeOneShot.MixMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMixMode.call(self._handle, emptyList(), _retPtr)
+      AnimationNodeOneShot.MixMode.from(_ret.value)
+    }
   }
 
   fun hasAutorestart(): Boolean {
-    val _ret = __method_bind.hasAutorestart.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAutorestart.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isUsingSync(): Boolean {
-    val _ret = __method_bind.isUsingSync.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isUsingSync.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAutorestart(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAutorestart.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutorestart.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setAutorestartDelay(enable: Float) {
-    val _arg = Variant(enable)
-    __method_bind.setAutorestartDelay.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutorestartDelay.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setAutorestartRandomDelay(enable: Float) {
-    val _arg = Variant(enable)
-    __method_bind.setAutorestartRandomDelay.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutorestartRandomDelay.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setFadeinTime(time: Float) {
-    val _arg = Variant(time)
-    __method_bind.setFadeinTime.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFadeinTime.call(self._handle, listOf(time), null)
+    }
   }
 
   fun setFadeoutTime(time: Float) {
-    val _arg = Variant(time)
-    __method_bind.setFadeoutTime.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFadeoutTime.call(self._handle, listOf(time), null)
+    }
   }
 
   fun setMixMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setMixMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMixMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setUseSync(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseSync.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseSync.call(self._handle, listOf(enable), null)
+    }
   }
 
   enum class MixMode(

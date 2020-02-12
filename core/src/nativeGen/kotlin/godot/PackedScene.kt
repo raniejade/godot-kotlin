@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class PackedScene(
   @Suppress("UNUSED_PARAMETER")
@@ -31,25 +40,47 @@ open class PackedScene(
   }
 
   fun canInstance(): Boolean {
-    val _ret = __method_bind.canInstance.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.canInstance.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getState(): SceneState {
-    val _ret = __method_bind.getState.call(this._handle)
-    return _ret.toAny() as SceneState
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: SceneState
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getState.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<SceneState>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun instance(editState: Int = 0): Node {
-    val _arg = Variant(editState)
-    val _ret = __method_bind.instance.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Node
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Node
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.instance.call(self._handle, listOf(editState), _retPtr)
+      _ret = objectToType<Node>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun pack(path: Node): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.pack.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.pack.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   enum class GenEditState(

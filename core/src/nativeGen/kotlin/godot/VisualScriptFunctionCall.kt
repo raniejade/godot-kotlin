@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.NodePath
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VisualScriptFunctionCall(
   @Suppress("UNUSED_PARAMETER")
@@ -121,103 +130,178 @@ open class VisualScriptFunctionCall(
   }
 
   fun getBasePath(): NodePath {
-    val _ret = __method_bind.getBasePath.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBasePath.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBaseScript(): String {
-    val _ret = __method_bind.getBaseScript.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getBaseScript.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getBaseType(): String {
-    val _ret = __method_bind.getBaseType.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getBaseType.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getBasicType(): Variant.Type {
-    val _ret = __method_bind.getBasicType.call(this._handle)
-    return Variant.Type.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBasicType.call(self._handle, emptyList(), _retPtr)
+      Variant.Type.from(_ret.value)
+    }
   }
 
   fun getCallMode(): CallMode {
-    val _ret = __method_bind.getCallMode.call(this._handle)
-    return VisualScriptFunctionCall.CallMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCallMode.call(self._handle, emptyList(), _retPtr)
+      VisualScriptFunctionCall.CallMode.from(_ret.value)
+    }
   }
 
   fun getFunction(): String {
-    val _ret = __method_bind.getFunction.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getFunction.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getRpcCallMode(): RPCCallMode {
-    val _ret = __method_bind.getRpcCallMode.call(this._handle)
-    return VisualScriptFunctionCall.RPCCallMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRpcCallMode.call(self._handle, emptyList(), _retPtr)
+      VisualScriptFunctionCall.RPCCallMode.from(_ret.value)
+    }
   }
 
   fun getSingleton(): String {
-    val _ret = __method_bind.getSingleton.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSingleton.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getUseDefaultArgs(): Int {
-    val _ret = __method_bind.getUseDefaultArgs.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUseDefaultArgs.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getValidate(): Boolean {
-    val _ret = __method_bind.getValidate.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getValidate.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBasePath(basePath: NodePath) {
-    val _arg = Variant(basePath)
-    __method_bind.setBasePath.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBasePath.call(self._handle, listOf(basePath), null)
+    }
   }
 
   fun setBaseScript(baseScript: String) {
-    val _arg = Variant(baseScript)
-    __method_bind.setBaseScript.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBaseScript.call(self._handle, listOf(baseScript), null)
+    }
   }
 
   fun setBaseType(baseType: String) {
-    val _arg = Variant(baseType)
-    __method_bind.setBaseType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBaseType.call(self._handle, listOf(baseType), null)
+    }
   }
 
   fun setBasicType(basicType: Int) {
-    val _arg = Variant(basicType)
-    __method_bind.setBasicType.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBasicType.call(self._handle, listOf(basicType), null)
+    }
   }
 
   fun setCallMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setCallMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCallMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setFunction(function: String) {
-    val _arg = Variant(function)
-    __method_bind.setFunction.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFunction.call(self._handle, listOf(function), null)
+    }
   }
 
   fun setRpcCallMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setRpcCallMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRpcCallMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setSingleton(singleton: String) {
-    val _arg = Variant(singleton)
-    __method_bind.setSingleton.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSingleton.call(self._handle, listOf(singleton), null)
+    }
   }
 
   fun setUseDefaultArgs(amount: Int) {
-    val _arg = Variant(amount)
-    __method_bind.setUseDefaultArgs.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseDefaultArgs.call(self._handle, listOf(amount), null)
+    }
   }
 
   fun setValidate(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setValidate.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setValidate.call(self._handle, listOf(enable), null)
+    }
   }
 
   enum class RPCCallMode(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -17,13 +18,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Control(
   @Suppress("UNUSED_PARAMETER")
@@ -354,368 +363,678 @@ open class Control(
   }
 
   fun acceptEvent() {
-    __method_bind.acceptEvent.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.acceptEvent.call(self._handle, emptyList(), null)
+    }
   }
 
   fun addColorOverride(name: String, color: Color) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(color))
-    __method_bind.addColorOverride.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(color)
+      __method_bind.addColorOverride.call(self._handle, _args, null)
+    }
   }
 
   fun addConstantOverride(name: String, constant: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(constant))
-    __method_bind.addConstantOverride.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(constant)
+      __method_bind.addConstantOverride.call(self._handle, _args, null)
+    }
   }
 
   fun addFontOverride(name: String, font: Font) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(font))
-    __method_bind.addFontOverride.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(font)
+      __method_bind.addFontOverride.call(self._handle, _args, null)
+    }
   }
 
   fun addIconOverride(name: String, texture: Texture) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(texture))
-    __method_bind.addIconOverride.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(texture)
+      __method_bind.addIconOverride.call(self._handle, _args, null)
+    }
   }
 
   fun addShaderOverride(name: String, shader: Shader) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(shader))
-    __method_bind.addShaderOverride.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(shader)
+      __method_bind.addShaderOverride.call(self._handle, _args, null)
+    }
   }
 
   fun addStyleboxOverride(name: String, stylebox: StyleBox) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(stylebox))
-    __method_bind.addStyleboxOverride.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(stylebox)
+      __method_bind.addStyleboxOverride.call(self._handle, _args, null)
+    }
   }
 
   fun forceDrag(data: Variant, preview: Control) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(data))
-    _args.add(Variant.fromAny(preview))
-    __method_bind.forceDrag.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(data)
+      _args.add(preview)
+      __method_bind.forceDrag.call(self._handle, _args, null)
+    }
   }
 
   fun getAnchor(margin: Int): Float {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getAnchor.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAnchor.call(self._handle, listOf(margin), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getBegin(): Vector2 {
-    val _ret = __method_bind.getBegin.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBegin.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getColor(name: String, type: String = ""): Color {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(type))
-    val _ret = __method_bind.getColor.call(this._handle, _args)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(type)
+      __method_bind.getColor.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCombinedMinimumSize(): Vector2 {
-    val _ret = __method_bind.getCombinedMinimumSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCombinedMinimumSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getConstant(name: String, type: String = ""): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(type))
-    val _ret = __method_bind.getConstant.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(type)
+      __method_bind.getConstant.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getCursorShape(position: Vector2 = Vector2(0, 0)): CursorShape {
-    val _arg = Variant(position)
-    val _ret = __method_bind.getCursorShape.call(this._handle, listOf(_arg))
-    return Control.CursorShape.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCursorShape.call(self._handle, listOf(position), _retPtr)
+      Control.CursorShape.from(_ret.value)
+    }
   }
 
   fun getCustomMinimumSize(): Vector2 {
-    val _ret = __method_bind.getCustomMinimumSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCustomMinimumSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getDefaultCursorShape(): CursorShape {
-    val _ret = __method_bind.getDefaultCursorShape.call(this._handle)
-    return Control.CursorShape.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getDefaultCursorShape.call(self._handle, emptyList(), _retPtr)
+      Control.CursorShape.from(_ret.value)
+    }
   }
 
   fun getEnd(): Vector2 {
-    val _ret = __method_bind.getEnd.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getEnd.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFocusMode(): FocusMode {
-    val _ret = __method_bind.getFocusMode.call(this._handle)
-    return Control.FocusMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFocusMode.call(self._handle, emptyList(), _retPtr)
+      Control.FocusMode.from(_ret.value)
+    }
   }
 
   fun getFocusNeighbour(margin: Int): NodePath {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getFocusNeighbour.call(this._handle, listOf(_arg))
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFocusNeighbour.call(self._handle, listOf(margin), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFocusNext(): NodePath {
-    val _ret = __method_bind.getFocusNext.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFocusNext.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFocusOwner(): Control {
-    val _ret = __method_bind.getFocusOwner.call(this._handle)
-    return _ret.toAny() as Control
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Control
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getFocusOwner.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Control>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getFocusPrevious(): NodePath {
-    val _ret = __method_bind.getFocusPrevious.call(this._handle)
-    return _ret.asNodePath()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = NodePath()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFocusPrevious.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFont(name: String, type: String = ""): Font {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(type))
-    val _ret = __method_bind.getFont.call(this._handle, _args)
-    return _ret.toAny() as Font
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Font
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(type)
+      __method_bind.getFont.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Font>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getGlobalPosition(): Vector2 {
-    val _ret = __method_bind.getGlobalPosition.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGlobalPosition.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getGlobalRect(): Rect2 {
-    val _ret = __method_bind.getGlobalRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGlobalRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getHGrowDirection(): GrowDirection {
-    val _ret = __method_bind.getHGrowDirection.call(this._handle)
-    return Control.GrowDirection.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHGrowDirection.call(self._handle, emptyList(), _retPtr)
+      Control.GrowDirection.from(_ret.value)
+    }
   }
 
   fun getHSizeFlags(): Int {
-    val _ret = __method_bind.getHSizeFlags.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getHSizeFlags.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getIcon(name: String, type: String = ""): Texture {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(type))
-    val _ret = __method_bind.getIcon.call(this._handle, _args)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(type)
+      __method_bind.getIcon.call(self._handle, _args, _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getMargin(margin: Int): Float {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getMargin.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMargin.call(self._handle, listOf(margin), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getMinimumSize(): Vector2 {
-    val _ret = __method_bind.getMinimumSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMinimumSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMouseFilter(): MouseFilter {
-    val _ret = __method_bind.getMouseFilter.call(this._handle)
-    return Control.MouseFilter.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getMouseFilter.call(self._handle, emptyList(), _retPtr)
+      Control.MouseFilter.from(_ret.value)
+    }
   }
 
   fun getParentAreaSize(): Vector2 {
-    val _ret = __method_bind.getParentAreaSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getParentAreaSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getParentControl(): Control {
-    val _ret = __method_bind.getParentControl.call(this._handle)
-    return _ret.toAny() as Control
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Control
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getParentControl.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Control>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getPivotOffset(): Vector2 {
-    val _ret = __method_bind.getPivotOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPivotOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.getPosition.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPosition.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRect(): Rect2 {
-    val _ret = __method_bind.getRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRotation(): Float {
-    val _ret = __method_bind.getRotation.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRotation.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRotationDegrees(): Float {
-    val _ret = __method_bind.getRotationDegrees.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRotationDegrees.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getScale(): Vector2 {
-    val _ret = __method_bind.getScale.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScale.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.getSize.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSize.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getStretchRatio(): Float {
-    val _ret = __method_bind.getStretchRatio.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStretchRatio.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getStylebox(name: String, type: String = ""): StyleBox {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(type))
-    val _ret = __method_bind.getStylebox.call(this._handle, _args)
-    return _ret.toAny() as StyleBox
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: StyleBox
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(type)
+      __method_bind.getStylebox.call(self._handle, _args, _retPtr)
+      _ret = objectToType<StyleBox>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTheme(): Theme {
-    val _ret = __method_bind.getTheme.call(this._handle)
-    return _ret.toAny() as Theme
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Theme
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTheme.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Theme>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTooltip(atPosition: Vector2 = Vector2(0, 0)): String {
-    val _arg = Variant(atPosition)
-    val _ret = __method_bind.getTooltip.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getTooltip.call(self._handle, listOf(atPosition), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getVGrowDirection(): GrowDirection {
-    val _ret = __method_bind.getVGrowDirection.call(this._handle)
-    return Control.GrowDirection.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVGrowDirection.call(self._handle, emptyList(), _retPtr)
+      Control.GrowDirection.from(_ret.value)
+    }
   }
 
   fun getVSizeFlags(): Int {
-    val _ret = __method_bind.getVSizeFlags.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVSizeFlags.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun grabClickFocus() {
-    __method_bind.grabClickFocus.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.grabClickFocus.call(self._handle, emptyList(), null)
+    }
   }
 
   fun grabFocus() {
-    __method_bind.grabFocus.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.grabFocus.call(self._handle, emptyList(), null)
+    }
   }
 
   fun hasColor(name: String, type: String = ""): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(type))
-    val _ret = __method_bind.hasColor.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(type)
+      __method_bind.hasColor.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun hasColorOverride(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasColorOverride.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasColorOverride.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasConstant(name: String, type: String = ""): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(type))
-    val _ret = __method_bind.hasConstant.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(type)
+      __method_bind.hasConstant.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun hasConstantOverride(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasConstantOverride.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasConstantOverride.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasFocus(): Boolean {
-    val _ret = __method_bind.hasFocus.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasFocus.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasFont(name: String, type: String = ""): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(type))
-    val _ret = __method_bind.hasFont.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(type)
+      __method_bind.hasFont.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun hasFontOverride(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasFontOverride.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasFontOverride.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasIcon(name: String, type: String = ""): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(type))
-    val _ret = __method_bind.hasIcon.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(type)
+      __method_bind.hasIcon.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun hasIconOverride(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasIconOverride.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasIconOverride.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasShaderOverride(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasShaderOverride.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasShaderOverride.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasStylebox(name: String, type: String = ""): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(type))
-    val _ret = __method_bind.hasStylebox.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(type)
+      __method_bind.hasStylebox.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun hasStyleboxOverride(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasStyleboxOverride.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasStyleboxOverride.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun isClippingContents(): Boolean {
-    val _ret = __method_bind.isClippingContents.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isClippingContents.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun minimumSizeChanged() {
-    __method_bind.minimumSizeChanged.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.minimumSizeChanged.call(self._handle, emptyList(), null)
+    }
   }
 
   fun releaseFocus() {
-    __method_bind.releaseFocus.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.releaseFocus.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setAnchor(
@@ -724,12 +1043,15 @@ open class Control(
     keepMargin: Boolean = false,
     pushOppositeAnchor: Boolean = true
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(anchor))
-    _args.add(Variant.fromAny(keepMargin))
-    _args.add(Variant.fromAny(pushOppositeAnchor))
-    __method_bind.setAnchor.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(anchor)
+      _args.add(keepMargin)
+      _args.add(pushOppositeAnchor)
+      __method_bind.setAnchor.call(self._handle, _args, null)
+    }
   }
 
   fun setAnchorAndMargin(
@@ -738,12 +1060,15 @@ open class Control(
     offset: Float,
     pushOppositeAnchor: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(anchor))
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(pushOppositeAnchor))
-    __method_bind.setAnchorAndMargin.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(anchor)
+      _args.add(offset)
+      _args.add(pushOppositeAnchor)
+      __method_bind.setAnchorAndMargin.call(self._handle, _args, null)
+    }
   }
 
   fun setAnchorsAndMarginsPreset(
@@ -751,99 +1076,138 @@ open class Control(
     resizeMode: Int = 0,
     margin: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(preset))
-    _args.add(Variant.fromAny(resizeMode))
-    _args.add(Variant.fromAny(margin))
-    __method_bind.setAnchorsAndMarginsPreset.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(preset)
+      _args.add(resizeMode)
+      _args.add(margin)
+      __method_bind.setAnchorsAndMarginsPreset.call(self._handle, _args, null)
+    }
   }
 
   fun setAnchorsPreset(preset: Int, keepMargins: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(preset))
-    _args.add(Variant.fromAny(keepMargins))
-    __method_bind.setAnchorsPreset.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(preset)
+      _args.add(keepMargins)
+      __method_bind.setAnchorsPreset.call(self._handle, _args, null)
+    }
   }
 
   fun setBegin(position: Vector2) {
-    val _arg = Variant(position)
-    __method_bind.setBegin.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBegin.call(self._handle, listOf(position), null)
+    }
   }
 
   fun setClipContents(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setClipContents.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setClipContents.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setCustomMinimumSize(size: Vector2) {
-    val _arg = Variant(size)
-    __method_bind.setCustomMinimumSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCustomMinimumSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setDefaultCursorShape(shape: Int) {
-    val _arg = Variant(shape)
-    __method_bind.setDefaultCursorShape.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDefaultCursorShape.call(self._handle, listOf(shape), null)
+    }
   }
 
   fun setDragForwarding(target: Control) {
-    val _arg = Variant(target)
-    __method_bind.setDragForwarding.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDragForwarding.call(self._handle, listOf(target), null)
+    }
   }
 
   fun setDragPreview(control: Control) {
-    val _arg = Variant(control)
-    __method_bind.setDragPreview.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDragPreview.call(self._handle, listOf(control), null)
+    }
   }
 
   fun setEnd(position: Vector2) {
-    val _arg = Variant(position)
-    __method_bind.setEnd.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEnd.call(self._handle, listOf(position), null)
+    }
   }
 
   fun setFocusMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setFocusMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFocusMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setFocusNeighbour(margin: Int, neighbour: NodePath) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(neighbour))
-    __method_bind.setFocusNeighbour.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(neighbour)
+      __method_bind.setFocusNeighbour.call(self._handle, _args, null)
+    }
   }
 
   fun setFocusNext(next: NodePath) {
-    val _arg = Variant(next)
-    __method_bind.setFocusNext.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFocusNext.call(self._handle, listOf(next), null)
+    }
   }
 
   fun setFocusPrevious(previous: NodePath) {
-    val _arg = Variant(previous)
-    __method_bind.setFocusPrevious.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFocusPrevious.call(self._handle, listOf(previous), null)
+    }
   }
 
   fun setGlobalPosition(position: Vector2, keepMargins: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(keepMargins))
-    __method_bind.setGlobalPosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(position)
+      _args.add(keepMargins)
+      __method_bind.setGlobalPosition.call(self._handle, _args, null)
+    }
   }
 
   fun setHGrowDirection(direction: Int) {
-    val _arg = Variant(direction)
-    __method_bind.setHGrowDirection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHGrowDirection.call(self._handle, listOf(direction), null)
+    }
   }
 
   fun setHSizeFlags(flags: Int) {
-    val _arg = Variant(flags)
-    __method_bind.setHSizeFlags.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHSizeFlags.call(self._handle, listOf(flags), null)
+    }
   }
 
   fun setMargin(margin: Int, offset: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(offset))
-    __method_bind.setMargin.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(offset)
+      __method_bind.setMargin.call(self._handle, _args, null)
+    }
   }
 
   fun setMarginsPreset(
@@ -851,85 +1215,118 @@ open class Control(
     resizeMode: Int = 0,
     margin: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(preset))
-    _args.add(Variant.fromAny(resizeMode))
-    _args.add(Variant.fromAny(margin))
-    __method_bind.setMarginsPreset.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(preset)
+      _args.add(resizeMode)
+      _args.add(margin)
+      __method_bind.setMarginsPreset.call(self._handle, _args, null)
+    }
   }
 
   fun setMouseFilter(filter: Int) {
-    val _arg = Variant(filter)
-    __method_bind.setMouseFilter.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMouseFilter.call(self._handle, listOf(filter), null)
+    }
   }
 
   fun setPivotOffset(pivotOffset: Vector2) {
-    val _arg = Variant(pivotOffset)
-    __method_bind.setPivotOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPivotOffset.call(self._handle, listOf(pivotOffset), null)
+    }
   }
 
   fun setPosition(position: Vector2, keepMargins: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(keepMargins))
-    __method_bind.setPosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(position)
+      _args.add(keepMargins)
+      __method_bind.setPosition.call(self._handle, _args, null)
+    }
   }
 
   fun setRotation(radians: Float) {
-    val _arg = Variant(radians)
-    __method_bind.setRotation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRotation.call(self._handle, listOf(radians), null)
+    }
   }
 
   fun setRotationDegrees(degrees: Float) {
-    val _arg = Variant(degrees)
-    __method_bind.setRotationDegrees.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRotationDegrees.call(self._handle, listOf(degrees), null)
+    }
   }
 
   fun setScale(scale: Vector2) {
-    val _arg = Variant(scale)
-    __method_bind.setScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScale.call(self._handle, listOf(scale), null)
+    }
   }
 
   fun setSize(size: Vector2, keepMargins: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(size))
-    _args.add(Variant.fromAny(keepMargins))
-    __method_bind.setSize.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(size)
+      _args.add(keepMargins)
+      __method_bind.setSize.call(self._handle, _args, null)
+    }
   }
 
   fun setStretchRatio(ratio: Float) {
-    val _arg = Variant(ratio)
-    __method_bind.setStretchRatio.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStretchRatio.call(self._handle, listOf(ratio), null)
+    }
   }
 
   fun setTheme(theme: Theme) {
-    val _arg = Variant(theme)
-    __method_bind.setTheme.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTheme.call(self._handle, listOf(theme), null)
+    }
   }
 
   fun setTooltip(tooltip: String) {
-    val _arg = Variant(tooltip)
-    __method_bind.setTooltip.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTooltip.call(self._handle, listOf(tooltip), null)
+    }
   }
 
   fun setVGrowDirection(direction: Int) {
-    val _arg = Variant(direction)
-    __method_bind.setVGrowDirection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVGrowDirection.call(self._handle, listOf(direction), null)
+    }
   }
 
   fun setVSizeFlags(flags: Int) {
-    val _arg = Variant(flags)
-    __method_bind.setVSizeFlags.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVSizeFlags.call(self._handle, listOf(flags), null)
+    }
   }
 
   fun showModal(exclusive: Boolean = false) {
-    val _arg = Variant(exclusive)
-    __method_bind.showModal.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.showModal.call(self._handle, listOf(exclusive), null)
+    }
   }
 
   fun warpMouse(toPosition: Vector2) {
-    val _arg = Variant(toPosition)
-    __method_bind.warpMouse.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.warpMouse.call(self._handle, listOf(toPosition), null)
+    }
   }
 
   enum class Anchor(

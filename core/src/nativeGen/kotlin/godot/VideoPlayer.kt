@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VideoPlayer(
   @Suppress("UNUSED_PARAMETER")
@@ -116,126 +125,223 @@ open class VideoPlayer(
   }
 
   fun getAudioTrack(): Int {
-    val _ret = __method_bind.getAudioTrack.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAudioTrack.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBufferingMsec(): Int {
-    val _ret = __method_bind.getBufferingMsec.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBufferingMsec.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBus(): String {
-    val _ret = __method_bind.getBus.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getBus.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getStream(): VideoStream {
-    val _ret = __method_bind.getStream.call(this._handle)
-    return _ret.toAny() as VideoStream
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: VideoStream
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getStream.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<VideoStream>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getStreamName(): String {
-    val _ret = __method_bind.getStreamName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getStreamName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getStreamPosition(): Float {
-    val _ret = __method_bind.getStreamPosition.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getStreamPosition.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVideoTexture(): Texture {
-    val _ret = __method_bind.getVideoTexture.call(this._handle)
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getVideoTexture.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getVolume(): Float {
-    val _ret = __method_bind.getVolume.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVolume.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getVolumeDb(): Float {
-    val _ret = __method_bind.getVolumeDb.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getVolumeDb.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun hasAutoplay(): Boolean {
-    val _ret = __method_bind.hasAutoplay.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasAutoplay.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasExpand(): Boolean {
-    val _ret = __method_bind.hasExpand.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasExpand.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPaused(): Boolean {
-    val _ret = __method_bind.isPaused.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPaused.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isPlaying(): Boolean {
-    val _ret = __method_bind.isPlaying.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isPlaying.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun play() {
-    __method_bind.play.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.play.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setAudioTrack(track: Int) {
-    val _arg = Variant(track)
-    __method_bind.setAudioTrack.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAudioTrack.call(self._handle, listOf(track), null)
+    }
   }
 
   fun setAutoplay(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setAutoplay.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutoplay.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setBufferingMsec(msec: Int) {
-    val _arg = Variant(msec)
-    __method_bind.setBufferingMsec.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBufferingMsec.call(self._handle, listOf(msec), null)
+    }
   }
 
   fun setBus(bus: String) {
-    val _arg = Variant(bus)
-    __method_bind.setBus.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBus.call(self._handle, listOf(bus), null)
+    }
   }
 
   fun setExpand(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setExpand.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExpand.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setPaused(paused: Boolean) {
-    val _arg = Variant(paused)
-    __method_bind.setPaused.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPaused.call(self._handle, listOf(paused), null)
+    }
   }
 
   fun setStream(stream: VideoStream) {
-    val _arg = Variant(stream)
-    __method_bind.setStream.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStream.call(self._handle, listOf(stream), null)
+    }
   }
 
   fun setStreamPosition(position: Float) {
-    val _arg = Variant(position)
-    __method_bind.setStreamPosition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStreamPosition.call(self._handle, listOf(position), null)
+    }
   }
 
   fun setVolume(volume: Float) {
-    val _arg = Variant(volume)
-    __method_bind.setVolume.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVolume.call(self._handle, listOf(volume), null)
+    }
   }
 
   fun setVolumeDb(db: Float) {
-    val _arg = Variant(db)
-    __method_bind.setVolumeDb.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVolumeDb.call(self._handle, listOf(db), null)
+    }
   }
 
   fun stop() {
-    __method_bind.stop.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.stop.call(self._handle, emptyList(), null)
+    }
   }
 
   companion object {

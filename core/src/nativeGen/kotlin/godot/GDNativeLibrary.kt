@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolStringArray
@@ -11,13 +12,21 @@ import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class GDNativeLibrary(
   @Suppress("UNUSED_PARAMETER")
@@ -70,63 +79,113 @@ open class GDNativeLibrary(
   }
 
   fun getConfigFile(): ConfigFile {
-    val _ret = __method_bind.getConfigFile.call(this._handle)
-    return _ret.toAny() as ConfigFile
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ConfigFile
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getConfigFile.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<ConfigFile>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getCurrentDependencies(): PoolStringArray {
-    val _ret = __method_bind.getCurrentDependencies.call(this._handle)
-    return _ret.asPoolStringArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolStringArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCurrentDependencies.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCurrentLibraryPath(): String {
-    val _ret = __method_bind.getCurrentLibraryPath.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getCurrentLibraryPath.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getSymbolPrefix(): String {
-    val _ret = __method_bind.getSymbolPrefix.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getSymbolPrefix.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun isReloadable(): Boolean {
-    val _ret = __method_bind.isReloadable.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isReloadable.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSingleton(): Boolean {
-    val _ret = __method_bind.isSingleton.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSingleton.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setConfigFile(configFile: ConfigFile) {
-    val _arg = Variant(configFile)
-    __method_bind.setConfigFile.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setConfigFile.call(self._handle, listOf(configFile), null)
+    }
   }
 
   fun setLoadOnce(loadOnce: Boolean) {
-    val _arg = Variant(loadOnce)
-    __method_bind.setLoadOnce.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLoadOnce.call(self._handle, listOf(loadOnce), null)
+    }
   }
 
   fun setReloadable(reloadable: Boolean) {
-    val _arg = Variant(reloadable)
-    __method_bind.setReloadable.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setReloadable.call(self._handle, listOf(reloadable), null)
+    }
   }
 
   fun setSingleton(singleton: Boolean) {
-    val _arg = Variant(singleton)
-    __method_bind.setSingleton.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSingleton.call(self._handle, listOf(singleton), null)
+    }
   }
 
   fun setSymbolPrefix(symbolPrefix: String) {
-    val _arg = Variant(symbolPrefix)
-    __method_bind.setSymbolPrefix.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSymbolPrefix.call(self._handle, listOf(symbolPrefix), null)
+    }
   }
 
   fun shouldLoadOnce(): Boolean {
-    val _ret = __method_bind.shouldLoadOnce.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.shouldLoadOnce.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   companion object {

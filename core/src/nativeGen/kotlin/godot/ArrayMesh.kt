@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.AABB
 import godot.core.Allocator
 import godot.core.GDError
@@ -16,13 +17,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class ArrayMesh(
   @Suppress("UNUSED_PARAMETER")
@@ -60,8 +69,10 @@ open class ArrayMesh(
   }
 
   fun addBlendShape(name: String) {
-    val _arg = Variant(name)
-    __method_bind.addBlendShape.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addBlendShape.call(self._handle, listOf(name), null)
+    }
   }
 
   fun addSurfaceFromArrays(
@@ -70,107 +81,176 @@ open class ArrayMesh(
     blendShapes: VariantArray,
     compressFlags: Int = 97280
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(primitive))
-    _args.add(Variant.fromAny(arrays))
-    _args.add(Variant.fromAny(blendShapes))
-    _args.add(Variant.fromAny(compressFlags))
-    __method_bind.addSurfaceFromArrays.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(primitive)
+      _args.add(arrays)
+      _args.add(blendShapes)
+      _args.add(compressFlags)
+      __method_bind.addSurfaceFromArrays.call(self._handle, _args, null)
+    }
   }
 
   fun clearBlendShapes() {
-    __method_bind.clearBlendShapes.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearBlendShapes.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getBlendShapeCount(): Int {
-    val _ret = __method_bind.getBlendShapeCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBlendShapeCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBlendShapeMode(): Mesh.BlendShapeMode {
-    val _ret = __method_bind.getBlendShapeMode.call(this._handle)
-    return Mesh.BlendShapeMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBlendShapeMode.call(self._handle, emptyList(), _retPtr)
+      Mesh.BlendShapeMode.from(_ret.value)
+    }
   }
 
   fun getBlendShapeName(index: Int): String {
-    val _arg = Variant(index)
-    val _ret = __method_bind.getBlendShapeName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getBlendShapeName.call(self._handle, listOf(index), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getCustomAabb(): AABB {
-    val _ret = __method_bind.getCustomAabb.call(this._handle)
-    return _ret.asAABB()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = AABB()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCustomAabb.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun lightmapUnwrap(transform: Transform, texelSize: Float): GDError {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(transform))
-    _args.add(Variant.fromAny(texelSize))
-    val _ret = __method_bind.lightmapUnwrap.call(this._handle, _args)
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(transform)
+      _args.add(texelSize)
+      __method_bind.lightmapUnwrap.call(self._handle, _args, _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun regenNormalmaps() {
-    __method_bind.regenNormalmaps.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.regenNormalmaps.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setBlendShapeMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setBlendShapeMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBlendShapeMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setCustomAabb(aabb: AABB) {
-    val _arg = Variant(aabb)
-    __method_bind.setCustomAabb.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCustomAabb.call(self._handle, listOf(aabb), null)
+    }
   }
 
   fun surfaceFindByName(name: String): Int {
-    val _arg = Variant(name)
-    val _ret = __method_bind.surfaceFindByName.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.surfaceFindByName.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun surfaceGetArrayIndexLen(surfIdx: Int): Int {
-    val _arg = Variant(surfIdx)
-    val _ret = __method_bind.surfaceGetArrayIndexLen.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.surfaceGetArrayIndexLen.call(self._handle, listOf(surfIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun surfaceGetArrayLen(surfIdx: Int): Int {
-    val _arg = Variant(surfIdx)
-    val _ret = __method_bind.surfaceGetArrayLen.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.surfaceGetArrayLen.call(self._handle, listOf(surfIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun surfaceGetFormat(surfIdx: Int): Int {
-    val _arg = Variant(surfIdx)
-    val _ret = __method_bind.surfaceGetFormat.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.surfaceGetFormat.call(self._handle, listOf(surfIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun surfaceGetName(surfIdx: Int): String {
-    val _arg = Variant(surfIdx)
-    val _ret = __method_bind.surfaceGetName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.surfaceGetName.call(self._handle, listOf(surfIdx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun surfaceGetPrimitiveType(surfIdx: Int): Mesh.PrimitiveType {
-    val _arg = Variant(surfIdx)
-    val _ret = __method_bind.surfaceGetPrimitiveType.call(this._handle, listOf(_arg))
-    return Mesh.PrimitiveType.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.surfaceGetPrimitiveType.call(self._handle, listOf(surfIdx), _retPtr)
+      Mesh.PrimitiveType.from(_ret.value)
+    }
   }
 
   fun surfaceRemove(surfIdx: Int) {
-    val _arg = Variant(surfIdx)
-    __method_bind.surfaceRemove.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.surfaceRemove.call(self._handle, listOf(surfIdx), null)
+    }
   }
 
   fun surfaceSetName(surfIdx: Int, name: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(surfIdx))
-    _args.add(Variant.fromAny(name))
-    __method_bind.surfaceSetName.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(surfIdx)
+      _args.add(name)
+      __method_bind.surfaceSetName.call(self._handle, _args, null)
+    }
   }
 
   fun surfaceUpdateRegion(
@@ -178,11 +258,14 @@ open class ArrayMesh(
     offset: Int,
     data: PoolByteArray
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(surfIdx))
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(data))
-    __method_bind.surfaceUpdateRegion.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(surfIdx)
+      _args.add(offset)
+      _args.add(data)
+      __method_bind.surfaceUpdateRegion.call(self._handle, _args, null)
+    }
   }
 
   enum class ArrayFormat(

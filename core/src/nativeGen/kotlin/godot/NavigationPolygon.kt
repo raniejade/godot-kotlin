@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolIntArray
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class NavigationPolygon(
   @Suppress("UNUSED_PARAMETER")
@@ -49,76 +58,125 @@ open class NavigationPolygon(
   }
 
   fun addOutline(outline: PoolVector2Array) {
-    val _arg = Variant(outline)
-    __method_bind.addOutline.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addOutline.call(self._handle, listOf(outline), null)
+    }
   }
 
   fun addOutlineAtIndex(outline: PoolVector2Array, index: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(outline))
-    _args.add(Variant.fromAny(index))
-    __method_bind.addOutlineAtIndex.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(outline)
+      _args.add(index)
+      __method_bind.addOutlineAtIndex.call(self._handle, _args, null)
+    }
   }
 
   fun addPolygon(polygon: PoolIntArray) {
-    val _arg = Variant(polygon)
-    __method_bind.addPolygon.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addPolygon.call(self._handle, listOf(polygon), null)
+    }
   }
 
   fun clearOutlines() {
-    __method_bind.clearOutlines.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearOutlines.call(self._handle, emptyList(), null)
+    }
   }
 
   fun clearPolygons() {
-    __method_bind.clearPolygons.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearPolygons.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getOutline(idx: Int): PoolVector2Array {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getOutline.call(this._handle, listOf(_arg))
-    return _ret.asPoolVector2Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector2Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getOutline.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getOutlineCount(): Int {
-    val _ret = __method_bind.getOutlineCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOutlineCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getPolygon(idx: Int): PoolIntArray {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getPolygon.call(this._handle, listOf(_arg))
-    return _ret.asPoolIntArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolIntArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPolygon.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPolygonCount(): Int {
-    val _ret = __method_bind.getPolygonCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPolygonCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getVertices(): PoolVector2Array {
-    val _ret = __method_bind.getVertices.call(this._handle)
-    return _ret.asPoolVector2Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector2Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getVertices.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun makePolygonsFromOutlines() {
-    __method_bind.makePolygonsFromOutlines.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.makePolygonsFromOutlines.call(self._handle, emptyList(), null)
+    }
   }
 
   fun removeOutline(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.removeOutline.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeOutline.call(self._handle, listOf(idx), null)
+    }
   }
 
   fun setOutline(idx: Int, outline: PoolVector2Array) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(outline))
-    __method_bind.setOutline.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(outline)
+      __method_bind.setOutline.call(self._handle, _args, null)
+    }
   }
 
   fun setVertices(vertices: PoolVector2Array) {
-    val _arg = Variant(vertices)
-    __method_bind.setVertices.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVertices.call(self._handle, listOf(vertices), null)
+    }
   }
 
   companion object {

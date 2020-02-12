@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -20,13 +21,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class CanvasItem(
   @Suppress("UNUSED_PARAMETER")
@@ -142,16 +151,19 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(center))
-    _args.add(Variant.fromAny(radius))
-    _args.add(Variant.fromAny(startAngle))
-    _args.add(Variant.fromAny(endAngle))
-    _args.add(Variant.fromAny(pointCount))
-    _args.add(Variant.fromAny(color))
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(antialiased))
-    __method_bind.drawArc.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(center)
+      _args.add(radius)
+      _args.add(startAngle)
+      _args.add(endAngle)
+      _args.add(pointCount)
+      _args.add(color)
+      _args.add(width)
+      _args.add(antialiased)
+      __method_bind.drawArc.call(self._handle, _args, null)
+    }
   }
 
   fun drawChar(
@@ -161,14 +173,19 @@ open class CanvasItem(
     next: String,
     modulate: Color = Color(1,1,1,1)
   ): Float {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(font))
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(char))
-    _args.add(Variant.fromAny(next))
-    _args.add(Variant.fromAny(modulate))
-    val _ret = __method_bind.drawChar.call(this._handle, _args)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(font)
+      _args.add(position)
+      _args.add(char)
+      _args.add(next)
+      _args.add(modulate)
+      __method_bind.drawChar.call(self._handle, _args, _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun drawCircle(
@@ -176,11 +193,14 @@ open class CanvasItem(
     radius: Float,
     color: Color
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(radius))
-    _args.add(Variant.fromAny(color))
-    __method_bind.drawCircle.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(position)
+      _args.add(radius)
+      _args.add(color)
+      __method_bind.drawCircle.call(self._handle, _args, null)
+    }
   }
 
   fun drawColoredPolygon(
@@ -191,14 +211,17 @@ open class CanvasItem(
     normalMap: Texture,
     antialiased: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(points))
-    _args.add(Variant.fromAny(color))
-    _args.add(Variant.fromAny(uvs))
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(normalMap))
-    _args.add(Variant.fromAny(antialiased))
-    __method_bind.drawColoredPolygon.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(points)
+      _args.add(color)
+      _args.add(uvs)
+      _args.add(texture)
+      _args.add(normalMap)
+      _args.add(antialiased)
+      __method_bind.drawColoredPolygon.call(self._handle, _args, null)
+    }
   }
 
   fun drawLine(
@@ -208,13 +231,16 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    _args.add(Variant.fromAny(color))
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(antialiased))
-    __method_bind.drawLine.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      _args.add(color)
+      _args.add(width)
+      _args.add(antialiased)
+      __method_bind.drawLine.call(self._handle, _args, null)
+    }
   }
 
   fun drawMesh(
@@ -224,13 +250,16 @@ open class CanvasItem(
     transform: Transform2D = Transform2D(Vector2(1, 0), Vector2(0, 1), Vector2(0, 0)),
     modulate: Color = Color(1,1,1,1)
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(mesh))
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(normalMap))
-    _args.add(Variant.fromAny(transform))
-    _args.add(Variant.fromAny(modulate))
-    __method_bind.drawMesh.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(mesh)
+      _args.add(texture)
+      _args.add(normalMap)
+      _args.add(transform)
+      _args.add(modulate)
+      __method_bind.drawMesh.call(self._handle, _args, null)
+    }
   }
 
   fun drawMultiline(
@@ -239,12 +268,15 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(points))
-    _args.add(Variant.fromAny(color))
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(antialiased))
-    __method_bind.drawMultiline.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(points)
+      _args.add(color)
+      _args.add(width)
+      _args.add(antialiased)
+      __method_bind.drawMultiline.call(self._handle, _args, null)
+    }
   }
 
   fun drawMultilineColors(
@@ -253,12 +285,15 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(points))
-    _args.add(Variant.fromAny(colors))
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(antialiased))
-    __method_bind.drawMultilineColors.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(points)
+      _args.add(colors)
+      _args.add(width)
+      _args.add(antialiased)
+      __method_bind.drawMultilineColors.call(self._handle, _args, null)
+    }
   }
 
   fun drawMultimesh(
@@ -266,11 +301,14 @@ open class CanvasItem(
     texture: Texture,
     normalMap: Texture
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(multimesh))
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(normalMap))
-    __method_bind.drawMultimesh.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(multimesh)
+      _args.add(texture)
+      _args.add(normalMap)
+      __method_bind.drawMultimesh.call(self._handle, _args, null)
+    }
   }
 
   fun drawPolygon(
@@ -281,14 +319,17 @@ open class CanvasItem(
     normalMap: Texture,
     antialiased: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(points))
-    _args.add(Variant.fromAny(colors))
-    _args.add(Variant.fromAny(uvs))
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(normalMap))
-    _args.add(Variant.fromAny(antialiased))
-    __method_bind.drawPolygon.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(points)
+      _args.add(colors)
+      _args.add(uvs)
+      _args.add(texture)
+      _args.add(normalMap)
+      _args.add(antialiased)
+      __method_bind.drawPolygon.call(self._handle, _args, null)
+    }
   }
 
   fun drawPolyline(
@@ -297,12 +338,15 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(points))
-    _args.add(Variant.fromAny(color))
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(antialiased))
-    __method_bind.drawPolyline.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(points)
+      _args.add(color)
+      _args.add(width)
+      _args.add(antialiased)
+      __method_bind.drawPolyline.call(self._handle, _args, null)
+    }
   }
 
   fun drawPolylineColors(
@@ -311,12 +355,15 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(points))
-    _args.add(Variant.fromAny(colors))
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(antialiased))
-    __method_bind.drawPolylineColors.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(points)
+      _args.add(colors)
+      _args.add(width)
+      _args.add(antialiased)
+      __method_bind.drawPolylineColors.call(self._handle, _args, null)
+    }
   }
 
   fun drawPrimitive(
@@ -327,14 +374,17 @@ open class CanvasItem(
     width: Float = 1.0f,
     normalMap: Texture
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(points))
-    _args.add(Variant.fromAny(colors))
-    _args.add(Variant.fromAny(uvs))
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(normalMap))
-    __method_bind.drawPrimitive.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(points)
+      _args.add(colors)
+      _args.add(uvs)
+      _args.add(texture)
+      _args.add(width)
+      _args.add(normalMap)
+      __method_bind.drawPrimitive.call(self._handle, _args, null)
+    }
   }
 
   fun drawRect(
@@ -344,13 +394,16 @@ open class CanvasItem(
     width: Float = 1.0f,
     antialiased: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(rect))
-    _args.add(Variant.fromAny(color))
-    _args.add(Variant.fromAny(filled))
-    _args.add(Variant.fromAny(width))
-    _args.add(Variant.fromAny(antialiased))
-    __method_bind.drawRect.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(rect)
+      _args.add(color)
+      _args.add(filled)
+      _args.add(width)
+      _args.add(antialiased)
+      __method_bind.drawRect.call(self._handle, _args, null)
+    }
   }
 
   fun drawSetTransform(
@@ -358,16 +411,21 @@ open class CanvasItem(
     rotation: Float,
     scale: Vector2
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(rotation))
-    _args.add(Variant.fromAny(scale))
-    __method_bind.drawSetTransform.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(position)
+      _args.add(rotation)
+      _args.add(scale)
+      __method_bind.drawSetTransform.call(self._handle, _args, null)
+    }
   }
 
   fun drawSetTransformMatrix(xform: Transform2D) {
-    val _arg = Variant(xform)
-    __method_bind.drawSetTransformMatrix.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.drawSetTransformMatrix.call(self._handle, listOf(xform), null)
+    }
   }
 
   fun drawString(
@@ -377,20 +435,26 @@ open class CanvasItem(
     modulate: Color = Color(1,1,1,1),
     clipW: Int = -1
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(font))
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(text))
-    _args.add(Variant.fromAny(modulate))
-    _args.add(Variant.fromAny(clipW))
-    __method_bind.drawString.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(font)
+      _args.add(position)
+      _args.add(text)
+      _args.add(modulate)
+      _args.add(clipW)
+      __method_bind.drawString.call(self._handle, _args, null)
+    }
   }
 
   fun drawStyleBox(styleBox: StyleBox, rect: Rect2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(styleBox))
-    _args.add(Variant.fromAny(rect))
-    __method_bind.drawStyleBox.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(styleBox)
+      _args.add(rect)
+      __method_bind.drawStyleBox.call(self._handle, _args, null)
+    }
   }
 
   fun drawTexture(
@@ -399,12 +463,15 @@ open class CanvasItem(
     modulate: Color = Color(1,1,1,1),
     normalMap: Texture
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(position))
-    _args.add(Variant.fromAny(modulate))
-    _args.add(Variant.fromAny(normalMap))
-    __method_bind.drawTexture.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(texture)
+      _args.add(position)
+      _args.add(modulate)
+      _args.add(normalMap)
+      __method_bind.drawTexture.call(self._handle, _args, null)
+    }
   }
 
   fun drawTextureRect(
@@ -415,14 +482,17 @@ open class CanvasItem(
     transpose: Boolean = false,
     normalMap: Texture
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(rect))
-    _args.add(Variant.fromAny(tile))
-    _args.add(Variant.fromAny(modulate))
-    _args.add(Variant.fromAny(transpose))
-    _args.add(Variant.fromAny(normalMap))
-    __method_bind.drawTextureRect.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(texture)
+      _args.add(rect)
+      _args.add(tile)
+      _args.add(modulate)
+      _args.add(transpose)
+      _args.add(normalMap)
+      __method_bind.drawTextureRect.call(self._handle, _args, null)
+    }
   }
 
   fun drawTextureRectRegion(
@@ -434,203 +504,375 @@ open class CanvasItem(
     normalMap: Texture,
     clipUv: Boolean = true
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(rect))
-    _args.add(Variant.fromAny(srcRect))
-    _args.add(Variant.fromAny(modulate))
-    _args.add(Variant.fromAny(transpose))
-    _args.add(Variant.fromAny(normalMap))
-    _args.add(Variant.fromAny(clipUv))
-    __method_bind.drawTextureRectRegion.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(texture)
+      _args.add(rect)
+      _args.add(srcRect)
+      _args.add(modulate)
+      _args.add(transpose)
+      _args.add(normalMap)
+      _args.add(clipUv)
+      __method_bind.drawTextureRectRegion.call(self._handle, _args, null)
+    }
   }
 
   fun forceUpdateTransform() {
-    __method_bind.forceUpdateTransform.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.forceUpdateTransform.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getCanvas(): RID {
-    val _ret = __method_bind.getCanvas.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCanvas.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCanvasItem(): RID {
-    val _ret = __method_bind.getCanvasItem.call(this._handle)
-    return _ret.asRID()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = RID()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCanvasItem.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCanvasTransform(): Transform2D {
-    val _ret = __method_bind.getCanvasTransform.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getCanvasTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getGlobalMousePosition(): Vector2 {
-    val _ret = __method_bind.getGlobalMousePosition.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGlobalMousePosition.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getGlobalTransform(): Transform2D {
-    val _ret = __method_bind.getGlobalTransform.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGlobalTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getGlobalTransformWithCanvas(): Transform2D {
-    val _ret = __method_bind.getGlobalTransformWithCanvas.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGlobalTransformWithCanvas.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLightMask(): Int {
-    val _ret = __method_bind.getLightMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getLightMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getLocalMousePosition(): Vector2 {
-    val _ret = __method_bind.getLocalMousePosition.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getLocalMousePosition.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.getMaterial.call(this._handle)
-    return _ret.toAny() as Material
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Material
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getMaterial.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Material>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getModulate(): Color {
-    val _ret = __method_bind.getModulate.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getModulate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSelfModulate(): Color {
-    val _ret = __method_bind.getSelfModulate.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSelfModulate.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTransform(): Transform2D {
-    val _ret = __method_bind.getTransform.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getUseParentMaterial(): Boolean {
-    val _ret = __method_bind.getUseParentMaterial.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUseParentMaterial.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getViewportRect(): Rect2 {
-    val _ret = __method_bind.getViewportRect.call(this._handle)
-    return _ret.asRect2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Rect2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getViewportRect.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getViewportTransform(): Transform2D {
-    val _ret = __method_bind.getViewportTransform.call(this._handle)
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getViewportTransform.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getWorld2d(): World2D {
-    val _ret = __method_bind.getWorld2d.call(this._handle)
-    return _ret.toAny() as World2D
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: World2D
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getWorld2d.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<World2D>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun hide() {
-    __method_bind.hide.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.hide.call(self._handle, emptyList(), null)
+    }
   }
 
   fun isDrawBehindParentEnabled(): Boolean {
-    val _ret = __method_bind.isDrawBehindParentEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDrawBehindParentEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isLocalTransformNotificationEnabled(): Boolean {
-    val _ret = __method_bind.isLocalTransformNotificationEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isLocalTransformNotificationEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isSetAsToplevel(): Boolean {
-    val _ret = __method_bind.isSetAsToplevel.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isSetAsToplevel.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isTransformNotificationEnabled(): Boolean {
-    val _ret = __method_bind.isTransformNotificationEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isTransformNotificationEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isVisible(): Boolean {
-    val _ret = __method_bind.isVisible.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isVisible.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isVisibleInTree(): Boolean {
-    val _ret = __method_bind.isVisibleInTree.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isVisibleInTree.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun makeCanvasPositionLocal(screenPoint: Vector2): Vector2 {
-    val _arg = Variant(screenPoint)
-    val _ret = __method_bind.makeCanvasPositionLocal.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.makeCanvasPositionLocal.call(self._handle, listOf(screenPoint), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun makeInputLocal(event: InputEvent): InputEvent {
-    val _arg = Variant(event)
-    val _ret = __method_bind.makeInputLocal.call(this._handle, listOf(_arg))
-    return _ret.toAny() as InputEvent
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: InputEvent
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.makeInputLocal.call(self._handle, listOf(event), _retPtr)
+      _ret = objectToType<InputEvent>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun setAsToplevel(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAsToplevel.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAsToplevel.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setDrawBehindParent(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setDrawBehindParent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDrawBehindParent.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setLightMask(lightMask: Int) {
-    val _arg = Variant(lightMask)
-    __method_bind.setLightMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLightMask.call(self._handle, listOf(lightMask), null)
+    }
   }
 
   fun setMaterial(material: Material) {
-    val _arg = Variant(material)
-    __method_bind.setMaterial.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaterial.call(self._handle, listOf(material), null)
+    }
   }
 
   fun setModulate(modulate: Color) {
-    val _arg = Variant(modulate)
-    __method_bind.setModulate.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setModulate.call(self._handle, listOf(modulate), null)
+    }
   }
 
   fun setNotifyLocalTransform(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setNotifyLocalTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNotifyLocalTransform.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setNotifyTransform(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setNotifyTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNotifyTransform.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setSelfModulate(selfModulate: Color) {
-    val _arg = Variant(selfModulate)
-    __method_bind.setSelfModulate.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSelfModulate.call(self._handle, listOf(selfModulate), null)
+    }
   }
 
   fun setUseParentMaterial(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setUseParentMaterial.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setUseParentMaterial.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setVisible(visible: Boolean) {
-    val _arg = Variant(visible)
-    __method_bind.setVisible.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setVisible.call(self._handle, listOf(visible), null)
+    }
   }
 
   fun show() {
-    __method_bind.show.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.show.call(self._handle, emptyList(), null)
+    }
   }
 
   fun update() {
-    __method_bind.update.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.update.call(self._handle, emptyList(), null)
+    }
   }
 
   enum class BlendMode(

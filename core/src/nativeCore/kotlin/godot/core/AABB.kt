@@ -7,6 +7,7 @@ import kotlinx.cinterop.invoke
 class AABB(
   value: CValue<godot_aabb>
 ) : CoreType<godot_aabb>(value) {
+  internal constructor(): this(__new(Vector3.ZERO, Vector3.ONE))
   constructor(position: Vector3, size: Vector3): this(__new(position, size))
 
   @MissingGDNativeAPI("AABB::end")

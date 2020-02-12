@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class StyleBoxFlat(
   @Suppress("UNUSED_PARAMETER")
@@ -246,130 +255,223 @@ open class StyleBoxFlat(
   }
 
   fun getAaSize(): Int {
-    val _ret = __method_bind.getAaSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAaSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBgColor(): Color {
-    val _ret = __method_bind.getBgColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBgColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBorderBlend(): Boolean {
-    val _ret = __method_bind.getBorderBlend.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBorderBlend.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBorderColor(): Color {
-    val _ret = __method_bind.getBorderColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBorderColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBorderWidth(margin: Int): Int {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getBorderWidth.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBorderWidth.call(self._handle, listOf(margin), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBorderWidthMin(): Int {
-    val _ret = __method_bind.getBorderWidthMin.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBorderWidthMin.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCornerDetail(): Int {
-    val _ret = __method_bind.getCornerDetail.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCornerDetail.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getCornerRadius(corner: Int): Int {
-    val _arg = Variant(corner)
-    val _ret = __method_bind.getCornerRadius.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCornerRadius.call(self._handle, listOf(corner), _retPtr)
+      _ret.value
+    }
   }
 
   fun getExpandMargin(margin: Int): Float {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.getExpandMargin.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getExpandMargin.call(self._handle, listOf(margin), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getShadowColor(): Color {
-    val _ret = __method_bind.getShadowColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getShadowColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getShadowOffset(): Vector2 {
-    val _ret = __method_bind.getShadowOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getShadowOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getShadowSize(): Int {
-    val _ret = __method_bind.getShadowSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getShadowSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isAntiAliased(): Boolean {
-    val _ret = __method_bind.isAntiAliased.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAntiAliased.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isDrawCenterEnabled(): Boolean {
-    val _ret = __method_bind.isDrawCenterEnabled.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isDrawCenterEnabled.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAaSize(size: Int) {
-    val _arg = Variant(size)
-    __method_bind.setAaSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAaSize.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setAntiAliased(antiAliased: Boolean) {
-    val _arg = Variant(antiAliased)
-    __method_bind.setAntiAliased.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAntiAliased.call(self._handle, listOf(antiAliased), null)
+    }
   }
 
   fun setBgColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setBgColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBgColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setBorderBlend(blend: Boolean) {
-    val _arg = Variant(blend)
-    __method_bind.setBorderBlend.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBorderBlend.call(self._handle, listOf(blend), null)
+    }
   }
 
   fun setBorderColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setBorderColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBorderColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setBorderWidth(margin: Int, width: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(width))
-    __method_bind.setBorderWidth.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(width)
+      __method_bind.setBorderWidth.call(self._handle, _args, null)
+    }
   }
 
   fun setBorderWidthAll(width: Int) {
-    val _arg = Variant(width)
-    __method_bind.setBorderWidthAll.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBorderWidthAll.call(self._handle, listOf(width), null)
+    }
   }
 
   fun setCornerDetail(detail: Int) {
-    val _arg = Variant(detail)
-    __method_bind.setCornerDetail.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCornerDetail.call(self._handle, listOf(detail), null)
+    }
   }
 
   fun setCornerRadius(corner: Int, radius: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(corner))
-    _args.add(Variant.fromAny(radius))
-    __method_bind.setCornerRadius.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(corner)
+      _args.add(radius)
+      __method_bind.setCornerRadius.call(self._handle, _args, null)
+    }
   }
 
   fun setCornerRadiusAll(radius: Int) {
-    val _arg = Variant(radius)
-    __method_bind.setCornerRadiusAll.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCornerRadiusAll.call(self._handle, listOf(radius), null)
+    }
   }
 
   fun setCornerRadiusIndividual(
@@ -378,29 +480,39 @@ open class StyleBoxFlat(
     radiusBottomRight: Int,
     radiusBottomLeft: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(radiusTopLeft))
-    _args.add(Variant.fromAny(radiusTopRight))
-    _args.add(Variant.fromAny(radiusBottomRight))
-    _args.add(Variant.fromAny(radiusBottomLeft))
-    __method_bind.setCornerRadiusIndividual.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(radiusTopLeft)
+      _args.add(radiusTopRight)
+      _args.add(radiusBottomRight)
+      _args.add(radiusBottomLeft)
+      __method_bind.setCornerRadiusIndividual.call(self._handle, _args, null)
+    }
   }
 
   fun setDrawCenter(drawCenter: Boolean) {
-    val _arg = Variant(drawCenter)
-    __method_bind.setDrawCenter.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDrawCenter.call(self._handle, listOf(drawCenter), null)
+    }
   }
 
   fun setExpandMargin(margin: Int, size: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(margin))
-    _args.add(Variant.fromAny(size))
-    __method_bind.setExpandMargin.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(margin)
+      _args.add(size)
+      __method_bind.setExpandMargin.call(self._handle, _args, null)
+    }
   }
 
   fun setExpandMarginAll(size: Float) {
-    val _arg = Variant(size)
-    __method_bind.setExpandMarginAll.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setExpandMarginAll.call(self._handle, listOf(size), null)
+    }
   }
 
   fun setExpandMarginIndividual(
@@ -409,27 +521,36 @@ open class StyleBoxFlat(
     sizeRight: Float,
     sizeBottom: Float
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(sizeLeft))
-    _args.add(Variant.fromAny(sizeTop))
-    _args.add(Variant.fromAny(sizeRight))
-    _args.add(Variant.fromAny(sizeBottom))
-    __method_bind.setExpandMarginIndividual.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(sizeLeft)
+      _args.add(sizeTop)
+      _args.add(sizeRight)
+      _args.add(sizeBottom)
+      __method_bind.setExpandMarginIndividual.call(self._handle, _args, null)
+    }
   }
 
   fun setShadowColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setShadowColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setShadowOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setShadowOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setShadowSize(size: Int) {
-    val _arg = Variant(size)
-    __method_bind.setShadowSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowSize.call(self._handle, listOf(size), null)
+    }
   }
 
   companion object {

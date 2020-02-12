@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -13,13 +14,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AnimationNodeBlendSpace2D(
   @Suppress("UNUSED_PARAMETER")
@@ -1212,11 +1221,14 @@ open class AnimationNodeBlendSpace2D(
     pos: Vector2,
     atIndex: Int = -1
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(node))
-    _args.add(Variant.fromAny(pos))
-    _args.add(Variant.fromAny(atIndex))
-    __method_bind.addBlendPoint.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(node)
+      _args.add(pos)
+      _args.add(atIndex)
+      __method_bind.addBlendPoint.call(self._handle, _args, null)
+    }
   }
 
   fun addTriangle(
@@ -1225,136 +1237,229 @@ open class AnimationNodeBlendSpace2D(
     z: Int,
     atIndex: Int = -1
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(x))
-    _args.add(Variant.fromAny(y))
-    _args.add(Variant.fromAny(z))
-    _args.add(Variant.fromAny(atIndex))
-    __method_bind.addTriangle.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(x)
+      _args.add(y)
+      _args.add(z)
+      _args.add(atIndex)
+      __method_bind.addTriangle.call(self._handle, _args, null)
+    }
   }
 
   fun getAutoTriangles(): Boolean {
-    val _ret = __method_bind.getAutoTriangles.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAutoTriangles.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBlendMode(): BlendMode {
-    val _ret = __method_bind.getBlendMode.call(this._handle)
-    return AnimationNodeBlendSpace2D.BlendMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBlendMode.call(self._handle, emptyList(), _retPtr)
+      AnimationNodeBlendSpace2D.BlendMode.from(_ret.value)
+    }
   }
 
   fun getBlendPointCount(): Int {
-    val _ret = __method_bind.getBlendPointCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBlendPointCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBlendPointNode(point: Int): AnimationRootNode {
-    val _arg = Variant(point)
-    val _ret = __method_bind.getBlendPointNode.call(this._handle, listOf(_arg))
-    return _ret.toAny() as AnimationRootNode
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: AnimationRootNode
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getBlendPointNode.call(self._handle, listOf(point), _retPtr)
+      _ret = objectToType<AnimationRootNode>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getBlendPointPosition(point: Int): Vector2 {
-    val _arg = Variant(point)
-    val _ret = __method_bind.getBlendPointPosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBlendPointPosition.call(self._handle, listOf(point), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMaxSpace(): Vector2 {
-    val _ret = __method_bind.getMaxSpace.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMaxSpace.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getMinSpace(): Vector2 {
-    val _ret = __method_bind.getMinSpace.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getMinSpace.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSnap(): Vector2 {
-    val _ret = __method_bind.getSnap.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getSnap.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getTriangleCount(): Int {
-    val _ret = __method_bind.getTriangleCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTriangleCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTrianglePoint(triangle: Int, point: Int): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(triangle))
-    _args.add(Variant.fromAny(point))
-    val _ret = __method_bind.getTrianglePoint.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(triangle)
+      _args.add(point)
+      __method_bind.getTrianglePoint.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getXLabel(): String {
-    val _ret = __method_bind.getXLabel.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getXLabel.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getYLabel(): String {
-    val _ret = __method_bind.getYLabel.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getYLabel.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun removeBlendPoint(point: Int) {
-    val _arg = Variant(point)
-    __method_bind.removeBlendPoint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeBlendPoint.call(self._handle, listOf(point), null)
+    }
   }
 
   fun removeTriangle(triangle: Int) {
-    val _arg = Variant(triangle)
-    __method_bind.removeTriangle.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeTriangle.call(self._handle, listOf(triangle), null)
+    }
   }
 
   fun setAutoTriangles(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setAutoTriangles.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAutoTriangles.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setBlendMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setBlendMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBlendMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   fun setBlendPointNode(point: Int, node: AnimationRootNode) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(point))
-    _args.add(Variant.fromAny(node))
-    __method_bind.setBlendPointNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(point)
+      _args.add(node)
+      __method_bind.setBlendPointNode.call(self._handle, _args, null)
+    }
   }
 
   fun setBlendPointPosition(point: Int, pos: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(point))
-    _args.add(Variant.fromAny(pos))
-    __method_bind.setBlendPointPosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(point)
+      _args.add(pos)
+      __method_bind.setBlendPointPosition.call(self._handle, _args, null)
+    }
   }
 
   fun setMaxSpace(maxSpace: Vector2) {
-    val _arg = Variant(maxSpace)
-    __method_bind.setMaxSpace.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMaxSpace.call(self._handle, listOf(maxSpace), null)
+    }
   }
 
   fun setMinSpace(minSpace: Vector2) {
-    val _arg = Variant(minSpace)
-    __method_bind.setMinSpace.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setMinSpace.call(self._handle, listOf(minSpace), null)
+    }
   }
 
   fun setSnap(snap: Vector2) {
-    val _arg = Variant(snap)
-    __method_bind.setSnap.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSnap.call(self._handle, listOf(snap), null)
+    }
   }
 
   fun setXLabel(text: String) {
-    val _arg = Variant(text)
-    __method_bind.setXLabel.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setXLabel.call(self._handle, listOf(text), null)
+    }
   }
 
   fun setYLabel(text: String) {
-    val _arg = Variant(text)
-    __method_bind.setYLabel.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setYLabel.call(self._handle, listOf(text), null)
+    }
   }
 
   enum class BlendMode(

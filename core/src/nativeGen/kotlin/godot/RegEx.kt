@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class RegEx(
   @Suppress("UNUSED_PARAMETER")
@@ -31,33 +40,62 @@ open class RegEx(
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun compile(pattern: String): GDError {
-    val _arg = Variant(pattern)
-    val _ret = __method_bind.compile.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.compile.call(self._handle, listOf(pattern), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun getGroupCount(): Int {
-    val _ret = __method_bind.getGroupCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGroupCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getNames(): VariantArray {
-    val _ret = __method_bind.getNames.call(this._handle)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNames.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPattern(): String {
-    val _ret = __method_bind.getPattern.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getPattern.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun isValid(): Boolean {
-    val _ret = __method_bind.isValid.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isValid.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun search(
@@ -65,12 +103,19 @@ open class RegEx(
     offset: Int = 0,
     end: Int = -1
   ): RegExMatch {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(subject))
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(end))
-    val _ret = __method_bind.search.call(this._handle, _args)
-    return _ret.toAny() as RegExMatch
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: RegExMatch
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(subject)
+      _args.add(offset)
+      _args.add(end)
+      __method_bind.search.call(self._handle, _args, _retPtr)
+      _ret = objectToType<RegExMatch>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun searchAll(
@@ -78,12 +123,18 @@ open class RegEx(
     offset: Int = 0,
     end: Int = -1
   ): VariantArray {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(subject))
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(end))
-    val _ret = __method_bind.searchAll.call(this._handle, _args)
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(subject)
+      _args.add(offset)
+      _args.add(end)
+      __method_bind.searchAll.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun sub(
@@ -93,14 +144,20 @@ open class RegEx(
     offset: Int = 0,
     end: Int = -1
   ): String {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(subject))
-    _args.add(Variant.fromAny(replacement))
-    _args.add(Variant.fromAny(all))
-    _args.add(Variant.fromAny(offset))
-    _args.add(Variant.fromAny(end))
-    val _ret = __method_bind.sub.call(this._handle, _args)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      val _args = mutableListOf<Any?>()
+      _args.add(subject)
+      _args.add(replacement)
+      _args.add(all)
+      _args.add(offset)
+      _args.add(end)
+      __method_bind.sub.call(self._handle, _args, _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   companion object {

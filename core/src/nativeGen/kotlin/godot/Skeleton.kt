@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.RID
@@ -14,13 +15,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Skeleton(
   @Suppress("UNUSED_PARAMETER")
@@ -33,121 +42,201 @@ open class Skeleton(
   }
 
   fun addBone(name: String) {
-    val _arg = Variant(name)
-    __method_bind.addBone.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addBone.call(self._handle, listOf(name), null)
+    }
   }
 
   fun bindChildNodeToBone(boneIdx: Int, node: Node) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(boneIdx))
-    _args.add(Variant.fromAny(node))
-    __method_bind.bindChildNodeToBone.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(boneIdx)
+      _args.add(node)
+      __method_bind.bindChildNodeToBone.call(self._handle, _args, null)
+    }
   }
 
   fun clearBones() {
-    __method_bind.clearBones.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clearBones.call(self._handle, emptyList(), null)
+    }
   }
 
   fun findBone(name: String): Int {
-    val _arg = Variant(name)
-    val _ret = __method_bind.findBone.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.findBone.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBoneCount(): Int {
-    val _ret = __method_bind.getBoneCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBoneCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBoneCustomPose(boneIdx: Int): Transform {
-    val _arg = Variant(boneIdx)
-    val _ret = __method_bind.getBoneCustomPose.call(this._handle, listOf(_arg))
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBoneCustomPose.call(self._handle, listOf(boneIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBoneGlobalPose(boneIdx: Int): Transform {
-    val _arg = Variant(boneIdx)
-    val _ret = __method_bind.getBoneGlobalPose.call(this._handle, listOf(_arg))
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBoneGlobalPose.call(self._handle, listOf(boneIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBoneName(boneIdx: Int): String {
-    val _arg = Variant(boneIdx)
-    val _ret = __method_bind.getBoneName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getBoneName.call(self._handle, listOf(boneIdx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getBoneParent(boneIdx: Int): Int {
-    val _arg = Variant(boneIdx)
-    val _ret = __method_bind.getBoneParent.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBoneParent.call(self._handle, listOf(boneIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getBonePose(boneIdx: Int): Transform {
-    val _arg = Variant(boneIdx)
-    val _ret = __method_bind.getBonePose.call(this._handle, listOf(_arg))
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBonePose.call(self._handle, listOf(boneIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBoneRest(boneIdx: Int): Transform {
-    val _arg = Variant(boneIdx)
-    val _ret = __method_bind.getBoneRest.call(this._handle, listOf(_arg))
-    return _ret.asTransform()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBoneRest.call(self._handle, listOf(boneIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getBoundChildNodesToBone(boneIdx: Int): VariantArray {
-    val _arg = Variant(boneIdx)
-    val _ret = __method_bind.getBoundChildNodesToBone.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getBoundChildNodesToBone.call(self._handle, listOf(boneIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun isBoneRestDisabled(boneIdx: Int): Boolean {
-    val _arg = Variant(boneIdx)
-    val _ret = __method_bind.isBoneRestDisabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isBoneRestDisabled.call(self._handle, listOf(boneIdx), _retPtr)
+      _ret.value
+    }
   }
 
   fun localizeRests() {
-    __method_bind.localizeRests.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.localizeRests.call(self._handle, emptyList(), null)
+    }
   }
 
   fun physicalBonesAddCollisionException(exception: RID) {
-    val _arg = Variant(exception)
-    __method_bind.physicalBonesAddCollisionException.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.physicalBonesAddCollisionException.call(self._handle, listOf(exception), null)
+    }
   }
 
   fun physicalBonesRemoveCollisionException(exception: RID) {
-    val _arg = Variant(exception)
-    __method_bind.physicalBonesRemoveCollisionException.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.physicalBonesRemoveCollisionException.call(self._handle, listOf(exception),
+          null)
+    }
   }
 
   fun physicalBonesStartSimulation(bones: VariantArray) {
-    val _arg = Variant(bones)
-    __method_bind.physicalBonesStartSimulation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.physicalBonesStartSimulation.call(self._handle, listOf(bones), null)
+    }
   }
 
   fun physicalBonesStopSimulation() {
-    __method_bind.physicalBonesStopSimulation.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.physicalBonesStopSimulation.call(self._handle, emptyList(), null)
+    }
   }
 
   fun registerSkin(skin: Skin): SkinReference {
-    val _arg = Variant(skin)
-    val _ret = __method_bind.registerSkin.call(this._handle, listOf(_arg))
-    return _ret.toAny() as SkinReference
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: SkinReference
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.registerSkin.call(self._handle, listOf(skin), _retPtr)
+      _ret = objectToType<SkinReference>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun setBoneCustomPose(boneIdx: Int, customPose: Transform) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(boneIdx))
-    _args.add(Variant.fromAny(customPose))
-    __method_bind.setBoneCustomPose.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(boneIdx)
+      _args.add(customPose)
+      __method_bind.setBoneCustomPose.call(self._handle, _args, null)
+    }
   }
 
   fun setBoneDisableRest(boneIdx: Int, disable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(boneIdx))
-    _args.add(Variant.fromAny(disable))
-    __method_bind.setBoneDisableRest.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(boneIdx)
+      _args.add(disable)
+      __method_bind.setBoneDisableRest.call(self._handle, _args, null)
+    }
   }
 
   fun setBoneGlobalPoseOverride(
@@ -156,45 +245,62 @@ open class Skeleton(
     amount: Float,
     persistent: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(boneIdx))
-    _args.add(Variant.fromAny(pose))
-    _args.add(Variant.fromAny(amount))
-    _args.add(Variant.fromAny(persistent))
-    __method_bind.setBoneGlobalPoseOverride.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(boneIdx)
+      _args.add(pose)
+      _args.add(amount)
+      _args.add(persistent)
+      __method_bind.setBoneGlobalPoseOverride.call(self._handle, _args, null)
+    }
   }
 
   fun setBoneParent(boneIdx: Int, parentIdx: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(boneIdx))
-    _args.add(Variant.fromAny(parentIdx))
-    __method_bind.setBoneParent.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(boneIdx)
+      _args.add(parentIdx)
+      __method_bind.setBoneParent.call(self._handle, _args, null)
+    }
   }
 
   fun setBonePose(boneIdx: Int, pose: Transform) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(boneIdx))
-    _args.add(Variant.fromAny(pose))
-    __method_bind.setBonePose.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(boneIdx)
+      _args.add(pose)
+      __method_bind.setBonePose.call(self._handle, _args, null)
+    }
   }
 
   fun setBoneRest(boneIdx: Int, rest: Transform) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(boneIdx))
-    _args.add(Variant.fromAny(rest))
-    __method_bind.setBoneRest.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(boneIdx)
+      _args.add(rest)
+      __method_bind.setBoneRest.call(self._handle, _args, null)
+    }
   }
 
   fun unbindChildNodeFromBone(boneIdx: Int, node: Node) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(boneIdx))
-    _args.add(Variant.fromAny(node))
-    __method_bind.unbindChildNodeFromBone.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(boneIdx)
+      _args.add(node)
+      __method_bind.unbindChildNodeFromBone.call(self._handle, _args, null)
+    }
   }
 
   fun unparentBoneAndRest(boneIdx: Int) {
-    val _arg = Variant(boneIdx)
-    __method_bind.unparentBoneAndRest.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.unparentBoneAndRest.call(self._handle, listOf(boneIdx), null)
+    }
   }
 
   companion object {

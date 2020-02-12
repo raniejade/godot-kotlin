@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class AnimationNodeStateMachine(
   @Suppress("UNUSED_PARAMETER")
@@ -35,11 +44,14 @@ open class AnimationNodeStateMachine(
     node: AnimationNode,
     position: Vector2 = Vector2(0, 0)
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(node))
-    _args.add(Variant.fromAny(position))
-    __method_bind.addNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(node)
+      _args.add(position)
+      __method_bind.addNode.call(self._handle, _args, null)
+    }
   }
 
   fun addTransition(
@@ -47,127 +59,213 @@ open class AnimationNodeStateMachine(
     to: String,
     transition: AnimationNodeStateMachineTransition
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    _args.add(Variant.fromAny(transition))
-    __method_bind.addTransition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      _args.add(transition)
+      __method_bind.addTransition.call(self._handle, _args, null)
+    }
   }
 
   fun getEndNode(): String {
-    val _ret = __method_bind.getEndNode.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getEndNode.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getGraphOffset(): Vector2 {
-    val _ret = __method_bind.getGraphOffset.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGraphOffset.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getNode(name: String): AnimationNode {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getNode.call(this._handle, listOf(_arg))
-    return _ret.toAny() as AnimationNode
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: AnimationNode
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getNode.call(self._handle, listOf(name), _retPtr)
+      _ret = objectToType<AnimationNode>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getNodeName(node: AnimationNode): String {
-    val _arg = Variant(node)
-    val _ret = __method_bind.getNodeName.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getNodeName.call(self._handle, listOf(node), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getNodePosition(name: String): Vector2 {
-    val _arg = Variant(name)
-    val _ret = __method_bind.getNodePosition.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getNodePosition.call(self._handle, listOf(name), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getStartNode(): String {
-    val _ret = __method_bind.getStartNode.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getStartNode.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getTransition(idx: Int): AnimationNodeStateMachineTransition {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getTransition.call(this._handle, listOf(_arg))
-    return _ret.toAny() as AnimationNodeStateMachineTransition
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: AnimationNodeStateMachineTransition
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTransition.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<AnimationNodeStateMachineTransition>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTransitionCount(): Int {
-    val _ret = __method_bind.getTransitionCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTransitionCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTransitionFrom(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getTransitionFrom.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getTransitionFrom.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getTransitionTo(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getTransitionTo.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getTransitionTo.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun hasNode(name: String): Boolean {
-    val _arg = Variant(name)
-    val _ret = __method_bind.hasNode.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasNode.call(self._handle, listOf(name), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasTransition(from: String, to: String): Boolean {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    val _ret = __method_bind.hasTransition.call(this._handle, _args)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      __method_bind.hasTransition.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun removeNode(name: String) {
-    val _arg = Variant(name)
-    __method_bind.removeNode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeNode.call(self._handle, listOf(name), null)
+    }
   }
 
   fun removeTransition(from: String, to: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(from))
-    _args.add(Variant.fromAny(to))
-    __method_bind.removeTransition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(from)
+      _args.add(to)
+      __method_bind.removeTransition.call(self._handle, _args, null)
+    }
   }
 
   fun removeTransitionByIndex(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.removeTransitionByIndex.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeTransitionByIndex.call(self._handle, listOf(idx), null)
+    }
   }
 
   fun renameNode(name: String, newName: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(newName))
-    __method_bind.renameNode.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(newName)
+      __method_bind.renameNode.call(self._handle, _args, null)
+    }
   }
 
   fun setEndNode(name: String) {
-    val _arg = Variant(name)
-    __method_bind.setEndNode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEndNode.call(self._handle, listOf(name), null)
+    }
   }
 
   fun setGraphOffset(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.setGraphOffset.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGraphOffset.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun setNodePosition(name: String, position: Vector2) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(position))
-    __method_bind.setNodePosition.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(name)
+      _args.add(position)
+      __method_bind.setNodePosition.call(self._handle, _args, null)
+    }
   }
 
   fun setStartNode(name: String) {
-    val _arg = Variant(name)
-    __method_bind.setStartNode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStartNode.call(self._handle, listOf(name), null)
+    }
   }
 
   companion object {

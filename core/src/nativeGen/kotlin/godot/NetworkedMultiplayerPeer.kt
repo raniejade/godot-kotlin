@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class NetworkedMultiplayerPeer(
   @Suppress("UNUSED_PARAMETER")
@@ -71,47 +80,81 @@ open class NetworkedMultiplayerPeer(
   }
 
   fun getConnectionStatus(): ConnectionStatus {
-    val _ret = __method_bind.getConnectionStatus.call(this._handle)
-    return NetworkedMultiplayerPeer.ConnectionStatus.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getConnectionStatus.call(self._handle, emptyList(), _retPtr)
+      NetworkedMultiplayerPeer.ConnectionStatus.from(_ret.value)
+    }
   }
 
   fun getPacketPeer(): Int {
-    val _ret = __method_bind.getPacketPeer.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getPacketPeer.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getTransferMode(): TransferMode {
-    val _ret = __method_bind.getTransferMode.call(this._handle)
-    return NetworkedMultiplayerPeer.TransferMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTransferMode.call(self._handle, emptyList(), _retPtr)
+      NetworkedMultiplayerPeer.TransferMode.from(_ret.value)
+    }
   }
 
   fun getUniqueId(): Int {
-    val _ret = __method_bind.getUniqueId.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getUniqueId.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRefusingNewConnections(): Boolean {
-    val _ret = __method_bind.isRefusingNewConnections.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRefusingNewConnections.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun poll() {
-    __method_bind.poll.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.poll.call(self._handle, emptyList(), null)
+    }
   }
 
   fun setRefuseNewConnections(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setRefuseNewConnections.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRefuseNewConnections.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setTargetPeer(id: Int) {
-    val _arg = Variant(id)
-    __method_bind.setTargetPeer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTargetPeer.call(self._handle, listOf(id), null)
+    }
   }
 
   fun setTransferMode(mode: Int) {
-    val _arg = Variant(mode)
-    __method_bind.setTransferMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTransferMode.call(self._handle, listOf(mode), null)
+    }
   }
 
   enum class ConnectionStatus(

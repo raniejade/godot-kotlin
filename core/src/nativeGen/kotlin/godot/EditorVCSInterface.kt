@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.Godot
@@ -11,13 +12,21 @@ import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorVCSInterface(
   @Suppress("UNUSED_PARAMETER")
@@ -30,60 +39,108 @@ open class EditorVCSInterface(
   }
 
   fun commit(msg: String) {
-    val _arg = Variant(msg)
-    __method_bind.commit.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.commit.call(self._handle, listOf(msg), null)
+    }
   }
 
   fun getFileDiff(filePath: String): VariantArray {
-    val _arg = Variant(filePath)
-    val _ret = __method_bind.getFileDiff.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFileDiff.call(self._handle, listOf(filePath), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getModifiedFilesData(): Dictionary {
-    val _ret = __method_bind.getModifiedFilesData.call(this._handle)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getModifiedFilesData.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getProjectName(): String {
-    val _ret = __method_bind.getProjectName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getProjectName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getVcsName(): String {
-    val _ret = __method_bind.getVcsName.call(this._handle)
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getVcsName.call(self._handle, emptyList(), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun initialize(projectRootPath: String): Boolean {
-    val _arg = Variant(projectRootPath)
-    val _ret = __method_bind.initialize.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.initialize.call(self._handle, listOf(projectRootPath), _retPtr)
+      _ret.value
+    }
   }
 
   fun isAddonReady(): Boolean {
-    val _ret = __method_bind.isAddonReady.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAddonReady.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isVcsInitialized(): Boolean {
-    val _ret = __method_bind.isVcsInitialized.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isVcsInitialized.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun shutDown(): Boolean {
-    val _ret = __method_bind.shutDown.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.shutDown.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun stageFile(filePath: String) {
-    val _arg = Variant(filePath)
-    __method_bind.stageFile.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.stageFile.call(self._handle, listOf(filePath), null)
+    }
   }
 
   fun unstageFile(filePath: String) {
-    val _arg = Variant(filePath)
-    __method_bind.unstageFile.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.unstageFile.call(self._handle, listOf(filePath), null)
+    }
   }
 
   companion object {

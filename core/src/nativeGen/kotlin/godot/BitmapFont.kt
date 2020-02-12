@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class BitmapFont(
   @Suppress("UNUSED_PARAMETER")
@@ -72,13 +81,16 @@ open class BitmapFont(
     align: Vector2 = Vector2(0, 0),
     advance: Float = -1.0f
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(character))
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(rect))
-    _args.add(Variant.fromAny(align))
-    _args.add(Variant.fromAny(advance))
-    __method_bind.addChar.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(character)
+      _args.add(texture)
+      _args.add(rect)
+      _args.add(align)
+      _args.add(advance)
+      __method_bind.addChar.call(self._handle, _args, null)
+    }
   }
 
   fun addKerningPair(
@@ -86,78 +98,127 @@ open class BitmapFont(
     charB: Int,
     kerning: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(charA))
-    _args.add(Variant.fromAny(charB))
-    _args.add(Variant.fromAny(kerning))
-    __method_bind.addKerningPair.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(charA)
+      _args.add(charB)
+      _args.add(kerning)
+      __method_bind.addKerningPair.call(self._handle, _args, null)
+    }
   }
 
   fun addTexture(texture: Texture) {
-    val _arg = Variant(texture)
-    __method_bind.addTexture.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addTexture.call(self._handle, listOf(texture), null)
+    }
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun createFromFnt(path: String): GDError {
-    val _arg = Variant(path)
-    val _ret = __method_bind.createFromFnt.call(this._handle, listOf(_arg))
-    return GDError.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.createFromFnt.call(self._handle, listOf(path), _retPtr)
+      GDError.from(_ret.value)
+    }
   }
 
   fun getCharSize(char: Int, next: Int = 0): Vector2 {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(char))
-    _args.add(Variant.fromAny(next))
-    val _ret = __method_bind.getCharSize.call(this._handle, _args)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(char)
+      _args.add(next)
+      __method_bind.getCharSize.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFallback(): BitmapFont {
-    val _ret = __method_bind.getFallback.call(this._handle)
-    return _ret.toAny() as BitmapFont
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: BitmapFont
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getFallback.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<BitmapFont>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getKerningPair(charA: Int, charB: Int): Int {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(charA))
-    _args.add(Variant.fromAny(charB))
-    val _ret = __method_bind.getKerningPair.call(this._handle, _args)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(charA)
+      _args.add(charB)
+      __method_bind.getKerningPair.call(self._handle, _args, _retPtr)
+      _ret.value
+    }
   }
 
   fun getTexture(idx: Int): Texture {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getTexture.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getTexture.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getTextureCount(): Int {
-    val _ret = __method_bind.getTextureCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getTextureCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAscent(px: Float) {
-    val _arg = Variant(px)
-    __method_bind.setAscent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAscent.call(self._handle, listOf(px), null)
+    }
   }
 
   fun setDistanceFieldHint(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setDistanceFieldHint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setDistanceFieldHint.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setFallback(fallback: BitmapFont) {
-    val _arg = Variant(fallback)
-    __method_bind.setFallback.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFallback.call(self._handle, listOf(fallback), null)
+    }
   }
 
   fun setHeight(px: Float) {
-    val _arg = Variant(px)
-    __method_bind.setHeight.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHeight.call(self._handle, listOf(px), null)
+    }
   }
 
   companion object {

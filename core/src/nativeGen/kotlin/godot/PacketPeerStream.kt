@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class PacketPeerStream(
   @Suppress("UNUSED_PARAMETER")
@@ -53,33 +62,56 @@ open class PacketPeerStream(
   }
 
   fun getInputBufferMaxSize(): Int {
-    val _ret = __method_bind.getInputBufferMaxSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getInputBufferMaxSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getOutputBufferMaxSize(): Int {
-    val _ret = __method_bind.getOutputBufferMaxSize.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getOutputBufferMaxSize.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getStreamPeer(): StreamPeer {
-    val _ret = __method_bind.getStreamPeer.call(this._handle)
-    return _ret.toAny() as StreamPeer
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: StreamPeer
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getStreamPeer.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<StreamPeer>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun setInputBufferMaxSize(maxSizeBytes: Int) {
-    val _arg = Variant(maxSizeBytes)
-    __method_bind.setInputBufferMaxSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setInputBufferMaxSize.call(self._handle, listOf(maxSizeBytes), null)
+    }
   }
 
   fun setOutputBufferMaxSize(maxSizeBytes: Int) {
-    val _arg = Variant(maxSizeBytes)
-    __method_bind.setOutputBufferMaxSize.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setOutputBufferMaxSize.call(self._handle, listOf(maxSizeBytes), null)
+    }
   }
 
   fun setStreamPeer(peer: StreamPeer) {
-    val _arg = Variant(peer)
-    __method_bind.setStreamPeer.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setStreamPeer.call(self._handle, listOf(peer), null)
+    }
   }
 
   companion object {

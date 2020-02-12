@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Dictionary
 import godot.core.Godot
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class JSONRPC(
   @Suppress("UNUSED_PARAMETER")
@@ -31,11 +40,17 @@ open class JSONRPC(
   }
 
   fun makeNotification(method: String, params: Variant): Dictionary {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(params))
-    val _ret = __method_bind.makeNotification.call(this._handle, _args)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(method)
+      _args.add(params)
+      __method_bind.makeNotification.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun makeRequest(
@@ -43,20 +58,32 @@ open class JSONRPC(
     params: Variant,
     id: Variant
   ): Dictionary {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(method))
-    _args.add(Variant.fromAny(params))
-    _args.add(Variant.fromAny(id))
-    val _ret = __method_bind.makeRequest.call(this._handle, _args)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(method)
+      _args.add(params)
+      _args.add(id)
+      __method_bind.makeRequest.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun makeResponse(result: Variant, id: Variant): Dictionary {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(result))
-    _args.add(Variant.fromAny(id))
-    val _ret = __method_bind.makeResponse.call(this._handle, _args)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(result)
+      _args.add(id)
+      __method_bind.makeResponse.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun makeResponseError(
@@ -64,33 +91,53 @@ open class JSONRPC(
     message: String,
     id: Variant
   ): Dictionary {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(code))
-    _args.add(Variant.fromAny(message))
-    _args.add(Variant.fromAny(id))
-    val _ret = __method_bind.makeResponseError.call(this._handle, _args)
-    return _ret.asDictionary()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Dictionary()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(code)
+      _args.add(message)
+      _args.add(id)
+      __method_bind.makeResponseError.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun processAction(action: Variant, recurse: Boolean = false): Variant {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(action))
-    _args.add(Variant.fromAny(recurse))
-    val _ret = __method_bind.processAction.call(this._handle, _args)
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(action)
+      _args.add(recurse)
+      __method_bind.processAction.call(self._handle, _args, _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun processString(action: String): String {
-    val _arg = Variant(action)
-    val _ret = __method_bind.processString.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.processString.call(self._handle, listOf(action), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun setScope(scope: String, target: Object) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(scope))
-    _args.add(Variant.fromAny(target))
-    __method_bind.setScope.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(scope)
+      _args.add(target)
+      __method_bind.setScope.call(self._handle, _args, null)
+    }
   }
 
   enum class ErrorCode(

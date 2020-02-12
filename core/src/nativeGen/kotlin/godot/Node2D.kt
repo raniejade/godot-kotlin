@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Transform2D
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Node2D(
   @Suppress("UNUSED_PARAMETER")
@@ -184,176 +193,289 @@ open class Node2D(
   }
 
   fun applyScale(ratio: Vector2) {
-    val _arg = Variant(ratio)
-    __method_bind.applyScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.applyScale.call(self._handle, listOf(ratio), null)
+    }
   }
 
   fun getAngleTo(point: Vector2): Float {
-    val _arg = Variant(point)
-    val _ret = __method_bind.getAngleTo.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAngleTo.call(self._handle, listOf(point), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGlobalPosition(): Vector2 {
-    val _ret = __method_bind.getGlobalPosition.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGlobalPosition.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getGlobalRotation(): Float {
-    val _ret = __method_bind.getGlobalRotation.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGlobalRotation.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGlobalRotationDegrees(): Float {
-    val _ret = __method_bind.getGlobalRotationDegrees.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getGlobalRotationDegrees.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getGlobalScale(): Vector2 {
-    val _ret = __method_bind.getGlobalScale.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getGlobalScale.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.getPosition.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getPosition.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRelativeTransformToParent(parent: Node): Transform2D {
-    val _arg = Variant(parent)
-    val _ret = __method_bind.getRelativeTransformToParent.call(this._handle, listOf(_arg))
-    return _ret.asTransform2D()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Transform2D()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getRelativeTransformToParent.call(self._handle, listOf(parent), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getRotation(): Float {
-    val _ret = __method_bind.getRotation.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRotation.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getRotationDegrees(): Float {
-    val _ret = __method_bind.getRotationDegrees.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getRotationDegrees.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getScale(): Vector2 {
-    val _ret = __method_bind.getScale.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getScale.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getZIndex(): Int {
-    val _ret = __method_bind.getZIndex.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getZIndex.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun globalTranslate(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.globalTranslate.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.globalTranslate.call(self._handle, listOf(offset), null)
+    }
   }
 
   fun isZRelative(): Boolean {
-    val _ret = __method_bind.isZRelative.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isZRelative.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun lookAt(point: Vector2) {
-    val _arg = Variant(point)
-    __method_bind.lookAt.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.lookAt.call(self._handle, listOf(point), null)
+    }
   }
 
   fun moveLocalX(delta: Float, scaled: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(delta))
-    _args.add(Variant.fromAny(scaled))
-    __method_bind.moveLocalX.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(delta)
+      _args.add(scaled)
+      __method_bind.moveLocalX.call(self._handle, _args, null)
+    }
   }
 
   fun moveLocalY(delta: Float, scaled: Boolean = false) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(delta))
-    _args.add(Variant.fromAny(scaled))
-    __method_bind.moveLocalY.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(delta)
+      _args.add(scaled)
+      __method_bind.moveLocalY.call(self._handle, _args, null)
+    }
   }
 
   fun rotate(radians: Float) {
-    val _arg = Variant(radians)
-    __method_bind.rotate.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.rotate.call(self._handle, listOf(radians), null)
+    }
   }
 
   fun setGlobalPosition(position: Vector2) {
-    val _arg = Variant(position)
-    __method_bind.setGlobalPosition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlobalPosition.call(self._handle, listOf(position), null)
+    }
   }
 
   fun setGlobalRotation(radians: Float) {
-    val _arg = Variant(radians)
-    __method_bind.setGlobalRotation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlobalRotation.call(self._handle, listOf(radians), null)
+    }
   }
 
   fun setGlobalRotationDegrees(degrees: Float) {
-    val _arg = Variant(degrees)
-    __method_bind.setGlobalRotationDegrees.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlobalRotationDegrees.call(self._handle, listOf(degrees), null)
+    }
   }
 
   fun setGlobalScale(scale: Vector2) {
-    val _arg = Variant(scale)
-    __method_bind.setGlobalScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlobalScale.call(self._handle, listOf(scale), null)
+    }
   }
 
   fun setGlobalTransform(xform: Transform2D) {
-    val _arg = Variant(xform)
-    __method_bind.setGlobalTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setGlobalTransform.call(self._handle, listOf(xform), null)
+    }
   }
 
   fun setPosition(position: Vector2) {
-    val _arg = Variant(position)
-    __method_bind.setPosition.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setPosition.call(self._handle, listOf(position), null)
+    }
   }
 
   fun setRotation(radians: Float) {
-    val _arg = Variant(radians)
-    __method_bind.setRotation.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRotation.call(self._handle, listOf(radians), null)
+    }
   }
 
   fun setRotationDegrees(degrees: Float) {
-    val _arg = Variant(degrees)
-    __method_bind.setRotationDegrees.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRotationDegrees.call(self._handle, listOf(degrees), null)
+    }
   }
 
   fun setScale(scale: Vector2) {
-    val _arg = Variant(scale)
-    __method_bind.setScale.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setScale.call(self._handle, listOf(scale), null)
+    }
   }
 
   fun setTransform(xform: Transform2D) {
-    val _arg = Variant(xform)
-    __method_bind.setTransform.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setTransform.call(self._handle, listOf(xform), null)
+    }
   }
 
   fun setZAsRelative(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setZAsRelative.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setZAsRelative.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setZIndex(zIndex: Int) {
-    val _arg = Variant(zIndex)
-    __method_bind.setZIndex.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setZIndex.call(self._handle, listOf(zIndex), null)
+    }
   }
 
   fun toGlobal(localPoint: Vector2): Vector2 {
-    val _arg = Variant(localPoint)
-    val _ret = __method_bind.toGlobal.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.toGlobal.call(self._handle, listOf(localPoint), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun toLocal(globalPoint: Vector2): Vector2 {
-    val _arg = Variant(globalPoint)
-    val _ret = __method_bind.toLocal.call(this._handle, listOf(_arg))
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.toLocal.call(self._handle, listOf(globalPoint), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun translate(offset: Vector2) {
-    val _arg = Variant(offset)
-    __method_bind.translate.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.translate.call(self._handle, listOf(offset), null)
+    }
   }
 
   companion object {

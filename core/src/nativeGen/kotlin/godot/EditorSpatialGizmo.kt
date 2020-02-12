@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -13,13 +14,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class EditorSpatialGizmo(
   @Suppress("UNUSED_PARAMETER")
@@ -32,13 +41,17 @@ open class EditorSpatialGizmo(
   }
 
   fun addCollisionSegments(segments: PoolVector3Array) {
-    val _arg = Variant(segments)
-    __method_bind.addCollisionSegments.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addCollisionSegments.call(self._handle, listOf(segments), null)
+    }
   }
 
   fun addCollisionTriangles(triangles: TriangleMesh) {
-    val _arg = Variant(triangles)
-    __method_bind.addCollisionTriangles.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addCollisionTriangles.call(self._handle, listOf(triangles), null)
+    }
   }
 
   fun addHandles(
@@ -47,12 +60,15 @@ open class EditorSpatialGizmo(
     billboard: Boolean = false,
     secondary: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(handles))
-    _args.add(Variant.fromAny(material))
-    _args.add(Variant.fromAny(billboard))
-    _args.add(Variant.fromAny(secondary))
-    __method_bind.addHandles.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(handles)
+      _args.add(material)
+      _args.add(billboard)
+      _args.add(secondary)
+      __method_bind.addHandles.call(self._handle, _args, null)
+    }
   }
 
   fun addLines(
@@ -61,12 +77,15 @@ open class EditorSpatialGizmo(
     billboard: Boolean = false,
     modulate: Color = Color(1,1,1,1)
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(lines))
-    _args.add(Variant.fromAny(material))
-    _args.add(Variant.fromAny(billboard))
-    _args.add(Variant.fromAny(modulate))
-    __method_bind.addLines.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(lines)
+      _args.add(material)
+      _args.add(billboard)
+      _args.add(modulate)
+      __method_bind.addLines.call(self._handle, _args, null)
+    }
   }
 
   fun addMesh(
@@ -75,12 +94,15 @@ open class EditorSpatialGizmo(
     skeleton: SkinReference,
     material: Material
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(mesh))
-    _args.add(Variant.fromAny(billboard))
-    _args.add(Variant.fromAny(skeleton))
-    _args.add(Variant.fromAny(material))
-    __method_bind.addMesh.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(mesh)
+      _args.add(billboard)
+      _args.add(skeleton)
+      _args.add(material)
+      __method_bind.addMesh.call(self._handle, _args, null)
+    }
   }
 
   fun addUnscaledBillboard(
@@ -88,35 +110,59 @@ open class EditorSpatialGizmo(
     defaultScale: Float = 1.0f,
     modulate: Color = Color(1,1,1,1)
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(material))
-    _args.add(Variant.fromAny(defaultScale))
-    _args.add(Variant.fromAny(modulate))
-    __method_bind.addUnscaledBillboard.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(material)
+      _args.add(defaultScale)
+      _args.add(modulate)
+      __method_bind.addUnscaledBillboard.call(self._handle, _args, null)
+    }
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getPlugin(): EditorSpatialGizmoPlugin {
-    val _ret = __method_bind.getPlugin.call(this._handle)
-    return _ret.toAny() as EditorSpatialGizmoPlugin
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: EditorSpatialGizmoPlugin
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getPlugin.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<EditorSpatialGizmoPlugin>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getSpatialNode(): Spatial {
-    val _ret = __method_bind.getSpatialNode.call(this._handle)
-    return _ret.toAny() as Spatial
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Spatial
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getSpatialNode.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Spatial>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun setHidden(hidden: Boolean) {
-    val _arg = Variant(hidden)
-    __method_bind.setHidden.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHidden.call(self._handle, listOf(hidden), null)
+    }
   }
 
   fun setSpatialNode(node: Node) {
-    val _arg = Variant(node)
-    __method_bind.setSpatialNode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSpatialNode.call(self._handle, listOf(node), null)
+    }
   }
 
   companion object {

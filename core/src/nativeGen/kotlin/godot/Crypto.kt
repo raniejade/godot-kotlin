@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.PoolByteArray
@@ -11,13 +12,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Crypto(
   @Suppress("UNUSED_PARAMETER")
@@ -30,15 +39,26 @@ open class Crypto(
   }
 
   fun generateRandomBytes(size: Int): PoolByteArray {
-    val _arg = Variant(size)
-    val _ret = __method_bind.generateRandomBytes.call(this._handle, listOf(_arg))
-    return _ret.asPoolByteArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolByteArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.generateRandomBytes.call(self._handle, listOf(size), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun generateRsa(size: Int): CryptoKey {
-    val _arg = Variant(size)
-    val _ret = __method_bind.generateRsa.call(this._handle, listOf(_arg))
-    return _ret.toAny() as CryptoKey
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: CryptoKey
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.generateRsa.call(self._handle, listOf(size), _retPtr)
+      _ret = objectToType<CryptoKey>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun generateSelfSignedCertificate(
@@ -47,13 +67,20 @@ open class Crypto(
     notBefore: String = "20140101000000",
     notAfter: String = "20340101000000"
   ): X509Certificate {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(key))
-    _args.add(Variant.fromAny(issuerName))
-    _args.add(Variant.fromAny(notBefore))
-    _args.add(Variant.fromAny(notAfter))
-    val _ret = __method_bind.generateSelfSignedCertificate.call(this._handle, _args)
-    return _ret.toAny() as X509Certificate
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: X509Certificate
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      val _args = mutableListOf<Any?>()
+      _args.add(key)
+      _args.add(issuerName)
+      _args.add(notBefore)
+      _args.add(notAfter)
+      __method_bind.generateSelfSignedCertificate.call(self._handle, _args, _retPtr)
+      _ret = objectToType<X509Certificate>(_tmp.value!!)
+      _ret
+    }
   }
 
   companion object {

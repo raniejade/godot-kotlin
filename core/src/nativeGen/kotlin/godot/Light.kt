@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
@@ -14,13 +15,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Light(
   @Suppress("UNUSED_PARAMETER")
@@ -155,96 +164,161 @@ open class Light(
   }
 
   fun getBakeMode(): BakeMode {
-    val _ret = __method_bind.getBakeMode.call(this._handle)
-    return Light.BakeMode.from(_ret.asInt())
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBakeMode.call(self._handle, emptyList(), _retPtr)
+      Light.BakeMode.from(_ret.value)
+    }
   }
 
   fun getColor(): Color {
-    val _ret = __method_bind.getColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getCullMask(): Int {
-    val _ret = __method_bind.getCullMask.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getCullMask.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getParam(param: Int): Float {
-    val _arg = Variant(param)
-    val _ret = __method_bind.getParam.call(this._handle, listOf(_arg))
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getParam.call(self._handle, listOf(param), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getShadowColor(): Color {
-    val _ret = __method_bind.getShadowColor.call(this._handle)
-    return _ret.asColor()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Color()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getShadowColor.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getShadowReverseCullFace(): Boolean {
-    val _ret = __method_bind.getShadowReverseCullFace.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getShadowReverseCullFace.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun hasShadow(): Boolean {
-    val _ret = __method_bind.hasShadow.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.hasShadow.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isEditorOnly(): Boolean {
-    val _ret = __method_bind.isEditorOnly.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isEditorOnly.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isNegative(): Boolean {
-    val _ret = __method_bind.isNegative.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isNegative.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setBakeMode(bakeMode: Int) {
-    val _arg = Variant(bakeMode)
-    __method_bind.setBakeMode.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBakeMode.call(self._handle, listOf(bakeMode), null)
+    }
   }
 
   fun setColor(color: Color) {
-    val _arg = Variant(color)
-    __method_bind.setColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setColor.call(self._handle, listOf(color), null)
+    }
   }
 
   fun setCullMask(cullMask: Int) {
-    val _arg = Variant(cullMask)
-    __method_bind.setCullMask.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setCullMask.call(self._handle, listOf(cullMask), null)
+    }
   }
 
   fun setEditorOnly(editorOnly: Boolean) {
-    val _arg = Variant(editorOnly)
-    __method_bind.setEditorOnly.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setEditorOnly.call(self._handle, listOf(editorOnly), null)
+    }
   }
 
   fun setNegative(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setNegative.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setNegative.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setParam(param: Int, value: Float) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(param))
-    _args.add(Variant.fromAny(value))
-    __method_bind.setParam.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(param)
+      _args.add(value)
+      __method_bind.setParam.call(self._handle, _args, null)
+    }
   }
 
   fun setShadow(enabled: Boolean) {
-    val _arg = Variant(enabled)
-    __method_bind.setShadow.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadow.call(self._handle, listOf(enabled), null)
+    }
   }
 
   fun setShadowColor(shadowColor: Color) {
-    val _arg = Variant(shadowColor)
-    __method_bind.setShadowColor.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowColor.call(self._handle, listOf(shadowColor), null)
+    }
   }
 
   fun setShadowReverseCullFace(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setShadowReverseCullFace.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setShadowReverseCullFace.call(self._handle, listOf(enable), null)
+    }
   }
 
   enum class BakeMode(

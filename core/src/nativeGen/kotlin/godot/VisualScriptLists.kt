@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -10,13 +11,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class VisualScriptLists(
   @Suppress("UNUSED_PARAMETER")
@@ -33,11 +42,14 @@ open class VisualScriptLists(
     name: String,
     index: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(index))
-    __method_bind.addInputDataPort.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(name)
+      _args.add(index)
+      __method_bind.addInputDataPort.call(self._handle, _args, null)
+    }
   }
 
   fun addOutputDataPort(
@@ -45,49 +57,68 @@ open class VisualScriptLists(
     name: String,
     index: Int
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(type))
-    _args.add(Variant.fromAny(name))
-    _args.add(Variant.fromAny(index))
-    __method_bind.addOutputDataPort.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(type)
+      _args.add(name)
+      _args.add(index)
+      __method_bind.addOutputDataPort.call(self._handle, _args, null)
+    }
   }
 
   fun removeInputDataPort(index: Int) {
-    val _arg = Variant(index)
-    __method_bind.removeInputDataPort.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeInputDataPort.call(self._handle, listOf(index), null)
+    }
   }
 
   fun removeOutputDataPort(index: Int) {
-    val _arg = Variant(index)
-    __method_bind.removeOutputDataPort.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeOutputDataPort.call(self._handle, listOf(index), null)
+    }
   }
 
   fun setInputDataPortName(index: Int, name: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(name))
-    __method_bind.setInputDataPortName.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(name)
+      __method_bind.setInputDataPortName.call(self._handle, _args, null)
+    }
   }
 
   fun setInputDataPortType(index: Int, type: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(type))
-    __method_bind.setInputDataPortType.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(type)
+      __method_bind.setInputDataPortType.call(self._handle, _args, null)
+    }
   }
 
   fun setOutputDataPortName(index: Int, name: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(name))
-    __method_bind.setOutputDataPortName.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(name)
+      __method_bind.setOutputDataPortName.call(self._handle, _args, null)
+    }
   }
 
   fun setOutputDataPortType(index: Int, type: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(index))
-    _args.add(Variant.fromAny(type))
-    __method_bind.setOutputDataPortType.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(index)
+      _args.add(type)
+      __method_bind.setOutputDataPortType.call(self._handle, _args, null)
+    }
   }
 
   companion object {

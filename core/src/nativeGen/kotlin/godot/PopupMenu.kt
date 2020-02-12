@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -12,13 +13,21 @@ import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class PopupMenu(
   @Suppress("UNUSED_PARAMETER")
@@ -90,11 +99,14 @@ open class PopupMenu(
     id: Int = -1,
     accel: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(accel))
-    __method_bind.addCheckItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(label)
+      _args.add(id)
+      _args.add(accel)
+      __method_bind.addCheckItem.call(self._handle, _args, null)
+    }
   }
 
   fun addCheckShortcut(
@@ -102,11 +114,14 @@ open class PopupMenu(
     id: Int = -1,
     global: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(shortcut))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(global))
-    __method_bind.addCheckShortcut.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(shortcut)
+      _args.add(id)
+      _args.add(global)
+      __method_bind.addCheckShortcut.call(self._handle, _args, null)
+    }
   }
 
   fun addIconCheckItem(
@@ -115,12 +130,15 @@ open class PopupMenu(
     id: Int = -1,
     accel: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(accel))
-    __method_bind.addIconCheckItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(texture)
+      _args.add(label)
+      _args.add(id)
+      _args.add(accel)
+      __method_bind.addIconCheckItem.call(self._handle, _args, null)
+    }
   }
 
   fun addIconCheckShortcut(
@@ -129,12 +147,15 @@ open class PopupMenu(
     id: Int = -1,
     global: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(shortcut))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(global))
-    __method_bind.addIconCheckShortcut.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(texture)
+      _args.add(shortcut)
+      _args.add(id)
+      _args.add(global)
+      __method_bind.addIconCheckShortcut.call(self._handle, _args, null)
+    }
   }
 
   fun addIconItem(
@@ -143,12 +164,15 @@ open class PopupMenu(
     id: Int = -1,
     accel: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(accel))
-    __method_bind.addIconItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(texture)
+      _args.add(label)
+      _args.add(id)
+      _args.add(accel)
+      __method_bind.addIconItem.call(self._handle, _args, null)
+    }
   }
 
   fun addIconRadioCheckItem(
@@ -157,12 +181,15 @@ open class PopupMenu(
     id: Int = -1,
     accel: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(accel))
-    __method_bind.addIconRadioCheckItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(texture)
+      _args.add(label)
+      _args.add(id)
+      _args.add(accel)
+      __method_bind.addIconRadioCheckItem.call(self._handle, _args, null)
+    }
   }
 
   fun addIconRadioCheckShortcut(
@@ -171,12 +198,15 @@ open class PopupMenu(
     id: Int = -1,
     global: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(shortcut))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(global))
-    __method_bind.addIconRadioCheckShortcut.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(texture)
+      _args.add(shortcut)
+      _args.add(id)
+      _args.add(global)
+      __method_bind.addIconRadioCheckShortcut.call(self._handle, _args, null)
+    }
   }
 
   fun addIconShortcut(
@@ -185,12 +215,15 @@ open class PopupMenu(
     id: Int = -1,
     global: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(texture))
-    _args.add(Variant.fromAny(shortcut))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(global))
-    __method_bind.addIconShortcut.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(texture)
+      _args.add(shortcut)
+      _args.add(id)
+      _args.add(global)
+      __method_bind.addIconShortcut.call(self._handle, _args, null)
+    }
   }
 
   fun addItem(
@@ -198,11 +231,14 @@ open class PopupMenu(
     id: Int = -1,
     accel: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(accel))
-    __method_bind.addItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(label)
+      _args.add(id)
+      _args.add(accel)
+      __method_bind.addItem.call(self._handle, _args, null)
+    }
   }
 
   fun addMultistateItem(
@@ -212,13 +248,16 @@ open class PopupMenu(
     id: Int = -1,
     accel: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(maxStates))
-    _args.add(Variant.fromAny(defaultState))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(accel))
-    __method_bind.addMultistateItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(label)
+      _args.add(maxStates)
+      _args.add(defaultState)
+      _args.add(id)
+      _args.add(accel)
+      __method_bind.addMultistateItem.call(self._handle, _args, null)
+    }
   }
 
   fun addRadioCheckItem(
@@ -226,11 +265,14 @@ open class PopupMenu(
     id: Int = -1,
     accel: Int = 0
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(accel))
-    __method_bind.addRadioCheckItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(label)
+      _args.add(id)
+      _args.add(accel)
+      __method_bind.addRadioCheckItem.call(self._handle, _args, null)
+    }
   }
 
   fun addRadioCheckShortcut(
@@ -238,16 +280,21 @@ open class PopupMenu(
     id: Int = -1,
     global: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(shortcut))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(global))
-    __method_bind.addRadioCheckShortcut.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(shortcut)
+      _args.add(id)
+      _args.add(global)
+      __method_bind.addRadioCheckShortcut.call(self._handle, _args, null)
+    }
   }
 
   fun addSeparator(label: String = "") {
-    val _arg = Variant(label)
-    __method_bind.addSeparator.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.addSeparator.call(self._handle, listOf(label), null)
+    }
   }
 
   fun addShortcut(
@@ -255,11 +302,14 @@ open class PopupMenu(
     id: Int = -1,
     global: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(shortcut))
-    _args.add(Variant.fromAny(id))
-    _args.add(Variant.fromAny(global))
-    __method_bind.addShortcut.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(shortcut)
+      _args.add(id)
+      _args.add(global)
+      __method_bind.addShortcut.call(self._handle, _args, null)
+    }
   }
 
   fun addSubmenuItem(
@@ -267,240 +317,391 @@ open class PopupMenu(
     submenu: String,
     id: Int = -1
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(label))
-    _args.add(Variant.fromAny(submenu))
-    _args.add(Variant.fromAny(id))
-    __method_bind.addSubmenuItem.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(label)
+      _args.add(submenu)
+      _args.add(id)
+      __method_bind.addSubmenuItem.call(self._handle, _args, null)
+    }
   }
 
   fun clear() {
-    __method_bind.clear.call(this._handle)
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.clear.call(self._handle, emptyList(), null)
+    }
   }
 
   fun getAllowSearch(): Boolean {
-    val _ret = __method_bind.getAllowSearch.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getAllowSearch.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemAccelerator(idx: Int): Int {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemAccelerator.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getItemAccelerator.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemCount(): Int {
-    val _ret = __method_bind.getItemCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getItemCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemIcon(idx: Int): Texture {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemIcon.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Texture
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Texture
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getItemIcon.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<Texture>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getItemId(idx: Int): Int {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemId.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getItemId.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemIndex(id: Int): Int {
-    val _arg = Variant(id)
-    val _ret = __method_bind.getItemIndex.call(this._handle, listOf(_arg))
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getItemIndex.call(self._handle, listOf(id), _retPtr)
+      _ret.value
+    }
   }
 
   fun getItemMetadata(idx: Int): Variant {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemMetadata.call(this._handle, listOf(_arg))
-    return _ret
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Variant()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getItemMetadata.call(self._handle, listOf(idx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getItemShortcut(idx: Int): ShortCut {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemShortcut.call(this._handle, listOf(_arg))
-    return _ret.toAny() as ShortCut
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: ShortCut
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.getItemShortcut.call(self._handle, listOf(idx), _retPtr)
+      _ret = objectToType<ShortCut>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getItemSubmenu(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemSubmenu.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getItemSubmenu.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getItemText(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemText.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getItemText.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getItemTooltip(idx: Int): String {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.getItemTooltip.call(this._handle, listOf(_arg))
-    return _ret.asString()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<godot_string>()
+      val _retPtr = _ret.ptr
+      checkNotNull(Godot.gdnative.godot_string_new)(_retPtr)
+      __method_bind.getItemTooltip.call(self._handle, listOf(idx), _retPtr)
+      _ret.toKStringAndDestroy()
+    }
   }
 
   fun getSubmenuPopupDelay(): Float {
-    val _ret = __method_bind.getSubmenuPopupDelay.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSubmenuPopupDelay.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isHideOnCheckableItemSelection(): Boolean {
-    val _ret = __method_bind.isHideOnCheckableItemSelection.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isHideOnCheckableItemSelection.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isHideOnItemSelection(): Boolean {
-    val _ret = __method_bind.isHideOnItemSelection.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isHideOnItemSelection.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isHideOnStateItemSelection(): Boolean {
-    val _ret = __method_bind.isHideOnStateItemSelection.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isHideOnStateItemSelection.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isHideOnWindowLoseFocus(): Boolean {
-    val _ret = __method_bind.isHideOnWindowLoseFocus.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isHideOnWindowLoseFocus.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isItemCheckable(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isItemCheckable.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isItemCheckable.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun isItemChecked(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isItemChecked.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isItemChecked.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun isItemDisabled(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isItemDisabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isItemDisabled.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun isItemRadioCheckable(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isItemRadioCheckable.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isItemRadioCheckable.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun isItemSeparator(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isItemSeparator.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isItemSeparator.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun isItemShortcutDisabled(idx: Int): Boolean {
-    val _arg = Variant(idx)
-    val _ret = __method_bind.isItemShortcutDisabled.call(this._handle, listOf(_arg))
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isItemShortcutDisabled.call(self._handle, listOf(idx), _retPtr)
+      _ret.value
+    }
   }
 
   fun removeItem(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.removeItem.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.removeItem.call(self._handle, listOf(idx), null)
+    }
   }
 
   fun setAllowSearch(allow: Boolean) {
-    val _arg = Variant(allow)
-    __method_bind.setAllowSearch.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAllowSearch.call(self._handle, listOf(allow), null)
+    }
   }
 
   fun setHideOnCheckableItemSelection(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setHideOnCheckableItemSelection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHideOnCheckableItemSelection.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setHideOnItemSelection(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setHideOnItemSelection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHideOnItemSelection.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setHideOnStateItemSelection(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setHideOnStateItemSelection.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHideOnStateItemSelection.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setHideOnWindowLoseFocus(enable: Boolean) {
-    val _arg = Variant(enable)
-    __method_bind.setHideOnWindowLoseFocus.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setHideOnWindowLoseFocus.call(self._handle, listOf(enable), null)
+    }
   }
 
   fun setItemAccelerator(idx: Int, accel: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(accel))
-    __method_bind.setItemAccelerator.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(accel)
+      __method_bind.setItemAccelerator.call(self._handle, _args, null)
+    }
   }
 
   fun setItemAsCheckable(idx: Int, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setItemAsCheckable.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(enable)
+      __method_bind.setItemAsCheckable.call(self._handle, _args, null)
+    }
   }
 
   fun setItemAsRadioCheckable(idx: Int, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setItemAsRadioCheckable.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(enable)
+      __method_bind.setItemAsRadioCheckable.call(self._handle, _args, null)
+    }
   }
 
   fun setItemAsSeparator(idx: Int, enable: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(enable))
-    __method_bind.setItemAsSeparator.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(enable)
+      __method_bind.setItemAsSeparator.call(self._handle, _args, null)
+    }
   }
 
   fun setItemChecked(idx: Int, checked: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(checked))
-    __method_bind.setItemChecked.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(checked)
+      __method_bind.setItemChecked.call(self._handle, _args, null)
+    }
   }
 
   fun setItemDisabled(idx: Int, disabled: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.setItemDisabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(disabled)
+      __method_bind.setItemDisabled.call(self._handle, _args, null)
+    }
   }
 
   fun setItemIcon(idx: Int, icon: Texture) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(icon))
-    __method_bind.setItemIcon.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(icon)
+      __method_bind.setItemIcon.call(self._handle, _args, null)
+    }
   }
 
   fun setItemId(idx: Int, id: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(id))
-    __method_bind.setItemId.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(id)
+      __method_bind.setItemId.call(self._handle, _args, null)
+    }
   }
 
   fun setItemMetadata(idx: Int, metadata: Variant) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(metadata))
-    __method_bind.setItemMetadata.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(metadata)
+      __method_bind.setItemMetadata.call(self._handle, _args, null)
+    }
   }
 
   fun setItemMultistate(idx: Int, state: Int) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(state))
-    __method_bind.setItemMultistate.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(state)
+      __method_bind.setItemMultistate.call(self._handle, _args, null)
+    }
   }
 
   fun setItemShortcut(
@@ -508,54 +709,75 @@ open class PopupMenu(
     shortcut: ShortCut,
     global: Boolean = false
   ) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(shortcut))
-    _args.add(Variant.fromAny(global))
-    __method_bind.setItemShortcut.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(shortcut)
+      _args.add(global)
+      __method_bind.setItemShortcut.call(self._handle, _args, null)
+    }
   }
 
   fun setItemShortcutDisabled(idx: Int, disabled: Boolean) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(disabled))
-    __method_bind.setItemShortcutDisabled.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(disabled)
+      __method_bind.setItemShortcutDisabled.call(self._handle, _args, null)
+    }
   }
 
   fun setItemSubmenu(idx: Int, submenu: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(submenu))
-    __method_bind.setItemSubmenu.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(submenu)
+      __method_bind.setItemSubmenu.call(self._handle, _args, null)
+    }
   }
 
   fun setItemText(idx: Int, text: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(text))
-    __method_bind.setItemText.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(text)
+      __method_bind.setItemText.call(self._handle, _args, null)
+    }
   }
 
   fun setItemTooltip(idx: Int, tooltip: String) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(idx))
-    _args.add(Variant.fromAny(tooltip))
-    __method_bind.setItemTooltip.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(idx)
+      _args.add(tooltip)
+      __method_bind.setItemTooltip.call(self._handle, _args, null)
+    }
   }
 
   fun setSubmenuPopupDelay(seconds: Float) {
-    val _arg = Variant(seconds)
-    __method_bind.setSubmenuPopupDelay.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setSubmenuPopupDelay.call(self._handle, listOf(seconds), null)
+    }
   }
 
   fun toggleItemChecked(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.toggleItemChecked.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.toggleItemChecked.call(self._handle, listOf(idx), null)
+    }
   }
 
   fun toggleItemMultistate(idx: Int) {
-    val _arg = Variant(idx)
-    __method_bind.toggleItemMultistate.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.toggleItemMultistate.call(self._handle, listOf(idx), null)
+    }
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
@@ -11,13 +12,21 @@ import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class PhysicsMaterial(
   @Suppress("UNUSED_PARAMETER")
@@ -62,43 +71,71 @@ open class PhysicsMaterial(
   }
 
   fun getBounce(): Float {
-    val _ret = __method_bind.getBounce.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getBounce.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun getFriction(): Float {
-    val _ret = __method_bind.getFriction.call(this._handle)
-    return _ret.asFloat()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<DoubleVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getFriction.call(self._handle, emptyList(), _retPtr)
+      _ret.value.toFloat()
+    }
   }
 
   fun isAbsorbent(): Boolean {
-    val _ret = __method_bind.isAbsorbent.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isAbsorbent.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun isRough(): Boolean {
-    val _ret = __method_bind.isRough.call(this._handle)
-    return _ret.asBoolean()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<BooleanVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.isRough.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setAbsorbent(absorbent: Boolean) {
-    val _arg = Variant(absorbent)
-    __method_bind.setAbsorbent.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setAbsorbent.call(self._handle, listOf(absorbent), null)
+    }
   }
 
   fun setBounce(bounce: Float) {
-    val _arg = Variant(bounce)
-    __method_bind.setBounce.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setBounce.call(self._handle, listOf(bounce), null)
+    }
   }
 
   fun setFriction(friction: Float) {
-    val _arg = Variant(friction)
-    __method_bind.setFriction.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setFriction.call(self._handle, listOf(friction), null)
+    }
   }
 
   fun setRough(rough: Boolean) {
-    val _arg = Variant(rough)
-    __method_bind.setRough.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setRough.call(self._handle, listOf(rough), null)
+    }
   }
 
   companion object {

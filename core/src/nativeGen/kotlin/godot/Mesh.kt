@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import gdnative.godot_string
 import godot.core.AABB
 import godot.core.Allocator
 import godot.core.Godot
@@ -15,13 +16,21 @@ import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
 import kotlin.reflect.KCallable
+import kotlinx.cinterop.BooleanVar
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.COpaquePointerVar
 import kotlinx.cinterop.CPointer
+import kotlinx.cinterop.DoubleVar
+import kotlinx.cinterop.IntVar
+import kotlinx.cinterop.alloc
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.pointed
+import kotlinx.cinterop.ptr
+import kotlinx.cinterop.readValue
 import kotlinx.cinterop.reinterpret
+import kotlinx.cinterop.value
 
 open class Mesh(
   @Suppress("UNUSED_PARAMETER")
@@ -51,74 +60,145 @@ open class Mesh(
   }
 
   fun createConvexShape(): Shape {
-    val _ret = __method_bind.createConvexShape.call(this._handle)
-    return _ret.toAny() as Shape
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Shape
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.createConvexShape.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Shape>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun createOutline(margin: Float): Mesh {
-    val _arg = Variant(margin)
-    val _ret = __method_bind.createOutline.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Mesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Mesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.createOutline.call(self._handle, listOf(margin), _retPtr)
+      _ret = objectToType<Mesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun createTrimeshShape(): Shape {
-    val _ret = __method_bind.createTrimeshShape.call(this._handle)
-    return _ret.toAny() as Shape
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Shape
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.createTrimeshShape.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<Shape>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun generateTriangleMesh(): TriangleMesh {
-    val _ret = __method_bind.generateTriangleMesh.call(this._handle)
-    return _ret.toAny() as TriangleMesh
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: TriangleMesh
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.generateTriangleMesh.call(self._handle, emptyList(), _retPtr)
+      _ret = objectToType<TriangleMesh>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun getAabb(): AABB {
-    val _ret = __method_bind.getAabb.call(this._handle)
-    return _ret.asAABB()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = AABB()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getAabb.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getFaces(): PoolVector3Array {
-    val _ret = __method_bind.getFaces.call(this._handle)
-    return _ret.asPoolVector3Array()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = PoolVector3Array()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getFaces.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getLightmapSizeHint(): Vector2 {
-    val _ret = __method_bind.getLightmapSizeHint.call(this._handle)
-    return _ret.asVector2()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = Vector2()
+      val _retPtr = _ret._value.ptr
+      __method_bind.getLightmapSizeHint.call(self._handle, emptyList(), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun getSurfaceCount(): Int {
-    val _ret = __method_bind.getSurfaceCount.call(this._handle)
-    return _ret.asInt()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = alloc<IntVar>()
+      val _retPtr = _ret.ptr
+      __method_bind.getSurfaceCount.call(self._handle, emptyList(), _retPtr)
+      _ret.value
+    }
   }
 
   fun setLightmapSizeHint(size: Vector2) {
-    val _arg = Variant(size)
-    __method_bind.setLightmapSizeHint.call(this._handle, listOf(_arg))
+    val self = this
+    return Allocator.allocationScope {
+      __method_bind.setLightmapSizeHint.call(self._handle, listOf(size), null)
+    }
   }
 
   fun surfaceGetArrays(surfIdx: Int): VariantArray {
-    val _arg = Variant(surfIdx)
-    val _ret = __method_bind.surfaceGetArrays.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.surfaceGetArrays.call(self._handle, listOf(surfIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun surfaceGetBlendShapeArrays(surfIdx: Int): VariantArray {
-    val _arg = Variant(surfIdx)
-    val _ret = __method_bind.surfaceGetBlendShapeArrays.call(this._handle, listOf(_arg))
-    return _ret.asVariantArray()
+    val self = this
+    return Allocator.allocationScope {
+      val _ret = VariantArray()
+      val _retPtr = _ret._value.ptr
+      __method_bind.surfaceGetBlendShapeArrays.call(self._handle, listOf(surfIdx), _retPtr)
+      _ret._value = _retPtr.pointed.readValue()
+      _ret
+    }
   }
 
   fun surfaceGetMaterial(surfIdx: Int): Material {
-    val _arg = Variant(surfIdx)
-    val _ret = __method_bind.surfaceGetMaterial.call(this._handle, listOf(_arg))
-    return _ret.toAny() as Material
+    val self = this
+    return Allocator.allocationScope {
+      lateinit var _ret: Material
+      val _tmp = alloc<COpaquePointerVar>()
+      val _retPtr = _tmp.ptr
+      __method_bind.surfaceGetMaterial.call(self._handle, listOf(surfIdx), _retPtr)
+      _ret = objectToType<Material>(_tmp.value!!)
+      _ret
+    }
   }
 
   fun surfaceSetMaterial(surfIdx: Int, material: Material) {
-    val _args = mutableListOf<Variant>()
-    _args.add(Variant.fromAny(surfIdx))
-    _args.add(Variant.fromAny(material))
-    __method_bind.surfaceSetMaterial.call(this._handle, _args)
+    val self = this
+    return Allocator.allocationScope {
+      val _args = mutableListOf<Any?>()
+      _args.add(surfIdx)
+      _args.add(material)
+      __method_bind.surfaceSetMaterial.call(self._handle, _args, null)
+    }
   }
 
   enum class BlendShapeMode(
