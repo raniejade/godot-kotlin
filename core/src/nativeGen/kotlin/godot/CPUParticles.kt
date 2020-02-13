@@ -619,6 +619,10 @@ open class CPUParticles(
     gravity = _p
   }
 
+  open fun _update_render_thread() {
+    TODO()
+  }
+
   fun convertFromParticles(particles: Node) {
     val self = this
     return Allocator.allocationScope {

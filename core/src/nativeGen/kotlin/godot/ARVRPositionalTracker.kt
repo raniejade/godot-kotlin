@@ -50,6 +50,30 @@ open class ARVRPositionalTracker(
     }
   }
 
+  open fun _set_joy_id(joyId: Int) {
+    TODO()
+  }
+
+  open fun _set_mesh(mesh: Mesh) {
+    TODO()
+  }
+
+  open fun _set_name(name: String) {
+    TODO()
+  }
+
+  open fun _set_orientation(orientation: Basis) {
+    TODO()
+  }
+
+  open fun _set_rw_position(rwPosition: Vector3) {
+    TODO()
+  }
+
+  open fun _set_type(type: Int) {
+    TODO()
+  }
+
   fun getHand(): TrackerHand {
     val self = this
     return Allocator.allocationScope {

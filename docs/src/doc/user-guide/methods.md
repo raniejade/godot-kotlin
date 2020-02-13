@@ -2,13 +2,16 @@ Any Kotlin method can be registered as long as its parameters and return type ca
 
 ```kotlin
 class RotatingCube: Spatial() {
-  fun _ready() {
+  override fun _ready() {
     gprint("I am ready!")
   }
 
   ...
 }
 ```
+
+## Virtual methods
+Virtual methods (like `_ready`, `_process` and `_physics_process`) are declared as overridable methods. The default implementation throws a `NotImplementedException`, so you have to override it if you plan to expose the method to Godot.
 
 ## Registration
 Methods can be registered in `GodotClass.init` via `ClassMemberRegistry.registerMethod`.

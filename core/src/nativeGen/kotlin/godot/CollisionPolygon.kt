@@ -73,6 +73,10 @@ open class CollisionPolygon(
     polygon = _p
   }
 
+  open fun _is_editable_3d_polygon(): Boolean {
+    TODO()
+  }
+
   fun getDepth(): Float {
     val self = this
     return Allocator.allocationScope {

@@ -53,6 +53,10 @@ open class NavigationPolygonInstance(
     }
   }
 
+  open fun _navpoly_changed() {
+    TODO()
+  }
+
   fun getNavigationPolygon(): NavigationPolygon {
     val self = this
     return Allocator.allocationScope {

@@ -190,6 +190,18 @@ open class LineEdit(
     }
   }
 
+  open fun _editor_settings_changed() {
+    TODO()
+  }
+
+  open fun _text_changed() {
+    TODO()
+  }
+
+  open fun _toggle_draw_caret() {
+    TODO()
+  }
+
   fun appendAtCursor(text: String) {
     val self = this
     return Allocator.allocationScope {

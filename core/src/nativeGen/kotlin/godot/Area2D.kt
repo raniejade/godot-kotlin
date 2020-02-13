@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
+import godot.core.RID
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
@@ -200,6 +201,42 @@ open class Area2D(
     val _p = gravityVec
     cb(_p)
     gravityVec = _p
+  }
+
+  open fun _area_enter_tree(id: Int) {
+    TODO()
+  }
+
+  open fun _area_exit_tree(id: Int) {
+    TODO()
+  }
+
+  open fun _area_inout(
+    arg0: Int,
+    arg1: RID,
+    arg2: Int,
+    arg3: Int,
+    arg4: Int
+  ) {
+    TODO()
+  }
+
+  open fun _body_enter_tree(id: Int) {
+    TODO()
+  }
+
+  open fun _body_exit_tree(id: Int) {
+    TODO()
+  }
+
+  open fun _body_inout(
+    arg0: Int,
+    arg1: RID,
+    arg2: Int,
+    arg3: Int,
+    arg4: Int
+  ) {
+    TODO()
   }
 
   fun getAngularDamp(): Float {

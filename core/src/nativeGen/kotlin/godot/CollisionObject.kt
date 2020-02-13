@@ -72,6 +72,16 @@ open class CollisionObject(
     }
   }
 
+  open fun _input_event(
+    camera: Object,
+    event: InputEvent,
+    clickPosition: Vector3,
+    clickNormal: Vector3,
+    shapeIdx: Int
+  ) {
+    TODO()
+  }
+
   fun createShapeOwner(owner: Object): Int {
     val self = this
     return Allocator.allocationScope {

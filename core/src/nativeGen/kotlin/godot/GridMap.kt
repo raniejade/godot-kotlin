@@ -128,6 +128,10 @@ open class GridMap(
     cellSize = _p
   }
 
+  open fun _update_octants_callback() {
+    TODO()
+  }
+
   fun clear() {
     val self = this
     return Allocator.allocationScope {

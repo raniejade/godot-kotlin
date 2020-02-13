@@ -4150,6 +4150,10 @@ open class AnimatedTexture(
     }
   }
 
+  open fun _update_proxy() {
+    TODO()
+  }
+
   fun getFps(): Float {
     val self = this
     return Allocator.allocationScope {

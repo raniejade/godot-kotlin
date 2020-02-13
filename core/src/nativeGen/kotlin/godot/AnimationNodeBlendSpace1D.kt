@@ -582,6 +582,14 @@ open class AnimationNodeBlendSpace1D(
     }
   }
 
+  open fun _add_blend_point(index: Int, node: AnimationRootNode) {
+    TODO()
+  }
+
+  open fun _tree_changed() {
+    TODO()
+  }
+
   fun addBlendPoint(
     node: AnimationRootNode,
     pos: Float,

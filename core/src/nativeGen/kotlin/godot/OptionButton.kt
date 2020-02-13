@@ -48,6 +48,26 @@ open class OptionButton(
     }
   }
 
+  open fun _focused(arg0: Int) {
+    TODO()
+  }
+
+  open fun _get_items(): VariantArray {
+    TODO()
+  }
+
+  open fun _select_int(arg0: Int) {
+    TODO()
+  }
+
+  open fun _selected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _set_items(arg0: VariantArray) {
+    TODO()
+  }
+
   fun addIconItem(
     texture: Texture,
     label: String,

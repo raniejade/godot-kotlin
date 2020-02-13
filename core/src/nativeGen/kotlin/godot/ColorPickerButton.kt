@@ -79,6 +79,14 @@ open class ColorPickerButton(
     color = _p
   }
 
+  open fun _color_changed(arg0: Color) {
+    TODO()
+  }
+
+  open fun _modal_closed() {
+    TODO()
+  }
+
   fun getPickColor(): Color {
     val self = this
     return Allocator.allocationScope {

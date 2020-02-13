@@ -6,6 +6,7 @@ import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
+import godot.core.PoolIntArray
 import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
@@ -72,6 +73,30 @@ open class BitmapFont(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_chars(): PoolIntArray {
+    TODO()
+  }
+
+  open fun _get_kernings(): PoolIntArray {
+    TODO()
+  }
+
+  open fun _get_textures(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_chars(arg0: PoolIntArray) {
+    TODO()
+  }
+
+  open fun _set_kernings(arg0: PoolIntArray) {
+    TODO()
+  }
+
+  open fun _set_textures(arg0: VariantArray) {
+    TODO()
   }
 
   fun addChar(

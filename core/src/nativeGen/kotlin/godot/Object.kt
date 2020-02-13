@@ -51,6 +51,30 @@ open class Object(
     }
   }
 
+  open fun _get(property: String): Variant {
+    TODO()
+  }
+
+  open fun _get_property_list(): VariantArray {
+    TODO()
+  }
+
+  open fun _init() {
+    TODO()
+  }
+
+  open fun _notification(what: Int) {
+    TODO()
+  }
+
+  open fun _set(property: String, value: Variant): Boolean {
+    TODO()
+  }
+
+  open fun _to_string(): String {
+    TODO()
+  }
+
   fun addUserSignal(signal: String, arguments: VariantArray) {
     val self = this
     return Allocator.allocationScope {

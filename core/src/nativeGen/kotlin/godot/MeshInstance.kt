@@ -72,6 +72,10 @@ open class MeshInstance(
     skeleton = _p
   }
 
+  open fun _mesh_changed() {
+    TODO()
+  }
+
   fun createConvexCollision() {
     val self = this
     return Allocator.allocationScope {

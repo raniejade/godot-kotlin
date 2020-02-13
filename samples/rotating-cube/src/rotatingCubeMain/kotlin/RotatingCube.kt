@@ -14,7 +14,7 @@ class RotatingCube: Spatial() {
     rotationDegrees = Vector3(y = 1f)
   }
 
-  fun _process(delta: Float) {
+  override fun _process(delta: Float) {
     // will not work as core types are pass-by-value
     // rotationDegrees.y += delta * 12f
 

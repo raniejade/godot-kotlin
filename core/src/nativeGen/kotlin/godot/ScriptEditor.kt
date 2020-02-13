@@ -5,10 +5,12 @@ import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
+import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
@@ -47,6 +49,235 @@ open class ScriptEditor(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _add_callback(
+    arg0: Object,
+    arg1: String,
+    arg2: PoolStringArray
+  ) {
+    TODO()
+  }
+
+  open fun _autosave_scripts() {
+    TODO()
+  }
+
+  open fun _breaked(arg0: Boolean, arg1: Boolean) {
+    TODO()
+  }
+
+  open fun _clear_execution(arg0: Reference) {
+    TODO()
+  }
+
+  open fun _close_all_tabs() {
+    TODO()
+  }
+
+  open fun _close_current_tab() {
+    TODO()
+  }
+
+  open fun _close_discard_current_tab(arg0: String) {
+    TODO()
+  }
+
+  open fun _close_docs_tab() {
+    TODO()
+  }
+
+  open fun _close_other_tabs() {
+    TODO()
+  }
+
+  open fun _copy_script_path() {
+    TODO()
+  }
+
+  open fun _editor_pause() {
+    TODO()
+  }
+
+  open fun _editor_play() {
+    TODO()
+  }
+
+  open fun _editor_settings_changed() {
+    TODO()
+  }
+
+  open fun _editor_stop() {
+    TODO()
+  }
+
+  open fun _file_dialog_action(arg0: String) {
+    TODO()
+  }
+
+  open fun _filter_methods_text_changed(arg0: String) {
+    TODO()
+  }
+
+  open fun _filter_scripts_text_changed(arg0: String) {
+    TODO()
+  }
+
+  open fun _get_debug_tooltip(arg0: String, arg1: Node): String {
+    TODO()
+  }
+
+  open fun _goto_script_line(arg0: Reference, arg1: Int) {
+    TODO()
+  }
+
+  open fun _goto_script_line2(arg0: Int) {
+    TODO()
+  }
+
+  open fun _help_class_goto(arg0: String) {
+    TODO()
+  }
+
+  open fun _help_class_open(arg0: String) {
+    TODO()
+  }
+
+  open fun _help_overview_selected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _help_search(arg0: String) {
+    TODO()
+  }
+
+  open fun _history_back() {
+    TODO()
+  }
+
+  open fun _history_forward() {
+    TODO()
+  }
+
+  open fun _live_auto_reload_running_scripts() {
+    TODO()
+  }
+
+  open fun _members_overview_selected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _menu_option(arg0: Int) {
+    TODO()
+  }
+
+  open fun _on_find_in_files_modified_files(arg0: PoolStringArray) {
+    TODO()
+  }
+
+  open fun _on_find_in_files_requested(arg0: String) {
+    TODO()
+  }
+
+  open fun _on_find_in_files_result_selected(
+    arg0: String,
+    arg1: Int,
+    arg2: Int,
+    arg3: Int
+  ) {
+    TODO()
+  }
+
+  open fun _open_recent_script(arg0: Int) {
+    TODO()
+  }
+
+  open fun _reload_scripts() {
+    TODO()
+  }
+
+  open fun _request_help(arg0: String) {
+    TODO()
+  }
+
+  open fun _res_saved_callback(arg0: Resource) {
+    TODO()
+  }
+
+  open fun _resave_scripts(arg0: String) {
+    TODO()
+  }
+
+  open fun _save_history() {
+    TODO()
+  }
+
+  open fun _script_changed() {
+    TODO()
+  }
+
+  open fun _script_created(arg0: Script) {
+    TODO()
+  }
+
+  open fun _script_list_gui_input(arg0: InputEvent) {
+    TODO()
+  }
+
+  open fun _script_selected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _script_split_dragged(arg0: Float) {
+    TODO()
+  }
+
+  open fun _set_execution(arg0: Reference, arg1: Int) {
+    TODO()
+  }
+
+  open fun _show_debugger(arg0: Boolean) {
+    TODO()
+  }
+
+  open fun _start_find_in_files(arg0: Boolean) {
+    TODO()
+  }
+
+  open fun _tab_changed(arg0: Int) {
+    TODO()
+  }
+
+  open fun _theme_option(arg0: Int) {
+    TODO()
+  }
+
+  open fun _toggle_members_overview_alpha_sort(arg0: Boolean) {
+    TODO()
+  }
+
+  open fun _tree_changed() {
+    TODO()
+  }
+
+  open fun _update_autosave_timer() {
+    TODO()
+  }
+
+  open fun _update_members_overview() {
+    TODO()
+  }
+
+  open fun _update_recent_scripts() {
+    TODO()
+  }
+
+  open fun _update_script_connections() {
+    TODO()
+  }
+
+  open fun _update_script_names() {
+    TODO()
   }
 
   fun canDropDataFw(

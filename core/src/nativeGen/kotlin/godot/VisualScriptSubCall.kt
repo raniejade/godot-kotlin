@@ -35,6 +35,10 @@ open class VisualScriptSubCall(
     }
   }
 
+  open fun _subcall(arguments: Variant): Variant {
+    TODO()
+  }
+
   companion object {
     internal fun __new(): COpaquePointer = Allocator.allocationScope {
       val fnPtr =

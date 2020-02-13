@@ -6,6 +6,7 @@ import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
+import godot.core.PoolByteArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
@@ -36,6 +37,26 @@ open class PackedDataContainer(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_data(): PoolByteArray {
+    TODO()
+  }
+
+  open fun _iter_get(arg0: Variant): Variant {
+    TODO()
+  }
+
+  open fun _iter_init(arg0: VariantArray): Variant {
+    TODO()
+  }
+
+  open fun _iter_next(arg0: VariantArray): Variant {
+    TODO()
+  }
+
+  open fun _set_data(arg0: PoolByteArray) {
+    TODO()
   }
 
   fun pack(value: Variant): GDError {

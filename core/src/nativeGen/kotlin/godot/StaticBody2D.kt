@@ -88,6 +88,10 @@ open class StaticBody2D(
     constantLinearVelocity = _p
   }
 
+  open fun _reload_physics_characteristics() {
+    TODO()
+  }
+
   fun getBounce(): Float {
     val self = this
     return Allocator.allocationScope {

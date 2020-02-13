@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
+import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.PoolVector2Array
@@ -41,6 +42,14 @@ open class PolygonPathFinder(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_data(): Dictionary {
+    TODO()
+  }
+
+  open fun _set_data(arg0: Dictionary) {
+    TODO()
   }
 
   fun findPath(from: Vector2, to: Vector2): PoolVector2Array {

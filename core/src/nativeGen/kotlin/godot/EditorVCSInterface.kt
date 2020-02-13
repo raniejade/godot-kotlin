@@ -38,6 +38,46 @@ open class EditorVCSInterface(
     }
   }
 
+  open fun _commit(msg: String) {
+    TODO()
+  }
+
+  open fun _get_file_diff(filePath: String): VariantArray {
+    TODO()
+  }
+
+  open fun _get_modified_files_data(): Dictionary {
+    TODO()
+  }
+
+  open fun _get_project_name(): String {
+    TODO()
+  }
+
+  open fun _get_vcs_name(): String {
+    TODO()
+  }
+
+  open fun _initialize(projectRootPath: String): Boolean {
+    TODO()
+  }
+
+  open fun _is_vcs_initialized(): Boolean {
+    TODO()
+  }
+
+  open fun _shut_down(): Boolean {
+    TODO()
+  }
+
+  open fun _stage_file(filePath: String) {
+    TODO()
+  }
+
+  open fun _unstage_file(filePath: String) {
+    TODO()
+  }
+
   fun commit(msg: String) {
     val self = this
     return Allocator.allocationScope {

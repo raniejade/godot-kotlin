@@ -42,6 +42,14 @@ open class VisualScriptNode(
     }
   }
 
+  open fun _get_default_input_values(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_default_input_values(values: VariantArray) {
+    TODO()
+  }
+
   fun getDefaultInputValue(portIdx: Int): Variant {
     val self = this
     return Allocator.allocationScope {

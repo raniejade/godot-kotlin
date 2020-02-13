@@ -157,6 +157,54 @@ open class GraphEdit(
     scrollOffset = _p
   }
 
+  open fun _connections_layer_draw() {
+    TODO()
+  }
+
+  open fun _graph_node_moved(arg0: Node) {
+    TODO()
+  }
+
+  open fun _graph_node_raised(arg0: Node) {
+    TODO()
+  }
+
+  open fun _scroll_moved(arg0: Float) {
+    TODO()
+  }
+
+  open fun _snap_toggled() {
+    TODO()
+  }
+
+  open fun _snap_value_changed(arg0: Float) {
+    TODO()
+  }
+
+  open fun _top_layer_draw() {
+    TODO()
+  }
+
+  open fun _top_layer_input(arg0: InputEvent) {
+    TODO()
+  }
+
+  open fun _update_scroll_offset() {
+    TODO()
+  }
+
+  open fun _zoom_minus() {
+    TODO()
+  }
+
+  open fun _zoom_plus() {
+    TODO()
+  }
+
+  open fun _zoom_reset() {
+    TODO()
+  }
+
   fun addValidConnectionType(fromType: Int, toType: Int) {
     val self = this
     return Allocator.allocationScope {

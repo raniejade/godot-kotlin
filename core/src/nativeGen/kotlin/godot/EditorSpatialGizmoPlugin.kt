@@ -8,7 +8,9 @@ import godot.core.Color
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -46,6 +48,23 @@ open class EditorSpatialGizmoPlugin(
       _args.add(material)
       __method_bind.addMaterial.call(self._handle, _args, null)
     }
+  }
+
+  open fun can_be_hidden(): Boolean {
+    TODO()
+  }
+
+  open fun commit_handle(
+    gizmo: EditorSpatialGizmo,
+    index: Int,
+    restore: Variant,
+    cancel: Boolean
+  ) {
+    TODO()
+  }
+
+  open fun create_gizmo(spatial: Spatial): EditorSpatialGizmo {
+    TODO()
   }
 
   fun createHandleMaterial(name: String, billboard: Boolean = false) {
@@ -94,6 +113,14 @@ open class EditorSpatialGizmoPlugin(
     }
   }
 
+  open fun get_handle_name(gizmo: EditorSpatialGizmo, index: Int): String {
+    TODO()
+  }
+
+  open fun get_handle_value(gizmo: EditorSpatialGizmo, index: Int): Variant {
+    TODO()
+  }
+
   fun getMaterial(name: String, gizmo: EditorSpatialGizmo): SpatialMaterial {
     val self = this
     return Allocator.allocationScope {
@@ -107,6 +134,35 @@ open class EditorSpatialGizmoPlugin(
       _ret = objectToType<SpatialMaterial>(_tmp.value!!)
       _ret
     }
+  }
+
+  open fun get_priority(): String {
+    TODO()
+  }
+
+  open fun has_gizmo(spatial: Spatial): Boolean {
+    TODO()
+  }
+
+  open fun is_handle_highlighted(gizmo: EditorSpatialGizmo, index: Int): Boolean {
+    TODO()
+  }
+
+  open fun is_selectable_when_hidden(): Boolean {
+    TODO()
+  }
+
+  open fun redraw(gizmo: EditorSpatialGizmo) {
+    TODO()
+  }
+
+  open fun set_handle(
+    gizmo: EditorSpatialGizmo,
+    index: Int,
+    camera: Camera,
+    point: Vector2
+  ) {
+    TODO()
   }
 
   companion object {

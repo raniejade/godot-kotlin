@@ -46,6 +46,14 @@ open class Translation(
     }
   }
 
+  open fun _get_messages(): PoolStringArray {
+    TODO()
+  }
+
+  open fun _set_messages(arg0: PoolStringArray) {
+    TODO()
+  }
+
   fun addMessage(srcMessage: String, xlatedMessage: String) {
     val self = this
     return Allocator.allocationScope {

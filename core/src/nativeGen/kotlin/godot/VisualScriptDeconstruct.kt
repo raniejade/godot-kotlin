@@ -45,6 +45,14 @@ open class VisualScriptDeconstruct(
     }
   }
 
+  open fun _get_elem_cache(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_elem_cache(cache: VariantArray) {
+    TODO()
+  }
+
   fun getDeconstructType(): Variant.Type {
     val self = this
     return Allocator.allocationScope {

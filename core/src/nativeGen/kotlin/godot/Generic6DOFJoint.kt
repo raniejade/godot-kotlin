@@ -671,6 +671,54 @@ open class Generic6DOFJoint(
     }
   }
 
+  open fun _get_angular_hi_limit_x(): Float {
+    TODO()
+  }
+
+  open fun _get_angular_hi_limit_y(): Float {
+    TODO()
+  }
+
+  open fun _get_angular_hi_limit_z(): Float {
+    TODO()
+  }
+
+  open fun _get_angular_lo_limit_x(): Float {
+    TODO()
+  }
+
+  open fun _get_angular_lo_limit_y(): Float {
+    TODO()
+  }
+
+  open fun _get_angular_lo_limit_z(): Float {
+    TODO()
+  }
+
+  open fun _set_angular_hi_limit_x(angle: Float) {
+    TODO()
+  }
+
+  open fun _set_angular_hi_limit_y(angle: Float) {
+    TODO()
+  }
+
+  open fun _set_angular_hi_limit_z(angle: Float) {
+    TODO()
+  }
+
+  open fun _set_angular_lo_limit_x(angle: Float) {
+    TODO()
+  }
+
+  open fun _set_angular_lo_limit_y(angle: Float) {
+    TODO()
+  }
+
+  open fun _set_angular_lo_limit_z(angle: Float) {
+    TODO()
+  }
+
   fun getFlagX(flag: Int): Boolean {
     val self = this
     return Allocator.allocationScope {

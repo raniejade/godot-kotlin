@@ -38,6 +38,14 @@ open class LargeTexture(
     }
   }
 
+  open fun _get_data(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_data(data: VariantArray) {
+    TODO()
+  }
+
   fun addPiece(ofs: Vector2, texture: Texture): Int {
     val self = this
     return Allocator.allocationScope {

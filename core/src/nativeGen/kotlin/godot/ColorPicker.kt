@@ -10,6 +10,8 @@ import godot.core.PoolColorArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.Unit
@@ -118,6 +120,66 @@ open class ColorPicker(
     val _p = color
     cb(_p)
     color = _p
+  }
+
+  open fun _add_preset_pressed() {
+    TODO()
+  }
+
+  open fun _focus_enter() {
+    TODO()
+  }
+
+  open fun _focus_exit() {
+    TODO()
+  }
+
+  open fun _hsv_draw(arg0: Int, arg1: Control) {
+    TODO()
+  }
+
+  open fun _html_entered(arg0: String) {
+    TODO()
+  }
+
+  open fun _html_focus_exit() {
+    TODO()
+  }
+
+  open fun _preset_input(arg0: InputEvent) {
+    TODO()
+  }
+
+  open fun _sample_draw() {
+    TODO()
+  }
+
+  open fun _screen_input(arg0: InputEvent) {
+    TODO()
+  }
+
+  open fun _screen_pick_pressed() {
+    TODO()
+  }
+
+  open fun _text_type_toggled() {
+    TODO()
+  }
+
+  open fun _update_presets() {
+    TODO()
+  }
+
+  open fun _uv_input(arg0: InputEvent) {
+    TODO()
+  }
+
+  open fun _value_changed(arg0: Float) {
+    TODO()
+  }
+
+  open fun _w_input(arg0: InputEvent) {
+    TODO()
   }
 
   fun addPreset(color: Color) {

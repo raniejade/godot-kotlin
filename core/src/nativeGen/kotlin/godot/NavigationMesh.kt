@@ -227,6 +227,14 @@ open class NavigationMesh(
     vertices = _p
   }
 
+  open fun _get_polygons(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_polygons(polygons: VariantArray) {
+    TODO()
+  }
+
   fun addPolygon(polygon: PoolIntArray) {
     val self = this
     return Allocator.allocationScope {

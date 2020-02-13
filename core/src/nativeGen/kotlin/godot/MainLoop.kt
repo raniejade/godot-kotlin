@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
+import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
@@ -43,6 +44,38 @@ open class MainLoop(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _drop_files(files: PoolStringArray, fromScreen: Int) {
+    TODO()
+  }
+
+  open fun _finalize() {
+    TODO()
+  }
+
+  open fun _global_menu_action(id: Variant, meta: Variant) {
+    TODO()
+  }
+
+  open fun _idle(delta: Float): Boolean {
+    TODO()
+  }
+
+  open fun _initialize() {
+    TODO()
+  }
+
+  open fun _input_event(event: InputEvent) {
+    TODO()
+  }
+
+  open fun _input_text(text: String) {
+    TODO()
+  }
+
+  open fun _iteration(delta: Float): Boolean {
+    TODO()
   }
 
   fun finish() {

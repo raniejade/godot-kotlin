@@ -246,6 +246,18 @@ open class Polygon2D(
     vertexColors = _p
   }
 
+  open fun _get_bones(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_bones(bones: VariantArray) {
+    TODO()
+  }
+
+  open fun _skeleton_bone_setup_changed() {
+    TODO()
+  }
+
   fun addBone(path: NodePath, weights: PoolFloatArray) {
     val self = this
     return Allocator.allocationScope {

@@ -154,6 +154,10 @@ open class SoftBody(
     parentCollisionIgnore = _p
   }
 
+  open fun _draw_soft_mesh() {
+    TODO()
+  }
+
   fun addCollisionExceptionWith(body: Node) {
     val self = this
     return Allocator.allocationScope {

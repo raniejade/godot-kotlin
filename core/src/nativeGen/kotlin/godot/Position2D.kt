@@ -7,6 +7,7 @@ import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Float
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -33,6 +34,14 @@ open class Position2D(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_gizmo_extents(): Float {
+    TODO()
+  }
+
+  open fun _set_gizmo_extents(extents: Float) {
+    TODO()
   }
 
   companion object {

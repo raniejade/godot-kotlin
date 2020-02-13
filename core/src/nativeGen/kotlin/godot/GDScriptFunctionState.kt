@@ -7,6 +7,7 @@ import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Any
 import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
@@ -40,6 +41,10 @@ open class GDScriptFunctionState(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _signal_callback(vararg varargs: Any?): Variant {
+    TODO()
   }
 
   fun isValid(extendedCheck: Boolean = false): Boolean {

@@ -100,6 +100,18 @@ open class AudioStreamPlayer(
     }
   }
 
+  open fun _bus_layout_changed() {
+    TODO()
+  }
+
+  open fun _is_active(): Boolean {
+    TODO()
+  }
+
+  open fun _set_playing(enable: Boolean) {
+    TODO()
+  }
+
   fun getBus(): String {
     val self = this
     return Allocator.allocationScope {

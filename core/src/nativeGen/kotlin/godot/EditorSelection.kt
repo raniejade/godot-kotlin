@@ -41,6 +41,14 @@ open class EditorSelection(
     }
   }
 
+  open fun _emit_change() {
+    TODO()
+  }
+
+  open fun _node_removed(arg0: Node) {
+    TODO()
+  }
+
   fun addNode(node: Node) {
     val self = this
     return Allocator.allocationScope {

@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
+import godot.core.Transform2D
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
@@ -130,6 +131,10 @@ open class ParallaxBackground(
     val _p = scrollOffset
     cb(_p)
     scrollOffset = _p
+  }
+
+  open fun _camera_moved(arg0: Transform2D, arg1: Vector2) {
+    TODO()
   }
 
   fun getLimitBegin(): Vector2 {

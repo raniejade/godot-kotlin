@@ -128,6 +128,74 @@ open class FileDialog(
     filters = _p
   }
 
+  open fun _action_pressed() {
+    TODO()
+  }
+
+  open fun _cancel_pressed() {
+    TODO()
+  }
+
+  open fun _dir_entered(arg0: String) {
+    TODO()
+  }
+
+  open fun _file_entered(arg0: String) {
+    TODO()
+  }
+
+  open fun _filter_selected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _go_up() {
+    TODO()
+  }
+
+  open fun _make_dir() {
+    TODO()
+  }
+
+  open fun _make_dir_confirm() {
+    TODO()
+  }
+
+  open fun _save_confirm_pressed() {
+    TODO()
+  }
+
+  open fun _select_drive(arg0: Int) {
+    TODO()
+  }
+
+  open fun _tree_item_activated() {
+    TODO()
+  }
+
+  open fun _tree_multi_selected(
+    arg0: Object,
+    arg1: Int,
+    arg2: Boolean
+  ) {
+    TODO()
+  }
+
+  open fun _tree_selected() {
+    TODO()
+  }
+
+  open fun _update_dir() {
+    TODO()
+  }
+
+  open fun _update_file_list() {
+    TODO()
+  }
+
+  open fun _update_file_name() {
+    TODO()
+  }
+
   fun addFilter(filter: String) {
     val self = this
     return Allocator.allocationScope {

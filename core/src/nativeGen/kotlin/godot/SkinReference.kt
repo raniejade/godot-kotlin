@@ -37,6 +37,10 @@ open class SkinReference(
     }
   }
 
+  open fun _skin_changed() {
+    TODO()
+  }
+
   fun getSkeleton(): RID {
     val self = this
     return Allocator.allocationScope {

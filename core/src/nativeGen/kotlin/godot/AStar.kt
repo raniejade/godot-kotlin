@@ -42,6 +42,14 @@ open class AStar(
     }
   }
 
+  open fun _compute_cost(fromId: Int, toId: Int): Float {
+    TODO()
+  }
+
+  open fun _estimate_cost(fromId: Int, toId: Int): Float {
+    TODO()
+  }
+
   fun addPoint(
     id: Int,
     position: Vector3,

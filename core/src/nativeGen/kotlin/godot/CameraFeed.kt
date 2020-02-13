@@ -65,6 +65,36 @@ open class CameraFeed(
     feedTransform = _p
   }
 
+  open fun _allocate_texture(
+    width: Int,
+    height: Int,
+    format: Int,
+    textureType: Int,
+    dataType: Int
+  ) {
+    TODO()
+  }
+
+  open fun _set_RGB_img(rgbImg: Image) {
+    TODO()
+  }
+
+  open fun _set_YCbCr_img(ycbcrImg: Image) {
+    TODO()
+  }
+
+  open fun _set_YCbCr_imgs(yImg: Image, cbcrImg: Image) {
+    TODO()
+  }
+
+  open fun _set_name(name: String) {
+    TODO()
+  }
+
+  open fun _set_position(position: Int) {
+    TODO()
+  }
+
   fun getId(): Int {
     val self = this
     return Allocator.allocationScope {

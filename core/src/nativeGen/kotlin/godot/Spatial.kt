@@ -165,6 +165,10 @@ open class Spatial(
     translation = _p
   }
 
+  open fun _update_gizmo() {
+    TODO()
+  }
+
   fun forceUpdateTransform() {
     val self = this
     return Allocator.allocationScope {

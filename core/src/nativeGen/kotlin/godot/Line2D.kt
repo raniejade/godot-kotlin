@@ -165,6 +165,14 @@ open class Line2D(
     points = _p
   }
 
+  open fun _curve_changed() {
+    TODO()
+  }
+
+  open fun _gradient_changed() {
+    TODO()
+  }
+
   fun addPoint(position: Vector2, atPosition: Int = -1) {
     val self = this
     return Allocator.allocationScope {

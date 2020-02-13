@@ -110,6 +110,14 @@ open class BakedLightmapData(
     octree = _p
   }
 
+  open fun _get_user_data(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_user_data(data: VariantArray) {
+    TODO()
+  }
+
   fun addUser(
     path: NodePath,
     lightmap: Texture,

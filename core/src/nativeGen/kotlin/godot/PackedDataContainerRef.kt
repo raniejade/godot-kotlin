@@ -7,6 +7,7 @@ import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
@@ -35,6 +36,22 @@ open class PackedDataContainerRef(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _is_dictionary(): Boolean {
+    TODO()
+  }
+
+  open fun _iter_get(arg0: Variant): Variant {
+    TODO()
+  }
+
+  open fun _iter_init(arg0: VariantArray): Variant {
+    TODO()
+  }
+
+  open fun _iter_next(arg0: VariantArray): Variant {
+    TODO()
   }
 
   fun size(): Int {

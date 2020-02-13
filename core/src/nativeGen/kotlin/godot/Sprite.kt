@@ -182,6 +182,10 @@ open class Sprite(
     regionRect = _p
   }
 
+  open fun _texture_changed() {
+    TODO()
+  }
+
   fun getFrame(): Int {
     val self = this
     return Allocator.allocationScope {

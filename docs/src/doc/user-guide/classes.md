@@ -27,13 +27,13 @@ class RotatingCube: Spatial() {
 }
 ```
 
-`_onInit` is equivalent to GDScript's constructor `_init`, however `_onInit` (and `_onDestroy`) are handled directly by this binding and not Godot.
+`_onInit` is equivalent to GDScript's constructor `_init`, however, `_onInit` and `_onDestroy` are handled directly by this binding, not Godot.
 
 ## Instance checks
 Checking if an object is an instance of a particular type can be done via the `is` operator.
 
 ```kotlin
-fun _ready() {
+override fun _ready() {
   val parent = getParent()
   if (parent is CollisionShape) {
     // smart cast works!
@@ -49,7 +49,7 @@ This also works for any type you define.
 If you are sure that an object is always an instance of some type, then you can take advantage of Kotlin's [contracts](https://kotlinlang.org/docs/reference/whatsnew13.html#contracts) feature.
 
 ```kotlin
-fun _ready() {
+override fun _ready() {
   val parent = getParent()
   require(parent is CollisionShape)
   // smart cast works here as well!

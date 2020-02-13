@@ -45,6 +45,10 @@ open class ShaderMaterial(
     }
   }
 
+  open fun _shader_changed() {
+    TODO()
+  }
+
   fun getShader(): Shader {
     val self = this
     return Allocator.allocationScope {

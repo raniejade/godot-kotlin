@@ -54,6 +54,14 @@ open class PhysicsBody2D(
     }
   }
 
+  open fun _get_layers(): Int {
+    TODO()
+  }
+
+  open fun _set_layers(mask: Int) {
+    TODO()
+  }
+
   fun addCollisionExceptionWith(body: Node) {
     val self = this
     return Allocator.allocationScope {

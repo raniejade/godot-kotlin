@@ -49,6 +49,10 @@ open class Path(
     }
   }
 
+  open fun _curve_changed() {
+    TODO()
+  }
+
   fun getCurve(): Curve3D {
     val self = this
     return Allocator.allocationScope {

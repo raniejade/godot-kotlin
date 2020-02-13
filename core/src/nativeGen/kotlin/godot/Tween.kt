@@ -84,6 +84,10 @@ open class Tween(
     }
   }
 
+  open fun _remove_by_uid(uid: Int) {
+    TODO()
+  }
+
   fun followMethod(
     `object`: Object,
     method: String,

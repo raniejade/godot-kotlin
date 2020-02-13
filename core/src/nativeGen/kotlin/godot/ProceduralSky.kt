@@ -213,6 +213,14 @@ open class ProceduralSky(
     sunColor = _p
   }
 
+  open fun _thread_done(image: Image) {
+    TODO()
+  }
+
+  open fun _update_sky() {
+    TODO()
+  }
+
   fun getGroundBottomColor(): Color {
     val self = this
     return Allocator.allocationScope {

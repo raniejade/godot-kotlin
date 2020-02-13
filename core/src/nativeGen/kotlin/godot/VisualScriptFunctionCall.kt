@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
+import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
@@ -127,6 +128,14 @@ open class VisualScriptFunctionCall(
     val _p = nodePath
     cb(_p)
     nodePath = _p
+  }
+
+  open fun _get_argument_cache(): Dictionary {
+    TODO()
+  }
+
+  open fun _set_argument_cache(argumentCache: Dictionary) {
+    TODO()
   }
 
   fun getBasePath(): NodePath {

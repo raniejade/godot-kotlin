@@ -53,6 +53,10 @@ open class WindowDialog(
     }
   }
 
+  open fun _closed() {
+    TODO()
+  }
+
   fun getCloseButton(): TextureButton {
     val self = this
     return Allocator.allocationScope {

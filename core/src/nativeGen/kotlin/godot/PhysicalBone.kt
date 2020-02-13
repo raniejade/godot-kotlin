@@ -124,6 +124,10 @@ open class PhysicalBone(
     jointOffset = _p
   }
 
+  open fun _direct_state_changed(arg0: Object) {
+    TODO()
+  }
+
   fun applyCentralImpulse(impulse: Vector3) {
     val self = this
     return Allocator.allocationScope {

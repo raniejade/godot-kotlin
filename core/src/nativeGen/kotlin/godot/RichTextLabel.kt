@@ -154,6 +154,10 @@ open class RichTextLabel(
     }
   }
 
+  open fun _scroll_changed(arg0: Float) {
+    TODO()
+  }
+
   fun addImage(
     image: Texture,
     width: Int = 0,

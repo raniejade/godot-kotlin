@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
+import godot.core.PoolIntArray
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
@@ -1214,6 +1215,26 @@ open class AnimationNodeBlendSpace2D(
     val _p = snap
     cb(_p)
     snap = _p
+  }
+
+  open fun _add_blend_point(index: Int, node: AnimationRootNode) {
+    TODO()
+  }
+
+  open fun _get_triangles(): PoolIntArray {
+    TODO()
+  }
+
+  open fun _set_triangles(triangles: PoolIntArray) {
+    TODO()
+  }
+
+  open fun _tree_changed() {
+    TODO()
+  }
+
+  open fun _update_triangles() {
+    TODO()
   }
 
   fun addBlendPoint(

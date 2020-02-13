@@ -95,6 +95,26 @@ open class MultiplayerAPI(
     }
   }
 
+  open fun _add_peer(id: Int) {
+    TODO()
+  }
+
+  open fun _connected_to_server() {
+    TODO()
+  }
+
+  open fun _connection_failed() {
+    TODO()
+  }
+
+  open fun _del_peer(id: Int) {
+    TODO()
+  }
+
+  open fun _server_disconnected() {
+    TODO()
+  }
+
   fun clear() {
     val self = this
     return Allocator.allocationScope {

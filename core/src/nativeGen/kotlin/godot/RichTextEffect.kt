@@ -7,6 +7,7 @@ import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -33,6 +34,10 @@ open class RichTextEffect(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _process_custom_fx(charFx: CharFXTransform): Boolean {
+    TODO()
   }
 
   companion object {

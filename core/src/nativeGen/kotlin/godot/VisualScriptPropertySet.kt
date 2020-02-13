@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
+import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
@@ -110,6 +111,14 @@ open class VisualScriptPropertySet(
     val _p = nodePath
     cb(_p)
     nodePath = _p
+  }
+
+  open fun _get_type_cache(): Dictionary {
+    TODO()
+  }
+
+  open fun _set_type_cache(typeCache: Dictionary) {
+    TODO()
   }
 
   fun getAssignOp(): AssignOp {

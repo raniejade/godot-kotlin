@@ -67,6 +67,10 @@ open class Resource(
     }
   }
 
+  open fun _setup_local_to_scene() {
+    TODO()
+  }
+
   fun duplicate(subresources: Boolean = false): Resource {
     val self = this
     return Allocator.allocationScope {

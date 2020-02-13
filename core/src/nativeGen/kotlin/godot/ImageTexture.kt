@@ -6,6 +6,7 @@ import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.GDError
 import godot.core.Godot
+import godot.core.RID
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
@@ -54,6 +55,10 @@ open class ImageTexture(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _reload_hook(rid: RID) {
+    TODO()
   }
 
   fun create(

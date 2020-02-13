@@ -128,6 +128,10 @@ open class EditorProperty(
     }
   }
 
+  open fun _focusable_focused(arg0: Int) {
+    TODO()
+  }
+
   fun addFocusable(control: Control) {
     val self = this
     return Allocator.allocationScope {
@@ -294,6 +298,10 @@ open class EditorProperty(
     return Allocator.allocationScope {
       __method_bind.setReadOnly.call(self._handle, listOf(readOnly), null)
     }
+  }
+
+  open fun update_property() {
+    TODO()
   }
 
   companion object {

@@ -68,6 +68,14 @@ open class Curve(
     }
   }
 
+  open fun _get_data(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_data(data: VariantArray) {
+    TODO()
+  }
+
   fun addPoint(
     position: Vector2,
     leftTangent: Float = 0.0f,

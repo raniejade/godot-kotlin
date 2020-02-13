@@ -50,6 +50,14 @@ open class ScrollBar(
     }
   }
 
+  open fun _drag_node_exit() {
+    TODO()
+  }
+
+  open fun _drag_node_input(arg0: InputEvent) {
+    TODO()
+  }
+
   fun getCustomStep(): Float {
     val self = this
     return Allocator.allocationScope {

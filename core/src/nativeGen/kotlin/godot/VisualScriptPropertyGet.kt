@@ -104,6 +104,14 @@ open class VisualScriptPropertyGet(
     nodePath = _p
   }
 
+  open fun _get_type_cache(): Variant.Type {
+    TODO()
+  }
+
+  open fun _set_type_cache(typeCache: Int) {
+    TODO()
+  }
+
   fun getBasePath(): NodePath {
     val self = this
     return Allocator.allocationScope {

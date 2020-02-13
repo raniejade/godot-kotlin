@@ -164,6 +164,22 @@ open class CSGPolygon(
     polygon = _p
   }
 
+  open fun _has_editable_3d_polygon_no_depth(): Boolean {
+    TODO()
+  }
+
+  open fun _is_editable_3d_polygon(): Boolean {
+    TODO()
+  }
+
+  open fun _path_changed() {
+    TODO()
+  }
+
+  open fun _path_exited() {
+    TODO()
+  }
+
   fun getDepth(): Float {
     val self = this
     return Allocator.allocationScope {

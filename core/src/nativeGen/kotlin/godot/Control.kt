@@ -362,6 +362,58 @@ open class Control(
     rectScale = _p
   }
 
+  open fun _clips_input(): Boolean {
+    TODO()
+  }
+
+  open fun _get_minimum_size(): Vector2 {
+    TODO()
+  }
+
+  open fun _get_tooltip(): String {
+    TODO()
+  }
+
+  open fun _gui_input(event: InputEvent) {
+    TODO()
+  }
+
+  open fun _make_custom_tooltip(forText: String): Object {
+    TODO()
+  }
+
+  open fun _override_changed() {
+    TODO()
+  }
+
+  open fun _set_anchor(margin: Int, anchor: Float) {
+    TODO()
+  }
+
+  open fun _set_global_position(position: Vector2) {
+    TODO()
+  }
+
+  open fun _set_position(margin: Vector2) {
+    TODO()
+  }
+
+  open fun _set_size(size: Vector2) {
+    TODO()
+  }
+
+  open fun _size_changed() {
+    TODO()
+  }
+
+  open fun _theme_changed() {
+    TODO()
+  }
+
+  open fun _update_minimum_size() {
+    TODO()
+  }
+
   fun acceptEvent() {
     val self = this
     return Allocator.allocationScope {
@@ -427,6 +479,14 @@ open class Control(
       _args.add(stylebox)
       __method_bind.addStyleboxOverride.call(self._handle, _args, null)
     }
+  }
+
+  open fun can_drop_data(position: Vector2, data: Variant): Boolean {
+    TODO()
+  }
+
+  open fun drop_data(position: Vector2, data: Variant) {
+    TODO()
   }
 
   fun forceDrag(data: Variant, preview: Control) {
@@ -527,6 +587,10 @@ open class Control(
       __method_bind.getDefaultCursorShape.call(self._handle, emptyList(), _retPtr)
       Control.CursorShape.from(_ret.value)
     }
+  }
+
+  open fun get_drag_data(position: Vector2): Variant {
+    TODO()
   }
 
   fun getEnd(): Vector2 {
@@ -978,6 +1042,10 @@ open class Control(
       __method_bind.hasIconOverride.call(self._handle, listOf(name), _retPtr)
       _ret.value
     }
+  }
+
+  open fun has_point(point: Vector2): Boolean {
+    TODO()
   }
 
   fun hasShaderOverride(name: String): Boolean {

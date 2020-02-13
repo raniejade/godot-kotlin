@@ -62,6 +62,22 @@ open class ConeTwistJoint(
     }
   }
 
+  open fun _get_swing_span(): Float {
+    TODO()
+  }
+
+  open fun _get_twist_span(): Float {
+    TODO()
+  }
+
+  open fun _set_swing_span(swingSpan: Float) {
+    TODO()
+  }
+
+  open fun _set_twist_span(twistSpan: Float) {
+    TODO()
+  }
+
   fun getParam(param: Int): Float {
     val self = this
     return Allocator.allocationScope {

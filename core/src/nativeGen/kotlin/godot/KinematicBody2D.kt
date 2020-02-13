@@ -57,6 +57,10 @@ open class KinematicBody2D(
     }
   }
 
+  open fun _direct_state_changed(arg0: Object) {
+    TODO()
+  }
+
   fun getFloorNormal(): Vector2 {
     val self = this
     return Allocator.allocationScope {

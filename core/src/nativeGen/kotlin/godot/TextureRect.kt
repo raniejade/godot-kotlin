@@ -78,6 +78,10 @@ open class TextureRect(
     }
   }
 
+  open fun _texture_changed() {
+    TODO()
+  }
+
   fun getStretchMode(): StretchMode {
     val self = this
     return Allocator.allocationScope {

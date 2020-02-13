@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
+import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.PoolFloatArray
 import godot.core.PoolVector3Array
@@ -56,6 +57,14 @@ open class Curve3D(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_data(): Dictionary {
+    TODO()
+  }
+
+  open fun _set_data(arg0: Dictionary) {
+    TODO()
   }
 
   fun addPoint(

@@ -35,6 +35,14 @@ open class EditorResourceConversionPlugin(
     }
   }
 
+  open fun _convert(resource: Resource): Resource {
+    TODO()
+  }
+
+  open fun _converts_to(): String {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for EditorResourceConversionPlugin

@@ -8,6 +8,8 @@ import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -67,6 +69,33 @@ open class EditorInspectorPlugin(
       _args.add(editor)
       __method_bind.addPropertyEditorForMultipleProperties.call(self._handle, _args, null)
     }
+  }
+
+  open fun can_handle(`object`: Object): Boolean {
+    TODO()
+  }
+
+  open fun parse_begin(`object`: Object) {
+    TODO()
+  }
+
+  open fun parse_category(`object`: Object, category: String) {
+    TODO()
+  }
+
+  open fun parse_end() {
+    TODO()
+  }
+
+  open fun parse_property(
+    `object`: Object,
+    type: Int,
+    path: String,
+    hint: Int,
+    hintText: String,
+    usage: Int
+  ): Boolean {
+    TODO()
   }
 
   companion object {

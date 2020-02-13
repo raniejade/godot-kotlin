@@ -8,6 +8,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
@@ -94,6 +95,18 @@ open class ScrollContainer(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _ensure_focused_visible(arg0: Control) {
+    TODO()
+  }
+
+  open fun _scroll_moved(arg0: Float) {
+    TODO()
+  }
+
+  open fun _update_scrollbar_position() {
+    TODO()
   }
 
   fun getDeadzone(): Int {

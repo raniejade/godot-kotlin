@@ -57,6 +57,14 @@ open class AnimationNodeBlendTree(
     graphOffset = _p
   }
 
+  open fun _node_changed(node: String) {
+    TODO()
+  }
+
+  open fun _tree_changed() {
+    TODO()
+  }
+
   fun addNode(
     name: String,
     node: AnimationNode,

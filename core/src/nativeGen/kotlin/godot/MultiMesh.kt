@@ -7,7 +7,10 @@ import godot.core.AABB
 import godot.core.Allocator
 import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolColorArray
 import godot.core.PoolFloatArray
+import godot.core.PoolVector2Array
+import godot.core.PoolVector3Array
 import godot.core.Transform
 import godot.core.Transform2D
 import godot.core.Variant
@@ -88,6 +91,38 @@ open class MultiMesh(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_color_array(): PoolColorArray {
+    TODO()
+  }
+
+  open fun _get_custom_data_array(): PoolColorArray {
+    TODO()
+  }
+
+  open fun _get_transform_2d_array(): PoolVector2Array {
+    TODO()
+  }
+
+  open fun _get_transform_array(): PoolVector3Array {
+    TODO()
+  }
+
+  open fun _set_color_array(arg0: PoolColorArray) {
+    TODO()
+  }
+
+  open fun _set_custom_data_array(arg0: PoolColorArray) {
+    TODO()
+  }
+
+  open fun _set_transform_2d_array(arg0: PoolVector2Array) {
+    TODO()
+  }
+
+  open fun _set_transform_array(arg0: PoolVector3Array) {
+    TODO()
   }
 
   fun getAabb(): AABB {

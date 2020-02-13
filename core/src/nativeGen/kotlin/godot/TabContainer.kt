@@ -93,6 +93,22 @@ open class TabContainer(
     }
   }
 
+  open fun _child_renamed_callback() {
+    TODO()
+  }
+
+  open fun _on_mouse_exited() {
+    TODO()
+  }
+
+  open fun _on_theme_changed() {
+    TODO()
+  }
+
+  open fun _update_current_tab() {
+    TODO()
+  }
+
   fun areTabsVisible(): Boolean {
     val self = this
     return Allocator.allocationScope {

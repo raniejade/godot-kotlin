@@ -10,6 +10,7 @@ import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -37,6 +38,27 @@ open class EditorExportPlugin(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _export_begin(
+    features: PoolStringArray,
+    isDebug: Boolean,
+    path: String,
+    flags: Int
+  ) {
+    TODO()
+  }
+
+  open fun _export_end() {
+    TODO()
+  }
+
+  open fun _export_file(
+    path: String,
+    type: String,
+    features: PoolStringArray
+  ) {
+    TODO()
   }
 
   fun addFile(

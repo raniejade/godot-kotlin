@@ -279,6 +279,38 @@ open class TextEdit(
     }
   }
 
+  open fun _click_selection_held() {
+    TODO()
+  }
+
+  open fun _cursor_changed_emit() {
+    TODO()
+  }
+
+  open fun _push_current_op() {
+    TODO()
+  }
+
+  open fun _scroll_moved(arg0: Float) {
+    TODO()
+  }
+
+  open fun _text_changed_emit() {
+    TODO()
+  }
+
+  open fun _toggle_draw_caret() {
+    TODO()
+  }
+
+  open fun _update_wrap_at() {
+    TODO()
+  }
+
+  open fun _v_scroll_input() {
+    TODO()
+  }
+
   fun addColorRegion(
     beginKey: String,
     endKey: String,

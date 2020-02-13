@@ -67,6 +67,18 @@ open class AnimatedSprite3D(
     }
   }
 
+  open fun _is_playing(): Boolean {
+    TODO()
+  }
+
+  open fun _res_changed() {
+    TODO()
+  }
+
+  open fun _set_playing(playing: Boolean) {
+    TODO()
+  }
+
   fun getAnimation(): String {
     val self = this
     return Allocator.allocationScope {

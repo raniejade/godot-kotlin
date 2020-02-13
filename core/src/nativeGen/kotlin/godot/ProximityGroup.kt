@@ -77,6 +77,10 @@ open class ProximityGroup(
     gridRadius = _p
   }
 
+  open fun _proximity_group_broadcast(name: String, params: Variant) {
+    TODO()
+  }
+
   fun broadcast(name: String, parameters: Variant) {
     val self = this
     return Allocator.allocationScope {

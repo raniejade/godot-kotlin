@@ -7,6 +7,7 @@ import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -33,6 +34,63 @@ open class VisualShaderNodeCustom(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_category(): String {
+    TODO()
+  }
+
+  open fun _get_code(
+    inputVars: VariantArray,
+    outputVars: VariantArray,
+    mode: Int,
+    type: Int
+  ): String {
+    TODO()
+  }
+
+  open fun _get_description(): String {
+    TODO()
+  }
+
+  open fun _get_global_code(mode: Int): String {
+    TODO()
+  }
+
+  open fun _get_input_port_count(): Int {
+    TODO()
+  }
+
+  open fun _get_input_port_name(port: Int): String {
+    TODO()
+  }
+
+  open fun _get_input_port_type(port: Int): Int {
+    TODO()
+  }
+
+  open fun _get_name(): String {
+    TODO()
+  }
+
+  open fun _get_output_port_count(): Int {
+    TODO()
+  }
+
+  open fun _get_output_port_name(port: Int): String {
+    TODO()
+  }
+
+  open fun _get_output_port_type(port: Int): Int {
+    TODO()
+  }
+
+  open fun _get_return_icon_type(): Int {
+    TODO()
+  }
+
+  open fun _get_subcategory(): String {
+    TODO()
   }
 
   companion object {

@@ -100,6 +100,22 @@ open class AnimationTree(
     rootMotionTrack = _p
   }
 
+  open fun _clear_caches() {
+    TODO()
+  }
+
+  open fun _node_removed(arg0: Node) {
+    TODO()
+  }
+
+  open fun _tree_changed() {
+    TODO()
+  }
+
+  open fun _update_properties() {
+    TODO()
+  }
+
   fun advance(delta: Float) {
     val self = this
     return Allocator.allocationScope {

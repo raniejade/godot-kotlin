@@ -54,6 +54,10 @@ open class VisibilityEnabler(
     }
   }
 
+  open fun _node_removed(arg0: Node) {
+    TODO()
+  }
+
   fun isEnablerEnabled(enabler: Int): Boolean {
     val self = this
     return Allocator.allocationScope {

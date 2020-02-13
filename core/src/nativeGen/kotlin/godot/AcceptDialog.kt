@@ -71,6 +71,18 @@ open class AcceptDialog(
     }
   }
 
+  open fun _builtin_text_entered(arg0: String) {
+    TODO()
+  }
+
+  open fun _custom_action(arg0: String) {
+    TODO()
+  }
+
+  open fun _ok() {
+    TODO()
+  }
+
   fun addButton(
     text: String,
     right: Boolean = false,

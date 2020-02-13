@@ -95,6 +95,23 @@ open class HTTPRequest(
     }
   }
 
+  open fun _redirect_request(arg0: String) {
+    TODO()
+  }
+
+  open fun _request_done(
+    arg0: Int,
+    arg1: Int,
+    arg2: PoolStringArray,
+    arg3: PoolByteArray
+  ) {
+    TODO()
+  }
+
+  open fun _timeout() {
+    TODO()
+  }
+
   fun cancelRequest() {
     val self = this
     return Allocator.allocationScope {

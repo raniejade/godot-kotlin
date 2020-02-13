@@ -58,6 +58,10 @@ open class EditorScenePostImport(
     }
   }
 
+  open fun post_import(scene: Object): Object {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for EditorScenePostImport

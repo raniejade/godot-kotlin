@@ -53,6 +53,10 @@ open class CurveTexture(
     }
   }
 
+  open fun _update() {
+    TODO()
+  }
+
   fun getCurve(): Curve {
     val self = this
     return Allocator.allocationScope {

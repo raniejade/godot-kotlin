@@ -39,6 +39,10 @@ open class AnimationNodeStateMachine(
     }
   }
 
+  open fun _tree_changed() {
+    TODO()
+  }
+
   fun addNode(
     name: String,
     node: AnimationNode,

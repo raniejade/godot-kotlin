@@ -1,7 +1,7 @@
 import godot.*
 
 class Simple: Spatial() {
-  fun _ready() {
+  override fun _ready() {
     gprint("Hello Godot from Kotlin!")
   }
 

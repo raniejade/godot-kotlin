@@ -43,6 +43,14 @@ open class Skeleton2D(
     }
   }
 
+  open fun _update_bone_setup() {
+    TODO()
+  }
+
+  open fun _update_transform() {
+    TODO()
+  }
+
   fun getBone(idx: Int): Bone2D {
     val self = this
     return Allocator.allocationScope {

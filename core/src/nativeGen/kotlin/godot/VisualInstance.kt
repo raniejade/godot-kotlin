@@ -48,6 +48,10 @@ open class VisualInstance(
     }
   }
 
+  open fun _get_visual_instance_rid(): RID {
+    TODO()
+  }
+
   fun getAabb(): AABB {
     val self = this
     return Allocator.allocationScope {

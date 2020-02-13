@@ -43,6 +43,14 @@ open class Container(
     }
   }
 
+  open fun _child_minsize_changed() {
+    TODO()
+  }
+
+  open fun _sort_children() {
+    TODO()
+  }
+
   fun fitChildInRect(child: Control, rect: Rect2) {
     val self = this
     return Allocator.allocationScope {

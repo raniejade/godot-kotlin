@@ -7,6 +7,7 @@ import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
@@ -34,6 +35,71 @@ open class VisualScriptCustomNode(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_caption(): String {
+    TODO()
+  }
+
+  open fun _get_category(): String {
+    TODO()
+  }
+
+  open fun _get_input_value_port_count(): Int {
+    TODO()
+  }
+
+  open fun _get_input_value_port_name(idx: Int): String {
+    TODO()
+  }
+
+  open fun _get_input_value_port_type(idx: Int): Int {
+    TODO()
+  }
+
+  open fun _get_output_sequence_port_count(): Int {
+    TODO()
+  }
+
+  open fun _get_output_sequence_port_text(idx: Int): String {
+    TODO()
+  }
+
+  open fun _get_output_value_port_count(): Int {
+    TODO()
+  }
+
+  open fun _get_output_value_port_name(idx: Int): String {
+    TODO()
+  }
+
+  open fun _get_output_value_port_type(idx: Int): Int {
+    TODO()
+  }
+
+  open fun _get_text(): String {
+    TODO()
+  }
+
+  open fun _get_working_memory_size(): Int {
+    TODO()
+  }
+
+  open fun _has_input_sequence_port(): Boolean {
+    TODO()
+  }
+
+  open fun _script_changed() {
+    TODO()
+  }
+
+  open fun _step(
+    inputs: VariantArray,
+    outputs: VariantArray,
+    startMode: Int,
+    workingMem: VariantArray
+  ): Variant {
+    TODO()
   }
 
   enum class StartMode(

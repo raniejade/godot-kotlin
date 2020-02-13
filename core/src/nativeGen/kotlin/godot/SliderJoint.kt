@@ -198,6 +198,22 @@ open class SliderJoint(
     }
   }
 
+  open fun _get_lower_limit_angular(): Float {
+    TODO()
+  }
+
+  open fun _get_upper_limit_angular(): Float {
+    TODO()
+  }
+
+  open fun _set_lower_limit_angular(lowerLimitAngular: Float) {
+    TODO()
+  }
+
+  open fun _set_upper_limit_angular(upperLimitAngular: Float) {
+    TODO()
+  }
+
   fun getParam(param: Int): Float {
     val self = this
     return Allocator.allocationScope {

@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
+import godot.core.Dictionary
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -37,6 +38,14 @@ open class PackedScene(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_bundled_scene(): Dictionary {
+    TODO()
+  }
+
+  open fun _set_bundled_scene(arg0: Dictionary) {
+    TODO()
   }
 
   fun canInstance(): Boolean {

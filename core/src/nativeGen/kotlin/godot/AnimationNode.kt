@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
+import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
@@ -56,6 +57,14 @@ open class AnimationNode(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_filters(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_filters(filters: VariantArray) {
+    TODO()
   }
 
   fun addInput(name: String) {
@@ -134,6 +143,18 @@ open class AnimationNode(
     }
   }
 
+  open fun get_caption(): String {
+    TODO()
+  }
+
+  open fun get_child_by_name(name: String): Object {
+    TODO()
+  }
+
+  open fun get_child_nodes(): Dictionary {
+    TODO()
+  }
+
   fun getInputCount(): Int {
     val self = this
     return Allocator.allocationScope {
@@ -166,6 +187,18 @@ open class AnimationNode(
     }
   }
 
+  open fun get_parameter_default_value(name: String): Variant {
+    TODO()
+  }
+
+  open fun get_parameter_list(): VariantArray {
+    TODO()
+  }
+
+  open fun has_filter(): String {
+    TODO()
+  }
+
   fun isFilterEnabled(): Boolean {
     val self = this
     return Allocator.allocationScope {
@@ -184,6 +217,10 @@ open class AnimationNode(
       __method_bind.isPathFiltered.call(self._handle, listOf(path), _retPtr)
       _ret.value
     }
+  }
+
+  open fun process(time: Float, seek: Boolean) {
+    TODO()
   }
 
   fun removeInput(index: Int) {

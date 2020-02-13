@@ -48,6 +48,10 @@ open class Theme(
     }
   }
 
+  open fun _emit_theme_changed() {
+    TODO()
+  }
+
   fun clear() {
     val self = this
     return Allocator.allocationScope {

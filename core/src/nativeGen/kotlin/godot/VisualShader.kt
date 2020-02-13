@@ -59,6 +59,18 @@ open class VisualShader(
     graphOffset = _p
   }
 
+  open fun _input_type_changed(arg0: Int, arg1: Int) {
+    TODO()
+  }
+
+  open fun _queue_update() {
+    TODO()
+  }
+
+  open fun _update_shader() {
+    TODO()
+  }
+
   fun addNode(
     type: Int,
     node: VisualShaderNode,

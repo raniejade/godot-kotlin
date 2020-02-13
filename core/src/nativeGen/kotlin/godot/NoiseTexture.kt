@@ -87,6 +87,22 @@ open class NoiseTexture(
     }
   }
 
+  open fun _generate_texture(): Image {
+    TODO()
+  }
+
+  open fun _queue_update() {
+    TODO()
+  }
+
+  open fun _thread_done(image: Image) {
+    TODO()
+  }
+
+  open fun _update_texture() {
+    TODO()
+  }
+
   fun getBumpStrength(): Float {
     val self = this
     return Allocator.allocationScope {

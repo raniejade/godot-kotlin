@@ -251,6 +251,22 @@ open class Camera2D(
     zoom = _p
   }
 
+  open fun _make_current(arg0: Object) {
+    TODO()
+  }
+
+  open fun _set_current(current: Boolean) {
+    TODO()
+  }
+
+  open fun _set_old_smoothing(followSmoothing: Float) {
+    TODO()
+  }
+
+  open fun _update_scroll() {
+    TODO()
+  }
+
   fun align() {
     val self = this
     return Allocator.allocationScope {

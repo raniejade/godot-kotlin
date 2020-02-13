@@ -166,6 +166,14 @@ open class SpriteBase3D(
     offset = _p
   }
 
+  open fun _im_update() {
+    TODO()
+  }
+
+  open fun _queue_update() {
+    TODO()
+  }
+
   fun generateTriangleMesh(): TriangleMesh {
     val self = this
     return Allocator.allocationScope {

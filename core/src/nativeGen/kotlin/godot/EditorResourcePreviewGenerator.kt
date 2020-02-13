@@ -7,6 +7,8 @@ import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -33,6 +35,26 @@ open class EditorResourcePreviewGenerator(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun can_generate_small_preview(): Boolean {
+    TODO()
+  }
+
+  open fun generate(from: Resource, size: Vector2): Texture {
+    TODO()
+  }
+
+  open fun generate_from_path(path: String, size: Vector2): Texture {
+    TODO()
+  }
+
+  open fun generate_small_preview_automatically(): Boolean {
+    TODO()
+  }
+
+  open fun handles(type: String): Boolean {
+    TODO()
   }
 
   companion object {

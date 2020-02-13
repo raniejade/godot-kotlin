@@ -43,6 +43,27 @@ open class TileSet(
     }
   }
 
+  open fun _forward_atlas_subtile_selection(
+    atlastileId: Int,
+    tilemap: Object,
+    tileLocation: Vector2
+  ): Vector2 {
+    TODO()
+  }
+
+  open fun _forward_subtile_selection(
+    autotileId: Int,
+    bitmask: Int,
+    tilemap: Object,
+    tileLocation: Vector2
+  ): Vector2 {
+    TODO()
+  }
+
+  open fun _is_tile_bound(drawnId: Int, neighborId: Int): Boolean {
+    TODO()
+  }
+
   fun autotileClearBitmaskMap(id: Int) {
     val self = this
     return Allocator.allocationScope {

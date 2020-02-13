@@ -37,6 +37,30 @@ open class EditorSceneImporter(
     }
   }
 
+  open fun _get_extensions(): VariantArray {
+    TODO()
+  }
+
+  open fun _get_import_flags(): Int {
+    TODO()
+  }
+
+  open fun _import_animation(
+    path: String,
+    flags: Int,
+    bakeFps: Int
+  ): Animation {
+    TODO()
+  }
+
+  open fun _import_scene(
+    path: String,
+    flags: Int,
+    bakeFps: Int
+  ): Node {
+    TODO()
+  }
+
   fun importAnimationFromOtherImporter(
     path: String,
     flags: Int,

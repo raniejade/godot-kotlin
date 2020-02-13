@@ -171,6 +171,18 @@ open class ItemList(
     fixedIconSize = _p
   }
 
+  open fun _get_items(): VariantArray {
+    TODO()
+  }
+
+  open fun _scroll_changed(arg0: Float) {
+    TODO()
+  }
+
+  open fun _set_items(arg0: VariantArray) {
+    TODO()
+  }
+
   fun addIconItem(icon: Texture, selectable: Boolean = true) {
     val self = this
     return Allocator.allocationScope {

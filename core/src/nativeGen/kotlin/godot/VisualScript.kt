@@ -45,6 +45,18 @@ open class VisualScript(
     }
   }
 
+  open fun _get_data(): Dictionary {
+    TODO()
+  }
+
+  open fun _node_ports_changed(arg0: Int) {
+    TODO()
+  }
+
+  open fun _set_data(data: Dictionary) {
+    TODO()
+  }
+
   fun addCustomSignal(name: String) {
     val self = this
     return Allocator.allocationScope {

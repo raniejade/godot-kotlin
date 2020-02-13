@@ -10,6 +10,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
@@ -174,6 +175,30 @@ open class Tree(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _popup_select(arg0: Int) {
+    TODO()
+  }
+
+  open fun _range_click_timeout() {
+    TODO()
+  }
+
+  open fun _scroll_moved(arg0: Float) {
+    TODO()
+  }
+
+  open fun _text_editor_enter(arg0: String) {
+    TODO()
+  }
+
+  open fun _text_editor_modal_close() {
+    TODO()
+  }
+
+  open fun _value_editor_changed(arg0: Float) {
+    TODO()
   }
 
   fun areColumnTitlesVisible(): Boolean {

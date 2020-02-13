@@ -119,6 +119,58 @@ open class Node(
     }
   }
 
+  open fun _enter_tree() {
+    TODO()
+  }
+
+  open fun _exit_tree() {
+    TODO()
+  }
+
+  open fun _get_configuration_warning(): String {
+    TODO()
+  }
+
+  open fun _get_editor_description(): String {
+    TODO()
+  }
+
+  open fun _get_import_path(): NodePath {
+    TODO()
+  }
+
+  open fun _input(event: InputEvent) {
+    TODO()
+  }
+
+  open fun _physics_process(delta: Float) {
+    TODO()
+  }
+
+  open fun _process(delta: Float) {
+    TODO()
+  }
+
+  open fun _ready() {
+    TODO()
+  }
+
+  open fun _set_editor_description(editorDescription: String) {
+    TODO()
+  }
+
+  open fun _set_import_path(importPath: NodePath) {
+    TODO()
+  }
+
+  open fun _unhandled_input(event: InputEvent) {
+    TODO()
+  }
+
+  open fun _unhandled_key_input(event: InputEventKey) {
+    TODO()
+  }
+
   fun addChild(node: Node, legibleUniqueName: Boolean = false) {
     val self = this
     return Allocator.allocationScope {

@@ -154,6 +154,14 @@ open class AnimationPlayer(
     rootNode = _p
   }
 
+  open fun _animation_changed() {
+    TODO()
+  }
+
+  open fun _node_removed(arg0: Node) {
+    TODO()
+  }
+
   fun addAnimation(name: String, animation: Animation): GDError {
     val self = this
     return Allocator.allocationScope {

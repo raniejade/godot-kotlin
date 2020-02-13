@@ -103,6 +103,22 @@ open class HingeJoint(
     }
   }
 
+  open fun _get_lower_limit(): Float {
+    TODO()
+  }
+
+  open fun _get_upper_limit(): Float {
+    TODO()
+  }
+
+  open fun _set_lower_limit(lowerLimit: Float) {
+    TODO()
+  }
+
+  open fun _set_upper_limit(upperLimit: Float) {
+    TODO()
+  }
+
   fun getFlag(flag: Int): Boolean {
     val self = this
     return Allocator.allocationScope {

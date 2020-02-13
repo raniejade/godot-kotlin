@@ -4,9 +4,12 @@ package godot
 import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
@@ -181,6 +184,50 @@ open class EditorPlugin(
     }
   }
 
+  open fun apply_changes() {
+    TODO()
+  }
+
+  open fun build(): Boolean {
+    TODO()
+  }
+
+  open fun clear() {
+    TODO()
+  }
+
+  open fun disable_plugin() {
+    TODO()
+  }
+
+  open fun edit(`object`: Object) {
+    TODO()
+  }
+
+  open fun enable_plugin() {
+    TODO()
+  }
+
+  open fun forward_canvas_draw_over_viewport(overlay: Control) {
+    TODO()
+  }
+
+  open fun forward_canvas_force_draw_over_viewport(overlay: Control) {
+    TODO()
+  }
+
+  open fun forward_canvas_gui_input(event: InputEvent): Boolean {
+    TODO()
+  }
+
+  open fun forward_spatial_gui_input(camera: Camera, event: InputEvent): Boolean {
+    TODO()
+  }
+
+  open fun get_breakpoints(): PoolStringArray {
+    TODO()
+  }
+
   fun getEditorInterface(): EditorInterface {
     val self = this
     return Allocator.allocationScope {
@@ -191,6 +238,14 @@ open class EditorPlugin(
       _ret = objectToType<EditorInterface>(_tmp.value!!)
       _ret
     }
+  }
+
+  open fun get_plugin_icon(): Object {
+    TODO()
+  }
+
+  open fun get_plugin_name(): String {
+    TODO()
   }
 
   fun getScriptCreateDialog(): ScriptCreateDialog {
@@ -205,6 +260,10 @@ open class EditorPlugin(
     }
   }
 
+  open fun get_state(): Dictionary {
+    TODO()
+  }
+
   fun getUndoRedo(): UndoRedo {
     val self = this
     return Allocator.allocationScope {
@@ -215,6 +274,18 @@ open class EditorPlugin(
       _ret = objectToType<UndoRedo>(_tmp.value!!)
       _ret
     }
+  }
+
+  open fun get_window_layout(layout: ConfigFile) {
+    TODO()
+  }
+
+  open fun handles(`object`: Object): Boolean {
+    TODO()
+  }
+
+  open fun has_main_screen(): Boolean {
+    TODO()
   }
 
   fun hideBottomPanel() {
@@ -229,6 +300,10 @@ open class EditorPlugin(
     return Allocator.allocationScope {
       __method_bind.makeBottomPanelItemVisible.call(self._handle, listOf(item), null)
     }
+  }
+
+  open fun make_visible(visible: Boolean) {
+    TODO()
   }
 
   fun queueSaveLayout() {
@@ -318,6 +393,10 @@ open class EditorPlugin(
     }
   }
 
+  open fun save_external_data() {
+    TODO()
+  }
+
   fun setForceDrawOverForwardingEnabled() {
     val self = this
     return Allocator.allocationScope {
@@ -330,6 +409,14 @@ open class EditorPlugin(
     return Allocator.allocationScope {
       __method_bind.setInputEventForwardingAlwaysEnabled.call(self._handle, emptyList(), null)
     }
+  }
+
+  open fun set_state(state: Dictionary) {
+    TODO()
+  }
+
+  open fun set_window_layout(layout: ConfigFile) {
+    TODO()
   }
 
   fun updateOverlays(): Int {

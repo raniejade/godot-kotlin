@@ -268,6 +268,26 @@ open class RigidBody(
     linearVelocity = _p
   }
 
+  open fun _body_enter_tree(arg0: Int) {
+    TODO()
+  }
+
+  open fun _body_exit_tree(arg0: Int) {
+    TODO()
+  }
+
+  open fun _direct_state_changed(arg0: Object) {
+    TODO()
+  }
+
+  open fun _integrate_forces(state: PhysicsDirectBodyState) {
+    TODO()
+  }
+
+  open fun _reload_physics_characteristics() {
+    TODO()
+  }
+
   fun addCentralForce(force: Vector3) {
     val self = this
     return Allocator.allocationScope {

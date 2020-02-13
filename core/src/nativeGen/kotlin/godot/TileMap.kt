@@ -4,7 +4,9 @@ package godot
 import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolIntArray
 import godot.core.Rect2
 import godot.core.Transform2D
 import godot.core.Variant
@@ -208,6 +210,34 @@ open class TileMap(
     val _p = cellSize
     cb(_p)
     cellSize = _p
+  }
+
+  open fun _clear_quadrants() {
+    TODO()
+  }
+
+  open fun _get_old_cell_size(): Int {
+    TODO()
+  }
+
+  open fun _get_tile_data(): PoolIntArray {
+    TODO()
+  }
+
+  open fun _recreate_quadrants() {
+    TODO()
+  }
+
+  open fun _set_celld(position: Vector2, data: Dictionary) {
+    TODO()
+  }
+
+  open fun _set_old_cell_size(size: Int) {
+    TODO()
+  }
+
+  open fun _set_tile_data(arg0: PoolIntArray) {
+    TODO()
   }
 
   fun clear() {

@@ -7,6 +7,7 @@ import godot.core.Allocator
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -39,6 +40,17 @@ open class EditorResourcePreview(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _preview_ready(
+    arg0: String,
+    arg1: Texture,
+    arg2: Texture,
+    arg3: Int,
+    arg4: String,
+    arg5: Variant
+  ) {
+    TODO()
   }
 
   fun addPreviewGenerator(generator: EditorResourcePreviewGenerator) {

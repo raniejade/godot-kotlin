@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
+import godot.core.Dictionary
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolByteArray
@@ -42,6 +43,14 @@ open class Image(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _get_data(): Dictionary {
+    TODO()
+  }
+
+  open fun _set_data(data: Dictionary) {
+    TODO()
   }
 
   fun blendRect(

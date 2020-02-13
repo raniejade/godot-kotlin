@@ -53,6 +53,10 @@ open class GradientTexture(
     }
   }
 
+  open fun _update() {
+    TODO()
+  }
+
   fun getGradient(): Gradient {
     val self = this
     return Allocator.allocationScope {

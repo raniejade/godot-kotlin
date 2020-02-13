@@ -205,6 +205,30 @@ open class SceneTree(
     }
   }
 
+  open fun _change_scene(arg0: Node) {
+    TODO()
+  }
+
+  open fun _connected_to_server() {
+    TODO()
+  }
+
+  open fun _connection_failed() {
+    TODO()
+  }
+
+  open fun _network_peer_connected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _network_peer_disconnected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _server_disconnected() {
+    TODO()
+  }
+
   fun callGroup(
     group: String,
     method: String,

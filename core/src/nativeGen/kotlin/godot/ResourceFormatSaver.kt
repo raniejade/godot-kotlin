@@ -5,8 +5,11 @@ import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
+import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -33,6 +36,22 @@ open class ResourceFormatSaver(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun get_recognized_extensions(resource: Resource): PoolStringArray {
+    TODO()
+  }
+
+  open fun recognize(resource: Resource): Boolean {
+    TODO()
+  }
+
+  open fun save(
+    path: String,
+    resource: Resource,
+    flags: Int
+  ): Int {
+    TODO()
   }
 
   companion object {

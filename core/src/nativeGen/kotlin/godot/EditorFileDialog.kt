@@ -8,6 +8,7 @@ import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
+import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -116,6 +117,132 @@ open class EditorFileDialog(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _action_pressed() {
+    TODO()
+  }
+
+  open fun _cancel_pressed() {
+    TODO()
+  }
+
+  open fun _dir_entered(arg0: String) {
+    TODO()
+  }
+
+  open fun _favorite_move_down() {
+    TODO()
+  }
+
+  open fun _favorite_move_up() {
+    TODO()
+  }
+
+  open fun _favorite_pressed() {
+    TODO()
+  }
+
+  open fun _favorite_selected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _file_entered(arg0: String) {
+    TODO()
+  }
+
+  open fun _filter_selected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _go_back() {
+    TODO()
+  }
+
+  open fun _go_forward() {
+    TODO()
+  }
+
+  open fun _go_up() {
+    TODO()
+  }
+
+  open fun _item_db_selected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _item_list_item_rmb_selected(arg0: Int, arg1: Vector2) {
+    TODO()
+  }
+
+  open fun _item_list_rmb_clicked(arg0: Vector2) {
+    TODO()
+  }
+
+  open fun _item_menu_id_pressed(arg0: Int) {
+    TODO()
+  }
+
+  open fun _item_selected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _items_clear_selection() {
+    TODO()
+  }
+
+  open fun _make_dir() {
+    TODO()
+  }
+
+  open fun _make_dir_confirm() {
+    TODO()
+  }
+
+  open fun _multi_selected(arg0: Int, arg1: Boolean) {
+    TODO()
+  }
+
+  open fun _recent_selected(arg0: Int) {
+    TODO()
+  }
+
+  open fun _save_confirm_pressed() {
+    TODO()
+  }
+
+  open fun _select_drive(arg0: Int) {
+    TODO()
+  }
+
+  open fun _thumbnail_done(
+    arg0: String,
+    arg1: Texture,
+    arg2: Texture,
+    arg3: Variant
+  ) {
+    TODO()
+  }
+
+  open fun _thumbnail_result(
+    arg0: String,
+    arg1: Texture,
+    arg2: Texture,
+    arg3: Variant
+  ) {
+    TODO()
+  }
+
+  open fun _update_dir() {
+    TODO()
+  }
+
+  open fun _update_file_list() {
+    TODO()
+  }
+
+  open fun _update_file_name() {
+    TODO()
   }
 
   fun addFilter(filter: String) {

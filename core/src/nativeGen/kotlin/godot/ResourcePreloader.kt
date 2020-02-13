@@ -38,6 +38,14 @@ open class ResourcePreloader(
     }
   }
 
+  open fun _get_resources(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_resources(arg0: VariantArray) {
+    TODO()
+  }
+
   fun addResource(name: String, resource: Resource) {
     val self = this
     return Allocator.allocationScope {

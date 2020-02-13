@@ -72,6 +72,10 @@ open class PrimitiveMesh(
     customAabb = _p
   }
 
+  open fun _update() {
+    TODO()
+  }
+
   fun getCustomAabb(): AABB {
     val self = this
     return Allocator.allocationScope {

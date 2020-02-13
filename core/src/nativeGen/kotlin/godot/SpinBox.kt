@@ -70,6 +70,22 @@ open class SpinBox(
     }
   }
 
+  open fun _line_edit_focus_exit() {
+    TODO()
+  }
+
+  open fun _line_edit_input(arg0: InputEvent) {
+    TODO()
+  }
+
+  open fun _range_click_timeout() {
+    TODO()
+  }
+
+  open fun _text_entered(arg0: String) {
+    TODO()
+  }
+
   fun apply() {
     val self = this
     return Allocator.allocationScope {

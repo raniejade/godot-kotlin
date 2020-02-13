@@ -36,6 +36,10 @@ open class EditorScript(
     }
   }
 
+  open fun _run() {
+    TODO()
+  }
+
   fun addRootNode(node: Node) {
     val self = this
     return Allocator.allocationScope {

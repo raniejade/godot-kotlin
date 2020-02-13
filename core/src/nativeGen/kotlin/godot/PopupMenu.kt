@@ -94,6 +94,18 @@ open class PopupMenu(
     }
   }
 
+  open fun _get_items(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_items(arg0: VariantArray) {
+    TODO()
+  }
+
+  open fun _submenu_timeout() {
+    TODO()
+  }
+
   fun addCheckItem(
     label: String,
     id: Int = -1,

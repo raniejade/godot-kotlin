@@ -87,6 +87,10 @@ open class CSGShape(
     }
   }
 
+  open fun _update_shape() {
+    TODO()
+  }
+
   fun getCollisionLayer(): Int {
     val self = this
     return Allocator.allocationScope {

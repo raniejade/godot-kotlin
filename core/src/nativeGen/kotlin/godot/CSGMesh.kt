@@ -52,6 +52,10 @@ open class CSGMesh(
     }
   }
 
+  open fun _mesh_changed() {
+    TODO()
+  }
+
   fun getMaterial(): Material {
     val self = this
     return Allocator.allocationScope {

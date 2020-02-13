@@ -61,6 +61,30 @@ open class EditorSpinSlider(
     }
   }
 
+  open fun _grabber_gui_input(arg0: InputEvent) {
+    TODO()
+  }
+
+  open fun _grabber_mouse_entered() {
+    TODO()
+  }
+
+  open fun _grabber_mouse_exited() {
+    TODO()
+  }
+
+  open fun _value_focus_exited() {
+    TODO()
+  }
+
+  open fun _value_input_closed() {
+    TODO()
+  }
+
+  open fun _value_input_entered(arg0: String) {
+    TODO()
+  }
+
   fun getLabel(): String {
     val self = this
     return Allocator.allocationScope {

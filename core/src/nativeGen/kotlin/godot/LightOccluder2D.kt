@@ -45,6 +45,10 @@ open class LightOccluder2D(
     }
   }
 
+  open fun _poly_changed() {
+    TODO()
+  }
+
   fun getOccluderLightMask(): Int {
     val self = this
     return Allocator.allocationScope {

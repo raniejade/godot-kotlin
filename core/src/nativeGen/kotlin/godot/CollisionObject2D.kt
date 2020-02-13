@@ -64,6 +64,14 @@ open class CollisionObject2D(
     }
   }
 
+  open fun _input_event(
+    viewport: Object,
+    event: InputEvent,
+    shapeIdx: Int
+  ) {
+    TODO()
+  }
+
   fun createShapeOwner(owner: Object): Int {
     val self = this
     return Allocator.allocationScope {

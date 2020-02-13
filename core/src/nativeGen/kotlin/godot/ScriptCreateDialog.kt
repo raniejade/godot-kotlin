@@ -8,6 +8,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -40,6 +41,54 @@ open class ScriptCreateDialog(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _browse_class_in_tree() {
+    TODO()
+  }
+
+  open fun _browse_path(arg0: Boolean, arg1: Boolean) {
+    TODO()
+  }
+
+  open fun _built_in_pressed() {
+    TODO()
+  }
+
+  open fun _class_name_changed(arg0: String) {
+    TODO()
+  }
+
+  open fun _create() {
+    TODO()
+  }
+
+  open fun _file_selected(arg0: String) {
+    TODO()
+  }
+
+  open fun _lang_changed(arg0: Int) {
+    TODO()
+  }
+
+  open fun _parent_name_changed(arg0: String) {
+    TODO()
+  }
+
+  open fun _path_changed(arg0: String) {
+    TODO()
+  }
+
+  open fun _path_entered(arg0: String) {
+    TODO()
+  }
+
+  open fun _path_hbox_sorted() {
+    TODO()
+  }
+
+  open fun _template_changed(arg0: Int) {
+    TODO()
   }
 
   fun config(

@@ -109,6 +109,14 @@ open class Tabs(
     }
   }
 
+  open fun _on_mouse_exited() {
+    TODO()
+  }
+
+  open fun _update_hover() {
+    TODO()
+  }
+
   fun addTab(title: String = "", icon: Texture) {
     val self = this
     return Allocator.allocationScope {

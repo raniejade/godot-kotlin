@@ -9,8 +9,10 @@ import godot.core.Godot
 import godot.core.PoolVector3Array
 import godot.core.Variant
 import godot.core.VariantArray
+import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
 import kotlin.reflect.KCallable
@@ -127,6 +129,22 @@ open class EditorSpatialGizmo(
     }
   }
 
+  open fun commit_handle(
+    index: Int,
+    restore: Variant,
+    cancel: Boolean
+  ) {
+    TODO()
+  }
+
+  open fun get_handle_name(index: Int): String {
+    TODO()
+  }
+
+  open fun get_handle_value(index: Int): Variant {
+    TODO()
+  }
+
   fun getPlugin(): EditorSpatialGizmoPlugin {
     val self = this
     return Allocator.allocationScope {
@@ -149,6 +167,22 @@ open class EditorSpatialGizmo(
       _ret = objectToType<Spatial>(_tmp.value!!)
       _ret
     }
+  }
+
+  open fun is_handle_highlighted(index: Int): Boolean {
+    TODO()
+  }
+
+  open fun redraw() {
+    TODO()
+  }
+
+  open fun set_handle(
+    index: Int,
+    camera: Camera,
+    point: Vector2
+  ) {
+    TODO()
   }
 
   fun setHidden(hidden: Boolean) {

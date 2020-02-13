@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Color
+import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.PoolColorArray
 import godot.core.PoolVector2Array
@@ -139,6 +140,90 @@ open class CanvasItem(
     val _p = selfModulate
     cb(_p)
     selfModulate = _p
+  }
+
+  open fun _draw() {
+    TODO()
+  }
+
+  open fun _edit_get_pivot(): Vector2 {
+    TODO()
+  }
+
+  open fun _edit_get_position(): Vector2 {
+    TODO()
+  }
+
+  open fun _edit_get_rect(): Rect2 {
+    TODO()
+  }
+
+  open fun _edit_get_rotation(): Float {
+    TODO()
+  }
+
+  open fun _edit_get_scale(): Vector2 {
+    TODO()
+  }
+
+  open fun _edit_get_state(): Dictionary {
+    TODO()
+  }
+
+  open fun _edit_get_transform(): Transform2D {
+    TODO()
+  }
+
+  open fun _edit_set_pivot(pivot: Vector2) {
+    TODO()
+  }
+
+  open fun _edit_set_position(position: Vector2) {
+    TODO()
+  }
+
+  open fun _edit_set_rect(rect: Rect2) {
+    TODO()
+  }
+
+  open fun _edit_set_rotation(degrees: Float) {
+    TODO()
+  }
+
+  open fun _edit_set_scale(scale: Vector2) {
+    TODO()
+  }
+
+  open fun _edit_set_state(state: Dictionary) {
+    TODO()
+  }
+
+  open fun _edit_use_pivot(): Boolean {
+    TODO()
+  }
+
+  open fun _edit_use_rect(): Boolean {
+    TODO()
+  }
+
+  open fun _edit_use_rotation(): Boolean {
+    TODO()
+  }
+
+  open fun _is_on_top(): Boolean {
+    TODO()
+  }
+
+  open fun _set_on_top(onTop: Boolean) {
+    TODO()
+  }
+
+  open fun _toplevel_raise_self() {
+    TODO()
+  }
+
+  open fun _update_callback() {
+    TODO()
   }
 
   fun drawArc(

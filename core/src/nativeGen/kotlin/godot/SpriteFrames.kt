@@ -40,6 +40,22 @@ open class SpriteFrames(
     }
   }
 
+  open fun _get_animations(): VariantArray {
+    TODO()
+  }
+
+  open fun _get_frames(): VariantArray {
+    TODO()
+  }
+
+  open fun _set_animations(arg0: VariantArray) {
+    TODO()
+  }
+
+  open fun _set_frames(arg0: VariantArray) {
+    TODO()
+  }
+
   fun addAnimation(anim: String) {
     val self = this
     return Allocator.allocationScope {

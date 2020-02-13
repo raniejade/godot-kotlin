@@ -138,6 +138,14 @@ open class BaseButton(
     }
   }
 
+  open fun _pressed() {
+    TODO()
+  }
+
+  open fun _toggled(buttonPressed: Boolean) {
+    TODO()
+  }
+
   fun getActionMode(): ActionMode {
     val self = this
     return Allocator.allocationScope {

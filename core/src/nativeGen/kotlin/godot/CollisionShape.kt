@@ -53,6 +53,14 @@ open class CollisionShape(
     }
   }
 
+  open fun _shape_changed() {
+    TODO()
+  }
+
+  open fun _update_debug_shape() {
+    TODO()
+  }
+
   fun getShape(): Shape {
     val self = this
     return Allocator.allocationScope {

@@ -5,9 +5,11 @@ import gdnative.godot_method_bind
 import gdnative.godot_string
 import godot.core.Allocator
 import godot.core.Godot
+import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlin.String
 import kotlin.Suppress
@@ -71,6 +73,76 @@ open class EditorInspector(
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
+  }
+
+  open fun _edit_request_change(arg0: Object, arg1: String) {
+    TODO()
+  }
+
+  open fun _feature_profile_changed() {
+    TODO()
+  }
+
+  open fun _filter_changed(arg0: String) {
+    TODO()
+  }
+
+  open fun _multiple_properties_changed(arg0: PoolStringArray, arg1: VariantArray) {
+    TODO()
+  }
+
+  open fun _node_removed(arg0: Node) {
+    TODO()
+  }
+
+  open fun _object_id_selected(arg0: String, arg1: Int) {
+    TODO()
+  }
+
+  open fun _property_changed(
+    arg0: String,
+    arg1: Variant,
+    arg2: String = "",
+    arg3: Boolean = false
+  ) {
+    TODO()
+  }
+
+  open fun _property_changed_update_all(
+    arg0: String,
+    arg1: Variant,
+    arg2: String,
+    arg3: Boolean
+  ) {
+    TODO()
+  }
+
+  open fun _property_checked(arg0: String, arg1: Boolean) {
+    TODO()
+  }
+
+  open fun _property_keyed(arg0: String, arg1: Boolean) {
+    TODO()
+  }
+
+  open fun _property_keyed_with_value(
+    arg0: String,
+    arg1: Variant,
+    arg2: Boolean
+  ) {
+    TODO()
+  }
+
+  open fun _property_selected(arg0: String, arg1: Int) {
+    TODO()
+  }
+
+  open fun _resource_selected(arg0: String, arg1: Resource) {
+    TODO()
+  }
+
+  open fun _vscroll_changed(arg0: Float) {
+    TODO()
   }
 
   fun refresh() {

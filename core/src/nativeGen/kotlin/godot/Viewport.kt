@@ -320,6 +320,38 @@ open class Viewport(
     size = _p
   }
 
+  open fun _gui_remove_focus() {
+    TODO()
+  }
+
+  open fun _gui_show_tooltip() {
+    TODO()
+  }
+
+  open fun _own_world_changed() {
+    TODO()
+  }
+
+  open fun _post_gui_grab_click_focus() {
+    TODO()
+  }
+
+  open fun _subwindow_visibility_changed() {
+    TODO()
+  }
+
+  open fun _vp_input(arg0: InputEvent) {
+    TODO()
+  }
+
+  open fun _vp_input_text(text: String) {
+    TODO()
+  }
+
+  open fun _vp_unhandled_input(arg0: InputEvent) {
+    TODO()
+  }
+
   fun findWorld(): World {
     val self = this
     return Allocator.allocationScope {

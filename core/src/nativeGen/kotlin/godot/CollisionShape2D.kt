@@ -70,6 +70,10 @@ open class CollisionShape2D(
     }
   }
 
+  open fun _shape_changed() {
+    TODO()
+  }
+
   fun getOneWayCollisionMargin(): Float {
     val self = this
     return Allocator.allocationScope {
