@@ -14,6 +14,7 @@ reckon {
 val versionString = project.version
 
 subprojects {
+  group = "com.github.raniejade"
   this.version = versionString.toString()
 
   if (Files.exists(Paths.get("$rootDir/local.properties"))) {

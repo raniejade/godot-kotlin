@@ -1,9 +1,7 @@
 includeBuild("../") {
   dependencySubstitution {
-    substitute(module("com.github.raniejade:godot-kotlin-gradle-plugin:0.1.0")).with(project(":gradle-plugin"))
-    substitute(module("com.github.raniejade:godot-kotlin-linux")).with(project(":core"))
-    substitute(module("com.github.raniejade:godot-kotlin-windows")).with(project(":core"))
-    substitute(module("com.github.raniejade:godot-kotlin-macos")).with(project(":core"))
+    substitute(module("com.github.raniejade:godot-kotlin-gradle-plugin:0.1.0")).with(project(":godot-kotlin-gradle-plugin"))
+    substitute(module("com.github.raniejade:godot-kotlin")).with(project(":godot-kotlin"))
   }
 }
 

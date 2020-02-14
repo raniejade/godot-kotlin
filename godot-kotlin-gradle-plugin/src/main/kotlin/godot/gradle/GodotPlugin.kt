@@ -66,17 +66,18 @@ open class GodotPlugin : Plugin<Project> {
                 compileKotlinTask.dependsOn(genEntryTask)
 
                 dependencies {
-                  val suffix = artifactSuffixFrom(platform)
+                  val prefix = artifactSuffixFrom(platform)
                   if (godot.isCompositeBuild.get()) {
-                    implementation("com.github.raniejade:godot-kotlin-$suffix:${godot.version.get()}") {
-                      targetConfiguration = "${suffix}X64ApiElements"
+                    implementation("com.github.raniejade:godot-kotlin:${godot.version.get()}") {
+                      targetConfiguration = "${prefix}ApiElements"
                       isTransitive = false
                     }
-//                    implementation("com.github.raniejade:godot-kotlin-$suffix:${godot.version.get()}") {
-//                      targetConfiguration = "${suffix}GdnativeCInterop"
-//                    }
+                    // pull in implementation dependencies
+                    implementation("com.github.raniejade:godot-kotlin:${godot.version.get()}") {
+                      targetConfiguration = "${prefix}Hack"
+                    }
                   } else {
-                    implementation("com.github.raniejade:godot-kotlin-$suffix:${godot.version.get()}")
+                    implementation("com.github.raniejade:godot-kotlin:${godot.version.get()}")
                   }
                 }
 

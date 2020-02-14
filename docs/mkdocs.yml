@@ -20,15 +20,20 @@ markdown_extensions:
   - codehilite:
       linenums: true
   - pymdownx.inlinehilite
+  - admonition
 
 
 nav:
   - Overview: index.md
   - API differences: api-differences.md
   - Supported platforms: supported-platforms.md
+  - Setting up:
+      - Gradle: setup/gradle.md
+      - IDE: setup/ide.md
   - User guide:
-    - Setting up: user-guide/setting-up.md
     - Classes: user-guide/classes.md
     - Methods: user-guide/methods.md
     - Signals: user-guide/signals.md
     - Properties: user-guide/properties.md
+  - Release notes: release-notes.md
+  - Roadmap: roadmap.md

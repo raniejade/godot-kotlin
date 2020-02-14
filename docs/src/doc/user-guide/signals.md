@@ -26,7 +26,7 @@ class RotatingCube: Spatial() {
 ```
 
 ## Emitting
-Every signal have an `emit` method which can be used to emit it.
+Every signal has a `emit` method which can be used to emit it.
 
 ```kotlin
 signalReverseChanged.emit(false)

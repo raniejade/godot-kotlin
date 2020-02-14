@@ -1,4 +1,2 @@
-enableFeaturePreview("GRADLE_METADATA")
-
-include(":core")
-include(":gradle-plugin")
+include(":godot-kotlin")
+include(":godot-kotlin-gradle-plugin")

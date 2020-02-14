@@ -74,9 +74,6 @@ project.extra["artifacts"] = arrayOf("godotPlugin")
 publishing {
   publications {
     val godotPlugin by creating(MavenPublication::class) {
-      groupId = "com.github.raniejade"
-      artifactId = "godot-kotlin-gradle-plugin"
-      from(components["java"])
       artifact(tasks.getByName("sourceJar"))
     }
   }
