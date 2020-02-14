@@ -6,14 +6,16 @@
 
 Kotlin Native bindings for Godot.
 
+Documentation is available at [godot-kotl.in](https://godot-kotl.in).
+
 ## Status
 Use with caution, this binding is not yet ready for production use. All of the core Godot classes are fully accessible in Kotlin, however, some APIs are a bit clunky and require some tweaking to make it concise (in the Kotlin way). 
 
 Here are some gotchas when using this binding:
 - Kotlin Native's compile times are horribly slow, it can take almost a minute to re-compile after making a **single line** change.
 - GDScript's coroutine is not and will probably never be implemented. However, a similar feature using Kotlin coroutines will be provided (when Kotlin Native supports multi-threaded coroutines).
-- It **might** be slow (I haven't look at performance yet). 
 
 ## Versioning
-Checkout the [documentation](https://godot-kotlin.netlify.com) for information about how this project is versioned.
+Checkout the [documentation](https://godot-kotl.in) for information about how this project is versioned.
     
+https://godot-kotlin.netlify.com
