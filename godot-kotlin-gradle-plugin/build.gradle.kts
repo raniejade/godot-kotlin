@@ -74,7 +74,7 @@ project.extra["artifacts"] = arrayOf("godotPlugin")
 publishing {
   publications {
     val godotPlugin by creating(MavenPublication::class) {
-      artifact(tasks.getByName("jar"))
+      from(components.getByName("java"))
       artifact(tasks.getByName("sourceJar"))
     }
   }
