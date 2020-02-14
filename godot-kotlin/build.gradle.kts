@@ -1,4 +1,6 @@
+import com.jfrog.bintray.gradle.tasks.BintrayUploadTask
 import godot.task.GenerateAPI
+import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
@@ -42,6 +44,22 @@ tasks {
     source.set(project.file("$rootDir/godot_headers/api.json"))
     maxSignalParams.set(MAX_SIGNAL_PARAMS)
     outputDir.set(project.file("src/nativeGen/kotlin"))
+  }
+
+  // workaround to upload gradle metadata file
+  // https://github.com/bintray/gradle-bintray-plugin/issues/229
+  withType<BintrayUploadTask> {
+    doFirst {
+      publishing.publications.withType<MavenPublication> {
+        buildDir.resolve("publications/$name/module.json").also {
+          if (it.exists()) {
+            artifact(object: FileBasedMavenArtifact(it) {
+              override fun getDefaultExtension() = "module"
+            })
+          }
+        }
+      }
+    }
   }
 }
 
