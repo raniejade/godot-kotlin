@@ -13,4 +13,4 @@ Aside from the slow compile times, another area improvement is IDE integration. 
 And finally, integrating [Spek Framework](https://spekframework.org) so that you can write unit and automation tests for your game.
 
 ## Performance
-Believe it or not, GDScript is much faster in simple cases as it is more integrated with Godot. Improving performance is definitely a priority but as a first step, this binding needs some benchmark tests (and tooling).
+Improving performance is definitely a priority but as a first step, this binding needs some benchmark tests (and tooling).
