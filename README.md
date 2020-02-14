@@ -17,5 +17,3 @@ Here are some gotchas when using this binding:
 
 ## Versioning
 Checkout the [documentation](https://godot-kotl.in) for information about how this project is versioned.
-    
-https://godot-kotlin.netlify.com
