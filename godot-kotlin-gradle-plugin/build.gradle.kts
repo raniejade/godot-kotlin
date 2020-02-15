@@ -26,6 +26,12 @@ pluginBundle {
   website = "https://github.com/raniejade/godot-kotlin"
   vcsUrl = "https://github.com/raniejade/godot-kotlin.git"
   tags = listOf("kotlin", "godot", "gamedev")
+
+  mavenCoordinates {
+    groupId = "com.github.raniejade"
+    artifactId = "godot-kotlin-gradle-plugin"
+    version = "${project.version}"
+  }
 }
 
 repositories {
