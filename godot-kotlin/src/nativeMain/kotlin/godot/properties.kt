@@ -5,7 +5,7 @@ import godot.core.CoreType
 import godot.core.Variant
 import kotlin.reflect.KMutableProperty1
 
-open class MutablePropertyHandler<T: Object, R>(val property: KMutableProperty1<T, R>, val default: Variant) {
+open class MutablePropertyHandler<T: Object, R>(val property: KMutableProperty1<T, R>, val default: Variant?) {
   open fun get(instance: T): Variant {
     return Variant.fromAny(
       property.get(instance) as Any
@@ -17,7 +17,9 @@ open class MutablePropertyHandler<T: Object, R>(val property: KMutableProperty1<
   }
 
   fun initializeDefaultValue(instance: T) {
-    set(instance, default)
+    if (default != null) {
+      set(instance, default)
+    }
   }
 }
 
@@ -91,6 +93,15 @@ inline fun <T: Object, reified R: CoreType<*>, reified P: KMutableProperty1<T, R
   val handler = MutablePropertyHandler(property, variant)
   val propertyHandleRef = track(handler)
   doRegisterProperty(className, propertyName, propertyHandleRef, variant.type, default = variant, hint = hint)
+}
+
+inline fun <T: Object, reified R: Resource, reified P: KMutableProperty1<T, R>> ClassMemberRegistry<T>.registerProperty(
+  property: P
+) {
+  val propertyName = property.name
+  val handler = MutablePropertyHandler(property, Variant())
+  val propertyHandleRef = track(handler)
+  doRegisterProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, hint = PropertyHint.resource())
 }
 
 inline fun <T: Object, reified R: Enum<R>, reified P: KMutableProperty1<T, R>> ClassMemberRegistry<T>.registerProperty(property: P, default: R? = null) {

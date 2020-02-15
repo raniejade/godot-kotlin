@@ -5,7 +5,8 @@ Similar to signals, properties are created via a delegate which varies depending
 - `booleanProperty()` for `Boolean`
 - `stringProperty()` for `String`
 - `enumProperty()` for `Enum`s
-- `property()` for `godot.Resource` types.
+- `resourceProperty()` for `godot.Resource` types.
+- `property` for Godot core types (i.e. `Vector2`, `Basis` and etc).
 
 Note that properties must be mutable (declared as `var`s).
 

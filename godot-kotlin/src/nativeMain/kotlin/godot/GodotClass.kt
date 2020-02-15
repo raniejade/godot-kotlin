@@ -1,7 +1,6 @@
 package godot
 
 import godot.core.CoreType
-import kotlinx.cinterop.COpaquePointer
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.freeze
 import kotlin.properties.ReadWriteProperty
@@ -47,5 +46,6 @@ abstract class GodotClass<S: Object, T: S>(
   fun <T: Object> stringProperty(changeListener: ChangeListener<T, String> = { _, _ -> }): ReadWriteProperty<T, String> = PropertyDelegate(changeListener)
   fun <T: Object> booleanProperty(changeListener: ChangeListener<T, Boolean> = { _, _ -> }): ReadWriteProperty<T, Boolean> = PropertyDelegate(changeListener)
   fun <E: Enum<E>> enumProperty(changeListener: ChangeListener<T, E> = { _, _ -> }): ReadWriteProperty<T, E> = PropertyDelegate(changeListener)
+  fun <T: Object, R: Resource> resourceProperty(changeListener: ChangeListener<T, R> = { _, _ -> }): ReadWriteProperty<T, R> = PropertyDelegate(changeListener)
   fun <T: Object, R: CoreType<*>> property(changeListener: ChangeListener<T, R> = { _, _ -> }): ReadWriteProperty<T, R> = PropertyDelegate(changeListener)
 }
