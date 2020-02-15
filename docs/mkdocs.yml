@@ -1,6 +1,9 @@
 site_name: Kotlin Native binding for Godot
 docs_dir: src/doc
 
+repo_name: 'raniejade/godot-kotlin'
+repo_url: 'https://github.com/raniejade/godot-kotlin'
+
 theme:
   name: material
   palette:

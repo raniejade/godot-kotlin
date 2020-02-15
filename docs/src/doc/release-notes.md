@@ -14,6 +14,6 @@ More will be added in the upcoming releases.
 See [Roadmap](./roadmap.md) for the future plans of this project.
 
 **Known issues**
-- Compilation speed is very slow (https://github.com/JetBrains/kotlin-native/issues/733)
-- Building release shared library is causing an OOM (https://github.com/JetBrains/kotlin-native/issues/3877). By
-  default the gradle plugin will build a debug shared library, please use that for now.
+
+- Compilation speed is very slow ([https://github.com/JetBrains/kotlin-native/issues/733]())
+- Building release shared library is causing an OOM ([https://github.com/JetBrains/kotlin-native/issues/3877]()). By default the gradle plugin will build a debug shared library, please use that for now.
