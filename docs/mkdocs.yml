@@ -6,11 +6,11 @@ repo_url: 'https://github.com/raniejade/godot-kotlin'
 
 theme:
   name: material
+  favicon: assets/img/favicon.ico
   palette:
-    primary: blue
+    primary: indigo
     accent: light-blue
-  logo:
-    icon: 'device_hub'
+  logo: assets/img/logo.png
 
 extra:
   social:
