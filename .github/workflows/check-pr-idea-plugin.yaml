@@ -1,13 +1,14 @@
-name: Check PR - godot-kotlin-gradle-plugin
+name: Check PR - godot-kotlin-idea-plugin
 on:
   pull_request:
     paths:
-      - 'godot-kotlin-gradle-plugin/**'
+      - 'godot-kotlin-idea-plugin/**'
       - 'build.gradle.kts'
       - 'buildSrc/build.gradle.kts'
       - 'gradle.properties'
-      - '.github/workflows/check-pr-gradle-plugin.yaml'
+      - '.github/workflows/check-pr-idea-plugin.yaml'
 
+# todo matrix build for all supported products
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,4 +20,4 @@ jobs:
           java-version: 11
       - uses: eskatos/gradle-command-action@v1
         with:
-          arguments: godot-kotlin-gradle-plugin:build -PexcludeIdePlugins
+          arguments: godot-kotlin-idea-plugin:build

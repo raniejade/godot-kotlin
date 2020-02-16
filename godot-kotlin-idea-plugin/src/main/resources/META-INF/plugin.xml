@@ -1,0 +1,10 @@
+<idea-plugin>
+  <id>com.github.raniejade.godot-kotlin</id>
+  <name>Godot Kotlin (godot-kotl.in)</name>
+  <vendor email="raniejaderamiso@gmail.com">Ranie Jade Ramiso</vendor>
+  <description><![CDATA[
+      Plugin for <a href="http://godot-kotl.in">godot-kotlin</a> a Kotlin Native binding for Godot.
+    ]]></description>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>org.jetbrains.kotlin</depends>
+</idea-plugin>
