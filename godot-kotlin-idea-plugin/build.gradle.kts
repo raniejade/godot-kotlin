@@ -21,7 +21,7 @@ val product = properties.getOrDefault("idea.product", "IJ193").run {
     "IJ193" -> Product(
       "IC",
       "193.6494.35",
-      listOf("org.jetbrains.kotlin:1.3.61-release-IJ2019.3-1"),
+      listOf("java", "org.jetbrains.kotlin:1.3.61-release-IJ2019.3-1"),
       VersionRange("193.1", "193.*"),
       "IJ2019.3"
     )

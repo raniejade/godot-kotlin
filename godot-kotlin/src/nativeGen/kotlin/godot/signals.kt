@@ -62,13 +62,13 @@ class Signal0Provider(
 /**
  * Creates a signal of 0 params
  */
+@godot.ide.Signal
 fun GodotClass<*, *>.signal0(): Signal0Provider = Signal0Provider(signals())
 
 
 /**
  * Registers a signal of 0 params
  */
-@godot.ide.Signal
 inline fun <T : Object, K : KProperty1<T, Signal0>>
     ClassMemberRegistry<T>.registerSignal(property: K) {
   val parameterTypes = emptyMap<String, Variant.Type>()
@@ -102,13 +102,13 @@ class Signal1Provider<A0>(
 /**
  * Creates a signal of 1 params
  */
+@godot.ide.Signal
 fun <A0> GodotClass<*, *>.signal1(): Signal1Provider<A0> = Signal1Provider(signals())
 
 
 /**
  * Registers a signal of 1 params
  */
-@godot.ide.Signal
 inline fun <T : Object, reified A0, K : KProperty1<T, Signal1<A0>>>
     ClassMemberRegistry<T>.registerSignal(property: K, a0: String) {
   val parameterTypes = mutableMapOf<String, Variant.Type>()
@@ -148,13 +148,13 @@ class Signal2Provider<A0, A1>(
 /**
  * Creates a signal of 2 params
  */
+@godot.ide.Signal
 fun <A0, A1> GodotClass<*, *>.signal2(): Signal2Provider<A0, A1> = Signal2Provider(signals())
 
 
 /**
  * Registers a signal of 2 params
  */
-@godot.ide.Signal
 inline fun <T : Object, reified A0, reified A1, K : KProperty1<T, Signal2<A0, A1>>>
     ClassMemberRegistry<T>.registerSignal(
   property: K,
@@ -201,6 +201,7 @@ class Signal3Provider<A0, A1, A2>(
 /**
  * Creates a signal of 3 params
  */
+@godot.ide.Signal
 fun <A0, A1, A2> GodotClass<*, *>.signal3(): Signal3Provider<A0, A1, A2> =
     Signal3Provider(signals())
 
@@ -208,7 +209,6 @@ fun <A0, A1, A2> GodotClass<*, *>.signal3(): Signal3Provider<A0, A1, A2> =
 /**
  * Registers a signal of 3 params
  */
-@godot.ide.Signal
 inline fun <T : Object, reified A0, reified A1, reified A2, K : KProperty1<T, Signal3<A0, A1, A2>>>
     ClassMemberRegistry<T>.registerSignal(
   property: K,
@@ -259,6 +259,7 @@ class Signal4Provider<A0, A1, A2, A3>(
 /**
  * Creates a signal of 4 params
  */
+@godot.ide.Signal
 fun <A0, A1, A2, A3> GodotClass<*, *>.signal4(): Signal4Provider<A0, A1, A2, A3> =
     Signal4Provider(signals())
 
@@ -266,7 +267,6 @@ fun <A0, A1, A2, A3> GodotClass<*, *>.signal4(): Signal4Provider<A0, A1, A2, A3>
 /**
  * Registers a signal of 4 params
  */
-@godot.ide.Signal
 inline fun <T : Object, reified A0, reified A1, reified A2, reified A3, K : KProperty1<T,
     Signal4<A0, A1, A2, A3>>> ClassMemberRegistry<T>.registerSignal(
   property: K,
@@ -321,6 +321,7 @@ class Signal5Provider<A0, A1, A2, A3, A4>(
 /**
  * Creates a signal of 5 params
  */
+@godot.ide.Signal
 fun <A0, A1, A2, A3, A4> GodotClass<*, *>.signal5(): Signal5Provider<A0, A1, A2, A3, A4> =
     Signal5Provider(signals())
 
@@ -328,7 +329,6 @@ fun <A0, A1, A2, A3, A4> GodotClass<*, *>.signal5(): Signal5Provider<A0, A1, A2,
 /**
  * Registers a signal of 5 params
  */
-@godot.ide.Signal
 inline fun <T : Object, reified A0, reified A1, reified A2, reified A3, reified A4, K :
     KProperty1<T, Signal5<A0, A1, A2, A3, A4>>> ClassMemberRegistry<T>.registerSignal(
   property: K,
@@ -387,6 +387,7 @@ class Signal6Provider<A0, A1, A2, A3, A4, A5>(
 /**
  * Creates a signal of 6 params
  */
+@godot.ide.Signal
 fun <A0, A1, A2, A3, A4, A5> GodotClass<*, *>.signal6(): Signal6Provider<A0, A1, A2, A3, A4, A5> =
     Signal6Provider(signals())
 
@@ -394,7 +395,6 @@ fun <A0, A1, A2, A3, A4, A5> GodotClass<*, *>.signal6(): Signal6Provider<A0, A1,
 /**
  * Registers a signal of 6 params
  */
-@godot.ide.Signal
 inline fun <T : Object, reified A0, reified A1, reified A2, reified A3, reified A4, reified A5, K :
     KProperty1<T, Signal6<A0, A1, A2, A3, A4, A5>>> ClassMemberRegistry<T>.registerSignal(
   property: K,
@@ -457,6 +457,7 @@ class Signal7Provider<A0, A1, A2, A3, A4, A5, A6>(
 /**
  * Creates a signal of 7 params
  */
+@godot.ide.Signal
 fun <A0, A1, A2, A3, A4, A5, A6> GodotClass<*, *>.signal7(): Signal7Provider<A0, A1, A2, A3, A4, A5,
     A6> = Signal7Provider(signals())
 
@@ -464,7 +465,6 @@ fun <A0, A1, A2, A3, A4, A5, A6> GodotClass<*, *>.signal7(): Signal7Provider<A0,
 /**
  * Registers a signal of 7 params
  */
-@godot.ide.Signal
 inline fun <T : Object, reified A0, reified A1, reified A2, reified A3, reified A4, reified A5,
     reified A6, K : KProperty1<T, Signal7<A0, A1, A2, A3, A4, A5, A6>>>
     ClassMemberRegistry<T>.registerSignal(
@@ -532,6 +532,7 @@ class Signal8Provider<A0, A1, A2, A3, A4, A5, A6, A7>(
 /**
  * Creates a signal of 8 params
  */
+@godot.ide.Signal
 fun <A0, A1, A2, A3, A4, A5, A6, A7> GodotClass<*, *>.signal8(): Signal8Provider<A0, A1, A2, A3, A4,
     A5, A6, A7> = Signal8Provider(signals())
 
@@ -539,7 +540,6 @@ fun <A0, A1, A2, A3, A4, A5, A6, A7> GodotClass<*, *>.signal8(): Signal8Provider
 /**
  * Registers a signal of 8 params
  */
-@godot.ide.Signal
 inline fun <T : Object, reified A0, reified A1, reified A2, reified A3, reified A4, reified A5,
     reified A6, reified A7, K : KProperty1<T, Signal8<A0, A1, A2, A3, A4, A5, A6, A7>>>
     ClassMemberRegistry<T>.registerSignal(
@@ -612,6 +612,7 @@ class Signal9Provider<A0, A1, A2, A3, A4, A5, A6, A7, A8>(
 /**
  * Creates a signal of 9 params
  */
+@godot.ide.Signal
 fun <A0, A1, A2, A3, A4, A5, A6, A7, A8> GodotClass<*, *>.signal9(): Signal9Provider<A0, A1, A2, A3,
     A4, A5, A6, A7, A8> = Signal9Provider(signals())
 
@@ -619,7 +620,6 @@ fun <A0, A1, A2, A3, A4, A5, A6, A7, A8> GodotClass<*, *>.signal9(): Signal9Prov
 /**
  * Registers a signal of 9 params
  */
-@godot.ide.Signal
 inline fun <T : Object, reified A0, reified A1, reified A2, reified A3, reified A4, reified A5,
     reified A6, reified A7, reified A8, K : KProperty1<T, Signal9<A0, A1, A2, A3, A4, A5, A6, A7,
     A8>>> ClassMemberRegistry<T>.registerSignal(
@@ -696,6 +696,7 @@ class Signal10Provider<A0, A1, A2, A3, A4, A5, A6, A7, A8, A9>(
 /**
  * Creates a signal of 10 params
  */
+@godot.ide.Signal
 fun <A0, A1, A2, A3, A4, A5, A6, A7, A8, A9> GodotClass<*, *>.signal10(): Signal10Provider<A0, A1,
     A2, A3, A4, A5, A6, A7, A8, A9> = Signal10Provider(signals())
 
@@ -703,7 +704,6 @@ fun <A0, A1, A2, A3, A4, A5, A6, A7, A8, A9> GodotClass<*, *>.signal10(): Signal
 /**
  * Registers a signal of 10 params
  */
-@godot.ide.Signal
 inline fun <T : Object, reified A0, reified A1, reified A2, reified A3, reified A4, reified A5,
     reified A6, reified A7, reified A8, reified A9, K : KProperty1<T, Signal10<A0, A1, A2, A3, A4,
     A5, A6, A7, A8, A9>>> ClassMemberRegistry<T>.registerSignal(

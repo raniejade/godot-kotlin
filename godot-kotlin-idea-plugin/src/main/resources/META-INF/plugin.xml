@@ -10,5 +10,6 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <applicationConfigurable instance="godot.idea.Settings"/>
+    <codeInsight.lineMarkerProvider language="kotlin" implementationClass="godot.idea.SignalLineMarkerProvider"/>
   </extensions>
 </idea-plugin>
