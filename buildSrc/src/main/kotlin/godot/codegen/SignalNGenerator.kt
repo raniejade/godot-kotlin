@@ -189,7 +189,6 @@ class SignalNGenerator {
     }
 
     val delegateBuilder = FunSpec.builder("signal$argCount")
-      .addAnnotation(AnnotationSpec.builder(ClassName("godot.ide", "Signal")).build())
       .addKdoc("Creates a signal of $argCount params")
       .receiver(
         with(ParameterizedTypeName) {
