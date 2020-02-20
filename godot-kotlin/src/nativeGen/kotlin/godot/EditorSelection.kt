@@ -35,7 +35,7 @@ open class EditorSelection(
    */
   val signalSelectionChanged: Signal0 = Signal0("selection_changed")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

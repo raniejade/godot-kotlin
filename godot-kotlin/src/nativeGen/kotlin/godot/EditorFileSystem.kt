@@ -53,7 +53,7 @@ open class EditorFileSystem(
    */
   val signalSourcesChanged: Signal1<Boolean> = Signal1("sources_changed")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

@@ -29,7 +29,7 @@ open class IP_Unix(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : IPInternal(null) {
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

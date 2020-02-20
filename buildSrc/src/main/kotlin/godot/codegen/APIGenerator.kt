@@ -385,10 +385,6 @@ class APIGenerator {
         """.trimIndent())
         .addStatement("")
 
-      if (!cls.isInstanciable) {
-        secondaryConstructor.addModifiers(KModifier.INTERNAL)
-      }
-
       addFunction(
         secondaryConstructor
           .build()

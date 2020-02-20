@@ -55,7 +55,7 @@ open class EditorSpinSlider(
       setReadOnly(value)
     }
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

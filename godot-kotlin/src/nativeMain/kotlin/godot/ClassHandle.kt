@@ -10,7 +10,8 @@ internal class ClassHandle<S: Object, T: S>(
   handle: COpaquePointer,
   className: String,
   val superClassName: String,
-  val info: GodotClass<S, T>
+  val info: GodotClass<S, T>,
+  val isTool: Boolean
 ) : ClassMemberRegistry<T>(handle, className) {
   fun create(instance: COpaquePointer): T {
     val ret = Godot.noInitZone {
@@ -33,7 +34,12 @@ internal class ClassHandle<S: Object, T: S>(
         destroy_func = staticCFunction(::destroyInstance)
         method_data = methodData
       }
-      checkNotNull(Godot.nativescript.godot_nativescript_register_class)(
+      val registerMethod = if (isTool) {
+        Godot.nativescript.godot_nativescript_register_tool_class
+      } else {
+        Godot.nativescript.godot_nativescript_register_class
+      }
+      checkNotNull(registerMethod)(
         handle,
         className.cstr.ptr,
         superClassName.cstr.ptr,

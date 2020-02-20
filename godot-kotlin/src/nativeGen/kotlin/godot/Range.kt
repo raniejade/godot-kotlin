@@ -122,7 +122,7 @@ open class Range(
    */
   val signalValueChanged: Signal1<Float> = Signal1("value_changed")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

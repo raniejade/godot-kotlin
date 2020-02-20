@@ -36,7 +36,7 @@ open class EditorResourcePreview(
    */
   val signalPreviewInvalidated: Signal1<String> = Signal1("preview_invalidated")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

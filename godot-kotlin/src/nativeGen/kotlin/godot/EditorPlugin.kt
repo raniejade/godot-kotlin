@@ -54,7 +54,7 @@ open class EditorPlugin(
    */
   val signalSceneClosed: Signal1<String> = Signal1("scene_closed")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

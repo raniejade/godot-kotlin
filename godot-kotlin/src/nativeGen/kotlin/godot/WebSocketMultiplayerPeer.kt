@@ -37,7 +37,7 @@ open class WebSocketMultiplayerPeer(
    */
   val signalPeerPacket: Signal1<Int> = Signal1("peer_packet")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

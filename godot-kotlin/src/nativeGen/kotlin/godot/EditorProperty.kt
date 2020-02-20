@@ -122,7 +122,7 @@ open class EditorProperty(
    */
   val signalSelected: Signal2<String, Int> = Signal2("selected")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

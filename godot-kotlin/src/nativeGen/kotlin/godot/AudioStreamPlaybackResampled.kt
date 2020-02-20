@@ -29,7 +29,7 @@ open class AudioStreamPlaybackResampled(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : AudioStreamPlayback(null) {
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

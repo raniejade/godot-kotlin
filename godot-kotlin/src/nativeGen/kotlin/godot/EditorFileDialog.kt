@@ -113,7 +113,7 @@ open class EditorFileDialog(
    */
   val signalFilesSelected: Signal1<PoolStringArray> = Signal1("files_selected")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

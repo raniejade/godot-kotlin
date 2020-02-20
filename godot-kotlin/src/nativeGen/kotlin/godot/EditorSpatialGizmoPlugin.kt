@@ -34,7 +34,7 @@ open class EditorSpatialGizmoPlugin(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Resource(null) {
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

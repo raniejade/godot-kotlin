@@ -15,6 +15,9 @@ open class GenerateGDClasses : DefaultTask() {
   @Input
   val libraryFile = project.objects.property<String>()
 
+  @Input
+  val pathPrefix = project.objects.property<String>()
+
   @OutputDirectory
   val outputDir = project.objects.directoryProperty()
 
@@ -24,10 +27,10 @@ open class GenerateGDClasses : DefaultTask() {
       val className = normalizeClassName(cls)
       val file = File(outputDir.get().asFile, "$className.gdns")
       file.delete()
-
+      val prefix = pathPrefix.getOrElse("res://")
       file.bufferedWriter().use { writer ->
         writer.appendln("[gd_resource type=\"NativeScript\" load_steps=2 format=2]")
-        writer.appendln("[ext_resource path=\"${libraryFile.get()}\" type=\"GDNativeLibrary\" id=1]")
+        writer.appendln("[ext_resource path=\"$prefix${libraryFile.get()}\" type=\"GDNativeLibrary\" id=1]")
         writer.appendln("[resource]")
         writer.appendln("resource_name=\"$className\"")
         writer.appendln("class_name=\"$className\"")

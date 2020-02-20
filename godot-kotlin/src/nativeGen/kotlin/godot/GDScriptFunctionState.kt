@@ -37,7 +37,7 @@ open class GDScriptFunctionState(
    */
   val signalCompleted: Signal1<Variant> = Signal1("completed")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

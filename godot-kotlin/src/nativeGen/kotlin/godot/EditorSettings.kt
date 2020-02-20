@@ -39,7 +39,7 @@ open class EditorSettings(
    */
   val signalSettingsChanged: Signal0 = Signal0("settings_changed")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

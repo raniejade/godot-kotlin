@@ -36,7 +36,7 @@ open class VisualScriptNode(
    */
   val signalPortsChanged: Signal0 = Signal0("ports_changed")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

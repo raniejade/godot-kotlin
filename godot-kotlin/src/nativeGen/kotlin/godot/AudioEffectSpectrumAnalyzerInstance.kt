@@ -33,7 +33,7 @@ open class AudioEffectSpectrumAnalyzerInstance(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : AudioEffectInstance(null) {
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

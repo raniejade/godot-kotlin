@@ -9,7 +9,7 @@ import org.gradle.kotlin.dsl.listProperty
 
 open class GenerateEntry : DefaultTask() {
   @Input
-  val classes = project.objects.listProperty<String>()
+  val classes = project.objects.listProperty<GDClass>()
 
   @OutputFile
   val output = project.objects.fileProperty()
@@ -53,7 +53,7 @@ open class GenerateEntry : DefaultTask() {
     nativeScriptInitFun.addCode("godot.nativescriptInit(handle) {\n⇥")
 
     classes.get().forEach { cls ->
-      nativeScriptInitFun.addCode("registerClass(%L)\n", cls)
+      nativeScriptInitFun.addCode("registerClass(%L, %L)\n", cls.name, cls.isTool)
     }
 
     nativeScriptInitFun.addCode("⇤}")

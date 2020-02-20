@@ -52,7 +52,7 @@ open class VisualShaderNode(
    */
   val signalEditorRefreshRequest: Signal0 = Signal0("editor_refresh_request")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

@@ -29,7 +29,7 @@ open class VisualShaderNodeOutput(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : VisualShaderNode(null) {
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

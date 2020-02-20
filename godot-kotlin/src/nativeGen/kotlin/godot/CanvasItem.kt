@@ -118,7 +118,7 @@ open class CanvasItem(
    */
   val signalVisibilityChanged: Signal0 = Signal0("visibility_changed")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

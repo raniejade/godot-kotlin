@@ -6,10 +6,11 @@ import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.mapProperty
 import org.gradle.kotlin.dsl.property
+import java.io.File
 
 open class GenerateLibrary : DefaultTask() {
   @Input
-  val libraries = project.objects.mapProperty<TargetPlatform, String>()
+  val libraries = project.objects.mapProperty<TargetPlatform, File>()
 
   @Input
   val singleton = project.objects.property<Boolean>()
@@ -23,6 +24,9 @@ open class GenerateLibrary : DefaultTask() {
   @Input
   val symbolPrefix = project.objects.property<String>()
 
+  @Input
+  val pathPrefix = project.objects.property<String>()
+
   @OutputFile
   val output = project.objects.fileProperty()
 
@@ -33,8 +37,9 @@ open class GenerateLibrary : DefaultTask() {
     file.bufferedWriter().use { writer ->
       writer.appendln("[entry]")
       writer.appendln()
+      val prefix = pathPrefix.getOrElse("res://")
       libraries.get().forEach { (platform, path) ->
-        writer.appendln("${platformToKey(platform)}=\"$path\"")
+        writer.appendln("${platformToKey(platform)}=\"$prefix$path\"")
       }
       writer.appendln()
 

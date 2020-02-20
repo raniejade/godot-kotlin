@@ -44,7 +44,7 @@ open class SceneTreeTimer(
    */
   val signalTimeout: Signal0 = Signal0("timeout")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

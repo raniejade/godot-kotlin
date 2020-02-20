@@ -29,7 +29,7 @@ open class Physics2DDirectBodyStateSW(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : Physics2DDirectBodyState(null) {
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

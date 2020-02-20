@@ -69,7 +69,7 @@ open class EditorInspector(
    */
   val signalRestartRequested: Signal0 = Signal0("restart_requested")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

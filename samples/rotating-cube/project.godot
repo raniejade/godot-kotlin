@@ -19,6 +19,10 @@ config/name="rotating-cube"
 run/main_scene="res://RotatingCube.tscn"
 config/icon="res://icon.png"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "editor-plugin" )
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

@@ -29,7 +29,7 @@ open class ResourceFormatLoaderCrypto(
   @Suppress("UNUSED_PARAMETER")
   __ignore: String?
 ) : ResourceFormatLoader(null) {
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

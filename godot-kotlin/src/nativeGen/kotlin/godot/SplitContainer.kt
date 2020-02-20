@@ -61,7 +61,7 @@ open class SplitContainer(
    */
   val signalDragged: Signal1<Int> = Signal1("dragged")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }

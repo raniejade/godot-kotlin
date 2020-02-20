@@ -37,7 +37,7 @@ open class ScriptCreateDialog(
    */
   val signalScriptCreated: Signal1<Script> = Signal1("script_created")
 
-  internal constructor() : this(null) {
+  constructor() : this(null) {
     if (Godot.shouldInitHandle()) {
       _handle = __new()
     }
