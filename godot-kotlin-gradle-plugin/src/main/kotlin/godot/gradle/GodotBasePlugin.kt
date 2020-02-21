@@ -6,16 +6,18 @@ import org.gradle.internal.os.OperatingSystem
 import org.gradle.kotlin.dsl.named
 import org.gradle.kotlin.dsl.provideDelegate
 
-class GodotBasePlugin: Plugin<Project> {
-  private val currentOS by lazy {
+open class GodotBasePlugin : Plugin<Project> {
+  val currentOS by lazy {
     val current = OperatingSystem.current()
     when {
-      current.isLinux -> "linux"
-      current.isMacOsX -> "macos"
-      current.isWindows -> "windows"
+      current.isLinux -> TargetPlatform.LINUX
+      current.isMacOsX -> TargetPlatform.MACOS
+      current.isWindows -> TargetPlatform.WINDOWS
       else -> throw AssertionError("Unsupported os: ${current.name}")
     }
   }
+
+  lateinit var godotComponent: GodotSoftwareComponent
 
   fun configureDefaults(extension: GodotBaseExtension) {
     extension.isCompositeBuild.set(false)
@@ -25,6 +27,12 @@ class GodotBasePlugin: Plugin<Project> {
   override fun apply(project: Project) {
     project.plugins.apply("org.jetbrains.kotlin.multiplatform")
     configurePluginAttributes(project)
+    configureComponents(project)
+  }
+
+  private fun configureComponents(project: Project) {
+    godotComponent = GodotSoftwareComponent(project, "godot", null)
+    project.components.add(godotComponent)
   }
 
   private fun configurePluginAttributes(project: Project) {
@@ -39,7 +47,7 @@ class GodotBasePlugin: Plugin<Project> {
         isCanBeConsumed = false
         attributes {
           attribute(PluginAttributes.usage, objects.named(PluginAttributes.Usage.PLUGIN))
-          attribute(PluginAttributes.os, objects.named(currentOS))
+          attribute(PluginAttributes.os, objects.named(currentOS.normalizedName()))
         }
       }
 

@@ -3,5 +3,7 @@ package godot.gradle
 enum class TargetPlatform {
   WINDOWS,
   MACOS,
-  LINUX
+  LINUX;
+
+  fun normalizedName() = name.toLowerCase()
 }

@@ -19,7 +19,6 @@ open class GodotPluginExtension(objects: ObjectFactory): GodotBaseExtension(obje
   val description = objects.property<String>()
   val author = objects.property<String>()
   val mainClass = objects.property<String>()
-  val version = objects.property<String>()
   val additionalClasses = objects.listProperty<String>()
   val debug = objects.property<Boolean>()
 
