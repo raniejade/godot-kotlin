@@ -31,7 +31,7 @@ open class GodotBasePlugin : Plugin<Project> {
   }
 
   private fun configureComponents(project: Project) {
-    godotComponent = GodotSoftwareComponent(project, "godot", null)
+    godotComponent = GodotSoftwareComponent("godot")
     project.components.add(godotComponent)
   }
 
