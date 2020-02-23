@@ -26,8 +26,18 @@ open class GodotBasePlugin : Plugin<Project> {
 
   override fun apply(project: Project) {
     project.plugins.apply("org.jetbrains.kotlin.multiplatform")
-    configurePluginAttributes(project)
+    configureConfigurations(project)
     configureComponents(project)
+    configureBaseTasks(project)
+  }
+
+  private fun configureBaseTasks(project: Project) {
+    project.configurations.getByName(PLUGIN_INCOMING_CONFIGURATION_NAME) {
+      project.tasks.register(INIT_PLUGINS_TASK_NAME, InitPlugins::class.java) {
+        plugins.from(this@getByName.resolve())
+        outputDir.set(project.file("addons"))
+      }
+    }
   }
 
   private fun configureComponents(project: Project) {
@@ -35,7 +45,7 @@ open class GodotBasePlugin : Plugin<Project> {
     project.components.add(godotComponent)
   }
 
-  private fun configurePluginAttributes(project: Project) {
+  private fun configureConfigurations(project: Project) {
     with(project) {
       dependencies.attributesSchema {
         attribute(PluginAttributes.usage)
@@ -85,5 +95,6 @@ open class GodotBasePlugin : Plugin<Project> {
     const val PLUGIN_WINDOWS_OUTGOING_CONFIGURATION_NAME = "godotPluginWindowsApiElements"
     const val PLUGIN_MACOS_OUTGOING_CONFIGURATION_NAME = "godotPluginMacosApiElements"
     const val PLUGIN_INCOMING_CONFIGURATION_NAME = "godotPlugin"
+    const val INIT_PLUGINS_TASK_NAME = "initPlugins"
   }
 }

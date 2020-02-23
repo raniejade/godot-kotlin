@@ -8,6 +8,7 @@ includeBuild("../") {
 include("simple")
 include("rotating-cube")
 include("editor-plugin")
+include("plugin-consumer")
 
 pluginManagement {
   resolutionStrategy.eachPlugin {
