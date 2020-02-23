@@ -1,15 +1,9 @@
 import java.nio.file.Files
 import java.nio.file.Paths
 
-plugins {
-  id("org.ajoberstar.reckon") version "0.12.0"
+apply {
+  plugin(BuildVersion::class.java)
 }
-
-reckon {
-  scopeFromProp()
-  stageFromProp("alpha", "rc", "final")
-}
-
 
 val versionString = project.version
 

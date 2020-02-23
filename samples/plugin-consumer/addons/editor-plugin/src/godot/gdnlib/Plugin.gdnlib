@@ -1,0 +1,18 @@
+[entry]
+
+X11.64="res://addons/editor-plugin/build/bin/pluginLinux/debugShared/libeditor_plugin.so"
+OSX.64="res://addons/editor-plugin/build/bin/pluginMacos/debugShared/libeditor_plugin.dylib"
+Windows.64="res://addons/editor-plugin/build/bin/pluginWindows/debugShared/editor_plugin.dll"
+
+[dependencies]
+
+X11.64=[  ]
+OSX.64=[  ]
+Windows.64=[  ]
+
+[general]
+
+singleton=false
+load_once=true
+symbol_prefix="godot_"
+reloadable=true
