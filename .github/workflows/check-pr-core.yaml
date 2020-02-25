@@ -13,6 +13,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
+        include:
+          - os: ubuntu-latest
+            task: compileKotlinLinux
+          - os: macos-latest
+            task: compileKotlinMacos
+          - os: windows-latest
+            task: compileKotlinWindows
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
@@ -24,4 +31,4 @@ jobs:
           java-version: 11
       - uses: eskatos/gradle-command-action@v1
         with:
-          arguments: godot-kotlin:build -PexcludeIdePlugins
+          arguments: godot-kotlin:${{ matrix.task }} -PexcludeIdePlugins

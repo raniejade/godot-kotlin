@@ -57,7 +57,7 @@ open class GodotToolPlugin @Inject constructor(private val softwareComponentFact
         output.set(project.file("$assembleDir/plugin.cfg"))
       }
 
-      val buildPlugin = project.tasks.create("buildPlugin")
+      val buildAllPlugin = project.tasks.create("buildPlugin")
 
       with(mpp) {
         linuxX64("pluginLinux")
@@ -89,7 +89,9 @@ open class GodotToolPlugin @Inject constructor(private val softwareComponentFact
             }
           }
 
-          buildPlugin.dependsOn(zipPlatformPlugin)
+          val buildPlatformPlugin = project.tasks.create("buildPlugin${disambiguationClassifier.capitalize()}")
+          buildPlatformPlugin.dependsOn(zipPlatformPlugin)
+          buildAllPlugin.dependsOn(buildPlatformPlugin)
 
           val outgoingConfigurationName = when (platform) {
             TargetPlatform.LINUX -> GodotBasePlugin.PLUGIN_LINUX_OUTGOING_CONFIGURATION_NAME

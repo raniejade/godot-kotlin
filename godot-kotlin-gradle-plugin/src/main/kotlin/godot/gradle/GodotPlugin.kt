@@ -40,11 +40,14 @@ open class GodotPlugin : Plugin<Project> {
         add(GodotBasePlugin.PLUGIN_INCOMING_CONFIGURATION_NAME, editorPluginDep)
       }
 
+      val buildLibraries = project.tasks.create("buildLibraries")
       godot.libraries.forEach { library ->
         val genEntryTask = createGenerateEntryTask(project, library)
         val librariesToBeGenerated = mutableMapOf<TargetPlatform, File>()
         library.platforms.get().map { it to mpp.targetFrom(it, library.name) }
           .forEach { (platform, target) ->
+            val disambiguationClassifier = platform.normalizedName()
+            val buildPlatformLibrary = project.tasks.create("buildLibrary${disambiguationClassifier.capitalize()}")
             with(target) {
               binaries {
                 val buildType = if (library.debug.get()) {
@@ -53,9 +56,12 @@ open class GodotPlugin : Plugin<Project> {
                   NativeBuildType.RELEASE
                 }
                 sharedLib(listOf(buildType)) {
+                  buildPlatformLibrary.dependsOn(linkTask)
                   librariesToBeGenerated[platform] = outputFile
                 }
               }
+
+              buildLibraries.dependsOn(buildPlatformLibrary)
 
               compilations.getByName("main") {
                 compileKotlinTask.dependsOn(genEntryTask)
