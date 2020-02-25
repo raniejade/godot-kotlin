@@ -14,4 +14,5 @@ dependencies {
     implementation("com.squareup:kotlinpoet:1.5.0")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.10.1")
     implementation("org.ajoberstar.reckon:reckon-gradle:0.12.0")
+    implementation("gradle.plugin.org.jetbrains.intellij.plugins:gradle-intellij-plugin:0.4.16")
 }

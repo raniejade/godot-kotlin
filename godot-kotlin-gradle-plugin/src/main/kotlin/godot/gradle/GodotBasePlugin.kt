@@ -3,6 +3,7 @@ package godot.gradle
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.internal.os.OperatingSystem
+import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.named
 import org.gradle.kotlin.dsl.provideDelegate
 
@@ -32,11 +33,9 @@ open class GodotBasePlugin : Plugin<Project> {
   }
 
   private fun configureBaseTasks(project: Project) {
-    project.configurations.getByName(PLUGIN_INCOMING_CONFIGURATION_NAME) {
-      project.tasks.register(INIT_PLUGINS_TASK_NAME, InitPlugins::class.java) {
-        plugins.from(this@getByName.resolve())
-        outputDir.set(project.file("addons"))
-      }
+    project.tasks.register(INIT_PLUGINS_TASK_NAME, InitPlugins::class.java) {
+      plugins.from(project.configurations.getByName(PLUGIN_INCOMING_CONFIGURATION_NAME))
+      outputDir.set(project.file("addons"))
     }
   }
 

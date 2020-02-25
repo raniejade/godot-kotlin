@@ -157,6 +157,7 @@ open class GodotToolPlugin @Inject constructor(private val softwareComponentFact
       val generateLibraryTask = createGenerateLibraryTask(project, pluginLibrary, outputDirPrefix = assembleDir)
       generateLibraryTask.pathPrefix.set(pathPrefix)
       val generateGDClassesTask = createGenerateGDClassesTask(project, pluginLibrary, outputDirPrefix = assembleDir)
+      generateGDClassesTask.classes.add(godotPlugin.mainClass.get())
       generateGDClassesTask.pathPrefix.set(pathPrefix)
       genEntryTask.dependsOn(generateLibraryTask, generateGDClassesTask)
 

@@ -2,6 +2,7 @@ package godot.gradle
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithTests
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
@@ -30,6 +31,15 @@ open class GodotPlugin : Plugin<Project> {
 
   private fun configureTargets(project: Project, godot: GodotExtension, mpp: KotlinMultiplatformExtension) {
     project.afterEvaluate {
+      dependencies {
+        val editorPluginDep = if (godot.isCompositeBuild.get()) {
+          "com.github.raniejade:godot-kotlin-editor-plugin:0.1.0"
+        } else {
+          "com.github.raniejade:godot-kotlin-editor-plugin:$godotKotlinVersion"
+        }
+        add(GodotBasePlugin.PLUGIN_INCOMING_CONFIGURATION_NAME, editorPluginDep)
+      }
+
       godot.libraries.forEach { library ->
         val genEntryTask = createGenerateEntryTask(project, library)
         val librariesToBeGenerated = mutableMapOf<TargetPlatform, File>()

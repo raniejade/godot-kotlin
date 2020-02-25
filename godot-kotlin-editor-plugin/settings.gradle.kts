@@ -4,23 +4,12 @@ includeBuild("../build-support") {
   }
 }
 
-includeBuild("../godot-kotlin-editor-plugin") {
-  dependencySubstitution {
-    substitute(module("com.github.raniejade:godot-kotlin-editor-plugin:0.1.0")).with(project(":"))
-  }
-}
-
 includeBuild("../") {
   dependencySubstitution {
     substitute(module("com.github.raniejade:godot-kotlin-gradle-plugin:0.1.0")).with(project(":godot-kotlin-gradle-plugin"))
     substitute(module("com.github.raniejade:godot-kotlin:0.1.0")).with(project(":godot-kotlin"))
   }
 }
-
-include("simple")
-include("rotating-cube")
-include("editor-plugin")
-include("plugin-consumer")
 
 pluginManagement {
   resolutionStrategy.eachPlugin {

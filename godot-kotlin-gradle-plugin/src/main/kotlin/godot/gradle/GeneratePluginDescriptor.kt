@@ -35,7 +35,7 @@ open class GeneratePluginDescriptor: DefaultTask() {
       writer.appendln("description=\"${description.get()}\"")
       writer.appendln("author=\"${author.get()}\"")
       writer.appendln("version=\"${version.get()}\"")
-      writer.appendln("script=\"src/godot/gdns/${mainClass.get()}.gdns\"")
+      writer.appendln("script=\"src/godot/gdns/${GDClassNameUtils.normalizeClassName(mainClass.get())}.gdns\"")
     }
   }
 }

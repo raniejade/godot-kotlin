@@ -17,7 +17,7 @@ open class GenerateEntry : DefaultTask() {
   @TaskAction
   fun generate() {
     val output = output.get().asFile
-    val fs = FileSpec.builder("", output.name)
+    val fs = FileSpec.builder("", output.name.removeSuffix(".kt"))
       .addComment("GENERATED FILE, DO NOT EDIT!")
 
     val cnameAnnotation = ClassName("kotlin.native", "CName")

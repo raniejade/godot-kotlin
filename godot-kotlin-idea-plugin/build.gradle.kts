@@ -1,6 +1,6 @@
 plugins {
   kotlin("jvm")
-  id("org.jetbrains.intellij") version "0.4.16"
+  id("org.jetbrains.intellij")
 }
 
 data class VersionRange(

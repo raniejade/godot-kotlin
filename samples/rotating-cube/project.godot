@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "editor-plugin" )
+enabled=PoolStringArray( "godot-kotlin-editor-plugin" )
 
 [rendering]
 

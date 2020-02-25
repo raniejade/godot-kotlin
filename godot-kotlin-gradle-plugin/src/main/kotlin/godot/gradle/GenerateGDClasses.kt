@@ -24,7 +24,7 @@ open class GenerateGDClasses : DefaultTask() {
   @TaskAction
   fun generateTask() {
     classes.get().forEach { cls ->
-      val className = normalizeClassName(cls)
+      val className = GDClassNameUtils.normalizeClassName(cls)
       val file = File(outputDir.get().asFile, "$className.gdns")
       file.delete()
       val prefix = pathPrefix.getOrElse("res://")
@@ -37,15 +37,5 @@ open class GenerateGDClasses : DefaultTask() {
         writer.appendln("library=ExtResource(1)")
       }
     }
-  }
-
-  private fun normalizeClassName(cls: String): String {
-    return CLASS_REGEX.matchEntire(cls)?.let { result ->
-      result.groups["simpleName"]!!.value
-    } ?: cls
-  }
-
-  companion object {
-    val CLASS_REGEX = Regex("^(?<package>(?>\\w+\\.)*)(?<simpleName>\\w+)\$")
   }
 }

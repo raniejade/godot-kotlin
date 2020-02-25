@@ -4,10 +4,8 @@ import org.gradle.api.Project
 
 fun createGenerateEntryTask(project: Project, library: GDNativeLibrary): GenerateEntry {
   return project.tasks.create(library.generateEntryTaskName, GenerateEntry::class.java) {
-    output.set(project.file("${library.generatedEntryDir}/entry"))
+    output.set(project.file("${library.generatedEntryDir}/entry.kt"))
     classes.set(library.classes.map { value -> value.map { GDClass(it, false) } })
-    // this is weird
-    outputs.upToDateWhen { false }
   }
 }
 

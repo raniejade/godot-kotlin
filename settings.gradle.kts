@@ -9,3 +9,9 @@ val excludeIdePlugins: String? by settings
 if (excludeIdePlugins == null) {
   include(":godot-kotlin-idea-plugin")
 }
+
+includeBuild("./build-support") {
+  dependencySubstitution {
+    substitute(module("godot-kotlin:build-support:0.1.0")).with(project(":"))
+  }
+}
