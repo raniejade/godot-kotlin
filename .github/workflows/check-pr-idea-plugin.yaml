@@ -8,9 +8,11 @@ on:
       - 'gradle.properties'
       - '.github/workflows/check-pr-idea-plugin.yaml'
 
-# todo matrix build for all supported products
 jobs:
   build:
+    strategy:
+      matrix:
+        idea_product: [IJ193]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,4 +22,4 @@ jobs:
           java-version: 11
       - uses: eskatos/gradle-command-action@v1
         with:
-          arguments: godot-kotlin-idea-plugin:build
+          arguments: godot-kotlin-idea-plugin:build -Pidea.product=${{ matrix.idea_product }}

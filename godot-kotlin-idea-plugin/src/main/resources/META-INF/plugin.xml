@@ -13,5 +13,6 @@
     <codeInsight.lineMarkerProvider language="kotlin" implementationClass="godot.idea.SignalDeclarationLineMarkerProvider"/>
     <codeInsight.lineMarkerProvider language="kotlin" implementationClass="godot.idea.SignalConnectLineMarkerProvider"/>
     <codeInsight.lineMarkerProvider language="kotlin" implementationClass="godot.idea.SignalAsListenerLineMarkerProvider"/>
+    <codeInsight.lineMarkerProvider language="kotlin" implementationClass="godot.idea.SignalEmitLineMarkerProvider"/>
   </extensions>
 </idea-plugin>

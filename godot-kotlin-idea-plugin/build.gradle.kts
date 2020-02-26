@@ -3,6 +3,10 @@ plugins {
   id("org.jetbrains.intellij")
 }
 
+apply {
+  plugin(IJPluginPublish::class.java)
+}
+
 data class VersionRange(
   val since: String,
   val until: String
