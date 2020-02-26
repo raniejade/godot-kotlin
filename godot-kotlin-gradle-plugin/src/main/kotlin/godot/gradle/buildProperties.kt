@@ -10,3 +10,4 @@ internal val buildProperties by lazy {
 }
 
 internal val godotKotlinVersion by lazy { buildProperties["godot.kotlin.version"] as String }
+internal val godotVersion by lazy { buildProperties["godot.version"] as String }

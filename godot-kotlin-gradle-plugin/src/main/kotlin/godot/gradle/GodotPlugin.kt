@@ -14,6 +14,7 @@ open class GodotPlugin : Plugin<Project> {
     val godotExtension = project.extensions.create("godot", GodotExtension::class.java, project.objects)
     val mpp = checkNotNull(project.extensions.findByType(KotlinMultiplatformExtension::class.java)) { "Kotlin multiplatform plugin not applied!" }
     base.configureDefaults(godotExtension)
+    base.configureBaseTasks(project, godotExtension)
     configureDefaults(godotExtension)
     configureTargets(project, godotExtension, mpp)
   }

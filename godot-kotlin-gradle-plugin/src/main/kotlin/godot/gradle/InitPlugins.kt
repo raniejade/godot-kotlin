@@ -29,30 +29,9 @@ open class InitPlugins : DefaultTask() {
         logger.warn("${plugin.name} must be a zip file!")
       }
 
-      ZipFile(plugin).use(::unzip)
+      ZipFile(plugin).use {
+        unzip(it, outputDir.get().asFile)
+      }
     }
   }
-
-  private fun unzip(zip: ZipFile) {
-    for (entry in zip.entries()) {
-      unzipEntry(outputDir.get().asFile, entry, zip)
-    }
-  }
-
-  private fun unzipEntry(outputDir: File, entry: ZipEntry, zip: ZipFile) {
-    val outputDirCanonicalPath = outputDir.canonicalPath
-    val output = outputDir.resolve(entry.name)
-    if (!output.canonicalPath.startsWith(outputDirCanonicalPath)) {
-      throw ZipException("Zip entry '${entry.name}' is outside of the output directory")
-    }
-    if (entry.isDirectory) {
-      output.mkdirs()
-    } else {
-      output.parentFile.mkdirs()
-      zip.getInputStream(entry).use { it.copyTo(output) }
-    }
-  }
-
-  private fun InputStream.copyTo(file: File): Long =
-    file.outputStream().use { copyTo(it) }
 }

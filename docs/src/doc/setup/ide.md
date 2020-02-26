@@ -1,4 +1,4 @@
-You will need either [IntelliJ IDEA](https://jetbrains.com/idea) (Ultimate is preferred but the Community edition works too!) or [CLion](https://www.jetbrains.com/clion/). The easist way to install them is via the [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/) app.
+You will need either [IntelliJ IDEA](https://jetbrains.com/idea) (Ultimate is preferred but the Community edition works too!) or [CLion](https://www.jetbrains.com/clion/). The easiest way to install them is via the [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/) app.
 
 
 ## Kotlin plugin

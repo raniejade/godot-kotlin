@@ -8,6 +8,7 @@ abstract class GodotBaseExtension(objects: ObjectFactory) {
   @Deprecated("Hack don't use")
   val isCompositeBuild = objects.property<Boolean>()
   val godotKotlinVersion = objects.property<String>()
+  val godotVersion = objects.property<String>()
 }
 
 open class GodotExtension(objects: ObjectFactory): GodotBaseExtension(objects) {

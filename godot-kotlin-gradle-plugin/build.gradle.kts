@@ -54,7 +54,10 @@ dependencies {
 tasks {
   val processResources by getting(Copy::class) {
     outputs.upToDateWhen { false }
-    val tokens = mapOf("version" to version.toString())
+    val tokens = mapOf(
+      "version" to version.toString(),
+      "godotVersion" to project.properties["godot.version"]
+    )
     from("src/main/resources") {
       include("*.properties")
       filter<ReplaceTokens>("tokens" to tokens)
