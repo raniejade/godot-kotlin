@@ -33,6 +33,7 @@ nav:
   - Setting up:
       - Gradle: setup/gradle.md
       - IDE: setup/ide.md
+      - Editor plugin: setup/editor-plugin.md
   - User guide:
     - Classes: user-guide/classes.md
     - Methods: user-guide/methods.md

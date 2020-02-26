@@ -17,7 +17,7 @@ gradle wrapper --gradle-version=6.1.1
 
 That is it, you have the wrapper installed! The command will produce several files but the important ones are `gradlew` and `gradlew.bat`. Moving forward we will be using `gradlew` to run gradle (`gradlew.bat` on Windows). The first time `gradlew` is used it will download the gradle version you have specified before.
 
-## Plugin
+## Setup
 Once you have the wrapper installed, we need to setup the Gradle plugin this binding provides. Without the plugin, you will have to manually generate the entry point, `.gdnlib` and `.gdns` files.
 
 ```kotlin
@@ -102,4 +102,43 @@ godot {
     }
   }
 }
+```
+
+## Editor plugins
+    
+Godot editor plugins is fully managed by the gradle plugin, therefore it is recommended to exclude the `addons` folder from your VCS (add it to `.gitignore` if you are using git). Installing a plugin is done by adding a dependency to the `godotPlugin` configuration.
+
+```kotlin
+dependencies {
+  godotPlugin("com.example:editor-plugin:0.1.0")
+}
+```
+
+Project and file dependencies are also supported.
+
+```kotlin
+dependencies {
+  godotPlugin(project(":editor-plugin"))
+  godotPlugin(file("thirdparty/some-plugin.zip"))
+}
+```
+
+!!! note ""
+    Project dependency must be a plugin project, see [Editor Plugin](editor-plugin.md) of the setup section for details on how to setup one.
+
+An `initPlugins` task is provided by the gradle plugin which will extract all plugins to the `addons` directory of your project.
+
+## Running godot
+The gradle plugin also provides a task that will download and run a specific version of Godot. By default, this version is set to the version of Godot this binding is built against. The version can be customized via the `godotVersion` property of the `godot` extension.
+
+```kotlin
+godot {
+  godotVersion.set("3.2-rc1")
+}
+```
+
+Running the task can be done by (this will also setup any editor plugins your project needs):
+
+```
+./gradlew runGodot
 ```

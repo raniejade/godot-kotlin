@@ -1,3 +1,20 @@
+## 32.1.1
+**Release date**: Not yet released.
+
+The main focus of this release is to provide a better integration between Godot and IntelliJ IDEA/CLion. The integration does not provide many features yet, but this release lays down the foundation on which new features can be built upon.
+
+### Support for authoring and consuming editor plugins
+TBD
+
+### Run godot via gradle
+TBD
+
+### Intellij IDEA/CLion plugin
+TBD
+
+### Godot editor plugin
+TBD
+
 ## 32.1.0
 **Release date**: Feb 15 2020
 
