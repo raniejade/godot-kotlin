@@ -3,6 +3,7 @@ import java.nio.file.Paths
 
 apply {
   plugin(BuildVersion::class.java)
+  plugin(MiscPlugin::class.java)
 }
 
 buildscript {
@@ -28,10 +29,4 @@ subprojects {
     localProperties.load(java.io.FileInputStream("$rootDir/local.properties"))
     localProperties.forEach { prop -> project.extra.set(prop.key as String, prop.value) }
   }
-
-  var releaseMode = false
-  if ("$version".matches(Regex("^\\d+\\.\\d+\\.\\d+(-rc\\.\\d+)?"))) {
-    releaseMode = true
-  }
-  project.extra["releaseMode"] = releaseMode
 }
