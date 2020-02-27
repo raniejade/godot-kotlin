@@ -57,7 +57,7 @@ jobs:
   deply_ij_plugin:
     strategy:
       matrix:
-        idea_product: [IJ193]
+        idea_product: [IJ193, CL193]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

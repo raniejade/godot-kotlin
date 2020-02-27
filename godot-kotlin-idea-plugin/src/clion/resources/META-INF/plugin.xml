@@ -6,7 +6,9 @@
       Plugin for <a href="http://godot-kotl.in">godot-kotlin</a> a Kotlin Native binding for Godot.
     ]]></description>
   <depends>com.intellij.modules.platform</depends>
-  <depends>org.jetbrains.kotlin</depends>
+  <depends>com.intellij.modules.clion</depends>
+  <depends>com.intellij.kotlinNative.platformDeps</depends>
+  <depends>org.jetbrains.kotlin.native.clion</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <applicationConfigurable instance="godot.idea.Settings"/>
