@@ -2,6 +2,7 @@ package godot.gradle
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.Input
+import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.mapProperty
@@ -25,6 +26,7 @@ open class GenerateLibrary : DefaultTask() {
   val symbolPrefix = project.objects.property<String>()
 
   @Input
+  @Optional
   val pathPrefix = project.objects.property<String>()
 
   @OutputFile

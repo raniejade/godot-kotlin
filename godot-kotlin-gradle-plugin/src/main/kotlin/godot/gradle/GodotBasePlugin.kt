@@ -92,7 +92,7 @@ open class GodotBasePlugin : Plugin<Project> {
     }
 
     project.tasks.register(RUN_GODOT_TASK_NAME, GodotExec::class.java) {
-      dependsOn(project.tasks.named(EXTRACT_GODOT_TASK_NAME))
+      dependsOn(project.tasks.named(EXTRACT_GODOT_TASK_NAME), project.tasks.named(INIT_PLUGINS_TASK_NAME))
       group = GODOT_TASK_GROUP
       description = "Runs godot."
       binary.set(binaryPath)

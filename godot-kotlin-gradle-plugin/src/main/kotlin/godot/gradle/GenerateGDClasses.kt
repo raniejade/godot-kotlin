@@ -2,6 +2,7 @@ package godot.gradle
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.Input
+import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.listProperty
@@ -16,6 +17,7 @@ open class GenerateGDClasses : DefaultTask() {
   val libraryFile = project.objects.property<String>()
 
   @Input
+  @Optional
   val pathPrefix = project.objects.property<String>()
 
   @OutputDirectory
