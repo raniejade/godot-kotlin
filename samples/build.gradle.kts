@@ -1,11 +1,14 @@
-buildscript {
-  repositories {
-    jcenter()
-    mavenCentral()
-    gradlePluginPortal()
-  }
+val godotProjects = listOf(
+  "simple",
+  "rotating-cube",
+  "plugin-consumer"
+)
 
-  dependencies {
-    classpath("godot-kotlin:build-support:0.1.0")
+gradle.includedBuilds.forEach { build ->
+  if (godotProjects.contains(build.name)) {
+    tasks.register("runGodot-${build.name}") {
+      group = "godot"
+      dependsOn(build.task(":runGodot"))
+    }
   }
 }

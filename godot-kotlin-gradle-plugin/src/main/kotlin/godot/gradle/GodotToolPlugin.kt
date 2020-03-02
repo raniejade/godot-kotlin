@@ -23,7 +23,8 @@ open class GodotToolPlugin @Inject constructor(private val softwareComponentFact
     val godotPlugin = project.extensions.create("godotPlugin", GodotPluginExtension::class.java, project.objects)
     val mpp = checkNotNull(project.extensions.findByType(KotlinMultiplatformExtension::class.java)) { "Kotlin multiplatform plugin not applied!" }
     base.configureDefaults(godotPlugin)
-    base.configureBaseTasks(project, godotPlugin)
+    // should not download godot nor init addons
+    // base.configureBaseTasks(project, godotPlugin)
     configureDefaults(project, godotPlugin)
     configureTargets(project, base, godotPlugin, mpp)
   }

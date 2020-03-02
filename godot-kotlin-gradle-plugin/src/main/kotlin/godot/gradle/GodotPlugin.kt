@@ -10,6 +10,7 @@ import java.io.File
 
 open class GodotPlugin : Plugin<Project> {
   override fun apply(project: Project) {
+    require(project.rootProject == project) { "Godot plugin can only be applied on the root project!" }
     val base = project.plugins.apply(GodotBasePlugin::class.java)
     val godotExtension = project.extensions.create("godot", GodotExtension::class.java, project.objects)
     val mpp = checkNotNull(project.extensions.findByType(KotlinMultiplatformExtension::class.java)) { "Kotlin multiplatform plugin not applied!" }

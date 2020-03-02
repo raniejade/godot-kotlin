@@ -1,20 +1,30 @@
 plugins {
-    kotlin("multiplatform")
-    id("com.github.raniejade.godot-kotlin")
+  kotlin("multiplatform") version "1.3.61"
+  id("com.github.raniejade.godot-kotlin")
 }
 
-repositories {
+buildscript {
+  repositories {
     jcenter()
-    mavenCentral()
+  }
+  dependencies {
+    classpath("godot-kotlin:build-support:0.1.0")
+  }
+}
+
+
+repositories {
+  jcenter()
+  mavenCentral()
 }
 
 dependencies {
-    godotPlugin(project(":editor-plugin"))
+  godotPlugin(project(":editor-plugin"))
 }
 
 godot {
-    isCompositeBuild.set(true)
-    libraries {
-        val simple by creating {}
-    }
+  isCompositeBuild.set(true)
+  libraries {
+    val simple by creating {}
+  }
 }
