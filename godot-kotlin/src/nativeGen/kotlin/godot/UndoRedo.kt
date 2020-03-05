@@ -49,14 +49,11 @@ open class UndoRedo(
     method: String,
     vararg varargs: Any?
   ) {
-    val self = this
-    return Allocator.allocationScope {
-      val _args = mutableListOf<Any?>()
-      _args.add(`object`)
-      _args.add(method)
-      varargs.forEach { _args.add(it) }
-      __method_bind.addDoMethod.call(self._handle, _args, null)
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(`object`))
+    _args.add(Variant(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.addDoMethod.slowcall(this._handle, _args)
   }
 
   fun addDoProperty(
@@ -86,14 +83,11 @@ open class UndoRedo(
     method: String,
     vararg varargs: Any?
   ) {
-    val self = this
-    return Allocator.allocationScope {
-      val _args = mutableListOf<Any?>()
-      _args.add(`object`)
-      _args.add(method)
-      varargs.forEach { _args.add(it) }
-      __method_bind.addUndoMethod.call(self._handle, _args, null)
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(`object`))
+    _args.add(Variant(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.addUndoMethod.slowcall(this._handle, _args)
   }
 
   fun addUndoProperty(

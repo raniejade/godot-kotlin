@@ -234,18 +234,12 @@ open class SceneTree(
     method: String,
     vararg varargs: Any?
   ): godot.core.Variant {
-    val self = this
-    return Allocator.allocationScope {
-      val _ret = godot.core.Variant()
-      val _retPtr = _ret._value.ptr
-      val _args = mutableListOf<Any?>()
-      _args.add(group)
-      _args.add(method)
-      varargs.forEach { _args.add(it) }
-      __method_bind.callGroup.call(self._handle, _args, _retPtr)
-      _ret._value = _retPtr.pointed.readValue()
-      _ret
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(group))
+    _args.add(Variant(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.callGroup.slowcall(this._handle, _args)
+    return _ret
   }
 
   fun callGroupFlags(
@@ -254,19 +248,13 @@ open class SceneTree(
     method: String,
     vararg varargs: Any?
   ): godot.core.Variant {
-    val self = this
-    return Allocator.allocationScope {
-      val _ret = godot.core.Variant()
-      val _retPtr = _ret._value.ptr
-      val _args = mutableListOf<Any?>()
-      _args.add(flags)
-      _args.add(group)
-      _args.add(method)
-      varargs.forEach { _args.add(it) }
-      __method_bind.callGroupFlags.call(self._handle, _args, _retPtr)
-      _ret._value = _retPtr.pointed.readValue()
-      _ret
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(flags))
+    _args.add(Variant(group))
+    _args.add(Variant(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.callGroupFlags.slowcall(this._handle, _args)
+    return _ret
   }
 
   fun changeScene(path: String): GDError {

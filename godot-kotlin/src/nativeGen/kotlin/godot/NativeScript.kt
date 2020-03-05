@@ -159,16 +159,10 @@ open class NativeScript(
   }
 
   fun new(vararg varargs: Any?): Variant {
-    val self = this
-    return Allocator.allocationScope {
-      val _ret = Variant()
-      val _retPtr = _ret._value.ptr
-      val _args = mutableListOf<Any?>()
-      varargs.forEach { _args.add(it) }
-      __method_bind.new.call(self._handle, _args, _retPtr)
-      _ret._value = _retPtr.pointed.readValue()
-      _ret
-    }
+    val _args = mutableListOf<Variant>()
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.new.slowcall(this._handle, _args)
+    return _ret
   }
 
   fun setClassName(className: String) {

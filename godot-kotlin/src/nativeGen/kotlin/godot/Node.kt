@@ -791,17 +791,11 @@ open class Node(
   }
 
   fun rpc(method: String, vararg varargs: Any?): Variant {
-    val self = this
-    return Allocator.allocationScope {
-      val _ret = Variant()
-      val _retPtr = _ret._value.ptr
-      val _args = mutableListOf<Any?>()
-      _args.add(method)
-      varargs.forEach { _args.add(it) }
-      __method_bind.rpc.call(self._handle, _args, _retPtr)
-      _ret._value = _retPtr.pointed.readValue()
-      _ret
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.rpc.slowcall(this._handle, _args)
+    return _ret
   }
 
   fun rpcConfig(method: String, mode: Int) {
@@ -819,32 +813,20 @@ open class Node(
     method: String,
     vararg varargs: Any?
   ): Variant {
-    val self = this
-    return Allocator.allocationScope {
-      val _ret = Variant()
-      val _retPtr = _ret._value.ptr
-      val _args = mutableListOf<Any?>()
-      _args.add(peerId)
-      _args.add(method)
-      varargs.forEach { _args.add(it) }
-      __method_bind.rpcId.call(self._handle, _args, _retPtr)
-      _ret._value = _retPtr.pointed.readValue()
-      _ret
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(peerId))
+    _args.add(Variant(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.rpcId.slowcall(this._handle, _args)
+    return _ret
   }
 
   fun rpcUnreliable(method: String, vararg varargs: Any?): Variant {
-    val self = this
-    return Allocator.allocationScope {
-      val _ret = Variant()
-      val _retPtr = _ret._value.ptr
-      val _args = mutableListOf<Any?>()
-      _args.add(method)
-      varargs.forEach { _args.add(it) }
-      __method_bind.rpcUnreliable.call(self._handle, _args, _retPtr)
-      _ret._value = _retPtr.pointed.readValue()
-      _ret
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.rpcUnreliable.slowcall(this._handle, _args)
+    return _ret
   }
 
   fun rpcUnreliableId(
@@ -852,18 +834,12 @@ open class Node(
     method: String,
     vararg varargs: Any?
   ): Variant {
-    val self = this
-    return Allocator.allocationScope {
-      val _ret = Variant()
-      val _retPtr = _ret._value.ptr
-      val _args = mutableListOf<Any?>()
-      _args.add(peerId)
-      _args.add(method)
-      varargs.forEach { _args.add(it) }
-      __method_bind.rpcUnreliableId.call(self._handle, _args, _retPtr)
-      _ret._value = _retPtr.pointed.readValue()
-      _ret
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(peerId))
+    _args.add(Variant(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.rpcUnreliableId.slowcall(this._handle, _args)
+    return _ret
   }
 
   fun rset(property: String, value: Variant) {

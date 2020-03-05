@@ -86,27 +86,18 @@ open class Object(
   }
 
   fun call(method: String, vararg varargs: Any?): Variant {
-    val self = this
-    return Allocator.allocationScope {
-      val _ret = Variant()
-      val _retPtr = _ret._value.ptr
-      val _args = mutableListOf<Any?>()
-      _args.add(method)
-      varargs.forEach { _args.add(it) }
-      __method_bind.call.call(self._handle, _args, _retPtr)
-      _ret._value = _retPtr.pointed.readValue()
-      _ret
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.call.slowcall(this._handle, _args)
+    return _ret
   }
 
   fun callDeferred(method: String, vararg varargs: Any?) {
-    val self = this
-    return Allocator.allocationScope {
-      val _args = mutableListOf<Any?>()
-      _args.add(method)
-      varargs.forEach { _args.add(it) }
-      __method_bind.callDeferred.call(self._handle, _args, null)
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(method))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.callDeferred.slowcall(this._handle, _args)
   }
 
   fun callv(method: String, argArray: VariantArray): Variant {
@@ -171,13 +162,10 @@ open class Object(
   }
 
   fun emitSignal(signal: String, vararg varargs: Any?) {
-    val self = this
-    return Allocator.allocationScope {
-      val _args = mutableListOf<Any?>()
-      _args.add(signal)
-      varargs.forEach { _args.add(it) }
-      __method_bind.emitSignal.call(self._handle, _args, null)
-    }
+    val _args = mutableListOf<Variant>()
+    _args.add(Variant(signal))
+    varargs.forEach { _args.add(Variant.fromAny(it)) }
+    val _ret = __method_bind.emitSignal.slowcall(this._handle, _args)
   }
 
   fun free() {
