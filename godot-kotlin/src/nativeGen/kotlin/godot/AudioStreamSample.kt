@@ -292,110 +292,140 @@ open class AudioStreamSample(
      * Container for method_bind pointers for AudioStreamSample
      */
     private object __method_bind {
-      val getData: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "get_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_data" }
-        }
-      val getFormat: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "get_format".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_format" }
-        }
-      val getLoopBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "get_loop_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_loop_begin" }
-        }
-      val getLoopEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "get_loop_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_loop_end" }
-        }
-      val getLoopMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "get_loop_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_loop_mode" }
-        }
-      val getMixRate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "get_mix_rate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mix_rate" }
-        }
-      val isStereo: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "is_stereo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_stereo" }
-        }
-      val saveToWav: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "save_to_wav".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method save_to_wav" }
-        }
-      val setData: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "set_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_data" }
-        }
-      val setFormat: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "set_format".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_format" }
-        }
-      val setLoopBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "set_loop_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_loop_begin" }
-        }
-      val setLoopEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "set_loop_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_loop_end" }
-        }
-      val setLoopMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "set_loop_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_loop_mode" }
-        }
-      val setMixRate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "set_mix_rate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mix_rate" }
-        }
-      val setStereo: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "set_stereo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_stereo" }
-        }}
+      val getData: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "get_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_data" }
+            }
+          }
+
+      val getFormat: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "get_format".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_format" }
+            }
+          }
+
+      val getLoopBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "get_loop_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_loop_begin" }
+            }
+          }
+
+      val getLoopEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "get_loop_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_loop_end" }
+            }
+          }
+
+      val getLoopMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "get_loop_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_loop_mode" }
+            }
+          }
+
+      val getMixRate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "get_mix_rate".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mix_rate" }
+            }
+          }
+
+      val isStereo: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "is_stereo".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_stereo" }
+            }
+          }
+
+      val saveToWav: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "save_to_wav".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method save_to_wav" }
+            }
+          }
+
+      val setData: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "set_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_data" }
+            }
+          }
+
+      val setFormat: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "set_format".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_format" }
+            }
+          }
+
+      val setLoopBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "set_loop_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_loop_begin" }
+            }
+          }
+
+      val setLoopEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "set_loop_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_loop_end" }
+            }
+          }
+
+      val setLoopMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "set_loop_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_loop_mode" }
+            }
+          }
+
+      val setMixRate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "set_mix_rate".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mix_rate" }
+            }
+          }
+
+      val setStereo: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
+              "set_stereo".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_stereo" }
+            }
+          }
+    }
   }
 }

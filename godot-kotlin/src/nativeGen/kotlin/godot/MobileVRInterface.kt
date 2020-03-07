@@ -224,103 +224,131 @@ open class MobileVRInterface(
      * Container for method_bind pointers for MobileVRInterface
      */
     private object __method_bind {
-      val getDisplayToLens: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "get_display_to_lens".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_display_to_lens" }
-        }
-      val getDisplayWidth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "get_display_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_display_width" }
-        }
-      val getEyeHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "get_eye_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_eye_height" }
-        }
-      val getIod: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "get_iod".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_iod" }
-        }
-      val getK1: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "get_k1".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_k1" }
-        }
-      val getK2: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "get_k2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_k2" }
-        }
-      val getOversample: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "get_oversample".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_oversample" }
-        }
-      val setDisplayToLens: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "set_display_to_lens".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_display_to_lens" }
-        }
-      val setDisplayWidth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "set_display_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_display_width" }
-        }
-      val setEyeHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "set_eye_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_eye_height" }
-        }
-      val setIod: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "set_iod".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_iod" }
-        }
-      val setK1: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "set_k1".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_k1" }
-        }
-      val setK2: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "set_k2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_k2" }
-        }
-      val setOversample: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "set_oversample".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_oversample" }
-        }}
+      val getDisplayToLens: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "get_display_to_lens".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_display_to_lens" }
+            }
+          }
+
+      val getDisplayWidth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "get_display_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_display_width" }
+            }
+          }
+
+      val getEyeHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "get_eye_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_eye_height" }
+            }
+          }
+
+      val getIod: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "get_iod".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_iod" }
+            }
+          }
+
+      val getK1: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "get_k1".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_k1" }
+            }
+          }
+
+      val getK2: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "get_k2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_k2" }
+            }
+          }
+
+      val getOversample: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "get_oversample".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_oversample" }
+            }
+          }
+
+      val setDisplayToLens: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "set_display_to_lens".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_display_to_lens" }
+            }
+          }
+
+      val setDisplayWidth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "set_display_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_display_width" }
+            }
+          }
+
+      val setEyeHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "set_eye_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_eye_height" }
+            }
+          }
+
+      val setIod: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "set_iod".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_iod" }
+            }
+          }
+
+      val setK1: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "set_k1".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_k1" }
+            }
+          }
+
+      val setK2: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "set_k2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_k2" }
+            }
+          }
+
+      val setOversample: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
+              "set_oversample".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_oversample" }
+            }
+          }
+    }
   }
 }

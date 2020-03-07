@@ -123,47 +123,59 @@ open class VehicleBody(
      * Container for method_bind pointers for VehicleBody
      */
     private object __method_bind {
-      val getBrake: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "get_brake".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_brake" }
-        }
-      val getEngineForce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "get_engine_force".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_engine_force" }
-        }
-      val getSteering: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "get_steering".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_steering" }
-        }
-      val setBrake: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "set_brake".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_brake" }
-        }
-      val setEngineForce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "set_engine_force".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_engine_force" }
-        }
-      val setSteering: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "set_steering".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_steering" }
-        }}
+      val getBrake: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
+              "get_brake".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_brake" }
+            }
+          }
+
+      val getEngineForce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
+              "get_engine_force".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_engine_force" }
+            }
+          }
+
+      val getSteering: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
+              "get_steering".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_steering" }
+            }
+          }
+
+      val setBrake: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
+              "set_brake".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_brake" }
+            }
+          }
+
+      val setEngineForce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
+              "set_engine_force".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_engine_force" }
+            }
+          }
+
+      val setSteering: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
+              "set_steering".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_steering" }
+            }
+          }
+    }
   }
 }

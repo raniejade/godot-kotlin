@@ -316,169 +316,254 @@ open class Skeleton(
      * Container for method_bind pointers for Skeleton
      */
     private object __method_bind {
-      val addBone: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "add_bone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_bone" }
-        }
-      val bindChildNodeToBone: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "bind_child_node_to_bone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bind_child_node_to_bone" }
-        }
-      val clearBones: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "clear_bones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_bones" }
-        }
-      val findBone: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "find_bone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method find_bone" }
-        }
-      val getBoneCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "get_bone_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
-        }
-      val getBoneCustomPose: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "get_bone_custom_pose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_custom_pose" }
-        }
-      val getBoneGlobalPose: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "get_bone_global_pose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_global_pose" }
-        }
-      val getBoneName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "get_bone_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_name" }
-        }
-      val getBoneParent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "get_bone_parent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_parent" }
-        }
-      val getBonePose: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "get_bone_pose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_pose" }
-        }
-      val getBoneRest: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "get_bone_rest".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_rest" }
-        }
-      val getBoundChildNodesToBone: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "get_bound_child_nodes_to_bone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bound_child_nodes_to_bone" }
-        }
-      val isBoneRestDisabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "is_bone_rest_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_bone_rest_disabled" }
-        }
-      val localizeRests: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "localize_rests".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method localize_rests" }
-        }
-      val physicalBonesAddCollisionException: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "physical_bones_add_collision_exception".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method physical_bones_add_collision_exception" }
-        }
-      val physicalBonesRemoveCollisionException: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "physical_bones_remove_collision_exception".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method physical_bones_remove_collision_exception" }
-        }
-      val physicalBonesStartSimulation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "physical_bones_start_simulation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method physical_bones_start_simulation" }
-        }
-      val physicalBonesStopSimulation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "physical_bones_stop_simulation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method physical_bones_stop_simulation" }
-        }
-      val registerSkin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "register_skin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method register_skin" }
-        }
-      val setBoneCustomPose: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "set_bone_custom_pose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bone_custom_pose" }
-        }
-      val setBoneDisableRest: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "set_bone_disable_rest".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bone_disable_rest" }
-        }
-      val setBoneGlobalPoseOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "set_bone_global_pose_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bone_global_pose_override" }
-        }
-      val setBoneParent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "set_bone_parent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bone_parent" }
-        }
-      val setBonePose: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "set_bone_pose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bone_pose" }
-        }
-      val setBoneRest: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "set_bone_rest".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bone_rest" }
-        }
-      val unbindChildNodeFromBone: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "unbind_child_node_from_bone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method unbind_child_node_from_bone" }
-        }
-      val unparentBoneAndRest: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "unparent_bone_and_rest".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method unparent_bone_and_rest" }
-        }}
+      val addBone: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "add_bone".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_bone" }
+            }
+          }
+
+      val bindChildNodeToBone: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "bind_child_node_to_bone".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method bind_child_node_to_bone" }
+            }
+          }
+
+      val clearBones: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "clear_bones".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_bones" }
+            }
+          }
+
+      val findBone: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "find_bone".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method find_bone" }
+            }
+          }
+
+      val getBoneCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "get_bone_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
+            }
+          }
+
+      val getBoneCustomPose: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "get_bone_custom_pose".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_custom_pose" }
+            }
+          }
+
+      val getBoneGlobalPose: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "get_bone_global_pose".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_global_pose" }
+            }
+          }
+
+      val getBoneName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "get_bone_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_name" }
+            }
+          }
+
+      val getBoneParent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "get_bone_parent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_parent" }
+            }
+          }
+
+      val getBonePose: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "get_bone_pose".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_pose" }
+            }
+          }
+
+      val getBoneRest: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "get_bone_rest".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_rest" }
+            }
+          }
+
+      val getBoundChildNodesToBone: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "get_bound_child_nodes_to_bone".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bound_child_nodes_to_bone"
+              }
+            }
+          }
+
+      val isBoneRestDisabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "is_bone_rest_disabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_bone_rest_disabled" }
+            }
+          }
+
+      val localizeRests: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "localize_rests".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method localize_rests" }
+            }
+          }
+
+      val physicalBonesAddCollisionException: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "physical_bones_add_collision_exception".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method physical_bones_add_collision_exception" }
+            }
+          }
+
+      val physicalBonesRemoveCollisionException: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "physical_bones_remove_collision_exception".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method physical_bones_remove_collision_exception" }
+            }
+          }
+
+      val physicalBonesStartSimulation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "physical_bones_start_simulation".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method physical_bones_start_simulation" }
+            }
+          }
+
+      val physicalBonesStopSimulation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "physical_bones_stop_simulation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method physical_bones_stop_simulation"
+              }
+            }
+          }
+
+      val registerSkin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "register_skin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method register_skin" }
+            }
+          }
+
+      val setBoneCustomPose: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "set_bone_custom_pose".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bone_custom_pose" }
+            }
+          }
+
+      val setBoneDisableRest: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "set_bone_disable_rest".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bone_disable_rest" }
+            }
+          }
+
+      val setBoneGlobalPoseOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "set_bone_global_pose_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bone_global_pose_override"
+              }
+            }
+          }
+
+      val setBoneParent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "set_bone_parent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bone_parent" }
+            }
+          }
+
+      val setBonePose: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "set_bone_pose".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bone_pose" }
+            }
+          }
+
+      val setBoneRest: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "set_bone_rest".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bone_rest" }
+            }
+          }
+
+      val unbindChildNodeFromBone: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "unbind_child_node_from_bone".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method unbind_child_node_from_bone" }
+            }
+          }
+
+      val unparentBoneAndRest: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
+              "unparent_bone_and_rest".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method unparent_bone_and_rest" }
+            }
+          }
+    }
   }
 }

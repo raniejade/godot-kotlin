@@ -187,77 +187,113 @@ open class SpringArm(
      * Container for method_bind pointers for SpringArm
      */
     private object __method_bind {
-      val addExcludedObject: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "add_excluded_object".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_excluded_object" }
-        }
-      val clearExcludedObjects: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "clear_excluded_objects".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_excluded_objects" }
-        }
-      val getCollisionMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "get_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
-        }
-      val getHitLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "get_hit_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_hit_length" }
-        }
-      val getLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "get_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_length" }
-        }
-      val getMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "get_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_margin" }
-        }
-      val getShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "get_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shape" }
-        }
-      val removeExcludedObject: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "remove_excluded_object".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_excluded_object" }
-        }
-      val setCollisionMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "set_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
-        }
-      val setLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "set_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_length" }
-        }
-      val setMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "set_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_margin" }
-        }
-      val setShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
-            "set_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shape" }
-        }}
+      val addExcludedObject: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "add_excluded_object".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_excluded_object" }
+            }
+          }
+
+      val clearExcludedObjects: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "clear_excluded_objects".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_excluded_objects" }
+            }
+          }
+
+      val getCollisionMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "get_collision_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
+            }
+          }
+
+      val getHitLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "get_hit_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_hit_length" }
+            }
+          }
+
+      val getLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "get_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_length" }
+            }
+          }
+
+      val getMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "get_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_margin" }
+            }
+          }
+
+      val getShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "get_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_shape" }
+            }
+          }
+
+      val removeExcludedObject: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "remove_excluded_object".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_excluded_object" }
+            }
+          }
+
+      val setCollisionMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "set_collision_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
+            }
+          }
+
+      val setLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "set_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_length" }
+            }
+          }
+
+      val setMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "set_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_margin" }
+            }
+          }
+
+      val setShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpringArm".cstr.ptr,
+              "set_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_shape" }
+            }
+          }
+    }
   }
 }

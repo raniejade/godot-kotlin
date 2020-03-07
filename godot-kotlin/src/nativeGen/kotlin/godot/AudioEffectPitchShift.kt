@@ -152,47 +152,59 @@ open class AudioEffectPitchShift(
      * Container for method_bind pointers for AudioEffectPitchShift
      */
     private object __method_bind {
-      val getFftSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
-            "get_fft_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fft_size" }
-        }
-      val getOversampling: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
-            "get_oversampling".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_oversampling" }
-        }
-      val getPitchScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
-            "get_pitch_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pitch_scale" }
-        }
-      val setFftSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
-            "set_fft_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fft_size" }
-        }
-      val setOversampling: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
-            "set_oversampling".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_oversampling" }
-        }
-      val setPitchScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
-            "set_pitch_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pitch_scale" }
-        }}
+      val getFftSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
+              "get_fft_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fft_size" }
+            }
+          }
+
+      val getOversampling: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
+              "get_oversampling".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_oversampling" }
+            }
+          }
+
+      val getPitchScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
+              "get_pitch_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_pitch_scale" }
+            }
+          }
+
+      val setFftSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
+              "set_fft_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fft_size" }
+            }
+          }
+
+      val setOversampling: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
+              "set_oversampling".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_oversampling" }
+            }
+          }
+
+      val setPitchScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
+              "set_pitch_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pitch_scale" }
+            }
+          }
+    }
   }
 }

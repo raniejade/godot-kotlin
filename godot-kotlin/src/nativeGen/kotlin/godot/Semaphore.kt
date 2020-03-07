@@ -68,17 +68,23 @@ open class Semaphore(
      * Container for method_bind pointers for Semaphore
      */
     private object __method_bind {
-      val post: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Semaphore".cstr.ptr,
-            "post".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method post" }
-        }
-      val wait: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Semaphore".cstr.ptr,
-            "wait".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method wait" }
-        }}
+      val post: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Semaphore".cstr.ptr,
+              "post".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method post" }
+            }
+          }
+
+      val wait: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Semaphore".cstr.ptr,
+              "wait".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method wait" }
+            }
+          }
+    }
   }
 }

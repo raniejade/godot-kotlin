@@ -113,40 +113,51 @@ open class EditorResourcePreview(
      * Container for method_bind pointers for EditorResourcePreview
      */
     private object __method_bind {
-      val addPreviewGenerator: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
-            "add_preview_generator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_preview_generator" }
-        }
-      val checkForInvalidation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
-            "check_for_invalidation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method check_for_invalidation" }
-        }
-      val queueEditedResourcePreview: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
-            "queue_edited_resource_preview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queue_edited_resource_preview" }
-        }
-      val queueResourcePreview: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
-            "queue_resource_preview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queue_resource_preview" }
-        }
-      val removePreviewGenerator: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
-            "remove_preview_generator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_preview_generator" }
-        }}
+      val addPreviewGenerator: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
+              "add_preview_generator".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_preview_generator" }
+            }
+          }
+
+      val checkForInvalidation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
+              "check_for_invalidation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method check_for_invalidation" }
+            }
+          }
+
+      val queueEditedResourcePreview: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
+              "queue_edited_resource_preview".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method queue_edited_resource_preview"
+              }
+            }
+          }
+
+      val queueResourcePreview: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
+              "queue_resource_preview".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method queue_resource_preview" }
+            }
+          }
+
+      val removePreviewGenerator: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
+              "remove_preview_generator".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_preview_generator" }
+            }
+          }
+    }
   }
 }

@@ -256,89 +256,113 @@ open class ParallaxBackground(
      * Container for method_bind pointers for ParallaxBackground
      */
     private object __method_bind {
-      val getLimitBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "get_limit_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_limit_begin" }
-        }
-      val getLimitEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "get_limit_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_limit_end" }
-        }
-      val getScrollBaseOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "get_scroll_base_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scroll_base_offset" }
-        }
-      val getScrollBaseScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "get_scroll_base_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scroll_base_scale" }
-        }
-      val getScrollOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "get_scroll_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scroll_offset" }
-        }
-      val isIgnoreCameraZoom: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "is_ignore_camera_zoom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ignore_camera_zoom" }
-        }
-      val setIgnoreCameraZoom: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "set_ignore_camera_zoom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ignore_camera_zoom" }
-        }
-      val setLimitBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "set_limit_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_limit_begin" }
-        }
-      val setLimitEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "set_limit_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_limit_end" }
-        }
-      val setScrollBaseOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "set_scroll_base_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_scroll_base_offset" }
-        }
-      val setScrollBaseScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "set_scroll_base_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_scroll_base_scale" }
-        }
-      val setScrollOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-            "set_scroll_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_scroll_offset" }
-        }}
+      val getLimitBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "get_limit_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_limit_begin" }
+            }
+          }
+
+      val getLimitEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "get_limit_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_limit_end" }
+            }
+          }
+
+      val getScrollBaseOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "get_scroll_base_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_scroll_base_offset" }
+            }
+          }
+
+      val getScrollBaseScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "get_scroll_base_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_scroll_base_scale" }
+            }
+          }
+
+      val getScrollOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "get_scroll_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_scroll_offset" }
+            }
+          }
+
+      val isIgnoreCameraZoom: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "is_ignore_camera_zoom".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_ignore_camera_zoom" }
+            }
+          }
+
+      val setIgnoreCameraZoom: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "set_ignore_camera_zoom".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ignore_camera_zoom" }
+            }
+          }
+
+      val setLimitBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "set_limit_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_limit_begin" }
+            }
+          }
+
+      val setLimitEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "set_limit_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_limit_end" }
+            }
+          }
+
+      val setScrollBaseOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "set_scroll_base_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_scroll_base_offset" }
+            }
+          }
+
+      val setScrollBaseScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "set_scroll_base_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_scroll_base_scale" }
+            }
+          }
+
+      val setScrollOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
+              "set_scroll_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_scroll_offset" }
+            }
+          }
+    }
   }
 }

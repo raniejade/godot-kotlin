@@ -134,63 +134,80 @@ open class ResourceLoaderInternal(
      * Container for method_bind pointers for ResourceLoader
      */
     private object __method_bind {
-      val exists: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "exists".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method exists" }
-        }
-      val getDependencies: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "get_dependencies".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dependencies" }
-        }
-      val getRecognizedExtensionsForType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "get_recognized_extensions_for_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_recognized_extensions_for_type"
+      val exists: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
+              "exists".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method exists" }
             }
-        }
-      val has: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "has".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has" }
-        }
-      val hasCached: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "has_cached".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_cached" }
-        }
-      val load: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "load".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method load" }
-        }
-      val loadInteractive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "load_interactive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method load_interactive" }
-        }
-      val setAbortOnMissingResources: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "set_abort_on_missing_resources".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_abort_on_missing_resources" }
-        }}
+          }
+
+      val getDependencies: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
+              "get_dependencies".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dependencies" }
+            }
+          }
+
+      val getRecognizedExtensionsForType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
+              "get_recognized_extensions_for_type".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_recognized_extensions_for_type" }
+            }
+          }
+
+      val has: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
+              "has".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has" }
+            }
+          }
+
+      val hasCached: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
+              "has_cached".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_cached" }
+            }
+          }
+
+      val load: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
+              "load".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load" }
+            }
+          }
+
+      val loadInteractive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
+              "load_interactive".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load_interactive" }
+            }
+          }
+
+      val setAbortOnMissingResources: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
+              "set_abort_on_missing_resources".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_abort_on_missing_resources"
+              }
+            }
+          }
+    }
   }
 }
 

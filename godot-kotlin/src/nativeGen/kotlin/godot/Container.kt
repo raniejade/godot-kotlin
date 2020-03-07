@@ -81,17 +81,23 @@ open class Container(
      * Container for method_bind pointers for Container
      */
     private object __method_bind {
-      val fitChildInRect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
-            "fit_child_in_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method fit_child_in_rect" }
-        }
-      val queueSort: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
-            "queue_sort".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queue_sort" }
-        }}
+      val fitChildInRect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
+              "fit_child_in_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method fit_child_in_rect" }
+            }
+          }
+
+      val queueSort: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
+              "queue_sort".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method queue_sort" }
+            }
+          }
+    }
   }
 }

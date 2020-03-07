@@ -287,110 +287,140 @@ open class KinematicBody(
      * Container for method_bind pointers for KinematicBody
      */
     private object __method_bind {
-      val getAxisLock: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_axis_lock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_axis_lock" }
-        }
-      val getFloorNormal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_floor_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_floor_normal" }
-        }
-      val getFloorVelocity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_floor_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_floor_velocity" }
-        }
-      val getSafeMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_safe_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_safe_margin" }
-        }
-      val getSlideCollision: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_slide_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slide_collision" }
-        }
-      val getSlideCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_slide_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slide_count" }
-        }
-      val isOnCeiling: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "is_on_ceiling".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_on_ceiling" }
-        }
-      val isOnFloor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "is_on_floor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_on_floor" }
-        }
-      val isOnWall: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "is_on_wall".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_on_wall" }
-        }
-      val moveAndCollide: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "move_and_collide".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method move_and_collide" }
-        }
-      val moveAndSlide: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "move_and_slide".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method move_and_slide" }
-        }
-      val moveAndSlideWithSnap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "move_and_slide_with_snap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method move_and_slide_with_snap" }
-        }
-      val setAxisLock: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "set_axis_lock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_axis_lock" }
-        }
-      val setSafeMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "set_safe_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_safe_margin" }
-        }
-      val testMove: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "test_move".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method test_move" }
-        }}
+      val getAxisLock: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "get_axis_lock".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_axis_lock" }
+            }
+          }
+
+      val getFloorNormal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "get_floor_normal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_floor_normal" }
+            }
+          }
+
+      val getFloorVelocity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "get_floor_velocity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_floor_velocity" }
+            }
+          }
+
+      val getSafeMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "get_safe_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_safe_margin" }
+            }
+          }
+
+      val getSlideCollision: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "get_slide_collision".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_slide_collision" }
+            }
+          }
+
+      val getSlideCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "get_slide_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_slide_count" }
+            }
+          }
+
+      val isOnCeiling: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "is_on_ceiling".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_on_ceiling" }
+            }
+          }
+
+      val isOnFloor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "is_on_floor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_on_floor" }
+            }
+          }
+
+      val isOnWall: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "is_on_wall".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_on_wall" }
+            }
+          }
+
+      val moveAndCollide: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "move_and_collide".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method move_and_collide" }
+            }
+          }
+
+      val moveAndSlide: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "move_and_slide".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method move_and_slide" }
+            }
+          }
+
+      val moveAndSlideWithSnap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "move_and_slide_with_snap".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method move_and_slide_with_snap" }
+            }
+          }
+
+      val setAxisLock: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "set_axis_lock".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_axis_lock" }
+            }
+          }
+
+      val setSafeMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "set_safe_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_safe_margin" }
+            }
+          }
+
+      val testMove: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
+              "test_move".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method test_move" }
+            }
+          }
+    }
   }
 }

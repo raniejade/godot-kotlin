@@ -341,117 +341,149 @@ open class VisualShader(
      * Container for method_bind pointers for VisualShader
      */
     private object __method_bind {
-      val addNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "add_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_node" }
-        }
-      val canConnectNodes: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "can_connect_nodes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method can_connect_nodes" }
-        }
-      val connectNodes: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "connect_nodes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connect_nodes" }
-        }
-      val connectNodesForced: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "connect_nodes_forced".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connect_nodes_forced" }
-        }
-      val disconnectNodes: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "disconnect_nodes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method disconnect_nodes" }
-        }
-      val getGraphOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_graph_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_graph_offset" }
-        }
-      val getNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node" }
-        }
-      val getNodeConnections: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_node_connections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_connections" }
-        }
-      val getNodeList: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_node_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_list" }
-        }
-      val getNodePosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_node_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_position" }
-        }
-      val getValidNodeId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_valid_node_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_valid_node_id" }
-        }
-      val isNodeConnection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "is_node_connection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_node_connection" }
-        }
-      val removeNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "remove_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_node" }
-        }
-      val setGraphOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "set_graph_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_graph_offset" }
-        }
-      val setMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "set_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mode" }
-        }
-      val setNodePosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "set_node_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_node_position" }
-        }}
+      val addNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "add_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_node" }
+            }
+          }
+
+      val canConnectNodes: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "can_connect_nodes".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method can_connect_nodes" }
+            }
+          }
+
+      val connectNodes: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "connect_nodes".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method connect_nodes" }
+            }
+          }
+
+      val connectNodesForced: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "connect_nodes_forced".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method connect_nodes_forced" }
+            }
+          }
+
+      val disconnectNodes: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "disconnect_nodes".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method disconnect_nodes" }
+            }
+          }
+
+      val getGraphOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "get_graph_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_graph_offset" }
+            }
+          }
+
+      val getNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "get_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node" }
+            }
+          }
+
+      val getNodeConnections: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "get_node_connections".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_connections" }
+            }
+          }
+
+      val getNodeList: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "get_node_list".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_list" }
+            }
+          }
+
+      val getNodePosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "get_node_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_position" }
+            }
+          }
+
+      val getValidNodeId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "get_valid_node_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_valid_node_id" }
+            }
+          }
+
+      val isNodeConnection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "is_node_connection".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_node_connection" }
+            }
+          }
+
+      val removeNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "remove_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_node" }
+            }
+          }
+
+      val setGraphOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "set_graph_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_graph_offset" }
+            }
+          }
+
+      val setMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "set_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mode" }
+            }
+          }
+
+      val setNodePosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
+              "set_node_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_node_position" }
+            }
+          }
+    }
   }
 }

@@ -610,173 +610,230 @@ open class Tween(
      * Container for method_bind pointers for Tween
      */
     private object __method_bind {
-      val followMethod: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "follow_method".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method follow_method" }
-        }
-      val followProperty: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "follow_property".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method follow_property" }
-        }
-      val getRuntime: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "get_runtime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_runtime" }
-        }
-      val getSpeedScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "get_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed_scale" }
-        }
-      val getTweenProcessMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "get_tween_process_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tween_process_mode" }
-        }
-      val interpolateCallback: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "interpolate_callback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method interpolate_callback" }
-        }
-      val interpolateDeferredCallback: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "interpolate_deferred_callback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method interpolate_deferred_callback" }
-        }
-      val interpolateMethod: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "interpolate_method".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method interpolate_method" }
-        }
-      val interpolateProperty: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "interpolate_property".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method interpolate_property" }
-        }
-      val isActive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "is_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_active" }
-        }
-      val isRepeat: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "is_repeat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_repeat" }
-        }
-      val remove: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "remove".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove" }
-        }
-      val removeAll: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "remove_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_all" }
-        }
-      val reset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "reset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reset" }
-        }
-      val resetAll: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "reset_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reset_all" }
-        }
-      val resume: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "resume".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resume" }
-        }
-      val resumeAll: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "resume_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resume_all" }
-        }
-      val seek: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "seek".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method seek" }
-        }
-      val setActive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "set_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_active" }
-        }
-      val setRepeat: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "set_repeat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_repeat" }
-        }
-      val setSpeedScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "set_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed_scale" }
-        }
-      val setTweenProcessMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "set_tween_process_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tween_process_mode" }
-        }
-      val start: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "start".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method start" }
-        }
-      val stop: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "stop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method stop" }
-        }
-      val stopAll: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "stop_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method stop_all" }
-        }
-      val targetingMethod: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "targeting_method".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method targeting_method" }
-        }
-      val targetingProperty: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "targeting_property".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method targeting_property" }
-        }
-      val tell: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "tell".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tell" }
-        }}
+      val followMethod: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "follow_method".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method follow_method" }
+            }
+          }
+
+      val followProperty: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "follow_property".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method follow_property" }
+            }
+          }
+
+      val getRuntime: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "get_runtime".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_runtime" }
+            }
+          }
+
+      val getSpeedScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "get_speed_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_speed_scale" }
+            }
+          }
+
+      val getTweenProcessMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "get_tween_process_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tween_process_mode" }
+            }
+          }
+
+      val interpolateCallback: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "interpolate_callback".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method interpolate_callback" }
+            }
+          }
+
+      val interpolateDeferredCallback: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "interpolate_deferred_callback".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method interpolate_deferred_callback"
+              }
+            }
+          }
+
+      val interpolateMethod: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "interpolate_method".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method interpolate_method" }
+            }
+          }
+
+      val interpolateProperty: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "interpolate_property".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method interpolate_property" }
+            }
+          }
+
+      val isActive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "is_active".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_active" }
+            }
+          }
+
+      val isRepeat: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "is_repeat".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_repeat" }
+            }
+          }
+
+      val remove: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "remove".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove" }
+            }
+          }
+
+      val removeAll: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "remove_all".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_all" }
+            }
+          }
+
+      val reset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "reset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method reset" }
+            }
+          }
+
+      val resetAll: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "reset_all".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method reset_all" }
+            }
+          }
+
+      val resume: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "resume".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method resume" }
+            }
+          }
+
+      val resumeAll: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "resume_all".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method resume_all" }
+            }
+          }
+
+      val seek: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "seek".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method seek" }
+            }
+          }
+
+      val setActive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "set_active".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_active" }
+            }
+          }
+
+      val setRepeat: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "set_repeat".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_repeat" }
+            }
+          }
+
+      val setSpeedScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "set_speed_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_speed_scale" }
+            }
+          }
+
+      val setTweenProcessMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "set_tween_process_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tween_process_mode" }
+            }
+          }
+
+      val start: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "start".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method start" }
+            }
+          }
+
+      val stop: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "stop".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method stop" }
+            }
+          }
+
+      val stopAll: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "stop_all".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method stop_all" }
+            }
+          }
+
+      val targetingMethod: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "targeting_method".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method targeting_method" }
+            }
+          }
+
+      val targetingProperty: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "targeting_property".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method targeting_property" }
+            }
+          }
+
+      val tell: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
+              "tell".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method tell" }
+            }
+          }
+    }
   }
 }

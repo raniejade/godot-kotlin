@@ -97,33 +97,41 @@ open class LightOccluder2D(
      * Container for method_bind pointers for LightOccluder2D
      */
     private object __method_bind {
-      val getOccluderLightMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "get_occluder_light_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_occluder_light_mask" }
-        }
-      val getOccluderPolygon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "get_occluder_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_occluder_polygon" }
-        }
-      val setOccluderLightMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "set_occluder_light_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_occluder_light_mask" }
-        }
-      val setOccluderPolygon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "set_occluder_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_occluder_polygon" }
-        }}
+      val getOccluderLightMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
+              "get_occluder_light_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_occluder_light_mask" }
+            }
+          }
+
+      val getOccluderPolygon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
+              "get_occluder_polygon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_occluder_polygon" }
+            }
+          }
+
+      val setOccluderLightMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
+              "set_occluder_light_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_occluder_light_mask" }
+            }
+          }
+
+      val setOccluderPolygon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
+              "set_occluder_polygon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_occluder_polygon" }
+            }
+          }
+    }
   }
 }

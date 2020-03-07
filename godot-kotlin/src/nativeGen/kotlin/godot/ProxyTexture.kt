@@ -74,19 +74,23 @@ open class ProxyTexture(
      * Container for method_bind pointers for ProxyTexture
      */
     private object __method_bind {
-      val getBase: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProxyTexture".cstr.ptr,
-            "get_base".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base" }
-        }
-      val setBase: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProxyTexture".cstr.ptr,
-            "set_base".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_base" }
-        }}
+      val getBase: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProxyTexture".cstr.ptr,
+              "get_base".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_base" }
+            }
+          }
+
+      val setBase: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProxyTexture".cstr.ptr,
+              "set_base".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_base" }
+            }
+          }
+    }
   }
 }

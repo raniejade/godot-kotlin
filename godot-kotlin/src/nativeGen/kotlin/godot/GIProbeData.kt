@@ -359,159 +359,203 @@ open class GIProbeData(
      * Container for method_bind pointers for GIProbeData
      */
     private object __method_bind {
-      val getBias: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "get_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bias" }
-        }
-      val getBounds: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "get_bounds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bounds" }
-        }
-      val getCellSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "get_cell_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cell_size" }
-        }
-      val getDynamicData: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "get_dynamic_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dynamic_data" }
-        }
-      val getDynamicRange: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "get_dynamic_range".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dynamic_range" }
-        }
-      val getEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "get_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_energy" }
-        }
-      val getNormalBias: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "get_normal_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_normal_bias" }
-        }
-      val getPropagation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "get_propagation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_propagation" }
-        }
-      val getToCellXform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "get_to_cell_xform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_to_cell_xform" }
-        }
-      val isCompressed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "is_compressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_compressed" }
-        }
-      val isInterior: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "is_interior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_interior" }
-        }
-      val setBias: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bias" }
-        }
-      val setBounds: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_bounds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bounds" }
-        }
-      val setCellSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_cell_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cell_size" }
-        }
-      val setCompress: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_compress".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_compress" }
-        }
-      val setDynamicData: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_dynamic_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dynamic_data" }
-        }
-      val setDynamicRange: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_dynamic_range".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dynamic_range" }
-        }
-      val setEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_energy" }
-        }
-      val setInterior: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_interior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_interior" }
-        }
-      val setNormalBias: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_normal_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_normal_bias" }
-        }
-      val setPropagation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_propagation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_propagation" }
-        }
-      val setToCellXform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "set_to_cell_xform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_to_cell_xform" }
-        }}
+      val getBias: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "get_bias".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bias" }
+            }
+          }
+
+      val getBounds: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "get_bounds".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bounds" }
+            }
+          }
+
+      val getCellSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "get_cell_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cell_size" }
+            }
+          }
+
+      val getDynamicData: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "get_dynamic_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dynamic_data" }
+            }
+          }
+
+      val getDynamicRange: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "get_dynamic_range".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dynamic_range" }
+            }
+          }
+
+      val getEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "get_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_energy" }
+            }
+          }
+
+      val getNormalBias: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "get_normal_bias".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_normal_bias" }
+            }
+          }
+
+      val getPropagation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "get_propagation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_propagation" }
+            }
+          }
+
+      val getToCellXform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "get_to_cell_xform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_to_cell_xform" }
+            }
+          }
+
+      val isCompressed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "is_compressed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_compressed" }
+            }
+          }
+
+      val isInterior: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "is_interior".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_interior" }
+            }
+          }
+
+      val setBias: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_bias".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bias" }
+            }
+          }
+
+      val setBounds: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_bounds".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bounds" }
+            }
+          }
+
+      val setCellSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_cell_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cell_size" }
+            }
+          }
+
+      val setCompress: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_compress".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_compress" }
+            }
+          }
+
+      val setDynamicData: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_dynamic_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dynamic_data" }
+            }
+          }
+
+      val setDynamicRange: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_dynamic_range".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dynamic_range" }
+            }
+          }
+
+      val setEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_energy" }
+            }
+          }
+
+      val setInterior: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_interior".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_interior" }
+            }
+          }
+
+      val setNormalBias: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_normal_bias".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_normal_bias" }
+            }
+          }
+
+      val setPropagation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_propagation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_propagation" }
+            }
+          }
+
+      val setToCellXform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
+              "set_to_cell_xform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_to_cell_xform" }
+            }
+          }
+    }
   }
 }

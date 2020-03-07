@@ -98,17 +98,21 @@ open class Sky(
      * Container for method_bind pointers for Sky
      */
     private object __method_bind {
-      val getRadianceSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sky".cstr.ptr,
-            "get_radiance_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radiance_size" }
-        }
-      val setRadianceSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sky".cstr.ptr,
-            "set_radiance_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radiance_size" }
-        }}
+      val getRadianceSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sky".cstr.ptr,
+              "get_radiance_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_radiance_size" }
+            }
+          }
+
+      val setRadianceSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sky".cstr.ptr,
+              "set_radiance_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_radiance_size" }
+            }
+          }
+    }
   }
 }

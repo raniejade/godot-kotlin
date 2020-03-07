@@ -265,166 +265,212 @@ open class SurfaceTool(
      * Container for method_bind pointers for SurfaceTool
      */
     private object __method_bind {
-      val addBones: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_bones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_bones" }
-        }
-      val addColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_color" }
-        }
-      val addIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_index" }
-        }
-      val addNormal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_normal" }
-        }
-      val addSmoothGroup: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_smooth_group".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_smooth_group" }
-        }
-      val addTangent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_tangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_tangent" }
-        }
-      val addTriangleFan: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_triangle_fan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_triangle_fan" }
-        }
-      val addUv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_uv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_uv" }
-        }
-      val addUv2: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_uv2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_uv2" }
-        }
-      val addVertex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_vertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_vertex" }
-        }
-      val addWeights: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_weights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_weights" }
-        }
-      val appendFrom: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "append_from".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method append_from" }
-        }
-      val begin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method begin" }
-        }
-      val clear: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "clear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear" }
-        }
-      val commit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "commit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method commit" }
-        }
-      val commitToArrays: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "commit_to_arrays".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method commit_to_arrays" }
-        }
-      val createFrom: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "create_from".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_from" }
-        }
-      val createFromBlendShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "create_from_blend_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_from_blend_shape" }
-        }
-      val deindex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "deindex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method deindex" }
-        }
-      val generateNormals: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "generate_normals".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generate_normals" }
-        }
-      val generateTangents: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "generate_tangents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generate_tangents" }
-        }
-      val index: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method index" }
-        }
-      val setMaterial: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "set_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_material" }
-        }}
+      val addBones: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_bones".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_bones" }
+            }
+          }
+
+      val addColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_color" }
+            }
+          }
+
+      val addIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_index" }
+            }
+          }
+
+      val addNormal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_normal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_normal" }
+            }
+          }
+
+      val addSmoothGroup: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_smooth_group".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_smooth_group" }
+            }
+          }
+
+      val addTangent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_tangent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_tangent" }
+            }
+          }
+
+      val addTriangleFan: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_triangle_fan".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_triangle_fan" }
+            }
+          }
+
+      val addUv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_uv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_uv" }
+            }
+          }
+
+      val addUv2: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_uv2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_uv2" }
+            }
+          }
+
+      val addVertex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_vertex".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_vertex" }
+            }
+          }
+
+      val addWeights: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "add_weights".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_weights" }
+            }
+          }
+
+      val appendFrom: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "append_from".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method append_from" }
+            }
+          }
+
+      val begin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method begin" }
+            }
+          }
+
+      val clear: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "clear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear" }
+            }
+          }
+
+      val commit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "commit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method commit" }
+            }
+          }
+
+      val commitToArrays: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "commit_to_arrays".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method commit_to_arrays" }
+            }
+          }
+
+      val createFrom: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "create_from".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_from" }
+            }
+          }
+
+      val createFromBlendShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "create_from_blend_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_from_blend_shape" }
+            }
+          }
+
+      val deindex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "deindex".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method deindex" }
+            }
+          }
+
+      val generateNormals: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "generate_normals".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method generate_normals" }
+            }
+          }
+
+      val generateTangents: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "generate_tangents".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method generate_tangents" }
+            }
+          }
+
+      val index: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method index" }
+            }
+          }
+
+      val setMaterial: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
+              "set_material".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_material" }
+            }
+          }
+    }
   }
 }

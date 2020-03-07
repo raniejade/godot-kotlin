@@ -74,19 +74,23 @@ open class AnimationNodeBlend2(
      * Container for method_bind pointers for AnimationNodeBlend2
      */
     private object __method_bind {
-      val isUsingSync: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlend2".cstr.ptr,
-            "is_using_sync".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_using_sync" }
-        }
-      val setUseSync: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlend2".cstr.ptr,
-            "set_use_sync".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_sync" }
-        }}
+      val isUsingSync: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlend2".cstr.ptr,
+              "is_using_sync".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_using_sync" }
+            }
+          }
+
+      val setUseSync: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlend2".cstr.ptr,
+              "set_use_sync".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_use_sync" }
+            }
+          }
+    }
   }
 }

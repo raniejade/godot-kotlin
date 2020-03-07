@@ -291,173 +291,221 @@ open class EditorInterface(
      * Container for method_bind pointers for EditorInterface
      */
     private object __method_bind {
-      val editResource: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "edit_resource".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method edit_resource" }
-        }
-      val getBaseControl: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_base_control".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base_control" }
-        }
-      val getCurrentPath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_current_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_path" }
-        }
-      val getEditedSceneRoot: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_edited_scene_root".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edited_scene_root" }
-        }
-      val getEditorSettings: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_editor_settings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_editor_settings" }
-        }
-      val getEditorViewport: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_editor_viewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_editor_viewport" }
-        }
-      val getInspector: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_inspector".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_inspector" }
-        }
-      val getOpenScenes: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_open_scenes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_open_scenes" }
-        }
-      val getResourceFilesystem: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_resource_filesystem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_resource_filesystem" }
-        }
-      val getResourcePreviewer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_resource_previewer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_resource_previewer" }
-        }
-      val getScriptEditor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_script_editor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_script_editor" }
-        }
-      val getSelectedPath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_selected_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_selected_path" }
-        }
-      val getSelection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_selection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_selection" }
-        }
-      val inspectObject: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "inspect_object".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method inspect_object" }
-        }
-      val isPluginEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "is_plugin_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_plugin_enabled" }
-        }
-      val makeMeshPreviews: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "make_mesh_previews".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_mesh_previews" }
-        }
-      val openSceneFromPath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "open_scene_from_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method open_scene_from_path" }
-        }
-      val reloadSceneFromPath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "reload_scene_from_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reload_scene_from_path" }
-        }
-      val saveScene: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "save_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method save_scene" }
-        }
-      val saveSceneAs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "save_scene_as".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method save_scene_as" }
-        }
-      val selectFile: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "select_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method select_file" }
-        }
-      val setDistractionFreeMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "set_distraction_free_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_distraction_free_mode" }
-        }
-      val setMainScreenEditor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "set_main_screen_editor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_main_screen_editor" }
-        }
-      val setPluginEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "set_plugin_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_plugin_enabled" }
-        }}
+      val editResource: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "edit_resource".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method edit_resource" }
+            }
+          }
+
+      val getBaseControl: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_base_control".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_base_control" }
+            }
+          }
+
+      val getCurrentPath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_current_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_current_path" }
+            }
+          }
+
+      val getEditedSceneRoot: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_edited_scene_root".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_edited_scene_root" }
+            }
+          }
+
+      val getEditorSettings: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_editor_settings".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_editor_settings" }
+            }
+          }
+
+      val getEditorViewport: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_editor_viewport".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_editor_viewport" }
+            }
+          }
+
+      val getInspector: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_inspector".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_inspector" }
+            }
+          }
+
+      val getOpenScenes: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_open_scenes".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_open_scenes" }
+            }
+          }
+
+      val getResourceFilesystem: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_resource_filesystem".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_resource_filesystem" }
+            }
+          }
+
+      val getResourcePreviewer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_resource_previewer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_resource_previewer" }
+            }
+          }
+
+      val getScriptEditor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_script_editor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_script_editor" }
+            }
+          }
+
+      val getSelectedPath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_selected_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_selected_path" }
+            }
+          }
+
+      val getSelection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "get_selection".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_selection" }
+            }
+          }
+
+      val inspectObject: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "inspect_object".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method inspect_object" }
+            }
+          }
+
+      val isPluginEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "is_plugin_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_plugin_enabled" }
+            }
+          }
+
+      val makeMeshPreviews: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "make_mesh_previews".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method make_mesh_previews" }
+            }
+          }
+
+      val openSceneFromPath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "open_scene_from_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method open_scene_from_path" }
+            }
+          }
+
+      val reloadSceneFromPath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "reload_scene_from_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method reload_scene_from_path" }
+            }
+          }
+
+      val saveScene: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "save_scene".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method save_scene" }
+            }
+          }
+
+      val saveSceneAs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "save_scene_as".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method save_scene_as" }
+            }
+          }
+
+      val selectFile: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "select_file".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method select_file" }
+            }
+          }
+
+      val setDistractionFreeMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "set_distraction_free_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_distraction_free_mode" }
+            }
+          }
+
+      val setMainScreenEditor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "set_main_screen_editor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_main_screen_editor" }
+            }
+          }
+
+      val setPluginEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
+              "set_plugin_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_plugin_enabled" }
+            }
+          }
+    }
   }
 }

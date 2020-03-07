@@ -74,19 +74,23 @@ open class CenterContainer(
      * Container for method_bind pointers for CenterContainer
      */
     private object __method_bind {
-      val isUsingTopLeft: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CenterContainer".cstr.ptr,
-            "is_using_top_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_using_top_left" }
-        }
-      val setUseTopLeft: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CenterContainer".cstr.ptr,
-            "set_use_top_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_top_left" }
-        }}
+      val isUsingTopLeft: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CenterContainer".cstr.ptr,
+              "is_using_top_left".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_using_top_left" }
+            }
+          }
+
+      val setUseTopLeft: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CenterContainer".cstr.ptr,
+              "set_use_top_left".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_use_top_left" }
+            }
+          }
+    }
   }
 }

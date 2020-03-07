@@ -309,131 +309,167 @@ open class EditorProperty(
      * Container for method_bind pointers for EditorProperty
      */
     private object __method_bind {
-      val addFocusable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "add_focusable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_focusable" }
-        }
-      val emitChanged: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "emit_changed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method emit_changed" }
-        }
-      val getEditedObject: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "get_edited_object".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edited_object" }
-        }
-      val getEditedProperty: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "get_edited_property".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edited_property" }
-        }
-      val getLabel: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "get_label".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_label" }
-        }
-      val getTooltipText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "get_tooltip_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tooltip_text" }
-        }
-      val isCheckable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "is_checkable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_checkable" }
-        }
-      val isChecked: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "is_checked".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_checked" }
-        }
-      val isDrawRed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "is_draw_red".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_draw_red" }
-        }
-      val isKeying: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "is_keying".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_keying" }
-        }
-      val isReadOnly: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "is_read_only".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_read_only" }
-        }
-      val setBottomEditor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "set_bottom_editor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bottom_editor" }
-        }
-      val setCheckable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "set_checkable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_checkable" }
-        }
-      val setChecked: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "set_checked".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_checked" }
-        }
-      val setDrawRed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "set_draw_red".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_draw_red" }
-        }
-      val setKeying: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "set_keying".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_keying" }
-        }
-      val setLabel: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "set_label".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_label" }
-        }
-      val setReadOnly: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "set_read_only".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_read_only" }
-        }}
+      val addFocusable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "add_focusable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_focusable" }
+            }
+          }
+
+      val emitChanged: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "emit_changed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method emit_changed" }
+            }
+          }
+
+      val getEditedObject: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "get_edited_object".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_edited_object" }
+            }
+          }
+
+      val getEditedProperty: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "get_edited_property".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_edited_property" }
+            }
+          }
+
+      val getLabel: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "get_label".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_label" }
+            }
+          }
+
+      val getTooltipText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "get_tooltip_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tooltip_text" }
+            }
+          }
+
+      val isCheckable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "is_checkable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_checkable" }
+            }
+          }
+
+      val isChecked: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "is_checked".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_checked" }
+            }
+          }
+
+      val isDrawRed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "is_draw_red".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_draw_red" }
+            }
+          }
+
+      val isKeying: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "is_keying".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_keying" }
+            }
+          }
+
+      val isReadOnly: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "is_read_only".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_read_only" }
+            }
+          }
+
+      val setBottomEditor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "set_bottom_editor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bottom_editor" }
+            }
+          }
+
+      val setCheckable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "set_checkable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_checkable" }
+            }
+          }
+
+      val setChecked: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "set_checked".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_checked" }
+            }
+          }
+
+      val setDrawRed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "set_draw_red".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_draw_red" }
+            }
+          }
+
+      val setKeying: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "set_keying".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_keying" }
+            }
+          }
+
+      val setLabel: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "set_label".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_label" }
+            }
+          }
+
+      val setReadOnly: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
+              "set_read_only".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_read_only" }
+            }
+          }
+    }
   }
 }

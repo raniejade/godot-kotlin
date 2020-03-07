@@ -73,19 +73,23 @@ open class CircleShape2D(
      * Container for method_bind pointers for CircleShape2D
      */
     private object __method_bind {
-      val getRadius: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CircleShape2D".cstr.ptr,
-            "get_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radius" }
-        }
-      val setRadius: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CircleShape2D".cstr.ptr,
-            "set_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radius" }
-        }}
+      val getRadius: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CircleShape2D".cstr.ptr,
+              "get_radius".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_radius" }
+            }
+          }
+
+      val setRadius: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CircleShape2D".cstr.ptr,
+              "set_radius".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_radius" }
+            }
+          }
+    }
   }
 }

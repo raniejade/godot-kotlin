@@ -96,26 +96,32 @@ open class BoxContainer(
      * Container for method_bind pointers for BoxContainer
      */
     private object __method_bind {
-      val addSpacer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
-            "add_spacer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_spacer" }
-        }
-      val getAlignment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
-            "get_alignment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_alignment" }
-        }
-      val setAlignment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
-            "set_alignment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_alignment" }
-        }}
+      val addSpacer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
+              "add_spacer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_spacer" }
+            }
+          }
+
+      val getAlignment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
+              "get_alignment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_alignment" }
+            }
+          }
+
+      val setAlignment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
+              "set_alignment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_alignment" }
+            }
+          }
+    }
   }
 }

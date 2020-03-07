@@ -93,41 +93,51 @@ open class CameraServerInternal(
      * Container for method_bind pointers for CameraServer
      */
     private object __method_bind {
-      val addFeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
-            "add_feed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_feed" }
-        }
-      val feeds: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
-            "feeds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method feeds" }
-        }
-      val getFeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
-            "get_feed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_feed" }
-        }
-      val getFeedCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
-            "get_feed_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_feed_count" }
-        }
-      val removeFeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
-            "remove_feed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_feed" }
-        }}
+      val addFeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
+              "add_feed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_feed" }
+            }
+          }
+
+      val feeds: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
+              "feeds".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method feeds" }
+            }
+          }
+
+      val getFeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
+              "get_feed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_feed" }
+            }
+          }
+
+      val getFeedCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
+              "get_feed_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_feed_count" }
+            }
+          }
+
+      val removeFeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
+              "remove_feed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_feed" }
+            }
+          }
+    }
   }
 }
 

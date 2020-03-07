@@ -317,137 +317,181 @@ open class Range(
      * Container for method_bind pointers for Range
      */
     private object __method_bind {
-      val getAsRatio: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_as_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_as_ratio" }
-        }
-      val getMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_max" }
-        }
-      val getMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_min" }
-        }
-      val getPage: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_page".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_page" }
-        }
-      val getStep: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_step".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_step" }
-        }
-      val getValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_value" }
-        }
-      val isGreaterAllowed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "is_greater_allowed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_greater_allowed" }
-        }
-      val isLesserAllowed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "is_lesser_allowed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_lesser_allowed" }
-        }
-      val isRatioExp: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "is_ratio_exp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ratio_exp" }
-        }
-      val isUsingRoundedValues: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "is_using_rounded_values".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_using_rounded_values" }
-        }
-      val setAllowGreater: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_allow_greater".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_allow_greater" }
-        }
-      val setAllowLesser: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_allow_lesser".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_allow_lesser" }
-        }
-      val setAsRatio: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_as_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_as_ratio" }
-        }
-      val setExpRatio: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_exp_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_exp_ratio" }
-        }
-      val setMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_max" }
-        }
-      val setMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_min" }
-        }
-      val setPage: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_page".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_page" }
-        }
-      val setStep: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_step".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_step" }
-        }
-      val setUseRoundedValues: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_use_rounded_values".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_rounded_values" }
-        }
-      val setValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_value" }
-        }
-      val share: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "share".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method share" }
-        }
-      val unshare: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "unshare".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method unshare" }
-        }}
+      val getAsRatio: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "get_as_ratio".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_as_ratio" }
+            }
+          }
+
+      val getMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "get_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_max" }
+            }
+          }
+
+      val getMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "get_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_min" }
+            }
+          }
+
+      val getPage: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "get_page".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_page" }
+            }
+          }
+
+      val getStep: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "get_step".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_step" }
+            }
+          }
+
+      val getValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "get_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_value" }
+            }
+          }
+
+      val isGreaterAllowed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "is_greater_allowed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_greater_allowed" }
+            }
+          }
+
+      val isLesserAllowed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "is_lesser_allowed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_lesser_allowed" }
+            }
+          }
+
+      val isRatioExp: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "is_ratio_exp".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_ratio_exp" }
+            }
+          }
+
+      val isUsingRoundedValues: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "is_using_rounded_values".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_using_rounded_values" }
+            }
+          }
+
+      val setAllowGreater: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "set_allow_greater".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_allow_greater" }
+            }
+          }
+
+      val setAllowLesser: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "set_allow_lesser".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_allow_lesser" }
+            }
+          }
+
+      val setAsRatio: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "set_as_ratio".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_as_ratio" }
+            }
+          }
+
+      val setExpRatio: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "set_exp_ratio".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_exp_ratio" }
+            }
+          }
+
+      val setMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "set_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_max" }
+            }
+          }
+
+      val setMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "set_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_min" }
+            }
+          }
+
+      val setPage: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "set_page".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_page" }
+            }
+          }
+
+      val setStep: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "set_step".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_step" }
+            }
+          }
+
+      val setUseRoundedValues: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "set_use_rounded_values".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_use_rounded_values" }
+            }
+          }
+
+      val setValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "set_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_value" }
+            }
+          }
+
+      val share: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "share".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method share" }
+            }
+          }
+
+      val unshare: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
+              "unshare".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method unshare" }
+            }
+          }
+    }
   }
 }

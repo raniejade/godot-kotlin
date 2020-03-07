@@ -82,19 +82,23 @@ open class VisualScriptDeconstruct(
      * Container for method_bind pointers for VisualScriptDeconstruct
      */
     private object __method_bind {
-      val getDeconstructType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptDeconstruct".cstr.ptr,
-            "get_deconstruct_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_deconstruct_type" }
-        }
-      val setDeconstructType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptDeconstruct".cstr.ptr,
-            "set_deconstruct_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_deconstruct_type" }
-        }}
+      val getDeconstructType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptDeconstruct".cstr.ptr,
+              "get_deconstruct_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_deconstruct_type" }
+            }
+          }
+
+      val setDeconstructType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptDeconstruct".cstr.ptr,
+              "set_deconstruct_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_deconstruct_type" }
+            }
+          }
+    }
   }
 }

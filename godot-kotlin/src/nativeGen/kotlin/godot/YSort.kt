@@ -73,17 +73,21 @@ open class YSort(
      * Container for method_bind pointers for YSort
      */
     private object __method_bind {
-      val isSortEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("YSort".cstr.ptr,
-            "is_sort_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_sort_enabled" }
-        }
-      val setSortEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("YSort".cstr.ptr,
-            "set_sort_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sort_enabled" }
-        }}
+      val isSortEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("YSort".cstr.ptr,
+              "is_sort_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_sort_enabled" }
+            }
+          }
+
+      val setSortEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("YSort".cstr.ptr,
+              "set_sort_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sort_enabled" }
+            }
+          }
+    }
   }
 }

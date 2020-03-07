@@ -618,251 +618,374 @@ open class LineEdit(
      * Container for method_bind pointers for LineEdit
      */
     private object __method_bind {
-      val appendAtCursor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "append_at_cursor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method append_at_cursor" }
-        }
-      val clear: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "clear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear" }
-        }
-      val cursorGetBlinkEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "cursor_get_blink_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cursor_get_blink_enabled" }
-        }
-      val cursorGetBlinkSpeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "cursor_get_blink_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cursor_get_blink_speed" }
-        }
-      val cursorSetBlinkEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "cursor_set_blink_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cursor_set_blink_enabled" }
-        }
-      val cursorSetBlinkSpeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "cursor_set_blink_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cursor_set_blink_speed" }
-        }
-      val deselect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "deselect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method deselect" }
-        }
-      val getAlign: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "get_align".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_align" }
-        }
-      val getCursorPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "get_cursor_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cursor_position" }
-        }
-      val getExpandToTextLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "get_expand_to_text_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_expand_to_text_length" }
-        }
-      val getMaxLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "get_max_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_max_length" }
-        }
-      val getMenu: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "get_menu".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_menu" }
-        }
-      val getPlaceholder: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "get_placeholder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_placeholder" }
-        }
-      val getPlaceholderAlpha: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "get_placeholder_alpha".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_placeholder_alpha" }
-        }
-      val getRightIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "get_right_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_right_icon" }
-        }
-      val getSecretCharacter: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "get_secret_character".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_secret_character" }
-        }
-      val getText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "get_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_text" }
-        }
-      val isClearButtonEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "is_clear_button_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_clear_button_enabled" }
-        }
-      val isContextMenuEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "is_context_menu_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_context_menu_enabled" }
-        }
-      val isEditable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "is_editable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_editable" }
-        }
-      val isSecret: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "is_secret".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_secret" }
-        }
-      val isSelectingEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "is_selecting_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_selecting_enabled" }
-        }
-      val isShortcutKeysEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "is_shortcut_keys_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_shortcut_keys_enabled" }
-        }
-      val menuOption: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "menu_option".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method menu_option" }
-        }
-      val select: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "select".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method select" }
-        }
-      val selectAll: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "select_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method select_all" }
-        }
-      val setAlign: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_align".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_align" }
-        }
-      val setClearButtonEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_clear_button_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_clear_button_enabled" }
-        }
-      val setContextMenuEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_context_menu_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_context_menu_enabled" }
-        }
-      val setCursorPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_cursor_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cursor_position" }
-        }
-      val setEditable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_editable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_editable" }
-        }
-      val setExpandToTextLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_expand_to_text_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expand_to_text_length" }
-        }
-      val setMaxLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_max_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_max_length" }
-        }
-      val setPlaceholder: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_placeholder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_placeholder" }
-        }
-      val setPlaceholderAlpha: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_placeholder_alpha".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_placeholder_alpha" }
-        }
-      val setRightIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_right_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_right_icon" }
-        }
-      val setSecret: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_secret".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_secret" }
-        }
-      val setSecretCharacter: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_secret_character".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_secret_character" }
-        }
-      val setSelectingEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_selecting_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_selecting_enabled" }
-        }
-      val setShortcutKeysEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_shortcut_keys_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shortcut_keys_enabled" }
-        }
-      val setText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-            "set_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_text" }
-        }}
+      val appendAtCursor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "append_at_cursor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method append_at_cursor" }
+            }
+          }
+
+      val clear: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "clear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear" }
+            }
+          }
+
+      val cursorGetBlinkEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "cursor_get_blink_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method cursor_get_blink_enabled" }
+            }
+          }
+
+      val cursorGetBlinkSpeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "cursor_get_blink_speed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method cursor_get_blink_speed" }
+            }
+          }
+
+      val cursorSetBlinkEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "cursor_set_blink_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method cursor_set_blink_enabled" }
+            }
+          }
+
+      val cursorSetBlinkSpeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "cursor_set_blink_speed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method cursor_set_blink_speed" }
+            }
+          }
+
+      val deselect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "deselect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method deselect" }
+            }
+          }
+
+      val getAlign: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "get_align".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_align" }
+            }
+          }
+
+      val getCursorPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "get_cursor_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cursor_position" }
+            }
+          }
+
+      val getExpandToTextLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "get_expand_to_text_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_expand_to_text_length" }
+            }
+          }
+
+      val getMaxLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "get_max_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_max_length" }
+            }
+          }
+
+      val getMenu: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "get_menu".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_menu" }
+            }
+          }
+
+      val getPlaceholder: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "get_placeholder".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_placeholder" }
+            }
+          }
+
+      val getPlaceholderAlpha: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "get_placeholder_alpha".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_placeholder_alpha" }
+            }
+          }
+
+      val getRightIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "get_right_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_right_icon" }
+            }
+          }
+
+      val getSecretCharacter: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "get_secret_character".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_secret_character" }
+            }
+          }
+
+      val getText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "get_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_text" }
+            }
+          }
+
+      val isClearButtonEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "is_clear_button_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_clear_button_enabled" }
+            }
+          }
+
+      val isContextMenuEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "is_context_menu_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_context_menu_enabled" }
+            }
+          }
+
+      val isEditable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "is_editable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_editable" }
+            }
+          }
+
+      val isSecret: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "is_secret".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_secret" }
+            }
+          }
+
+      val isSelectingEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "is_selecting_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_selecting_enabled" }
+            }
+          }
+
+      val isShortcutKeysEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "is_shortcut_keys_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_shortcut_keys_enabled" }
+            }
+          }
+
+      val menuOption: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "menu_option".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method menu_option" }
+            }
+          }
+
+      val select: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "select".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method select" }
+            }
+          }
+
+      val selectAll: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "select_all".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method select_all" }
+            }
+          }
+
+      val setAlign: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_align".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_align" }
+            }
+          }
+
+      val setClearButtonEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_clear_button_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_clear_button_enabled" }
+            }
+          }
+
+      val setContextMenuEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_context_menu_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_context_menu_enabled" }
+            }
+          }
+
+      val setCursorPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_cursor_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cursor_position" }
+            }
+          }
+
+      val setEditable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_editable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_editable" }
+            }
+          }
+
+      val setExpandToTextLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_expand_to_text_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_expand_to_text_length" }
+            }
+          }
+
+      val setMaxLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_max_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_max_length" }
+            }
+          }
+
+      val setPlaceholder: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_placeholder".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_placeholder" }
+            }
+          }
+
+      val setPlaceholderAlpha: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_placeholder_alpha".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_placeholder_alpha" }
+            }
+          }
+
+      val setRightIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_right_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_right_icon" }
+            }
+          }
+
+      val setSecret: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_secret".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_secret" }
+            }
+          }
+
+      val setSecretCharacter: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_secret_character".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_secret_character" }
+            }
+          }
+
+      val setSelectingEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_selecting_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_selecting_enabled" }
+            }
+          }
+
+      val setShortcutKeysEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_shortcut_keys_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_shortcut_keys_enabled" }
+            }
+          }
+
+      val setText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
+              "set_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_text" }
+            }
+          }
+    }
   }
 }

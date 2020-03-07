@@ -100,33 +100,41 @@ open class VisualScriptReturn(
      * Container for method_bind pointers for VisualScriptReturn
      */
     private object __method_bind {
-      val getReturnType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "get_return_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_return_type" }
-        }
-      val isReturnValueEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "is_return_value_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_return_value_enabled" }
-        }
-      val setEnableReturnValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "set_enable_return_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enable_return_value" }
-        }
-      val setReturnType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "set_return_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_return_type" }
-        }}
+      val getReturnType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
+              "get_return_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_return_type" }
+            }
+          }
+
+      val isReturnValueEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
+              "is_return_value_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_return_value_enabled" }
+            }
+          }
+
+      val setEnableReturnValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
+              "set_enable_return_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_enable_return_value" }
+            }
+          }
+
+      val setReturnType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
+              "set_return_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_return_type" }
+            }
+          }
+    }
   }
 }

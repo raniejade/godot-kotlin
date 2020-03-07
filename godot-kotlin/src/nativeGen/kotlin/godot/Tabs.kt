@@ -431,173 +431,231 @@ open class Tabs(
      * Container for method_bind pointers for Tabs
      */
     private object __method_bind {
-      val addTab: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "add_tab".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_tab" }
-        }
-      val ensureTabVisible: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "ensure_tab_visible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method ensure_tab_visible" }
-        }
-      val getCurrentTab: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_current_tab".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_tab" }
-        }
-      val getDragToRearrangeEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_drag_to_rearrange_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_drag_to_rearrange_enabled" }
-        }
-      val getOffsetButtonsVisible: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_offset_buttons_visible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset_buttons_visible" }
-        }
-      val getScrollingEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_scrolling_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scrolling_enabled" }
-        }
-      val getSelectWithRmb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_select_with_rmb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_select_with_rmb" }
-        }
-      val getTabAlign: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_tab_align".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tab_align" }
-        }
-      val getTabCloseDisplayPolicy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_tab_close_display_policy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tab_close_display_policy" }
-        }
-      val getTabCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_tab_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tab_count" }
-        }
-      val getTabDisabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_tab_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tab_disabled" }
-        }
-      val getTabIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_tab_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tab_icon" }
-        }
-      val getTabOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_tab_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tab_offset" }
-        }
-      val getTabRect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_tab_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tab_rect" }
-        }
-      val getTabTitle: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_tab_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tab_title" }
-        }
-      val getTabsRearrangeGroup: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "get_tabs_rearrange_group".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tabs_rearrange_group" }
-        }
-      val moveTab: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "move_tab".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method move_tab" }
-        }
-      val removeTab: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "remove_tab".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_tab" }
-        }
-      val setCurrentTab: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "set_current_tab".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_current_tab" }
-        }
-      val setDragToRearrangeEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "set_drag_to_rearrange_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_drag_to_rearrange_enabled" }
-        }
-      val setScrollingEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "set_scrolling_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_scrolling_enabled" }
-        }
-      val setSelectWithRmb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "set_select_with_rmb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_select_with_rmb" }
-        }
-      val setTabAlign: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "set_tab_align".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tab_align" }
-        }
-      val setTabCloseDisplayPolicy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "set_tab_close_display_policy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tab_close_display_policy" }
-        }
-      val setTabDisabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "set_tab_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tab_disabled" }
-        }
-      val setTabIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "set_tab_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tab_icon" }
-        }
-      val setTabTitle: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "set_tab_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tab_title" }
-        }
-      val setTabsRearrangeGroup: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-            "set_tabs_rearrange_group".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tabs_rearrange_group" }
-        }}
+      val addTab: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "add_tab".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_tab" }
+            }
+          }
+
+      val ensureTabVisible: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "ensure_tab_visible".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method ensure_tab_visible" }
+            }
+          }
+
+      val getCurrentTab: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_current_tab".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_current_tab" }
+            }
+          }
+
+      val getDragToRearrangeEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_drag_to_rearrange_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_drag_to_rearrange_enabled"
+              }
+            }
+          }
+
+      val getOffsetButtonsVisible: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_offset_buttons_visible".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offset_buttons_visible" }
+            }
+          }
+
+      val getScrollingEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_scrolling_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_scrolling_enabled" }
+            }
+          }
+
+      val getSelectWithRmb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_select_with_rmb".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_select_with_rmb" }
+            }
+          }
+
+      val getTabAlign: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_tab_align".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tab_align" }
+            }
+          }
+
+      val getTabCloseDisplayPolicy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_tab_close_display_policy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tab_close_display_policy" }
+            }
+          }
+
+      val getTabCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_tab_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tab_count" }
+            }
+          }
+
+      val getTabDisabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_tab_disabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tab_disabled" }
+            }
+          }
+
+      val getTabIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_tab_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tab_icon" }
+            }
+          }
+
+      val getTabOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_tab_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tab_offset" }
+            }
+          }
+
+      val getTabRect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_tab_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tab_rect" }
+            }
+          }
+
+      val getTabTitle: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_tab_title".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tab_title" }
+            }
+          }
+
+      val getTabsRearrangeGroup: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "get_tabs_rearrange_group".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tabs_rearrange_group" }
+            }
+          }
+
+      val moveTab: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "move_tab".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method move_tab" }
+            }
+          }
+
+      val removeTab: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "remove_tab".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_tab" }
+            }
+          }
+
+      val setCurrentTab: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "set_current_tab".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_current_tab" }
+            }
+          }
+
+      val setDragToRearrangeEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "set_drag_to_rearrange_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_drag_to_rearrange_enabled"
+              }
+            }
+          }
+
+      val setScrollingEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "set_scrolling_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_scrolling_enabled" }
+            }
+          }
+
+      val setSelectWithRmb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "set_select_with_rmb".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_select_with_rmb" }
+            }
+          }
+
+      val setTabAlign: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "set_tab_align".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tab_align" }
+            }
+          }
+
+      val setTabCloseDisplayPolicy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "set_tab_close_display_policy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tab_close_display_policy" }
+            }
+          }
+
+      val setTabDisabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "set_tab_disabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tab_disabled" }
+            }
+          }
+
+      val setTabIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "set_tab_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tab_icon" }
+            }
+          }
+
+      val setTabTitle: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "set_tab_title".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tab_title" }
+            }
+          }
+
+      val setTabsRearrangeGroup: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
+              "set_tabs_rearrange_group".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tabs_rearrange_group" }
+            }
+          }
+    }
   }
 }

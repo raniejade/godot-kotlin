@@ -138,47 +138,59 @@ open class MeshTexture(
      * Container for method_bind pointers for MeshTexture
      */
     private object __method_bind {
-      val getBaseTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "get_base_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base_texture" }
-        }
-      val getImageSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "get_image_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_image_size" }
-        }
-      val getMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "get_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
-        }
-      val setBaseTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "set_base_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_base_texture" }
-        }
-      val setImageSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "set_image_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_image_size" }
-        }
-      val setMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "set_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mesh" }
-        }}
+      val getBaseTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
+              "get_base_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_base_texture" }
+            }
+          }
+
+      val getImageSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
+              "get_image_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_image_size" }
+            }
+          }
+
+      val getMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
+              "get_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mesh" }
+            }
+          }
+
+      val setBaseTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
+              "set_base_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_base_texture" }
+            }
+          }
+
+      val setImageSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
+              "set_image_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_image_size" }
+            }
+          }
+
+      val setMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
+              "set_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mesh" }
+            }
+          }
+    }
   }
 }

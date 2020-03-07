@@ -144,54 +144,68 @@ open class InterpolatedCamera(
      * Container for method_bind pointers for InterpolatedCamera
      */
     private object __method_bind {
-      val getSpeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "get_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed" }
-        }
-      val getTargetPath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "get_target_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_target_path" }
-        }
-      val isInterpolationEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "is_interpolation_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_interpolation_enabled" }
-        }
-      val setInterpolationEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "set_interpolation_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_interpolation_enabled" }
-        }
-      val setSpeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "set_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed" }
-        }
-      val setTarget: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "set_target".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_target" }
-        }
-      val setTargetPath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "set_target_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_target_path" }
-        }}
+      val getSpeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
+              "get_speed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_speed" }
+            }
+          }
+
+      val getTargetPath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
+              "get_target_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_target_path" }
+            }
+          }
+
+      val isInterpolationEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
+              "is_interpolation_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_interpolation_enabled" }
+            }
+          }
+
+      val setInterpolationEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
+              "set_interpolation_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_interpolation_enabled" }
+            }
+          }
+
+      val setSpeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
+              "set_speed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_speed" }
+            }
+          }
+
+      val setTarget: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
+              "set_target".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_target" }
+            }
+          }
+
+      val setTargetPath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
+              "set_target_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_target_path" }
+            }
+          }
+    }
   }
 }

@@ -154,47 +154,59 @@ open class ParallaxLayer(
      * Container for method_bind pointers for ParallaxLayer
      */
     private object __method_bind {
-      val getMirroring: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
-            "get_mirroring".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mirroring" }
-        }
-      val getMotionOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
-            "get_motion_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_motion_offset" }
-        }
-      val getMotionScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
-            "get_motion_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_motion_scale" }
-        }
-      val setMirroring: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
-            "set_mirroring".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mirroring" }
-        }
-      val setMotionOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
-            "set_motion_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_motion_offset" }
-        }
-      val setMotionScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
-            "set_motion_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_motion_scale" }
-        }}
+      val getMirroring: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
+              "get_mirroring".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mirroring" }
+            }
+          }
+
+      val getMotionOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
+              "get_motion_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_motion_offset" }
+            }
+          }
+
+      val getMotionScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
+              "get_motion_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_motion_scale" }
+            }
+          }
+
+      val setMirroring: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
+              "set_mirroring".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mirroring" }
+            }
+          }
+
+      val setMotionOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
+              "set_motion_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_motion_offset" }
+            }
+          }
+
+      val setMotionScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxLayer".cstr.ptr,
+              "set_motion_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_motion_scale" }
+            }
+          }
+    }
   }
 }

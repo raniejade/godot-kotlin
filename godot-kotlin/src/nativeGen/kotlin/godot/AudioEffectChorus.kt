@@ -437,131 +437,167 @@ open class AudioEffectChorus(
      * Container for method_bind pointers for AudioEffectChorus
      */
     private object __method_bind {
-      val getDry: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_dry".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dry" }
-        }
-      val getVoiceCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_count" }
-        }
-      val getVoiceCutoffHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_cutoff_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_cutoff_hz" }
-        }
-      val getVoiceDelayMs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_delay_ms".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_delay_ms" }
-        }
-      val getVoiceDepthMs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_depth_ms".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_depth_ms" }
-        }
-      val getVoiceLevelDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_level_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_level_db" }
-        }
-      val getVoicePan: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_pan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_pan" }
-        }
-      val getVoiceRateHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_rate_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_rate_hz" }
-        }
-      val getWet: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_wet".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_wet" }
-        }
-      val setDry: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_dry".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dry" }
-        }
-      val setVoiceCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_count" }
-        }
-      val setVoiceCutoffHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_cutoff_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_cutoff_hz" }
-        }
-      val setVoiceDelayMs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_delay_ms".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_delay_ms" }
-        }
-      val setVoiceDepthMs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_depth_ms".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_depth_ms" }
-        }
-      val setVoiceLevelDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_level_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_level_db" }
-        }
-      val setVoicePan: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_pan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_pan" }
-        }
-      val setVoiceRateHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_rate_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_rate_hz" }
-        }
-      val setWet: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_wet".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_wet" }
-        }}
+      val getDry: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "get_dry".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dry" }
+            }
+          }
+
+      val getVoiceCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "get_voice_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_voice_count" }
+            }
+          }
+
+      val getVoiceCutoffHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "get_voice_cutoff_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_voice_cutoff_hz" }
+            }
+          }
+
+      val getVoiceDelayMs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "get_voice_delay_ms".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_voice_delay_ms" }
+            }
+          }
+
+      val getVoiceDepthMs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "get_voice_depth_ms".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_voice_depth_ms" }
+            }
+          }
+
+      val getVoiceLevelDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "get_voice_level_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_voice_level_db" }
+            }
+          }
+
+      val getVoicePan: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "get_voice_pan".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_voice_pan" }
+            }
+          }
+
+      val getVoiceRateHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "get_voice_rate_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_voice_rate_hz" }
+            }
+          }
+
+      val getWet: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "get_wet".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_wet" }
+            }
+          }
+
+      val setDry: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "set_dry".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dry" }
+            }
+          }
+
+      val setVoiceCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "set_voice_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_voice_count" }
+            }
+          }
+
+      val setVoiceCutoffHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "set_voice_cutoff_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_voice_cutoff_hz" }
+            }
+          }
+
+      val setVoiceDelayMs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "set_voice_delay_ms".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_voice_delay_ms" }
+            }
+          }
+
+      val setVoiceDepthMs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "set_voice_depth_ms".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_voice_depth_ms" }
+            }
+          }
+
+      val setVoiceLevelDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "set_voice_level_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_voice_level_db" }
+            }
+          }
+
+      val setVoicePan: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "set_voice_pan".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_voice_pan" }
+            }
+          }
+
+      val setVoiceRateHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "set_voice_rate_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_voice_rate_hz" }
+            }
+          }
+
+      val setWet: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
+              "set_wet".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_wet" }
+            }
+          }
+    }
   }
 }

@@ -635,257 +635,341 @@ open class Camera(
      * Container for method_bind pointers for Camera
      */
     private object __method_bind {
-      val clearCurrent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "clear_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_current" }
-        }
-      val getCameraRid: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_camera_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_camera_rid" }
-        }
-      val getCameraTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_camera_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_camera_transform" }
-        }
-      val getCullMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cull_mask" }
-        }
-      val getCullMaskBit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_cull_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cull_mask_bit" }
-        }
-      val getDopplerTracking: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_doppler_tracking".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_doppler_tracking" }
-        }
-      val getEnvironment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_environment" }
-        }
-      val getFov: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_fov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fov" }
-        }
-      val getFrustum: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_frustum".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frustum" }
-        }
-      val getFrustumOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_frustum_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frustum_offset" }
-        }
-      val getHOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_h_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_h_offset" }
-        }
-      val getKeepAspectMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_keep_aspect_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_keep_aspect_mode" }
-        }
-      val getProjection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_projection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_projection" }
-        }
-      val getSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
-        }
-      val getVOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_v_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_v_offset" }
-        }
-      val getZfar: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_zfar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_zfar" }
-        }
-      val getZnear: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_znear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_znear" }
-        }
-      val isCurrent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "is_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_current" }
-        }
-      val isPositionBehind: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "is_position_behind".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_position_behind" }
-        }
-      val makeCurrent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "make_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_current" }
-        }
-      val projectLocalRayNormal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "project_local_ray_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method project_local_ray_normal" }
-        }
-      val projectPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "project_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method project_position" }
-        }
-      val projectRayNormal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "project_ray_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method project_ray_normal" }
-        }
-      val projectRayOrigin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "project_ray_origin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method project_ray_origin" }
-        }
-      val setCullMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cull_mask" }
-        }
-      val setCullMaskBit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_cull_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cull_mask_bit" }
-        }
-      val setCurrent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_current" }
-        }
-      val setDopplerTracking: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_doppler_tracking".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_doppler_tracking" }
-        }
-      val setEnvironment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_environment" }
-        }
-      val setFov: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_fov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fov" }
-        }
-      val setFrustum: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_frustum".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frustum" }
-        }
-      val setFrustumOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_frustum_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frustum_offset" }
-        }
-      val setHOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_h_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_h_offset" }
-        }
-      val setKeepAspectMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_keep_aspect_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_keep_aspect_mode" }
-        }
-      val setOrthogonal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_orthogonal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_orthogonal" }
-        }
-      val setPerspective: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_perspective".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_perspective" }
-        }
-      val setProjection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_projection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_projection" }
-        }
-      val setSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
-        }
-      val setVOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_v_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_v_offset" }
-        }
-      val setZfar: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_zfar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_zfar" }
-        }
-      val setZnear: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_znear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_znear" }
-        }
-      val unprojectPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "unproject_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method unproject_position" }
-        }}
+      val clearCurrent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "clear_current".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_current" }
+            }
+          }
+
+      val getCameraRid: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_camera_rid".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_camera_rid" }
+            }
+          }
+
+      val getCameraTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_camera_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_camera_transform" }
+            }
+          }
+
+      val getCullMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_cull_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cull_mask" }
+            }
+          }
+
+      val getCullMaskBit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_cull_mask_bit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cull_mask_bit" }
+            }
+          }
+
+      val getDopplerTracking: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_doppler_tracking".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_doppler_tracking" }
+            }
+          }
+
+      val getEnvironment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_environment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_environment" }
+            }
+          }
+
+      val getFov: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_fov".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fov" }
+            }
+          }
+
+      val getFrustum: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_frustum".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_frustum" }
+            }
+          }
+
+      val getFrustumOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_frustum_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_frustum_offset" }
+            }
+          }
+
+      val getHOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_h_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_h_offset" }
+            }
+          }
+
+      val getKeepAspectMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_keep_aspect_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_keep_aspect_mode" }
+            }
+          }
+
+      val getProjection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_projection".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_projection" }
+            }
+          }
+
+      val getSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_size" }
+            }
+          }
+
+      val getVOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_v_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_v_offset" }
+            }
+          }
+
+      val getZfar: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_zfar".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_zfar" }
+            }
+          }
+
+      val getZnear: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "get_znear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_znear" }
+            }
+          }
+
+      val isCurrent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "is_current".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_current" }
+            }
+          }
+
+      val isPositionBehind: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "is_position_behind".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_position_behind" }
+            }
+          }
+
+      val makeCurrent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "make_current".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method make_current" }
+            }
+          }
+
+      val projectLocalRayNormal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "project_local_ray_normal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method project_local_ray_normal" }
+            }
+          }
+
+      val projectPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "project_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method project_position" }
+            }
+          }
+
+      val projectRayNormal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "project_ray_normal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method project_ray_normal" }
+            }
+          }
+
+      val projectRayOrigin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "project_ray_origin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method project_ray_origin" }
+            }
+          }
+
+      val setCullMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_cull_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cull_mask" }
+            }
+          }
+
+      val setCullMaskBit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_cull_mask_bit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cull_mask_bit" }
+            }
+          }
+
+      val setCurrent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_current".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_current" }
+            }
+          }
+
+      val setDopplerTracking: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_doppler_tracking".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_doppler_tracking" }
+            }
+          }
+
+      val setEnvironment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_environment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_environment" }
+            }
+          }
+
+      val setFov: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_fov".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fov" }
+            }
+          }
+
+      val setFrustum: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_frustum".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_frustum" }
+            }
+          }
+
+      val setFrustumOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_frustum_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_frustum_offset" }
+            }
+          }
+
+      val setHOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_h_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_h_offset" }
+            }
+          }
+
+      val setKeepAspectMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_keep_aspect_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_keep_aspect_mode" }
+            }
+          }
+
+      val setOrthogonal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_orthogonal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_orthogonal" }
+            }
+          }
+
+      val setPerspective: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_perspective".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_perspective" }
+            }
+          }
+
+      val setProjection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_projection".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_projection" }
+            }
+          }
+
+      val setSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_size" }
+            }
+          }
+
+      val setVOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_v_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_v_offset" }
+            }
+          }
+
+      val setZfar: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_zfar".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_zfar" }
+            }
+          }
+
+      val setZnear: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "set_znear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_znear" }
+            }
+          }
+
+      val unprojectPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
+              "unproject_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method unproject_position" }
+            }
+          }
+    }
   }
 }

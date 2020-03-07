@@ -1524,833 +1524,1109 @@ open class OSInternal(
      * Container for method_bind pointers for OS
      */
     private object __method_bind {
-      val alert: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "alert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method alert" }
-        }
-      val canDraw: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "can_draw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method can_draw" }
-        }
-      val canUseThreads: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "can_use_threads".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method can_use_threads" }
-        }
-      val centerWindow: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "center_window".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method center_window" }
-        }
-      val closeMidiInputs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "close_midi_inputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method close_midi_inputs" }
-        }
-      val delayMsec: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "delay_msec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method delay_msec" }
-        }
-      val delayUsec: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "delay_usec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method delay_usec" }
-        }
-      val dumpMemoryToFile: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "dump_memory_to_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method dump_memory_to_file" }
-        }
-      val dumpResourcesToFile: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "dump_resources_to_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method dump_resources_to_file" }
-        }
-      val execute: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "execute".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method execute" }
-        }
-      val findScancodeFromString: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "find_scancode_from_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method find_scancode_from_string" }
-        }
-      val getAudioDriverCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_audio_driver_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_audio_driver_count" }
-        }
-      val getAudioDriverName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_audio_driver_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_audio_driver_name" }
-        }
-      val getBorderlessWindow: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_borderless_window".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_borderless_window" }
-        }
-      val getClipboard: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_clipboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_clipboard" }
-        }
-      val getCmdlineArgs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_cmdline_args".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cmdline_args" }
-        }
-      val getConnectedMidiInputs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_connected_midi_inputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connected_midi_inputs" }
-        }
-      val getCurrentScreen: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_current_screen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_screen" }
-        }
-      val getCurrentVideoDriver: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_current_video_driver".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_video_driver" }
-        }
-      val getDate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_date".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_date" }
-        }
-      val getDatetime: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_datetime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_datetime" }
-        }
-      val getDatetimeFromUnixTime: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_datetime_from_unix_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_datetime_from_unix_time" }
-        }
-      val getDynamicMemoryUsage: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_dynamic_memory_usage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dynamic_memory_usage" }
-        }
-      val getEnvironment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_environment" }
-        }
-      val getExecutablePath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_executable_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_executable_path" }
-        }
-      val getExitCode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_exit_code".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_exit_code" }
-        }
-      val getGrantedPermissions: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_granted_permissions".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_granted_permissions" }
-        }
-      val getImeSelection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_ime_selection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ime_selection" }
-        }
-      val getImeText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_ime_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ime_text" }
-        }
-      val getLatinKeyboardVariant: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_latin_keyboard_variant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_latin_keyboard_variant" }
-        }
-      val getLocale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_locale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_locale" }
-        }
-      val getLowProcessorUsageModeSleepUsec: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_low_processor_usage_mode_sleep_usec".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method get_low_processor_usage_mode_sleep_usec" }
-        }
-      val getMaxWindowSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_max_window_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_max_window_size" }
-        }
-      val getMinWindowSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_min_window_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_min_window_size" }
-        }
-      val getModelName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_model_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_model_name" }
-        }
-      val getName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_name" }
-        }
-      val getPowerPercentLeft: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_power_percent_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_power_percent_left" }
-        }
-      val getPowerSecondsLeft: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_power_seconds_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_power_seconds_left" }
-        }
-      val getPowerState: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_power_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_power_state" }
-        }
-      val getProcessId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_process_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_process_id" }
-        }
-      val getProcessorCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_processor_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_processor_count" }
-        }
-      val getRealWindowSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_real_window_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_real_window_size" }
-        }
-      val getScancodeString: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_scancode_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scancode_string" }
-        }
-      val getScreenCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_screen_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_screen_count" }
-        }
-      val getScreenDpi: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_screen_dpi".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_screen_dpi" }
-        }
-      val getScreenOrientation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_screen_orientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_screen_orientation" }
-        }
-      val getScreenPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_screen_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_screen_position" }
-        }
-      val getScreenSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_screen_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_screen_size" }
-        }
-      val getSplashTickMsec: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_splash_tick_msec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_splash_tick_msec" }
-        }
-      val getStaticMemoryPeakUsage: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_static_memory_peak_usage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_static_memory_peak_usage" }
-        }
-      val getStaticMemoryUsage: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_static_memory_usage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_static_memory_usage" }
-        }
-      val getSystemDir: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_system_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_system_dir" }
-        }
-      val getSystemTimeMsecs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_system_time_msecs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_system_time_msecs" }
-        }
-      val getSystemTimeSecs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_system_time_secs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_system_time_secs" }
-        }
-      val getTicksMsec: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_ticks_msec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ticks_msec" }
-        }
-      val getTicksUsec: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_ticks_usec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ticks_usec" }
-        }
-      val getTime: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_time" }
-        }
-      val getTimeZoneInfo: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_time_zone_info".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_time_zone_info" }
-        }
-      val getUniqueId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_unique_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_unique_id" }
-        }
-      val getUnixTime: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_unix_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_unix_time" }
-        }
-      val getUnixTimeFromDatetime: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_unix_time_from_datetime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_unix_time_from_datetime" }
-        }
-      val getUserDataDir: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_user_data_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_user_data_dir" }
-        }
-      val getVideoDriverCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_video_driver_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_video_driver_count" }
-        }
-      val getVideoDriverName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_video_driver_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_video_driver_name" }
-        }
-      val getVirtualKeyboardHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_virtual_keyboard_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_virtual_keyboard_height" }
-        }
-      val getWindowPerPixelTransparencyEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_window_per_pixel_transparency_enabled".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method get_window_per_pixel_transparency_enabled" }
-        }
-      val getWindowPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_window_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_window_position" }
-        }
-      val getWindowSafeArea: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_window_safe_area".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_window_safe_area" }
-        }
-      val getWindowSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_window_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_window_size" }
-        }
-      val globalMenuAddItem: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "global_menu_add_item".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method global_menu_add_item" }
-        }
-      val globalMenuAddSeparator: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "global_menu_add_separator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method global_menu_add_separator" }
-        }
-      val globalMenuClear: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "global_menu_clear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method global_menu_clear" }
-        }
-      val globalMenuRemoveItem: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "global_menu_remove_item".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method global_menu_remove_item" }
-        }
-      val hasEnvironment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "has_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_environment" }
-        }
-      val hasFeature: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "has_feature".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_feature" }
-        }
-      val hasTouchscreenUiHint: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "has_touchscreen_ui_hint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_touchscreen_ui_hint" }
-        }
-      val hasVirtualKeyboard: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "has_virtual_keyboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_virtual_keyboard" }
-        }
-      val hideVirtualKeyboard: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "hide_virtual_keyboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hide_virtual_keyboard" }
-        }
-      val isDebugBuild: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_debug_build".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_debug_build" }
-        }
-      val isInLowProcessorUsageMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_in_low_processor_usage_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_in_low_processor_usage_mode" }
-        }
-      val isKeepScreenOn: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_keep_screen_on".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_keep_screen_on" }
-        }
-      val isOkLeftAndCancelRight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_ok_left_and_cancel_right".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ok_left_and_cancel_right" }
-        }
-      val isScancodeUnicode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_scancode_unicode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_scancode_unicode" }
-        }
-      val isStdoutVerbose: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_stdout_verbose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_stdout_verbose" }
-        }
-      val isUserfsPersistent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_userfs_persistent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_userfs_persistent" }
-        }
-      val isVsyncEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_vsync_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_vsync_enabled" }
-        }
-      val isVsyncViaCompositorEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_vsync_via_compositor_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_vsync_via_compositor_enabled" }
-        }
-      val isWindowAlwaysOnTop: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_always_on_top".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_always_on_top" }
-        }
-      val isWindowFocused: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_focused".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_focused" }
-        }
-      val isWindowFullscreen: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_fullscreen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_fullscreen" }
-        }
-      val isWindowMaximized: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_maximized".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_maximized" }
-        }
-      val isWindowMinimized: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_minimized".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_minimized" }
-        }
-      val isWindowResizable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_resizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_resizable" }
-        }
-      val kill: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "kill".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method kill" }
-        }
-      val moveWindowToForeground: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "move_window_to_foreground".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method move_window_to_foreground" }
-        }
-      val nativeVideoIsPlaying: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "native_video_is_playing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method native_video_is_playing" }
-        }
-      val nativeVideoPause: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "native_video_pause".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method native_video_pause" }
-        }
-      val nativeVideoPlay: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "native_video_play".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method native_video_play" }
-        }
-      val nativeVideoStop: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "native_video_stop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method native_video_stop" }
-        }
-      val nativeVideoUnpause: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "native_video_unpause".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method native_video_unpause" }
-        }
-      val openMidiInputs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "open_midi_inputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method open_midi_inputs" }
-        }
-      val printAllResources: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "print_all_resources".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method print_all_resources" }
-        }
-      val printAllTexturesBySize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "print_all_textures_by_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method print_all_textures_by_size" }
-        }
-      val printResourcesByType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "print_resources_by_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method print_resources_by_type" }
-        }
-      val printResourcesInUse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "print_resources_in_use".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method print_resources_in_use" }
-        }
-      val requestAttention: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "request_attention".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method request_attention" }
-        }
-      val requestPermission: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "request_permission".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method request_permission" }
-        }
-      val requestPermissions: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "request_permissions".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method request_permissions" }
-        }
-      val setBorderlessWindow: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_borderless_window".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_borderless_window" }
-        }
-      val setClipboard: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_clipboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_clipboard" }
-        }
-      val setCurrentScreen: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_current_screen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_current_screen" }
-        }
-      val setExitCode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_exit_code".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_exit_code" }
-        }
-      val setIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_icon" }
-        }
-      val setImeActive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_ime_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ime_active" }
-        }
-      val setImePosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_ime_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ime_position" }
-        }
-      val setKeepScreenOn: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_keep_screen_on".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_keep_screen_on" }
-        }
-      val setLowProcessorUsageMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_low_processor_usage_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_low_processor_usage_mode" }
-        }
-      val setLowProcessorUsageModeSleepUsec: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_low_processor_usage_mode_sleep_usec".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method set_low_processor_usage_mode_sleep_usec" }
-        }
-      val setMaxWindowSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_max_window_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_max_window_size" }
-        }
-      val setMinWindowSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_min_window_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_min_window_size" }
-        }
-      val setNativeIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_native_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_native_icon" }
-        }
-      val setScreenOrientation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_screen_orientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_screen_orientation" }
-        }
-      val setThreadName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_thread_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_thread_name" }
-        }
-      val setUseFileAccessSaveAndSwap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_use_file_access_save_and_swap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_file_access_save_and_swap"
+      val alert: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "alert".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method alert" }
             }
-        }
-      val setUseVsync: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_use_vsync".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_vsync" }
-        }
-      val setVsyncViaCompositor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_vsync_via_compositor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vsync_via_compositor" }
-        }
-      val setWindowAlwaysOnTop: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_always_on_top".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_always_on_top" }
-        }
-      val setWindowFullscreen: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_fullscreen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_fullscreen" }
-        }
-      val setWindowMaximized: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_maximized".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_maximized" }
-        }
-      val setWindowMinimized: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_minimized".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_minimized" }
-        }
-      val setWindowPerPixelTransparencyEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_per_pixel_transparency_enabled".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method set_window_per_pixel_transparency_enabled" }
-        }
-      val setWindowPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_position" }
-        }
-      val setWindowResizable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_resizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_resizable" }
-        }
-      val setWindowSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_size" }
-        }
-      val setWindowTitle: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_title" }
-        }
-      val shellOpen: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "shell_open".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shell_open" }
-        }
-      val showVirtualKeyboard: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "show_virtual_keyboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method show_virtual_keyboard" }
-        }}
+          }
+
+      val canDraw: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "can_draw".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method can_draw" }
+            }
+          }
+
+      val canUseThreads: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "can_use_threads".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method can_use_threads" }
+            }
+          }
+
+      val centerWindow: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "center_window".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method center_window" }
+            }
+          }
+
+      val closeMidiInputs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "close_midi_inputs".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method close_midi_inputs" }
+            }
+          }
+
+      val delayMsec: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "delay_msec".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method delay_msec" }
+            }
+          }
+
+      val delayUsec: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "delay_usec".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method delay_usec" }
+            }
+          }
+
+      val dumpMemoryToFile: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "dump_memory_to_file".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method dump_memory_to_file" }
+            }
+          }
+
+      val dumpResourcesToFile: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "dump_resources_to_file".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method dump_resources_to_file" }
+            }
+          }
+
+      val execute: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "execute".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method execute" }
+            }
+          }
+
+      val findScancodeFromString: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "find_scancode_from_string".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method find_scancode_from_string" }
+            }
+          }
+
+      val getAudioDriverCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_audio_driver_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_audio_driver_count" }
+            }
+          }
+
+      val getAudioDriverName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_audio_driver_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_audio_driver_name" }
+            }
+          }
+
+      val getBorderlessWindow: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_borderless_window".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_borderless_window" }
+            }
+          }
+
+      val getClipboard: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_clipboard".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_clipboard" }
+            }
+          }
+
+      val getCmdlineArgs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_cmdline_args".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cmdline_args" }
+            }
+          }
+
+      val getConnectedMidiInputs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_connected_midi_inputs".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connected_midi_inputs" }
+            }
+          }
+
+      val getCurrentScreen: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_current_screen".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_current_screen" }
+            }
+          }
+
+      val getCurrentVideoDriver: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_current_video_driver".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_current_video_driver" }
+            }
+          }
+
+      val getDate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_date".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_date" }
+            }
+          }
+
+      val getDatetime: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_datetime".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_datetime" }
+            }
+          }
+
+      val getDatetimeFromUnixTime: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_datetime_from_unix_time".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_datetime_from_unix_time" }
+            }
+          }
+
+      val getDynamicMemoryUsage: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_dynamic_memory_usage".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dynamic_memory_usage" }
+            }
+          }
+
+      val getEnvironment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_environment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_environment" }
+            }
+          }
+
+      val getExecutablePath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_executable_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_executable_path" }
+            }
+          }
+
+      val getExitCode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_exit_code".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_exit_code" }
+            }
+          }
+
+      val getGrantedPermissions: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_granted_permissions".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_granted_permissions" }
+            }
+          }
+
+      val getImeSelection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_ime_selection".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ime_selection" }
+            }
+          }
+
+      val getImeText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_ime_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ime_text" }
+            }
+          }
+
+      val getLatinKeyboardVariant: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_latin_keyboard_variant".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_latin_keyboard_variant" }
+            }
+          }
+
+      val getLocale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_locale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_locale" }
+            }
+          }
+
+      val getLowProcessorUsageModeSleepUsec: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_low_processor_usage_mode_sleep_usec".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_low_processor_usage_mode_sleep_usec" }
+            }
+          }
+
+      val getMaxWindowSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_max_window_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_max_window_size" }
+            }
+          }
+
+      val getMinWindowSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_min_window_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_min_window_size" }
+            }
+          }
+
+      val getModelName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_model_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_model_name" }
+            }
+          }
+
+      val getName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_name" }
+            }
+          }
+
+      val getPowerPercentLeft: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_power_percent_left".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_power_percent_left" }
+            }
+          }
+
+      val getPowerSecondsLeft: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_power_seconds_left".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_power_seconds_left" }
+            }
+          }
+
+      val getPowerState: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_power_state".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_power_state" }
+            }
+          }
+
+      val getProcessId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_process_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_process_id" }
+            }
+          }
+
+      val getProcessorCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_processor_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_processor_count" }
+            }
+          }
+
+      val getRealWindowSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_real_window_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_real_window_size" }
+            }
+          }
+
+      val getScancodeString: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_scancode_string".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_scancode_string" }
+            }
+          }
+
+      val getScreenCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_screen_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_screen_count" }
+            }
+          }
+
+      val getScreenDpi: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_screen_dpi".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_screen_dpi" }
+            }
+          }
+
+      val getScreenOrientation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_screen_orientation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_screen_orientation" }
+            }
+          }
+
+      val getScreenPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_screen_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_screen_position" }
+            }
+          }
+
+      val getScreenSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_screen_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_screen_size" }
+            }
+          }
+
+      val getSplashTickMsec: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_splash_tick_msec".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_splash_tick_msec" }
+            }
+          }
+
+      val getStaticMemoryPeakUsage: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_static_memory_peak_usage".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_static_memory_peak_usage" }
+            }
+          }
+
+      val getStaticMemoryUsage: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_static_memory_usage".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_static_memory_usage" }
+            }
+          }
+
+      val getSystemDir: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_system_dir".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_system_dir" }
+            }
+          }
+
+      val getSystemTimeMsecs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_system_time_msecs".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_system_time_msecs" }
+            }
+          }
+
+      val getSystemTimeSecs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_system_time_secs".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_system_time_secs" }
+            }
+          }
+
+      val getTicksMsec: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_ticks_msec".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ticks_msec" }
+            }
+          }
+
+      val getTicksUsec: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_ticks_usec".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ticks_usec" }
+            }
+          }
+
+      val getTime: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_time".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_time" }
+            }
+          }
+
+      val getTimeZoneInfo: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_time_zone_info".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_time_zone_info" }
+            }
+          }
+
+      val getUniqueId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_unique_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_unique_id" }
+            }
+          }
+
+      val getUnixTime: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_unix_time".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_unix_time" }
+            }
+          }
+
+      val getUnixTimeFromDatetime: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_unix_time_from_datetime".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_unix_time_from_datetime" }
+            }
+          }
+
+      val getUserDataDir: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_user_data_dir".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_user_data_dir" }
+            }
+          }
+
+      val getVideoDriverCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_video_driver_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_video_driver_count" }
+            }
+          }
+
+      val getVideoDriverName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_video_driver_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_video_driver_name" }
+            }
+          }
+
+      val getVirtualKeyboardHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_virtual_keyboard_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_virtual_keyboard_height" }
+            }
+          }
+
+      val getWindowPerPixelTransparencyEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_window_per_pixel_transparency_enabled".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_window_per_pixel_transparency_enabled" }
+            }
+          }
+
+      val getWindowPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_window_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_window_position" }
+            }
+          }
+
+      val getWindowSafeArea: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_window_safe_area".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_window_safe_area" }
+            }
+          }
+
+      val getWindowSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "get_window_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_window_size" }
+            }
+          }
+
+      val globalMenuAddItem: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "global_menu_add_item".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method global_menu_add_item" }
+            }
+          }
+
+      val globalMenuAddSeparator: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "global_menu_add_separator".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method global_menu_add_separator" }
+            }
+          }
+
+      val globalMenuClear: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "global_menu_clear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method global_menu_clear" }
+            }
+          }
+
+      val globalMenuRemoveItem: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "global_menu_remove_item".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method global_menu_remove_item" }
+            }
+          }
+
+      val hasEnvironment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "has_environment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_environment" }
+            }
+          }
+
+      val hasFeature: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "has_feature".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_feature" }
+            }
+          }
+
+      val hasTouchscreenUiHint: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "has_touchscreen_ui_hint".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_touchscreen_ui_hint" }
+            }
+          }
+
+      val hasVirtualKeyboard: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "has_virtual_keyboard".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_virtual_keyboard" }
+            }
+          }
+
+      val hideVirtualKeyboard: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "hide_virtual_keyboard".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method hide_virtual_keyboard" }
+            }
+          }
+
+      val isDebugBuild: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_debug_build".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_debug_build" }
+            }
+          }
+
+      val isInLowProcessorUsageMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_in_low_processor_usage_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_in_low_processor_usage_mode"
+              }
+            }
+          }
+
+      val isKeepScreenOn: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_keep_screen_on".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_keep_screen_on" }
+            }
+          }
+
+      val isOkLeftAndCancelRight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_ok_left_and_cancel_right".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_ok_left_and_cancel_right" }
+            }
+          }
+
+      val isScancodeUnicode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_scancode_unicode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_scancode_unicode" }
+            }
+          }
+
+      val isStdoutVerbose: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_stdout_verbose".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_stdout_verbose" }
+            }
+          }
+
+      val isUserfsPersistent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_userfs_persistent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_userfs_persistent" }
+            }
+          }
+
+      val isVsyncEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_vsync_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_vsync_enabled" }
+            }
+          }
+
+      val isVsyncViaCompositorEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_vsync_via_compositor_enabled".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method is_vsync_via_compositor_enabled" }
+            }
+          }
+
+      val isWindowAlwaysOnTop: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_window_always_on_top".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_window_always_on_top" }
+            }
+          }
+
+      val isWindowFocused: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_window_focused".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_window_focused" }
+            }
+          }
+
+      val isWindowFullscreen: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_window_fullscreen".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_window_fullscreen" }
+            }
+          }
+
+      val isWindowMaximized: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_window_maximized".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_window_maximized" }
+            }
+          }
+
+      val isWindowMinimized: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_window_minimized".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_window_minimized" }
+            }
+          }
+
+      val isWindowResizable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "is_window_resizable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_window_resizable" }
+            }
+          }
+
+      val kill: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "kill".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method kill" }
+            }
+          }
+
+      val moveWindowToForeground: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "move_window_to_foreground".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method move_window_to_foreground" }
+            }
+          }
+
+      val nativeVideoIsPlaying: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "native_video_is_playing".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method native_video_is_playing" }
+            }
+          }
+
+      val nativeVideoPause: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "native_video_pause".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method native_video_pause" }
+            }
+          }
+
+      val nativeVideoPlay: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "native_video_play".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method native_video_play" }
+            }
+          }
+
+      val nativeVideoStop: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "native_video_stop".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method native_video_stop" }
+            }
+          }
+
+      val nativeVideoUnpause: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "native_video_unpause".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method native_video_unpause" }
+            }
+          }
+
+      val openMidiInputs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "open_midi_inputs".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method open_midi_inputs" }
+            }
+          }
+
+      val printAllResources: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "print_all_resources".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method print_all_resources" }
+            }
+          }
+
+      val printAllTexturesBySize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "print_all_textures_by_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method print_all_textures_by_size" }
+            }
+          }
+
+      val printResourcesByType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "print_resources_by_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method print_resources_by_type" }
+            }
+          }
+
+      val printResourcesInUse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "print_resources_in_use".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method print_resources_in_use" }
+            }
+          }
+
+      val requestAttention: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "request_attention".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method request_attention" }
+            }
+          }
+
+      val requestPermission: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "request_permission".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method request_permission" }
+            }
+          }
+
+      val requestPermissions: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "request_permissions".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method request_permissions" }
+            }
+          }
+
+      val setBorderlessWindow: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_borderless_window".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_borderless_window" }
+            }
+          }
+
+      val setClipboard: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_clipboard".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_clipboard" }
+            }
+          }
+
+      val setCurrentScreen: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_current_screen".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_current_screen" }
+            }
+          }
+
+      val setExitCode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_exit_code".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_exit_code" }
+            }
+          }
+
+      val setIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_icon" }
+            }
+          }
+
+      val setImeActive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_ime_active".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ime_active" }
+            }
+          }
+
+      val setImePosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_ime_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ime_position" }
+            }
+          }
+
+      val setKeepScreenOn: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_keep_screen_on".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_keep_screen_on" }
+            }
+          }
+
+      val setLowProcessorUsageMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_low_processor_usage_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_low_processor_usage_mode" }
+            }
+          }
+
+      val setLowProcessorUsageModeSleepUsec: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_low_processor_usage_mode_sleep_usec".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_low_processor_usage_mode_sleep_usec" }
+            }
+          }
+
+      val setMaxWindowSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_max_window_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_max_window_size" }
+            }
+          }
+
+      val setMinWindowSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_min_window_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_min_window_size" }
+            }
+          }
+
+      val setNativeIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_native_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_native_icon" }
+            }
+          }
+
+      val setScreenOrientation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_screen_orientation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_screen_orientation" }
+            }
+          }
+
+      val setThreadName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_thread_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_thread_name" }
+            }
+          }
+
+      val setUseFileAccessSaveAndSwap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_use_file_access_save_and_swap".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_use_file_access_save_and_swap" }
+            }
+          }
+
+      val setUseVsync: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_use_vsync".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_use_vsync" }
+            }
+          }
+
+      val setVsyncViaCompositor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_vsync_via_compositor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vsync_via_compositor" }
+            }
+          }
+
+      val setWindowAlwaysOnTop: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_window_always_on_top".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_window_always_on_top" }
+            }
+          }
+
+      val setWindowFullscreen: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_window_fullscreen".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_window_fullscreen" }
+            }
+          }
+
+      val setWindowMaximized: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_window_maximized".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_window_maximized" }
+            }
+          }
+
+      val setWindowMinimized: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_window_minimized".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_window_minimized" }
+            }
+          }
+
+      val setWindowPerPixelTransparencyEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_window_per_pixel_transparency_enabled".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_window_per_pixel_transparency_enabled" }
+            }
+          }
+
+      val setWindowPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_window_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_window_position" }
+            }
+          }
+
+      val setWindowResizable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_window_resizable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_window_resizable" }
+            }
+          }
+
+      val setWindowSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_window_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_window_size" }
+            }
+          }
+
+      val setWindowTitle: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "set_window_title".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_window_title" }
+            }
+          }
+
+      val shellOpen: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "shell_open".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method shell_open" }
+            }
+          }
+
+      val showVirtualKeyboard: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
+              "show_virtual_keyboard".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method show_virtual_keyboard" }
+            }
+          }
+    }
   }
 }
 

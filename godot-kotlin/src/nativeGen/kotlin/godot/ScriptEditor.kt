@@ -372,54 +372,68 @@ open class ScriptEditor(
      * Container for method_bind pointers for ScriptEditor
      */
     private object __method_bind {
-      val canDropDataFw: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "can_drop_data_fw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method can_drop_data_fw" }
-        }
-      val dropDataFw: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "drop_data_fw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method drop_data_fw" }
-        }
-      val getCurrentScript: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "get_current_script".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_script" }
-        }
-      val getDragDataFw: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "get_drag_data_fw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_drag_data_fw" }
-        }
-      val getOpenScripts: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "get_open_scripts".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_open_scripts" }
-        }
-      val gotoLine: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "goto_line".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method goto_line" }
-        }
-      val openScriptCreateDialog: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "open_script_create_dialog".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method open_script_create_dialog" }
-        }}
+      val canDropDataFw: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
+              "can_drop_data_fw".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method can_drop_data_fw" }
+            }
+          }
+
+      val dropDataFw: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
+              "drop_data_fw".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method drop_data_fw" }
+            }
+          }
+
+      val getCurrentScript: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
+              "get_current_script".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_current_script" }
+            }
+          }
+
+      val getDragDataFw: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
+              "get_drag_data_fw".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_drag_data_fw" }
+            }
+          }
+
+      val getOpenScripts: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
+              "get_open_scripts".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_open_scripts" }
+            }
+          }
+
+      val gotoLine: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
+              "goto_line".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method goto_line" }
+            }
+          }
+
+      val openScriptCreateDialog: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
+              "open_script_create_dialog".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method open_script_create_dialog" }
+            }
+          }
+    }
   }
 }

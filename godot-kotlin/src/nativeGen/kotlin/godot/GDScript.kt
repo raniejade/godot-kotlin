@@ -67,17 +67,23 @@ open class GDScript(
      * Container for method_bind pointers for GDScript
      */
     private object __method_bind {
-      val getAsByteCode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDScript".cstr.ptr,
-            "get_as_byte_code".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_as_byte_code" }
-        }
-      val new: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDScript".cstr.ptr,
-            "new".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method new" }
-        }}
+      val getAsByteCode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDScript".cstr.ptr,
+              "get_as_byte_code".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_as_byte_code" }
+            }
+          }
+
+      val new: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDScript".cstr.ptr,
+              "new".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method new" }
+            }
+          }
+    }
   }
 }

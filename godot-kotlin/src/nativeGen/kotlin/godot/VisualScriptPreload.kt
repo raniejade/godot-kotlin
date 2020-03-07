@@ -75,19 +75,23 @@ open class VisualScriptPreload(
      * Container for method_bind pointers for VisualScriptPreload
      */
     private object __method_bind {
-      val getPreload: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPreload".cstr.ptr,
-            "get_preload".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_preload" }
-        }
-      val setPreload: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPreload".cstr.ptr,
-            "set_preload".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_preload" }
-        }}
+      val getPreload: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPreload".cstr.ptr,
+              "get_preload".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_preload" }
+            }
+          }
+
+      val setPreload: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPreload".cstr.ptr,
+              "set_preload".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_preload" }
+            }
+          }
+    }
   }
 }

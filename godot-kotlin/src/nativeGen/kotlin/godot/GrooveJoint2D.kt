@@ -98,33 +98,41 @@ open class GrooveJoint2D(
      * Container for method_bind pointers for GrooveJoint2D
      */
     private object __method_bind {
-      val getInitialOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GrooveJoint2D".cstr.ptr,
-            "get_initial_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_initial_offset" }
-        }
-      val getLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GrooveJoint2D".cstr.ptr,
-            "get_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_length" }
-        }
-      val setInitialOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GrooveJoint2D".cstr.ptr,
-            "set_initial_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_initial_offset" }
-        }
-      val setLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GrooveJoint2D".cstr.ptr,
-            "set_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_length" }
-        }}
+      val getInitialOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GrooveJoint2D".cstr.ptr,
+              "get_initial_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_initial_offset" }
+            }
+          }
+
+      val getLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GrooveJoint2D".cstr.ptr,
+              "get_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_length" }
+            }
+          }
+
+      val setInitialOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GrooveJoint2D".cstr.ptr,
+              "set_initial_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_initial_offset" }
+            }
+          }
+
+      val setLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GrooveJoint2D".cstr.ptr,
+              "set_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_length" }
+            }
+          }
+    }
   }
 }

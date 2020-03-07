@@ -1652,587 +1652,879 @@ open class Control(
      * Container for method_bind pointers for Control
      */
     private object __method_bind {
-      val acceptEvent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "accept_event".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method accept_event" }
-        }
-      val addColorOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "add_color_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_color_override" }
-        }
-      val addConstantOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "add_constant_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_constant_override" }
-        }
-      val addFontOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "add_font_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_font_override" }
-        }
-      val addIconOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "add_icon_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_icon_override" }
-        }
-      val addShaderOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "add_shader_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_shader_override" }
-        }
-      val addStyleboxOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "add_stylebox_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_stylebox_override" }
-        }
-      val forceDrag: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "force_drag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method force_drag" }
-        }
-      val getAnchor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_anchor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_anchor" }
-        }
-      val getBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_begin" }
-        }
-      val getColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color" }
-        }
-      val getCombinedMinimumSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_combined_minimum_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_combined_minimum_size" }
-        }
-      val getConstant: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant" }
-        }
-      val getCursorShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_cursor_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cursor_shape" }
-        }
-      val getCustomMinimumSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_custom_minimum_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_custom_minimum_size" }
-        }
-      val getDefaultCursorShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_default_cursor_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_default_cursor_shape" }
-        }
-      val getEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_end" }
-        }
-      val getFocusMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_focus_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_focus_mode" }
-        }
-      val getFocusNeighbour: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_focus_neighbour".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_focus_neighbour" }
-        }
-      val getFocusNext: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_focus_next".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_focus_next" }
-        }
-      val getFocusOwner: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_focus_owner".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_focus_owner" }
-        }
-      val getFocusPrevious: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_focus_previous".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_focus_previous" }
-        }
-      val getFont: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_font".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_font" }
-        }
-      val getGlobalPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_global_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_global_position" }
-        }
-      val getGlobalRect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_global_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_global_rect" }
-        }
-      val getHGrowDirection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_h_grow_direction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_h_grow_direction" }
-        }
-      val getHSizeFlags: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_h_size_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_h_size_flags" }
-        }
-      val getIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_icon" }
-        }
-      val getMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_margin" }
-        }
-      val getMinimumSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_minimum_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_minimum_size" }
-        }
-      val getMouseFilter: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_mouse_filter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mouse_filter" }
-        }
-      val getParentAreaSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_parent_area_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_parent_area_size" }
-        }
-      val getParentControl: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_parent_control".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_parent_control" }
-        }
-      val getPivotOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_pivot_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pivot_offset" }
-        }
-      val getPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_position" }
-        }
-      val getRect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rect" }
-        }
-      val getRotation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rotation" }
-        }
-      val getRotationDegrees: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_rotation_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rotation_degrees" }
-        }
-      val getScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scale" }
-        }
-      val getSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
-        }
-      val getStretchRatio: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_stretch_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stretch_ratio" }
-        }
-      val getStylebox: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_stylebox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stylebox" }
-        }
-      val getTheme: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_theme".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_theme" }
-        }
-      val getTooltip: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_tooltip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tooltip" }
-        }
-      val getVGrowDirection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_v_grow_direction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_v_grow_direction" }
-        }
-      val getVSizeFlags: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "get_v_size_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_v_size_flags" }
-        }
-      val grabClickFocus: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "grab_click_focus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method grab_click_focus" }
-        }
-      val grabFocus: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "grab_focus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method grab_focus" }
-        }
-      val hasColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_color" }
-        }
-      val hasColorOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_color_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_color_override" }
-        }
-      val hasConstant: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_constant" }
-        }
-      val hasConstantOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_constant_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_constant_override" }
-        }
-      val hasFocus: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_focus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_focus" }
-        }
-      val hasFont: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_font".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_font" }
-        }
-      val hasFontOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_font_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_font_override" }
-        }
-      val hasIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_icon" }
-        }
-      val hasIconOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_icon_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_icon_override" }
-        }
-      val hasShaderOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_shader_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_shader_override" }
-        }
-      val hasStylebox: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_stylebox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_stylebox" }
-        }
-      val hasStyleboxOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "has_stylebox_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_stylebox_override" }
-        }
-      val isClippingContents: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "is_clipping_contents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_clipping_contents" }
-        }
-      val minimumSizeChanged: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "minimum_size_changed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method minimum_size_changed" }
-        }
-      val releaseFocus: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "release_focus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method release_focus" }
-        }
-      val setAnchor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_anchor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_anchor" }
-        }
-      val setAnchorAndMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_anchor_and_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_anchor_and_margin" }
-        }
-      val setAnchorsAndMarginsPreset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_anchors_and_margins_preset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_anchors_and_margins_preset" }
-        }
-      val setAnchorsPreset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_anchors_preset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_anchors_preset" }
-        }
-      val setBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_begin" }
-        }
-      val setClipContents: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_clip_contents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_clip_contents" }
-        }
-      val setCustomMinimumSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_custom_minimum_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_custom_minimum_size" }
-        }
-      val setDefaultCursorShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_default_cursor_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_default_cursor_shape" }
-        }
-      val setDragForwarding: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_drag_forwarding".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_drag_forwarding" }
-        }
-      val setDragPreview: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_drag_preview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_drag_preview" }
-        }
-      val setEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_end" }
-        }
-      val setFocusMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_focus_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_focus_mode" }
-        }
-      val setFocusNeighbour: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_focus_neighbour".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_focus_neighbour" }
-        }
-      val setFocusNext: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_focus_next".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_focus_next" }
-        }
-      val setFocusPrevious: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_focus_previous".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_focus_previous" }
-        }
-      val setGlobalPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_global_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_global_position" }
-        }
-      val setHGrowDirection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_h_grow_direction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_h_grow_direction" }
-        }
-      val setHSizeFlags: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_h_size_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_h_size_flags" }
-        }
-      val setMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_margin" }
-        }
-      val setMarginsPreset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_margins_preset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_margins_preset" }
-        }
-      val setMouseFilter: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_mouse_filter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mouse_filter" }
-        }
-      val setPivotOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_pivot_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pivot_offset" }
-        }
-      val setPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_position" }
-        }
-      val setRotation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rotation" }
-        }
-      val setRotationDegrees: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_rotation_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rotation_degrees" }
-        }
-      val setScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_scale" }
-        }
-      val setSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
-        }
-      val setStretchRatio: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_stretch_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_stretch_ratio" }
-        }
-      val setTheme: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_theme".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_theme" }
-        }
-      val setTooltip: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_tooltip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tooltip" }
-        }
-      val setVGrowDirection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_v_grow_direction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_v_grow_direction" }
-        }
-      val setVSizeFlags: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "set_v_size_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_v_size_flags" }
-        }
-      val showModal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "show_modal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method show_modal" }
-        }
-      val warpMouse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-            "warp_mouse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method warp_mouse" }
-        }}
+      val acceptEvent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "accept_event".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method accept_event" }
+            }
+          }
+
+      val addColorOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "add_color_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_color_override" }
+            }
+          }
+
+      val addConstantOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "add_constant_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_constant_override" }
+            }
+          }
+
+      val addFontOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "add_font_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_font_override" }
+            }
+          }
+
+      val addIconOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "add_icon_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_icon_override" }
+            }
+          }
+
+      val addShaderOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "add_shader_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_shader_override" }
+            }
+          }
+
+      val addStyleboxOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "add_stylebox_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_stylebox_override" }
+            }
+          }
+
+      val forceDrag: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "force_drag".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method force_drag" }
+            }
+          }
+
+      val getAnchor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_anchor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_anchor" }
+            }
+          }
+
+      val getBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_begin" }
+            }
+          }
+
+      val getColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_color" }
+            }
+          }
+
+      val getCombinedMinimumSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_combined_minimum_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_combined_minimum_size" }
+            }
+          }
+
+      val getConstant: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_constant".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_constant" }
+            }
+          }
+
+      val getCursorShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_cursor_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cursor_shape" }
+            }
+          }
+
+      val getCustomMinimumSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_custom_minimum_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_custom_minimum_size" }
+            }
+          }
+
+      val getDefaultCursorShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_default_cursor_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_default_cursor_shape" }
+            }
+          }
+
+      val getEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_end" }
+            }
+          }
+
+      val getFocusMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_focus_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_focus_mode" }
+            }
+          }
+
+      val getFocusNeighbour: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_focus_neighbour".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_focus_neighbour" }
+            }
+          }
+
+      val getFocusNext: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_focus_next".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_focus_next" }
+            }
+          }
+
+      val getFocusOwner: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_focus_owner".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_focus_owner" }
+            }
+          }
+
+      val getFocusPrevious: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_focus_previous".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_focus_previous" }
+            }
+          }
+
+      val getFont: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_font".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_font" }
+            }
+          }
+
+      val getGlobalPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_global_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_global_position" }
+            }
+          }
+
+      val getGlobalRect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_global_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_global_rect" }
+            }
+          }
+
+      val getHGrowDirection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_h_grow_direction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_h_grow_direction" }
+            }
+          }
+
+      val getHSizeFlags: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_h_size_flags".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_h_size_flags" }
+            }
+          }
+
+      val getIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_icon" }
+            }
+          }
+
+      val getMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_margin" }
+            }
+          }
+
+      val getMinimumSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_minimum_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_minimum_size" }
+            }
+          }
+
+      val getMouseFilter: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_mouse_filter".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mouse_filter" }
+            }
+          }
+
+      val getParentAreaSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_parent_area_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_parent_area_size" }
+            }
+          }
+
+      val getParentControl: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_parent_control".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_parent_control" }
+            }
+          }
+
+      val getPivotOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_pivot_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_pivot_offset" }
+            }
+          }
+
+      val getPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_position" }
+            }
+          }
+
+      val getRect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rect" }
+            }
+          }
+
+      val getRotation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_rotation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rotation" }
+            }
+          }
+
+      val getRotationDegrees: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_rotation_degrees".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rotation_degrees" }
+            }
+          }
+
+      val getScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_scale" }
+            }
+          }
+
+      val getSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_size" }
+            }
+          }
+
+      val getStretchRatio: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_stretch_ratio".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_stretch_ratio" }
+            }
+          }
+
+      val getStylebox: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_stylebox".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_stylebox" }
+            }
+          }
+
+      val getTheme: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_theme".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_theme" }
+            }
+          }
+
+      val getTooltip: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_tooltip".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tooltip" }
+            }
+          }
+
+      val getVGrowDirection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_v_grow_direction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_v_grow_direction" }
+            }
+          }
+
+      val getVSizeFlags: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "get_v_size_flags".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_v_size_flags" }
+            }
+          }
+
+      val grabClickFocus: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "grab_click_focus".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method grab_click_focus" }
+            }
+          }
+
+      val grabFocus: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "grab_focus".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method grab_focus" }
+            }
+          }
+
+      val hasColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_color" }
+            }
+          }
+
+      val hasColorOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_color_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_color_override" }
+            }
+          }
+
+      val hasConstant: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_constant".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_constant" }
+            }
+          }
+
+      val hasConstantOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_constant_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_constant_override" }
+            }
+          }
+
+      val hasFocus: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_focus".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_focus" }
+            }
+          }
+
+      val hasFont: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_font".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_font" }
+            }
+          }
+
+      val hasFontOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_font_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_font_override" }
+            }
+          }
+
+      val hasIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_icon" }
+            }
+          }
+
+      val hasIconOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_icon_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_icon_override" }
+            }
+          }
+
+      val hasShaderOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_shader_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_shader_override" }
+            }
+          }
+
+      val hasStylebox: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_stylebox".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_stylebox" }
+            }
+          }
+
+      val hasStyleboxOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "has_stylebox_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_stylebox_override" }
+            }
+          }
+
+      val isClippingContents: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "is_clipping_contents".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_clipping_contents" }
+            }
+          }
+
+      val minimumSizeChanged: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "minimum_size_changed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method minimum_size_changed" }
+            }
+          }
+
+      val releaseFocus: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "release_focus".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method release_focus" }
+            }
+          }
+
+      val setAnchor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_anchor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_anchor" }
+            }
+          }
+
+      val setAnchorAndMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_anchor_and_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_anchor_and_margin" }
+            }
+          }
+
+      val setAnchorsAndMarginsPreset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_anchors_and_margins_preset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_anchors_and_margins_preset"
+              }
+            }
+          }
+
+      val setAnchorsPreset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_anchors_preset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_anchors_preset" }
+            }
+          }
+
+      val setBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_begin" }
+            }
+          }
+
+      val setClipContents: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_clip_contents".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_clip_contents" }
+            }
+          }
+
+      val setCustomMinimumSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_custom_minimum_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_custom_minimum_size" }
+            }
+          }
+
+      val setDefaultCursorShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_default_cursor_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_default_cursor_shape" }
+            }
+          }
+
+      val setDragForwarding: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_drag_forwarding".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_drag_forwarding" }
+            }
+          }
+
+      val setDragPreview: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_drag_preview".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_drag_preview" }
+            }
+          }
+
+      val setEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_end" }
+            }
+          }
+
+      val setFocusMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_focus_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_focus_mode" }
+            }
+          }
+
+      val setFocusNeighbour: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_focus_neighbour".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_focus_neighbour" }
+            }
+          }
+
+      val setFocusNext: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_focus_next".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_focus_next" }
+            }
+          }
+
+      val setFocusPrevious: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_focus_previous".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_focus_previous" }
+            }
+          }
+
+      val setGlobalPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_global_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_global_position" }
+            }
+          }
+
+      val setHGrowDirection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_h_grow_direction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_h_grow_direction" }
+            }
+          }
+
+      val setHSizeFlags: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_h_size_flags".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_h_size_flags" }
+            }
+          }
+
+      val setMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_margin" }
+            }
+          }
+
+      val setMarginsPreset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_margins_preset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_margins_preset" }
+            }
+          }
+
+      val setMouseFilter: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_mouse_filter".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mouse_filter" }
+            }
+          }
+
+      val setPivotOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_pivot_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pivot_offset" }
+            }
+          }
+
+      val setPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_position" }
+            }
+          }
+
+      val setRotation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_rotation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_rotation" }
+            }
+          }
+
+      val setRotationDegrees: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_rotation_degrees".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_rotation_degrees" }
+            }
+          }
+
+      val setScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_scale" }
+            }
+          }
+
+      val setSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_size" }
+            }
+          }
+
+      val setStretchRatio: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_stretch_ratio".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_stretch_ratio" }
+            }
+          }
+
+      val setTheme: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_theme".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_theme" }
+            }
+          }
+
+      val setTooltip: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_tooltip".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tooltip" }
+            }
+          }
+
+      val setVGrowDirection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_v_grow_direction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_v_grow_direction" }
+            }
+          }
+
+      val setVSizeFlags: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "set_v_size_flags".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_v_size_flags" }
+            }
+          }
+
+      val showModal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "show_modal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method show_modal" }
+            }
+          }
+
+      val warpMouse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
+              "warp_mouse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method warp_mouse" }
+            }
+          }
+    }
   }
 }

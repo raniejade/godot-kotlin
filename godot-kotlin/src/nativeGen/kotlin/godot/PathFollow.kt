@@ -250,89 +250,131 @@ open class PathFollow(
      * Container for method_bind pointers for PathFollow
      */
     private object __method_bind {
-      val getCubicInterpolation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "get_cubic_interpolation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cubic_interpolation" }
-        }
-      val getHOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "get_h_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_h_offset" }
-        }
-      val getOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
-        }
-      val getRotationMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "get_rotation_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rotation_mode" }
-        }
-      val getUnitOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "get_unit_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_unit_offset" }
-        }
-      val getVOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "get_v_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_v_offset" }
-        }
-      val hasLoop: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "has_loop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_loop" }
-        }
-      val setCubicInterpolation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "set_cubic_interpolation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cubic_interpolation" }
-        }
-      val setHOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "set_h_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_h_offset" }
-        }
-      val setLoop: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "set_loop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_loop" }
-        }
-      val setOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
-        }
-      val setRotationMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "set_rotation_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rotation_mode" }
-        }
-      val setUnitOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "set_unit_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_unit_offset" }
-        }
-      val setVOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
-            "set_v_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_v_offset" }
-        }}
+      val getCubicInterpolation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_cubic_interpolation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cubic_interpolation" }
+            }
+          }
+
+      val getHOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_h_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_h_offset" }
+            }
+          }
+
+      val getOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            }
+          }
+
+      val getRotationMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_rotation_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rotation_mode" }
+            }
+          }
+
+      val getUnitOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_unit_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_unit_offset" }
+            }
+          }
+
+      val getVOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_v_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_v_offset" }
+            }
+          }
+
+      val hasLoop: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "has_loop".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_loop" }
+            }
+          }
+
+      val setCubicInterpolation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_cubic_interpolation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cubic_interpolation" }
+            }
+          }
+
+      val setHOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_h_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_h_offset" }
+            }
+          }
+
+      val setLoop: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_loop".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_loop" }
+            }
+          }
+
+      val setOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            }
+          }
+
+      val setRotationMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_rotation_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_rotation_mode" }
+            }
+          }
+
+      val setUnitOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_unit_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_unit_offset" }
+            }
+          }
+
+      val setVOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_v_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_v_offset" }
+            }
+          }
+    }
   }
 }

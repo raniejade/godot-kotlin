@@ -72,23 +72,29 @@ open class Mutex(
      * Container for method_bind pointers for Mutex
      */
     private object __method_bind {
-      val lock: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
-            "lock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lock" }
-        }
-      val tryLock: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
-            "try_lock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method try_lock" }
-        }
-      val unlock: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
-            "unlock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method unlock" }
-        }}
+      val lock: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
+              "lock".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method lock" }
+            }
+          }
+
+      val tryLock: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
+              "try_lock".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method try_lock" }
+            }
+          }
+
+      val unlock: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
+              "unlock".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method unlock" }
+            }
+          }
+    }
   }
 }

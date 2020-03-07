@@ -315,138 +315,176 @@ open class AnimatedSprite(
      * Container for method_bind pointers for AnimatedSprite
      */
     private object __method_bind {
-      val getAnimation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "get_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_animation" }
-        }
-      val getFrame: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "get_frame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frame" }
-        }
-      val getOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
-        }
-      val getSpeedScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "get_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed_scale" }
-        }
-      val getSpriteFrames: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "get_sprite_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sprite_frames" }
-        }
-      val isCentered: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "is_centered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_centered" }
-        }
-      val isFlippedH: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "is_flipped_h".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_flipped_h" }
-        }
-      val isFlippedV: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "is_flipped_v".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_flipped_v" }
-        }
-      val isPlaying: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "is_playing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_playing" }
-        }
-      val play: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "play".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method play" }
-        }
-      val setAnimation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_animation" }
-        }
-      val setCentered: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_centered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_centered" }
-        }
-      val setFlipH: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_flip_h".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flip_h" }
-        }
-      val setFlipV: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_flip_v".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flip_v" }
-        }
-      val setFrame: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_frame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frame" }
-        }
-      val setOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
-        }
-      val setSpeedScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed_scale" }
-        }
-      val setSpriteFrames: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_sprite_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sprite_frames" }
-        }
-      val stop: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "stop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method stop" }
-        }}
+      val getAnimation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "get_animation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_animation" }
+            }
+          }
+
+      val getFrame: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "get_frame".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_frame" }
+            }
+          }
+
+      val getOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "get_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            }
+          }
+
+      val getSpeedScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "get_speed_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_speed_scale" }
+            }
+          }
+
+      val getSpriteFrames: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "get_sprite_frames".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sprite_frames" }
+            }
+          }
+
+      val isCentered: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "is_centered".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_centered" }
+            }
+          }
+
+      val isFlippedH: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "is_flipped_h".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_flipped_h" }
+            }
+          }
+
+      val isFlippedV: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "is_flipped_v".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_flipped_v" }
+            }
+          }
+
+      val isPlaying: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "is_playing".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_playing" }
+            }
+          }
+
+      val play: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "play".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method play" }
+            }
+          }
+
+      val setAnimation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "set_animation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_animation" }
+            }
+          }
+
+      val setCentered: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "set_centered".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_centered" }
+            }
+          }
+
+      val setFlipH: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "set_flip_h".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_flip_h" }
+            }
+          }
+
+      val setFlipV: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "set_flip_v".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_flip_v" }
+            }
+          }
+
+      val setFrame: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "set_frame".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_frame" }
+            }
+          }
+
+      val setOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "set_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            }
+          }
+
+      val setSpeedScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "set_speed_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_speed_scale" }
+            }
+          }
+
+      val setSpriteFrames: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "set_sprite_frames".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sprite_frames" }
+            }
+          }
+
+      val stop: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
+              "stop".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method stop" }
+            }
+          }
+    }
   }
 }

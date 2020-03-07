@@ -84,17 +84,23 @@ open class ColorRect(
      * Container for method_bind pointers for ColorRect
      */
     private object __method_bind {
-      val getFrameColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorRect".cstr.ptr,
-            "get_frame_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frame_color" }
-        }
-      val setFrameColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorRect".cstr.ptr,
-            "set_frame_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frame_color" }
-        }}
+      val getFrameColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorRect".cstr.ptr,
+              "get_frame_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_frame_color" }
+            }
+          }
+
+      val setFrameColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorRect".cstr.ptr,
+              "set_frame_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_frame_color" }
+            }
+          }
+    }
   }
 }

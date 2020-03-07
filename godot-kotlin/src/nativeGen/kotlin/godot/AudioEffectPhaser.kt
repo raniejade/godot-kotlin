@@ -174,75 +174,95 @@ open class AudioEffectPhaser(
      * Container for method_bind pointers for AudioEffectPhaser
      */
     private object __method_bind {
-      val getDepth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
-            "get_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_depth" }
-        }
-      val getFeedback: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
-            "get_feedback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_feedback" }
-        }
-      val getRangeMaxHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
-            "get_range_max_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_range_max_hz" }
-        }
-      val getRangeMinHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
-            "get_range_min_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_range_min_hz" }
-        }
-      val getRateHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
-            "get_rate_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rate_hz" }
-        }
-      val setDepth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
-            "set_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_depth" }
-        }
-      val setFeedback: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
-            "set_feedback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_feedback" }
-        }
-      val setRangeMaxHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
-            "set_range_max_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_range_max_hz" }
-        }
-      val setRangeMinHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
-            "set_range_min_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_range_min_hz" }
-        }
-      val setRateHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
-            "set_rate_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rate_hz" }
-        }}
+      val getDepth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
+              "get_depth".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_depth" }
+            }
+          }
+
+      val getFeedback: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
+              "get_feedback".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_feedback" }
+            }
+          }
+
+      val getRangeMaxHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
+              "get_range_max_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_range_max_hz" }
+            }
+          }
+
+      val getRangeMinHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
+              "get_range_min_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_range_min_hz" }
+            }
+          }
+
+      val getRateHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
+              "get_rate_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rate_hz" }
+            }
+          }
+
+      val setDepth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
+              "set_depth".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_depth" }
+            }
+          }
+
+      val setFeedback: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
+              "set_feedback".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_feedback" }
+            }
+          }
+
+      val setRangeMaxHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
+              "set_range_max_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_range_max_hz" }
+            }
+          }
+
+      val setRangeMinHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
+              "set_range_min_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_range_min_hz" }
+            }
+          }
+
+      val setRateHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPhaser".cstr.ptr,
+              "set_rate_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_rate_hz" }
+            }
+          }
+    }
   }
 }

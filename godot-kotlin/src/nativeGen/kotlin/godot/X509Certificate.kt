@@ -69,19 +69,23 @@ open class X509Certificate(
      * Container for method_bind pointers for X509Certificate
      */
     private object __method_bind {
-      val load: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("X509Certificate".cstr.ptr,
-            "load".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method load" }
-        }
-      val save: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("X509Certificate".cstr.ptr,
-            "save".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method save" }
-        }}
+      val load: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("X509Certificate".cstr.ptr,
+              "load".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load" }
+            }
+          }
+
+      val save: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("X509Certificate".cstr.ptr,
+              "save".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method save" }
+            }
+          }
+    }
   }
 }

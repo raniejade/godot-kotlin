@@ -75,19 +75,23 @@ open class WorldEnvironment(
      * Container for method_bind pointers for WorldEnvironment
      */
     private object __method_bind {
-      val getEnvironment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WorldEnvironment".cstr.ptr,
-            "get_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_environment" }
-        }
-      val setEnvironment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WorldEnvironment".cstr.ptr,
-            "set_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_environment" }
-        }}
+      val getEnvironment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WorldEnvironment".cstr.ptr,
+              "get_environment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_environment" }
+            }
+          }
+
+      val setEnvironment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WorldEnvironment".cstr.ptr,
+              "set_environment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_environment" }
+            }
+          }
+    }
   }
 }

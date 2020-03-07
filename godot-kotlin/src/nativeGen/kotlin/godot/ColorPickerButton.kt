@@ -158,47 +158,59 @@ open class ColorPickerButton(
      * Container for method_bind pointers for ColorPickerButton
      */
     private object __method_bind {
-      val getPickColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "get_pick_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pick_color" }
-        }
-      val getPicker: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "get_picker".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_picker" }
-        }
-      val getPopup: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "get_popup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_popup" }
-        }
-      val isEditingAlpha: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "is_editing_alpha".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_editing_alpha" }
-        }
-      val setEditAlpha: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "set_edit_alpha".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_edit_alpha" }
-        }
-      val setPickColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "set_pick_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pick_color" }
-        }}
+      val getPickColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
+              "get_pick_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_pick_color" }
+            }
+          }
+
+      val getPicker: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
+              "get_picker".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_picker" }
+            }
+          }
+
+      val getPopup: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
+              "get_popup".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_popup" }
+            }
+          }
+
+      val isEditingAlpha: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
+              "is_editing_alpha".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_editing_alpha" }
+            }
+          }
+
+      val setEditAlpha: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
+              "set_edit_alpha".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_edit_alpha" }
+            }
+          }
+
+      val setPickColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
+              "set_pick_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pick_color" }
+            }
+          }
+    }
   }
 }

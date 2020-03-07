@@ -126,61 +126,77 @@ open class VisualScriptLists(
      * Container for method_bind pointers for VisualScriptLists
      */
     private object __method_bind {
-      val addInputDataPort: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
-            "add_input_data_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_input_data_port" }
-        }
-      val addOutputDataPort: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
-            "add_output_data_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_output_data_port" }
-        }
-      val removeInputDataPort: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
-            "remove_input_data_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_input_data_port" }
-        }
-      val removeOutputDataPort: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
-            "remove_output_data_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_output_data_port" }
-        }
-      val setInputDataPortName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
-            "set_input_data_port_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_input_data_port_name" }
-        }
-      val setInputDataPortType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
-            "set_input_data_port_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_input_data_port_type" }
-        }
-      val setOutputDataPortName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
-            "set_output_data_port_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_output_data_port_name" }
-        }
-      val setOutputDataPortType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
-            "set_output_data_port_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_output_data_port_type" }
-        }}
+      val addInputDataPort: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
+              "add_input_data_port".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_input_data_port" }
+            }
+          }
+
+      val addOutputDataPort: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
+              "add_output_data_port".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_output_data_port" }
+            }
+          }
+
+      val removeInputDataPort: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
+              "remove_input_data_port".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_input_data_port" }
+            }
+          }
+
+      val removeOutputDataPort: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
+              "remove_output_data_port".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_output_data_port" }
+            }
+          }
+
+      val setInputDataPortName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
+              "set_input_data_port_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_input_data_port_name" }
+            }
+          }
+
+      val setInputDataPortType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
+              "set_input_data_port_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_input_data_port_type" }
+            }
+          }
+
+      val setOutputDataPortName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
+              "set_output_data_port_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_output_data_port_name" }
+            }
+          }
+
+      val setOutputDataPortType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLists".cstr.ptr,
+              "set_output_data_port_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_output_data_port_type" }
+            }
+          }
+    }
   }
 }

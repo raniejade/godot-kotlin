@@ -139,61 +139,77 @@ open class StreamPeerBuffer(
      * Container for method_bind pointers for StreamPeerBuffer
      */
     private object __method_bind {
-      val clear: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "clear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear" }
-        }
-      val duplicate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "duplicate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method duplicate" }
-        }
-      val getDataArray: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "get_data_array".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_data_array" }
-        }
-      val getPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "get_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_position" }
-        }
-      val getSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
-        }
-      val resize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "resize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resize" }
-        }
-      val seek: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "seek".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method seek" }
-        }
-      val setDataArray: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "set_data_array".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_data_array" }
-        }}
+      val clear: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
+              "clear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear" }
+            }
+          }
+
+      val duplicate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
+              "duplicate".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method duplicate" }
+            }
+          }
+
+      val getDataArray: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
+              "get_data_array".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_data_array" }
+            }
+          }
+
+      val getPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
+              "get_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_position" }
+            }
+          }
+
+      val getSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
+              "get_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_size" }
+            }
+          }
+
+      val resize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
+              "resize".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method resize" }
+            }
+          }
+
+      val seek: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
+              "seek".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method seek" }
+            }
+          }
+
+      val setDataArray: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
+              "set_data_array".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_data_array" }
+            }
+          }
+    }
   }
 }

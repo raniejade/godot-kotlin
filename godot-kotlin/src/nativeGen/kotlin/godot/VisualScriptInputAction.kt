@@ -123,33 +123,41 @@ open class VisualScriptInputAction(
      * Container for method_bind pointers for VisualScriptInputAction
      */
     private object __method_bind {
-      val getActionMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "get_action_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_action_mode" }
-        }
-      val getActionName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "get_action_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_action_name" }
-        }
-      val setActionMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "set_action_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_action_mode" }
-        }
-      val setActionName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "set_action_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_action_name" }
-        }}
+      val getActionMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
+              "get_action_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_action_mode" }
+            }
+          }
+
+      val getActionName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
+              "get_action_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_action_name" }
+            }
+          }
+
+      val setActionMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
+              "set_action_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_action_mode" }
+            }
+          }
+
+      val setActionName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
+              "set_action_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_action_name" }
+            }
+          }
+    }
   }
 }

@@ -110,33 +110,41 @@ open class VisualScriptConstant(
      * Container for method_bind pointers for VisualScriptConstant
      */
     private object __method_bind {
-      val getConstantType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "get_constant_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant_type" }
-        }
-      val getConstantValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "get_constant_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant_value" }
-        }
-      val setConstantType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "set_constant_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_constant_type" }
-        }
-      val setConstantValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "set_constant_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_constant_value" }
-        }}
+      val getConstantType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
+              "get_constant_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_constant_type" }
+            }
+          }
+
+      val getConstantValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
+              "get_constant_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_constant_value" }
+            }
+          }
+
+      val setConstantType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
+              "set_constant_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_constant_type" }
+            }
+          }
+
+      val setConstantValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
+              "set_constant_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_constant_value" }
+            }
+          }
+    }
   }
 }

@@ -126,47 +126,59 @@ open class PacketPeerStream(
      * Container for method_bind pointers for PacketPeerStream
      */
     private object __method_bind {
-      val getInputBufferMaxSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
-            "get_input_buffer_max_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_input_buffer_max_size" }
-        }
-      val getOutputBufferMaxSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
-            "get_output_buffer_max_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_output_buffer_max_size" }
-        }
-      val getStreamPeer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
-            "get_stream_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stream_peer" }
-        }
-      val setInputBufferMaxSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
-            "set_input_buffer_max_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_input_buffer_max_size" }
-        }
-      val setOutputBufferMaxSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
-            "set_output_buffer_max_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_output_buffer_max_size" }
-        }
-      val setStreamPeer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
-            "set_stream_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_stream_peer" }
-        }}
+      val getInputBufferMaxSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
+              "get_input_buffer_max_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_input_buffer_max_size" }
+            }
+          }
+
+      val getOutputBufferMaxSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
+              "get_output_buffer_max_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_output_buffer_max_size" }
+            }
+          }
+
+      val getStreamPeer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
+              "get_stream_peer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_stream_peer" }
+            }
+          }
+
+      val setInputBufferMaxSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
+              "set_input_buffer_max_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_input_buffer_max_size" }
+            }
+          }
+
+      val setOutputBufferMaxSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
+              "set_output_buffer_max_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_output_buffer_max_size" }
+            }
+          }
+
+      val setStreamPeer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerStream".cstr.ptr,
+              "set_stream_peer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_stream_peer" }
+            }
+          }
+    }
   }
 }

@@ -149,61 +149,77 @@ open class AudioEffectLimiter(
      * Container for method_bind pointers for AudioEffectLimiter
      */
     private object __method_bind {
-      val getCeilingDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "get_ceiling_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ceiling_db" }
-        }
-      val getSoftClipDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "get_soft_clip_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_soft_clip_db" }
-        }
-      val getSoftClipRatio: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "get_soft_clip_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_soft_clip_ratio" }
-        }
-      val getThresholdDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "get_threshold_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_threshold_db" }
-        }
-      val setCeilingDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "set_ceiling_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ceiling_db" }
-        }
-      val setSoftClipDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "set_soft_clip_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_soft_clip_db" }
-        }
-      val setSoftClipRatio: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "set_soft_clip_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_soft_clip_ratio" }
-        }
-      val setThresholdDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "set_threshold_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_threshold_db" }
-        }}
+      val getCeilingDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
+              "get_ceiling_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ceiling_db" }
+            }
+          }
+
+      val getSoftClipDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
+              "get_soft_clip_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_soft_clip_db" }
+            }
+          }
+
+      val getSoftClipRatio: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
+              "get_soft_clip_ratio".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_soft_clip_ratio" }
+            }
+          }
+
+      val getThresholdDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
+              "get_threshold_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_threshold_db" }
+            }
+          }
+
+      val setCeilingDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
+              "set_ceiling_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ceiling_db" }
+            }
+          }
+
+      val setSoftClipDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
+              "set_soft_clip_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_soft_clip_db" }
+            }
+          }
+
+      val setSoftClipRatio: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
+              "set_soft_clip_ratio".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_soft_clip_ratio" }
+            }
+          }
+
+      val setThresholdDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
+              "set_threshold_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_threshold_db" }
+            }
+          }
+    }
   }
 }

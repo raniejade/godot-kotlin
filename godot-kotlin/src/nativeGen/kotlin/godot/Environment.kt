@@ -2281,1099 +2281,1422 @@ open class Environment(
      * Container for method_bind pointers for Environment
      */
     private object __method_bind {
-      val getAdjustmentBrightness: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_adjustment_brightness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_adjustment_brightness" }
-        }
-      val getAdjustmentColorCorrection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_adjustment_color_correction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_adjustment_color_correction" }
-        }
-      val getAdjustmentContrast: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_adjustment_contrast".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_adjustment_contrast" }
-        }
-      val getAdjustmentSaturation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_adjustment_saturation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_adjustment_saturation" }
-        }
-      val getAmbientLightColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ambient_light_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ambient_light_color" }
-        }
-      val getAmbientLightEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ambient_light_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ambient_light_energy" }
-        }
-      val getAmbientLightSkyContribution: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ambient_light_sky_contribution".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ambient_light_sky_contribution"
+      val getAdjustmentBrightness: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_adjustment_brightness".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_adjustment_brightness" }
             }
-        }
-      val getBackground: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_background".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_background" }
-        }
-      val getBgColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_bg_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bg_color" }
-        }
-      val getBgEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_bg_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bg_energy" }
-        }
-      val getCameraFeedId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_camera_feed_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_camera_feed_id" }
-        }
-      val getCanvasMaxLayer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_canvas_max_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_canvas_max_layer" }
-        }
-      val getDofBlurFarAmount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_far_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_amount" }
-        }
-      val getDofBlurFarDistance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_far_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_distance" }
-        }
-      val getDofBlurFarQuality: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_far_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_quality" }
-        }
-      val getDofBlurFarTransition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_far_transition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_transition" }
-        }
-      val getDofBlurNearAmount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_near_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_amount" }
-        }
-      val getDofBlurNearDistance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_near_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_distance" }
-        }
-      val getDofBlurNearQuality: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_near_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_quality" }
-        }
-      val getDofBlurNearTransition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_near_transition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_transition" }
-        }
-      val getFogColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_color" }
-        }
-      val getFogDepthBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_depth_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_depth_begin" }
-        }
-      val getFogDepthCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_depth_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_depth_curve" }
-        }
-      val getFogDepthEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_depth_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_depth_end" }
-        }
-      val getFogHeightCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_height_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_height_curve" }
-        }
-      val getFogHeightMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_height_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_height_max" }
-        }
-      val getFogHeightMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_height_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_height_min" }
-        }
-      val getFogSunAmount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_sun_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_sun_amount" }
-        }
-      val getFogSunColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_sun_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_sun_color" }
-        }
-      val getFogTransmitCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_transmit_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_transmit_curve" }
-        }
-      val getGlowBlendMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_blend_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_blend_mode" }
-        }
-      val getGlowBloom: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_bloom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_bloom" }
-        }
-      val getGlowHdrBleedScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_hdr_bleed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_bleed_scale" }
-        }
-      val getGlowHdrBleedThreshold: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_hdr_bleed_threshold".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_bleed_threshold" }
-        }
-      val getGlowHdrLuminanceCap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_hdr_luminance_cap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_luminance_cap" }
-        }
-      val getGlowIntensity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_intensity" }
-        }
-      val getGlowStrength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_strength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_strength" }
-        }
-      val getSky: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_sky".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky" }
-        }
-      val getSkyCustomFov: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_sky_custom_fov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_custom_fov" }
-        }
-      val getSkyOrientation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_sky_orientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_orientation" }
-        }
-      val getSkyRotation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_sky_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_rotation" }
-        }
-      val getSkyRotationDegrees: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_sky_rotation_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_rotation_degrees" }
-        }
-      val getSsaoAoChannelAffect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_ao_channel_affect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_ao_channel_affect" }
-        }
-      val getSsaoBias: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_bias" }
-        }
-      val getSsaoBlur: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_blur".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_blur" }
-        }
-      val getSsaoColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_color" }
-        }
-      val getSsaoDirectLightAffect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_direct_light_affect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_direct_light_affect" }
-        }
-      val getSsaoEdgeSharpness: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_edge_sharpness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_edge_sharpness" }
-        }
-      val getSsaoIntensity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_intensity" }
-        }
-      val getSsaoIntensity2: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_intensity2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_intensity2" }
-        }
-      val getSsaoQuality: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_quality" }
-        }
-      val getSsaoRadius: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_radius" }
-        }
-      val getSsaoRadius2: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_radius2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_radius2" }
-        }
-      val getSsrDepthTolerance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssr_depth_tolerance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssr_depth_tolerance" }
-        }
-      val getSsrFadeIn: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssr_fade_in".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssr_fade_in" }
-        }
-      val getSsrFadeOut: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssr_fade_out".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssr_fade_out" }
-        }
-      val getSsrMaxSteps: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssr_max_steps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssr_max_steps" }
-        }
-      val getTonemapAutoExposure: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_auto_exposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure" }
-        }
-      val getTonemapAutoExposureGrey: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_auto_exposure_grey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_grey" }
-        }
-      val getTonemapAutoExposureMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_auto_exposure_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_max" }
-        }
-      val getTonemapAutoExposureMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_auto_exposure_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_min" }
-        }
-      val getTonemapAutoExposureSpeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_auto_exposure_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_speed" }
-        }
-      val getTonemapExposure: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_exposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_exposure" }
-        }
-      val getTonemapWhite: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_white".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_white" }
-        }
-      val getTonemapper: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemapper".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemapper" }
-        }
-      val isAdjustmentEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_adjustment_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_adjustment_enabled" }
-        }
-      val isDofBlurFarEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_dof_blur_far_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_dof_blur_far_enabled" }
-        }
-      val isDofBlurNearEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_dof_blur_near_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_dof_blur_near_enabled" }
-        }
-      val isFogDepthEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_fog_depth_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_fog_depth_enabled" }
-        }
-      val isFogEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_fog_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_fog_enabled" }
-        }
-      val isFogHeightEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_fog_height_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_fog_height_enabled" }
-        }
-      val isFogTransmitEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_fog_transmit_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_fog_transmit_enabled" }
-        }
-      val isGlowBicubicUpscaleEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_glow_bicubic_upscale_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_glow_bicubic_upscale_enabled" }
-        }
-      val isGlowEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_glow_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_glow_enabled" }
-        }
-      val isGlowLevelEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_glow_level_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_glow_level_enabled" }
-        }
-      val isSsaoEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_ssao_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ssao_enabled" }
-        }
-      val isSsrEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_ssr_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ssr_enabled" }
-        }
-      val isSsrRough: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_ssr_rough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ssr_rough" }
-        }
-      val setAdjustmentBrightness: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_adjustment_brightness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_adjustment_brightness" }
-        }
-      val setAdjustmentColorCorrection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_adjustment_color_correction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_adjustment_color_correction" }
-        }
-      val setAdjustmentContrast: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_adjustment_contrast".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_adjustment_contrast" }
-        }
-      val setAdjustmentEnable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_adjustment_enable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_adjustment_enable" }
-        }
-      val setAdjustmentSaturation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_adjustment_saturation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_adjustment_saturation" }
-        }
-      val setAmbientLightColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ambient_light_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ambient_light_color" }
-        }
-      val setAmbientLightEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ambient_light_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ambient_light_energy" }
-        }
-      val setAmbientLightSkyContribution: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ambient_light_sky_contribution".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ambient_light_sky_contribution"
+          }
+
+      val getAdjustmentColorCorrection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_adjustment_color_correction".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_adjustment_color_correction" }
             }
-        }
-      val setBackground: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_background".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_background" }
-        }
-      val setBgColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_bg_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bg_color" }
-        }
-      val setBgEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_bg_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bg_energy" }
-        }
-      val setCameraFeedId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_camera_feed_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_camera_feed_id" }
-        }
-      val setCanvasMaxLayer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_canvas_max_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_canvas_max_layer" }
-        }
-      val setDofBlurFarAmount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_far_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_amount" }
-        }
-      val setDofBlurFarDistance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_far_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_distance" }
-        }
-      val setDofBlurFarEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_far_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_enabled" }
-        }
-      val setDofBlurFarQuality: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_far_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_quality" }
-        }
-      val setDofBlurFarTransition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_far_transition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_transition" }
-        }
-      val setDofBlurNearAmount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_near_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_amount" }
-        }
-      val setDofBlurNearDistance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_near_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_distance" }
-        }
-      val setDofBlurNearEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_near_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_enabled" }
-        }
-      val setDofBlurNearQuality: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_near_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_quality" }
-        }
-      val setDofBlurNearTransition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_near_transition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_transition" }
-        }
-      val setFogColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_color" }
-        }
-      val setFogDepthBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_depth_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_begin" }
-        }
-      val setFogDepthCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_depth_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_curve" }
-        }
-      val setFogDepthEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_depth_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_enabled" }
-        }
-      val setFogDepthEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_depth_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_end" }
-        }
-      val setFogEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_enabled" }
-        }
-      val setFogHeightCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_height_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_height_curve" }
-        }
-      val setFogHeightEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_height_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_height_enabled" }
-        }
-      val setFogHeightMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_height_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_height_max" }
-        }
-      val setFogHeightMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_height_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_height_min" }
-        }
-      val setFogSunAmount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_sun_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_sun_amount" }
-        }
-      val setFogSunColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_sun_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_sun_color" }
-        }
-      val setFogTransmitCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_transmit_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_transmit_curve" }
-        }
-      val setFogTransmitEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_transmit_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_transmit_enabled" }
-        }
-      val setGlowBicubicUpscale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_bicubic_upscale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_bicubic_upscale" }
-        }
-      val setGlowBlendMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_blend_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_blend_mode" }
-        }
-      val setGlowBloom: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_bloom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_bloom" }
-        }
-      val setGlowEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_enabled" }
-        }
-      val setGlowHdrBleedScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_hdr_bleed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_bleed_scale" }
-        }
-      val setGlowHdrBleedThreshold: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_hdr_bleed_threshold".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_bleed_threshold" }
-        }
-      val setGlowHdrLuminanceCap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_hdr_luminance_cap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_luminance_cap" }
-        }
-      val setGlowIntensity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_intensity" }
-        }
-      val setGlowLevel: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_level".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_level" }
-        }
-      val setGlowStrength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_strength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_strength" }
-        }
-      val setSky: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_sky".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky" }
-        }
-      val setSkyCustomFov: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_sky_custom_fov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_custom_fov" }
-        }
-      val setSkyOrientation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_sky_orientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_orientation" }
-        }
-      val setSkyRotation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_sky_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_rotation" }
-        }
-      val setSkyRotationDegrees: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_sky_rotation_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_rotation_degrees" }
-        }
-      val setSsaoAoChannelAffect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_ao_channel_affect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_ao_channel_affect" }
-        }
-      val setSsaoBias: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_bias" }
-        }
-      val setSsaoBlur: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_blur".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_blur" }
-        }
-      val setSsaoColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_color" }
-        }
-      val setSsaoDirectLightAffect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_direct_light_affect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_direct_light_affect" }
-        }
-      val setSsaoEdgeSharpness: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_edge_sharpness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_edge_sharpness" }
-        }
-      val setSsaoEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_enabled" }
-        }
-      val setSsaoIntensity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_intensity" }
-        }
-      val setSsaoIntensity2: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_intensity2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_intensity2" }
-        }
-      val setSsaoQuality: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_quality" }
-        }
-      val setSsaoRadius: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_radius" }
-        }
-      val setSsaoRadius2: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_radius2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_radius2" }
-        }
-      val setSsrDepthTolerance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_depth_tolerance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_depth_tolerance" }
-        }
-      val setSsrEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_enabled" }
-        }
-      val setSsrFadeIn: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_fade_in".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_fade_in" }
-        }
-      val setSsrFadeOut: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_fade_out".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_fade_out" }
-        }
-      val setSsrMaxSteps: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_max_steps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_max_steps" }
-        }
-      val setSsrRough: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_rough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_rough" }
-        }
-      val setTonemapAutoExposure: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_auto_exposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure" }
-        }
-      val setTonemapAutoExposureGrey: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_auto_exposure_grey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_grey" }
-        }
-      val setTonemapAutoExposureMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_auto_exposure_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_max" }
-        }
-      val setTonemapAutoExposureMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_auto_exposure_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_min" }
-        }
-      val setTonemapAutoExposureSpeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_auto_exposure_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_speed" }
-        }
-      val setTonemapExposure: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_exposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_exposure" }
-        }
-      val setTonemapWhite: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_white".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_white" }
-        }
-      val setTonemapper: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemapper".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemapper" }
-        }}
+          }
+
+      val getAdjustmentContrast: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_adjustment_contrast".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_adjustment_contrast" }
+            }
+          }
+
+      val getAdjustmentSaturation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_adjustment_saturation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_adjustment_saturation" }
+            }
+          }
+
+      val getAmbientLightColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ambient_light_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ambient_light_color" }
+            }
+          }
+
+      val getAmbientLightEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ambient_light_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ambient_light_energy" }
+            }
+          }
+
+      val getAmbientLightSkyContribution: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ambient_light_sky_contribution".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_ambient_light_sky_contribution" }
+            }
+          }
+
+      val getBackground: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_background".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_background" }
+            }
+          }
+
+      val getBgColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_bg_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bg_color" }
+            }
+          }
+
+      val getBgEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_bg_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bg_energy" }
+            }
+          }
+
+      val getCameraFeedId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_camera_feed_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_camera_feed_id" }
+            }
+          }
+
+      val getCanvasMaxLayer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_canvas_max_layer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_canvas_max_layer" }
+            }
+          }
+
+      val getDofBlurFarAmount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_dof_blur_far_amount".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_amount" }
+            }
+          }
+
+      val getDofBlurFarDistance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_dof_blur_far_distance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_distance" }
+            }
+          }
+
+      val getDofBlurFarQuality: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_dof_blur_far_quality".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_quality" }
+            }
+          }
+
+      val getDofBlurFarTransition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_dof_blur_far_transition".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_transition" }
+            }
+          }
+
+      val getDofBlurNearAmount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_dof_blur_near_amount".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_amount" }
+            }
+          }
+
+      val getDofBlurNearDistance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_dof_blur_near_distance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_distance" }
+            }
+          }
+
+      val getDofBlurNearQuality: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_dof_blur_near_quality".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_quality" }
+            }
+          }
+
+      val getDofBlurNearTransition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_dof_blur_near_transition".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_transition" }
+            }
+          }
+
+      val getFogColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_fog_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fog_color" }
+            }
+          }
+
+      val getFogDepthBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_fog_depth_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fog_depth_begin" }
+            }
+          }
+
+      val getFogDepthCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_fog_depth_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fog_depth_curve" }
+            }
+          }
+
+      val getFogDepthEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_fog_depth_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fog_depth_end" }
+            }
+          }
+
+      val getFogHeightCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_fog_height_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fog_height_curve" }
+            }
+          }
+
+      val getFogHeightMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_fog_height_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fog_height_max" }
+            }
+          }
+
+      val getFogHeightMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_fog_height_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fog_height_min" }
+            }
+          }
+
+      val getFogSunAmount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_fog_sun_amount".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fog_sun_amount" }
+            }
+          }
+
+      val getFogSunColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_fog_sun_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fog_sun_color" }
+            }
+          }
+
+      val getFogTransmitCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_fog_transmit_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fog_transmit_curve" }
+            }
+          }
+
+      val getGlowBlendMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_glow_blend_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_glow_blend_mode" }
+            }
+          }
+
+      val getGlowBloom: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_glow_bloom".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_glow_bloom" }
+            }
+          }
+
+      val getGlowHdrBleedScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_glow_hdr_bleed_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_bleed_scale" }
+            }
+          }
+
+      val getGlowHdrBleedThreshold: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_glow_hdr_bleed_threshold".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_bleed_threshold" }
+            }
+          }
+
+      val getGlowHdrLuminanceCap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_glow_hdr_luminance_cap".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_luminance_cap" }
+            }
+          }
+
+      val getGlowIntensity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_glow_intensity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_glow_intensity" }
+            }
+          }
+
+      val getGlowStrength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_glow_strength".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_glow_strength" }
+            }
+          }
+
+      val getSky: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_sky".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sky" }
+            }
+          }
+
+      val getSkyCustomFov: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_sky_custom_fov".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sky_custom_fov" }
+            }
+          }
+
+      val getSkyOrientation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_sky_orientation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sky_orientation" }
+            }
+          }
+
+      val getSkyRotation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_sky_rotation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sky_rotation" }
+            }
+          }
+
+      val getSkyRotationDegrees: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_sky_rotation_degrees".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sky_rotation_degrees" }
+            }
+          }
+
+      val getSsaoAoChannelAffect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_ao_channel_affect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_ao_channel_affect" }
+            }
+          }
+
+      val getSsaoBias: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_bias".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_bias" }
+            }
+          }
+
+      val getSsaoBlur: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_blur".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_blur" }
+            }
+          }
+
+      val getSsaoColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_color" }
+            }
+          }
+
+      val getSsaoDirectLightAffect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_direct_light_affect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_direct_light_affect" }
+            }
+          }
+
+      val getSsaoEdgeSharpness: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_edge_sharpness".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_edge_sharpness" }
+            }
+          }
+
+      val getSsaoIntensity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_intensity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_intensity" }
+            }
+          }
+
+      val getSsaoIntensity2: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_intensity2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_intensity2" }
+            }
+          }
+
+      val getSsaoQuality: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_quality".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_quality" }
+            }
+          }
+
+      val getSsaoRadius: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_radius".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_radius" }
+            }
+          }
+
+      val getSsaoRadius2: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssao_radius2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssao_radius2" }
+            }
+          }
+
+      val getSsrDepthTolerance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssr_depth_tolerance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssr_depth_tolerance" }
+            }
+          }
+
+      val getSsrFadeIn: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssr_fade_in".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssr_fade_in" }
+            }
+          }
+
+      val getSsrFadeOut: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssr_fade_out".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssr_fade_out" }
+            }
+          }
+
+      val getSsrMaxSteps: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_ssr_max_steps".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ssr_max_steps" }
+            }
+          }
+
+      val getTonemapAutoExposure: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_tonemap_auto_exposure".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure" }
+            }
+          }
+
+      val getTonemapAutoExposureGrey: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_tonemap_auto_exposure_grey".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_grey"
+              }
+            }
+          }
+
+      val getTonemapAutoExposureMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_tonemap_auto_exposure_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_max"
+              }
+            }
+          }
+
+      val getTonemapAutoExposureMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_tonemap_auto_exposure_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_min"
+              }
+            }
+          }
+
+      val getTonemapAutoExposureSpeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_tonemap_auto_exposure_speed".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_tonemap_auto_exposure_speed" }
+            }
+          }
+
+      val getTonemapExposure: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_tonemap_exposure".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tonemap_exposure" }
+            }
+          }
+
+      val getTonemapWhite: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_tonemap_white".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tonemap_white" }
+            }
+          }
+
+      val getTonemapper: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "get_tonemapper".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tonemapper" }
+            }
+          }
+
+      val isAdjustmentEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_adjustment_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_adjustment_enabled" }
+            }
+          }
+
+      val isDofBlurFarEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_dof_blur_far_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_dof_blur_far_enabled" }
+            }
+          }
+
+      val isDofBlurNearEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_dof_blur_near_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_dof_blur_near_enabled" }
+            }
+          }
+
+      val isFogDepthEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_fog_depth_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_fog_depth_enabled" }
+            }
+          }
+
+      val isFogEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_fog_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_fog_enabled" }
+            }
+          }
+
+      val isFogHeightEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_fog_height_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_fog_height_enabled" }
+            }
+          }
+
+      val isFogTransmitEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_fog_transmit_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_fog_transmit_enabled" }
+            }
+          }
+
+      val isGlowBicubicUpscaleEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_glow_bicubic_upscale_enabled".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method is_glow_bicubic_upscale_enabled" }
+            }
+          }
+
+      val isGlowEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_glow_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_glow_enabled" }
+            }
+          }
+
+      val isGlowLevelEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_glow_level_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_glow_level_enabled" }
+            }
+          }
+
+      val isSsaoEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_ssao_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_ssao_enabled" }
+            }
+          }
+
+      val isSsrEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_ssr_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_ssr_enabled" }
+            }
+          }
+
+      val isSsrRough: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "is_ssr_rough".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_ssr_rough" }
+            }
+          }
+
+      val setAdjustmentBrightness: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_adjustment_brightness".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_adjustment_brightness" }
+            }
+          }
+
+      val setAdjustmentColorCorrection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_adjustment_color_correction".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_adjustment_color_correction" }
+            }
+          }
+
+      val setAdjustmentContrast: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_adjustment_contrast".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_adjustment_contrast" }
+            }
+          }
+
+      val setAdjustmentEnable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_adjustment_enable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_adjustment_enable" }
+            }
+          }
+
+      val setAdjustmentSaturation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_adjustment_saturation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_adjustment_saturation" }
+            }
+          }
+
+      val setAmbientLightColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ambient_light_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ambient_light_color" }
+            }
+          }
+
+      val setAmbientLightEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ambient_light_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ambient_light_energy" }
+            }
+          }
+
+      val setAmbientLightSkyContribution: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ambient_light_sky_contribution".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_ambient_light_sky_contribution" }
+            }
+          }
+
+      val setBackground: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_background".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_background" }
+            }
+          }
+
+      val setBgColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_bg_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bg_color" }
+            }
+          }
+
+      val setBgEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_bg_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bg_energy" }
+            }
+          }
+
+      val setCameraFeedId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_camera_feed_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_camera_feed_id" }
+            }
+          }
+
+      val setCanvasMaxLayer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_canvas_max_layer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_canvas_max_layer" }
+            }
+          }
+
+      val setDofBlurFarAmount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_dof_blur_far_amount".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_amount" }
+            }
+          }
+
+      val setDofBlurFarDistance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_dof_blur_far_distance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_distance" }
+            }
+          }
+
+      val setDofBlurFarEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_dof_blur_far_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_enabled" }
+            }
+          }
+
+      val setDofBlurFarQuality: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_dof_blur_far_quality".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_quality" }
+            }
+          }
+
+      val setDofBlurFarTransition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_dof_blur_far_transition".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_transition" }
+            }
+          }
+
+      val setDofBlurNearAmount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_dof_blur_near_amount".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_amount" }
+            }
+          }
+
+      val setDofBlurNearDistance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_dof_blur_near_distance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_distance" }
+            }
+          }
+
+      val setDofBlurNearEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_dof_blur_near_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_enabled" }
+            }
+          }
+
+      val setDofBlurNearQuality: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_dof_blur_near_quality".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_quality" }
+            }
+          }
+
+      val setDofBlurNearTransition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_dof_blur_near_transition".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_transition" }
+            }
+          }
+
+      val setFogColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_color" }
+            }
+          }
+
+      val setFogDepthBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_depth_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_depth_begin" }
+            }
+          }
+
+      val setFogDepthCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_depth_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_depth_curve" }
+            }
+          }
+
+      val setFogDepthEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_depth_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_depth_enabled" }
+            }
+          }
+
+      val setFogDepthEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_depth_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_depth_end" }
+            }
+          }
+
+      val setFogEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_enabled" }
+            }
+          }
+
+      val setFogHeightCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_height_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_height_curve" }
+            }
+          }
+
+      val setFogHeightEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_height_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_height_enabled" }
+            }
+          }
+
+      val setFogHeightMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_height_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_height_max" }
+            }
+          }
+
+      val setFogHeightMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_height_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_height_min" }
+            }
+          }
+
+      val setFogSunAmount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_sun_amount".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_sun_amount" }
+            }
+          }
+
+      val setFogSunColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_sun_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_sun_color" }
+            }
+          }
+
+      val setFogTransmitCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_transmit_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_transmit_curve" }
+            }
+          }
+
+      val setFogTransmitEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_fog_transmit_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fog_transmit_enabled" }
+            }
+          }
+
+      val setGlowBicubicUpscale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_glow_bicubic_upscale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_glow_bicubic_upscale" }
+            }
+          }
+
+      val setGlowBlendMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_glow_blend_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_glow_blend_mode" }
+            }
+          }
+
+      val setGlowBloom: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_glow_bloom".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_glow_bloom" }
+            }
+          }
+
+      val setGlowEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_glow_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_glow_enabled" }
+            }
+          }
+
+      val setGlowHdrBleedScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_glow_hdr_bleed_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_bleed_scale" }
+            }
+          }
+
+      val setGlowHdrBleedThreshold: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_glow_hdr_bleed_threshold".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_bleed_threshold" }
+            }
+          }
+
+      val setGlowHdrLuminanceCap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_glow_hdr_luminance_cap".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_luminance_cap" }
+            }
+          }
+
+      val setGlowIntensity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_glow_intensity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_glow_intensity" }
+            }
+          }
+
+      val setGlowLevel: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_glow_level".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_glow_level" }
+            }
+          }
+
+      val setGlowStrength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_glow_strength".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_glow_strength" }
+            }
+          }
+
+      val setSky: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_sky".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sky" }
+            }
+          }
+
+      val setSkyCustomFov: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_sky_custom_fov".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sky_custom_fov" }
+            }
+          }
+
+      val setSkyOrientation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_sky_orientation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sky_orientation" }
+            }
+          }
+
+      val setSkyRotation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_sky_rotation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sky_rotation" }
+            }
+          }
+
+      val setSkyRotationDegrees: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_sky_rotation_degrees".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sky_rotation_degrees" }
+            }
+          }
+
+      val setSsaoAoChannelAffect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_ao_channel_affect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_ao_channel_affect" }
+            }
+          }
+
+      val setSsaoBias: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_bias".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_bias" }
+            }
+          }
+
+      val setSsaoBlur: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_blur".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_blur" }
+            }
+          }
+
+      val setSsaoColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_color" }
+            }
+          }
+
+      val setSsaoDirectLightAffect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_direct_light_affect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_direct_light_affect" }
+            }
+          }
+
+      val setSsaoEdgeSharpness: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_edge_sharpness".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_edge_sharpness" }
+            }
+          }
+
+      val setSsaoEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_enabled" }
+            }
+          }
+
+      val setSsaoIntensity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_intensity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_intensity" }
+            }
+          }
+
+      val setSsaoIntensity2: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_intensity2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_intensity2" }
+            }
+          }
+
+      val setSsaoQuality: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_quality".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_quality" }
+            }
+          }
+
+      val setSsaoRadius: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_radius".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_radius" }
+            }
+          }
+
+      val setSsaoRadius2: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssao_radius2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssao_radius2" }
+            }
+          }
+
+      val setSsrDepthTolerance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssr_depth_tolerance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssr_depth_tolerance" }
+            }
+          }
+
+      val setSsrEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssr_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssr_enabled" }
+            }
+          }
+
+      val setSsrFadeIn: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssr_fade_in".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssr_fade_in" }
+            }
+          }
+
+      val setSsrFadeOut: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssr_fade_out".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssr_fade_out" }
+            }
+          }
+
+      val setSsrMaxSteps: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssr_max_steps".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssr_max_steps" }
+            }
+          }
+
+      val setSsrRough: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_ssr_rough".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ssr_rough" }
+            }
+          }
+
+      val setTonemapAutoExposure: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_tonemap_auto_exposure".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure" }
+            }
+          }
+
+      val setTonemapAutoExposureGrey: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_tonemap_auto_exposure_grey".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_grey"
+              }
+            }
+          }
+
+      val setTonemapAutoExposureMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_tonemap_auto_exposure_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_max"
+              }
+            }
+          }
+
+      val setTonemapAutoExposureMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_tonemap_auto_exposure_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_min"
+              }
+            }
+          }
+
+      val setTonemapAutoExposureSpeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_tonemap_auto_exposure_speed".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_tonemap_auto_exposure_speed" }
+            }
+          }
+
+      val setTonemapExposure: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_tonemap_exposure".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tonemap_exposure" }
+            }
+          }
+
+      val setTonemapWhite: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_tonemap_white".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tonemap_white" }
+            }
+          }
+
+      val setTonemapper: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
+              "set_tonemapper".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tonemapper" }
+            }
+          }
+    }
   }
 }

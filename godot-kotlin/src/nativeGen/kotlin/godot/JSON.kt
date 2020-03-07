@@ -67,18 +67,22 @@ open class JSONInternal(
      * Container for method_bind pointers for JSON
      */
     private object __method_bind {
-      val parse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_JSON".cstr.ptr,
-            "parse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method parse" }
-        }
-      val print: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_JSON".cstr.ptr,
-            "print".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method print" }
-        }}
+      val parse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_JSON".cstr.ptr,
+              "parse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method parse" }
+            }
+          }
+
+      val print: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_JSON".cstr.ptr,
+              "print".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method print" }
+            }
+          }
+    }
   }
 }
 

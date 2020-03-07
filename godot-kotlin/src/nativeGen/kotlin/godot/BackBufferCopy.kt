@@ -132,33 +132,41 @@ open class BackBufferCopy(
      * Container for method_bind pointers for BackBufferCopy
      */
     private object __method_bind {
-      val getCopyMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
-            "get_copy_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_copy_mode" }
-        }
-      val getRect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
-            "get_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rect" }
-        }
-      val setCopyMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
-            "set_copy_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_copy_mode" }
-        }
-      val setRect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
-            "set_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rect" }
-        }}
+      val getCopyMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
+              "get_copy_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_copy_mode" }
+            }
+          }
+
+      val getRect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
+              "get_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rect" }
+            }
+          }
+
+      val setCopyMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
+              "set_copy_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_copy_mode" }
+            }
+          }
+
+      val setRect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
+              "set_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_rect" }
+            }
+          }
+    }
   }
 }

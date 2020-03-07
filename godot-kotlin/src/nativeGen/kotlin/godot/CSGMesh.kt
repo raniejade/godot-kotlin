@@ -105,29 +105,41 @@ open class CSGMesh(
      * Container for method_bind pointers for CSGMesh
      */
     private object __method_bind {
-      val getMaterial: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
-            "get_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_material" }
-        }
-      val getMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
-            "get_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
-        }
-      val setMaterial: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
-            "set_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_material" }
-        }
-      val setMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
-            "set_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mesh" }
-        }}
+      val getMaterial: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
+              "get_material".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_material" }
+            }
+          }
+
+      val getMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
+              "get_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mesh" }
+            }
+          }
+
+      val setMaterial: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
+              "set_material".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_material" }
+            }
+          }
+
+      val setMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
+              "set_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mesh" }
+            }
+          }
+    }
   }
 }

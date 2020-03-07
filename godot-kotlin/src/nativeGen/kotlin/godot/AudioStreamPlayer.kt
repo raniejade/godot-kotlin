@@ -320,145 +320,185 @@ open class AudioStreamPlayer(
      * Container for method_bind pointers for AudioStreamPlayer
      */
     private object __method_bind {
-      val getBus: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "get_bus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bus" }
-        }
-      val getMixTarget: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "get_mix_target".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mix_target" }
-        }
-      val getPitchScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "get_pitch_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pitch_scale" }
-        }
-      val getPlaybackPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "get_playback_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_playback_position" }
-        }
-      val getStream: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "get_stream".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stream" }
-        }
-      val getStreamPaused: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "get_stream_paused".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stream_paused" }
-        }
-      val getStreamPlayback: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "get_stream_playback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stream_playback" }
-        }
-      val getVolumeDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "get_volume_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_volume_db" }
-        }
-      val isAutoplayEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "is_autoplay_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_autoplay_enabled" }
-        }
-      val isPlaying: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "is_playing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_playing" }
-        }
-      val play: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "play".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method play" }
-        }
-      val seek: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "seek".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method seek" }
-        }
-      val setAutoplay: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "set_autoplay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_autoplay" }
-        }
-      val setBus: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "set_bus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bus" }
-        }
-      val setMixTarget: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "set_mix_target".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mix_target" }
-        }
-      val setPitchScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "set_pitch_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pitch_scale" }
-        }
-      val setStream: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "set_stream".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_stream" }
-        }
-      val setStreamPaused: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "set_stream_paused".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_stream_paused" }
-        }
-      val setVolumeDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "set_volume_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_volume_db" }
-        }
-      val stop: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
-            "stop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method stop" }
-        }}
+      val getBus: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "get_bus".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bus" }
+            }
+          }
+
+      val getMixTarget: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "get_mix_target".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mix_target" }
+            }
+          }
+
+      val getPitchScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "get_pitch_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_pitch_scale" }
+            }
+          }
+
+      val getPlaybackPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "get_playback_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_playback_position" }
+            }
+          }
+
+      val getStream: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "get_stream".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_stream" }
+            }
+          }
+
+      val getStreamPaused: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "get_stream_paused".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_stream_paused" }
+            }
+          }
+
+      val getStreamPlayback: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "get_stream_playback".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_stream_playback" }
+            }
+          }
+
+      val getVolumeDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "get_volume_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_volume_db" }
+            }
+          }
+
+      val isAutoplayEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "is_autoplay_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_autoplay_enabled" }
+            }
+          }
+
+      val isPlaying: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "is_playing".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_playing" }
+            }
+          }
+
+      val play: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "play".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method play" }
+            }
+          }
+
+      val seek: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "seek".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method seek" }
+            }
+          }
+
+      val setAutoplay: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "set_autoplay".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_autoplay" }
+            }
+          }
+
+      val setBus: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "set_bus".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bus" }
+            }
+          }
+
+      val setMixTarget: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "set_mix_target".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mix_target" }
+            }
+          }
+
+      val setPitchScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "set_pitch_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pitch_scale" }
+            }
+          }
+
+      val setStream: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "set_stream".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_stream" }
+            }
+          }
+
+      val setStreamPaused: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "set_stream_paused".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_stream_paused" }
+            }
+          }
+
+      val setVolumeDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "set_volume_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_volume_db" }
+            }
+          }
+
+      val stop: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer".cstr.ptr,
+              "stop".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method stop" }
+            }
+          }
+    }
   }
 }

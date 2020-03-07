@@ -120,33 +120,41 @@ open class SegmentShape2D(
      * Container for method_bind pointers for SegmentShape2D
      */
     private object __method_bind {
-      val getA: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
-            "get_a".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_a" }
-        }
-      val getB: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
-            "get_b".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_b" }
-        }
-      val setA: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
-            "set_a".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_a" }
-        }
-      val setB: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
-            "set_b".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_b" }
-        }}
+      val getA: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
+              "get_a".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_a" }
+            }
+          }
+
+      val getB: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
+              "get_b".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_b" }
+            }
+          }
+
+      val setA: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
+              "set_a".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_a" }
+            }
+          }
+
+      val setB: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
+              "set_b".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_b" }
+            }
+          }
+    }
   }
 }

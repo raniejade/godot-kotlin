@@ -73,17 +73,23 @@ open class PinJoint2D(
      * Container for method_bind pointers for PinJoint2D
      */
     private object __method_bind {
-      val getSoftness: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint2D".cstr.ptr,
-            "get_softness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_softness" }
-        }
-      val setSoftness: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint2D".cstr.ptr,
-            "set_softness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_softness" }
-        }}
+      val getSoftness: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint2D".cstr.ptr,
+              "get_softness".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_softness" }
+            }
+          }
+
+      val setSoftness: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint2D".cstr.ptr,
+              "set_softness".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_softness" }
+            }
+          }
+    }
   }
 }

@@ -628,245 +628,365 @@ open class Polygon2D(
      * Container for method_bind pointers for Polygon2D
      */
     private object __method_bind {
-      val addBone: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "add_bone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_bone" }
-        }
-      val clearBones: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "clear_bones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_bones" }
-        }
-      val eraseBone: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "erase_bone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method erase_bone" }
-        }
-      val getAntialiased: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_antialiased".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_antialiased" }
-        }
-      val getBoneCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_bone_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
-        }
-      val getBonePath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_bone_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_path" }
-        }
-      val getBoneWeights: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_bone_weights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_weights" }
-        }
-      val getColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color" }
-        }
-      val getInternalVertexCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_internal_vertex_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_internal_vertex_count" }
-        }
-      val getInvert: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_invert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_invert" }
-        }
-      val getInvertBorder: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_invert_border".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_invert_border" }
-        }
-      val getOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
-        }
-      val getPolygon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_polygon" }
-        }
-      val getPolygons: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_polygons".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_polygons" }
-        }
-      val getSkeleton: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_skeleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_skeleton" }
-        }
-      val getTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture" }
-        }
-      val getTextureOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_texture_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture_offset" }
-        }
-      val getTextureRotation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_texture_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture_rotation" }
-        }
-      val getTextureRotationDegrees: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_texture_rotation_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture_rotation_degrees" }
-        }
-      val getTextureScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_texture_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture_scale" }
-        }
-      val getUv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_uv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_uv" }
-        }
-      val getVertexColors: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "get_vertex_colors".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_colors" }
-        }
-      val setAntialiased: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_antialiased".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_antialiased" }
-        }
-      val setBonePath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_bone_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bone_path" }
-        }
-      val setBoneWeights: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_bone_weights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bone_weights" }
-        }
-      val setColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_color" }
-        }
-      val setInternalVertexCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_internal_vertex_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_internal_vertex_count" }
-        }
-      val setInvert: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_invert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_invert" }
-        }
-      val setInvertBorder: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_invert_border".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_invert_border" }
-        }
-      val setOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
-        }
-      val setPolygon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_polygon" }
-        }
-      val setPolygons: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_polygons".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_polygons" }
-        }
-      val setSkeleton: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_skeleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_skeleton" }
-        }
-      val setTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture" }
-        }
-      val setTextureOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_texture_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture_offset" }
-        }
-      val setTextureRotation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_texture_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture_rotation" }
-        }
-      val setTextureRotationDegrees: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_texture_rotation_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture_rotation_degrees" }
-        }
-      val setTextureScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_texture_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture_scale" }
-        }
-      val setUv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_uv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_uv" }
-        }
-      val setVertexColors: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "set_vertex_colors".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_colors" }
-        }}
+      val addBone: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "add_bone".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_bone" }
+            }
+          }
+
+      val clearBones: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "clear_bones".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_bones" }
+            }
+          }
+
+      val eraseBone: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "erase_bone".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method erase_bone" }
+            }
+          }
+
+      val getAntialiased: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_antialiased".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_antialiased" }
+            }
+          }
+
+      val getBoneCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_bone_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
+            }
+          }
+
+      val getBonePath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_bone_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_path" }
+            }
+          }
+
+      val getBoneWeights: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_bone_weights".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_weights" }
+            }
+          }
+
+      val getColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_color" }
+            }
+          }
+
+      val getInternalVertexCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_internal_vertex_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_internal_vertex_count" }
+            }
+          }
+
+      val getInvert: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_invert".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_invert" }
+            }
+          }
+
+      val getInvertBorder: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_invert_border".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_invert_border" }
+            }
+          }
+
+      val getOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            }
+          }
+
+      val getPolygon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_polygon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_polygon" }
+            }
+          }
+
+      val getPolygons: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_polygons".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_polygons" }
+            }
+          }
+
+      val getSkeleton: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_skeleton".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_skeleton" }
+            }
+          }
+
+      val getTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture" }
+            }
+          }
+
+      val getTextureOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_texture_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture_offset" }
+            }
+          }
+
+      val getTextureRotation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_texture_rotation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture_rotation" }
+            }
+          }
+
+      val getTextureRotationDegrees: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_texture_rotation_degrees".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture_rotation_degrees" }
+            }
+          }
+
+      val getTextureScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_texture_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture_scale" }
+            }
+          }
+
+      val getUv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_uv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_uv" }
+            }
+          }
+
+      val getVertexColors: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "get_vertex_colors".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_colors" }
+            }
+          }
+
+      val setAntialiased: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_antialiased".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_antialiased" }
+            }
+          }
+
+      val setBonePath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_bone_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bone_path" }
+            }
+          }
+
+      val setBoneWeights: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_bone_weights".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bone_weights" }
+            }
+          }
+
+      val setColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_color" }
+            }
+          }
+
+      val setInternalVertexCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_internal_vertex_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_internal_vertex_count" }
+            }
+          }
+
+      val setInvert: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_invert".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_invert" }
+            }
+          }
+
+      val setInvertBorder: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_invert_border".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_invert_border" }
+            }
+          }
+
+      val setOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            }
+          }
+
+      val setPolygon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_polygon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_polygon" }
+            }
+          }
+
+      val setPolygons: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_polygons".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_polygons" }
+            }
+          }
+
+      val setSkeleton: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_skeleton".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_skeleton" }
+            }
+          }
+
+      val setTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture" }
+            }
+          }
+
+      val setTextureOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_texture_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture_offset" }
+            }
+          }
+
+      val setTextureRotation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_texture_rotation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture_rotation" }
+            }
+          }
+
+      val setTextureRotationDegrees: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_texture_rotation_degrees".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture_rotation_degrees" }
+            }
+          }
+
+      val setTextureScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_texture_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture_scale" }
+            }
+          }
+
+      val setUv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_uv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_uv" }
+            }
+          }
+
+      val setVertexColors: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
+              "set_vertex_colors".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertex_colors" }
+            }
+          }
+    }
   }
 }

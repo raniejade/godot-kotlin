@@ -223,77 +223,101 @@ open class Button(
      * Container for method_bind pointers for Button
      */
     private object __method_bind {
-      val getButtonIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "get_button_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_button_icon" }
-        }
-      val getClipText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "get_clip_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_clip_text" }
-        }
-      val getText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "get_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_text" }
-        }
-      val getTextAlign: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "get_text_align".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_text_align" }
-        }
-      val isExpandIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "is_expand_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_expand_icon" }
-        }
-      val isFlat: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "is_flat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_flat" }
-        }
-      val setButtonIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "set_button_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_button_icon" }
-        }
-      val setClipText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "set_clip_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_clip_text" }
-        }
-      val setExpandIcon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "set_expand_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expand_icon" }
-        }
-      val setFlat: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "set_flat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flat" }
-        }
-      val setText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "set_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_text" }
-        }
-      val setTextAlign: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "set_text_align".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_text_align" }
-        }}
+      val getButtonIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "get_button_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_button_icon" }
+            }
+          }
+
+      val getClipText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "get_clip_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_clip_text" }
+            }
+          }
+
+      val getText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "get_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_text" }
+            }
+          }
+
+      val getTextAlign: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "get_text_align".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_text_align" }
+            }
+          }
+
+      val isExpandIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "is_expand_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_expand_icon" }
+            }
+          }
+
+      val isFlat: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "is_flat".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_flat" }
+            }
+          }
+
+      val setButtonIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "set_button_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_button_icon" }
+            }
+          }
+
+      val setClipText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "set_clip_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_clip_text" }
+            }
+          }
+
+      val setExpandIcon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "set_expand_icon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_expand_icon" }
+            }
+          }
+
+      val setFlat: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "set_flat".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_flat" }
+            }
+          }
+
+      val setText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "set_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_text" }
+            }
+          }
+
+      val setTextAlign: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
+              "set_text_align".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_text_align" }
+            }
+          }
+    }
   }
 }

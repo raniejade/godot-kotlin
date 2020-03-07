@@ -98,29 +98,41 @@ open class Material(
      * Container for method_bind pointers for Material
      */
     private object __method_bind {
-      val getNextPass: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
-            "get_next_pass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_next_pass" }
-        }
-      val getRenderPriority: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
-            "get_render_priority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_render_priority" }
-        }
-      val setNextPass: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
-            "set_next_pass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_next_pass" }
-        }
-      val setRenderPriority: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
-            "set_render_priority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_render_priority" }
-        }}
+      val getNextPass: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
+              "get_next_pass".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_next_pass" }
+            }
+          }
+
+      val getRenderPriority: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
+              "get_render_priority".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_render_priority" }
+            }
+          }
+
+      val setNextPass: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
+              "set_next_pass".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_next_pass" }
+            }
+          }
+
+      val setRenderPriority: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
+              "set_render_priority".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_render_priority" }
+            }
+          }
+    }
   }
 }

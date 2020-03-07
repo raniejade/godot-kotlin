@@ -95,26 +95,32 @@ open class GradientTexture(
      * Container for method_bind pointers for GradientTexture
      */
     private object __method_bind {
-      val getGradient: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
-            "get_gradient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_gradient" }
-        }
-      val setGradient: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
-            "set_gradient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_gradient" }
-        }
-      val setWidth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
-            "set_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_width" }
-        }}
+      val getGradient: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
+              "get_gradient".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_gradient" }
+            }
+          }
+
+      val setGradient: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
+              "set_gradient".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_gradient" }
+            }
+          }
+
+      val setWidth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
+              "set_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_width" }
+            }
+          }
+    }
   }
 }

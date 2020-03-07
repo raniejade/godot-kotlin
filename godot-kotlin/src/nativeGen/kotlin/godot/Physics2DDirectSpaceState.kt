@@ -172,54 +172,68 @@ open class Physics2DDirectSpaceState(
      * Container for method_bind pointers for Physics2DDirectSpaceState
      */
     private object __method_bind {
-      val castMotion: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
-            "cast_motion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cast_motion" }
-        }
-      val collideShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
-            "collide_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method collide_shape" }
-        }
-      val getRestInfo: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
-            "get_rest_info".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rest_info" }
-        }
-      val intersectPoint: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
-            "intersect_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method intersect_point" }
-        }
-      val intersectPointOnCanvas: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
-            "intersect_point_on_canvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method intersect_point_on_canvas" }
-        }
-      val intersectRay: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
-            "intersect_ray".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method intersect_ray" }
-        }
-      val intersectShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
-            "intersect_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method intersect_shape" }
-        }}
+      val castMotion: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
+              "cast_motion".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method cast_motion" }
+            }
+          }
+
+      val collideShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
+              "collide_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method collide_shape" }
+            }
+          }
+
+      val getRestInfo: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
+              "get_rest_info".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rest_info" }
+            }
+          }
+
+      val intersectPoint: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
+              "intersect_point".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method intersect_point" }
+            }
+          }
+
+      val intersectPointOnCanvas: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
+              "intersect_point_on_canvas".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method intersect_point_on_canvas" }
+            }
+          }
+
+      val intersectRay: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
+              "intersect_ray".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method intersect_ray" }
+            }
+          }
+
+      val intersectShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DDirectSpaceState".cstr.ptr,
+              "intersect_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method intersect_shape" }
+            }
+          }
+    }
   }
 }

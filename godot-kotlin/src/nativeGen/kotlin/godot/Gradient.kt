@@ -202,77 +202,113 @@ open class Gradient(
      * Container for method_bind pointers for Gradient
      */
     private object __method_bind {
-      val addPoint: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "add_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_point" }
-        }
-      val getColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "get_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color" }
-        }
-      val getColors: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "get_colors".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_colors" }
-        }
-      val getOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
-        }
-      val getOffsets: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "get_offsets".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offsets" }
-        }
-      val getPointCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "get_point_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_point_count" }
-        }
-      val interpolate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "interpolate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method interpolate" }
-        }
-      val removePoint: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "remove_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_point" }
-        }
-      val setColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "set_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_color" }
-        }
-      val setColors: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "set_colors".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_colors" }
-        }
-      val setOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
-        }
-      val setOffsets: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "set_offsets".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offsets" }
-        }}
+      val addPoint: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "add_point".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_point" }
+            }
+          }
+
+      val getColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "get_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_color" }
+            }
+          }
+
+      val getColors: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "get_colors".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_colors" }
+            }
+          }
+
+      val getOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "get_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            }
+          }
+
+      val getOffsets: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "get_offsets".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offsets" }
+            }
+          }
+
+      val getPointCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "get_point_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_point_count" }
+            }
+          }
+
+      val interpolate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "interpolate".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method interpolate" }
+            }
+          }
+
+      val removePoint: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "remove_point".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_point" }
+            }
+          }
+
+      val setColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "set_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_color" }
+            }
+          }
+
+      val setColors: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "set_colors".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_colors" }
+            }
+          }
+
+      val setOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "set_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            }
+          }
+
+      val setOffsets: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
+              "set_offsets".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_offsets" }
+            }
+          }
+    }
   }
 }

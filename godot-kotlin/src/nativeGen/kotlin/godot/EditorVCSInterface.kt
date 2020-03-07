@@ -188,82 +188,104 @@ open class EditorVCSInterface(
      * Container for method_bind pointers for EditorVCSInterface
      */
     private object __method_bind {
-      val commit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "commit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method commit" }
-        }
-      val getFileDiff: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "get_file_diff".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_file_diff" }
-        }
-      val getModifiedFilesData: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "get_modified_files_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_modified_files_data" }
-        }
-      val getProjectName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "get_project_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_project_name" }
-        }
-      val getVcsName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "get_vcs_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vcs_name" }
-        }
-      val initialize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "initialize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method initialize" }
-        }
-      val isAddonReady: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "is_addon_ready".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_addon_ready" }
-        }
-      val isVcsInitialized: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "is_vcs_initialized".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_vcs_initialized" }
-        }
-      val shutDown: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "shut_down".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shut_down" }
-        }
-      val stageFile: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "stage_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method stage_file" }
-        }
-      val unstageFile: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
-            "unstage_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method unstage_file" }
-        }}
+      val commit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "commit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method commit" }
+            }
+          }
+
+      val getFileDiff: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "get_file_diff".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_file_diff" }
+            }
+          }
+
+      val getModifiedFilesData: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "get_modified_files_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_modified_files_data" }
+            }
+          }
+
+      val getProjectName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "get_project_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_project_name" }
+            }
+          }
+
+      val getVcsName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "get_vcs_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vcs_name" }
+            }
+          }
+
+      val initialize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "initialize".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method initialize" }
+            }
+          }
+
+      val isAddonReady: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "is_addon_ready".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_addon_ready" }
+            }
+          }
+
+      val isVcsInitialized: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "is_vcs_initialized".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_vcs_initialized" }
+            }
+          }
+
+      val shutDown: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "shut_down".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method shut_down" }
+            }
+          }
+
+      val stageFile: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "stage_file".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method stage_file" }
+            }
+          }
+
+      val unstageFile: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorVCSInterface".cstr.ptr,
+              "unstage_file".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method unstage_file" }
+            }
+          }
+    }
   }
 }

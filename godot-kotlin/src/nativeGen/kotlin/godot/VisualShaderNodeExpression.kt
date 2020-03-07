@@ -74,19 +74,23 @@ open class VisualShaderNodeExpression(
      * Container for method_bind pointers for VisualShaderNodeExpression
      */
     private object __method_bind {
-      val getExpression: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
-            "get_expression".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_expression" }
-        }
-      val setExpression: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
-            "set_expression".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expression" }
-        }}
+      val getExpression: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
+              "get_expression".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_expression" }
+            }
+          }
+
+      val setExpression: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
+              "set_expression".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_expression" }
+            }
+          }
+    }
   }
 }

@@ -79,26 +79,32 @@ open class AudioEffectEQ(
      * Container for method_bind pointers for AudioEffectEQ
      */
     private object __method_bind {
-      val getBandCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
-            "get_band_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_band_count" }
-        }
-      val getBandGainDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
-            "get_band_gain_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_band_gain_db" }
-        }
-      val setBandGainDb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
-            "set_band_gain_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_band_gain_db" }
-        }}
+      val getBandCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
+              "get_band_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_band_count" }
+            }
+          }
+
+      val getBandGainDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
+              "get_band_gain_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_band_gain_db" }
+            }
+          }
+
+      val setBandGainDb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
+              "set_band_gain_db".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_band_gain_db" }
+            }
+          }
+    }
   }
 }

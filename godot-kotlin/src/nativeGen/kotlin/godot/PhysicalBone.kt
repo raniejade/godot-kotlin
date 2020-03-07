@@ -361,159 +361,203 @@ open class PhysicalBone(
      * Container for method_bind pointers for PhysicalBone
      */
     private object __method_bind {
-      val applyCentralImpulse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "apply_central_impulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method apply_central_impulse" }
-        }
-      val applyImpulse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "apply_impulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method apply_impulse" }
-        }
-      val getBodyOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_body_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_body_offset" }
-        }
-      val getBoneId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_bone_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_id" }
-        }
-      val getBounce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bounce" }
-        }
-      val getFriction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_friction" }
-        }
-      val getGravityScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_gravity_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_gravity_scale" }
-        }
-      val getJointOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_joint_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joint_offset" }
-        }
-      val getJointType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_joint_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joint_type" }
-        }
-      val getMass: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_mass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mass" }
-        }
-      val getSimulatePhysics: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_simulate_physics".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_simulate_physics" }
-        }
-      val getWeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_weight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_weight" }
-        }
-      val isSimulatingPhysics: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "is_simulating_physics".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_simulating_physics" }
-        }
-      val isStaticBody: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "is_static_body".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_static_body" }
-        }
-      val setBodyOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_body_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_body_offset" }
-        }
-      val setBounce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bounce" }
-        }
-      val setFriction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_friction" }
-        }
-      val setGravityScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_gravity_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_gravity_scale" }
-        }
-      val setJointOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_joint_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_joint_offset" }
-        }
-      val setJointType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_joint_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_joint_type" }
-        }
-      val setMass: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_mass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mass" }
-        }
-      val setWeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_weight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_weight" }
-        }}
+      val applyCentralImpulse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "apply_central_impulse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method apply_central_impulse" }
+            }
+          }
+
+      val applyImpulse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "apply_impulse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method apply_impulse" }
+            }
+          }
+
+      val getBodyOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "get_body_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_body_offset" }
+            }
+          }
+
+      val getBoneId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "get_bone_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bone_id" }
+            }
+          }
+
+      val getBounce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "get_bounce".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bounce" }
+            }
+          }
+
+      val getFriction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "get_friction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_friction" }
+            }
+          }
+
+      val getGravityScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "get_gravity_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_gravity_scale" }
+            }
+          }
+
+      val getJointOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "get_joint_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_joint_offset" }
+            }
+          }
+
+      val getJointType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "get_joint_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_joint_type" }
+            }
+          }
+
+      val getMass: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "get_mass".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mass" }
+            }
+          }
+
+      val getSimulatePhysics: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "get_simulate_physics".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_simulate_physics" }
+            }
+          }
+
+      val getWeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "get_weight".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_weight" }
+            }
+          }
+
+      val isSimulatingPhysics: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "is_simulating_physics".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_simulating_physics" }
+            }
+          }
+
+      val isStaticBody: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "is_static_body".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_static_body" }
+            }
+          }
+
+      val setBodyOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "set_body_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_body_offset" }
+            }
+          }
+
+      val setBounce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "set_bounce".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bounce" }
+            }
+          }
+
+      val setFriction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "set_friction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_friction" }
+            }
+          }
+
+      val setGravityScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "set_gravity_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_gravity_scale" }
+            }
+          }
+
+      val setJointOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "set_joint_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_joint_offset" }
+            }
+          }
+
+      val setJointType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "set_joint_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_joint_type" }
+            }
+          }
+
+      val setMass: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "set_mass".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mass" }
+            }
+          }
+
+      val setWeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
+              "set_weight".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_weight" }
+            }
+          }
+    }
   }
 }

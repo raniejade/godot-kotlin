@@ -164,54 +164,70 @@ open class StreamPeerSSL(
      * Container for method_bind pointers for StreamPeerSSL
      */
     private object __method_bind {
-      val acceptStream: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
-            "accept_stream".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method accept_stream" }
-        }
-      val connectToStream: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
-            "connect_to_stream".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connect_to_stream" }
-        }
-      val disconnectFromStream: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
-            "disconnect_from_stream".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method disconnect_from_stream" }
-        }
-      val getStatus: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
-            "get_status".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_status" }
-        }
-      val isBlockingHandshakeEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
-            "is_blocking_handshake_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_blocking_handshake_enabled" }
-        }
-      val poll: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
-            "poll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method poll" }
-        }
-      val setBlockingHandshakeEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
-            "set_blocking_handshake_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_blocking_handshake_enabled" }
-        }}
+      val acceptStream: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
+              "accept_stream".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method accept_stream" }
+            }
+          }
+
+      val connectToStream: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
+              "connect_to_stream".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method connect_to_stream" }
+            }
+          }
+
+      val disconnectFromStream: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
+              "disconnect_from_stream".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method disconnect_from_stream" }
+            }
+          }
+
+      val getStatus: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
+              "get_status".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_status" }
+            }
+          }
+
+      val isBlockingHandshakeEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
+              "is_blocking_handshake_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_blocking_handshake_enabled"
+              }
+            }
+          }
+
+      val poll: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
+              "poll".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method poll" }
+            }
+          }
+
+      val setBlockingHandshakeEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerSSL".cstr.ptr,
+              "set_blocking_handshake_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_blocking_handshake_enabled"
+              }
+            }
+          }
+    }
   }
 }

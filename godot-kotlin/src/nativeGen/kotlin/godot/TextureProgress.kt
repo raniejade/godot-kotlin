@@ -460,173 +460,221 @@ open class TextureProgress(
      * Container for method_bind pointers for TextureProgress
      */
     private object __method_bind {
-      val getFillDegrees: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_fill_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fill_degrees" }
-        }
-      val getFillMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_fill_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fill_mode" }
-        }
-      val getNinePatchStretch: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_nine_patch_stretch".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_nine_patch_stretch" }
-        }
-      val getOverTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_over_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_over_texture" }
-        }
-      val getProgressTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_progress_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_progress_texture" }
-        }
-      val getRadialCenterOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_radial_center_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radial_center_offset" }
-        }
-      val getRadialInitialAngle: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_radial_initial_angle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radial_initial_angle" }
-        }
-      val getStretchMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_stretch_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stretch_margin" }
-        }
-      val getTintOver: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_tint_over".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tint_over" }
-        }
-      val getTintProgress: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_tint_progress".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tint_progress" }
-        }
-      val getTintUnder: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_tint_under".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tint_under" }
-        }
-      val getUnderTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "get_under_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_under_texture" }
-        }
-      val setFillDegrees: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_fill_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fill_degrees" }
-        }
-      val setFillMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_fill_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fill_mode" }
-        }
-      val setNinePatchStretch: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_nine_patch_stretch".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_nine_patch_stretch" }
-        }
-      val setOverTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_over_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_over_texture" }
-        }
-      val setProgressTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_progress_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_progress_texture" }
-        }
-      val setRadialCenterOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_radial_center_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radial_center_offset" }
-        }
-      val setRadialInitialAngle: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_radial_initial_angle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radial_initial_angle" }
-        }
-      val setStretchMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_stretch_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_stretch_margin" }
-        }
-      val setTintOver: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_tint_over".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tint_over" }
-        }
-      val setTintProgress: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_tint_progress".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tint_progress" }
-        }
-      val setTintUnder: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_tint_under".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tint_under" }
-        }
-      val setUnderTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
-            "set_under_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_under_texture" }
-        }}
+      val getFillDegrees: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_fill_degrees".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fill_degrees" }
+            }
+          }
+
+      val getFillMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_fill_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_fill_mode" }
+            }
+          }
+
+      val getNinePatchStretch: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_nine_patch_stretch".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_nine_patch_stretch" }
+            }
+          }
+
+      val getOverTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_over_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_over_texture" }
+            }
+          }
+
+      val getProgressTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_progress_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_progress_texture" }
+            }
+          }
+
+      val getRadialCenterOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_radial_center_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_radial_center_offset" }
+            }
+          }
+
+      val getRadialInitialAngle: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_radial_initial_angle".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_radial_initial_angle" }
+            }
+          }
+
+      val getStretchMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_stretch_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_stretch_margin" }
+            }
+          }
+
+      val getTintOver: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_tint_over".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tint_over" }
+            }
+          }
+
+      val getTintProgress: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_tint_progress".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tint_progress" }
+            }
+          }
+
+      val getTintUnder: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_tint_under".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tint_under" }
+            }
+          }
+
+      val getUnderTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "get_under_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_under_texture" }
+            }
+          }
+
+      val setFillDegrees: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_fill_degrees".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fill_degrees" }
+            }
+          }
+
+      val setFillMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_fill_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_fill_mode" }
+            }
+          }
+
+      val setNinePatchStretch: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_nine_patch_stretch".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_nine_patch_stretch" }
+            }
+          }
+
+      val setOverTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_over_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_over_texture" }
+            }
+          }
+
+      val setProgressTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_progress_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_progress_texture" }
+            }
+          }
+
+      val setRadialCenterOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_radial_center_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_radial_center_offset" }
+            }
+          }
+
+      val setRadialInitialAngle: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_radial_initial_angle".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_radial_initial_angle" }
+            }
+          }
+
+      val setStretchMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_stretch_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_stretch_margin" }
+            }
+          }
+
+      val setTintOver: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_tint_over".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tint_over" }
+            }
+          }
+
+      val setTintProgress: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_tint_progress".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tint_progress" }
+            }
+          }
+
+      val setTintUnder: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_tint_under".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tint_under" }
+            }
+          }
+
+      val setUnderTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureProgress".cstr.ptr,
+              "set_under_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_under_texture" }
+            }
+          }
+    }
   }
 }

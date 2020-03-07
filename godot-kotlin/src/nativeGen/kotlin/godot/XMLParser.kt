@@ -253,107 +253,159 @@ open class XMLParser(
      * Container for method_bind pointers for XMLParser
      */
     private object __method_bind {
-      val getAttributeCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_attribute_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_attribute_count" }
-        }
-      val getAttributeName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_attribute_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_attribute_name" }
-        }
-      val getAttributeValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_attribute_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_attribute_value" }
-        }
-      val getCurrentLine: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_current_line".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_line" }
-        }
-      val getNamedAttributeValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_named_attribute_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_named_attribute_value" }
-        }
-      val getNamedAttributeValueSafe: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_named_attribute_value_safe".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_named_attribute_value_safe" }
-        }
-      val getNodeData: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_node_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_data" }
-        }
-      val getNodeName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_node_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_name" }
-        }
-      val getNodeOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_node_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_offset" }
-        }
-      val getNodeType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_node_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_type" }
-        }
-      val hasAttribute: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "has_attribute".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_attribute" }
-        }
-      val isEmpty: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "is_empty".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_empty" }
-        }
-      val open: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "open".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method open" }
-        }
-      val openBuffer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "open_buffer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method open_buffer" }
-        }
-      val read: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "read".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method read" }
-        }
-      val seek: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "seek".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method seek" }
-        }
-      val skipSection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "skip_section".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skip_section" }
-        }}
+      val getAttributeCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "get_attribute_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_attribute_count" }
+            }
+          }
+
+      val getAttributeName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "get_attribute_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_attribute_name" }
+            }
+          }
+
+      val getAttributeValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "get_attribute_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_attribute_value" }
+            }
+          }
+
+      val getCurrentLine: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "get_current_line".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_current_line" }
+            }
+          }
+
+      val getNamedAttributeValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "get_named_attribute_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_named_attribute_value" }
+            }
+          }
+
+      val getNamedAttributeValueSafe: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "get_named_attribute_value_safe".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_named_attribute_value_safe"
+              }
+            }
+          }
+
+      val getNodeData: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "get_node_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_data" }
+            }
+          }
+
+      val getNodeName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "get_node_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_name" }
+            }
+          }
+
+      val getNodeOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "get_node_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_offset" }
+            }
+          }
+
+      val getNodeType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "get_node_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_type" }
+            }
+          }
+
+      val hasAttribute: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "has_attribute".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_attribute" }
+            }
+          }
+
+      val isEmpty: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "is_empty".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_empty" }
+            }
+          }
+
+      val open: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "open".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method open" }
+            }
+          }
+
+      val openBuffer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "open_buffer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method open_buffer" }
+            }
+          }
+
+      val read: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "read".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method read" }
+            }
+          }
+
+      val seek: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "seek".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method seek" }
+            }
+          }
+
+      val skipSection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
+              "skip_section".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method skip_section" }
+            }
+          }
+    }
   }
 }

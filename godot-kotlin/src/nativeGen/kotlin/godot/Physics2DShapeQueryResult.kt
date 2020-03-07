@@ -96,40 +96,50 @@ open class Physics2DShapeQueryResult(
      * Container for method_bind pointers for Physics2DShapeQueryResult
      */
     private object __method_bind {
-      val getResultCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DShapeQueryResult".cstr.ptr,
-            "get_result_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_result_count" }
-        }
-      val getResultObject: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DShapeQueryResult".cstr.ptr,
-            "get_result_object".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_result_object" }
-        }
-      val getResultObjectId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DShapeQueryResult".cstr.ptr,
-            "get_result_object_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_result_object_id" }
-        }
-      val getResultObjectShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DShapeQueryResult".cstr.ptr,
-            "get_result_object_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_result_object_shape" }
-        }
-      val getResultRid: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DShapeQueryResult".cstr.ptr,
-            "get_result_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_result_rid" }
-        }}
+      val getResultCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DShapeQueryResult".cstr.ptr,
+              "get_result_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_result_count" }
+            }
+          }
+
+      val getResultObject: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DShapeQueryResult".cstr.ptr,
+              "get_result_object".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_result_object" }
+            }
+          }
+
+      val getResultObjectId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DShapeQueryResult".cstr.ptr,
+              "get_result_object_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_result_object_id" }
+            }
+          }
+
+      val getResultObjectShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DShapeQueryResult".cstr.ptr,
+              "get_result_object_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_result_object_shape" }
+            }
+          }
+
+      val getResultRid: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DShapeQueryResult".cstr.ptr,
+              "get_result_rid".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_result_rid" }
+            }
+          }
+    }
   }
 }

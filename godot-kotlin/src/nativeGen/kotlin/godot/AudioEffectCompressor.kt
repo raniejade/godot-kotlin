@@ -225,103 +225,131 @@ open class AudioEffectCompressor(
      * Container for method_bind pointers for AudioEffectCompressor
      */
     private object __method_bind {
-      val getAttackUs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "get_attack_us".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_attack_us" }
-        }
-      val getGain: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "get_gain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_gain" }
-        }
-      val getMix: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "get_mix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mix" }
-        }
-      val getRatio: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "get_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ratio" }
-        }
-      val getReleaseMs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "get_release_ms".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_release_ms" }
-        }
-      val getSidechain: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "get_sidechain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sidechain" }
-        }
-      val getThreshold: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "get_threshold".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_threshold" }
-        }
-      val setAttackUs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "set_attack_us".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_attack_us" }
-        }
-      val setGain: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "set_gain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_gain" }
-        }
-      val setMix: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "set_mix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mix" }
-        }
-      val setRatio: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "set_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ratio" }
-        }
-      val setReleaseMs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "set_release_ms".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_release_ms" }
-        }
-      val setSidechain: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "set_sidechain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sidechain" }
-        }
-      val setThreshold: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "set_threshold".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_threshold" }
-        }}
+      val getAttackUs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "get_attack_us".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_attack_us" }
+            }
+          }
+
+      val getGain: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "get_gain".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_gain" }
+            }
+          }
+
+      val getMix: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "get_mix".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mix" }
+            }
+          }
+
+      val getRatio: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "get_ratio".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ratio" }
+            }
+          }
+
+      val getReleaseMs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "get_release_ms".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_release_ms" }
+            }
+          }
+
+      val getSidechain: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "get_sidechain".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sidechain" }
+            }
+          }
+
+      val getThreshold: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "get_threshold".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_threshold" }
+            }
+          }
+
+      val setAttackUs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "set_attack_us".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_attack_us" }
+            }
+          }
+
+      val setGain: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "set_gain".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_gain" }
+            }
+          }
+
+      val setMix: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "set_mix".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mix" }
+            }
+          }
+
+      val setRatio: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "set_ratio".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ratio" }
+            }
+          }
+
+      val setReleaseMs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "set_release_ms".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_release_ms" }
+            }
+          }
+
+      val setSidechain: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "set_sidechain".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sidechain" }
+            }
+          }
+
+      val setThreshold: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
+              "set_threshold".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_threshold" }
+            }
+          }
+    }
   }
 }

@@ -141,33 +141,41 @@ open class VisualShaderNodeTextureUniform(
      * Container for method_bind pointers for VisualShaderNodeTextureUniform
      */
     private object __method_bind {
-      val getColorDefault: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTextureUniform".cstr.ptr,
-            "get_color_default".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color_default" }
-        }
-      val getTextureType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTextureUniform".cstr.ptr,
-            "get_texture_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture_type" }
-        }
-      val setColorDefault: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTextureUniform".cstr.ptr,
-            "set_color_default".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_color_default" }
-        }
-      val setTextureType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTextureUniform".cstr.ptr,
-            "set_texture_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture_type" }
-        }}
+      val getColorDefault: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTextureUniform".cstr.ptr,
+              "get_color_default".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_color_default" }
+            }
+          }
+
+      val getTextureType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTextureUniform".cstr.ptr,
+              "get_texture_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture_type" }
+            }
+          }
+
+      val setColorDefault: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTextureUniform".cstr.ptr,
+              "set_color_default".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_color_default" }
+            }
+          }
+
+      val setTextureType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTextureUniform".cstr.ptr,
+              "set_texture_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture_type" }
+            }
+          }
+    }
   }
 }

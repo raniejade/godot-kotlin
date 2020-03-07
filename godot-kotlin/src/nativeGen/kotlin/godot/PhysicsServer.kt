@@ -1431,801 +1431,1036 @@ open class PhysicsServerInternal(
      * Container for method_bind pointers for PhysicsServer
      */
     private object __method_bind {
-      val areaAddShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_add_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_add_shape" }
-        }
-      val areaAttachObjectInstanceId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_attach_object_instance_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_attach_object_instance_id" }
-        }
-      val areaClearShapes: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_clear_shapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_clear_shapes" }
-        }
-      val areaCreate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_create".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_create" }
-        }
-      val areaGetObjectInstanceId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_get_object_instance_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_get_object_instance_id" }
-        }
-      val areaGetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_get_param" }
-        }
-      val areaGetShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_get_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_get_shape" }
-        }
-      val areaGetShapeCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_get_shape_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_get_shape_count" }
-        }
-      val areaGetShapeTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_get_shape_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_get_shape_transform" }
-        }
-      val areaGetSpace: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_get_space".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_get_space" }
-        }
-      val areaGetSpaceOverrideMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_get_space_override_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_get_space_override_mode" }
-        }
-      val areaGetTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_get_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_get_transform" }
-        }
-      val areaIsRayPickable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_is_ray_pickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_is_ray_pickable" }
-        }
-      val areaRemoveShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_remove_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_remove_shape" }
-        }
-      val areaSetAreaMonitorCallback: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_area_monitor_callback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_area_monitor_callback" }
-        }
-      val areaSetCollisionLayer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_collision_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_collision_layer" }
-        }
-      val areaSetCollisionMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_collision_mask" }
-        }
-      val areaSetMonitorCallback: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_monitor_callback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_monitor_callback" }
-        }
-      val areaSetMonitorable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_monitorable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_monitorable" }
-        }
-      val areaSetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_param" }
-        }
-      val areaSetRayPickable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_ray_pickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_ray_pickable" }
-        }
-      val areaSetShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_shape" }
-        }
-      val areaSetShapeDisabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_shape_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_shape_disabled" }
-        }
-      val areaSetShapeTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_shape_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_shape_transform" }
-        }
-      val areaSetSpace: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_space".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_space" }
-        }
-      val areaSetSpaceOverrideMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_space_override_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_space_override_mode" }
-        }
-      val areaSetTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "area_set_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method area_set_transform" }
-        }
-      val bodyAddCentralForce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_add_central_force".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_add_central_force" }
-        }
-      val bodyAddCollisionException: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_add_collision_exception".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_add_collision_exception" }
-        }
-      val bodyAddForce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_add_force".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_add_force" }
-        }
-      val bodyAddShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_add_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_add_shape" }
-        }
-      val bodyAddTorque: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_add_torque".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_add_torque" }
-        }
-      val bodyApplyCentralImpulse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_apply_central_impulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_apply_central_impulse" }
-        }
-      val bodyApplyImpulse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_apply_impulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_apply_impulse" }
-        }
-      val bodyApplyTorqueImpulse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_apply_torque_impulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_apply_torque_impulse" }
-        }
-      val bodyAttachObjectInstanceId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_attach_object_instance_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_attach_object_instance_id" }
-        }
-      val bodyClearShapes: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_clear_shapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_clear_shapes" }
-        }
-      val bodyCreate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_create".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_create" }
-        }
-      val bodyGetCollisionLayer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_collision_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_collision_layer" }
-        }
-      val bodyGetCollisionMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_collision_mask" }
-        }
-      val bodyGetDirectState: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_direct_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_direct_state" }
-        }
-      val bodyGetKinematicSafeMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_kinematic_safe_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_kinematic_safe_margin" }
-        }
-      val bodyGetMaxContactsReported: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_max_contacts_reported".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_max_contacts_reported" }
-        }
-      val bodyGetMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_mode" }
-        }
-      val bodyGetObjectInstanceId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_object_instance_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_object_instance_id" }
-        }
-      val bodyGetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_param" }
-        }
-      val bodyGetShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_shape" }
-        }
-      val bodyGetShapeCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_shape_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_shape_count" }
-        }
-      val bodyGetShapeTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_shape_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_shape_transform" }
-        }
-      val bodyGetSpace: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_space".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_space" }
-        }
-      val bodyGetState: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_get_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_get_state" }
-        }
-      val bodyIsAxisLocked: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_is_axis_locked".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_is_axis_locked" }
-        }
-      val bodyIsContinuousCollisionDetectionEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_is_continuous_collision_detection_enabled".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method body_is_continuous_collision_detection_enabled" }
-        }
-      val bodyIsOmittingForceIntegration: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_is_omitting_force_integration".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_is_omitting_force_integration"
+      val areaAddShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_add_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_add_shape" }
             }
-        }
-      val bodyIsRayPickable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_is_ray_pickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_is_ray_pickable" }
-        }
-      val bodyRemoveCollisionException: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_remove_collision_exception".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_remove_collision_exception" }
-        }
-      val bodyRemoveShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_remove_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_remove_shape" }
-        }
-      val bodySetAxisLock: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_axis_lock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_axis_lock" }
-        }
-      val bodySetAxisVelocity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_axis_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_axis_velocity" }
-        }
-      val bodySetCollisionLayer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_collision_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_collision_layer" }
-        }
-      val bodySetCollisionMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_collision_mask" }
-        }
-      val bodySetEnableContinuousCollisionDetection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_enable_continuous_collision_detection".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method body_set_enable_continuous_collision_detection" }
-        }
-      val bodySetForceIntegrationCallback: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_force_integration_callback".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method body_set_force_integration_callback" }
-        }
-      val bodySetKinematicSafeMargin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_kinematic_safe_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_kinematic_safe_margin" }
-        }
-      val bodySetMaxContactsReported: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_max_contacts_reported".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_max_contacts_reported" }
-        }
-      val bodySetMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_mode" }
-        }
-      val bodySetOmitForceIntegration: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_omit_force_integration".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_omit_force_integration" }
-        }
-      val bodySetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_param" }
-        }
-      val bodySetRayPickable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_ray_pickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_ray_pickable" }
-        }
-      val bodySetShape: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_shape" }
-        }
-      val bodySetShapeDisabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_shape_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_shape_disabled" }
-        }
-      val bodySetShapeTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_shape_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_shape_transform" }
-        }
-      val bodySetSpace: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_space".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_space" }
-        }
-      val bodySetState: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "body_set_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method body_set_state" }
-        }
-      val coneTwistJointGetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "cone_twist_joint_get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cone_twist_joint_get_param" }
-        }
-      val coneTwistJointSetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "cone_twist_joint_set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cone_twist_joint_set_param" }
-        }
-      val freeRid: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "free_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method free_rid" }
-        }
-      val generic6dofJointGetFlag: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "generic_6dof_joint_get_flag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_get_flag" }
-        }
-      val generic6dofJointGetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "generic_6dof_joint_get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_get_param" }
-        }
-      val generic6dofJointSetFlag: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "generic_6dof_joint_set_flag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_set_flag" }
-        }
-      val generic6dofJointSetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "generic_6dof_joint_set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_set_param" }
-        }
-      val getProcessInfo: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "get_process_info".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_process_info" }
-        }
-      val hingeJointGetFlag: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "hinge_joint_get_flag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hinge_joint_get_flag" }
-        }
-      val hingeJointGetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "hinge_joint_get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hinge_joint_get_param" }
-        }
-      val hingeJointSetFlag: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "hinge_joint_set_flag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hinge_joint_set_flag" }
-        }
-      val hingeJointSetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "hinge_joint_set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hinge_joint_set_param" }
-        }
-      val jointCreateConeTwist: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "joint_create_cone_twist".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method joint_create_cone_twist" }
-        }
-      val jointCreateGeneric6dof: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "joint_create_generic_6dof".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method joint_create_generic_6dof" }
-        }
-      val jointCreateHinge: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "joint_create_hinge".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method joint_create_hinge" }
-        }
-      val jointCreatePin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "joint_create_pin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method joint_create_pin" }
-        }
-      val jointCreateSlider: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "joint_create_slider".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method joint_create_slider" }
-        }
-      val jointGetSolverPriority: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "joint_get_solver_priority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method joint_get_solver_priority" }
-        }
-      val jointGetType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "joint_get_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method joint_get_type" }
-        }
-      val jointSetSolverPriority: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "joint_set_solver_priority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method joint_set_solver_priority" }
-        }
-      val pinJointGetLocalA: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pin_joint_get_local_a".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pin_joint_get_local_a" }
-        }
-      val pinJointGetLocalB: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pin_joint_get_local_b".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pin_joint_get_local_b" }
-        }
-      val pinJointGetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pin_joint_get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pin_joint_get_param" }
-        }
-      val pinJointSetLocalA: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pin_joint_set_local_a".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pin_joint_set_local_a" }
-        }
-      val pinJointSetLocalB: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pin_joint_set_local_b".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pin_joint_set_local_b" }
-        }
-      val pinJointSetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pin_joint_set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pin_joint_set_param" }
-        }
-      val setActive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "set_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_active" }
-        }
-      val shapeCreate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "shape_create".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shape_create" }
-        }
-      val shapeGetData: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "shape_get_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shape_get_data" }
-        }
-      val shapeGetType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "shape_get_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shape_get_type" }
-        }
-      val shapeSetData: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "shape_set_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shape_set_data" }
-        }
-      val sliderJointGetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "slider_joint_get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method slider_joint_get_param" }
-        }
-      val sliderJointSetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "slider_joint_set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method slider_joint_set_param" }
-        }
-      val spaceCreate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "space_create".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method space_create" }
-        }
-      val spaceGetDirectState: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "space_get_direct_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method space_get_direct_state" }
-        }
-      val spaceGetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "space_get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method space_get_param" }
-        }
-      val spaceIsActive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "space_is_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method space_is_active" }
-        }
-      val spaceSetActive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "space_set_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method space_set_active" }
-        }
-      val spaceSetParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "space_set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method space_set_param" }
-        }}
+          }
+
+      val areaAttachObjectInstanceId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_attach_object_instance_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_attach_object_instance_id"
+              }
+            }
+          }
+
+      val areaClearShapes: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_clear_shapes".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_clear_shapes" }
+            }
+          }
+
+      val areaCreate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_create".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_create" }
+            }
+          }
+
+      val areaGetObjectInstanceId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_get_object_instance_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_get_object_instance_id" }
+            }
+          }
+
+      val areaGetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_get_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_get_param" }
+            }
+          }
+
+      val areaGetShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_get_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_get_shape" }
+            }
+          }
+
+      val areaGetShapeCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_get_shape_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_get_shape_count" }
+            }
+          }
+
+      val areaGetShapeTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_get_shape_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_get_shape_transform" }
+            }
+          }
+
+      val areaGetSpace: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_get_space".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_get_space" }
+            }
+          }
+
+      val areaGetSpaceOverrideMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_get_space_override_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_get_space_override_mode" }
+            }
+          }
+
+      val areaGetTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_get_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_get_transform" }
+            }
+          }
+
+      val areaIsRayPickable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_is_ray_pickable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_is_ray_pickable" }
+            }
+          }
+
+      val areaRemoveShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_remove_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_remove_shape" }
+            }
+          }
+
+      val areaSetAreaMonitorCallback: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_area_monitor_callback".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_area_monitor_callback"
+              }
+            }
+          }
+
+      val areaSetCollisionLayer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_collision_layer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_collision_layer" }
+            }
+          }
+
+      val areaSetCollisionMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_collision_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_collision_mask" }
+            }
+          }
+
+      val areaSetMonitorCallback: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_monitor_callback".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_monitor_callback" }
+            }
+          }
+
+      val areaSetMonitorable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_monitorable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_monitorable" }
+            }
+          }
+
+      val areaSetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_param" }
+            }
+          }
+
+      val areaSetRayPickable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_ray_pickable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_ray_pickable" }
+            }
+          }
+
+      val areaSetShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_shape" }
+            }
+          }
+
+      val areaSetShapeDisabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_shape_disabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_shape_disabled" }
+            }
+          }
+
+      val areaSetShapeTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_shape_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_shape_transform" }
+            }
+          }
+
+      val areaSetSpace: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_space".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_space" }
+            }
+          }
+
+      val areaSetSpaceOverrideMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_space_override_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_space_override_mode" }
+            }
+          }
+
+      val areaSetTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "area_set_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method area_set_transform" }
+            }
+          }
+
+      val bodyAddCentralForce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_add_central_force".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_add_central_force" }
+            }
+          }
+
+      val bodyAddCollisionException: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_add_collision_exception".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_add_collision_exception" }
+            }
+          }
+
+      val bodyAddForce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_add_force".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_add_force" }
+            }
+          }
+
+      val bodyAddShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_add_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_add_shape" }
+            }
+          }
+
+      val bodyAddTorque: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_add_torque".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_add_torque" }
+            }
+          }
+
+      val bodyApplyCentralImpulse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_apply_central_impulse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_apply_central_impulse" }
+            }
+          }
+
+      val bodyApplyImpulse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_apply_impulse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_apply_impulse" }
+            }
+          }
+
+      val bodyApplyTorqueImpulse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_apply_torque_impulse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_apply_torque_impulse" }
+            }
+          }
+
+      val bodyAttachObjectInstanceId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_attach_object_instance_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_attach_object_instance_id"
+              }
+            }
+          }
+
+      val bodyClearShapes: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_clear_shapes".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_clear_shapes" }
+            }
+          }
+
+      val bodyCreate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_create".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_create" }
+            }
+          }
+
+      val bodyGetCollisionLayer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_collision_layer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_collision_layer" }
+            }
+          }
+
+      val bodyGetCollisionMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_collision_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_collision_mask" }
+            }
+          }
+
+      val bodyGetDirectState: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_direct_state".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_direct_state" }
+            }
+          }
+
+      val bodyGetKinematicSafeMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_kinematic_safe_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_kinematic_safe_margin"
+              }
+            }
+          }
+
+      val bodyGetMaxContactsReported: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_max_contacts_reported".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_max_contacts_reported"
+              }
+            }
+          }
+
+      val bodyGetMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_mode" }
+            }
+          }
+
+      val bodyGetObjectInstanceId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_object_instance_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_object_instance_id" }
+            }
+          }
+
+      val bodyGetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_param" }
+            }
+          }
+
+      val bodyGetShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_shape" }
+            }
+          }
+
+      val bodyGetShapeCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_shape_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_shape_count" }
+            }
+          }
+
+      val bodyGetShapeTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_shape_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_shape_transform" }
+            }
+          }
+
+      val bodyGetSpace: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_space".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_space" }
+            }
+          }
+
+      val bodyGetState: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_get_state".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_get_state" }
+            }
+          }
+
+      val bodyIsAxisLocked: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_is_axis_locked".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_is_axis_locked" }
+            }
+          }
+
+      val bodyIsContinuousCollisionDetectionEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_is_continuous_collision_detection_enabled".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method body_is_continuous_collision_detection_enabled" }
+            }
+          }
+
+      val bodyIsOmittingForceIntegration: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_is_omitting_force_integration".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method body_is_omitting_force_integration" }
+            }
+          }
+
+      val bodyIsRayPickable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_is_ray_pickable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_is_ray_pickable" }
+            }
+          }
+
+      val bodyRemoveCollisionException: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_remove_collision_exception".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method body_remove_collision_exception" }
+            }
+          }
+
+      val bodyRemoveShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_remove_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_remove_shape" }
+            }
+          }
+
+      val bodySetAxisLock: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_axis_lock".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_axis_lock" }
+            }
+          }
+
+      val bodySetAxisVelocity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_axis_velocity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_axis_velocity" }
+            }
+          }
+
+      val bodySetCollisionLayer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_collision_layer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_collision_layer" }
+            }
+          }
+
+      val bodySetCollisionMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_collision_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_collision_mask" }
+            }
+          }
+
+      val bodySetEnableContinuousCollisionDetection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_enable_continuous_collision_detection".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method body_set_enable_continuous_collision_detection" }
+            }
+          }
+
+      val bodySetForceIntegrationCallback: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_force_integration_callback".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method body_set_force_integration_callback" }
+            }
+          }
+
+      val bodySetKinematicSafeMargin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_kinematic_safe_margin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_kinematic_safe_margin"
+              }
+            }
+          }
+
+      val bodySetMaxContactsReported: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_max_contacts_reported".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_max_contacts_reported"
+              }
+            }
+          }
+
+      val bodySetMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_mode" }
+            }
+          }
+
+      val bodySetOmitForceIntegration: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_omit_force_integration".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method body_set_omit_force_integration" }
+            }
+          }
+
+      val bodySetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_param" }
+            }
+          }
+
+      val bodySetRayPickable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_ray_pickable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_ray_pickable" }
+            }
+          }
+
+      val bodySetShape: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_shape".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_shape" }
+            }
+          }
+
+      val bodySetShapeDisabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_shape_disabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_shape_disabled" }
+            }
+          }
+
+      val bodySetShapeTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_shape_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_shape_transform" }
+            }
+          }
+
+      val bodySetSpace: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_space".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_space" }
+            }
+          }
+
+      val bodySetState: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "body_set_state".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method body_set_state" }
+            }
+          }
+
+      val coneTwistJointGetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "cone_twist_joint_get_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method cone_twist_joint_get_param" }
+            }
+          }
+
+      val coneTwistJointSetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "cone_twist_joint_set_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method cone_twist_joint_set_param" }
+            }
+          }
+
+      val freeRid: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "free_rid".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method free_rid" }
+            }
+          }
+
+      val generic6dofJointGetFlag: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "generic_6dof_joint_get_flag".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_get_flag" }
+            }
+          }
+
+      val generic6dofJointGetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "generic_6dof_joint_get_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_get_param" }
+            }
+          }
+
+      val generic6dofJointSetFlag: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "generic_6dof_joint_set_flag".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_set_flag" }
+            }
+          }
+
+      val generic6dofJointSetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "generic_6dof_joint_set_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_set_param" }
+            }
+          }
+
+      val getProcessInfo: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "get_process_info".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_process_info" }
+            }
+          }
+
+      val hingeJointGetFlag: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "hinge_joint_get_flag".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method hinge_joint_get_flag" }
+            }
+          }
+
+      val hingeJointGetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "hinge_joint_get_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method hinge_joint_get_param" }
+            }
+          }
+
+      val hingeJointSetFlag: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "hinge_joint_set_flag".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method hinge_joint_set_flag" }
+            }
+          }
+
+      val hingeJointSetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "hinge_joint_set_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method hinge_joint_set_param" }
+            }
+          }
+
+      val jointCreateConeTwist: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "joint_create_cone_twist".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method joint_create_cone_twist" }
+            }
+          }
+
+      val jointCreateGeneric6dof: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "joint_create_generic_6dof".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method joint_create_generic_6dof" }
+            }
+          }
+
+      val jointCreateHinge: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "joint_create_hinge".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method joint_create_hinge" }
+            }
+          }
+
+      val jointCreatePin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "joint_create_pin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method joint_create_pin" }
+            }
+          }
+
+      val jointCreateSlider: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "joint_create_slider".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method joint_create_slider" }
+            }
+          }
+
+      val jointGetSolverPriority: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "joint_get_solver_priority".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method joint_get_solver_priority" }
+            }
+          }
+
+      val jointGetType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "joint_get_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method joint_get_type" }
+            }
+          }
+
+      val jointSetSolverPriority: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "joint_set_solver_priority".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method joint_set_solver_priority" }
+            }
+          }
+
+      val pinJointGetLocalA: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "pin_joint_get_local_a".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method pin_joint_get_local_a" }
+            }
+          }
+
+      val pinJointGetLocalB: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "pin_joint_get_local_b".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method pin_joint_get_local_b" }
+            }
+          }
+
+      val pinJointGetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "pin_joint_get_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method pin_joint_get_param" }
+            }
+          }
+
+      val pinJointSetLocalA: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "pin_joint_set_local_a".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method pin_joint_set_local_a" }
+            }
+          }
+
+      val pinJointSetLocalB: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "pin_joint_set_local_b".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method pin_joint_set_local_b" }
+            }
+          }
+
+      val pinJointSetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "pin_joint_set_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method pin_joint_set_param" }
+            }
+          }
+
+      val setActive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "set_active".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_active" }
+            }
+          }
+
+      val shapeCreate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "shape_create".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method shape_create" }
+            }
+          }
+
+      val shapeGetData: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "shape_get_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method shape_get_data" }
+            }
+          }
+
+      val shapeGetType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "shape_get_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method shape_get_type" }
+            }
+          }
+
+      val shapeSetData: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "shape_set_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method shape_set_data" }
+            }
+          }
+
+      val sliderJointGetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "slider_joint_get_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method slider_joint_get_param" }
+            }
+          }
+
+      val sliderJointSetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "slider_joint_set_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method slider_joint_set_param" }
+            }
+          }
+
+      val spaceCreate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "space_create".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method space_create" }
+            }
+          }
+
+      val spaceGetDirectState: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "space_get_direct_state".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method space_get_direct_state" }
+            }
+          }
+
+      val spaceGetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "space_get_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method space_get_param" }
+            }
+          }
+
+      val spaceIsActive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "space_is_active".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method space_is_active" }
+            }
+          }
+
+      val spaceSetActive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "space_set_active".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method space_set_active" }
+            }
+          }
+
+      val spaceSetParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
+              "space_set_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method space_set_param" }
+            }
+          }
+    }
   }
 }
 

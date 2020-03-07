@@ -137,61 +137,77 @@ open class LargeTexture(
      * Container for method_bind pointers for LargeTexture
      */
     private object __method_bind {
-      val addPiece: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "add_piece".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_piece" }
-        }
-      val clear: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "clear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear" }
-        }
-      val getPieceCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "get_piece_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_piece_count" }
-        }
-      val getPieceOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "get_piece_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_piece_offset" }
-        }
-      val getPieceTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "get_piece_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_piece_texture" }
-        }
-      val setPieceOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "set_piece_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_piece_offset" }
-        }
-      val setPieceTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "set_piece_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_piece_texture" }
-        }
-      val setSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
-        }}
+      val addPiece: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
+              "add_piece".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_piece" }
+            }
+          }
+
+      val clear: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
+              "clear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear" }
+            }
+          }
+
+      val getPieceCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
+              "get_piece_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_piece_count" }
+            }
+          }
+
+      val getPieceOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
+              "get_piece_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_piece_offset" }
+            }
+          }
+
+      val getPieceTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
+              "get_piece_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_piece_texture" }
+            }
+          }
+
+      val setPieceOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
+              "set_piece_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_piece_offset" }
+            }
+          }
+
+      val setPieceTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
+              "set_piece_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_piece_texture" }
+            }
+          }
+
+      val setSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
+              "set_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_size" }
+            }
+          }
+    }
   }
 }

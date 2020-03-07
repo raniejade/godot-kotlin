@@ -87,33 +87,41 @@ open class InstancePlaceholder(
      * Container for method_bind pointers for InstancePlaceholder
      */
     private object __method_bind {
-      val createInstance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
-            "create_instance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_instance" }
-        }
-      val getInstancePath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
-            "get_instance_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_instance_path" }
-        }
-      val getStoredValues: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
-            "get_stored_values".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stored_values" }
-        }
-      val replaceByInstance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
-            "replace_by_instance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method replace_by_instance" }
-        }}
+      val createInstance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
+              "create_instance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_instance" }
+            }
+          }
+
+      val getInstancePath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
+              "get_instance_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_instance_path" }
+            }
+          }
+
+      val getStoredValues: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
+              "get_stored_values".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_stored_values" }
+            }
+          }
+
+      val replaceByInstance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
+              "replace_by_instance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method replace_by_instance" }
+            }
+          }
+    }
   }
 }

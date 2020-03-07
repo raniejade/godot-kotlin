@@ -85,19 +85,23 @@ open class VisualShaderNodeTransformConstant(
      * Container for method_bind pointers for VisualShaderNodeTransformConstant
      */
     private object __method_bind {
-      val getConstant: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformConstant".cstr.ptr,
-            "get_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant" }
-        }
-      val setConstant: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformConstant".cstr.ptr,
-            "set_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_constant" }
-        }}
+      val getConstant: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformConstant".cstr.ptr,
+              "get_constant".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_constant" }
+            }
+          }
+
+      val setConstant: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformConstant".cstr.ptr,
+              "set_constant".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_constant" }
+            }
+          }
+    }
   }
 }

@@ -124,33 +124,41 @@ open class PackedScene(
      * Container for method_bind pointers for PackedScene
      */
     private object __method_bind {
-      val canInstance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
-            "can_instance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method can_instance" }
-        }
-      val getState: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
-            "get_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_state" }
-        }
-      val instance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
-            "instance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instance" }
-        }
-      val pack: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
-            "pack".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pack" }
-        }}
+      val canInstance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
+              "can_instance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method can_instance" }
+            }
+          }
+
+      val getState: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
+              "get_state".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_state" }
+            }
+          }
+
+      val instance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
+              "instance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method instance" }
+            }
+          }
+
+      val pack: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
+              "pack".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method pack" }
+            }
+          }
+    }
   }
 }

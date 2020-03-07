@@ -90,26 +90,32 @@ open class VisualScriptFunctionState(
      * Container for method_bind pointers for VisualScriptFunctionState
      */
     private object __method_bind {
-      val connectToSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
-            "connect_to_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connect_to_signal" }
-        }
-      val isValid: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
-            "is_valid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_valid" }
-        }
-      val resume: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
-            "resume".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resume" }
-        }}
+      val connectToSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
+              "connect_to_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method connect_to_signal" }
+            }
+          }
+
+      val isValid: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
+              "is_valid".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_valid" }
+            }
+          }
+
+      val resume: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
+              "resume".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method resume" }
+            }
+          }
+    }
   }
 }

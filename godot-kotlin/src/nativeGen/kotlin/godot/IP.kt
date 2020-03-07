@@ -124,54 +124,70 @@ open class IPInternal(
      * Container for method_bind pointers for IP
      */
     private object __method_bind {
-      val clearCache: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "clear_cache".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_cache" }
-        }
-      val eraseResolveItem: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "erase_resolve_item".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method erase_resolve_item" }
-        }
-      val getLocalAddresses: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "get_local_addresses".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_local_addresses" }
-        }
-      val getLocalInterfaces: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "get_local_interfaces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_local_interfaces" }
-        }
-      val getResolveItemAddress: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "get_resolve_item_address".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_resolve_item_address" }
-        }
-      val getResolveItemStatus: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "get_resolve_item_status".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_resolve_item_status" }
-        }
-      val resolveHostname: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "resolve_hostname".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resolve_hostname" }
-        }
-      val resolveHostnameQueueItem: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "resolve_hostname_queue_item".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resolve_hostname_queue_item" }
-        }}
+      val clearCache: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
+              "clear_cache".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_cache" }
+            }
+          }
+
+      val eraseResolveItem: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
+              "erase_resolve_item".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method erase_resolve_item" }
+            }
+          }
+
+      val getLocalAddresses: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
+              "get_local_addresses".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_local_addresses" }
+            }
+          }
+
+      val getLocalInterfaces: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
+              "get_local_interfaces".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_local_interfaces" }
+            }
+          }
+
+      val getResolveItemAddress: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
+              "get_resolve_item_address".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_resolve_item_address" }
+            }
+          }
+
+      val getResolveItemStatus: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
+              "get_resolve_item_status".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_resolve_item_status" }
+            }
+          }
+
+      val resolveHostname: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
+              "resolve_hostname".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method resolve_hostname" }
+            }
+          }
+
+      val resolveHostnameQueueItem: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
+              "resolve_hostname_queue_item".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method resolve_hostname_queue_item" }
+            }
+          }
+    }
   }
 }
 

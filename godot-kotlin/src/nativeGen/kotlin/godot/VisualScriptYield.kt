@@ -121,33 +121,41 @@ open class VisualScriptYield(
      * Container for method_bind pointers for VisualScriptYield
      */
     private object __method_bind {
-      val getWaitTime: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "get_wait_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_wait_time" }
-        }
-      val getYieldMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "get_yield_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_yield_mode" }
-        }
-      val setWaitTime: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "set_wait_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_wait_time" }
-        }
-      val setYieldMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "set_yield_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_yield_mode" }
-        }}
+      val getWaitTime: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
+              "get_wait_time".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_wait_time" }
+            }
+          }
+
+      val getYieldMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
+              "get_yield_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_yield_mode" }
+            }
+          }
+
+      val setWaitTime: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
+              "set_wait_time".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_wait_time" }
+            }
+          }
+
+      val setYieldMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
+              "set_yield_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_yield_mode" }
+            }
+          }
+    }
   }
 }

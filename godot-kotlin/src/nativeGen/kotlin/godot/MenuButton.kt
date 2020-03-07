@@ -105,29 +105,41 @@ open class MenuButton(
      * Container for method_bind pointers for MenuButton
      */
     private object __method_bind {
-      val getPopup: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "get_popup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_popup" }
-        }
-      val isSwitchOnHover: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "is_switch_on_hover".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_switch_on_hover" }
-        }
-      val setDisableShortcuts: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "set_disable_shortcuts".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_disable_shortcuts" }
-        }
-      val setSwitchOnHover: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "set_switch_on_hover".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_switch_on_hover" }
-        }}
+      val getPopup: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
+              "get_popup".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_popup" }
+            }
+          }
+
+      val isSwitchOnHover: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
+              "is_switch_on_hover".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_switch_on_hover" }
+            }
+          }
+
+      val setDisableShortcuts: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
+              "set_disable_shortcuts".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_disable_shortcuts" }
+            }
+          }
+
+      val setSwitchOnHover: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
+              "set_switch_on_hover".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_switch_on_hover" }
+            }
+          }
+    }
   }
 }

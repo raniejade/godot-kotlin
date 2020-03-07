@@ -65,20 +65,24 @@ open class VisualScriptEditorInternal(
      * Container for method_bind pointers for VisualScriptEditor
      */
     private object __method_bind {
-      val addCustomNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
-            "add_custom_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_custom_node" }
-        }
-      val removeCustomNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
-            "remove_custom_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_custom_node" }
-        }}
+      val addCustomNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
+              "add_custom_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_custom_node" }
+            }
+          }
+
+      val removeCustomNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
+              "remove_custom_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_custom_node" }
+            }
+          }
+    }
   }
 }
 

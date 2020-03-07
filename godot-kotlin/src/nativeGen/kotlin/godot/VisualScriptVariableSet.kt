@@ -74,19 +74,23 @@ open class VisualScriptVariableSet(
      * Container for method_bind pointers for VisualScriptVariableSet
      */
     private object __method_bind {
-      val getVariable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptVariableSet".cstr.ptr,
-            "get_variable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_variable" }
-        }
-      val setVariable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptVariableSet".cstr.ptr,
-            "set_variable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_variable" }
-        }}
+      val getVariable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptVariableSet".cstr.ptr,
+              "get_variable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_variable" }
+            }
+          }
+
+      val setVariable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptVariableSet".cstr.ptr,
+              "set_variable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_variable" }
+            }
+          }
+    }
   }
 }

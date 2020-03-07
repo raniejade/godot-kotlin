@@ -458,271 +458,347 @@ open class MeshDataTool(
      * Container for method_bind pointers for MeshDataTool
      */
     private object __method_bind {
-      val clear: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "clear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear" }
-        }
-      val commitToSurface: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "commit_to_surface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method commit_to_surface" }
-        }
-      val createFromSurface: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "create_from_surface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_from_surface" }
-        }
-      val getEdgeCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_edge_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edge_count" }
-        }
-      val getEdgeFaces: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_edge_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edge_faces" }
-        }
-      val getEdgeMeta: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_edge_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edge_meta" }
-        }
-      val getEdgeVertex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_edge_vertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edge_vertex" }
-        }
-      val getFaceCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_face_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_face_count" }
-        }
-      val getFaceEdge: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_face_edge".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_face_edge" }
-        }
-      val getFaceMeta: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_face_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_face_meta" }
-        }
-      val getFaceNormal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_face_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_face_normal" }
-        }
-      val getFaceVertex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_face_vertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_face_vertex" }
-        }
-      val getFormat: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_format".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_format" }
-        }
-      val getMaterial: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_material" }
-        }
-      val getVertex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex" }
-        }
-      val getVertexBones: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_bones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_bones" }
-        }
-      val getVertexColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_color" }
-        }
-      val getVertexCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_count" }
-        }
-      val getVertexEdges: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_edges".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_edges" }
-        }
-      val getVertexFaces: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_faces" }
-        }
-      val getVertexMeta: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_meta" }
-        }
-      val getVertexNormal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_normal" }
-        }
-      val getVertexTangent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_tangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_tangent" }
-        }
-      val getVertexUv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_uv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_uv" }
-        }
-      val getVertexUv2: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_uv2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_uv2" }
-        }
-      val getVertexWeights: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_weights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_weights" }
-        }
-      val setEdgeMeta: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_edge_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_edge_meta" }
-        }
-      val setFaceMeta: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_face_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_face_meta" }
-        }
-      val setMaterial: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_material" }
-        }
-      val setVertex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex" }
-        }
-      val setVertexBones: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_bones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_bones" }
-        }
-      val setVertexColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_color" }
-        }
-      val setVertexMeta: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_meta" }
-        }
-      val setVertexNormal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_normal" }
-        }
-      val setVertexTangent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_tangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_tangent" }
-        }
-      val setVertexUv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_uv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_uv" }
-        }
-      val setVertexUv2: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_uv2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_uv2" }
-        }
-      val setVertexWeights: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_weights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_weights" }
-        }}
+      val clear: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "clear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear" }
+            }
+          }
+
+      val commitToSurface: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "commit_to_surface".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method commit_to_surface" }
+            }
+          }
+
+      val createFromSurface: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "create_from_surface".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_from_surface" }
+            }
+          }
+
+      val getEdgeCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_edge_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_edge_count" }
+            }
+          }
+
+      val getEdgeFaces: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_edge_faces".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_edge_faces" }
+            }
+          }
+
+      val getEdgeMeta: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_edge_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_edge_meta" }
+            }
+          }
+
+      val getEdgeVertex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_edge_vertex".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_edge_vertex" }
+            }
+          }
+
+      val getFaceCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_face_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_face_count" }
+            }
+          }
+
+      val getFaceEdge: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_face_edge".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_face_edge" }
+            }
+          }
+
+      val getFaceMeta: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_face_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_face_meta" }
+            }
+          }
+
+      val getFaceNormal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_face_normal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_face_normal" }
+            }
+          }
+
+      val getFaceVertex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_face_vertex".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_face_vertex" }
+            }
+          }
+
+      val getFormat: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_format".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_format" }
+            }
+          }
+
+      val getMaterial: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_material".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_material" }
+            }
+          }
+
+      val getVertex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex" }
+            }
+          }
+
+      val getVertexBones: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_bones".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_bones" }
+            }
+          }
+
+      val getVertexColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_color" }
+            }
+          }
+
+      val getVertexCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_count" }
+            }
+          }
+
+      val getVertexEdges: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_edges".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_edges" }
+            }
+          }
+
+      val getVertexFaces: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_faces".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_faces" }
+            }
+          }
+
+      val getVertexMeta: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_meta" }
+            }
+          }
+
+      val getVertexNormal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_normal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_normal" }
+            }
+          }
+
+      val getVertexTangent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_tangent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_tangent" }
+            }
+          }
+
+      val getVertexUv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_uv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_uv" }
+            }
+          }
+
+      val getVertexUv2: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_uv2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_uv2" }
+            }
+          }
+
+      val getVertexWeights: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "get_vertex_weights".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertex_weights" }
+            }
+          }
+
+      val setEdgeMeta: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_edge_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_edge_meta" }
+            }
+          }
+
+      val setFaceMeta: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_face_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_face_meta" }
+            }
+          }
+
+      val setMaterial: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_material".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_material" }
+            }
+          }
+
+      val setVertex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_vertex".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertex" }
+            }
+          }
+
+      val setVertexBones: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_vertex_bones".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertex_bones" }
+            }
+          }
+
+      val setVertexColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_vertex_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertex_color" }
+            }
+          }
+
+      val setVertexMeta: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_vertex_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertex_meta" }
+            }
+          }
+
+      val setVertexNormal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_vertex_normal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertex_normal" }
+            }
+          }
+
+      val setVertexTangent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_vertex_tangent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertex_tangent" }
+            }
+          }
+
+      val setVertexUv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_vertex_uv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertex_uv" }
+            }
+          }
+
+      val setVertexUv2: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_vertex_uv2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertex_uv2" }
+            }
+          }
+
+      val setVertexWeights: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
+              "set_vertex_weights".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertex_weights" }
+            }
+          }
+    }
   }
 }

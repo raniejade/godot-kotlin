@@ -99,29 +99,41 @@ open class RayShape2D(
      * Container for method_bind pointers for RayShape2D
      */
     private object __method_bind {
-      val getLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
-            "get_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_length" }
-        }
-      val getSlipsOnSlope: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
-            "get_slips_on_slope".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slips_on_slope" }
-        }
-      val setLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
-            "set_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_length" }
-        }
-      val setSlipsOnSlope: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
-            "set_slips_on_slope".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_slips_on_slope" }
-        }}
+      val getLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
+              "get_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_length" }
+            }
+          }
+
+      val getSlipsOnSlope: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
+              "get_slips_on_slope".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_slips_on_slope" }
+            }
+          }
+
+      val setLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
+              "set_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_length" }
+            }
+          }
+
+      val setSlipsOnSlope: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
+              "set_slips_on_slope".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_slips_on_slope" }
+            }
+          }
+    }
   }
 }

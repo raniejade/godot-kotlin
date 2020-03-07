@@ -152,42 +152,60 @@ open class Shape2D(
      * Container for method_bind pointers for Shape2D
      */
     private object __method_bind {
-      val collide: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "collide".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method collide" }
-        }
-      val collideAndGetContacts: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "collide_and_get_contacts".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method collide_and_get_contacts" }
-        }
-      val collideWithMotion: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "collide_with_motion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method collide_with_motion" }
-        }
-      val collideWithMotionAndGetContacts: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "collide_with_motion_and_get_contacts".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method collide_with_motion_and_get_contacts" }
-        }
-      val getCustomSolverBias: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "get_custom_solver_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_custom_solver_bias" }
-        }
-      val setCustomSolverBias: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "set_custom_solver_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_custom_solver_bias" }
-        }}
+      val collide: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
+              "collide".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method collide" }
+            }
+          }
+
+      val collideAndGetContacts: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
+              "collide_and_get_contacts".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method collide_and_get_contacts" }
+            }
+          }
+
+      val collideWithMotion: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
+              "collide_with_motion".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method collide_with_motion" }
+            }
+          }
+
+      val collideWithMotionAndGetContacts: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
+              "collide_with_motion_and_get_contacts".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method collide_with_motion_and_get_contacts" }
+            }
+          }
+
+      val getCustomSolverBias: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
+              "get_custom_solver_bias".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_custom_solver_bias" }
+            }
+          }
+
+      val setCustomSolverBias: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
+              "set_custom_solver_bias".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_custom_solver_bias" }
+            }
+          }
+    }
   }
 }

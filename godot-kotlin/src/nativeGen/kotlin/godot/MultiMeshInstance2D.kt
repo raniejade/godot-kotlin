@@ -134,47 +134,59 @@ open class MultiMeshInstance2D(
      * Container for method_bind pointers for MultiMeshInstance2D
      */
     private object __method_bind {
-      val getMultimesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "get_multimesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_multimesh" }
-        }
-      val getNormalMap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "get_normal_map".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_normal_map" }
-        }
-      val getTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "get_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture" }
-        }
-      val setMultimesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "set_multimesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_multimesh" }
-        }
-      val setNormalMap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "set_normal_map".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_normal_map" }
-        }
-      val setTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "set_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture" }
-        }}
+      val getMultimesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
+              "get_multimesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_multimesh" }
+            }
+          }
+
+      val getNormalMap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
+              "get_normal_map".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_normal_map" }
+            }
+          }
+
+      val getTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
+              "get_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture" }
+            }
+          }
+
+      val setMultimesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
+              "set_multimesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_multimesh" }
+            }
+          }
+
+      val setNormalMap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
+              "set_normal_map".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_normal_map" }
+            }
+          }
+
+      val setTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
+              "set_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture" }
+            }
+          }
+    }
   }
 }

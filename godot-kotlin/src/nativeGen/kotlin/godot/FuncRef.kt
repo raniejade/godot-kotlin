@@ -91,35 +91,50 @@ open class FuncRef(
      * Container for method_bind pointers for FuncRef
      */
     private object __method_bind {
-      val callFunc: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
-            "call_func".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method call_func" }
-        }
-      val callFuncv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
-            "call_funcv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method call_funcv" }
-        }
-      val isValid: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
-            "is_valid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_valid" }
-        }
-      val setFunction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
-            "set_function".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_function" }
-        }
-      val setInstance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
-            "set_instance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_instance" }
-        }}
+      val callFunc: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
+              "call_func".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method call_func" }
+            }
+          }
+
+      val callFuncv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
+              "call_funcv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method call_funcv" }
+            }
+          }
+
+      val isValid: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
+              "is_valid".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_valid" }
+            }
+          }
+
+      val setFunction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
+              "set_function".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_function" }
+            }
+          }
+
+      val setInstance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
+              "set_instance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_instance" }
+            }
+          }
+    }
   }
 }

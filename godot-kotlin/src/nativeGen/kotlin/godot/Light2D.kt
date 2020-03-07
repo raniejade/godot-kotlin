@@ -660,257 +660,383 @@ open class Light2D(
      * Container for method_bind pointers for Light2D
      */
     private object __method_bind {
-      val getColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color" }
-        }
-      val getEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_energy" }
-        }
-      val getHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_height" }
-        }
-      val getItemCullMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_item_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_item_cull_mask" }
-        }
-      val getItemShadowCullMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_item_shadow_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_item_shadow_cull_mask" }
-        }
-      val getLayerRangeMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_layer_range_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_layer_range_max" }
-        }
-      val getLayerRangeMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_layer_range_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_layer_range_min" }
-        }
-      val getMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mode" }
-        }
-      val getShadowBufferSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_shadow_buffer_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shadow_buffer_size" }
-        }
-      val getShadowColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_shadow_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shadow_color" }
-        }
-      val getShadowFilter: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_shadow_filter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shadow_filter" }
-        }
-      val getShadowGradientLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_shadow_gradient_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shadow_gradient_length" }
-        }
-      val getShadowSmooth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_shadow_smooth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shadow_smooth" }
-        }
-      val getTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture" }
-        }
-      val getTextureOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_texture_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture_offset" }
-        }
-      val getTextureScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_texture_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture_scale" }
-        }
-      val getZRangeMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_z_range_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_z_range_max" }
-        }
-      val getZRangeMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "get_z_range_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_z_range_min" }
-        }
-      val isEditorOnly: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "is_editor_only".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_editor_only" }
-        }
-      val isEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "is_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_enabled" }
-        }
-      val isShadowEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "is_shadow_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_shadow_enabled" }
-        }
-      val setColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_color" }
-        }
-      val setEditorOnly: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_editor_only".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_editor_only" }
-        }
-      val setEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enabled" }
-        }
-      val setEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_energy" }
-        }
-      val setHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_height" }
-        }
-      val setItemCullMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_item_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_item_cull_mask" }
-        }
-      val setItemShadowCullMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_item_shadow_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_item_shadow_cull_mask" }
-        }
-      val setLayerRangeMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_layer_range_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_layer_range_max" }
-        }
-      val setLayerRangeMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_layer_range_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_layer_range_min" }
-        }
-      val setMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mode" }
-        }
-      val setShadowBufferSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_shadow_buffer_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shadow_buffer_size" }
-        }
-      val setShadowColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_shadow_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shadow_color" }
-        }
-      val setShadowEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_shadow_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shadow_enabled" }
-        }
-      val setShadowFilter: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_shadow_filter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shadow_filter" }
-        }
-      val setShadowGradientLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_shadow_gradient_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shadow_gradient_length" }
-        }
-      val setShadowSmooth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_shadow_smooth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shadow_smooth" }
-        }
-      val setTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture" }
-        }
-      val setTextureOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_texture_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture_offset" }
-        }
-      val setTextureScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_texture_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture_scale" }
-        }
-      val setZRangeMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_z_range_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_z_range_max" }
-        }
-      val setZRangeMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
-            "set_z_range_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_z_range_min" }
-        }}
+      val getColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_color" }
+            }
+          }
+
+      val getEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_energy" }
+            }
+          }
+
+      val getHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_height" }
+            }
+          }
+
+      val getItemCullMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_item_cull_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_item_cull_mask" }
+            }
+          }
+
+      val getItemShadowCullMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_item_shadow_cull_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_item_shadow_cull_mask" }
+            }
+          }
+
+      val getLayerRangeMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_layer_range_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_layer_range_max" }
+            }
+          }
+
+      val getLayerRangeMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_layer_range_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_layer_range_min" }
+            }
+          }
+
+      val getMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mode" }
+            }
+          }
+
+      val getShadowBufferSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_shadow_buffer_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_shadow_buffer_size" }
+            }
+          }
+
+      val getShadowColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_shadow_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_shadow_color" }
+            }
+          }
+
+      val getShadowFilter: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_shadow_filter".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_shadow_filter" }
+            }
+          }
+
+      val getShadowGradientLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_shadow_gradient_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_shadow_gradient_length" }
+            }
+          }
+
+      val getShadowSmooth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_shadow_smooth".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_shadow_smooth" }
+            }
+          }
+
+      val getTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture" }
+            }
+          }
+
+      val getTextureOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_texture_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture_offset" }
+            }
+          }
+
+      val getTextureScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_texture_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture_scale" }
+            }
+          }
+
+      val getZRangeMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_z_range_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_z_range_max" }
+            }
+          }
+
+      val getZRangeMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "get_z_range_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_z_range_min" }
+            }
+          }
+
+      val isEditorOnly: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "is_editor_only".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_editor_only" }
+            }
+          }
+
+      val isEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "is_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_enabled" }
+            }
+          }
+
+      val isShadowEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "is_shadow_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_shadow_enabled" }
+            }
+          }
+
+      val setColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_color" }
+            }
+          }
+
+      val setEditorOnly: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_editor_only".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_editor_only" }
+            }
+          }
+
+      val setEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_enabled" }
+            }
+          }
+
+      val setEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_energy" }
+            }
+          }
+
+      val setHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_height" }
+            }
+          }
+
+      val setItemCullMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_item_cull_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_item_cull_mask" }
+            }
+          }
+
+      val setItemShadowCullMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_item_shadow_cull_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_item_shadow_cull_mask" }
+            }
+          }
+
+      val setLayerRangeMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_layer_range_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_layer_range_max" }
+            }
+          }
+
+      val setLayerRangeMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_layer_range_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_layer_range_min" }
+            }
+          }
+
+      val setMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mode" }
+            }
+          }
+
+      val setShadowBufferSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_shadow_buffer_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_shadow_buffer_size" }
+            }
+          }
+
+      val setShadowColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_shadow_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_shadow_color" }
+            }
+          }
+
+      val setShadowEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_shadow_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_shadow_enabled" }
+            }
+          }
+
+      val setShadowFilter: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_shadow_filter".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_shadow_filter" }
+            }
+          }
+
+      val setShadowGradientLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_shadow_gradient_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_shadow_gradient_length" }
+            }
+          }
+
+      val setShadowSmooth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_shadow_smooth".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_shadow_smooth" }
+            }
+          }
+
+      val setTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture" }
+            }
+          }
+
+      val setTextureOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_texture_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture_offset" }
+            }
+          }
+
+      val setTextureScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_texture_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture_scale" }
+            }
+          }
+
+      val setZRangeMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_z_range_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_z_range_max" }
+            }
+          }
+
+      val setZRangeMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light2D".cstr.ptr,
+              "set_z_range_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_z_range_min" }
+            }
+          }
+    }
   }
 }

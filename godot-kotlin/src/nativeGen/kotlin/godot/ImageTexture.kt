@@ -188,75 +188,95 @@ open class ImageTexture(
      * Container for method_bind pointers for ImageTexture
      */
     private object __method_bind {
-      val create: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "create".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create" }
-        }
-      val createFromImage: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "create_from_image".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_from_image" }
-        }
-      val getFormat: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "get_format".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_format" }
-        }
-      val getLossyStorageQuality: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "get_lossy_storage_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_lossy_storage_quality" }
-        }
-      val getStorage: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "get_storage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_storage" }
-        }
-      val load: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "load".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method load" }
-        }
-      val setData: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "set_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_data" }
-        }
-      val setLossyStorageQuality: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "set_lossy_storage_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_lossy_storage_quality" }
-        }
-      val setSizeOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "set_size_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size_override" }
-        }
-      val setStorage: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "set_storage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_storage" }
-        }}
+      val create: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
+              "create".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create" }
+            }
+          }
+
+      val createFromImage: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
+              "create_from_image".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_from_image" }
+            }
+          }
+
+      val getFormat: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
+              "get_format".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_format" }
+            }
+          }
+
+      val getLossyStorageQuality: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
+              "get_lossy_storage_quality".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_lossy_storage_quality" }
+            }
+          }
+
+      val getStorage: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
+              "get_storage".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_storage" }
+            }
+          }
+
+      val load: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
+              "load".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load" }
+            }
+          }
+
+      val setData: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
+              "set_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_data" }
+            }
+          }
+
+      val setLossyStorageQuality: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
+              "set_lossy_storage_quality".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_lossy_storage_quality" }
+            }
+          }
+
+      val setSizeOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
+              "set_size_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_size_override" }
+            }
+          }
+
+      val setStorage: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
+              "set_storage".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_storage" }
+            }
+          }
+    }
   }
 }

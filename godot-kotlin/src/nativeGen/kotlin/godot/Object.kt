@@ -888,245 +888,325 @@ open class Object(
      * Container for method_bind pointers for Object
      */
     private object __method_bind {
-      val addUserSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "add_user_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_user_signal" }
-        }
-      val call: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "call".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method call" }
-        }
-      val callDeferred: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "call_deferred".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method call_deferred" }
-        }
-      val callv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "callv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method callv" }
-        }
-      val canTranslateMessages: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "can_translate_messages".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method can_translate_messages" }
-        }
-      val connect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "connect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connect" }
-        }
-      val disconnect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "disconnect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method disconnect" }
-        }
-      val emitSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "emit_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method emit_signal" }
-        }
-      val free: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "free".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method free" }
-        }
-      val get: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get" }
-        }
-      val getClass: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_class".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_class" }
-        }
-      val getIncomingConnections: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_incoming_connections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_incoming_connections" }
-        }
-      val getIndexed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_indexed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_indexed" }
-        }
-      val getInstanceId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_instance_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_instance_id" }
-        }
-      val getMeta: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_meta" }
-        }
-      val getMetaList: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_meta_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_meta_list" }
-        }
-      val getMethodList: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_method_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_method_list" }
-        }
-      val getPropertyList: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_property_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_property_list" }
-        }
-      val getScript: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_script".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_script" }
-        }
-      val getSignalConnectionList: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_signal_connection_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_signal_connection_list" }
-        }
-      val getSignalList: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "get_signal_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_signal_list" }
-        }
-      val hasMeta: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "has_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_meta" }
-        }
-      val hasMethod: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "has_method".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_method" }
-        }
-      val hasUserSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "has_user_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_user_signal" }
-        }
-      val isBlockingSignals: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "is_blocking_signals".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_blocking_signals" }
-        }
-      val isClass: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "is_class".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_class" }
-        }
-      val isConnected: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "is_connected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_connected" }
-        }
-      val isQueuedForDeletion: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "is_queued_for_deletion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_queued_for_deletion" }
-        }
-      val notification: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "notification".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method notification" }
-        }
-      val propertyListChangedNotify: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "property_list_changed_notify".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method property_list_changed_notify" }
-        }
-      val removeMeta: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "remove_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_meta" }
-        }
-      val set: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "set".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set" }
-        }
-      val setBlockSignals: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "set_block_signals".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_block_signals" }
-        }
-      val setDeferred: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "set_deferred".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_deferred" }
-        }
-      val setIndexed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "set_indexed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_indexed" }
-        }
-      val setMessageTranslation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "set_message_translation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_message_translation" }
-        }
-      val setMeta: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "set_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_meta" }
-        }
-      val setScript: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "set_script".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_script" }
-        }
-      val toString: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "to_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method to_string" }
-        }
-      val tr: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "tr".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tr" }
-        }}
+      val addUserSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "add_user_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_user_signal" }
+            }
+          }
+
+      val call: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "call".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method call" }
+            }
+          }
+
+      val callDeferred: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "call_deferred".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method call_deferred" }
+            }
+          }
+
+      val callv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "callv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method callv" }
+            }
+          }
+
+      val canTranslateMessages: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "can_translate_messages".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method can_translate_messages" }
+            }
+          }
+
+      val connect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "connect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method connect" }
+            }
+          }
+
+      val disconnect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "disconnect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method disconnect" }
+            }
+          }
+
+      val emitSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "emit_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method emit_signal" }
+            }
+          }
+
+      val free: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "free".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method free" }
+            }
+          }
+
+      val get: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get" }
+            }
+          }
+
+      val getClass: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_class".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_class" }
+            }
+          }
+
+      val getIncomingConnections: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_incoming_connections".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_incoming_connections" }
+            }
+          }
+
+      val getIndexed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_indexed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_indexed" }
+            }
+          }
+
+      val getInstanceId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_instance_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_instance_id" }
+            }
+          }
+
+      val getMeta: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_meta" }
+            }
+          }
+
+      val getMetaList: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_meta_list".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_meta_list" }
+            }
+          }
+
+      val getMethodList: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_method_list".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_method_list" }
+            }
+          }
+
+      val getPropertyList: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_property_list".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_property_list" }
+            }
+          }
+
+      val getScript: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_script".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_script" }
+            }
+          }
+
+      val getSignalConnectionList: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_signal_connection_list".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_signal_connection_list" }
+            }
+          }
+
+      val getSignalList: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "get_signal_list".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_signal_list" }
+            }
+          }
+
+      val hasMeta: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "has_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_meta" }
+            }
+          }
+
+      val hasMethod: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "has_method".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_method" }
+            }
+          }
+
+      val hasUserSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "has_user_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_user_signal" }
+            }
+          }
+
+      val isBlockingSignals: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "is_blocking_signals".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_blocking_signals" }
+            }
+          }
+
+      val isClass: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "is_class".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_class" }
+            }
+          }
+
+      val isConnected: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "is_connected".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_connected" }
+            }
+          }
+
+      val isQueuedForDeletion: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "is_queued_for_deletion".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_queued_for_deletion" }
+            }
+          }
+
+      val notification: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "notification".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method notification" }
+            }
+          }
+
+      val propertyListChangedNotify: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "property_list_changed_notify".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method property_list_changed_notify" }
+            }
+          }
+
+      val removeMeta: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "remove_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_meta" }
+            }
+          }
+
+      val set: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "set".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set" }
+            }
+          }
+
+      val setBlockSignals: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "set_block_signals".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_block_signals" }
+            }
+          }
+
+      val setDeferred: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "set_deferred".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_deferred" }
+            }
+          }
+
+      val setIndexed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "set_indexed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_indexed" }
+            }
+          }
+
+      val setMessageTranslation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "set_message_translation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_message_translation" }
+            }
+          }
+
+      val setMeta: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "set_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_meta" }
+            }
+          }
+
+      val setScript: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "set_script".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_script" }
+            }
+          }
+
+      val toString: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "to_string".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method to_string" }
+            }
+          }
+
+      val tr: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
+              "tr".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method tr" }
+            }
+          }
+    }
   }
 }

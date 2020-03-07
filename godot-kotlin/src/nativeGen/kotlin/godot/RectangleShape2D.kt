@@ -85,19 +85,23 @@ open class RectangleShape2D(
      * Container for method_bind pointers for RectangleShape2D
      */
     private object __method_bind {
-      val getExtents: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RectangleShape2D".cstr.ptr,
-            "get_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_extents" }
-        }
-      val setExtents: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RectangleShape2D".cstr.ptr,
-            "set_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_extents" }
-        }}
+      val getExtents: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RectangleShape2D".cstr.ptr,
+              "get_extents".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_extents" }
+            }
+          }
+
+      val setExtents: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RectangleShape2D".cstr.ptr,
+              "set_extents".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_extents" }
+            }
+          }
+    }
   }
 }

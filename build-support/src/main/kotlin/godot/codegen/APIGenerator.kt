@@ -477,15 +477,24 @@ class APIGenerator {
       .filter { method -> !method.isVirtual }
       .map { method ->
         PropertySpec.builder(method.name, METHOD_BIND_TYPE)
-          .getter(FunSpec.getterBuilder()
-            .addCode("""
-                return Allocator.allocationScope {
+          .delegate("""
+              lazy {
+                Allocator.allocationScope {
                   val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)(%S.cstr.ptr, %S.cstr.ptr)
                   requireNotNull(ptr) { %S }
                 }
+              }
               """.trimIndent(), cls.rawName, method.rawName, "No method_bind found for method ${method.rawName}")
-            .build()
-          ).build()
+          .build()
+//          .getter(FunSpec.getterBuilder()
+//            .addCode("""
+//                return Allocator.allocationScope {
+//                  val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)(%S.cstr.ptr, %S.cstr.ptr)
+//                  requireNotNull(ptr) { %S }
+//                }
+//              """.trimIndent(), cls.rawName, method.rawName, "No method_bind found for method ${method.rawName}")
+//            .build()
+//          ).build()
       }
     builder.addProperties(methodBindProperties)
 

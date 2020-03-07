@@ -239,113 +239,167 @@ open class Directory(
      * Container for method_bind pointers for Directory
      */
     private object __method_bind {
-      val changeDir: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "change_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method change_dir" }
-        }
-      val copy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "copy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method copy" }
-        }
-      val currentIsDir: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "current_is_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method current_is_dir" }
-        }
-      val dirExists: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "dir_exists".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method dir_exists" }
-        }
-      val fileExists: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "file_exists".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method file_exists" }
-        }
-      val getCurrentDir: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_current_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_dir" }
-        }
-      val getCurrentDrive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_current_drive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_drive" }
-        }
-      val getDrive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_drive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_drive" }
-        }
-      val getDriveCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_drive_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_drive_count" }
-        }
-      val getNext: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_next".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_next" }
-        }
-      val getSpaceLeft: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_space_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_space_left" }
-        }
-      val listDirBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "list_dir_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method list_dir_begin" }
-        }
-      val listDirEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "list_dir_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method list_dir_end" }
-        }
-      val makeDir: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "make_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_dir" }
-        }
-      val makeDirRecursive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "make_dir_recursive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_dir_recursive" }
-        }
-      val open: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "open".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method open" }
-        }
-      val remove: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "remove".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove" }
-        }
-      val rename: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "rename".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rename" }
-        }}
+      val changeDir: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "change_dir".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method change_dir" }
+            }
+          }
+
+      val copy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "copy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method copy" }
+            }
+          }
+
+      val currentIsDir: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "current_is_dir".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method current_is_dir" }
+            }
+          }
+
+      val dirExists: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "dir_exists".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method dir_exists" }
+            }
+          }
+
+      val fileExists: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "file_exists".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method file_exists" }
+            }
+          }
+
+      val getCurrentDir: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "get_current_dir".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_current_dir" }
+            }
+          }
+
+      val getCurrentDrive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "get_current_drive".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_current_drive" }
+            }
+          }
+
+      val getDrive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "get_drive".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_drive" }
+            }
+          }
+
+      val getDriveCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "get_drive_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_drive_count" }
+            }
+          }
+
+      val getNext: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "get_next".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_next" }
+            }
+          }
+
+      val getSpaceLeft: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "get_space_left".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_space_left" }
+            }
+          }
+
+      val listDirBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "list_dir_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method list_dir_begin" }
+            }
+          }
+
+      val listDirEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "list_dir_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method list_dir_end" }
+            }
+          }
+
+      val makeDir: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "make_dir".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method make_dir" }
+            }
+          }
+
+      val makeDirRecursive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "make_dir_recursive".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method make_dir_recursive" }
+            }
+          }
+
+      val open: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "open".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method open" }
+            }
+          }
+
+      val remove: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "remove".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove" }
+            }
+          }
+
+      val rename: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
+              "rename".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method rename" }
+            }
+          }
+    }
   }
 }

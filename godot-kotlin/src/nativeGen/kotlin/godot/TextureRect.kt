@@ -211,75 +211,95 @@ open class TextureRect(
      * Container for method_bind pointers for TextureRect
      */
     private object __method_bind {
-      val getStretchMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "get_stretch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stretch_mode" }
-        }
-      val getTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "get_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture" }
-        }
-      val hasExpand: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "has_expand".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_expand" }
-        }
-      val isFlippedH: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "is_flipped_h".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_flipped_h" }
-        }
-      val isFlippedV: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "is_flipped_v".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_flipped_v" }
-        }
-      val setExpand: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "set_expand".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expand" }
-        }
-      val setFlipH: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "set_flip_h".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flip_h" }
-        }
-      val setFlipV: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "set_flip_v".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flip_v" }
-        }
-      val setStretchMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "set_stretch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_stretch_mode" }
-        }
-      val setTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "set_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture" }
-        }}
+      val getStretchMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
+              "get_stretch_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_stretch_mode" }
+            }
+          }
+
+      val getTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
+              "get_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture" }
+            }
+          }
+
+      val hasExpand: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
+              "has_expand".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_expand" }
+            }
+          }
+
+      val isFlippedH: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
+              "is_flipped_h".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_flipped_h" }
+            }
+          }
+
+      val isFlippedV: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
+              "is_flipped_v".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_flipped_v" }
+            }
+          }
+
+      val setExpand: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
+              "set_expand".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_expand" }
+            }
+          }
+
+      val setFlipH: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
+              "set_flip_h".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_flip_h" }
+            }
+          }
+
+      val setFlipV: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
+              "set_flip_v".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_flip_v" }
+            }
+          }
+
+      val setStretchMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
+              "set_stretch_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_stretch_mode" }
+            }
+          }
+
+      val setTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
+              "set_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture" }
+            }
+          }
+    }
   }
 }

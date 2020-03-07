@@ -193,82 +193,104 @@ open class RemoteTransform2D(
      * Container for method_bind pointers for RemoteTransform2D
      */
     private object __method_bind {
-      val forceUpdateCache: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "force_update_cache".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method force_update_cache" }
-        }
-      val getRemoteNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "get_remote_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_remote_node" }
-        }
-      val getUpdatePosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "get_update_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_update_position" }
-        }
-      val getUpdateRotation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "get_update_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_update_rotation" }
-        }
-      val getUpdateScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "get_update_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_update_scale" }
-        }
-      val getUseGlobalCoordinates: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "get_use_global_coordinates".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_use_global_coordinates" }
-        }
-      val setRemoteNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "set_remote_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_remote_node" }
-        }
-      val setUpdatePosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "set_update_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_update_position" }
-        }
-      val setUpdateRotation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "set_update_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_update_rotation" }
-        }
-      val setUpdateScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "set_update_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_update_scale" }
-        }
-      val setUseGlobalCoordinates: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
-            "set_use_global_coordinates".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_global_coordinates" }
-        }}
+      val forceUpdateCache: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "force_update_cache".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method force_update_cache" }
+            }
+          }
+
+      val getRemoteNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "get_remote_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_remote_node" }
+            }
+          }
+
+      val getUpdatePosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "get_update_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_update_position" }
+            }
+          }
+
+      val getUpdateRotation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "get_update_rotation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_update_rotation" }
+            }
+          }
+
+      val getUpdateScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "get_update_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_update_scale" }
+            }
+          }
+
+      val getUseGlobalCoordinates: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "get_use_global_coordinates".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_use_global_coordinates" }
+            }
+          }
+
+      val setRemoteNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "set_remote_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_remote_node" }
+            }
+          }
+
+      val setUpdatePosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "set_update_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_update_position" }
+            }
+          }
+
+      val setUpdateRotation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "set_update_rotation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_update_rotation" }
+            }
+          }
+
+      val setUpdateScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "set_update_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_update_scale" }
+            }
+          }
+
+      val setUseGlobalCoordinates: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform2D".cstr.ptr,
+              "set_use_global_coordinates".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_use_global_coordinates" }
+            }
+          }
+    }
   }
 }

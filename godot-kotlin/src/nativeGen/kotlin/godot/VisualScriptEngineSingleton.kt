@@ -74,19 +74,23 @@ open class VisualScriptEngineSingleton(
      * Container for method_bind pointers for VisualScriptEngineSingleton
      */
     private object __method_bind {
-      val getSingleton: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEngineSingleton".cstr.ptr,
-            "get_singleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_singleton" }
-        }
-      val setSingleton: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEngineSingleton".cstr.ptr,
-            "set_singleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_singleton" }
-        }}
+      val getSingleton: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEngineSingleton".cstr.ptr,
+              "get_singleton".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_singleton" }
+            }
+          }
+
+      val setSingleton: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEngineSingleton".cstr.ptr,
+              "set_singleton".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_singleton" }
+            }
+          }
+    }
   }
 }

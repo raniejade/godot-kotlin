@@ -137,47 +137,59 @@ open class VisualScriptComment(
      * Container for method_bind pointers for VisualScriptComment
      */
     private object __method_bind {
-      val getDescription: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "get_description".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_description" }
-        }
-      val getSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
-        }
-      val getTitle: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "get_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_title" }
-        }
-      val setDescription: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "set_description".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_description" }
-        }
-      val setSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
-        }
-      val setTitle: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "set_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_title" }
-        }}
+      val getDescription: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
+              "get_description".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_description" }
+            }
+          }
+
+      val getSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
+              "get_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_size" }
+            }
+          }
+
+      val getTitle: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
+              "get_title".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_title" }
+            }
+          }
+
+      val setDescription: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
+              "set_description".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_description" }
+            }
+          }
+
+      val setSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
+              "set_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_size" }
+            }
+          }
+
+      val setTitle: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
+              "set_title".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_title" }
+            }
+          }
+    }
   }
 }

@@ -95,19 +95,23 @@ open class VisualShaderNodeVectorDerivativeFunc(
      * Container for method_bind pointers for VisualShaderNodeVectorDerivativeFunc
      */
     private object __method_bind {
-      val getFunction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVectorDerivativeFunc".cstr.ptr,
-            "get_function".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_function" }
-        }
-      val setFunction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVectorDerivativeFunc".cstr.ptr,
-            "set_function".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_function" }
-        }}
+      val getFunction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVectorDerivativeFunc".cstr.ptr,
+              "get_function".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_function" }
+            }
+          }
+
+      val setFunction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVectorDerivativeFunc".cstr.ptr,
+              "set_function".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_function" }
+            }
+          }
+    }
   }
 }

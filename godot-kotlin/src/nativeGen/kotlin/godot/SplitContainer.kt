@@ -151,54 +151,68 @@ open class SplitContainer(
      * Container for method_bind pointers for SplitContainer
      */
     private object __method_bind {
-      val clampSplitOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "clamp_split_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clamp_split_offset" }
-        }
-      val getDraggerVisibility: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "get_dragger_visibility".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dragger_visibility" }
-        }
-      val getSplitOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "get_split_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_split_offset" }
-        }
-      val isCollapsed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "is_collapsed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_collapsed" }
-        }
-      val setCollapsed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "set_collapsed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collapsed" }
-        }
-      val setDraggerVisibility: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "set_dragger_visibility".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dragger_visibility" }
-        }
-      val setSplitOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "set_split_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_split_offset" }
-        }}
+      val clampSplitOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
+              "clamp_split_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clamp_split_offset" }
+            }
+          }
+
+      val getDraggerVisibility: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
+              "get_dragger_visibility".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_dragger_visibility" }
+            }
+          }
+
+      val getSplitOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
+              "get_split_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_split_offset" }
+            }
+          }
+
+      val isCollapsed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
+              "is_collapsed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_collapsed" }
+            }
+          }
+
+      val setCollapsed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
+              "set_collapsed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collapsed" }
+            }
+          }
+
+      val setDraggerVisibility: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
+              "set_dragger_visibility".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_dragger_visibility" }
+            }
+          }
+
+      val setSplitOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
+              "set_split_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_split_offset" }
+            }
+          }
+    }
   }
 }

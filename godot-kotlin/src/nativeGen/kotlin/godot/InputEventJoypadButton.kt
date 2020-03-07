@@ -116,40 +116,50 @@ open class InputEventJoypadButton(
      * Container for method_bind pointers for InputEventJoypadButton
      */
     private object __method_bind {
-      val getButtonIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
-            "get_button_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_button_index" }
-        }
-      val getPressure: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
-            "get_pressure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pressure" }
-        }
-      val setButtonIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
-            "set_button_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_button_index" }
-        }
-      val setPressed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
-            "set_pressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
-        }
-      val setPressure: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
-            "set_pressure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pressure" }
-        }}
+      val getButtonIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
+              "get_button_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_button_index" }
+            }
+          }
+
+      val getPressure: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
+              "get_pressure".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_pressure" }
+            }
+          }
+
+      val setButtonIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
+              "set_button_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_button_index" }
+            }
+          }
+
+      val setPressed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
+              "set_pressed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pressed" }
+            }
+          }
+
+      val setPressure: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
+              "set_pressure".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pressure" }
+            }
+          }
+    }
   }
 }

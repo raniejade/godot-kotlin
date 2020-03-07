@@ -100,40 +100,50 @@ open class SpatialVelocityTracker(
      * Container for method_bind pointers for SpatialVelocityTracker
      */
     private object __method_bind {
-      val getTrackedLinearVelocity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-            "get_tracked_linear_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tracked_linear_velocity" }
-        }
-      val isTrackingPhysicsStep: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-            "is_tracking_physics_step".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_tracking_physics_step" }
-        }
-      val reset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-            "reset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reset" }
-        }
-      val setTrackPhysicsStep: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-            "set_track_physics_step".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_track_physics_step" }
-        }
-      val updatePosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-            "update_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method update_position" }
-        }}
+      val getTrackedLinearVelocity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
+              "get_tracked_linear_velocity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tracked_linear_velocity" }
+            }
+          }
+
+      val isTrackingPhysicsStep: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
+              "is_tracking_physics_step".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_tracking_physics_step" }
+            }
+          }
+
+      val reset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
+              "reset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method reset" }
+            }
+          }
+
+      val setTrackPhysicsStep: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
+              "set_track_physics_step".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_track_physics_step" }
+            }
+          }
+
+      val updatePosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
+              "update_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method update_position" }
+            }
+          }
+    }
   }
 }

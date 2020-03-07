@@ -200,75 +200,95 @@ open class AudioEffectDistortion(
      * Container for method_bind pointers for AudioEffectDistortion
      */
     private object __method_bind {
-      val getDrive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
-            "get_drive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_drive" }
-        }
-      val getKeepHfHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
-            "get_keep_hf_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_keep_hf_hz" }
-        }
-      val getMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
-            "get_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mode" }
-        }
-      val getPostGain: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
-            "get_post_gain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_post_gain" }
-        }
-      val getPreGain: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
-            "get_pre_gain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pre_gain" }
-        }
-      val setDrive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
-            "set_drive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_drive" }
-        }
-      val setKeepHfHz: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
-            "set_keep_hf_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_keep_hf_hz" }
-        }
-      val setMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
-            "set_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mode" }
-        }
-      val setPostGain: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
-            "set_post_gain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_post_gain" }
-        }
-      val setPreGain: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
-            "set_pre_gain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pre_gain" }
-        }}
+      val getDrive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
+              "get_drive".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_drive" }
+            }
+          }
+
+      val getKeepHfHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
+              "get_keep_hf_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_keep_hf_hz" }
+            }
+          }
+
+      val getMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
+              "get_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mode" }
+            }
+          }
+
+      val getPostGain: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
+              "get_post_gain".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_post_gain" }
+            }
+          }
+
+      val getPreGain: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
+              "get_pre_gain".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_pre_gain" }
+            }
+          }
+
+      val setDrive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
+              "set_drive".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_drive" }
+            }
+          }
+
+      val setKeepHfHz: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
+              "set_keep_hf_hz".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_keep_hf_hz" }
+            }
+          }
+
+      val setMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
+              "set_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mode" }
+            }
+          }
+
+      val setPostGain: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
+              "set_post_gain".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_post_gain" }
+            }
+          }
+
+      val setPreGain: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectDistortion".cstr.ptr,
+              "set_pre_gain".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pre_gain" }
+            }
+          }
+    }
   }
 }

@@ -224,29 +224,41 @@ open class HingeJoint(
      * Container for method_bind pointers for HingeJoint
      */
     private object __method_bind {
-      val getFlag: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "get_flag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_flag" }
-        }
-      val getParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_param" }
-        }
-      val setFlag: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "set_flag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flag" }
-        }
-      val setParam: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_param" }
-        }}
+      val getFlag: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
+              "get_flag".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_flag" }
+            }
+          }
+
+      val getParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
+              "get_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_param" }
+            }
+          }
+
+      val setFlag: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
+              "set_flag".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_flag" }
+            }
+          }
+
+      val setParam: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
+              "set_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_param" }
+            }
+          }
+    }
   }
 }

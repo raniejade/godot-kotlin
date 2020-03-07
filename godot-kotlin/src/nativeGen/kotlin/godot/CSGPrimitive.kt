@@ -67,19 +67,23 @@ open class CSGPrimitive(
      * Container for method_bind pointers for CSGPrimitive
      */
     private object __method_bind {
-      val isInvertingFaces: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
-            "is_inverting_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_inverting_faces" }
-        }
-      val setInvertFaces: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
-            "set_invert_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_invert_faces" }
-        }}
+      val isInvertingFaces: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
+              "is_inverting_faces".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_inverting_faces" }
+            }
+          }
+
+      val setInvertFaces: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
+              "set_invert_faces".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_invert_faces" }
+            }
+          }
+    }
   }
 }

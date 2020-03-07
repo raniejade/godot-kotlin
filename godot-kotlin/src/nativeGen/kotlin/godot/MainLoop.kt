@@ -165,41 +165,59 @@ open class MainLoop(
      * Container for method_bind pointers for MainLoop
      */
     private object __method_bind {
-      val finish: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-            "finish".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method finish" }
-        }
-      val idle: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-            "idle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method idle" }
-        }
-      val init: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-            "init".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method init" }
-        }
-      val inputEvent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-            "input_event".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method input_event" }
-        }
-      val inputText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-            "input_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method input_text" }
-        }
-      val iteration: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-            "iteration".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method iteration" }
-        }}
+      val finish: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
+              "finish".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method finish" }
+            }
+          }
+
+      val idle: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
+              "idle".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method idle" }
+            }
+          }
+
+      val init: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
+              "init".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method init" }
+            }
+          }
+
+      val inputEvent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
+              "input_event".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method input_event" }
+            }
+          }
+
+      val inputText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
+              "input_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method input_text" }
+            }
+          }
+
+      val iteration: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
+              "iteration".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method iteration" }
+            }
+          }
+    }
   }
 }

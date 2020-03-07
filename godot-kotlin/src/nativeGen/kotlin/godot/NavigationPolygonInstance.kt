@@ -105,33 +105,41 @@ open class NavigationPolygonInstance(
      * Container for method_bind pointers for NavigationPolygonInstance
      */
     private object __method_bind {
-      val getNavigationPolygon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "get_navigation_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_navigation_polygon" }
-        }
-      val isEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "is_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_enabled" }
-        }
-      val setEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "set_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enabled" }
-        }
-      val setNavigationPolygon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "set_navigation_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_navigation_polygon" }
-        }}
+      val getNavigationPolygon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
+              "get_navigation_polygon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_navigation_polygon" }
+            }
+          }
+
+      val isEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
+              "is_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_enabled" }
+            }
+          }
+
+      val setEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
+              "set_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_enabled" }
+            }
+          }
+
+      val setNavigationPolygon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
+              "set_navigation_polygon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_navigation_polygon" }
+            }
+          }
+    }
   }
 }

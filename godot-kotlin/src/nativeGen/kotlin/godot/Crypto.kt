@@ -94,23 +94,30 @@ open class Crypto(
      * Container for method_bind pointers for Crypto
      */
     private object __method_bind {
-      val generateRandomBytes: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Crypto".cstr.ptr,
-            "generate_random_bytes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generate_random_bytes" }
-        }
-      val generateRsa: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Crypto".cstr.ptr,
-            "generate_rsa".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generate_rsa" }
-        }
-      val generateSelfSignedCertificate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Crypto".cstr.ptr,
-            "generate_self_signed_certificate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generate_self_signed_certificate" }
-        }}
+      val generateRandomBytes: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Crypto".cstr.ptr,
+              "generate_random_bytes".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method generate_random_bytes" }
+            }
+          }
+
+      val generateRsa: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Crypto".cstr.ptr,
+              "generate_rsa".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method generate_rsa" }
+            }
+          }
+
+      val generateSelfSignedCertificate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Crypto".cstr.ptr,
+              "generate_self_signed_certificate".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method generate_self_signed_certificate" }
+            }
+          }
+    }
   }
 }

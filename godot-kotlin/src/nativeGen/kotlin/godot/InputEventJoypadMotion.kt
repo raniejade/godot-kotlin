@@ -100,33 +100,41 @@ open class InputEventJoypadMotion(
      * Container for method_bind pointers for InputEventJoypadMotion
      */
     private object __method_bind {
-      val getAxis: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
-            "get_axis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_axis" }
-        }
-      val getAxisValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
-            "get_axis_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_axis_value" }
-        }
-      val setAxis: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
-            "set_axis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_axis" }
-        }
-      val setAxisValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
-            "set_axis_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_axis_value" }
-        }}
+      val getAxis: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
+              "get_axis".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_axis" }
+            }
+          }
+
+      val getAxisValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
+              "get_axis_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_axis_value" }
+            }
+          }
+
+      val setAxis: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
+              "set_axis".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_axis" }
+            }
+          }
+
+      val setAxisValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
+              "set_axis_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_axis_value" }
+            }
+          }
+    }
   }
 }

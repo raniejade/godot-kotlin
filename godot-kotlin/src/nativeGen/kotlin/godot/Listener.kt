@@ -84,29 +84,41 @@ open class Listener(
      * Container for method_bind pointers for Listener
      */
     private object __method_bind {
-      val clearCurrent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
-            "clear_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_current" }
-        }
-      val getListenerTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
-            "get_listener_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_listener_transform" }
-        }
-      val isCurrent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
-            "is_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_current" }
-        }
-      val makeCurrent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
-            "make_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_current" }
-        }}
+      val clearCurrent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
+              "clear_current".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_current" }
+            }
+          }
+
+      val getListenerTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
+              "get_listener_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_listener_transform" }
+            }
+          }
+
+      val isCurrent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
+              "is_current".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_current" }
+            }
+          }
+
+      val makeCurrent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
+              "make_current".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method make_current" }
+            }
+          }
+    }
   }
 }

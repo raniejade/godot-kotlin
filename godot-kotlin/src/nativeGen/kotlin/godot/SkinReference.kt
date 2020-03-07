@@ -69,19 +69,23 @@ open class SkinReference(
      * Container for method_bind pointers for SkinReference
      */
     private object __method_bind {
-      val getSkeleton: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkinReference".cstr.ptr,
-            "get_skeleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_skeleton" }
-        }
-      val getSkin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkinReference".cstr.ptr,
-            "get_skin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_skin" }
-        }}
+      val getSkeleton: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkinReference".cstr.ptr,
+              "get_skeleton".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_skeleton" }
+            }
+          }
+
+      val getSkin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkinReference".cstr.ptr,
+              "get_skin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_skin" }
+            }
+          }
+    }
   }
 }

@@ -100,33 +100,41 @@ open class VisualScriptTypeCast(
      * Container for method_bind pointers for VisualScriptTypeCast
      */
     private object __method_bind {
-      val getBaseScript: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
-            "get_base_script".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base_script" }
-        }
-      val getBaseType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
-            "get_base_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base_type" }
-        }
-      val setBaseScript: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
-            "set_base_script".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_base_script" }
-        }
-      val setBaseType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
-            "set_base_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_base_type" }
-        }}
+      val getBaseScript: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
+              "get_base_script".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_base_script" }
+            }
+          }
+
+      val getBaseType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
+              "get_base_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_base_type" }
+            }
+          }
+
+      val setBaseScript: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
+              "set_base_script".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_base_script" }
+            }
+          }
+
+      val setBaseType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
+              "set_base_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_base_type" }
+            }
+          }
+    }
   }
 }

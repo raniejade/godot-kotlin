@@ -103,27 +103,33 @@ open class EditorInspectorPlugin(
      * Container for method_bind pointers for EditorInspectorPlugin
      */
     private object __method_bind {
-      val addCustomControl: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
-            "add_custom_control".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_custom_control" }
-        }
-      val addPropertyEditor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
-            "add_property_editor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_property_editor" }
-        }
-      val addPropertyEditorForMultipleProperties: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
-            "add_property_editor_for_multiple_properties".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method add_property_editor_for_multiple_properties" }
-        }}
+      val addCustomControl: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
+              "add_custom_control".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_custom_control" }
+            }
+          }
+
+      val addPropertyEditor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
+              "add_property_editor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_property_editor" }
+            }
+          }
+
+      val addPropertyEditorForMultipleProperties: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
+              "add_property_editor_for_multiple_properties".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method add_property_editor_for_multiple_properties" }
+            }
+          }
+    }
   }
 }

@@ -585,299 +585,389 @@ open class VisualScript(
      * Container for method_bind pointers for VisualScript
      */
     private object __method_bind {
-      val addCustomSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "add_custom_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_custom_signal" }
-        }
-      val addFunction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "add_function".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_function" }
-        }
-      val addNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "add_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_node" }
-        }
-      val addVariable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "add_variable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_variable" }
-        }
-      val customSignalAddArgument: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "custom_signal_add_argument".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method custom_signal_add_argument" }
-        }
-      val customSignalGetArgumentCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "custom_signal_get_argument_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method custom_signal_get_argument_count" }
-        }
-      val customSignalGetArgumentName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "custom_signal_get_argument_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method custom_signal_get_argument_name" }
-        }
-      val customSignalGetArgumentType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "custom_signal_get_argument_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method custom_signal_get_argument_type" }
-        }
-      val customSignalRemoveArgument: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "custom_signal_remove_argument".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method custom_signal_remove_argument" }
-        }
-      val customSignalSetArgumentName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "custom_signal_set_argument_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method custom_signal_set_argument_name" }
-        }
-      val customSignalSetArgumentType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "custom_signal_set_argument_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method custom_signal_set_argument_type" }
-        }
-      val customSignalSwapArgument: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "custom_signal_swap_argument".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method custom_signal_swap_argument" }
-        }
-      val dataConnect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "data_connect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method data_connect" }
-        }
-      val dataDisconnect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "data_disconnect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method data_disconnect" }
-        }
-      val getFunctionNodeId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "get_function_node_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_function_node_id" }
-        }
-      val getFunctionScroll: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "get_function_scroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_function_scroll" }
-        }
-      val getNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "get_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node" }
-        }
-      val getNodePosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "get_node_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_position" }
-        }
-      val getVariableDefaultValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "get_variable_default_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_variable_default_value" }
-        }
-      val getVariableExport: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "get_variable_export".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_variable_export" }
-        }
-      val getVariableInfo: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "get_variable_info".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_variable_info" }
-        }
-      val hasCustomSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "has_custom_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_custom_signal" }
-        }
-      val hasDataConnection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "has_data_connection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_data_connection" }
-        }
-      val hasFunction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "has_function".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_function" }
-        }
-      val hasNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "has_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_node" }
-        }
-      val hasSequenceConnection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "has_sequence_connection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_sequence_connection" }
-        }
-      val hasVariable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "has_variable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_variable" }
-        }
-      val removeCustomSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "remove_custom_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_custom_signal" }
-        }
-      val removeFunction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "remove_function".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_function" }
-        }
-      val removeNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "remove_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_node" }
-        }
-      val removeVariable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "remove_variable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_variable" }
-        }
-      val renameCustomSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "rename_custom_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rename_custom_signal" }
-        }
-      val renameFunction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "rename_function".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rename_function" }
-        }
-      val renameVariable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "rename_variable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rename_variable" }
-        }
-      val sequenceConnect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "sequence_connect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method sequence_connect" }
-        }
-      val sequenceDisconnect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "sequence_disconnect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method sequence_disconnect" }
-        }
-      val setFunctionScroll: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "set_function_scroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_function_scroll" }
-        }
-      val setInstanceBaseType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "set_instance_base_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_instance_base_type" }
-        }
-      val setNodePosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "set_node_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_node_position" }
-        }
-      val setVariableDefaultValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "set_variable_default_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_variable_default_value" }
-        }
-      val setVariableExport: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "set_variable_export".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_variable_export" }
-        }
-      val setVariableInfo: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "set_variable_info".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_variable_info" }
-        }}
+      val addCustomSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "add_custom_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_custom_signal" }
+            }
+          }
+
+      val addFunction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "add_function".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_function" }
+            }
+          }
+
+      val addNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "add_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_node" }
+            }
+          }
+
+      val addVariable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "add_variable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_variable" }
+            }
+          }
+
+      val customSignalAddArgument: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "custom_signal_add_argument".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method custom_signal_add_argument" }
+            }
+          }
+
+      val customSignalGetArgumentCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "custom_signal_get_argument_count".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method custom_signal_get_argument_count" }
+            }
+          }
+
+      val customSignalGetArgumentName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "custom_signal_get_argument_name".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method custom_signal_get_argument_name" }
+            }
+          }
+
+      val customSignalGetArgumentType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "custom_signal_get_argument_type".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method custom_signal_get_argument_type" }
+            }
+          }
+
+      val customSignalRemoveArgument: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "custom_signal_remove_argument".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method custom_signal_remove_argument"
+              }
+            }
+          }
+
+      val customSignalSetArgumentName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "custom_signal_set_argument_name".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method custom_signal_set_argument_name" }
+            }
+          }
+
+      val customSignalSetArgumentType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "custom_signal_set_argument_type".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method custom_signal_set_argument_type" }
+            }
+          }
+
+      val customSignalSwapArgument: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "custom_signal_swap_argument".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method custom_signal_swap_argument" }
+            }
+          }
+
+      val dataConnect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "data_connect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method data_connect" }
+            }
+          }
+
+      val dataDisconnect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "data_disconnect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method data_disconnect" }
+            }
+          }
+
+      val getFunctionNodeId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "get_function_node_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_function_node_id" }
+            }
+          }
+
+      val getFunctionScroll: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "get_function_scroll".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_function_scroll" }
+            }
+          }
+
+      val getNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "get_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node" }
+            }
+          }
+
+      val getNodePosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "get_node_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_position" }
+            }
+          }
+
+      val getVariableDefaultValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "get_variable_default_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_variable_default_value" }
+            }
+          }
+
+      val getVariableExport: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "get_variable_export".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_variable_export" }
+            }
+          }
+
+      val getVariableInfo: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "get_variable_info".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_variable_info" }
+            }
+          }
+
+      val hasCustomSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "has_custom_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_custom_signal" }
+            }
+          }
+
+      val hasDataConnection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "has_data_connection".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_data_connection" }
+            }
+          }
+
+      val hasFunction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "has_function".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_function" }
+            }
+          }
+
+      val hasNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "has_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_node" }
+            }
+          }
+
+      val hasSequenceConnection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "has_sequence_connection".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_sequence_connection" }
+            }
+          }
+
+      val hasVariable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "has_variable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_variable" }
+            }
+          }
+
+      val removeCustomSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "remove_custom_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_custom_signal" }
+            }
+          }
+
+      val removeFunction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "remove_function".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_function" }
+            }
+          }
+
+      val removeNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "remove_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_node" }
+            }
+          }
+
+      val removeVariable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "remove_variable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_variable" }
+            }
+          }
+
+      val renameCustomSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "rename_custom_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method rename_custom_signal" }
+            }
+          }
+
+      val renameFunction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "rename_function".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method rename_function" }
+            }
+          }
+
+      val renameVariable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "rename_variable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method rename_variable" }
+            }
+          }
+
+      val sequenceConnect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "sequence_connect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method sequence_connect" }
+            }
+          }
+
+      val sequenceDisconnect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "sequence_disconnect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method sequence_disconnect" }
+            }
+          }
+
+      val setFunctionScroll: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "set_function_scroll".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_function_scroll" }
+            }
+          }
+
+      val setInstanceBaseType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "set_instance_base_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_instance_base_type" }
+            }
+          }
+
+      val setNodePosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "set_node_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_node_position" }
+            }
+          }
+
+      val setVariableDefaultValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "set_variable_default_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_variable_default_value" }
+            }
+          }
+
+      val setVariableExport: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "set_variable_export".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_variable_export" }
+            }
+          }
+
+      val setVariableInfo: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
+              "set_variable_info".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_variable_info" }
+            }
+          }
+    }
   }
 }

@@ -141,47 +141,59 @@ open class CollisionPolygon(
      * Container for method_bind pointers for CollisionPolygon
      */
     private object __method_bind {
-      val getDepth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
-            "get_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_depth" }
-        }
-      val getPolygon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
-            "get_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_polygon" }
-        }
-      val isDisabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
-            "is_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_disabled" }
-        }
-      val setDepth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
-            "set_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_depth" }
-        }
-      val setDisabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
-            "set_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_disabled" }
-        }
-      val setPolygon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
-            "set_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_polygon" }
-        }}
+      val getDepth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
+              "get_depth".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_depth" }
+            }
+          }
+
+      val getPolygon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
+              "get_polygon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_polygon" }
+            }
+          }
+
+      val isDisabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
+              "is_disabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_disabled" }
+            }
+          }
+
+      val setDepth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
+              "set_depth".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_depth" }
+            }
+          }
+
+      val setDisabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
+              "set_disabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_disabled" }
+            }
+          }
+
+      val setPolygon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
+              "set_polygon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_polygon" }
+            }
+          }
+    }
   }
 }

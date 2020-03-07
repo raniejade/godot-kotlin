@@ -75,19 +75,23 @@ open class MultiMeshInstance(
      * Container for method_bind pointers for MultiMeshInstance
      */
     private object __method_bind {
-      val getMultimesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance".cstr.ptr,
-            "get_multimesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_multimesh" }
-        }
-      val setMultimesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance".cstr.ptr,
-            "set_multimesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_multimesh" }
-        }}
+      val getMultimesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance".cstr.ptr,
+              "get_multimesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_multimesh" }
+            }
+          }
+
+      val setMultimesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance".cstr.ptr,
+              "set_multimesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_multimesh" }
+            }
+          }
+    }
   }
 }

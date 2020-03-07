@@ -73,19 +73,23 @@ open class GridContainer(
      * Container for method_bind pointers for GridContainer
      */
     private object __method_bind {
-      val getColumns: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridContainer".cstr.ptr,
-            "get_columns".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_columns" }
-        }
-      val setColumns: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridContainer".cstr.ptr,
-            "set_columns".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_columns" }
-        }}
+      val getColumns: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridContainer".cstr.ptr,
+              "get_columns".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_columns" }
+            }
+          }
+
+      val setColumns: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridContainer".cstr.ptr,
+              "set_columns".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_columns" }
+            }
+          }
+    }
   }
 }

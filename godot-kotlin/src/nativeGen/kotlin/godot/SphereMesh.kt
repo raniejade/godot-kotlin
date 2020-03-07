@@ -175,65 +175,95 @@ open class SphereMesh(
      * Container for method_bind pointers for SphereMesh
      */
     private object __method_bind {
-      val getHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "get_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_height" }
-        }
-      val getIsHemisphere: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "get_is_hemisphere".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_is_hemisphere" }
-        }
-      val getRadialSegments: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "get_radial_segments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radial_segments" }
-        }
-      val getRadius: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "get_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radius" }
-        }
-      val getRings: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "get_rings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rings" }
-        }
-      val setHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "set_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_height" }
-        }
-      val setIsHemisphere: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "set_is_hemisphere".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_is_hemisphere" }
-        }
-      val setRadialSegments: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "set_radial_segments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radial_segments" }
-        }
-      val setRadius: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "set_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radius" }
-        }
-      val setRings: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "set_rings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rings" }
-        }}
+      val getHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
+              "get_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_height" }
+            }
+          }
+
+      val getIsHemisphere: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
+              "get_is_hemisphere".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_is_hemisphere" }
+            }
+          }
+
+      val getRadialSegments: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
+              "get_radial_segments".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_radial_segments" }
+            }
+          }
+
+      val getRadius: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
+              "get_radius".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_radius" }
+            }
+          }
+
+      val getRings: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
+              "get_rings".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rings" }
+            }
+          }
+
+      val setHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
+              "set_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_height" }
+            }
+          }
+
+      val setIsHemisphere: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
+              "set_is_hemisphere".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_is_hemisphere" }
+            }
+          }
+
+      val setRadialSegments: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
+              "set_radial_segments".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_radial_segments" }
+            }
+          }
+
+      val setRadius: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
+              "set_radius".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_radius" }
+            }
+          }
+
+      val setRings: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
+              "set_rings".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_rings" }
+            }
+          }
+    }
   }
 }

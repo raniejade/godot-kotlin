@@ -92,26 +92,32 @@ open class ConvexPolygonShape2D(
      * Container for method_bind pointers for ConvexPolygonShape2D
      */
     private object __method_bind {
-      val getPoints: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape2D".cstr.ptr,
-            "get_points".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_points" }
-        }
-      val setPointCloud: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape2D".cstr.ptr,
-            "set_point_cloud".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_point_cloud" }
-        }
-      val setPoints: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape2D".cstr.ptr,
-            "set_points".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_points" }
-        }}
+      val getPoints: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape2D".cstr.ptr,
+              "get_points".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_points" }
+            }
+          }
+
+      val setPointCloud: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape2D".cstr.ptr,
+              "set_point_cloud".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_point_cloud" }
+            }
+          }
+
+      val setPoints: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape2D".cstr.ptr,
+              "set_points".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_points" }
+            }
+          }
+    }
   }
 }

@@ -139,47 +139,59 @@ open class InputEventMouse(
      * Container for method_bind pointers for InputEventMouse
      */
     private object __method_bind {
-      val getButtonMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "get_button_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_button_mask" }
-        }
-      val getGlobalPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "get_global_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_global_position" }
-        }
-      val getPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "get_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_position" }
-        }
-      val setButtonMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "set_button_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_button_mask" }
-        }
-      val setGlobalPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "set_global_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_global_position" }
-        }
-      val setPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "set_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_position" }
-        }}
+      val getButtonMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
+              "get_button_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_button_mask" }
+            }
+          }
+
+      val getGlobalPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
+              "get_global_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_global_position" }
+            }
+          }
+
+      val getPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
+              "get_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_position" }
+            }
+          }
+
+      val setButtonMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
+              "set_button_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_button_mask" }
+            }
+          }
+
+      val setGlobalPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
+              "set_global_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_global_position" }
+            }
+          }
+
+      val setPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
+              "set_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_position" }
+            }
+          }
+    }
   }
 }

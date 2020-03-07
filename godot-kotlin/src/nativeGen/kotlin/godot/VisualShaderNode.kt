@@ -146,47 +146,59 @@ open class VisualShaderNode(
      * Container for method_bind pointers for VisualShaderNode
      */
     private object __method_bind {
-      val getDefaultInputValues: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
-            "get_default_input_values".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_default_input_values" }
-        }
-      val getInputPortDefaultValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
-            "get_input_port_default_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_input_port_default_value" }
-        }
-      val getOutputPortForPreview: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
-            "get_output_port_for_preview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_output_port_for_preview" }
-        }
-      val setDefaultInputValues: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
-            "set_default_input_values".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_default_input_values" }
-        }
-      val setInputPortDefaultValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
-            "set_input_port_default_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_input_port_default_value" }
-        }
-      val setOutputPortForPreview: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
-            "set_output_port_for_preview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_output_port_for_preview" }
-        }}
+      val getDefaultInputValues: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
+              "get_default_input_values".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_default_input_values" }
+            }
+          }
+
+      val getInputPortDefaultValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
+              "get_input_port_default_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_input_port_default_value" }
+            }
+          }
+
+      val getOutputPortForPreview: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
+              "get_output_port_for_preview".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_output_port_for_preview" }
+            }
+          }
+
+      val setDefaultInputValues: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
+              "set_default_input_values".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_default_input_values" }
+            }
+          }
+
+      val setInputPortDefaultValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
+              "set_input_port_default_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_input_port_default_value" }
+            }
+          }
+
+      val setOutputPortForPreview: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
+              "set_output_port_for_preview".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_output_port_for_preview" }
+            }
+          }
+    }
   }
 }

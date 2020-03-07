@@ -70,19 +70,23 @@ open class ButtonGroup(
      * Container for method_bind pointers for ButtonGroup
      */
     private object __method_bind {
-      val getButtons: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ButtonGroup".cstr.ptr,
-            "get_buttons".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_buttons" }
-        }
-      val getPressedButton: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ButtonGroup".cstr.ptr,
-            "get_pressed_button".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pressed_button" }
-        }}
+      val getButtons: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ButtonGroup".cstr.ptr,
+              "get_buttons".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_buttons" }
+            }
+          }
+
+      val getPressedButton: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ButtonGroup".cstr.ptr,
+              "get_pressed_button".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_pressed_button" }
+            }
+          }
+    }
   }
 }

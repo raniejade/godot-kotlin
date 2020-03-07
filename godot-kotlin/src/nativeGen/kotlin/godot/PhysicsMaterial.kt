@@ -150,61 +150,77 @@ open class PhysicsMaterial(
      * Container for method_bind pointers for PhysicsMaterial
      */
     private object __method_bind {
-      val getBounce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "get_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bounce" }
-        }
-      val getFriction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "get_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_friction" }
-        }
-      val isAbsorbent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "is_absorbent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_absorbent" }
-        }
-      val isRough: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "is_rough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_rough" }
-        }
-      val setAbsorbent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "set_absorbent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_absorbent" }
-        }
-      val setBounce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "set_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bounce" }
-        }
-      val setFriction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "set_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_friction" }
-        }
-      val setRough: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "set_rough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rough" }
-        }}
+      val getBounce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
+              "get_bounce".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bounce" }
+            }
+          }
+
+      val getFriction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
+              "get_friction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_friction" }
+            }
+          }
+
+      val isAbsorbent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
+              "is_absorbent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_absorbent" }
+            }
+          }
+
+      val isRough: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
+              "is_rough".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_rough" }
+            }
+          }
+
+      val setAbsorbent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
+              "set_absorbent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_absorbent" }
+            }
+          }
+
+      val setBounce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
+              "set_bounce".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bounce" }
+            }
+          }
+
+      val setFriction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
+              "set_friction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_friction" }
+            }
+          }
+
+      val setRough: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
+              "set_rough".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_rough" }
+            }
+          }
+    }
   }
 }

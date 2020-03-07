@@ -103,29 +103,41 @@ open class Expression(
      * Container for method_bind pointers for Expression
      */
     private object __method_bind {
-      val execute: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-            "execute".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method execute" }
-        }
-      val getErrorText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-            "get_error_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_error_text" }
-        }
-      val hasExecuteFailed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-            "has_execute_failed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_execute_failed" }
-        }
-      val parse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-            "parse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method parse" }
-        }}
+      val execute: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
+              "execute".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method execute" }
+            }
+          }
+
+      val getErrorText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
+              "get_error_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_error_text" }
+            }
+          }
+
+      val hasExecuteFailed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
+              "has_execute_failed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_execute_failed" }
+            }
+          }
+
+      val parse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
+              "parse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method parse" }
+            }
+          }
+    }
   }
 }

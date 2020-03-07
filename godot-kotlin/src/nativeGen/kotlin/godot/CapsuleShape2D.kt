@@ -99,33 +99,41 @@ open class CapsuleShape2D(
      * Container for method_bind pointers for CapsuleShape2D
      */
     private object __method_bind {
-      val getHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape2D".cstr.ptr,
-            "get_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_height" }
-        }
-      val getRadius: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape2D".cstr.ptr,
-            "get_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radius" }
-        }
-      val setHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape2D".cstr.ptr,
-            "set_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_height" }
-        }
-      val setRadius: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape2D".cstr.ptr,
-            "set_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radius" }
-        }}
+      val getHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape2D".cstr.ptr,
+              "get_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_height" }
+            }
+          }
+
+      val getRadius: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape2D".cstr.ptr,
+              "get_radius".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_radius" }
+            }
+          }
+
+      val setHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape2D".cstr.ptr,
+              "set_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_height" }
+            }
+          }
+
+      val setRadius: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape2D".cstr.ptr,
+              "set_radius".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_radius" }
+            }
+          }
+    }
   }
 }

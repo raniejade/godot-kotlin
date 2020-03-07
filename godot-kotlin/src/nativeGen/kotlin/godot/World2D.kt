@@ -97,23 +97,32 @@ open class World2D(
      * Container for method_bind pointers for World2D
      */
     private object __method_bind {
-      val getCanvas: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-            "get_canvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_canvas" }
-        }
-      val getDirectSpaceState: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-            "get_direct_space_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_direct_space_state" }
-        }
-      val getSpace: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-            "get_space".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_space" }
-        }}
+      val getCanvas: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
+              "get_canvas".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_canvas" }
+            }
+          }
+
+      val getDirectSpaceState: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
+              "get_direct_space_state".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_direct_space_state" }
+            }
+          }
+
+      val getSpace: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
+              "get_space".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_space" }
+            }
+          }
+    }
   }
 }

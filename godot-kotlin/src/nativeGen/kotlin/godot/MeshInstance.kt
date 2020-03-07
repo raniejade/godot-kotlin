@@ -196,89 +196,113 @@ open class MeshInstance(
      * Container for method_bind pointers for MeshInstance
      */
     private object __method_bind {
-      val createConvexCollision: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "create_convex_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_convex_collision" }
-        }
-      val createDebugTangents: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "create_debug_tangents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_debug_tangents" }
-        }
-      val createTrimeshCollision: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "create_trimesh_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_trimesh_collision" }
-        }
-      val getMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "get_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
-        }
-      val getSkeletonPath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "get_skeleton_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_skeleton_path" }
-        }
-      val getSkin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "get_skin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_skin" }
-        }
-      val getSurfaceMaterial: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "get_surface_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_surface_material" }
-        }
-      val getSurfaceMaterialCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "get_surface_material_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_surface_material_count" }
-        }
-      val setMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "set_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mesh" }
-        }
-      val setSkeletonPath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "set_skeleton_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_skeleton_path" }
-        }
-      val setSkin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "set_skin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_skin" }
-        }
-      val setSurfaceMaterial: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "set_surface_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_surface_material" }
-        }}
+      val createConvexCollision: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "create_convex_collision".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_convex_collision" }
+            }
+          }
+
+      val createDebugTangents: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "create_debug_tangents".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_debug_tangents" }
+            }
+          }
+
+      val createTrimeshCollision: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "create_trimesh_collision".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_trimesh_collision" }
+            }
+          }
+
+      val getMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "get_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mesh" }
+            }
+          }
+
+      val getSkeletonPath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "get_skeleton_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_skeleton_path" }
+            }
+          }
+
+      val getSkin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "get_skin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_skin" }
+            }
+          }
+
+      val getSurfaceMaterial: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "get_surface_material".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_surface_material" }
+            }
+          }
+
+      val getSurfaceMaterialCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "get_surface_material_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_surface_material_count" }
+            }
+          }
+
+      val setMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "set_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mesh" }
+            }
+          }
+
+      val setSkeletonPath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "set_skeleton_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_skeleton_path" }
+            }
+          }
+
+      val setSkin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "set_skin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_skin" }
+            }
+          }
+
+      val setSurfaceMaterial: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
+              "set_surface_material".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_surface_material" }
+            }
+          }
+    }
   }
 }

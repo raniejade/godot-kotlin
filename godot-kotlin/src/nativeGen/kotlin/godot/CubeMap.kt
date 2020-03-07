@@ -237,65 +237,95 @@ open class CubeMap(
      * Container for method_bind pointers for CubeMap
      */
     private object __method_bind {
-      val getFlags: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_flags" }
-        }
-      val getHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_height" }
-        }
-      val getLossyStorageQuality: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_lossy_storage_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_lossy_storage_quality" }
-        }
-      val getSide: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_side".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_side" }
-        }
-      val getStorage: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_storage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_storage" }
-        }
-      val getWidth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_width" }
-        }
-      val setFlags: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "set_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flags" }
-        }
-      val setLossyStorageQuality: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "set_lossy_storage_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_lossy_storage_quality" }
-        }
-      val setSide: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "set_side".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_side" }
-        }
-      val setStorage: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "set_storage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_storage" }
-        }}
+      val getFlags: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
+              "get_flags".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_flags" }
+            }
+          }
+
+      val getHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
+              "get_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_height" }
+            }
+          }
+
+      val getLossyStorageQuality: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
+              "get_lossy_storage_quality".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_lossy_storage_quality" }
+            }
+          }
+
+      val getSide: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
+              "get_side".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_side" }
+            }
+          }
+
+      val getStorage: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
+              "get_storage".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_storage" }
+            }
+          }
+
+      val getWidth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
+              "get_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_width" }
+            }
+          }
+
+      val setFlags: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
+              "set_flags".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_flags" }
+            }
+          }
+
+      val setLossyStorageQuality: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
+              "set_lossy_storage_quality".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_lossy_storage_quality" }
+            }
+          }
+
+      val setSide: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
+              "set_side".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_side" }
+            }
+          }
+
+      val setStorage: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
+              "set_storage".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_storage" }
+            }
+          }
+    }
   }
 }

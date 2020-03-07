@@ -106,35 +106,50 @@ open class ShortCut(
      * Container for method_bind pointers for ShortCut
      */
     private object __method_bind {
-      val getAsText: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "get_as_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_as_text" }
-        }
-      val getShortcut: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "get_shortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shortcut" }
-        }
-      val isShortcut: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "is_shortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_shortcut" }
-        }
-      val isValid: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "is_valid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_valid" }
-        }
-      val setShortcut: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "set_shortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shortcut" }
-        }}
+      val getAsText: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
+              "get_as_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_as_text" }
+            }
+          }
+
+      val getShortcut: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
+              "get_shortcut".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_shortcut" }
+            }
+          }
+
+      val isShortcut: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
+              "is_shortcut".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_shortcut" }
+            }
+          }
+
+      val isValid: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
+              "is_valid".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_valid" }
+            }
+          }
+
+      val setShortcut: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
+              "set_shortcut".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_shortcut" }
+            }
+          }
+    }
   }
 }

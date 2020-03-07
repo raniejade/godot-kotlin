@@ -85,19 +85,23 @@ open class ConvexPolygonShape(
      * Container for method_bind pointers for ConvexPolygonShape
      */
     private object __method_bind {
-      val getPoints: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape".cstr.ptr,
-            "get_points".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_points" }
-        }
-      val setPoints: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape".cstr.ptr,
-            "set_points".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_points" }
-        }}
+      val getPoints: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape".cstr.ptr,
+              "get_points".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_points" }
+            }
+          }
+
+      val setPoints: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape".cstr.ptr,
+              "set_points".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_points" }
+            }
+          }
+    }
   }
 }

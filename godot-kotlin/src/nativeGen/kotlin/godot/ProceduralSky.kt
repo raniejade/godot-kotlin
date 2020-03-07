@@ -536,229 +536,293 @@ open class ProceduralSky(
      * Container for method_bind pointers for ProceduralSky
      */
     private object __method_bind {
-      val getGroundBottomColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_ground_bottom_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ground_bottom_color" }
-        }
-      val getGroundCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_ground_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ground_curve" }
-        }
-      val getGroundEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_ground_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ground_energy" }
-        }
-      val getGroundHorizonColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_ground_horizon_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ground_horizon_color" }
-        }
-      val getSkyCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sky_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_curve" }
-        }
-      val getSkyEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sky_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_energy" }
-        }
-      val getSkyHorizonColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sky_horizon_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_horizon_color" }
-        }
-      val getSkyTopColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sky_top_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_top_color" }
-        }
-      val getSunAngleMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sun_angle_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sun_angle_max" }
-        }
-      val getSunAngleMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sun_angle_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sun_angle_min" }
-        }
-      val getSunColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sun_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sun_color" }
-        }
-      val getSunCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sun_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sun_curve" }
-        }
-      val getSunEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sun_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sun_energy" }
-        }
-      val getSunLatitude: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sun_latitude".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sun_latitude" }
-        }
-      val getSunLongitude: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_sun_longitude".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sun_longitude" }
-        }
-      val getTextureSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "get_texture_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture_size" }
-        }
-      val setGroundBottomColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_ground_bottom_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ground_bottom_color" }
-        }
-      val setGroundCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_ground_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ground_curve" }
-        }
-      val setGroundEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_ground_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ground_energy" }
-        }
-      val setGroundHorizonColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_ground_horizon_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ground_horizon_color" }
-        }
-      val setSkyCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sky_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_curve" }
-        }
-      val setSkyEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sky_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_energy" }
-        }
-      val setSkyHorizonColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sky_horizon_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_horizon_color" }
-        }
-      val setSkyTopColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sky_top_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_top_color" }
-        }
-      val setSunAngleMax: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sun_angle_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sun_angle_max" }
-        }
-      val setSunAngleMin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sun_angle_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sun_angle_min" }
-        }
-      val setSunColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sun_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sun_color" }
-        }
-      val setSunCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sun_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sun_curve" }
-        }
-      val setSunEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sun_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sun_energy" }
-        }
-      val setSunLatitude: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sun_latitude".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sun_latitude" }
-        }
-      val setSunLongitude: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_sun_longitude".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sun_longitude" }
-        }
-      val setTextureSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-            "set_texture_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture_size" }
-        }}
+      val getGroundBottomColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_ground_bottom_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ground_bottom_color" }
+            }
+          }
+
+      val getGroundCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_ground_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ground_curve" }
+            }
+          }
+
+      val getGroundEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_ground_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ground_energy" }
+            }
+          }
+
+      val getGroundHorizonColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_ground_horizon_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ground_horizon_color" }
+            }
+          }
+
+      val getSkyCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sky_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sky_curve" }
+            }
+          }
+
+      val getSkyEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sky_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sky_energy" }
+            }
+          }
+
+      val getSkyHorizonColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sky_horizon_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sky_horizon_color" }
+            }
+          }
+
+      val getSkyTopColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sky_top_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sky_top_color" }
+            }
+          }
+
+      val getSunAngleMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sun_angle_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sun_angle_max" }
+            }
+          }
+
+      val getSunAngleMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sun_angle_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sun_angle_min" }
+            }
+          }
+
+      val getSunColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sun_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sun_color" }
+            }
+          }
+
+      val getSunCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sun_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sun_curve" }
+            }
+          }
+
+      val getSunEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sun_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sun_energy" }
+            }
+          }
+
+      val getSunLatitude: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sun_latitude".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sun_latitude" }
+            }
+          }
+
+      val getSunLongitude: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_sun_longitude".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sun_longitude" }
+            }
+          }
+
+      val getTextureSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "get_texture_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture_size" }
+            }
+          }
+
+      val setGroundBottomColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_ground_bottom_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ground_bottom_color" }
+            }
+          }
+
+      val setGroundCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_ground_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ground_curve" }
+            }
+          }
+
+      val setGroundEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_ground_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ground_energy" }
+            }
+          }
+
+      val setGroundHorizonColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_ground_horizon_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_ground_horizon_color" }
+            }
+          }
+
+      val setSkyCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sky_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sky_curve" }
+            }
+          }
+
+      val setSkyEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sky_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sky_energy" }
+            }
+          }
+
+      val setSkyHorizonColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sky_horizon_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sky_horizon_color" }
+            }
+          }
+
+      val setSkyTopColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sky_top_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sky_top_color" }
+            }
+          }
+
+      val setSunAngleMax: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sun_angle_max".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sun_angle_max" }
+            }
+          }
+
+      val setSunAngleMin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sun_angle_min".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sun_angle_min" }
+            }
+          }
+
+      val setSunColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sun_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sun_color" }
+            }
+          }
+
+      val setSunCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sun_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sun_curve" }
+            }
+          }
+
+      val setSunEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sun_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sun_energy" }
+            }
+          }
+
+      val setSunLatitude: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sun_latitude".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sun_latitude" }
+            }
+          }
+
+      val setSunLongitude: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_sun_longitude".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sun_longitude" }
+            }
+          }
+
+      val setTextureSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+              "set_texture_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture_size" }
+            }
+          }
+    }
   }
 }

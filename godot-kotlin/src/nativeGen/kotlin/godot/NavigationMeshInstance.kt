@@ -101,33 +101,41 @@ open class NavigationMeshInstance(
      * Container for method_bind pointers for NavigationMeshInstance
      */
     private object __method_bind {
-      val getNavigationMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
-            "get_navigation_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_navigation_mesh" }
-        }
-      val isEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
-            "is_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_enabled" }
-        }
-      val setEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
-            "set_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enabled" }
-        }
-      val setNavigationMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
-            "set_navigation_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_navigation_mesh" }
-        }}
+      val getNavigationMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
+              "get_navigation_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_navigation_mesh" }
+            }
+          }
+
+      val isEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
+              "is_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_enabled" }
+            }
+          }
+
+      val setEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
+              "set_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_enabled" }
+            }
+          }
+
+      val setNavigationMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
+              "set_navigation_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_navigation_mesh" }
+            }
+          }
+    }
   }
 }

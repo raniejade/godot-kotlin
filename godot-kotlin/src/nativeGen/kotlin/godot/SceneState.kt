@@ -290,125 +290,186 @@ open class SceneState(
      * Container for method_bind pointers for SceneState
      */
     private object __method_bind {
-      val getConnectionBinds: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_binds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_binds" }
-        }
-      val getConnectionCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_count" }
-        }
-      val getConnectionFlags: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_flags" }
-        }
-      val getConnectionMethod: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_method".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_method" }
-        }
-      val getConnectionSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_signal" }
-        }
-      val getConnectionSource: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_source".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_source" }
-        }
-      val getConnectionTarget: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_target".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_target" }
-        }
-      val getNodeCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_count" }
-        }
-      val getNodeGroups: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_groups".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_groups" }
-        }
-      val getNodeIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_index" }
-        }
-      val getNodeInstance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_instance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_instance" }
-        }
-      val getNodeInstancePlaceholder: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_instance_placeholder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_instance_placeholder" }
-        }
-      val getNodeName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_name" }
-        }
-      val getNodeOwnerPath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_owner_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_owner_path" }
-        }
-      val getNodePath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_path" }
-        }
-      val getNodePropertyCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_property_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_property_count" }
-        }
-      val getNodePropertyName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_property_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_property_name" }
-        }
-      val getNodePropertyValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_property_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_property_value" }
-        }
-      val getNodeType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_type" }
-        }
-      val isNodeInstancePlaceholder: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "is_node_instance_placeholder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_node_instance_placeholder" }
-        }}
+      val getConnectionBinds: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_connection_binds".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_binds" }
+            }
+          }
+
+      val getConnectionCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_connection_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_count" }
+            }
+          }
+
+      val getConnectionFlags: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_connection_flags".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_flags" }
+            }
+          }
+
+      val getConnectionMethod: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_connection_method".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_method" }
+            }
+          }
+
+      val getConnectionSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_connection_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_signal" }
+            }
+          }
+
+      val getConnectionSource: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_connection_source".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_source" }
+            }
+          }
+
+      val getConnectionTarget: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_connection_target".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_target" }
+            }
+          }
+
+      val getNodeCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_count" }
+            }
+          }
+
+      val getNodeGroups: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_groups".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_groups" }
+            }
+          }
+
+      val getNodeIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_index" }
+            }
+          }
+
+      val getNodeInstance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_instance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_instance" }
+            }
+          }
+
+      val getNodeInstancePlaceholder: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_instance_placeholder".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_instance_placeholder"
+              }
+            }
+          }
+
+      val getNodeName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_name" }
+            }
+          }
+
+      val getNodeOwnerPath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_owner_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_owner_path" }
+            }
+          }
+
+      val getNodePath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_path" }
+            }
+          }
+
+      val getNodePropertyCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_property_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_property_count" }
+            }
+          }
+
+      val getNodePropertyName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_property_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_property_name" }
+            }
+          }
+
+      val getNodePropertyValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_property_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_property_value" }
+            }
+          }
+
+      val getNodeType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "get_node_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_type" }
+            }
+          }
+
+      val isNodeInstancePlaceholder: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
+              "is_node_instance_placeholder".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_node_instance_placeholder" }
+            }
+          }
+    }
   }
 }

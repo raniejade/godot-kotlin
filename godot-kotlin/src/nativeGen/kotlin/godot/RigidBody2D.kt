@@ -750,350 +750,450 @@ open class RigidBody2D(
      * Container for method_bind pointers for RigidBody2D
      */
     private object __method_bind {
-      val addCentralForce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "add_central_force".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_central_force" }
-        }
-      val addForce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "add_force".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_force" }
-        }
-      val addTorque: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "add_torque".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_torque" }
-        }
-      val applyCentralImpulse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "apply_central_impulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method apply_central_impulse" }
-        }
-      val applyImpulse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "apply_impulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method apply_impulse" }
-        }
-      val applyTorqueImpulse: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "apply_torque_impulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method apply_torque_impulse" }
-        }
-      val getAngularDamp: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_angular_damp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_angular_damp" }
-        }
-      val getAngularVelocity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_angular_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_angular_velocity" }
-        }
-      val getAppliedForce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_applied_force".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_applied_force" }
-        }
-      val getAppliedTorque: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_applied_torque".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_applied_torque" }
-        }
-      val getBounce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bounce" }
-        }
-      val getCollidingBodies: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_colliding_bodies".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_colliding_bodies" }
-        }
-      val getContinuousCollisionDetectionMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_continuous_collision_detection_mode".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method get_continuous_collision_detection_mode" }
-        }
-      val getFriction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_friction" }
-        }
-      val getGravityScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_gravity_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_gravity_scale" }
-        }
-      val getInertia: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_inertia".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_inertia" }
-        }
-      val getLinearDamp: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_linear_damp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_linear_damp" }
-        }
-      val getLinearVelocity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_linear_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_linear_velocity" }
-        }
-      val getMass: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_mass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mass" }
-        }
-      val getMaxContactsReported: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_max_contacts_reported".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_max_contacts_reported" }
-        }
-      val getMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mode" }
-        }
-      val getPhysicsMaterialOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_physics_material_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_physics_material_override" }
-        }
-      val getWeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "get_weight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_weight" }
-        }
-      val isAbleToSleep: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "is_able_to_sleep".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_able_to_sleep" }
-        }
-      val isContactMonitorEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "is_contact_monitor_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_contact_monitor_enabled" }
-        }
-      val isSleeping: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "is_sleeping".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_sleeping" }
-        }
-      val isUsingCustomIntegrator: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "is_using_custom_integrator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_using_custom_integrator" }
-        }
-      val setAngularDamp: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_angular_damp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_angular_damp" }
-        }
-      val setAngularVelocity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_angular_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_angular_velocity" }
-        }
-      val setAppliedForce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_applied_force".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_applied_force" }
-        }
-      val setAppliedTorque: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_applied_torque".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_applied_torque" }
-        }
-      val setAxisVelocity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_axis_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_axis_velocity" }
-        }
-      val setBounce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bounce" }
-        }
-      val setCanSleep: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_can_sleep".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_can_sleep" }
-        }
-      val setContactMonitor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_contact_monitor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_contact_monitor" }
-        }
-      val setContinuousCollisionDetectionMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_continuous_collision_detection_mode".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method set_continuous_collision_detection_mode" }
-        }
-      val setFriction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_friction" }
-        }
-      val setGravityScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_gravity_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_gravity_scale" }
-        }
-      val setInertia: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_inertia".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_inertia" }
-        }
-      val setLinearDamp: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_linear_damp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_linear_damp" }
-        }
-      val setLinearVelocity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_linear_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_linear_velocity" }
-        }
-      val setMass: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_mass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mass" }
-        }
-      val setMaxContactsReported: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_max_contacts_reported".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_max_contacts_reported" }
-        }
-      val setMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mode" }
-        }
-      val setPhysicsMaterialOverride: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_physics_material_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_physics_material_override" }
-        }
-      val setSleeping: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_sleeping".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sleeping" }
-        }
-      val setUseCustomIntegrator: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_use_custom_integrator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_custom_integrator" }
-        }
-      val setWeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "set_weight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_weight" }
-        }
-      val testMotion: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
-            "test_motion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method test_motion" }
-        }}
+      val addCentralForce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "add_central_force".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_central_force" }
+            }
+          }
+
+      val addForce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "add_force".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_force" }
+            }
+          }
+
+      val addTorque: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "add_torque".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_torque" }
+            }
+          }
+
+      val applyCentralImpulse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "apply_central_impulse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method apply_central_impulse" }
+            }
+          }
+
+      val applyImpulse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "apply_impulse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method apply_impulse" }
+            }
+          }
+
+      val applyTorqueImpulse: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "apply_torque_impulse".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method apply_torque_impulse" }
+            }
+          }
+
+      val getAngularDamp: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_angular_damp".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_angular_damp" }
+            }
+          }
+
+      val getAngularVelocity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_angular_velocity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_angular_velocity" }
+            }
+          }
+
+      val getAppliedForce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_applied_force".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_applied_force" }
+            }
+          }
+
+      val getAppliedTorque: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_applied_torque".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_applied_torque" }
+            }
+          }
+
+      val getBounce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_bounce".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bounce" }
+            }
+          }
+
+      val getCollidingBodies: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_colliding_bodies".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_colliding_bodies" }
+            }
+          }
+
+      val getContinuousCollisionDetectionMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_continuous_collision_detection_mode".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_continuous_collision_detection_mode" }
+            }
+          }
+
+      val getFriction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_friction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_friction" }
+            }
+          }
+
+      val getGravityScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_gravity_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_gravity_scale" }
+            }
+          }
+
+      val getInertia: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_inertia".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_inertia" }
+            }
+          }
+
+      val getLinearDamp: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_linear_damp".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_linear_damp" }
+            }
+          }
+
+      val getLinearVelocity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_linear_velocity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_linear_velocity" }
+            }
+          }
+
+      val getMass: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_mass".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mass" }
+            }
+          }
+
+      val getMaxContactsReported: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_max_contacts_reported".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_max_contacts_reported" }
+            }
+          }
+
+      val getMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mode" }
+            }
+          }
+
+      val getPhysicsMaterialOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_physics_material_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_physics_material_override"
+              }
+            }
+          }
+
+      val getWeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "get_weight".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_weight" }
+            }
+          }
+
+      val isAbleToSleep: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "is_able_to_sleep".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_able_to_sleep" }
+            }
+          }
+
+      val isContactMonitorEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "is_contact_monitor_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_contact_monitor_enabled" }
+            }
+          }
+
+      val isSleeping: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "is_sleeping".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_sleeping" }
+            }
+          }
+
+      val isUsingCustomIntegrator: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "is_using_custom_integrator".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_using_custom_integrator" }
+            }
+          }
+
+      val setAngularDamp: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_angular_damp".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_angular_damp" }
+            }
+          }
+
+      val setAngularVelocity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_angular_velocity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_angular_velocity" }
+            }
+          }
+
+      val setAppliedForce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_applied_force".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_applied_force" }
+            }
+          }
+
+      val setAppliedTorque: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_applied_torque".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_applied_torque" }
+            }
+          }
+
+      val setAxisVelocity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_axis_velocity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_axis_velocity" }
+            }
+          }
+
+      val setBounce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_bounce".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bounce" }
+            }
+          }
+
+      val setCanSleep: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_can_sleep".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_can_sleep" }
+            }
+          }
+
+      val setContactMonitor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_contact_monitor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_contact_monitor" }
+            }
+          }
+
+      val setContinuousCollisionDetectionMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_continuous_collision_detection_mode".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_continuous_collision_detection_mode" }
+            }
+          }
+
+      val setFriction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_friction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_friction" }
+            }
+          }
+
+      val setGravityScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_gravity_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_gravity_scale" }
+            }
+          }
+
+      val setInertia: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_inertia".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_inertia" }
+            }
+          }
+
+      val setLinearDamp: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_linear_damp".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_linear_damp" }
+            }
+          }
+
+      val setLinearVelocity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_linear_velocity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_linear_velocity" }
+            }
+          }
+
+      val setMass: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_mass".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mass" }
+            }
+          }
+
+      val setMaxContactsReported: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_max_contacts_reported".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_max_contacts_reported" }
+            }
+          }
+
+      val setMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mode" }
+            }
+          }
+
+      val setPhysicsMaterialOverride: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_physics_material_override".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_physics_material_override"
+              }
+            }
+          }
+
+      val setSleeping: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_sleeping".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sleeping" }
+            }
+          }
+
+      val setUseCustomIntegrator: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_use_custom_integrator".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_use_custom_integrator" }
+            }
+          }
+
+      val setWeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "set_weight".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_weight" }
+            }
+          }
+
+      val testMotion: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody2D".cstr.ptr,
+              "test_motion".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method test_motion" }
+            }
+          }
+    }
   }
 }

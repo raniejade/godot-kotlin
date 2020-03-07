@@ -60,12 +60,14 @@ open class ConfirmationDialog(
      * Container for method_bind pointers for ConfirmationDialog
      */
     private object __method_bind {
-      val getCancel: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfirmationDialog".cstr.ptr,
-            "get_cancel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cancel" }
-        }}
+      val getCancel: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfirmationDialog".cstr.ptr,
+              "get_cancel".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cancel" }
+            }
+          }
+    }
   }
 }

@@ -135,41 +135,59 @@ open class PlaneMesh(
      * Container for method_bind pointers for PlaneMesh
      */
     private object __method_bind {
-      val getSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
-        }
-      val getSubdivideDepth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
-            "get_subdivide_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_subdivide_depth" }
-        }
-      val getSubdivideWidth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
-            "get_subdivide_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_subdivide_width" }
-        }
-      val setSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
-        }
-      val setSubdivideDepth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
-            "set_subdivide_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_subdivide_depth" }
-        }
-      val setSubdivideWidth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
-            "set_subdivide_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_subdivide_width" }
-        }}
+      val getSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
+              "get_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_size" }
+            }
+          }
+
+      val getSubdivideDepth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
+              "get_subdivide_depth".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_subdivide_depth" }
+            }
+          }
+
+      val getSubdivideWidth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
+              "get_subdivide_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_subdivide_width" }
+            }
+          }
+
+      val setSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
+              "set_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_size" }
+            }
+          }
+
+      val setSubdivideDepth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
+              "set_subdivide_depth".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_subdivide_depth" }
+            }
+          }
+
+      val setSubdivideWidth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneMesh".cstr.ptr,
+              "set_subdivide_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_subdivide_width" }
+            }
+          }
+    }
   }
 }

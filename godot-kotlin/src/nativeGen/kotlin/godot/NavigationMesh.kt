@@ -699,364 +699,468 @@ open class NavigationMesh(
      * Container for method_bind pointers for NavigationMesh
      */
     private object __method_bind {
-      val addPolygon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "add_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_polygon" }
-        }
-      val clearPolygons: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "clear_polygons".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_polygons" }
-        }
-      val createFromMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "create_from_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_from_mesh" }
-        }
-      val getAgentHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_agent_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_agent_height" }
-        }
-      val getAgentMaxClimb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_agent_max_climb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_agent_max_climb" }
-        }
-      val getAgentMaxSlope: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_agent_max_slope".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_agent_max_slope" }
-        }
-      val getAgentRadius: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_agent_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_agent_radius" }
-        }
-      val getCellHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_cell_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cell_height" }
-        }
-      val getCellSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_cell_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cell_size" }
-        }
-      val getCollisionMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
-        }
-      val getCollisionMaskBit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_collision_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
-        }
-      val getDetailSampleDistance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_detail_sample_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_detail_sample_distance" }
-        }
-      val getDetailSampleMaxError: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_detail_sample_max_error".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_detail_sample_max_error" }
-        }
-      val getEdgeMaxError: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_edge_max_error".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edge_max_error" }
-        }
-      val getEdgeMaxLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_edge_max_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edge_max_length" }
-        }
-      val getFilterLedgeSpans: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_filter_ledge_spans".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_filter_ledge_spans" }
-        }
-      val getFilterLowHangingObstacles: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_filter_low_hanging_obstacles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_filter_low_hanging_obstacles" }
-        }
-      val getFilterWalkableLowHeightSpans: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_filter_walkable_low_height_spans".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method get_filter_walkable_low_height_spans" }
-        }
-      val getParsedGeometryType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_parsed_geometry_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_parsed_geometry_type" }
-        }
-      val getPolygon: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_polygon" }
-        }
-      val getPolygonCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_polygon_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_polygon_count" }
-        }
-      val getRegionMergeSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_region_merge_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_region_merge_size" }
-        }
-      val getRegionMinSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_region_min_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_region_min_size" }
-        }
-      val getSamplePartitionType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_sample_partition_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sample_partition_type" }
-        }
-      val getSourceGeometryMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_source_geometry_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_source_geometry_mode" }
-        }
-      val getSourceGroupName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_source_group_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_source_group_name" }
-        }
-      val getVertices: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_vertices".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertices" }
-        }
-      val getVertsPerPoly: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "get_verts_per_poly".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_verts_per_poly" }
-        }
-      val setAgentHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_agent_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_agent_height" }
-        }
-      val setAgentMaxClimb: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_agent_max_climb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_agent_max_climb" }
-        }
-      val setAgentMaxSlope: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_agent_max_slope".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_agent_max_slope" }
-        }
-      val setAgentRadius: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_agent_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_agent_radius" }
-        }
-      val setCellHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_cell_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cell_height" }
-        }
-      val setCellSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_cell_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cell_size" }
-        }
-      val setCollisionMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
-        }
-      val setCollisionMaskBit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_collision_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
-        }
-      val setDetailSampleDistance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_detail_sample_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_detail_sample_distance" }
-        }
-      val setDetailSampleMaxError: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_detail_sample_max_error".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_detail_sample_max_error" }
-        }
-      val setEdgeMaxError: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_edge_max_error".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_edge_max_error" }
-        }
-      val setEdgeMaxLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_edge_max_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_edge_max_length" }
-        }
-      val setFilterLedgeSpans: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_filter_ledge_spans".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_filter_ledge_spans" }
-        }
-      val setFilterLowHangingObstacles: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_filter_low_hanging_obstacles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_filter_low_hanging_obstacles" }
-        }
-      val setFilterWalkableLowHeightSpans: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_filter_walkable_low_height_spans".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method set_filter_walkable_low_height_spans" }
-        }
-      val setParsedGeometryType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_parsed_geometry_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_parsed_geometry_type" }
-        }
-      val setRegionMergeSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_region_merge_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_region_merge_size" }
-        }
-      val setRegionMinSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_region_min_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_region_min_size" }
-        }
-      val setSamplePartitionType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_sample_partition_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sample_partition_type" }
-        }
-      val setSourceGeometryMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_source_geometry_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_source_geometry_mode" }
-        }
-      val setSourceGroupName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_source_group_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_source_group_name" }
-        }
-      val setVertices: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_vertices".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertices" }
-        }
-      val setVertsPerPoly: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-            "set_verts_per_poly".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_verts_per_poly" }
-        }}
+      val addPolygon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "add_polygon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_polygon" }
+            }
+          }
+
+      val clearPolygons: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "clear_polygons".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_polygons" }
+            }
+          }
+
+      val createFromMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "create_from_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_from_mesh" }
+            }
+          }
+
+      val getAgentHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_agent_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_agent_height" }
+            }
+          }
+
+      val getAgentMaxClimb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_agent_max_climb".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_agent_max_climb" }
+            }
+          }
+
+      val getAgentMaxSlope: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_agent_max_slope".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_agent_max_slope" }
+            }
+          }
+
+      val getAgentRadius: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_agent_radius".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_agent_radius" }
+            }
+          }
+
+      val getCellHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_cell_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cell_height" }
+            }
+          }
+
+      val getCellSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_cell_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cell_size" }
+            }
+          }
+
+      val getCollisionMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_collision_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
+            }
+          }
+
+      val getCollisionMaskBit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_collision_mask_bit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
+            }
+          }
+
+      val getDetailSampleDistance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_detail_sample_distance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_detail_sample_distance" }
+            }
+          }
+
+      val getDetailSampleMaxError: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_detail_sample_max_error".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_detail_sample_max_error" }
+            }
+          }
+
+      val getEdgeMaxError: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_edge_max_error".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_edge_max_error" }
+            }
+          }
+
+      val getEdgeMaxLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_edge_max_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_edge_max_length" }
+            }
+          }
+
+      val getFilterLedgeSpans: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_filter_ledge_spans".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_filter_ledge_spans" }
+            }
+          }
+
+      val getFilterLowHangingObstacles: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_filter_low_hanging_obstacles".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_filter_low_hanging_obstacles" }
+            }
+          }
+
+      val getFilterWalkableLowHeightSpans: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_filter_walkable_low_height_spans".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_filter_walkable_low_height_spans" }
+            }
+          }
+
+      val getParsedGeometryType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_parsed_geometry_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_parsed_geometry_type" }
+            }
+          }
+
+      val getPolygon: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_polygon".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_polygon" }
+            }
+          }
+
+      val getPolygonCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_polygon_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_polygon_count" }
+            }
+          }
+
+      val getRegionMergeSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_region_merge_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_region_merge_size" }
+            }
+          }
+
+      val getRegionMinSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_region_min_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_region_min_size" }
+            }
+          }
+
+      val getSamplePartitionType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_sample_partition_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sample_partition_type" }
+            }
+          }
+
+      val getSourceGeometryMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_source_geometry_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_source_geometry_mode" }
+            }
+          }
+
+      val getSourceGroupName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_source_group_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_source_group_name" }
+            }
+          }
+
+      val getVertices: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_vertices".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_vertices" }
+            }
+          }
+
+      val getVertsPerPoly: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "get_verts_per_poly".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_verts_per_poly" }
+            }
+          }
+
+      val setAgentHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_agent_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_agent_height" }
+            }
+          }
+
+      val setAgentMaxClimb: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_agent_max_climb".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_agent_max_climb" }
+            }
+          }
+
+      val setAgentMaxSlope: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_agent_max_slope".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_agent_max_slope" }
+            }
+          }
+
+      val setAgentRadius: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_agent_radius".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_agent_radius" }
+            }
+          }
+
+      val setCellHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_cell_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cell_height" }
+            }
+          }
+
+      val setCellSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_cell_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cell_size" }
+            }
+          }
+
+      val setCollisionMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_collision_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
+            }
+          }
+
+      val setCollisionMaskBit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_collision_mask_bit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
+            }
+          }
+
+      val setDetailSampleDistance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_detail_sample_distance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_detail_sample_distance" }
+            }
+          }
+
+      val setDetailSampleMaxError: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_detail_sample_max_error".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_detail_sample_max_error" }
+            }
+          }
+
+      val setEdgeMaxError: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_edge_max_error".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_edge_max_error" }
+            }
+          }
+
+      val setEdgeMaxLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_edge_max_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_edge_max_length" }
+            }
+          }
+
+      val setFilterLedgeSpans: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_filter_ledge_spans".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_filter_ledge_spans" }
+            }
+          }
+
+      val setFilterLowHangingObstacles: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_filter_low_hanging_obstacles".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_filter_low_hanging_obstacles" }
+            }
+          }
+
+      val setFilterWalkableLowHeightSpans: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_filter_walkable_low_height_spans".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_filter_walkable_low_height_spans" }
+            }
+          }
+
+      val setParsedGeometryType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_parsed_geometry_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_parsed_geometry_type" }
+            }
+          }
+
+      val setRegionMergeSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_region_merge_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_region_merge_size" }
+            }
+          }
+
+      val setRegionMinSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_region_min_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_region_min_size" }
+            }
+          }
+
+      val setSamplePartitionType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_sample_partition_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sample_partition_type" }
+            }
+          }
+
+      val setSourceGeometryMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_source_geometry_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_source_geometry_mode" }
+            }
+          }
+
+      val setSourceGroupName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_source_group_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_source_group_name" }
+            }
+          }
+
+      val setVertices: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_vertices".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertices" }
+            }
+          }
+
+      val setVertsPerPoly: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
+              "set_verts_per_poly".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_verts_per_poly" }
+            }
+          }
+    }
   }
 }

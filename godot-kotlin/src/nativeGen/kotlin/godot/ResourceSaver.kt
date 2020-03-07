@@ -67,20 +67,24 @@ open class ResourceSaverInternal(
      * Container for method_bind pointers for ResourceSaver
      */
     private object __method_bind {
-      val getRecognizedExtensions: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
-            "get_recognized_extensions".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_recognized_extensions" }
-        }
-      val save: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
-            "save".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method save" }
-        }}
+      val getRecognizedExtensions: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
+              "get_recognized_extensions".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_recognized_extensions" }
+            }
+          }
+
+      val save: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
+              "save".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method save" }
+            }
+          }
+    }
   }
 }
 

@@ -74,19 +74,23 @@ open class VisualScriptEmitSignal(
      * Container for method_bind pointers for VisualScriptEmitSignal
      */
     private object __method_bind {
-      val getSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEmitSignal".cstr.ptr,
-            "get_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_signal" }
-        }
-      val setSignal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEmitSignal".cstr.ptr,
-            "set_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_signal" }
-        }}
+      val getSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEmitSignal".cstr.ptr,
+              "get_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_signal" }
+            }
+          }
+
+      val setSignal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEmitSignal".cstr.ptr,
+              "set_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_signal" }
+            }
+          }
+    }
   }
 }

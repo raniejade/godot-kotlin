@@ -52,12 +52,14 @@ open class AudioStream(
      * Container for method_bind pointers for AudioStream
      */
     private object __method_bind {
-      val getLength: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStream".cstr.ptr,
-            "get_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_length" }
-        }}
+      val getLength: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStream".cstr.ptr,
+              "get_length".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_length" }
+            }
+          }
+    }
   }
 }

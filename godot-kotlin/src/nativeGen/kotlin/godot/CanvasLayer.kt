@@ -322,138 +322,176 @@ open class CanvasLayer(
      * Container for method_bind pointers for CanvasLayer
      */
     private object __method_bind {
-      val getCanvas: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "get_canvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_canvas" }
-        }
-      val getCustomViewport: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "get_custom_viewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_custom_viewport" }
-        }
-      val getFollowViewportScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "get_follow_viewport_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_follow_viewport_scale" }
-        }
-      val getLayer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "get_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_layer" }
-        }
-      val getOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
-        }
-      val getRotation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "get_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rotation" }
-        }
-      val getRotationDegrees: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "get_rotation_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rotation_degrees" }
-        }
-      val getScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "get_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scale" }
-        }
-      val getTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "get_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_transform" }
-        }
-      val isFollowingViewport: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "is_following_viewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_following_viewport" }
-        }
-      val setCustomViewport: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "set_custom_viewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_custom_viewport" }
-        }
-      val setFollowViewport: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "set_follow_viewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_follow_viewport" }
-        }
-      val setFollowViewportScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "set_follow_viewport_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_follow_viewport_scale" }
-        }
-      val setLayer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "set_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_layer" }
-        }
-      val setOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
-        }
-      val setRotation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "set_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rotation" }
-        }
-      val setRotationDegrees: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "set_rotation_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rotation_degrees" }
-        }
-      val setScale: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "set_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_scale" }
-        }
-      val setTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "set_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_transform" }
-        }}
+      val getCanvas: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "get_canvas".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_canvas" }
+            }
+          }
+
+      val getCustomViewport: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "get_custom_viewport".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_custom_viewport" }
+            }
+          }
+
+      val getFollowViewportScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "get_follow_viewport_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_follow_viewport_scale" }
+            }
+          }
+
+      val getLayer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "get_layer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_layer" }
+            }
+          }
+
+      val getOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "get_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            }
+          }
+
+      val getRotation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "get_rotation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rotation" }
+            }
+          }
+
+      val getRotationDegrees: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "get_rotation_degrees".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rotation_degrees" }
+            }
+          }
+
+      val getScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "get_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_scale" }
+            }
+          }
+
+      val getTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "get_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_transform" }
+            }
+          }
+
+      val isFollowingViewport: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "is_following_viewport".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_following_viewport" }
+            }
+          }
+
+      val setCustomViewport: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "set_custom_viewport".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_custom_viewport" }
+            }
+          }
+
+      val setFollowViewport: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "set_follow_viewport".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_follow_viewport" }
+            }
+          }
+
+      val setFollowViewportScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "set_follow_viewport_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_follow_viewport_scale" }
+            }
+          }
+
+      val setLayer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "set_layer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_layer" }
+            }
+          }
+
+      val setOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "set_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            }
+          }
+
+      val setRotation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "set_rotation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_rotation" }
+            }
+          }
+
+      val setRotationDegrees: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "set_rotation_degrees".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_rotation_degrees" }
+            }
+          }
+
+      val setScale: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "set_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_scale" }
+            }
+          }
+
+      val setTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
+              "set_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_transform" }
+            }
+          }
+    }
   }
 }

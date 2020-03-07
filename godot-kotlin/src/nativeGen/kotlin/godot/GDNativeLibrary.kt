@@ -200,89 +200,113 @@ open class GDNativeLibrary(
      * Container for method_bind pointers for GDNativeLibrary
      */
     private object __method_bind {
-      val getConfigFile: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "get_config_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_config_file" }
-        }
-      val getCurrentDependencies: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "get_current_dependencies".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_dependencies" }
-        }
-      val getCurrentLibraryPath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "get_current_library_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_library_path" }
-        }
-      val getSymbolPrefix: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "get_symbol_prefix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_symbol_prefix" }
-        }
-      val isReloadable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "is_reloadable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_reloadable" }
-        }
-      val isSingleton: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "is_singleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_singleton" }
-        }
-      val setConfigFile: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "set_config_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_config_file" }
-        }
-      val setLoadOnce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "set_load_once".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_load_once" }
-        }
-      val setReloadable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "set_reloadable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_reloadable" }
-        }
-      val setSingleton: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "set_singleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_singleton" }
-        }
-      val setSymbolPrefix: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "set_symbol_prefix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_symbol_prefix" }
-        }
-      val shouldLoadOnce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "should_load_once".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method should_load_once" }
-        }}
+      val getConfigFile: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "get_config_file".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_config_file" }
+            }
+          }
+
+      val getCurrentDependencies: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "get_current_dependencies".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_current_dependencies" }
+            }
+          }
+
+      val getCurrentLibraryPath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "get_current_library_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_current_library_path" }
+            }
+          }
+
+      val getSymbolPrefix: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "get_symbol_prefix".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_symbol_prefix" }
+            }
+          }
+
+      val isReloadable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "is_reloadable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_reloadable" }
+            }
+          }
+
+      val isSingleton: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "is_singleton".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_singleton" }
+            }
+          }
+
+      val setConfigFile: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "set_config_file".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_config_file" }
+            }
+          }
+
+      val setLoadOnce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "set_load_once".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_load_once" }
+            }
+          }
+
+      val setReloadable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "set_reloadable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_reloadable" }
+            }
+          }
+
+      val setSingleton: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "set_singleton".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_singleton" }
+            }
+          }
+
+      val setSymbolPrefix: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "set_symbol_prefix".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_symbol_prefix" }
+            }
+          }
+
+      val shouldLoadOnce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
+              "should_load_once".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method should_load_once" }
+            }
+          }
+    }
   }
 }

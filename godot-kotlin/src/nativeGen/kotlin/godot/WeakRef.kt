@@ -58,11 +58,14 @@ open class WeakRef(
      * Container for method_bind pointers for WeakRef
      */
     private object __method_bind {
-      val getRef: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WeakRef".cstr.ptr,
-            "get_ref".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ref" }
-        }}
+      val getRef: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WeakRef".cstr.ptr,
+              "get_ref".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ref" }
+            }
+          }
+    }
   }
 }

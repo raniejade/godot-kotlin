@@ -74,19 +74,23 @@ open class InputEventMagnifyGesture(
      * Container for method_bind pointers for InputEventMagnifyGesture
      */
     private object __method_bind {
-      val getFactor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMagnifyGesture".cstr.ptr,
-            "get_factor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_factor" }
-        }
-      val setFactor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMagnifyGesture".cstr.ptr,
-            "set_factor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_factor" }
-        }}
+      val getFactor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMagnifyGesture".cstr.ptr,
+              "get_factor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_factor" }
+            }
+          }
+
+      val setFactor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMagnifyGesture".cstr.ptr,
+              "set_factor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_factor" }
+            }
+          }
+    }
   }
 }

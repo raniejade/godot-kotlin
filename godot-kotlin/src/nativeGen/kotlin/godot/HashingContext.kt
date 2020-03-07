@@ -103,26 +103,32 @@ open class HashingContext(
      * Container for method_bind pointers for HashingContext
      */
     private object __method_bind {
-      val finish: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HashingContext".cstr.ptr,
-            "finish".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method finish" }
-        }
-      val start: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HashingContext".cstr.ptr,
-            "start".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method start" }
-        }
-      val update: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HashingContext".cstr.ptr,
-            "update".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method update" }
-        }}
+      val finish: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HashingContext".cstr.ptr,
+              "finish".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method finish" }
+            }
+          }
+
+      val start: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HashingContext".cstr.ptr,
+              "start".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method start" }
+            }
+          }
+
+      val update: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HashingContext".cstr.ptr,
+              "update".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method update" }
+            }
+          }
+    }
   }
 }

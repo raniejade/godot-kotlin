@@ -97,40 +97,51 @@ open class EditorSelection(
      * Container for method_bind pointers for EditorSelection
      */
     private object __method_bind {
-      val addNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
-            "add_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_node" }
-        }
-      val clear: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
-            "clear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear" }
-        }
-      val getSelectedNodes: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
-            "get_selected_nodes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_selected_nodes" }
-        }
-      val getTransformableSelectedNodes: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
-            "get_transformable_selected_nodes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_transformable_selected_nodes" }
-        }
-      val removeNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
-            "remove_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_node" }
-        }}
+      val addNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
+              "add_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_node" }
+            }
+          }
+
+      val clear: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
+              "clear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear" }
+            }
+          }
+
+      val getSelectedNodes: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
+              "get_selected_nodes".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_selected_nodes" }
+            }
+          }
+
+      val getTransformableSelectedNodes: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
+              "get_transformable_selected_nodes".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_transformable_selected_nodes" }
+            }
+          }
+
+      val removeNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
+              "remove_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_node" }
+            }
+          }
+    }
   }
 }

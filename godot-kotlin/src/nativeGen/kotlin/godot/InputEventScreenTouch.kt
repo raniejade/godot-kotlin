@@ -127,40 +127,50 @@ open class InputEventScreenTouch(
      * Container for method_bind pointers for InputEventScreenTouch
      */
     private object __method_bind {
-      val getIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "get_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_index" }
-        }
-      val getPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "get_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_position" }
-        }
-      val setIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "set_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_index" }
-        }
-      val setPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "set_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_position" }
-        }
-      val setPressed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "set_pressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
-        }}
+      val getIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
+              "get_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_index" }
+            }
+          }
+
+      val getPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
+              "get_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_position" }
+            }
+          }
+
+      val setIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
+              "set_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_index" }
+            }
+          }
+
+      val setPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
+              "set_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_position" }
+            }
+          }
+
+      val setPressed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
+              "set_pressed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pressed" }
+            }
+          }
+    }
   }
 }

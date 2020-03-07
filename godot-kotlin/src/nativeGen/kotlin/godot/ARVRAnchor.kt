@@ -136,47 +136,68 @@ open class ARVRAnchor(
      * Container for method_bind pointers for ARVRAnchor
      */
     private object __method_bind {
-      val getAnchorId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_anchor_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_anchor_id" }
-        }
-      val getAnchorName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_anchor_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_anchor_name" }
-        }
-      val getIsActive: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_is_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_is_active" }
-        }
-      val getMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
-        }
-      val getPlane: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_plane".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_plane" }
-        }
-      val getSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
-        }
-      val setAnchorId: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "set_anchor_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_anchor_id" }
-        }}
+      val getAnchorId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
+              "get_anchor_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_anchor_id" }
+            }
+          }
+
+      val getAnchorName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
+              "get_anchor_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_anchor_name" }
+            }
+          }
+
+      val getIsActive: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
+              "get_is_active".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_is_active" }
+            }
+          }
+
+      val getMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
+              "get_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mesh" }
+            }
+          }
+
+      val getPlane: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
+              "get_plane".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_plane" }
+            }
+          }
+
+      val getSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
+              "get_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_size" }
+            }
+          }
+
+      val setAnchorId: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
+              "set_anchor_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_anchor_id" }
+            }
+          }
+    }
   }
 }

@@ -143,61 +143,77 @@ open class WebSocketPeer(
      * Container for method_bind pointers for WebSocketPeer
      */
     private object __method_bind {
-      val close: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "close".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method close" }
-        }
-      val getConnectedHost: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "get_connected_host".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connected_host" }
-        }
-      val getConnectedPort: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "get_connected_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connected_port" }
-        }
-      val getWriteMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "get_write_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_write_mode" }
-        }
-      val isConnectedToHost: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "is_connected_to_host".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_connected_to_host" }
-        }
-      val setNoDelay: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "set_no_delay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_no_delay" }
-        }
-      val setWriteMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "set_write_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_write_mode" }
-        }
-      val wasStringPacket: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "was_string_packet".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method was_string_packet" }
-        }}
+      val close: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
+              "close".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method close" }
+            }
+          }
+
+      val getConnectedHost: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
+              "get_connected_host".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connected_host" }
+            }
+          }
+
+      val getConnectedPort: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
+              "get_connected_port".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connected_port" }
+            }
+          }
+
+      val getWriteMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
+              "get_write_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_write_mode" }
+            }
+          }
+
+      val isConnectedToHost: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
+              "is_connected_to_host".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_connected_to_host" }
+            }
+          }
+
+      val setNoDelay: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
+              "set_no_delay".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_no_delay" }
+            }
+          }
+
+      val setWriteMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
+              "set_write_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_write_mode" }
+            }
+          }
+
+      val wasStringPacket: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
+              "was_string_packet".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method was_string_packet" }
+            }
+          }
+    }
   }
 }

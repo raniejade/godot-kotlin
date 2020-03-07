@@ -47,13 +47,15 @@ open class JavaClassWrapperInternal(
      * Container for method_bind pointers for JavaClassWrapper
      */
     private object __method_bind {
-      val wrap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JavaClassWrapper".cstr.ptr,
-            "wrap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method wrap" }
-        }}
+      val wrap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JavaClassWrapper".cstr.ptr,
+              "wrap".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method wrap" }
+            }
+          }
+    }
   }
 }
 

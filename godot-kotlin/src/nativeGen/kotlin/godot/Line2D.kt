@@ -531,197 +531,261 @@ open class Line2D(
      * Container for method_bind pointers for Line2D
      */
     private object __method_bind {
-      val addPoint: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "add_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_point" }
-        }
-      val clearPoints: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "clear_points".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_points" }
-        }
-      val getAntialiased: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_antialiased".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_antialiased" }
-        }
-      val getBeginCapMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_begin_cap_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_begin_cap_mode" }
-        }
-      val getCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_curve" }
-        }
-      val getDefaultColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_default_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_default_color" }
-        }
-      val getEndCapMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_end_cap_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_end_cap_mode" }
-        }
-      val getGradient: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_gradient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_gradient" }
-        }
-      val getJointMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_joint_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joint_mode" }
-        }
-      val getPointCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_point_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_point_count" }
-        }
-      val getPointPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_point_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_point_position" }
-        }
-      val getPoints: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_points".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_points" }
-        }
-      val getRoundPrecision: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_round_precision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_round_precision" }
-        }
-      val getSharpLimit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_sharp_limit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sharp_limit" }
-        }
-      val getTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture" }
-        }
-      val getTextureMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_texture_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture_mode" }
-        }
-      val getWidth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "get_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_width" }
-        }
-      val removePoint: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "remove_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_point" }
-        }
-      val setAntialiased: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_antialiased".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_antialiased" }
-        }
-      val setBeginCapMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_begin_cap_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_begin_cap_mode" }
-        }
-      val setCurve: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_curve" }
-        }
-      val setDefaultColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_default_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_default_color" }
-        }
-      val setEndCapMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_end_cap_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_end_cap_mode" }
-        }
-      val setGradient: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_gradient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_gradient" }
-        }
-      val setJointMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_joint_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_joint_mode" }
-        }
-      val setPointPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_point_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_point_position" }
-        }
-      val setPoints: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_points".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_points" }
-        }
-      val setRoundPrecision: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_round_precision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_round_precision" }
-        }
-      val setSharpLimit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_sharp_limit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sharp_limit" }
-        }
-      val setTexture: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture" }
-        }
-      val setTextureMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_texture_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture_mode" }
-        }
-      val setWidth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "set_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_width" }
-        }}
+      val addPoint: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "add_point".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_point" }
+            }
+          }
+
+      val clearPoints: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "clear_points".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_points" }
+            }
+          }
+
+      val getAntialiased: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_antialiased".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_antialiased" }
+            }
+          }
+
+      val getBeginCapMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_begin_cap_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_begin_cap_mode" }
+            }
+          }
+
+      val getCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_curve" }
+            }
+          }
+
+      val getDefaultColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_default_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_default_color" }
+            }
+          }
+
+      val getEndCapMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_end_cap_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_end_cap_mode" }
+            }
+          }
+
+      val getGradient: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_gradient".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_gradient" }
+            }
+          }
+
+      val getJointMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_joint_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_joint_mode" }
+            }
+          }
+
+      val getPointCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_point_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_point_count" }
+            }
+          }
+
+      val getPointPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_point_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_point_position" }
+            }
+          }
+
+      val getPoints: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_points".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_points" }
+            }
+          }
+
+      val getRoundPrecision: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_round_precision".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_round_precision" }
+            }
+          }
+
+      val getSharpLimit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_sharp_limit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sharp_limit" }
+            }
+          }
+
+      val getTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture" }
+            }
+          }
+
+      val getTextureMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_texture_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_texture_mode" }
+            }
+          }
+
+      val getWidth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "get_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_width" }
+            }
+          }
+
+      val removePoint: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "remove_point".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_point" }
+            }
+          }
+
+      val setAntialiased: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_antialiased".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_antialiased" }
+            }
+          }
+
+      val setBeginCapMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_begin_cap_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_begin_cap_mode" }
+            }
+          }
+
+      val setCurve: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_curve".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_curve" }
+            }
+          }
+
+      val setDefaultColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_default_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_default_color" }
+            }
+          }
+
+      val setEndCapMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_end_cap_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_end_cap_mode" }
+            }
+          }
+
+      val setGradient: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_gradient".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_gradient" }
+            }
+          }
+
+      val setJointMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_joint_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_joint_mode" }
+            }
+          }
+
+      val setPointPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_point_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_point_position" }
+            }
+          }
+
+      val setPoints: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_points".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_points" }
+            }
+          }
+
+      val setRoundPrecision: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_round_precision".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_round_precision" }
+            }
+          }
+
+      val setSharpLimit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_sharp_limit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_sharp_limit" }
+            }
+          }
+
+      val setTexture: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_texture".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture" }
+            }
+          }
+
+      val setTextureMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_texture_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_texture_mode" }
+            }
+          }
+
+      val setWidth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
+              "set_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_width" }
+            }
+          }
+    }
   }
 }

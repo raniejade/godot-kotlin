@@ -404,175 +404,223 @@ open class ReflectionProbe(
      * Container for method_bind pointers for ReflectionProbe
      */
     private object __method_bind {
-      val areShadowsEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "are_shadows_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method are_shadows_enabled" }
-        }
-      val getCullMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cull_mask" }
-        }
-      val getExtents: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_extents" }
-        }
-      val getIntensity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_intensity" }
-        }
-      val getInteriorAmbient: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_interior_ambient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_interior_ambient" }
-        }
-      val getInteriorAmbientEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_interior_ambient_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_interior_ambient_energy" }
-        }
-      val getInteriorAmbientProbeContribution: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_interior_ambient_probe_contribution".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method get_interior_ambient_probe_contribution" }
-        }
-      val getMaxDistance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_max_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_max_distance" }
-        }
-      val getOriginOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_origin_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_origin_offset" }
-        }
-      val getUpdateMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_update_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_update_mode" }
-        }
-      val isBoxProjectionEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "is_box_projection_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_box_projection_enabled" }
-        }
-      val isSetAsInterior: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "is_set_as_interior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_set_as_interior" }
-        }
-      val setAsInterior: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_as_interior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_as_interior" }
-        }
-      val setCullMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cull_mask" }
-        }
-      val setEnableBoxProjection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_enable_box_projection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enable_box_projection" }
-        }
-      val setEnableShadows: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_enable_shadows".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enable_shadows" }
-        }
-      val setExtents: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_extents" }
-        }
-      val setIntensity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_intensity" }
-        }
-      val setInteriorAmbient: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_interior_ambient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_interior_ambient" }
-        }
-      val setInteriorAmbientEnergy: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_interior_ambient_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_interior_ambient_energy" }
-        }
-      val setInteriorAmbientProbeContribution: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_interior_ambient_probe_contribution".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method set_interior_ambient_probe_contribution" }
-        }
-      val setMaxDistance: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_max_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_max_distance" }
-        }
-      val setOriginOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_origin_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_origin_offset" }
-        }
-      val setUpdateMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_update_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_update_mode" }
-        }}
+      val areShadowsEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "are_shadows_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method are_shadows_enabled" }
+            }
+          }
+
+      val getCullMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "get_cull_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cull_mask" }
+            }
+          }
+
+      val getExtents: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "get_extents".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_extents" }
+            }
+          }
+
+      val getIntensity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "get_intensity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_intensity" }
+            }
+          }
+
+      val getInteriorAmbient: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "get_interior_ambient".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_interior_ambient" }
+            }
+          }
+
+      val getInteriorAmbientEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "get_interior_ambient_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_interior_ambient_energy" }
+            }
+          }
+
+      val getInteriorAmbientProbeContribution: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "get_interior_ambient_probe_contribution".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method get_interior_ambient_probe_contribution" }
+            }
+          }
+
+      val getMaxDistance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "get_max_distance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_max_distance" }
+            }
+          }
+
+      val getOriginOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "get_origin_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_origin_offset" }
+            }
+          }
+
+      val getUpdateMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "get_update_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_update_mode" }
+            }
+          }
+
+      val isBoxProjectionEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "is_box_projection_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_box_projection_enabled" }
+            }
+          }
+
+      val isSetAsInterior: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "is_set_as_interior".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_set_as_interior" }
+            }
+          }
+
+      val setAsInterior: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_as_interior".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_as_interior" }
+            }
+          }
+
+      val setCullMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_cull_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cull_mask" }
+            }
+          }
+
+      val setEnableBoxProjection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_enable_box_projection".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_enable_box_projection" }
+            }
+          }
+
+      val setEnableShadows: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_enable_shadows".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_enable_shadows" }
+            }
+          }
+
+      val setExtents: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_extents".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_extents" }
+            }
+          }
+
+      val setIntensity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_intensity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_intensity" }
+            }
+          }
+
+      val setInteriorAmbient: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_interior_ambient".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_interior_ambient" }
+            }
+          }
+
+      val setInteriorAmbientEnergy: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_interior_ambient_energy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_interior_ambient_energy" }
+            }
+          }
+
+      val setInteriorAmbientProbeContribution: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_interior_ambient_probe_contribution".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_interior_ambient_probe_contribution" }
+            }
+          }
+
+      val setMaxDistance: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_max_distance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_max_distance" }
+            }
+          }
+
+      val setOriginOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_origin_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_origin_offset" }
+            }
+          }
+
+      val setUpdateMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
+              "set_update_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_update_mode" }
+            }
+          }
+    }
   }
 }

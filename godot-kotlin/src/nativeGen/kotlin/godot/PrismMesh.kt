@@ -186,65 +186,95 @@ open class PrismMesh(
      * Container for method_bind pointers for PrismMesh
      */
     private object __method_bind {
-      val getLeftToRight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
-            "get_left_to_right".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_left_to_right" }
-        }
-      val getSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
-        }
-      val getSubdivideDepth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
-            "get_subdivide_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_subdivide_depth" }
-        }
-      val getSubdivideHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
-            "get_subdivide_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_subdivide_height" }
-        }
-      val getSubdivideWidth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
-            "get_subdivide_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_subdivide_width" }
-        }
-      val setLeftToRight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
-            "set_left_to_right".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_left_to_right" }
-        }
-      val setSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
-        }
-      val setSubdivideDepth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
-            "set_subdivide_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_subdivide_depth" }
-        }
-      val setSubdivideHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
-            "set_subdivide_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_subdivide_height" }
-        }
-      val setSubdivideWidth: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
-            "set_subdivide_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_subdivide_width" }
-        }}
+      val getLeftToRight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
+              "get_left_to_right".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_left_to_right" }
+            }
+          }
+
+      val getSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
+              "get_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_size" }
+            }
+          }
+
+      val getSubdivideDepth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
+              "get_subdivide_depth".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_subdivide_depth" }
+            }
+          }
+
+      val getSubdivideHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
+              "get_subdivide_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_subdivide_height" }
+            }
+          }
+
+      val getSubdivideWidth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
+              "get_subdivide_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_subdivide_width" }
+            }
+          }
+
+      val setLeftToRight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
+              "set_left_to_right".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_left_to_right" }
+            }
+          }
+
+      val setSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
+              "set_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_size" }
+            }
+          }
+
+      val setSubdivideDepth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
+              "set_subdivide_depth".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_subdivide_depth" }
+            }
+          }
+
+      val setSubdivideHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
+              "set_subdivide_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_subdivide_height" }
+            }
+          }
+
+      val setSubdivideWidth: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PrismMesh".cstr.ptr,
+              "set_subdivide_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_subdivide_width" }
+            }
+          }
+    }
   }
 }

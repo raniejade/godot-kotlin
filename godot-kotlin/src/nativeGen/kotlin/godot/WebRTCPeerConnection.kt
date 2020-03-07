@@ -200,68 +200,86 @@ open class WebRTCPeerConnection(
      * Container for method_bind pointers for WebRTCPeerConnection
      */
     private object __method_bind {
-      val addIceCandidate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "add_ice_candidate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_ice_candidate" }
-        }
-      val close: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "close".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method close" }
-        }
-      val createDataChannel: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "create_data_channel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_data_channel" }
-        }
-      val createOffer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "create_offer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_offer" }
-        }
-      val getConnectionState: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "get_connection_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_state" }
-        }
-      val initialize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "initialize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method initialize" }
-        }
-      val poll: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "poll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method poll" }
-        }
-      val setLocalDescription: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "set_local_description".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_local_description" }
-        }
-      val setRemoteDescription: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "set_remote_description".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_remote_description" }
-        }}
+      val addIceCandidate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
+              "add_ice_candidate".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_ice_candidate" }
+            }
+          }
+
+      val close: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
+              "close".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method close" }
+            }
+          }
+
+      val createDataChannel: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
+              "create_data_channel".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_data_channel" }
+            }
+          }
+
+      val createOffer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
+              "create_offer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_offer" }
+            }
+          }
+
+      val getConnectionState: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
+              "get_connection_state".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_state" }
+            }
+          }
+
+      val initialize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
+              "initialize".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method initialize" }
+            }
+          }
+
+      val poll: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
+              "poll".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method poll" }
+            }
+          }
+
+      val setLocalDescription: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
+              "set_local_description".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_local_description" }
+            }
+          }
+
+      val setRemoteDescription: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
+              "set_remote_description".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_remote_description" }
+            }
+          }
+    }
   }
 }

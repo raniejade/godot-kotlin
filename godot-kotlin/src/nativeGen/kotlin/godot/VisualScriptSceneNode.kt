@@ -85,19 +85,23 @@ open class VisualScriptSceneNode(
      * Container for method_bind pointers for VisualScriptSceneNode
      */
     private object __method_bind {
-      val getNodePath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSceneNode".cstr.ptr,
-            "get_node_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_path" }
-        }
-      val setNodePath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSceneNode".cstr.ptr,
-            "set_node_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_node_path" }
-        }}
+      val getNodePath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSceneNode".cstr.ptr,
+              "get_node_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_node_path" }
+            }
+          }
+
+      val setNodePath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSceneNode".cstr.ptr,
+              "set_node_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_node_path" }
+            }
+          }
+    }
   }
 }

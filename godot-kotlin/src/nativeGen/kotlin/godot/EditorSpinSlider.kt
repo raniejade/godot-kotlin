@@ -142,47 +142,59 @@ open class EditorSpinSlider(
      * Container for method_bind pointers for EditorSpinSlider
      */
     private object __method_bind {
-      val getLabel: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
-            "get_label".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_label" }
-        }
-      val isFlat: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
-            "is_flat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_flat" }
-        }
-      val isReadOnly: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
-            "is_read_only".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_read_only" }
-        }
-      val setFlat: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
-            "set_flat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flat" }
-        }
-      val setLabel: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
-            "set_label".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_label" }
-        }
-      val setReadOnly: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
-            "set_read_only".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_read_only" }
-        }}
+      val getLabel: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
+              "get_label".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_label" }
+            }
+          }
+
+      val isFlat: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
+              "is_flat".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_flat" }
+            }
+          }
+
+      val isReadOnly: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
+              "is_read_only".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_read_only" }
+            }
+          }
+
+      val setFlat: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
+              "set_flat".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_flat" }
+            }
+          }
+
+      val setLabel: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
+              "set_label".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_label" }
+            }
+          }
+
+      val setReadOnly: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpinSlider".cstr.ptr,
+              "set_read_only".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_read_only" }
+            }
+          }
+    }
   }
 }

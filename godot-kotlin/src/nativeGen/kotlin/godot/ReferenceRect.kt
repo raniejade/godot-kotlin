@@ -110,33 +110,41 @@ open class ReferenceRect(
      * Container for method_bind pointers for ReferenceRect
      */
     private object __method_bind {
-      val getBorderColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
-            "get_border_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_border_color" }
-        }
-      val getEditorOnly: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
-            "get_editor_only".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_editor_only" }
-        }
-      val setBorderColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
-            "set_border_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_border_color" }
-        }
-      val setEditorOnly: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
-            "set_editor_only".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_editor_only" }
-        }}
+      val getBorderColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
+              "get_border_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_border_color" }
+            }
+          }
+
+      val getEditorOnly: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
+              "get_editor_only".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_editor_only" }
+            }
+          }
+
+      val setBorderColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
+              "set_border_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_border_color" }
+            }
+          }
+
+      val setEditorOnly: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
+              "set_editor_only".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_editor_only" }
+            }
+          }
+    }
   }
 }

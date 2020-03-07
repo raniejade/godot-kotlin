@@ -195,65 +195,95 @@ open class Navigation(
      * Container for method_bind pointers for Navigation
      */
     private object __method_bind {
-      val getClosestPoint: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_closest_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_closest_point" }
-        }
-      val getClosestPointNormal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_closest_point_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_closest_point_normal" }
-        }
-      val getClosestPointOwner: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_closest_point_owner".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_closest_point_owner" }
-        }
-      val getClosestPointToSegment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_closest_point_to_segment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_closest_point_to_segment" }
-        }
-      val getSimplePath: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_simple_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_simple_path" }
-        }
-      val getUpVector: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_up_vector".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_up_vector" }
-        }
-      val navmeshAdd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "navmesh_add".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method navmesh_add" }
-        }
-      val navmeshRemove: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "navmesh_remove".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method navmesh_remove" }
-        }
-      val navmeshSetTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "navmesh_set_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method navmesh_set_transform" }
-        }
-      val setUpVector: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "set_up_vector".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_up_vector" }
-        }}
+      val getClosestPoint: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
+              "get_closest_point".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_closest_point" }
+            }
+          }
+
+      val getClosestPointNormal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
+              "get_closest_point_normal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_closest_point_normal" }
+            }
+          }
+
+      val getClosestPointOwner: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
+              "get_closest_point_owner".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_closest_point_owner" }
+            }
+          }
+
+      val getClosestPointToSegment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
+              "get_closest_point_to_segment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_closest_point_to_segment" }
+            }
+          }
+
+      val getSimplePath: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
+              "get_simple_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_simple_path" }
+            }
+          }
+
+      val getUpVector: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
+              "get_up_vector".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_up_vector" }
+            }
+          }
+
+      val navmeshAdd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
+              "navmesh_add".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method navmesh_add" }
+            }
+          }
+
+      val navmeshRemove: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
+              "navmesh_remove".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method navmesh_remove" }
+            }
+          }
+
+      val navmeshSetTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
+              "navmesh_set_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method navmesh_set_transform" }
+            }
+          }
+
+      val setUpVector: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
+              "set_up_vector".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_up_vector" }
+            }
+          }
+    }
   }
 }

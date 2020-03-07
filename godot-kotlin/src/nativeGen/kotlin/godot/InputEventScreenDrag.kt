@@ -181,61 +181,77 @@ open class InputEventScreenDrag(
      * Container for method_bind pointers for InputEventScreenDrag
      */
     private object __method_bind {
-      val getIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "get_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_index" }
-        }
-      val getPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "get_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_position" }
-        }
-      val getRelative: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "get_relative".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_relative" }
-        }
-      val getSpeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "get_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed" }
-        }
-      val setIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "set_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_index" }
-        }
-      val setPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "set_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_position" }
-        }
-      val setRelative: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "set_relative".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_relative" }
-        }
-      val setSpeed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "set_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed" }
-        }}
+      val getIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
+              "get_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_index" }
+            }
+          }
+
+      val getPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
+              "get_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_position" }
+            }
+          }
+
+      val getRelative: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
+              "get_relative".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_relative" }
+            }
+          }
+
+      val getSpeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
+              "get_speed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_speed" }
+            }
+          }
+
+      val setIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
+              "set_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_index" }
+            }
+          }
+
+      val setPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
+              "set_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_position" }
+            }
+          }
+
+      val setRelative: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
+              "set_relative".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_relative" }
+            }
+          }
+
+      val setSpeed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
+              "set_speed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_speed" }
+            }
+          }
+    }
   }
 }

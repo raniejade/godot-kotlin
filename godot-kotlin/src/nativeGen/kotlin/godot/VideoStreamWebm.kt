@@ -74,19 +74,23 @@ open class VideoStreamWebm(
      * Container for method_bind pointers for VideoStreamWebm
      */
     private object __method_bind {
-      val getFile: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VideoStreamWebm".cstr.ptr,
-            "get_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_file" }
-        }
-      val setFile: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VideoStreamWebm".cstr.ptr,
-            "set_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_file" }
-        }}
+      val getFile: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VideoStreamWebm".cstr.ptr,
+              "get_file".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_file" }
+            }
+          }
+
+      val setFile: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VideoStreamWebm".cstr.ptr,
+              "set_file".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_file" }
+            }
+          }
+    }
   }
 }

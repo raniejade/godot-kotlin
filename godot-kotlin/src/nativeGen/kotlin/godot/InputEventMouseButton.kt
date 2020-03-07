@@ -141,54 +141,68 @@ open class InputEventMouseButton(
      * Container for method_bind pointers for InputEventMouseButton
      */
     private object __method_bind {
-      val getButtonIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "get_button_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_button_index" }
-        }
-      val getFactor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "get_factor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_factor" }
-        }
-      val isDoubleclick: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "is_doubleclick".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_doubleclick" }
-        }
-      val setButtonIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "set_button_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_button_index" }
-        }
-      val setDoubleclick: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "set_doubleclick".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_doubleclick" }
-        }
-      val setFactor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "set_factor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_factor" }
-        }
-      val setPressed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "set_pressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
-        }}
+      val getButtonIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
+              "get_button_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_button_index" }
+            }
+          }
+
+      val getFactor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
+              "get_factor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_factor" }
+            }
+          }
+
+      val isDoubleclick: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
+              "is_doubleclick".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_doubleclick" }
+            }
+          }
+
+      val setButtonIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
+              "set_button_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_button_index" }
+            }
+          }
+
+      val setDoubleclick: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
+              "set_doubleclick".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_doubleclick" }
+            }
+          }
+
+      val setFactor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
+              "set_factor".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_factor" }
+            }
+          }
+
+      val setPressed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
+              "set_pressed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pressed" }
+            }
+          }
+    }
   }
 }

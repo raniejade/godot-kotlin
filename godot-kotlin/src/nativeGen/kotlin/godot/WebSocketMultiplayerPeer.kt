@@ -80,19 +80,23 @@ open class WebSocketMultiplayerPeer(
      * Container for method_bind pointers for WebSocketMultiplayerPeer
      */
     private object __method_bind {
-      val getPeer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketMultiplayerPeer".cstr.ptr,
-            "get_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_peer" }
-        }
-      val setBuffers: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketMultiplayerPeer".cstr.ptr,
-            "set_buffers".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_buffers" }
-        }}
+      val getPeer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketMultiplayerPeer".cstr.ptr,
+              "get_peer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_peer" }
+            }
+          }
+
+      val setBuffers: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketMultiplayerPeer".cstr.ptr,
+              "set_buffers".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_buffers" }
+            }
+          }
+    }
   }
 }

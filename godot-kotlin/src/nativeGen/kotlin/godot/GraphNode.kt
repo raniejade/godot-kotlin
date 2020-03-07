@@ -471,191 +471,286 @@ open class GraphNode(
      * Container for method_bind pointers for GraphNode
      */
     private object __method_bind {
-      val clearAllSlots: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "clear_all_slots".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_all_slots" }
-        }
-      val clearSlot: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "clear_slot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_slot" }
-        }
-      val getConnectionInputColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_input_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_input_color" }
-        }
-      val getConnectionInputCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_input_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_input_count" }
-        }
-      val getConnectionInputPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_input_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_input_position" }
-        }
-      val getConnectionInputType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_input_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_input_type" }
-        }
-      val getConnectionOutputColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_output_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_output_color" }
-        }
-      val getConnectionOutputCount: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_output_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_output_count" }
-        }
-      val getConnectionOutputPosition: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_output_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_output_position" }
-        }
-      val getConnectionOutputType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_output_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_output_type" }
-        }
-      val getOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
-        }
-      val getOverlay: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_overlay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_overlay" }
-        }
-      val getSlotColorLeft: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_slot_color_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slot_color_left" }
-        }
-      val getSlotColorRight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_slot_color_right".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slot_color_right" }
-        }
-      val getSlotTypeLeft: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_slot_type_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slot_type_left" }
-        }
-      val getSlotTypeRight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_slot_type_right".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slot_type_right" }
-        }
-      val getTitle: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_title" }
-        }
-      val isCloseButtonVisible: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_close_button_visible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_close_button_visible" }
-        }
-      val isComment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_comment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_comment" }
-        }
-      val isResizable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_resizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_resizable" }
-        }
-      val isSelected: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_selected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_selected" }
-        }
-      val isSlotEnabledLeft: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_slot_enabled_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_slot_enabled_left" }
-        }
-      val isSlotEnabledRight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_slot_enabled_right".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_slot_enabled_right" }
-        }
-      val setComment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_comment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_comment" }
-        }
-      val setOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
-        }
-      val setOverlay: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_overlay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_overlay" }
-        }
-      val setResizable: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_resizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_resizable" }
-        }
-      val setSelected: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_selected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_selected" }
-        }
-      val setShowCloseButton: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_show_close_button".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_show_close_button" }
-        }
-      val setSlot: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_slot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_slot" }
-        }
-      val setTitle: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_title" }
-        }}
+      val clearAllSlots: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "clear_all_slots".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_all_slots" }
+            }
+          }
+
+      val clearSlot: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "clear_slot".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_slot" }
+            }
+          }
+
+      val getConnectionInputColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_connection_input_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_input_color" }
+            }
+          }
+
+      val getConnectionInputCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_connection_input_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_input_count" }
+            }
+          }
+
+      val getConnectionInputPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_connection_input_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_input_position"
+              }
+            }
+          }
+
+      val getConnectionInputType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_connection_input_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_input_type" }
+            }
+          }
+
+      val getConnectionOutputColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_connection_output_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_output_color" }
+            }
+          }
+
+      val getConnectionOutputCount: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_connection_output_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_output_count" }
+            }
+          }
+
+      val getConnectionOutputPosition: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_connection_output_position".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_output_position"
+              }
+            }
+          }
+
+      val getConnectionOutputType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_connection_output_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_output_type" }
+            }
+          }
+
+      val getOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            }
+          }
+
+      val getOverlay: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_overlay".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_overlay" }
+            }
+          }
+
+      val getSlotColorLeft: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_slot_color_left".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_slot_color_left" }
+            }
+          }
+
+      val getSlotColorRight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_slot_color_right".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_slot_color_right" }
+            }
+          }
+
+      val getSlotTypeLeft: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_slot_type_left".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_slot_type_left" }
+            }
+          }
+
+      val getSlotTypeRight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_slot_type_right".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_slot_type_right" }
+            }
+          }
+
+      val getTitle: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "get_title".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_title" }
+            }
+          }
+
+      val isCloseButtonVisible: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "is_close_button_visible".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_close_button_visible" }
+            }
+          }
+
+      val isComment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "is_comment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_comment" }
+            }
+          }
+
+      val isResizable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "is_resizable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_resizable" }
+            }
+          }
+
+      val isSelected: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "is_selected".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_selected" }
+            }
+          }
+
+      val isSlotEnabledLeft: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "is_slot_enabled_left".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_slot_enabled_left" }
+            }
+          }
+
+      val isSlotEnabledRight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "is_slot_enabled_right".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_slot_enabled_right" }
+            }
+          }
+
+      val setComment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "set_comment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_comment" }
+            }
+          }
+
+      val setOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "set_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            }
+          }
+
+      val setOverlay: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "set_overlay".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_overlay" }
+            }
+          }
+
+      val setResizable: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "set_resizable".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_resizable" }
+            }
+          }
+
+      val setSelected: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "set_selected".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_selected" }
+            }
+          }
+
+      val setShowCloseButton: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "set_show_close_button".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_show_close_button" }
+            }
+          }
+
+      val setSlot: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "set_slot".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_slot" }
+            }
+          }
+
+      val setTitle: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
+              "set_title".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_title" }
+            }
+          }
+    }
   }
 }

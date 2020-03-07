@@ -76,26 +76,32 @@ open class EditorScript(
      * Container for method_bind pointers for EditorScript
      */
     private object __method_bind {
-      val addRootNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-            "add_root_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_root_node" }
-        }
-      val getEditorInterface: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-            "get_editor_interface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_editor_interface" }
-        }
-      val getScene: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-            "get_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scene" }
-        }}
+      val addRootNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
+              "add_root_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_root_node" }
+            }
+          }
+
+      val getEditorInterface: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
+              "get_editor_interface".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_editor_interface" }
+            }
+          }
+
+      val getScene: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
+              "get_scene".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_scene" }
+            }
+          }
+    }
   }
 }

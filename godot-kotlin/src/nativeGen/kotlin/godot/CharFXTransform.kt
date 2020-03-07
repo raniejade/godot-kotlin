@@ -285,117 +285,149 @@ open class CharFXTransform(
      * Container for method_bind pointers for CharFXTransform
      */
     private object __method_bind {
-      val getAbsoluteIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "get_absolute_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_absolute_index" }
-        }
-      val getCharacter: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "get_character".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_character" }
-        }
-      val getColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "get_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color" }
-        }
-      val getElapsedTime: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "get_elapsed_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_elapsed_time" }
-        }
-      val getEnvironment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "get_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_environment" }
-        }
-      val getOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
-        }
-      val getRelativeIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "get_relative_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_relative_index" }
-        }
-      val isVisible: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "is_visible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_visible" }
-        }
-      val setAbsoluteIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "set_absolute_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_absolute_index" }
-        }
-      val setCharacter: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "set_character".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_character" }
-        }
-      val setColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "set_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_color" }
-        }
-      val setElapsedTime: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "set_elapsed_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_elapsed_time" }
-        }
-      val setEnvironment: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "set_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_environment" }
-        }
-      val setOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
-        }
-      val setRelativeIndex: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "set_relative_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_relative_index" }
-        }
-      val setVisibility: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
-            "set_visibility".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_visibility" }
-        }}
+      val getAbsoluteIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "get_absolute_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_absolute_index" }
+            }
+          }
+
+      val getCharacter: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "get_character".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_character" }
+            }
+          }
+
+      val getColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "get_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_color" }
+            }
+          }
+
+      val getElapsedTime: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "get_elapsed_time".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_elapsed_time" }
+            }
+          }
+
+      val getEnvironment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "get_environment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_environment" }
+            }
+          }
+
+      val getOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "get_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            }
+          }
+
+      val getRelativeIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "get_relative_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_relative_index" }
+            }
+          }
+
+      val isVisible: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "is_visible".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_visible" }
+            }
+          }
+
+      val setAbsoluteIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "set_absolute_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_absolute_index" }
+            }
+          }
+
+      val setCharacter: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "set_character".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_character" }
+            }
+          }
+
+      val setColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "set_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_color" }
+            }
+          }
+
+      val setElapsedTime: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "set_elapsed_time".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_elapsed_time" }
+            }
+          }
+
+      val setEnvironment: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "set_environment".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_environment" }
+            }
+          }
+
+      val setOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "set_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            }
+          }
+
+      val setRelativeIndex: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "set_relative_index".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_relative_index" }
+            }
+          }
+
+      val setVisibility: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CharFXTransform".cstr.ptr,
+              "set_visibility".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_visibility" }
+            }
+          }
+    }
   }
 }

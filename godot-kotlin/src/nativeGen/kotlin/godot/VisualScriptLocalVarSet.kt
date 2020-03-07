@@ -100,33 +100,41 @@ open class VisualScriptLocalVarSet(
      * Container for method_bind pointers for VisualScriptLocalVarSet
      */
     private object __method_bind {
-      val getVarName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-            "get_var_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_var_name" }
-        }
-      val getVarType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-            "get_var_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_var_type" }
-        }
-      val setVarName: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-            "set_var_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_var_name" }
-        }
-      val setVarType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-            "set_var_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_var_type" }
-        }}
+      val getVarName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
+              "get_var_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_var_name" }
+            }
+          }
+
+      val getVarType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
+              "get_var_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_var_type" }
+            }
+          }
+
+      val setVarName: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
+              "set_var_name".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_var_name" }
+            }
+          }
+
+      val setVarType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
+              "set_var_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_var_type" }
+            }
+          }
+    }
   }
 }

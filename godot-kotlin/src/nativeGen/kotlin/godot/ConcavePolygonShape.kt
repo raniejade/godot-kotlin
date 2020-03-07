@@ -85,19 +85,23 @@ open class ConcavePolygonShape(
      * Container for method_bind pointers for ConcavePolygonShape
      */
     private object __method_bind {
-      val getFaces: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape".cstr.ptr,
-            "get_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_faces" }
-        }
-      val setFaces: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape".cstr.ptr,
-            "set_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_faces" }
-        }}
+      val getFaces: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape".cstr.ptr,
+              "get_faces".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_faces" }
+            }
+          }
+
+      val setFaces: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape".cstr.ptr,
+              "set_faces".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_faces" }
+            }
+          }
+    }
   }
 }

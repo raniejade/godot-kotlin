@@ -438,173 +438,221 @@ open class SpriteBase3D(
      * Container for method_bind pointers for SpriteBase3D
      */
     private object __method_bind {
-      val generateTriangleMesh: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "generate_triangle_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generate_triangle_mesh" }
-        }
-      val getAlphaCutMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "get_alpha_cut_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_alpha_cut_mode" }
-        }
-      val getAxis: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "get_axis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_axis" }
-        }
-      val getBillboardMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "get_billboard_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_billboard_mode" }
-        }
-      val getDrawFlag: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "get_draw_flag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_draw_flag" }
-        }
-      val getItemRect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "get_item_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_item_rect" }
-        }
-      val getModulate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "get_modulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_modulate" }
-        }
-      val getOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
-        }
-      val getOpacity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "get_opacity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_opacity" }
-        }
-      val getPixelSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "get_pixel_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pixel_size" }
-        }
-      val isCentered: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "is_centered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_centered" }
-        }
-      val isFlippedH: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "is_flipped_h".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_flipped_h" }
-        }
-      val isFlippedV: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "is_flipped_v".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_flipped_v" }
-        }
-      val setAlphaCutMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_alpha_cut_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_alpha_cut_mode" }
-        }
-      val setAxis: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_axis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_axis" }
-        }
-      val setBillboardMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_billboard_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_billboard_mode" }
-        }
-      val setCentered: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_centered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_centered" }
-        }
-      val setDrawFlag: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_draw_flag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_draw_flag" }
-        }
-      val setFlipH: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_flip_h".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flip_h" }
-        }
-      val setFlipV: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_flip_v".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flip_v" }
-        }
-      val setModulate: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_modulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_modulate" }
-        }
-      val setOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
-        }
-      val setOpacity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_opacity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_opacity" }
-        }
-      val setPixelSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "set_pixel_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pixel_size" }
-        }}
+      val generateTriangleMesh: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "generate_triangle_mesh".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method generate_triangle_mesh" }
+            }
+          }
+
+      val getAlphaCutMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "get_alpha_cut_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_alpha_cut_mode" }
+            }
+          }
+
+      val getAxis: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "get_axis".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_axis" }
+            }
+          }
+
+      val getBillboardMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "get_billboard_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_billboard_mode" }
+            }
+          }
+
+      val getDrawFlag: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "get_draw_flag".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_draw_flag" }
+            }
+          }
+
+      val getItemRect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "get_item_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_item_rect" }
+            }
+          }
+
+      val getModulate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "get_modulate".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_modulate" }
+            }
+          }
+
+      val getOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "get_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            }
+          }
+
+      val getOpacity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "get_opacity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_opacity" }
+            }
+          }
+
+      val getPixelSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "get_pixel_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_pixel_size" }
+            }
+          }
+
+      val isCentered: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "is_centered".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_centered" }
+            }
+          }
+
+      val isFlippedH: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "is_flipped_h".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_flipped_h" }
+            }
+          }
+
+      val isFlippedV: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "is_flipped_v".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_flipped_v" }
+            }
+          }
+
+      val setAlphaCutMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_alpha_cut_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_alpha_cut_mode" }
+            }
+          }
+
+      val setAxis: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_axis".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_axis" }
+            }
+          }
+
+      val setBillboardMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_billboard_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_billboard_mode" }
+            }
+          }
+
+      val setCentered: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_centered".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_centered" }
+            }
+          }
+
+      val setDrawFlag: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_draw_flag".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_draw_flag" }
+            }
+          }
+
+      val setFlipH: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_flip_h".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_flip_h" }
+            }
+          }
+
+      val setFlipV: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_flip_v".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_flip_v" }
+            }
+          }
+
+      val setModulate: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_modulate".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_modulate" }
+            }
+          }
+
+      val setOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            }
+          }
+
+      val setOpacity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_opacity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_opacity" }
+            }
+          }
+
+      val setPixelSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
+              "set_pixel_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pixel_size" }
+            }
+          }
+    }
   }
 }

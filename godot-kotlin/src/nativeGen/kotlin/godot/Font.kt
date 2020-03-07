@@ -174,65 +174,85 @@ open class Font(
      * Container for method_bind pointers for Font
      */
     private object __method_bind {
-      val draw: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "draw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw" }
-        }
-      val drawChar: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "draw_char".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_char" }
-        }
-      val getAscent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "get_ascent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ascent" }
-        }
-      val getDescent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "get_descent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_descent" }
-        }
-      val getHeight: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "get_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_height" }
-        }
-      val getStringSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "get_string_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_string_size" }
-        }
-      val getWordwrapStringSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "get_wordwrap_string_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_wordwrap_string_size" }
-        }
-      val hasOutline: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "has_outline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_outline" }
-        }
-      val isDistanceFieldHint: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "is_distance_field_hint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_distance_field_hint" }
-        }
-      val updateChanges: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "update_changes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method update_changes" }
-        }}
+      val draw: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
+              "draw".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method draw" }
+            }
+          }
+
+      val drawChar: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
+              "draw_char".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method draw_char" }
+            }
+          }
+
+      val getAscent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
+              "get_ascent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_ascent" }
+            }
+          }
+
+      val getDescent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
+              "get_descent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_descent" }
+            }
+          }
+
+      val getHeight: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
+              "get_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_height" }
+            }
+          }
+
+      val getStringSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
+              "get_string_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_string_size" }
+            }
+          }
+
+      val getWordwrapStringSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
+              "get_wordwrap_string_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_wordwrap_string_size" }
+            }
+          }
+
+      val hasOutline: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
+              "has_outline".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_outline" }
+            }
+          }
+
+      val isDistanceFieldHint: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
+              "is_distance_field_hint".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_distance_field_hint" }
+            }
+          }
+
+      val updateChanges: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
+              "update_changes".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method update_changes" }
+            }
+          }
+    }
   }
 }

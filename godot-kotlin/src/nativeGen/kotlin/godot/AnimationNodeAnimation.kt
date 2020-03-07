@@ -74,19 +74,23 @@ open class AnimationNodeAnimation(
      * Container for method_bind pointers for AnimationNodeAnimation
      */
     private object __method_bind {
-      val getAnimation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAnimation".cstr.ptr,
-            "get_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_animation" }
-        }
-      val setAnimation: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAnimation".cstr.ptr,
-            "set_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_animation" }
-        }}
+      val getAnimation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAnimation".cstr.ptr,
+              "get_animation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_animation" }
+            }
+          }
+
+      val setAnimation: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAnimation".cstr.ptr,
+              "set_animation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_animation" }
+            }
+          }
+    }
   }
 }

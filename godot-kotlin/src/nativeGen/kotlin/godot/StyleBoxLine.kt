@@ -187,75 +187,95 @@ open class StyleBoxLine(
      * Container for method_bind pointers for StyleBoxLine
      */
     private object __method_bind {
-      val getColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "get_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color" }
-        }
-      val getGrowBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "get_grow_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_grow_begin" }
-        }
-      val getGrowEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "get_grow_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_grow_end" }
-        }
-      val getThickness: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "get_thickness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_thickness" }
-        }
-      val isVertical: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "is_vertical".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_vertical" }
-        }
-      val setColor: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "set_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_color" }
-        }
-      val setGrowBegin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "set_grow_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_grow_begin" }
-        }
-      val setGrowEnd: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "set_grow_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_grow_end" }
-        }
-      val setThickness: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "set_thickness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_thickness" }
-        }
-      val setVertical: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "set_vertical".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertical" }
-        }}
+      val getColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
+              "get_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_color" }
+            }
+          }
+
+      val getGrowBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
+              "get_grow_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_grow_begin" }
+            }
+          }
+
+      val getGrowEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
+              "get_grow_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_grow_end" }
+            }
+          }
+
+      val getThickness: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
+              "get_thickness".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_thickness" }
+            }
+          }
+
+      val isVertical: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
+              "is_vertical".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_vertical" }
+            }
+          }
+
+      val setColor: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
+              "set_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_color" }
+            }
+          }
+
+      val setGrowBegin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
+              "set_grow_begin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_grow_begin" }
+            }
+          }
+
+      val setGrowEnd: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
+              "set_grow_end".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_grow_end" }
+            }
+          }
+
+      val setThickness: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
+              "set_thickness".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_thickness" }
+            }
+          }
+
+      val setVertical: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
+              "set_vertical".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_vertical" }
+            }
+          }
+    }
   }
 }

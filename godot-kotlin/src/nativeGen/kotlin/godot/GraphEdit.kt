@@ -476,157 +476,234 @@ open class GraphEdit(
      * Container for method_bind pointers for GraphEdit
      */
     private object __method_bind {
-      val addValidConnectionType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "add_valid_connection_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_valid_connection_type" }
-        }
-      val addValidLeftDisconnectType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "add_valid_left_disconnect_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_valid_left_disconnect_type" }
-        }
-      val addValidRightDisconnectType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "add_valid_right_disconnect_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_valid_right_disconnect_type" }
-        }
-      val clearConnections: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "clear_connections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_connections" }
-        }
-      val connectNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "connect_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connect_node" }
-        }
-      val disconnectNode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "disconnect_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method disconnect_node" }
-        }
-      val getConnectionList: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "get_connection_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_list" }
-        }
-      val getScrollOfs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "get_scroll_ofs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scroll_ofs" }
-        }
-      val getSnap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "get_snap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_snap" }
-        }
-      val getZoom: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "get_zoom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_zoom" }
-        }
-      val getZoomHbox: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "get_zoom_hbox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_zoom_hbox" }
-        }
-      val isNodeConnected: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "is_node_connected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_node_connected" }
-        }
-      val isRightDisconnectsEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "is_right_disconnects_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_right_disconnects_enabled" }
-        }
-      val isUsingSnap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "is_using_snap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_using_snap" }
-        }
-      val isValidConnectionType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "is_valid_connection_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_valid_connection_type" }
-        }
-      val removeValidConnectionType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "remove_valid_connection_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_valid_connection_type" }
-        }
-      val removeValidLeftDisconnectType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "remove_valid_left_disconnect_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_valid_left_disconnect_type"
+      val addValidConnectionType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "add_valid_connection_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_valid_connection_type" }
             }
-        }
-      val removeValidRightDisconnectType: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "remove_valid_right_disconnect_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_valid_right_disconnect_type"
+          }
+
+      val addValidLeftDisconnectType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "add_valid_left_disconnect_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_valid_left_disconnect_type"
+              }
             }
-        }
-      val setConnectionActivity: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "set_connection_activity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_connection_activity" }
-        }
-      val setRightDisconnects: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "set_right_disconnects".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_right_disconnects" }
-        }
-      val setScrollOfs: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "set_scroll_ofs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_scroll_ofs" }
-        }
-      val setSelected: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "set_selected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_selected" }
-        }
-      val setSnap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "set_snap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_snap" }
-        }
-      val setUseSnap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "set_use_snap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_snap" }
-        }
-      val setZoom: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
-            "set_zoom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_zoom" }
-        }}
+          }
+
+      val addValidRightDisconnectType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "add_valid_right_disconnect_type".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method add_valid_right_disconnect_type" }
+            }
+          }
+
+      val clearConnections: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "clear_connections".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_connections" }
+            }
+          }
+
+      val connectNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "connect_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method connect_node" }
+            }
+          }
+
+      val disconnectNode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "disconnect_node".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method disconnect_node" }
+            }
+          }
+
+      val getConnectionList: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "get_connection_list".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_connection_list" }
+            }
+          }
+
+      val getScrollOfs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "get_scroll_ofs".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_scroll_ofs" }
+            }
+          }
+
+      val getSnap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "get_snap".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_snap" }
+            }
+          }
+
+      val getZoom: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "get_zoom".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_zoom" }
+            }
+          }
+
+      val getZoomHbox: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "get_zoom_hbox".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_zoom_hbox" }
+            }
+          }
+
+      val isNodeConnected: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "is_node_connected".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_node_connected" }
+            }
+          }
+
+      val isRightDisconnectsEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "is_right_disconnects_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_right_disconnects_enabled" }
+            }
+          }
+
+      val isUsingSnap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "is_using_snap".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_using_snap" }
+            }
+          }
+
+      val isValidConnectionType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "is_valid_connection_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_valid_connection_type" }
+            }
+          }
+
+      val removeValidConnectionType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "remove_valid_connection_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_valid_connection_type" }
+            }
+          }
+
+      val removeValidLeftDisconnectType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "remove_valid_left_disconnect_type".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method remove_valid_left_disconnect_type" }
+            }
+          }
+
+      val removeValidRightDisconnectType: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "remove_valid_right_disconnect_type".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method remove_valid_right_disconnect_type" }
+            }
+          }
+
+      val setConnectionActivity: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "set_connection_activity".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_connection_activity" }
+            }
+          }
+
+      val setRightDisconnects: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "set_right_disconnects".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_right_disconnects" }
+            }
+          }
+
+      val setScrollOfs: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "set_scroll_ofs".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_scroll_ofs" }
+            }
+          }
+
+      val setSelected: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "set_selected".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_selected" }
+            }
+          }
+
+      val setSnap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "set_snap".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_snap" }
+            }
+          }
+
+      val setUseSnap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "set_use_snap".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_use_snap" }
+            }
+          }
+
+      val setZoom: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphEdit".cstr.ptr,
+              "set_zoom".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_zoom" }
+            }
+          }
+    }
   }
 }

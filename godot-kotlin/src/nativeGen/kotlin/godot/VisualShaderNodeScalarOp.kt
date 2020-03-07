@@ -109,19 +109,23 @@ open class VisualShaderNodeScalarOp(
      * Container for method_bind pointers for VisualShaderNodeScalarOp
      */
     private object __method_bind {
-      val getOperator: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeScalarOp".cstr.ptr,
-            "get_operator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_operator" }
-        }
-      val setOperator: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeScalarOp".cstr.ptr,
-            "set_operator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_operator" }
-        }}
+      val getOperator: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeScalarOp".cstr.ptr,
+              "get_operator".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_operator" }
+            }
+          }
+
+      val setOperator: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeScalarOp".cstr.ptr,
+              "set_operator".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_operator" }
+            }
+          }
+    }
   }
 }

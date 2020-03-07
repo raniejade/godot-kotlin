@@ -110,33 +110,41 @@ open class LineShape2D(
      * Container for method_bind pointers for LineShape2D
      */
     private object __method_bind {
-      val getD: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
-            "get_d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_d" }
-        }
-      val getNormal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
-            "get_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_normal" }
-        }
-      val setD: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
-            "set_d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_d" }
-        }
-      val setNormal: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr =
-            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
-            "set_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_normal" }
-        }}
+      val getD: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
+              "get_d".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_d" }
+            }
+          }
+
+      val getNormal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
+              "get_normal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_normal" }
+            }
+          }
+
+      val setD: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
+              "set_d".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_d" }
+            }
+          }
+
+      val setNormal: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
+              "set_normal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_normal" }
+            }
+          }
+    }
   }
 }

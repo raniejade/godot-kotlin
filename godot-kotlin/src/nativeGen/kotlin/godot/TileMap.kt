@@ -884,353 +884,528 @@ open class TileMap(
      * Container for method_bind pointers for TileMap
      */
     private object __method_bind {
-      val clear: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "clear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear" }
-        }
-      val fixInvalidTiles: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "fix_invalid_tiles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method fix_invalid_tiles" }
-        }
-      val getCell: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_cell".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cell" }
-        }
-      val getCellAutotileCoord: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_cell_autotile_coord".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cell_autotile_coord" }
-        }
-      val getCellSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_cell_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cell_size" }
-        }
-      val getCellv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_cellv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cellv" }
-        }
-      val getClipUv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_clip_uv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_clip_uv" }
-        }
-      val getCollisionBounce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_collision_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_bounce" }
-        }
-      val getCollisionFriction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_collision_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_friction" }
-        }
-      val getCollisionLayer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_collision_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_layer" }
-        }
-      val getCollisionLayerBit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_collision_layer_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_layer_bit" }
-        }
-      val getCollisionMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
-        }
-      val getCollisionMaskBit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_collision_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
-        }
-      val getCollisionUseKinematic: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_collision_use_kinematic".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_use_kinematic" }
-        }
-      val getCollisionUseParent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_collision_use_parent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_use_parent" }
-        }
-      val getCustomTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_custom_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_custom_transform" }
-        }
-      val getHalfOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_half_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_half_offset" }
-        }
-      val getMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mode" }
-        }
-      val getOccluderLightMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_occluder_light_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_occluder_light_mask" }
-        }
-      val getQuadrantSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_quadrant_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_quadrant_size" }
-        }
-      val getTileOrigin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_tile_origin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tile_origin" }
-        }
-      val getTileset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_tileset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tileset" }
-        }
-      val getUsedCells: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_used_cells".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_used_cells" }
-        }
-      val getUsedCellsById: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_used_cells_by_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_used_cells_by_id" }
-        }
-      val getUsedRect: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "get_used_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_used_rect" }
-        }
-      val isCellTransposed: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "is_cell_transposed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_cell_transposed" }
-        }
-      val isCellXFlipped: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "is_cell_x_flipped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_cell_x_flipped" }
-        }
-      val isCellYFlipped: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "is_cell_y_flipped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_cell_y_flipped" }
-        }
-      val isCenteredTexturesEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "is_centered_textures_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_centered_textures_enabled" }
-        }
-      val isCompatibilityModeEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "is_compatibility_mode_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_compatibility_mode_enabled" }
-        }
-      val isYSortModeEnabled: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "is_y_sort_mode_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_y_sort_mode_enabled" }
-        }
-      val mapToWorld: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "map_to_world".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method map_to_world" }
-        }
-      val setCell: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_cell".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cell" }
-        }
-      val setCellSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_cell_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cell_size" }
-        }
-      val setCellv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_cellv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cellv" }
-        }
-      val setCenteredTextures: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_centered_textures".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_centered_textures" }
-        }
-      val setClipUv: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_clip_uv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_clip_uv" }
-        }
-      val setCollisionBounce: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_collision_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_bounce" }
-        }
-      val setCollisionFriction: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_collision_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_friction" }
-        }
-      val setCollisionLayer: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_collision_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_layer" }
-        }
-      val setCollisionLayerBit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_collision_layer_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_layer_bit" }
-        }
-      val setCollisionMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
-        }
-      val setCollisionMaskBit: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_collision_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
-        }
-      val setCollisionUseKinematic: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_collision_use_kinematic".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_use_kinematic" }
-        }
-      val setCollisionUseParent: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_collision_use_parent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_use_parent" }
-        }
-      val setCompatibilityMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_compatibility_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_compatibility_mode" }
-        }
-      val setCustomTransform: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_custom_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_custom_transform" }
-        }
-      val setHalfOffset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_half_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_half_offset" }
-        }
-      val setMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mode" }
-        }
-      val setOccluderLightMask: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_occluder_light_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_occluder_light_mask" }
-        }
-      val setQuadrantSize: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_quadrant_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_quadrant_size" }
-        }
-      val setTileOrigin: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_tile_origin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tile_origin" }
-        }
-      val setTileset: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_tileset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tileset" }
-        }
-      val setYSortMode: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "set_y_sort_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_y_sort_mode" }
-        }
-      val updateBitmaskArea: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "update_bitmask_area".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method update_bitmask_area" }
-        }
-      val updateBitmaskRegion: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "update_bitmask_region".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method update_bitmask_region" }
-        }
-      val updateDirtyQuadrants: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "update_dirty_quadrants".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method update_dirty_quadrants" }
-        }
-      val worldToMap: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "world_to_map".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method world_to_map" }
-        }}
+      val clear: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "clear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear" }
+            }
+          }
+
+      val fixInvalidTiles: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "fix_invalid_tiles".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method fix_invalid_tiles" }
+            }
+          }
+
+      val getCell: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_cell".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cell" }
+            }
+          }
+
+      val getCellAutotileCoord: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_cell_autotile_coord".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cell_autotile_coord" }
+            }
+          }
+
+      val getCellSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_cell_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cell_size" }
+            }
+          }
+
+      val getCellv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_cellv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cellv" }
+            }
+          }
+
+      val getClipUv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_clip_uv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_clip_uv" }
+            }
+          }
+
+      val getCollisionBounce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_collision_bounce".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_bounce" }
+            }
+          }
+
+      val getCollisionFriction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_collision_friction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_friction" }
+            }
+          }
+
+      val getCollisionLayer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_collision_layer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_layer" }
+            }
+          }
+
+      val getCollisionLayerBit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_collision_layer_bit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_layer_bit" }
+            }
+          }
+
+      val getCollisionMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_collision_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
+            }
+          }
+
+      val getCollisionMaskBit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_collision_mask_bit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
+            }
+          }
+
+      val getCollisionUseKinematic: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_collision_use_kinematic".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_use_kinematic" }
+            }
+          }
+
+      val getCollisionUseParent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_collision_use_parent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_collision_use_parent" }
+            }
+          }
+
+      val getCustomTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_custom_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_custom_transform" }
+            }
+          }
+
+      val getHalfOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_half_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_half_offset" }
+            }
+          }
+
+      val getMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mode" }
+            }
+          }
+
+      val getOccluderLightMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_occluder_light_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_occluder_light_mask" }
+            }
+          }
+
+      val getQuadrantSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_quadrant_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_quadrant_size" }
+            }
+          }
+
+      val getTileOrigin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_tile_origin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tile_origin" }
+            }
+          }
+
+      val getTileset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_tileset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tileset" }
+            }
+          }
+
+      val getUsedCells: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_used_cells".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_used_cells" }
+            }
+          }
+
+      val getUsedCellsById: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_used_cells_by_id".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_used_cells_by_id" }
+            }
+          }
+
+      val getUsedRect: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "get_used_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_used_rect" }
+            }
+          }
+
+      val isCellTransposed: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "is_cell_transposed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_cell_transposed" }
+            }
+          }
+
+      val isCellXFlipped: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "is_cell_x_flipped".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_cell_x_flipped" }
+            }
+          }
+
+      val isCellYFlipped: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "is_cell_y_flipped".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_cell_y_flipped" }
+            }
+          }
+
+      val isCenteredTexturesEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "is_centered_textures_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_centered_textures_enabled" }
+            }
+          }
+
+      val isCompatibilityModeEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "is_compatibility_mode_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_compatibility_mode_enabled"
+              }
+            }
+          }
+
+      val isYSortModeEnabled: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "is_y_sort_mode_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_y_sort_mode_enabled" }
+            }
+          }
+
+      val mapToWorld: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "map_to_world".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method map_to_world" }
+            }
+          }
+
+      val setCell: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_cell".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cell" }
+            }
+          }
+
+      val setCellSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_cell_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cell_size" }
+            }
+          }
+
+      val setCellv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_cellv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cellv" }
+            }
+          }
+
+      val setCenteredTextures: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_centered_textures".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_centered_textures" }
+            }
+          }
+
+      val setClipUv: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_clip_uv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_clip_uv" }
+            }
+          }
+
+      val setCollisionBounce: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_collision_bounce".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_bounce" }
+            }
+          }
+
+      val setCollisionFriction: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_collision_friction".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_friction" }
+            }
+          }
+
+      val setCollisionLayer: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_collision_layer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_layer" }
+            }
+          }
+
+      val setCollisionLayerBit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_collision_layer_bit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_layer_bit" }
+            }
+          }
+
+      val setCollisionMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_collision_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
+            }
+          }
+
+      val setCollisionMaskBit: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_collision_mask_bit".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
+            }
+          }
+
+      val setCollisionUseKinematic: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_collision_use_kinematic".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_use_kinematic" }
+            }
+          }
+
+      val setCollisionUseParent: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_collision_use_parent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_collision_use_parent" }
+            }
+          }
+
+      val setCompatibilityMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_compatibility_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_compatibility_mode" }
+            }
+          }
+
+      val setCustomTransform: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_custom_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_custom_transform" }
+            }
+          }
+
+      val setHalfOffset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_half_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_half_offset" }
+            }
+          }
+
+      val setMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_mode" }
+            }
+          }
+
+      val setOccluderLightMask: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_occluder_light_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_occluder_light_mask" }
+            }
+          }
+
+      val setQuadrantSize: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_quadrant_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_quadrant_size" }
+            }
+          }
+
+      val setTileOrigin: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_tile_origin".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tile_origin" }
+            }
+          }
+
+      val setTileset: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_tileset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tileset" }
+            }
+          }
+
+      val setYSortMode: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "set_y_sort_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_y_sort_mode" }
+            }
+          }
+
+      val updateBitmaskArea: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "update_bitmask_area".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method update_bitmask_area" }
+            }
+          }
+
+      val updateBitmaskRegion: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "update_bitmask_region".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method update_bitmask_region" }
+            }
+          }
+
+      val updateDirtyQuadrants: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "update_dirty_quadrants".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method update_dirty_quadrants" }
+            }
+          }
+
+      val worldToMap: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
+              "world_to_map".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method world_to_map" }
+            }
+          }
+    }
   }
 }

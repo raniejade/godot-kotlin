@@ -219,89 +219,131 @@ open class ConfigFile(
      * Container for method_bind pointers for ConfigFile
      */
     private object __method_bind {
-      val eraseSection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "erase_section".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method erase_section" }
-        }
-      val eraseSectionKey: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "erase_section_key".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method erase_section_key" }
-        }
-      val getSectionKeys: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "get_section_keys".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_section_keys" }
-        }
-      val getSections: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "get_sections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sections" }
-        }
-      val getValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "get_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_value" }
-        }
-      val hasSection: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "has_section".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_section" }
-        }
-      val hasSectionKey: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "has_section_key".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_section_key" }
-        }
-      val load: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "load".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method load" }
-        }
-      val loadEncrypted: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "load_encrypted".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method load_encrypted" }
-        }
-      val loadEncryptedPass: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "load_encrypted_pass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method load_encrypted_pass" }
-        }
-      val save: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "save".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method save" }
-        }
-      val saveEncrypted: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "save_encrypted".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method save_encrypted" }
-        }
-      val saveEncryptedPass: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "save_encrypted_pass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method save_encrypted_pass" }
-        }
-      val setValue: CPointer<godot_method_bind>
-        get() = Allocator.allocationScope {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "set_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_value" }
-        }}
+      val eraseSection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "erase_section".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method erase_section" }
+            }
+          }
+
+      val eraseSectionKey: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "erase_section_key".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method erase_section_key" }
+            }
+          }
+
+      val getSectionKeys: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "get_section_keys".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_section_keys" }
+            }
+          }
+
+      val getSections: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "get_sections".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_sections" }
+            }
+          }
+
+      val getValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "get_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_value" }
+            }
+          }
+
+      val hasSection: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "has_section".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_section" }
+            }
+          }
+
+      val hasSectionKey: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "has_section_key".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_section_key" }
+            }
+          }
+
+      val load: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "load".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load" }
+            }
+          }
+
+      val loadEncrypted: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "load_encrypted".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load_encrypted" }
+            }
+          }
+
+      val loadEncryptedPass: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "load_encrypted_pass".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load_encrypted_pass" }
+            }
+          }
+
+      val save: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "save".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method save" }
+            }
+          }
+
+      val saveEncrypted: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "save_encrypted".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method save_encrypted" }
+            }
+          }
+
+      val saveEncryptedPass: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "save_encrypted_pass".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method save_encrypted_pass" }
+            }
+          }
+
+      val setValue: CPointer<godot_method_bind> by lazy {
+            Allocator.allocationScope {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+              "set_value".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_value" }
+            }
+          }
+    }
   }
 }
