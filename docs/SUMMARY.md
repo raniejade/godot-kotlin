@@ -1,4 +1,4 @@
-- [Overview](index.md)
+* [Overview](index.md)
 * [API differences](api-differences.md)
 * [Supported platforms](supported-platforms.md)
 * [Setting up]()
