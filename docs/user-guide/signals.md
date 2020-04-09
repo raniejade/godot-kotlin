@@ -1,4 +1,6 @@
-Signals are represented as properties of type `Signal` and must start with a prefix `signal` (see [API differences](../api-differences.md) section for an explanation). Signals can be created via the `signalX` delegate, where `X` is the number of parameters your signal have. This binding only supports signals with at most 10 parameters at the moment.
+# Signals
+
+Signals are represented as properties of type `Signal` and must start with a prefix `signal` \(see [API differences](../api-differences.md) section for an explanation\). Signals can be created via the `signalX` delegate, where `X` is the number of parameters your signal have. This binding only supports signals with at most 10 parameters at the moment.
 
 ```kotlin
 class RotatingCube: Spatial() {
@@ -11,6 +13,7 @@ class RotatingCube: Spatial() {
 Do note that delegation is necessary here as the actual signal is only created during registration.
 
 ## Registration
+
 Methods can be registered in `GodotClass.init` via `ClassMemberRegistry.registerSignal`.
 
 ```kotlin
@@ -26,6 +29,7 @@ class RotatingCube: Spatial() {
 ```
 
 ## Emitting
+
 Every signal has a `emit` method which can be used to emit it.
 
 ```kotlin
@@ -33,6 +37,7 @@ signalReverseChanged.emit(false)
 ```
 
 ## Subscribing
+
 A method can be subscribed/connected to a signal via `SignalX.connect`. The number of parameters of the method and signal must match.
 
 ```kotlin
@@ -47,3 +52,4 @@ class SomeObject: Object() {
 val targetObject = SomeObject()
 signalReverseChanged.connect(targetObject, targetObject::onReverseChanged)
 ```
+
