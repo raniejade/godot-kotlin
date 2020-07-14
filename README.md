@@ -4,6 +4,7 @@
 [![Bintray](https://img.shields.io/bintray/v/raniejade/godot-kotlin/godot-kotlin?label=release&style=flat-square)](https://bintray.com/raniejade/godot-kotlin/godot-kotlin/_latestVersion)
 [![Bintray](https://img.shields.io/bintray/v/raniejade/godot-kotlin-dev/godot-kotlin?label=dev&style=flat-square)](https://bintray.com/raniejade/godot-kotlin-dev/godot-kotlin/_latestVersion)
 
+NOTICE: Project is being merged at [utopia-rise/godot-kotlin](https://github.com/utopia-rise/godot-kotlin). No further development will be done in this repository.
 
 ![logo](docs/src/doc/assets/img/logo.png)
 
